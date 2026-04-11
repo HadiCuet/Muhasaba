@@ -1,0 +1,53 @@
+import 'package:drift/drift.dart';
+
+import '../database.dart';
+import '../tables.dart';
+
+part 'amal_dao.g.dart';
+
+@DriftAccessor(tables: [Amals])
+class AmalDao extends DatabaseAccessor<AppDatabase> with _$AmalDaoMixin {
+  AmalDao(super.db);
+
+  /// All non-archived amal, ordered by sortOrder then id.
+  Stream<List<AmalRow>> watchActive() {
+    return (select(amals)
+          ..where((a) => a.archivedAt.isNull())
+          ..orderBy([
+            (a) => OrderingTerm.asc(a.sortOrder),
+            (a) => OrderingTerm.asc(a.id),
+          ]))
+        .watch();
+  }
+
+  Future<List<AmalRow>> getActive() {
+    return (select(amals)
+          ..where((a) => a.archivedAt.isNull())
+          ..orderBy([
+            (a) => OrderingTerm.asc(a.sortOrder),
+            (a) => OrderingTerm.asc(a.id),
+          ]))
+        .get();
+  }
+
+  Future<AmalRow?> getById(int id) {
+    return (select(amals)..where((a) => a.id.equals(id))).getSingleOrNull();
+  }
+
+  Future<int> insertAmal(AmalsCompanion entry) => into(amals).insert(entry);
+
+  Future<bool> updateAmal(AmalRow row) => update(amals).replace(row);
+
+  /// Soft-delete: hides from tracking but keeps historical completions.
+  Future<int> archive(int id, DateTime at) {
+    return (update(amals)..where((a) => a.id.equals(id))).write(
+      AmalsCompanion(archivedAt: Value(at)),
+    );
+  }
+
+  /// Hard-delete an amal and cascade its completions/hidden days. Use
+  /// sparingly — `archive` is usually what we want.
+  Future<int> deleteAmal(int id) {
+    return (delete(amals)..where((a) => a.id.equals(id))).go();
+  }
+}
