@@ -1,0 +1,142 @@
+<h2>Amal Form & App Improvements</h2>
+<p class="subtitle">Current form works, but here's what could make it great. Pick what excites you.</p>
+
+<div class="section">
+  <h3>1. Form UX Improvements</h3>
+  <p class="subtitle">Polish the existing add/edit amal experience</p>
+</div>
+
+<div class="options" data-multiselect>
+
+  <!-- A: Icon/Emoji per amal -->
+  <div class="option" data-choice="icon-picker" onclick="toggleSelect(this)">
+    <div class="letter">A</div>
+    <div class="content">
+      <h3>Icon per Amal</h3>
+      <p>Pick an icon or emoji for each amal — shows on the card. Makes the Today list instantly scannable.</p>
+      <div style="margin-top:8px;display:flex;gap:8px;flex-wrap:wrap;">
+        <span style="background:#e8f5e9;padding:4px 10px;border-radius:8px;font-size:18px;">🕌</span>
+        <span style="background:#e8f5e9;padding:4px 10px;border-radius:8px;font-size:18px;">📖</span>
+        <span style="background:#e8f5e9;padding:4px 10px;border-radius:8px;font-size:18px;">🤲</span>
+        <span style="background:#e8f5e9;padding:4px 10px;border-radius:8px;font-size:18px;">💰</span>
+        <span style="background:#e8f5e9;padding:4px 10px;border-radius:8px;font-size:18px;">📿</span>
+        <span style="background:#e8f5e9;padding:4px 10px;border-radius:8px;font-size:18px;">🏃</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- B: Quick-add templates -->
+  <div class="option" data-choice="templates" onclick="toggleSelect(this)">
+    <div class="letter">B</div>
+    <div class="content">
+      <h3>Quick-Add Templates</h3>
+      <p>Pre-built amal templates for common practices — tap to add instantly, customize after. Way faster than filling the form from scratch.</p>
+      <div style="margin-top:8px;font-size:13px;color:#555;">
+        <div style="display:flex;flex-wrap:wrap;gap:6px;">
+          <span style="background:#f5f5f5;padding:3px 10px;border-radius:12px;border:1px solid #ddd;">Tasbih 33x</span>
+          <span style="background:#f5f5f5;padding:3px 10px;border-radius:12px;border:1px solid #ddd;">Surah Kahf (weekly)</span>
+          <span style="background:#f5f5f5;padding:3px 10px;border-radius:12px;border:1px solid #ddd;">Istighfar 100x</span>
+          <span style="background:#f5f5f5;padding:3px 10px;border-radius:12px;border:1px solid #ddd;">Sadaqah (monthly)</span>
+          <span style="background:#f5f5f5;padding:3px 10px;border-radius:12px;border:1px solid #ddd;">Duha Prayer</span>
+          <span style="background:#f5f5f5;padding:3px 10px;border-radius:12px;border:1px solid #ddd;">Tahajjud</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- C: Better target input -->
+  <div class="option" data-choice="better-target" onclick="toggleSelect(this)">
+    <div class="letter">C</div>
+    <div class="content">
+      <h3>Smarter Target Input</h3>
+      <p>Current ± stepper is slow for 33 or 100. Replace with: quick-pick chips (1, 3, 7, 33, 100) + text field for custom. One tap for common counts.</p>
+      <div style="margin-top:8px;display:flex;gap:6px;flex-wrap:wrap;">
+        <span style="background:white;padding:4px 12px;border-radius:16px;border:1px solid #ccc;font-size:13px;">1</span>
+        <span style="background:white;padding:4px 12px;border-radius:16px;border:1px solid #ccc;font-size:13px;">3</span>
+        <span style="background:white;padding:4px 12px;border-radius:16px;border:1px solid #ccc;font-size:13px;">7</span>
+        <span style="background:#e8f5e9;padding:4px 12px;border-radius:16px;border:1px solid #a5d6a7;font-size:13px;color:#2E7D5B;font-weight:600;">33</span>
+        <span style="background:white;padding:4px 12px;border-radius:16px;border:1px solid #ccc;font-size:13px;">100</span>
+        <span style="background:white;padding:4px 12px;border-radius:16px;border:1px solid #ccc;font-size:13px;">Custom...</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- D: Drag to reorder -->
+  <div class="option" data-choice="reorder" onclick="toggleSelect(this)">
+    <div class="letter">D</div>
+    <div class="content">
+      <h3>Drag-to-Reorder on Today Screen</h3>
+      <p>The DB has <code>sortOrder</code> but no UI to use it. Add a reorder mode — long-press the list to enter drag mode, rearrange amal in your preferred priority.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top:28px;">
+  <h3>2. New Feature Ideas</h3>
+  <p class="subtitle">Beyond form improvements — what would make the app more valuable?</p>
+</div>
+
+<div class="options" data-multiselect>
+
+  <!-- E: Categories -->
+  <div class="option" data-choice="categories" onclick="toggleSelect(this)">
+    <div class="letter">E</div>
+    <div class="content">
+      <h3>Categories / Groups</h3>
+      <p>Group amal into collapsible sections: <strong>Salah</strong>, <strong>Dhikr</strong>, <strong>Quran</strong>, <strong>Sadaqah</strong>, etc. Keeps the Today list organized as it grows.</p>
+      <div style="margin-top:8px;font-size:12px;color:#666;">
+        <div style="font-weight:600;color:#2E7D5B;margin-bottom:4px;">▾ Salah (3/5)</div>
+        <div style="padding-left:16px;margin-bottom:2px;">✓ Fajr &nbsp; ✓ Dhuhr &nbsp; ○ Asr &nbsp; ✓ Maghrib &nbsp; ○ Isha</div>
+        <div style="font-weight:600;color:#2E7D5B;margin-top:8px;margin-bottom:4px;">▾ Dhikr (0/2)</div>
+        <div style="padding-left:16px;">○ Tasbih 33x &nbsp; ○ Istighfar 100x</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- F: Home screen widget -->
+  <div class="option" data-choice="widget" onclick="toggleSelect(this)">
+    <div class="letter">F</div>
+    <div class="content">
+      <h3>Home Screen Widget</h3>
+      <p>iOS widget (WidgetKit) / Android widget showing today's completion ring or checklist. Glanceable without opening the app.</p>
+      <div style="margin-top:8px;text-align:center;">
+        <div style="display:inline-block;background:white;border-radius:16px;padding:12px 20px;box-shadow:0 1px 4px rgba(0,0,0,0.1);">
+          <div style="font-size:11px;color:#888;margin-bottom:4px;">Muhasaba</div>
+          <div style="font-size:24px;font-weight:700;color:#2E7D5B;">4/7</div>
+          <div style="font-size:10px;color:#888;">completed today</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- G: Quran progress -->
+  <div class="option" data-choice="quran" onclick="toggleSelect(this)">
+    <div class="letter">G</div>
+    <div class="content">
+      <h3>Quran Progress Tracker</h3>
+      <p>Instead of just a "Tilawah" checkbox — track which juz, surah, or page you're on. A mini Quran bookmark inside the app.</p>
+    </div>
+  </div>
+
+  <!-- H: Backup/Export -->
+  <div class="option" data-choice="backup" onclick="toggleSelect(this)">
+    <div class="letter">H</div>
+    <div class="content">
+      <h3>Backup & Restore</h3>
+      <p>Export the Drift DB to iCloud/local file. Restore on a new device. Peace of mind for long-term tracking data.</p>
+    </div>
+  </div>
+
+</div>
+
+<div class="section" style="margin-top:24px;padding:16px;background:#f8f8f8;border-radius:12px;">
+  <h3 style="margin-top:0;">&#11088; My Top 3 Picks</h3>
+  <p style="font-size:14px;color:#555;margin-bottom:0;">
+    <strong>B (Templates)</strong> — biggest time-saver for adding amal<br>
+    <strong>C (Smarter Target)</strong> — small change, big improvement for tasbih/dhikr<br>
+    <strong>D (Reorder)</strong> — the data layer already supports it, just needs UI
+  </p>
+</div>
+
+<p class="subtitle" style="margin-top:20px;">Multi-select everything that interests you, then reply in the terminal.</p>

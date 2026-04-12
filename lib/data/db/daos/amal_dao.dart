@@ -50,4 +50,31 @@ class AmalDao extends DatabaseAccessor<AppDatabase> with _$AmalDaoMixin {
   Future<int> deleteAmal(int id) {
     return (delete(amals)..where((a) => a.id.equals(id))).go();
   }
+
+  /// Returns distinct icons used by active amal, most-recently-created first.
+  Future<List<String>> getRecentIcons() async {
+    final rows = await (selectOnly(amals, distinct: true)
+          ..addColumns([amals.icon])
+          ..where(amals.icon.isNotNull() & amals.archivedAt.isNull())
+          ..orderBy([OrderingTerm.desc(amals.id)])
+          ..limit(20))
+        .get();
+    return rows
+        .map((r) => r.read(amals.icon))
+        .whereType<String>()
+        .toList();
+  }
+
+  /// Batch-update sortOrder for multiple amal at once (drag-to-reorder).
+  Future<void> updateSortOrders(Map<int, int> idToSortOrder) async {
+    await db.batch((b) {
+      for (final entry in idToSortOrder.entries) {
+        b.update(
+          amals,
+          AmalsCompanion(sortOrder: Value(entry.value)),
+          where: (a) => a.id.equals(entry.key),
+        );
+      }
+    });
+  }
 }

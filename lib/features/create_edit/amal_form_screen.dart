@@ -7,14 +7,18 @@ import '../../app/providers.dart';
 import '../../data/db/database.dart';
 import '../../domain/models/frequency.dart';
 import '../../domain/services/reminder_scheduler.dart';
+import 'amal_templates.dart';
+import 'widgets/category_picker.dart';
+import 'widgets/emoji_picker.dart';
 
 /// Create or edit an amal. Pass `amalId = null` to create a new one, or an
 /// existing id to edit. When editing, the form hydrates from the row before
-/// the first paint.
+/// the first paint. [prefill] pre-populates the form from a template.
 class AmalFormScreen extends ConsumerStatefulWidget {
-  const AmalFormScreen({super.key, this.amalId});
+  const AmalFormScreen({super.key, this.amalId, this.prefill});
 
   final int? amalId;
+  final AmalTemplate? prefill;
 
   @override
   ConsumerState<AmalFormScreen> createState() => _AmalFormScreenState();
@@ -24,11 +28,13 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
   final _formKey = GlobalKey<FormState>();
   final _titleController = TextEditingController();
 
+  String? _icon;
+  String? _category;
   Frequency _frequency = Frequency.daily;
   int _target = 1;
-  int? _weeklyDay;
+  int? _weeklyDay = DateTime.friday;
   int? _monthlyDate;
-  bool _defaultChecked = false;
+  bool _defaultChecked = true;
   TimeOfDay? _reminderTime;
 
   bool _loading = false;
@@ -40,6 +46,13 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
     if (widget.amalId != null) {
       _loading = true;
       _hydrate();
+    } else if (widget.prefill != null) {
+      final t = widget.prefill!;
+      _icon = t.icon;
+      _titleController.text = t.title;
+      _category = t.category;
+      _frequency = t.frequency;
+      _target = t.target;
     }
   }
 
@@ -53,6 +66,8 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
       _existing = row;
       if (row != null) {
         _titleController.text = row.title;
+        _icon = row.icon;
+        _category = row.category;
         _frequency = row.frequency;
         _target = row.target;
         _weeklyDay = row.weeklyDay;
@@ -76,6 +91,13 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
     super.dispose();
   }
 
+  Future<void> _pickIcon() async {
+    final picked = await showEmojiPicker(context, ref, current: _icon);
+    if (picked != null) {
+      setState(() => _icon = picked.isEmpty ? null : picked);
+    }
+  }
+
   Future<void> _save() async {
     if (!_formKey.currentState!.validate()) return;
     final title = _titleController.text.trim();
@@ -95,6 +117,8 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                 _frequency == Frequency.monthly ? _monthlyDate : null,
             defaultChecked: _defaultChecked,
             reminderTime: reminder,
+            icon: _icon,
+            category: _category,
           );
     } else {
       await ref.read(appDatabaseProvider).amalDao.updateAmal(
@@ -110,14 +134,18 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
               ),
               defaultChecked: _defaultChecked,
               reminderTime: Value(reminder),
+              icon: Value(_icon),
+              category: Value(_category),
             ),
           );
       amalId = _existing!.id;
     }
 
+    // Refresh recent icons after saving.
+    ref.invalidate(recentIconsProvider);
+
     // Schedule or cancel the OS-level notification to match the saved
-    // reminder. If the user enabled one, ask for permission first; on denial
-    // the row still saves, but we skip scheduling and surface a banner.
+    // reminder.
     final scheduler = ref.read(reminderSchedulerProvider);
     final parsed = parseReminderTime(reminder);
     String? permissionMessage;
@@ -156,44 +184,92 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
       );
     }
     final isEdit = _existing != null;
+    final theme = Theme.of(context);
     return Scaffold(
       appBar: AppBar(
         title: Text(isEdit ? 'Edit amal' : 'New amal'),
-        actions: [
-          TextButton(
+      ),
+      bottomNavigationBar: SafeArea(
+        child: Padding(
+          padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+          child: FilledButton(
             onPressed: _save,
+            style: FilledButton.styleFrom(
+              minimumSize: const Size.fromHeight(48),
+            ),
             child: const Text('Save'),
           ),
-        ],
+        ),
       ),
       body: Form(
         key: _formKey,
         child: ListView(
-          padding: const EdgeInsets.all(16),
+          padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
           children: [
-            TextFormField(
-              controller: _titleController,
-              decoration: const InputDecoration(
-                labelText: 'Title',
-                border: OutlineInputBorder(),
-              ),
-              validator: (v) {
-                final s = v?.trim() ?? '';
-                if (s.isEmpty) return 'Title is required';
-                if (s.length > 120) return 'Title is too long';
-                return null;
-              },
+            // ── Icon + Title row ───────────────────────────────────────
+            Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                GestureDetector(
+                  onTap: _pickIcon,
+                  child: Container(
+                    width: 56,
+                    height: 56,
+                    decoration: BoxDecoration(
+                      color: theme.colorScheme.surfaceContainerHighest,
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                    alignment: Alignment.center,
+                    child: _icon != null
+                        ? Text(_icon!, style: const TextStyle(fontSize: 28))
+                        : Icon(
+                            Icons.add_reaction_outlined,
+                            color: theme.colorScheme.onSurfaceVariant,
+                          ),
+                  ),
+                ),
+                const SizedBox(width: 12),
+                Expanded(
+                  child: TextFormField(
+                    controller: _titleController,
+                    decoration: const InputDecoration(
+                      labelText: 'Title',
+                      border: OutlineInputBorder(),
+                    ),
+                    validator: (v) {
+                      final s = v?.trim() ?? '';
+                      if (s.isEmpty) return 'Title is required';
+                      if (s.length > 120) return 'Title is too long';
+                      return null;
+                    },
+                  ),
+                ),
+              ],
             ),
-            const SizedBox(height: 16),
+            const SizedBox(height: 20),
+
+            // ── Frequency ──────────────────────────────────────────────
             _FrequencySelector(
               value: _frequency,
               onChanged: (f) => setState(() => _frequency = f),
             ),
             const SizedBox(height: 16),
-            _TargetField(
+
+            // ── Category ───────────────────────────────────────────────
+            Text('Category', style: theme.textTheme.labelLarge),
+            const SizedBox(height: 8),
+            CategoryPicker(
+              selected: _category,
+              onChanged: (c) => setState(() => _category = c),
+            ),
+            const SizedBox(height: 16),
+
+            // ── Target ─────────────────────────────────────────────────
+            _TargetChips(
               value: _target,
               onChanged: (v) => setState(() => _target = v),
             ),
+
             if (_frequency == Frequency.weekly) ...[
               const SizedBox(height: 16),
               _WeeklyDayPicker(
@@ -250,6 +326,10 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Frequency selector (unchanged)
+// ---------------------------------------------------------------------------
+
 class _FrequencySelector extends StatelessWidget {
   const _FrequencySelector({required this.value, required this.onChanged});
 
@@ -277,42 +357,112 @@ class _FrequencySelector extends StatelessWidget {
   }
 }
 
-class _TargetField extends StatelessWidget {
-  const _TargetField({required this.value, required this.onChanged});
+// ---------------------------------------------------------------------------
+// Target chips: preset values + custom text field
+// ---------------------------------------------------------------------------
+
+class _TargetChips extends StatefulWidget {
+  const _TargetChips({required this.value, required this.onChanged});
 
   final int value;
   final ValueChanged<int> onChanged;
 
   @override
+  State<_TargetChips> createState() => _TargetChipsState();
+}
+
+class _TargetChipsState extends State<_TargetChips> {
+  final _controller = TextEditingController();
+  static const _presets = [1, 3, 5, 7, 11, 33, 100];
+
+  bool get _isCustom => !_presets.contains(widget.value);
+
+  @override
+  void initState() {
+    super.initState();
+    if (_isCustom && widget.value > 0) {
+      _controller.text = '${widget.value}';
+    }
+  }
+
+  @override
+  void didUpdateWidget(_TargetChips old) {
+    super.didUpdateWidget(old);
+    if (widget.value != old.value) {
+      if (!_isCustom) {
+        _controller.clear();
+      } else if (_controller.text != '${widget.value}') {
+        _controller.text = '${widget.value}';
+      }
+    }
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Row(
+    final theme = Theme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Expanded(
-          child: Text(
-            'Times per period',
-            style: Theme.of(context).textTheme.bodyLarge,
-          ),
+        Text('Times per period', style: theme.textTheme.labelLarge),
+        const SizedBox(height: 8),
+        Wrap(
+          spacing: 8,
+          runSpacing: 8,
+          children: [
+            for (final p in _presets)
+              ChoiceChip(
+                label: Text('$p'),
+                selected: widget.value == p,
+                onSelected: (_) {
+                  _controller.clear();
+                  widget.onChanged(p);
+                },
+              ),
+          ],
         ),
-        IconButton(
-          onPressed: value > 1 ? () => onChanged(value - 1) : null,
-          icon: const Icon(Icons.remove_circle_outline),
-        ),
-        SizedBox(
-          width: 40,
-          child: Text(
-            '$value',
-            textAlign: TextAlign.center,
-            style: Theme.of(context).textTheme.titleMedium,
-          ),
-        ),
-        IconButton(
-          onPressed: () => onChanged(value + 1),
-          icon: const Icon(Icons.add_circle_outline),
+        const SizedBox(height: 12),
+        Row(
+          children: [
+            Text('Custom', style: theme.textTheme.bodyMedium),
+            const SizedBox(width: 12),
+            SizedBox(
+              width: 80,
+              child: TextField(
+                controller: _controller,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  border: const OutlineInputBorder(),
+                  isDense: true,
+                  contentPadding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 8,
+                  ),
+                  hintText: _isCustom ? null : 'e.g. 50',
+                ),
+                onChanged: (v) {
+                  final parsed = int.tryParse(v.trim());
+                  if (parsed != null && parsed > 0) {
+                    widget.onChanged(parsed);
+                  }
+                },
+              ),
+            ),
+          ],
         ),
       ],
     );
   }
 }
+
+// ---------------------------------------------------------------------------
+// Weekly day picker (unchanged)
+// ---------------------------------------------------------------------------
 
 class _WeeklyDayPicker extends StatelessWidget {
   const _WeeklyDayPicker({required this.value, required this.onChanged});
@@ -339,7 +489,7 @@ class _WeeklyDayPicker extends StatelessWidget {
         const SizedBox(height: 4),
         Text(
           value == null
-              ? 'Any day (hides after first check until next week)'
+              ? 'Any day (stays visible today, hides next day)'
               : 'Only ${_fullName(value!)}',
           style: Theme.of(context).textTheme.bodySmall,
         ),
@@ -378,6 +528,10 @@ class _WeeklyDayPicker extends StatelessWidget {
   }
 }
 
+// ---------------------------------------------------------------------------
+// Monthly date picker (unchanged)
+// ---------------------------------------------------------------------------
+
 class _MonthlyDatePicker extends StatelessWidget {
   const _MonthlyDatePicker({required this.value, required this.onChanged});
 
@@ -393,7 +547,7 @@ class _MonthlyDatePicker extends StatelessWidget {
         const SizedBox(height: 4),
         Text(
           value == null
-              ? 'Any date (hides after first check until next month)'
+              ? 'Any date (stays visible today, hides next day)'
               : 'Only on the ${_ordinal(value!)}',
           style: Theme.of(context).textTheme.bodySmall,
         ),

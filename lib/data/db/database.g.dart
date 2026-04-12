@@ -126,6 +126,26 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
     ),
     defaultValue: const Constant(false),
   );
+  static const VerificationMeta _iconMeta = const VerificationMeta('icon');
+  @override
+  late final GeneratedColumn<String> icon = GeneratedColumn<String>(
+    'icon',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _categoryMeta = const VerificationMeta(
+    'category',
+  );
+  @override
+  late final GeneratedColumn<String> category = GeneratedColumn<String>(
+    'category',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
   static const VerificationMeta _createdAtMeta = const VerificationMeta(
     'createdAt',
   );
@@ -160,6 +180,8 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
     reminderTime,
     sortOrder,
     isSeed,
+    icon,
+    category,
     createdAt,
     archivedAt,
   ];
@@ -237,6 +259,18 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
         isSeed.isAcceptableOrUnknown(data['is_seed']!, _isSeedMeta),
       );
     }
+    if (data.containsKey('icon')) {
+      context.handle(
+        _iconMeta,
+        icon.isAcceptableOrUnknown(data['icon']!, _iconMeta),
+      );
+    }
+    if (data.containsKey('category')) {
+      context.handle(
+        _categoryMeta,
+        category.isAcceptableOrUnknown(data['category']!, _categoryMeta),
+      );
+    }
     if (data.containsKey('created_at')) {
       context.handle(
         _createdAtMeta,
@@ -302,6 +336,14 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
         DriftSqlType.bool,
         data['${effectivePrefix}is_seed'],
       )!,
+      icon: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}icon'],
+      ),
+      category: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}category'],
+      ),
       createdAt: attachedDatabase.typeMapping.read(
         DriftSqlType.dateTime,
         data['${effectivePrefix}created_at'],
@@ -333,6 +375,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
   final String? reminderTime;
   final int sortOrder;
   final bool isSeed;
+  final String? icon;
+  final String? category;
   final DateTime createdAt;
   final DateTime? archivedAt;
   const AmalRow({
@@ -346,6 +390,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     this.reminderTime,
     required this.sortOrder,
     required this.isSeed,
+    this.icon,
+    this.category,
     required this.createdAt,
     this.archivedAt,
   });
@@ -372,6 +418,12 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     }
     map['sort_order'] = Variable<int>(sortOrder);
     map['is_seed'] = Variable<bool>(isSeed);
+    if (!nullToAbsent || icon != null) {
+      map['icon'] = Variable<String>(icon);
+    }
+    if (!nullToAbsent || category != null) {
+      map['category'] = Variable<String>(category);
+    }
     map['created_at'] = Variable<DateTime>(createdAt);
     if (!nullToAbsent || archivedAt != null) {
       map['archived_at'] = Variable<DateTime>(archivedAt);
@@ -397,6 +449,10 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
           : Value(reminderTime),
       sortOrder: Value(sortOrder),
       isSeed: Value(isSeed),
+      icon: icon == null && nullToAbsent ? const Value.absent() : Value(icon),
+      category: category == null && nullToAbsent
+          ? const Value.absent()
+          : Value(category),
       createdAt: Value(createdAt),
       archivedAt: archivedAt == null && nullToAbsent
           ? const Value.absent()
@@ -422,6 +478,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
       reminderTime: serializer.fromJson<String?>(json['reminderTime']),
       sortOrder: serializer.fromJson<int>(json['sortOrder']),
       isSeed: serializer.fromJson<bool>(json['isSeed']),
+      icon: serializer.fromJson<String?>(json['icon']),
+      category: serializer.fromJson<String?>(json['category']),
       createdAt: serializer.fromJson<DateTime>(json['createdAt']),
       archivedAt: serializer.fromJson<DateTime?>(json['archivedAt']),
     );
@@ -442,6 +500,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
       'reminderTime': serializer.toJson<String?>(reminderTime),
       'sortOrder': serializer.toJson<int>(sortOrder),
       'isSeed': serializer.toJson<bool>(isSeed),
+      'icon': serializer.toJson<String?>(icon),
+      'category': serializer.toJson<String?>(category),
       'createdAt': serializer.toJson<DateTime>(createdAt),
       'archivedAt': serializer.toJson<DateTime?>(archivedAt),
     };
@@ -458,6 +518,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     Value<String?> reminderTime = const Value.absent(),
     int? sortOrder,
     bool? isSeed,
+    Value<String?> icon = const Value.absent(),
+    Value<String?> category = const Value.absent(),
     DateTime? createdAt,
     Value<DateTime?> archivedAt = const Value.absent(),
   }) => AmalRow(
@@ -471,6 +533,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     reminderTime: reminderTime.present ? reminderTime.value : this.reminderTime,
     sortOrder: sortOrder ?? this.sortOrder,
     isSeed: isSeed ?? this.isSeed,
+    icon: icon.present ? icon.value : this.icon,
+    category: category.present ? category.value : this.category,
     createdAt: createdAt ?? this.createdAt,
     archivedAt: archivedAt.present ? archivedAt.value : this.archivedAt,
   );
@@ -492,6 +556,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
           : this.reminderTime,
       sortOrder: data.sortOrder.present ? data.sortOrder.value : this.sortOrder,
       isSeed: data.isSeed.present ? data.isSeed.value : this.isSeed,
+      icon: data.icon.present ? data.icon.value : this.icon,
+      category: data.category.present ? data.category.value : this.category,
       createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
       archivedAt: data.archivedAt.present
           ? data.archivedAt.value
@@ -512,6 +578,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
           ..write('reminderTime: $reminderTime, ')
           ..write('sortOrder: $sortOrder, ')
           ..write('isSeed: $isSeed, ')
+          ..write('icon: $icon, ')
+          ..write('category: $category, ')
           ..write('createdAt: $createdAt, ')
           ..write('archivedAt: $archivedAt')
           ..write(')'))
@@ -530,6 +598,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     reminderTime,
     sortOrder,
     isSeed,
+    icon,
+    category,
     createdAt,
     archivedAt,
   );
@@ -547,6 +617,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
           other.reminderTime == this.reminderTime &&
           other.sortOrder == this.sortOrder &&
           other.isSeed == this.isSeed &&
+          other.icon == this.icon &&
+          other.category == this.category &&
           other.createdAt == this.createdAt &&
           other.archivedAt == this.archivedAt);
 }
@@ -562,6 +634,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
   final Value<String?> reminderTime;
   final Value<int> sortOrder;
   final Value<bool> isSeed;
+  final Value<String?> icon;
+  final Value<String?> category;
   final Value<DateTime> createdAt;
   final Value<DateTime?> archivedAt;
   const AmalsCompanion({
@@ -575,6 +649,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     this.reminderTime = const Value.absent(),
     this.sortOrder = const Value.absent(),
     this.isSeed = const Value.absent(),
+    this.icon = const Value.absent(),
+    this.category = const Value.absent(),
     this.createdAt = const Value.absent(),
     this.archivedAt = const Value.absent(),
   });
@@ -589,6 +665,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     this.reminderTime = const Value.absent(),
     this.sortOrder = const Value.absent(),
     this.isSeed = const Value.absent(),
+    this.icon = const Value.absent(),
+    this.category = const Value.absent(),
     required DateTime createdAt,
     this.archivedAt = const Value.absent(),
   }) : title = Value(title),
@@ -605,6 +683,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     Expression<String>? reminderTime,
     Expression<int>? sortOrder,
     Expression<bool>? isSeed,
+    Expression<String>? icon,
+    Expression<String>? category,
     Expression<DateTime>? createdAt,
     Expression<DateTime>? archivedAt,
   }) {
@@ -619,6 +699,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
       if (reminderTime != null) 'reminder_time': reminderTime,
       if (sortOrder != null) 'sort_order': sortOrder,
       if (isSeed != null) 'is_seed': isSeed,
+      if (icon != null) 'icon': icon,
+      if (category != null) 'category': category,
       if (createdAt != null) 'created_at': createdAt,
       if (archivedAt != null) 'archived_at': archivedAt,
     });
@@ -635,6 +717,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     Value<String?>? reminderTime,
     Value<int>? sortOrder,
     Value<bool>? isSeed,
+    Value<String?>? icon,
+    Value<String?>? category,
     Value<DateTime>? createdAt,
     Value<DateTime?>? archivedAt,
   }) {
@@ -649,6 +733,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
       reminderTime: reminderTime ?? this.reminderTime,
       sortOrder: sortOrder ?? this.sortOrder,
       isSeed: isSeed ?? this.isSeed,
+      icon: icon ?? this.icon,
+      category: category ?? this.category,
       createdAt: createdAt ?? this.createdAt,
       archivedAt: archivedAt ?? this.archivedAt,
     );
@@ -689,6 +775,12 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     if (isSeed.present) {
       map['is_seed'] = Variable<bool>(isSeed.value);
     }
+    if (icon.present) {
+      map['icon'] = Variable<String>(icon.value);
+    }
+    if (category.present) {
+      map['category'] = Variable<String>(category.value);
+    }
     if (createdAt.present) {
       map['created_at'] = Variable<DateTime>(createdAt.value);
     }
@@ -711,6 +803,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
           ..write('reminderTime: $reminderTime, ')
           ..write('sortOrder: $sortOrder, ')
           ..write('isSeed: $isSeed, ')
+          ..write('icon: $icon, ')
+          ..write('category: $category, ')
           ..write('createdAt: $createdAt, ')
           ..write('archivedAt: $archivedAt')
           ..write(')'))
@@ -1560,6 +1654,216 @@ class SettingsKvCompanion extends UpdateCompanion<SettingRow> {
   }
 }
 
+class $CategoriesTable extends Categories
+    with TableInfo<$CategoriesTable, CategoryRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $CategoriesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _nameMeta = const VerificationMeta('name');
+  @override
+  late final GeneratedColumn<String> name = GeneratedColumn<String>(
+    'name',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _sortOrderMeta = const VerificationMeta(
+    'sortOrder',
+  );
+  @override
+  late final GeneratedColumn<int> sortOrder = GeneratedColumn<int>(
+    'sort_order',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  @override
+  List<GeneratedColumn> get $columns => [name, sortOrder];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'categories';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<CategoryRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('name')) {
+      context.handle(
+        _nameMeta,
+        name.isAcceptableOrUnknown(data['name']!, _nameMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_nameMeta);
+    }
+    if (data.containsKey('sort_order')) {
+      context.handle(
+        _sortOrderMeta,
+        sortOrder.isAcceptableOrUnknown(data['sort_order']!, _sortOrderMeta),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {name};
+  @override
+  CategoryRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return CategoryRow(
+      name: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}name'],
+      )!,
+      sortOrder: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}sort_order'],
+      )!,
+    );
+  }
+
+  @override
+  $CategoriesTable createAlias(String alias) {
+    return $CategoriesTable(attachedDatabase, alias);
+  }
+}
+
+class CategoryRow extends DataClass implements Insertable<CategoryRow> {
+  final String name;
+  final int sortOrder;
+  const CategoryRow({required this.name, required this.sortOrder});
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['name'] = Variable<String>(name);
+    map['sort_order'] = Variable<int>(sortOrder);
+    return map;
+  }
+
+  CategoriesCompanion toCompanion(bool nullToAbsent) {
+    return CategoriesCompanion(name: Value(name), sortOrder: Value(sortOrder));
+  }
+
+  factory CategoryRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return CategoryRow(
+      name: serializer.fromJson<String>(json['name']),
+      sortOrder: serializer.fromJson<int>(json['sortOrder']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'name': serializer.toJson<String>(name),
+      'sortOrder': serializer.toJson<int>(sortOrder),
+    };
+  }
+
+  CategoryRow copyWith({String? name, int? sortOrder}) => CategoryRow(
+    name: name ?? this.name,
+    sortOrder: sortOrder ?? this.sortOrder,
+  );
+  CategoryRow copyWithCompanion(CategoriesCompanion data) {
+    return CategoryRow(
+      name: data.name.present ? data.name.value : this.name,
+      sortOrder: data.sortOrder.present ? data.sortOrder.value : this.sortOrder,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('CategoryRow(')
+          ..write('name: $name, ')
+          ..write('sortOrder: $sortOrder')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(name, sortOrder);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is CategoryRow &&
+          other.name == this.name &&
+          other.sortOrder == this.sortOrder);
+}
+
+class CategoriesCompanion extends UpdateCompanion<CategoryRow> {
+  final Value<String> name;
+  final Value<int> sortOrder;
+  final Value<int> rowid;
+  const CategoriesCompanion({
+    this.name = const Value.absent(),
+    this.sortOrder = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  CategoriesCompanion.insert({
+    required String name,
+    this.sortOrder = const Value.absent(),
+    this.rowid = const Value.absent(),
+  }) : name = Value(name);
+  static Insertable<CategoryRow> custom({
+    Expression<String>? name,
+    Expression<int>? sortOrder,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (name != null) 'name': name,
+      if (sortOrder != null) 'sort_order': sortOrder,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  CategoriesCompanion copyWith({
+    Value<String>? name,
+    Value<int>? sortOrder,
+    Value<int>? rowid,
+  }) {
+    return CategoriesCompanion(
+      name: name ?? this.name,
+      sortOrder: sortOrder ?? this.sortOrder,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (name.present) {
+      map['name'] = Variable<String>(name.value);
+    }
+    if (sortOrder.present) {
+      map['sort_order'] = Variable<int>(sortOrder.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('CategoriesCompanion(')
+          ..write('name: $name, ')
+          ..write('sortOrder: $sortOrder, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
@@ -1567,7 +1871,9 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $CompletionsTable completions = $CompletionsTable(this);
   late final $HiddenDaysTable hiddenDays = $HiddenDaysTable(this);
   late final $SettingsKvTable settingsKv = $SettingsKvTable(this);
+  late final $CategoriesTable categories = $CategoriesTable(this);
   late final AmalDao amalDao = AmalDao(this as AppDatabase);
+  late final CategoryDao categoryDao = CategoryDao(this as AppDatabase);
   late final CompletionDao completionDao = CompletionDao(this as AppDatabase);
   late final HiddenDayDao hiddenDayDao = HiddenDayDao(this as AppDatabase);
   late final SettingsDao settingsDao = SettingsDao(this as AppDatabase);
@@ -1580,6 +1886,7 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     completions,
     hiddenDays,
     settingsKv,
+    categories,
   ];
   @override
   StreamQueryUpdateRules get streamUpdateRules => const StreamQueryUpdateRules([
@@ -1615,6 +1922,8 @@ typedef $$AmalsTableCreateCompanionBuilder =
       Value<String?> reminderTime,
       Value<int> sortOrder,
       Value<bool> isSeed,
+      Value<String?> icon,
+      Value<String?> category,
       required DateTime createdAt,
       Value<DateTime?> archivedAt,
     });
@@ -1630,6 +1939,8 @@ typedef $$AmalsTableUpdateCompanionBuilder =
       Value<String?> reminderTime,
       Value<int> sortOrder,
       Value<bool> isSeed,
+      Value<String?> icon,
+      Value<String?> category,
       Value<DateTime> createdAt,
       Value<DateTime?> archivedAt,
     });
@@ -1731,6 +2042,16 @@ class $$AmalsTableFilterComposer extends Composer<_$AppDatabase, $AmalsTable> {
 
   ColumnFilters<bool> get isSeed => $composableBuilder(
     column: $table.isSeed,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get icon => $composableBuilder(
+    column: $table.icon,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get category => $composableBuilder(
+    column: $table.category,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -1854,6 +2175,16 @@ class $$AmalsTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<String> get icon => $composableBuilder(
+    column: $table.icon,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get category => $composableBuilder(
+    column: $table.category,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<DateTime> get createdAt => $composableBuilder(
     column: $table.createdAt,
     builder: (column) => ColumnOrderings(column),
@@ -1909,6 +2240,12 @@ class $$AmalsTableAnnotationComposer
 
   GeneratedColumn<bool> get isSeed =>
       $composableBuilder(column: $table.isSeed, builder: (column) => column);
+
+  GeneratedColumn<String> get icon =>
+      $composableBuilder(column: $table.icon, builder: (column) => column);
+
+  GeneratedColumn<String> get category =>
+      $composableBuilder(column: $table.category, builder: (column) => column);
 
   GeneratedColumn<DateTime> get createdAt =>
       $composableBuilder(column: $table.createdAt, builder: (column) => column);
@@ -2007,6 +2344,8 @@ class $$AmalsTableTableManager
                 Value<String?> reminderTime = const Value.absent(),
                 Value<int> sortOrder = const Value.absent(),
                 Value<bool> isSeed = const Value.absent(),
+                Value<String?> icon = const Value.absent(),
+                Value<String?> category = const Value.absent(),
                 Value<DateTime> createdAt = const Value.absent(),
                 Value<DateTime?> archivedAt = const Value.absent(),
               }) => AmalsCompanion(
@@ -2020,6 +2359,8 @@ class $$AmalsTableTableManager
                 reminderTime: reminderTime,
                 sortOrder: sortOrder,
                 isSeed: isSeed,
+                icon: icon,
+                category: category,
                 createdAt: createdAt,
                 archivedAt: archivedAt,
               ),
@@ -2035,6 +2376,8 @@ class $$AmalsTableTableManager
                 Value<String?> reminderTime = const Value.absent(),
                 Value<int> sortOrder = const Value.absent(),
                 Value<bool> isSeed = const Value.absent(),
+                Value<String?> icon = const Value.absent(),
+                Value<String?> category = const Value.absent(),
                 required DateTime createdAt,
                 Value<DateTime?> archivedAt = const Value.absent(),
               }) => AmalsCompanion.insert(
@@ -2048,6 +2391,8 @@ class $$AmalsTableTableManager
                 reminderTime: reminderTime,
                 sortOrder: sortOrder,
                 isSeed: isSeed,
+                icon: icon,
+                category: category,
                 createdAt: createdAt,
                 archivedAt: archivedAt,
               ),
@@ -2866,6 +3211,149 @@ typedef $$SettingsKvTableProcessedTableManager =
       SettingRow,
       PrefetchHooks Function()
     >;
+typedef $$CategoriesTableCreateCompanionBuilder =
+    CategoriesCompanion Function({
+      required String name,
+      Value<int> sortOrder,
+      Value<int> rowid,
+    });
+typedef $$CategoriesTableUpdateCompanionBuilder =
+    CategoriesCompanion Function({
+      Value<String> name,
+      Value<int> sortOrder,
+      Value<int> rowid,
+    });
+
+class $$CategoriesTableFilterComposer
+    extends Composer<_$AppDatabase, $CategoriesTable> {
+  $$CategoriesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get sortOrder => $composableBuilder(
+    column: $table.sortOrder,
+    builder: (column) => ColumnFilters(column),
+  );
+}
+
+class $$CategoriesTableOrderingComposer
+    extends Composer<_$AppDatabase, $CategoriesTable> {
+  $$CategoriesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get sortOrder => $composableBuilder(
+    column: $table.sortOrder,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$CategoriesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $CategoriesTable> {
+  $$CategoriesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<String> get name =>
+      $composableBuilder(column: $table.name, builder: (column) => column);
+
+  GeneratedColumn<int> get sortOrder =>
+      $composableBuilder(column: $table.sortOrder, builder: (column) => column);
+}
+
+class $$CategoriesTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $CategoriesTable,
+          CategoryRow,
+          $$CategoriesTableFilterComposer,
+          $$CategoriesTableOrderingComposer,
+          $$CategoriesTableAnnotationComposer,
+          $$CategoriesTableCreateCompanionBuilder,
+          $$CategoriesTableUpdateCompanionBuilder,
+          (
+            CategoryRow,
+            BaseReferences<_$AppDatabase, $CategoriesTable, CategoryRow>,
+          ),
+          CategoryRow,
+          PrefetchHooks Function()
+        > {
+  $$CategoriesTableTableManager(_$AppDatabase db, $CategoriesTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$CategoriesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$CategoriesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$CategoriesTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<String> name = const Value.absent(),
+                Value<int> sortOrder = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => CategoriesCompanion(
+                name: name,
+                sortOrder: sortOrder,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required String name,
+                Value<int> sortOrder = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => CategoriesCompanion.insert(
+                name: name,
+                sortOrder: sortOrder,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map((e) => (e.readTable(table), BaseReferences(db, table, e)))
+              .toList(),
+          prefetchHooksCallback: null,
+        ),
+      );
+}
+
+typedef $$CategoriesTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $CategoriesTable,
+      CategoryRow,
+      $$CategoriesTableFilterComposer,
+      $$CategoriesTableOrderingComposer,
+      $$CategoriesTableAnnotationComposer,
+      $$CategoriesTableCreateCompanionBuilder,
+      $$CategoriesTableUpdateCompanionBuilder,
+      (
+        CategoryRow,
+        BaseReferences<_$AppDatabase, $CategoriesTable, CategoryRow>,
+      ),
+      CategoryRow,
+      PrefetchHooks Function()
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -2878,4 +3366,6 @@ class $AppDatabaseManager {
       $$HiddenDaysTableTableManager(_db, _db.hiddenDays);
   $$SettingsKvTableTableManager get settingsKv =>
       $$SettingsKvTableTableManager(_db, _db.settingsKv);
+  $$CategoriesTableTableManager get categories =>
+      $$CategoriesTableTableManager(_db, _db.categories);
 }

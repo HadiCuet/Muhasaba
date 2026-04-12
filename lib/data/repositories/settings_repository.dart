@@ -30,6 +30,18 @@ class SettingsRepository {
   Future<void> setThemeMode(ThemeMode mode) =>
       _dao.set(SettingKeys.themeMode, mode.name);
 
+  Future<void> setTodayViewMode(String mode) =>
+      _dao.set(SettingKeys.todayViewMode, mode);
+
+  Future<void> setLocale(String? tag) async {
+    if (tag == null) {
+      // Delete the key so system default is used.
+      await _dao.set(SettingKeys.locale, '');
+    } else {
+      await _dao.set(SettingKeys.locale, tag);
+    }
+  }
+
   AppSettings _fromMap(Map<String, String> m) {
     return AppSettings(
       startOfWeek:
@@ -42,7 +54,14 @@ class SettingsRepository {
           int.tryParse(m[SettingKeys.rolloverHour] ?? '') ??
               AppSettings.defaults.rolloverHour,
       themeMode: _parseTheme(m[SettingKeys.themeMode]),
+      todayViewMode: m[SettingKeys.todayViewMode] ?? 'grouped',
+      locale: _parseLocale(m[SettingKeys.locale]),
     );
+  }
+
+  String? _parseLocale(String? v) {
+    if (v == null || v.isEmpty) return null;
+    return v;
   }
 
   ThemeMode _parseTheme(String? v) {

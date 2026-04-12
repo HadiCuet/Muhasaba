@@ -15,8 +15,20 @@ class Amals extends Table {
   TextColumn get reminderTime => text().nullable()(); // "HH:mm" local
   IntColumn get sortOrder => integer().withDefault(const Constant(0))();
   BoolColumn get isSeed => boolean().withDefault(const Constant(false))();
+  TextColumn get icon => text().nullable()(); // emoji, e.g. "🕌"
+  TextColumn get category => text().nullable()(); // category name
   DateTimeColumn get createdAt => dateTime()();
   DateTimeColumn get archivedAt => dateTime().nullable()();
+}
+
+/// Persisted category list so users don't re-type category names.
+@DataClassName('CategoryRow')
+class Categories extends Table {
+  TextColumn get name => text()();
+  IntColumn get sortOrder => integer().withDefault(const Constant(0))();
+
+  @override
+  Set<Column> get primaryKey => {name};
 }
 
 /// One row per (amal, muhasabaDate). `progress >= amal.target` means the amal

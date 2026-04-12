@@ -25,6 +25,8 @@ class AmalRepository {
     bool defaultChecked = false,
     String? reminderTime,
     int sortOrder = 0,
+    String? icon,
+    String? category,
   }) {
     return _dao.insertAmal(
       AmalsCompanion.insert(
@@ -36,6 +38,8 @@ class AmalRepository {
         defaultChecked: Value(defaultChecked),
         reminderTime: Value(reminderTime),
         sortOrder: Value(sortOrder),
+        icon: Value(icon),
+        category: Value(category),
         createdAt: DateTime.now().toUtc(),
       ),
     );
@@ -47,4 +51,11 @@ class AmalRepository {
   /// Historical completions are retained so stats remain accurate.
   Future<void> removeFromTracking(int id) =>
       _dao.archive(id, DateTime.now().toUtc());
+
+  /// Returns distinct emoji icons used by active amal.
+  Future<List<String>> getRecentIcons() => _dao.getRecentIcons();
+
+  /// Batch-update sort orders for drag-to-reorder.
+  Future<void> reorder(Map<int, int> idToSortOrder) =>
+      _dao.updateSortOrders(idToSortOrder);
 }

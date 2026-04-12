@@ -1,0 +1,119 @@
+<h2>Updated Design: Progressive Tint + No Strikethrough</h2>
+<p class="subtitle">Count-based amal tint deepens with progress. Title stays readable, never crossed out.</p>
+
+<div class="section">
+  <h3>Full List Example</h3>
+</div>
+
+<div class="mockup">
+  <div class="mockup-header">Today — Mixed states</div>
+  <div class="mockup-body" style="background:#f0f0f0; padding:16px; max-width:380px; margin:0 auto;">
+
+    <!-- 1. Simple amal, NOT done -->
+    <div style="background:white; border:1px solid #ccc; border-radius:12px; padding:12px 14px; margin-bottom:10px; display:flex; align-items:center; gap:12px;">
+      <div style="width:28px;height:28px;border-radius:50%;border:2px solid #888;"></div>
+      <div style="flex:1;">
+        <div style="font-weight:600;color:#1a1a1a;">Fajr</div>
+        <div style="font-size:12px;color:#888;margin-top:2px;">Reminder: 05:00</div>
+      </div>
+      <div style="color:#ccc;">&#9998;</div>
+    </div>
+
+    <!-- 2. Simple amal, DONE — green tint, NO strikethrough -->
+    <div style="background:#e8f5e9; border:1px solid #a5d6a7; border-radius:12px; padding:12px 14px; margin-bottom:10px; display:flex; align-items:center; gap:12px;">
+      <div style="width:28px;height:28px;border-radius:50%;background:#2E7D5B;display:flex;align-items:center;justify-content:center;color:white;font-size:16px;">&#10003;</div>
+      <div style="flex:1;">
+        <div style="font-weight:600;color:#555;">Dhuhr</div>
+      </div>
+      <div style="color:#2E7D5B;">&#9998;</div>
+    </div>
+
+    <!-- 3. Simple amal, DONE with note + streak — green tint, inline note preview -->
+    <div style="background:#e8f5e9; border:1px solid #a5d6a7; border-radius:12px; overflow:hidden; margin-bottom:10px;">
+      <div style="padding:12px 14px; display:flex; align-items:center; gap:12px;">
+        <div style="width:28px;height:28px;border-radius:50%;background:#2E7D5B;display:flex;align-items:center;justify-content:center;color:white;font-size:16px;">&#10003;</div>
+        <div style="flex:1;">
+          <div style="display:flex;align-items:center;gap:8px;">
+            <span style="font-weight:600;color:#555;">Asr</span>
+            <span style="background:#c8e6c9;color:#2E7D5B;font-size:11px;font-weight:600;padding:1px 6px;border-radius:8px;">5d</span>
+          </div>
+          <div style="font-size:12px;color:#2E7D5B;margin-top:2px;font-style:italic;">&#128466; Prayed at the masjid</div>
+        </div>
+        <div style="color:#2E7D5B;font-size:14px;">&#9660;</div>
+      </div>
+    </div>
+
+    <!-- 4. Count-based: 0/33 — white, not started -->
+    <div style="background:white; border:1px solid #ccc; border-radius:12px; padding:12px 14px; margin-bottom:10px; display:flex; align-items:center; gap:12px;">
+      <div style="width:28px;height:28px;border-radius:50%;border:2px solid #888;"></div>
+      <div style="flex:1;">
+        <div style="font-weight:600;color:#1a1a1a;">Tasbih</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="width:24px;height:24px;border-radius:50%;border:1px solid #ccc;display:flex;align-items:center;justify-content:center;font-size:14px;color:#888;">−</div>
+        <span style="font-size:13px;font-weight:600;color:#888;">0/33</span>
+        <div style="width:24px;height:24px;border-radius:50%;border:1px solid #ccc;display:flex;align-items:center;justify-content:center;font-size:14px;color:#888;">+</div>
+      </div>
+    </div>
+
+    <!-- 5. Count-based: 10/33 — light tint (~30%) -->
+    <div style="background:rgba(232,245,233,0.35); border:1px solid rgba(165,214,167,0.5); border-radius:12px; padding:12px 14px; margin-bottom:10px; display:flex; align-items:center; gap:12px;">
+      <div style="width:28px;height:28px;border-radius:50%;border:2px solid #66bb6a;"></div>
+      <div style="flex:1;">
+        <div style="font-weight:600;color:#1a1a1a;">Istighfar</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="width:24px;height:24px;border-radius:50%;border:1px solid #a5d6a7;display:flex;align-items:center;justify-content:center;font-size:14px;color:#2E7D5B;">−</div>
+        <span style="font-size:13px;font-weight:600;color:#2E7D5B;">10/33</span>
+        <div style="width:24px;height:24px;border-radius:50%;border:1px solid #a5d6a7;display:flex;align-items:center;justify-content:center;font-size:14px;color:#2E7D5B;">+</div>
+      </div>
+    </div>
+
+    <!-- 6. Count-based: 25/33 — medium tint (~75%) -->
+    <div style="background:rgba(232,245,233,0.75); border:1px solid rgba(165,214,167,0.8); border-radius:12px; padding:12px 14px; margin-bottom:10px; display:flex; align-items:center; gap:12px;">
+      <div style="width:28px;height:28px;border-radius:50%;border:2px solid #43a047;"></div>
+      <div style="flex:1;">
+        <div style="font-weight:600;color:#333;">Salawat</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="width:24px;height:24px;border-radius:50%;border:1px solid #81c784;display:flex;align-items:center;justify-content:center;font-size:14px;color:#2E7D5B;">−</div>
+        <span style="font-size:13px;font-weight:600;color:#2E7D5B;">25/33</span>
+        <div style="width:24px;height:24px;border-radius:50%;border:1px solid #81c784;display:flex;align-items:center;justify-content:center;font-size:14px;color:#2E7D5B;">+</div>
+      </div>
+    </div>
+
+    <!-- 7. Count-based: 33/33 — full tint (100%), check icon -->
+    <div style="background:#e8f5e9; border:1px solid #a5d6a7; border-radius:12px; padding:12px 14px; display:flex; align-items:center; gap:12px;">
+      <div style="width:28px;height:28px;border-radius:50%;background:#2E7D5B;display:flex;align-items:center;justify-content:center;color:white;font-size:16px;">&#10003;</div>
+      <div style="flex:1;">
+        <div style="font-weight:600;color:#555;">Dhikr</div>
+      </div>
+      <div style="display:flex;align-items:center;gap:6px;">
+        <div style="width:24px;height:24px;border-radius:50%;border:1px solid #a5d6a7;display:flex;align-items:center;justify-content:center;font-size:14px;color:#2E7D5B;">−</div>
+        <span style="font-size:13px;font-weight:600;color:#2E7D5B;">33/33</span>
+        <div style="width:24px;height:24px;border-radius:50%;border:1px solid #a5d6a7;display:flex;align-items:center;justify-content:center;font-size:14px;color:#2E7D5B;">+</div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<div class="section" style="margin-top:24px;">
+  <h3>Color Progression Rule</h3>
+  <div style="display:flex;align-items:center;gap:8px;margin:12px 0;">
+    <div style="flex:1;height:24px;border-radius:6px;background:linear-gradient(to right, white 0%, #e8f5e9 100%);border:1px solid #ccc;"></div>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-size:12px;color:#888;">
+    <span>0% progress</span>
+    <span>50%</span>
+    <span>100% (complete)</span>
+  </div>
+  <p style="font-size:13px;color:#666;margin-top:8px;">
+    <strong>Simple amal (target=1):</strong> white → full green tint on tap<br>
+    <strong>Count-based (target>1):</strong> tint = progress/target (linear interpolation)
+  </p>
+</div>
+
+<div class="section" style="margin-top:16px;">
+  <p class="subtitle">Reply in the terminal — does this capture what you had in mind?</p>
+</div>

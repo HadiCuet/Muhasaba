@@ -10,6 +10,8 @@ class AppSettings {
     required this.startOfMonth,
     required this.rolloverHour,
     required this.themeMode,
+    this.todayViewMode = 'grouped',
+    this.locale,
   });
 
   /// 1..7, `DateTime.monday == 1`, `DateTime.saturday == 6`. Default: Saturday.
@@ -23,6 +25,12 @@ class AppSettings {
 
   final ThemeMode themeMode;
 
+  /// "flat" or "grouped" — controls the Today screen layout.
+  final String todayViewMode;
+
+  /// BCP-47 language tag (e.g. "ar", "bn"). `null` = follow device locale.
+  final String? locale;
+
   static const defaults = AppSettings(
     startOfWeek: DateTime.saturday,
     startOfMonth: 1,
@@ -35,12 +43,16 @@ class AppSettings {
     int? startOfMonth,
     int? rolloverHour,
     ThemeMode? themeMode,
+    String? todayViewMode,
+    String? Function()? locale,
   }) {
     return AppSettings(
       startOfWeek: startOfWeek ?? this.startOfWeek,
       startOfMonth: startOfMonth ?? this.startOfMonth,
       rolloverHour: rolloverHour ?? this.rolloverHour,
       themeMode: themeMode ?? this.themeMode,
+      todayViewMode: todayViewMode ?? this.todayViewMode,
+      locale: locale != null ? locale() : this.locale,
     );
   }
 
@@ -51,9 +63,11 @@ class AppSettings {
           other.startOfWeek == startOfWeek &&
           other.startOfMonth == startOfMonth &&
           other.rolloverHour == rolloverHour &&
-          other.themeMode == themeMode;
+          other.themeMode == themeMode &&
+          other.todayViewMode == todayViewMode &&
+          other.locale == locale;
 
   @override
   int get hashCode =>
-      Object.hash(startOfWeek, startOfMonth, rolloverHour, themeMode);
+      Object.hash(startOfWeek, startOfMonth, rolloverHour, themeMode, todayViewMode, locale);
 }

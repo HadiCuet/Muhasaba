@@ -198,17 +198,14 @@ class _AmalRowTileState extends State<AmalRowTile> {
                       const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
                   child: Row(
                     children: [
-                      // Leading check icon.
-                      Icon(
-                        isDone
-                            ? Icons.check_circle
-                            : Icons.radio_button_unchecked,
-                        color: isDone
-                            ? theme.colorScheme.primary
-                            : theme.colorScheme.onSurfaceVariant,
-                        size: 28,
-                      ),
-                      const SizedBox(width: 12),
+                      // Leading amal icon (emoji).
+                      if (amal.icon != null && amal.icon!.isNotEmpty) ...[
+                        Text(
+                          amal.icon!,
+                          style: const TextStyle(fontSize: 22),
+                        ),
+                        const SizedBox(width: 10),
+                      ],
 
                       // Title + optional note preview + streak badge.
                       Expanded(
@@ -317,24 +314,40 @@ class _AmalRowTileState extends State<AmalRowTile> {
                             onChanged: _handleStepperProgress,
                           ),
                         ),
-                      ] else
-                        IconButton(
-                          icon: Icon(
-                            _noteExpanded
-                                ? Icons.expand_less
-                                : (row.note != null && row.note!.isNotEmpty
-                                    ? Icons.sticky_note_2
-                                    : Icons.sticky_note_2_outlined),
-                            size: 20,
-                            color: _noteExpanded ||
-                                    (row.note != null && row.note!.isNotEmpty)
-                                ? theme.colorScheme.primary
-                                : theme.colorScheme.outlineVariant,
+                      ] else ...[
+                        // Note toggle + trailing check circle for target=1.
+                        GestureDetector(
+                          onTap: _noteExpanded ? _collapseNote : _expandNote,
+                          child: Padding(
+                            padding: const EdgeInsets.only(right: 4),
+                            child: Icon(
+                              _noteExpanded
+                                  ? Icons.expand_less
+                                  : (row.note != null && row.note!.isNotEmpty
+                                      ? Icons.sticky_note_2
+                                      : Icons.sticky_note_2_outlined),
+                              size: 18,
+                              color: _noteExpanded ||
+                                      (row.note != null &&
+                                          row.note!.isNotEmpty)
+                                  ? theme.colorScheme.primary
+                                  : theme.colorScheme.outlineVariant,
+                            ),
                           ),
-                          tooltip: _noteExpanded ? 'Collapse note' : 'Add note',
-                          onPressed:
-                              _noteExpanded ? _collapseNote : _expandNote,
                         ),
+                        Padding(
+                          padding: const EdgeInsets.only(left: 4),
+                          child: Icon(
+                            isDone
+                                ? Icons.check_circle
+                                : Icons.radio_button_unchecked,
+                            color: isDone
+                                ? theme.colorScheme.primary
+                                : theme.colorScheme.onSurfaceVariant,
+                            size: 28,
+                          ),
+                        ),
+                      ],
                     ],
                   ),
                 ),

@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../core/time/day_boundary.dart';
 import '../data/db/database.dart';
 import '../data/repositories/amal_repository.dart';
+import '../data/repositories/category_repository.dart';
 import '../data/repositories/completion_repository.dart';
 import '../data/repositories/settings_repository.dart';
 import '../domain/models/app_settings.dart';
@@ -36,6 +37,18 @@ final settingsRepositoryProvider = Provider<SettingsRepository>((ref) {
 
 final amalRepositoryProvider = Provider<AmalRepository>((ref) {
   return AmalRepository(ref.watch(appDatabaseProvider).amalDao);
+});
+
+final categoryRepositoryProvider = Provider<CategoryRepository>((ref) {
+  return CategoryRepository(ref.watch(appDatabaseProvider).categoryDao);
+});
+
+final categoriesProvider = StreamProvider<List<CategoryRow>>((ref) {
+  return ref.watch(categoryRepositoryProvider).watchAll();
+});
+
+final recentIconsProvider = FutureProvider<List<String>>((ref) {
+  return ref.watch(amalRepositoryProvider).getRecentIcons();
 });
 
 final completionRepositoryProvider = Provider<CompletionRepository>((ref) {

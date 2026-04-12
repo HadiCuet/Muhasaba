@@ -13,6 +13,8 @@ class SettingKeys {
   static const startOfMonth = 'start_of_month'; // 1..31
   static const rolloverHour = 'rollover_hour'; // 0..23
   static const themeMode = 'theme_mode'; // system | light | dark
+  static const todayViewMode = 'today_view_mode'; // flat | grouped
+  static const locale = 'locale'; // BCP-47 tag e.g. "ar", "bn", null=system
 }
 
 @DriftAccessor(tables: [SettingsKv])
