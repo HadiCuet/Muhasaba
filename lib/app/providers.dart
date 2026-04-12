@@ -73,16 +73,16 @@ final currentMuhasabaDateProvider = Provider<DateTime>((ref) {
 /// A small value type so the family key is comparable / const-friendly.
 /// Using the raw `DateTime` directly works fine because `DateTime` has
 /// value equality.
-final todayRowsProvider =
-    FutureProvider.family<List<TodayRow>, DateTime>((ref, date) async {
+final todayRowsProvider = FutureProvider.family<List<TodayRow>, DateTime>((
+  ref,
+  date,
+) async {
   final settings = await ref.watch(settingsProvider.future);
   final db = ref.watch(appDatabaseProvider);
 
   // Re-fetch when the user edits the amal list or completions/hidden rows
   // for this specific date change.
-  final amals = await ref.watch(
-    _activeAmalsProvider.future,
-  );
+  final amals = await ref.watch(_activeAmalsProvider.future);
   final completions = await ref.watch(_completionsForDateProvider(date).future);
   final hidden = await ref.watch(_hiddenForDateProvider(date).future);
 
@@ -101,42 +101,45 @@ final todayRowsProvider =
 /// `ref.invalidate(statsSnapshotProvider)` from write sites — we don't
 /// subscribe to the completions stream here because stats depend on rows
 /// across the entire 52-week / 24-month window, not just a single day.
-final statsSnapshotProvider = FutureProvider.autoDispose<StatsSnapshot>(
-  (ref) async {
-    final settings = await ref.watch(settingsProvider.future);
-    final date = ref.watch(currentMuhasabaDateProvider);
-    final db = ref.watch(appDatabaseProvider);
-    final amals = await ref.watch(_activeAmalsProvider.future);
-    return const StatsService().compute(
-      muhasabaDate: date,
-      settings: settings,
-      amals: amals,
-      periodCompletionsOf: db.completionDao.getForAmalBetween,
-    );
-  },
-);
+final statsSnapshotProvider = FutureProvider.autoDispose<StatsSnapshot>((
+  ref,
+) async {
+  final settings = await ref.watch(settingsProvider.future);
+  final date = ref.watch(currentMuhasabaDateProvider);
+  final db = ref.watch(appDatabaseProvider);
+  final amals = await ref.watch(_activeAmalsProvider.future);
+  return const StatsService().compute(
+    muhasabaDate: date,
+    settings: settings,
+    amals: amals,
+    periodCompletionsOf: db.completionDao.getForAmalBetween,
+  );
+});
 
 /// Per-amal current streak for display on Today rows. Returns a map of
 /// amalId → currentStreak. Invalidated alongside `statsSnapshotProvider`
 /// after writes.
-final currentStreaksProvider =
-    FutureProvider.autoDispose<Map<int, int>>((ref) async {
+final currentStreaksProvider = FutureProvider.autoDispose<Map<int, int>>((
+  ref,
+) async {
   final snap = await ref.watch(statsSnapshotProvider.future);
-  return {
-    for (final s in snap.perAmal) s.amalId: s.currentStreak,
-  };
+  return {for (final s in snap.perAmal) s.amalId: s.currentStreak};
 });
 
 final _activeAmalsProvider = StreamProvider.autoDispose((ref) {
   return ref.watch(appDatabaseProvider).amalDao.watchActive();
 });
 
-final _completionsForDateProvider =
-    StreamProvider.autoDispose.family((ref, DateTime date) {
+final _completionsForDateProvider = StreamProvider.autoDispose.family((
+  ref,
+  DateTime date,
+) {
   return ref.watch(appDatabaseProvider).completionDao.watchForDate(date);
 });
 
-final _hiddenForDateProvider =
-    StreamProvider.autoDispose.family((ref, DateTime date) {
+final _hiddenForDateProvider = StreamProvider.autoDispose.family((
+  ref,
+  DateTime date,
+) {
   return ref.watch(appDatabaseProvider).hiddenDayDao.watchForDate(date);
 });

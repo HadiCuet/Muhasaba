@@ -1,0 +1,172 @@
+{
+  "@@locale": "bn",
+
+  "appTitle": "Muhasaba",
+
+  "tabToday": "আজ",
+  "tabStats": "পরিসংখ্যান",
+  "tabHistory": "ইতিহাস",
+  "tabSettings": "সেটিংস",
+  "newAmal": "নতুন আমল",
+
+  "editAmal": "আমল সম্পাদনা",
+  "newAmalTitle": "নতুন আমল",
+  "save": "সংরক্ষণ",
+  "cancel": "বাতিল",
+  "clear": "মুছুন",
+
+  "titleLabel": "শিরোনাম",
+  "titleRequired": "শিরোনাম আবশ্যক",
+  "titleTooLong": "শিরোনাম অনেক বড়",
+
+  "frequencyLabel": "পুনরাবৃত্তি",
+  "frequencyDaily": "দৈনিক",
+  "frequencyWeekly": "সাপ্তাহিক",
+  "frequencyMonthly": "মাসিক",
+
+  "categoryLabel": "বিভাগ",
+  "categoryOther": "অন্যান্য",
+  "categorySalah": "নামাজ",
+  "categoryDhikr": "যিকর",
+  "categoryQuran": "কুরআন",
+  "categoryCharity": "দান",
+
+  "timesPerPeriod": "প্রতি পর্বে কতবার",
+  "custom": "কাস্টম",
+  "customTargetHint": "যেমন ৫০",
+
+  "dayOfWeek": "সপ্তাহের দিন",
+  "anyDay": "যেকোনো",
+  "anyDayHint": "যেকোনো দিন (আজ দেখাবে, পরদিন লুকাবে)",
+  "onlyDayHint": "শুধু {day}",
+
+  "dateOfMonth": "মাসের তারিখ",
+  "anyDate": "যেকোনো",
+  "anyDateHint": "যেকোনো তারিখ (আজ দেখাবে, পরদিন লুকাবে)",
+  "onlyDateHint": "শুধু {date} তারিখে",
+
+  "startPreChecked": "আগে থেকে চেক করা",
+  "startPreCheckedSubtitle": "নতুন পর্ব শুরু হলে এই আমল স্বয়ংক্রিয়ভাবে সম্পন্ন হিসেবে চিহ্নিত থাকবে, যতক্ষণ না আপনি আনচেক করেন।",
+
+  "reminder": "রিমাইন্ডার",
+  "reminderNone": "নেই",
+  "reminderTime": "রিমাইন্ডার: {time}",
+  "reminderPermissionWarning": "রিমাইন্ডার সংরক্ষিত হয়েছে, তবে নোটিফিকেশনের অনুমতি নেই। সতর্কতা পেতে সিস্টেম সেটিংস থেকে চালু করুন।",
+
+  "groupByCategory": "বিভাগ অনুযায়ী",
+  "flatList": "সাধারণ তালিকা",
+  "errorGeneric": "ত্রুটি: {error}",
+  "todayEmptyHint": "আপনার প্রথম আমল যোগ করতে + চাপুন।",
+
+  "noteLabel": "নোট",
+  "noteHint": "যেমন মসজিদে নামাজ পড়েছি",
+  "completed": "সম্পন্ন",
+  "notCompleted": "অসম্পন্ন",
+  "progressOf": "{target} এর মধ্যে {progress} সম্পন্ন",
+
+  "removeFromToday": "আজকের তালিকা থেকে সরান",
+  "removeFromTodaySubtitle": "শুধু আজকের জন্য লুকান। আগামীকাল ফিরে আসবে।",
+  "removeFromTracking": "ট্র্যাকিং থেকে সরান",
+  "removeFromTrackingSubtitle": "আপনার তালিকা থেকে স্থায়ীভাবে সরান। ইতিহাস রক্ষিত থাকবে।",
+
+  "chooseIcon": "আইকন বাছাই করুন",
+  "iconNone": "নেই",
+  "recentlyUsed": "সম্প্রতি ব্যবহৃত",
+  "emojiSectionGeneral": "সাধারণ",
+
+  "categoryNameHint": "নাম",
+  "categoryNew": "+ নতুন",
+
+  "addAmal": "আমল যোগ করুন",
+  "customAmal": "কাস্টম আমল",
+
+  "templateTasbih": "তাসবিহ ৩৩ বার",
+  "templateIstighfar": "ইস্তিগফার ১০০ বার",
+  "templateSurahKahf": "সূরা কাহফ",
+  "templateSadaqah": "সাদাকাহ",
+  "templateTahajjud": "তাহাজ্জুদ",
+  "templateDuhaPrayer": "চাশতের নামাজ",
+
+  "settingsTitle": "সেটিংস",
+  "settingsLoadError": "সেটিংস লোড করতে ব্যর্থ:\n{error}",
+
+  "sectionDayBoundary": "দিনের সীমানা",
+  "rolloverHour": "দিন পরিবর্তনের সময়",
+  "rolloverAtMidnight": "আজ মধ্যরাতে শেষ হবে।",
+  "rolloverSubtitle": "গতকালের আমল {time} পর্যন্ত সম্পাদনাযোগ্য থাকবে।",
+  "pickRolloverHour": "দিন পরিবর্তনের সময় নির্বাচন করুন",
+
+  "sectionWeekMonth": "সপ্তাহ ও মাস",
+  "startOfWeek": "সপ্তাহের শুরু",
+  "startOfMonth": "মাসের শুরু",
+  "startOfMonthClamped": "২৮ তারিখের পরের দিনগুলো ছোট মাসের শেষ দিনে সমন্বিত হবে।",
+
+  "sectionAppearance": "চেহারা",
+  "theme": "থিম",
+  "themeSystem": "সিস্টেম",
+  "themeLight": "লাইট",
+  "themeDark": "ডার্ক",
+
+  "sectionLanguage": "ভাষা",
+  "language": "ভাষা",
+  "systemDefault": "সিস্টেম ডিফল্ট",
+
+  "aboutTitle": "Muhasaba",
+  "aboutSubtitle": "একটি ব্যক্তিগত দ্বীন মুহাসাবার জার্নাল। সমস্ত তথ্য এই ডিভাইসেই থাকে।",
+
+  "statsTitle": "পরিসংখ্যান",
+  "statsLoadError": "পরিসংখ্যান লোড করতে ব্যর্থ:\n{error}",
+  "perAmal": "আমল প্রতি",
+  "thisWeek": "এই সপ্তাহ",
+  "thisMonth": "এই মাস",
+  "totalCompletions": "মোট সম্পন্ন",
+  "streakCurrent": "বর্তমান",
+  "streakLongest": "সর্বোচ্চ",
+  "ratioWeek": "সপ্তাহ",
+  "ratioMonth": "মাস",
+
+  "streakDays": "{count, plural, =1{দিন} other{দিন}}",
+  "streakWeeks": "{count, plural, =1{সপ্তাহ} other{সপ্তাহ}}",
+  "streakMonths": "{count, plural, =1{মাস} other{মাস}}",
+
+  "frequencyBadgeDaily": "দৈনিক",
+  "frequencyBadgeWeekly": "সাপ্তাহিক",
+  "frequencyBadgeMonthly": "মাসিক",
+
+  "statsEmpty": "এখনো কোনো আমল নেই। ট্র্যাকিং শুরু করতে আজ ট্যাব থেকে একটি যোগ করুন।",
+
+  "historyTitle": "ইতিহাস",
+  "jumpToDate": "তারিখে যান",
+  "historyEmptyDay": "{date} তারিখে কোনো আমল ট্র্যাক করা হয়নি",
+
+  "streakUnitD": "দি",
+  "streakUnitW": "স",
+  "streakUnitM": "মা",
+
+  "mondayShort": "সোম",
+  "tuesdayShort": "মঙ্গল",
+  "wednesdayShort": "বুধ",
+  "thursdayShort": "বৃহ",
+  "fridayShort": "শুক্র",
+  "saturdayShort": "শনি",
+  "sundayShort": "রবি",
+
+  "mondayFull": "সোমবার",
+  "tuesdayFull": "মঙ্গলবার",
+  "wednesdayFull": "বুধবার",
+  "thursdayFull": "বৃহস্পতিবার",
+  "fridayFull": "শুক্রবার",
+  "saturdayFull": "শনিবার",
+  "sundayFull": "রবিবার",
+
+  "hadith0": "\"আল্লাহর কাছে সবচেয়ে প্রিয় আমল হলো যা নিয়মিত করা হয়, যদিও তা অল্প হোক।\"\n— বুখারি ও মুসলিম",
+  "hadith1": "\"তোমরা যতটুকু পারো ততটুকু নেক আমল করো, কারণ সর্বোত্তম আমল হলো যা নিয়মিত করা হয়, যদিও তা অল্প হোক।\"\n— ইবনে মাজাহ",
+  "hadith2": "\"আদম সন্তান মৃত্যুবরণ করলে তার আমল বন্ধ হয়ে যায়, তিনটি ব্যতীত: সাদাকায়ে জারিয়া, উপকারী ইলম, অথবা এমন নেক সন্তান যে তার জন্য দোয়া করে।\"\n— মুসলিম",
+  "hadith3": "\"যে ব্যক্তি দুই ঠান্ডা নামাজ (ফজর ও আসর) আদায় করবে, সে জান্নাতে প্রবেশ করবে।\"\n— বুখারি",
+  "hadith4": "\"আল্লাহ তোমাদের চেহারা বা সম্পদের দিকে তাকান না, বরং তিনি তোমাদের অন্তর ও আমলের দিকে তাকান।\"\n— মুসলিম",
+  "hadith5": "\"সর্বোত্তম মানুষ তারাই যারা মানুষের সবচেয়ে বেশি উপকার করে।\"\n— দারাকুতনি",
+  "hadith6": "\"সহজ করো, কঠিন করো না; সুসংবাদ দাও, ভয় দেখিয়ে মানুষকে দূরে সরিয়ে দিও না।\"\n— বুখারি",
+  "hadith7": "\"যে ব্যক্তি ইলম অর্জনের পথে চলে, আল্লাহ তার জন্য জান্নাতের পথ সহজ করে দেন।\"\n— মুসলিম",
+  "hadith8": "\"দান-সাদাকায় সম্পদ কমে না।\"\n— মুসলিম",
+  "hadith9": "\"শক্তিশালী মুমিন দুর্বল মুমিনের চেয়ে আল্লাহর কাছে উত্তম ও বেশি প্রিয়, তবে উভয়ের মধ্যেই কল্যাণ রয়েছে।\"\n— মুসলিম"
+}

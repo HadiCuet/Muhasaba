@@ -23,9 +23,9 @@ class SettingsDao extends DatabaseAccessor<AppDatabase>
   SettingsDao(super.db);
 
   Stream<Map<String, String>> watchAll() {
-    return select(settingsKv).watch().map(
-          (rows) => {for (final r in rows) r.key: r.value},
-        );
+    return select(
+      settingsKv,
+    ).watch().map((rows) => {for (final r in rows) r.key: r.value});
   }
 
   Future<Map<String, String>> getAll() async {
@@ -34,8 +34,9 @@ class SettingsDao extends DatabaseAccessor<AppDatabase>
   }
 
   Future<String?> get(String key) async {
-    final row = await (select(settingsKv)..where((s) => s.key.equals(key)))
-        .getSingleOrNull();
+    final row = await (select(
+      settingsKv,
+    )..where((s) => s.key.equals(key))).getSingleOrNull();
     return row?.value;
   }
 

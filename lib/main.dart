@@ -11,9 +11,7 @@ Future<void> main() async {
 
   runApp(
     ProviderScope(
-      overrides: [
-        reminderSchedulerProvider.overrideWithValue(scheduler),
-      ],
+      overrides: [reminderSchedulerProvider.overrideWithValue(scheduler)],
       child: const MuhasabaApp(),
     ),
   );

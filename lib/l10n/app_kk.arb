@@ -1,0 +1,172 @@
+{
+  "@@locale": "kk",
+
+  "appTitle": "Muhasaba",
+
+  "tabToday": "Бүгін",
+  "tabStats": "Статистика",
+  "tabHistory": "Тарих",
+  "tabSettings": "Баптаулар",
+  "newAmal": "Жаңа амал",
+
+  "editAmal": "Амалды өзгерту",
+  "newAmalTitle": "Жаңа амал",
+  "save": "Сақтау",
+  "cancel": "Бас тарту",
+  "clear": "Тазалау",
+
+  "titleLabel": "Атауы",
+  "titleRequired": "Атауы міндетті",
+  "titleTooLong": "Атауы тым ұзын",
+
+  "frequencyLabel": "Жиілік",
+  "frequencyDaily": "Күнделікті",
+  "frequencyWeekly": "Апта сайын",
+  "frequencyMonthly": "Ай сайын",
+
+  "categoryLabel": "Санат",
+  "categoryOther": "Басқа",
+  "categorySalah": "Намаз",
+  "categoryDhikr": "Зікір",
+  "categoryQuran": "Құран",
+  "categoryCharity": "Қайырымдылық",
+
+  "timesPerPeriod": "Кезең ішінде рет",
+  "custom": "Басқа",
+  "customTargetHint": "мыс. 50",
+
+  "dayOfWeek": "Апта күні",
+  "anyDay": "Кез келген",
+  "anyDayHint": "Кез келген күн (бүгін көрінеді, ертең жасырылады)",
+  "onlyDayHint": "Тек {day}",
+
+  "dateOfMonth": "Ай күні",
+  "anyDate": "Кез келген",
+  "anyDateHint": "Кез келген күн (бүгін көрінеді, ертең жасырылады)",
+  "onlyDateHint": "Тек {date}-күні",
+
+  "startPreChecked": "Алдын ала белгіленген күйде бастау",
+  "startPreCheckedSubtitle": "Жаңа кезең басталғанда бұл амал әдепкі бойынша орындалған деп белгіленеді, белгіні алып тастай аласыз.",
+
+  "reminder": "Еске салу",
+  "reminderNone": "Жоқ",
+  "reminderTime": "Еске салу: {time}",
+  "reminderPermissionWarning": "Еске салу сақталды, бірақ хабарландыруларға рұқсат берілмеген. Ескертулер алу үшін жүйе баптауларында қосыңыз.",
+
+  "groupByCategory": "Санат бойынша топтау",
+  "flatList": "Жай тізім",
+  "errorGeneric": "Қате: {error}",
+  "todayEmptyHint": "Бірінші амалыңызды қосу үшін + түймесін басыңыз.",
+
+  "noteLabel": "Жазба",
+  "noteHint": "мыс. Мешітте намаз оқыдым",
+  "completed": "орындалды",
+  "notCompleted": "орындалмады",
+  "progressOf": "{target} ішінен {progress} орындалды",
+
+  "removeFromToday": "Бүгіннен алып тастау",
+  "removeFromTodaySubtitle": "Тек бүгін үшін жасыру. Ертең қайтады.",
+  "removeFromTracking": "Бақылаудан алып тастау",
+  "removeFromTrackingSubtitle": "Тізімнен біржола алып тастау. Тарих сақталады.",
+
+  "chooseIcon": "Белгіше таңдау",
+  "iconNone": "Жоқ",
+  "recentlyUsed": "Жақында қолданылған",
+  "emojiSectionGeneral": "Жалпы",
+
+  "categoryNameHint": "Атауы",
+  "categoryNew": "+ Жаңа",
+
+  "addAmal": "Амал қосу",
+  "customAmal": "Арнайы амал",
+
+  "templateTasbih": "Тасбих 33x",
+  "templateIstighfar": "Истиғфар 100x",
+  "templateSurahKahf": "Кәһф сүресі",
+  "templateSadaqah": "Садақа",
+  "templateTahajjud": "Тахажжуд",
+  "templateDuhaPrayer": "Духа намазы",
+
+  "settingsTitle": "Баптаулар",
+  "settingsLoadError": "Баптауларды жүктеу сәтсіз:\n{error}",
+
+  "sectionDayBoundary": "Күн шекарасы",
+  "rolloverHour": "Ауысу сағаты",
+  "rolloverAtMidnight": "Бүгін түн ортасында аяқталады.",
+  "rolloverSubtitle": "Кешегі амалдар {time} дейін өңделе алады.",
+  "pickRolloverHour": "Күн ауысатын сағатты таңдаңыз",
+
+  "sectionWeekMonth": "Апта және ай",
+  "startOfWeek": "Апта басы",
+  "startOfMonth": "Ай басы",
+  "startOfMonthClamped": "28-күннен кейінгі күндер қысқа айларда соңғы күнге бейімделеді.",
+
+  "sectionAppearance": "Сыртқы түрі",
+  "theme": "Тақырып",
+  "themeSystem": "Жүйелік",
+  "themeLight": "Жарық",
+  "themeDark": "Қараңғы",
+
+  "sectionLanguage": "Тіл",
+  "language": "Тіл",
+  "systemDefault": "Жүйе тілі",
+
+  "aboutTitle": "Muhasaba",
+  "aboutSubtitle": "Жеке діни есептілік журналы. Барлық деректер осы құрылғыда сақталады.",
+
+  "statsTitle": "Статистика",
+  "statsLoadError": "Статистиканы жүктеу сәтсіз:\n{error}",
+  "perAmal": "Әр амал",
+  "thisWeek": "Осы апта",
+  "thisMonth": "Осы ай",
+  "totalCompletions": "жалпы орындалғандар",
+  "streakCurrent": "Ағымдағы",
+  "streakLongest": "Ең ұзақ",
+  "ratioWeek": "Апта",
+  "ratioMonth": "Ай",
+
+  "streakDays": "{count, plural, =1{күн} other{күн}}",
+  "streakWeeks": "{count, plural, =1{апта} other{апта}}",
+  "streakMonths": "{count, plural, =1{ай} other{ай}}",
+
+  "frequencyBadgeDaily": "күнделікті",
+  "frequencyBadgeWeekly": "апта сайын",
+  "frequencyBadgeMonthly": "ай сайын",
+
+  "statsEmpty": "Әлі амал жоқ. Бақылауды бастау үшін Бүгін бетінде амал қосыңыз.",
+
+  "historyTitle": "Тарих",
+  "jumpToDate": "Күнге өту",
+  "historyEmptyDay": "{date} күні ешқандай амал бақыланбаған",
+
+  "streakUnitD": "к",
+  "streakUnitW": "а",
+  "streakUnitM": "а",
+
+  "mondayShort": "Дүй",
+  "tuesdayShort": "Сей",
+  "wednesdayShort": "Сәр",
+  "thursdayShort": "Бей",
+  "fridayShort": "Жұм",
+  "saturdayShort": "Сен",
+  "sundayShort": "Жек",
+
+  "mondayFull": "Дүйсенбі",
+  "tuesdayFull": "Сейсенбі",
+  "wednesdayFull": "Сәрсенбі",
+  "thursdayFull": "Бейсенбі",
+  "fridayFull": "Жұма",
+  "saturdayFull": "Сенбі",
+  "sundayFull": "Жексенбі",
+
+  "hadith0": "\"Аллаһ үшін ең сүйікті амалдар үнемі жасалатын амалдар, аз болса да.\"\n— Бұхари және Муслим",
+  "hadith1": "\"Жақсы амалдарды қолыңыздан келгенше жасаңыз, өйткені ең жақсы амалдар үнемі жасалатындар, аз болса да.\"\n— Ибн Мәжа",
+  "hadith2": "\"Адам баласы қайтыс болғанда, амалдары тоқтайды, тек үшеуін қоспағанда: үздіксіз садақа, пайдалы ілім немесе оған дұға ететін ізгілікті перзент.\"\n— Муслим",
+  "hadith3": "\"Кім екі салқын намазды (Таң және Аср) оқыса, жәннатқа кіреді.\"\n— Бұхари",
+  "hadith4": "\"Аллаһ сіздің сыртқы келбетіңізге және байлығыңызға қарамайды, бірақ жүректеріңізге және амалдарыңызға қарайды.\"\n— Муслим",
+  "hadith5": "\"Адамдардың ең жақсысы — адамдарға ең көп пайда әкелетін адам.\"\n— Дарақұтни",
+  "hadith6": "\"Істерді жеңілдетіңіз, қиындатпаңыз; қуанышты хабар беріңіз, адамдарды қорқытпаңыз.\"\n— Бұхари",
+  "hadith7": "\"Кім ілім іздеп жолға шықса, Аллаһ оған жәннатқа жолды жеңілдетеді.\"\n— Муслим",
+  "hadith8": "\"Садақа малды азайтпайды.\"\n— Муслим",
+  "hadith9": "\"Күшті мүмін Аллаһ үшін әлсіз мүміннен жақсырақ және сүйіктірек, бірақ екеуінде де жақсылық бар.\"\n— Муслим"
+}

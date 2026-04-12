@@ -37,22 +37,20 @@ Future<void> assignSeedIcons(AppDatabase db) async {
   const salahIcon = '🕌';
   const quranIcon = '📖';
 
-  await (db.update(db.amals)
-        ..where((a) =>
+  await (db.update(db.amals)..where(
+        (a) =>
             a.isSeed.equals(true) &
-            a.title.isIn(['Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha'])))
-      .write(const AmalsCompanion(
-    icon: Value(salahIcon),
-    category: Value('Salah'),
-  ));
+            a.title.isIn(['Fajr', 'Dhuhr', 'Asr', 'Maghrib', 'Isha']),
+      ))
+      .write(
+        const AmalsCompanion(icon: Value(salahIcon), category: Value('Salah')),
+      );
 
-  await (db.update(db.amals)
-        ..where(
-            (a) => a.isSeed.equals(true) & a.title.equals('Tilawah')))
-      .write(const AmalsCompanion(
-    icon: Value(quranIcon),
-    category: Value('Quran'),
-  ));
+  await (db.update(
+    db.amals,
+  )..where((a) => a.isSeed.equals(true) & a.title.equals('Tilawah'))).write(
+    const AmalsCompanion(icon: Value(quranIcon), category: Value('Quran')),
+  );
 }
 
 AmalsCompanion _seed(

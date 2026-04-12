@@ -1,0 +1,233 @@
+{
+  "@@locale": "en",
+
+  "appTitle": "Muhasaba",
+
+  "tabToday": "Today",
+  "tabStats": "Stats",
+  "tabHistory": "History",
+  "tabSettings": "Settings",
+  "newAmal": "New amal",
+
+  "editAmal": "Edit amal",
+  "newAmalTitle": "New amal",
+  "save": "Save",
+  "cancel": "Cancel",
+  "clear": "Clear",
+
+  "titleLabel": "Title",
+  "titleRequired": "Title is required",
+  "titleTooLong": "Title is too long",
+
+  "frequencyLabel": "Frequency",
+  "frequencyDaily": "Daily",
+  "frequencyWeekly": "Weekly",
+  "frequencyMonthly": "Monthly",
+
+  "categoryLabel": "Category",
+  "categoryOther": "Other",
+  "categorySalah": "Salah",
+  "categoryDhikr": "Dhikr",
+  "categoryQuran": "Quran",
+  "categoryCharity": "Charity",
+
+  "timesPerPeriod": "Times per period",
+  "custom": "Custom",
+  "customTargetHint": "e.g. 50",
+
+  "dayOfWeek": "Day of week",
+  "anyDay": "Any",
+  "anyDayHint": "Any day (stays visible today, hides next day)",
+  "onlyDayHint": "Only {day}",
+  "@onlyDayHint": {
+    "placeholders": {
+      "day": { "type": "String" }
+    }
+  },
+
+  "dateOfMonth": "Date of month",
+  "anyDate": "Any",
+  "anyDateHint": "Any date (stays visible today, hides next day)",
+  "onlyDateHint": "Only on the {date}",
+  "@onlyDateHint": {
+    "placeholders": {
+      "date": { "type": "String" }
+    }
+  },
+
+  "startPreChecked": "Start pre-checked",
+  "startPreCheckedSubtitle": "When a new period starts, this amal is marked complete by default until you uncheck it.",
+
+  "reminder": "Reminder",
+  "reminderNone": "None",
+  "reminderTime": "Reminder: {time}",
+  "@reminderTime": {
+    "placeholders": {
+      "time": { "type": "String" }
+    }
+  },
+  "reminderPermissionWarning": "Reminder saved, but notifications are not permitted. Enable them in system settings to get alerts.",
+
+  "groupByCategory": "Group by category",
+  "flatList": "Flat list",
+  "errorGeneric": "Error: {error}",
+  "@errorGeneric": {
+    "placeholders": {
+      "error": { "type": "String" }
+    }
+  },
+  "todayEmptyHint": "Tap + to add your first amal.",
+
+  "noteLabel": "Note",
+  "noteHint": "e.g. Prayed at the masjid",
+  "completed": "completed",
+  "notCompleted": "not completed",
+  "progressOf": "{progress} of {target} completed",
+  "@progressOf": {
+    "placeholders": {
+      "progress": { "type": "int" },
+      "target": { "type": "int" }
+    }
+  },
+
+  "removeFromToday": "Remove from today",
+  "removeFromTodaySubtitle": "Hide just for this day. It returns tomorrow.",
+  "removeFromTracking": "Remove from tracking",
+  "removeFromTrackingSubtitle": "Permanently remove from your list. History is kept.",
+
+  "chooseIcon": "Choose icon",
+  "iconNone": "None",
+  "recentlyUsed": "Recently Used",
+  "emojiSectionGeneral": "General",
+
+  "categoryNameHint": "Name",
+  "categoryNew": "+ New",
+
+  "addAmal": "Add Amal",
+  "customAmal": "Custom Amal",
+
+  "templateTasbih": "Tasbih 33x",
+  "templateIstighfar": "Istighfar 100x",
+  "templateSurahKahf": "Surah Kahf",
+  "templateSadaqah": "Sadaqah",
+  "templateTahajjud": "Tahajjud",
+  "templateDuhaPrayer": "Duha Prayer",
+
+  "settingsTitle": "Settings",
+  "settingsLoadError": "Failed to load settings:\n{error}",
+  "@settingsLoadError": {
+    "placeholders": {
+      "error": { "type": "String" }
+    }
+  },
+
+  "sectionDayBoundary": "Day boundary",
+  "rolloverHour": "Rollover hour",
+  "rolloverAtMidnight": "Today ends at midnight.",
+  "rolloverSubtitle": "Yesterday's amal stay editable until {time}.",
+  "@rolloverSubtitle": {
+    "placeholders": {
+      "time": { "type": "String" }
+    }
+  },
+  "pickRolloverHour": "Pick the hour the day rolls over",
+
+  "sectionWeekMonth": "Week & month",
+  "startOfWeek": "Start of week",
+  "startOfMonth": "Start of month",
+  "startOfMonthClamped": "Days past the 28th are clamped to the last day of shorter months.",
+
+  "sectionAppearance": "Appearance",
+  "theme": "Theme",
+  "themeSystem": "System",
+  "themeLight": "Light",
+  "themeDark": "Dark",
+
+  "sectionLanguage": "Language",
+  "language": "Language",
+  "systemDefault": "System default",
+
+  "aboutTitle": "Muhasaba",
+  "aboutSubtitle": "A personal deen accountability journal. All data stays on this device.",
+
+  "statsTitle": "Stats",
+  "statsLoadError": "Failed to load stats:\n{error}",
+  "@statsLoadError": {
+    "placeholders": {
+      "error": { "type": "String" }
+    }
+  },
+  "perAmal": "Per amal",
+  "thisWeek": "This week",
+  "thisMonth": "This month",
+  "totalCompletions": "total completions",
+  "streakCurrent": "Current",
+  "streakLongest": "Longest",
+  "ratioWeek": "Week",
+  "ratioMonth": "Month",
+
+  "streakDays": "{count, plural, =1{day} other{days}}",
+  "@streakDays": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "streakWeeks": "{count, plural, =1{week} other{weeks}}",
+  "@streakWeeks": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+  "streakMonths": "{count, plural, =1{month} other{months}}",
+  "@streakMonths": {
+    "placeholders": {
+      "count": { "type": "int" }
+    }
+  },
+
+  "frequencyBadgeDaily": "daily",
+  "frequencyBadgeWeekly": "weekly",
+  "frequencyBadgeMonthly": "monthly",
+
+  "statsEmpty": "No amal yet. Add one on Today to start tracking.",
+
+  "historyTitle": "History",
+  "jumpToDate": "Jump to date",
+  "historyEmptyDay": "No amal tracked on {date}",
+  "@historyEmptyDay": {
+    "placeholders": {
+      "date": { "type": "String" }
+    }
+  },
+
+  "streakUnitD": "d",
+  "streakUnitW": "w",
+  "streakUnitM": "m",
+
+  "mondayShort": "Mon",
+  "tuesdayShort": "Tue",
+  "wednesdayShort": "Wed",
+  "thursdayShort": "Thu",
+  "fridayShort": "Fri",
+  "saturdayShort": "Sat",
+  "sundayShort": "Sun",
+
+  "mondayFull": "Monday",
+  "tuesdayFull": "Tuesday",
+  "wednesdayFull": "Wednesday",
+  "thursdayFull": "Thursday",
+  "fridayFull": "Friday",
+  "saturdayFull": "Saturday",
+  "sundayFull": "Sunday",
+
+  "hadith0": "\"The most beloved deeds to Allah are those done consistently, even if small.\"\n— Bukhari & Muslim",
+  "hadith1": "\"Take up good deeds only as much as you are able, for the best deeds are those done consistently even if they are few.\"\n— Ibn Majah",
+  "hadith2": "\"When the son of Adam dies, his deeds come to an end except three: ongoing charity, beneficial knowledge, or a righteous child who prays for him.\"\n— Muslim",
+  "hadith3": "\"Whoever prays the two cool prayers (Fajr and Asr) will enter Paradise.\"\n— Bukhari",
+  "hadith4": "\"Allah does not look at your appearance or your wealth, but He looks at your hearts and your deeds.\"\n— Muslim",
+  "hadith5": "\"The best of people are those who are most beneficial to people.\"\n— Daraqutni",
+  "hadith6": "\"Make things easy and do not make them difficult; give glad tidings and do not scare people away.\"\n— Bukhari",
+  "hadith7": "\"He who treads a path in search of knowledge, Allah will make easy for him the path to Paradise.\"\n— Muslim",
+  "hadith8": "\"Charity does not decrease wealth.\"\n— Muslim",
+  "hadith9": "\"The strong believer is better and more beloved to Allah than the weak believer, while there is good in both.\"\n— Muslim"
+}

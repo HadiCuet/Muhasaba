@@ -57,15 +57,15 @@ Period monthPeriodOf(DateTime date, int startOfMonth) {
   final nextBase = start.month == 12
       ? DateTime.utc(start.year + 1, 1, 1)
       : DateTime.utc(start.year, start.month + 1, 1);
-  final endExclusive =
-      _clampedDay(nextBase.year, nextBase.month, startOfMonth);
+  final endExclusive = _clampedDay(nextBase.year, nextBase.month, startOfMonth);
   return Period(start: start, endExclusive: endExclusive);
 }
 
 /// The number of days in the given calendar month.
 int daysInMonth(int year, int month) {
-  final firstOfNext =
-      month == 12 ? DateTime.utc(year + 1, 1, 1) : DateTime.utc(year, month + 1, 1);
+  final firstOfNext = month == 12
+      ? DateTime.utc(year + 1, 1, 1)
+      : DateTime.utc(year, month + 1, 1);
   final lastOfThis = firstOfNext.subtract(const Duration(days: 1));
   return lastOfThis.day;
 }

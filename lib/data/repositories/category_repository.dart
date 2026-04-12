@@ -16,6 +16,5 @@ class CategoryRepository {
   /// category text — only the suggestion chip disappears.
   Future<void> delete(String name) => _dao.deleteCategory(name);
 
-  Future<void> reorder(List<CategoryRow> rows) =>
-      _dao.updateSortOrders(rows);
+  Future<void> reorder(List<CategoryRow> rows) => _dao.updateSortOrders(rows);
 }

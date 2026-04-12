@@ -1,5 +1,6 @@
 import 'package:drift/drift.dart' show Value;
 import 'package:flutter/material.dart';
+import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
@@ -101,27 +102,32 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
   Future<void> _save() async {
     if (!_formKey.currentState!.validate()) return;
     final title = _titleController.text.trim();
+    final permWarning = AppLocalizations.of(context).reminderPermissionWarning;
     final reminder = _reminderTime == null
         ? null
         : '${_reminderTime!.hour.toString().padLeft(2, '0')}:'
-            '${_reminderTime!.minute.toString().padLeft(2, '0')}';
+              '${_reminderTime!.minute.toString().padLeft(2, '0')}';
 
     final int amalId;
     if (_existing == null) {
-      amalId = await ref.read(amalRepositoryProvider).create(
+      amalId = await ref
+          .read(amalRepositoryProvider)
+          .create(
             title: title,
             frequency: _frequency,
             target: _target,
             weeklyDay: _frequency == Frequency.weekly ? _weeklyDay : null,
-            monthlyDate:
-                _frequency == Frequency.monthly ? _monthlyDate : null,
+            monthlyDate: _frequency == Frequency.monthly ? _monthlyDate : null,
             defaultChecked: _defaultChecked,
             reminderTime: reminder,
             icon: _icon,
             category: _category,
           );
     } else {
-      await ref.read(appDatabaseProvider).amalDao.updateAmal(
+      await ref
+          .read(appDatabaseProvider)
+          .amalDao
+          .updateAmal(
             _existing!.copyWith(
               title: title,
               frequency: _frequency,
@@ -159,9 +165,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
           minute: parsed.minute,
         );
       } else {
-        permissionMessage =
-            'Reminder saved, but notifications are not permitted. '
-            'Enable them in system settings to get alerts.';
+        permissionMessage = permWarning;
       }
     } else {
       await scheduler.cancel(amalId);
@@ -169,9 +173,9 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
 
     if (!mounted) return;
     if (permissionMessage != null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(permissionMessage)),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(permissionMessage)));
     }
     context.pop();
   }
@@ -179,16 +183,13 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
   @override
   Widget build(BuildContext context) {
     if (_loading) {
-      return const Scaffold(
-        body: Center(child: CircularProgressIndicator()),
-      );
+      return const Scaffold(body: Center(child: CircularProgressIndicator()));
     }
     final isEdit = _existing != null;
     final theme = Theme.of(context);
+    final l = AppLocalizations.of(context);
     return Scaffold(
-      appBar: AppBar(
-        title: Text(isEdit ? 'Edit amal' : 'New amal'),
-      ),
+      appBar: AppBar(title: Text(isEdit ? l.editAmal : l.newAmalTitle)),
       bottomNavigationBar: SafeArea(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
@@ -197,7 +198,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
             style: FilledButton.styleFrom(
               minimumSize: const Size.fromHeight(48),
             ),
-            child: const Text('Save'),
+            child: Text(l.save),
           ),
         ),
       ),
@@ -232,14 +233,14 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                 Expanded(
                   child: TextFormField(
                     controller: _titleController,
-                    decoration: const InputDecoration(
-                      labelText: 'Title',
-                      border: OutlineInputBorder(),
+                    decoration: InputDecoration(
+                      labelText: l.titleLabel,
+                      border: const OutlineInputBorder(),
                     ),
                     validator: (v) {
                       final s = v?.trim() ?? '';
-                      if (s.isEmpty) return 'Title is required';
-                      if (s.length > 120) return 'Title is too long';
+                      if (s.isEmpty) return l.titleRequired;
+                      if (s.length > 120) return l.titleTooLong;
                       return null;
                     },
                   ),
@@ -256,7 +257,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
             const SizedBox(height: 16),
 
             // ── Category ───────────────────────────────────────────────
-            Text('Category', style: theme.textTheme.labelLarge),
+            Text(l.categoryLabel, style: theme.textTheme.labelLarge),
             const SizedBox(height: 8),
             CategoryPicker(
               selected: _category,
@@ -287,9 +288,8 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
             const SizedBox(height: 16),
             SwitchListTile(
               contentPadding: EdgeInsets.zero,
-              title: const Text('Start pre-checked'),
-              subtitle: const Text(
-                  'When a new period starts, this amal is marked complete by default until you uncheck it.'),
+              title: Text(l.startPreChecked),
+              subtitle: Text(l.startPreCheckedSubtitle),
               value: _defaultChecked,
               onChanged: (v) => setState(() => _defaultChecked = v),
             ),
@@ -297,10 +297,10 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
             ListTile(
               contentPadding: EdgeInsets.zero,
               leading: const Icon(Icons.notifications_outlined),
-              title: const Text('Reminder'),
+              title: Text(l.reminder),
               subtitle: Text(
                 _reminderTime == null
-                    ? 'None'
+                    ? l.reminderNone
                     : _reminderTime!.format(context),
               ),
               trailing: _reminderTime == null
@@ -338,16 +338,26 @@ class _FrequencySelector extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Frequency', style: Theme.of(context).textTheme.labelLarge),
+        Text(l.frequencyLabel, style: Theme.of(context).textTheme.labelLarge),
         const SizedBox(height: 8),
         SegmentedButton<Frequency>(
-          segments: const [
-            ButtonSegment(value: Frequency.daily, label: Text('Daily')),
-            ButtonSegment(value: Frequency.weekly, label: Text('Weekly')),
-            ButtonSegment(value: Frequency.monthly, label: Text('Monthly')),
+          segments: [
+            ButtonSegment(
+              value: Frequency.daily,
+              label: Text(l.frequencyDaily),
+            ),
+            ButtonSegment(
+              value: Frequency.weekly,
+              label: Text(l.frequencyWeekly),
+            ),
+            ButtonSegment(
+              value: Frequency.monthly,
+              label: Text(l.frequencyMonthly),
+            ),
           ],
           selected: {value},
           onSelectionChanged: (s) => onChanged(s.first),
@@ -406,10 +416,11 @@ class _TargetChipsState extends State<_TargetChips> {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l = AppLocalizations.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Times per period', style: theme.textTheme.labelLarge),
+        Text(l.timesPerPeriod, style: theme.textTheme.labelLarge),
         const SizedBox(height: 8),
         Wrap(
           spacing: 8,
@@ -429,7 +440,7 @@ class _TargetChipsState extends State<_TargetChips> {
         const SizedBox(height: 12),
         Row(
           children: [
-            Text('Custom', style: theme.textTheme.bodyMedium),
+            Text(l.custom, style: theme.textTheme.bodyMedium),
             const SizedBox(width: 12),
             SizedBox(
               width: 80,
@@ -443,7 +454,7 @@ class _TargetChipsState extends State<_TargetChips> {
                     horizontal: 10,
                     vertical: 8,
                   ),
-                  hintText: _isCustom ? null : 'e.g. 50',
+                  hintText: _isCustom ? null : l.customTargetHint,
                 ),
                 onChanged: (v) {
                   final parsed = int.tryParse(v.trim());
@@ -470,27 +481,25 @@ class _WeeklyDayPicker extends StatelessWidget {
   final int? value;
   final ValueChanged<int?> onChanged;
 
-  static const _names = {
-    DateTime.saturday: 'Sat',
-    DateTime.sunday: 'Sun',
-    DateTime.monday: 'Mon',
-    DateTime.tuesday: 'Tue',
-    DateTime.wednesday: 'Wed',
-    DateTime.thursday: 'Thu',
-    DateTime.friday: 'Fri',
-  };
-
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
+    final names = {
+      DateTime.saturday: l.saturdayShort,
+      DateTime.sunday: l.sundayShort,
+      DateTime.monday: l.mondayShort,
+      DateTime.tuesday: l.tuesdayShort,
+      DateTime.wednesday: l.wednesdayShort,
+      DateTime.thursday: l.thursdayShort,
+      DateTime.friday: l.fridayShort,
+    };
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Day of week', style: Theme.of(context).textTheme.labelLarge),
+        Text(l.dayOfWeek, style: Theme.of(context).textTheme.labelLarge),
         const SizedBox(height: 4),
         Text(
-          value == null
-              ? 'Any day (stays visible today, hides next day)'
-              : 'Only ${_fullName(value!)}',
+          value == null ? l.anyDayHint : l.onlyDayHint(_fullName(value!, l)),
           style: Theme.of(context).textTheme.bodySmall,
         ),
         const SizedBox(height: 8),
@@ -498,11 +507,11 @@ class _WeeklyDayPicker extends StatelessWidget {
           spacing: 8,
           children: [
             ChoiceChip(
-              label: const Text('Any'),
+              label: Text(l.anyDay),
               selected: value == null,
               onSelected: (_) => onChanged(null),
             ),
-            for (final entry in _names.entries)
+            for (final entry in names.entries)
               ChoiceChip(
                 label: Text(entry.value),
                 selected: value == entry.key,
@@ -514,15 +523,15 @@ class _WeeklyDayPicker extends StatelessWidget {
     );
   }
 
-  String _fullName(int d) {
-    const full = {
-      DateTime.saturday: 'Saturday',
-      DateTime.sunday: 'Sunday',
-      DateTime.monday: 'Monday',
-      DateTime.tuesday: 'Tuesday',
-      DateTime.wednesday: 'Wednesday',
-      DateTime.thursday: 'Thursday',
-      DateTime.friday: 'Friday',
+  String _fullName(int d, AppLocalizations l) {
+    final full = {
+      DateTime.saturday: l.saturdayFull,
+      DateTime.sunday: l.sundayFull,
+      DateTime.monday: l.mondayFull,
+      DateTime.tuesday: l.tuesdayFull,
+      DateTime.wednesday: l.wednesdayFull,
+      DateTime.thursday: l.thursdayFull,
+      DateTime.friday: l.fridayFull,
     };
     return full[d] ?? '';
   }
@@ -540,22 +549,21 @@ class _MonthlyDatePicker extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text('Date of month', style: Theme.of(context).textTheme.labelLarge),
+        Text(l.dateOfMonth, style: Theme.of(context).textTheme.labelLarge),
         const SizedBox(height: 4),
         Text(
-          value == null
-              ? 'Any date (stays visible today, hides next day)'
-              : 'Only on the ${_ordinal(value!)}',
+          value == null ? l.anyDateHint : l.onlyDateHint(_ordinal(value!)),
           style: Theme.of(context).textTheme.bodySmall,
         ),
         const SizedBox(height: 8),
         Row(
           children: [
             FilterChip(
-              label: const Text('Any'),
+              label: Text(l.anyDate),
               selected: value == null,
               onSelected: (_) => onChanged(null),
             ),
@@ -569,15 +577,9 @@ class _MonthlyDatePicker extends StatelessWidget {
                   isDense: true,
                 ),
                 items: [
-                  const DropdownMenuItem<int?>(
-                    value: null,
-                    child: Text('Any'),
-                  ),
+                  DropdownMenuItem<int?>(value: null, child: Text(l.anyDate)),
                   for (var d = 1; d <= 31; d++)
-                    DropdownMenuItem<int?>(
-                      value: d,
-                      child: Text(_ordinal(d)),
-                    ),
+                    DropdownMenuItem<int?>(value: d, child: Text(_ordinal(d))),
                 ],
                 onChanged: onChanged,
               ),

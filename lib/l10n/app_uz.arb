@@ -1,0 +1,172 @@
+{
+  "@@locale": "uz",
+
+  "appTitle": "Muhasaba",
+
+  "tabToday": "Bugun",
+  "tabStats": "Statistika",
+  "tabHistory": "Tarix",
+  "tabSettings": "Sozlamalar",
+  "newAmal": "Yangi amal",
+
+  "editAmal": "Amalni tahrirlash",
+  "newAmalTitle": "Yangi amal",
+  "save": "Saqlash",
+  "cancel": "Bekor qilish",
+  "clear": "Tozalash",
+
+  "titleLabel": "Sarlavha",
+  "titleRequired": "Sarlavha kiritilishi shart",
+  "titleTooLong": "Sarlavha juda uzun",
+
+  "frequencyLabel": "Takroriylik",
+  "frequencyDaily": "Kunlik",
+  "frequencyWeekly": "Haftalik",
+  "frequencyMonthly": "Oylik",
+
+  "categoryLabel": "Turkum",
+  "categoryOther": "Boshqa",
+  "categorySalah": "Namoz",
+  "categoryDhikr": "Zikr",
+  "categoryQuran": "Qur'on",
+  "categoryCharity": "Sadaqa",
+
+  "timesPerPeriod": "Davr ichida marta",
+  "custom": "Boshqa",
+  "customTargetHint": "masalan, 50",
+
+  "dayOfWeek": "Hafta kuni",
+  "anyDay": "Har qanday",
+  "anyDayHint": "Har qanday kun (bugun ko'rinadi, ertaga yashirinadi)",
+  "onlyDayHint": "Faqat {day}",
+
+  "dateOfMonth": "Oy sanasi",
+  "anyDate": "Har qanday",
+  "anyDateHint": "Har qanday sana (bugun ko'rinadi, ertaga yashirinadi)",
+  "onlyDateHint": "Faqat {date}-sanada",
+
+  "startPreChecked": "Oldindan belgilangan holda boshlash",
+  "startPreCheckedSubtitle": "Yangi davr boshlanganida bu amal sukut bo'yicha bajarilgan deb belgilanadi, siz belgini olib tashlashingiz mumkin.",
+
+  "reminder": "Eslatma",
+  "reminderNone": "Yo'q",
+  "reminderTime": "Eslatma: {time}",
+  "reminderPermissionWarning": "Eslatma saqlandi, lekin bildirishnomalarga ruxsat berilmagan. Ogohlantirishlar olish uchun tizim sozlamalarida yoqing.",
+
+  "groupByCategory": "Turkum bo'yicha guruhlash",
+  "flatList": "Oddiy ro'yxat",
+  "errorGeneric": "Xato: {error}",
+  "todayEmptyHint": "Birinchi amalingizni qo'shish uchun + tugmasini bosing.",
+
+  "noteLabel": "Izoh",
+  "noteHint": "masalan, Masjidda namoz o'qidim",
+  "completed": "bajarildi",
+  "notCompleted": "bajarilmadi",
+  "progressOf": "{target} tadan {progress} tasi bajarildi",
+
+  "removeFromToday": "Bugundan olib tashlash",
+  "removeFromTodaySubtitle": "Faqat bugun uchun yashirish. Ertaga qaytadi.",
+  "removeFromTracking": "Kuzatuvdan olib tashlash",
+  "removeFromTrackingSubtitle": "Ro'yxatdan butunlay olib tashlash. Tarix saqlanadi.",
+
+  "chooseIcon": "Belgi tanlash",
+  "iconNone": "Yo'q",
+  "recentlyUsed": "Yaqinda ishlatilgan",
+  "emojiSectionGeneral": "Umumiy",
+
+  "categoryNameHint": "Nomi",
+  "categoryNew": "+ Yangi",
+
+  "addAmal": "Amal qo'shish",
+  "customAmal": "Maxsus amal",
+
+  "templateTasbih": "Tasbih 33x",
+  "templateIstighfar": "Istighfor 100x",
+  "templateSurahKahf": "Kahf surasi",
+  "templateSadaqah": "Sadaqa",
+  "templateTahajjud": "Tahajjud",
+  "templateDuhaPrayer": "Duho namozi",
+
+  "settingsTitle": "Sozlamalar",
+  "settingsLoadError": "Sozlamalarni yuklashda xato:\n{error}",
+
+  "sectionDayBoundary": "Kun chegarasi",
+  "rolloverHour": "O'tish soati",
+  "rolloverAtMidnight": "Bugun yarim tunda tugaydi.",
+  "rolloverSubtitle": "Kechagi amallar {time} gacha tahrirlanishi mumkin.",
+  "pickRolloverHour": "Kun o'tadigan soatni tanlang",
+
+  "sectionWeekMonth": "Hafta va oy",
+  "startOfWeek": "Hafta boshlanishi",
+  "startOfMonth": "Oy boshlanishi",
+  "startOfMonthClamped": "28-kundan keyingi kunlar qisqaroq oylarda oxirgi kunga moslashtiriladi.",
+
+  "sectionAppearance": "Tashqi ko'rinish",
+  "theme": "Mavzu",
+  "themeSystem": "Tizim",
+  "themeLight": "Yorug'",
+  "themeDark": "Qorong'u",
+
+  "sectionLanguage": "Til",
+  "language": "Til",
+  "systemDefault": "Tizim tili",
+
+  "aboutTitle": "Muhasaba",
+  "aboutSubtitle": "Shaxsiy diniy hisobdorlik jurnali. Barcha ma'lumotlar ushbu qurilmada saqlanadi.",
+
+  "statsTitle": "Statistika",
+  "statsLoadError": "Statistikani yuklashda xato:\n{error}",
+  "perAmal": "Har bir amal",
+  "thisWeek": "Shu hafta",
+  "thisMonth": "Shu oy",
+  "totalCompletions": "jami bajarilganlar",
+  "streakCurrent": "Joriy",
+  "streakLongest": "Eng uzun",
+  "ratioWeek": "Hafta",
+  "ratioMonth": "Oy",
+
+  "streakDays": "{count, plural, =1{kun} other{kun}}",
+  "streakWeeks": "{count, plural, =1{hafta} other{hafta}}",
+  "streakMonths": "{count, plural, =1{oy} other{oy}}",
+
+  "frequencyBadgeDaily": "kunlik",
+  "frequencyBadgeWeekly": "haftalik",
+  "frequencyBadgeMonthly": "oylik",
+
+  "statsEmpty": "Hali amal yo'q. Kuzatishni boshlash uchun Bugun sahifasida amal qo'shing.",
+
+  "historyTitle": "Tarix",
+  "jumpToDate": "Sanaga o'tish",
+  "historyEmptyDay": "{date} sanasida hech qanday amal kuzatilmagan",
+
+  "streakUnitD": "k",
+  "streakUnitW": "h",
+  "streakUnitM": "o",
+
+  "mondayShort": "Dush",
+  "tuesdayShort": "Sesh",
+  "wednesdayShort": "Chor",
+  "thursdayShort": "Pay",
+  "fridayShort": "Jum",
+  "saturdayShort": "Shan",
+  "sundayShort": "Yak",
+
+  "mondayFull": "Dushanba",
+  "tuesdayFull": "Seshanba",
+  "wednesdayFull": "Chorshanba",
+  "thursdayFull": "Payshanba",
+  "fridayFull": "Juma",
+  "saturdayFull": "Shanba",
+  "sundayFull": "Yakshanba",
+
+  "hadith0": "\"Alloh uchun eng sevimli amallar doimiy qilinadigan amallardir, garchi oz bo'lsa ham.\"\n— Buxoriy va Muslim",
+  "hadith1": "\"Yaxshi amallarni qo'lingizdan kelgancha qiling, chunki eng yaxshi amallar doimiy qilinganlardir, garchi oz bo'lsa ham.\"\n— Ibn Moja",
+  "hadith2": "\"Odam farzandi vafot etganida, amallari to'xtaydi, faqat uchta narsa bundan mustasno: doimiy sadaqa, foydali ilm yoki unga duo qiladigan solih farzand.\"\n— Muslim",
+  "hadith3": "\"Kim ikki salqin namoini (Bomdod va Asrni) o'qisa, jannatga kiradi.\"\n— Buxoriy",
+  "hadith4": "\"Alloh sizning tashqi ko'rinishingiz va boyligingizga qaramaydi, balki qalblaringiz va amallaringizga qaraydi.\"\n— Muslim",
+  "hadith5": "\"Insonlarning eng yaxshisi odamlarga eng ko'p foyda keltiradigan kishidir.\"\n— Doroqutniy",
+  "hadith6": "\"Ishlarni osonlashtiring, qiyinlashtirmang; xushxabar bering, odamlarni qo'rqitmang.\"\n— Buxoriy",
+  "hadith7": "\"Kim ilm izlab yo'lga chiqsa, Alloh unga jannatga yo'lni osonlashtiradi.\"\n— Muslim",
+  "hadith8": "\"Sadaqa molni kamaytirmaydi.\"\n— Muslim",
+  "hadith9": "\"Kuchli mo'min Alloh uchun zaif mo'mindan yaxshiroq va sevimli, garchi ikkalasida ham yaxshilik bor.\"\n— Muslim"
+}

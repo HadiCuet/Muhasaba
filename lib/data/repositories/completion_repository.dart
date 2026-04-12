@@ -21,8 +21,7 @@ class CompletionRepository {
     int amalId,
     DateTime start,
     DateTime endExclusive,
-  ) =>
-      _completions.getForAmalBetween(amalId, start, endExclusive);
+  ) => _completions.getForAmalBetween(amalId, start, endExclusive);
 
   Future<void> setProgress({
     required int amalId,

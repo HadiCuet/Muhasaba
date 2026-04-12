@@ -9,9 +9,11 @@ class Amals extends Table {
   TextColumn get title => text().withLength(min: 1, max: 120)();
   IntColumn get frequency => intEnum<Frequency>()();
   IntColumn get target => integer().withDefault(const Constant(1))();
-  IntColumn get weeklyDay => integer().nullable()(); // 1..7, DateTime.monday == 1
+  IntColumn get weeklyDay =>
+      integer().nullable()(); // 1..7, DateTime.monday == 1
   IntColumn get monthlyDate => integer().nullable()(); // 1..31
-  BoolColumn get defaultChecked => boolean().withDefault(const Constant(false))();
+  BoolColumn get defaultChecked =>
+      boolean().withDefault(const Constant(false))();
   TextColumn get reminderTime => text().nullable()(); // "HH:mm" local
   IntColumn get sortOrder => integer().withDefault(const Constant(0))();
   BoolColumn get isSeed => boolean().withDefault(const Constant(false))();
@@ -45,8 +47,8 @@ class Completions extends Table {
 
   @override
   List<Set<Column>> get uniqueKeys => [
-        {amalId, muhasabaDate},
-      ];
+    {amalId, muhasabaDate},
+  ];
 }
 
 /// Row-level "remove from today" — a transient hide for a single muhasaba day.

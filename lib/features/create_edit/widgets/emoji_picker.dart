@@ -1,10 +1,14 @@
 import 'package:flutter/material.dart';
+import '../../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../app/providers.dart';
+import '../../../domain/utils/localized_category.dart';
 
 /// Curated emoji sections for amal icon selection.
-const _sections = <String, List<String>>{
+/// Keys are English category names used for localized lookup.
+const _sectionKeys = ['Salah', 'Dhikr', 'Quran', 'Charity'];
+const _sectionEmojis = <String, List<String>>{
   'Salah': [
     '\u{1F54C}',
     '\u{1F9CE}',
@@ -58,6 +62,7 @@ class _EmojiPickerSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l = AppLocalizations.of(context);
     final recentIcons = ref.watch(recentIconsProvider);
 
     return DraggableScrollableSheet(
@@ -96,11 +101,11 @@ class _EmojiPickerSheet extends StatelessWidget {
                   padding: const EdgeInsets.only(bottom: 12),
                   child: Row(
                     children: [
-                      Text('Choose icon', style: theme.textTheme.titleMedium),
+                      Text(l.chooseIcon, style: theme.textTheme.titleMedium),
                       const Spacer(),
                       TextButton(
                         onPressed: () => Navigator.of(context).pop(''),
-                        child: const Text('None'),
+                        child: Text(l.iconNone),
                       ),
                     ],
                   ),
@@ -118,7 +123,7 @@ class _EmojiPickerSheet extends StatelessWidget {
                         Padding(
                           padding: const EdgeInsets.only(bottom: 8),
                           child: Text(
-                            'Recently Used',
+                            l.recentlyUsed,
                             style: theme.textTheme.labelMedium?.copyWith(
                               color: theme.colorScheme.onSurfaceVariant,
                             ),
@@ -149,12 +154,14 @@ class _EmojiPickerSheet extends StatelessWidget {
               ),
 
               // Curated sections
-              for (final entry in _sections.entries) ...[
+              for (final key in [..._sectionKeys, 'General']) ...[
                 SliverToBoxAdapter(
                   child: Padding(
                     padding: const EdgeInsets.only(top: 8, bottom: 8),
                     child: Text(
-                      entry.key,
+                      key == 'General'
+                          ? l.emojiSectionGeneral
+                          : localizedCategoryName(key, l),
                       style: theme.textTheme.labelMedium?.copyWith(
                         color: theme.colorScheme.onSurfaceVariant,
                       ),
@@ -167,11 +174,12 @@ class _EmojiPickerSheet extends StatelessWidget {
                     mainAxisSpacing: 4,
                     crossAxisSpacing: 4,
                   ),
-                  itemCount: entry.value.length,
+                  itemCount: _sectionEmojis[key]!.length,
                   itemBuilder: (context, index) => _EmojiChip(
-                    emoji: entry.value[index],
-                    isSelected: entry.value[index] == current,
-                    onTap: () => Navigator.of(context).pop(entry.value[index]),
+                    emoji: _sectionEmojis[key]![index],
+                    isSelected: _sectionEmojis[key]![index] == current,
+                    onTap: () =>
+                        Navigator.of(context).pop(_sectionEmojis[key]![index]),
                   ),
                 ),
               ],

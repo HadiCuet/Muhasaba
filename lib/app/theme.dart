@@ -16,9 +16,7 @@ ThemeData _base(Brightness b) {
         side: BorderSide(color: scheme.outlineVariant),
       ),
     ),
-    listTileTheme: ListTileThemeData(
-      iconColor: scheme.onSurfaceVariant,
-    ),
+    listTileTheme: ListTileThemeData(iconColor: scheme.onSurfaceVariant),
     appBarTheme: const AppBarTheme(centerTitle: false),
   );
 }

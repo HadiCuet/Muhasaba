@@ -30,10 +30,7 @@ class TodayRow {
 /// A group of amal rows belonging to the same category, for the grouped view.
 @immutable
 class TodayGroup {
-  const TodayGroup({
-    required this.categoryName,
-    required this.rows,
-  });
+  const TodayGroup({required this.categoryName, required this.rows});
 
   /// `null` means "Other" (uncategorized amal).
   final String? categoryName;
@@ -46,11 +43,12 @@ class TodayGroup {
 /// Callback used by `TodayBuilder` to look up completions for a given amal
 /// within a period. Pulled out as a function so tests can stub it without
 /// spinning up a database.
-typedef PeriodCompletionsLookup = Future<List<CompletionRow>> Function(
-  int amalId,
-  DateTime start,
-  DateTime endExclusive,
-);
+typedef PeriodCompletionsLookup =
+    Future<List<CompletionRow>> Function(
+      int amalId,
+      DateTime start,
+      DateTime endExclusive,
+    );
 
 /// Given a muhasaba date, the user's settings, the list of active amal, and
 /// the completions + hidden-day rows for that single date, produces the
@@ -70,8 +68,7 @@ class TodayBuilder {
     List<CategoryRow> categoryOrder,
   ) {
     final catIndex = <String, int>{
-      for (var i = 0; i < categoryOrder.length; i++)
-        categoryOrder[i].name: i,
+      for (var i = 0; i < categoryOrder.length; i++) categoryOrder[i].name: i,
     };
     final buckets = <String?, List<TodayRow>>{};
     for (final row in rows) {
@@ -80,11 +77,8 @@ class TodayBuilder {
     }
     final groups = <TodayGroup>[];
     // Named categories first, in DB sort order.
-    final sortedCats = buckets.keys
-        .where((k) => k != null)
-        .toList()
-      ..sort((a, b) =>
-          (catIndex[a!] ?? 999).compareTo(catIndex[b!] ?? 999));
+    final sortedCats = buckets.keys.where((k) => k != null).toList()
+      ..sort((a, b) => (catIndex[a!] ?? 999).compareTo(catIndex[b!] ?? 999));
     for (final cat in sortedCats) {
       groups.add(TodayGroup(categoryName: cat, rows: buckets[cat]!));
     }
@@ -125,11 +119,7 @@ class TodayBuilder {
           ? todayRow.progress
           : (amal.defaultChecked ? amal.target : 0);
 
-      rows.add(TodayRow(
-        amal: amal,
-        progress: progress,
-        note: todayRow?.note,
-      ));
+      rows.add(TodayRow(amal: amal, progress: progress, note: todayRow?.note));
     }
     return rows;
   }
@@ -151,28 +141,19 @@ class TodayBuilder {
         // Only check completions BEFORE today so that today's completion
         // keeps the amal visible (as "done") for the rest of the day.
         final week = weekPeriodOf(date, settings.startOfWeek);
-        final inWeek = await periodCompletionsOf(
-          amal.id,
-          week.start,
-          date,
-        );
+        final inWeek = await periodCompletionsOf(amal.id, week.start, date);
         return !inWeek.any((c) => c.progress >= amal.target);
 
       case Frequency.monthly:
         if (amal.monthlyDate != null) {
           final dim = daysInMonth(date.year, date.month);
-          final targetDay =
-              amal.monthlyDate! > dim ? dim : amal.monthlyDate!;
+          final targetDay = amal.monthlyDate! > dim ? dim : amal.monthlyDate!;
           return date.day == targetDay;
         }
         // Same as weekly: exclude today so the amal stays visible when
         // completed, then hides starting tomorrow.
         final month = monthPeriodOf(date, settings.startOfMonth);
-        final inMonth = await periodCompletionsOf(
-          amal.id,
-          month.start,
-          date,
-        );
+        final inMonth = await periodCompletionsOf(amal.id, month.start, date);
         return !inMonth.any((c) => c.progress >= amal.target);
     }
   }

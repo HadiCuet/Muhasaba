@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import '../../../l10n/app_localizations.dart';
 
+import '../../../domain/models/frequency.dart';
+import '../../../domain/utils/localized_category.dart';
 import '../amal_templates.dart';
 
 /// Shows the template selection sheet.
@@ -48,7 +51,7 @@ class _TemplateSheetBody extends StatelessWidget {
 
             // Title
             Text(
-              'Add Amal',
+              AppLocalizations.of(context).addAmal,
               style: theme.textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.bold,
               ),
@@ -86,7 +89,7 @@ class _TemplateSheetBody extends StatelessWidget {
                   ),
                 ),
                 onPressed: () => Navigator.pop(context, true),
-                child: const Text('Custom Amal'),
+                child: Text(AppLocalizations.of(context).customAmal),
               ),
             ),
           ],
@@ -101,16 +104,31 @@ class _TemplateCard extends StatelessWidget {
 
   final AmalTemplate template;
 
-  String get _subtitle {
-    final freq =
-        template.frequency.name[0].toUpperCase() +
-        template.frequency.name.substring(1);
-    return '$freq \u00B7 ${template.category}';
+  String _subtitle(AppLocalizations l) {
+    final freq = switch (template.frequency) {
+      Frequency.daily => l.frequencyDaily,
+      Frequency.weekly => l.frequencyWeekly,
+      Frequency.monthly => l.frequencyMonthly,
+    };
+    return '$freq \u00B7 ${localizedCategoryName(template.category, l)}';
+  }
+
+  String _localizedTitle(AppLocalizations l) {
+    return switch (template.title) {
+      'Tasbih 33x' => l.templateTasbih,
+      'Istighfar 100x' => l.templateIstighfar,
+      'Surah Kahf' => l.templateSurahKahf,
+      'Sadaqah' => l.templateSadaqah,
+      'Tahajjud' => l.templateTahajjud,
+      'Duha Prayer' => l.templateDuhaPrayer,
+      _ => template.title,
+    };
   }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l = AppLocalizations.of(context);
 
     return Material(
       color: theme.colorScheme.surfaceContainerLow,
@@ -126,7 +144,7 @@ class _TemplateCard extends StatelessWidget {
               Text(template.icon, style: const TextStyle(fontSize: 24)),
               const SizedBox(height: 6),
               Text(
-                template.title,
+                _localizedTitle(l),
                 style: theme.textTheme.bodySmall?.copyWith(
                   fontWeight: FontWeight.bold,
                   fontSize: 13,
@@ -135,7 +153,7 @@ class _TemplateCard extends StatelessWidget {
               ),
               const SizedBox(height: 2),
               Text(
-                _subtitle,
+                _subtitle(l),
                 style: theme.textTheme.bodySmall?.copyWith(
                   fontSize: 10,
                   color: theme.colorScheme.onSurfaceVariant,

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
@@ -11,8 +12,9 @@ class StatsScreen extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final snapshotAsync = ref.watch(statsSnapshotProvider);
+    final l = AppLocalizations.of(context);
     return Scaffold(
-      appBar: AppBar(title: const Text('Stats')),
+      appBar: AppBar(title: Text(l.statsTitle)),
       body: RefreshIndicator(
         onRefresh: () async => ref.invalidate(statsSnapshotProvider),
         child: snapshotAsync.when(
@@ -20,16 +22,13 @@ class StatsScreen extends ConsumerWidget {
           error: (e, _) => ListView(
             children: [
               const SizedBox(height: 120),
-              Center(child: Text('Failed to load stats:\n$e')),
+              Center(child: Text(l.statsLoadError(e.toString()))),
             ],
           ),
           data: (snap) {
             if (snap.perAmal.isEmpty) {
               return ListView(
-                children: const [
-                  SizedBox(height: 120),
-                  _EmptyState(),
-                ],
+                children: const [SizedBox(height: 120), _EmptyState()],
               );
             }
             return ListView(
@@ -37,10 +36,7 @@ class StatsScreen extends ConsumerWidget {
               children: [
                 _GlobalCard(global: snap.global),
                 const SizedBox(height: 12),
-                Text(
-                  'Per amal',
-                  style: Theme.of(context).textTheme.labelLarge,
-                ),
+                Text(l.perAmal, style: Theme.of(context).textTheme.labelLarge),
                 const SizedBox(height: 8),
                 for (final s in snap.perAmal) ...[
                   _AmalStatsCard(stats: s),
@@ -63,6 +59,7 @@ class _GlobalCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l = AppLocalizations.of(context);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -70,21 +67,17 @@ class _GlobalCard extends StatelessWidget {
           children: [
             Expanded(
               child: _Metric(
-                label: 'This week',
+                label: l.thisWeek,
                 value: '${global.weekTotalCompletions}',
-                caption: 'total completions',
+                caption: l.totalCompletions,
               ),
             ),
-            Container(
-              width: 1,
-              height: 48,
-              color: theme.dividerColor,
-            ),
+            Container(width: 1, height: 48, color: theme.dividerColor),
             Expanded(
               child: _Metric(
-                label: 'This month',
+                label: l.thisMonth,
                 value: '${global.monthTotalCompletions}',
-                caption: 'total completions',
+                caption: l.totalCompletions,
               ),
             ),
           ],
@@ -102,6 +95,7 @@ class _AmalStatsCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l = AppLocalizations.of(context);
     return Card(
       child: Padding(
         padding: const EdgeInsets.all(16),
@@ -125,30 +119,38 @@ class _AmalStatsCard extends StatelessWidget {
               children: [
                 Expanded(
                   child: _Metric(
-                    label: 'Current',
+                    label: l.streakCurrent,
                     value: '${stats.currentStreak}',
-                    caption: _streakUnit(stats.frequency, stats.currentStreak),
+                    caption: _streakUnit(
+                      l,
+                      stats.frequency,
+                      stats.currentStreak,
+                    ),
                   ),
                 ),
                 Expanded(
                   child: _Metric(
-                    label: 'Longest',
+                    label: l.streakLongest,
                     value: '${stats.longestStreak}',
-                    caption: _streakUnit(stats.frequency, stats.longestStreak),
+                    caption: _streakUnit(
+                      l,
+                      stats.frequency,
+                      stats.longestStreak,
+                    ),
                   ),
                 ),
               ],
             ),
             const SizedBox(height: 16),
             _RatioBar(
-              label: 'Week',
+              label: l.ratioWeek,
               completed: stats.weeklyCompleted,
               expected: stats.weeklyExpected,
               rate: stats.weeklyRate,
             ),
             const SizedBox(height: 8),
             _RatioBar(
-              label: 'Month',
+              label: l.ratioMonth,
               completed: stats.monthlyCompleted,
               expected: stats.monthlyExpected,
               rate: stats.monthlyRate,
@@ -159,14 +161,14 @@ class _AmalStatsCard extends StatelessWidget {
     );
   }
 
-  String _streakUnit(Frequency f, int value) {
+  String _streakUnit(AppLocalizations l, Frequency f, int value) {
     switch (f) {
       case Frequency.daily:
-        return value == 1 ? 'day' : 'days';
+        return l.streakDays(value);
       case Frequency.weekly:
-        return value == 1 ? 'week' : 'weeks';
+        return l.streakWeeks(value);
       case Frequency.monthly:
-        return value == 1 ? 'month' : 'months';
+        return l.streakMonths(value);
     }
   }
 }
@@ -260,10 +262,11 @@ class _FrequencyBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l = AppLocalizations.of(context);
     final label = switch (frequency) {
-      Frequency.daily => 'daily',
-      Frequency.weekly => 'weekly',
-      Frequency.monthly => 'monthly',
+      Frequency.daily => l.frequencyBadgeDaily,
+      Frequency.weekly => l.frequencyBadgeWeekly,
+      Frequency.monthly => l.frequencyBadgeMonthly,
     };
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
@@ -286,6 +289,7 @@ class _EmptyState extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(32),
@@ -299,7 +303,7 @@ class _EmptyState extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Text(
-              'No amal yet. Add one on Today to start tracking.',
+              l.statsEmpty,
               textAlign: TextAlign.center,
               style: Theme.of(context).textTheme.bodyMedium,
             ),

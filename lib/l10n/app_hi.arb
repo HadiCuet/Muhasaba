@@ -1,0 +1,172 @@
+{
+  "@@locale": "hi",
+
+  "appTitle": "Muhasaba",
+
+  "tabToday": "आज",
+  "tabStats": "आँकड़े",
+  "tabHistory": "इतिहास",
+  "tabSettings": "सेटिंग्स",
+  "newAmal": "नया अमल",
+
+  "editAmal": "अमल संपादित करें",
+  "newAmalTitle": "नया अमल",
+  "save": "सहेजें",
+  "cancel": "रद्द करें",
+  "clear": "साफ़ करें",
+
+  "titleLabel": "शीर्षक",
+  "titleRequired": "शीर्षक आवश्यक है",
+  "titleTooLong": "शीर्षक बहुत लंबा है",
+
+  "frequencyLabel": "आवृत्ति",
+  "frequencyDaily": "रोज़ाना",
+  "frequencyWeekly": "साप्ताहिक",
+  "frequencyMonthly": "मासिक",
+
+  "categoryLabel": "श्रेणी",
+  "categoryOther": "अन्य",
+  "categorySalah": "नमाज़",
+  "categoryDhikr": "ज़िक्र",
+  "categoryQuran": "कुरआन",
+  "categoryCharity": "सदक़ा",
+
+  "timesPerPeriod": "प्रति अवधि बार",
+  "custom": "कस्टम",
+  "customTargetHint": "जैसे 50",
+
+  "dayOfWeek": "सप्ताह का दिन",
+  "anyDay": "कोई भी",
+  "anyDayHint": "कोई भी दिन (आज दिखेगा, अगले दिन छुप जाएगा)",
+  "onlyDayHint": "केवल {day}",
+
+  "dateOfMonth": "महीने की तारीख़",
+  "anyDate": "कोई भी",
+  "anyDateHint": "कोई भी तारीख़ (आज दिखेगी, अगले दिन छुप जाएगी)",
+  "onlyDateHint": "केवल {date} को",
+
+  "startPreChecked": "पहले से चेक किया हुआ शुरू करें",
+  "startPreCheckedSubtitle": "जब नई अवधि शुरू होती है, तो यह अमल डिफ़ॉल्ट रूप से पूर्ण चिह्नित रहता है जब तक आप इसे अनचेक नहीं करते।",
+
+  "reminder": "रिमाइंडर",
+  "reminderNone": "कोई नहीं",
+  "reminderTime": "रिमाइंडर: {time}",
+  "reminderPermissionWarning": "रिमाइंडर सहेजा गया, लेकिन नोटिफ़िकेशन की अनुमति नहीं है। अलर्ट पाने के लिए सिस्टम सेटिंग्स में सक्षम करें।",
+
+  "groupByCategory": "श्रेणी के अनुसार",
+  "flatList": "सपाट सूची",
+  "errorGeneric": "त्रुटि: {error}",
+  "todayEmptyHint": "अपना पहला अमल जोड़ने के लिए + दबाएँ।",
+
+  "noteLabel": "नोट",
+  "noteHint": "जैसे मस्जिद में नमाज़ पढ़ी",
+  "completed": "पूर्ण",
+  "notCompleted": "अपूर्ण",
+  "progressOf": "{target} में से {progress} पूर्ण",
+
+  "removeFromToday": "आज से हटाएँ",
+  "removeFromTodaySubtitle": "केवल आज के लिए छुपाएँ। कल वापस आ जाएगा।",
+  "removeFromTracking": "ट्रैकिंग से हटाएँ",
+  "removeFromTrackingSubtitle": "अपनी सूची से स्थायी रूप से हटाएँ। इतिहास सुरक्षित रहेगा।",
+
+  "chooseIcon": "आइकन चुनें",
+  "iconNone": "कोई नहीं",
+  "recentlyUsed": "हाल ही में उपयोग किए गए",
+  "emojiSectionGeneral": "सामान्य",
+
+  "categoryNameHint": "नाम",
+  "categoryNew": "+ नई",
+
+  "addAmal": "अमल जोड़ें",
+  "customAmal": "कस्टम अमल",
+
+  "templateTasbih": "तस्बीह 33x",
+  "templateIstighfar": "इस्तिग़फ़ार 100x",
+  "templateSurahKahf": "सूरह कहफ़",
+  "templateSadaqah": "सदक़ा",
+  "templateTahajjud": "तहज्जुद",
+  "templateDuhaPrayer": "चाश्त की नमाज़",
+
+  "settingsTitle": "सेटिंग्स",
+  "settingsLoadError": "सेटिंग्स लोड करने में विफल:\n{error}",
+
+  "sectionDayBoundary": "दिन की सीमा",
+  "rolloverHour": "रोलओवर का समय",
+  "rolloverAtMidnight": "आज आधी रात को समाप्त होता है।",
+  "rolloverSubtitle": "कल के अमल {time} तक संपादन योग्य रहेंगे।",
+  "pickRolloverHour": "दिन बदलने का समय चुनें",
+
+  "sectionWeekMonth": "सप्ताह और महीना",
+  "startOfWeek": "सप्ताह की शुरुआत",
+  "startOfMonth": "महीने की शुरुआत",
+  "startOfMonthClamped": "28 से ज़्यादा की तारीख़ छोटे महीनों के अंतिम दिन पर सेट हो जाती है।",
+
+  "sectionAppearance": "रंगरूप",
+  "theme": "थीम",
+  "themeSystem": "सिस्टम",
+  "themeLight": "लाइट",
+  "themeDark": "डार्क",
+
+  "sectionLanguage": "भाषा",
+  "language": "भाषा",
+  "systemDefault": "सिस्टम डिफ़ॉल्ट",
+
+  "aboutTitle": "Muhasaba",
+  "aboutSubtitle": "एक निजी दीन की जवाबदेही डायरी। सारा डेटा इस डिवाइस पर ही रहता है।",
+
+  "statsTitle": "आँकड़े",
+  "statsLoadError": "आँकड़े लोड करने में विफल:\n{error}",
+  "perAmal": "प्रति अमल",
+  "thisWeek": "इस सप्ताह",
+  "thisMonth": "इस महीने",
+  "totalCompletions": "कुल पूर्णताएँ",
+  "streakCurrent": "वर्तमान",
+  "streakLongest": "सबसे लंबी",
+  "ratioWeek": "सप्ताह",
+  "ratioMonth": "महीना",
+
+  "streakDays": "{count, plural, =1{दिन} other{दिन}}",
+  "streakWeeks": "{count, plural, =1{सप्ताह} other{सप्ताह}}",
+  "streakMonths": "{count, plural, =1{महीना} other{महीने}}",
+
+  "frequencyBadgeDaily": "रोज़ाना",
+  "frequencyBadgeWeekly": "साप्ताहिक",
+  "frequencyBadgeMonthly": "मासिक",
+
+  "statsEmpty": "अभी कोई अमल नहीं है। ट्रैकिंग शुरू करने के लिए आज में एक जोड़ें।",
+
+  "historyTitle": "इतिहास",
+  "jumpToDate": "तारीख़ पर जाएँ",
+  "historyEmptyDay": "{date} को कोई अमल ट्रैक नहीं किया गया",
+
+  "streakUnitD": "दि",
+  "streakUnitW": "स",
+  "streakUnitM": "म",
+
+  "mondayShort": "सोम",
+  "tuesdayShort": "मंगल",
+  "wednesdayShort": "बुध",
+  "thursdayShort": "गुरु",
+  "fridayShort": "शुक्र",
+  "saturdayShort": "शनि",
+  "sundayShort": "रवि",
+
+  "mondayFull": "सोमवार",
+  "tuesdayFull": "मंगलवार",
+  "wednesdayFull": "बुधवार",
+  "thursdayFull": "गुरुवार",
+  "fridayFull": "शुक्रवार",
+  "saturdayFull": "शनिवार",
+  "sundayFull": "रविवार",
+
+  "hadith0": "\"अल्लाह को सबसे प्रिय अमल वे हैं जो लगातार किए जाएँ, भले ही छोटे हों।\"\n— बुख़ारी व मुस्लिम",
+  "hadith1": "\"उतने ही नेक अमल करो जितने तुमसे हो सकें, क्योंकि सबसे अच्छे अमल वे हैं जो लगातार किए जाएँ, भले ही थोड़े हों।\"\n— इब्ने माजह",
+  "hadith2": "\"जब आदम की संतान मरती है तो उसके अमल रुक जाते हैं सिवाय तीन के: सदक़ा-ए-जारिया, फ़ायदेमंद इल्म, या नेक संतान जो उसके लिए दुआ करे।\"\n— मुस्लिम",
+  "hadith3": "\"जो व्यक्ति दो ठंडी नमाज़ें (फ़ज्र और अस्र) पढ़ेगा, वह जन्नत में दाख़िल होगा।\"\n— बुख़ारी",
+  "hadith4": "\"अल्लाह तुम्हारी शक्ल और दौलत नहीं देखता, बल्कि वह तुम्हारे दिलों और अमलों को देखता है।\"\n— मुस्लिम",
+  "hadith5": "\"लोगों में सबसे अच्छे वे हैं जो लोगों के लिए सबसे ज़्यादा फ़ायदेमंद हों।\"\n— दारक़ुतनी",
+  "hadith6": "\"आसानी पैदा करो और मुश्किल न बनाओ; ख़ुशख़बरी दो और लोगों को दूर मत भगाओ।\"\n— बुख़ारी",
+  "hadith7": "\"जो इल्म की तलाश में रास्ता चलता है, अल्लाह उसके लिए जन्नत का रास्ता आसान कर देता है।\"\n— मुस्लिम",
+  "hadith8": "\"सदक़ा माल को कम नहीं करता।\"\n— मुस्लिम",
+  "hadith9": "\"ताक़तवर मोमिन कमज़ोर मोमिन से अल्लाह को ज़्यादा प्रिय और बेहतर है, जबकि दोनों में ख़ैर है।\"\n— मुस्लिम"
+}

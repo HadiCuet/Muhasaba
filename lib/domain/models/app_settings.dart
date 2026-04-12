@@ -68,6 +68,12 @@ class AppSettings {
           other.locale == locale;
 
   @override
-  int get hashCode =>
-      Object.hash(startOfWeek, startOfMonth, rolloverHour, themeMode, todayViewMode, locale);
+  int get hashCode => Object.hash(
+    startOfWeek,
+    startOfMonth,
+    rolloverHour,
+    themeMode,
+    todayViewMode,
+    locale,
+  );
 }

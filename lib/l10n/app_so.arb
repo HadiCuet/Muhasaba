@@ -1,0 +1,172 @@
+{
+  "@@locale": "so",
+
+  "appTitle": "Muhasaba",
+
+  "tabToday": "Maanta",
+  "tabStats": "Tirakoob",
+  "tabHistory": "Taariikhda",
+  "tabSettings": "Dejinta",
+  "newAmal": "Camal cusub",
+
+  "editAmal": "Wax ka beddel camasha",
+  "newAmalTitle": "Camal cusub",
+  "save": "Kaydi",
+  "cancel": "Ka noqo",
+  "clear": "Nadiifi",
+
+  "titleLabel": "Cinwaan",
+  "titleRequired": "Cinwaanka waa lagama maari karo",
+  "titleTooLong": "Cinwaanka aad buu u dheer yahay",
+
+  "frequencyLabel": "Inta jeer",
+  "frequencyDaily": "Maalin walba",
+  "frequencyWeekly": "Toddobaad walba",
+  "frequencyMonthly": "Bil walba",
+
+  "categoryLabel": "Qaybta",
+  "categoryOther": "Kuwo kale",
+  "categorySalah": "Salaadda",
+  "categoryDhikr": "Xasuus",
+  "categoryQuran": "Quraanka",
+  "categoryCharity": "Sadaqo",
+
+  "timesPerPeriod": "Tirada muddo walba",
+  "custom": "Gaar ah",
+  "customTargetHint": "tus. 50",
+
+  "dayOfWeek": "Maalinta toddobaadka",
+  "anyDay": "Maalin kasta",
+  "anyDayHint": "Maalin kasta (waa la arkaa maanta, berri way qarinaysaa)",
+  "onlyDayHint": "Kaliya {day}",
+
+  "dateOfMonth": "Taariikhda bisha",
+  "anyDate": "Taariikh kasta",
+  "anyDateHint": "Taariikh kasta (waa la arkaa maanta, berri way qarinaysaa)",
+  "onlyDateHint": "Kaliya {date}",
+
+  "startPreChecked": "Ku bilow iyada oo calaamaysan",
+  "startPreCheckedSubtitle": "Marka muddo cusub bilaabato, camalkan wuxuu noqdaa mid dhammaystiran ilaa aad ka saarto calaamadda.",
+
+  "reminder": "Xusuusin",
+  "reminderNone": "Midna",
+  "reminderTime": "Xusuusin: {time}",
+  "reminderPermissionWarning": "Xusuusinta waa la kaydiyay, laakiin ogeysiisyada lama ogola. Ka fur dejinta nidaamka si aad u hesho digniinadda.",
+
+  "groupByCategory": "U koobi qaybaha",
+  "flatList": "Liis fudud",
+  "errorGeneric": "Khalad: {error}",
+  "todayEmptyHint": "Riix + si aad u ku darto camalkaaga ugu horreeya.",
+
+  "noteLabel": "Qoraal",
+  "noteHint": "tus. Masjidka ayaan ku tukaday",
+  "completed": "la dhammeeyay",
+  "notCompleted": "lama dhammeeyo",
+  "progressOf": "{progress} ka mid ah {target} oo la dhammeeyay",
+
+  "removeFromToday": "Ka saar maanta",
+  "removeFromTodaySubtitle": "Qari maanta kaliya. Berri way soo noqonaysaa.",
+  "removeFromTracking": "Ka saar raadraaca",
+  "removeFromTrackingSubtitle": "Si joogto ah uga saar liiskaaga. Taariikhda waa la haynayaa.",
+
+  "chooseIcon": "Dooro astaanta",
+  "iconNone": "Midna",
+  "recentlyUsed": "Dhawaan la isticmaalay",
+  "emojiSectionGeneral": "Guud",
+
+  "categoryNameHint": "Magaca",
+  "categoryNew": "+ Cusub",
+
+  "addAmal": "Ku dar camal",
+  "customAmal": "Camal gaarka ah",
+
+  "templateTasbih": "Tasbiix 33x",
+  "templateIstighfar": "Istigfaar 100x",
+  "templateSurahKahf": "Suuradda Al-Kahf",
+  "templateSadaqah": "Sadaqo",
+  "templateTahajjud": "Tahajjud",
+  "templateDuhaPrayer": "Salaadda Duxa",
+
+  "settingsTitle": "Dejinta",
+  "settingsLoadError": "Waa la guul darreystay soo dejinta dejinta:\n{error}",
+
+  "sectionDayBoundary": "Xadka maalinta",
+  "rolloverHour": "Saacadda wareegga",
+  "rolloverAtMidnight": "Maanta waxay dhammaataa habeenbadhka.",
+  "rolloverSubtitle": "Camalka shalay wuxuu wax laga beddeli karaa ilaa {time}.",
+  "pickRolloverHour": "Dooro saacadda maalinta wareegto",
+
+  "sectionWeekMonth": "Toddobaadka & bisha",
+  "startOfWeek": "Bilowga toddobaadka",
+  "startOfMonth": "Bilowga bisha",
+  "startOfMonthClamped": "Maalaha ka dambeeya 28-ka waxaa lagu xaddidaa maalinta ugu dambeysa ee bilaha gaagaaban.",
+
+  "sectionAppearance": "Muuqaalka",
+  "theme": "Muuqaalka",
+  "themeSystem": "Nidaamka",
+  "themeLight": "Iftiinka",
+  "themeDark": "Mugdiga",
+
+  "sectionLanguage": "Luuqadda",
+  "language": "Luuqadda",
+  "systemDefault": "Caadiga nidaamka",
+
+  "aboutTitle": "Muhasaba",
+  "aboutSubtitle": "Buug-gacmeedka xisaabtanka diinta ee gaarka ah. Dhammaan xogta waxay ku hadhaysaa qalabkan.",
+
+  "statsTitle": "Tirakoob",
+  "statsLoadError": "Waa la guul darreystay soo dejinta tirakoobka:\n{error}",
+  "perAmal": "Camal walba",
+  "thisWeek": "Toddobaadkan",
+  "thisMonth": "Bishan",
+  "totalCompletions": "wadarta la dhammeeyay",
+  "streakCurrent": "Hadda",
+  "streakLongest": "Ugu dheeraa",
+  "ratioWeek": "Toddobaad",
+  "ratioMonth": "Bil",
+
+  "streakDays": "{count, plural, =1{maalin} other{maalmood}}",
+  "streakWeeks": "{count, plural, =1{toddobaad} other{toddobaad}}",
+  "streakMonths": "{count, plural, =1{bil} other{bilood}}",
+
+  "frequencyBadgeDaily": "maalinlaha",
+  "frequencyBadgeWeekly": "toddobaadlaha",
+  "frequencyBadgeMonthly": "bishiiba",
+
+  "statsEmpty": "Wali camal ma jiro. Ku dar mid Maanta si aad u bilowdo raadraaca.",
+
+  "historyTitle": "Taariikhda",
+  "jumpToDate": "U bood taariikhda",
+  "historyEmptyDay": "Camal lama raadraacin {date}",
+
+  "streakUnitD": "m",
+  "streakUnitW": "t",
+  "streakUnitM": "b",
+
+  "mondayShort": "Isn",
+  "tuesdayShort": "Tal",
+  "wednesdayShort": "Arb",
+  "thursdayShort": "Kha",
+  "fridayShort": "Jim",
+  "saturdayShort": "Sab",
+  "sundayShort": "Axd",
+
+  "mondayFull": "Isniin",
+  "tuesdayFull": "Talaado",
+  "wednesdayFull": "Arbaco",
+  "thursdayFull": "Khamiis",
+  "fridayFull": "Jimce",
+  "saturdayFull": "Sabti",
+  "sundayFull": "Axad",
+
+  "hadith0": "\"Camalada Alle ugu jecel waa kuwa si joogto ah loo sameeyo, xitaa hadday yar yihiin.\"\n— Bukhaari & Muslim",
+  "hadith1": "\"Ku qaata camalo wanaagsan intaad awoodo, waayo camalada ugu wanaagsan waa kuwa si joogto ah loo sameeyo xitaa hadday yar yihiin.\"\n— Ibn Maajah",
+  "hadith2": "\"Marka uu dhinto wiilka Aadam, camalladiisu way joogsataa marka laga reebo saddex: sadaqo socota, cilmi anfaca, ama ilmo fiican oo u duceeya.\"\n— Muslim",
+  "hadith3": "\"Qofkii tukada labada salaadood ee qabow (Fajriga iyo Casriga) wuxuu gali doonaa Jannada.\"\n— Bukhaari",
+  "hadith4": "\"Allaahu ma eego muuqaalkaaga ama hantidaada, laakiin wuxuu eegaa qalbiyadaada iyo camalladaada.\"\n— Muslim",
+  "hadith5": "\"Dadka ugu fiican waa kuwa ugu anfaca dadka.\"\n— Daaraqudni",
+  "hadith6": "\"Fududeeya hana adkeeynina; u bishaareya hana ka cabsiiynina dadka.\"\n— Bukhaari",
+  "hadith7": "\"Qofkii jid u mara raadinta cilmiga, Allaahu wuxuu uga fududeeyaa jidka Jannada.\"\n— Muslim",
+  "hadith8": "\"Sadaqadu hantida ma yareeyo.\"\n— Muslim",
+  "hadith9": "\"Mu'minka xoogga badan waa ka fiican yahay oo Alle ka jecel yahay mu'minka daciifka ah, laakiin labadaba wanaag way ku jirtaa.\"\n— Muslim"
+}

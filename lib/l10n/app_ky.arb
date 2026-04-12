@@ -1,0 +1,172 @@
+{
+  "@@locale": "ky",
+
+  "appTitle": "Muhasaba",
+
+  "tabToday": "Бүгүн",
+  "tabStats": "Статистика",
+  "tabHistory": "Тарых",
+  "tabSettings": "Жөндөөлөр",
+  "newAmal": "Жаңы амал",
+
+  "editAmal": "Амалды өзгөртүү",
+  "newAmalTitle": "Жаңы амал",
+  "save": "Сактоо",
+  "cancel": "Жокко чыгаруу",
+  "clear": "Тазалоо",
+
+  "titleLabel": "Аталышы",
+  "titleRequired": "Аталышы милдеттүү",
+  "titleTooLong": "Аталышы өтө узун",
+
+  "frequencyLabel": "Жыштык",
+  "frequencyDaily": "Күн сайын",
+  "frequencyWeekly": "Жума сайын",
+  "frequencyMonthly": "Ай сайын",
+
+  "categoryLabel": "Категория",
+  "categoryOther": "Башка",
+  "categorySalah": "Намаз",
+  "categoryDhikr": "Зикир",
+  "categoryQuran": "Куран",
+  "categoryCharity": "Кайрымдуулук",
+
+  "timesPerPeriod": "Мезгил ичинде жолу",
+  "custom": "Башка",
+  "customTargetHint": "мис. 50",
+
+  "dayOfWeek": "Жума күнү",
+  "anyDay": "Каалаган",
+  "anyDayHint": "Каалаган күн (бүгүн көрүнөт, эртең жашырылат)",
+  "onlyDayHint": "Жалгыз {day}",
+
+  "dateOfMonth": "Айдын күнү",
+  "anyDate": "Каалаган",
+  "anyDateHint": "Каалаган күн (бүгүн көрүнөт, эртең жашырылат)",
+  "onlyDateHint": "Жалгыз {date}-күнү",
+
+  "startPreChecked": "Алдын ала белгиленген абалда баштоо",
+  "startPreCheckedSubtitle": "Жаңы мезгил башталганда бул амал демейки боюнча аткарылган деп белгиленет, белгини алып салсаңыз болот.",
+
+  "reminder": "Эскертме",
+  "reminderNone": "Жок",
+  "reminderTime": "Эскертме: {time}",
+  "reminderPermissionWarning": "Эскертме сакталды, бирок билдирмелерге уруксат берилген эмес. Эскертүүлөрдү алуу үчүн тутум жөндөөлөрүндө иштетиңиз.",
+
+  "groupByCategory": "Категория боюнча топтоо",
+  "flatList": "Жөнөкөй тизме",
+  "errorGeneric": "Ката: {error}",
+  "todayEmptyHint": "Биринчи амалыңызды кошуу үчүн + баскычын басыңыз.",
+
+  "noteLabel": "Жазуу",
+  "noteHint": "мис. Мечитте намаз окудум",
+  "completed": "аткарылды",
+  "notCompleted": "аткарылган жок",
+  "progressOf": "{target} ичинен {progress} аткарылды",
+
+  "removeFromToday": "Бүгүндөн алып салуу",
+  "removeFromTodaySubtitle": "Жалгыз бүгүн үчүн жашыруу. Эртең кайтып келет.",
+  "removeFromTracking": "Көзөмөлдөн алып салуу",
+  "removeFromTrackingSubtitle": "Тизмеден биротоло алып салуу. Тарых сакталат.",
+
+  "chooseIcon": "Белги тандоо",
+  "iconNone": "Жок",
+  "recentlyUsed": "Жакында колдонулган",
+  "emojiSectionGeneral": "Жалпы",
+
+  "categoryNameHint": "Аты",
+  "categoryNew": "+ Жаңы",
+
+  "addAmal": "Амал кошуу",
+  "customAmal": "Өзгөчө амал",
+
+  "templateTasbih": "Тасбих 33x",
+  "templateIstighfar": "Истигфар 100x",
+  "templateSurahKahf": "Кахф сүрөсү",
+  "templateSadaqah": "Садака",
+  "templateTahajjud": "Тахажжуд",
+  "templateDuhaPrayer": "Духа намазы",
+
+  "settingsTitle": "Жөндөөлөр",
+  "settingsLoadError": "Жөндөөлөрдү жүктөөдө ката:\n{error}",
+
+  "sectionDayBoundary": "Күн чеги",
+  "rolloverHour": "Которулуу сааты",
+  "rolloverAtMidnight": "Бүгүн түн ортосунда аяктайт.",
+  "rolloverSubtitle": "Кечээки амалдар {time} чейин өзгөртүлө алат.",
+  "pickRolloverHour": "Күн которулуучу саатты тандаңыз",
+
+  "sectionWeekMonth": "Жума жана ай",
+  "startOfWeek": "Жума башы",
+  "startOfMonth": "Ай башы",
+  "startOfMonthClamped": "28-күндөн кийинки күндөр кыска айларда акыркы күнгө ылайыкталат.",
+
+  "sectionAppearance": "Сырткы көрүнүш",
+  "theme": "Тема",
+  "themeSystem": "Тутум",
+  "themeLight": "Жарык",
+  "themeDark": "Караңгы",
+
+  "sectionLanguage": "Тил",
+  "language": "Тил",
+  "systemDefault": "Тутум тили",
+
+  "aboutTitle": "Muhasaba",
+  "aboutSubtitle": "Жеке диний эсеп журналы. Бардык маалыматтар бул түзмөктө сакталат.",
+
+  "statsTitle": "Статистика",
+  "statsLoadError": "Статистиканы жүктөөдө ката:\n{error}",
+  "perAmal": "Ар бир амал",
+  "thisWeek": "Бул жума",
+  "thisMonth": "Бул ай",
+  "totalCompletions": "жалпы аткарылгандар",
+  "streakCurrent": "Учурдагы",
+  "streakLongest": "Эң узун",
+  "ratioWeek": "Жума",
+  "ratioMonth": "Ай",
+
+  "streakDays": "{count, plural, =1{күн} other{күн}}",
+  "streakWeeks": "{count, plural, =1{жума} other{жума}}",
+  "streakMonths": "{count, plural, =1{ай} other{ай}}",
+
+  "frequencyBadgeDaily": "күн сайын",
+  "frequencyBadgeWeekly": "жума сайын",
+  "frequencyBadgeMonthly": "ай сайын",
+
+  "statsEmpty": "Азырынча амал жок. Көзөмөлдөөнү баштоо үчүн Бүгүн бетинде амал кошуңуз.",
+
+  "historyTitle": "Тарых",
+  "jumpToDate": "Күнгө өтүү",
+  "historyEmptyDay": "{date} күнү эч кандай амал көзөмөлдөнгөн эмес",
+
+  "streakUnitD": "к",
+  "streakUnitW": "ж",
+  "streakUnitM": "а",
+
+  "mondayShort": "Дүй",
+  "tuesdayShort": "Шей",
+  "wednesdayShort": "Шар",
+  "thursdayShort": "Бей",
+  "fridayShort": "Жум",
+  "saturdayShort": "Ише",
+  "sundayShort": "Жек",
+
+  "mondayFull": "Дүйшөмбү",
+  "tuesdayFull": "Шейшемби",
+  "wednesdayFull": "Шаршемби",
+  "thursdayFull": "Бейшемби",
+  "fridayFull": "Жума",
+  "saturdayFull": "Ишемби",
+  "sundayFull": "Жекшемби",
+
+  "hadith0": "\"Аллах үчүн эң сүйүктүү амалдар дайыма жасалуучу амалдар, аз болсо да.\"\n— Бухари жана Муслим",
+  "hadith1": "\"Жакшы амалдарды колуңуздан келгенче жасаңыз, анткени эң жакшы амалдар дайыма жасалгандар, аз болсо да.\"\n— Ибн Мажа",
+  "hadith2": "\"Адам баласы каза болгондо, амалдары токтойт, үчөөнү кошпогондо: үзгүлтүксүз садака, пайдалуу илим же ага дуба кылуучу ак ниет перзент.\"\n— Муслим",
+  "hadith3": "\"Ким эки салкын намазды (Багымдат жана Аср) окуса, бейишке кирет.\"\n— Бухари",
+  "hadith4": "\"Аллах силердин сырткы көрүнүшүңөргө жана байлыгыңарга карабайт, бирок жүрөктөрүңөргө жана амалдарыңарга карайт.\"\n— Муслим",
+  "hadith5": "\"Адамдардын эң жакшысы — адамдарга эң көп пайда алып келүүчү адам.\"\n— Даракутни",
+  "hadith6": "\"Иштерди жеңилдетиңиз, кыйындатпаңыз; кубанычтуу кабар бериңиз, адамдарды коркутпаңыз.\"\n— Бухари",
+  "hadith7": "\"Ким илим издеп жолго чыкса, Аллах ага бейишке жолду жеңилдетет.\"\n— Муслим",
+  "hadith8": "\"Садака малды азайтпайт.\"\n— Муслим",
+  "hadith9": "\"Күчтүү момун Аллах үчүн алсыз момундан жакшыраак жана сүйүктүүрөөк, бирок экөөндө тең жакшылык бар.\"\n— Муслим"
+}

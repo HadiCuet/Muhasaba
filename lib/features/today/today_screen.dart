@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
@@ -6,6 +7,7 @@ import 'package:intl/intl.dart';
 import '../../app/providers.dart';
 import '../../data/db/database.dart';
 import '../../domain/services/today_builder.dart';
+import '../../domain/utils/localized_category.dart';
 import 'widgets/amal_row.dart';
 import 'widgets/remove_sheet.dart';
 
@@ -21,11 +23,12 @@ class TodayScreen extends ConsumerWidget {
     final settingsAsync = ref.watch(settingsProvider);
     final viewMode = settingsAsync.value?.todayViewMode ?? 'grouped';
 
+    final l = AppLocalizations.of(context);
+    final locale = Localizations.localeOf(context).toString();
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(
-          DateFormat('EEEE, MMM d').format(date.toLocal()),
-        ),
+        title: Text(DateFormat('EEEE, MMM d', locale).format(date.toLocal())),
         actions: [
           IconButton(
             icon: Icon(
@@ -33,8 +36,7 @@ class TodayScreen extends ConsumerWidget {
                   ? Icons.view_list_rounded
                   : Icons.workspaces_outlined,
             ),
-            tooltip:
-                viewMode == 'flat' ? 'Group by category' : 'Flat list',
+            tooltip: viewMode == 'flat' ? l.groupByCategory : l.flatList,
             onPressed: () {
               final next = viewMode == 'flat' ? 'grouped' : 'flat';
               ref.read(settingsRepositoryProvider).setTodayViewMode(next);
@@ -44,23 +46,15 @@ class TodayScreen extends ConsumerWidget {
       ),
       body: rowsAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => Center(child: Text('Error: $e')),
+        error: (e, _) => Center(child: Text(l.errorGeneric(e.toString()))),
         data: (rows) {
           if (rows.isEmpty) {
             return const _EmptyState();
           }
           if (viewMode == 'grouped') {
-            return _GroupedView(
-              rows: rows,
-              date: date,
-              streaks: streaks,
-            );
+            return _GroupedView(rows: rows, date: date, streaks: streaks);
           }
-          return _FlatView(
-            rows: rows,
-            date: date,
-            streaks: streaks,
-          );
+          return _FlatView(rows: rows, date: date, streaks: streaks);
         },
       ),
     );
@@ -112,8 +106,7 @@ class _FlatView extends ConsumerWidget {
     return AmalRowTile(
       row: row,
       streak: streaks[row.amal.id],
-      onProgressChanged: (progress) =>
-          _setProgress(ref, row, date, progress),
+      onProgressChanged: (progress) => _setProgress(ref, row, date, progress),
       onRemove: () => _openRemoveSheet(context, ref, row, date),
       onEdit: () => context.push('/amal/${row.amal.id}'),
       onNoteChanged: (note) => _setNote(ref, row, date, note),
@@ -179,11 +172,9 @@ class _GroupedView extends ConsumerWidget {
                 streak: streaks[row.amal.id],
                 onProgressChanged: (progress) =>
                     _setProgress(ref, row, date, progress),
-                onRemove: () =>
-                    _openRemoveSheet(context, ref, row, date),
+                onRemove: () => _openRemoveSheet(context, ref, row, date),
                 onEdit: () => context.push('/amal/${row.amal.id}'),
-                onNoteChanged: (note) =>
-                    _setNote(ref, row, date, note),
+                onNoteChanged: (note) => _setNote(ref, row, date, note),
               ),
             );
           }
@@ -207,7 +198,11 @@ class _GroupHeader extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final name = group.categoryName ?? 'Other';
+    final l = AppLocalizations.of(context);
+    final rawName = group.categoryName;
+    final name = rawName != null
+        ? localizedCategoryName(rawName, l)
+        : l.categoryOther;
     return Padding(
       padding: const EdgeInsets.fromLTRB(4, 12, 4, 6),
       child: Row(
@@ -242,11 +237,9 @@ Future<void> _setNote(
   DateTime date,
   String? note,
 ) async {
-  await ref.read(completionRepositoryProvider).setNote(
-        amalId: row.amal.id,
-        muhasabaDate: date,
-        note: note,
-      );
+  await ref
+      .read(completionRepositoryProvider)
+      .setNote(amalId: row.amal.id, muhasabaDate: date, note: note);
   ref.invalidate(todayRowsProvider(date));
 }
 
@@ -256,7 +249,9 @@ Future<void> _setProgress(
   DateTime date,
   int progress,
 ) async {
-  await ref.read(completionRepositoryProvider).setProgress(
+  await ref
+      .read(completionRepositoryProvider)
+      .setProgress(
         amalId: row.amal.id,
         muhasabaDate: date,
         progress: progress,
@@ -280,9 +275,7 @@ Future<void> _openRemoveSheet(
           .read(completionRepositoryProvider)
           .removeFromDay(row.amal.id, date);
     case RemoveChoice.tracking:
-      await ref
-          .read(amalRepositoryProvider)
-          .removeFromTracking(row.amal.id);
+      await ref.read(amalRepositoryProvider).removeFromTracking(row.amal.id);
       await ref.read(reminderSchedulerProvider).cancel(row.amal.id);
     case RemoveChoice.cancel:
       return;
@@ -296,17 +289,17 @@ Future<void> _openRemoveSheet(
 // Inspirational empty state with rotating hadith
 // ---------------------------------------------------------------------------
 
-const _hadiths = [
-  '"The most beloved deeds to Allah are those done consistently, even if small."\n— Bukhari & Muslim',
-  '"Take up good deeds only as much as you are able, for the best deeds are those done consistently even if they are few."\n— Ibn Majah',
-  '"When the son of Adam dies, his deeds come to an end except three: ongoing charity, beneficial knowledge, or a righteous child who prays for him."\n— Muslim',
-  '"Whoever prays the two cool prayers (Fajr and Asr) will enter Paradise."\n— Bukhari',
-  '"Allah does not look at your appearance or your wealth, but He looks at your hearts and your deeds."\n— Muslim',
-  '"The best of people are those who are most beneficial to people."\n— Daraqutni',
-  '"Make things easy and do not make them difficult; give glad tidings and do not scare people away."\n— Bukhari',
-  '"He who treads a path in search of knowledge, Allah will make easy for him the path to Paradise."\n— Muslim',
-  '"Charity does not decrease wealth."\n— Muslim',
-  '"The strong believer is better and more beloved to Allah than the weak believer, while there is good in both."\n— Muslim',
+List<String> _hadiths(AppLocalizations l) => [
+  l.hadith0,
+  l.hadith1,
+  l.hadith2,
+  l.hadith3,
+  l.hadith4,
+  l.hadith5,
+  l.hadith6,
+  l.hadith7,
+  l.hadith8,
+  l.hadith9,
 ];
 
 class _EmptyState extends StatelessWidget {
@@ -315,9 +308,12 @@ class _EmptyState extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final dayOfYear =
-        DateTime.now().difference(DateTime(DateTime.now().year)).inDays;
-    final hadith = _hadiths[dayOfYear % _hadiths.length];
+    final l = AppLocalizations.of(context);
+    final dayOfYear = DateTime.now()
+        .difference(DateTime(DateTime.now().year))
+        .inDays;
+    final quotes = _hadiths(l);
+    final hadith = quotes[dayOfYear % quotes.length];
 
     return Center(
       child: Padding(
@@ -342,7 +338,7 @@ class _EmptyState extends StatelessWidget {
             ),
             const SizedBox(height: 24),
             Text(
-              'Tap + to add your first amal.',
+              l.todayEmptyHint,
               textAlign: TextAlign.center,
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: theme.colorScheme.outline,

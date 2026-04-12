@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 import 'package:intl/intl.dart';
@@ -27,12 +28,13 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
     final selected = _selected ?? today;
     final rowsAsync = ref.watch(todayRowsProvider(selected));
 
+    final l = AppLocalizations.of(context);
     return Scaffold(
       appBar: AppBar(
-        title: const Text('History'),
+        title: Text(l.historyTitle),
         actions: [
           IconButton(
-            tooltip: 'Jump to date',
+            tooltip: l.jumpToDate,
             icon: const Icon(Icons.event),
             onPressed: () => _jumpToDate(context, today, selected),
           ),
@@ -49,7 +51,8 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
           Expanded(
             child: rowsAsync.when(
               loading: () => const Center(child: CircularProgressIndicator()),
-              error: (e, _) => Center(child: Text('Error: $e')),
+              error: (e, _) =>
+                  Center(child: Text(l.errorGeneric(e.toString()))),
               data: (rows) {
                 if (rows.isEmpty) {
                   return _EmptyDay(date: selected);
@@ -68,8 +71,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                         onRemove: () =>
                             _openRemoveSheet(context, row, selected),
                         onEdit: () => context.push('/amal/${row.amal.id}'),
-                        onNoteChanged: (note) =>
-                            _setNote(row, selected, note),
+                        onNoteChanged: (note) => _setNote(row, selected, note),
                       ),
                     );
                   },
@@ -101,25 +103,17 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
     }
   }
 
-  Future<void> _setNote(
-    TodayRow row,
-    DateTime date,
-    String? note,
-  ) async {
-    await ref.read(completionRepositoryProvider).setNote(
-          amalId: row.amal.id,
-          muhasabaDate: date,
-          note: note,
-        );
+  Future<void> _setNote(TodayRow row, DateTime date, String? note) async {
+    await ref
+        .read(completionRepositoryProvider)
+        .setNote(amalId: row.amal.id, muhasabaDate: date, note: note);
     ref.invalidate(todayRowsProvider(date));
   }
 
-  Future<void> _setProgress(
-    TodayRow row,
-    DateTime date,
-    int progress,
-  ) async {
-    await ref.read(completionRepositoryProvider).setProgress(
+  Future<void> _setProgress(TodayRow row, DateTime date, int progress) async {
+    await ref
+        .read(completionRepositoryProvider)
+        .setProgress(
           amalId: row.amal.id,
           muhasabaDate: date,
           progress: progress,
@@ -237,7 +231,10 @@ class _DateChip extends StatelessWidget {
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Text(
-                DateFormat('EEE').format(date.toLocal()).toUpperCase(),
+                DateFormat(
+                  'EEE',
+                  Localizations.localeOf(context).toString(),
+                ).format(date.toLocal()).toUpperCase(),
                 style: theme.textTheme.labelSmall?.copyWith(
                   color: fg.withValues(alpha: 0.75),
                   letterSpacing: 0.6,
@@ -245,7 +242,10 @@ class _DateChip extends StatelessWidget {
               ),
               const SizedBox(height: 2),
               Text(
-                DateFormat('d').format(date.toLocal()),
+                DateFormat(
+                  'd',
+                  Localizations.localeOf(context).toString(),
+                ).format(date.toLocal()),
                 style: theme.textTheme.titleMedium?.copyWith(
                   color: fg,
                   fontWeight: FontWeight.w600,
@@ -253,7 +253,10 @@ class _DateChip extends StatelessWidget {
               ),
               const SizedBox(height: 2),
               Text(
-                DateFormat('MMM').format(date.toLocal()),
+                DateFormat(
+                  'MMM',
+                  Localizations.localeOf(context).toString(),
+                ).format(date.toLocal()),
                 style: theme.textTheme.labelSmall?.copyWith(
                   color: fg.withValues(alpha: 0.75),
                 ),
@@ -274,6 +277,8 @@ class _EmptyDay extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l = AppLocalizations.of(context);
+    final locale = Localizations.localeOf(context).toString();
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(32),
@@ -287,7 +292,9 @@ class _EmptyDay extends StatelessWidget {
             ),
             const SizedBox(height: 12),
             Text(
-              'No amal tracked on ${DateFormat('EEEE, MMM d').format(date.toLocal())}',
+              l.historyEmptyDay(
+                DateFormat('EEEE, MMM d', locale).format(date.toLocal()),
+              ),
               textAlign: TextAlign.center,
               style: theme.textTheme.bodyMedium,
             ),

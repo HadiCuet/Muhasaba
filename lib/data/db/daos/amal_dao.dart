@@ -53,16 +53,14 @@ class AmalDao extends DatabaseAccessor<AppDatabase> with _$AmalDaoMixin {
 
   /// Returns distinct icons used by active amal, most-recently-created first.
   Future<List<String>> getRecentIcons() async {
-    final rows = await (selectOnly(amals, distinct: true)
-          ..addColumns([amals.icon])
-          ..where(amals.icon.isNotNull() & amals.archivedAt.isNull())
-          ..orderBy([OrderingTerm.desc(amals.id)])
-          ..limit(20))
-        .get();
-    return rows
-        .map((r) => r.read(amals.icon))
-        .whereType<String>()
-        .toList();
+    final rows =
+        await (selectOnly(amals, distinct: true)
+              ..addColumns([amals.icon])
+              ..where(amals.icon.isNotNull() & amals.archivedAt.isNull())
+              ..orderBy([OrderingTerm.desc(amals.id)])
+              ..limit(20))
+            .get();
+    return rows.map((r) => r.read(amals.icon)).whereType<String>().toList();
   }
 
   /// Batch-update sortOrder for multiple amal at once (drag-to-reorder).

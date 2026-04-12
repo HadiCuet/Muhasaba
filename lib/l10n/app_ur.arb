@@ -1,0 +1,172 @@
+{
+  "@@locale": "ur",
+
+  "appTitle": "Muhasaba",
+
+  "tabToday": "آج",
+  "tabStats": "اعداد و شمار",
+  "tabHistory": "تاریخچہ",
+  "tabSettings": "ترتیبات",
+  "newAmal": "نیا عمل",
+
+  "editAmal": "عمل میں ترمیم",
+  "newAmalTitle": "نیا عمل",
+  "save": "محفوظ کریں",
+  "cancel": "منسوخ",
+  "clear": "صاف کریں",
+
+  "titleLabel": "عنوان",
+  "titleRequired": "عنوان ضروری ہے",
+  "titleTooLong": "عنوان بہت طویل ہے",
+
+  "frequencyLabel": "تکرار",
+  "frequencyDaily": "روزانہ",
+  "frequencyWeekly": "ہفتہ وار",
+  "frequencyMonthly": "ماہانہ",
+
+  "categoryLabel": "زمرہ",
+  "categoryOther": "دیگر",
+  "categorySalah": "نماز",
+  "categoryDhikr": "ذکر",
+  "categoryQuran": "قرآن",
+  "categoryCharity": "صدقہ",
+
+  "timesPerPeriod": "مدت میں مرتبہ",
+  "custom": "اپنی مرضی",
+  "customTargetHint": "مثلاً 50",
+
+  "dayOfWeek": "ہفتے کا دن",
+  "anyDay": "کوئی بھی",
+  "anyDayHint": "کوئی بھی دن (آج نظر آئے گا، اگلے دن چھپ جائے گا)",
+  "onlyDayHint": "صرف {day}",
+
+  "dateOfMonth": "مہینے کی تاریخ",
+  "anyDate": "کوئی بھی",
+  "anyDateHint": "کوئی بھی تاریخ (آج نظر آئے گی، اگلے دن چھپ جائے گی)",
+  "onlyDateHint": "صرف {date} کو",
+
+  "startPreChecked": "پہلے سے نشان زد",
+  "startPreCheckedSubtitle": "جب نئی مدت شروع ہو تو یہ عمل بطور پیش فرض مکمل نشان زد ہوتا ہے جب تک آپ اسے غیر نشان زد نہ کریں۔",
+
+  "reminder": "یاد دہانی",
+  "reminderNone": "کوئی نہیں",
+  "reminderTime": "یاد دہانی: {time}",
+  "reminderPermissionWarning": "یاد دہانی محفوظ ہو گئی، لیکن اطلاعات کی اجازت نہیں ہے۔ الرٹ حاصل کرنے کے لیے سسٹم ترتیبات سے انہیں فعال کریں۔",
+
+  "groupByCategory": "زمرے کے مطابق",
+  "flatList": "سادہ فہرست",
+  "errorGeneric": "خرابی: {error}",
+  "todayEmptyHint": "اپنا پہلا عمل شامل کرنے کے لیے + دبائیں۔",
+
+  "noteLabel": "نوٹ",
+  "noteHint": "مثلاً مسجد میں نماز پڑھی",
+  "completed": "مکمل",
+  "notCompleted": "نامکمل",
+  "progressOf": "{target} میں سے {progress} مکمل",
+
+  "removeFromToday": "آج سے ہٹائیں",
+  "removeFromTodaySubtitle": "صرف آج کے لیے چھپائیں۔ کل واپس آ جائے گا۔",
+  "removeFromTracking": "ٹریکنگ سے ہٹائیں",
+  "removeFromTrackingSubtitle": "اپنی فہرست سے مستقل طور پر ہٹائیں۔ تاریخچہ محفوظ رہے گا۔",
+
+  "chooseIcon": "آئیکن منتخب کریں",
+  "iconNone": "کوئی نہیں",
+  "recentlyUsed": "حال ہی میں استعمال شدہ",
+  "emojiSectionGeneral": "عمومی",
+
+  "categoryNameHint": "نام",
+  "categoryNew": "+ نیا",
+
+  "addAmal": "عمل شامل کریں",
+  "customAmal": "اپنی مرضی کا عمل",
+
+  "templateTasbih": "تسبیح 33 مرتبہ",
+  "templateIstighfar": "استغفار 100 مرتبہ",
+  "templateSurahKahf": "سورۃ الکہف",
+  "templateSadaqah": "صدقہ",
+  "templateTahajjud": "تہجد",
+  "templateDuhaPrayer": "نماز چاشت",
+
+  "settingsTitle": "ترتیبات",
+  "settingsLoadError": "ترتیبات لوڈ کرنے میں ناکامی:\n{error}",
+
+  "sectionDayBoundary": "دن کی حد",
+  "rolloverHour": "دن تبدیل ہونے کا وقت",
+  "rolloverAtMidnight": "آج آدھی رات کو ختم ہوتا ہے۔",
+  "rolloverSubtitle": "گزشتہ کل کے اعمال {time} تک قابل ترمیم رہیں گے۔",
+  "pickRolloverHour": "دن تبدیل ہونے کا وقت منتخب کریں",
+
+  "sectionWeekMonth": "ہفتہ اور مہینہ",
+  "startOfWeek": "ہفتے کا آغاز",
+  "startOfMonth": "مہینے کا آغاز",
+  "startOfMonthClamped": "28 سے زیادہ کی تاریخیں چھوٹے مہینوں کے آخری دن پر محدود ہو جاتی ہیں۔",
+
+  "sectionAppearance": "ظاہری شکل",
+  "theme": "تھیم",
+  "themeSystem": "سسٹم",
+  "themeLight": "روشن",
+  "themeDark": "تاریک",
+
+  "sectionLanguage": "زبان",
+  "language": "زبان",
+  "systemDefault": "سسٹم کی طے شدہ",
+
+  "aboutTitle": "Muhasaba",
+  "aboutSubtitle": "ایک ذاتی دینی احتساب کی ڈائری۔ تمام ڈیٹا اس آلے پر محفوظ رہتا ہے۔",
+
+  "statsTitle": "اعداد و شمار",
+  "statsLoadError": "اعداد و شمار لوڈ کرنے میں ناکامی:\n{error}",
+  "perAmal": "فی عمل",
+  "thisWeek": "اس ہفتے",
+  "thisMonth": "اس مہینے",
+  "totalCompletions": "کل تکمیلات",
+  "streakCurrent": "موجودہ",
+  "streakLongest": "طویل ترین",
+  "ratioWeek": "ہفتہ",
+  "ratioMonth": "مہینہ",
+
+  "streakDays": "{count, plural, =1{دن} other{دن}}",
+  "streakWeeks": "{count, plural, =1{ہفتہ} other{ہفتے}}",
+  "streakMonths": "{count, plural, =1{مہینہ} other{مہینے}}",
+
+  "frequencyBadgeDaily": "روزانہ",
+  "frequencyBadgeWeekly": "ہفتہ وار",
+  "frequencyBadgeMonthly": "ماہانہ",
+
+  "statsEmpty": "ابھی کوئی عمل نہیں۔ ٹریکنگ شروع کرنے کے لیے آج ٹیب سے ایک شامل کریں۔",
+
+  "historyTitle": "تاریخچہ",
+  "jumpToDate": "تاریخ پر جائیں",
+  "historyEmptyDay": "{date} کو کوئی عمل ریکارڈ نہیں ہوا",
+
+  "streakUnitD": "د",
+  "streakUnitW": "ہ",
+  "streakUnitM": "م",
+
+  "mondayShort": "پیر",
+  "tuesdayShort": "منگل",
+  "wednesdayShort": "بدھ",
+  "thursdayShort": "جمعرات",
+  "fridayShort": "جمعہ",
+  "saturdayShort": "ہفتہ",
+  "sundayShort": "اتوار",
+
+  "mondayFull": "پیر",
+  "tuesdayFull": "منگل",
+  "wednesdayFull": "بدھ",
+  "thursdayFull": "جمعرات",
+  "fridayFull": "جمعہ",
+  "saturdayFull": "ہفتہ",
+  "sundayFull": "اتوار",
+
+  "hadith0": "\"اللہ کے نزدیک سب سے محبوب عمل وہ ہے جو مسلسل کیا جائے، چاہے تھوڑا ہی ہو۔\"\n— بخاری و مسلم",
+  "hadith1": "\"نیک اعمال اتنے ہی اختیار کرو جتنے تم سے ہو سکیں، کیونکہ بہترین اعمال وہ ہیں جو مسلسل کیے جائیں چاہے تھوڑے ہوں۔\"\n— ابن ماجہ",
+  "hadith2": "\"جب ابن آدم فوت ہو جاتا ہے تو اس کے اعمال منقطع ہو جاتے ہیں سوائے تین کے: صدقہ جاریہ، علم نافع، یا نیک اولاد جو اس کے لیے دعا کرے۔\"\n— مسلم",
+  "hadith3": "\"جس نے دو ٹھنڈی نمازیں (فجر اور عصر) پڑھیں وہ جنت میں داخل ہو گا۔\"\n— بخاری",
+  "hadith4": "\"اللہ تمہاری صورتوں اور مالوں کو نہیں دیکھتا بلکہ تمہارے دلوں اور اعمال کو دیکھتا ہے۔\"\n— مسلم",
+  "hadith5": "\"لوگوں میں سب سے بہتر وہ ہے جو لوگوں کے لیے سب سے زیادہ فائدہ مند ہو۔\"\n— دارقطنی",
+  "hadith6": "\"آسانی کرو اور مشکل نہ بناؤ، خوشخبری دو اور لوگوں کو متنفر نہ کرو۔\"\n— بخاری",
+  "hadith7": "\"جو شخص علم کی تلاش میں راستہ چلے، اللہ اس کے لیے جنت کا راستہ آسان کر دیتا ہے۔\"\n— مسلم",
+  "hadith8": "\"صدقہ مال کو کم نہیں کرتا۔\"\n— مسلم",
+  "hadith9": "\"طاقتور مومن اللہ کے نزدیک کمزور مومن سے بہتر اور زیادہ محبوب ہے، جبکہ دونوں میں خیر ہے۔\"\n— مسلم"
+}

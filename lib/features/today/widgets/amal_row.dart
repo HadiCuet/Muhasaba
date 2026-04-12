@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../../../l10n/app_localizations.dart';
 
 import '../../../domain/models/frequency.dart';
 import '../../../domain/services/today_builder.dart';
@@ -150,9 +151,10 @@ class _AmalRowTileState extends State<AmalRowTile> {
       progress01,
     )!;
 
+    final l = AppLocalizations.of(context);
     final semanticsLabel = amal.target == 1
-        ? '${amal.title}, ${isDone ? "completed" : "not completed"}'
-        : '${amal.title}, ${row.progress} of ${amal.target} completed';
+        ? '${amal.title}, ${isDone ? l.completed : l.notCompleted}'
+        : '${amal.title}, ${l.progressOf(row.progress, amal.target)}';
 
     return Dismissible(
       key: ValueKey('amal-${amal.id}'),
@@ -163,8 +165,8 @@ class _AmalRowTileState extends State<AmalRowTile> {
       },
       background: const SizedBox.shrink(),
       secondaryBackground: Container(
-        alignment: Alignment.centerRight,
-        padding: const EdgeInsets.only(right: 20),
+        alignment: AlignmentDirectional.centerEnd,
+        padding: const EdgeInsetsDirectional.only(end: 20),
         decoration: BoxDecoration(
           color: theme.colorScheme.errorContainer,
           borderRadius: BorderRadius.circular(12),
@@ -194,16 +196,15 @@ class _AmalRowTileState extends State<AmalRowTile> {
                 onDoubleTap: widget.onEdit,
                 onLongPress: widget.onEdit,
                 child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 12,
+                    vertical: 10,
+                  ),
                   child: Row(
                     children: [
                       // Leading amal icon (emoji).
                       if (amal.icon != null && amal.icon!.isNotEmpty) ...[
-                        Text(
-                          amal.icon!,
-                          style: const TextStyle(fontSize: 22),
-                        ),
+                        Text(amal.icon!, style: const TextStyle(fontSize: 22)),
                         const SizedBox(width: 10),
                       ],
 
@@ -231,7 +232,9 @@ class _AmalRowTileState extends State<AmalRowTile> {
                                     widget.streak! >= 2) ...[
                                   const SizedBox(width: 8),
                                   _StreakBadge(
-                                      streak: widget.streak!, row: row),
+                                    streak: widget.streak!,
+                                    row: row,
+                                  ),
                                 ],
                               ],
                             ),
@@ -256,10 +259,11 @@ class _AmalRowTileState extends State<AmalRowTile> {
                                           row.note!,
                                           style: theme.textTheme.bodySmall
                                               ?.copyWith(
-                                            color: theme
-                                                .colorScheme.onSurfaceVariant,
-                                            fontStyle: FontStyle.italic,
-                                          ),
+                                                color: theme
+                                                    .colorScheme
+                                                    .onSurfaceVariant,
+                                                fontStyle: FontStyle.italic,
+                                              ),
                                           maxLines: 1,
                                           overflow: TextOverflow.ellipsis,
                                         ),
@@ -275,7 +279,7 @@ class _AmalRowTileState extends State<AmalRowTile> {
                               Padding(
                                 padding: const EdgeInsets.only(top: 2),
                                 child: Text(
-                                  'Reminder: ${amal.reminderTime}',
+                                  l.reminderTime(amal.reminderTime!),
                                   style: theme.textTheme.bodySmall?.copyWith(
                                     color: theme.colorScheme.onSurfaceVariant,
                                   ),
@@ -291,17 +295,17 @@ class _AmalRowTileState extends State<AmalRowTile> {
                         GestureDetector(
                           onTap: _noteExpanded ? _collapseNote : _expandNote,
                           child: Padding(
-                            padding: const EdgeInsets.only(right: 4),
+                            padding: const EdgeInsetsDirectional.only(end: 4),
                             child: Icon(
                               _noteExpanded
                                   ? Icons.expand_less
                                   : (row.note != null && row.note!.isNotEmpty
-                                      ? Icons.sticky_note_2
-                                      : Icons.sticky_note_2_outlined),
+                                        ? Icons.sticky_note_2
+                                        : Icons.sticky_note_2_outlined),
                               size: 18,
-                              color: _noteExpanded ||
-                                      (row.note != null &&
-                                          row.note!.isNotEmpty)
+                              color:
+                                  _noteExpanded ||
+                                      (row.note != null && row.note!.isNotEmpty)
                                   ? theme.colorScheme.primary
                                   : theme.colorScheme.outlineVariant,
                             ),
@@ -319,24 +323,24 @@ class _AmalRowTileState extends State<AmalRowTile> {
                         GestureDetector(
                           onTap: _noteExpanded ? _collapseNote : _expandNote,
                           child: Padding(
-                            padding: const EdgeInsets.only(right: 4),
+                            padding: const EdgeInsetsDirectional.only(end: 4),
                             child: Icon(
                               _noteExpanded
                                   ? Icons.expand_less
                                   : (row.note != null && row.note!.isNotEmpty
-                                      ? Icons.sticky_note_2
-                                      : Icons.sticky_note_2_outlined),
+                                        ? Icons.sticky_note_2
+                                        : Icons.sticky_note_2_outlined),
                               size: 18,
-                              color: _noteExpanded ||
-                                      (row.note != null &&
-                                          row.note!.isNotEmpty)
+                              color:
+                                  _noteExpanded ||
+                                      (row.note != null && row.note!.isNotEmpty)
                                   ? theme.colorScheme.primary
                                   : theme.colorScheme.outlineVariant,
                             ),
                           ),
                         ),
                         Padding(
-                          padding: const EdgeInsets.only(left: 4),
+                          padding: const EdgeInsetsDirectional.only(start: 4),
                           child: Icon(
                             isDone
                                 ? Icons.check_circle
@@ -369,6 +373,7 @@ class _AmalRowTileState extends State<AmalRowTile> {
   }
 
   Widget _buildNoteSection(ThemeData theme) {
+    final l = AppLocalizations.of(context);
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
@@ -381,7 +386,7 @@ class _AmalRowTileState extends State<AmalRowTile> {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Note',
+            l.noteLabel,
             style: theme.textTheme.labelSmall?.copyWith(
               color: theme.colorScheme.primary,
               fontWeight: FontWeight.w600,
@@ -394,7 +399,7 @@ class _AmalRowTileState extends State<AmalRowTile> {
             maxLines: 2,
             textCapitalization: TextCapitalization.sentences,
             decoration: InputDecoration(
-              hintText: 'e.g. Prayed at the masjid',
+              hintText: l.noteHint,
               border: OutlineInputBorder(
                 borderRadius: BorderRadius.circular(8),
               ),
@@ -410,18 +415,9 @@ class _AmalRowTileState extends State<AmalRowTile> {
             mainAxisAlignment: MainAxisAlignment.end,
             children: [
               if (widget.row.note != null && widget.row.note!.isNotEmpty)
-                TextButton(
-                  onPressed: _clearNote,
-                  child: const Text('Clear'),
-                ),
-              TextButton(
-                onPressed: _collapseNote,
-                child: const Text('Cancel'),
-              ),
-              FilledButton(
-                onPressed: _saveNote,
-                child: const Text('Save'),
-              ),
+                TextButton(onPressed: _clearNote, child: Text(l.clear)),
+              TextButton(onPressed: _collapseNote, child: Text(l.cancel)),
+              FilledButton(onPressed: _saveNote, child: Text(l.save)),
             ],
           ),
         ],
@@ -443,10 +439,11 @@ class _StreakBadge extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l = AppLocalizations.of(context);
     final unit = switch (row.amal.frequency) {
-      Frequency.daily => 'd',
-      Frequency.weekly => 'w',
-      Frequency.monthly => 'm',
+      Frequency.daily => l.streakUnitD,
+      Frequency.weekly => l.streakUnitW,
+      Frequency.monthly => l.streakUnitM,
     };
     return Container(
       padding: const EdgeInsets.symmetric(horizontal: 6, vertical: 1),

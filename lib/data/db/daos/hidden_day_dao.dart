@@ -11,13 +11,15 @@ class HiddenDayDao extends DatabaseAccessor<AppDatabase>
   HiddenDayDao(super.db);
 
   Stream<List<HiddenDayRow>> watchForDate(DateTime date) {
-    return (select(hiddenDays)..where((h) => h.muhasabaDate.equals(date)))
-        .watch();
+    return (select(
+      hiddenDays,
+    )..where((h) => h.muhasabaDate.equals(date))).watch();
   }
 
   Future<List<HiddenDayRow>> getForDate(DateTime date) {
-    return (select(hiddenDays)..where((h) => h.muhasabaDate.equals(date)))
-        .get();
+    return (select(
+      hiddenDays,
+    )..where((h) => h.muhasabaDate.equals(date))).get();
   }
 
   Future<void> hide(int amalId, DateTime date) {
@@ -29,8 +31,7 @@ class HiddenDayDao extends DatabaseAccessor<AppDatabase>
 
   Future<int> unhide(int amalId, DateTime date) {
     return (delete(hiddenDays)
-          ..where(
-              (h) => h.amalId.equals(amalId) & h.muhasabaDate.equals(date)))
+          ..where((h) => h.amalId.equals(amalId) & h.muhasabaDate.equals(date)))
         .go();
   }
 }

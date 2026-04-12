@@ -1,0 +1,172 @@
+{
+  "@@locale": "sw",
+
+  "appTitle": "Muhasaba",
+
+  "tabToday": "Leo",
+  "tabStats": "Takwimu",
+  "tabHistory": "Historia",
+  "tabSettings": "Mipangilio",
+  "newAmal": "Amali mpya",
+
+  "editAmal": "Hariri amali",
+  "newAmalTitle": "Amali mpya",
+  "save": "Hifadhi",
+  "cancel": "Ghairi",
+  "clear": "Futa",
+
+  "titleLabel": "Kichwa",
+  "titleRequired": "Kichwa kinahitajika",
+  "titleTooLong": "Kichwa ni kirefu sana",
+
+  "frequencyLabel": "Mzunguko",
+  "frequencyDaily": "Kila siku",
+  "frequencyWeekly": "Kila wiki",
+  "frequencyMonthly": "Kila mwezi",
+
+  "categoryLabel": "Aina",
+  "categoryOther": "Nyingine",
+  "categorySalah": "Swala",
+  "categoryDhikr": "Dhikri",
+  "categoryQuran": "Qurani",
+  "categoryCharity": "Sadaka",
+
+  "timesPerPeriod": "Mara kwa kipindi",
+  "custom": "Maalum",
+  "customTargetHint": "mf. 50",
+
+  "dayOfWeek": "Siku ya wiki",
+  "anyDay": "Yoyote",
+  "anyDayHint": "Siku yoyote (inaonekana leo, inafichwa kesho)",
+  "onlyDayHint": "{day} pekee",
+
+  "dateOfMonth": "Tarehe ya mwezi",
+  "anyDate": "Yoyote",
+  "anyDateHint": "Tarehe yoyote (inaonekana leo, inafichwa kesho)",
+  "onlyDateHint": "Tarehe {date} pekee",
+
+  "startPreChecked": "Anza ikitiwa alama",
+  "startPreCheckedSubtitle": "Kipindi kipya kinapoanza, amali hii inawekwa alama ya kukamilika kwa chaguo-msingi hadi uitoe alama.",
+
+  "reminder": "Kikumbusho",
+  "reminderNone": "Hakuna",
+  "reminderTime": "Kikumbusho: {time}",
+  "reminderPermissionWarning": "Kikumbusho kimehifadhiwa, lakini arifa hazijaruhusiwa. Ziruhusu kwenye mipangilio ya mfumo ili kupata tahadhari.",
+
+  "groupByCategory": "Pangilia kwa aina",
+  "flatList": "Orodha tambarare",
+  "errorGeneric": "Hitilafu: {error}",
+  "todayEmptyHint": "Bonyeza + kuongeza amali yako ya kwanza.",
+
+  "noteLabel": "Dokezo",
+  "noteHint": "mf. Niliswali msikitini",
+  "completed": "imekamilika",
+  "notCompleted": "haijakamilika",
+  "progressOf": "{progress} kati ya {target} zimekamilika",
+
+  "removeFromToday": "Ondoa leo",
+  "removeFromTodaySubtitle": "Ficha kwa siku hii tu. Inarudi kesho.",
+  "removeFromTracking": "Ondoa kutoka ufuatiliaji",
+  "removeFromTrackingSubtitle": "Ondoa kabisa kutoka orodha yako. Historia inabaki.",
+
+  "chooseIcon": "Chagua ikoni",
+  "iconNone": "Hakuna",
+  "recentlyUsed": "Zilizotumika hivi karibuni",
+  "emojiSectionGeneral": "Kwa ujumla",
+
+  "categoryNameHint": "Jina",
+  "categoryNew": "+ Mpya",
+
+  "addAmal": "Ongeza Amali",
+  "customAmal": "Amali Maalum",
+
+  "templateTasbih": "Tasbihi 33x",
+  "templateIstighfar": "Istighfari 100x",
+  "templateSurahKahf": "Suratul Kahf",
+  "templateSadaqah": "Sadaka",
+  "templateTahajjud": "Tahajudi",
+  "templateDuhaPrayer": "Swala ya Dhuha",
+
+  "settingsTitle": "Mipangilio",
+  "settingsLoadError": "Imeshindwa kupakia mipangilio:\n{error}",
+
+  "sectionDayBoundary": "Mpaka wa siku",
+  "rolloverHour": "Saa ya mabadiliko",
+  "rolloverAtMidnight": "Leo inaisha usiku wa manane.",
+  "rolloverSubtitle": "Amali za jana zinabaki zikiweza kuhaririwa hadi {time}.",
+  "pickRolloverHour": "Chagua saa ambayo siku inabadilika",
+
+  "sectionWeekMonth": "Wiki na mwezi",
+  "startOfWeek": "Mwanzo wa wiki",
+  "startOfMonth": "Mwanzo wa mwezi",
+  "startOfMonthClamped": "Siku baada ya 28 zinabadilishwa kuwa siku ya mwisho ya miezi mifupi.",
+
+  "sectionAppearance": "Muonekano",
+  "theme": "Mandhari",
+  "themeSystem": "Mfumo",
+  "themeLight": "Mwanga",
+  "themeDark": "Giza",
+
+  "sectionLanguage": "Lugha",
+  "language": "Lugha",
+  "systemDefault": "Chaguo-msingi la mfumo",
+
+  "aboutTitle": "Muhasaba",
+  "aboutSubtitle": "Jarida la kibinafsi la uwajibikaji wa dini. Data yote inabaki kwenye kifaa hiki.",
+
+  "statsTitle": "Takwimu",
+  "statsLoadError": "Imeshindwa kupakia takwimu:\n{error}",
+  "perAmal": "Kwa kila amali",
+  "thisWeek": "Wiki hii",
+  "thisMonth": "Mwezi huu",
+  "totalCompletions": "jumla ya kukamilika",
+  "streakCurrent": "Sasa hivi",
+  "streakLongest": "Ndefu zaidi",
+  "ratioWeek": "Wiki",
+  "ratioMonth": "Mwezi",
+
+  "streakDays": "{count, plural, =1{siku} other{siku}}",
+  "streakWeeks": "{count, plural, =1{wiki} other{wiki}}",
+  "streakMonths": "{count, plural, =1{mwezi} other{miezi}}",
+
+  "frequencyBadgeDaily": "kila siku",
+  "frequencyBadgeWeekly": "kila wiki",
+  "frequencyBadgeMonthly": "kila mwezi",
+
+  "statsEmpty": "Hakuna amali bado. Ongeza moja kwenye Leo ili kuanza kufuatilia.",
+
+  "historyTitle": "Historia",
+  "jumpToDate": "Ruka hadi tarehe",
+  "historyEmptyDay": "Hakuna amali iliyofuatiliwa tarehe {date}",
+
+  "streakUnitD": "s",
+  "streakUnitW": "w",
+  "streakUnitM": "m",
+
+  "mondayShort": "Jtt",
+  "tuesdayShort": "Jnn",
+  "wednesdayShort": "Jtn",
+  "thursdayShort": "Alh",
+  "fridayShort": "Iju",
+  "saturdayShort": "Jms",
+  "sundayShort": "Jpi",
+
+  "mondayFull": "Jumatatu",
+  "tuesdayFull": "Jumanne",
+  "wednesdayFull": "Jumatano",
+  "thursdayFull": "Alhamisi",
+  "fridayFull": "Ijumaa",
+  "saturdayFull": "Jumamosi",
+  "sundayFull": "Jumapili",
+
+  "hadith0": "\"Amali zinazopendwa zaidi na Mwenyezi Mungu ni zile zinazofanywa kwa uthabiti, hata zikiwa ndogo.\"\n— Bukhari na Muslim",
+  "hadith1": "\"Fanyeni amali njema kadri mnavyoweza, kwani amali bora ni zile zinazofanywa kwa uthabiti hata zikiwa chache.\"\n— Ibn Majah",
+  "hadith2": "\"Mwanaadamu anapokufa, amali zake zinakoma isipokuwa tatu: sadaka jariya, elimu yenye manufaa, au mtoto mwema anayemuombea dua.\"\n— Muslim",
+  "hadith3": "\"Anayeswali swala mbili za baridi (Alfajiri na Alasiri) ataingia Peponi.\"\n— Bukhari",
+  "hadith4": "\"Mwenyezi Mungu haangalii sura zenu wala mali zenu, bali anaangalia nyoyo zenu na amali zenu.\"\n— Muslim",
+  "hadith5": "\"Watu bora ni wale wanaowafaa zaidi watu wengine.\"\n— Daraqutni",
+  "hadith6": "\"Rahisisheni mambo wala msiyafanye kuwa magumu; peeni habari njema wala msiwaogoneshe watu.\"\n— Bukhari",
+  "hadith7": "\"Anayepita njia kutafuta elimu, Mwenyezi Mungu atamrahisishia njia ya Peponi.\"\n— Muslim",
+  "hadith8": "\"Sadaka haipunguzi mali.\"\n— Muslim",
+  "hadith9": "\"Muumini mwenye nguvu ni bora na mpendwa zaidi kwa Mwenyezi Mungu kuliko muumini dhaifu, ingawa wote wana kheri.\"\n— Muslim"
+}

@@ -46,13 +46,13 @@ class SettingsRepository {
     return AppSettings(
       startOfWeek:
           int.tryParse(m[SettingKeys.startOfWeek] ?? '') ??
-              AppSettings.defaults.startOfWeek,
+          AppSettings.defaults.startOfWeek,
       startOfMonth:
           int.tryParse(m[SettingKeys.startOfMonth] ?? '') ??
-              AppSettings.defaults.startOfMonth,
+          AppSettings.defaults.startOfMonth,
       rolloverHour:
           int.tryParse(m[SettingKeys.rolloverHour] ?? '') ??
-              AppSettings.defaults.rolloverHour,
+          AppSettings.defaults.rolloverHour,
       themeMode: _parseTheme(m[SettingKeys.themeMode]),
       todayViewMode: m[SettingKeys.todayViewMode] ?? 'grouped',
       locale: _parseLocale(m[SettingKeys.locale]),

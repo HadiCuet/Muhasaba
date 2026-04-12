@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
+import '../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../domain/models/app_settings.dart';
@@ -15,6 +17,10 @@ class MuhasabaApp extends ConsumerWidget {
     // Fall back to defaults until the first settings row lands — keeps the
     // very first frame from flashing the wrong theme.
     final settings = ref.watch(settingsProvider).value ?? AppSettings.defaults;
+
+    // Resolve locale: null = follow system, non-null = user-picked language.
+    final locale = settings.locale != null ? Locale(settings.locale!) : null;
+
     return MaterialApp.router(
       title: 'Muhasaba',
       debugShowCheckedModeBanner: false,
@@ -22,6 +28,34 @@ class MuhasabaApp extends ConsumerWidget {
       darkTheme: buildDarkTheme(),
       themeMode: settings.themeMode,
       routerConfig: router,
+      locale: locale,
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+      ],
+      supportedLocales: AppLocalizations.supportedLocales,
+      // Graceful fallback: if the device locale isn't in our supported list,
+      // try matching just the language code, then fall back to English.
+      localeResolutionCallback: (deviceLocale, supportedLocales) {
+        if (locale != null) return locale; // User override.
+        if (deviceLocale == null) return const Locale('en');
+        // Exact match first.
+        for (final supported in supportedLocales) {
+          if (supported.languageCode == deviceLocale.languageCode &&
+              supported.countryCode == deviceLocale.countryCode) {
+            return supported;
+          }
+        }
+        // Language-only match.
+        for (final supported in supportedLocales) {
+          if (supported.languageCode == deviceLocale.languageCode) {
+            return supported;
+          }
+        }
+        return const Locale('en');
+      },
     );
   }
 }

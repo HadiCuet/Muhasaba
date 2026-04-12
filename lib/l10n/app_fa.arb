@@ -1,0 +1,172 @@
+{
+  "@@locale": "fa",
+
+  "appTitle": "Muhasaba",
+
+  "tabToday": "امروز",
+  "tabStats": "آمار",
+  "tabHistory": "تاریخچه",
+  "tabSettings": "تنظیمات",
+  "newAmal": "عمل جدید",
+
+  "editAmal": "ویرایش عمل",
+  "newAmalTitle": "عمل جدید",
+  "save": "ذخیره",
+  "cancel": "لغو",
+  "clear": "پاک کردن",
+
+  "titleLabel": "عنوان",
+  "titleRequired": "عنوان الزامی است",
+  "titleTooLong": "عنوان بیش از حد طولانی است",
+
+  "frequencyLabel": "تکرار",
+  "frequencyDaily": "روزانه",
+  "frequencyWeekly": "هفتگی",
+  "frequencyMonthly": "ماهانه",
+
+  "categoryLabel": "دسته‌بندی",
+  "categoryOther": "سایر",
+  "categorySalah": "نماز",
+  "categoryDhikr": "ذکر",
+  "categoryQuran": "قرآن",
+  "categoryCharity": "صدقه",
+
+  "timesPerPeriod": "تعداد در هر دوره",
+  "custom": "سفارشی",
+  "customTargetHint": "مثلاً ۵۰",
+
+  "dayOfWeek": "روز هفته",
+  "anyDay": "هر روز",
+  "anyDayHint": "هر روز (امروز نمایش داده می‌شود، فردا مخفی می‌شود)",
+  "onlyDayHint": "فقط {day}",
+
+  "dateOfMonth": "تاریخ ماه",
+  "anyDate": "هر تاریخ",
+  "anyDateHint": "هر تاریخ (امروز نمایش داده می‌شود، فردا مخفی می‌شود)",
+  "onlyDateHint": "فقط در تاریخ {date}",
+
+  "startPreChecked": "از پیش علامت‌گذاری شده",
+  "startPreCheckedSubtitle": "هنگام شروع دوره جدید، این عمل به‌طور پیش‌فرض انجام‌شده علامت می‌خورد تا زمانی که آن را بردارید.",
+
+  "reminder": "یادآوری",
+  "reminderNone": "بدون یادآوری",
+  "reminderTime": "یادآوری: {time}",
+  "reminderPermissionWarning": "یادآوری ذخیره شد، اما اعلان‌ها مجاز نیستند. برای دریافت هشدارها، اعلان‌ها را در تنظیمات سیستم فعال کنید.",
+
+  "groupByCategory": "گروه‌بندی بر اساس دسته",
+  "flatList": "لیست ساده",
+  "errorGeneric": "خطا: {error}",
+  "todayEmptyHint": "روی + بزنید تا اولین عمل خود را اضافه کنید.",
+
+  "noteLabel": "یادداشت",
+  "noteHint": "مثلاً در مسجد نماز خواندم",
+  "completed": "انجام شده",
+  "notCompleted": "انجام نشده",
+  "progressOf": "{progress} از {target} انجام شده",
+
+  "removeFromToday": "حذف از امروز",
+  "removeFromTodaySubtitle": "فقط برای امروز مخفی می‌شود. فردا برمی‌گردد.",
+  "removeFromTracking": "حذف از پیگیری",
+  "removeFromTrackingSubtitle": "برای همیشه از لیست حذف می‌شود. تاریخچه حفظ می‌شود.",
+
+  "chooseIcon": "انتخاب آیکون",
+  "iconNone": "بدون آیکون",
+  "recentlyUsed": "اخیراً استفاده شده",
+  "emojiSectionGeneral": "عمومی",
+
+  "categoryNameHint": "نام",
+  "categoryNew": "+ جدید",
+
+  "addAmal": "افزودن عمل",
+  "customAmal": "عمل سفارشی",
+
+  "templateTasbih": "تسبیح ۳۳ بار",
+  "templateIstighfar": "استغفار ۱۰۰ بار",
+  "templateSurahKahf": "سوره کهف",
+  "templateSadaqah": "صدقه",
+  "templateTahajjud": "تهجد",
+  "templateDuhaPrayer": "نماز چاشت",
+
+  "settingsTitle": "تنظیمات",
+  "settingsLoadError": "خطا در بارگذاری تنظیمات:\n{error}",
+
+  "sectionDayBoundary": "مرز روز",
+  "rolloverHour": "ساعت تغییر روز",
+  "rolloverAtMidnight": "امروز در نیمه‌شب به پایان می‌رسد.",
+  "rolloverSubtitle": "اعمال دیروز تا {time} قابل ویرایش هستند.",
+  "pickRolloverHour": "ساعت تغییر روز را انتخاب کنید",
+
+  "sectionWeekMonth": "هفته و ماه",
+  "startOfWeek": "شروع هفته",
+  "startOfMonth": "شروع ماه",
+  "startOfMonthClamped": "روزهای بعد از ۲۸ام به آخرین روز ماه‌های کوتاه‌تر محدود می‌شوند.",
+
+  "sectionAppearance": "ظاهر",
+  "theme": "پوسته",
+  "themeSystem": "سیستم",
+  "themeLight": "روشن",
+  "themeDark": "تاریک",
+
+  "sectionLanguage": "زبان",
+  "language": "زبان",
+  "systemDefault": "پیش‌فرض سیستم",
+
+  "aboutTitle": "Muhasaba",
+  "aboutSubtitle": "دفتر محاسبه شخصی دین. تمام داده‌ها روی این دستگاه باقی می‌مانند.",
+
+  "statsTitle": "آمار",
+  "statsLoadError": "خطا در بارگذاری آمار:\n{error}",
+  "perAmal": "به تفکیک عمل",
+  "thisWeek": "این هفته",
+  "thisMonth": "این ماه",
+  "totalCompletions": "مجموع انجام‌ها",
+  "streakCurrent": "فعلی",
+  "streakLongest": "بیشترین",
+  "ratioWeek": "هفته",
+  "ratioMonth": "ماه",
+
+  "streakDays": "{count, plural, =1{روز} other{روز}}",
+  "streakWeeks": "{count, plural, =1{هفته} other{هفته}}",
+  "streakMonths": "{count, plural, =1{ماه} other{ماه}}",
+
+  "frequencyBadgeDaily": "روزانه",
+  "frequencyBadgeWeekly": "هفتگی",
+  "frequencyBadgeMonthly": "ماهانه",
+
+  "statsEmpty": "هنوز عملی ثبت نشده. یکی را در بخش امروز اضافه کنید تا پیگیری شروع شود.",
+
+  "historyTitle": "تاریخچه",
+  "jumpToDate": "رفتن به تاریخ",
+  "historyEmptyDay": "هیچ عملی در تاریخ {date} ثبت نشده",
+
+  "streakUnitD": "ر",
+  "streakUnitW": "ه",
+  "streakUnitM": "م",
+
+  "mondayShort": "دو",
+  "tuesdayShort": "سه",
+  "wednesdayShort": "چهار",
+  "thursdayShort": "پنج",
+  "fridayShort": "جمعه",
+  "saturdayShort": "شنبه",
+  "sundayShort": "یک",
+
+  "mondayFull": "دوشنبه",
+  "tuesdayFull": "سه‌شنبه",
+  "wednesdayFull": "چهارشنبه",
+  "thursdayFull": "پنجشنبه",
+  "fridayFull": "جمعه",
+  "saturdayFull": "شنبه",
+  "sundayFull": "یکشنبه",
+
+  "hadith0": "«محبوب‌ترین اعمال نزد خداوند آن‌هایی هستند که مداومت داشته باشند، هرچند اندک باشند.»\n— بخاری و مسلم",
+  "hadith1": "«اعمال نیک را به اندازه توانتان انجام دهید، زیرا بهترین اعمال آن‌هایی هستند که با مداومت انجام شوند، هرچند اندک باشند.»\n— ابن ماجه",
+  "hadith2": "«چون فرزند آدم بمیرد، عملش قطع می‌شود مگر از سه چیز: صدقه جاریه، علم سودمند، یا فرزند صالحی که برایش دعا کند.»\n— مسلم",
+  "hadith3": "«هرکس دو نماز خنک (فجر و عصر) را بخواند، وارد بهشت می‌شود.»\n— بخاری",
+  "hadith4": "«خداوند به ظاهر و ثروت شما نمی‌نگرد، بلکه به دل‌ها و اعمال شما می‌نگرد.»\n— مسلم",
+  "hadith5": "«بهترین مردم کسانی هستند که بیشترین سود را به مردم برسانند.»\n— دارقطنی",
+  "hadith6": "«آسان بگیرید و سخت نگیرید؛ مژده دهید و مردم را نرمانید.»\n— بخاری",
+  "hadith7": "«هرکس راهی را برای جستجوی علم بپیماید، خداوند راه بهشت را برایش آسان می‌سازد.»\n— مسلم",
+  "hadith8": "«صدقه مال را کم نمی‌کند.»\n— مسلم",
+  "hadith9": "«مؤمن قوی بهتر و محبوب‌تر نزد خداوند است از مؤمن ضعیف، و در هر دو خیر هست.»\n— مسلم"
+}

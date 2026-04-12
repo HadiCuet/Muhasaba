@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
 import '../../data/repositories/settings_repository.dart';
 import '../../domain/models/app_settings.dart';
+import '../../domain/utils/supported_languages.dart';
 
 /// Grouped settings list. Each tile shows the current value and opens a
 /// picker dialog on tap. Writes go straight to `SettingsRepository`; the
@@ -16,12 +18,13 @@ class SettingsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final settingsAsync = ref.watch(settingsProvider);
     final repo = ref.watch(settingsRepositoryProvider);
+    final l = AppLocalizations.of(context);
 
     return Scaffold(
-      appBar: AppBar(title: const Text('Settings')),
+      appBar: AppBar(title: Text(l.settingsTitle)),
       body: settingsAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => Center(child: Text('Failed to load settings:\n$e')),
+        error: (e, _) => Center(child: Text(l.settingsLoadError(e.toString()))),
         data: (settings) => _SettingsList(settings: settings, repo: repo),
       ),
     );
@@ -36,14 +39,13 @@ class _SettingsList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
     return ListView(
       children: [
-        _SectionHeader(title: 'Day boundary'),
+        _SectionHeader(title: l.sectionDayBoundary),
         ListTile(
-          title: const Text('Rollover hour'),
-          subtitle: Text(
-            _rolloverSubtitle(settings.rolloverHour),
-          ),
+          title: Text(l.rolloverHour),
+          subtitle: Text(_rolloverSubtitle(context, settings.rolloverHour)),
           trailing: Text(_formatHour(settings.rolloverHour)),
           onTap: () async {
             final picked = await _pickRolloverHour(
@@ -56,9 +58,9 @@ class _SettingsList extends StatelessWidget {
           },
         ),
         const Divider(height: 1),
-        _SectionHeader(title: 'Week & month'),
+        _SectionHeader(title: l.sectionWeekMonth),
         ListTile(
-          title: const Text('Start of week'),
+          title: Text(l.startOfWeek),
           trailing: Text(_weekdayName(settings.startOfWeek)),
           onTap: () async {
             final picked = await _pickStartOfWeek(
@@ -71,10 +73,8 @@ class _SettingsList extends StatelessWidget {
           },
         ),
         ListTile(
-          title: const Text('Start of month'),
-          subtitle: const Text(
-            'Days past the 28th are clamped to the last day of shorter months.',
-          ),
+          title: Text(l.startOfMonth),
+          subtitle: Text(l.startOfMonthClamped),
           trailing: Text(_ordinal(settings.startOfMonth)),
           onTap: () async {
             final picked = await _pickStartOfMonth(
@@ -87,10 +87,10 @@ class _SettingsList extends StatelessWidget {
           },
         ),
         const Divider(height: 1),
-        _SectionHeader(title: 'Appearance'),
+        _SectionHeader(title: l.sectionAppearance),
         ListTile(
-          title: const Text('Theme'),
-          trailing: Text(_themeLabel(settings.themeMode)),
+          title: Text(l.theme),
+          trailing: Text(_themeLabel(context, settings.themeMode)),
           onTap: () async {
             final picked = await _pickThemeMode(context, settings.themeMode);
             if (picked != null) {
@@ -98,17 +98,40 @@ class _SettingsList extends StatelessWidget {
             }
           },
         ),
+        const Divider(height: 1),
+        _SectionHeader(title: l.sectionLanguage),
+        ListTile(
+          title: Text(l.language),
+          trailing: Text(_currentLanguageLabel(context, settings.locale)),
+          onTap: () async {
+            final picked = await _pickLanguage(context, settings.locale);
+            if (picked != null) {
+              await repo.setLocale(picked == '_system' ? null : picked);
+            }
+          },
+        ),
         const SizedBox(height: 24),
-        const _AboutTile(),
+        _AboutTile(l: l),
       ],
     );
   }
 
-  String _rolloverSubtitle(int hour) {
-    if (hour == 0) {
-      return "Today ends at midnight.";
+  String _currentLanguageLabel(BuildContext context, String? locale) {
+    if (locale == null) {
+      return AppLocalizations.of(context).systemDefault;
     }
-    return "Yesterday's amal stay editable until ${_formatHour(hour)}.";
+    for (final lang in kSupportedLanguages) {
+      if (lang.code == locale) return lang.nativeName;
+    }
+    return locale;
+  }
+
+  String _rolloverSubtitle(BuildContext context, int hour) {
+    final l = AppLocalizations.of(context);
+    if (hour == 0) {
+      return l.rolloverAtMidnight;
+    }
+    return l.rolloverSubtitle(_formatHour(hour));
   }
 }
 
@@ -134,16 +157,16 @@ class _SectionHeader extends StatelessWidget {
 }
 
 class _AboutTile extends StatelessWidget {
-  const _AboutTile();
+  const _AboutTile({required this.l});
+
+  final AppLocalizations l;
 
   @override
   Widget build(BuildContext context) {
-    return const ListTile(
-      leading: Icon(Icons.info_outline),
-      title: Text('Muhasaba'),
-      subtitle: Text(
-        'A personal deen accountability journal. All data stays on this device.',
-      ),
+    return ListTile(
+      leading: const Icon(Icons.info_outline),
+      title: Text(l.aboutTitle),
+      subtitle: Text(l.aboutSubtitle),
     );
   }
 }
@@ -153,10 +176,11 @@ class _AboutTile extends StatelessWidget {
 // ---------------------------------------------------------------------------
 
 Future<int?> _pickStartOfWeek(BuildContext context, int current) {
+  final l = AppLocalizations.of(context);
   return showDialog<int>(
     context: context,
     builder: (ctx) => SimpleDialog(
-      title: const Text('Start of week'),
+      title: Text(l.startOfWeek),
       children: [
         RadioGroup<int>(
           groupValue: current,
@@ -165,10 +189,7 @@ Future<int?> _pickStartOfWeek(BuildContext context, int current) {
             mainAxisSize: MainAxisSize.min,
             children: [
               for (var day = 1; day <= 7; day++)
-                RadioListTile<int>(
-                  title: Text(_weekdayName(day)),
-                  value: day,
-                ),
+                RadioListTile<int>(title: Text(_weekdayName(day)), value: day),
             ],
           ),
         ),
@@ -187,18 +208,23 @@ Future<int?> _pickStartOfMonth(BuildContext context, int current) {
           height: 360,
           child: Column(
             children: [
-              const Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+              Padding(
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 16,
+                  vertical: 8,
+                ),
                 child: Text(
-                  'Start of month',
-                  style: TextStyle(fontSize: 18, fontWeight: FontWeight.w600),
+                  AppLocalizations.of(context).startOfMonth,
+                  style: const TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w600,
+                  ),
                 ),
               ),
               Expanded(
                 child: GridView.builder(
                   padding: const EdgeInsets.all(16),
-                  gridDelegate:
-                      const SliverGridDelegateWithFixedCrossAxisCount(
+                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                     crossAxisCount: 7,
                     mainAxisSpacing: 8,
                     crossAxisSpacing: 8,
@@ -217,9 +243,7 @@ Future<int?> _pickStartOfMonth(BuildContext context, int current) {
                           color: selected
                               ? Theme.of(ctx).colorScheme.primaryContainer
                               : null,
-                          border: Border.all(
-                            color: Theme.of(ctx).dividerColor,
-                          ),
+                          border: Border.all(color: Theme.of(ctx).dividerColor),
                         ),
                         child: Text(
                           '$day',
@@ -243,10 +267,11 @@ Future<int?> _pickStartOfMonth(BuildContext context, int current) {
 }
 
 Future<int?> _pickRolloverHour(BuildContext context, int current) async {
+  final l = AppLocalizations.of(context);
   final picked = await showTimePicker(
     context: context,
     initialTime: TimeOfDay(hour: current, minute: 0),
-    helpText: 'Pick the hour the day rolls over',
+    helpText: l.pickRolloverHour,
     builder: (ctx, child) {
       // Force the picker to snap to whole hours by overriding the layout to
       // a spinner. We still accept whatever the user taps, then zero out the
@@ -259,10 +284,11 @@ Future<int?> _pickRolloverHour(BuildContext context, int current) async {
 }
 
 Future<ThemeMode?> _pickThemeMode(BuildContext context, ThemeMode current) {
+  final l = AppLocalizations.of(context);
   return showDialog<ThemeMode>(
     context: context,
     builder: (ctx) => SimpleDialog(
-      title: const Text('Theme'),
+      title: Text(l.theme),
       children: [
         RadioGroup<ThemeMode>(
           groupValue: current,
@@ -272,8 +298,38 @@ Future<ThemeMode?> _pickThemeMode(BuildContext context, ThemeMode current) {
             children: [
               for (final mode in ThemeMode.values)
                 RadioListTile<ThemeMode>(
-                  title: Text(_themeLabel(mode)),
+                  title: Text(_themeLabel(context, mode)),
                   value: mode,
+                ),
+            ],
+          ),
+        ),
+      ],
+    ),
+  );
+}
+
+Future<String?> _pickLanguage(BuildContext context, String? current) {
+  final l = AppLocalizations.of(context);
+  return showDialog<String>(
+    context: context,
+    builder: (ctx) => SimpleDialog(
+      title: Text(l.language),
+      children: [
+        RadioGroup<String>(
+          groupValue: current ?? '_system',
+          onChanged: (v) => Navigator.of(ctx).pop(v),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              RadioListTile<String>(
+                title: Text(l.systemDefault),
+                value: '_system',
+              ),
+              for (final lang in kSupportedLanguages)
+                RadioListTile<String>(
+                  title: Text(lang.nativeName),
+                  value: lang.code,
                 ),
             ],
           ),
@@ -322,13 +378,14 @@ String _formatHour(int hour) {
   return '$display:00 $suffix';
 }
 
-String _themeLabel(ThemeMode mode) {
+String _themeLabel(BuildContext context, ThemeMode mode) {
+  final l = AppLocalizations.of(context);
   switch (mode) {
     case ThemeMode.system:
-      return 'System';
+      return l.themeSystem;
     case ThemeMode.light:
-      return 'Light';
+      return l.themeLight;
     case ThemeMode.dark:
-      return 'Dark';
+      return l.themeDark;
   }
 }

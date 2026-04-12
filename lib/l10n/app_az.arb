@@ -1,0 +1,172 @@
+{
+  "@@locale": "az",
+
+  "appTitle": "Muhasaba",
+
+  "tabToday": "Bu gun",
+  "tabStats": "Statistika",
+  "tabHistory": "Tarixce",
+  "tabSettings": "Parametrler",
+  "newAmal": "Yeni emel",
+
+  "editAmal": "Emeli redakte et",
+  "newAmalTitle": "Yeni emel",
+  "save": "Saxla",
+  "cancel": "Legv et",
+  "clear": "Temizle",
+
+  "titleLabel": "Basliq",
+  "titleRequired": "Basliq teleb olunur",
+  "titleTooLong": "Basliq cox uzundur",
+
+  "frequencyLabel": "Tezlik",
+  "frequencyDaily": "Gundelik",
+  "frequencyWeekly": "Heftelik",
+  "frequencyMonthly": "Ayliq",
+
+  "categoryLabel": "Kateqoriya",
+  "categoryOther": "Diger",
+  "categorySalah": "Namaz",
+  "categoryDhikr": "Zikr",
+  "categoryQuran": "Quran",
+  "categoryCharity": "Sedeqe",
+
+  "timesPerPeriod": "Dovre erzinde defe",
+  "custom": "Ferdi",
+  "customTargetHint": "mes. 50",
+
+  "dayOfWeek": "Heftenin gunu",
+  "anyDay": "Istenielen",
+  "anyDayHint": "Istenielen gun (bu gun gosterilir, sabah gizlenir)",
+  "onlyDayHint": "Yalniz {day}",
+
+  "dateOfMonth": "Ayin tarixi",
+  "anyDate": "Istenielen",
+  "anyDateHint": "Istenielen tarix (bu gun gosterilir, sabah gizlenir)",
+  "onlyDateHint": "Yalniz {date}-de",
+
+  "startPreChecked": "Qeyd olunmus baslat",
+  "startPreCheckedSubtitle": "Yeni dovre basladiqda, bu emel siz legv edene qeder tamamlanmis sayilir.",
+
+  "reminder": "Xatirlatma",
+  "reminderNone": "Yoxdur",
+  "reminderTime": "Xatirlatma: {time}",
+  "reminderPermissionWarning": "Xatirlatma saxlanildi, lakin bildirisler icaze verilmeyib. Xeberdar olmaq ucun sistem parametrlerinde aktiv edin.",
+
+  "groupByCategory": "Kateqoriyaya gore qrupla",
+  "flatList": "Sade siyahi",
+  "errorGeneric": "Xeta: {error}",
+  "todayEmptyHint": "Ilk emelinizi elave etmek ucun + basin.",
+
+  "noteLabel": "Qeyd",
+  "noteHint": "mes. Mescidde namaz qildim",
+  "completed": "tamamlandi",
+  "notCompleted": "tamamlanmadi",
+  "progressOf": "{target}-dan {progress} tamamlandi",
+
+  "removeFromToday": "Bu gunden sil",
+  "removeFromTodaySubtitle": "Yalniz bu gun ucun gizlenir. Sabah geri qayidir.",
+  "removeFromTracking": "Izlemeden sil",
+  "removeFromTrackingSubtitle": "Siyahinizdan hemiselik silinir. Tarixce saxlanilir.",
+
+  "chooseIcon": "Simvol secin",
+  "iconNone": "Yoxdur",
+  "recentlyUsed": "Son istifade olunan",
+  "emojiSectionGeneral": "Umumi",
+
+  "categoryNameHint": "Ad",
+  "categoryNew": "+ Yeni",
+
+  "addAmal": "Emel elave et",
+  "customAmal": "Ferdi emel",
+
+  "templateTasbih": "Tesbih 33x",
+  "templateIstighfar": "Istigfar 100x",
+  "templateSurahKahf": "Kehf suresi",
+  "templateSadaqah": "Sedeqe",
+  "templateTahajjud": "Tehecud",
+  "templateDuhaPrayer": "Zuha namazi",
+
+  "settingsTitle": "Parametrler",
+  "settingsLoadError": "Parametrleri yuklemek mumkun olmadi:\n{error}",
+
+  "sectionDayBoundary": "Gun serhedi",
+  "rolloverHour": "Kecid saati",
+  "rolloverAtMidnight": "Bu gun geceyarisi basa catir.",
+  "rolloverSubtitle": "Dunenki emeller {time}-dek redakte oluna biler.",
+  "pickRolloverHour": "Gunun kecid saatini secin",
+
+  "sectionWeekMonth": "Hefte ve ay",
+  "startOfWeek": "Heftenin baslangici",
+  "startOfMonth": "Ayin baslangici",
+  "startOfMonthClamped": "28-den sonraki gunler qisa aylarda ayin son gunune uygunlasdirilir.",
+
+  "sectionAppearance": "Gorunus",
+  "theme": "Movzu",
+  "themeSystem": "Sistem",
+  "themeLight": "Isiqli",
+  "themeDark": "Qaranlig",
+
+  "sectionLanguage": "Dil",
+  "language": "Dil",
+  "systemDefault": "Sistem susmaya gore",
+
+  "aboutTitle": "Muhasaba",
+  "aboutSubtitle": "Sexsi din mesuliyyet jurnali. Butun melumatlar bu cihazda qalir.",
+
+  "statsTitle": "Statistika",
+  "statsLoadError": "Statistikani yuklemek mumkun olmadi:\n{error}",
+  "perAmal": "Her emel ucun",
+  "thisWeek": "Bu hefte",
+  "thisMonth": "Bu ay",
+  "totalCompletions": "umumi tamamlanma",
+  "streakCurrent": "Cari",
+  "streakLongest": "En uzun",
+  "ratioWeek": "Hefte",
+  "ratioMonth": "Ay",
+
+  "streakDays": "{count, plural, =1{gun} other{gun}}",
+  "streakWeeks": "{count, plural, =1{hefte} other{hefte}}",
+  "streakMonths": "{count, plural, =1{ay} other{ay}}",
+
+  "frequencyBadgeDaily": "gundelik",
+  "frequencyBadgeWeekly": "heftelik",
+  "frequencyBadgeMonthly": "ayliq",
+
+  "statsEmpty": "Hele emel yoxdur. Izlemeye baslamaq ucun Bu gun sehifesinde elave edin.",
+
+  "historyTitle": "Tarixce",
+  "jumpToDate": "Tarixe kec",
+  "historyEmptyDay": "{date} tarixinde emel izlenmeyib",
+
+  "streakUnitD": "g",
+  "streakUnitW": "h",
+  "streakUnitM": "a",
+
+  "mondayShort": "B.e",
+  "tuesdayShort": "C.a",
+  "wednesdayShort": "C",
+  "thursdayShort": "C.a",
+  "fridayShort": "C",
+  "saturdayShort": "S",
+  "sundayShort": "B",
+
+  "mondayFull": "Bazar ertesi",
+  "tuesdayFull": "Cersenbe axsami",
+  "wednesdayFull": "Cersenbe",
+  "thursdayFull": "Cumme axsami",
+  "fridayFull": "Cumme",
+  "saturdayFull": "Senbe",
+  "sundayFull": "Bazar",
+
+  "hadith0": "\"Allahin en sevdiyi emeller, az da olsa, davaml olanlardir.\"\n— Buxari ve Muslim",
+  "hadith1": "\"Bacardiqiniz qeder yaxsi emeller gorun, cunki en yaxsi emeller az olsa da, davaml olanlardir.\"\n— Ibn Mace",
+  "hadith2": "\"Adem ovladi olduyu zaman, emelleri uc seyden basqa kesilir: davaml sedeqe, faydali elm ve ya onun ucun dua eden saleh ovlad.\"\n— Muslim",
+  "hadith3": "\"Kim iki serin namazi (Subh ve Esr) qilarsa, Cenneete daxil olar.\"\n— Buxari",
+  "hadith4": "\"Allah sizin xarici gorunusunuze ve var-dovletinize baxmir, O sizin ureylerinize ve emellerinize baxir.\"\n— Muslim",
+  "hadith5": "\"Insanlarin en yaxsisi insanlara en cox fayda verenidir.\"\n— Daraqutni",
+  "hadith6": "\"Asanlasdiriniz, cetinlesdirmeyiniz; mujde veriniz, insanlari uzaqlasdimayin.\"\n— Buxari",
+  "hadith7": "\"Kim elm axtarisi yoluna cixarsa, Allah onun ucun Cennet yolunu asanlasdirar.\"\n— Muslim",
+  "hadith8": "\"Sedeqe mali azaltmaz.\"\n— Muslim",
+  "hadith9": "\"Guclu momin, zeif mominden daha yaxsi ve Allaha daha sevimlidir, herciend her ikisinde xeyir var.\"\n— Muslim"
+}

@@ -11,13 +11,15 @@ class CompletionDao extends DatabaseAccessor<AppDatabase>
   CompletionDao(super.db);
 
   Stream<List<CompletionRow>> watchForDate(DateTime date) {
-    return (select(completions)..where((c) => c.muhasabaDate.equals(date)))
-        .watch();
+    return (select(
+      completions,
+    )..where((c) => c.muhasabaDate.equals(date))).watch();
   }
 
   Future<List<CompletionRow>> getForDate(DateTime date) {
-    return (select(completions)..where((c) => c.muhasabaDate.equals(date)))
-        .get();
+    return (select(
+      completions,
+    )..where((c) => c.muhasabaDate.equals(date))).get();
   }
 
   Future<CompletionRow?> getForAmalDate(int amalId, DateTime date) {
@@ -31,11 +33,12 @@ class CompletionDao extends DatabaseAccessor<AppDatabase>
     DateTime start, // inclusive
     DateTime endExclusive,
   ) {
-    return (select(completions)
-          ..where((c) =>
+    return (select(completions)..where(
+          (c) =>
               c.amalId.equals(amalId) &
               c.muhasabaDate.isBiggerOrEqualValue(start) &
-              c.muhasabaDate.isSmallerThanValue(endExclusive)))
+              c.muhasabaDate.isSmallerThanValue(endExclusive),
+        ))
         .get();
   }
 
@@ -71,8 +74,7 @@ class CompletionDao extends DatabaseAccessor<AppDatabase>
 
   Future<int> clearFor(int amalId, DateTime date) {
     return (delete(completions)
-          ..where(
-              (c) => c.amalId.equals(amalId) & c.muhasabaDate.equals(date)))
+          ..where((c) => c.amalId.equals(amalId) & c.muhasabaDate.equals(date)))
         .go();
   }
 }

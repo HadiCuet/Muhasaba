@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../app/providers.dart';
@@ -131,14 +132,14 @@ class _CategoryPickerState extends ConsumerState<CategoryPicker> {
                     focusNode: _focusNode,
                     autofocus: true,
                     style: Theme.of(context).textTheme.bodySmall,
-                    decoration: const InputDecoration(
+                    decoration: InputDecoration(
                       isDense: true,
-                      contentPadding: EdgeInsets.symmetric(
+                      contentPadding: const EdgeInsets.symmetric(
                         horizontal: 8,
                         vertical: 8,
                       ),
-                      border: OutlineInputBorder(),
-                      hintText: 'Name',
+                      border: const OutlineInputBorder(),
+                      hintText: AppLocalizations.of(context).categoryNameHint,
                     ),
                     onSubmitted: (_) => _submitNew(),
                   ),
@@ -159,7 +160,7 @@ class _CategoryPickerState extends ConsumerState<CategoryPicker> {
           )
         else
           ActionChip(
-            label: const Text('+ New'),
+            label: Text(AppLocalizations.of(context).categoryNew),
             onPressed: () => setState(() => _adding = true),
           ),
       ],

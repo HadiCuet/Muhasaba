@@ -80,9 +80,7 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (context, state) {
           final id = int.tryParse(state.pathParameters['id'] ?? '');
           if (id == null) {
-            return const Scaffold(
-              body: Center(child: Text('Invalid amal id')),
-            );
+            return const Scaffold(body: Center(child: Text('Invalid amal id')));
           }
           return AmalFormScreen(amalId: id);
         },

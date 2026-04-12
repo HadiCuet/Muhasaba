@@ -1,0 +1,172 @@
+{
+  "@@locale": "bs",
+
+  "appTitle": "Muhasaba",
+
+  "tabToday": "Danas",
+  "tabStats": "Statistika",
+  "tabHistory": "Historija",
+  "tabSettings": "Postavke",
+  "newAmal": "Novi amel",
+
+  "editAmal": "Uredi amel",
+  "newAmalTitle": "Novi amel",
+  "save": "Spremi",
+  "cancel": "Otkazi",
+  "clear": "Ocisti",
+
+  "titleLabel": "Naslov",
+  "titleRequired": "Naslov je obavezan",
+  "titleTooLong": "Naslov je predugacak",
+
+  "frequencyLabel": "Ucestalost",
+  "frequencyDaily": "Dnevno",
+  "frequencyWeekly": "Sedmicno",
+  "frequencyMonthly": "Mjesecno",
+
+  "categoryLabel": "Kategorija",
+  "categoryOther": "Ostalo",
+  "categorySalah": "Namaz",
+  "categoryDhikr": "Zikr",
+  "categoryQuran": "Kur'an",
+  "categoryCharity": "Sadaka",
+
+  "timesPerPeriod": "Puta po periodu",
+  "custom": "Prilagodeno",
+  "customTargetHint": "npr. 50",
+
+  "dayOfWeek": "Dan u sedmici",
+  "anyDay": "Bilo koji",
+  "anyDayHint": "Bilo koji dan (ostaje vidljiv danas, nestaje sutra)",
+  "onlyDayHint": "Samo {day}",
+
+  "dateOfMonth": "Datum u mjesecu",
+  "anyDate": "Bilo koji",
+  "anyDateHint": "Bilo koji datum (ostaje vidljiv danas, nestaje sutra)",
+  "onlyDateHint": "Samo na {date}",
+
+  "startPreChecked": "Pocni oznaceno",
+  "startPreCheckedSubtitle": "Kada pocne novi period, ovaj amel je automatski oznacen kao zavrsen dok ga ne odznacite.",
+
+  "reminder": "Podsjetnik",
+  "reminderNone": "Nema",
+  "reminderTime": "Podsjetnik: {time}",
+  "reminderPermissionWarning": "Podsjetnik je sacuvan, ali obavijesti nisu dozvoljene. Omogucite ih u postavkama sistema za primanje upozorenja.",
+
+  "groupByCategory": "Grupiraj po kategoriji",
+  "flatList": "Obicna lista",
+  "errorGeneric": "Greska: {error}",
+  "todayEmptyHint": "Pritisnite + da dodate svoj prvi amel.",
+
+  "noteLabel": "Biljeska",
+  "noteHint": "npr. Klanjao u dzamiji",
+  "completed": "zavrseno",
+  "notCompleted": "nezavrseno",
+  "progressOf": "{progress} od {target} zavrseno",
+
+  "removeFromToday": "Ukloni iz danas",
+  "removeFromTodaySubtitle": "Sakrij samo za danas. Vraca se sutra.",
+  "removeFromTracking": "Ukloni iz pracenja",
+  "removeFromTrackingSubtitle": "Trajno ukloni sa liste. Historija se cuva.",
+
+  "chooseIcon": "Odaberi ikonu",
+  "iconNone": "Nema",
+  "recentlyUsed": "Nedavno koristeno",
+  "emojiSectionGeneral": "Opce",
+
+  "categoryNameHint": "Naziv",
+  "categoryNew": "+ Novo",
+
+  "addAmal": "Dodaj amel",
+  "customAmal": "Prilagodeni amel",
+
+  "templateTasbih": "Tespih 33x",
+  "templateIstighfar": "Istigfar 100x",
+  "templateSurahKahf": "Sura El-Kehf",
+  "templateSadaqah": "Sadaka",
+  "templateTahajjud": "Tehedzud",
+  "templateDuhaPrayer": "Duha namaz",
+
+  "settingsTitle": "Postavke",
+  "settingsLoadError": "Greska pri ucitavanju postavki:\n{error}",
+
+  "sectionDayBoundary": "Granica dana",
+  "rolloverHour": "Sat prijelaza",
+  "rolloverAtMidnight": "Dan zavrsava u ponoc.",
+  "rolloverSubtitle": "Jucerasnji ameli ostaju uredivi do {time}.",
+  "pickRolloverHour": "Odaberite sat u kojem dan prelazi",
+
+  "sectionWeekMonth": "Sedmica i mjesec",
+  "startOfWeek": "Pocetak sedmice",
+  "startOfMonth": "Pocetak mjeseca",
+  "startOfMonthClamped": "Dani nakon 28. se ogranicavaju na zadnji dan kracih mjeseci.",
+
+  "sectionAppearance": "Izgled",
+  "theme": "Tema",
+  "themeSystem": "Sistemska",
+  "themeLight": "Svijetla",
+  "themeDark": "Tamna",
+
+  "sectionLanguage": "Jezik",
+  "language": "Jezik",
+  "systemDefault": "Sistemski zadano",
+
+  "aboutTitle": "Muhasaba",
+  "aboutSubtitle": "Licni dnevnik odgovornosti u vjeri. Svi podaci ostaju na ovom uredaju.",
+
+  "statsTitle": "Statistika",
+  "statsLoadError": "Greska pri ucitavanju statistike:\n{error}",
+  "perAmal": "Po amelu",
+  "thisWeek": "Ove sedmice",
+  "thisMonth": "Ovog mjeseca",
+  "totalCompletions": "ukupno zavrseno",
+  "streakCurrent": "Trenutni",
+  "streakLongest": "Najduzi",
+  "ratioWeek": "Sedmica",
+  "ratioMonth": "Mjesec",
+
+  "streakDays": "{count, plural, =1{dan} other{dana}}",
+  "streakWeeks": "{count, plural, =1{sedmica} other{sedmica}}",
+  "streakMonths": "{count, plural, =1{mjesec} other{mjeseci}}",
+
+  "frequencyBadgeDaily": "dnevno",
+  "frequencyBadgeWeekly": "sedmicno",
+  "frequencyBadgeMonthly": "mjesecno",
+
+  "statsEmpty": "Jos nema amela. Dodajte jedan na Danas da pocnete pracenje.",
+
+  "historyTitle": "Historija",
+  "jumpToDate": "Skoci na datum",
+  "historyEmptyDay": "Nema pracenih amela za {date}",
+
+  "streakUnitD": "d",
+  "streakUnitW": "s",
+  "streakUnitM": "m",
+
+  "mondayShort": "Pon",
+  "tuesdayShort": "Uto",
+  "wednesdayShort": "Sri",
+  "thursdayShort": "Cet",
+  "fridayShort": "Pet",
+  "saturdayShort": "Sub",
+  "sundayShort": "Ned",
+
+  "mondayFull": "Ponedjeljak",
+  "tuesdayFull": "Utorak",
+  "wednesdayFull": "Srijeda",
+  "thursdayFull": "Cetvrtak",
+  "fridayFull": "Petak",
+  "saturdayFull": "Subota",
+  "sundayFull": "Nedjelja",
+
+  "hadith0": "\"Allahu najdraza djela su ona koja se cine redovno, makar bila i mala.\"\n— Buhari i Muslim",
+  "hadith1": "\"Prihvatite se dobrih djela onoliko koliko mozete, jer su najbolja djela ona koja se cine redovno, makar bila i malobrojna.\"\n— Ibn Madze",
+  "hadith2": "\"Kada umre sin Ademov, prestaju njegova djela osim tri: trajna sadaka, korisno znanje ili dobro dijete koje moli za njega.\"\n— Muslim",
+  "hadith3": "\"Ko klanja dva hladna namaza (sabah i ikindiju) uci ce u Dzennet.\"\n— Buhari",
+  "hadith4": "\"Allah ne gleda u vas izgled niti u vase bogatstvo, vec gleda u vasa srca i vasa djela.\"\n— Muslim",
+  "hadith5": "\"Najbolji medu ljudima su oni koji su najkorisniji za ljude.\"\n— Darekutni",
+  "hadith6": "\"Olaksavajte i ne otezavajte; radujte ljude i ne rastijerujte ih.\"\n— Buhari",
+  "hadith7": "\"Ko krene putem u potrazi za znanjem, Allah ce mu olaksati put do Dzenneta.\"\n— Muslim",
+  "hadith8": "\"Sadaka ne umanjuje imetak.\"\n— Muslim",
+  "hadith9": "\"Jaki vjernik je bolji i drazi Allahu od slabog vjernika, a u obojici je dobro.\"\n— Muslim"
+}
