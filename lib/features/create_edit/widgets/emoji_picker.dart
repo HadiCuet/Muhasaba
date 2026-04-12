@@ -3,8 +3,6 @@ import '../../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../app/providers.dart';
-import '../../../domain/utils/localized_category.dart';
-
 /// Curated emoji sections for amal icon selection.
 /// Keys are English category names used for localized lookup.
 const _sectionKeys = ['Salah', 'Dhikr', 'Quran', 'Charity'];
@@ -159,9 +157,7 @@ class _EmojiPickerSheet extends StatelessWidget {
                   child: Padding(
                     padding: const EdgeInsets.only(top: 8, bottom: 8),
                     child: Text(
-                      key == 'General'
-                          ? l.emojiSectionGeneral
-                          : localizedCategoryName(key, l),
+                      key == 'General' ? l.emojiSectionGeneral : key,
                       style: theme.textTheme.labelMedium?.copyWith(
                         color: theme.colorScheme.onSurfaceVariant,
                       ),

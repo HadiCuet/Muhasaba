@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 
 import '../../../domain/models/frequency.dart';
-import '../../../domain/utils/localized_category.dart';
 import '../amal_templates.dart';
 
 /// Shows the template selection sheet.
@@ -110,7 +109,7 @@ class _TemplateCard extends StatelessWidget {
       Frequency.weekly => l.frequencyWeekly,
       Frequency.monthly => l.frequencyMonthly,
     };
-    return '$freq \u00B7 ${localizedCategoryName(template.category, l)}';
+    return '$freq \u00B7 ${template.category}';
   }
 
   String _localizedTitle(AppLocalizations l) {

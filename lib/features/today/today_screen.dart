@@ -7,7 +7,6 @@ import 'package:intl/intl.dart';
 import '../../app/providers.dart';
 import '../../data/db/database.dart';
 import '../../domain/services/today_builder.dart';
-import '../../domain/utils/localized_category.dart';
 import 'widgets/amal_row.dart';
 import 'widgets/remove_sheet.dart';
 
@@ -199,10 +198,7 @@ class _GroupHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final l = AppLocalizations.of(context);
-    final rawName = group.categoryName;
-    final name = rawName != null
-        ? localizedCategoryName(rawName, l)
-        : l.categoryOther;
+    final name = group.categoryName ?? l.categoryOther;
     return Padding(
       padding: const EdgeInsets.fromLTRB(4, 12, 4, 6),
       child: Row(
