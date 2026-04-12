@@ -54,18 +54,23 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                 if (rows.isEmpty) {
                   return _EmptyDay(date: selected);
                 }
-                return ListView.separated(
+                return ListView.builder(
+                  padding: const EdgeInsets.fromLTRB(12, 8, 12, 16),
                   itemCount: rows.length,
-                  separatorBuilder: (_, _) => const Divider(height: 1),
                   itemBuilder: (context, i) {
                     final row = rows[i];
-                    return AmalRowTile(
-                      row: row,
-                      onProgressChanged: (progress) =>
-                          _setProgress(row, selected, progress),
-                      onLongPress: () =>
-                          _openRemoveSheet(context, row, selected),
-                      onEdit: () => context.push('/amal/${row.amal.id}'),
+                    return Padding(
+                      padding: const EdgeInsets.only(bottom: 8),
+                      child: AmalRowTile(
+                        row: row,
+                        onProgressChanged: (progress) =>
+                            _setProgress(row, selected, progress),
+                        onRemove: () =>
+                            _openRemoveSheet(context, row, selected),
+                        onEdit: () => context.push('/amal/${row.amal.id}'),
+                        onNoteChanged: (note) =>
+                            _setNote(row, selected, note),
+                      ),
                     );
                   },
                 );
@@ -96,6 +101,19 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
     }
   }
 
+  Future<void> _setNote(
+    TodayRow row,
+    DateTime date,
+    String? note,
+  ) async {
+    await ref.read(completionRepositoryProvider).setNote(
+          amalId: row.amal.id,
+          muhasabaDate: date,
+          note: note,
+        );
+    ref.invalidate(todayRowsProvider(date));
+  }
+
   Future<void> _setProgress(
     TodayRow row,
     DateTime date,
@@ -109,6 +127,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
         );
     ref.invalidate(todayRowsProvider(date));
     ref.invalidate(statsSnapshotProvider);
+    ref.invalidate(currentStreaksProvider);
   }
 
   Future<void> _openRemoveSheet(
@@ -130,6 +149,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
     }
     ref.invalidate(todayRowsProvider(date));
     ref.invalidate(statsSnapshotProvider);
+    ref.invalidate(currentStreaksProvider);
   }
 }
 

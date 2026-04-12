@@ -103,6 +103,17 @@ final statsSnapshotProvider = FutureProvider.autoDispose<StatsSnapshot>(
   },
 );
 
+/// Per-amal current streak for display on Today rows. Returns a map of
+/// amalId → currentStreak. Invalidated alongside `statsSnapshotProvider`
+/// after writes.
+final currentStreaksProvider =
+    FutureProvider.autoDispose<Map<int, int>>((ref) async {
+  final snap = await ref.watch(statsSnapshotProvider.future);
+  return {
+    for (final s in snap.perAmal) s.amalId: s.currentStreak,
+  };
+});
+
 final _activeAmalsProvider = StreamProvider.autoDispose((ref) {
   return ref.watch(appDatabaseProvider).amalDao.watchActive();
 });
