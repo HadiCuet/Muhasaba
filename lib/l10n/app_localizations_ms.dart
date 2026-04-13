@@ -374,6 +374,78 @@ class AppLocalizationsMs extends AppLocalizations {
       'Belum ada amal. Tambahkan satu di Hari Ini untuk mula menjejak.';
 
   @override
+  String get statsToday => 'Hari Ini';
+
+  @override
+  String get statsThisWeek => 'Minggu Ini';
+
+  @override
+  String get statsThisMonth => 'Bulan Ini';
+
+  @override
+  String get statsAllTime => 'Sepanjang Masa';
+
+  @override
+  String get statsCustomRange => 'Julat Tersuai';
+
+  @override
+  String get statsAllCategories => 'Semua';
+
+  @override
+  String get statsAllAmals => 'Semua';
+
+  @override
+  String get statsCompleted => 'Selesai';
+
+  @override
+  String get statsExpected => 'Dijangka';
+
+  @override
+  String get statsVsPrevious => 'vs Sebelumnya';
+
+  @override
+  String get statsByCategory => 'Mengikut Kategori';
+
+  @override
+  String get statsPerAmal => 'Setiap Amal';
+
+  @override
+  String get statsCurrentStreak => 'Rentak Semasa';
+
+  @override
+  String get statsBestStreak => 'Rentak Terbaik';
+
+  @override
+  String get statsTotalDays => 'Jumlah Hari';
+
+  @override
+  String get statsConsistency => 'Konsistensi';
+
+  @override
+  String get statsLast5Weeks => '5 minggu lepas';
+
+  @override
+  String get statsDailyBreakdown => 'Pecahan Harian';
+
+  @override
+  String get statsCompletionRate => 'Kadar penyelesaian';
+
+  @override
+  String get statsFilterTime => 'Masa';
+
+  @override
+  String get statsFilterCategory => 'Kategori';
+
+  @override
+  String get statsFilterAmal => 'Amal';
+
+  @override
+  String get statsStreaks => 'Rentak';
+
+  @override
+  String get statsSelectDateRange => 'Pilih julat tarikh';
+
+  @override
   String get historyTitle => 'Sejarah';
 
   @override

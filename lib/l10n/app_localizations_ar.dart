@@ -385,6 +385,78 @@ class AppLocalizationsAr extends AppLocalizations {
       'لا توجد أعمال بعد. أضف عملاً من صفحة اليوم لبدء المتابعة.';
 
   @override
+  String get statsToday => 'اليوم';
+
+  @override
+  String get statsThisWeek => 'هذا الأسبوع';
+
+  @override
+  String get statsThisMonth => 'هذا الشهر';
+
+  @override
+  String get statsAllTime => 'كل الأوقات';
+
+  @override
+  String get statsCustomRange => 'نطاق مخصص';
+
+  @override
+  String get statsAllCategories => 'الكل';
+
+  @override
+  String get statsAllAmals => 'الكل';
+
+  @override
+  String get statsCompleted => 'مكتمل';
+
+  @override
+  String get statsExpected => 'متوقع';
+
+  @override
+  String get statsVsPrevious => 'مقارنة بالسابق';
+
+  @override
+  String get statsByCategory => 'حسب الفئة';
+
+  @override
+  String get statsPerAmal => 'لكل عمل';
+
+  @override
+  String get statsCurrentStreak => 'السلسلة الحالية';
+
+  @override
+  String get statsBestStreak => 'أفضل سلسلة';
+
+  @override
+  String get statsTotalDays => 'إجمالي الأيام';
+
+  @override
+  String get statsConsistency => 'الانتظام';
+
+  @override
+  String get statsLast5Weeks => 'آخر 5 أسابيع';
+
+  @override
+  String get statsDailyBreakdown => 'التفصيل اليومي';
+
+  @override
+  String get statsCompletionRate => 'نسبة الإنجاز';
+
+  @override
+  String get statsFilterTime => 'الوقت';
+
+  @override
+  String get statsFilterCategory => 'الفئة';
+
+  @override
+  String get statsFilterAmal => 'العمل';
+
+  @override
+  String get statsStreaks => 'السلاسل';
+
+  @override
+  String get statsSelectDateRange => 'اختر نطاق التاريخ';
+
+  @override
   String get historyTitle => 'السجل';
 
   @override

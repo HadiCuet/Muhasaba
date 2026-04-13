@@ -374,6 +374,78 @@ class AppLocalizationsHa extends AppLocalizations {
       'Babu amali tukuna. Ka kara daya a Yau don fara bin diddigi.';
 
   @override
+  String get statsToday => 'Yau';
+
+  @override
+  String get statsThisWeek => 'Wannan makon';
+
+  @override
+  String get statsThisMonth => 'Wannan watan';
+
+  @override
+  String get statsAllTime => 'Dukkan lokaci';
+
+  @override
+  String get statsCustomRange => 'Zabin lokaci';
+
+  @override
+  String get statsAllCategories => 'Duka';
+
+  @override
+  String get statsAllAmals => 'Duka';
+
+  @override
+  String get statsCompleted => 'An kammala';
+
+  @override
+  String get statsExpected => 'Ana sa ran';
+
+  @override
+  String get statsVsPrevious => 'Idan aka kwatanta da na baya';
+
+  @override
+  String get statsByCategory => 'Ta nau\'i';
+
+  @override
+  String get statsPerAmal => 'Kowane amali';
+
+  @override
+  String get statsCurrentStreak => 'Jerin yanzu';
+
+  @override
+  String get statsBestStreak => 'Mafi kyawun jeri';
+
+  @override
+  String get statsTotalDays => 'Jimlar ranaku';
+
+  @override
+  String get statsConsistency => 'Daidaituwa';
+
+  @override
+  String get statsLast5Weeks => 'Makwanni 5 da suka gabata';
+
+  @override
+  String get statsDailyBreakdown => 'Rarraba na kowace rana';
+
+  @override
+  String get statsCompletionRate => 'Adadin kammalawa';
+
+  @override
+  String get statsFilterTime => 'Lokaci';
+
+  @override
+  String get statsFilterCategory => 'Nau\'i';
+
+  @override
+  String get statsFilterAmal => 'Amali';
+
+  @override
+  String get statsStreaks => 'Jerurruka';
+
+  @override
+  String get statsSelectDateRange => 'Zabi kewayon kwanakin';
+
+  @override
   String get historyTitle => 'Tarihi';
 
   @override

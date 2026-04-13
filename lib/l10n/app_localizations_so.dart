@@ -377,6 +377,78 @@ class AppLocalizationsSo extends AppLocalizations {
       'Wali camal ma jiro. Ku dar mid Maanta si aad u bilowdo raadraaca.';
 
   @override
+  String get statsToday => 'Maanta';
+
+  @override
+  String get statsThisWeek => 'Toddobaadkan';
+
+  @override
+  String get statsThisMonth => 'Bishan';
+
+  @override
+  String get statsAllTime => 'Wakhti oo dhan';
+
+  @override
+  String get statsCustomRange => 'Muddo gaarka ah';
+
+  @override
+  String get statsAllCategories => 'Dhammaan';
+
+  @override
+  String get statsAllAmals => 'Dhammaan';
+
+  @override
+  String get statsCompleted => 'La dhammeeyay';
+
+  @override
+  String get statsExpected => 'La filayay';
+
+  @override
+  String get statsVsPrevious => 'Marka loo barbardhigo kii hore';
+
+  @override
+  String get statsByCategory => 'Qaybaha';
+
+  @override
+  String get statsPerAmal => 'Camal walba';
+
+  @override
+  String get statsCurrentStreak => 'Taxanaha hadda';
+
+  @override
+  String get statsBestStreak => 'Taxanaha ugu fiican';
+
+  @override
+  String get statsTotalDays => 'Wadarta maalmaha';
+
+  @override
+  String get statsConsistency => 'Joogteynta';
+
+  @override
+  String get statsLast5Weeks => '5-dii toddobaad ee ugu dambeeyay';
+
+  @override
+  String get statsDailyBreakdown => 'Faahfaahin maalinle ah';
+
+  @override
+  String get statsCompletionRate => 'Heerka dhammaystirka';
+
+  @override
+  String get statsFilterTime => 'Waqtiga';
+
+  @override
+  String get statsFilterCategory => 'Qaybta';
+
+  @override
+  String get statsFilterAmal => 'Camasha';
+
+  @override
+  String get statsStreaks => 'Taxanayaal';
+
+  @override
+  String get statsSelectDateRange => 'Dooro muddada taariikhda';
+
+  @override
   String get historyTitle => 'Taariikhda';
 
   @override

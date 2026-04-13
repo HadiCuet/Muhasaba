@@ -375,6 +375,78 @@ class AppLocalizationsUr extends AppLocalizations {
       'ابھی کوئی عمل نہیں۔ ٹریکنگ شروع کرنے کے لیے آج ٹیب سے ایک شامل کریں۔';
 
   @override
+  String get statsToday => 'آج';
+
+  @override
+  String get statsThisWeek => 'اس ہفتے';
+
+  @override
+  String get statsThisMonth => 'اس مہینے';
+
+  @override
+  String get statsAllTime => 'ہمہ وقت';
+
+  @override
+  String get statsCustomRange => 'اپنی مرضی کی مدت';
+
+  @override
+  String get statsAllCategories => 'سب';
+
+  @override
+  String get statsAllAmals => 'سب';
+
+  @override
+  String get statsCompleted => 'مکمل';
+
+  @override
+  String get statsExpected => 'متوقع';
+
+  @override
+  String get statsVsPrevious => 'پچھلے کے مقابلے';
+
+  @override
+  String get statsByCategory => 'زمرے کے لحاظ سے';
+
+  @override
+  String get statsPerAmal => 'فی عمل';
+
+  @override
+  String get statsCurrentStreak => 'موجودہ سلسلہ';
+
+  @override
+  String get statsBestStreak => 'بہترین سلسلہ';
+
+  @override
+  String get statsTotalDays => 'کل دن';
+
+  @override
+  String get statsConsistency => 'استقامت';
+
+  @override
+  String get statsLast5Weeks => 'گزشتہ 5 ہفتے';
+
+  @override
+  String get statsDailyBreakdown => 'روزانہ تفصیل';
+
+  @override
+  String get statsCompletionRate => 'تکمیل کی شرح';
+
+  @override
+  String get statsFilterTime => 'وقت';
+
+  @override
+  String get statsFilterCategory => 'زمرہ';
+
+  @override
+  String get statsFilterAmal => 'عمل';
+
+  @override
+  String get statsStreaks => 'سلسلے';
+
+  @override
+  String get statsSelectDateRange => 'تاریخ کی مدت منتخب کریں';
+
+  @override
   String get historyTitle => 'تاریخچہ';
 
   @override

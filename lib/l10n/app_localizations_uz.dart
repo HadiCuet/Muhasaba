@@ -377,6 +377,78 @@ class AppLocalizationsUz extends AppLocalizations {
       'Hali amal yo\'q. Kuzatishni boshlash uchun Bugun sahifasida amal qo\'shing.';
 
   @override
+  String get statsToday => 'Bugun';
+
+  @override
+  String get statsThisWeek => 'Shu hafta';
+
+  @override
+  String get statsThisMonth => 'Shu oy';
+
+  @override
+  String get statsAllTime => 'Barcha vaqt';
+
+  @override
+  String get statsCustomRange => 'Maxsus oraliq';
+
+  @override
+  String get statsAllCategories => 'Barchasi';
+
+  @override
+  String get statsAllAmals => 'Barchasi';
+
+  @override
+  String get statsCompleted => 'Bajarilgan';
+
+  @override
+  String get statsExpected => 'Kutilgan';
+
+  @override
+  String get statsVsPrevious => 'Avvalgiga nisbatan';
+
+  @override
+  String get statsByCategory => 'Turkum bo\'yicha';
+
+  @override
+  String get statsPerAmal => 'Har bir amal';
+
+  @override
+  String get statsCurrentStreak => 'Joriy ketma-ketlik';
+
+  @override
+  String get statsBestStreak => 'Eng yaxshi ketma-ketlik';
+
+  @override
+  String get statsTotalDays => 'Jami kunlar';
+
+  @override
+  String get statsConsistency => 'Barqarorlik';
+
+  @override
+  String get statsLast5Weeks => 'Oxirgi 5 hafta';
+
+  @override
+  String get statsDailyBreakdown => 'Kunlik tafsilot';
+
+  @override
+  String get statsCompletionRate => 'Bajarish darajasi';
+
+  @override
+  String get statsFilterTime => 'Vaqt';
+
+  @override
+  String get statsFilterCategory => 'Turkum';
+
+  @override
+  String get statsFilterAmal => 'Amal';
+
+  @override
+  String get statsStreaks => 'Ketma-ketliklar';
+
+  @override
+  String get statsSelectDateRange => 'Sana oralig\'ini tanlang';
+
+  @override
   String get historyTitle => 'Tarix';
 
   @override

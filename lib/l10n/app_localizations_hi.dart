@@ -374,6 +374,78 @@ class AppLocalizationsHi extends AppLocalizations {
       'अभी कोई अमल नहीं है। ट्रैकिंग शुरू करने के लिए आज में एक जोड़ें।';
 
   @override
+  String get statsToday => 'आज';
+
+  @override
+  String get statsThisWeek => 'इस सप्ताह';
+
+  @override
+  String get statsThisMonth => 'इस महीने';
+
+  @override
+  String get statsAllTime => 'सभी समय';
+
+  @override
+  String get statsCustomRange => 'कस्टम अवधि';
+
+  @override
+  String get statsAllCategories => 'सभी';
+
+  @override
+  String get statsAllAmals => 'सभी';
+
+  @override
+  String get statsCompleted => 'पूर्ण';
+
+  @override
+  String get statsExpected => 'अपेक्षित';
+
+  @override
+  String get statsVsPrevious => 'पिछले की तुलना में';
+
+  @override
+  String get statsByCategory => 'श्रेणी अनुसार';
+
+  @override
+  String get statsPerAmal => 'प्रति अमल';
+
+  @override
+  String get statsCurrentStreak => 'वर्तमान लकीर';
+
+  @override
+  String get statsBestStreak => 'सर्वश्रेष्ठ लकीर';
+
+  @override
+  String get statsTotalDays => 'कुल दिन';
+
+  @override
+  String get statsConsistency => 'नियमितता';
+
+  @override
+  String get statsLast5Weeks => 'पिछले 5 सप्ताह';
+
+  @override
+  String get statsDailyBreakdown => 'दैनिक विश्लेषण';
+
+  @override
+  String get statsCompletionRate => 'पूर्णता दर';
+
+  @override
+  String get statsFilterTime => 'समय';
+
+  @override
+  String get statsFilterCategory => 'श्रेणी';
+
+  @override
+  String get statsFilterAmal => 'अमल';
+
+  @override
+  String get statsStreaks => 'लकीरें';
+
+  @override
+  String get statsSelectDateRange => 'तारीख़ की अवधि चुनें';
+
+  @override
   String get historyTitle => 'इतिहास';
 
   @override

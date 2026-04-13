@@ -377,6 +377,78 @@ class AppLocalizationsTg extends AppLocalizations {
       'Хануз амал нест. Барои огози пайгирй дар сахифаи Имруз илова кунед.';
 
   @override
+  String get statsToday => 'Имруз';
+
+  @override
+  String get statsThisWeek => 'Ин хафта';
+
+  @override
+  String get statsThisMonth => 'Ин мох';
+
+  @override
+  String get statsAllTime => 'Хамаи вакт';
+
+  @override
+  String get statsCustomRange => 'Давраи дилхох';
+
+  @override
+  String get statsAllCategories => 'Хама';
+
+  @override
+  String get statsAllAmals => 'Хама';
+
+  @override
+  String get statsCompleted => 'Ичро шуд';
+
+  @override
+  String get statsExpected => 'Интизоршаванда';
+
+  @override
+  String get statsVsPrevious => 'Дар муколиса бо пешина';
+
+  @override
+  String get statsByCategory => 'Аз руи гурух';
+
+  @override
+  String get statsPerAmal => 'Барои хар амал';
+
+  @override
+  String get statsCurrentStreak => 'Силсилаи хозира';
+
+  @override
+  String get statsBestStreak => 'Бехтарин силсила';
+
+  @override
+  String get statsTotalDays => 'Хамагй рузхо';
+
+  @override
+  String get statsConsistency => 'Устуворй';
+
+  @override
+  String get statsLast5Weeks => '5 хафтаи охир';
+
+  @override
+  String get statsDailyBreakdown => 'Тафсилоти рузона';
+
+  @override
+  String get statsCompletionRate => 'Дарачаи ичро';
+
+  @override
+  String get statsFilterTime => 'Вакт';
+
+  @override
+  String get statsFilterCategory => 'Гурух';
+
+  @override
+  String get statsFilterAmal => 'Амал';
+
+  @override
+  String get statsStreaks => 'Силсилахо';
+
+  @override
+  String get statsSelectDateRange => 'Давраи санаро интихоб кунед';
+
+  @override
   String get historyTitle => 'Таърих';
 
   @override

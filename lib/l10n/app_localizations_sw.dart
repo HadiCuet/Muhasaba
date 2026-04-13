@@ -373,6 +373,78 @@ class AppLocalizationsSw extends AppLocalizations {
       'Hakuna amali bado. Ongeza moja kwenye Leo ili kuanza kufuatilia.';
 
   @override
+  String get statsToday => 'Leo';
+
+  @override
+  String get statsThisWeek => 'Wiki hii';
+
+  @override
+  String get statsThisMonth => 'Mwezi huu';
+
+  @override
+  String get statsAllTime => 'Wakati wote';
+
+  @override
+  String get statsCustomRange => 'Kipindi maalum';
+
+  @override
+  String get statsAllCategories => 'Zote';
+
+  @override
+  String get statsAllAmals => 'Zote';
+
+  @override
+  String get statsCompleted => 'Imekamilika';
+
+  @override
+  String get statsExpected => 'Inayotarajiwa';
+
+  @override
+  String get statsVsPrevious => 'dhidi ya Awali';
+
+  @override
+  String get statsByCategory => 'Kwa Aina';
+
+  @override
+  String get statsPerAmal => 'Kwa kila Amali';
+
+  @override
+  String get statsCurrentStreak => 'Mfululizo wa sasa';
+
+  @override
+  String get statsBestStreak => 'Mfululizo bora';
+
+  @override
+  String get statsTotalDays => 'Jumla ya siku';
+
+  @override
+  String get statsConsistency => 'Uthabiti';
+
+  @override
+  String get statsLast5Weeks => 'Wiki 5 zilizopita';
+
+  @override
+  String get statsDailyBreakdown => 'Uchambuzi wa kila siku';
+
+  @override
+  String get statsCompletionRate => 'Kiwango cha kukamilika';
+
+  @override
+  String get statsFilterTime => 'Wakati';
+
+  @override
+  String get statsFilterCategory => 'Aina';
+
+  @override
+  String get statsFilterAmal => 'Amali';
+
+  @override
+  String get statsStreaks => 'Mifululizo';
+
+  @override
+  String get statsSelectDateRange => 'Chagua kipindi cha tarehe';
+
+  @override
   String get historyTitle => 'Historia';
 
   @override

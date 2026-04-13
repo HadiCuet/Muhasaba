@@ -375,6 +375,78 @@ class AppLocalizationsAz extends AppLocalizations {
       'Hele emel yoxdur. Izlemeye baslamaq ucun Bu gun sehifesinde elave edin.';
 
   @override
+  String get statsToday => 'Bu gun';
+
+  @override
+  String get statsThisWeek => 'Bu hefte';
+
+  @override
+  String get statsThisMonth => 'Bu ay';
+
+  @override
+  String get statsAllTime => 'Butun zamanlar';
+
+  @override
+  String get statsCustomRange => 'Ferdi araliq';
+
+  @override
+  String get statsAllCategories => 'Hamisi';
+
+  @override
+  String get statsAllAmals => 'Hamisi';
+
+  @override
+  String get statsCompleted => 'Tamamlandi';
+
+  @override
+  String get statsExpected => 'Gozlenilen';
+
+  @override
+  String get statsVsPrevious => 'Evvelkine nisbeten';
+
+  @override
+  String get statsByCategory => 'Kateqoriyaya gore';
+
+  @override
+  String get statsPerAmal => 'Her emel ucun';
+
+  @override
+  String get statsCurrentStreak => 'Cari seriya';
+
+  @override
+  String get statsBestStreak => 'En yaxsi seriya';
+
+  @override
+  String get statsTotalDays => 'Umumi gunler';
+
+  @override
+  String get statsConsistency => 'Ardicilliq';
+
+  @override
+  String get statsLast5Weeks => 'Son 5 hefte';
+
+  @override
+  String get statsDailyBreakdown => 'Gunluk tefsir';
+
+  @override
+  String get statsCompletionRate => 'Tamamlanma derecesi';
+
+  @override
+  String get statsFilterTime => 'Vaxt';
+
+  @override
+  String get statsFilterCategory => 'Kateqoriya';
+
+  @override
+  String get statsFilterAmal => 'Emel';
+
+  @override
+  String get statsStreaks => 'Seriyalar';
+
+  @override
+  String get statsSelectDateRange => 'Tarix araligini secin';
+
+  @override
   String get historyTitle => 'Tarixce';
 
   @override

@@ -375,6 +375,78 @@ class AppLocalizationsTk extends AppLocalizations {
       'Entek amal yok. Yzarlamaga baslamak ucin Bu gun sahypasynda gosunn.';
 
   @override
+  String get statsToday => 'Bu gun';
+
+  @override
+  String get statsThisWeek => 'Bu hepde';
+
+  @override
+  String get statsThisMonth => 'Bu ay';
+
+  @override
+  String get statsAllTime => 'Ahli wagt';
+
+  @override
+  String get statsCustomRange => 'Ozbashdak aralyk';
+
+  @override
+  String get statsAllCategories => 'Hemmesi';
+
+  @override
+  String get statsAllAmals => 'Hemmesi';
+
+  @override
+  String get statsCompleted => 'Yerine yetirildi';
+
+  @override
+  String get statsExpected => 'Garasylyan';
+
+  @override
+  String get statsVsPrevious => 'Oncekisi bilen';
+
+  @override
+  String get statsByCategory => 'Kategoriia boyunca';
+
+  @override
+  String get statsPerAmal => 'Her amal boyunca';
+
+  @override
+  String get statsCurrentStreak => 'Hazyrkyzaman tapgyry';
+
+  @override
+  String get statsBestStreak => 'In gowy tapgyr';
+
+  @override
+  String get statsTotalDays => 'Jemi gunler';
+
+  @override
+  String get statsConsistency => 'Yzygiderlilik';
+
+  @override
+  String get statsLast5Weeks => 'Sonky 5 hepde';
+
+  @override
+  String get statsDailyBreakdown => 'Gundelik jikme-jiklik';
+
+  @override
+  String get statsCompletionRate => 'Yerine yetirme derejesi';
+
+  @override
+  String get statsFilterTime => 'Wagt';
+
+  @override
+  String get statsFilterCategory => 'Kategoriia';
+
+  @override
+  String get statsFilterAmal => 'Amal';
+
+  @override
+  String get statsStreaks => 'Tapgyrlar';
+
+  @override
+  String get statsSelectDateRange => 'Sene aralygy saylan';
+
+  @override
   String get historyTitle => 'Taryh';
 
   @override

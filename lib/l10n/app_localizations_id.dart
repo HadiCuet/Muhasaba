@@ -376,6 +376,78 @@ class AppLocalizationsId extends AppLocalizations {
       'Belum ada amal. Tambahkan di Hari Ini untuk mulai melacak.';
 
   @override
+  String get statsToday => 'Hari Ini';
+
+  @override
+  String get statsThisWeek => 'Minggu Ini';
+
+  @override
+  String get statsThisMonth => 'Bulan Ini';
+
+  @override
+  String get statsAllTime => 'Semua Waktu';
+
+  @override
+  String get statsCustomRange => 'Rentang Kustom';
+
+  @override
+  String get statsAllCategories => 'Semua';
+
+  @override
+  String get statsAllAmals => 'Semua';
+
+  @override
+  String get statsCompleted => 'Selesai';
+
+  @override
+  String get statsExpected => 'Diharapkan';
+
+  @override
+  String get statsVsPrevious => 'vs Sebelumnya';
+
+  @override
+  String get statsByCategory => 'Per Kategori';
+
+  @override
+  String get statsPerAmal => 'Per Amal';
+
+  @override
+  String get statsCurrentStreak => 'Streak Saat Ini';
+
+  @override
+  String get statsBestStreak => 'Streak Terbaik';
+
+  @override
+  String get statsTotalDays => 'Total Hari';
+
+  @override
+  String get statsConsistency => 'Konsistensi';
+
+  @override
+  String get statsLast5Weeks => '5 minggu terakhir';
+
+  @override
+  String get statsDailyBreakdown => 'Rincian Harian';
+
+  @override
+  String get statsCompletionRate => 'Tingkat penyelesaian';
+
+  @override
+  String get statsFilterTime => 'Waktu';
+
+  @override
+  String get statsFilterCategory => 'Kategori';
+
+  @override
+  String get statsFilterAmal => 'Amal';
+
+  @override
+  String get statsStreaks => 'Streak';
+
+  @override
+  String get statsSelectDateRange => 'Pilih rentang tanggal';
+
+  @override
   String get historyTitle => 'Riwayat';
 
   @override

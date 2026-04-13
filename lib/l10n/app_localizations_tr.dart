@@ -376,6 +376,78 @@ class AppLocalizationsTr extends AppLocalizations {
       'Henüz amel yok. Takibe başlamak için Bugün sekmesinden bir tane ekleyin.';
 
   @override
+  String get statsToday => 'Bugün';
+
+  @override
+  String get statsThisWeek => 'Bu Hafta';
+
+  @override
+  String get statsThisMonth => 'Bu Ay';
+
+  @override
+  String get statsAllTime => 'Tüm Zamanlar';
+
+  @override
+  String get statsCustomRange => 'Özel Aralık';
+
+  @override
+  String get statsAllCategories => 'Tümü';
+
+  @override
+  String get statsAllAmals => 'Tümü';
+
+  @override
+  String get statsCompleted => 'Tamamlanan';
+
+  @override
+  String get statsExpected => 'Beklenen';
+
+  @override
+  String get statsVsPrevious => 'Öncekine göre';
+
+  @override
+  String get statsByCategory => 'Kategoriye Göre';
+
+  @override
+  String get statsPerAmal => 'Amel Başına';
+
+  @override
+  String get statsCurrentStreak => 'Mevcut Seri';
+
+  @override
+  String get statsBestStreak => 'En İyi Seri';
+
+  @override
+  String get statsTotalDays => 'Toplam Gün';
+
+  @override
+  String get statsConsistency => 'Tutarlılık';
+
+  @override
+  String get statsLast5Weeks => 'Son 5 hafta';
+
+  @override
+  String get statsDailyBreakdown => 'Günlük Dağılım';
+
+  @override
+  String get statsCompletionRate => 'Tamamlanma oranı';
+
+  @override
+  String get statsFilterTime => 'Zaman';
+
+  @override
+  String get statsFilterCategory => 'Kategori';
+
+  @override
+  String get statsFilterAmal => 'Amel';
+
+  @override
+  String get statsStreaks => 'Seriler';
+
+  @override
+  String get statsSelectDateRange => 'Tarih aralığı seçin';
+
+  @override
   String get historyTitle => 'Geçmiş';
 
   @override

@@ -377,6 +377,78 @@ class AppLocalizationsFr extends AppLocalizations {
       'Aucun amal pour le moment. Ajoutez-en un dans Aujourd\'hui pour commencer le suivi.';
 
   @override
+  String get statsToday => 'Aujourd\'hui';
+
+  @override
+  String get statsThisWeek => 'Cette semaine';
+
+  @override
+  String get statsThisMonth => 'Ce mois-ci';
+
+  @override
+  String get statsAllTime => 'Depuis toujours';
+
+  @override
+  String get statsCustomRange => 'Plage personnalisee';
+
+  @override
+  String get statsAllCategories => 'Toutes';
+
+  @override
+  String get statsAllAmals => 'Tous';
+
+  @override
+  String get statsCompleted => 'Accomplis';
+
+  @override
+  String get statsExpected => 'Attendus';
+
+  @override
+  String get statsVsPrevious => 'vs Precedent';
+
+  @override
+  String get statsByCategory => 'Par categorie';
+
+  @override
+  String get statsPerAmal => 'Par amal';
+
+  @override
+  String get statsCurrentStreak => 'Serie actuelle';
+
+  @override
+  String get statsBestStreak => 'Meilleure serie';
+
+  @override
+  String get statsTotalDays => 'Total de jours';
+
+  @override
+  String get statsConsistency => 'Regularite';
+
+  @override
+  String get statsLast5Weeks => '5 dernieres semaines';
+
+  @override
+  String get statsDailyBreakdown => 'Detail quotidien';
+
+  @override
+  String get statsCompletionRate => 'Taux d\'accomplissement';
+
+  @override
+  String get statsFilterTime => 'Temps';
+
+  @override
+  String get statsFilterCategory => 'Categorie';
+
+  @override
+  String get statsFilterAmal => 'Amal';
+
+  @override
+  String get statsStreaks => 'Series';
+
+  @override
+  String get statsSelectDateRange => 'Selectionner une plage de dates';
+
+  @override
   String get historyTitle => 'Historique';
 
   @override

@@ -1,283 +1,119 @@
 import 'package:flutter/material.dart';
-import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
-import '../../app/providers.dart';
-import '../../domain/models/frequency.dart';
-import '../../domain/services/stats_service.dart';
+import '../../l10n/app_localizations.dart';
+import 'stats_providers.dart';
+import 'widgets/stats_filter_row.dart';
+import 'widgets/score_ring_card.dart';
+import 'widgets/daily_chart_card.dart';
+import 'widgets/category_breakdown_card.dart';
+import 'widgets/streaks_card.dart';
+import 'widgets/heatmap_card.dart';
+import 'widgets/per_amal_card.dart';
 
 class StatsScreen extends ConsumerWidget {
   const StatsScreen({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final snapshotAsync = ref.watch(statsSnapshotProvider);
     final l = AppLocalizations.of(context);
+    final snapshotAsync = ref.watch(enhancedStatsProvider);
+    final filter = ref.watch(statsFilterProvider);
+    final locale = Localizations.localeOf(context).toString();
+
     return Scaffold(
       appBar: AppBar(title: Text(l.statsTitle)),
       body: RefreshIndicator(
-        onRefresh: () async => ref.invalidate(statsSnapshotProvider),
-        child: snapshotAsync.when(
-          loading: () => const Center(child: CircularProgressIndicator()),
-          error: (e, _) => ListView(
-            children: [
-              const SizedBox(height: 120),
-              Center(child: Text(l.statsLoadError(e.toString()))),
-            ],
-          ),
-          data: (snap) {
-            if (snap.perAmal.isEmpty) {
-              return ListView(
-                children: const [SizedBox(height: 120), _EmptyState()],
-              );
-            }
-            return ListView(
-              padding: const EdgeInsets.all(16),
-              children: [
-                _GlobalCard(global: snap.global),
-                const SizedBox(height: 12),
-                Text(l.perAmal, style: Theme.of(context).textTheme.labelLarge),
-                const SizedBox(height: 8),
-                for (final s in snap.perAmal) ...[
-                  _AmalStatsCard(stats: s),
-                  const SizedBox(height: 8),
-                ],
-              ],
-            );
-          },
-        ),
-      ),
-    );
-  }
-}
-
-class _GlobalCard extends StatelessWidget {
-  const _GlobalCard({required this.global});
-
-  final GlobalStats global;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final l = AppLocalizations.of(context);
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Row(
-          children: [
-            Expanded(
-              child: _Metric(
-                label: l.thisWeek,
-                value: '${global.weekTotalCompletions}',
-                caption: l.totalCompletions,
-              ),
+        onRefresh: () async => ref.invalidate(enhancedStatsProvider),
+        child: CustomScrollView(
+          slivers: [
+            // Filter row — always visible at top
+            const SliverToBoxAdapter(
+              child: StatsFilterRow(),
             ),
-            Container(width: 1, height: 48, color: theme.dividerColor),
-            Expanded(
-              child: _Metric(
-                label: l.thisMonth,
-                value: '${global.monthTotalCompletions}',
-                caption: l.totalCompletions,
-              ),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _AmalStatsCard extends StatelessWidget {
-  const _AmalStatsCard({required this.stats});
-
-  final AmalStats stats;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final l = AppLocalizations.of(context);
-    return Card(
-      child: Padding(
-        padding: const EdgeInsets.all(16),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Expanded(
-                  child: Text(
-                    stats.title,
-                    style: theme.textTheme.titleMedium,
-                    overflow: TextOverflow.ellipsis,
-                  ),
+            // Stats content
+            ...snapshotAsync.when(
+              loading: () => [
+                const SliverFillRemaining(
+                  child: Center(child: CircularProgressIndicator()),
                 ),
-                _FrequencyBadge(frequency: stats.frequency),
               ],
-            ),
-            const SizedBox(height: 12),
-            Row(
-              children: [
-                Expanded(
-                  child: _Metric(
-                    label: l.streakCurrent,
-                    value: '${stats.currentStreak}',
-                    caption: _streakUnit(
-                      l,
-                      stats.frequency,
-                      stats.currentStreak,
-                    ),
-                  ),
-                ),
-                Expanded(
-                  child: _Metric(
-                    label: l.streakLongest,
-                    value: '${stats.longestStreak}',
-                    caption: _streakUnit(
-                      l,
-                      stats.frequency,
-                      stats.longestStreak,
+              error: (e, _) => [
+                SliverFillRemaining(
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsetsDirectional.all(32),
+                      child: Text(
+                        l.statsLoadError(e.toString()),
+                        textAlign: TextAlign.center,
+                      ),
                     ),
                   ),
                 ),
               ],
-            ),
-            const SizedBox(height: 16),
-            _RatioBar(
-              label: l.ratioWeek,
-              completed: stats.weeklyCompleted,
-              expected: stats.weeklyExpected,
-              rate: stats.weeklyRate,
-            ),
-            const SizedBox(height: 8),
-            _RatioBar(
-              label: l.ratioMonth,
-              completed: stats.monthlyCompleted,
-              expected: stats.monthlyExpected,
-              rate: stats.monthlyRate,
-            ),
-          ],
-        ),
-      ),
-    );
-  }
+              data: (snap) {
+                if (snap.perAmal.isEmpty) {
+                  return [
+                    const SliverFillRemaining(child: _EmptyState()),
+                  ];
+                }
 
-  String _streakUnit(AppLocalizations l, Frequency f, int value) {
-    switch (f) {
-      case Frequency.daily:
-        return l.streakDays(value);
-      case Frequency.weekly:
-        return l.streakWeeks(value);
-      case Frequency.monthly:
-        return l.streakMonths(value);
-    }
-  }
-}
+                final isSingleAmal = filter.amalId != null;
+                final children = <Widget>[];
 
-class _Metric extends StatelessWidget {
-  const _Metric({
-    required this.label,
-    required this.value,
-    required this.caption,
-  });
+                // 1. Score ring
+                children.add(ScoreRingCard(snapshot: snap));
+                children.add(const SizedBox(height: 12));
 
-  final String label;
-  final String value;
-  final String caption;
+                // 2. Daily chart (hide if <= 1 day)
+                if (snap.dailyBreakdown.length > 1) {
+                  children.add(DailyChartCard(
+                    dailyBreakdown: snap.dailyBreakdown,
+                    locale: locale,
+                  ));
+                  children.add(const SizedBox(height: 12));
+                }
 
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          label.toUpperCase(),
-          style: theme.textTheme.labelSmall?.copyWith(
-            color: theme.colorScheme.primary,
-            letterSpacing: 0.8,
-          ),
-        ),
-        const SizedBox(height: 2),
-        Text(value, style: theme.textTheme.headlineMedium),
-        Text(
-          caption,
-          style: theme.textTheme.bodySmall?.copyWith(
-            color: theme.colorScheme.onSurfaceVariant,
-          ),
-        ),
-      ],
-    );
-  }
-}
+                // 3. Category breakdown (hide if empty or single-amal filter)
+                if (snap.categoryBreakdown.isNotEmpty && !isSingleAmal) {
+                  children.add(CategoryBreakdownCard(
+                    categories: snap.categoryBreakdown,
+                  ));
+                  children.add(const SizedBox(height: 12));
+                }
 
-class _RatioBar extends StatelessWidget {
-  const _RatioBar({
-    required this.label,
-    required this.completed,
-    required this.expected,
-    required this.rate,
-  });
+                // 4. Streaks
+                children.add(StreaksCard(
+                  currentStreak: snap.currentStreak,
+                  longestStreak: snap.longestStreak,
+                  totalCompletedDays: snap.totalCompletedDays,
+                ));
+                children.add(const SizedBox(height: 12));
 
-  final String label;
-  final int completed;
-  final int expected;
-  final double rate;
+                // 5. Heatmap (hide if empty)
+                if (snap.heatmapData.isNotEmpty) {
+                  children.add(HeatmapCard(heatmapData: snap.heatmapData));
+                  children.add(const SizedBox(height: 12));
+                }
 
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final pct = (rate * 100).round();
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Row(
-          children: [
-            Text(label, style: theme.textTheme.labelMedium),
-            const Spacer(),
-            Text(
-              '$completed / $expected  ·  $pct%',
-              style: theme.textTheme.labelMedium,
+                // 6. Per-amal list (hide if <= 1 amal and single-amal filter)
+                if (!(snap.perAmal.length <= 1 && isSingleAmal)) {
+                  children.add(PerAmalCard(perAmal: snap.perAmal));
+                  children.add(const SizedBox(height: 12));
+                }
+
+                return [
+                  SliverPadding(
+                    padding:
+                        const EdgeInsetsDirectional.fromSTEB(16, 0, 16, 16),
+                    sliver: SliverList(
+                      delegate: SliverChildListDelegate(children),
+                    ),
+                  ),
+                ];
+              },
             ),
           ],
-        ),
-        const SizedBox(height: 4),
-        ClipRRect(
-          borderRadius: BorderRadius.circular(4),
-          child: LinearProgressIndicator(
-            value: rate.clamp(0.0, 1.0),
-            minHeight: 6,
-            backgroundColor: theme.colorScheme.surfaceContainerHighest,
-          ),
-        ),
-      ],
-    );
-  }
-}
-
-class _FrequencyBadge extends StatelessWidget {
-  const _FrequencyBadge({required this.frequency});
-
-  final Frequency frequency;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final l = AppLocalizations.of(context);
-    final label = switch (frequency) {
-      Frequency.daily => l.frequencyBadgeDaily,
-      Frequency.weekly => l.frequencyBadgeWeekly,
-      Frequency.monthly => l.frequencyBadgeMonthly,
-    };
-    return Container(
-      padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 2),
-      decoration: BoxDecoration(
-        color: theme.colorScheme.secondaryContainer,
-        borderRadius: BorderRadius.circular(10),
-      ),
-      child: Text(
-        label,
-        style: theme.textTheme.labelSmall?.copyWith(
-          color: theme.colorScheme.onSecondaryContainer,
         ),
       ),
     );

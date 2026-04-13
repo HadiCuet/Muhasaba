@@ -375,6 +375,78 @@ class AppLocalizationsBs extends AppLocalizations {
       'Jos nema amela. Dodajte jedan na Danas da pocnete pracenje.';
 
   @override
+  String get statsToday => 'Danas';
+
+  @override
+  String get statsThisWeek => 'Ove sedmice';
+
+  @override
+  String get statsThisMonth => 'Ovog mjeseca';
+
+  @override
+  String get statsAllTime => 'Svo vrijeme';
+
+  @override
+  String get statsCustomRange => 'Prilagodeni raspon';
+
+  @override
+  String get statsAllCategories => 'Sve';
+
+  @override
+  String get statsAllAmals => 'Sve';
+
+  @override
+  String get statsCompleted => 'Zavrseno';
+
+  @override
+  String get statsExpected => 'Ocekivano';
+
+  @override
+  String get statsVsPrevious => 'U odnosu na prethodno';
+
+  @override
+  String get statsByCategory => 'Po kategoriji';
+
+  @override
+  String get statsPerAmal => 'Po amelu';
+
+  @override
+  String get statsCurrentStreak => 'Trenutni niz';
+
+  @override
+  String get statsBestStreak => 'Najbolji niz';
+
+  @override
+  String get statsTotalDays => 'Ukupno dana';
+
+  @override
+  String get statsConsistency => 'Dosljednost';
+
+  @override
+  String get statsLast5Weeks => 'Zadnjih 5 sedmica';
+
+  @override
+  String get statsDailyBreakdown => 'Dnevni pregled';
+
+  @override
+  String get statsCompletionRate => 'Stopa zavrsenosti';
+
+  @override
+  String get statsFilterTime => 'Vrijeme';
+
+  @override
+  String get statsFilterCategory => 'Kategorija';
+
+  @override
+  String get statsFilterAmal => 'Amel';
+
+  @override
+  String get statsStreaks => 'Nizovi';
+
+  @override
+  String get statsSelectDateRange => 'Odaberite raspon datuma';
+
+  @override
   String get historyTitle => 'Historija';
 
   @override

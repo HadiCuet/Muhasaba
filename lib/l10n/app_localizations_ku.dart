@@ -374,6 +374,78 @@ class AppLocalizationsKu extends AppLocalizations {
       'هێشتا هیچ کردارێک نییە. لە ئەمڕۆ یەکێک زیاد بکە بۆ دەستپێکردنی شوێنکەوتن.';
 
   @override
+  String get statsToday => 'ئەمڕۆ';
+
+  @override
+  String get statsThisWeek => 'ئەم هەفتەیە';
+
+  @override
+  String get statsThisMonth => 'ئەم مانگە';
+
+  @override
+  String get statsAllTime => 'هەموو کات';
+
+  @override
+  String get statsCustomRange => 'ماوەی تایبەت';
+
+  @override
+  String get statsAllCategories => 'هەمووی';
+
+  @override
+  String get statsAllAmals => 'هەمووی';
+
+  @override
+  String get statsCompleted => 'تەواو کراوە';
+
+  @override
+  String get statsExpected => 'چاوەڕوانکراو';
+
+  @override
+  String get statsVsPrevious => 'بە بەراورد لەگەڵ پێشووەکە';
+
+  @override
+  String get statsByCategory => 'بەپێی جۆر';
+
+  @override
+  String get statsPerAmal => 'بۆ هەر کردارێک';
+
+  @override
+  String get statsCurrentStreak => 'زنجیرەی ئێستا';
+
+  @override
+  String get statsBestStreak => 'باشترین زنجیرە';
+
+  @override
+  String get statsTotalDays => 'کۆی ڕۆژەکان';
+
+  @override
+  String get statsConsistency => 'بەردەوامی';
+
+  @override
+  String get statsLast5Weeks => 'دوایین ٥ هەفتە';
+
+  @override
+  String get statsDailyBreakdown => 'وردەکاری ڕۆژانە';
+
+  @override
+  String get statsCompletionRate => 'ڕێژەی تەواوکردن';
+
+  @override
+  String get statsFilterTime => 'کات';
+
+  @override
+  String get statsFilterCategory => 'جۆر';
+
+  @override
+  String get statsFilterAmal => 'کردار';
+
+  @override
+  String get statsStreaks => 'زنجیرەکان';
+
+  @override
+  String get statsSelectDateRange => 'ماوەی ڕێکەوت هەڵبژێرە';
+
+  @override
   String get historyTitle => 'مێژوو';
 
   @override

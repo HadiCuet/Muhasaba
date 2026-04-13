@@ -374,6 +374,78 @@ class AppLocalizationsBn extends AppLocalizations {
       'এখনো কোনো আমল নেই। ট্র্যাকিং শুরু করতে আজ ট্যাব থেকে একটি যোগ করুন।';
 
   @override
+  String get statsToday => 'আজ';
+
+  @override
+  String get statsThisWeek => 'এই সপ্তাহ';
+
+  @override
+  String get statsThisMonth => 'এই মাস';
+
+  @override
+  String get statsAllTime => 'সর্বকালীন';
+
+  @override
+  String get statsCustomRange => 'কাস্টম পরিসীমা';
+
+  @override
+  String get statsAllCategories => 'সব';
+
+  @override
+  String get statsAllAmals => 'সব';
+
+  @override
+  String get statsCompleted => 'সম্পন্ন';
+
+  @override
+  String get statsExpected => 'প্রত্যাশিত';
+
+  @override
+  String get statsVsPrevious => 'পূর্ববর্তীর তুলনায়';
+
+  @override
+  String get statsByCategory => 'বিভাগ অনুযায়ী';
+
+  @override
+  String get statsPerAmal => 'আমল প্রতি';
+
+  @override
+  String get statsCurrentStreak => 'বর্তমান ধারা';
+
+  @override
+  String get statsBestStreak => 'সেরা ধারা';
+
+  @override
+  String get statsTotalDays => 'মোট দিন';
+
+  @override
+  String get statsConsistency => 'ধারাবাহিকতা';
+
+  @override
+  String get statsLast5Weeks => 'গত ৫ সপ্তাহ';
+
+  @override
+  String get statsDailyBreakdown => 'দৈনিক বিশ্লেষণ';
+
+  @override
+  String get statsCompletionRate => 'সম্পন্নের হার';
+
+  @override
+  String get statsFilterTime => 'সময়';
+
+  @override
+  String get statsFilterCategory => 'বিভাগ';
+
+  @override
+  String get statsFilterAmal => 'আমল';
+
+  @override
+  String get statsStreaks => 'ধারা';
+
+  @override
+  String get statsSelectDateRange => 'তারিখের পরিসীমা নির্বাচন করুন';
+
+  @override
   String get historyTitle => 'ইতিহাস';
 
   @override

@@ -373,6 +373,78 @@ class AppLocalizationsSq extends AppLocalizations {
       'Asnje amal ende. Shtoni nje ne Sot per te filluar ndjekjen.';
 
   @override
+  String get statsToday => 'Sot';
+
+  @override
+  String get statsThisWeek => 'Kete jave';
+
+  @override
+  String get statsThisMonth => 'Kete muaj';
+
+  @override
+  String get statsAllTime => 'Gjithe kohet';
+
+  @override
+  String get statsCustomRange => 'Gama e personalizuar';
+
+  @override
+  String get statsAllCategories => 'Te gjitha';
+
+  @override
+  String get statsAllAmals => 'Te gjitha';
+
+  @override
+  String get statsCompleted => 'Te perfunduara';
+
+  @override
+  String get statsExpected => 'Te pritura';
+
+  @override
+  String get statsVsPrevious => 'Kunder te meparshmit';
+
+  @override
+  String get statsByCategory => 'Sipas kategorise';
+
+  @override
+  String get statsPerAmal => 'Per amal';
+
+  @override
+  String get statsCurrentStreak => 'Seria aktuale';
+
+  @override
+  String get statsBestStreak => 'Seria me e mire';
+
+  @override
+  String get statsTotalDays => 'Dite gjithsej';
+
+  @override
+  String get statsConsistency => 'Qendreshmeria';
+
+  @override
+  String get statsLast5Weeks => '5 javet e fundit';
+
+  @override
+  String get statsDailyBreakdown => 'Ndarja ditore';
+
+  @override
+  String get statsCompletionRate => 'Shkalla e perfundimit';
+
+  @override
+  String get statsFilterTime => 'Koha';
+
+  @override
+  String get statsFilterCategory => 'Kategoria';
+
+  @override
+  String get statsFilterAmal => 'Amali';
+
+  @override
+  String get statsStreaks => 'Serite';
+
+  @override
+  String get statsSelectDateRange => 'Zgjidhni gamen e datave';
+
+  @override
   String get historyTitle => 'Historiku';
 
   @override

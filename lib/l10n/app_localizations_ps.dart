@@ -374,6 +374,78 @@ class AppLocalizationsPs extends AppLocalizations {
       'تر اوسه هیڅ عمل نشته. د تعقیب پیل لپاره د نن په برخه کې یو اضافه کړئ.';
 
   @override
+  String get statsToday => 'نن';
+
+  @override
+  String get statsThisWeek => 'دا اونۍ';
+
+  @override
+  String get statsThisMonth => 'دا میاشت';
+
+  @override
+  String get statsAllTime => 'ټول وختونه';
+
+  @override
+  String get statsCustomRange => 'دلخواه موده';
+
+  @override
+  String get statsAllCategories => 'ټول';
+
+  @override
+  String get statsAllAmals => 'ټول';
+
+  @override
+  String get statsCompleted => 'بشپړ شوي';
+
+  @override
+  String get statsExpected => 'تمه شوي';
+
+  @override
+  String get statsVsPrevious => 'د تیر په پرتله';
+
+  @override
+  String get statsByCategory => 'د کټګورۍ له مخې';
+
+  @override
+  String get statsPerAmal => 'د هر عمل';
+
+  @override
+  String get statsCurrentStreak => 'اوسنی لړۍ';
+
+  @override
+  String get statsBestStreak => 'غوره لړۍ';
+
+  @override
+  String get statsTotalDays => 'ټول ورځې';
+
+  @override
+  String get statsConsistency => 'دوام';
+
+  @override
+  String get statsLast5Weeks => 'وروستۍ ۵ اونۍ';
+
+  @override
+  String get statsDailyBreakdown => 'ورځنی تفصیل';
+
+  @override
+  String get statsCompletionRate => 'د بشپړتیا شرح';
+
+  @override
+  String get statsFilterTime => 'وخت';
+
+  @override
+  String get statsFilterCategory => 'کټګوري';
+
+  @override
+  String get statsFilterAmal => 'عمل';
+
+  @override
+  String get statsStreaks => 'لړۍ';
+
+  @override
+  String get statsSelectDateRange => 'د نیټې موده وټاکئ';
+
+  @override
   String get historyTitle => 'تاریخچه';
 
   @override

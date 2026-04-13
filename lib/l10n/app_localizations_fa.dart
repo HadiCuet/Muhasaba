@@ -375,6 +375,78 @@ class AppLocalizationsFa extends AppLocalizations {
       'هنوز عملی ثبت نشده. یکی را در بخش امروز اضافه کنید تا پیگیری شروع شود.';
 
   @override
+  String get statsToday => 'امروز';
+
+  @override
+  String get statsThisWeek => 'این هفته';
+
+  @override
+  String get statsThisMonth => 'این ماه';
+
+  @override
+  String get statsAllTime => 'همه زمان‌ها';
+
+  @override
+  String get statsCustomRange => 'بازه سفارشی';
+
+  @override
+  String get statsAllCategories => 'همه';
+
+  @override
+  String get statsAllAmals => 'همه';
+
+  @override
+  String get statsCompleted => 'انجام شده';
+
+  @override
+  String get statsExpected => 'مورد انتظار';
+
+  @override
+  String get statsVsPrevious => 'در مقایسه با قبلی';
+
+  @override
+  String get statsByCategory => 'بر اساس دسته';
+
+  @override
+  String get statsPerAmal => 'به تفکیک عمل';
+
+  @override
+  String get statsCurrentStreak => 'رکورد فعلی';
+
+  @override
+  String get statsBestStreak => 'بهترین رکورد';
+
+  @override
+  String get statsTotalDays => 'کل روزها';
+
+  @override
+  String get statsConsistency => 'پایداری';
+
+  @override
+  String get statsLast5Weeks => '۵ هفته اخیر';
+
+  @override
+  String get statsDailyBreakdown => 'جزئیات روزانه';
+
+  @override
+  String get statsCompletionRate => 'نرخ انجام';
+
+  @override
+  String get statsFilterTime => 'زمان';
+
+  @override
+  String get statsFilterCategory => 'دسته‌بندی';
+
+  @override
+  String get statsFilterAmal => 'عمل';
+
+  @override
+  String get statsStreaks => 'رکوردها';
+
+  @override
+  String get statsSelectDateRange => 'بازه تاریخ را انتخاب کنید';
+
+  @override
   String get historyTitle => 'تاریخچه';
 
   @override

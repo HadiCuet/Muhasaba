@@ -374,6 +374,78 @@ class AppLocalizationsKk extends AppLocalizations {
       'Әлі амал жоқ. Бақылауды бастау үшін Бүгін бетінде амал қосыңыз.';
 
   @override
+  String get statsToday => 'Бүгін';
+
+  @override
+  String get statsThisWeek => 'Осы апта';
+
+  @override
+  String get statsThisMonth => 'Осы ай';
+
+  @override
+  String get statsAllTime => 'Барлық уақыт';
+
+  @override
+  String get statsCustomRange => 'Таңдаулы кезең';
+
+  @override
+  String get statsAllCategories => 'Барлығы';
+
+  @override
+  String get statsAllAmals => 'Барлығы';
+
+  @override
+  String get statsCompleted => 'Орындалған';
+
+  @override
+  String get statsExpected => 'Күтілген';
+
+  @override
+  String get statsVsPrevious => 'Алдыңғымен салыстырғанда';
+
+  @override
+  String get statsByCategory => 'Санат бойынша';
+
+  @override
+  String get statsPerAmal => 'Әр амал';
+
+  @override
+  String get statsCurrentStreak => 'Ағымдағы серия';
+
+  @override
+  String get statsBestStreak => 'Ең жақсы серия';
+
+  @override
+  String get statsTotalDays => 'Жалпы күндер';
+
+  @override
+  String get statsConsistency => 'Тұрақтылық';
+
+  @override
+  String get statsLast5Weeks => 'Соңғы 5 апта';
+
+  @override
+  String get statsDailyBreakdown => 'Күнделікті талдау';
+
+  @override
+  String get statsCompletionRate => 'Орындалу деңгейі';
+
+  @override
+  String get statsFilterTime => 'Уақыт';
+
+  @override
+  String get statsFilterCategory => 'Санат';
+
+  @override
+  String get statsFilterAmal => 'Амал';
+
+  @override
+  String get statsStreaks => 'Сериялар';
+
+  @override
+  String get statsSelectDateRange => 'Күн аралығын таңдаңыз';
+
+  @override
   String get historyTitle => 'Тарих';
 
   @override

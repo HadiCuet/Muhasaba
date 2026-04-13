@@ -776,6 +776,150 @@ abstract class AppLocalizations {
   /// **'No amal yet. Add one on Today to start tracking.'**
   String get statsEmpty;
 
+  /// No description provided for @statsToday.
+  ///
+  /// In en, this message translates to:
+  /// **'Today'**
+  String get statsToday;
+
+  /// No description provided for @statsThisWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'This Week'**
+  String get statsThisWeek;
+
+  /// No description provided for @statsThisMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'This Month'**
+  String get statsThisMonth;
+
+  /// No description provided for @statsAllTime.
+  ///
+  /// In en, this message translates to:
+  /// **'All Time'**
+  String get statsAllTime;
+
+  /// No description provided for @statsCustomRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Custom Range'**
+  String get statsCustomRange;
+
+  /// No description provided for @statsAllCategories.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get statsAllCategories;
+
+  /// No description provided for @statsAllAmals.
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get statsAllAmals;
+
+  /// No description provided for @statsCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get statsCompleted;
+
+  /// No description provided for @statsExpected.
+  ///
+  /// In en, this message translates to:
+  /// **'Expected'**
+  String get statsExpected;
+
+  /// No description provided for @statsVsPrevious.
+  ///
+  /// In en, this message translates to:
+  /// **'vs Previous'**
+  String get statsVsPrevious;
+
+  /// No description provided for @statsByCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'By Category'**
+  String get statsByCategory;
+
+  /// No description provided for @statsPerAmal.
+  ///
+  /// In en, this message translates to:
+  /// **'Per Amal'**
+  String get statsPerAmal;
+
+  /// No description provided for @statsCurrentStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Streak'**
+  String get statsCurrentStreak;
+
+  /// No description provided for @statsBestStreak.
+  ///
+  /// In en, this message translates to:
+  /// **'Best Streak'**
+  String get statsBestStreak;
+
+  /// No description provided for @statsTotalDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Total Days'**
+  String get statsTotalDays;
+
+  /// No description provided for @statsConsistency.
+  ///
+  /// In en, this message translates to:
+  /// **'Consistency'**
+  String get statsConsistency;
+
+  /// No description provided for @statsLast5Weeks.
+  ///
+  /// In en, this message translates to:
+  /// **'Last 5 weeks'**
+  String get statsLast5Weeks;
+
+  /// No description provided for @statsDailyBreakdown.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Breakdown'**
+  String get statsDailyBreakdown;
+
+  /// No description provided for @statsCompletionRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Completion rate'**
+  String get statsCompletionRate;
+
+  /// No description provided for @statsFilterTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Time'**
+  String get statsFilterTime;
+
+  /// No description provided for @statsFilterCategory.
+  ///
+  /// In en, this message translates to:
+  /// **'Category'**
+  String get statsFilterCategory;
+
+  /// No description provided for @statsFilterAmal.
+  ///
+  /// In en, this message translates to:
+  /// **'Amal'**
+  String get statsFilterAmal;
+
+  /// No description provided for @statsStreaks.
+  ///
+  /// In en, this message translates to:
+  /// **'Streaks'**
+  String get statsStreaks;
+
+  /// No description provided for @statsSelectDateRange.
+  ///
+  /// In en, this message translates to:
+  /// **'Select date range'**
+  String get statsSelectDateRange;
+
   /// No description provided for @historyTitle.
   ///
   /// In en, this message translates to:

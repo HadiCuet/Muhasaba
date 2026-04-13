@@ -373,6 +373,78 @@ class AppLocalizationsEn extends AppLocalizations {
   String get statsEmpty => 'No amal yet. Add one on Today to start tracking.';
 
   @override
+  String get statsToday => 'Today';
+
+  @override
+  String get statsThisWeek => 'This Week';
+
+  @override
+  String get statsThisMonth => 'This Month';
+
+  @override
+  String get statsAllTime => 'All Time';
+
+  @override
+  String get statsCustomRange => 'Custom Range';
+
+  @override
+  String get statsAllCategories => 'All';
+
+  @override
+  String get statsAllAmals => 'All';
+
+  @override
+  String get statsCompleted => 'Completed';
+
+  @override
+  String get statsExpected => 'Expected';
+
+  @override
+  String get statsVsPrevious => 'vs Previous';
+
+  @override
+  String get statsByCategory => 'By Category';
+
+  @override
+  String get statsPerAmal => 'Per Amal';
+
+  @override
+  String get statsCurrentStreak => 'Current Streak';
+
+  @override
+  String get statsBestStreak => 'Best Streak';
+
+  @override
+  String get statsTotalDays => 'Total Days';
+
+  @override
+  String get statsConsistency => 'Consistency';
+
+  @override
+  String get statsLast5Weeks => 'Last 5 weeks';
+
+  @override
+  String get statsDailyBreakdown => 'Daily Breakdown';
+
+  @override
+  String get statsCompletionRate => 'Completion rate';
+
+  @override
+  String get statsFilterTime => 'Time';
+
+  @override
+  String get statsFilterCategory => 'Category';
+
+  @override
+  String get statsFilterAmal => 'Amal';
+
+  @override
+  String get statsStreaks => 'Streaks';
+
+  @override
+  String get statsSelectDateRange => 'Select date range';
+
+  @override
   String get historyTitle => 'History';
 
   @override
