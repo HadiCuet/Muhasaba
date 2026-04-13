@@ -528,7 +528,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get hadith5 =>
-      '\"The best of people are those who are most beneficial to people.\"\n— Daraqutni';
+      '\"The best of people are those who are most beneficial to people.\"\n— Tabarani';
 
   @override
   String get hadith6 =>
@@ -723,7 +723,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get hadith49 =>
-      '\"Whoever eats and says Alhamdulillah, his past sins will be forgiven.\"\n— Tirmidhi';
+      '\"Whoever eats food and says: \'Praise be to Allah who has fed me this and provided it without any power or strength on my part,\' his past sins will be forgiven.\"\n— Tirmidhi';
 
   @override
   String get hadith50 =>
@@ -779,7 +779,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get hadith63 =>
-      '\"Kindness to parents is the greatest obligatory act.\"\n— Bukhari';
+      '\"The most beloved deeds to Allah: prayer at its proper time, then kindness to parents, then jihad in the cause of Allah.\"\n— Bukhari & Muslim';
 
   @override
   String get hadith64 =>
@@ -822,7 +822,8 @@ class AppLocalizationsEn extends AppLocalizations {
       '\"Umrah to Umrah is an expiation for what is between them.\"\n— Bukhari & Muslim';
 
   @override
-  String get hadith74 => '\"Race to do good deeds.\"\n— Muslim';
+  String get hadith74 =>
+      '\"Hasten to do good deeds before trials come like portions of a dark night.\"\n— Muslim';
 
   @override
   String get hadith75 =>
@@ -846,7 +847,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get hadith80 =>
-      '\"The deeds most loved by Allah are the most consistent, even if small.\"\n— Bukhari';
+      '\"Whoever is not grateful to people is not grateful to Allah.\"\n— Tirmidhi';
 
   @override
   String get hadith81 =>
@@ -862,11 +863,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get hadith84 =>
-      '\"The best of you is the one whose heart is most tender.\"\n— Tabarani';
+      '\"The best of worship is awaiting relief.\"\n— Tirmidhi';
 
   @override
   String get hadith85 =>
-      '\"Allah does not burden a soul beyond what it can bear.\"\n— Quran 2:286';
+      '\"Whoever leaves something for the sake of Allah, Allah will replace it with something better.\"\n— Ahmad';
 
   @override
   String get hadith86 =>

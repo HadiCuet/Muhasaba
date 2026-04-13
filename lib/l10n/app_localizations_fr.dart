@@ -532,7 +532,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get hadith5 =>
-      '\"Les meilleurs des gens sont ceux qui sont les plus utiles aux gens.\"\n— Daraqutni';
+      '\"Les meilleurs des gens sont ceux qui sont les plus utiles aux gens.\"\n— Tabarani';
 
   @override
   String get hadith6 =>
@@ -732,7 +732,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get hadith49 =>
-      '\"Celui qui mange et dit Alhamdulillah verra ses péchés passés pardonnés.\"\n— Tirmidhi';
+      '\"Celui qui mange et dit : \'Louange à Allah qui m\'a nourri de cela et me l\'a accordé sans aucune force ni puissance de ma part,\' ses péchés passés lui seront pardonnés.\"\n— Tirmidhi';
 
   @override
   String get hadith50 =>
@@ -788,7 +788,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get hadith63 =>
-      '\"La bonté envers les parents est le plus grand des actes obligatoires.\"\n— Bukhari';
+      '\"Les actes les plus aimés d\'Allah : la prière à son heure, puis la bonté envers les parents, puis le jihad dans le sentier d\'Allah.\"\n— Bukhari & Muslim';
 
   @override
   String get hadith64 =>
@@ -832,7 +832,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get hadith74 =>
-      '\"Empressez-vous de faire les bonnes actions.\"\n— Muslim';
+      '\"Hâtez-vous de faire les bonnes actions avant que les épreuves ne surviennent comme des portions d\'une nuit sombre.\"\n— Muslim';
 
   @override
   String get hadith75 =>
@@ -856,7 +856,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get hadith80 =>
-      '\"Les actes les plus aimés d\'Allah sont les plus réguliers, même s\'ils sont modestes.\"\n— Bukhari';
+      '\"Celui qui n\'est pas reconnaissant envers les gens n\'est pas reconnaissant envers Allah.\"\n— Tirmidhi';
 
   @override
   String get hadith81 =>
@@ -872,11 +872,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get hadith84 =>
-      '\"Le meilleur d\'entre vous est celui dont le cœur est le plus tendre.\"\n— Tabarani';
+      '\"La meilleure des adorations est l\'attente du soulagement.\"\n— Tirmidhi';
 
   @override
   String get hadith85 =>
-      '\"Allah n\'impose à aucune âme une charge supérieure à sa capacité.\"\n— Coran 2:286';
+      '\"Celui qui abandonne quelque chose pour l\'amour d\'Allah, Allah le remplacera par quelque chose de meilleur.\"\n— Ahmad';
 
   @override
   String get hadith86 =>
@@ -900,7 +900,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get hadith91 =>
-      '\"Celui qui abandonne le mensonge, même en plaisantant, je lui garantis un palais aux abords du Paradis.\"\n— Abu Dawud';
+      '\"Celui qui abandonne le mensonge pour l\'amour d\'Allah, même en plaisantant, je lui garantis un palais aux abords du Paradis.\"\n— Abu Dawud';
 
   @override
   String get hadith92 =>

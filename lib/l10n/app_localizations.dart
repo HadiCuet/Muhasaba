@@ -1073,7 +1073,7 @@ abstract class AppLocalizations {
   /// No description provided for @hadith5.
   ///
   /// In en, this message translates to:
-  /// **'\"The best of people are those who are most beneficial to people.\"\n— Daraqutni'**
+  /// **'\"The best of people are those who are most beneficial to people.\"\n— Tabarani'**
   String get hadith5;
 
   /// No description provided for @hadith6.
@@ -1385,7 +1385,7 @@ abstract class AppLocalizations {
   /// No description provided for @hadith49.
   ///
   /// In en, this message translates to:
-  /// **'\"Whoever eats and says Alhamdulillah, his past sins will be forgiven.\"\n— Tirmidhi'**
+  /// **'\"Whoever eats food and says: \'Praise be to Allah who has fed me this and provided it without any power or strength on my part,\' his past sins will be forgiven.\"\n— Tirmidhi'**
   String get hadith49;
 
   /// No description provided for @hadith50.
@@ -1469,7 +1469,7 @@ abstract class AppLocalizations {
   /// No description provided for @hadith63.
   ///
   /// In en, this message translates to:
-  /// **'\"Kindness to parents is the greatest obligatory act.\"\n— Bukhari'**
+  /// **'\"The most beloved deeds to Allah: prayer at its proper time, then kindness to parents, then jihad in the cause of Allah.\"\n— Bukhari & Muslim'**
   String get hadith63;
 
   /// No description provided for @hadith64.
@@ -1535,7 +1535,7 @@ abstract class AppLocalizations {
   /// No description provided for @hadith74.
   ///
   /// In en, this message translates to:
-  /// **'\"Race to do good deeds.\"\n— Muslim'**
+  /// **'\"Hasten to do good deeds before trials come like portions of a dark night.\"\n— Muslim'**
   String get hadith74;
 
   /// No description provided for @hadith75.
@@ -1571,7 +1571,7 @@ abstract class AppLocalizations {
   /// No description provided for @hadith80.
   ///
   /// In en, this message translates to:
-  /// **'\"The deeds most loved by Allah are the most consistent, even if small.\"\n— Bukhari'**
+  /// **'\"Whoever is not grateful to people is not grateful to Allah.\"\n— Tirmidhi'**
   String get hadith80;
 
   /// No description provided for @hadith81.
@@ -1595,13 +1595,13 @@ abstract class AppLocalizations {
   /// No description provided for @hadith84.
   ///
   /// In en, this message translates to:
-  /// **'\"The best of you is the one whose heart is most tender.\"\n— Tabarani'**
+  /// **'\"The best of worship is awaiting relief.\"\n— Tirmidhi'**
   String get hadith84;
 
   /// No description provided for @hadith85.
   ///
   /// In en, this message translates to:
-  /// **'\"Allah does not burden a soul beyond what it can bear.\"\n— Quran 2:286'**
+  /// **'\"Whoever leaves something for the sake of Allah, Allah will replace it with something better.\"\n— Ahmad'**
   String get hadith85;
 
   /// No description provided for @hadith86.

@@ -529,7 +529,7 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get hadith5 =>
-      '\"Mafi alherin mutane su ne wadanda suka fi amfanar mutane.\"\n— Daraqutni';
+      '\"Mafi alherin mutane su ne wadanda suka fi amfanar mutane.\"\n— Tabarani';
 
   @override
   String get hadith6 =>
@@ -726,7 +726,7 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get hadith49 =>
-      '\"Duk wanda ya ci abinci ya ce Alhamdulillah, za a gafarta masa zunubansa na baya.\"\n— Tirmizi';
+      '\"Duk wanda ya ci abinci ya ce: \'Godiya ta tabbata ga Allah wanda ya ciyar da ni wannan kuma ya azurta ni ba tare da wani iko ko karfi daga gare ni ba,\' za a gafarta masa zunubansa na baya.\"\n— Tirmizi';
 
   @override
   String get hadith50 =>
@@ -781,7 +781,7 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get hadith63 =>
-      '\"Yin alheri ga iyaye shi ne mafi girman aikin farilla.\"\n— Bukhari';
+      '\"Ayyukan da Allah ya fi so: salla a lokacinta, sannan kyautatawa ga iyaye, sannan jihadi a tafarkin Allah.\"\n— Bukhari da Muslim';
 
   @override
   String get hadith64 =>
@@ -823,7 +823,8 @@ class AppLocalizationsHa extends AppLocalizations {
       '\"Umra zuwa Umra kafara ce ga zunuban da ke tsakaninsu.\"\n— Bukhari da Muslim';
 
   @override
-  String get hadith74 => '\"Ku yi tseren yin ayyukan alheri.\"\n— Muslim';
+  String get hadith74 =>
+      '\"Ku yi gaggawa da ayyukan alheri kafin fitnoni su zo kamar yanki na dare mai duhu.\"\n— Muslim';
 
   @override
   String get hadith75 =>
@@ -847,7 +848,7 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get hadith80 =>
-      '\"Aikin da Allah ya fi so shi ne wanda ake yi a kai a kai, ko da kaɗan ne.\"\n— Bukhari';
+      '\"Wanda bai gode wa mutane ba, bai gode wa Allah ba.\"\n— Tirmizi';
 
   @override
   String get hadith81 =>
@@ -863,11 +864,11 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get hadith84 =>
-      '\"Mafi alherinku shi ne wanda zuciyarsa ta fi tausasawa.\"\n— Tabrani';
+      '\"Mafi kyawun ibada ita ce jiran samun sauƙi.\"\n— Tirmizi';
 
   @override
   String get hadith85 =>
-      '\"Allah ba ya ɗora wa rai fiye da iyawarta.\"\n— Alkur\'ani 2:286';
+      '\"Duk wanda ya bar wani abu saboda Allah, Allah zai maye masa da wani abu mafi alheri.\"\n— Ahmad';
 
   @override
   String get hadith86 =>

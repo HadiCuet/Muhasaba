@@ -12,328 +12,329 @@ class AppLocalizationsKu extends AppLocalizations {
   String get appTitle => 'Muhasaba';
 
   @override
-  String get tabToday => 'ئەمڕۆ';
+  String get tabToday => 'Îro';
 
   @override
-  String get tabStats => 'ئامار';
+  String get tabStats => 'Amar';
 
   @override
-  String get tabHistory => 'مێژوو';
+  String get tabHistory => 'Dîrok';
 
   @override
-  String get tabSettings => 'ڕێکخستنەکان';
+  String get tabSettings => 'Mîheng';
 
   @override
-  String get newAmal => 'کرداری نوێ';
+  String get newAmal => 'Kirina nû';
 
   @override
-  String get editAmal => 'دەستکاری کردار';
+  String get editAmal => 'Kirinê biguherîne';
 
   @override
-  String get newAmalTitle => 'کرداری نوێ';
+  String get newAmalTitle => 'Kirina nû';
 
   @override
-  String get save => 'پاشەکەوتکردن';
+  String get save => 'Tomar bike';
 
   @override
-  String get cancel => 'پاشگەزبوونەوە';
+  String get cancel => 'Dev jê berde';
 
   @override
-  String get clear => 'سڕینەوە';
+  String get clear => 'Paqij bike';
 
   @override
-  String get titleLabel => 'ناونیشان';
+  String get titleLabel => 'Sernav';
 
   @override
-  String get titleRequired => 'ناونیشان پێویستە';
+  String get titleRequired => 'Sernav pêwîst e';
 
   @override
-  String get titleTooLong => 'ناونیشان زۆر درێژە';
+  String get titleTooLong => 'Sernav pir dirêj e';
 
   @override
-  String get frequencyLabel => 'دووبارەبوونەوە';
+  String get frequencyLabel => 'Dubarebûn';
 
   @override
-  String get frequencyDaily => 'ڕۆژانە';
+  String get frequencyDaily => 'Rojane';
 
   @override
-  String get frequencyWeekly => 'هەفتانە';
+  String get frequencyWeekly => 'Heftane';
 
   @override
-  String get frequencyMonthly => 'مانگانە';
+  String get frequencyMonthly => 'Mehane';
 
   @override
-  String get categoryLabel => 'جۆر';
+  String get categoryLabel => 'Beş';
 
   @override
-  String get categoryOther => 'هیتر';
+  String get categoryOther => 'Yên din';
 
   @override
-  String get categorySalah => 'نوێژ';
+  String get categorySalah => 'Nimêj';
 
   @override
-  String get categoryDhikr => 'زیکر';
+  String get categoryDhikr => 'Zikir';
 
   @override
-  String get categoryQuran => 'قورئان';
+  String get categoryQuran => 'Quran';
 
   @override
-  String get categoryCharity => 'خێرات';
+  String get categoryCharity => 'Xêr';
 
   @override
-  String get timesPerPeriod => 'جار لە هەر ماوەیەک';
+  String get timesPerPeriod => 'Car di her heyamê de';
 
   @override
-  String get custom => 'تایبەت';
+  String get custom => 'Taybet';
 
   @override
-  String get customTargetHint => 'بۆ نمونە ٥٠';
+  String get customTargetHint => 'wek mînak 50';
 
   @override
-  String get dayOfWeek => 'ڕۆژی هەفتە';
+  String get dayOfWeek => 'Roja hefteyê';
 
   @override
-  String get anyDay => 'هەر ڕۆژێک';
+  String get anyDay => 'Her roj';
 
   @override
-  String get anyDayHint => 'هەر ڕۆژێک (ئەمڕۆ دەردەکەوێت، سبەی دەشارێتەوە)';
+  String get anyDayHint => 'Her roj (îro xuya dibe, sibê vedişêre)';
 
   @override
   String onlyDayHint(String day) {
-    return 'تەنها $day';
+    return 'Tenê $day';
   }
 
   @override
-  String get dateOfMonth => 'ڕێکەوتی مانگ';
+  String get dateOfMonth => 'Roja mehê';
 
   @override
-  String get anyDate => 'هەر ڕێکەوتێک';
+  String get anyDate => 'Her roj';
 
   @override
-  String get anyDateHint => 'هەر ڕێکەوتێک (ئەمڕۆ دەردەکەوێت، سبەی دەشارێتەوە)';
+  String get anyDateHint => 'Her roj (îro xuya dibe, sibê vedişêre)';
 
   @override
   String onlyDateHint(String date) {
-    return 'تەنها لە $date';
+    return 'Tenê di $date de';
   }
 
   @override
-  String get startPreChecked => 'لە سەرەتاوە نیشانکراو';
+  String get startPreChecked => 'Ji destpêkê ve nîşankirî';
 
   @override
   String get startPreCheckedSubtitle =>
-      'کاتێک ماوەیەکی نوێ دەست پێ دەکات، ئەم کردارە بە بنەڕەتی وەک تەواوکراو نیشان دەکرێت تا تۆ نیشانەکەی لادەبەیت.';
+      'Gava heyamek nû dest pê dike, ev kirin bi xweber wek qediyayî tê nîşankirin heta ku tu nîşanê rakî.';
 
   @override
-  String get reminder => 'بیرخستنەوە';
+  String get reminder => 'Bîranîn';
 
   @override
-  String get reminderNone => 'هیچ';
+  String get reminderNone => 'Tune';
 
   @override
   String reminderTime(String time) {
-    return 'بیرخستنەوە: $time';
+    return 'Bîranîn: $time';
   }
 
   @override
   String get reminderPermissionWarning =>
-      'بیرخستنەوە پاشەکەوت کرا، بەڵام ئاگاداریەکان ڕێگەپێنەدراون. لە ڕێکخستنەکانی سیستەم چالاکیان بکە بۆ وەرگرتنی ئاگاداری.';
+      'Bîranîn hat tomarkirin, lê agahdarî destûr nehatiye dayîn. Di mîhengên pergalê de wan çalak bike.';
 
   @override
-  String get groupByCategory => 'کۆکردنەوە بەپێی جۆر';
+  String get groupByCategory => 'Li gorî beşê kom bike';
 
   @override
-  String get flatList => 'لیستی ئاسایی';
+  String get flatList => 'Lîsteya sade';
 
   @override
   String errorGeneric(String error) {
-    return 'هەڵە: $error';
+    return 'Çewtî: $error';
   }
 
   @override
-  String get todayEmptyHint => 'دەست بنێ لەسەر + بۆ زیادکردنی یەکەم کردارت.';
+  String get todayEmptyHint =>
+      'Li + bitikîne da ku kirina xwe ya yekem lê zêde bikî.';
 
   @override
-  String get noteLabel => 'تێبینی';
+  String get noteLabel => 'Not';
 
   @override
-  String get noteHint => 'بۆ نمونە لە مزگەوت نوێژم کرد';
+  String get noteHint => 'wek mînak Li mizgeftê nimêj kir';
 
   @override
-  String get completed => 'تەواو کرا';
+  String get completed => 'qediya';
 
   @override
-  String get notCompleted => 'تەواو نەکرا';
+  String get notCompleted => 'neqediya';
 
   @override
   String progressOf(int progress, int target) {
-    return '$progress لە $target تەواو کرا';
+    return '$progress ji $target qediya';
   }
 
   @override
-  String get removeFromToday => 'لابردن لە ئەمڕۆ';
+  String get removeFromToday => 'Ji îro rake';
 
   @override
   String get removeFromTodaySubtitle =>
-      'تەنها بۆ ئەم ڕۆژە دەشارێتەوە. سبەی دەگەڕێتەوە.';
+      'Tenê ji bo vê rojê vedişêre. Sibê vedigere.';
 
   @override
-  String get removeFromTracking => 'لابردن لە شوێنکەوتن';
+  String get removeFromTracking => 'Ji şopandinê rake';
 
   @override
   String get removeFromTrackingSubtitle =>
-      'بە تەواوی لە لیستەکەت لادەبرێت. مێژووەکە دەمێنێتەوە.';
+      'Bi tevahî ji lîsteya te tê rakirin. Dîrok dimîne.';
 
   @override
-  String get chooseIcon => 'وێنۆچکە هەڵبژێرە';
+  String get chooseIcon => 'Îkonê hilbijêre';
 
   @override
-  String get iconNone => 'هیچ';
+  String get iconNone => 'Tune';
 
   @override
-  String get recentlyUsed => 'دوایین بەکارهێنراوەکان';
+  String get recentlyUsed => 'Yên dawî bikaranîn';
 
   @override
-  String get emojiSectionGeneral => 'گشتی';
+  String get emojiSectionGeneral => 'Giştî';
 
   @override
-  String get categoryNameHint => 'ناو';
+  String get categoryNameHint => 'Nav';
 
   @override
-  String get categoryNew => '+ نوێ';
+  String get categoryNew => '+ Nû';
 
   @override
-  String get addAmal => 'زیادکردنی کردار';
+  String get addAmal => 'Kirin lê zêde bike';
 
   @override
-  String get customAmal => 'کرداری تایبەت';
+  String get customAmal => 'Kirina taybet';
 
   @override
-  String get templateTasbih => 'تەسبیح ٣٣ جار';
+  String get templateTasbih => 'Tesbîh 33 car';
 
   @override
-  String get templateIstighfar => 'ئیستیغفار ١٠٠ جار';
+  String get templateIstighfar => 'Îstîxfar 100 car';
 
   @override
-  String get templateSurahKahf => 'سورەتی کەهف';
+  String get templateSurahKahf => 'Sûreya Kehf';
 
   @override
-  String get templateSadaqah => 'خێرات';
+  String get templateSadaqah => 'Sedaqe';
 
   @override
-  String get templateTahajjud => 'تەهەجود';
+  String get templateTahajjud => 'Teheccud';
 
   @override
-  String get templateDuhaPrayer => 'نوێژی دوحا';
+  String get templateDuhaPrayer => 'Nimêja Duhayê';
 
   @override
-  String get settingsTitle => 'ڕێکخستنەکان';
+  String get settingsTitle => 'Mîheng';
 
   @override
   String settingsLoadError(String error) {
-    return 'ڕێکخستنەکان بارنەکران:\n$error';
+    return 'Mîheng nehatin barkirin:\n$error';
   }
 
   @override
-  String get sectionDayBoundary => 'سنووری ڕۆژ';
+  String get sectionDayBoundary => 'Sînorê rojê';
 
   @override
-  String get rolloverHour => 'کاتی گۆڕانی ڕۆژ';
+  String get rolloverHour => 'Saeta guherîna rojê';
 
   @override
-  String get rolloverAtMidnight => 'ئەمڕۆ لە نیوەشەو تەواو دەبێت.';
+  String get rolloverAtMidnight => 'Îro di nîvê şevê de diqede.';
 
   @override
   String rolloverSubtitle(String time) {
-    return 'کردارەکانی دوێنێ تا $time دەستکاریکردنیان دەکرێت.';
+    return 'Kirînên duh heta $time têne guherandin.';
   }
 
   @override
-  String get pickRolloverHour => 'کاتژمێری گۆڕانی ڕۆژ هەڵبژێرە';
+  String get pickRolloverHour => 'Saeta guherîna rojê hilbijêre';
 
   @override
-  String get sectionWeekMonth => 'هەفتە و مانگ';
+  String get sectionWeekMonth => 'Hefte û meh';
 
   @override
-  String get startOfWeek => 'سەرەتای هەفتە';
+  String get startOfWeek => 'Destpêka hefteyê';
 
   @override
-  String get startOfMonth => 'سەرەتای مانگ';
+  String get startOfMonth => 'Destpêka mehê';
 
   @override
   String get startOfMonthClamped =>
-      'ڕۆژەکانی دوای ٢٨ بۆ دوایین ڕۆژی مانگە کورتەکان دەگۆڕدرێن.';
+      'Rojên piştî 28ê ji bo mehên kurt li roja dawî tê guhertin.';
 
   @override
-  String get sectionAppearance => 'دەرکەوتن';
+  String get sectionAppearance => 'Xuyang';
 
   @override
-  String get theme => 'ڕووکار';
+  String get theme => 'Tema';
 
   @override
-  String get themeSystem => 'سیستەم';
+  String get themeSystem => 'Pergal';
 
   @override
-  String get themeLight => 'ڕووناک';
+  String get themeLight => 'Ronahî';
 
   @override
-  String get themeDark => 'تاریک';
+  String get themeDark => 'Tarî';
 
   @override
-  String get sectionLanguage => 'زمان';
+  String get sectionLanguage => 'Ziman';
 
   @override
-  String get language => 'زمان';
+  String get language => 'Ziman';
 
   @override
-  String get systemDefault => 'بنەڕەتی سیستەم';
+  String get systemDefault => 'Bingehîn a pergalê';
 
   @override
   String get aboutTitle => 'Muhasaba';
 
   @override
   String get aboutSubtitle =>
-      'ڕۆژنامەی تایبەتی بەرپرسیارێتی ئایینی. هەموو داتاکان لەم ئامێرەدا دەمێنێتەوە.';
+      'Rojnameya berpirsiyariya dînî ya kesane. Hemû dane li ser vê amûrê dimînin.';
 
   @override
-  String get statsTitle => 'ئامار';
+  String get statsTitle => 'Amar';
 
   @override
   String statsLoadError(String error) {
-    return 'ئامار بارنەکران:\n$error';
+    return 'Amar nehatin barkirin:\n$error';
   }
 
   @override
-  String get perAmal => 'بۆ هەر کردارێک';
+  String get perAmal => 'Ji bo her kirinê';
 
   @override
-  String get thisWeek => 'ئەم هەفتەیە';
+  String get thisWeek => 'Vê hefteyê';
 
   @override
-  String get thisMonth => 'ئەم مانگە';
+  String get thisMonth => 'Vê mehê';
 
   @override
-  String get totalCompletions => 'کۆی تەواوکردنەکان';
+  String get totalCompletions => 'tevahiya qediyandinan';
 
   @override
-  String get streakCurrent => 'ئێستا';
+  String get streakCurrent => 'Niha';
 
   @override
-  String get streakLongest => 'درێژترین';
+  String get streakLongest => 'Herî dirêj';
 
   @override
-  String get ratioWeek => 'هەفتە';
+  String get ratioWeek => 'Hefte';
 
   @override
-  String get ratioMonth => 'مانگ';
+  String get ratioMonth => 'Meh';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'ڕۆژ',
-      one: 'ڕۆژ',
+      other: 'roj',
+      one: 'roj',
     );
     return '$_temp0';
   }
@@ -343,8 +344,8 @@ class AppLocalizationsKu extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'هەفتە',
-      one: 'هەفتە',
+      other: 'hefte',
+      one: 'hefte',
     );
     return '$_temp0';
   }
@@ -354,197 +355,197 @@ class AppLocalizationsKu extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'مانگ',
-      one: 'مانگ',
+      other: 'meh',
+      one: 'meh',
     );
     return '$_temp0';
   }
 
   @override
-  String get frequencyBadgeDaily => 'ڕۆژانە';
+  String get frequencyBadgeDaily => 'rojane';
 
   @override
-  String get frequencyBadgeWeekly => 'هەفتانە';
+  String get frequencyBadgeWeekly => 'heftane';
 
   @override
-  String get frequencyBadgeMonthly => 'مانگانە';
+  String get frequencyBadgeMonthly => 'mehane';
 
   @override
   String get statsEmpty =>
-      'هێشتا هیچ کردارێک نییە. لە ئەمڕۆ یەکێک زیاد بکە بۆ دەستپێکردنی شوێنکەوتن.';
+      'Hîn kirin tune. Ji Îro yekê lê zêde bike da ku şopandin dest pê bike.';
 
   @override
-  String get statsToday => 'ئەمڕۆ';
+  String get statsToday => 'Îro';
 
   @override
-  String get statsThisWeek => 'ئەم هەفتەیە';
+  String get statsThisWeek => 'Vê Hefteyê';
 
   @override
-  String get statsThisMonth => 'ئەم مانگە';
+  String get statsThisMonth => 'Vê Mehê';
 
   @override
-  String get statsAllTime => 'هەموو کات';
+  String get statsAllTime => 'Hemû Dem';
 
   @override
-  String get statsCustomRange => 'ماوەی تایبەت';
+  String get statsCustomRange => 'Heyama Taybet';
 
   @override
-  String get statsAllCategories => 'هەمووی';
+  String get statsAllCategories => 'Hemû';
 
   @override
-  String get statsAllAmals => 'هەمووی';
+  String get statsAllAmals => 'Hemû';
 
   @override
-  String get statsCompleted => 'تەواو کراوە';
+  String get statsCompleted => 'Qediyaye';
 
   @override
-  String get statsExpected => 'چاوەڕوانکراو';
+  String get statsExpected => 'Bendewarkirî';
 
   @override
-  String get statsVsPrevious => 'بە بەراورد لەگەڵ پێشووەکە';
+  String get statsVsPrevious => 'li hember ya berê';
 
   @override
-  String get statsByCategory => 'بەپێی جۆر';
+  String get statsByCategory => 'Li gorî beşê';
 
   @override
-  String get statsPerAmal => 'بۆ هەر کردارێک';
+  String get statsPerAmal => 'Ji bo her kirinê';
 
   @override
-  String get statsCurrentStreak => 'زنجیرەی ئێستا';
+  String get statsCurrentStreak => 'Rêza niha';
 
   @override
-  String get statsBestStreak => 'باشترین زنجیرە';
+  String get statsBestStreak => 'Rêza herî baş';
 
   @override
-  String get statsTotalDays => 'کۆی ڕۆژەکان';
+  String get statsTotalDays => 'Tevahiya rojan';
 
   @override
-  String get statsConsistency => 'بەردەوامی';
+  String get statsConsistency => 'Berdewamî';
 
   @override
-  String get statsLast5Weeks => 'دوایین ٥ هەفتە';
+  String get statsLast5Weeks => '5 hefteyên dawî';
 
   @override
-  String get statsDailyBreakdown => 'وردەکاری ڕۆژانە';
+  String get statsDailyBreakdown => 'Hûrguliyên rojane';
 
   @override
-  String get statsCompletionRate => 'ڕێژەی تەواوکردن';
+  String get statsCompletionRate => 'Rêjeya qedandinê';
 
   @override
-  String get statsFilterTime => 'کات';
+  String get statsFilterTime => 'Dem';
 
   @override
-  String get statsFilterCategory => 'جۆر';
+  String get statsFilterCategory => 'Beş';
 
   @override
-  String get statsFilterAmal => 'کردار';
+  String get statsFilterAmal => 'Kirin';
 
   @override
-  String get statsStreaks => 'زنجیرەکان';
+  String get statsStreaks => 'Rêz';
 
   @override
-  String get statsSelectDateRange => 'ماوەی ڕێکەوت هەڵبژێرە';
+  String get statsSelectDateRange => 'Heyama rojê hilbijêre';
 
   @override
-  String get historyTitle => 'مێژوو';
+  String get historyTitle => 'Dîrok';
 
   @override
-  String get jumpToDate => 'بڕۆ بۆ ڕێکەوت';
+  String get jumpToDate => 'Biçe rojekê';
 
   @override
   String historyEmptyDay(String date) {
-    return 'هیچ کردارێک لە $date تۆمار نەکراوە';
+    return 'Di $date de kirin nehatiye tomarkirin';
   }
 
   @override
-  String get streakUnitD => 'ڕ';
+  String get streakUnitD => 'r';
 
   @override
-  String get streakUnitW => 'ه';
+  String get streakUnitW => 'h';
 
   @override
-  String get streakUnitM => 'م';
+  String get streakUnitM => 'm';
 
   @override
-  String get mondayShort => 'دشم';
+  String get mondayShort => 'Dş';
 
   @override
-  String get tuesdayShort => 'سشم';
+  String get tuesdayShort => 'Sş';
 
   @override
-  String get wednesdayShort => 'چشم';
+  String get wednesdayShort => 'Çş';
 
   @override
-  String get thursdayShort => 'پشم';
+  String get thursdayShort => 'Pş';
 
   @override
-  String get fridayShort => 'هەی';
+  String get fridayShort => 'În';
 
   @override
-  String get saturdayShort => 'شەم';
+  String get saturdayShort => 'Şe';
 
   @override
-  String get sundayShort => 'یشم';
+  String get sundayShort => 'Yş';
 
   @override
-  String get mondayFull => 'دووشەممە';
+  String get mondayFull => 'Duşem';
 
   @override
-  String get tuesdayFull => 'سێشەممە';
+  String get tuesdayFull => 'Sêşem';
 
   @override
-  String get wednesdayFull => 'چوارشەممە';
+  String get wednesdayFull => 'Çarşem';
 
   @override
-  String get thursdayFull => 'پێنجشەممە';
+  String get thursdayFull => 'Pêncşem';
 
   @override
-  String get fridayFull => 'هەینی';
+  String get fridayFull => 'Înî';
 
   @override
-  String get saturdayFull => 'شەممە';
+  String get saturdayFull => 'Şemî';
 
   @override
-  String get sundayFull => 'یەکشەممە';
+  String get sundayFull => 'Yekşem';
 
   @override
   String get hadith0 =>
-      '\"خۆشەویستترین کردار لای خوا ئەوانەن کە بەردەوام بن، تەنانەت گەر بچووکیش بن.\"\n— بوخاری و موسلیم';
+      '\"Kirinên herî delal li ber Xwedê ew in ku domdar in, heke piçûk bin jî.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith1 =>
-      '\"کرداری چاک بکەن بەقەدری توانایان، چونکە باشترین کردار ئەوانەن کە بەردەوام بن تەنانەت گەر کەمیش بن.\"\n— ئیبن ماجە';
+      '\"Kirinên qenc bikin bi qasî ku hûn dikarin, ji ber ku kirinên herî baş ew in ku domdar in heke hindik bin jî.\"\n— Îbn Mace';
 
   @override
   String get hadith2 =>
-      '\"کاتێک کوڕی ئادەم دەمرێت، کردارەکانی دەوەستن جگە لە سێ: خێراتی بەردەوام، زانستی سوودبەخش، یان منداڵێکی چاک کە بۆی دوعا دەکات.\"\n— موسلیم';
+      '\"Gava kurê Adem dimire, kirinên wî disekinin ji bilî sisiyan: xêra domdar, zanista bi kêr, an zarokek salih ku ji bo wî dua dike.\"\n— Muslim';
 
   @override
   String get hadith3 =>
-      '\"هەرکەسێک دوو نوێژی فێنک (بەیانی و عەسر) بکات دەچێتە بەهەشتەوە.\"\n— بوخاری';
+      '\"Kî du nimêjên hênik (Fecir û Esr) bike, dê bikeve Bihuştê.\"\n— Buxarî';
 
   @override
   String get hadith4 =>
-      '\"خوا سەیری ڕووخسارتان و سامانتان ناکات، بەڵکو سەیری دڵ و کردارتان دەکات.\"\n— موسلیم';
+      '\"Xwedê li rûyê we û malê we nanêre, lê li dilê we û kirinên we dinêre.\"\n— Muslim';
 
   @override
   String get hadith5 =>
-      '\"باشترین خەڵک ئەوانەن کە سوودیان بۆ خەڵک هەبێت.\"\n— دارەقوتنی';
+      '\"Yê herî baş di nav mirovan de ew e ku ji bo mirovan herî bi kêr be.\"\n— Tebranî';
 
   @override
   String get hadith6 =>
-      '\"ئاسان بکەن و قورس مەکەن؛ مژدە بدەن و خەڵکی مەتۆقێنن.\"\n— بوخاری';
+      '\"Hêsan bikin û dijwar nekin; mizgînî bidin û mirovan netirsînin.\"\n— Buxarî';
 
   @override
   String get hadith7 =>
-      '\"هەرکەسێک ڕێگایەک بگرێت بۆ بەدەستهێنانی زانست، خوا ڕێگای بەهەشتی بۆ ئاسان دەکات.\"\n— موسلیم';
+      '\"Kî rêyek bigire ji bo lêgerîna zanistê, Xwedê rêya Bihuştê jê re hêsan dike.\"\n— Muslim';
 
   @override
-  String get hadith8 => '\"خێرات سامان کەم ناکاتەوە.\"\n— موسلیم';
+  String get hadith8 => '\"Xêr malê kêm nake.\"\n— Muslim';
 
   @override
   String get hadith9 =>
-      '\"باوەڕداری بەهێز باشتر و خۆشەویستترە لای خوا لە باوەڕداری لاواز، لەگەڵ ئەوەشدا لە هەردووکیاندا چاکە هەیە.\"\n— موسلیم';
+      '\"Bawermendê bihêz çêtir û ji Xwedê re delaltir e ji bawermendê qels, lê di herduyan de jî qencî heye.\"\n— Muslim';
 
   @override
   String get hadith10 =>
@@ -722,7 +723,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get hadith49 =>
-      '\"Kî xwarinê bixwe û Elhemdulillah bêje, gunehên wî yên berê têne baxişandin.\"\n— Tirmizî';
+      '\"Kî xwarinê bixwe û bibêje: \'Spas ji Xwedê re ye ku ev xwarin da min û bêyî hêz û hîla min dabîn kir,\' gunehên wî yên berê têne baxişandin.\"\n— Tirmizî';
 
   @override
   String get hadith50 =>
@@ -776,7 +777,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get hadith63 =>
-      '\"Qenciya li dê û bavan peywira herî mezin e.\"\n— Buxarî';
+      '\"Kirinên herî delal li ber Xwedê: nimêj di dema xwe de, paşê qenciya li dê û bavan, paşê cîhad di rêya Xwedê de.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith64 =>
@@ -818,104 +819,105 @@ class AppLocalizationsKu extends AppLocalizations {
       '\"Umre heya umreya din keffareta gunehên di navbera wan de ye.\"\n— Buxarî û Muslim';
 
   @override
-  String get hadith74 => '\"Di karên qenc de pêşbaziyê bikin.\"\n— Muslim';
+  String get hadith74 =>
+      '\"Berî ku ceribandin wek perçeyên şeveke tarî werin, di kirinên qenc de lez bikin.\"\n— Muslim';
 
   @override
   String get hadith75 =>
-      '\"دوو ڕەکاتی نوێژی بەیانی باشترن لە دونیا و هەموو ئەوەی تێیدایە.\"\n— موسلیم';
+      '\"Du rikatên nimêja Fecirê ji dinyayê û her tiştê ku tê de ye çêtir in.\"\n— Muslim';
 
   @override
   String get hadith76 =>
-      '\"هەرکەسێک بەردەوام ئیستیغفار بکات، خودا لە هەموو تەنگانەیەک ڕێگای دەرچوونی بۆ دابین دەکات.\"\n— ئەبوو داوود';
+      '\"Kî bi domdarî \'Estexfirullah\' bibêje, Xwedê ji her tengasiyê rêyek jê re vedike.\"\n— Ebû Dawûd';
 
   @override
   String get hadith77 =>
-      '\"ئەگەر ئێوە بە ڕاستی متمانەتان بە خودا دەکرد، ئەوا وەک باڵندەکان ڕزقتان دەدا.\"\n— تیرمیزی';
+      '\"Heke hûn bi rastî pişta xwe bi Xwedê ve girêdana, ew ê wek çûkan rizqê we bida we.\"\n— Tirmizî';
 
   @override
   String get hadith78 =>
-      '\"هەرکەسێک سەردانی نەخۆشێک بکات، تاکو دەگەڕێتەوە لە باخچەی بەهەشتدایە.\"\n— موسلیم';
+      '\"Kî serdana nexweşekî bike, heta ku vegere di baxçeyê Bihuştê de ye.\"\n— Muslim';
 
   @override
   String get hadith79 =>
-      '\"سەلام بڵاو بکەنەوە، نان بدەن، و شەو نوێژ بکەن کاتێک خەڵکی خەوتوون — بە ئاشتییەوە دەچنە بەهەشتەوە.\"\n— تیرمیزی';
+      '\"Selamê belav bikin, birçiyan têr bikin û bi şev nimêj bikin gava ku mirov radizan — hûn ê bi aştiyê bikevin Bihuştê.\"\n— Tirmizî';
 
   @override
   String get hadith80 =>
-      '\"خۆشەویستترین کردەوە لای خودا ئەوەیە کە بەردەوام بێت، تەنانەت ئەگەر کەم بێت.\"\n— بوخاری';
+      '\"Kî spasiya mirovan neke, spasiya Xwedê jî nake.\"\n— Tirmizî';
 
   @override
   String get hadith81 =>
-      '\"بەغیلی تەنها لە دوو بارەوە ڕوادەبێت: کەسێک کە خودا سامانی داوە و لە ڕێگای ڕاستدا خەرجی دەکات، و کەسێک کە خودا دانایی داوە و پێی حوکم دەدات و فێری دەکات.\"\n— بوخاری و موسلیم';
+      '\"Çavnebarî tenê di du baran de rewa ye: mirovê ku Xwedê mal daye û ew di rêya rast de xerc dike, û mirovê ku Xwedê şehrezayî daye û pê dadbarî dike û hîn dike.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith82 =>
-      '\"مرۆڤ لەسەر ئایینی هاوڕێیەتی، بۆیە هەر یەکتان سەیری ئەوە بکات کە لەگەڵ کێ هاوڕێ دەبێت.\"\n— ئەبوو داوود و تیرمیزی';
+      '\"Mirov li ser dînê hevalê xwe ye, bila her yek ji we binêre ku bi kê re hevaltî dike.\"\n— Ebû Dawûd û Tirmizî';
 
   @override
   String get hadith83 =>
-      '\"زۆر بیری لە مردن بکەنەوە، چونکە دڵ پاک دەکات.\"\n— تیرمیزی';
+      '\"Zêde li mirinê bifikirin, ji ber ku ew dilê we paqij dike.\"\n— Tirmizî';
 
   @override
   String get hadith84 =>
-      '\"باشترینتان ئەوەیە کە دڵی هەموویان نەرمتر بێت.\"\n— تەبەرانی';
+      '\"Îbadeta herî baş li bendê bûna rehetiyê ye.\"\n— Tirmizî';
 
   @override
   String get hadith85 =>
-      '\"خودا هیچ کەسێک بارگرانی لە توانای زیاتر ناکات.\"\n— قورئان ٢:٢٨٦';
+      '\"Kî tiştekî ji bo Xwedê berde, Xwedê dê tiştekî çêtir bide wî.\"\n— Ehmed';
 
   @override
   String get hadith86 =>
-      '\"هەرکەسێک کەموکوڕی موسلمانێک بشارێتەوە، خودا لە ڕۆژی قیامەت کەموکوڕییەکانی دادەپۆشێت.\"\n— بوخاری و موسلیم';
+      '\"Kî kêmasiyên Misilmanekî veşêre, Xwedê dê Roja Qiyametê kêmasiyên wî veşêre.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith87 =>
-      '\"لەم دونیایەدا وەک بێگانەیەک بژی یان وەک ڕێبوارێک.\"\n— بوخاری';
+      '\"Di vê dinyayê de wek xerîbek an rêwiyek bijî.\"\n— Buxarî';
 
   @override
   String get hadith88 =>
-      '\"هەرکەسێک ئاسانکاری بۆ کەسێکی تەنگانەدا بکات، خودا لە دونیا و ئاخیرەتدا ئاسانی بۆ دەکات.\"\n— موسلیم';
+      '\"Kî ji bo kesê di tengasiyê de hêsaniyê peyda bike, Xwedê dê li dinyayê û axretê jê re hêsaniyê peyda bike.\"\n— Muslim';
 
   @override
   String get hadith89 =>
-      '\"پاداشتی کردەوەکان بە نیەتەکان دادەنرێت.\"\n— بوخاری و موسلیم';
+      '\"Xelata kirinan bi niyetan ve girêdayî ye.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith90 =>
-      '\"لە گومان دووربن، چونکە گومان درۆیینترین قسەیە.\"\n— بوخاری و موسلیم';
+      '\"Ji gumanê dûr bikevin, ji ber ku guman derewîntirîn axaftin e.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith91 =>
-      '\"هەرکەسێک بۆ خاتری خودا درۆ بەجێبهێڵێت، تەنانەت لە پێکەنین، من بۆی قەسرێک لە لێواری بەهەشتدا دەسەلمێنم.\"\n— ئەبوو داوود';
+      '\"Kî ji bo Xwedê dev ji derewan berde, tewra di henekê de jî, ez qesrekî li qeraxa Bihuştê jê re garantî dikim.\"\n— Ebû Dawûd';
 
   @override
   String get hadith92 =>
-      '\"دەروازەکانی چاکە زۆرن: تەسبیحی خودا، سوپاسی ئەو، سەدەقە، فەرمانی بە چاکە، و لابردنی زیانی ڕێگا.\"\n— موسلیم';
+      '\"Deriyên qenciyê gelek in: pesnê Xwedê dayîn, spasiya wî kirin, xêr, fermana bi qenciyê, û rakirina zirarê ji rê.\"\n— Muslim';
 
   @override
   String get hadith93 =>
-      '\"پێکەوە نان بخۆن و ناوی خودا ببێنن، بۆتان بەرەکەت دەبێت.\"\n— ئەبوو داوود';
+      '\"Bi hev re xwarinê bixwin û navê Xwedê bibêjin, dê ji we re bibe bereketê.\"\n— Ebû Dawûd';
 
   @override
   String get hadith94 =>
-      '\"باشترین کۆبوونەوە ئەوەیە کە فراوانتر بێت.\"\n— ئەبوو داوود';
+      '\"Civîna herî baş ew e ku herî fireh be.\"\n— Ebû Dawûd';
 
   @override
-  String get hadith95 => '\"لێبوردن بکەن، ئێوەش لێبوردن دەکرێت.\"\n— ئەحمەد';
+  String get hadith95 => '\"Bibaxşînin û hûn jî tên baxişandin.\"\n— Ehmed';
 
   @override
   String get hadith96 =>
-      '\"وشترەکەت ببەستە پاشان متمانە بە خودا بکە.\"\n— تیرمیزی';
+      '\"Devê xwe girê bide û paşê pişta xwe bi Xwedê ve girê bide.\"\n— Tirmizî';
 
   @override
   String get hadith97 =>
-      '\"سەرسوڕمەزانە کاری باوەڕداری — هەموو شتێک بۆی باشە.\"\n— موسلیم';
+      '\"Kara bawermend ecêb e — her tişt ji bo wî baş e.\"\n— Muslim';
 
   @override
   String get hadith98 =>
-      '\"موسلمان برای موسلمانە: ستەمی لێ ناکات، بەجێی ناهێڵێت، و سووکی ناکات.\"\n— موسلیم';
+      '\"Misilman birayê Misilman e: ne zilm lê dike, ne dev jê berdide û ne jî wî piçûk dibîne.\"\n— Muslim';
 
   @override
   String get hadith99 =>
-      '\"خۆشەویستترین قسە لای خودا: سوبحان ئاللە و بیحەمدیهی، سوبحان ئاللە ئەلعەزیم.\"\n— بوخاری و موسلیم';
+      '\"Gotina herî delal li ber Xwedê: SubhanAllahi we bihamdihi, SubhanAllahil Ezîm.\"\n— Buxarî û Muslim';
 }

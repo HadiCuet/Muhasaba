@@ -529,7 +529,7 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get hadith5 =>
-      '\"ترټولو غوره خلک هغه دي چې خلکو ته ترټولو ډیر ګټور وي.\"\n— دارقطني';
+      '\"ترټولو غوره خلک هغه دي چې خلکو ته ترټولو ډیر ګټور وي.\"\n— طبراني';
 
   @override
   String get hadith6 =>
@@ -718,7 +718,7 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get hadith49 =>
-      '\"هر څوک چې خوراک وخوري او \'الحمد لله\' ووایی، تیرې ګناهونه یې بخښل کیږي.\"\n— ترمذي';
+      '\"هر څوک چې خوراک وخوري او ووایي: \'الحمدلله چې ما ته یې دا خوراک ورکړ او بې له کومې ځواکې یا طاقتې زما ما ته رسولی دی،\' د هغه تېرې ګناهونه بخښل کیږي.\"\n— ترمذي';
 
   @override
   String get hadith50 =>
@@ -772,7 +772,7 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get hadith63 =>
-      '\"د والدینو سره نېکي ترټولو لوی فرض عمل دی.\"\n— بخاري';
+      '\"د الله تعالی نزد ترټولو خوښ عملونه: لمونځ په خپل وخت، بیا د والدینو سره نېکي، بیا د الله په لاره کې جهاد.\"\n— بخاري او مسلم';
 
   @override
   String get hadith64 =>
@@ -814,7 +814,8 @@ class AppLocalizationsPs extends AppLocalizations {
       '\"عمره تر بلې عمرې د دواړو ترمنځ ګناهونو کفاره ده.\"\n— بخاري او مسلم';
 
   @override
-  String get hadith74 => '\"نېکو کارونو ته ومنډه کړئ.\"\n— مسلم';
+  String get hadith74 =>
+      '\"مخکې له دې چې فتنې د توره شپې د ټوټو په شان راشي، نېکو عملونو ته ولاړ شئ.\"\n— مسلم';
 
   @override
   String get hadith75 =>
@@ -838,7 +839,7 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get hadith80 =>
-      '\"د الله نزد تر ټولو ګران عمل هغه دی چې دوامداره وي، که لږ هم وي.\"\n— بخاري';
+      '\"هر څوک چې د خلکو شکرګزار نه وي، د الله شکرګزار نه دی.\"\n— ترمذي';
 
   @override
   String get hadith81 =>
@@ -852,12 +853,11 @@ class AppLocalizationsPs extends AppLocalizations {
   String get hadith83 => '\"مرګ ډیر یاد کړئ، ځکه چې دا زړه پاکوي.\"\n— ترمذي';
 
   @override
-  String get hadith84 =>
-      '\"ستاسو تر ټولو غوره هغه دی چې زړه یې تر ټولو نرم وي.\"\n— طبراني';
+  String get hadith84 => '\"ترټولو غوره عبادت د خلاصون انتظار دی.\"\n— ترمذي';
 
   @override
   String get hadith85 =>
-      '\"الله هیڅ ځان ته د وسعت څخه زیات بار نه اچوي.\"\n— قرآن ۲:۲۸۶';
+      '\"هر څوک چې د الله لپاره یو شی پریږدي، الله به ورته غوره شی ورکړي.\"\n— احمد';
 
   @override
   String get hadith86 =>

@@ -529,7 +529,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get hadith5 =>
-      '\"लोगों में सबसे अच्छे वे हैं जो लोगों के लिए सबसे ज़्यादा फ़ायदेमंद हों।\"\n— दारक़ुतनी';
+      '\"लोगों में सबसे अच्छे वे हैं जो लोगों के लिए सबसे ज़्यादा फ़ायदेमंद हों।\"\n— तबरानी';
 
   @override
   String get hadith6 =>
@@ -723,7 +723,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get hadith49 =>
-      '\"जो खाना खाकर अलहम्दुलिल्लाह कहे, उसके पिछले गुनाह माफ़ कर दिए जाएंगे।\"\n— तिर्मिज़ी';
+      '\"जो खाना खाकर कहे: \'उस अल्लाह की हम्द जिसने मुझे यह खिलाया और मेरी किसी ताक़त या ज़ोर के बिना मुझे यह रोज़ी दी,\' उसके पिछले गुनाह माफ़ कर दिए जाएंगे।\"\n— तिर्मिज़ी';
 
   @override
   String get hadith50 =>
@@ -777,7 +777,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get hadith63 =>
-      '\"माता-पिता से अच्छा व्यवहार सबसे बड़ा फ़र्ज़ अमल है।\"\n— बुख़ारी';
+      '\"अल्लाह को सबसे प्रिय अमल: वक़्त पर नमाज़, फिर माता-पिता से अच्छा बर्ताव, फिर अल्लाह की राह में जिहाद।\"\n— बुख़ारी व मुस्लिम';
 
   @override
   String get hadith64 =>
@@ -819,7 +819,8 @@ class AppLocalizationsHi extends AppLocalizations {
       '\"एक उमरा से दूसरे उमरा तक दोनों के बीच के गुनाहों का कफ़्फ़ारा है।\"\n— बुख़ारी और मुस्लिम';
 
   @override
-  String get hadith74 => '\"नेक कामों में आगे बढ़ो।\"\n— मुस्लिम';
+  String get hadith74 =>
+      '\"अँधेरी रात के टुकड़ों जैसी आज़माइशें आने से पहले नेक कामों की ओर दौड़ो।\"\n— मुस्लिम';
 
   @override
   String get hadith75 =>
@@ -843,7 +844,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get hadith80 =>
-      '\"अल्लाह को सबसे प्रिय अमल वह है जो निरंतर किया जाए, भले ही कम हो।\"\n— बुख़ारी';
+      '\"जो लोगों का शुक्र नहीं करता, वह अल्लाह का भी शुक्र नहीं करता।\"\n— तिर्मिज़ी';
 
   @override
   String get hadith81 =>
@@ -859,11 +860,11 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get hadith84 =>
-      '\"तुम में सबसे अच्छा वह है जिसका दिल सबसे कोमल हो।\"\n— तबरानी';
+      '\"सबसे अच्छी इबादत राहत का इंतिज़ार करना है।\"\n— तिर्मिज़ी';
 
   @override
   String get hadith85 =>
-      '\"अल्लाह किसी जान पर उसकी ताक़त से ज़्यादा बोझ नहीं डालता।\"\n— क़ुरआन 2:286';
+      '\"जो अल्लाह की ख़ातिर कोई चीज़ छोड़ देता है, अल्लाह उसे उससे बेहतर चीज़ देता है।\"\n— अहमद';
 
   @override
   String get hadith86 =>

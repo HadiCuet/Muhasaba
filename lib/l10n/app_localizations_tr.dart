@@ -531,7 +531,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get hadith5 =>
-      '\"İnsanların en hayırlısı, insanlara en faydalısı olandır.\"\n— Dârekutnî';
+      '\"İnsanların en hayırlısı, insanlara en faydalısı olandır.\"\n— Taberânî';
 
   @override
   String get hadith6 =>
@@ -725,7 +725,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get hadith49 =>
-      '\"Kim yiyip de \'Elhamdülillah\' derse, geçmiş günahları bağışlanır.\"\n— Tirmizî';
+      '\"Kim yemek yeyip \'Bu yemeği bana yediren ve güç ve kuvvetim olmaksızın onu bana nasip eden Allah\'a hamd olsun\' derse, geçmiş günahları bağışlanır.\"\n— Tirmizî';
 
   @override
   String get hadith50 =>
@@ -779,7 +779,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get hadith63 =>
-      '\"Anne babaya iyilik, en büyük farz ameldir.\"\n— Buhârî';
+      '\"Allah\'a en sevimli ameller: vaktinde kılınan namaz, sonra anne babaya iyilik, sonra Allah yolunda cihattır.\"\n— Buhârî ve Müslim';
 
   @override
   String get hadith64 => '\"Aza şükredenin çoğu verilir.\"\n— Beyhakî';
@@ -820,7 +820,8 @@ class AppLocalizationsTr extends AppLocalizations {
       '\"Bir umre, diğer umreye kadar olan günahlara kefarettir.\"\n— Buhârî ve Müslim';
 
   @override
-  String get hadith74 => '\"Hayırlı işlere koşun.\"\n— Müslim';
+  String get hadith74 =>
+      '\"Karanlık gecenin parçaları gibi fitneler gelmeden önce hayırlı amellere koşun.\"\n— Müslim';
 
   @override
   String get hadith75 =>
@@ -844,7 +845,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get hadith80 =>
-      '\"Allah\'ın en çok sevdiği ameller, az da olsa devamlı olanlardır.\"\n— Buhârî';
+      '\"İnsanlara teşekkür etmeyen, Allah\'a da şükretmez.\"\n— Tirmizî';
 
   @override
   String get hadith81 =>
@@ -860,11 +861,11 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get hadith84 =>
-      '\"Sizin en hayırlınız, kalbi en yumuşak olanınızdır.\"\n— Taberânî';
+      '\"İbadetin en faziletlisi, ferec (kurtuluş) beklemektir.\"\n— Tirmizî';
 
   @override
   String get hadith85 =>
-      '\"Allah hiçbir nefse taşıyamayacağı yükü yüklemez.\"\n— Kur\'ân 2:286';
+      '\"Kim Allah rızası için bir şeyi terk ederse, Allah ona daha hayırlısını verir.\"\n— Ahmed';
 
   @override
   String get hadith86 =>

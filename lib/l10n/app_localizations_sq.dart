@@ -516,7 +516,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get hadith2 =>
-      '\"Kur vdes biri i Ademit, veprat e tij nderpiten perveq trive: sadakaja e vazhdueshme, dituria e dobishme, ose femija i mire qe lutet per te.\"\n— Muslimi';
+      '\"Kur vdes biri i Ademit, veprat e tij ndërpriten përveç tre: sadakaja e vazhdueshme, dituria e dobishme, ose fëmija i mirë që lutet për të.\"\n— Muslimi';
 
   @override
   String get hadith3 =>
@@ -528,7 +528,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get hadith5 =>
-      '\"Me te miret e njerezve jane ata qe jane me te dobishmit per njerezit.\"\n— Darekutniu';
+      '\"Më të mirët e njerëzve janë ata që janë më të dobishmit për njerëzit.\"\n— Tabarani';
 
   @override
   String get hadith6 =>
@@ -536,7 +536,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get hadith7 =>
-      '\"Ai qe ndjek nje rruge per kerkim te dijes, Allahu ia lehtesonshtegen per ne Xhenet.\"\n— Muslimi';
+      '\"Ai që ndjek një rrugë për kërkim të dijes, Allahu ia lehtëson rrugën për në Xhenet.\"\n— Muslimi';
 
   @override
   String get hadith8 => '\"Sadakaja nuk e pakeson pasurine.\"\n— Muslimi';
@@ -726,7 +726,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get hadith49 =>
-      '\"Kush ha dhe thotë Elhamdulilah, i falen mëkatet e kaluara.\"\n— Tirmidhiu';
+      '\"Kush ha ushqim dhe thotë: \'Falënderimi i takon Allahut që më ushqeu me këtë dhe ma mundësoi pa asnjë fuqi e forcë timen,\' i falen mëkatet e kaluara.\"\n— Tirmidhi';
 
   @override
   String get hadith50 =>
@@ -781,7 +781,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get hadith63 =>
-      '\"Mirësia ndaj prindërve është detyrimi më i madh.\"\n— Bukhari';
+      '\"Veprat më të dashura tek Allahu: namazi në kohën e tij, pastaj mirësia ndaj prindërve, pastaj xhihadi në rrugën e Allahut.\"\n— Buhariu & Muslimi';
 
   @override
   String get hadith64 =>
@@ -824,7 +824,8 @@ class AppLocalizationsSq extends AppLocalizations {
       '\"Umra pas umres është shlyerje për mëkatet mes tyre.\"\n— Bukhari & Muslim';
 
   @override
-  String get hadith74 => '\"Garoni për vepra të mira.\"\n— Muslim';
+  String get hadith74 =>
+      '\"Nxitoni në vepra të mira para se të vijnë sprovat si copa të një nate të errët.\"\n— Muslimi';
 
   @override
   String get hadith75 =>
@@ -848,7 +849,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get hadith80 =>
-      '\"Veprat më të dashura tek Allahu janë ato më të vazhdueshmet, edhe nëse janë të pakta.\"\n— Buhariu';
+      '\"Kush nuk është mirënjohës ndaj njerëzve, nuk është mirënjohës ndaj Allahut.\"\n— Tirmidhiu';
 
   @override
   String get hadith81 =>
@@ -864,11 +865,11 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get hadith84 =>
-      '\"Më i miri prej jush është ai që ka zemrën më të butë.\"\n— Taberaniu';
+      '\"Adhurimi më i mirë është pritja e lehtësimit.\"\n— Tirmidhiu';
 
   @override
   String get hadith85 =>
-      '\"Allahu nuk e ngarkon askënd përtej mundësisë së tij.\"\n— Kurani 2:286';
+      '\"Kush lë diçka për hir të Allahut, Allahu e zëvendëson me diçka më të mirë.\"\n— Ahmedi';
 
   @override
   String get hadith86 =>

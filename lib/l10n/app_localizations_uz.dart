@@ -532,7 +532,7 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get hadith5 =>
-      '\"Insonlarning eng yaxshisi odamlarga eng ko\'p foyda keltiradigan kishidir.\"\n— Doroqutniy';
+      '\"Insonlarning eng yaxshisi odamlarga eng ko\'p foyda keltiradigan kishidir.\"\n— Tabaraniy';
 
   @override
   String get hadith6 =>
@@ -727,7 +727,7 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get hadith49 =>
-      '\"Kim taom yeb, Alhamdulillah desa, uning o\'tgan gunohlari kechiriladi.\"\n— Termiziy';
+      '\"Kim taom yeb: \'Menga buni yedirgan va mening hech qanday kuchim va quvvatim bo\'lmagan holda buni menga nasib etgan Allohga hamd bo\'lsin\' desa, uning o\'tgan gunohlari kechiriladi.\"\n— Termiziy';
 
   @override
   String get hadith50 =>
@@ -782,7 +782,7 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get hadith63 =>
-      '\"Ota-onaga yaxshilik qilish eng buyuk farz amaldir.\"\n— Buxoriy';
+      '\"Allohga eng sevimli amallar: o\'z vaqtida o\'qilgan namoz, keyin ota-onaga yaxshilik, keyin Alloh yo\'lida jihod.\"\n— Buxoriy va Muslim';
 
   @override
   String get hadith64 =>
@@ -824,7 +824,8 @@ class AppLocalizationsUz extends AppLocalizations {
       '\"Bir umra ikkinchi umragacha orasidagi gunohlarning kafforatidir.\"\n— Buxoriy va Muslim';
 
   @override
-  String get hadith74 => '\"Yaxshi ishlarga shoshiling.\"\n— Muslim';
+  String get hadith74 =>
+      '\"Qorong\'i tunning bo\'laklari kabi fitnalar kelishidan oldin yaxshi ishlarga shoshiling.\"\n— Muslim';
 
   @override
   String get hadith75 =>
@@ -848,7 +849,7 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get hadith80 =>
-      '\"Allohga eng sevimli amal — doimiy bajariladigan amaldir, garchi oz bo\'lsa ham.\"\n— Buxoriy';
+      '\"Odamlarga shukr qilmagan kishi Allohga ham shukr qilmaydi.\"\n— Termiziy';
 
   @override
   String get hadith81 =>
@@ -864,11 +865,11 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get hadith84 =>
-      '\"Sizlarning eng yaxshingiz qalbi eng yumshoq bo\'lganidir.\"\n— Tabaroniy';
+      '\"Ibodat eng yaxshisi — yengillik kutishdir.\"\n— Termiziy';
 
   @override
   String get hadith85 =>
-      '\"Alloh hech bir jonga uning toqatidan ortiq yuk yuklamaydi.\"\n— Qur\'on 2:286';
+      '\"Kim Alloh uchun biror narsani tark etsa, Alloh unga undan yaxshiroq narsani beradi.\"\n— Ahmad';
 
   @override
   String get hadith86 =>

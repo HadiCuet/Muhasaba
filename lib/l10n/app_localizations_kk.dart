@@ -529,7 +529,7 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get hadith5 =>
-      '\"Адамдардың ең жақсысы — адамдарға ең көп пайда әкелетін адам.\"\n— Дарақұтни';
+      '\"Адамдардың ең жақсысы — адамдарға ең көп пайда әкелетін адам.\"\n— Табарани';
 
   @override
   String get hadith6 =>
@@ -720,7 +720,7 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get hadith49 =>
-      '\"Кім тамақ жеп, \'Әлхамдулиллаһ\' десе, оның өткен күнәлары кешіріледі.\"\n— Термизи';
+      '\"Кім тамақ жеп: \'Маған мұны жегізген және менің ешқандай күшім мен қуатымсыз мұны маған нәсіп еткен Аллаһқа мақтау\' десе, оның өткен күнәлары кешіріледі.\"\n— Термизи';
 
   @override
   String get hadith50 =>
@@ -774,7 +774,7 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get hadith63 =>
-      '\"Ата-анаға жақсылық — ең ұлы парыз амал.\"\n— Бұхари';
+      '\"Аллаһқа ең сүйікті амалдар: уақытында оқылған намаз, содан соң ата-анаға жақсылық, содан соң Аллаһ жолындағы жиһад.\"\n— Бұхари және Муслим';
 
   @override
   String get hadith64 =>
@@ -816,7 +816,8 @@ class AppLocalizationsKk extends AppLocalizations {
       '\"Бір умра екінші умраға дейін арасындағы күнәлардың кәффараты.\"\n— Бұхари және Муслим';
 
   @override
-  String get hadith74 => '\"Жақсы істерге жарысыңдар.\"\n— Муслим';
+  String get hadith74 =>
+      '\"Қараңғы түннің бөліктеріндей сынақтар келмей тұрып, жақсы істерге асығыңдар.\"\n— Муслим';
 
   @override
   String get hadith75 =>
@@ -840,7 +841,7 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get hadith80 =>
-      '\"Аллаға ең сүйікті амал — тұрақты жасалатыны, аз болса да.\"\n— Бұхари';
+      '\"Адамдарға алғыс білдірмеген Аллаһқа да алғыс білдірмейді.\"\n— Термизи';
 
   @override
   String get hadith81 =>
@@ -856,11 +857,11 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get hadith84 =>
-      '\"Сендердің ең жақсыңдар — жүрегі ең жұмсағыңдар.\"\n— Табарани';
+      '\"Ғибадаттың ең жақсысы — жеңілдікті күту.\"\n— Термизи';
 
   @override
   String get hadith85 =>
-      '\"Алла ешбір жанға күшінен артық жүк салмайды.\"\n— Құран 2:286';
+      '\"Кім Аллаһ үшін бір нәрседен бас тартса, Аллаһ оған одан жақсырағын береді.\"\n— Ахмад';
 
   @override
   String get hadith86 =>

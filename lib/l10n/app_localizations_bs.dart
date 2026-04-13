@@ -530,7 +530,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get hadith5 =>
-      '\"Najbolji medu ljudima su oni koji su najkorisniji za ljude.\"\n— Darekutni';
+      '\"Najbolji medu ljudima su oni koji su najkorisniji za ljude.\"\n— Taberani';
 
   @override
   String get hadith6 =>
@@ -723,7 +723,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get hadith49 =>
-      '\"Ko pojede i kaže Elhamdulillah, bit će mu oprošteni prošli grijesi.\"\n— Tirmizi';
+      '\"Ko pojede i kaže: \'Hvala Allahu koji me nahranio ovim i opskrbio me bez ikakve moje moći i snage,\' bit će mu oprošteni prošli grijesi.\"\n— Tirmizi';
 
   @override
   String get hadith50 =>
@@ -778,7 +778,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get hadith63 =>
-      '\"Dobrota prema roditeljima je najveća obavezna dužnost.\"\n— Buhari';
+      '\"Allahu najdraza djela: namaz u njegovom vremenu, zatim dobročinstvo prema roditeljima, zatim džihad na Allahovom putu.\"\n— Buhari i Muslim';
 
   @override
   String get hadith64 =>
@@ -820,7 +820,8 @@ class AppLocalizationsBs extends AppLocalizations {
       '\"Umra do umre je iskupljenje za grijehe između njih.\"\n— Buhari i Muslim';
 
   @override
-  String get hadith74 => '\"Natječite se u dobrim djelima.\"\n— Muslim';
+  String get hadith74 =>
+      '\"Požurite sa dobrim djelima prije nego što dođu iskušenja poput komada mračne noći.\"\n— Muslim';
 
   @override
   String get hadith75 =>
@@ -844,7 +845,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get hadith80 =>
-      '\"Allahu najdraža djela su ona koja su najredovnija, makar bila i mala.\"\n— Buhari';
+      '\"Ko nije zahvalan ljudima, nije zahvalan ni Allahu.\"\n— Tirmizi';
 
   @override
   String get hadith81 =>
@@ -860,11 +861,11 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get hadith84 =>
-      '\"Najbolji među vama je onaj čije je srce najnježnije.\"\n— Taberani';
+      '\"Najbolji ibadet je iščekivanje olakšanja.\"\n— Tirmizi';
 
   @override
   String get hadith85 =>
-      '\"Allah nikoga ne opterećuje preko njegovih mogućnosti.\"\n— Kur\'an 2:286';
+      '\"Ko ostavi nešto radi Allaha, Allah će mu to zamijeniti nečim boljim.\"\n— Ahmed';
 
   @override
   String get hadith86 =>

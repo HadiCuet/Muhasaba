@@ -510,15 +510,15 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith0 =>
-      '\"Allahyn in soyyan amallary, az hem bolsa, yzygiderli edilen amallardy.\"\n— Buhari we Muslim';
+      '\"Allanyň iň söýýän amallary, az hem bolsa, yzygiderli edilýän amallardyr.\"\n— Buhari we Muslim';
 
   @override
   String get hadith1 =>
-      '\"Basaryp biljek amallarynyzdan tutunyn, cunki in gowy amallar az bolsa-da yzygiderli edilenlerdir.\"\n— Ibn Maje';
+      '\"Başaryp biljek amallaryňyzdan tutunyň, çünki iň gowy amallar az bolsa-da yzygiderli edilýänlerdir.\"\n— Ibn Mäje';
 
   @override
   String get hadith2 =>
-      '\"Adam ogly olende, amallary uc zatdan basga kesilyer: dowamly sadaka, peydaly ylym ya-da onun ucin doga edyan salyh perzent.\"\n— Muslim';
+      '\"Adam ogly ölende, amallary üç zatdan başga kesilýär: dowamly sadaka, peýdaly ylym ýa-da onuň üçin doga edýän salyh perzent.\"\n— Muslim';
 
   @override
   String get hadith3 =>
@@ -526,26 +526,26 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith4 =>
-      '\"Allah sizin dasky gorkuinize ya-da baylygynyza dal, yureginize we amallarynyza sereder.\"\n— Muslim';
+      '\"Alla siziň daşky görnüşiňize ýa-da baýlygyňyza däl, ýüregiňize we amallaryňyza seredýär.\"\n— Muslim';
 
   @override
   String get hadith5 =>
-      '\"Adamlaryn in gowusy, adamlara in peydaly bolanlardyr.\"\n— Darakutni';
+      '\"Adamlaryn in gowusy, adamlara in peydaly bolanlardyr.\"\n— Tabarany';
 
   @override
   String get hadith6 =>
-      '\"Ansatlasdyryn, kynlasdyrman; busunji habar berin, adamlary gayyrmang.\"\n— Buhari';
+      '\"Aňsatlaşdyryň, kynlaşdyrmaň; buşluk habar beriň, adamlary gaýtarmaň.\"\n— Buhari';
 
   @override
   String get hadith7 =>
-      '\"Kim ylym gozlap yola cykyar, Allah onun ucin jennete baryan yoly ansatlasdyrar.\"\n— Muslim';
+      '\"Kim ylym gözläp ýola çyksa, Alla onuň üçin jennete barýan ýoly aňsatlaşdyrar.\"\n— Muslim';
 
   @override
-  String get hadith8 => '\"Sadaka baylygy azaltmaz.\"\n— Muslim';
+  String get hadith8 => '\"Sadaka baýlygy azaltmaz.\"\n— Muslim';
 
   @override
   String get hadith9 =>
-      '\"Guyyli momin, ejiz mominden gowusy hem Allaha has soygulisidir, her ikisinde hem hayyr bardyr.\"\n— Muslim';
+      '\"Güýçli mömin ejiz möminden gowusy hem Alla has söýgülisidir, her ikisinde hem haýyr bardyr.\"\n— Muslim';
 
   @override
   String get hadith10 =>
@@ -613,44 +613,44 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith20 =>
-      '\"Kim Ramazanda iman we sogap umydy bilen oraza tutsa, onun gecen gunaleri bagyslanyar.\"\n— Buhari we Muslim';
+      '\"Kim Ramazanda iman we sogap umydy bilen oraza tutsa, onuň geçen günäleri bagyşlanýar.\"\n— Buhari we Muslim';
 
   @override
-  String get hadith21 => '\"Namaz dininin sutunidur.\"\n— Bayhaky';
+  String get hadith21 => '\"Namaz diniň sütünidir.\"\n— Beýhaky';
 
   @override
   String get hadith22 =>
-      '\"Azan bilen ykamat arasyndaky doga ret edilmeyar.\"\n— Abu Dawud';
+      '\"Azan bilen ykamat arasyndaky doga ret edilmeýär.\"\n— Abu Dawud';
 
   @override
   String get hadith23 =>
-      '\"Kim Allah ucin metjit gursa, Allah onya jennetde oy gurar.\"\n— Buhari we Muslim';
+      '\"Kim Alla üçin metjit gursa, Alla oňa jennetde öý gurar.\"\n— Buhari we Muslim';
 
   @override
   String get hadith24 =>
-      '\"Erkekler ucin in gowy hatarlar — onki hatarlar, zenanlar ucin in gowy hatarlar — yzky hatarlardyr.\"\n— Muslim';
+      '\"Erkekler üçin iň gowy hatarlar — öňki hatarlar, zenanlar üçin iň gowy hatarlar — yzky hatarlardyr.\"\n— Muslim';
 
   @override
-  String get hadith25 => '\"Oraza dowzahdan galkandyr.\"\n— Nesayy';
+  String get hadith25 => '\"Oraza dowzahdan galkandyr.\"\n— Nesaýy';
 
   @override
   String get hadith26 =>
-      '\"Kim on iki rekagat sunnet namaz okasa, onya jennetde oy gurulyar.\"\n— Muslim';
+      '\"Kim on iki rekagat sünnet namaz okasa, oňa jennetde öý gurulýar.\"\n— Muslim';
 
   @override
   String get hadith27 =>
-      '\"Kurany gowy bilyar yaly, ol belent perishdeler bilen bile bolar.\"\n— Buhari we Muslim';
+      '\"Kurany gowy bilýän şahs belent perişdeler bilen bile bolar.\"\n— Buhari we Muslim';
 
   @override
   String get hadith28 =>
-      '\"Ylym owrenmek her bir musulmana parzdy.\"\n— Ibn Maje';
+      '\"Ylym öwrenmek her bir musulmana parzdyr.\"\n— Ibn Mäje';
 
   @override
-  String get hadith29 => '\"In gowy sadaka — suw bermekdir.\"\n— Ahmad';
+  String get hadith29 => '\"Iň gowy sadaka — suw bermekdir.\"\n— Ahmad';
 
   @override
   String get hadith30 =>
-      '\"Kim mominden bir kyncilygy ayyrar, Allah Kyýamat gununde ondan bir kyncilygy ayyrar.\"\n— Muslim';
+      '\"Kim möminden bir kynçylygy aýyrsa, Alla Kyýamat gününde ondan bir kynçylygy aýyrar.\"\n— Muslim';
 
   @override
   String get hadith31 =>
@@ -658,72 +658,72 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith32 =>
-      '\"Utanc — imandan bir bolekdir.\"\n— Buhari we Muslim';
+      '\"Utanç — imandan bir bölegidir.\"\n— Buhari we Muslim';
 
   @override
-  String get hadith33 => '\"Tazalyk — imanyn yarysy.\"\n— Muslim';
+  String get hadith33 => '\"Tämizlik — imanyň ýarysydyr.\"\n— Muslim';
 
   @override
   String get hadith34 =>
-      '\"Kim sabyr etse, Allah onya sabyr berer.\"\n— Buhari we Muslim';
+      '\"Kim sabyr etse, Alla oňa sabyr berer.\"\n— Buhari we Muslim';
 
   @override
   String get hadith35 =>
-      '\"In gowy baylyk — Allahy yatlayan dildir.\"\n— Tabarany';
+      '\"Iň gowy baýlyk — Allany ýatlaýan dildir.\"\n— Tabarany';
 
   @override
   String get hadith36 =>
-      '\"Sizin hic birinis ozi ucin halayanyny doganyna-da halamagunca, hakyky momin bolmaz.\"\n— Buhari we Muslim';
+      '\"Siziň hiç biriňiz özi üçin halaýanyny doganyna-da halamaguňça, hakyky mömin bolmaz.\"\n— Buhari we Muslim';
 
   @override
   String get hadith37 =>
-      '\"Aclary doyuryn, syrkawlary goryun we tussaglary azat edyn.\"\n— Buhari';
+      '\"Açlary doýuryň, syrkawlary göruň we tussaglary azat ediň.\"\n— Buhari';
 
   @override
   String get hadith38 =>
-      '\"Guyyli adam — goresde yenyan dal, gaharly wagty ozune erk edyan adamdyr.\"\n— Buhari we Muslim';
+      '\"Güýçli adam — göreşde ýeňýän däl, gaharlananda özüne erk edýän adamdyr.\"\n— Buhari we Muslim';
 
   @override
   String get hadith39 =>
-      '\"Kim dilini we namysyny gorap saklasa, men onya jenneti kepillendiryan.\"\n— Buhari';
+      '\"Kim dilini we namysyny gorap saklasa, men oňa jenneti kepillendirýärin.\"\n— Buhari';
 
   @override
   String get hadith40 =>
-      '\"Her namazdan son otuz uc gezek \'SubhanAllah\', \'Alhamdulillah\' we \'Allahy Akbar\' diyyn.\"\n— Muslim';
+      '\"Her namazdan soň otuz üç gezek \'SubhanAllah\', \'Alhamdulillah\' we \'Allahu Akbar\' diýiň.\"\n— Muslim';
 
   @override
-  String get hadith41 => '\"In gowy zikir — La ilahe illallah.\"\n— Tirmizi';
+  String get hadith41 => '\"Iň gowy zikir — La ilähe illallah.\"\n— Tirmizi';
 
   @override
   String get hadith42 =>
-      '\"Iki niygmat bar, kop adam olary elden gideryar: saglyk we bos wagt.\"\n— Buhari';
+      '\"Iki nygmat bar, köp adam olary elden gidirýär: saglyk we boş wagt.\"\n— Buhari';
 
   @override
   String get hadith43 =>
-      '\"Basi bisen gelmanka baha beryn: yaslygyny garrylygynyza, saglygynyzy keselliginize, baylygynyzy garyplygynyza, bos wagtynyzy mesgulliginize we yasaysynyzy oluminize seredip.\"\n— Hakim';
+      '\"Bäşden öň bäşe baha beriň: ýaşlygyňyzy garrylygyňyza, saglygyňyzy keselligiňize, baýlygyňyzy garyplygyňyza, boş wagtyňyzy meşgulligiňize we ýaşaýşyňyzy ölümiňize seredip.\"\n— Hakim';
 
   @override
   String get hadith44 =>
-      '\"Kim Yhlas suresini on gezek okasa, Allah onya jennetde oy gurar.\"\n— Ahmad';
+      '\"Kim Yhlas süresini on gezek okasa, Alla oňa jennetde öý gurar.\"\n— Ahmad';
 
   @override
   String get hadith45 =>
-      '\"Parz namazlardan son in gowy namaz — gije namazydyr.\"\n— Muslim';
+      '\"Parz namazlardan soň iň gowy namaz — gije namazydyr.\"\n— Muslim';
 
   @override
   String get hadith46 =>
-      '\"Sadaka gunaleri suw ody ocurisi yaly ocuryar.\"\n— Tirmizi';
+      '\"Sadaka günäleri suw ody öçürişi ýaly öçürýär.\"\n— Tirmizi';
 
   @override
   String get hadith47 =>
-      '\"Garyndaslyk gatnasgyny saklayjy — jogap beriji dal, aragatnasyk uzulende-de ony dowam etdiryandir.\"\n— Buhari';
+      '\"Garyndaşlyk gatnaşygyny saklaýjy — jogap beriji däl, aragatnaşyk üzülende-de ony dowam etdirýändir.\"\n— Buhari';
 
   @override
-  String get hadith48 => '\"Her bir gowy is sadakadyr.\"\n— Buhari we Muslim';
+  String get hadith48 => '\"Her bir gowy iş sadakadyr.\"\n— Buhari we Muslim';
 
   @override
   String get hadith49 =>
-      '\"Kim nahar iyip, \'Alhamdulillah\' diyse, onun gecen gunaleri bagyslanyar.\"\n— Tirmizi';
+      '\"Kim nahar iyip: \'Mana muny iydiren we mening hic hili guyc-kuwwatym bolmazdan muny nesip eden Allaha hamd bolsun\' diyse, onun gecen gunaleri bagyslanyar.\"\n— Tirmizi';
 
   @override
   String get hadith50 =>
@@ -766,7 +766,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith60 =>
-      '\"Kim \'La hawla wa la kuwwata illa billah\' diýse — bu togsan dokuzyň dokuzy keselleriň dermany, iň ýeňili — aladadyr.\"\n— Hakim';
+      '\"Kim \'La hawla wa la kuwwata illa billah\' diyse — bu togsan dokuz keselin dermanydyr, in yenili — aladadyr.\"\n— Hakim';
 
   @override
   String get hadith61 =>
@@ -777,7 +777,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith63 =>
-      '\"Ene-ata ýagşylyk etmek — iň beýik parz amaldyr.\"\n— Buhary';
+      '\"Allahyn in soyyan amallary: wagtynda okalyar namaz, sonra ene-ata yagsylyk, sonra Allah yolunda jihat.\"\n— Buhari we Muslim';
 
   @override
   String get hadith64 => '\"Aza şükür eden köpe eýe bolar.\"\n— Beýhaky';
@@ -818,7 +818,8 @@ class AppLocalizationsTk extends AppLocalizations {
       '\"Bir umra beýleki umra çenli arasyndaky günäleriň keffaratydyr.\"\n— Buhary we Muslim';
 
   @override
-  String get hadith74 => '\"Ýagşy işlere ýaryşyň.\"\n— Muslim';
+  String get hadith74 =>
+      '\"Garanky gijanin boleji yaly pitneler gelmanka yagsylyk islerine howlunyn.\"\n— Muslim';
 
   @override
   String get hadith75 =>
@@ -842,7 +843,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith80 =>
-      '\"Alla iň söýgüli amal — hemişelik edilýäni, az hem bolsa.\"\n— Buhari';
+      '\"Adamlara sukur etmeyan, Allaha-da sukur etmez.\"\n— Tirmizi';
 
   @override
   String get hadith81 =>
@@ -858,11 +859,11 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith84 =>
-      '\"Siziň iň gowuňyz — ýüregi iň ýumşagyňyz.\"\n— Tabrani';
+      '\"Ibadatyn in gowusy — yenil gorunmegine garasmakdyr.\"\n— Tirmizi';
 
   @override
   String get hadith85 =>
-      '\"Alla hiç bir jana güýjünden artyk ýük salmaýar.\"\n— Kuran 2:286';
+      '\"Kim Allah ucin bir zady tashlasa, Allah onya ondan gowusyny berer.\"\n— Ahmad';
 
   @override
   String get hadith86 =>

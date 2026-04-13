@@ -529,7 +529,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get hadith5 =>
-      '\"Sebaik-baik manusia ialah yang paling bermanfaat kepada manusia lain.\"\n— Daraqutni';
+      '\"Sebaik-baik manusia ialah yang paling bermanfaat kepada manusia lain.\"\n— Tabarani';
 
   @override
   String get hadith6 =>
@@ -729,7 +729,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get hadith49 =>
-      '\"Sesiapa yang makan lalu berkata Alhamdulillah, dosa-dosa lamanya akan diampunkan.\"\n— Tirmizi';
+      '\"Sesiapa yang makan lalu berkata: \'Segala puji bagi Allah yang telah memberi makan ini kepadaku dan mengurniainya tanpa sebarang daya dan kekuatan daripadaku,\' dosa-dosa lamanya akan diampunkan.\"\n— Tirmizi';
 
   @override
   String get hadith50 =>
@@ -785,7 +785,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get hadith63 =>
-      '\"Berbuat baik kepada ibu bapa adalah amalan wajib yang paling besar.\"\n— Bukhari';
+      '\"Amalan yang paling dicintai Allah: solat pada waktunya, kemudian berbakti kepada ibu bapa, kemudian jihad di jalan Allah.\"\n— Bukhari & Muslim';
 
   @override
   String get hadith64 =>
@@ -829,7 +829,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get hadith74 =>
-      '\"Berlumba-lumbalah dalam melakukan kebaikan.\"\n— Muslim';
+      '\"Bersegeralah melakukan amal kebaikan sebelum datangnya fitnah seperti kepingan malam yang gelap.\"\n— Muslim';
 
   @override
   String get hadith75 =>
@@ -853,7 +853,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get hadith80 =>
-      '\"Amalan yang paling dicintai Allah ialah yang paling istiqamah, walaupun sedikit.\"\n— Bukhari';
+      '\"Sesiapa yang tidak berterima kasih kepada manusia, tidak berterima kasih kepada Allah.\"\n— Tirmizi';
 
   @override
   String get hadith81 =>
@@ -869,11 +869,11 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get hadith84 =>
-      '\"Sebaik-baik kamu ialah yang paling lembut hatinya.\"\n— Tabarani';
+      '\"Ibadah yang paling utama ialah menunggu kelegaan (dari Allah).\"\n— Tirmizi';
 
   @override
   String get hadith85 =>
-      '\"Allah tidak membebani seseorang melainkan sesuai dengan kesanggupannya.\"\n— al-Quran 2:286';
+      '\"Sesiapa yang meninggalkan sesuatu kerana Allah, Allah akan menggantikannya dengan yang lebih baik.\"\n— Ahmad';
 
   @override
   String get hadith86 =>
