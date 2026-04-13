@@ -610,4 +610,310 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get settingsDeveloper => 'Dörediji';
+
+  @override
+  String get hadith20 =>
+      '\"Kim Ramazanda iman we sogap umydy bilen oraza tutsa, onun gecen gunaleri bagyslanyar.\"\n— Buhari we Muslim';
+
+  @override
+  String get hadith21 => '\"Namaz dininin sutunidur.\"\n— Bayhaky';
+
+  @override
+  String get hadith22 =>
+      '\"Azan bilen ykamat arasyndaky doga ret edilmeyar.\"\n— Abu Dawud';
+
+  @override
+  String get hadith23 =>
+      '\"Kim Allah ucin metjit gursa, Allah onya jennetde oy gurar.\"\n— Buhari we Muslim';
+
+  @override
+  String get hadith24 =>
+      '\"Erkekler ucin in gowy hatarlar — onki hatarlar, zenanlar ucin in gowy hatarlar — yzky hatarlardyr.\"\n— Muslim';
+
+  @override
+  String get hadith25 => '\"Oraza dowzahdan galkandyr.\"\n— Nesayy';
+
+  @override
+  String get hadith26 =>
+      '\"Kim on iki rekagat sunnet namaz okasa, onya jennetde oy gurulyar.\"\n— Muslim';
+
+  @override
+  String get hadith27 =>
+      '\"Kurany gowy bilyar yaly, ol belent perishdeler bilen bile bolar.\"\n— Buhari we Muslim';
+
+  @override
+  String get hadith28 =>
+      '\"Ylym owrenmek her bir musulmana parzdy.\"\n— Ibn Maje';
+
+  @override
+  String get hadith29 => '\"In gowy sadaka — suw bermekdir.\"\n— Ahmad';
+
+  @override
+  String get hadith30 =>
+      '\"Kim mominden bir kyncilygy ayyrar, Allah Kyýamat gununde ondan bir kyncilygy ayyrar.\"\n— Muslim';
+
+  @override
+  String get hadith31 =>
+      '\"Rehimli bolanlara Rehmany Rehim rehim eder.\"\n— Abu Dawud we Tirmizi';
+
+  @override
+  String get hadith32 =>
+      '\"Utanc — imandan bir bolekdir.\"\n— Buhari we Muslim';
+
+  @override
+  String get hadith33 => '\"Tazalyk — imanyn yarysy.\"\n— Muslim';
+
+  @override
+  String get hadith34 =>
+      '\"Kim sabyr etse, Allah onya sabyr berer.\"\n— Buhari we Muslim';
+
+  @override
+  String get hadith35 =>
+      '\"In gowy baylyk — Allahy yatlayan dildir.\"\n— Tabarany';
+
+  @override
+  String get hadith36 =>
+      '\"Sizin hic birinis ozi ucin halayanyny doganyna-da halamagunca, hakyky momin bolmaz.\"\n— Buhari we Muslim';
+
+  @override
+  String get hadith37 =>
+      '\"Aclary doyuryn, syrkawlary goryun we tussaglary azat edyn.\"\n— Buhari';
+
+  @override
+  String get hadith38 =>
+      '\"Guyyli adam — goresde yenyan dal, gaharly wagty ozune erk edyan adamdyr.\"\n— Buhari we Muslim';
+
+  @override
+  String get hadith39 =>
+      '\"Kim dilini we namysyny gorap saklasa, men onya jenneti kepillendiryan.\"\n— Buhari';
+
+  @override
+  String get hadith40 =>
+      '\"Her namazdan son otuz uc gezek \'SubhanAllah\', \'Alhamdulillah\' we \'Allahy Akbar\' diyyn.\"\n— Muslim';
+
+  @override
+  String get hadith41 => '\"In gowy zikir — La ilahe illallah.\"\n— Tirmizi';
+
+  @override
+  String get hadith42 =>
+      '\"Iki niygmat bar, kop adam olary elden gideryar: saglyk we bos wagt.\"\n— Buhari';
+
+  @override
+  String get hadith43 =>
+      '\"Basi bisen gelmanka baha beryn: yaslygyny garrylygynyza, saglygynyzy keselliginize, baylygynyzy garyplygynyza, bos wagtynyzy mesgulliginize we yasaysynyzy oluminize seredip.\"\n— Hakim';
+
+  @override
+  String get hadith44 =>
+      '\"Kim Yhlas suresini on gezek okasa, Allah onya jennetde oy gurar.\"\n— Ahmad';
+
+  @override
+  String get hadith45 =>
+      '\"Parz namazlardan son in gowy namaz — gije namazydyr.\"\n— Muslim';
+
+  @override
+  String get hadith46 =>
+      '\"Sadaka gunaleri suw ody ocurisi yaly ocuryar.\"\n— Tirmizi';
+
+  @override
+  String get hadith47 =>
+      '\"Garyndaslyk gatnasgyny saklayjy — jogap beriji dal, aragatnasyk uzulende-de ony dowam etdiryandir.\"\n— Buhari';
+
+  @override
+  String get hadith48 => '\"Her bir gowy is sadakadyr.\"\n— Buhari we Muslim';
+
+  @override
+  String get hadith49 =>
+      '\"Kim nahar iyip, \'Alhamdulillah\' diyse, onun gecen gunaleri bagyslanyar.\"\n— Tirmizi';
+
+  @override
+  String get hadith50 =>
+      '\"Allanyň iň söýgüli adamlary — beýlekilere iň köp peýda berýänlerdir.\"\n— Tabarany';
+
+  @override
+  String get hadith51 =>
+      '\"Kim gaharyny saklasa, emma ony amala aşyryp bilýän bolsa, Alla ony Kyýamat güni ähli mahluklaryň öňünde çagyryp, sylagyňy saýla diýer.\"\n— Tirmizi';
+
+  @override
+  String get hadith52 =>
+      '\"Sadaka bermäge howlugyň, çünki ol betbagtçylygyň öňüni alýar.\"\n— Tirmizi';
+
+  @override
+  String get hadith53 =>
+      '\"Hiç bir ýagşylygy kiçeltme, hatda doganyň bilen ýylgyryp görüşmek bolsa-da.\"\n— Muslim';
+
+  @override
+  String get hadith54 =>
+      '\"Siziň iň gowuňyz maşgalasyna iň gowy garaýanyňyzdyr.\"\n— Tirmizi';
+
+  @override
+  String get hadith55 =>
+      '\"Kim gije Bakara süresiniň soňky iki aýatyny okasa, bu oňa ýeterlikdir.\"\n— Buhary we Muslim';
+
+  @override
+  String get hadith56 =>
+      '\"Dünýä bir haryt, iň gowy haryt bolsa — salyha aýaldyr.\"\n— Muslim';
+
+  @override
+  String get hadith57 =>
+      '\"Üç doga ret edilmez: oraza tutýanyň dogasy, adalatly ýolbaşçynyň dogasy we mazlumyň dogasy.\"\n— Tirmizi';
+
+  @override
+  String get hadith58 =>
+      '\"Kim maňa bir gezek salawat aýtsa, Alla oňa on gezek rehmet iberer.\"\n— Muslim';
+
+  @override
+  String get hadith59 => '\"Metjit her bir takwa adamyň öýüdir.\"\n— Tabarany';
+
+  @override
+  String get hadith60 =>
+      '\"Kim \'La hawla wa la kuwwata illa billah\' diýse — bu togsan dokuzyň dokuzy keselleriň dermany, iň ýeňili — aladadyr.\"\n— Hakim';
+
+  @override
+  String get hadith61 =>
+      '\"Alla bir zat edeňde ony iň gowy edip etmegiňi söýýär.\"\n— Tabarany';
+
+  @override
+  String get hadith62 => '\"Jennet eneleriň aýaklarynyň astynda.\"\n— Nesaýy';
+
+  @override
+  String get hadith63 =>
+      '\"Ene-ata ýagşylyk etmek — iň beýik parz amaldyr.\"\n— Buhary';
+
+  @override
+  String get hadith64 => '\"Aza şükür eden köpe eýe bolar.\"\n— Beýhaky';
+
+  @override
+  String get hadith65 => '\"Mömin möminiň aýnasydyr.\"\n— Abu Dawud';
+
+  @override
+  String get hadith66 =>
+      '\"Dogruçyllyk ýagşylyga eltýär, ýagşylyk bolsa jennete eltýär.\"\n— Buhary we Muslim';
+
+  @override
+  String get hadith67 =>
+      '\"Amanaty saňa ynanana gaýtar, saňa hyýanat edene hyýanat etme.\"\n— Abu Dawud we Tirmizi';
+
+  @override
+  String get hadith68 =>
+      '\"Musulmana ýetýän ýadawlyk, kesel, gaýgy, hasrat, zyýan ýa-da alada, hatda tiken batsa-da, Alla onuň günäleriniň bir bölegini bagyşlar.\"\n— Buhary we Muslim';
+
+  @override
+  String get hadith69 =>
+      '\"Musulmanyň doganyna gaýybana eden dogasy hemişe kabul bolýar.\"\n— Muslim';
+
+  @override
+  String get hadith70 =>
+      '\"Kim Alladan üç gezek jennet sorasa, jennet diýýär: Allahym, ony jennete giriziň.\"\n— Tirmizi';
+
+  @override
+  String get hadith71 =>
+      '\"Ramazandan soňky iň fazylatly oraza — Allanyň aýy Muharremdir.\"\n— Muslim';
+
+  @override
+  String get hadith72 =>
+      '\"Kim haj edip, erbet söz aýtmasa we günä etmese, ejesiniň dogran güni ýaly gaýdyp geler.\"\n— Buhary we Muslim';
+
+  @override
+  String get hadith73 =>
+      '\"Bir umra beýleki umra çenli arasyndaky günäleriň keffaratydyr.\"\n— Buhary we Muslim';
+
+  @override
+  String get hadith74 => '\"Ýagşy işlere ýaryşyň.\"\n— Muslim';
+
+  @override
+  String get hadith75 =>
+      '\"Ertir namazynyň iki rekagaty dünýäden we ondaky ähli zatdan gowudyr.\"\n— Muslim';
+
+  @override
+  String get hadith76 =>
+      '\"Kim yzygiderli istigfar etse, Alla oňa her kynçylykdan çykalga berer.\"\n— Abu Dawud';
+
+  @override
+  String get hadith77 =>
+      '\"Eger siz Alla mynasyp tewekkül etseňiz, Ol sizi guşlary rysgallandyryşy ýaly rysgallandyrardy.\"\n— Tirmizi';
+
+  @override
+  String get hadith78 =>
+      '\"Kim syrkawa baryp görse, gaýdýança jennet bagynda bolar.\"\n— Muslim';
+
+  @override
+  String get hadith79 =>
+      '\"Salamy ýaýyň, nahar beriň we adamlar ýatyrka gije namaz okaň — jennete parahatçylyk bilen girersiňiz.\"\n— Tirmizi';
+
+  @override
+  String get hadith80 =>
+      '\"Alla iň söýgüli amal — hemişelik edilýäni, az hem bolsa.\"\n— Buhari';
+
+  @override
+  String get hadith81 =>
+      '\"Göriplik diňe iki ýagdaýda jaýyzdyr: Alla baýlyk beren adam ony hak ýolda sarp etse, we Alla hikmet beren adam onuň bilen höküm çykaryp öwretse.\"\n— Buhari we Muslim';
+
+  @override
+  String get hadith82 =>
+      '\"Adam dostunyň dinine eýerýär, şonuň üçin her biriňiz kim bilen dost bolýandygyňyza serediň.\"\n— Abu Dawud we Tirmizi';
+
+  @override
+  String get hadith83 =>
+      '\"Ölümi köp ýatlaň, sebäbi ol ýüregi arassalaýar.\"\n— Tirmizi';
+
+  @override
+  String get hadith84 =>
+      '\"Siziň iň gowuňyz — ýüregi iň ýumşagyňyz.\"\n— Tabrani';
+
+  @override
+  String get hadith85 =>
+      '\"Alla hiç bir jana güýjünden artyk ýük salmaýar.\"\n— Kuran 2:286';
+
+  @override
+  String get hadith86 =>
+      '\"Kim musulmanyň aýbyny gizlese, Alla Kyýamat gününde onuň aýbyny gizlär.\"\n— Buhari we Muslim';
+
+  @override
+  String get hadith87 =>
+      '\"Dünýäde ýat adam ýa-da ýolagçy ýaly bol.\"\n— Buhari';
+
+  @override
+  String get hadith88 =>
+      '\"Kim kynçylykdaky adama aňsatlyk etse, Alla oňa dünýäde we ahyretde aňsatlyk eder.\"\n— Muslim';
+
+  @override
+  String get hadith89 =>
+      '\"Amallaryň sylagy niýetlere baglydyr.\"\n— Buhari we Muslim';
+
+  @override
+  String get hadith90 =>
+      '\"Güman etmekden gaça duruň, sebäbi güman iň ýalan sözdür.\"\n— Buhari we Muslim';
+
+  @override
+  String get hadith91 =>
+      '\"Kim Alla üçin ýalany taşlasa, degişme wagtynda-da bolsa, men oňa jennetiň gyrasynda köşk kepilligini berýärin.\"\n— Abu Dawud';
+
+  @override
+  String get hadith92 =>
+      '\"Ýagşylygyň gapylary köpdür: Allany ulaltmak, Oňa hamd etmek, sadaka, ýagşylyga çagyrmak we ýoldan zyýany aýyrmak.\"\n— Muslim';
+
+  @override
+  String get hadith93 =>
+      '\"Bile naharlaňyň we Allanyň adyny tutuň, size bereketli bolar.\"\n— Abu Dawud';
+
+  @override
+  String get hadith94 => '\"Iň gowy mejlis — iň giňi.\"\n— Abu Dawud';
+
+  @override
+  String get hadith95 => '\"Bagyşlaň, sizem bagyşlanarsyňyz.\"\n— Ahmad';
+
+  @override
+  String get hadith96 => '\"Düýäňi daň, soňra Alla tewekkül et.\"\n— Tirmizi';
+
+  @override
+  String get hadith97 =>
+      '\"Möminiň işi geň galdyryjy — hemme zat oňa gowy.\"\n— Muslim';
+
+  @override
+  String get hadith98 =>
+      '\"Musulman musulmanyň doganydyr: oňa zulum etmez, taşlamaz, äsgermezlik etmez.\"\n— Muslim';
+
+  @override
+  String get hadith99 =>
+      '\"Alla iň söýgüli söz: SubhanAllahy wa bihamdihi, SubhanAllahyl Azym.\"\n— Buhari we Muslim';
 }

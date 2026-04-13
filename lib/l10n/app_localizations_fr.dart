@@ -614,4 +614,322 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get settingsDeveloper => 'Développeur';
+
+  @override
+  String get hadith20 =>
+      '\"Celui qui jeûne le Ramadan avec foi et en espérant la récompense verra ses péchés passés pardonnés.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith21 =>
+      '\"La prière est le pilier de la religion.\"\n— Bayhaqi';
+
+  @override
+  String get hadith22 =>
+      '\"L\'invocation entre l\'adhan et l\'iqama n\'est pas rejetée.\"\n— Abu Dawud';
+
+  @override
+  String get hadith23 =>
+      '\"Celui qui construit une mosquée pour Allah, Allah lui construira une maison au Paradis.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith24 =>
+      '\"Les meilleurs rangs pour les hommes sont les premiers, et les meilleurs rangs pour les femmes sont les derniers.\"\n— Muslim';
+
+  @override
+  String get hadith25 =>
+      '\"Le jeûne est un bouclier contre le feu de l\'Enfer.\"\n— Nasa\'i';
+
+  @override
+  String get hadith26 =>
+      '\"Celui qui prie douze rak\'ahs de prière surérogatoire, une maison lui sera construite au Paradis.\"\n— Muslim';
+
+  @override
+  String get hadith27 =>
+      '\"Celui qui maîtrise le Coran sera en compagnie des anges nobles et vertueux.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith28 =>
+      '\"La recherche du savoir est une obligation pour tout musulman.\"\n— Ibn Majah';
+
+  @override
+  String get hadith29 =>
+      '\"La meilleure des aumônes est de donner de l\'eau à boire.\"\n— Ahmad';
+
+  @override
+  String get hadith30 =>
+      '\"Celui qui soulage un croyant d\'une difficulté, Allah le soulagera d\'une difficulté au Jour du Jugement.\"\n— Muslim';
+
+  @override
+  String get hadith31 =>
+      '\"Les miséricordieux se voient accorder la miséricorde du Tout Miséricordieux.\"\n— Abu Dawud & Tirmidhi';
+
+  @override
+  String get hadith32 =>
+      '\"La pudeur fait partie de la foi.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith33 => '\"La propreté est la moitié de la foi.\"\n— Muslim';
+
+  @override
+  String get hadith34 =>
+      '\"Celui qui fait preuve de patience, Allah lui accordera la patience.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith35 =>
+      '\"La meilleure richesse est une langue qui se souvient d\'Allah.\"\n— Tabarani';
+
+  @override
+  String get hadith36 =>
+      '\"Aucun de vous ne croit véritablement tant qu\'il n\'aime pas pour son frère ce qu\'il aime pour lui-même.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith37 =>
+      '\"Nourrissez les affamés, visitez les malades et libérez les captifs.\"\n— Bukhari';
+
+  @override
+  String get hadith38 =>
+      '\"L\'homme fort n\'est pas celui qui l\'emporte à la lutte, mais celui qui se maîtrise dans la colère.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith39 =>
+      '\"Celui qui préserve ce qui se trouve entre ses mâchoires et entre ses jambes, je lui garantis le Paradis.\"\n— Bukhari';
+
+  @override
+  String get hadith40 =>
+      '\"Dites \'SubhanAllah\', \'Alhamdulillah\' et \'Allahu Akbar\' trente-trois fois chacun après chaque prière.\"\n— Muslim';
+
+  @override
+  String get hadith41 =>
+      '\"Le meilleur dhikr est La ilaha illallah.\"\n— Tirmidhi';
+
+  @override
+  String get hadith42 =>
+      '\"Il y a deux bienfaits dont beaucoup de gens sont dupés : la santé et le temps libre.\"\n— Bukhari';
+
+  @override
+  String get hadith43 =>
+      '\"Profite de cinq choses avant cinq autres : ta jeunesse avant ta vieillesse, ta santé avant ta maladie, ta richesse avant ta pauvreté, ton temps libre avant ton occupation, et ta vie avant ta mort.\"\n— Hakim';
+
+  @override
+  String get hadith44 =>
+      '\"Celui qui récite la sourate al-Ikhlas dix fois, Allah lui construira une maison au Paradis.\"\n— Ahmad';
+
+  @override
+  String get hadith45 =>
+      '\"La meilleure prière après les prières obligatoires est la prière de la nuit.\"\n— Muslim';
+
+  @override
+  String get hadith46 =>
+      '\"L\'aumône éteint les péchés comme l\'eau éteint le feu.\"\n— Tirmidhi';
+
+  @override
+  String get hadith47 =>
+      '\"Celui qui maintient les liens de parenté n\'est pas celui qui rend la pareille. C\'est celui qui les maintient même quand on les rompt avec lui.\"\n— Bukhari';
+
+  @override
+  String get hadith48 =>
+      '\"Tout acte de bonté est une aumône.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith49 =>
+      '\"Celui qui mange et dit Alhamdulillah verra ses péchés passés pardonnés.\"\n— Tirmidhi';
+
+  @override
+  String get hadith50 =>
+      '\"Les gens les plus aimés d\'Allah sont ceux qui sont les plus utiles aux autres.\"\n— Tabarani';
+
+  @override
+  String get hadith51 =>
+      '\"Celui qui maîtrise sa colère alors qu\'il est en mesure d\'agir, Allah l\'appellera devant toute la création au Jour du Jugement pour qu\'il choisisse sa récompense.\"\n— Tirmidhi';
+
+  @override
+  String get hadith52 =>
+      '\"Faites l\'aumône sans tarder, car elle se dresse devant la calamité.\"\n— Tirmidhi';
+
+  @override
+  String get hadith53 =>
+      '\"Ne méprise aucun acte de bien, ne serait-ce que de rencontrer ton frère avec un visage souriant.\"\n— Muslim';
+
+  @override
+  String get hadith54 =>
+      '\"Les meilleurs d\'entre vous sont ceux qui sont les meilleurs envers leur famille.\"\n— Tirmidhi';
+
+  @override
+  String get hadith55 =>
+      '\"Celui qui récite les deux derniers versets de la sourate al-Baqarah la nuit, ils lui suffiront.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith56 =>
+      '\"Le monde est un bien dont on profite, et le meilleur de ses biens est une épouse vertueuse.\"\n— Muslim';
+
+  @override
+  String get hadith57 =>
+      '\"Trois invocations ne sont jamais rejetées : l\'invocation du jeûneur, celle du dirigeant juste et celle de l\'opprimé.\"\n— Tirmidhi';
+
+  @override
+  String get hadith58 =>
+      '\"Celui qui prie sur moi une fois, Allah priera sur lui dix fois.\"\n— Muslim';
+
+  @override
+  String get hadith59 =>
+      '\"La mosquée est la maison de toute personne pieuse.\"\n— Tabarani';
+
+  @override
+  String get hadith60 =>
+      '\"Celui qui dit \'La hawla wa la quwwata illa billah\' — c\'est un remède à quatre-vingt-dix-neuf maux, dont le moindre est le souci.\"\n— Hakim';
+
+  @override
+  String get hadith61 =>
+      '\"Allah aime que lorsque l\'un de vous fait quelque chose, il le fasse avec excellence.\"\n— Tabarani';
+
+  @override
+  String get hadith62 =>
+      '\"Le Paradis se trouve sous les pieds des mères.\"\n— Nasa\'i';
+
+  @override
+  String get hadith63 =>
+      '\"La bonté envers les parents est le plus grand des actes obligatoires.\"\n— Bukhari';
+
+  @override
+  String get hadith64 =>
+      '\"Celui qui est reconnaissant pour le peu recevra davantage.\"\n— Bayhaqi';
+
+  @override
+  String get hadith65 =>
+      '\"Le croyant est le miroir du croyant.\"\n— Abu Dawud';
+
+  @override
+  String get hadith66 =>
+      '\"La véracité mène à la vertu, et la vertu mène au Paradis.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith67 =>
+      '\"Restitue le dépôt à celui qui te l\'a confié, et ne trahis pas celui qui t\'a trahi.\"\n— Abu Dawud & Tirmidhi';
+
+  @override
+  String get hadith68 =>
+      '\"Aucune fatigue, maladie, chagrin, tristesse, douleur ou détresse n\'atteint un musulman — même la piqûre d\'une épine — sans qu\'Allah n\'efface par cela une partie de ses péchés.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith69 =>
+      '\"L\'invocation d\'un musulman pour son frère en son absence est toujours exaucée.\"\n— Muslim';
+
+  @override
+  String get hadith70 =>
+      '\"Celui qui demande le Paradis à Allah trois fois, le Paradis dit : Ô Allah, fais-le entrer au Paradis.\"\n— Tirmidhi';
+
+  @override
+  String get hadith71 =>
+      '\"Le jeûne le plus méritoire après le Ramadan est celui du mois d\'Allah, Muharram.\"\n— Muslim';
+
+  @override
+  String get hadith72 =>
+      '\"Celui qui accomplit le Hajj sans commettre d\'obscénité ni de péché revient comme au jour où sa mère l\'a mis au monde.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith73 =>
+      '\"D\'une Omra à l\'autre, c\'est une expiation pour ce qui se trouve entre les deux.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith74 =>
+      '\"Empressez-vous de faire les bonnes actions.\"\n— Muslim';
+
+  @override
+  String get hadith75 =>
+      '\"Les deux rak\'ahs du Fajr sont meilleures que le monde et tout ce qu\'il contient.\"\n— Muslim';
+
+  @override
+  String get hadith76 =>
+      '\"Celui qui demande régulièrement pardon à Allah, Allah lui accordera une issue à toute difficulté.\"\n— Abu Dawud';
+
+  @override
+  String get hadith77 =>
+      '\"Si vous placiez votre confiance en Allah comme il se doit, Il vous accorderait votre subsistance comme Il l\'accorde aux oiseaux.\"\n— Tirmidhi';
+
+  @override
+  String get hadith78 =>
+      '\"Celui qui rend visite à un malade se trouve dans un jardin du Paradis jusqu\'à ce qu\'il revienne.\"\n— Muslim';
+
+  @override
+  String get hadith79 =>
+      '\"Répandez la paix, nourrissez les affamés et priez la nuit pendant que les gens dorment — vous entrerez au Paradis en paix.\"\n— Tirmidhi';
+
+  @override
+  String get hadith80 =>
+      '\"Les actes les plus aimés d\'Allah sont les plus réguliers, même s\'ils sont modestes.\"\n— Bukhari';
+
+  @override
+  String get hadith81 =>
+      '\"L\'envie n\'est permise que dans deux cas : un homme à qui Allah a donné des richesses qu\'il dépense dans le bien, et un homme à qui Allah a donné la sagesse et qui juge et enseigne avec elle.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith82 =>
+      '\"L\'homme adopte la religion de son ami intime ; que chacun de vous prenne garde à qui il prend pour ami.\"\n— Abu Dawud & Tirmidhi';
+
+  @override
+  String get hadith83 =>
+      '\"Rappelez-vous souvent la mort, car elle purifie le cœur.\"\n— Tirmidhi';
+
+  @override
+  String get hadith84 =>
+      '\"Le meilleur d\'entre vous est celui dont le cœur est le plus tendre.\"\n— Tabarani';
+
+  @override
+  String get hadith85 =>
+      '\"Allah n\'impose à aucune âme une charge supérieure à sa capacité.\"\n— Coran 2:286';
+
+  @override
+  String get hadith86 =>
+      '\"Celui qui couvre les défauts d\'un musulman, Allah couvrira ses défauts au Jour du Jugement.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith87 =>
+      '\"Sois en ce monde comme un étranger ou un voyageur.\"\n— Bukhari';
+
+  @override
+  String get hadith88 =>
+      '\"Celui qui facilite les choses à une personne en difficulté, Allah lui facilitera les choses en ce monde et dans l\'au-delà.\"\n— Muslim';
+
+  @override
+  String get hadith89 =>
+      '\"La récompense des actes dépend des intentions.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith90 =>
+      '\"Évitez la suspicion, car la suspicion est la plus mensongère des paroles.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith91 =>
+      '\"Celui qui abandonne le mensonge, même en plaisantant, je lui garantis un palais aux abords du Paradis.\"\n— Abu Dawud';
+
+  @override
+  String get hadith92 =>
+      '\"Les portes du bien sont nombreuses : glorifier Allah, Le louer, faire l\'aumône, ordonner le bien et enlever ce qui nuit du chemin.\"\n— Muslim';
+
+  @override
+  String get hadith93 =>
+      '\"Mangez ensemble et mentionnez le nom d\'Allah, et cela sera béni pour vous.\"\n— Abu Dawud';
+
+  @override
+  String get hadith94 =>
+      '\"La meilleure des assemblées est la plus spacieuse.\"\n— Abu Dawud';
+
+  @override
+  String get hadith95 => '\"Pardonnez et vous serez pardonnés.\"\n— Ahmad';
+
+  @override
+  String get hadith96 =>
+      '\"Attache ton chameau, puis place ta confiance en Allah.\"\n— Tirmidhi';
+
+  @override
+  String get hadith97 =>
+      '\"Comme l\'affaire du croyant est merveilleuse — tout est un bien pour lui.\"\n— Muslim';
+
+  @override
+  String get hadith98 =>
+      '\"Un musulman est le frère d\'un musulman : il ne lui fait pas de tort, ne l\'abandonne pas et ne le méprise pas.\"\n— Muslim';
+
+  @override
+  String get hadith99 =>
+      '\"La parole la plus aimée d\'Allah est : SubhanAllahi wa bihamdihi, SubhanAllahil Azeem.\"\n— Bukhari & Muslim';
 }

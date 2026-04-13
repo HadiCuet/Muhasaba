@@ -613,4 +613,318 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get settingsDeveloper => 'Pengembang';
+
+  @override
+  String get hadith20 =>
+      '\"Barangsiapa berpuasa Ramadan karena iman dan mengharap pahala, diampunilah dosa-dosanya yang telah lalu.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith21 => '\"Shalat adalah tiang agama.\"\n— Baihaqi';
+
+  @override
+  String get hadith22 =>
+      '\"Doa antara adzan dan iqamah tidak ditolak.\"\n— Abu Dawud';
+
+  @override
+  String get hadith23 =>
+      '\"Barangsiapa membangun masjid karena Allah, Allah akan membangunkan untuknya rumah di surga.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith24 =>
+      '\"Sebaik-baik shaf laki-laki adalah yang pertama, dan sebaik-baik shaf perempuan adalah yang terakhir.\"\n— Muslim';
+
+  @override
+  String get hadith25 => '\"Puasa adalah perisai dari api neraka.\"\n— Nasa\'i';
+
+  @override
+  String get hadith26 =>
+      '\"Barangsiapa shalat dua belas rakaat sunnah, dibangunkan untuknya rumah di surga.\"\n— Muslim';
+
+  @override
+  String get hadith27 =>
+      '\"Orang yang mahir membaca Al-Quran bersama para malaikat yang mulia.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith28 =>
+      '\"Menuntut ilmu wajib bagi setiap Muslim.\"\n— Ibnu Majah';
+
+  @override
+  String get hadith29 =>
+      '\"Sebaik-baik sedekah adalah memberi minum air.\"\n— Ahmad';
+
+  @override
+  String get hadith30 =>
+      '\"Barangsiapa membaca Surah Al-Kahfi pada hari Jumat, akan disinari cahaya antara dua Jumat.\"\n— Hakim';
+
+  @override
+  String get hadith31 =>
+      '\"Bertakwalah kepada Allah di mana pun kamu berada, dan ikutilah keburukan dengan kebaikan, niscaya ia akan menghapusnya.\"\n— Tirmidzi';
+
+  @override
+  String get hadith32 =>
+      '\"Mudahkanlah dan jangan mempersulit; berilah kabar gembira dan jangan membuat orang menjauh.\"\n— Bukhari';
+
+  @override
+  String get hadith33 => '\"Kebersihan adalah sebagian dari iman.\"\n— Muslim';
+
+  @override
+  String get hadith34 =>
+      '\"Manusia yang paling dicintai Allah adalah yang paling bermanfaat bagi manusia.\"\n— Thabarani';
+
+  @override
+  String get hadith35 => '\"Sedekah tidak mengurangi harta.\"\n— Muslim';
+
+  @override
+  String get hadith36 =>
+      '\"Sebaik-baik kalian adalah yang belajar Al-Quran dan mengajarkannya.\"\n— Bukhari';
+
+  @override
+  String get hadith37 =>
+      '\"Barangsiapa menempuh jalan untuk mencari ilmu, Allah mudahkan baginya jalan menuju surga.\"\n— Muslim';
+
+  @override
+  String get hadith38 =>
+      '\"Tidak beriman salah seorang di antara kalian hingga ia mencintai saudaranya seperti mencintai dirinya sendiri.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith39 =>
+      '\"Perbuatan baik melindungi dari keburukan.\"\n— Thabarani';
+
+  @override
+  String get hadith40 =>
+      '\"Barangsiapa mengucapkan \'Subhanallahi wa bihamdihi,\' ditanam untuknya pohon kurma di surga.\"\n— Tirmidzi';
+
+  @override
+  String get hadith41 =>
+      '\"Sesungguhnya setiap amalan tergantung pada niatnya.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith42 =>
+      '\"Barangsiapa shalat Subuh berjamaah, ia dalam perlindungan Allah.\"\n— Muslim';
+
+  @override
+  String get hadith43 =>
+      '\"Seorang hamba paling dekat dengan Tuhannya saat bersujud, maka perbanyaklah doa.\"\n— Muslim';
+
+  @override
+  String get hadith44 => '\"Kesabaran adalah cahaya.\"\n— Muslim';
+
+  @override
+  String get hadith45 =>
+      '\"Tidak bersyukur kepada Allah orang yang tidak berterima kasih kepada manusia.\"\n— Abu Dawud';
+
+  @override
+  String get hadith46 =>
+      '\"Tidaklah seorang Muslim menanam tanaman lalu dimakan manusia atau burung, melainkan itu menjadi sedekah baginya.\"\n— Bukhari';
+
+  @override
+  String get hadith47 =>
+      '\"Sebaik-baik kalian adalah yang terbaik terhadap keluarganya.\"\n— Tirmidzi';
+
+  @override
+  String get hadith48 =>
+      '\"Barangsiapa menahan amarah padahal mampu melampiaskannya, Allah akan memanggilnya di hadapan seluruh makhluk pada hari kiamat.\"\n— Abu Dawud';
+
+  @override
+  String get hadith49 =>
+      '\"Senyummu di hadapan saudaramu adalah sedekah.\"\n— Tirmidzi';
+
+  @override
+  String get hadith50 =>
+      '\"Orang yang paling dicintai Allah adalah yang paling bermanfaat bagi orang lain.\"\n— Thabrani';
+
+  @override
+  String get hadith51 =>
+      '\"Barangsiapa menahan amarahnya padahal ia mampu melampiaskannya, Allah akan memanggilnya di hadapan seluruh makhluk pada Hari Kiamat untuk memilih pahalanya.\"\n— Tirmidzi';
+
+  @override
+  String get hadith52 =>
+      '\"Bersegeralah bersedekah, karena sedekah menghalangi datangnya musibah.\"\n— Tirmidzi';
+
+  @override
+  String get hadith53 =>
+      '\"Jangan meremehkan kebaikan sekecil apapun, meskipun hanya bertemu saudaramu dengan wajah berseri.\"\n— Muslim';
+
+  @override
+  String get hadith54 =>
+      '\"Sebaik-baik kalian adalah yang terbaik terhadap keluarganya.\"\n— Tirmidzi';
+
+  @override
+  String get hadith55 =>
+      '\"Barangsiapa membaca dua ayat terakhir Surah Al-Baqarah pada malam hari, maka itu cukup baginya.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith56 =>
+      '\"Dunia adalah perhiasan, dan sebaik-baik perhiasan adalah istri yang shalihah.\"\n— Muslim';
+
+  @override
+  String get hadith57 =>
+      '\"Tiga doa yang tidak ditolak: doa orang yang berpuasa, pemimpin yang adil, dan orang yang teraniaya.\"\n— Tirmidzi';
+
+  @override
+  String get hadith58 =>
+      '\"Barangsiapa bershalawat kepadaku sekali, Allah akan bershalawat kepadanya sepuluh kali.\"\n— Muslim';
+
+  @override
+  String get hadith59 =>
+      '\"Masjid adalah rumah setiap orang bertakwa.\"\n— Thabrani';
+
+  @override
+  String get hadith60 =>
+      '\"Barangsiapa mengucapkan \'La hawla wa la quwwata illa billah\' — itu adalah obat bagi sembilan puluh sembilan penyakit, yang paling ringannya adalah kegelisahan.\"\n— Hakim';
+
+  @override
+  String get hadith61 =>
+      '\"Allah mencintai jika seseorang melakukan sesuatu, ia melakukannya dengan sebaik-baiknya.\"\n— Thabrani';
+
+  @override
+  String get hadith62 =>
+      '\"Surga berada di bawah telapak kaki ibu.\"\n— Nasa\'i';
+
+  @override
+  String get hadith63 =>
+      '\"Berbakti kepada orang tua adalah kewajiban yang paling agung.\"\n— Bukhari';
+
+  @override
+  String get hadith64 =>
+      '\"Barangsiapa bersyukur atas yang sedikit, akan diberi yang banyak.\"\n— Baihaqi';
+
+  @override
+  String get hadith65 =>
+      '\"Mukmin adalah cermin bagi mukmin lainnya.\"\n— Abu Dawud';
+
+  @override
+  String get hadith66 =>
+      '\"Kejujuran membawa kepada kebaikan, dan kebaikan membawa kepada surga.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith67 =>
+      '\"Kembalikanlah amanah kepada yang mempercayaimu, dan jangan berkhianat kepada yang mengkhianatimu.\"\n— Abu Dawud & Tirmidzi';
+
+  @override
+  String get hadith68 =>
+      '\"Tidaklah seorang Muslim tertimpa kelelahan, penyakit, kesedihan, kesusahan, gangguan, atau kegelisahan, bahkan tertusuk duri sekalipun, melainkan Allah menghapus sebagian dosanya karenanya.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith69 =>
+      '\"Doa seorang Muslim untuk saudaranya yang tidak hadir selalu dikabulkan.\"\n— Muslim';
+
+  @override
+  String get hadith70 =>
+      '\"Barangsiapa meminta surga kepada Allah tiga kali, surga berkata: Ya Allah, masukkanlah ia ke surga.\"\n— Tirmidzi';
+
+  @override
+  String get hadith71 =>
+      '\"Puasa yang paling utama setelah Ramadan adalah puasa di bulan Allah, Muharram.\"\n— Muslim';
+
+  @override
+  String get hadith72 =>
+      '\"Barangsiapa menunaikan haji dan tidak berkata-kata kotor serta tidak berbuat fasik, maka ia kembali seperti hari ia dilahirkan ibunya.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith73 =>
+      '\"Umrah ke umrah adalah penghapus dosa di antara keduanya.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith74 => '\"Berlomba-lombalah dalam kebaikan.\"\n— Muslim';
+
+  @override
+  String get hadith75 =>
+      '\"Dua rakaat Fajar lebih baik dari dunia dan segala isinya.\"\n— Muslim';
+
+  @override
+  String get hadith76 =>
+      '\"Barang siapa yang istiqamah beristighfar, Allah akan memberikan jalan keluar dari setiap kesulitan.\"\n— Abu Dawud';
+
+  @override
+  String get hadith77 =>
+      '\"Seandainya kalian bertawakal kepada Allah dengan sebenar-benarnya, niscaya Dia akan memberi kalian rezeki sebagaimana Dia memberi rezeki kepada burung.\"\n— Tirmidzi';
+
+  @override
+  String get hadith78 =>
+      '\"Barang siapa yang menjenguk orang sakit, ia berada di taman surga hingga ia kembali.\"\n— Muslim';
+
+  @override
+  String get hadith79 =>
+      '\"Sebarkanlah salam, berilah makan, dan salatlah di malam hari saat orang-orang tidur — kalian akan masuk surga dengan damai.\"\n— Tirmidzi';
+
+  @override
+  String get hadith80 =>
+      '\"Amal yang paling dicintai Allah adalah yang paling konsisten, meskipun sedikit.\"\n— Bukhari';
+
+  @override
+  String get hadith81 =>
+      '\"Tidak boleh iri kecuali dalam dua hal: seseorang yang diberi harta oleh Allah lalu ia menghabiskannya di jalan kebenaran, dan seseorang yang diberi hikmah lalu ia memutuskan dan mengajarkannya.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith82 =>
+      '\"Seseorang itu mengikuti agama temannya, maka hendaklah salah seorang dari kalian melihat siapa yang ia jadikan teman.\"\n— Abu Dawud & Tirmidzi';
+
+  @override
+  String get hadith83 =>
+      '\"Perbanyaklah mengingat kematian, karena ia membersihkan hati.\"\n— Tirmidzi';
+
+  @override
+  String get hadith84 =>
+      '\"Sebaik-baik kalian adalah yang paling lembut hatinya.\"\n— Thabrani';
+
+  @override
+  String get hadith85 =>
+      '\"Allah tidak membebani seseorang melainkan sesuai dengan kemampuannya.\"\n— Al-Quran 2:286';
+
+  @override
+  String get hadith86 =>
+      '\"Barang siapa yang menutupi aib seorang muslim, Allah akan menutupi aibnya pada Hari Kiamat.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith87 =>
+      '\"Jadilah di dunia ini seakan-akan engkau orang asing atau musafir.\"\n— Bukhari';
+
+  @override
+  String get hadith88 =>
+      '\"Barang siapa yang memudahkan orang yang dalam kesulitan, Allah akan memudahkannya di dunia dan akhirat.\"\n— Muslim';
+
+  @override
+  String get hadith89 =>
+      '\"Sesungguhnya setiap amal tergantung pada niatnya.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith90 =>
+      '\"Jauhilah prasangka, karena prasangka adalah ucapan yang paling dusta.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith91 =>
+      '\"Barang siapa yang meninggalkan dusta demi Allah, meskipun dalam bercanda, aku menjamin baginya sebuah istana di pinggiran surga.\"\n— Abu Dawud';
+
+  @override
+  String get hadith92 =>
+      '\"Pintu-pintu kebaikan itu banyak: bertasbih, memuji Allah, bersedekah, menyuruh kebaikan, dan menyingkirkan gangguan dari jalan.\"\n— Muslim';
+
+  @override
+  String get hadith93 =>
+      '\"Makanlah bersama-sama dan sebutlah nama Allah, niscaya akan diberkahi untuk kalian.\"\n— Abu Dawud';
+
+  @override
+  String get hadith94 =>
+      '\"Sebaik-baik majelis adalah yang paling lapang.\"\n— Abu Dawud';
+
+  @override
+  String get hadith95 =>
+      '\"Maafkanlah, niscaya kalian akan dimaafkan.\"\n— Ahmad';
+
+  @override
+  String get hadith96 =>
+      '\"Ikatlah untamu, kemudian bertawakallah kepada Allah.\"\n— Tirmidzi';
+
+  @override
+  String get hadith97 =>
+      '\"Sungguh menakjubkan urusan orang beriman — segala sesuatunya baik baginya.\"\n— Muslim';
+
+  @override
+  String get hadith98 =>
+      '\"Seorang muslim adalah saudara bagi muslim lainnya: ia tidak menzaliminya, tidak meninggalkannya, dan tidak menghinakannya.\"\n— Muslim';
+
+  @override
+  String get hadith99 =>
+      '\"Ucapan yang paling dicintai Allah adalah: SubhanAllahi wa bihamdihi, SubhanAllahil Azhim.\"\n— Bukhari & Muslim';
 }

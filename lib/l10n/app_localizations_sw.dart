@@ -608,4 +608,314 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get settingsDeveloper => 'Msanidi';
+
+  @override
+  String get hadith20 =>
+      '\"Anayefunga Ramadhani kwa imani na kutaraji thawabu, dhambi zake zilizopita zitasamehewa.\"\n— Bukhari na Muslim';
+
+  @override
+  String get hadith21 => '\"Swala ni nguzo ya dini.\"\n— Bayhaqi';
+
+  @override
+  String get hadith22 =>
+      '\"Dua kati ya adhana na iqama hairudiwi.\"\n— Abu Dawud';
+
+  @override
+  String get hadith23 =>
+      '\"Anayejenga msikiti kwa ajili ya Mwenyezi Mungu, Mwenyezi Mungu atamjengea nyumba Peponi.\"\n— Bukhari na Muslim';
+
+  @override
+  String get hadith24 =>
+      '\"Safu bora kwa wanaume ni za mbele, na safu bora kwa wanawake ni za nyuma.\"\n— Muslim';
+
+  @override
+  String get hadith25 =>
+      '\"Kufunga ni ngao dhidi ya Moto wa Jahannam.\"\n— Nasa\'i';
+
+  @override
+  String get hadith26 =>
+      '\"Anayeswali rakaa kumi na mbili za sunna, atajengewa nyumba Peponi.\"\n— Muslim';
+
+  @override
+  String get hadith27 =>
+      '\"Aliye hodari katika Qurani atakuwa pamoja na malaika watukufu.\"\n— Bukhari na Muslim';
+
+  @override
+  String get hadith28 =>
+      '\"Kutafuta elimu ni faradhi kwa kila Muislamu.\"\n— Ibn Majah';
+
+  @override
+  String get hadith29 => '\"Sadaka bora ni kutoa maji ya kunywa.\"\n— Ahmad';
+
+  @override
+  String get hadith30 =>
+      '\"Anayemuondolea muumini shida, Mwenyezi Mungu atamwondolea shida Siku ya Hukumu.\"\n— Muslim';
+
+  @override
+  String get hadith31 =>
+      '\"Wenye huruma huhurumiwa na Mwingi wa Huruma.\"\n— Abu Dawud na Tirmidhi';
+
+  @override
+  String get hadith32 => '\"Haya ni sehemu ya imani.\"\n— Bukhari na Muslim';
+
+  @override
+  String get hadith33 => '\"Usafi ni nusu ya imani.\"\n— Muslim';
+
+  @override
+  String get hadith34 =>
+      '\"Anayesubiri, Mwenyezi Mungu atampa subira.\"\n— Bukhari na Muslim';
+
+  @override
+  String get hadith35 =>
+      '\"Utajiri bora ni ulimi unaomkumbuka Mwenyezi Mungu.\"\n— Tabarani';
+
+  @override
+  String get hadith36 =>
+      '\"Hakuna yeyote kati yenu atakayeamini kweli kweli hadi ampendelee ndugu yake kile anachojipendea mwenyewe.\"\n— Bukhari na Muslim';
+
+  @override
+  String get hadith37 =>
+      '\"Walisheni wenye njaa, watembeleni wagonjwa, na waacheni huru mateka.\"\n— Bukhari';
+
+  @override
+  String get hadith38 =>
+      '\"Mtu mwenye nguvu si yule anayeshinda katika mieleka, bali ni yule anayejizuia wakati wa hasira.\"\n— Bukhari na Muslim';
+
+  @override
+  String get hadith39 =>
+      '\"Anayehifadhi kile kilicho kati ya taya zake na miguu yake, ninamhakikishia Pepo.\"\n— Bukhari';
+
+  @override
+  String get hadith40 =>
+      '\"Semeni \'SubhanAllah\', \'Alhamdulillah\', na \'Allahu Akbar\' mara thelathini na tatu baada ya kila swala.\"\n— Muslim';
+
+  @override
+  String get hadith41 => '\"Dhikri bora ni La ilaha illallah.\"\n— Tirmidhi';
+
+  @override
+  String get hadith42 =>
+      '\"Kuna neema mbili ambazo watu wengi huzipoteza: afya na wakati wa ziada.\"\n— Bukhari';
+
+  @override
+  String get hadith43 =>
+      '\"Tumieni tano kabla ya tano: ujana kabla ya uzee, afya kabla ya ugonjwa, utajiri kabla ya umaskini, wakati wa ziada kabla ya shughuli, na uhai kabla ya kifo.\"\n— Hakim';
+
+  @override
+  String get hadith44 =>
+      '\"Anayesoma Suratul Ikhlas mara kumi, Mwenyezi Mungu atamjengea nyumba Peponi.\"\n— Ahmad';
+
+  @override
+  String get hadith45 =>
+      '\"Swala bora baada ya swala za faradhi ni swala ya usiku.\"\n— Muslim';
+
+  @override
+  String get hadith46 =>
+      '\"Sadaka inazima dhambi kama maji yanavyozima moto.\"\n— Tirmidhi';
+
+  @override
+  String get hadith47 =>
+      '\"Anayeunga udugu si yule anayerudisha, bali ni yule anayeendelea kuunga hata unapokatwa.\"\n— Bukhari';
+
+  @override
+  String get hadith48 => '\"Kila tendo jema ni sadaka.\"\n— Bukhari na Muslim';
+
+  @override
+  String get hadith49 =>
+      '\"Anayekula na kusema Alhamdulillah, dhambi zake zilizopita zitasamehewa.\"\n— Tirmidhi';
+
+  @override
+  String get hadith50 =>
+      '\"Watu wanaopendwa zaidi na Mwenyezi Mungu ni wale wanaowafaidia wengine zaidi.\"\n— Tabarani';
+
+  @override
+  String get hadith51 =>
+      '\"Yeyote anayezuia hasira yake hali ana uwezo wa kuitekeleza, Mwenyezi Mungu atamwita mbele ya viumbe vyote Siku ya Hukumu ili achague thawabu yake.\"\n— Tirmidhi';
+
+  @override
+  String get hadith52 =>
+      '\"Harakisheni kutoa sadaka, kwani inazuia maafa.\"\n— Tirmidhi';
+
+  @override
+  String get hadith53 =>
+      '\"Usidharau jambo lolote jema, hata kukutana na ndugu yako kwa uso wenye tabasamu.\"\n— Muslim';
+
+  @override
+  String get hadith54 =>
+      '\"Bora wenu ni yule aliye bora kwa familia yake.\"\n— Tirmidhi';
+
+  @override
+  String get hadith55 =>
+      '\"Yeyote anayesoma aya mbili za mwisho za Sura Al-Baqarah usiku, zinamtosha.\"\n— Bukhari na Muslim';
+
+  @override
+  String get hadith56 =>
+      '\"Dunia ni starehe, na starehe bora zaidi ni mke mwema.\"\n— Muslim';
+
+  @override
+  String get hadith57 =>
+      '\"Dua tatu hazikataliwa: dua ya mfungaji, kiongozi mwadilifu, na mtu aliyedhulumiwa.\"\n— Tirmidhi';
+
+  @override
+  String get hadith58 =>
+      '\"Yeyote anayenitumia salawati mara moja, Mwenyezi Mungu anamtumia rehema mara kumi.\"\n— Muslim';
+
+  @override
+  String get hadith59 =>
+      '\"Msikiti ni nyumba ya kila mtu mcha Mungu.\"\n— Tabarani';
+
+  @override
+  String get hadith60 =>
+      '\"Yeyote anayesema \'La hawla wa la quwwata illa billah\' — ni dawa ya magonjwa tisini na tisa, dogo zaidi kati yake ni wasiwasi.\"\n— Hakim';
+
+  @override
+  String get hadith61 =>
+      '\"Mwenyezi Mungu anapenda mtu anapofanya jambo, alifanye kwa ubora.\"\n— Tabarani';
+
+  @override
+  String get hadith62 => '\"Pepo iko chini ya miguu ya mama.\"\n— Nasa\'i';
+
+  @override
+  String get hadith63 =>
+      '\"Wema kwa wazazi ni wajibu mkubwa zaidi.\"\n— Bukhari';
+
+  @override
+  String get hadith64 =>
+      '\"Yeyote anayeshukuru kwa kidogo atapewa kingi.\"\n— Bayhaqi';
+
+  @override
+  String get hadith65 => '\"Muumini ni kioo cha muumini.\"\n— Abu Dawud';
+
+  @override
+  String get hadith66 =>
+      '\"Ukweli unaongoza kwenye wema, na wema unaongoza kwenye Pepo.\"\n— Bukhari na Muslim';
+
+  @override
+  String get hadith67 =>
+      '\"Rudisha amana kwa aliyekuamini, na usimdhulumu aliyekudhulumu.\"\n— Abu Dawud na Tirmidhi';
+
+  @override
+  String get hadith68 =>
+      '\"Hakuna uchovu, ugonjwa, huzuni, msongo, madhara au wasiwasi unaompata Muislamu, hata mchomo wa mwiba, isipokuwa Mwenyezi Mungu humfutia baadhi ya dhambi zake.\"\n— Bukhari na Muslim';
+
+  @override
+  String get hadith69 =>
+      '\"Dua ya Muislamu kwa ndugu yake ambaye hayupo daima inakubaliwa.\"\n— Muslim';
+
+  @override
+  String get hadith70 =>
+      '\"Yeyote anayemuomba Mwenyezi Mungu Pepo mara tatu, Pepo husema: Ee Mwenyezi Mungu, mwingize Peponi.\"\n— Tirmidhi';
+
+  @override
+  String get hadith71 =>
+      '\"Saumu bora zaidi baada ya Ramadani ni saumu ya mwezi wa Mwenyezi Mungu, Muharram.\"\n— Muslim';
+
+  @override
+  String get hadith72 =>
+      '\"Yeyote anayefanya Haji na hasemi maneno machafu wala hatendi dhambi, anarudi kama siku aliyozaliwa na mama yake.\"\n— Bukhari na Muslim';
+
+  @override
+  String get hadith73 =>
+      '\"Umra hadi Umra nyingine ni kafara ya dhambi zilizo kati yake.\"\n— Bukhari na Muslim';
+
+  @override
+  String get hadith74 => '\"Shindaneni katika matendo mema.\"\n— Muslim';
+
+  @override
+  String get hadith75 =>
+      '\"Rakaa mbili za Alfajiri ni bora kuliko dunia na vyote vilivyomo.\"\n— Muslim';
+
+  @override
+  String get hadith76 =>
+      '\"Anayeomba msamaha kwa Mwenyezi Mungu mara kwa mara, Mwenyezi Mungu atampa njia ya kutoka katika kila shida.\"\n— Abu Dawud';
+
+  @override
+  String get hadith77 =>
+      '\"Kama mngemtegemea Mwenyezi Mungu kama inavyostahili, Angewapa riziki kama Anavyowapa ndege.\"\n— Tirmidhi';
+
+  @override
+  String get hadith78 =>
+      '\"Anayemtembelea mgonjwa anakuwa katika bustani ya Pepo hadi anarudi.\"\n— Muslim';
+
+  @override
+  String get hadith79 =>
+      '\"Enezeni salamu, lisheni wenye njaa, na salini usiku watu wanapokuwa wamelala — mtaingia Peponi kwa amani.\"\n— Tirmidhi';
+
+  @override
+  String get hadith80 =>
+      '\"Matendo yapendwayo zaidi na Mwenyezi Mungu ni yale yanayofanywa kwa uthabiti, hata yakiwa madogo.\"\n— Bukhari';
+
+  @override
+  String get hadith81 =>
+      '\"Wivu hauruhusiwi isipokuwa katika mambo mawili: mtu aliyepewa mali na Mwenyezi Mungu naye akaitumia katika njia ya haki, na mtu aliyepewa hekima naye akahukumu na kufundisha nayo.\"\n— Bukhari na Muslim';
+
+  @override
+  String get hadith82 =>
+      '\"Mtu anafuata dini ya rafiki yake wa karibu, basi kila mmoja wenu aangalie anayemfanya rafiki.\"\n— Abu Dawud na Tirmidhi';
+
+  @override
+  String get hadith83 =>
+      '\"Kumbukeni mauti mara kwa mara, kwani inasafisha moyo.\"\n— Tirmidhi';
+
+  @override
+  String get hadith84 =>
+      '\"Bora wenu ni yule ambaye moyo wake ni laini zaidi.\"\n— Tabrani';
+
+  @override
+  String get hadith85 =>
+      '\"Mwenyezi Mungu hambebi mtu zaidi ya uwezo wake.\"\n— Qurani 2:286';
+
+  @override
+  String get hadith86 =>
+      '\"Anayeficha makosa ya Mwislamu, Mwenyezi Mungu ataficha makosa yake Siku ya Hukumu.\"\n— Bukhari na Muslim';
+
+  @override
+  String get hadith87 =>
+      '\"Kuwa katika dunia hii kana kwamba wewe ni mgeni au msafiri.\"\n— Bukhari';
+
+  @override
+  String get hadith88 =>
+      '\"Anayemfanyia urahisi mtu aliye katika ugumu, Mwenyezi Mungu atamfanyia urahisi duniani na akhera.\"\n— Muslim';
+
+  @override
+  String get hadith89 =>
+      '\"Malipo ya matendo yanategemea nia.\"\n— Bukhari na Muslim';
+
+  @override
+  String get hadith90 =>
+      '\"Jiepusheni na dhana, kwani dhana ni usemi wa uongo zaidi.\"\n— Bukhari na Muslim';
+
+  @override
+  String get hadith91 =>
+      '\"Anayeacha uongo kwa ajili ya Mwenyezi Mungu, hata katika utani, namhakikishia jumba pembezoni mwa Pepo.\"\n— Abu Dawud';
+
+  @override
+  String get hadith92 =>
+      '\"Milango ya wema ni mingi: kumtakasa Mwenyezi Mungu, kumhimidi, sadaka, kuamrisha mema na kuondoa vikwazo njiani.\"\n— Muslim';
+
+  @override
+  String get hadith93 =>
+      '\"Kuleni pamoja na mtajeni jina la Mwenyezi Mungu, mtabarikiwa.\"\n— Abu Dawud';
+
+  @override
+  String get hadith94 =>
+      '\"Mkutano bora ni ule wenye wasaa zaidi.\"\n— Abu Dawud';
+
+  @override
+  String get hadith95 => '\"Sameheni na mtasamehewa.\"\n— Ahmad';
+
+  @override
+  String get hadith96 =>
+      '\"Mfunge ngamia wako kisha umtegemee Mwenyezi Mungu.\"\n— Tirmidhi';
+
+  @override
+  String get hadith97 =>
+      '\"Ni ajabu mambo ya muumini — kila kitu ni kheri kwake.\"\n— Muslim';
+
+  @override
+  String get hadith98 =>
+      '\"Mwislamu ni ndugu wa Mwislamu: hamdhulumu, hamtelekezi, wala hamdharau.\"\n— Muslim';
+
+  @override
+  String get hadith99 =>
+      '\"Neno linalopendwa zaidi na Mwenyezi Mungu ni: SubhanAllahi wa bihamdihi, SubhanAllahil Azim.\"\n— Bukhari na Muslim';
 }

@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:math';
 
 import 'package:flutter/material.dart';
 import '../../l10n/app_localizations.dart';
@@ -150,6 +151,22 @@ List<String> _hadiths(AppLocalizations l) => [
   l.hadith5, l.hadith6, l.hadith7, l.hadith8, l.hadith9,
   l.hadith10, l.hadith11, l.hadith12, l.hadith13, l.hadith14,
   l.hadith15, l.hadith16, l.hadith17, l.hadith18, l.hadith19,
+  l.hadith20, l.hadith21, l.hadith22, l.hadith23, l.hadith24,
+  l.hadith25, l.hadith26, l.hadith27, l.hadith28, l.hadith29,
+  l.hadith30, l.hadith31, l.hadith32, l.hadith33, l.hadith34,
+  l.hadith35, l.hadith36, l.hadith37, l.hadith38, l.hadith39,
+  l.hadith40, l.hadith41, l.hadith42, l.hadith43, l.hadith44,
+  l.hadith45, l.hadith46, l.hadith47, l.hadith48, l.hadith49,
+  l.hadith50, l.hadith51, l.hadith52, l.hadith53, l.hadith54,
+  l.hadith55, l.hadith56, l.hadith57, l.hadith58, l.hadith59,
+  l.hadith60, l.hadith61, l.hadith62, l.hadith63, l.hadith64,
+  l.hadith65, l.hadith66, l.hadith67, l.hadith68, l.hadith69,
+  l.hadith70, l.hadith71, l.hadith72, l.hadith73, l.hadith74,
+  l.hadith75, l.hadith76, l.hadith77, l.hadith78, l.hadith79,
+  l.hadith80, l.hadith81, l.hadith82, l.hadith83, l.hadith84,
+  l.hadith85, l.hadith86, l.hadith87, l.hadith88, l.hadith89,
+  l.hadith90, l.hadith91, l.hadith92, l.hadith93, l.hadith94,
+  l.hadith95, l.hadith96, l.hadith97, l.hadith98, l.hadith99,
 ];
 
 class _AppBrandCard extends StatefulWidget {
@@ -162,20 +179,37 @@ class _AppBrandCard extends StatefulWidget {
 }
 
 class _AppBrandCardState extends State<_AppBrandCard> {
-  int _index = 0;
-  late final Timer _timer;
+  late final List<String> _selected;
+  late final PageController _pageController;
+  int _currentPage = 0;
+  Timer? _timer;
 
   @override
   void initState() {
     super.initState();
+    final all = _hadiths(widget.l);
+    final indices = List.generate(all.length, (i) => i)..shuffle(Random());
+    _selected = indices.take(10).map((i) => all[i]).toList();
+    _pageController = PageController();
+    _startTimer();
+  }
+
+  void _startTimer() {
+    _timer?.cancel();
     _timer = Timer.periodic(const Duration(seconds: 8), (_) {
-      setState(() => _index = (_index + 1) % _hadiths(widget.l).length);
+      final next = (_currentPage + 1) % _selected.length;
+      _pageController.animateToPage(
+        next,
+        duration: const Duration(milliseconds: 500),
+        curve: Curves.easeInOut,
+      );
     });
   }
 
   @override
   void dispose() {
-    _timer.cancel();
+    _timer?.cancel();
+    _pageController.dispose();
     super.dispose();
   }
 
@@ -183,7 +217,6 @@ class _AppBrandCardState extends State<_AppBrandCard> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final seed = theme.colorScheme.primary;
-    final hadiths = _hadiths(widget.l);
 
     return Container(
       margin: const EdgeInsets.only(top: 8),
@@ -247,16 +280,25 @@ class _AppBrandCardState extends State<_AppBrandCard> {
             ),
             child: Column(
               children: [
-                AnimatedSwitcher(
-                  duration: const Duration(milliseconds: 500),
-                  child: Text(
-                    hadiths[_index],
-                    key: ValueKey<int>(_index),
-                    textAlign: TextAlign.center,
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      fontStyle: FontStyle.italic,
-                      color: theme.colorScheme.onSurfaceVariant,
-                      height: 1.5,
+                SizedBox(
+                  height: 80,
+                  child: PageView.builder(
+                    controller: _pageController,
+                    itemCount: _selected.length,
+                    onPageChanged: (page) {
+                      setState(() => _currentPage = page);
+                      _startTimer(); // Reset timer on manual swipe.
+                    },
+                    itemBuilder: (_, i) => Center(
+                      child: Text(
+                        _selected[i],
+                        textAlign: TextAlign.center,
+                        style: theme.textTheme.bodySmall?.copyWith(
+                          fontStyle: FontStyle.italic,
+                          color: theme.colorScheme.onSurfaceVariant,
+                          height: 1.5,
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -265,15 +307,15 @@ class _AppBrandCardState extends State<_AppBrandCard> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (var i = 0; i < hadiths.length; i++)
+                    for (var i = 0; i < _selected.length; i++)
                       AnimatedContainer(
                         duration: const Duration(milliseconds: 300),
                         margin: const EdgeInsets.symmetric(horizontal: 2),
-                        width: i == _index ? 10 : 4,
+                        width: i == _currentPage ? 10 : 4,
                         height: 4,
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(2),
-                          color: i == _index
+                          color: i == _currentPage
                               ? seed
                               : theme.colorScheme.outlineVariant,
                         ),

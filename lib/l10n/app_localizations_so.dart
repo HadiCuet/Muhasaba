@@ -613,4 +613,321 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get settingsDeveloper => 'Sameeyaha';
+
+  @override
+  String get hadith20 =>
+      '\"Qofkii sooma Ramadaan iimaankiisa iyo inaad rajaynayso ajar, dambiyadii hore waa loo cafiyaa.\"\n— Bukhaari & Muslim';
+
+  @override
+  String get hadith21 => '\"Salaaddu waa tiirka diinta.\"\n— Bayhaqi';
+
+  @override
+  String get hadith22 =>
+      '\"Ducada u dhexaysa adhaamka iyo iqaamaddu lama diido.\"\n— Abu Dawud';
+
+  @override
+  String get hadith23 =>
+      '\"Qofkii Ilaahay u dhisa masjid, Ilaahay wuxuu ugu dhisaa guri Jannada.\"\n— Bukhaari & Muslim';
+
+  @override
+  String get hadith24 =>
+      '\"Safafka ugu wanaagsan ee ragga waa kuwa hore, safafka ugu wanaagsan ee haweenka waa kuwa dambe.\"\n— Muslim';
+
+  @override
+  String get hadith25 => '\"Soomku waa gaashaan ka dhawra Naarta.\"\n— Nasaai';
+
+  @override
+  String get hadith26 =>
+      '\"Qofkii tukada laba iyo toban rakco oo sunno ah, guri ayaa loogu dhisaa Jannada.\"\n— Muslim';
+
+  @override
+  String get hadith27 =>
+      '\"Kan si fiican u akhriyo Quraanka wuxuu la jiri doonaa malaa\'igta sharafta leh.\"\n— Bukhaari & Muslim';
+
+  @override
+  String get hadith28 =>
+      '\"Raadinta cilmigu waa waajib muslim kasta.\"\n— Ibn Maajah';
+
+  @override
+  String get hadith29 =>
+      '\"Sadaqada ugu wanaagsan waa biyaha cabbitaanka.\"\n— Ahmad';
+
+  @override
+  String get hadith30 =>
+      '\"Qofkii ka saara dhibaato mu\'min, Ilaahay wuxuu ka saari dhibaato Maalinta Qiyaamada.\"\n— Muslim';
+
+  @override
+  String get hadith31 =>
+      '\"Kuwa naxariista leh, Kan ugu Naxariista Badan ayaa u naxariista.\"\n— Abu Dawud & Tirmidhi';
+
+  @override
+  String get hadith32 =>
+      '\"Xishmaddu waa qayb ka mid ah iimaanka.\"\n— Bukhaari & Muslim';
+
+  @override
+  String get hadith33 =>
+      '\"Nadiifnimadu waa badh ka mid ah iimaanka.\"\n— Muslim';
+
+  @override
+  String get hadith34 =>
+      '\"Qofkii samiray, Ilaahay wuxuu siinayaa samir.\"\n— Bukhaari & Muslim';
+
+  @override
+  String get hadith35 =>
+      '\"Hantida ugu wanaagsan waa carrabka Ilaahay xusa.\"\n— Tabaraani';
+
+  @override
+  String get hadith36 =>
+      '\"Midkiinna ma rumeynayo ilaa uu u jeclaado walaalihiis wuxuu naftiisa u jecel yahay.\"\n— Bukhaari & Muslim';
+
+  @override
+  String get hadith37 =>
+      '\"Quudi kuwa gaajaysan, soo booqda kuwa buka, xoreena maxaabiista.\"\n— Bukhaari';
+
+  @override
+  String get hadith38 =>
+      '\"Qofka xoogga leh maaha kan ku guulaysta legdanka, waa kan is-xakama markuu cadhaysan yahay.\"\n— Bukhaari & Muslim';
+
+  @override
+  String get hadith39 =>
+      '\"Qofkii dhawra waxa u dhexeeya afkiisa iyo lugihiisa, waxaan ugu dammaanad qaadayaa Jannada.\"\n— Bukhaari';
+
+  @override
+  String get hadith40 =>
+      '\"Dhaha \'SubhanAllah\', \'Alhamdulillaah\' iyo \'Allaahu Akbar\' saddex iyo soddon jeer kasta oo salaad ka dib.\"\n— Muslim';
+
+  @override
+  String get hadith41 =>
+      '\"Dhikriga ugu wanaagsan waa La ilaaha illallaah.\"\n— Tirmidhi';
+
+  @override
+  String get hadith42 =>
+      '\"Waxaa jira labo nicmo oo ay dad badan khasaaraan: caafimaadka iyo waqtiga faariga ah.\"\n— Bukhaari';
+
+  @override
+  String get hadith43 =>
+      '\"Ka faa\'iidaysta shan ka hor shan: yaranimo ka hor gaboob, caafimaad ka hor jirro, hodan ka hor faqri, waqti ka hor mashquul, iyo nolol ka hor dhimasho.\"\n— Hakim';
+
+  @override
+  String get hadith44 =>
+      '\"Qofkii akhriyo Suuradda Al-Ikhlaas toban jeer, Ilaahay wuxuu ugu dhisaa guri Jannada.\"\n— Ahmad';
+
+  @override
+  String get hadith45 =>
+      '\"Salaadda ugu wanaagsan ka dib fariidada waa salaadda habeenka.\"\n— Muslim';
+
+  @override
+  String get hadith46 =>
+      '\"Sadaqadu way demisaa dambiyada sida biyuhu ay demiyaan dabka.\"\n— Tirmidhi';
+
+  @override
+  String get hadith47 =>
+      '\"Kan xiriirka qaraabada xajiya maaha kan ku abtirsa, waa kan xajiya xitaa markay go\'do.\"\n— Bukhaari';
+
+  @override
+  String get hadith48 =>
+      '\"Fal wanaag kasta sadaqo weeye.\"\n— Bukhaari & Muslim';
+
+  @override
+  String get hadith49 =>
+      '\"Qofkii cuna oo yidhaahda Alhamdulillaah, dambiyihii hore waa la cafiyaa.\"\n— Tirmidhi';
+
+  @override
+  String get hadith50 =>
+      '\"Dadka Ilaahay ugu jecel waa kuwa dadka kale ugu wanaagsan ugu faa\'iideysa.\"\n— Tabaraani';
+
+  @override
+  String get hadith51 =>
+      '\"Qofkii xanaaqiisa celiyo isagoo awood u leh inuu ku dhaqmo, Ilaahay wuxuu ugu yeerayaa maalinta Qiyaamaha dhammaan uunka hortooda si uu u doorto abaalmarintiisa.\"\n— Tirmidhi';
+
+  @override
+  String get hadith52 =>
+      '\"Ku dhaqso sadaqada, maxaa yeelay waxay ka hor istaagaysaa musiibooyinka.\"\n— Tirmidhi';
+
+  @override
+  String get hadith53 =>
+      '\"Ha quudhsin wax kasta oo wanaagsan, xitaa haddii ay tahay inaad walaalkaa kula kulanto waji bashbash ah.\"\n— Muslim';
+
+  @override
+  String get hadith54 =>
+      '\"Kuwiinna ugu wanaagsan waa ka ugu wanaagsan qoyskiisa.\"\n— Tirmidhi';
+
+  @override
+  String get hadith55 =>
+      '\"Qofkii habeenkii akhriya labada aayad ee ugu dambeeya Suurada Al-Baqarah, waa ku filan yihiin.\"\n— Bukhaari & Muslim';
+
+  @override
+  String get hadith56 =>
+      '\"Adduunyadani waa raashin, raashintii ugu fiicnaydna waa naag wanaagsan.\"\n— Muslim';
+
+  @override
+  String get hadith57 =>
+      '\"Saddex ducooyin ah oo aan la celin: ducada qofka sooman, hogaamiyaha cadliska ah, iyo qofka la dulmi jiray.\"\n— Tirmidhi';
+
+  @override
+  String get hadith58 =>
+      '\"Qofkii hal mar salaad iigu diro, Ilaahay toban jeer buu naxariis ugu diraa.\"\n— Muslim';
+
+  @override
+  String get hadith59 =>
+      '\"Masaajidku waa guriga qof kasta oo xalaal ah.\"\n— Tabaraani';
+
+  @override
+  String get hadith60 =>
+      '\"Qofkii yidhaahda \'Laa hawla walaa quwwata illaa billaah\' — waa dawo sagaashan iyo sagaal cudur, kan ugu fududna waa walaac.\"\n— Haakim';
+
+  @override
+  String get hadith61 =>
+      '\"Ilaahay wuxuu jecel yahay marka aad wax qabsataan, inaad si heer sare leh u qabsataan.\"\n— Tabaraani';
+
+  @override
+  String get hadith62 =>
+      '\"Jannadu waxay ku hoos taallaa cagaha hooyooyinka.\"\n— Nasaa\'i';
+
+  @override
+  String get hadith63 =>
+      '\"Wanaag u sameynta waalidka waa waajibka ugu weyn.\"\n— Bukhaari';
+
+  @override
+  String get hadith64 =>
+      '\"Qofkii ku mahadiya wax yar, wax badan ayaa la siinayaa.\"\n— Bayhaqi';
+
+  @override
+  String get hadith65 =>
+      '\"Mu\'minku waa muraayaddii mu\'minka.\"\n— Abu Dawud';
+
+  @override
+  String get hadith66 =>
+      '\"Runtu waxay horseedaa wanaag, wanaaguna wuxuu horseedaa Jannada.\"\n— Bukhaari & Muslim';
+
+  @override
+  String get hadith67 =>
+      '\"U celi amaanada qofka kugu aaminay, hana khiyaanayn qofka ku khiyaanay.\"\n— Abu Dawud & Tirmidhi';
+
+  @override
+  String get hadith68 =>
+      '\"Daal, cudur, murug, tiiraanyo, waxyeello ama walaac oo Muslim-ka gaaraya, xitaa qodax oo ku mudhda, Ilaahay wuxuu ku cafiyaa qaar ka mid ah dambiyaashiisa.\"\n— Bukhaari & Muslim';
+
+  @override
+  String get hadith69 =>
+      '\"Ducada Muslimka uu u sameeyo walaalki isagoo maqan had iyo jeer waa la aqbalaa.\"\n— Muslim';
+
+  @override
+  String get hadith70 =>
+      '\"Qofkii saddex jeer Ilaahay ka waydiista Jannada, Jannadu waxay tidhaahdaa: Ilaahayow, Jannada geli.\"\n— Tirmidhi';
+
+  @override
+  String get hadith71 =>
+      '\"Soonka ugu fiican ee ka dambeeya Ramadaan waa soonka bisha Ilaahay ee Muharram.\"\n— Muslim';
+
+  @override
+  String get hadith72 =>
+      '\"Qofkii xajka sameeya oo aan hadal xun ku hadlin dambina samayn, wuxuu u soo noqdaa sida maalin hooyadii dhashay.\"\n— Bukhaari & Muslim';
+
+  @override
+  String get hadith73 =>
+      '\"Cumrada ilaa cumrada kale waa kafaarad dambiyada u dhexeeya.\"\n— Bukhaari & Muslim';
+
+  @override
+  String get hadith74 => '\"Ku tartama camalka wanaagsan.\"\n— Muslim';
+
+  @override
+  String get hadith75 =>
+      '\"Laba rakcadood ee salaadda Fajr way ka wanaagsan yihiin adduunka iyo waxa ku jira oo dhan.\"\n— Muslim';
+
+  @override
+  String get hadith76 =>
+      '\"Qofka joogtada ah istigfaar sameeya, Allaah wuxuu ka siinayaa meel uu kaga baxo dhib kasta.\"\n— Abu Dawud';
+
+  @override
+  String get hadith77 =>
+      '\"Haddii aad Allaah ku tawakushaan sida loo tawakuli lahaa, wuxuu idinku rizqin lahaa sida uu u rizqeeyo shimbiraha.\"\n— Tirmidhi';
+
+  @override
+  String get hadith78 =>
+      '\"Qofka booqda qof buka, wuxuu ku suganyahay beeraha Jannada ilaa uu soo noqdo.\"\n— Muslim';
+
+  @override
+  String get hadith79 =>
+      '\"Faafia salaamta, quudi dadka gaajaysan, salaadna tuka habeenkii markii dadku hurdo — Jannada nabad ku galaysaan.\"\n— Tirmidhi';
+
+  @override
+  String get hadith80 =>
+      '\"Camalka Allaah ugu jecel waa kan joogtada ah, in kasta oo yar yahay.\"\n— Bukhari';
+
+  @override
+  String get hadith81 =>
+      '\"Xasaddu waa la oggolaan karaa laba kiis oo keliya: nin Allaah maal siiyay oo jidka xaqa ku bixiya, iyo nin Allaah xigmad siiyay oo ku xukuma kuna baraa.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith82 =>
+      '\"Qofku wuxuu ku socda diinta saaxiibkiis, sidaas darteed mid kastaaba ha eego qofka uu saaxiib la yahay.\"\n— Abu Dawud & Tirmidhi';
+
+  @override
+  String get hadith83 =>
+      '\"Badanaa xasuusta dhimashada, waayo, waxay nadiifisaa qalbiga.\"\n— Tirmidhi';
+
+  @override
+  String get hadith84 =>
+      '\"Kuwiinna ugu wanaagsan waa kii qalbigiisu ugu jilicsan yahay.\"\n— Tabrani';
+
+  @override
+  String get hadith85 =>
+      '\"Allaah naf kasta wax ka badan awooddeeda uma raraan.\"\n— Quraan 2:286';
+
+  @override
+  String get hadith86 =>
+      '\"Qofka qariiya ceebta Muslim, Allaah wuxuu qariinayaa ceebtiisa Maalinta Qiyaamaha.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith87 =>
+      '\"Adduunkan ku jir sidii aad qariib tahay ama musaafir.\"\n— Bukhari';
+
+  @override
+  String get hadith88 =>
+      '\"Qofka u fududeeya qof dhibaato ku jira, Allaah wuxuu ugu fududeeyaa adduunka iyo aakhirada.\"\n— Muslim';
+
+  @override
+  String get hadith89 =>
+      '\"Abaalgudka camalku wuxuu ku xiran yahay niyada.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith90 =>
+      '\"Ka fogaada tuhmada, waayo, tuhmadu waa hadalka ugu beenta badan.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith91 =>
+      '\"Qofka ka taga beenta Allaah daraaddiis, xitaa kaftan, waxaan u dammaanad qaadayaa guri ku yaal darfaha Jannada.\"\n— Abu Dawud';
+
+  @override
+  String get hadith92 =>
+      '\"Albaabbada khayrku way badan yihiin: Allaah ku weyneyn, Allaah ku ammaanid, sadaqo, wanaaga ku amrid, iyo jidka wax laga saaro.\"\n— Muslim';
+
+  @override
+  String get hadith93 =>
+      '\"Wada cuna oo magaca Allaah sheega, waxaa laydiin barakadeeyaa.\"\n— Abu Dawud';
+
+  @override
+  String get hadith94 =>
+      '\"Kulanku ugu wanaagsan waa kan ugu ballaaran.\"\n— Abu Dawud';
+
+  @override
+  String get hadith95 =>
+      '\"Iscafimaadya, waana laydiin cafi doonaa.\"\n— Ahmad';
+
+  @override
+  String get hadith96 =>
+      '\"Geelahaaga xidh, kaddibna Allaah ku tawakul.\"\n— Tirmidhi';
+
+  @override
+  String get hadith97 =>
+      '\"Waa lala yaabaa arrimaha mu\'minka — wax walba waa u wanaagsan yihiin.\"\n— Muslim';
+
+  @override
+  String get hadith98 =>
+      '\"Muslimku waa walaalka Muslimka: ma dulmiyo, ma dayaco, mana quudhsado.\"\n— Muslim';
+
+  @override
+  String get hadith99 =>
+      '\"Hadalka Allaah ugu jecel waa: SubhanAllaahi wa bihamdihi, SubhanAllaahil Aziim.\"\n— Bukhari & Muslim';
 }

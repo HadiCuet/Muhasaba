@@ -1207,6 +1207,486 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Developer'**
   String get settingsDeveloper;
+
+  /// No description provided for @hadith20.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever fasts Ramadan out of faith and seeking reward, his past sins will be forgiven.\"\n— Bukhari & Muslim'**
+  String get hadith20;
+
+  /// No description provided for @hadith21.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Prayer is the pillar of religion.\"\n— Bayhaqi'**
+  String get hadith21;
+
+  /// No description provided for @hadith22.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The supplication between the adhan and iqamah is not rejected.\"\n— Abu Dawud'**
+  String get hadith22;
+
+  /// No description provided for @hadith23.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever builds a mosque for Allah, Allah will build for him a house in Paradise.\"\n— Bukhari & Muslim'**
+  String get hadith23;
+
+  /// No description provided for @hadith24.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The best rows for men are the first rows, and the best rows for women are the last rows.\"\n— Muslim'**
+  String get hadith24;
+
+  /// No description provided for @hadith25.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Fasting is a shield from the Hellfire.\"\n— Nasa\'i'**
+  String get hadith25;
+
+  /// No description provided for @hadith26.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever prays twelve rak\'ahs of Sunnah, a house will be built for him in Paradise.\"\n— Muslim'**
+  String get hadith26;
+
+  /// No description provided for @hadith27.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The one who is proficient in the Quran will be with the noble angels.\"\n— Bukhari & Muslim'**
+  String get hadith27;
+
+  /// No description provided for @hadith28.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Seeking knowledge is an obligation upon every Muslim.\"\n— Ibn Majah'**
+  String get hadith28;
+
+  /// No description provided for @hadith29.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The best of charity is giving water to drink.\"\n— Ahmad'**
+  String get hadith29;
+
+  /// No description provided for @hadith30.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever removes a hardship from a believer, Allah will remove a hardship from him on the Day of Judgment.\"\n— Muslim'**
+  String get hadith30;
+
+  /// No description provided for @hadith31.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The merciful are shown mercy by the Most Merciful.\"\n— Abu Dawud & Tirmidhi'**
+  String get hadith31;
+
+  /// No description provided for @hadith32.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Modesty is part of faith.\"\n— Bukhari & Muslim'**
+  String get hadith32;
+
+  /// No description provided for @hadith33.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Cleanliness is half of faith.\"\n— Muslim'**
+  String get hadith33;
+
+  /// No description provided for @hadith34.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever is patient, Allah will give him patience.\"\n— Bukhari & Muslim'**
+  String get hadith34;
+
+  /// No description provided for @hadith35.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The best wealth is a tongue that remembers Allah.\"\n— Tabarani'**
+  String get hadith35;
+
+  /// No description provided for @hadith36.
+  ///
+  /// In en, this message translates to:
+  /// **'\"None of you truly believes until he loves for his brother what he loves for himself.\"\n— Bukhari & Muslim'**
+  String get hadith36;
+
+  /// No description provided for @hadith37.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Feed the hungry, visit the sick, and free the captives.\"\n— Bukhari'**
+  String get hadith37;
+
+  /// No description provided for @hadith38.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The strong person is not the one who wrestles, but the one who controls himself in anger.\"\n— Bukhari & Muslim'**
+  String get hadith38;
+
+  /// No description provided for @hadith39.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever guards what is between his jaws and his legs, I guarantee him Paradise.\"\n— Bukhari'**
+  String get hadith39;
+
+  /// No description provided for @hadith40.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Say \'SubhanAllah\', \'Alhamdulillah\', and \'Allahu Akbar\' thirty-three times each after every prayer.\"\n— Muslim'**
+  String get hadith40;
+
+  /// No description provided for @hadith41.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The best dhikr is La ilaha illallah.\"\n— Tirmidhi'**
+  String get hadith41;
+
+  /// No description provided for @hadith42.
+  ///
+  /// In en, this message translates to:
+  /// **'\"There are two blessings which many people waste: health and free time.\"\n— Bukhari'**
+  String get hadith42;
+
+  /// No description provided for @hadith43.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Make use of five before five: youth before old age, health before sickness, wealth before poverty, free time before busyness, and life before death.\"\n— Hakim'**
+  String get hadith43;
+
+  /// No description provided for @hadith44.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever recites Surah Al-Ikhlas ten times, Allah will build for him a house in Paradise.\"\n— Ahmad'**
+  String get hadith44;
+
+  /// No description provided for @hadith45.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The best prayer after the obligatory prayers is the night prayer.\"\n— Muslim'**
+  String get hadith45;
+
+  /// No description provided for @hadith46.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Charity extinguishes sins as water extinguishes fire.\"\n— Tirmidhi'**
+  String get hadith46;
+
+  /// No description provided for @hadith47.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The one who maintains family ties is not the one who reciprocates. It is the one who maintains them even when cut off.\"\n— Bukhari'**
+  String get hadith47;
+
+  /// No description provided for @hadith48.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Every good deed is charity.\"\n— Bukhari & Muslim'**
+  String get hadith48;
+
+  /// No description provided for @hadith49.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever eats and says Alhamdulillah, his past sins will be forgiven.\"\n— Tirmidhi'**
+  String get hadith49;
+
+  /// No description provided for @hadith50.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The most beloved people to Allah are those who are most beneficial to others.\"\n— Tabarani'**
+  String get hadith50;
+
+  /// No description provided for @hadith51.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever controls his anger while able to act, Allah will call him before all creation on the Day of Judgment to choose his reward.\"\n— Tirmidhi'**
+  String get hadith51;
+
+  /// No description provided for @hadith52.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Give charity without delay, for it stands in the way of calamity.\"\n— Tirmidhi'**
+  String get hadith52;
+
+  /// No description provided for @hadith53.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Do not belittle any good deed, even meeting your brother with a cheerful face.\"\n— Muslim'**
+  String get hadith53;
+
+  /// No description provided for @hadith54.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The best of you are those who are best to their families.\"\n— Tirmidhi'**
+  String get hadith54;
+
+  /// No description provided for @hadith55.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever recites the last two verses of Surah Al-Baqarah at night, they will suffice him.\"\n— Bukhari & Muslim'**
+  String get hadith55;
+
+  /// No description provided for @hadith56.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The world is a provision, and the best provision is a righteous wife.\"\n— Muslim'**
+  String get hadith56;
+
+  /// No description provided for @hadith57.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Three supplications are never rejected: the supplication of a fasting person, a just ruler, and the oppressed.\"\n— Tirmidhi'**
+  String get hadith57;
+
+  /// No description provided for @hadith58.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever sends blessings upon me once, Allah will send blessings upon him tenfold.\"\n— Muslim'**
+  String get hadith58;
+
+  /// No description provided for @hadith59.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The mosque is the house of every pious person.\"\n— Tabarani'**
+  String get hadith59;
+
+  /// No description provided for @hadith60.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever says \'La hawla wa la quwwata illa billah\' — it is a remedy for ninety-nine diseases, the least of which is worry.\"\n— Hakim'**
+  String get hadith60;
+
+  /// No description provided for @hadith61.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Allah loves that when you do something, you do it with excellence.\"\n— Tabarani'**
+  String get hadith61;
+
+  /// No description provided for @hadith62.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Paradise lies under the feet of mothers.\"\n— Nasa\'i'**
+  String get hadith62;
+
+  /// No description provided for @hadith63.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Kindness to parents is the greatest obligatory act.\"\n— Bukhari'**
+  String get hadith63;
+
+  /// No description provided for @hadith64.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever is thankful for little will be given much.\"\n— Bayhaqi'**
+  String get hadith64;
+
+  /// No description provided for @hadith65.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The believer is the mirror of the believer.\"\n— Abu Dawud'**
+  String get hadith65;
+
+  /// No description provided for @hadith66.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Truthfulness leads to righteousness, and righteousness leads to Paradise.\"\n— Bukhari & Muslim'**
+  String get hadith66;
+
+  /// No description provided for @hadith67.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Return the trust to the one who entrusted you, and do not betray the one who betrayed you.\"\n— Abu Dawud & Tirmidhi'**
+  String get hadith67;
+
+  /// No description provided for @hadith68.
+  ///
+  /// In en, this message translates to:
+  /// **'\"No fatigue, disease, sorrow, sadness, hurt, or distress befalls a Muslim, even a prick of a thorn, except that Allah removes some of his sins thereby.\"\n— Bukhari & Muslim'**
+  String get hadith68;
+
+  /// No description provided for @hadith69.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The supplication of a Muslim for his brother in his absence is always answered.\"\n— Muslim'**
+  String get hadith69;
+
+  /// No description provided for @hadith70.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever asks Allah for Paradise three times, Paradise says: O Allah, admit him to Paradise.\"\n— Tirmidhi'**
+  String get hadith70;
+
+  /// No description provided for @hadith71.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The most virtuous fast after Ramadan is fasting in the month of Allah, Muharram.\"\n— Muslim'**
+  String get hadith71;
+
+  /// No description provided for @hadith72.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever performs Hajj and does not commit any obscenity or sin returns like the day his mother bore him.\"\n— Bukhari & Muslim'**
+  String get hadith72;
+
+  /// No description provided for @hadith73.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Umrah to Umrah is an expiation for what is between them.\"\n— Bukhari & Muslim'**
+  String get hadith73;
+
+  /// No description provided for @hadith74.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Race to do good deeds.\"\n— Muslim'**
+  String get hadith74;
+
+  /// No description provided for @hadith75.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The two rak\'ahs of Fajr are better than the world and everything in it.\"\n— Muslim'**
+  String get hadith75;
+
+  /// No description provided for @hadith76.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever says \'Astaghfirullah\' regularly, Allah will provide a way out of every difficulty.\"\n— Abu Dawud'**
+  String get hadith76;
+
+  /// No description provided for @hadith77.
+  ///
+  /// In en, this message translates to:
+  /// **'\"If you relied on Allah as He should be relied upon, He would provide for you as He provides for the birds.\"\n— Tirmidhi'**
+  String get hadith77;
+
+  /// No description provided for @hadith78.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever visits a sick person is in the harvest of Paradise until he returns.\"\n— Muslim'**
+  String get hadith78;
+
+  /// No description provided for @hadith79.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Spread peace, feed the hungry, and pray at night when others sleep — you will enter Paradise in peace.\"\n— Tirmidhi'**
+  String get hadith79;
+
+  /// No description provided for @hadith80.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The deeds most loved by Allah are the most consistent, even if small.\"\n— Bukhari'**
+  String get hadith80;
+
+  /// No description provided for @hadith81.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Envy is not permissible except in two cases: a man to whom Allah has given wealth and he spends it in the right way, and a man to whom Allah has given wisdom and he judges and teaches with it.\"\n— Bukhari & Muslim'**
+  String get hadith81;
+
+  /// No description provided for @hadith82.
+  ///
+  /// In en, this message translates to:
+  /// **'\"A person is upon the religion of his close friend, so let each of you look at whom he befriends.\"\n— Abu Dawud & Tirmidhi'**
+  String get hadith82;
+
+  /// No description provided for @hadith83.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Remember death often, for it purifies the heart.\"\n— Tirmidhi'**
+  String get hadith83;
+
+  /// No description provided for @hadith84.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The best of you is the one whose heart is most tender.\"\n— Tabarani'**
+  String get hadith84;
+
+  /// No description provided for @hadith85.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Allah does not burden a soul beyond what it can bear.\"\n— Quran 2:286'**
+  String get hadith85;
+
+  /// No description provided for @hadith86.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever conceals the faults of a Muslim, Allah will conceal his faults on the Day of Judgment.\"\n— Bukhari & Muslim'**
+  String get hadith86;
+
+  /// No description provided for @hadith87.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Be in this world as if you were a stranger or a traveler.\"\n— Bukhari'**
+  String get hadith87;
+
+  /// No description provided for @hadith88.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever makes it easy for someone in difficulty, Allah will make it easy for him in this world and the hereafter.\"\n— Muslim'**
+  String get hadith88;
+
+  /// No description provided for @hadith89.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The reward of deeds depends upon the intentions.\"\n— Bukhari & Muslim'**
+  String get hadith89;
+
+  /// No description provided for @hadith90.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Avoid suspicion, for suspicion is the most false of speech.\"\n— Bukhari & Muslim'**
+  String get hadith90;
+
+  /// No description provided for @hadith91.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever gives up lying for the sake of Allah, even while joking, I guarantee him a palace in the outskirts of Paradise.\"\n— Abu Dawud'**
+  String get hadith91;
+
+  /// No description provided for @hadith92.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The doors of goodness are many: glorifying Allah, praising Him, charity, enjoining good, and removing harm from the road.\"\n— Muslim'**
+  String get hadith92;
+
+  /// No description provided for @hadith93.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Eat together and mention the name of Allah, and it will be blessed for you.\"\n— Abu Dawud'**
+  String get hadith93;
+
+  /// No description provided for @hadith94.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The best gathering is the most spacious.\"\n— Abu Dawud'**
+  String get hadith94;
+
+  /// No description provided for @hadith95.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Forgive and you will be forgiven.\"\n— Ahmad'**
+  String get hadith95;
+
+  /// No description provided for @hadith96.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Tie your camel and then put your trust in Allah.\"\n— Tirmidhi'**
+  String get hadith96;
+
+  /// No description provided for @hadith97.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Wondrous is the affair of the believer — everything is good for him.\"\n— Muslim'**
+  String get hadith97;
+
+  /// No description provided for @hadith98.
+  ///
+  /// In en, this message translates to:
+  /// **'\"A Muslim is a brother to a Muslim: he does not wrong him, nor abandon him, nor despise him.\"\n— Muslim'**
+  String get hadith98;
+
+  /// No description provided for @hadith99.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The most beloved speech to Allah is: SubhanAllahi wa bihamdihi, SubhanAllahil Azeem.\"\n— Bukhari & Muslim'**
+  String get hadith99;
 }
 
 class _AppLocalizationsDelegate

@@ -609,4 +609,319 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get settingsDeveloper => 'Zhvilluesi';
+
+  @override
+  String get hadith20 =>
+      '\"Kush agjëron Ramazanin me besim dhe duke shpresuar shpërblimin, i falen mëkatet e kaluara.\"\n— Buhariu & Muslimi';
+
+  @override
+  String get hadith21 => '\"Namazi është shtylla e fesë.\"\n— Bejhekiu';
+
+  @override
+  String get hadith22 =>
+      '\"Lutja midis ezanit dhe ikametit nuk refuzohet.\"\n— Ebu Davudi';
+
+  @override
+  String get hadith23 =>
+      '\"Kush ndërton një xhami për Allahun, Allahu i ndërton atij një shtëpi në Xhenet.\"\n— Buhariu & Muslimi';
+
+  @override
+  String get hadith24 =>
+      '\"Safat më të mira për burrat janë të parat, ndërsa safat më të mira për gratë janë të fundit.\"\n— Muslimi';
+
+  @override
+  String get hadith25 =>
+      '\"Agjërimi është mburojë nga zjarri i Xhehenemit.\"\n— Nesaiu';
+
+  @override
+  String get hadith26 =>
+      '\"Kush fal dymbëdhjetë rekate sunet, i ndërtohet një shtëpi në Xhenet.\"\n— Muslimi';
+
+  @override
+  String get hadith27 =>
+      '\"Ai që e lexon bukur Kuranin do të jetë me engjëjt fisnikë.\"\n— Buhariu & Muslimi';
+
+  @override
+  String get hadith28 =>
+      '\"Kërkimi i dijes është detyrë e çdo myslimani.\"\n— Ibn Maxhe';
+
+  @override
+  String get hadith29 =>
+      '\"Sadakaja më e mirë është dhënia e ujit.\"\n— Ahmedi';
+
+  @override
+  String get hadith30 =>
+      '\"Kush ia largon një vështirësi besimtarit, Allahu do t\'ia largojë një vështirësi atij në Ditën e Gjykimit.\"\n— Muslimi';
+
+  @override
+  String get hadith31 =>
+      '\"Mëshirëplotëve u tregon mëshirë i Gjithëmëshirshmi.\"\n— Ebu Davudi & Tirmidhiu';
+
+  @override
+  String get hadith32 =>
+      '\"Turpi është pjesë e besimit.\"\n— Buhariu & Muslimi';
+
+  @override
+  String get hadith33 => '\"Pastërtia është gjysma e besimit.\"\n— Muslimi';
+
+  @override
+  String get hadith34 =>
+      '\"Kush duron, Allahu i jep durim.\"\n— Buhariu & Muslimi';
+
+  @override
+  String get hadith35 =>
+      '\"Pasuria më e mirë është gjuha që e përmend Allahun.\"\n— Taberaniu';
+
+  @override
+  String get hadith36 =>
+      '\"Askush prej jush nuk beson vërtet derisa t\'i dojë vëllait të vet atë që i do vetes.\"\n— Buhariu & Muslimi';
+
+  @override
+  String get hadith37 =>
+      '\"Ushqeni të uriturit, vizitoni të sëmurët dhe lironi të robëruarit.\"\n— Buhariu';
+
+  @override
+  String get hadith38 =>
+      '\"I forti nuk është ai që mund në mundje, por ai që e kontrollon veten në zemërim.\"\n— Buhariu & Muslimi';
+
+  @override
+  String get hadith39 =>
+      '\"Kush e ruan gjuhën dhe nderin e vet, unë i garantoj Xhenetin.\"\n— Buhariu';
+
+  @override
+  String get hadith40 =>
+      '\"Thoni \'SubhanAllah\', \'Elhamdulilah\' dhe \'Allahu Ekber\' tridhjetë e tri herë pas çdo namazi.\"\n— Muslimi';
+
+  @override
+  String get hadith41 =>
+      '\"Dhikri më i mirë është La ilahe il-lAllah.\"\n— Tirmidhiu';
+
+  @override
+  String get hadith42 =>
+      '\"Ka dy begatira që shumë njerëz i humbasin: shëndetin dhe kohën e lirë.\"\n— Buhariu';
+
+  @override
+  String get hadith43 =>
+      '\"Përfitoni pesë gjëra para pesë të tjerave: rininë para pleqërisë, shëndetin para sëmundjes, pasurinë para varfërisë, kohën e lirë para zënies dhe jetën para vdekjes.\"\n— Hakimi';
+
+  @override
+  String get hadith44 =>
+      '\"Kush lexon Suren Ihlas dhjetë herë, Allahu i ndërton atij një shtëpi në Xhenet.\"\n— Ahmedi';
+
+  @override
+  String get hadith45 =>
+      '\"Namazi më i mirë pas farzit është namazi i natës.\"\n— Muslimi';
+
+  @override
+  String get hadith46 =>
+      '\"Sadakaja i shuan mëkatet siç e shuan uji zjarrin.\"\n— Tirmidhiu';
+
+  @override
+  String get hadith47 =>
+      '\"Ai që i mban lidhjet farefisnore nuk është ai që i kthen vizitat, por ai që i mban edhe kur i shkëputen.\"\n— Buhariu';
+
+  @override
+  String get hadith48 =>
+      '\"Çdo vepër e mirë është sadaka.\"\n— Buhariu & Muslimi';
+
+  @override
+  String get hadith49 =>
+      '\"Kush ha dhe thotë Elhamdulilah, i falen mëkatet e kaluara.\"\n— Tirmidhiu';
+
+  @override
+  String get hadith50 =>
+      '\"Njerëzit më të dashur tek Allahu janë ata që u sjellin më shumë dobi të tjerëve.\"\n— Tabarani';
+
+  @override
+  String get hadith51 =>
+      '\"Kush e përmbajt zemërimin e tij ndërkohë që ka mundësi ta shprehë, Allahu do ta thërrasë para të gjithë krijesave Ditën e Gjykimit për të zgjedhur shpërblimin e tij.\"\n— Tirmidhi';
+
+  @override
+  String get hadith52 =>
+      '\"Nxitoni në dhënien e sadakasë, sepse ajo e ndalon fatkeqësinë.\"\n— Tirmidhi';
+
+  @override
+  String get hadith53 =>
+      '\"Mos e nënvlerëso asnjë vepër të mirë, qoftë edhe takimi me vëllanë tënd me fytyrë të buzëqeshur.\"\n— Muslim';
+
+  @override
+  String get hadith54 =>
+      '\"Më i miri prej jush është ai që është më i mirë me familjen e tij.\"\n— Tirmidhi';
+
+  @override
+  String get hadith55 =>
+      '\"Kush i lexon dy ajetet e fundit të sures El-Bekare natën, ato i mjaftojnë atij.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith56 =>
+      '\"Kjo botë është furnizim, dhe furnizimi më i mirë është gruaja e devotshme.\"\n— Muslim';
+
+  @override
+  String get hadith57 =>
+      '\"Tri lutje nuk refuzohen: lutja e agjëruesit, lutja e udhëheqësit të drejtë dhe lutja e të shtypurit.\"\n— Tirmidhi';
+
+  @override
+  String get hadith58 =>
+      '\"Kush dërgon salavat mbi mua një herë, Allahu dërgon dhjetë herë mëshirë mbi të.\"\n— Muslim';
+
+  @override
+  String get hadith59 =>
+      '\"Xhamia është shtëpia e çdo njeriu të devotshëm.\"\n— Tabarani';
+
+  @override
+  String get hadith60 =>
+      '\"Kush thotë \'La hawla we la kuwwete il-la bil-lah\' — kjo është ilaç për nëntëdhjetë e nëntë sëmundje, më e lehta e të cilave është shqetësimi.\"\n— Hakim';
+
+  @override
+  String get hadith61 =>
+      '\"Allahu e do kur dikush bën diçka, ta bëjë me përsosmëri.\"\n— Tabarani';
+
+  @override
+  String get hadith62 => '\"Xheneti ndodhet nën këmbët e nënave.\"\n— Nasa\'i';
+
+  @override
+  String get hadith63 =>
+      '\"Mirësia ndaj prindërve është detyrimi më i madh.\"\n— Bukhari';
+
+  @override
+  String get hadith64 =>
+      '\"Kush falënderon për pak, do t\'i jepet shumë.\"\n— Bejheki';
+
+  @override
+  String get hadith65 =>
+      '\"Besimtari është pasqyra e besimtarit.\"\n— Abu Dawud';
+
+  @override
+  String get hadith66 =>
+      '\"Sinqeriteti çon tek mirësia, dhe mirësia çon tek Xheneti.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith67 =>
+      '\"Ktheja amanetin atij që ta besoi, dhe mos e tradhëto atë që të tradhtoi.\"\n— Abu Dawud & Tirmidhi';
+
+  @override
+  String get hadith68 =>
+      '\"Asnjë lodhje, sëmundje, pikëllim, trishtim, dëm apo shqetësim nuk e godet muslimanin, madje as shpimi i një gjembi, veçse Allahu ia fshin disa nga mëkatet e tij.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith69 =>
+      '\"Duaja e muslimanit për vëllanë e tij në mungesë të tij pranohet gjithmonë.\"\n— Muslim';
+
+  @override
+  String get hadith70 =>
+      '\"Kush i kërkon Allahut Xhenetin tri herë, Xheneti thotë: O Allah, fute atë në Xhenet.\"\n— Tirmidhi';
+
+  @override
+  String get hadith71 =>
+      '\"Agjërimi më i vlefshëm pas Ramazanit është agjërimi i muajit të Allahut, Muharremit.\"\n— Muslim';
+
+  @override
+  String get hadith72 =>
+      '\"Kush kryen haxhin dhe nuk flet fjalë të ndyta e nuk bën mëkat, kthehet si ditën kur e lindi nëna e tij.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith73 =>
+      '\"Umra pas umres është shlyerje për mëkatet mes tyre.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith74 => '\"Garoni për vepra të mira.\"\n— Muslim';
+
+  @override
+  String get hadith75 =>
+      '\"Dy rekatet e sabahut janë më të mira se bota dhe gjithçka që gjendet në të.\"\n— Muslimi';
+
+  @override
+  String get hadith76 =>
+      '\"Kush bën istigfar rregullisht, Allahu do t\'i japë rrugëdalje nga çdo vështirësi.\"\n— Ebu Davudi';
+
+  @override
+  String get hadith77 =>
+      '\"Nëse do të mbështeteshit tek Allahu siç duhet, Ai do t\'ju furnizonte ashtu siç i furnizon shpendët.\"\n— Tirmidhiu';
+
+  @override
+  String get hadith78 =>
+      '\"Kush viziton një të sëmurë, gjendet në kopshtin e xhenetit derisa të kthehet.\"\n— Muslimi';
+
+  @override
+  String get hadith79 =>
+      '\"Përhapni selamin, ushqeni të uriturit dhe faluni natën kur njerëzit flenë — do të hyni në xhenet me paqe.\"\n— Tirmidhiu';
+
+  @override
+  String get hadith80 =>
+      '\"Veprat më të dashura tek Allahu janë ato më të vazhdueshmet, edhe nëse janë të pakta.\"\n— Buhariu';
+
+  @override
+  String get hadith81 =>
+      '\"Smira nuk lejohet përveçse në dy raste: një njeri të cilit Allahu i ka dhënë pasuri dhe ai e shpenzon në rrugën e drejtë, dhe një njeri të cilit Allahu i ka dhënë urtësi dhe ai gjykon dhe mëson me të.\"\n— Buhariu dhe Muslimi';
+
+  @override
+  String get hadith82 =>
+      '\"Njeriu ndjek fenë e shokut të tij, prandaj le të shikojë secili prej jush me kë miqësohet.\"\n— Ebu Davudi dhe Tirmidhiu';
+
+  @override
+  String get hadith83 =>
+      '\"Kujtojeni vdekjen shpesh, sepse ajo e pastron zemrën.\"\n— Tirmidhiu';
+
+  @override
+  String get hadith84 =>
+      '\"Më i miri prej jush është ai që ka zemrën më të butë.\"\n— Taberaniu';
+
+  @override
+  String get hadith85 =>
+      '\"Allahu nuk e ngarkon askënd përtej mundësisë së tij.\"\n— Kurani 2:286';
+
+  @override
+  String get hadith86 =>
+      '\"Kush ia mbulon të metat një muslimani, Allahu do t\'ia mbulojë të metat në Ditën e Gjykimit.\"\n— Buhariu dhe Muslimi';
+
+  @override
+  String get hadith87 =>
+      '\"Ji në këtë botë sikur të ishe i huaj ose udhëtar.\"\n— Buhariu';
+
+  @override
+  String get hadith88 =>
+      '\"Kush ia lehtëson dikujt në vështirësi, Allahu do t\'ia lehtësojë atij në dynja dhe ahiret.\"\n— Muslimi';
+
+  @override
+  String get hadith89 =>
+      '\"Shpërblimi i veprave varet nga qëllimet.\"\n— Buhariu dhe Muslimi';
+
+  @override
+  String get hadith90 =>
+      '\"Largohuni nga dyshimi, sepse dyshimi është fjala më e rreme.\"\n— Buhariu dhe Muslimi';
+
+  @override
+  String get hadith91 =>
+      '\"Kush e lë gënjeshtrën për hir të Allahut, edhe gjatë shakasë, unë i garantoj atij një pallat në skajin e xhenetit.\"\n— Ebu Davudi';
+
+  @override
+  String get hadith92 =>
+      '\"Dyert e mirësisë janë të shumta: madhërimi i Allahut, lavdërimi i Tij, sadakaja, urdhërimi për të mirë dhe largimi i pengesave nga rruga.\"\n— Muslimi';
+
+  @override
+  String get hadith93 =>
+      '\"Hani së bashku dhe përmendni emrin e Allahut, do të bekohet për ju.\"\n— Ebu Davudi';
+
+  @override
+  String get hadith94 =>
+      '\"Tubimi më i mirë është ai më i gjeri.\"\n— Ebu Davudi';
+
+  @override
+  String get hadith95 => '\"Falni dhe do të faleni.\"\n— Ahmedi';
+
+  @override
+  String get hadith96 =>
+      '\"Lidhe devenë tënde e pastaj mbështetu tek Allahu.\"\n— Tirmidhiu';
+
+  @override
+  String get hadith97 =>
+      '\"Sa e mrekullueshme është çështja e besimtarit — gjithçka është mirë për të.\"\n— Muslimi';
+
+  @override
+  String get hadith98 =>
+      '\"Muslimani është vëlla i muslimanit: nuk i bën padrejtësi, nuk e braktis dhe nuk e përbuz.\"\n— Muslimi';
+
+  @override
+  String get hadith99 =>
+      '\"Fjala më e dashur tek Allahu është: SubhanAllahi ue bihamdihi, SubhanAllahil Adhim.\"\n— Buhariu dhe Muslimi';
 }

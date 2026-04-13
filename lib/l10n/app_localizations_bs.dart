@@ -610,4 +610,314 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get settingsDeveloper => 'Programer';
+
+  @override
+  String get hadith20 =>
+      '\"Ko posti Ramazan iz imana i nadajući se nagradi, bit će mu oprošteni prošli grijesi.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith21 => '\"Namaz je stub vjere.\"\n— Bejheki';
+
+  @override
+  String get hadith22 =>
+      '\"Dova između ezana i ikameta se ne odbija.\"\n— Ebu Davud';
+
+  @override
+  String get hadith23 =>
+      '\"Ko sagradi džamiju Allaha radi, Allah će mu sagraditi kuću u Džennetu.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith24 =>
+      '\"Najbolji safovi za muškarce su prvi, a najbolji safovi za žene su posljednji.\"\n— Muslim';
+
+  @override
+  String get hadith25 => '\"Post je štit od vatre džehenemske.\"\n— Nesai';
+
+  @override
+  String get hadith26 =>
+      '\"Ko klanja dvanaest rekata sunneta, bit će mu sagrađena kuća u Džennetu.\"\n— Muslim';
+
+  @override
+  String get hadith27 =>
+      '\"Onaj ko vješto uči Kur\'an bit će sa plemenitim melekima.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith28 =>
+      '\"Traženje znanja je obaveza svakog muslimana.\"\n— Ibn Madže';
+
+  @override
+  String get hadith29 =>
+      '\"Najbolja sadaka je napojiti nekoga vodom.\"\n— Ahmed';
+
+  @override
+  String get hadith30 =>
+      '\"Ko otkloni teškoću od vjernika, Allah će otkloniti teškoću od njega na Sudnjem danu.\"\n— Muslim';
+
+  @override
+  String get hadith31 =>
+      '\"Milostivima će se smilovati Milostivi.\"\n— Ebu Davud i Tirmizi';
+
+  @override
+  String get hadith32 => '\"Stid je dio imana.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith33 => '\"Čistoća je pola imana.\"\n— Muslim';
+
+  @override
+  String get hadith34 =>
+      '\"Ko se strpi, Allah će mu dati strpljenje.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith35 =>
+      '\"Najbolje bogatstvo je jezik koji spominje Allaha.\"\n— Taberani';
+
+  @override
+  String get hadith36 =>
+      '\"Niko od vas neće istinski vjerovati dok ne bude želio svome bratu ono što želi sebi.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith37 =>
+      '\"Nahranite gladne, posjetite bolesne i oslobodite zarobljenike.\"\n— Buhari';
+
+  @override
+  String get hadith38 =>
+      '\"Jak čovjek nije onaj ko pobjeđuje u hrvanju, već onaj ko se kontroliše u srdžbi.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith39 =>
+      '\"Ko čuva ono što je između vilica i ono što je između nogu, ja mu garantujem Džennet.\"\n— Buhari';
+
+  @override
+  String get hadith40 =>
+      '\"Recite \'SubhanAllah\', \'Elhamdulillah\' i \'Allahu Ekber\' po trideset tri puta nakon svakog namaza.\"\n— Muslim';
+
+  @override
+  String get hadith41 => '\"Najbolji zikr je La ilahe illallah.\"\n— Tirmizi';
+
+  @override
+  String get hadith42 =>
+      '\"Dva su blagoslova koja mnogi ljudi troše uzalud: zdravlje i slobodno vrijeme.\"\n— Buhari';
+
+  @override
+  String get hadith43 =>
+      '\"Iskoristite petero prije petero: mladost prije starosti, zdravlje prije bolesti, bogatstvo prije siromaštva, slobodno vrijeme prije zauzetosti i život prije smrti.\"\n— Hakim';
+
+  @override
+  String get hadith44 =>
+      '\"Ko prouči Suru Ihlas deset puta, Allah će mu sagraditi kuću u Džennetu.\"\n— Ahmed';
+
+  @override
+  String get hadith45 =>
+      '\"Najbolji namaz nakon farzova je noćni namaz.\"\n— Muslim';
+
+  @override
+  String get hadith46 =>
+      '\"Sadaka gasi grijehe kao što voda gasi vatru.\"\n— Tirmizi';
+
+  @override
+  String get hadith47 =>
+      '\"Onaj ko održava rodbinske veze nije onaj ko uzvraća, već onaj ko ih održava i kad su prekinute.\"\n— Buhari';
+
+  @override
+  String get hadith48 => '\"Svako dobro djelo je sadaka.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith49 =>
+      '\"Ko pojede i kaže Elhamdulillah, bit će mu oprošteni prošli grijesi.\"\n— Tirmizi';
+
+  @override
+  String get hadith50 =>
+      '\"Allahu najdraži su oni ljudi koji su najkorisniji drugima.\"\n— Taberani';
+
+  @override
+  String get hadith51 =>
+      '\"Ko savlada svoju srdžbu, a u mogućnosti je da je ispolji, Allah će ga na Sudnjem danu pozvati pred svim stvorenjima da odabere svoju nagradu.\"\n— Tirmizi';
+
+  @override
+  String get hadith52 =>
+      '\"Požurite sa sadakom, jer ona stoji na putu nesreće.\"\n— Tirmizi';
+
+  @override
+  String get hadith53 =>
+      '\"Ne potcjenjuj nijedno dobro djelo, pa makar to bilo da sretneš brata sa vedrim licem.\"\n— Muslim';
+
+  @override
+  String get hadith54 =>
+      '\"Najbolji među vama su oni koji su najbolji prema svojoj porodici.\"\n— Tirmizi';
+
+  @override
+  String get hadith55 =>
+      '\"Ko prouči posljednja dva ajeta sure El-Bekare noću, bit će mu dovoljno.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith56 =>
+      '\"Dunjaluk je uživanje, a najbolje uživanje je dobra supruga.\"\n— Muslim';
+
+  @override
+  String get hadith57 =>
+      '\"Tri dove se ne odbijaju: dova postača, pravednog vladara i onoga kome je učinjena nepravda.\"\n— Tirmizi';
+
+  @override
+  String get hadith58 =>
+      '\"Ko donese na mene jedan salavat, Allah će mu uzvratiti deset puta.\"\n— Muslim';
+
+  @override
+  String get hadith59 =>
+      '\"Džamija je kuća svakog bogobojaznog čovjeka.\"\n— Taberani';
+
+  @override
+  String get hadith60 =>
+      '\"Ko kaže \'La havle ve la kuvvete illa billah\' — to je lijek za devedeset devet bolesti, od kojih je najlakša briga.\"\n— Hakim';
+
+  @override
+  String get hadith61 =>
+      '\"Allah voli kada neko od vas radi nešto, da to uradi na najbolji način.\"\n— Taberani';
+
+  @override
+  String get hadith62 => '\"Džennet se nalazi pod nogama majki.\"\n— Nesai';
+
+  @override
+  String get hadith63 =>
+      '\"Dobrota prema roditeljima je najveća obavezna dužnost.\"\n— Buhari';
+
+  @override
+  String get hadith64 =>
+      '\"Ko bude zahvalan na malom, biće mu dato mnogo.\"\n— Bejheki';
+
+  @override
+  String get hadith65 => '\"Vjernik je ogledalo vjerniku.\"\n— Ebu Davud';
+
+  @override
+  String get hadith66 =>
+      '\"Iskrenost vodi ka dobru, a dobro vodi ka Džennetu.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith67 =>
+      '\"Vrati emanet onome ko ti ga je povjerio, i ne iznevjeri onoga ko te iznevjerio.\"\n— Ebu Davud i Tirmizi';
+
+  @override
+  String get hadith68 =>
+      '\"Nijedan umor, bolest, tuga, žalost, povreda ili briga ne pogodi muslimana, pa čak ni ubod trna, a da mu Allah ne oprosti neke od grijeha.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith69 =>
+      '\"Dova muslimana za brata u njegovom odsustvu uvijek biva uslišana.\"\n— Muslim';
+
+  @override
+  String get hadith70 =>
+      '\"Ko zamoli Allaha za Džennet tri puta, Džennet kaže: Allahu moj, uvedi ga u Džennet.\"\n— Tirmizi';
+
+  @override
+  String get hadith71 =>
+      '\"Najvrjedniji post nakon Ramazana je post u Allahovom mjesecu Muharremu.\"\n— Muslim';
+
+  @override
+  String get hadith72 =>
+      '\"Ko obavi hadž i ne govori ružne riječi niti čini grijehe, vratiće se čist kao na dan kada ga je majka rodila.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith73 =>
+      '\"Umra do umre je iskupljenje za grijehe između njih.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith74 => '\"Natječite se u dobrim djelima.\"\n— Muslim';
+
+  @override
+  String get hadith75 =>
+      '\"Dva rekata sabah-namaza su bolji od dunjaluka i svega što je na njemu.\"\n— Muslim';
+
+  @override
+  String get hadith76 =>
+      '\"Ko redovno čini istigfar, Allah će mu dati izlaz iz svake poteškoće.\"\n— Ebu Davud';
+
+  @override
+  String get hadith77 =>
+      '\"Kada biste se oslonili na Allaha onako kako treba, On bi vas opskrbio kao što opskrbljuje ptice.\"\n— Tirmizi';
+
+  @override
+  String get hadith78 =>
+      '\"Ko posjeti bolesnika, u džennetskom je vrtu sve dok se ne vrati.\"\n— Muslim';
+
+  @override
+  String get hadith79 =>
+      '\"Širite selam, hranite gladne i klanjajte noću dok ljudi spavaju — ući ćete u džennet u miru.\"\n— Tirmizi';
+
+  @override
+  String get hadith80 =>
+      '\"Allahu najdraža djela su ona koja su najredovnija, makar bila i mala.\"\n— Buhari';
+
+  @override
+  String get hadith81 =>
+      '\"Zavist je dozvoljena samo u dva slučaja: čovjeku kome je Allah dao imetak pa ga troši na putu istine, i čovjeku kome je Allah dao mudrost pa po njoj sudi i podučava.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith82 =>
+      '\"Čovjek slijedi vjeru svoga prijatelja, pa neka svako od vas pazi s kim se druži.\"\n— Ebu Davud i Tirmizi';
+
+  @override
+  String get hadith83 =>
+      '\"Često se sjećajte smrti jer ona čisti srce.\"\n— Tirmizi';
+
+  @override
+  String get hadith84 =>
+      '\"Najbolji među vama je onaj čije je srce najnježnije.\"\n— Taberani';
+
+  @override
+  String get hadith85 =>
+      '\"Allah nikoga ne opterećuje preko njegovih mogućnosti.\"\n— Kur\'an 2:286';
+
+  @override
+  String get hadith86 =>
+      '\"Ko prikrije mahane jednog muslimana, Allah će prikriti njegove mahane na Sudnjem danu.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith87 =>
+      '\"Budi na ovom svijetu kao da si stranac ili putnik.\"\n— Buhari';
+
+  @override
+  String get hadith88 =>
+      '\"Ko olakša nekome ko je u teškoći, Allah će njemu olakšati na dunjaluku i ahiretu.\"\n— Muslim';
+
+  @override
+  String get hadith89 =>
+      '\"Djela se vrednuju prema namjerama.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith90 =>
+      '\"Čuvajte se sumnje jer je sumnja najlažniji govor.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith91 =>
+      '\"Ko ostavi laž radi Allaha, čak i u šali, ja mu garantujem palaču na rubu dženneta.\"\n— Ebu Davud';
+
+  @override
+  String get hadith92 =>
+      '\"Vrata dobra su brojna: veličanje Allaha, zahvala Njemu, sadaka, naređivanje dobra i uklanjanje prepreka s puta.\"\n— Muslim';
+
+  @override
+  String get hadith93 =>
+      '\"Jedite zajedno i spominjite Allahovo ime, bit će vam blagoslovljeno.\"\n— Ebu Davud';
+
+  @override
+  String get hadith94 =>
+      '\"Najbolji skup je onaj koji je najprostraniji.\"\n— Ebu Davud';
+
+  @override
+  String get hadith95 => '\"Oprostite i biće vam oprošteno.\"\n— Ahmed';
+
+  @override
+  String get hadith96 =>
+      '\"Veži svoju devu, a onda se osloni na Allaha.\"\n— Tirmizi';
+
+  @override
+  String get hadith97 =>
+      '\"Divan li je posao vjernika — sve mu je dobro.\"\n— Muslim';
+
+  @override
+  String get hadith98 =>
+      '\"Musliman je brat muslimanu: ne čini mu nepravdu, ne napušta ga i ne prezire ga.\"\n— Muslim';
+
+  @override
+  String get hadith99 =>
+      '\"Najdraži govor Allahu je: SubhanAllahi ve bihamdihi, SubhanAllahil Azim.\"\n— Buhari i Muslim';
 }

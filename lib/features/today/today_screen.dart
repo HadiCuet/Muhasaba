@@ -286,16 +286,26 @@ Future<void> _openRemoveSheet(
 // ---------------------------------------------------------------------------
 
 List<String> _hadiths(AppLocalizations l) => [
-  l.hadith0,
-  l.hadith1,
-  l.hadith2,
-  l.hadith3,
-  l.hadith4,
-  l.hadith5,
-  l.hadith6,
-  l.hadith7,
-  l.hadith8,
-  l.hadith9,
+  l.hadith0, l.hadith1, l.hadith2, l.hadith3, l.hadith4,
+  l.hadith5, l.hadith6, l.hadith7, l.hadith8, l.hadith9,
+  l.hadith10, l.hadith11, l.hadith12, l.hadith13, l.hadith14,
+  l.hadith15, l.hadith16, l.hadith17, l.hadith18, l.hadith19,
+  l.hadith20, l.hadith21, l.hadith22, l.hadith23, l.hadith24,
+  l.hadith25, l.hadith26, l.hadith27, l.hadith28, l.hadith29,
+  l.hadith30, l.hadith31, l.hadith32, l.hadith33, l.hadith34,
+  l.hadith35, l.hadith36, l.hadith37, l.hadith38, l.hadith39,
+  l.hadith40, l.hadith41, l.hadith42, l.hadith43, l.hadith44,
+  l.hadith45, l.hadith46, l.hadith47, l.hadith48, l.hadith49,
+  l.hadith50, l.hadith51, l.hadith52, l.hadith53, l.hadith54,
+  l.hadith55, l.hadith56, l.hadith57, l.hadith58, l.hadith59,
+  l.hadith60, l.hadith61, l.hadith62, l.hadith63, l.hadith64,
+  l.hadith65, l.hadith66, l.hadith67, l.hadith68, l.hadith69,
+  l.hadith70, l.hadith71, l.hadith72, l.hadith73, l.hadith74,
+  l.hadith75, l.hadith76, l.hadith77, l.hadith78, l.hadith79,
+  l.hadith80, l.hadith81, l.hadith82, l.hadith83, l.hadith84,
+  l.hadith85, l.hadith86, l.hadith87, l.hadith88, l.hadith89,
+  l.hadith90, l.hadith91, l.hadith92, l.hadith93, l.hadith94,
+  l.hadith95, l.hadith96, l.hadith97, l.hadith98, l.hadith99,
 ];
 
 class _EmptyState extends StatelessWidget {
