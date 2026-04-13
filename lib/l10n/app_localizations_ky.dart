@@ -546,4 +546,9 @@ class AppLocalizationsKy extends AppLocalizations {
   @override
   String get hadith9 =>
       '\"Күчтүү момун Аллах үчүн алсыз момундан жакшыраак жана сүйүктүүрөөк, бирок экөөндө тең жакшылык бар.\"\n— Муслим';
+
+  @override
+  String historyDayCompleted(int completed, int total) {
+    return '$total ичинен $completed аткарылды';
+  }
 }

@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -27,6 +29,8 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
     final today = ref.watch(currentMuhasabaDateProvider);
     final selected = _selected ?? today;
     final rowsAsync = ref.watch(todayRowsProvider(selected));
+    final streaksAsync = ref.watch(currentStreaksProvider);
+    final streaks = streaksAsync.value ?? const {};
 
     final l = AppLocalizations.of(context);
     return Scaffold(
@@ -59,13 +63,21 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
                 }
                 return ListView.builder(
                   padding: const EdgeInsets.fromLTRB(12, 8, 12, 16),
-                  itemCount: rows.length,
+                  // +1 for the day summary header
+                  itemCount: rows.length + 1,
                   itemBuilder: (context, i) {
-                    final row = rows[i];
+                    if (i == 0) {
+                      return _DaySummary(
+                        date: selected,
+                        rows: rows,
+                      );
+                    }
+                    final row = rows[i - 1];
                     return Padding(
                       padding: const EdgeInsets.only(bottom: 8),
                       child: AmalRowTile(
                         row: row,
+                        streak: streaks[row.amal.id],
                         onProgressChanged: (progress) =>
                             _setProgress(row, selected, progress),
                         onRemove: () =>
@@ -166,10 +178,10 @@ class _DateStrip extends StatelessWidget {
   Widget build(BuildContext context) {
     final todayUtc = DateTime.utc(today.year, today.month, today.day);
     return SizedBox(
-      height: 84,
+      height: 78,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
-        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
         // Reverse so the newest days live on the right and the strip opens
         // anchored to `today` — same mental model as iOS Calendar's date row.
         reverse: true,
@@ -226,9 +238,10 @@ class _DateChip extends StatelessWidget {
                 ? Border.all(color: scheme.primary, width: 1.5)
                 : null,
           ),
-          padding: const EdgeInsets.symmetric(vertical: 8),
+          padding: const EdgeInsets.symmetric(vertical: 6),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
+            mainAxisSize: MainAxisSize.min,
             children: [
               Text(
                 DateFormat(
@@ -238,9 +251,11 @@ class _DateChip extends StatelessWidget {
                 style: theme.textTheme.labelSmall?.copyWith(
                   color: fg.withValues(alpha: 0.75),
                   letterSpacing: 0.6,
+                  fontSize: 9,
+                  height: 1,
                 ),
               ),
-              const SizedBox(height: 2),
+              const SizedBox(height: 3),
               Text(
                 DateFormat(
                   'd',
@@ -249,9 +264,10 @@ class _DateChip extends StatelessWidget {
                 style: theme.textTheme.titleMedium?.copyWith(
                   color: fg,
                   fontWeight: FontWeight.w600,
+                  height: 1,
                 ),
               ),
-              const SizedBox(height: 2),
+              const SizedBox(height: 3),
               Text(
                 DateFormat(
                   'MMM',
@@ -259,6 +275,8 @@ class _DateChip extends StatelessWidget {
                 ).format(date.toLocal()),
                 style: theme.textTheme.labelSmall?.copyWith(
                   color: fg.withValues(alpha: 0.75),
+                  fontSize: 9,
+                  height: 1,
                 ),
               ),
             ],
@@ -268,6 +286,145 @@ class _DateChip extends StatelessWidget {
     );
   }
 }
+
+// ---------------------------------------------------------------------------
+// Day summary header with completion ring
+// ---------------------------------------------------------------------------
+
+class _DaySummary extends StatelessWidget {
+  const _DaySummary({required this.date, required this.rows});
+
+  final DateTime date;
+  final List<TodayRow> rows;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final l = AppLocalizations.of(context);
+    final locale = Localizations.localeOf(context).toString();
+
+    final completed = rows.where((r) => r.isCompleted).length;
+    final total = rows.length;
+    final rate = total > 0 ? completed / total : 0.0;
+
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(4, 8, 4, 8),
+      child: Row(
+        children: [
+          // Mini completion ring.
+          SizedBox(
+            width: 44,
+            height: 44,
+            child: CustomPaint(
+              painter: _MiniRingPainter(
+                rate: rate,
+                fillColor: theme.colorScheme.primary,
+                backgroundColor: theme.colorScheme.surfaceContainerHighest,
+              ),
+              child: Center(
+                child: Text(
+                  '${(rate * 100).round()}%',
+                  style: theme.textTheme.labelSmall?.copyWith(
+                    fontWeight: FontWeight.w700,
+                    color: theme.colorScheme.onSurface,
+                  ),
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  DateFormat('EEEE, MMM d', locale).format(date.toLocal()),
+                  style: theme.textTheme.titleSmall?.copyWith(
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  l.historyDayCompleted(completed, total),
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _MiniRingPainter extends CustomPainter {
+  _MiniRingPainter({
+    required this.rate,
+    required this.fillColor,
+    required this.backgroundColor,
+  });
+
+  final double rate;
+  final Color fillColor;
+  final Color backgroundColor;
+
+  @override
+  void paint(Canvas canvas, Size size) {
+    final center = Offset(size.width / 2, size.height / 2);
+    final radius = (size.shortestSide / 2) - 3;
+    const strokeWidth = 4.0;
+
+    // Background track.
+    canvas.drawCircle(
+      center,
+      radius,
+      Paint()
+        ..color = backgroundColor
+        ..style = PaintingStyle.stroke
+        ..strokeWidth = strokeWidth,
+    );
+
+    // Filled arc.
+    if (rate > 0) {
+      canvas.drawArc(
+        Rect.fromCircle(center: center, radius: radius),
+        -math.pi / 2,
+        2 * math.pi * rate.clamp(0.0, 1.0),
+        false,
+        Paint()
+          ..color = fillColor
+          ..style = PaintingStyle.stroke
+          ..strokeWidth = strokeWidth
+          ..strokeCap = StrokeCap.round,
+      );
+    }
+  }
+
+  @override
+  bool shouldRepaint(_MiniRingPainter oldDelegate) =>
+      rate != oldDelegate.rate ||
+      fillColor != oldDelegate.fillColor ||
+      backgroundColor != oldDelegate.backgroundColor;
+}
+
+// ---------------------------------------------------------------------------
+// Empty day — motivational hadith
+// ---------------------------------------------------------------------------
+
+List<String> _hadiths(AppLocalizations l) => [
+  l.hadith0,
+  l.hadith1,
+  l.hadith2,
+  l.hadith3,
+  l.hadith4,
+  l.hadith5,
+  l.hadith6,
+  l.hadith7,
+  l.hadith8,
+  l.hadith9,
+];
 
 class _EmptyDay extends StatelessWidget {
   const _EmptyDay({required this.date});
@@ -279,6 +436,10 @@ class _EmptyDay extends StatelessWidget {
     final theme = Theme.of(context);
     final l = AppLocalizations.of(context);
     final locale = Localizations.localeOf(context).toString();
+    final dayOfYear = date.difference(DateTime(date.year)).inDays;
+    final quotes = _hadiths(l);
+    final hadith = quotes[dayOfYear % quotes.length];
+
     return Center(
       child: Padding(
         padding: const EdgeInsets.all(32),
@@ -287,16 +448,26 @@ class _EmptyDay extends StatelessWidget {
           children: [
             Icon(
               Icons.history_toggle_off,
-              size: 56,
-              color: theme.colorScheme.outline,
+              size: 48,
+              color: theme.colorScheme.primary.withValues(alpha: 0.5),
             ),
-            const SizedBox(height: 12),
+            const SizedBox(height: 16),
             Text(
               l.historyEmptyDay(
                 DateFormat('EEEE, MMM d', locale).format(date.toLocal()),
               ),
               textAlign: TextAlign.center,
               style: theme.textTheme.bodyMedium,
+            ),
+            const SizedBox(height: 20),
+            Text(
+              hadith,
+              textAlign: TextAlign.center,
+              style: theme.textTheme.bodyLarge?.copyWith(
+                fontStyle: FontStyle.italic,
+                color: theme.colorScheme.onSurfaceVariant,
+                height: 1.5,
+              ),
             ),
           ],
         ),

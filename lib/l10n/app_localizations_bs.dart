@@ -546,4 +546,9 @@ class AppLocalizationsBs extends AppLocalizations {
   @override
   String get hadith9 =>
       '\"Jaki vjernik je bolji i drazi Allahu od slabog vjernika, a u obojici je dobro.\"\n— Muslim';
+
+  @override
+  String historyDayCompleted(int completed, int total) {
+    return '$completed od $total završeno';
+  }
 }

@@ -548,4 +548,9 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get hadith9 =>
       '\"Kuchli mo\'min Alloh uchun zaif mo\'mindan yaxshiroq va sevimli, garchi ikkalasida ham yaxshilik bor.\"\n— Muslim';
+
+  @override
+  String historyDayCompleted(int completed, int total) {
+    return '$total dan $completed bajarildi';
+  }
 }

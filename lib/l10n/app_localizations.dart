@@ -1099,6 +1099,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'\"The strong believer is better and more beloved to Allah than the weak believer, while there is good in both.\"\n— Muslim'**
   String get hadith9;
+
+  /// No description provided for @historyDayCompleted.
+  ///
+  /// In en, this message translates to:
+  /// **'{completed} of {total} completed'**
+  String historyDayCompleted(int completed, int total);
 }
 
 class _AppLocalizationsDelegate

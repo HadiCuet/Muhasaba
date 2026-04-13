@@ -553,4 +553,9 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get hadith9 =>
       '«المؤمن القوي خير وأحب إلى الله من المؤمن الضعيف، وفي كلٍّ خير.»\n— مسلم';
+
+  @override
+  String historyDayCompleted(int completed, int total) {
+    return 'تم إنجاز $completed من $total';
+  }
 }

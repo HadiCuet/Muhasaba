@@ -544,4 +544,9 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get hadith9 =>
       '\"The strong believer is better and more beloved to Allah than the weak believer, while there is good in both.\"\n— Muslim';
+
+  @override
+  String historyDayCompleted(int completed, int total) {
+    return '$completed of $total completed';
+  }
 }

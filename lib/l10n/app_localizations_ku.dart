@@ -545,4 +545,9 @@ class AppLocalizationsKu extends AppLocalizations {
   @override
   String get hadith9 =>
       '\"باوەڕداری بەهێز باشتر و خۆشەویستترە لای خوا لە باوەڕداری لاواز، لەگەڵ ئەوەشدا لە هەردووکیاندا چاکە هەیە.\"\n— موسلیم';
+
+  @override
+  String historyDayCompleted(int completed, int total) {
+    return '$completed ji $total qediya';
+  }
 }

@@ -548,4 +548,9 @@ class AppLocalizationsSo extends AppLocalizations {
   @override
   String get hadith9 =>
       '\"Mu\'minka xoogga badan waa ka fiican yahay oo Alle ka jecel yahay mu\'minka daciifka ah, laakiin labadaba wanaag way ku jirtaa.\"\n— Muslim';
+
+  @override
+  String historyDayCompleted(int completed, int total) {
+    return '$completed ka mid ah $total la dhammeeyey';
+  }
 }

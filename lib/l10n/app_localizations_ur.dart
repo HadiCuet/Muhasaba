@@ -546,4 +546,9 @@ class AppLocalizationsUr extends AppLocalizations {
   @override
   String get hadith9 =>
       '\"طاقتور مومن اللہ کے نزدیک کمزور مومن سے بہتر اور زیادہ محبوب ہے، جبکہ دونوں میں خیر ہے۔\"\n— مسلم';
+
+  @override
+  String historyDayCompleted(int completed, int total) {
+    return '$total میں سے $completed مکمل';
+  }
 }

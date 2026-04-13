@@ -546,4 +546,9 @@ class AppLocalizationsTk extends AppLocalizations {
   @override
   String get hadith9 =>
       '\"Guyyli momin, ejiz mominden gowusy hem Allaha has soygulisidir, her ikisinde hem hayyr bardyr.\"\n— Muslim';
+
+  @override
+  String historyDayCompleted(int completed, int total) {
+    return '$total-dan $completed ýerine ýetirildi';
+  }
 }

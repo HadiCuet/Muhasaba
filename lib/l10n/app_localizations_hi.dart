@@ -545,4 +545,9 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get hadith9 =>
       '\"ताक़तवर मोमिन कमज़ोर मोमिन से अल्लाह को ज़्यादा प्रिय और बेहतर है, जबकि दोनों में ख़ैर है।\"\n— मुस्लिम';
+
+  @override
+  String historyDayCompleted(int completed, int total) {
+    return '$total में से $completed पूर्ण';
+  }
 }

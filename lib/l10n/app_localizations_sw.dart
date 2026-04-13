@@ -544,4 +544,9 @@ class AppLocalizationsSw extends AppLocalizations {
   @override
   String get hadith9 =>
       '\"Muumini mwenye nguvu ni bora na mpendwa zaidi kwa Mwenyezi Mungu kuliko muumini dhaifu, ingawa wote wana kheri.\"\n— Muslim';
+
+  @override
+  String historyDayCompleted(int completed, int total) {
+    return '$completed kati ya $total yamekamilika';
+  }
 }

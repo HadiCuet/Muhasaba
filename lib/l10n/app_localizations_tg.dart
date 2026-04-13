@@ -548,4 +548,9 @@ class AppLocalizationsTg extends AppLocalizations {
   @override
   String get hadith9 =>
       '\"Муъмини кавй бехтар ва дусттар назди Аллох аст аз муъмини заиф, хол он ки дар хар ду хайр хаст.\"\n— Муслим';
+
+  @override
+  String historyDayCompleted(int completed, int total) {
+    return '$completed аз $total иҷро шуд';
+  }
 }

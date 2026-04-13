@@ -545,4 +545,9 @@ class AppLocalizationsKk extends AppLocalizations {
   @override
   String get hadith9 =>
       '\"Күшті мүмін Аллаһ үшін әлсіз мүміннен жақсырақ және сүйіктірек, бірақ екеуінде де жақсылық бар.\"\n— Муслим';
+
+  @override
+  String historyDayCompleted(int completed, int total) {
+    return '$total ішінен $completed орындалды';
+  }
 }

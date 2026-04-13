@@ -545,4 +545,9 @@ class AppLocalizationsPs extends AppLocalizations {
   @override
   String get hadith9 =>
       '\"قوي مؤمن د الله سره غوره او ډیر خوښ دی د ضعیف مؤمن په پرتله، خو په دواړو کې خیر شته.\"\n— مسلم';
+
+  @override
+  String historyDayCompleted(int completed, int total) {
+    return '$total څخه $completed بشپړ شوي';
+  }
 }

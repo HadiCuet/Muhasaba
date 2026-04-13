@@ -254,5 +254,13 @@
   "hadith6": "\"Make things easy and do not make them difficult; give glad tidings and do not scare people away.\"\n— Bukhari",
   "hadith7": "\"He who treads a path in search of knowledge, Allah will make easy for him the path to Paradise.\"\n— Muslim",
   "hadith8": "\"Charity does not decrease wealth.\"\n— Muslim",
-  "hadith9": "\"The strong believer is better and more beloved to Allah than the weak believer, while there is good in both.\"\n— Muslim"
+  "hadith9": "\"The strong believer is better and more beloved to Allah than the weak believer, while there is good in both.\"\n— Muslim",
+
+  "historyDayCompleted": "{completed} of {total} completed",
+  "@historyDayCompleted": {
+    "placeholders": {
+      "completed": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  }
 }

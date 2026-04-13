@@ -545,4 +545,9 @@ class AppLocalizationsHa extends AppLocalizations {
   @override
   String get hadith9 =>
       '\"Mumini mai karfi ya fi dacewa kuma ya fi soyuwa ga Allah fiye da mumini mai rauni, alhali akwai alheri a cikin dukkansu.\"\n— Muslim';
+
+  @override
+  String historyDayCompleted(int completed, int total) {
+    return '$completed daga $total an kammala';
+  }
 }

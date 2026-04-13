@@ -544,4 +544,9 @@ class AppLocalizationsSq extends AppLocalizations {
   @override
   String get hadith9 =>
       '\"Besimtari i forte eshte me i mire dhe me i dashur tek Allahu sesa besimtari i dobet, ndersa te dy kane te mire.\"\n— Muslimi';
+
+  @override
+  String historyDayCompleted(int completed, int total) {
+    return '$completed nga $total të përfunduara';
+  }
 }

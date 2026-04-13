@@ -545,4 +545,9 @@ class AppLocalizationsBn extends AppLocalizations {
   @override
   String get hadith9 =>
       '\"শক্তিশালী মুমিন দুর্বল মুমিনের চেয়ে আল্লাহর কাছে উত্তম ও বেশি প্রিয়, তবে উভয়ের মধ্যেই কল্যাণ রয়েছে।\"\n— মুসলিম';
+
+  @override
+  String historyDayCompleted(int completed, int total) {
+    return '$total এর মধ্যে $completed সম্পন্ন';
+  }
 }
