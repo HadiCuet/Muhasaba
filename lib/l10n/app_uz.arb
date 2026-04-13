@@ -174,5 +174,8 @@
   "hadith16": "\"Birodaringga tabassum qilishing sadaqadir.\"\n— Termiziy",
   "hadith17": "\"Sizlarning eng yaxshingiz Qur'onni o'rganuvchi va o'rgatuvchidur.\"\n— Buxoriy",
   "hadith18": "\"Hech kim o'z qo'li mehnati bilan topganidan yaxshiroq taom yemagan.\"\n— Buxoriy",
-  "hadith19": "\"Alloh yumshoq va har ishda yumshoqlikni sevadi.\"\n— Buxoriy va Muslim"
+  "hadith19": "\"Alloh yumshoq va har ishda yumshoqlikni sevadi.\"\n— Buxoriy va Muslim",
+  "settingsAbout": "Haqida",
+  "settingsVersion": "Versiya",
+  "settingsDeveloper": "Dasturchi"
 }

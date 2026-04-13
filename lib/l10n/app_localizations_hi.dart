@@ -601,4 +601,13 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'दिन कब रीसेट होता है';
+
+  @override
+  String get settingsAbout => 'जानकारी';
+
+  @override
+  String get settingsVersion => 'संस्करण';
+
+  @override
+  String get settingsDeveloper => 'डेवलपर';
 }

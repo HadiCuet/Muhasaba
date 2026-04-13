@@ -601,4 +601,13 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'Gün haçan täzelenýär';
+
+  @override
+  String get settingsAbout => 'Hakynda';
+
+  @override
+  String get settingsVersion => 'Wersiýa';
+
+  @override
+  String get settingsDeveloper => 'Dörediji';
 }

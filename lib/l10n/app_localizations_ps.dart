@@ -600,4 +600,13 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'ورځ کله بیا پیلیږي';
+
+  @override
+  String get settingsAbout => 'په اړه';
+
+  @override
+  String get settingsVersion => 'نسخه';
+
+  @override
+  String get settingsDeveloper => 'جوړونکی';
 }

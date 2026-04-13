@@ -600,4 +600,13 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'When the day resets';
+
+  @override
+  String get settingsAbout => 'About';
+
+  @override
+  String get settingsVersion => 'Version';
+
+  @override
+  String get settingsDeveloper => 'Developer';
 }

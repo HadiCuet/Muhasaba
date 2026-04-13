@@ -174,5 +174,8 @@
   "hadith16": "\"Ton sourire à ton frère est une aumône.\"\n— Tirmidhi",
   "hadith17": "\"Le meilleur d'entre vous est celui qui apprend le Coran et l'enseigne.\"\n— Bukhari",
   "hadith18": "\"Personne n'a mangé meilleure nourriture que celle gagnée par le travail de ses mains.\"\n— Bukhari",
-  "hadith19": "\"Allah est doux et Il aime la douceur en toute chose.\"\n— Bukhari & Muslim"
+  "hadith19": "\"Allah est doux et Il aime la douceur en toute chose.\"\n— Bukhari & Muslim",
+  "settingsAbout": "À propos",
+  "settingsVersion": "Version",
+  "settingsDeveloper": "Développeur"
 }

@@ -599,4 +599,13 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'Siku inaposeti lini';
+
+  @override
+  String get settingsAbout => 'Kuhusu';
+
+  @override
+  String get settingsVersion => 'Toleo';
+
+  @override
+  String get settingsDeveloper => 'Msanidi';
 }

@@ -601,4 +601,13 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'Күн качан жаңыланат';
+
+  @override
+  String get settingsAbout => 'Жөнүндө';
+
+  @override
+  String get settingsVersion => 'Версия';
+
+  @override
+  String get settingsDeveloper => 'Иштеп чыгуучу';
 }

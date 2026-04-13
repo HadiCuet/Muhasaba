@@ -602,4 +602,13 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'Bila hari ditetapkan semula';
+
+  @override
+  String get settingsAbout => 'Perihal';
+
+  @override
+  String get settingsVersion => 'Versi';
+
+  @override
+  String get settingsDeveloper => 'Pembangun';
 }

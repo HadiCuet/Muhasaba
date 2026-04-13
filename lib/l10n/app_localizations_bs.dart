@@ -601,4 +601,13 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'Kada se dan resetuje';
+
+  @override
+  String get settingsAbout => 'O aplikaciji';
+
+  @override
+  String get settingsVersion => 'Verzija';
+
+  @override
+  String get settingsDeveloper => 'Programer';
 }

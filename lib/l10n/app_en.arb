@@ -277,5 +277,8 @@
   "settingsSchedule": "Schedule",
   "settingsAppearance": "Appearance",
   "settingsAboutTagline": "Your daily deen companion",
-  "settingsRolloverSub": "When the day resets"
+  "settingsRolloverSub": "When the day resets",
+  "settingsAbout": "About",
+  "settingsVersion": "Version",
+  "settingsDeveloper": "Developer"
 }

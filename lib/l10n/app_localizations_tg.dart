@@ -603,4 +603,13 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'Рӯз кай аз нав оғоз мешавад';
+
+  @override
+  String get settingsAbout => 'Дар бора';
+
+  @override
+  String get settingsVersion => 'Версия';
+
+  @override
+  String get settingsDeveloper => 'Барномасоз';
 }

@@ -600,4 +600,13 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'Roj kengî nû dibe';
+
+  @override
+  String get settingsAbout => 'Derbarê';
+
+  @override
+  String get settingsVersion => 'Guherto';
+
+  @override
+  String get settingsDeveloper => 'Pêşvebir';
 }

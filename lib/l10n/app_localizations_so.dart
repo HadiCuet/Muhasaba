@@ -604,4 +604,13 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'Goorma maalinta dib u bilaabato';
+
+  @override
+  String get settingsAbout => 'Ku saabsan';
+
+  @override
+  String get settingsVersion => 'Nooca';
+
+  @override
+  String get settingsDeveloper => 'Sameeyaha';
 }

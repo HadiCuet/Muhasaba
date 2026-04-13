@@ -600,4 +600,13 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'Kur rifreskohet dita';
+
+  @override
+  String get settingsAbout => 'Rreth';
+
+  @override
+  String get settingsVersion => 'Versioni';
+
+  @override
+  String get settingsDeveloper => 'Zhvilluesi';
 }

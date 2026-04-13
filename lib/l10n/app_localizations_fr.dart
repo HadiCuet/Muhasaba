@@ -605,4 +605,13 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'Quand la journée se réinitialise';
+
+  @override
+  String get settingsAbout => 'À propos';
+
+  @override
+  String get settingsVersion => 'Version';
+
+  @override
+  String get settingsDeveloper => 'Développeur';
 }

@@ -601,4 +601,13 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'روز چه زمانی بازنشانی می‌شود';
+
+  @override
+  String get settingsAbout => 'درباره';
+
+  @override
+  String get settingsVersion => 'نسخه';
+
+  @override
+  String get settingsDeveloper => 'توسعه‌دهنده';
 }

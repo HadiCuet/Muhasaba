@@ -174,5 +174,8 @@
   "hadith16": "\"Qardaşına təbəssüm etməyin sədəqədir.\"\n— Tirmizi",
   "hadith17": "\"Sizin ən xeyirliniz Quranı öyrənən və öyrədəndir.\"\n— Buxari",
   "hadith18": "\"Heç kəs öz əlinin zəhməti ilə qazandığından yaxşı yemək yeməmişdir.\"\n— Buxari",
-  "hadith19": "\"Allah mülayimdir və hər işdə mülayimliyi sevir.\"\n— Buxari və Müslim"
+  "hadith19": "\"Allah mülayimdir və hər işdə mülayimliyi sevir.\"\n— Buxari və Müslim",
+  "settingsAbout": "Haqqında",
+  "settingsVersion": "Versiya",
+  "settingsDeveloper": "Tərtibatçı"
 }

@@ -601,4 +601,13 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'دن کب ری سیٹ ہوتا ہے';
+
+  @override
+  String get settingsAbout => 'معلومات';
+
+  @override
+  String get settingsVersion => 'ورژن';
+
+  @override
+  String get settingsDeveloper => 'ڈیولپر';
 }

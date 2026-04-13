@@ -600,4 +600,13 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'Yaushe ranar take fara';
+
+  @override
+  String get settingsAbout => 'Game da';
+
+  @override
+  String get settingsVersion => 'Sigar';
+
+  @override
+  String get settingsDeveloper => 'Mai haɓaka';
 }

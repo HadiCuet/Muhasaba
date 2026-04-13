@@ -604,4 +604,13 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'Kapan hari direset';
+
+  @override
+  String get settingsAbout => 'Tentang';
+
+  @override
+  String get settingsVersion => 'Versi';
+
+  @override
+  String get settingsDeveloper => 'Pengembang';
 }

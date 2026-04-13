@@ -112,6 +112,22 @@ class _SettingsList extends StatelessWidget {
             ),
           ],
         ),
+        const SizedBox(height: 8),
+
+        // About group.
+        _SectionHeader(title: l.settingsAbout),
+        _CardGroup(
+          children: [
+            _SettingsItem(
+              icon: 'ℹ️',
+              iconColor: Colors.teal,
+              title: l.settingsVersion,
+              trailing: '1.0.0',
+              showChevron: false,
+              onTap: () {},
+            ),
+          ],
+        ),
       ],
     );
   }
@@ -334,6 +350,7 @@ class _SettingsItem extends StatelessWidget {
     required this.title,
     this.subtitle,
     required this.trailing,
+    this.showChevron = true,
     required this.onTap,
   });
 
@@ -342,6 +359,7 @@ class _SettingsItem extends StatelessWidget {
   final String title;
   final String? subtitle;
   final String trailing;
+  final bool showChevron;
   final VoidCallback onTap;
 
   @override
@@ -395,12 +413,14 @@ class _SettingsItem extends StatelessWidget {
                 color: theme.colorScheme.onSurfaceVariant,
               ),
             ),
-            const SizedBox(width: 4),
-            Icon(
-              Icons.chevron_right,
-              size: 18,
-              color: theme.colorScheme.onSurfaceVariant,
-            ),
+            if (showChevron) ...[
+              const SizedBox(width: 4),
+              Icon(
+                Icons.chevron_right,
+                size: 18,
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
+            ],
           ],
         ),
       ),

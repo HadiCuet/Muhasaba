@@ -602,4 +602,13 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'Gün ne zaman sıfırlanır';
+
+  @override
+  String get settingsAbout => 'Hakkında';
+
+  @override
+  String get settingsVersion => 'Sürüm';
+
+  @override
+  String get settingsDeveloper => 'Geliştirici';
 }

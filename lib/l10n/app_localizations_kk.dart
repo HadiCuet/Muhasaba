@@ -600,4 +600,13 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'Күн қашан жаңарады';
+
+  @override
+  String get settingsAbout => 'Туралы';
+
+  @override
+  String get settingsVersion => 'Нұсқа';
+
+  @override
+  String get settingsDeveloper => 'Әзірлеуші';
 }

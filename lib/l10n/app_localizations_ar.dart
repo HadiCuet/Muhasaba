@@ -607,4 +607,13 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'متى يبدأ اليوم الجديد';
+
+  @override
+  String get settingsAbout => 'حول';
+
+  @override
+  String get settingsVersion => 'الإصدار';
+
+  @override
+  String get settingsDeveloper => 'المطور';
 }

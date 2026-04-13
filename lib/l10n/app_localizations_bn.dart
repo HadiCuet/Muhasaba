@@ -600,4 +600,13 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'দিন কখন রিসেট হয়';
+
+  @override
+  String get settingsAbout => 'সম্পর্কে';
+
+  @override
+  String get settingsVersion => 'সংস্করণ';
+
+  @override
+  String get settingsDeveloper => 'ডেভেলপার';
 }

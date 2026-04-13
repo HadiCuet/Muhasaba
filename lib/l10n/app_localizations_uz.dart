@@ -604,4 +604,13 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get settingsRolloverSub => 'Kun qachon yangilanadi';
+
+  @override
+  String get settingsAbout => 'Haqida';
+
+  @override
+  String get settingsVersion => 'Versiya';
+
+  @override
+  String get settingsDeveloper => 'Dasturchi';
 }
