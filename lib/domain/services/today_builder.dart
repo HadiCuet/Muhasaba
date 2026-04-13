@@ -130,6 +130,14 @@ class TodayBuilder {
     required AppSettings settings,
     required PeriodCompletionsLookup periodCompletionsOf,
   }) async {
+    // Don't show amals on dates before they were created.
+    final created = DateTime.utc(
+      amal.createdAt.year,
+      amal.createdAt.month,
+      amal.createdAt.day,
+    );
+    if (date.isBefore(created)) return false;
+
     switch (amal.frequency) {
       case Frequency.daily:
         return true;
