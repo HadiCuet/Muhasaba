@@ -551,4 +551,16 @@ class AppLocalizationsAz extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$total-dən $completed tamamlandı';
   }
+
+  @override
+  String get settingsSchedule => 'Cədvəl';
+
+  @override
+  String get settingsAppearance => 'Görünüş';
+
+  @override
+  String get settingsAboutTagline => 'Gündəlik din yoldaşınız';
+
+  @override
+  String get settingsRolloverSub => 'Gün nə vaxt sıfırlanır';
 }

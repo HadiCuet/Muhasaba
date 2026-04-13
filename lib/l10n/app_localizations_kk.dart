@@ -550,4 +550,16 @@ class AppLocalizationsKk extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$total ішінен $completed орындалды';
   }
+
+  @override
+  String get settingsSchedule => 'Кесте';
+
+  @override
+  String get settingsAppearance => 'Сыртқы түрі';
+
+  @override
+  String get settingsAboutTagline => 'Сіздің күнделікті дін серігіңіз';
+
+  @override
+  String get settingsRolloverSub => 'Күн қашан жаңарады';
 }

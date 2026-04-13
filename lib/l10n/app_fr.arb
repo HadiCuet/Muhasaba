@@ -1,119 +1,94 @@
 {
   "@@locale": "fr",
-
   "appTitle": "Muhasaba",
-
   "tabToday": "Aujourd'hui",
   "tabStats": "Statistiques",
   "tabHistory": "Historique",
   "tabSettings": "Paramètres",
   "newAmal": "Nouvel amal",
-
   "editAmal": "Modifier l'amal",
   "newAmalTitle": "Nouvel amal",
   "save": "Enregistrer",
   "cancel": "Annuler",
   "clear": "Effacer",
-
   "titleLabel": "Titre",
   "titleRequired": "Le titre est requis",
   "titleTooLong": "Le titre est trop long",
-
   "frequencyLabel": "Fréquence",
   "frequencyDaily": "Quotidien",
   "frequencyWeekly": "Hebdomadaire",
   "frequencyMonthly": "Mensuel",
-
   "categoryLabel": "Catégorie",
   "categoryOther": "Autre",
   "categorySalah": "Salat",
   "categoryDhikr": "Dhikr",
   "categoryQuran": "Coran",
   "categoryCharity": "Charité",
-
   "timesPerPeriod": "Fois par période",
   "custom": "Personnalisé",
   "customTargetHint": "ex. 50",
-
   "dayOfWeek": "Jour de la semaine",
   "anyDay": "Tous",
   "anyDayHint": "N'importe quel jour (reste visible aujourd'hui, masqué le lendemain)",
   "onlyDayHint": "Seulement le {day}",
-
   "dateOfMonth": "Date du mois",
   "anyDate": "Toutes",
   "anyDateHint": "N'importe quelle date (reste visible aujourd'hui, masquée le lendemain)",
   "onlyDateHint": "Seulement le {date}",
-
   "startPreChecked": "Coché par défaut",
   "startPreCheckedSubtitle": "Lorsqu'une nouvelle période commence, cet amal est marqué comme accompli par défaut jusqu'à ce que vous le décochiez.",
-
   "reminder": "Rappel",
   "reminderNone": "Aucun",
   "reminderTime": "Rappel : {time}",
   "reminderPermissionWarning": "Rappel enregistré, mais les notifications ne sont pas autorisées. Activez-les dans les réglages du système pour recevoir des alertes.",
-
   "groupByCategory": "Grouper par catégorie",
   "flatList": "Liste simple",
   "errorGeneric": "Erreur : {error}",
   "todayEmptyHint": "Appuyez sur + pour ajouter votre premier amal.",
-
   "noteLabel": "Note",
   "noteHint": "ex. Prière à la mosquée",
   "completed": "accompli",
   "notCompleted": "non accompli",
   "progressOf": "{progress} sur {target} accomplis",
-
   "removeFromToday": "Retirer d'aujourd'hui",
   "removeFromTodaySubtitle": "Masquer uniquement pour aujourd'hui. Il réapparaît demain.",
   "removeFromTracking": "Supprimer du suivi",
   "removeFromTrackingSubtitle": "Supprimer définitivement de votre liste. L'historique est conservé.",
-
   "chooseIcon": "Choisir une icône",
   "iconNone": "Aucune",
   "recentlyUsed": "Récemment utilisés",
   "emojiSectionGeneral": "Général",
-
   "categoryNameHint": "Nom",
   "categoryNew": "+ Nouveau",
-
   "addAmal": "Ajouter un amal",
   "customAmal": "Amal personnalisé",
-
   "templateTasbih": "Tasbih 33x",
   "templateIstighfar": "Istighfar 100x",
   "templateSurahKahf": "Sourate Al-Kahf",
   "templateSadaqah": "Sadaqa",
   "templateTahajjud": "Tahajjud",
   "templateDuhaPrayer": "Prière du Doha",
-
   "settingsTitle": "Paramètres",
   "settingsLoadError": "Impossible de charger les paramètres :\n{error}",
-
   "sectionDayBoundary": "Limite de journée",
   "rolloverHour": "Heure de basculement",
   "rolloverAtMidnight": "La journée se termine à minuit.",
   "rolloverSubtitle": "Les amal d'hier restent modifiables jusqu'à {time}.",
   "pickRolloverHour": "Choisir l'heure de basculement de la journée",
-
   "sectionWeekMonth": "Semaine et mois",
   "startOfWeek": "Début de la semaine",
   "startOfMonth": "Début du mois",
   "startOfMonthClamped": "Les jours au-delà du 28 sont ramenés au dernier jour des mois plus courts.",
-
   "sectionAppearance": "Apparence",
   "theme": "Thème",
   "themeSystem": "Système",
   "themeLight": "Clair",
   "themeDark": "Sombre",
-
   "sectionLanguage": "Langue",
   "language": "Langue",
   "systemDefault": "Par défaut du système",
-
   "aboutTitle": "Muhasaba",
   "aboutSubtitle": "Un journal personnel de responsabilité spirituelle (deen). Toutes les données restent sur cet appareil.",
-
   "statsTitle": "Statistiques",
   "statsLoadError": "Impossible de charger les statistiques :\n{error}",
   "perAmal": "Par amal",
@@ -124,17 +99,13 @@
   "streakLongest": "La plus longue",
   "ratioWeek": "Semaine",
   "ratioMonth": "Mois",
-
   "streakDays": "{count, plural, =1{jour} other{jours}}",
   "streakWeeks": "{count, plural, =1{semaine} other{semaines}}",
   "streakMonths": "{count, plural, =1{mois} other{mois}}",
-
   "frequencyBadgeDaily": "quotidien",
   "frequencyBadgeWeekly": "hebdomadaire",
   "frequencyBadgeMonthly": "mensuel",
-
   "statsEmpty": "Aucun amal pour le moment. Ajoutez-en un dans Aujourd'hui pour commencer le suivi.",
-
   "statsToday": "Aujourd'hui",
   "statsThisWeek": "Cette semaine",
   "statsThisMonth": "Ce mois-ci",
@@ -159,15 +130,12 @@
   "statsFilterAmal": "Amal",
   "statsStreaks": "Series",
   "statsSelectDateRange": "Selectionner une plage de dates",
-
   "historyTitle": "Historique",
   "jumpToDate": "Aller à une date",
   "historyEmptyDay": "Aucun amal suivi le {date}",
-
   "streakUnitD": "j",
   "streakUnitW": "s",
   "streakUnitM": "m",
-
   "mondayShort": "Lun",
   "tuesdayShort": "Mar",
   "wednesdayShort": "Mer",
@@ -175,7 +143,6 @@
   "fridayShort": "Ven",
   "saturdayShort": "Sam",
   "sundayShort": "Dim",
-
   "mondayFull": "Lundi",
   "tuesdayFull": "Mardi",
   "wednesdayFull": "Mercredi",
@@ -183,7 +150,6 @@
   "fridayFull": "Vendredi",
   "saturdayFull": "Samedi",
   "sundayFull": "Dimanche",
-
   "hadith0": "\"Les actes les plus aimés d'Allah sont ceux accomplis avec constance, même s'ils sont modestes.\"\n— Bukhari et Muslim",
   "hadith1": "\"N'entreprenez des bonnes actions que dans la mesure de vos capacités, car les meilleures actions sont celles accomplies avec régularité, même si elles sont peu nombreuses.\"\n— Ibn Majah",
   "hadith2": "\"Lorsque le fils d'Adam meurt, ses actes cessent sauf trois : une aumône continue, un savoir bénéfique, ou un enfant pieux qui invoque pour lui.\"\n— Muslim",
@@ -194,5 +160,9 @@
   "hadith7": "\"Celui qui emprunte un chemin à la recherche du savoir, Allah lui facilite un chemin vers le Paradis.\"\n— Muslim",
   "hadith8": "\"L'aumône ne diminue pas la richesse.\"\n— Muslim",
   "hadith9": "\"Le croyant fort est meilleur et plus aimé d'Allah que le croyant faible, bien qu'il y ait du bien en chacun d'eux.\"\n— Muslim",
-  "historyDayCompleted": "{completed} sur {total} terminé(s)"
+  "historyDayCompleted": "{completed} sur {total} terminé(s)",
+  "settingsSchedule": "Horaire",
+  "settingsAppearance": "Apparence",
+  "settingsAboutTagline": "Votre compagnon quotidien de deen",
+  "settingsRolloverSub": "Quand la journée se réinitialise"
 }

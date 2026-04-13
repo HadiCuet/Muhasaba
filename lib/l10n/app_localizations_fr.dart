@@ -553,4 +553,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$completed sur $total terminé(s)';
   }
+
+  @override
+  String get settingsSchedule => 'Horaire';
+
+  @override
+  String get settingsAppearance => 'Apparence';
+
+  @override
+  String get settingsAboutTagline => 'Votre compagnon quotidien de deen';
+
+  @override
+  String get settingsRolloverSub => 'Quand la journée se réinitialise';
 }

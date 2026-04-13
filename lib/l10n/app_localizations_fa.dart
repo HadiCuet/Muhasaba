@@ -551,4 +551,16 @@ class AppLocalizationsFa extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$completed از $total انجام شده';
   }
+
+  @override
+  String get settingsSchedule => 'زمان‌بندی';
+
+  @override
+  String get settingsAppearance => 'ظاهر';
+
+  @override
+  String get settingsAboutTagline => 'همراه روزانه دین شما';
+
+  @override
+  String get settingsRolloverSub => 'روز چه زمانی بازنشانی می‌شود';
 }

@@ -1,119 +1,94 @@
 {
   "@@locale": "ms",
-
   "appTitle": "Muhasaba",
-
   "tabToday": "Hari Ini",
   "tabStats": "Statistik",
   "tabHistory": "Sejarah",
   "tabSettings": "Tetapan",
   "newAmal": "Amal baharu",
-
   "editAmal": "Sunting amal",
   "newAmalTitle": "Amal baharu",
   "save": "Simpan",
   "cancel": "Batal",
   "clear": "Kosongkan",
-
   "titleLabel": "Tajuk",
   "titleRequired": "Tajuk diperlukan",
   "titleTooLong": "Tajuk terlalu panjang",
-
   "frequencyLabel": "Kekerapan",
   "frequencyDaily": "Harian",
   "frequencyWeekly": "Mingguan",
   "frequencyMonthly": "Bulanan",
-
   "categoryLabel": "Kategori",
   "categoryOther": "Lain-lain",
   "categorySalah": "Solat",
   "categoryDhikr": "Zikir",
   "categoryQuran": "Al-Quran",
   "categoryCharity": "Sedekah",
-
   "timesPerPeriod": "Kali setiap tempoh",
   "custom": "Tersuai",
   "customTargetHint": "cth. 50",
-
   "dayOfWeek": "Hari dalam minggu",
   "anyDay": "Mana-mana",
   "anyDayHint": "Mana-mana hari (kekal hari ini, hilang esok)",
   "onlyDayHint": "Hanya {day}",
-
   "dateOfMonth": "Tarikh dalam bulan",
   "anyDate": "Mana-mana",
   "anyDateHint": "Mana-mana tarikh (kekal hari ini, hilang esok)",
   "onlyDateHint": "Hanya pada {date}",
-
   "startPreChecked": "Mula ditanda siap",
   "startPreCheckedSubtitle": "Apabila tempoh baharu bermula, amal ini ditanda selesai secara lalai sehingga anda nyahtandanya.",
-
   "reminder": "Peringatan",
   "reminderNone": "Tiada",
   "reminderTime": "Peringatan: {time}",
   "reminderPermissionWarning": "Peringatan disimpan, tetapi notifikasi tidak dibenarkan. Aktifkannya di tetapan sistem untuk menerima makluman.",
-
   "groupByCategory": "Kumpul mengikut kategori",
   "flatList": "Senarai rata",
   "errorGeneric": "Ralat: {error}",
   "todayEmptyHint": "Ketik + untuk menambah amal pertama anda.",
-
   "noteLabel": "Nota",
   "noteHint": "cth. Solat di masjid",
   "completed": "selesai",
   "notCompleted": "belum selesai",
   "progressOf": "{progress} daripada {target} selesai",
-
   "removeFromToday": "Buang daripada hari ini",
   "removeFromTodaySubtitle": "Sembunyikan untuk hari ini sahaja. Ia akan kembali esok.",
   "removeFromTracking": "Buang daripada penjejakan",
   "removeFromTrackingSubtitle": "Buang secara kekal daripada senarai anda. Sejarah dikekalkan.",
-
   "chooseIcon": "Pilih ikon",
   "iconNone": "Tiada",
   "recentlyUsed": "Baru Digunakan",
   "emojiSectionGeneral": "Umum",
-
   "categoryNameHint": "Nama",
   "categoryNew": "+ Baharu",
-
   "addAmal": "Tambah Amal",
   "customAmal": "Amal Tersuai",
-
   "templateTasbih": "Tasbih 33x",
   "templateIstighfar": "Istighfar 100x",
   "templateSurahKahf": "Surah Al-Kahfi",
   "templateSadaqah": "Sedekah",
   "templateTahajjud": "Tahajud",
   "templateDuhaPrayer": "Solat Dhuha",
-
   "settingsTitle": "Tetapan",
   "settingsLoadError": "Gagal memuatkan tetapan:\n{error}",
-
   "sectionDayBoundary": "Sempadan hari",
   "rolloverHour": "Jam peralihan",
   "rolloverAtMidnight": "Hari berakhir pada tengah malam.",
   "rolloverSubtitle": "Amal semalam masih boleh disunting sehingga {time}.",
   "pickRolloverHour": "Pilih jam peralihan hari",
-
   "sectionWeekMonth": "Minggu & bulan",
   "startOfWeek": "Permulaan minggu",
   "startOfMonth": "Permulaan bulan",
   "startOfMonthClamped": "Hari melebihi ke-28 akan diselaraskan kepada hari terakhir bulan yang lebih pendek.",
-
   "sectionAppearance": "Penampilan",
   "theme": "Tema",
   "themeSystem": "Sistem",
   "themeLight": "Cerah",
   "themeDark": "Gelap",
-
   "sectionLanguage": "Bahasa",
   "language": "Bahasa",
   "systemDefault": "Lalai sistem",
-
   "aboutTitle": "Muhasaba",
   "aboutSubtitle": "Jurnal muhasabah diri peribadi. Semua data kekal di peranti ini.",
-
   "statsTitle": "Statistik",
   "statsLoadError": "Gagal memuatkan statistik:\n{error}",
   "perAmal": "Setiap amal",
@@ -124,17 +99,13 @@
   "streakLongest": "Terpanjang",
   "ratioWeek": "Minggu",
   "ratioMonth": "Bulan",
-
   "streakDays": "{count, plural, =1{hari} other{hari}}",
   "streakWeeks": "{count, plural, =1{minggu} other{minggu}}",
   "streakMonths": "{count, plural, =1{bulan} other{bulan}}",
-
   "frequencyBadgeDaily": "harian",
   "frequencyBadgeWeekly": "mingguan",
   "frequencyBadgeMonthly": "bulanan",
-
   "statsEmpty": "Belum ada amal. Tambahkan satu di Hari Ini untuk mula menjejak.",
-
   "statsToday": "Hari Ini",
   "statsThisWeek": "Minggu Ini",
   "statsThisMonth": "Bulan Ini",
@@ -159,15 +130,12 @@
   "statsFilterAmal": "Amal",
   "statsStreaks": "Rentak",
   "statsSelectDateRange": "Pilih julat tarikh",
-
   "historyTitle": "Sejarah",
   "jumpToDate": "Lompat ke tarikh",
   "historyEmptyDay": "Tiada amal dijejak pada {date}",
-
   "streakUnitD": "h",
   "streakUnitW": "m",
   "streakUnitM": "b",
-
   "mondayShort": "Isn",
   "tuesdayShort": "Sel",
   "wednesdayShort": "Rab",
@@ -175,7 +143,6 @@
   "fridayShort": "Jum",
   "saturdayShort": "Sab",
   "sundayShort": "Ahd",
-
   "mondayFull": "Isnin",
   "tuesdayFull": "Selasa",
   "wednesdayFull": "Rabu",
@@ -183,7 +150,6 @@
   "fridayFull": "Jumaat",
   "saturdayFull": "Sabtu",
   "sundayFull": "Ahad",
-
   "hadith0": "\"Amalan yang paling dicintai Allah ialah yang dilakukan secara istiqamah, walaupun sedikit.\"\n— Bukhari & Muslim",
   "hadith1": "\"Lakukanlah amalan kebaikan sekadar kemampuan kamu, kerana amalan yang terbaik ialah yang dilakukan secara istiqamah walaupun sedikit.\"\n— Ibn Majah",
   "hadith2": "\"Apabila anak Adam meninggal dunia, terputuslah segala amalannya kecuali tiga perkara: sedekah jariah, ilmu yang bermanfaat, atau anak soleh yang mendoakannya.\"\n— Muslim",
@@ -194,5 +160,9 @@
   "hadith7": "\"Sesiapa yang menempuh jalan untuk menuntut ilmu, Allah akan memudahkan baginya jalan ke syurga.\"\n— Muslim",
   "hadith8": "\"Sedekah tidak mengurangi harta.\"\n— Muslim",
   "hadith9": "\"Mukmin yang kuat lebih baik dan lebih dicintai Allah daripada mukmin yang lemah, dan pada kedua-duanya ada kebaikan.\"\n— Muslim",
-  "historyDayCompleted": "{completed} daripada {total} selesai"
+  "historyDayCompleted": "{completed} daripada {total} selesai",
+  "settingsSchedule": "Jadual",
+  "settingsAppearance": "Penampilan",
+  "settingsAboutTagline": "Teman deen harian anda",
+  "settingsRolloverSub": "Bila hari ditetapkan semula"
 }

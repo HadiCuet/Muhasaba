@@ -550,4 +550,16 @@ class AppLocalizationsHa extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$completed daga $total an kammala';
   }
+
+  @override
+  String get settingsSchedule => 'Jadawalin';
+
+  @override
+  String get settingsAppearance => 'Bayyanar';
+
+  @override
+  String get settingsAboutTagline => 'Abokin addininku na yau da kullun';
+
+  @override
+  String get settingsRolloverSub => 'Yaushe ranar take fara';
 }

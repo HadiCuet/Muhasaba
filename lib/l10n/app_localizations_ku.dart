@@ -550,4 +550,16 @@ class AppLocalizationsKu extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$completed ji $total qediya';
   }
+
+  @override
+  String get settingsSchedule => 'Bernameya dem';
+
+  @override
+  String get settingsAppearance => 'Xuyang';
+
+  @override
+  String get settingsAboutTagline => 'Hevkarê dînê te yê rojane';
+
+  @override
+  String get settingsRolloverSub => 'Roj kengî nû dibe';
 }

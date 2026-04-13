@@ -1,119 +1,94 @@
 {
   "@@locale": "ps",
-
   "appTitle": "Muhasaba",
-
   "tabToday": "نن",
   "tabStats": "احصایې",
   "tabHistory": "تاریخچه",
   "tabSettings": "تنظیمات",
   "newAmal": "نوی عمل",
-
   "editAmal": "عمل سمول",
   "newAmalTitle": "نوی عمل",
   "save": "خوندی کول",
   "cancel": "لغوه",
   "clear": "پاکول",
-
   "titleLabel": "سرلیک",
   "titleRequired": "سرلیک اړین دی",
   "titleTooLong": "سرلیک ډیر اوږد دی",
-
   "frequencyLabel": "تکرار",
   "frequencyDaily": "ورځنی",
   "frequencyWeekly": "اونیزه",
   "frequencyMonthly": "میاشتنی",
-
   "categoryLabel": "کټګوري",
   "categoryOther": "نور",
   "categorySalah": "لمونځ",
   "categoryDhikr": "ذکر",
   "categoryQuran": "قرآن",
   "categoryCharity": "صدقه",
-
   "timesPerPeriod": "د دورې په هر ځل",
   "custom": "دلخواه",
   "customTargetHint": "لکه ۵۰",
-
   "dayOfWeek": "د اونۍ ورځ",
   "anyDay": "هره",
   "anyDayHint": "هره ورځ (نن ښکاره کیږي، سبا پټیږي)",
   "onlyDayHint": "یوازې {day}",
-
   "dateOfMonth": "د میاشتې نیټه",
   "anyDate": "هره",
   "anyDateHint": "هره نیټه (نن ښکاره کیږي، سبا پټیږي)",
   "onlyDateHint": "یوازې د {date} نیټې",
-
   "startPreChecked": "دمخه نښه شوی پیل",
   "startPreCheckedSubtitle": "کله چې نوې دوره پیل شي، دا عمل د تلواله بشپړ نښه شوی وي تر هغه چې تاسو یې لرې نه کړئ.",
-
   "reminder": "یادونه",
   "reminderNone": "هیڅ",
   "reminderTime": "یادونه: {time}",
   "reminderPermissionWarning": "یادونه خوندی شوه، خو خبرتیاوې اجازه نه لري. د هوښیارتیاوو لپاره یې د سیسټم تنظیماتو کې فعاله کړئ.",
-
   "groupByCategory": "د کټګورۍ له مخې ګروپ کول",
   "flatList": "ساده لیست",
   "errorGeneric": "تېروتنه: {error}",
   "todayEmptyHint": "د خپل لومړي عمل اضافه کولو لپاره + ټک وکړئ.",
-
   "noteLabel": "یادښت",
   "noteHint": "لکه په جومات کې مې لمونځ وکړ",
   "completed": "بشپړ شو",
   "notCompleted": "بشپړ نه دی شوی",
   "progressOf": "د {target} څخه {progress} بشپړ شوي",
-
   "removeFromToday": "د نن څخه لرې کول",
   "removeFromTodaySubtitle": "یوازې د نن لپاره پټول. سبا بیرته راځي.",
   "removeFromTracking": "د تعقیب څخه لرې کول",
   "removeFromTrackingSubtitle": "د خپل لیست څخه تل لپاره لرې کول. تاریخچه ساتل کیږي.",
-
   "chooseIcon": "عکس غوره کړئ",
   "iconNone": "هیڅ",
   "recentlyUsed": "وروستی کارول شوی",
   "emojiSectionGeneral": "عمومي",
-
   "categoryNameHint": "نوم",
   "categoryNew": "+ نوی",
-
   "addAmal": "عمل اضافه کول",
   "customAmal": "دلخواه عمل",
-
   "templateTasbih": "تسبیح ۳۳ ځله",
   "templateIstighfar": "استغفار ۱۰۰ ځله",
   "templateSurahKahf": "سوره کهف",
   "templateSadaqah": "صدقه",
   "templateTahajjud": "تهجد",
   "templateDuhaPrayer": "د چاشت لمونځ",
-
   "settingsTitle": "تنظیمات",
   "settingsLoadError": "تنظیمات پورته کول وناکامه شول:\n{error}",
-
   "sectionDayBoundary": "د ورځې حد",
   "rolloverHour": "د ورځې بدلون ساعت",
   "rolloverAtMidnight": "نن شپه نیمه پای ته رسیږي.",
   "rolloverSubtitle": "د پرون عملونه تر {time} پورې د سمون وړ وي.",
   "pickRolloverHour": "هغه ساعت غوره کړئ چې ورځ پرې بدلیږي",
-
   "sectionWeekMonth": "اونۍ او میاشت",
   "startOfWeek": "د اونۍ پیل",
   "startOfMonth": "د میاشتې پیل",
   "startOfMonthClamped": "د ۲۸مې نه وروسته ورځې د لنډو میاشتو وروستۍ ورځې ته محدودیږي.",
-
   "sectionAppearance": "بڼه",
   "theme": "تیمه",
   "themeSystem": "سیسټم",
   "themeLight": "رڼا",
   "themeDark": "تیاره",
-
   "sectionLanguage": "ژبه",
   "language": "ژبه",
   "systemDefault": "د سیسټم تلواله",
-
   "aboutTitle": "Muhasaba",
   "aboutSubtitle": "د شخصي دیني حساب ورکولو ډایري. ټول معلومات پدې وسیله کې پاتې کیږي.",
-
   "statsTitle": "احصایې",
   "statsLoadError": "احصایې پورته کول وناکامه شول:\n{error}",
   "perAmal": "د هر عمل",
@@ -124,17 +99,13 @@
   "streakLongest": "ترټولو اوږد",
   "ratioWeek": "اونۍ",
   "ratioMonth": "میاشت",
-
   "streakDays": "{count, plural, =1{ورځ} other{ورځې}}",
   "streakWeeks": "{count, plural, =1{اونۍ} other{اونۍ}}",
   "streakMonths": "{count, plural, =1{میاشت} other{میاشتې}}",
-
   "frequencyBadgeDaily": "ورځنی",
   "frequencyBadgeWeekly": "اونیزه",
   "frequencyBadgeMonthly": "میاشتنی",
-
   "statsEmpty": "تر اوسه هیڅ عمل نشته. د تعقیب پیل لپاره د نن په برخه کې یو اضافه کړئ.",
-
   "statsToday": "نن",
   "statsThisWeek": "دا اونۍ",
   "statsThisMonth": "دا میاشت",
@@ -159,15 +130,12 @@
   "statsFilterAmal": "عمل",
   "statsStreaks": "لړۍ",
   "statsSelectDateRange": "د نیټې موده وټاکئ",
-
   "historyTitle": "تاریخچه",
   "jumpToDate": "نیټې ته ورتلل",
   "historyEmptyDay": "په {date} هیڅ عمل تعقیب شوی نه دی",
-
   "streakUnitD": "و",
   "streakUnitW": "ا",
   "streakUnitM": "م",
-
   "mondayShort": "دو",
   "tuesdayShort": "سه",
   "wednesdayShort": "چه",
@@ -175,7 +143,6 @@
   "fridayShort": "جم",
   "saturdayShort": "شن",
   "sundayShort": "یک",
-
   "mondayFull": "دوشنبه",
   "tuesdayFull": "سه‌شنبه",
   "wednesdayFull": "چهارشنبه",
@@ -183,7 +150,6 @@
   "fridayFull": "جمعه",
   "saturdayFull": "شنبه",
   "sundayFull": "یکشنبه",
-
   "hadith0": "\"د الله تعالی ته ترټولو خوښې عملونه هغه دي چې پرې دوام وشي، که لږ هم وي.\"\n— بخاري او مسلم",
   "hadith1": "\"نیک عملونه هومره واخلئ څومره چې وکولی شئ، ځکه ترټولو غوره عملونه هغه دي چې دوامداره وي که لږ هم وي.\"\n— ابن ماجه",
   "hadith2": "\"کله چې د آدم زوی مړ شي، عملونه یې ودریږي پرته له دریو: صدقه جاریه، ګټور علم، یا نیک اولاد چې د هغه لپاره دعا کوي.\"\n— مسلم",
@@ -194,5 +160,9 @@
   "hadith7": "\"هر څوک چې د علم په لټه کې لاره ووهي، الله به ورته جنت ته لاره اسانه کړي.\"\n— مسلم",
   "hadith8": "\"صدقه مال نه کموي.\"\n— مسلم",
   "hadith9": "\"قوي مؤمن د الله سره غوره او ډیر خوښ دی د ضعیف مؤمن په پرتله، خو په دواړو کې خیر شته.\"\n— مسلم",
-  "historyDayCompleted": "{total} څخه {completed} بشپړ شوي"
+  "historyDayCompleted": "{total} څخه {completed} بشپړ شوي",
+  "settingsSchedule": "مهالویش",
+  "settingsAppearance": "بڼه",
+  "settingsAboutTagline": "ستاسو ورځنی دیني ملګری",
+  "settingsRolloverSub": "ورځ کله بیا پیلیږي"
 }

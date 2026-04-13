@@ -550,4 +550,16 @@ class AppLocalizationsHi extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$total में से $completed पूर्ण';
   }
+
+  @override
+  String get settingsSchedule => 'अनुसूची';
+
+  @override
+  String get settingsAppearance => 'दिखावट';
+
+  @override
+  String get settingsAboutTagline => 'आपका दैनिक दीन साथी';
+
+  @override
+  String get settingsRolloverSub => 'दिन कब रीसेट होता है';
 }

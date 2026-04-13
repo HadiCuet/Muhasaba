@@ -551,4 +551,16 @@ class AppLocalizationsKy extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$total ичинен $completed аткарылды';
   }
+
+  @override
+  String get settingsSchedule => 'График';
+
+  @override
+  String get settingsAppearance => 'Көрүнүш';
+
+  @override
+  String get settingsAboutTagline => 'Күнүмдүк дин жолдошуңуз';
+
+  @override
+  String get settingsRolloverSub => 'Күн качан жаңыланат';
 }

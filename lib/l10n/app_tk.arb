@@ -1,119 +1,94 @@
 {
   "@@locale": "tk",
-
   "appTitle": "Muhasaba",
-
   "tabToday": "Bu gun",
   "tabStats": "Statistika",
   "tabHistory": "Taryh",
   "tabSettings": "Sazlamalar",
   "newAmal": "Taze amal",
-
   "editAmal": "Amaly uytgetmek",
   "newAmalTitle": "Taze amal",
   "save": "Saklamak",
   "cancel": "Goybolsun",
   "clear": "Arassalamak",
-
   "titleLabel": "At",
   "titleRequired": "At gerek",
   "titleTooLong": "At gaty uzyn",
-
   "frequencyLabel": "Yygylyk",
   "frequencyDaily": "Her gun",
   "frequencyWeekly": "Her hepde",
   "frequencyMonthly": "Her ay",
-
   "categoryLabel": "Kategoriia",
   "categoryOther": "Beyleki",
   "categorySalah": "Namaz",
   "categoryDhikr": "Zikir",
   "categoryQuran": "Kuran",
   "categoryCharity": "Sadaka",
-
   "timesPerPeriod": "Dowr boyuncha gezek",
   "custom": "Ozbashdak",
   "customTargetHint": "mes. 50",
-
   "dayOfWeek": "Hepdenin guny",
   "anyDay": "Islendik",
   "anyDayHint": "Islendik gun (bu gun gorkezilyar, ertir gizlenyar)",
   "onlyDayHint": "Dine {day}",
-
   "dateOfMonth": "Ayyn senesi",
   "anyDate": "Islendik",
   "anyDateHint": "Islendik sene (bu gun gorkezilyar, ertir gizlenyar)",
   "onlyDateHint": "Dine {date}-de",
-
   "startPreChecked": "Belgilenen bolup basla",
   "startPreCheckedSubtitle": "Taze dowr baslanda, bu amal siz pozunca yerine yetirilen hasaplanyar.",
-
   "reminder": "Yatlatma",
   "reminderNone": "Yok",
   "reminderTime": "Yatlatma: {time}",
   "reminderPermissionWarning": "Yatlatma saklandy, emma bildirislere rugsat berilmedik. Duydurys almak ucin ulgam sazlamalarynda acyn.",
-
   "groupByCategory": "Kategoriia boyunca toparlamak",
   "flatList": "Duz sanaw",
   "errorGeneric": "Yalnyshlyk: {error}",
   "todayEmptyHint": "Ilkinji amalynyz gosmak ucin + basyn.",
-
   "noteLabel": "Bellik",
   "noteHint": "mes. Metjitde namaz okadym",
   "completed": "yerine yetirildi",
   "notCompleted": "yerine yetirilmedi",
   "progressOf": "{target}-dan {progress} yerine yetirildi",
-
   "removeFromToday": "Bu gunden ayyrmak",
   "removeFromTodaySubtitle": "Dine bu gun ucin gizlenyar. Ertir gaydyp gelyar.",
   "removeFromTracking": "Yzarlamadan ayyrmak",
   "removeFromTrackingSubtitle": "Sanawynyzdan hemiselik ayyrylyar. Taryh saklanyar.",
-
   "chooseIcon": "Nyshan saylang",
   "iconNone": "Yok",
   "recentlyUsed": "Son ulanylan",
   "emojiSectionGeneral": "Umumy",
-
   "categoryNameHint": "At",
   "categoryNew": "+ Taze",
-
   "addAmal": "Amal gosmak",
   "customAmal": "Ozbashdak amal",
-
   "templateTasbih": "Tesbih 33x",
   "templateIstighfar": "Istigfar 100x",
   "templateSurahKahf": "Kehf suresi",
   "templateSadaqah": "Sadaka",
   "templateTahajjud": "Tehejjud",
   "templateDuhaPrayer": "Duha namazy",
-
   "settingsTitle": "Sazlamalar",
   "settingsLoadError": "Sazlamalary yuklemek basartmady:\n{error}",
-
   "sectionDayBoundary": "Gun arasy",
   "rolloverHour": "Gecis sagady",
   "rolloverAtMidnight": "Bu gun yarim gijede gutaryar.",
   "rolloverSubtitle": "Dununki amallar {time}-a cenli uytgedilip bilinyer.",
   "pickRolloverHour": "Gunun gecyan sagadyny saylan",
-
   "sectionWeekMonth": "Hepde we ay",
   "startOfWeek": "Hepdenin basy",
   "startOfMonth": "Ayyn basy",
   "startOfMonthClamped": "28-den sonky gunler gysga aylarda ayyn sonky gunune laykyklasdyrylyar.",
-
   "sectionAppearance": "Gorkez",
   "theme": "Tema",
   "themeSystem": "Ulgam",
   "themeLight": "Yagty",
   "themeDark": "Garanky",
-
   "sectionLanguage": "Dil",
   "language": "Dil",
   "systemDefault": "Ulgam boyunca",
-
   "aboutTitle": "Muhasaba",
   "aboutSubtitle": "Sahsy din jogapkarcilik jurnalynyzy. Ahli maglumatlar bu enjamdadyr.",
-
   "statsTitle": "Statistika",
   "statsLoadError": "Statistikany yuklemek basartmady:\n{error}",
   "perAmal": "Her amal boyunca",
@@ -124,17 +99,13 @@
   "streakLongest": "In uzyn",
   "ratioWeek": "Hepde",
   "ratioMonth": "Ay",
-
   "streakDays": "{count, plural, =1{gun} other{gun}}",
   "streakWeeks": "{count, plural, =1{hepde} other{hepde}}",
   "streakMonths": "{count, plural, =1{ay} other{ay}}",
-
   "frequencyBadgeDaily": "gundelik",
   "frequencyBadgeWeekly": "hepdelik",
   "frequencyBadgeMonthly": "aylyyk",
-
   "statsEmpty": "Entek amal yok. Yzarlamaga baslamak ucin Bu gun sahypasynda gosunn.",
-
   "statsToday": "Bu gun",
   "statsThisWeek": "Bu hepde",
   "statsThisMonth": "Bu ay",
@@ -159,15 +130,12 @@
   "statsFilterAmal": "Amal",
   "statsStreaks": "Tapgyrlar",
   "statsSelectDateRange": "Sene aralygy saylan",
-
   "historyTitle": "Taryh",
   "jumpToDate": "Sena gecmek",
   "historyEmptyDay": "{date} senesinde amal yzarlanmady",
-
   "streakUnitD": "g",
   "streakUnitW": "h",
   "streakUnitM": "a",
-
   "mondayShort": "Dus",
   "tuesdayShort": "Sis",
   "wednesdayShort": "Car",
@@ -175,7 +143,6 @@
   "fridayShort": "Ann",
   "saturdayShort": "Sen",
   "sundayShort": "Yks",
-
   "mondayFull": "Dusenbe",
   "tuesdayFull": "Sisenbe",
   "wednesdayFull": "Carsenbe",
@@ -183,7 +150,6 @@
   "fridayFull": "Anna",
   "saturdayFull": "Senbe",
   "sundayFull": "Yeksenbe",
-
   "hadith0": "\"Allahyn in soyyan amallary, az hem bolsa, yzygiderli edilen amallardy.\"\n— Buhari we Muslim",
   "hadith1": "\"Basaryp biljek amallarynyzdan tutunyn, cunki in gowy amallar az bolsa-da yzygiderli edilenlerdir.\"\n— Ibn Maje",
   "hadith2": "\"Adam ogly olende, amallary uc zatdan basga kesilyer: dowamly sadaka, peydaly ylym ya-da onun ucin doga edyan salyh perzent.\"\n— Muslim",
@@ -194,5 +160,9 @@
   "hadith7": "\"Kim ylym gozlap yola cykyar, Allah onun ucin jennete baryan yoly ansatlasdyrar.\"\n— Muslim",
   "hadith8": "\"Sadaka baylygy azaltmaz.\"\n— Muslim",
   "hadith9": "\"Guyyli momin, ejiz mominden gowusy hem Allaha has soygulisidir, her ikisinde hem hayyr bardyr.\"\n— Muslim",
-  "historyDayCompleted": "{total}-dan {completed} ýerine ýetirildi"
+  "historyDayCompleted": "{total}-dan {completed} ýerine ýetirildi",
+  "settingsSchedule": "Tertip",
+  "settingsAppearance": "Daşky görnüş",
+  "settingsAboutTagline": "Gündelik din ýoldaşyňyz",
+  "settingsRolloverSub": "Gün haçan täzelenýär"
 }

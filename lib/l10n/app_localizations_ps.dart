@@ -550,4 +550,16 @@ class AppLocalizationsPs extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$total څخه $completed بشپړ شوي';
   }
+
+  @override
+  String get settingsSchedule => 'مهالویش';
+
+  @override
+  String get settingsAppearance => 'بڼه';
+
+  @override
+  String get settingsAboutTagline => 'ستاسو ورځنی دیني ملګری';
+
+  @override
+  String get settingsRolloverSub => 'ورځ کله بیا پیلیږي';
 }

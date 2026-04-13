@@ -1,119 +1,94 @@
 {
   "@@locale": "tg",
-
   "appTitle": "Muhasaba",
-
   "tabToday": "Имруз",
   "tabStats": "Омор",
   "tabHistory": "Таърих",
   "tabSettings": "Танзимот",
   "newAmal": "Амали нав",
-
   "editAmal": "Тагйири амал",
   "newAmalTitle": "Амали нав",
   "save": "Захира кардан",
   "cancel": "Бекор кардан",
   "clear": "Тоза кардан",
-
   "titleLabel": "Сарлавха",
   "titleRequired": "Сарлавха лозим аст",
   "titleTooLong": "Сарлавха хеле дароз аст",
-
   "frequencyLabel": "Басомад",
   "frequencyDaily": "Харруза",
   "frequencyWeekly": "Хафтаина",
   "frequencyMonthly": "Мохона",
-
   "categoryLabel": "Гурух",
   "categoryOther": "Дигар",
   "categorySalah": "Намоз",
   "categoryDhikr": "Зикр",
   "categoryQuran": "Куръон",
   "categoryCharity": "Садака",
-
   "timesPerPeriod": "Маротиба дар давра",
   "custom": "Дилхох",
   "customTargetHint": "мас. 50",
-
   "dayOfWeek": "Рузи хафта",
   "anyDay": "Хар руз",
   "anyDayHint": "Хар руз (имруз намоиш дода мешавад, фардо пинхон мешавад)",
   "onlyDayHint": "Танхо {day}",
-
   "dateOfMonth": "Санаи мох",
   "anyDate": "Хар сана",
   "anyDateHint": "Хар сана (имруз намоиш дода мешавад, фардо пинхон мешавад)",
   "onlyDateHint": "Танхо дар {date}",
-
   "startPreChecked": "Аз аввал кушодашуда огоз шавад",
   "startPreCheckedSubtitle": "Вакте давраи нав огоз мешавад, ин амал то даме ки шумо онро бардоред, ичрошуда хисоб мешавад.",
-
   "reminder": "Ёдоварй",
   "reminderNone": "Нест",
   "reminderTime": "Ёдоварй: {time}",
   "reminderPermissionWarning": "Ёдоварй захира шуд, вале огохиномахо ичозат нест. Барои гирифтани огохинома онхоро дар танзимоти система фаъол кунед.",
-
   "groupByCategory": "Аз руи гурух",
   "flatList": "Руйхати содда",
   "errorGeneric": "Хато: {error}",
   "todayEmptyHint": "Барои илова кардани аввалин амалатон + -ро пахш кунед.",
-
   "noteLabel": "Ёддошт",
   "noteHint": "мас. Дар масчид намоз хондам",
   "completed": "ичро шуд",
   "notCompleted": "ичро нашуд",
   "progressOf": "{progress} аз {target} ичро шуд",
-
   "removeFromToday": "Аз имруз хорич кардан",
   "removeFromTodaySubtitle": "Танхо барои имруз пинхон мешавад. Фардо бармегардад.",
   "removeFromTracking": "Аз пайгирй хорич кардан",
   "removeFromTrackingSubtitle": "Аз руйхати шумо хамешагй хорич мешавад. Таърих нигох дошта мешавад.",
-
   "chooseIcon": "Тасвирчаро интихоб кунед",
   "iconNone": "Нест",
   "recentlyUsed": "Охирин истифодашуда",
   "emojiSectionGeneral": "Умумй",
-
   "categoryNameHint": "Ном",
   "categoryNew": "+ Нав",
-
   "addAmal": "Илова кардани амал",
   "customAmal": "Амали дилхох",
-
   "templateTasbih": "Тасбех 33x",
   "templateIstighfar": "Истигфор 100x",
   "templateSurahKahf": "Сураи Кахф",
   "templateSadaqah": "Садака",
   "templateTahajjud": "Тахачуд",
   "templateDuhaPrayer": "Намози Зухо",
-
   "settingsTitle": "Танзимот",
   "settingsLoadError": "Танзимот бор нашуд:\n{error}",
-
   "sectionDayBoundary": "Хадди руз",
   "rolloverHour": "Соати гузариш",
   "rolloverAtMidnight": "Имруз дар нисфишаб тамом мешавад.",
   "rolloverSubtitle": "Амалхои дирузй то {time} тагйир дода мешаванд.",
   "pickRolloverHour": "Соати гузариши рузро интихоб кунед",
-
   "sectionWeekMonth": "Хафта ва мох",
   "startOfWeek": "Оғози хафта",
   "startOfMonth": "Оғози мох",
   "startOfMonthClamped": "Рузхои баъд аз 28-ум дар моххои кутох ба охирин рузи мох мувофик карда мешаванд.",
-
   "sectionAppearance": "Намуд",
   "theme": "Мавзуъ",
   "themeSystem": "Системавй",
   "themeLight": "Равшан",
   "themeDark": "Торик",
-
   "sectionLanguage": "Забон",
   "language": "Забон",
   "systemDefault": "Пешфарзи система",
-
   "aboutTitle": "Muhasaba",
   "aboutSubtitle": "Журнали шахсии масъулияти динй. Хамаи маълумот дар ин дастгох мемонад.",
-
   "statsTitle": "Омор",
   "statsLoadError": "Оморро бор кардан нашуд:\n{error}",
   "perAmal": "Барои хар амал",
@@ -124,17 +99,13 @@
   "streakLongest": "Дарозтарин",
   "ratioWeek": "Хафта",
   "ratioMonth": "Мох",
-
   "streakDays": "{count, plural, =1{руз} other{руз}}",
   "streakWeeks": "{count, plural, =1{хафта} other{хафта}}",
   "streakMonths": "{count, plural, =1{мох} other{мох}}",
-
   "frequencyBadgeDaily": "харруза",
   "frequencyBadgeWeekly": "хафтаина",
   "frequencyBadgeMonthly": "мохона",
-
   "statsEmpty": "Хануз амал нест. Барои огози пайгирй дар сахифаи Имруз илова кунед.",
-
   "statsToday": "Имруз",
   "statsThisWeek": "Ин хафта",
   "statsThisMonth": "Ин мох",
@@ -159,15 +130,12 @@
   "statsFilterAmal": "Амал",
   "statsStreaks": "Силсилахо",
   "statsSelectDateRange": "Давраи санаро интихоб кунед",
-
   "historyTitle": "Таърих",
   "jumpToDate": "Ба сана гузаштан",
   "historyEmptyDay": "Дар {date} амал пайгирй нашудааст",
-
   "streakUnitD": "р",
   "streakUnitW": "х",
   "streakUnitM": "м",
-
   "mondayShort": "Дш",
   "tuesdayShort": "Сш",
   "wednesdayShort": "Чш",
@@ -175,7 +143,6 @@
   "fridayShort": "Чм",
   "saturdayShort": "Шн",
   "sundayShort": "Яш",
-
   "mondayFull": "Душанбе",
   "tuesdayFull": "Сешанбе",
   "wednesdayFull": "Чоршанбе",
@@ -183,7 +150,6 @@
   "fridayFull": "Чумъа",
   "saturdayFull": "Шанбе",
   "sundayFull": "Якшанбе",
-
   "hadith0": "\"Дусттарин амалхо назди Аллох онхоеанд, ки доимй бошанд, хатто агар кам бошанд.\"\n— Бухорй ва Муслим",
   "hadith1": "\"Аз амалхо он кадар гиред, ки тавонед, зеро бехтарин амалхо онхоеанд, ки доимй бошанд, хатто агар кам бошанд.\"\n— Ибни Моча",
   "hadith2": "\"Вакте фарзанди Одам мемирад, амалхояш катъ мешаванд магар се чиз: садакаи чория, илми судманд ё фарзанди солех, ки барояш дуо мекунад.\"\n— Муслим",
@@ -194,5 +160,9 @@
   "hadith7": "\"Хар кй рохи илмро пеш гирад, Аллох барояш рохи чаннатро осон мекунад.\"\n— Муслим",
   "hadith8": "\"Садака молро кам намекунад.\"\n— Муслим",
   "hadith9": "\"Муъмини кавй бехтар ва дусттар назди Аллох аст аз муъмини заиф, хол он ки дар хар ду хайр хаст.\"\n— Муслим",
-  "historyDayCompleted": "{completed} аз {total} иҷро шуд"
+  "historyDayCompleted": "{completed} аз {total} иҷро шуд",
+  "settingsSchedule": "Ҷадвал",
+  "settingsAppearance": "Намуди зоҳирӣ",
+  "settingsAboutTagline": "Ҳамроҳи рӯзонаи динии шумо",
+  "settingsRolloverSub": "Рӯз кай аз нав оғоз мешавад"
 }

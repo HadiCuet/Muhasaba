@@ -553,4 +553,16 @@ class AppLocalizationsUz extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$total dan $completed bajarildi';
   }
+
+  @override
+  String get settingsSchedule => 'Jadval';
+
+  @override
+  String get settingsAppearance => 'Tashqi ko\'rinish';
+
+  @override
+  String get settingsAboutTagline => 'Kundalik din hamrohingiz';
+
+  @override
+  String get settingsRolloverSub => 'Kun qachon yangilanadi';
 }

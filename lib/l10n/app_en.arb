@@ -262,5 +262,10 @@
       "completed": { "type": "int" },
       "total": { "type": "int" }
     }
-  }
+  },
+
+  "settingsSchedule": "Schedule",
+  "settingsAppearance": "Appearance",
+  "settingsAboutTagline": "Your daily deen companion",
+  "settingsRolloverSub": "When the day resets"
 }

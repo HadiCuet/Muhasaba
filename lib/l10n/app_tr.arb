@@ -1,119 +1,94 @@
 {
   "@@locale": "tr",
-
   "appTitle": "Muhasaba",
-
   "tabToday": "Bugün",
   "tabStats": "İstatistik",
   "tabHistory": "Geçmiş",
   "tabSettings": "Ayarlar",
   "newAmal": "Yeni amel",
-
   "editAmal": "Ameli düzenle",
   "newAmalTitle": "Yeni amel",
   "save": "Kaydet",
   "cancel": "İptal",
   "clear": "Temizle",
-
   "titleLabel": "Başlık",
   "titleRequired": "Başlık zorunludur",
   "titleTooLong": "Başlık çok uzun",
-
   "frequencyLabel": "Sıklık",
   "frequencyDaily": "Günlük",
   "frequencyWeekly": "Haftalık",
   "frequencyMonthly": "Aylık",
-
   "categoryLabel": "Kategori",
   "categoryOther": "Diğer",
   "categorySalah": "Namaz",
   "categoryDhikr": "Zikir",
   "categoryQuran": "Kur'an",
   "categoryCharity": "Sadaka",
-
   "timesPerPeriod": "Dönem başına tekrar",
   "custom": "Özel",
   "customTargetHint": "örn. 50",
-
   "dayOfWeek": "Haftanın günü",
   "anyDay": "Herhangi",
   "anyDayHint": "Herhangi bir gün (bugün görünür, ertesi gün gizlenir)",
   "onlyDayHint": "Yalnızca {day}",
-
   "dateOfMonth": "Ayın günü",
   "anyDate": "Herhangi",
   "anyDateHint": "Herhangi bir tarih (bugün görünür, ertesi gün gizlenir)",
   "onlyDateHint": "Yalnızca {date} tarihinde",
-
   "startPreChecked": "İşaretli başlat",
   "startPreCheckedSubtitle": "Yeni dönem başladığında bu amel varsayılan olarak tamamlanmış işaretlenir; siz işaretini kaldırabilirsiniz.",
-
   "reminder": "Hatırlatıcı",
   "reminderNone": "Yok",
   "reminderTime": "Hatırlatıcı: {time}",
   "reminderPermissionWarning": "Hatırlatıcı kaydedildi, ancak bildirim izni verilmemiş. Uyarı almak için sistem ayarlarından bildirimleri etkinleştirin.",
-
   "groupByCategory": "Kategoriye göre grupla",
   "flatList": "Düz liste",
   "errorGeneric": "Hata: {error}",
   "todayEmptyHint": "İlk amelinizi eklemek için + tuşuna basın.",
-
   "noteLabel": "Not",
   "noteHint": "örn. Camide kıldım",
   "completed": "tamamlandı",
   "notCompleted": "tamamlanmadı",
   "progressOf": "{target} içerisinden {progress} tamamlandı",
-
   "removeFromToday": "Bugünden kaldır",
   "removeFromTodaySubtitle": "Yalnızca bugün için gizle. Yarın tekrar görünür.",
   "removeFromTracking": "Takipten kaldır",
   "removeFromTrackingSubtitle": "Listenizden kalıcı olarak kaldırır. Geçmiş kayıtları saklanır.",
-
   "chooseIcon": "Simge seç",
   "iconNone": "Yok",
   "recentlyUsed": "Son Kullanılanlar",
   "emojiSectionGeneral": "Genel",
-
   "categoryNameHint": "Ad",
   "categoryNew": "+ Yeni",
-
   "addAmal": "Amel Ekle",
   "customAmal": "Özel Amel",
-
   "templateTasbih": "Tesbih 33x",
   "templateIstighfar": "İstiğfar 100x",
   "templateSurahKahf": "Kehf Suresi",
   "templateSadaqah": "Sadaka",
   "templateTahajjud": "Teheccüd",
   "templateDuhaPrayer": "Kuşluk Namazı",
-
   "settingsTitle": "Ayarlar",
   "settingsLoadError": "Ayarlar yüklenemedi:\n{error}",
-
   "sectionDayBoundary": "Gün sınırı",
   "rolloverHour": "Geçiş saati",
   "rolloverAtMidnight": "Gün gece yarısında sona erer.",
   "rolloverSubtitle": "Dünkü ameller saat {time}'a kadar düzenlenebilir.",
   "pickRolloverHour": "Günün geçiş saatini seçin",
-
   "sectionWeekMonth": "Hafta ve ay",
   "startOfWeek": "Hafta başı",
   "startOfMonth": "Ay başı",
   "startOfMonthClamped": "28'den sonraki günler kısa aylarda ayın son gününe yuvarlanır.",
-
   "sectionAppearance": "Görünüm",
   "theme": "Tema",
   "themeSystem": "Sistem",
   "themeLight": "Açık",
   "themeDark": "Koyu",
-
   "sectionLanguage": "Dil",
   "language": "Dil",
   "systemDefault": "Sistem varsayılanı",
-
   "aboutTitle": "Muhasaba",
   "aboutSubtitle": "Kişisel bir din muhasebe günlüğü. Tüm veriler bu cihazda kalır.",
-
   "statsTitle": "İstatistik",
   "statsLoadError": "İstatistikler yüklenemedi:\n{error}",
   "perAmal": "Amel başına",
@@ -124,17 +99,13 @@
   "streakLongest": "En uzun",
   "ratioWeek": "Hafta",
   "ratioMonth": "Ay",
-
   "streakDays": "{count, plural, =1{gün} other{gün}}",
   "streakWeeks": "{count, plural, =1{hafta} other{hafta}}",
   "streakMonths": "{count, plural, =1{ay} other{ay}}",
-
   "frequencyBadgeDaily": "günlük",
   "frequencyBadgeWeekly": "haftalık",
   "frequencyBadgeMonthly": "aylık",
-
   "statsEmpty": "Henüz amel yok. Takibe başlamak için Bugün sekmesinden bir tane ekleyin.",
-
   "statsToday": "Bugün",
   "statsThisWeek": "Bu Hafta",
   "statsThisMonth": "Bu Ay",
@@ -159,15 +130,12 @@
   "statsFilterAmal": "Amel",
   "statsStreaks": "Seriler",
   "statsSelectDateRange": "Tarih aralığı seçin",
-
   "historyTitle": "Geçmiş",
   "jumpToDate": "Tarihe git",
   "historyEmptyDay": "{date} tarihinde takip edilen amel yok",
-
   "streakUnitD": "g",
   "streakUnitW": "h",
   "streakUnitM": "a",
-
   "mondayShort": "Pzt",
   "tuesdayShort": "Sal",
   "wednesdayShort": "Çar",
@@ -175,7 +143,6 @@
   "fridayShort": "Cum",
   "saturdayShort": "Cmt",
   "sundayShort": "Paz",
-
   "mondayFull": "Pazartesi",
   "tuesdayFull": "Salı",
   "wednesdayFull": "Çarşamba",
@@ -183,7 +150,6 @@
   "fridayFull": "Cuma",
   "saturdayFull": "Cumartesi",
   "sundayFull": "Pazar",
-
   "hadith0": "\"Allah'a en sevimli ameller, az da olsa devamlılığı olanlardır.\"\n— Buhârî ve Müslim",
   "hadith1": "\"Gücü yettiğiniz kadar salih amel işleyin. Çünkü amellerin en hayırlısı az da olsa devamlı olanıdır.\"\n— İbn Mâce",
   "hadith2": "\"İnsanoğlu öldüğünde ameli kesilir; ancak üç şey bundan müstesnadır: sadaka-i câriye, faydalanılan ilim, kendisine dua eden salih evlat.\"\n— Müslim",
@@ -194,5 +160,9 @@
   "hadith7": "\"Kim ilim aramak için bir yola girerse, Allah ona cennetin yolunu kolaylaştırır.\"\n— Müslim",
   "hadith8": "\"Sadaka malı eksiltmez.\"\n— Müslim",
   "hadith9": "\"Kuvvetli mü'min, zayıf mü'minden daha hayırlı ve Allah'a daha sevimlidir. Her ikisinde de hayır vardır.\"\n— Müslim",
-  "historyDayCompleted": "{total} üzerinden {completed} tamamlandı"
+  "historyDayCompleted": "{total} üzerinden {completed} tamamlandı",
+  "settingsSchedule": "Zamanlama",
+  "settingsAppearance": "Görünüm",
+  "settingsAboutTagline": "Günlük din yoldaşınız",
+  "settingsRolloverSub": "Gün ne zaman sıfırlanır"
 }

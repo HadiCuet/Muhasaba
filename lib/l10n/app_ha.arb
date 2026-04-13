@@ -1,119 +1,94 @@
 {
   "@@locale": "ha",
-
   "appTitle": "Muhasaba",
-
   "tabToday": "Yau",
   "tabStats": "Kididdiga",
   "tabHistory": "Tarihi",
   "tabSettings": "Saituna",
   "newAmal": "Sabon amali",
-
   "editAmal": "Gyara amali",
   "newAmalTitle": "Sabon amali",
   "save": "Ajiye",
   "cancel": "Soke",
   "clear": "Share",
-
   "titleLabel": "Take",
   "titleRequired": "Ana bukatar take",
   "titleTooLong": "Take ya yi tsawo",
-
   "frequencyLabel": "Yawan lokaci",
   "frequencyDaily": "Kowace rana",
   "frequencyWeekly": "Kowace mako",
   "frequencyMonthly": "Kowace wata",
-
   "categoryLabel": "Nau'i",
   "categoryOther": "Wansu",
   "categorySalah": "Sallah",
   "categoryDhikr": "Zikiri",
   "categoryQuran": "Alqur'ani",
   "categoryCharity": "Sadaka",
-
   "timesPerPeriod": "Sau a kowane lokaci",
   "custom": "Na musamman",
   "customTargetHint": "misali 50",
-
   "dayOfWeek": "Ranar mako",
   "anyDay": "Kowace",
   "anyDayHint": "Kowace rana (ana ganinta yau, ta boye gobe)",
   "onlyDayHint": "{day} kadai",
-
   "dateOfMonth": "Kwanan wata",
   "anyDate": "Kowace",
   "anyDateHint": "Kowace kwana (ana ganinta yau, ta boye gobe)",
   "onlyDateHint": "Kawai ranar {date}",
-
   "startPreChecked": "Fara an yi masa alama",
   "startPreCheckedSubtitle": "Lokacin da sabon lokaci ya fara, wannan amalin yana da alamar kammala ta asali har sai ka cire shi.",
-
   "reminder": "Tunatar da kai",
   "reminderNone": "Babu",
   "reminderTime": "Tunatar da kai: {time}",
   "reminderPermissionWarning": "An ajiye tunatar da kai, amma ba a ba da izinin sanarwa ba. Ka kunna su a saituna na tsarin don samun fadar.",
-
   "groupByCategory": "Tsara ta nau'i",
   "flatList": "Jerin shimfida",
   "errorGeneric": "Kuskure: {error}",
   "todayEmptyHint": "Danna + don kara amalin ka na farko.",
-
   "noteLabel": "Bayani",
   "noteHint": "misali Na yi sallah a masallaci",
   "completed": "an kammala",
   "notCompleted": "ba a kammala ba",
   "progressOf": "{progress} daga cikin {target} an kammala",
-
   "removeFromToday": "Cire daga yau",
   "removeFromTodaySubtitle": "Boye kawai a wannan rana. Zai dawo gobe.",
   "removeFromTracking": "Cire daga bin diddigin",
   "removeFromTrackingSubtitle": "Cire gaba daya daga jerin ka. Ana adana tarihi.",
-
   "chooseIcon": "Zabi gunki",
   "iconNone": "Babu",
   "recentlyUsed": "An yi amfani da su kwanan nan",
   "emojiSectionGeneral": "Na gaba daya",
-
   "categoryNameHint": "Suna",
   "categoryNew": "+ Sabo",
-
   "addAmal": "Kara Amali",
   "customAmal": "Amali Na Musamman",
-
   "templateTasbih": "Tasbihi 33x",
   "templateIstighfar": "Istigfari 100x",
   "templateSurahKahf": "Suratul Kahfi",
   "templateSadaqah": "Sadaka",
   "templateTahajjud": "Tahajjud",
   "templateDuhaPrayer": "Sallar Duha",
-
   "settingsTitle": "Saituna",
   "settingsLoadError": "Ba a iya loda saituna ba:\n{error}",
-
   "sectionDayBoundary": "Iyakar rana",
   "rolloverHour": "Sa'ar mika mulki",
   "rolloverAtMidnight": "Yau yana karewa da tsakar dare.",
   "rolloverSubtitle": "Amalin jiya suna ci gaba da gyarawa har {time}.",
   "pickRolloverHour": "Zabi sa'ar da rana ke canjawa",
-
   "sectionWeekMonth": "Mako da wata",
   "startOfWeek": "Farkon mako",
   "startOfMonth": "Farkon wata",
   "startOfMonthClamped": "Ranaku bayan 28 ana rage su zuwa ranar karshe ta watannin da suka fi gajarta.",
-
   "sectionAppearance": "Bayyanar fuska",
   "theme": "Jigo",
   "themeSystem": "Na tsarin",
   "themeLight": "Haske",
   "themeDark": "Duhu",
-
   "sectionLanguage": "Harshe",
   "language": "Harshe",
   "systemDefault": "Na tsarin asali",
-
   "aboutTitle": "Muhasaba",
   "aboutSubtitle": "Littafin lissafin addini na sirri. Duk bayanan suna nan a wannan na'ura.",
-
   "statsTitle": "Kididdiga",
   "statsLoadError": "Ba a iya loda kididdiga ba:\n{error}",
   "perAmal": "Kowane amali",
@@ -124,17 +99,13 @@
   "streakLongest": "Mafi tsawo",
   "ratioWeek": "Mako",
   "ratioMonth": "Wata",
-
   "streakDays": "{count, plural, =1{rana} other{ranaku}}",
   "streakWeeks": "{count, plural, =1{mako} other{makwanni}}",
   "streakMonths": "{count, plural, =1{wata} other{watanni}}",
-
   "frequencyBadgeDaily": "kowace rana",
   "frequencyBadgeWeekly": "kowace mako",
   "frequencyBadgeMonthly": "kowace wata",
-
   "statsEmpty": "Babu amali tukuna. Ka kara daya a Yau don fara bin diddigi.",
-
   "statsToday": "Yau",
   "statsThisWeek": "Wannan makon",
   "statsThisMonth": "Wannan watan",
@@ -159,15 +130,12 @@
   "statsFilterAmal": "Amali",
   "statsStreaks": "Jerurruka",
   "statsSelectDateRange": "Zabi kewayon kwanakin",
-
   "historyTitle": "Tarihi",
   "jumpToDate": "Je zuwa kwanan wata",
   "historyEmptyDay": "Babu amali da aka bi diddigin a ranar {date}",
-
   "streakUnitD": "r",
   "streakUnitW": "m",
   "streakUnitM": "w",
-
   "mondayShort": "Lit",
   "tuesdayShort": "Tal",
   "wednesdayShort": "Lar",
@@ -175,7 +143,6 @@
   "fridayShort": "Jum",
   "saturdayShort": "Asa",
   "sundayShort": "Lah",
-
   "mondayFull": "Litinin",
   "tuesdayFull": "Talata",
   "wednesdayFull": "Laraba",
@@ -183,7 +150,6 @@
   "fridayFull": "Juma'a",
   "saturdayFull": "Asabar",
   "sundayFull": "Lahadi",
-
   "hadith0": "\"Ayyukan da Allah ya fi so su ne wadanda ake yi a kai a kai, ko da kanana ne.\"\n— Bukhari da Muslim",
   "hadith1": "\"Ku dauki ayyuka na alheri gwargwadon iyawar ku, domin mafi kyawun ayyuka su ne wadanda ake yi a kai a kai ko da kadan ne.\"\n— Ibn Majah",
   "hadith2": "\"Idan dan Adam ya mutu, ayyukansa sun yanke sai uku: sadaka mai gudana, ilmi mai amfani, ko da mai alheri da yake masa addu'a.\"\n— Muslim",
@@ -194,5 +160,9 @@
   "hadith7": "\"Duk wanda ya bi hanya don neman ilmi, Allah zai saukake masa hanyar Aljanna.\"\n— Muslim",
   "hadith8": "\"Sadaka ba ta rage dukiya ba.\"\n— Muslim",
   "hadith9": "\"Mumini mai karfi ya fi dacewa kuma ya fi soyuwa ga Allah fiye da mumini mai rauni, alhali akwai alheri a cikin dukkansu.\"\n— Muslim",
-  "historyDayCompleted": "{completed} daga {total} an kammala"
+  "historyDayCompleted": "{completed} daga {total} an kammala",
+  "settingsSchedule": "Jadawalin",
+  "settingsAppearance": "Bayyanar",
+  "settingsAboutTagline": "Abokin addininku na yau da kullun",
+  "settingsRolloverSub": "Yaushe ranar take fara"
 }

@@ -558,4 +558,16 @@ class AppLocalizationsAr extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return 'تم إنجاز $completed من $total';
   }
+
+  @override
+  String get settingsSchedule => 'الجدول';
+
+  @override
+  String get settingsAppearance => 'المظهر';
+
+  @override
+  String get settingsAboutTagline => 'رفيقك اليومي في الدين';
+
+  @override
+  String get settingsRolloverSub => 'متى يبدأ اليوم الجديد';
 }

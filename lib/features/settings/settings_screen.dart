@@ -7,10 +7,6 @@ import '../../data/repositories/settings_repository.dart';
 import '../../domain/models/app_settings.dart';
 import '../../domain/utils/supported_languages.dart';
 
-/// Grouped settings list. Each tile shows the current value and opens a
-/// picker dialog on tap. Writes go straight to `SettingsRepository`; the
-/// stream-backed `settingsProvider` rebuilds every consumer — including the
-/// MaterialApp's `themeMode` and `todayRowsProvider` — automatically.
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
 
@@ -40,98 +36,172 @@ class _SettingsList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
+
     return ListView(
+      padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
       children: [
-        _SectionHeader(title: l.sectionDayBoundary),
-        ListTile(
-          title: Text(l.rolloverHour),
-          subtitle: Text(_rolloverSubtitle(context, settings.rolloverHour)),
-          trailing: Text(_formatHour(settings.rolloverHour)),
-          onTap: () async {
-            final picked = await _pickRolloverHour(
-              context,
-              settings.rolloverHour,
-            );
-            if (picked != null) {
-              await repo.setRolloverHour(picked);
-            }
-          },
+        // App branding card.
+        _AppBrandCard(l: l),
+        const SizedBox(height: 8),
+
+        // Schedule group.
+        _SectionHeader(title: l.settingsSchedule),
+        _CardGroup(
+          children: [
+            _SettingsItem(
+              icon: '🕐',
+              iconColor: Colors.blue,
+              title: l.rolloverHour,
+              subtitle: l.settingsRolloverSub,
+              trailing: _formatHour(settings.rolloverHour),
+              onTap: () async {
+                final picked = await _pickRolloverHour(
+                  context,
+                  settings.rolloverHour,
+                );
+                if (picked != null) await repo.setRolloverHour(picked);
+              },
+            ),
+            _SettingsItem(
+              icon: '📅',
+              iconColor: Colors.blue,
+              title: l.startOfWeek,
+              trailing: _weekdayName(settings.startOfWeek),
+              onTap: () async {
+                final picked = await _pickStartOfWeek(
+                  context,
+                  settings.startOfWeek,
+                );
+                if (picked != null) await repo.setStartOfWeek(picked);
+              },
+            ),
+          ],
         ),
-        const Divider(height: 1),
-        _SectionHeader(title: l.sectionWeekMonth),
-        ListTile(
-          title: Text(l.startOfWeek),
-          trailing: Text(_weekdayName(settings.startOfWeek)),
-          onTap: () async {
-            final picked = await _pickStartOfWeek(
-              context,
-              settings.startOfWeek,
-            );
-            if (picked != null) {
-              await repo.setStartOfWeek(picked);
-            }
-          },
+        const SizedBox(height: 8),
+
+        // Appearance group.
+        _SectionHeader(title: l.settingsAppearance),
+        _CardGroup(
+          children: [
+            _SettingsItem(
+              icon: '🎨',
+              iconColor: Colors.purple,
+              title: l.theme,
+              trailing: _themeLabel(context, settings.themeMode),
+              onTap: () async {
+                final picked = await _pickThemeMode(
+                  context,
+                  settings.themeMode,
+                );
+                if (picked != null) await repo.setThemeMode(picked);
+              },
+            ),
+            _SettingsItem(
+              icon: '🌍',
+              iconColor: Colors.purple,
+              title: l.language,
+              trailing: _currentLanguageLabel(context, settings.locale),
+              onTap: () async {
+                final picked = await _pickLanguage(context, settings.locale);
+                if (picked != null) {
+                  await repo.setLocale(picked == '_system' ? null : picked);
+                }
+              },
+            ),
+          ],
         ),
-        ListTile(
-          title: Text(l.startOfMonth),
-          subtitle: Text(l.startOfMonthClamped),
-          trailing: Text(_ordinal(settings.startOfMonth)),
-          onTap: () async {
-            final picked = await _pickStartOfMonth(
-              context,
-              settings.startOfMonth,
-            );
-            if (picked != null) {
-              await repo.setStartOfMonth(picked);
-            }
-          },
-        ),
-        const Divider(height: 1),
-        _SectionHeader(title: l.sectionAppearance),
-        ListTile(
-          title: Text(l.theme),
-          trailing: Text(_themeLabel(context, settings.themeMode)),
-          onTap: () async {
-            final picked = await _pickThemeMode(context, settings.themeMode);
-            if (picked != null) {
-              await repo.setThemeMode(picked);
-            }
-          },
-        ),
-        const Divider(height: 1),
-        _SectionHeader(title: l.sectionLanguage),
-        ListTile(
-          title: Text(l.language),
-          trailing: Text(_currentLanguageLabel(context, settings.locale)),
-          onTap: () async {
-            final picked = await _pickLanguage(context, settings.locale);
-            if (picked != null) {
-              await repo.setLocale(picked == '_system' ? null : picked);
-            }
-          },
-        ),
-        const SizedBox(height: 24),
-        _AboutTile(l: l),
       ],
     );
   }
 
   String _currentLanguageLabel(BuildContext context, String? locale) {
-    if (locale == null) {
-      return AppLocalizations.of(context).systemDefault;
-    }
+    if (locale == null) return AppLocalizations.of(context).systemDefault;
     for (final lang in kSupportedLanguages) {
       if (lang.code == locale) return lang.nativeName;
     }
     return locale;
   }
+}
 
-  String _rolloverSubtitle(BuildContext context, int hour) {
-    final l = AppLocalizations.of(context);
-    if (hour == 0) {
-      return l.rolloverAtMidnight;
-    }
-    return l.rolloverSubtitle(_formatHour(hour));
+// ---------------------------------------------------------------------------
+// Reusable UI components
+// ---------------------------------------------------------------------------
+
+class _AppBrandCard extends StatelessWidget {
+  const _AppBrandCard({required this.l});
+
+  final AppLocalizations l;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final seed = theme.colorScheme.primary;
+
+    return Container(
+      margin: const EdgeInsets.only(top: 8),
+      padding: const EdgeInsets.all(14),
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(14),
+        gradient: LinearGradient(
+          colors: [
+            seed.withValues(alpha: 0.12),
+            seed.withValues(alpha: 0.04),
+          ],
+          begin: AlignmentDirectional.topStart,
+          end: AlignmentDirectional.bottomEnd,
+        ),
+        border: Border.all(color: seed.withValues(alpha: 0.10)),
+      ),
+      child: Row(
+        children: [
+          Container(
+            width: 44,
+            height: 44,
+            decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(12),
+              gradient: LinearGradient(
+                colors: [seed, seed.withValues(alpha: 0.7)],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+            alignment: Alignment.center,
+            child: Text(
+              '☪',
+              style: TextStyle(fontSize: 22, color: theme.colorScheme.onPrimary),
+            ),
+          ),
+          const SizedBox(width: 12),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  l.aboutTitle,
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    fontWeight: FontWeight.w600,
+                  ),
+                ),
+                const SizedBox(height: 2),
+                Text(
+                  l.aboutSubtitle,
+                  style: theme.textTheme.bodySmall?.copyWith(
+                    color: theme.colorScheme.onSurfaceVariant,
+                  ),
+                ),
+                const SizedBox(height: 1),
+                Text(
+                  l.settingsAboutTagline,
+                  style: theme.textTheme.labelSmall?.copyWith(
+                    color: theme.colorScheme.outline,
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }
 
@@ -144,7 +214,7 @@ class _SectionHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 20, 16, 8),
+      padding: const EdgeInsetsDirectional.fromSTEB(4, 16, 4, 6),
       child: Text(
         title.toUpperCase(),
         style: theme.textTheme.labelSmall?.copyWith(
@@ -156,23 +226,121 @@ class _SectionHeader extends StatelessWidget {
   }
 }
 
-class _AboutTile extends StatelessWidget {
-  const _AboutTile({required this.l});
+class _CardGroup extends StatelessWidget {
+  const _CardGroup({required this.children});
 
-  final AppLocalizations l;
+  final List<Widget> children;
 
   @override
   Widget build(BuildContext context) {
-    return ListTile(
-      leading: const Icon(Icons.info_outline),
-      title: Text(l.aboutTitle),
-      subtitle: Text(l.aboutSubtitle),
+    final theme = Theme.of(context);
+    return Container(
+      decoration: BoxDecoration(
+        color: theme.colorScheme.surfaceContainerHighest,
+        borderRadius: BorderRadius.circular(14),
+      ),
+      clipBehavior: Clip.antiAlias,
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          for (var i = 0; i < children.length; i++) ...[
+            children[i],
+            if (i < children.length - 1)
+              Divider(
+                height: 1,
+                indent: 52,
+                color: theme.dividerColor,
+              ),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+class _SettingsItem extends StatelessWidget {
+  const _SettingsItem({
+    required this.icon,
+    required this.iconColor,
+    required this.title,
+    this.subtitle,
+    required this.trailing,
+    required this.onTap,
+  });
+
+  final String icon;
+  final Color iconColor;
+  final String title;
+  final String? subtitle;
+  final String trailing;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return InkWell(
+      onTap: onTap,
+      child: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
+        child: Row(
+          children: [
+            // Leading icon circle.
+            Container(
+              width: 30,
+              height: 30,
+              decoration: BoxDecoration(
+                color: iconColor.withValues(alpha: 0.12),
+                borderRadius: BorderRadius.circular(8),
+              ),
+              alignment: Alignment.center,
+              child: Text(icon, style: const TextStyle(fontSize: 15)),
+            ),
+            const SizedBox(width: 10),
+            // Title + optional subtitle.
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: theme.textTheme.bodyMedium?.copyWith(
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  if (subtitle != null) ...[
+                    const SizedBox(height: 1),
+                    Text(
+                      subtitle!,
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color: theme.colorScheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ],
+                ],
+              ),
+            ),
+            // Trailing value.
+            Text(
+              trailing,
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: theme.colorScheme.onSurfaceVariant,
+              ),
+            ),
+            const SizedBox(width: 4),
+            Icon(
+              Icons.chevron_right,
+              size: 18,
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
 
 // ---------------------------------------------------------------------------
-// Pickers
+// Pickers (unchanged)
 // ---------------------------------------------------------------------------
 
 Future<int?> _pickStartOfWeek(BuildContext context, int current) {
@@ -198,86 +366,13 @@ Future<int?> _pickStartOfWeek(BuildContext context, int current) {
   );
 }
 
-Future<int?> _pickStartOfMonth(BuildContext context, int current) {
-  return showModalBottomSheet<int>(
-    context: context,
-    showDragHandle: true,
-    builder: (ctx) {
-      return SafeArea(
-        child: SizedBox(
-          height: 360,
-          child: Column(
-            children: [
-              Padding(
-                padding: const EdgeInsets.symmetric(
-                  horizontal: 16,
-                  vertical: 8,
-                ),
-                child: Text(
-                  AppLocalizations.of(context).startOfMonth,
-                  style: const TextStyle(
-                    fontSize: 18,
-                    fontWeight: FontWeight.w600,
-                  ),
-                ),
-              ),
-              Expanded(
-                child: GridView.builder(
-                  padding: const EdgeInsets.all(16),
-                  gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-                    crossAxisCount: 7,
-                    mainAxisSpacing: 8,
-                    crossAxisSpacing: 8,
-                  ),
-                  itemCount: 31,
-                  itemBuilder: (_, i) {
-                    final day = i + 1;
-                    final selected = day == current;
-                    return InkWell(
-                      borderRadius: BorderRadius.circular(8),
-                      onTap: () => Navigator.of(ctx).pop(day),
-                      child: Container(
-                        alignment: Alignment.center,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(8),
-                          color: selected
-                              ? Theme.of(ctx).colorScheme.primaryContainer
-                              : null,
-                          border: Border.all(color: Theme.of(ctx).dividerColor),
-                        ),
-                        child: Text(
-                          '$day',
-                          style: TextStyle(
-                            fontWeight: selected
-                                ? FontWeight.bold
-                                : FontWeight.normal,
-                          ),
-                        ),
-                      ),
-                    );
-                  },
-                ),
-              ),
-            ],
-          ),
-        ),
-      );
-    },
-  );
-}
-
 Future<int?> _pickRolloverHour(BuildContext context, int current) async {
   final l = AppLocalizations.of(context);
   final picked = await showTimePicker(
     context: context,
     initialTime: TimeOfDay(hour: current, minute: 0),
     helpText: l.pickRolloverHour,
-    builder: (ctx, child) {
-      // Force the picker to snap to whole hours by overriding the layout to
-      // a spinner. We still accept whatever the user taps, then zero out the
-      // minute below.
-      return child!;
-    },
+    builder: (ctx, child) => child!,
   );
   if (picked == null) return null;
   return picked.hour;
@@ -355,20 +450,6 @@ String _weekdayName(int day) {
   ];
   if (day < 1 || day > 7) return '—';
   return names[day - 1];
-}
-
-String _ordinal(int n) {
-  if (n >= 11 && n <= 13) return '${n}th';
-  switch (n % 10) {
-    case 1:
-      return '${n}st';
-    case 2:
-      return '${n}nd';
-    case 3:
-      return '${n}rd';
-    default:
-      return '${n}th';
-  }
 }
 
 String _formatHour(int hour) {

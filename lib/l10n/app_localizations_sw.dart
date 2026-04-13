@@ -549,4 +549,16 @@ class AppLocalizationsSw extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$completed kati ya $total yamekamilika';
   }
+
+  @override
+  String get settingsSchedule => 'Ratiba';
+
+  @override
+  String get settingsAppearance => 'Mwonekano';
+
+  @override
+  String get settingsAboutTagline => 'Mwenzi wako wa kila siku wa dini';
+
+  @override
+  String get settingsRolloverSub => 'Siku inaposeti lini';
 }

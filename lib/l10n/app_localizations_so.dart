@@ -553,4 +553,16 @@ class AppLocalizationsSo extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$completed ka mid ah $total la dhammeeyey';
   }
+
+  @override
+  String get settingsSchedule => 'Jadwalka';
+
+  @override
+  String get settingsAppearance => 'Muuqaalka';
+
+  @override
+  String get settingsAboutTagline => 'Saaxiibkaaga diinta ee maalinlaha ah';
+
+  @override
+  String get settingsRolloverSub => 'Goorma maalinta dib u bilaabato';
 }

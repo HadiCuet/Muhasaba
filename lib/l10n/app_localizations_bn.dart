@@ -550,4 +550,16 @@ class AppLocalizationsBn extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$total এর মধ্যে $completed সম্পন্ন';
   }
+
+  @override
+  String get settingsSchedule => 'সময়সূচি';
+
+  @override
+  String get settingsAppearance => 'চেহারা';
+
+  @override
+  String get settingsAboutTagline => 'আপনার দৈনিক দ্বীন সঙ্গী';
+
+  @override
+  String get settingsRolloverSub => 'দিন কখন রিসেট হয়';
 }

@@ -553,4 +553,16 @@ class AppLocalizationsTg extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$completed аз $total иҷро шуд';
   }
+
+  @override
+  String get settingsSchedule => 'Ҷадвал';
+
+  @override
+  String get settingsAppearance => 'Намуди зоҳирӣ';
+
+  @override
+  String get settingsAboutTagline => 'Ҳамроҳи рӯзонаи динии шумо';
+
+  @override
+  String get settingsRolloverSub => 'Рӯз кай аз нав оғоз мешавад';
 }

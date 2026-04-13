@@ -1105,6 +1105,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{completed} of {total} completed'**
   String historyDayCompleted(int completed, int total);
+
+  /// No description provided for @settingsSchedule.
+  ///
+  /// In en, this message translates to:
+  /// **'Schedule'**
+  String get settingsSchedule;
+
+  /// No description provided for @settingsAppearance.
+  ///
+  /// In en, this message translates to:
+  /// **'Appearance'**
+  String get settingsAppearance;
+
+  /// No description provided for @settingsAboutTagline.
+  ///
+  /// In en, this message translates to:
+  /// **'Your daily deen companion'**
+  String get settingsAboutTagline;
+
+  /// No description provided for @settingsRolloverSub.
+  ///
+  /// In en, this message translates to:
+  /// **'When the day resets'**
+  String get settingsRolloverSub;
 }
 
 class _AppLocalizationsDelegate

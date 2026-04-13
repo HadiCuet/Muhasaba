@@ -1,119 +1,94 @@
 {
   "@@locale": "sq",
-
   "appTitle": "Muhasaba",
-
   "tabToday": "Sot",
   "tabStats": "Statistikat",
   "tabHistory": "Historiku",
   "tabSettings": "Cilesimet",
   "newAmal": "Amal i ri",
-
   "editAmal": "Ndrysho amalin",
   "newAmalTitle": "Amal i ri",
   "save": "Ruaj",
   "cancel": "Anulo",
   "clear": "Pastro",
-
   "titleLabel": "Titulli",
   "titleRequired": "Titulli eshte i detyrueshem",
   "titleTooLong": "Titulli eshte shume i gjate",
-
   "frequencyLabel": "Frekuenca",
   "frequencyDaily": "Ditore",
   "frequencyWeekly": "Javore",
   "frequencyMonthly": "Mujore",
-
   "categoryLabel": "Kategoria",
   "categoryOther": "Tjeter",
   "categorySalah": "Namazi",
   "categoryDhikr": "Dhikri",
   "categoryQuran": "Kurani",
   "categoryCharity": "Sadakaja",
-
   "timesPerPeriod": "Here per periudhe",
   "custom": "Personalizuar",
   "customTargetHint": "p.sh. 50",
-
   "dayOfWeek": "Dita e javes",
   "anyDay": "Cilado",
   "anyDayHint": "Cilado dite (mbetet e dukshme sot, fshihet neser)",
   "onlyDayHint": "Vetem {day}",
-
   "dateOfMonth": "Data e muajit",
   "anyDate": "Cilado",
   "anyDateHint": "Cilado date (mbetet e dukshme sot, fshihet neser)",
   "onlyDateHint": "Vetem me {date}",
-
   "startPreChecked": "Fillo e shenuar",
   "startPreCheckedSubtitle": "Kur nis nje periudhe e re, ky amal shenohet si i perfunduar automatikisht derisa ta hiqni.",
-
   "reminder": "Kujtese",
   "reminderNone": "Asgje",
   "reminderTime": "Kujtese: {time}",
   "reminderPermissionWarning": "Kujtesa u ruajt, por njoftimet nuk jane te lejuara. Aktivizoni ato ne cilesimet e sistemit per te marre njoftime.",
-
   "groupByCategory": "Grupo sipas kategorise",
   "flatList": "Liste e thjeshte",
   "errorGeneric": "Gabim: {error}",
   "todayEmptyHint": "Shtypni + per te shtuar amalin tuaj te pare.",
-
   "noteLabel": "Shenimi",
   "noteHint": "p.sh. U fala ne xhami",
   "completed": "perfunduar",
   "notCompleted": "e paperfunduar",
   "progressOf": "{progress} nga {target} te perfunduara",
-
   "removeFromToday": "Hiq nga sot",
   "removeFromTodaySubtitle": "Fshih vetem per sot. Kthehet neser.",
   "removeFromTracking": "Hiq nga ndjekja",
   "removeFromTrackingSubtitle": "Hiq perfundimisht nga lista juaj. Historiku ruhet.",
-
   "chooseIcon": "Zgjidh ikonen",
   "iconNone": "Asgje",
   "recentlyUsed": "Perdorur se fundmi",
   "emojiSectionGeneral": "Te pergjithshme",
-
   "categoryNameHint": "Emri",
   "categoryNew": "+ E re",
-
   "addAmal": "Shto Amal",
   "customAmal": "Amal i personalizuar",
-
   "templateTasbih": "Tesbihe 33x",
   "templateIstighfar": "Istigfar 100x",
   "templateSurahKahf": "Surja Kehf",
   "templateSadaqah": "Sadakaja",
   "templateTahajjud": "Tehexhudi",
   "templateDuhaPrayer": "Namazi i Duhas",
-
   "settingsTitle": "Cilesimet",
   "settingsLoadError": "Deshtoi ngarkimi i cilesimeve:\n{error}",
-
   "sectionDayBoundary": "Kufiri i dites",
   "rolloverHour": "Ora e kalimit",
   "rolloverAtMidnight": "Dita mbaron ne mesnatë.",
   "rolloverSubtitle": "Amalet e djeshme mbeten te ndryshueshme deri ne {time}.",
   "pickRolloverHour": "Zgjidhni oren kur dita kalon",
-
   "sectionWeekMonth": "Java & muaji",
   "startOfWeek": "Fillimi i javes",
   "startOfMonth": "Fillimi i muajit",
   "startOfMonthClamped": "Ditet pas te 28-es kufijzohen ne diten e fundit te muajve me te shkurter.",
-
   "sectionAppearance": "Pamja",
   "theme": "Tema",
   "themeSystem": "Sistemi",
   "themeLight": "E ndritshme",
   "themeDark": "E erret",
-
   "sectionLanguage": "Gjuha",
   "language": "Gjuha",
   "systemDefault": "Parazgjedhja e sistemit",
-
   "aboutTitle": "Muhasaba",
   "aboutSubtitle": "Nje ditar personal per llogaridhenien e fese. Te gjitha te dhenat mbeten ne kete pajisje.",
-
   "statsTitle": "Statistikat",
   "statsLoadError": "Deshtoi ngarkimi i statistikave:\n{error}",
   "perAmal": "Per amal",
@@ -124,17 +99,13 @@
   "streakLongest": "Me e gjata",
   "ratioWeek": "Java",
   "ratioMonth": "Muaji",
-
   "streakDays": "{count, plural, =1{dite} other{dite}}",
   "streakWeeks": "{count, plural, =1{jave} other{jave}}",
   "streakMonths": "{count, plural, =1{muaj} other{muaj}}",
-
   "frequencyBadgeDaily": "ditore",
   "frequencyBadgeWeekly": "javore",
   "frequencyBadgeMonthly": "mujore",
-
   "statsEmpty": "Asnje amal ende. Shtoni nje ne Sot per te filluar ndjekjen.",
-
   "statsToday": "Sot",
   "statsThisWeek": "Kete jave",
   "statsThisMonth": "Kete muaj",
@@ -159,15 +130,12 @@
   "statsFilterAmal": "Amali",
   "statsStreaks": "Serite",
   "statsSelectDateRange": "Zgjidhni gamen e datave",
-
   "historyTitle": "Historiku",
   "jumpToDate": "Kalo te data",
   "historyEmptyDay": "Asnje amal e ndjekur me {date}",
-
   "streakUnitD": "d",
   "streakUnitW": "j",
   "streakUnitM": "m",
-
   "mondayShort": "Hen",
   "tuesdayShort": "Mar",
   "wednesdayShort": "Mer",
@@ -175,7 +143,6 @@
   "fridayShort": "Pre",
   "saturdayShort": "Sht",
   "sundayShort": "Dil",
-
   "mondayFull": "E hene",
   "tuesdayFull": "E marte",
   "wednesdayFull": "E merkure",
@@ -183,7 +150,6 @@
   "fridayFull": "E premte",
   "saturdayFull": "E shtune",
   "sundayFull": "E diel",
-
   "hadith0": "\"Veprat me te dashura tek Allahu jane ato qe behen rregullisht, edhe nese jane te vogla.\"\n— Buhariu & Muslimi",
   "hadith1": "\"Merrni persiper vepra te mira aq sa keni mundesi, sepse veprat me te mira jane ato qe behen rregullisht edhe nese jane te pakta.\"\n— Ibn Maxhe",
   "hadith2": "\"Kur vdes biri i Ademit, veprat e tij nderpiten perveq trive: sadakaja e vazhdueshme, dituria e dobishme, ose femija i mire qe lutet per te.\"\n— Muslimi",
@@ -194,5 +160,9 @@
   "hadith7": "\"Ai qe ndjek nje rruge per kerkim te dijes, Allahu ia lehtesonshtegen per ne Xhenet.\"\n— Muslimi",
   "hadith8": "\"Sadakaja nuk e pakeson pasurine.\"\n— Muslimi",
   "hadith9": "\"Besimtari i forte eshte me i mire dhe me i dashur tek Allahu sesa besimtari i dobet, ndersa te dy kane te mire.\"\n— Muslimi",
-  "historyDayCompleted": "{completed} nga {total} të përfunduara"
+  "historyDayCompleted": "{completed} nga {total} të përfunduara",
+  "settingsSchedule": "Orari",
+  "settingsAppearance": "Pamja",
+  "settingsAboutTagline": "Shoqëruesi juaj i përditshëm i dinit",
+  "settingsRolloverSub": "Kur rifreskohet dita"
 }

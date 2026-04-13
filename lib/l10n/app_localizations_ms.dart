@@ -550,4 +550,16 @@ class AppLocalizationsMs extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$completed daripada $total selesai';
   }
+
+  @override
+  String get settingsSchedule => 'Jadual';
+
+  @override
+  String get settingsAppearance => 'Penampilan';
+
+  @override
+  String get settingsAboutTagline => 'Teman deen harian anda';
+
+  @override
+  String get settingsRolloverSub => 'Bila hari ditetapkan semula';
 }

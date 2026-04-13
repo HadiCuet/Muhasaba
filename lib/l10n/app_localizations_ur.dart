@@ -551,4 +551,16 @@ class AppLocalizationsUr extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$total میں سے $completed مکمل';
   }
+
+  @override
+  String get settingsSchedule => 'شیڈول';
+
+  @override
+  String get settingsAppearance => 'ظاہری شکل';
+
+  @override
+  String get settingsAboutTagline => 'آپ کا روزانہ دین ساتھی';
+
+  @override
+  String get settingsRolloverSub => 'دن کب ری سیٹ ہوتا ہے';
 }

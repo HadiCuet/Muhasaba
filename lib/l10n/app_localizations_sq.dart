@@ -549,4 +549,16 @@ class AppLocalizationsSq extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$completed nga $total të përfunduara';
   }
+
+  @override
+  String get settingsSchedule => 'Orari';
+
+  @override
+  String get settingsAppearance => 'Pamja';
+
+  @override
+  String get settingsAboutTagline => 'Shoqëruesi juaj i përditshëm i dinit';
+
+  @override
+  String get settingsRolloverSub => 'Kur rifreskohet dita';
 }

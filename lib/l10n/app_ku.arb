@@ -1,119 +1,94 @@
 {
   "@@locale": "ku",
-
   "appTitle": "Muhasaba",
-
   "tabToday": "ئەمڕۆ",
   "tabStats": "ئامار",
   "tabHistory": "مێژوو",
   "tabSettings": "ڕێکخستنەکان",
   "newAmal": "کرداری نوێ",
-
   "editAmal": "دەستکاری کردار",
   "newAmalTitle": "کرداری نوێ",
   "save": "پاشەکەوتکردن",
   "cancel": "پاشگەزبوونەوە",
   "clear": "سڕینەوە",
-
   "titleLabel": "ناونیشان",
   "titleRequired": "ناونیشان پێویستە",
   "titleTooLong": "ناونیشان زۆر درێژە",
-
   "frequencyLabel": "دووبارەبوونەوە",
   "frequencyDaily": "ڕۆژانە",
   "frequencyWeekly": "هەفتانە",
   "frequencyMonthly": "مانگانە",
-
   "categoryLabel": "جۆر",
   "categoryOther": "هیتر",
   "categorySalah": "نوێژ",
   "categoryDhikr": "زیکر",
   "categoryQuran": "قورئان",
   "categoryCharity": "خێرات",
-
   "timesPerPeriod": "جار لە هەر ماوەیەک",
   "custom": "تایبەت",
   "customTargetHint": "بۆ نمونە ٥٠",
-
   "dayOfWeek": "ڕۆژی هەفتە",
   "anyDay": "هەر ڕۆژێک",
   "anyDayHint": "هەر ڕۆژێک (ئەمڕۆ دەردەکەوێت، سبەی دەشارێتەوە)",
   "onlyDayHint": "تەنها {day}",
-
   "dateOfMonth": "ڕێکەوتی مانگ",
   "anyDate": "هەر ڕێکەوتێک",
   "anyDateHint": "هەر ڕێکەوتێک (ئەمڕۆ دەردەکەوێت، سبەی دەشارێتەوە)",
   "onlyDateHint": "تەنها لە {date}",
-
   "startPreChecked": "لە سەرەتاوە نیشانکراو",
   "startPreCheckedSubtitle": "کاتێک ماوەیەکی نوێ دەست پێ دەکات، ئەم کردارە بە بنەڕەتی وەک تەواوکراو نیشان دەکرێت تا تۆ نیشانەکەی لادەبەیت.",
-
   "reminder": "بیرخستنەوە",
   "reminderNone": "هیچ",
   "reminderTime": "بیرخستنەوە: {time}",
   "reminderPermissionWarning": "بیرخستنەوە پاشەکەوت کرا، بەڵام ئاگاداریەکان ڕێگەپێنەدراون. لە ڕێکخستنەکانی سیستەم چالاکیان بکە بۆ وەرگرتنی ئاگاداری.",
-
   "groupByCategory": "کۆکردنەوە بەپێی جۆر",
   "flatList": "لیستی ئاسایی",
   "errorGeneric": "هەڵە: {error}",
   "todayEmptyHint": "دەست بنێ لەسەر + بۆ زیادکردنی یەکەم کردارت.",
-
   "noteLabel": "تێبینی",
   "noteHint": "بۆ نمونە لە مزگەوت نوێژم کرد",
   "completed": "تەواو کرا",
   "notCompleted": "تەواو نەکرا",
   "progressOf": "{progress} لە {target} تەواو کرا",
-
   "removeFromToday": "لابردن لە ئەمڕۆ",
   "removeFromTodaySubtitle": "تەنها بۆ ئەم ڕۆژە دەشارێتەوە. سبەی دەگەڕێتەوە.",
   "removeFromTracking": "لابردن لە شوێنکەوتن",
   "removeFromTrackingSubtitle": "بە تەواوی لە لیستەکەت لادەبرێت. مێژووەکە دەمێنێتەوە.",
-
   "chooseIcon": "وێنۆچکە هەڵبژێرە",
   "iconNone": "هیچ",
   "recentlyUsed": "دوایین بەکارهێنراوەکان",
   "emojiSectionGeneral": "گشتی",
-
   "categoryNameHint": "ناو",
   "categoryNew": "+ نوێ",
-
   "addAmal": "زیادکردنی کردار",
   "customAmal": "کرداری تایبەت",
-
   "templateTasbih": "تەسبیح ٣٣ جار",
   "templateIstighfar": "ئیستیغفار ١٠٠ جار",
   "templateSurahKahf": "سورەتی کەهف",
   "templateSadaqah": "خێرات",
   "templateTahajjud": "تەهەجود",
   "templateDuhaPrayer": "نوێژی دوحا",
-
   "settingsTitle": "ڕێکخستنەکان",
   "settingsLoadError": "ڕێکخستنەکان بارنەکران:\n{error}",
-
   "sectionDayBoundary": "سنووری ڕۆژ",
   "rolloverHour": "کاتی گۆڕانی ڕۆژ",
   "rolloverAtMidnight": "ئەمڕۆ لە نیوەشەو تەواو دەبێت.",
   "rolloverSubtitle": "کردارەکانی دوێنێ تا {time} دەستکاریکردنیان دەکرێت.",
   "pickRolloverHour": "کاتژمێری گۆڕانی ڕۆژ هەڵبژێرە",
-
   "sectionWeekMonth": "هەفتە و مانگ",
   "startOfWeek": "سەرەتای هەفتە",
   "startOfMonth": "سەرەتای مانگ",
   "startOfMonthClamped": "ڕۆژەکانی دوای ٢٨ بۆ دوایین ڕۆژی مانگە کورتەکان دەگۆڕدرێن.",
-
   "sectionAppearance": "دەرکەوتن",
   "theme": "ڕووکار",
   "themeSystem": "سیستەم",
   "themeLight": "ڕووناک",
   "themeDark": "تاریک",
-
   "sectionLanguage": "زمان",
   "language": "زمان",
   "systemDefault": "بنەڕەتی سیستەم",
-
   "aboutTitle": "Muhasaba",
   "aboutSubtitle": "ڕۆژنامەی تایبەتی بەرپرسیارێتی ئایینی. هەموو داتاکان لەم ئامێرەدا دەمێنێتەوە.",
-
   "statsTitle": "ئامار",
   "statsLoadError": "ئامار بارنەکران:\n{error}",
   "perAmal": "بۆ هەر کردارێک",
@@ -124,17 +99,13 @@
   "streakLongest": "درێژترین",
   "ratioWeek": "هەفتە",
   "ratioMonth": "مانگ",
-
   "streakDays": "{count, plural, =1{ڕۆژ} other{ڕۆژ}}",
   "streakWeeks": "{count, plural, =1{هەفتە} other{هەفتە}}",
   "streakMonths": "{count, plural, =1{مانگ} other{مانگ}}",
-
   "frequencyBadgeDaily": "ڕۆژانە",
   "frequencyBadgeWeekly": "هەفتانە",
   "frequencyBadgeMonthly": "مانگانە",
-
   "statsEmpty": "هێشتا هیچ کردارێک نییە. لە ئەمڕۆ یەکێک زیاد بکە بۆ دەستپێکردنی شوێنکەوتن.",
-
   "statsToday": "ئەمڕۆ",
   "statsThisWeek": "ئەم هەفتەیە",
   "statsThisMonth": "ئەم مانگە",
@@ -159,15 +130,12 @@
   "statsFilterAmal": "کردار",
   "statsStreaks": "زنجیرەکان",
   "statsSelectDateRange": "ماوەی ڕێکەوت هەڵبژێرە",
-
   "historyTitle": "مێژوو",
   "jumpToDate": "بڕۆ بۆ ڕێکەوت",
   "historyEmptyDay": "هیچ کردارێک لە {date} تۆمار نەکراوە",
-
   "streakUnitD": "ڕ",
   "streakUnitW": "ه",
   "streakUnitM": "م",
-
   "mondayShort": "دشم",
   "tuesdayShort": "سشم",
   "wednesdayShort": "چشم",
@@ -175,7 +143,6 @@
   "fridayShort": "هەی",
   "saturdayShort": "شەم",
   "sundayShort": "یشم",
-
   "mondayFull": "دووشەممە",
   "tuesdayFull": "سێشەممە",
   "wednesdayFull": "چوارشەممە",
@@ -183,7 +150,6 @@
   "fridayFull": "هەینی",
   "saturdayFull": "شەممە",
   "sundayFull": "یەکشەممە",
-
   "hadith0": "\"خۆشەویستترین کردار لای خوا ئەوانەن کە بەردەوام بن، تەنانەت گەر بچووکیش بن.\"\n— بوخاری و موسلیم",
   "hadith1": "\"کرداری چاک بکەن بەقەدری توانایان، چونکە باشترین کردار ئەوانەن کە بەردەوام بن تەنانەت گەر کەمیش بن.\"\n— ئیبن ماجە",
   "hadith2": "\"کاتێک کوڕی ئادەم دەمرێت، کردارەکانی دەوەستن جگە لە سێ: خێراتی بەردەوام، زانستی سوودبەخش، یان منداڵێکی چاک کە بۆی دوعا دەکات.\"\n— موسلیم",
@@ -194,5 +160,9 @@
   "hadith7": "\"هەرکەسێک ڕێگایەک بگرێت بۆ بەدەستهێنانی زانست، خوا ڕێگای بەهەشتی بۆ ئاسان دەکات.\"\n— موسلیم",
   "hadith8": "\"خێرات سامان کەم ناکاتەوە.\"\n— موسلیم",
   "hadith9": "\"باوەڕداری بەهێز باشتر و خۆشەویستترە لای خوا لە باوەڕداری لاواز، لەگەڵ ئەوەشدا لە هەردووکیاندا چاکە هەیە.\"\n— موسلیم",
-  "historyDayCompleted": "{completed} ji {total} qediya"
+  "historyDayCompleted": "{completed} ji {total} qediya",
+  "settingsSchedule": "Bernameya dem",
+  "settingsAppearance": "Xuyang",
+  "settingsAboutTagline": "Hevkarê dînê te yê rojane",
+  "settingsRolloverSub": "Roj kengî nû dibe"
 }

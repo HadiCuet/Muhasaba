@@ -551,4 +551,16 @@ class AppLocalizationsTk extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$total-dan $completed ýerine ýetirildi';
   }
+
+  @override
+  String get settingsSchedule => 'Tertip';
+
+  @override
+  String get settingsAppearance => 'Daşky görnüş';
+
+  @override
+  String get settingsAboutTagline => 'Gündelik din ýoldaşyňyz';
+
+  @override
+  String get settingsRolloverSub => 'Gün haçan täzelenýär';
 }

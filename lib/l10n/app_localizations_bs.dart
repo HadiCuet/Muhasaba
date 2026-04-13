@@ -551,4 +551,16 @@ class AppLocalizationsBs extends AppLocalizations {
   String historyDayCompleted(int completed, int total) {
     return '$completed od $total završeno';
   }
+
+  @override
+  String get settingsSchedule => 'Raspored';
+
+  @override
+  String get settingsAppearance => 'Izgled';
+
+  @override
+  String get settingsAboutTagline => 'Vaš dnevni din pratilac';
+
+  @override
+  String get settingsRolloverSub => 'Kada se dan resetuje';
 }
