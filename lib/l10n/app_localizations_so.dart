@@ -550,6 +550,45 @@ class AppLocalizationsSo extends AppLocalizations {
       '\"Mu\'minka xoogga badan waa ka fiican yahay oo Alle ka jecel yahay mu\'minka daciifka ah, laakiin labadaba wanaag way ku jirtaa.\"\n— Muslim';
 
   @override
+  String get hadith10 =>
+      '\"Qofka maalin kasta boqol jeer yidhaahda \'SubhanAllahi wa bihamdihi\', dambiyadiisa waa la cafiyaa xitaa hadday la mid yihiin xumbada badda.\"\n— Bukhaari';
+
+  @override
+  String get hadith11 =>
+      '\"Ducadii ugu wanaagsanayd waa ducada maalinta Carafa, wixii ugu wanaagsanaa ee aan iyo anbiyada iga horreeyey dhaheen: Laa ilaaha illallaah.\"\n— Tirmidhi';
+
+  @override
+  String get hadith12 =>
+      '\"Qofka akhriyo Aayatul-Kursiga salaad kasta oo fard ah kadib, waxba kama hor joogsado inuu Jannada galo marka laga reebo geeridu.\"\n— Nasaai';
+
+  @override
+  String get hadith13 => '\"Hadal wanaagsan waa sadaqo.\"\n— Bukhaari & Muslim';
+
+  @override
+  String get hadith14 =>
+      '\"Qofka rumaysan Ilaahay iyo Maalinta Aakhiro, ha ku hadlo khayr ama ha aamuuso.\"\n— Bukhaari & Muslim';
+
+  @override
+  String get hadith15 =>
+      '\"Kan u daryeela carmallada iyo miskiinka waa sida mujaahid Ilaahay dartiis ah.\"\n— Bukhaari';
+
+  @override
+  String get hadith16 =>
+      '\"Dhoollacaddaadaada walaalkaa waa sadaqo.\"\n— Tirmidhi';
+
+  @override
+  String get hadith17 =>
+      '\"Kan ugu wanaagsan ee idinka mid ah waa kan Quraanka barta oo bara.\"\n— Bukhaari';
+
+  @override
+  String get hadith18 =>
+      '\"Qofna ma cunin cunto ka wanaagsan wixii uu gacmihiisa ku shaqeeyey.\"\n— Bukhaari';
+
+  @override
+  String get hadith19 =>
+      '\"Ilaahay waa qabow yahay wuxuuna jecel yahay qabownimada wax kasta.\"\n— Bukhaari & Muslim';
+
+  @override
   String historyDayCompleted(int completed, int total) {
     return '$completed ka mid ah $total la dhammeeyey';
   }

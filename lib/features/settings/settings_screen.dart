@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -127,15 +129,45 @@ class _SettingsList extends StatelessWidget {
 // Reusable UI components
 // ---------------------------------------------------------------------------
 
-class _AppBrandCard extends StatelessWidget {
+List<String> _hadiths(AppLocalizations l) => [
+  l.hadith0, l.hadith1, l.hadith2, l.hadith3, l.hadith4,
+  l.hadith5, l.hadith6, l.hadith7, l.hadith8, l.hadith9,
+  l.hadith10, l.hadith11, l.hadith12, l.hadith13, l.hadith14,
+  l.hadith15, l.hadith16, l.hadith17, l.hadith18, l.hadith19,
+];
+
+class _AppBrandCard extends StatefulWidget {
   const _AppBrandCard({required this.l});
 
   final AppLocalizations l;
 
   @override
+  State<_AppBrandCard> createState() => _AppBrandCardState();
+}
+
+class _AppBrandCardState extends State<_AppBrandCard> {
+  int _index = 0;
+  late final Timer _timer;
+
+  @override
+  void initState() {
+    super.initState();
+    _timer = Timer.periodic(const Duration(seconds: 8), (_) {
+      setState(() => _index = (_index + 1) % _hadiths(widget.l).length);
+    });
+  }
+
+  @override
+  void dispose() {
+    _timer.cancel();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final seed = theme.colorScheme.primary;
+    final hadiths = _hadiths(widget.l);
 
     return Container(
       margin: const EdgeInsets.only(top: 8),
@@ -152,49 +184,85 @@ class _AppBrandCard extends StatelessWidget {
         ),
         border: Border.all(color: seed.withValues(alpha: 0.10)),
       ),
-      child: Row(
+      child: Column(
         children: [
-          Container(
-            width: 44,
-            height: 44,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(12),
-              gradient: LinearGradient(
-                colors: [seed, seed.withValues(alpha: 0.7)],
-                begin: Alignment.topLeft,
-                end: Alignment.bottomRight,
+          // App info row.
+          Row(
+            children: [
+              ClipRRect(
+                borderRadius: BorderRadius.circular(12),
+                child: Image.asset(
+                  'assets/icon/app_icon.png',
+                  width: 44,
+                  height: 44,
+                ),
               ),
-            ),
-            alignment: Alignment.center,
-            child: Text(
-              '☪',
-              style: TextStyle(fontSize: 22, color: theme.colorScheme.onPrimary),
-            ),
+              const SizedBox(width: 12),
+              Expanded(
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      widget.l.aboutTitle,
+                      style: theme.textTheme.titleMedium?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    const SizedBox(height: 2),
+                    Text(
+                      widget.l.settingsAboutTagline,
+                      style: theme.textTheme.labelSmall?.copyWith(
+                        color: theme.colorScheme.outline,
+                      ),
+                    ),
+                  ],
+                ),
+              ),
+            ],
           ),
-          const SizedBox(width: 12),
-          Expanded(
+          const SizedBox(height: 10),
+          // Hadith inset card.
+          Container(
+            width: double.infinity,
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
+            decoration: BoxDecoration(
+              color: theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
+              borderRadius: BorderRadius.circular(10),
+            ),
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text(
-                  l.aboutTitle,
-                  style: theme.textTheme.titleMedium?.copyWith(
-                    fontWeight: FontWeight.w600,
+                AnimatedSwitcher(
+                  duration: const Duration(milliseconds: 500),
+                  child: Text(
+                    hadiths[_index],
+                    key: ValueKey<int>(_index),
+                    textAlign: TextAlign.center,
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      fontStyle: FontStyle.italic,
+                      color: theme.colorScheme.onSurfaceVariant,
+                      height: 1.5,
+                    ),
                   ),
                 ),
-                const SizedBox(height: 2),
-                Text(
-                  l.aboutSubtitle,
-                  style: theme.textTheme.bodySmall?.copyWith(
-                    color: theme.colorScheme.onSurfaceVariant,
-                  ),
-                ),
-                const SizedBox(height: 1),
-                Text(
-                  l.settingsAboutTagline,
-                  style: theme.textTheme.labelSmall?.copyWith(
-                    color: theme.colorScheme.outline,
-                  ),
+                const SizedBox(height: 8),
+                // Dot indicators.
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    for (var i = 0; i < hadiths.length; i++)
+                      AnimatedContainer(
+                        duration: const Duration(milliseconds: 300),
+                        margin: const EdgeInsets.symmetric(horizontal: 2),
+                        width: i == _index ? 10 : 4,
+                        height: 4,
+                        decoration: BoxDecoration(
+                          borderRadius: BorderRadius.circular(2),
+                          color: i == _index
+                              ? seed
+                              : theme.colorScheme.outlineVariant,
+                        ),
+                      ),
+                  ],
                 ),
               ],
             ),
@@ -236,8 +304,9 @@ class _CardGroup extends StatelessWidget {
     final theme = Theme.of(context);
     return Container(
       decoration: BoxDecoration(
-        color: theme.colorScheme.surfaceContainerHighest,
+        color: theme.colorScheme.surfaceContainerLow,
         borderRadius: BorderRadius.circular(14),
+        border: Border.all(color: theme.colorScheme.outlineVariant.withValues(alpha: 0.5)),
       ),
       clipBehavior: Clip.antiAlias,
       child: Column(
@@ -248,8 +317,8 @@ class _CardGroup extends StatelessWidget {
             if (i < children.length - 1)
               Divider(
                 height: 1,
-                indent: 52,
-                color: theme.dividerColor,
+                thickness: 0.5,
+                color: theme.colorScheme.outlineVariant.withValues(alpha: 0.5),
               ),
           ],
         ],

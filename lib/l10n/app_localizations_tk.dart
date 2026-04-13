@@ -548,6 +548,44 @@ class AppLocalizationsTk extends AppLocalizations {
       '\"Guyyli momin, ejiz mominden gowusy hem Allaha has soygulisidir, her ikisinde hem hayyr bardyr.\"\n— Muslim';
 
   @override
+  String get hadith10 =>
+      '\"Kim günde ýüz gezek \'SubhanAllahi we bihamdihi\' diýse, günäleri bagyşlanar, deňziň köpügi ýaly bolsa-da.\"\n— Buhari';
+
+  @override
+  String get hadith11 =>
+      '\"Iň gowy doga — Arafa gününiň dogasydyr, men we menden öňki pygamberler aýdan iň gowy söz: La ilahe illallah.\"\n— Tirmizi';
+
+  @override
+  String get hadith12 =>
+      '\"Kim her parz namazdan soň Aýat al-Kursi okasa, ony jennete girmekden diňe ölüm saklar.\"\n— Nesaýy';
+
+  @override
+  String get hadith13 => '\"Ýagşy söz sadakadyr.\"\n— Buhari we Muslim';
+
+  @override
+  String get hadith14 =>
+      '\"Allaha we ahyret gününe iman eden, ýagşylyk aýtsyn ýa-da dymyp otursyn.\"\n— Buhari we Muslim';
+
+  @override
+  String get hadith15 =>
+      '\"Dul aýala we garyba seretýän, Allah ýolunda söweşiji ýalydyr.\"\n— Buhari';
+
+  @override
+  String get hadith16 => '\"Doganyňa ýylgyrmagyň sadakadyr.\"\n— Tirmizi';
+
+  @override
+  String get hadith17 =>
+      '\"Siziň iň gowuňyz Kurany öwrenýän we öwredýändir.\"\n— Buhari';
+
+  @override
+  String get hadith18 =>
+      '\"Hiç kim öz eliniň zähmetinden gowy nahar iýmändir.\"\n— Buhari';
+
+  @override
+  String get hadith19 =>
+      '\"Allah ýumşakdyr we ähli işde ýumşaklygy söýýär.\"\n— Buhari we Muslim';
+
+  @override
   String historyDayCompleted(int completed, int total) {
     return '$total-dan $completed ýerine ýetirildi';
   }

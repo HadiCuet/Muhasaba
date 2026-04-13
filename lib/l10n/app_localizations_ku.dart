@@ -547,6 +547,44 @@ class AppLocalizationsKu extends AppLocalizations {
       '\"باوەڕداری بەهێز باشتر و خۆشەویستترە لای خوا لە باوەڕداری لاواز، لەگەڵ ئەوەشدا لە هەردووکیاندا چاکە هەیە.\"\n— موسلیم';
 
   @override
+  String get hadith10 =>
+      '\"Ew kesê ku di rojê de sed caran \'SubhanAllahi we bihamdihi\' bêje, gunahên wî têne baxişandin heke wek kefa behrê bin jî.\"\n— Buxarî';
+
+  @override
+  String get hadith11 =>
+      '\"Duaya herî baş ya roja Erefeyê ye, û baştirîn gotina ku min û pêxemberên beriya min gotine ev e: La ilaha illallah.\"\n— Tirmizî';
+
+  @override
+  String get hadith12 =>
+      '\"Ew kes ku piştî her nimêja ferzê Ayetul-Kursiyê bixwîne, tiştek wî ji ketina bihuştê nahêle ji bilî mirinê.\"\n— Nesaî';
+
+  @override
+  String get hadith13 => '\"Gotina baş xêr e.\"\n— Buxarî & Muslim';
+
+  @override
+  String get hadith14 =>
+      '\"Ew kesê ku bi Xwedê û roja dawîn bawer dike, bila qala qenciyê bike an bêdeng be.\"\n— Buxarî & Muslim';
+
+  @override
+  String get hadith15 =>
+      '\"Ew kesê ku li jinebîyê û feqîr miqate dibe, mîna mûcahidê di rêya Xwedê de ye.\"\n— Buxarî';
+
+  @override
+  String get hadith16 => '\"Bişirîna te li rûyê birayê te xêr e.\"\n— Tirmizî';
+
+  @override
+  String get hadith17 =>
+      '\"Yê herî qenc di nav we de ew e ku Quranê hîn dibe û hîn dike.\"\n— Buxarî';
+
+  @override
+  String get hadith18 =>
+      '\"Kes xwarina ji ya ku bi destê xwe qezenc kiriye çêtir nexwariye.\"\n— Buxarî';
+
+  @override
+  String get hadith19 =>
+      '\"Xwedê nerm e û nermiyê di her tiştî de hez dike.\"\n— Buxarî & Muslim';
+
+  @override
   String historyDayCompleted(int completed, int total) {
     return '$completed ji $total qediya';
   }

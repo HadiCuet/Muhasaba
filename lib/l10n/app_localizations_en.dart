@@ -546,6 +546,45 @@ class AppLocalizationsEn extends AppLocalizations {
       '\"The strong believer is better and more beloved to Allah than the weak believer, while there is good in both.\"\n— Muslim';
 
   @override
+  String get hadith10 =>
+      '\"Whoever says \'SubhanAllah wa bihamdihi\' a hundred times a day will have his sins forgiven even if they were like the foam of the sea.\"\n— Bukhari';
+
+  @override
+  String get hadith11 =>
+      '\"The best supplication is that of the Day of Arafah, and the best thing that I and the Prophets before me said is: La ilaha illallah.\"\n— Tirmidhi';
+
+  @override
+  String get hadith12 =>
+      '\"Whoever recites Ayat al-Kursi after every obligatory prayer, nothing prevents him from entering Paradise except death.\"\n— Nasa\'i';
+
+  @override
+  String get hadith13 => '\"A good word is charity.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith14 =>
+      '\"Whoever believes in Allah and the Last Day, let him speak good or remain silent.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith15 =>
+      '\"The one who looks after a widow or a poor person is like a warrior in the cause of Allah.\"\n— Bukhari';
+
+  @override
+  String get hadith16 =>
+      '\"Smiling at your brother is an act of charity.\"\n— Tirmidhi';
+
+  @override
+  String get hadith17 =>
+      '\"The best among you are those who learn the Quran and teach it.\"\n— Bukhari';
+
+  @override
+  String get hadith18 =>
+      '\"No one has eaten better food than what he earns from the work of his own hands.\"\n— Bukhari';
+
+  @override
+  String get hadith19 =>
+      '\"Allah is gentle and loves gentleness in all things.\"\n— Bukhari & Muslim';
+
+  @override
   String historyDayCompleted(int completed, int total) {
     return '$completed of $total completed';
   }

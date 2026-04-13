@@ -550,6 +550,46 @@ class AppLocalizationsFr extends AppLocalizations {
       '\"Le croyant fort est meilleur et plus aimé d\'Allah que le croyant faible, bien qu\'il y ait du bien en chacun d\'eux.\"\n— Muslim';
 
   @override
+  String get hadith10 =>
+      '\"Celui qui dit \'SubhanAllah wa bihamdihi\' cent fois par jour verra ses péchés pardonnés, même s\'ils étaient comme l\'écume de la mer.\"\n— Bukhari';
+
+  @override
+  String get hadith11 =>
+      '\"La meilleure invocation est celle du jour d\'Arafah, et la meilleure parole que j\'ai dite ainsi que les prophètes avant moi est : La ilaha illallah.\"\n— Tirmidhi';
+
+  @override
+  String get hadith12 =>
+      '\"Celui qui récite Ayat al-Kursi après chaque prière obligatoire, rien ne l\'empêche d\'entrer au Paradis sauf la mort.\"\n— Nasa\'i';
+
+  @override
+  String get hadith13 =>
+      '\"Une bonne parole est une aumône.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith14 =>
+      '\"Que celui qui croit en Allah et au Jour Dernier dise du bien ou qu\'il se taise.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith15 =>
+      '\"Celui qui prend soin d\'une veuve ou d\'un pauvre est comme un combattant dans le sentier d\'Allah.\"\n— Bukhari';
+
+  @override
+  String get hadith16 =>
+      '\"Ton sourire à ton frère est une aumône.\"\n— Tirmidhi';
+
+  @override
+  String get hadith17 =>
+      '\"Le meilleur d\'entre vous est celui qui apprend le Coran et l\'enseigne.\"\n— Bukhari';
+
+  @override
+  String get hadith18 =>
+      '\"Personne n\'a mangé meilleure nourriture que celle gagnée par le travail de ses mains.\"\n— Bukhari';
+
+  @override
+  String get hadith19 =>
+      '\"Allah est doux et Il aime la douceur en toute chose.\"\n— Bukhari & Muslim';
+
+  @override
   String historyDayCompleted(int completed, int total) {
     return '$completed sur $total terminé(s)';
   }

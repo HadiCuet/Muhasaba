@@ -546,6 +546,44 @@ class AppLocalizationsSw extends AppLocalizations {
       '\"Muumini mwenye nguvu ni bora na mpendwa zaidi kwa Mwenyezi Mungu kuliko muumini dhaifu, ingawa wote wana kheri.\"\n— Muslim';
 
   @override
+  String get hadith10 =>
+      '\"Mtu anayesema \'SubhanAllah wa bihamdihi\' mara mia kwa siku, dhambi zake zitasamehewa hata kama zingekuwa kama povu la bahari.\"\n— Bukhari';
+
+  @override
+  String get hadith11 =>
+      '\"Dua bora zaidi ni ile ya siku ya Arafa, na bora zaidi niliyosema mimi na manabii kabla yangu ni: La ilaha illallah.\"\n— Tirmidhi';
+
+  @override
+  String get hadith12 =>
+      '\"Mtu anayesoma Ayatul-Kursi baada ya kila swala ya faradhi, hakuna kinachomzuia kuingia Peponi isipokuwa kifo.\"\n— Nasa\'i';
+
+  @override
+  String get hadith13 => '\"Neno jema ni sadaka.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith14 =>
+      '\"Mwenye kuamini Mwenyezi Mungu na Siku ya Mwisho, na aseme jema au anyamaze.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith15 =>
+      '\"Anayemtunza mjane au maskini ni kama mpiganaji katika njia ya Mwenyezi Mungu.\"\n— Bukhari';
+
+  @override
+  String get hadith16 => '\"Kutabasamu kwa ndugu yako ni sadaka.\"\n— Tirmidhi';
+
+  @override
+  String get hadith17 =>
+      '\"Bora kati yenu ni yule anayejifunza Qurani na kuifundisha.\"\n— Bukhari';
+
+  @override
+  String get hadith18 =>
+      '\"Hakuna mtu aliyekula chakula bora kuliko kile alichokipata kwa kazi ya mikono yake.\"\n— Bukhari';
+
+  @override
+  String get hadith19 =>
+      '\"Mwenyezi Mungu ni mpole na anapenda upole katika kila jambo.\"\n— Bukhari & Muslim';
+
+  @override
   String historyDayCompleted(int completed, int total) {
     return '$completed kati ya $total yamekamilika';
   }

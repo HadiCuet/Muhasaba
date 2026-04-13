@@ -555,6 +555,43 @@ class AppLocalizationsAr extends AppLocalizations {
       '«المؤمن القوي خير وأحب إلى الله من المؤمن الضعيف، وفي كلٍّ خير.»\n— مسلم';
 
   @override
+  String get hadith10 =>
+      '\"من قال سبحان الله وبحمده في يوم مائة مرة حُطّت خطاياه وإن كانت مثل زبد البحر.\"\n— البخاري';
+
+  @override
+  String get hadith11 =>
+      '\"خير الدعاء دعاء يوم عرفة، وخير ما قلت أنا والنبيون من قبلي: لا إله إلا الله.\"\n— الترمذي';
+
+  @override
+  String get hadith12 =>
+      '\"من قرأ آية الكرسي دبر كل صلاة مكتوبة لم يمنعه من دخول الجنة إلا الموت.\"\n— النسائي';
+
+  @override
+  String get hadith13 => '\"الكلمة الطيبة صدقة.\"\n— البخاري ومسلم';
+
+  @override
+  String get hadith14 =>
+      '\"من كان يؤمن بالله واليوم الآخر فليقل خيرًا أو ليصمت.\"\n— البخاري ومسلم';
+
+  @override
+  String get hadith15 =>
+      '\"الساعي على الأرملة والمسكين كالمجاهد في سبيل الله.\"\n— البخاري';
+
+  @override
+  String get hadith16 => '\"تبسّمك في وجه أخيك صدقة.\"\n— الترمذي';
+
+  @override
+  String get hadith17 => '\"خيركم من تعلم القرآن وعلمه.\"\n— البخاري';
+
+  @override
+  String get hadith18 =>
+      '\"ما أكل أحد طعامًا قط خيرًا من أن يأكل من عمل يده.\"\n— البخاري';
+
+  @override
+  String get hadith19 =>
+      '\"إن الله رفيق يحب الرفق في الأمر كله.\"\n— البخاري ومسلم';
+
+  @override
   String historyDayCompleted(int completed, int total) {
     return 'تم إنجاز $completed من $total';
   }

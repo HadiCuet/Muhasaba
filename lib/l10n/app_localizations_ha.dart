@@ -547,6 +547,44 @@ class AppLocalizationsHa extends AppLocalizations {
       '\"Mumini mai karfi ya fi dacewa kuma ya fi soyuwa ga Allah fiye da mumini mai rauni, alhali akwai alheri a cikin dukkansu.\"\n— Muslim';
 
   @override
+  String get hadith10 =>
+      '\"Duk wanda ya ce \'SubhanAllahi wa bihamdihi\' sau ɗari a rana, za a gafarta masa zunubansa ko da sun kasance kamar kumfar teku.\"\n— Bukhari';
+
+  @override
+  String get hadith11 =>
+      '\"Mafi kyawun addu\'a shi ne addu\'ar ranar Arafa, kuma mafi kyawun abin da na faɗa da Annabawan da suka gabace ni shi ne: La ilaha illallah.\"\n— Tirmizi';
+
+  @override
+  String get hadith12 =>
+      '\"Duk wanda ya karanta Ayatul Kursi bayan kowace salla ta farilla, babu abin da zai hana shi shiga Aljanna sai mutuwa.\"\n— Nasa\'i';
+
+  @override
+  String get hadith13 => '\"Magana mai kyau sadaka ce.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith14 =>
+      '\"Duk wanda ya yi imani da Allah da Ranar Lahira, to ya faɗi alheri ko ya yi shiru.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith15 =>
+      '\"Mai kula da gwauruwa da miskini kamar mai jihadi a tafarkin Allah ne.\"\n— Bukhari';
+
+  @override
+  String get hadith16 => '\"Murmushinka ga ɗan\'uwanka sadaka ce.\"\n— Tirmizi';
+
+  @override
+  String get hadith17 =>
+      '\"Mafi alherinku shi ne wanda ya koyi Alƙur\'ani kuma ya koyar.\"\n— Bukhari';
+
+  @override
+  String get hadith18 =>
+      '\"Ba wanda ya ci abinci mafi kyau fiye da wanda ya samu daga aikin hannayensa.\"\n— Bukhari';
+
+  @override
+  String get hadith19 =>
+      '\"Allah Mai tausayi ne, kuma Yana son tausayi a cikin komai.\"\n— Bukhari & Muslim';
+
+  @override
   String historyDayCompleted(int completed, int total) {
     return '$completed daga $total an kammala';
   }

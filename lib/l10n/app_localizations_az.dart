@@ -548,6 +548,44 @@ class AppLocalizationsAz extends AppLocalizations {
       '\"Guclu momin, zeif mominden daha yaxsi ve Allaha daha sevimlidir, herciend her ikisinde xeyir var.\"\n— Muslim';
 
   @override
+  String get hadith10 =>
+      '\"Kim gündə yüz dəfə \'SubhanAllahi və bihamdihi\' desə, günahları bağışlanar, hətta dənizin köpüyü qədər olsa belə.\"\n— Buxari';
+
+  @override
+  String get hadith11 =>
+      '\"Ən xeyirli dua Ərəfə günü edilən duadır, məndən əvvəlki peyğəmbərlərin və mənim dediyim ən xeyirli söz: La ilahə illəllah.\"\n— Tirmizi';
+
+  @override
+  String get hadith12 =>
+      '\"Kim hər fərz namazdan sonra Ayətəl-Kürsi oxusa, onu cənnətə girməkdən yalnız ölüm saxlayar.\"\n— Nəsai';
+
+  @override
+  String get hadith13 => '\"Gözəl söz sədəqədir.\"\n— Buxari və Müslim';
+
+  @override
+  String get hadith14 =>
+      '\"Allaha və axirət gününə iman gətirən xeyir söyləsin və ya sussun.\"\n— Buxari və Müslim';
+
+  @override
+  String get hadith15 =>
+      '\"Dul qadına və miskinə baxan adam Allah yolunda mübarizə aparan kimidir.\"\n— Buxari';
+
+  @override
+  String get hadith16 => '\"Qardaşına təbəssüm etməyin sədəqədir.\"\n— Tirmizi';
+
+  @override
+  String get hadith17 =>
+      '\"Sizin ən xeyirliniz Quranı öyrənən və öyrədəndir.\"\n— Buxari';
+
+  @override
+  String get hadith18 =>
+      '\"Heç kəs öz əlinin zəhməti ilə qazandığından yaxşı yemək yeməmişdir.\"\n— Buxari';
+
+  @override
+  String get hadith19 =>
+      '\"Allah mülayimdir və hər işdə mülayimliyi sevir.\"\n— Buxari və Müslim';
+
+  @override
   String historyDayCompleted(int completed, int total) {
     return '$total-dən $completed tamamlandı';
   }

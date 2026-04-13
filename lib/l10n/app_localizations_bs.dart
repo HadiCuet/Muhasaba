@@ -548,6 +548,44 @@ class AppLocalizationsBs extends AppLocalizations {
       '\"Jaki vjernik je bolji i drazi Allahu od slabog vjernika, a u obojici je dobro.\"\n— Muslim';
 
   @override
+  String get hadith10 =>
+      '\"Ko kaže \'SubhanAllah ve bihamdihi\' stotinu puta dnevno, bit će mu oprošteni grijesi makar bili poput morske pjene.\"\n— Buhari';
+
+  @override
+  String get hadith11 =>
+      '\"Najbolja dova je dova na dan Arefata, a najbolje što sam ja i vjerovjesnici prije mene rekli je: La ilahe illallah.\"\n— Tirmizi';
+
+  @override
+  String get hadith12 =>
+      '\"Ko prouči Ajetul-Kursijj nakon svakog farz-namaza, ništa ga ne sprečava da uđe u Džennet osim smrti.\"\n— Nesai';
+
+  @override
+  String get hadith13 => '\"Lijepa riječ je sadaka.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith14 =>
+      '\"Ko vjeruje u Allaha i Sudnji dan, neka govori dobro ili neka šuti.\"\n— Buhari i Muslim';
+
+  @override
+  String get hadith15 =>
+      '\"Onaj ko se brine o udovici i siromahu je poput mudžahida na Allahovom putu.\"\n— Buhari';
+
+  @override
+  String get hadith16 => '\"Osmijeh tvom bratu je sadaka.\"\n— Tirmizi';
+
+  @override
+  String get hadith17 =>
+      '\"Najbolji među vama je onaj ko nauči Kur\'an i podučava ga.\"\n— Buhari';
+
+  @override
+  String get hadith18 =>
+      '\"Niko nije jeo bolju hranu od one koju je zaradio radom svojih ruku.\"\n— Buhari';
+
+  @override
+  String get hadith19 =>
+      '\"Allah je blag i voli blagost u svemu.\"\n— Buhari i Muslim';
+
+  @override
   String historyDayCompleted(int completed, int total) {
     return '$completed od $total završeno';
   }

@@ -546,6 +546,45 @@ class AppLocalizationsSq extends AppLocalizations {
       '\"Besimtari i forte eshte me i mire dhe me i dashur tek Allahu sesa besimtari i dobet, ndersa te dy kane te mire.\"\n— Muslimi';
 
   @override
+  String get hadith10 =>
+      '\"Kush thotë \'SubhanAllah ue bihamdihi\' njëqind herë në ditë, mëkatet e tij do të falen edhe sikur të ishin si shkuma e detit.\"\n— Buhariu';
+
+  @override
+  String get hadith11 =>
+      '\"Lutja më e mirë është ajo e ditës së Arafatit, dhe fjala më e mirë që unë dhe profetët para meje kemi thënë: La ilahe il-lAllah.\"\n— Tirmidhiu';
+
+  @override
+  String get hadith12 =>
+      '\"Kush lexon Ajetul-Kursinë pas çdo namazi farz, asgjë nuk e pengon nga hyrja në Xhenet përveç vdekjes.\"\n— Nesaiu';
+
+  @override
+  String get hadith13 => '\"Fjala e mirë është sadaka.\"\n— Buhariu & Muslimi';
+
+  @override
+  String get hadith14 =>
+      '\"Kush beson në Allahun dhe Ditën e Fundit, le të thotë fjalë të mirë ose le të heshtë.\"\n— Buhariu & Muslimi';
+
+  @override
+  String get hadith15 =>
+      '\"Ai që kujdeset për të vejën dhe të varfrin, është si luftëtar në rrugën e Allahut.\"\n— Buhariu';
+
+  @override
+  String get hadith16 =>
+      '\"Buzëqeshja ndaj vëllait tënd është sadaka.\"\n— Tirmidhiu';
+
+  @override
+  String get hadith17 =>
+      '\"Më i miri prej jush është ai që e mëson Kuranin dhe ua mëson të tjerëve.\"\n— Buhariu';
+
+  @override
+  String get hadith18 =>
+      '\"Askush nuk ka ngrënë ushqim më të mirë sesa atë që e fiton me punën e duarve të veta.\"\n— Buhariu';
+
+  @override
+  String get hadith19 =>
+      '\"Allahu është i butë dhe e do butësinë në çdo gjë.\"\n— Buhariu & Muslimi';
+
+  @override
   String historyDayCompleted(int completed, int total) {
     return '$completed nga $total të përfunduara';
   }

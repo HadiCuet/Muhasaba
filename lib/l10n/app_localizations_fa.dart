@@ -548,6 +548,44 @@ class AppLocalizationsFa extends AppLocalizations {
       '«مؤمن قوی بهتر و محبوب‌تر نزد خداوند است از مؤمن ضعیف، و در هر دو خیر هست.»\n— مسلم';
 
   @override
+  String get hadith10 =>
+      '\"هر کس روزی صد بار \'سبحان‌الله و بحمده\' بگوید، گناهانش آمرزیده می‌شود حتی اگر مانند کف دریا باشد.\"\n— بخاری';
+
+  @override
+  String get hadith11 =>
+      '\"بهترین دعا، دعای روز عرفه است و بهترین چیزی که من و پیامبران پیش از من گفته‌ایم: لا اله الا الله.\"\n— ترمذی';
+
+  @override
+  String get hadith12 =>
+      '\"هر کس پس از هر نماز واجب آیة‌الکرسی بخواند، چیزی مانع ورود او به بهشت نمی‌شود مگر مرگ.\"\n— نسائی';
+
+  @override
+  String get hadith13 => '\"سخن نیک صدقه است.\"\n— بخاری و مسلم';
+
+  @override
+  String get hadith14 =>
+      '\"هر کس به خدا و روز قیامت ایمان دارد، سخن نیک بگوید یا سکوت کند.\"\n— بخاری و مسلم';
+
+  @override
+  String get hadith15 =>
+      '\"کسی که از بیوه‌زن و مسکین مراقبت کند، مانند مجاهد در راه خداست.\"\n— بخاری';
+
+  @override
+  String get hadith16 => '\"لبخند زدن به برادرت صدقه است.\"\n— ترمذی';
+
+  @override
+  String get hadith17 =>
+      '\"بهترین شما کسی است که قرآن بیاموزد و آن را بیاموزاند.\"\n— بخاری';
+
+  @override
+  String get hadith18 =>
+      '\"هیچ‌کس غذایی بهتر از دسترنج خود نخورده است.\"\n— بخاری';
+
+  @override
+  String get hadith19 =>
+      '\"خداوند مهربان است و در همه امور مهربانی را دوست دارد.\"\n— بخاری و مسلم';
+
+  @override
   String historyDayCompleted(int completed, int total) {
     return '$completed از $total انجام شده';
   }

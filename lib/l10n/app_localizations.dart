@@ -1100,6 +1100,66 @@ abstract class AppLocalizations {
   /// **'\"The strong believer is better and more beloved to Allah than the weak believer, while there is good in both.\"\n— Muslim'**
   String get hadith9;
 
+  /// No description provided for @hadith10.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever says \'SubhanAllah wa bihamdihi\' a hundred times a day will have his sins forgiven even if they were like the foam of the sea.\"\n— Bukhari'**
+  String get hadith10;
+
+  /// No description provided for @hadith11.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The best supplication is that of the Day of Arafah, and the best thing that I and the Prophets before me said is: La ilaha illallah.\"\n— Tirmidhi'**
+  String get hadith11;
+
+  /// No description provided for @hadith12.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever recites Ayat al-Kursi after every obligatory prayer, nothing prevents him from entering Paradise except death.\"\n— Nasa\'i'**
+  String get hadith12;
+
+  /// No description provided for @hadith13.
+  ///
+  /// In en, this message translates to:
+  /// **'\"A good word is charity.\"\n— Bukhari & Muslim'**
+  String get hadith13;
+
+  /// No description provided for @hadith14.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Whoever believes in Allah and the Last Day, let him speak good or remain silent.\"\n— Bukhari & Muslim'**
+  String get hadith14;
+
+  /// No description provided for @hadith15.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The one who looks after a widow or a poor person is like a warrior in the cause of Allah.\"\n— Bukhari'**
+  String get hadith15;
+
+  /// No description provided for @hadith16.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Smiling at your brother is an act of charity.\"\n— Tirmidhi'**
+  String get hadith16;
+
+  /// No description provided for @hadith17.
+  ///
+  /// In en, this message translates to:
+  /// **'\"The best among you are those who learn the Quran and teach it.\"\n— Bukhari'**
+  String get hadith17;
+
+  /// No description provided for @hadith18.
+  ///
+  /// In en, this message translates to:
+  /// **'\"No one has eaten better food than what he earns from the work of his own hands.\"\n— Bukhari'**
+  String get hadith18;
+
+  /// No description provided for @hadith19.
+  ///
+  /// In en, this message translates to:
+  /// **'\"Allah is gentle and loves gentleness in all things.\"\n— Bukhari & Muslim'**
+  String get hadith19;
+
   /// No description provided for @historyDayCompleted.
   ///
   /// In en, this message translates to:

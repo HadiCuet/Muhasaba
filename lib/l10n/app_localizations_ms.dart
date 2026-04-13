@@ -547,6 +547,46 @@ class AppLocalizationsMs extends AppLocalizations {
       '\"Mukmin yang kuat lebih baik dan lebih dicintai Allah daripada mukmin yang lemah, dan pada kedua-duanya ada kebaikan.\"\n— Muslim';
 
   @override
+  String get hadith10 =>
+      '\"Sesiapa yang membaca \'SubhanAllah wa bihamdihi\' seratus kali sehari, dosanya akan diampunkan walaupun sebanyak buih di lautan.\"\n— Bukhari';
+
+  @override
+  String get hadith11 =>
+      '\"Doa yang terbaik ialah doa pada hari Arafah, dan sebaik-baik yang aku dan para nabi sebelumku ucapkan ialah: La ilaha illallah.\"\n— Tirmizi';
+
+  @override
+  String get hadith12 =>
+      '\"Sesiapa yang membaca Ayat Kursi selepas setiap solat fardhu, tiada yang menghalangnya daripada masuk syurga kecuali kematian.\"\n— Nasa\'i';
+
+  @override
+  String get hadith13 =>
+      '\"Perkataan yang baik adalah sedekah.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith14 =>
+      '\"Sesiapa yang beriman kepada Allah dan hari akhirat, hendaklah berkata baik atau berdiam diri.\"\n— Bukhari & Muslim';
+
+  @override
+  String get hadith15 =>
+      '\"Orang yang menjaga janda dan orang miskin adalah seperti pejuang di jalan Allah.\"\n— Bukhari';
+
+  @override
+  String get hadith16 =>
+      '\"Senyumanmu kepada saudaramu adalah sedekah.\"\n— Tirmizi';
+
+  @override
+  String get hadith17 =>
+      '\"Sebaik-baik kamu adalah yang mempelajari al-Quran dan mengajarkannya.\"\n— Bukhari';
+
+  @override
+  String get hadith18 =>
+      '\"Tiada makanan yang lebih baik daripada hasil usaha tangannya sendiri.\"\n— Bukhari';
+
+  @override
+  String get hadith19 =>
+      '\"Allah itu lembut dan menyukai kelembutan dalam segala perkara.\"\n— Bukhari & Muslim';
+
+  @override
   String historyDayCompleted(int completed, int total) {
     return '$completed daripada $total selesai';
   }

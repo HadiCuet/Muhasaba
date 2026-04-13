@@ -550,6 +550,45 @@ class AppLocalizationsUz extends AppLocalizations {
       '\"Kuchli mo\'min Alloh uchun zaif mo\'mindan yaxshiroq va sevimli, garchi ikkalasida ham yaxshilik bor.\"\n— Muslim';
 
   @override
+  String get hadith10 =>
+      '\"Kim kuniga yuz marta \'SubhanAllohi va bihamdihi\' desa, uning gunohlari kechiriladi, hatto dengiz ko\'pigi kabi bo\'lsa ham.\"\n— Buxoriy';
+
+  @override
+  String get hadith11 =>
+      '\"Eng yaxshi duo — Arafa kunidagi duo, men va mendan oldingi payg\'ambarlar aytgan eng yaxshi so\'z: La ilaha illalloh.\"\n— Termiziy';
+
+  @override
+  String get hadith12 =>
+      '\"Kim har farz namazdan keyin Oyat al-Kursiy o\'qisa, uni jannatga kirishdan faqat o\'lim to\'sqinlik qiladi.\"\n— Nasoiy';
+
+  @override
+  String get hadith13 => '\"Yaxshi so\'z sadaqadir.\"\n— Buxoriy va Muslim';
+
+  @override
+  String get hadith14 =>
+      '\"Allohga va oxirat kuniga ishongan kishi yaxshi so\'z aytsin yoki sukut saqlasin.\"\n— Buxoriy va Muslim';
+
+  @override
+  String get hadith15 =>
+      '\"Beva va miskinlarga g\'amxo\'rlik qiluvchi Alloh yo\'lida kurashuvchi kabidur.\"\n— Buxoriy';
+
+  @override
+  String get hadith16 =>
+      '\"Birodaringga tabassum qilishing sadaqadir.\"\n— Termiziy';
+
+  @override
+  String get hadith17 =>
+      '\"Sizlarning eng yaxshingiz Qur\'onni o\'rganuvchi va o\'rgatuvchidur.\"\n— Buxoriy';
+
+  @override
+  String get hadith18 =>
+      '\"Hech kim o\'z qo\'li mehnati bilan topganidan yaxshiroq taom yemagan.\"\n— Buxoriy';
+
+  @override
+  String get hadith19 =>
+      '\"Alloh yumshoq va har ishda yumshoqlikni sevadi.\"\n— Buxoriy va Muslim';
+
+  @override
   String historyDayCompleted(int completed, int total) {
     return '$total dan $completed bajarildi';
   }
