@@ -206,6 +206,12 @@ class AppLocalizationsSo extends AppLocalizations {
   String get categoryNew => '+ Cusub';
 
   @override
+  String get categoryNewSheetTitle => 'Qayb cusub';
+
+  @override
+  String get categoryEditSheetTitle => 'Tafatir qaybta';
+
+  @override
   String get addAmal => 'Ku dar camal';
 
   @override

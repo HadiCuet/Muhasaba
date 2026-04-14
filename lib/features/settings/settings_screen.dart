@@ -1,6 +1,7 @@
 import 'dart:async';
 import 'dart:math';
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -63,7 +64,13 @@ class _SettingsList extends StatelessWidget {
                   context,
                   settings.rolloverHour,
                 );
-                if (picked != null) await repo.setRolloverHour(picked);
+                if (picked != null) {
+                  await repo.setRolloverHour(picked);
+                  FirebaseAnalytics.instance.logEvent(
+                    name: 'rollover_hour_changed',
+                    parameters: {'hour': picked},
+                  );
+                }
               },
             ),
             _SettingsItem(
@@ -76,7 +83,13 @@ class _SettingsList extends StatelessWidget {
                   context,
                   settings.startOfWeek,
                 );
-                if (picked != null) await repo.setStartOfWeek(picked);
+                if (picked != null) {
+                  await repo.setStartOfWeek(picked);
+                  FirebaseAnalytics.instance.logEvent(
+                    name: 'start_of_week_changed',
+                    parameters: {'weekday': picked},
+                  );
+                }
               },
             ),
           ],
@@ -97,7 +110,13 @@ class _SettingsList extends StatelessWidget {
                   context,
                   settings.themeMode,
                 );
-                if (picked != null) await repo.setThemeMode(picked);
+                if (picked != null) {
+                  await repo.setThemeMode(picked);
+                  FirebaseAnalytics.instance.logEvent(
+                    name: 'theme_changed',
+                    parameters: {'mode': picked.name},
+                  );
+                }
               },
             ),
             _SettingsItem(
@@ -109,6 +128,10 @@ class _SettingsList extends StatelessWidget {
                 final picked = await _pickLanguage(context, settings.locale);
                 if (picked != null) {
                   await repo.setLocale(picked == '_system' ? null : picked);
+                  FirebaseAnalytics.instance.logEvent(
+                    name: 'language_changed',
+                    parameters: {'locale': picked},
+                  );
                 }
               },
             ),

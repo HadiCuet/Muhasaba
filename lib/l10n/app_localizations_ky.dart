@@ -204,6 +204,12 @@ class AppLocalizationsKy extends AppLocalizations {
   String get categoryNew => '+ Жаңы';
 
   @override
+  String get categoryNewSheetTitle => 'Жаңы категория';
+
+  @override
+  String get categoryEditSheetTitle => 'Категорияны өзгөртүү';
+
+  @override
   String get addAmal => 'Амал кошуу';
 
   @override

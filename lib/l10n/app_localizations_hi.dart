@@ -203,6 +203,12 @@ class AppLocalizationsHi extends AppLocalizations {
   String get categoryNew => '+ नई';
 
   @override
+  String get categoryNewSheetTitle => 'नई श्रेणी';
+
+  @override
+  String get categoryEditSheetTitle => 'श्रेणी संपादित करें';
+
+  @override
   String get addAmal => 'अमल जोड़ें';
 
   @override

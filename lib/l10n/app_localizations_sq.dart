@@ -202,6 +202,12 @@ class AppLocalizationsSq extends AppLocalizations {
   String get categoryNew => '+ E re';
 
   @override
+  String get categoryNewSheetTitle => 'Kategori e re';
+
+  @override
+  String get categoryEditSheetTitle => 'Ndrysho kategorinë';
+
+  @override
   String get addAmal => 'Shto Amal';
 
   @override

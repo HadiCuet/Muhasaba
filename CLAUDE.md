@@ -77,7 +77,7 @@ import '../../l10n/app_localizations.dart';  // relative from feature files
 
 ## Constraints
 
-- Local-only app — no backend, no cloud sync, no auth
+- Local-only data — no backend, no cloud sync, no auth. Anonymous telemetry (Firebase Analytics + Crashlytics) is sent in release builds only; Crashlytics is disabled in debug via `setCrashlyticsCollectionEnabled(!kDebugMode)` in `main.dart`.
 - No test files — user does not want them
 - Prefer libraries with good iOS parity and offline support
 - Keep Islamic content respectful and accurate to mainstream practice

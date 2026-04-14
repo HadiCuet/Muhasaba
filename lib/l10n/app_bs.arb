@@ -60,6 +60,8 @@
   "emojiSectionGeneral": "Opce",
   "categoryNameHint": "Naziv",
   "categoryNew": "+ Novo",
+  "categoryNewSheetTitle": "Nova kategorija",
+  "categoryEditSheetTitle": "Uredi kategoriju",
   "addAmal": "Dodaj amel",
   "customAmal": "Prilagodeni amel",
   "templateTasbih": "Tespih 33x",

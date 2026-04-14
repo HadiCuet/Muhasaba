@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_timezone/flutter_timezone.dart';
@@ -90,7 +91,12 @@ class _LocalReminderScheduler extends ReminderScheduler {
         badge: true,
         sound: true,
       );
-      return granted ?? false;
+      final result = granted ?? false;
+      FirebaseAnalytics.instance.logEvent(
+        name: 'notification_permission_result',
+        parameters: {'platform': 'ios', 'granted': result ? 1 : 0},
+      );
+      return result;
     }
 
     final android = _plugin
@@ -99,7 +105,12 @@ class _LocalReminderScheduler extends ReminderScheduler {
         >();
     if (android != null) {
       final granted = await android.requestNotificationsPermission();
-      return granted ?? true;
+      final result = granted ?? true;
+      FirebaseAnalytics.instance.logEvent(
+        name: 'notification_permission_result',
+        parameters: {'platform': 'android', 'granted': result ? 1 : 0},
+      );
+      return result;
     }
 
     return true;

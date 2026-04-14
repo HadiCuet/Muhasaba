@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "525146256049",
+    "project_id": "muhasaba-dev",
+    "storage_bucket": "muhasaba-dev.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:525146256049:android:21db500909a9f24ac76890",
+        "android_client_info": {
+          "package_name": "dev.hadi.muhasaba"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAi9mGguacIdCUG7GBR6C4stKj0d6_iRYE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

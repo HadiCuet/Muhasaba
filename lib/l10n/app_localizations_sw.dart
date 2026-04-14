@@ -202,6 +202,12 @@ class AppLocalizationsSw extends AppLocalizations {
   String get categoryNew => '+ Mpya';
 
   @override
+  String get categoryNewSheetTitle => 'Kategoria mpya';
+
+  @override
+  String get categoryEditSheetTitle => 'Hariri kategoria';
+
+  @override
   String get addAmal => 'Ongeza Amali';
 
   @override

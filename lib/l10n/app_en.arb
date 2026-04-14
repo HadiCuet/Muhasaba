@@ -98,6 +98,8 @@
   "emojiSectionGeneral": "General",
   "categoryNameHint": "Name",
   "categoryNew": "+ New",
+  "categoryNewSheetTitle": "New category",
+  "categoryEditSheetTitle": "Edit category",
   "addAmal": "Add Amal",
   "customAmal": "Custom Amal",
   "templateTasbih": "Tasbih 33x",

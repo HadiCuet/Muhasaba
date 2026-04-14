@@ -205,6 +205,12 @@ class AppLocalizationsId extends AppLocalizations {
   String get categoryNew => '+ Baru';
 
   @override
+  String get categoryNewSheetTitle => 'Kategori baru';
+
+  @override
+  String get categoryEditSheetTitle => 'Ubah kategori';
+
+  @override
   String get addAmal => 'Tambah Amal';
 
   @override

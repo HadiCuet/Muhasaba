@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -106,10 +107,18 @@ class StatsFilterRow extends ConsumerWidget {
             customStart: () => range.start,
             customEnd: () => range.end,
           ));
+          FirebaseAnalytics.instance.logEvent(
+            name: 'stats_period_changed',
+            parameters: {'period': 'custom'},
+          );
         }
       } else {
         ref.read(statsFilterProvider.notifier).update(
             filter.copyWith(period: value));
+        FirebaseAnalytics.instance.logEvent(
+          name: 'stats_period_changed',
+          parameters: {'period': value.name},
+        );
       }
     });
   }
@@ -229,6 +238,10 @@ class _CategoryDropdown extends ConsumerWidget {
           ref.read(statsFilterProvider.notifier).update(filter.copyWith(
             category: () => newCategory,
           ));
+          FirebaseAnalytics.instance.logEvent(
+            name: 'stats_category_filter_changed',
+            parameters: {'active': newCategory != null ? 1 : 0},
+          );
         });
       },
     );
@@ -309,6 +322,10 @@ class _AmalDropdown extends ConsumerWidget {
           ref.read(statsFilterProvider.notifier).update(filter.copyWith(
             amalId: () => newAmalId,
           ));
+          FirebaseAnalytics.instance.logEvent(
+            name: 'stats_amal_filter_changed',
+            parameters: {'active': newAmalId != null ? 1 : 0},
+          );
         });
       },
     );

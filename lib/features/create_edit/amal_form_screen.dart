@@ -1,4 +1,5 @@
 import 'package:drift/drift.dart' show Value;
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -31,6 +32,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
 
   String? _icon;
   String? _category;
+  bool _iconIsManual = false;
   Frequency _frequency = Frequency.daily;
   int _target = 1;
   int? _weeklyDay = DateTime.friday;
@@ -50,6 +52,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
     } else if (widget.prefill != null) {
       final t = widget.prefill!;
       _icon = t.icon;
+      _iconIsManual = true;
       _titleController.text = t.title;
       _category = t.category;
       _frequency = t.frequency;
@@ -68,6 +71,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
       if (row != null) {
         _titleController.text = row.title;
         _icon = row.icon;
+        _iconIsManual = row.icon != null;
         _category = row.category;
         _frequency = row.frequency;
         _target = row.target;
@@ -95,7 +99,10 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
   Future<void> _pickIcon() async {
     final picked = await showEmojiPicker(context, ref, current: _icon);
     if (picked != null) {
-      setState(() => _icon = picked.isEmpty ? null : picked);
+      setState(() {
+        _icon = picked.isEmpty ? null : picked;
+        _iconIsManual = picked.isNotEmpty; // "None" resumes flowing
+      });
     }
   }
 
@@ -123,6 +130,14 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
             icon: _icon,
             category: _category,
           );
+      FirebaseAnalytics.instance.logEvent(
+        name: 'amal_created',
+        parameters: {
+          'frequency': _frequency.name,
+          'has_reminder': reminder != null ? 1 : 0,
+          'category': ?_category,
+        },
+      );
     } else {
       await ref
           .read(appDatabaseProvider)
@@ -145,6 +160,14 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
             ),
           );
       amalId = _existing!.id;
+      FirebaseAnalytics.instance.logEvent(
+        name: 'amal_edited',
+        parameters: {
+          'frequency': _frequency.name,
+          'has_reminder': reminder != null ? 1 : 0,
+          'category': ?_category,
+        },
+      );
     }
 
     // Refresh recent icons after saving.
@@ -154,6 +177,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
     // reminder.
     final scheduler = ref.read(reminderSchedulerProvider);
     final parsed = parseReminderTime(reminder);
+    final hadPreviousReminder = _existing?.reminderTime != null;
     String? permissionMessage;
     if (parsed != null) {
       final granted = await scheduler.requestPermissions();
@@ -164,11 +188,24 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
           hour: parsed.hour,
           minute: parsed.minute,
         );
+        FirebaseAnalytics.instance.logEvent(
+          name: 'reminder_scheduled',
+          parameters: {
+            'hour': parsed.hour,
+            'had_previous_reminder': hadPreviousReminder ? 1 : 0,
+          },
+        );
       } else {
         permissionMessage = permWarning;
       }
     } else {
       await scheduler.cancel(amalId);
+      if (hadPreviousReminder) {
+        FirebaseAnalytics.instance.logEvent(
+          name: 'reminder_canceled',
+          parameters: {'source': 'form_edit'},
+        );
+      }
     }
 
     if (!mounted) return;
@@ -261,7 +298,20 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
             const SizedBox(height: 8),
             CategoryPicker(
               selected: _category,
-              onChanged: (c) => setState(() => _category = c),
+              onChanged: (c) => setState(() {
+                _category = c;
+                if (!_iconIsManual) {
+                  if (c == null) {
+                    _icon = null;
+                  } else {
+                    final cats = ref.read(categoriesProvider).value ?? const [];
+                    _icon = cats
+                        .cast<CategoryRow?>()
+                        .firstWhere((x) => x?.name == c, orElse: () => null)
+                        ?.icon;
+                  }
+                }
+              }),
             ),
             const SizedBox(height: 16),
 

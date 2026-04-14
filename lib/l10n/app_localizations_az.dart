@@ -204,6 +204,12 @@ class AppLocalizationsAz extends AppLocalizations {
   String get categoryNew => '+ Yeni';
 
   @override
+  String get categoryNewSheetTitle => 'Yeni kateqoriya';
+
+  @override
+  String get categoryEditSheetTitle => 'Kateqoriyanı redaktə et';
+
+  @override
   String get addAmal => 'Emel elave et';
 
   @override

@@ -500,6 +500,18 @@ abstract class AppLocalizations {
   /// **'+ New'**
   String get categoryNew;
 
+  /// No description provided for @categoryNewSheetTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New category'**
+  String get categoryNewSheetTitle;
+
+  /// No description provided for @categoryEditSheetTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit category'**
+  String get categoryEditSheetTitle;
+
   /// No description provided for @addAmal.
   ///
   /// In en, this message translates to:

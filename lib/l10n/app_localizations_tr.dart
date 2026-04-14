@@ -205,6 +205,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get categoryNew => '+ Yeni';
 
   @override
+  String get categoryNewSheetTitle => 'Yeni kategori';
+
+  @override
+  String get categoryEditSheetTitle => 'Kategoriyi düzenle';
+
+  @override
   String get addAmal => 'Amel Ekle';
 
   @override

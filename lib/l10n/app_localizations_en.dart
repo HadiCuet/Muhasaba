@@ -203,6 +203,12 @@ class AppLocalizationsEn extends AppLocalizations {
   String get categoryNew => '+ New';
 
   @override
+  String get categoryNewSheetTitle => 'New category';
+
+  @override
+  String get categoryEditSheetTitle => 'Edit category';
+
+  @override
   String get addAmal => 'Add Amal';
 
   @override

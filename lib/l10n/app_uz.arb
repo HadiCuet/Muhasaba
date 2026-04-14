@@ -60,6 +60,8 @@
   "emojiSectionGeneral": "Umumiy",
   "categoryNameHint": "Nomi",
   "categoryNew": "+ Yangi",
+  "categoryNewSheetTitle": "Yangi turkum",
+  "categoryEditSheetTitle": "Turkumni tahrirlash",
   "addAmal": "Amal qo'shish",
   "customAmal": "Maxsus amal",
   "templateTasbih": "Tasbih 33x",

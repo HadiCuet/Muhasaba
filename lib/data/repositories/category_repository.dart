@@ -10,7 +10,12 @@ class CategoryRepository {
   Stream<List<CategoryRow>> watchAll() => _dao.watchAll();
   Future<List<CategoryRow>> getAll() => _dao.getAll();
 
-  Future<void> create(String name) => _dao.insertCategory(name);
+  Future<void> create(String name, {String? icon}) =>
+      _dao.insertCategory(name, icon: icon);
+
+  /// Updates the icon of an existing category. Passing `null` clears it.
+  Future<void> updateIcon(String name, String? icon) =>
+      _dao.updateIcon(name, icon);
 
   /// Removes a category from the pick-list. Existing amal keep their
   /// category text — only the suggestion chip disappears.

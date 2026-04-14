@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -39,6 +40,10 @@ class TodayScreen extends ConsumerWidget {
             onPressed: () {
               final next = viewMode == 'flat' ? 'grouped' : 'flat';
               ref.read(settingsRepositoryProvider).setTodayViewMode(next);
+              FirebaseAnalytics.instance.logEvent(
+                name: 'today_view_mode_changed',
+                parameters: {'mode': next},
+              );
             },
           ),
         ],
@@ -129,6 +134,11 @@ class _FlatView extends ConsumerWidget {
 
     ref.read(amalRepositoryProvider).reorder(idToSortOrder);
     ref.invalidate(todayRowsProvider(date));
+
+    FirebaseAnalytics.instance.logEvent(
+      name: 'amal_reordered',
+      parameters: {'item_count': reordered.length},
+    );
   }
 }
 
@@ -237,6 +247,15 @@ Future<void> _setNote(
       .read(completionRepositoryProvider)
       .setNote(amalId: row.amal.id, muhasabaDate: date, note: note);
   ref.invalidate(todayRowsProvider(date));
+
+  // Only log actual saves (not clears). Don't include note content.
+  if (note != null && note.isNotEmpty) {
+    final hadPrev = row.note != null && row.note!.isNotEmpty;
+    FirebaseAnalytics.instance.logEvent(
+      name: 'amal_note_saved',
+      parameters: {'had_previous_note': hadPrev ? 1 : 0},
+    );
+  }
 }
 
 Future<void> _setProgress(
@@ -245,6 +264,8 @@ Future<void> _setProgress(
   DateTime date,
   int progress,
 ) async {
+  final wasCompleted = row.isCompleted;
+  final nowCompleted = progress >= row.amal.target;
   await ref
       .read(completionRepositoryProvider)
       .setProgress(
@@ -253,6 +274,20 @@ Future<void> _setProgress(
         progress: progress,
         target: row.amal.target,
       );
+  if (!wasCompleted && nowCompleted) {
+    FirebaseAnalytics.instance.logEvent(
+      name: 'amal_completed',
+      parameters: {
+        'frequency': row.amal.frequency.name,
+        'target': row.amal.target,
+      },
+    );
+  } else if (wasCompleted && !nowCompleted) {
+    FirebaseAnalytics.instance.logEvent(
+      name: 'amal_uncompleted',
+      parameters: {'frequency': row.amal.frequency.name},
+    );
+  }
   ref.invalidate(todayRowsProvider(date));
   ref.invalidate(statsSnapshotProvider);
   ref.invalidate(currentStreaksProvider);
@@ -270,9 +305,23 @@ Future<void> _openRemoveSheet(
       await ref
           .read(completionRepositoryProvider)
           .removeFromDay(row.amal.id, date);
+      FirebaseAnalytics.instance.logEvent(
+        name: 'amal_removed',
+        parameters: {'scope': 'today'},
+      );
     case RemoveChoice.tracking:
       await ref.read(amalRepositoryProvider).removeFromTracking(row.amal.id);
       await ref.read(reminderSchedulerProvider).cancel(row.amal.id);
+      FirebaseAnalytics.instance.logEvent(
+        name: 'amal_removed',
+        parameters: {'scope': 'tracking'},
+      );
+      if (row.amal.reminderTime != null) {
+        FirebaseAnalytics.instance.logEvent(
+          name: 'reminder_canceled',
+          parameters: {'source': 'tracking_removed'},
+        );
+      }
     case RemoveChoice.cancel:
       return;
   }

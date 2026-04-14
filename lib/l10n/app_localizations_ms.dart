@@ -203,6 +203,12 @@ class AppLocalizationsMs extends AppLocalizations {
   String get categoryNew => '+ Baharu';
 
   @override
+  String get categoryNewSheetTitle => 'Kategori baharu';
+
+  @override
+  String get categoryEditSheetTitle => 'Edit kategori';
+
+  @override
   String get addAmal => 'Tambah Amal';
 
   @override

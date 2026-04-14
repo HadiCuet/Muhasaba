@@ -60,6 +60,8 @@
   "emojiSectionGeneral": "Umum",
   "categoryNameHint": "Nama",
   "categoryNew": "+ Baru",
+  "categoryNewSheetTitle": "Kategori baru",
+  "categoryEditSheetTitle": "Ubah kategori",
   "addAmal": "Tambah Amal",
   "customAmal": "Amal Kustom",
   "templateTasbih": "Tasbih 33x",

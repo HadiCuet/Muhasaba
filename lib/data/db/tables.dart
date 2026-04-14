@@ -28,6 +28,7 @@ class Amals extends Table {
 class Categories extends Table {
   TextColumn get name => text()();
   IntColumn get sortOrder => integer().withDefault(const Constant(0))();
+  TextColumn get icon => text().nullable()(); // emoji, e.g. "🕌"
 
   @override
   Set<Column> get primaryKey => {name};

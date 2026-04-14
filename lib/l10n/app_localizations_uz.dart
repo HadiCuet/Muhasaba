@@ -206,6 +206,12 @@ class AppLocalizationsUz extends AppLocalizations {
   String get categoryNew => '+ Yangi';
 
   @override
+  String get categoryNewSheetTitle => 'Yangi turkum';
+
+  @override
+  String get categoryEditSheetTitle => 'Turkumni tahrirlash';
+
+  @override
   String get addAmal => 'Amal qo\'shish';
 
   @override

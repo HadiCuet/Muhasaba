@@ -204,6 +204,12 @@ class AppLocalizationsTk extends AppLocalizations {
   String get categoryNew => '+ Taze';
 
   @override
+  String get categoryNewSheetTitle => 'Täze kategoriýa';
+
+  @override
+  String get categoryEditSheetTitle => 'Kategoriýany redaktirlemek';
+
+  @override
   String get addAmal => 'Amal gosmak';
 
   @override

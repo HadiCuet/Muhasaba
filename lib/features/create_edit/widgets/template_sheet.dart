@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 
@@ -134,7 +135,16 @@ class _TemplateCard extends StatelessWidget {
       borderRadius: BorderRadius.circular(12),
       child: InkWell(
         borderRadius: BorderRadius.circular(12),
-        onTap: () => Navigator.pop(context, template),
+        onTap: () {
+          FirebaseAnalytics.instance.logEvent(
+            name: 'amal_template_selected',
+            parameters: {
+              'template_id': template.title,
+              'category': template.category,
+            },
+          );
+          Navigator.pop(context, template);
+        },
         child: Padding(
           padding: const EdgeInsets.all(12),
           child: Column(

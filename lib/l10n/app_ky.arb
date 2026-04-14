@@ -60,6 +60,8 @@
   "emojiSectionGeneral": "Жалпы",
   "categoryNameHint": "Аты",
   "categoryNew": "+ Жаңы",
+  "categoryNewSheetTitle": "Жаңы категория",
+  "categoryEditSheetTitle": "Категорияны өзгөртүү",
   "addAmal": "Амал кошуу",
   "customAmal": "Өзгөчө амал",
   "templateTasbih": "Тасбих 33x",

@@ -202,6 +202,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get categoryNew => '+ جديدة';
 
   @override
+  String get categoryNewSheetTitle => 'فئة جديدة';
+
+  @override
+  String get categoryEditSheetTitle => 'تعديل الفئة';
+
+  @override
   String get addAmal => 'إضافة عمل';
 
   @override

@@ -204,6 +204,12 @@ class AppLocalizationsFa extends AppLocalizations {
   String get categoryNew => '+ جدید';
 
   @override
+  String get categoryNewSheetTitle => 'دسته جدید';
+
+  @override
+  String get categoryEditSheetTitle => 'ویرایش دسته';
+
+  @override
   String get addAmal => 'افزودن عمل';
 
   @override

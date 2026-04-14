@@ -23,14 +23,25 @@ class CategoryDao extends DatabaseAccessor<AppDatabase>
     )..orderBy([(c) => OrderingTerm.asc(c.sortOrder)])).get();
   }
 
-  Future<int> insertCategory(String name) async {
+  Future<int> insertCategory(String name, {String? icon}) async {
     final maxOrder = await customSelect(
       'SELECT COALESCE(MAX(sort_order), -1) AS m FROM categories',
     ).getSingle();
     final nextOrder = (maxOrder.read<int>('m')) + 1;
     return into(categories).insert(
-      CategoriesCompanion.insert(name: name, sortOrder: Value(nextOrder)),
+      CategoriesCompanion.insert(
+        name: name,
+        sortOrder: Value(nextOrder),
+        icon: Value(icon),
+      ),
       mode: InsertMode.insertOrIgnore,
+    );
+  }
+
+  /// Updates the icon of an existing category. Passing `null` clears it.
+  Future<void> updateIcon(String name, String? icon) {
+    return (update(categories)..where((c) => c.name.equals(name))).write(
+      CategoriesCompanion(icon: Value(icon)),
     );
   }
 

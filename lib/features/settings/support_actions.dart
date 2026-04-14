@@ -1,6 +1,7 @@
 import 'dart:io' show Platform;
 
 import 'package:device_info_plus/device_info_plus.dart';
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:in_app_review/in_app_review.dart';
@@ -21,6 +22,7 @@ const String _subjectFeature = 'Muhasaba — Feature Request';
 /// App Store listing, and finally a SnackBar with the support email if
 /// neither is available (e.g. simulator, or app not yet published).
 Future<void> requestAppReview(BuildContext context) async {
+  FirebaseAnalytics.instance.logEvent(name: 'rate_app_tapped');
   final review = InAppReview.instance;
   try {
     if (await review.isAvailable()) {
@@ -39,6 +41,10 @@ Future<void> requestAppReview(BuildContext context) async {
 /// with a blank contact email. The sheet sits as a modal over the current
 /// screen — the user stays in the app.
 Future<void> sendContactEmail(BuildContext context) async {
+  FirebaseAnalytics.instance.logEvent(
+    name: 'support_email_opened',
+    parameters: {'topic': 'contact'},
+  );
   final ok = await _sendEmail(subject: _subjectContact);
   if (!ok && context.mounted) _showFallbackSnackBar(context);
 }
@@ -46,6 +52,10 @@ Future<void> sendContactEmail(BuildContext context) async {
 /// Opens the native mail compose sheet pre-filled with app version and
 /// device info for a bug report.
 Future<void> sendBugReportEmail(BuildContext context) async {
+  FirebaseAnalytics.instance.logEvent(
+    name: 'support_email_opened',
+    parameters: {'topic': 'bug'},
+  );
   final body = await _buildDeviceInfoBody();
   final ok = await _sendEmail(subject: _subjectBug, body: body);
   if (!ok && context.mounted) _showFallbackSnackBar(context);
@@ -53,6 +63,10 @@ Future<void> sendBugReportEmail(BuildContext context) async {
 
 /// Opens the native mail compose sheet with a blank feature request email.
 Future<void> sendFeatureRequestEmail(BuildContext context) async {
+  FirebaseAnalytics.instance.logEvent(
+    name: 'support_email_opened',
+    parameters: {'topic': 'feature'},
+  );
   final ok = await _sendEmail(subject: _subjectFeature);
   if (!ok && context.mounted) _showFallbackSnackBar(context);
 }

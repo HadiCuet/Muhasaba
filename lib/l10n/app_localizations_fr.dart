@@ -205,6 +205,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get categoryNew => '+ Nouveau';
 
   @override
+  String get categoryNewSheetTitle => 'Nouvelle catégorie';
+
+  @override
+  String get categoryEditSheetTitle => 'Modifier la catégorie';
+
+  @override
   String get addAmal => 'Ajouter un amal';
 
   @override

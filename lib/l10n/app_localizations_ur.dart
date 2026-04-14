@@ -204,6 +204,12 @@ class AppLocalizationsUr extends AppLocalizations {
   String get categoryNew => '+ نیا';
 
   @override
+  String get categoryNewSheetTitle => 'نئی قسم';
+
+  @override
+  String get categoryEditSheetTitle => 'قسم میں ترمیم کریں';
+
+  @override
   String get addAmal => 'عمل شامل کریں';
 
   @override

@@ -203,6 +203,12 @@ class AppLocalizationsBn extends AppLocalizations {
   String get categoryNew => '+ নতুন';
 
   @override
+  String get categoryNewSheetTitle => 'নতুন বিভাগ';
+
+  @override
+  String get categoryEditSheetTitle => 'বিভাগ সম্পাদনা';
+
+  @override
   String get addAmal => 'আমল যোগ করুন';
 
   @override

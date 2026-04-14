@@ -203,6 +203,12 @@ class AppLocalizationsPs extends AppLocalizations {
   String get categoryNew => '+ نوی';
 
   @override
+  String get categoryNewSheetTitle => 'نوې کټګورۍ';
+
+  @override
+  String get categoryEditSheetTitle => 'کټګورۍ سمول';
+
+  @override
   String get addAmal => 'عمل اضافه کول';
 
   @override

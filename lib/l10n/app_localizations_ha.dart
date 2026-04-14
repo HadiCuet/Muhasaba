@@ -203,6 +203,12 @@ class AppLocalizationsHa extends AppLocalizations {
   String get categoryNew => '+ Sabo';
 
   @override
+  String get categoryNewSheetTitle => 'Sabon rukuni';
+
+  @override
+  String get categoryEditSheetTitle => 'Gyara rukuni';
+
+  @override
   String get addAmal => 'Kara Amali';
 
   @override

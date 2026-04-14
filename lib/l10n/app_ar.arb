@@ -60,6 +60,8 @@
   "emojiSectionGeneral": "عام",
   "categoryNameHint": "الاسم",
   "categoryNew": "+ جديدة",
+  "categoryNewSheetTitle": "فئة جديدة",
+  "categoryEditSheetTitle": "تعديل الفئة",
   "addAmal": "إضافة عمل",
   "customAmal": "عمل مخصص",
   "templateTasbih": "تسبيح 33 مرة",

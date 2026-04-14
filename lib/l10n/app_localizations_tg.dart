@@ -206,6 +206,12 @@ class AppLocalizationsTg extends AppLocalizations {
   String get categoryNew => '+ Нав';
 
   @override
+  String get categoryNewSheetTitle => 'Категорияи нав';
+
+  @override
+  String get categoryEditSheetTitle => 'Таҳрири категория';
+
+  @override
   String get addAmal => 'Илова кардани амал';
 
   @override

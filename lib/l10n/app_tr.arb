@@ -60,6 +60,8 @@
   "emojiSectionGeneral": "Genel",
   "categoryNameHint": "Ad",
   "categoryNew": "+ Yeni",
+  "categoryNewSheetTitle": "Yeni kategori",
+  "categoryEditSheetTitle": "Kategoriyi düzenle",
   "addAmal": "Amel Ekle",
   "customAmal": "Özel Amel",
   "templateTasbih": "Tesbih 33x",

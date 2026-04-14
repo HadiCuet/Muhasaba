@@ -1,3 +1,4 @@
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import '../l10n/app_localizations.dart';
 import 'package:go_router/go_router.dart';
@@ -16,7 +17,10 @@ class AppShell extends StatelessWidget {
       body: navigationShell,
       floatingActionButton: navigationShell.currentIndex == 0
           ? FloatingActionButton.extended(
-              onPressed: () => context.push('/amal/new'),
+              onPressed: () {
+                FirebaseAnalytics.instance.logEvent(name: 'new_amal_started');
+                context.push('/amal/new');
+              },
               icon: const Icon(Icons.add),
               label: Text(l.newAmal),
             )

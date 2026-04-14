@@ -20,16 +20,56 @@ Future<void> seedInitialAmals(AppDatabase db) async {
   });
 }
 
-/// Seeds the default categories. Called from both onCreate and v2 migration.
+/// Seeds the default categories. Called from both `onCreate` and the v1 → v3
+/// upgrade path. Uses `insertOrIgnore` so it's safe to call even when the
+/// rows already exist (e.g. when a prior partial migration had already
+/// created the table and seeded it).
+///
+/// Fresh installs on schemaVersion ≥ 3 get icons alongside the names. The
+/// v2 → v3 upgrade path doesn't call this — it relies on
+/// [assignSeedCategoryIcons] to backfill icons on the existing rows.
 Future<void> seedCategories(AppDatabase db) async {
   await db.batch((b) {
     b.insertAll(db.categories, [
-      CategoriesCompanion.insert(name: 'Salah', sortOrder: const Value(0)),
-      CategoriesCompanion.insert(name: 'Dhikr', sortOrder: const Value(1)),
-      CategoriesCompanion.insert(name: 'Quran', sortOrder: const Value(2)),
-      CategoriesCompanion.insert(name: 'Charity', sortOrder: const Value(3)),
-    ]);
+      CategoriesCompanion.insert(
+        name: 'Salah',
+        sortOrder: const Value(0),
+        icon: const Value('🕌'),
+      ),
+      CategoriesCompanion.insert(
+        name: 'Dhikr',
+        sortOrder: const Value(1),
+        icon: const Value('📿'),
+      ),
+      CategoriesCompanion.insert(
+        name: 'Quran',
+        sortOrder: const Value(2),
+        icon: const Value('📖'),
+      ),
+      CategoriesCompanion.insert(
+        name: 'Charity',
+        sortOrder: const Value(3),
+        icon: const Value('💰'),
+      ),
+    ], mode: InsertMode.insertOrIgnore);
   });
+}
+
+/// Assigns icons to the four seeded categories for existing installs that
+/// upgraded from v2 (where `icon` didn't exist). The `IS NULL` guard means
+/// we don't clobber any icon a user might have already set via the editor.
+Future<void> assignSeedCategoryIcons(AppDatabase db) async {
+  const mapping = <String, String>{
+    'Salah': '🕌',
+    'Dhikr': '📿',
+    'Quran': '📖',
+    'Charity': '💰',
+  };
+  for (final entry in mapping.entries) {
+    await (db.update(db.categories)
+          ..where((c) => c.name.equals(entry.key) & c.icon.isNull()))
+        .write(CategoriesCompanion(icon: Value(entry.value)));
+  }
 }
 
 /// Assigns icons and categories to existing seed amal (v1→v2 upgrade path).

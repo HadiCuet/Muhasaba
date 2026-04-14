@@ -21,7 +21,7 @@ class AppDatabase extends _$AppDatabase {
     : super(executor ?? driftDatabase(name: 'muhasaba'));
 
   @override
-  int get schemaVersion => 2;
+  int get schemaVersion => 3;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -31,12 +31,34 @@ class AppDatabase extends _$AppDatabase {
       await seedCategories(this);
     },
     onUpgrade: (m, from, to) async {
+      // All DDL below is guarded with existence checks so the migration is
+      // idempotent — safe to re-run even if a previous attempt committed
+      // some steps before failing, which is exactly the state a few users
+      // ended up in after the first (buggy) v3 build.
       if (from < 2) {
-        await m.addColumn(amals, amals.icon);
-        await m.addColumn(amals, amals.category);
-        await m.createTable(categories);
+        if (!await _hasColumn('amals', 'icon')) {
+          await m.addColumn(amals, amals.icon);
+        }
+        if (!await _hasColumn('amals', 'category')) {
+          await m.addColumn(amals, amals.category);
+        }
+        if (!await _hasTable('categories')) {
+          // `createTable` uses the compile-time `Categories` class, which
+          // carries the `icon` column — so v1 → v3 upgraders get the full
+          // v3 schema here, and `seedCategories` below inserts icons
+          // alongside the seed names. No separate backfill needed.
+          await m.createTable(categories);
+        }
+        // `seedCategories` is idempotent (insertOrIgnore), so it's safe to
+        // run whether the table was just created or already existed.
         await seedCategories(this);
         await assignSeedIcons(this);
+      }
+      if (from == 2) {
+        if (!await _hasColumn('categories', 'icon')) {
+          await m.addColumn(categories, categories.icon);
+        }
+        await assignSeedCategoryIcons(this);
       }
     },
     beforeOpen: (details) async {
@@ -44,4 +66,23 @@ class AppDatabase extends _$AppDatabase {
       await customStatement('PRAGMA foreign_keys = ON');
     },
   );
+
+  /// Returns `true` if [table] contains a column named [column].
+  Future<bool> _hasColumn(String table, String column) async {
+    final row = await customSelect(
+      "SELECT 1 AS x FROM pragma_table_info(?) WHERE name = ? LIMIT 1",
+      variables: [Variable.withString(table), Variable.withString(column)],
+    ).getSingleOrNull();
+    return row != null;
+  }
+
+  /// Returns `true` if a table named [name] exists in the DB.
+  Future<bool> _hasTable(String name) async {
+    final row = await customSelect(
+      "SELECT 1 AS x FROM sqlite_master "
+      "WHERE type = 'table' AND name = ? LIMIT 1",
+      variables: [Variable.withString(name)],
+    ).getSingleOrNull();
+    return row != null;
+  }
 }

@@ -1,5 +1,6 @@
 import 'dart:math' as math;
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -49,7 +50,16 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
           _DateStrip(
             selected: selected,
             today: today,
-            onSelected: (d) => setState(() => _selected = d),
+            onSelected: (d) {
+              setState(() => _selected = d);
+              final daysBack = DateTime.utc(today.year, today.month, today.day)
+                  .difference(DateTime.utc(d.year, d.month, d.day))
+                  .inDays;
+              FirebaseAnalytics.instance.logEvent(
+                name: 'history_day_selected',
+                parameters: {'days_back': daysBack},
+              );
+            },
           ),
           const Divider(height: 1),
           Expanded(
@@ -112,6 +122,13 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
       setState(() {
         _selected = DateTime.utc(picked.year, picked.month, picked.day);
       });
+      final daysBack = DateTime.utc(today.year, today.month, today.day)
+          .difference(DateTime.utc(picked.year, picked.month, picked.day))
+          .inDays;
+      FirebaseAnalytics.instance.logEvent(
+        name: 'history_date_picked',
+        parameters: {'days_back': daysBack},
+      );
     }
   }
 

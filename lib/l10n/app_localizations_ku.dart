@@ -204,6 +204,12 @@ class AppLocalizationsKu extends AppLocalizations {
   String get categoryNew => '+ Nû';
 
   @override
+  String get categoryNewSheetTitle => 'Kategoriya nû';
+
+  @override
+  String get categoryEditSheetTitle => 'Kategoriyê biguhêre';
+
+  @override
   String get addAmal => 'Kirin lê zêde bike';
 
   @override

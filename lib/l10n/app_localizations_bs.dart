@@ -204,6 +204,12 @@ class AppLocalizationsBs extends AppLocalizations {
   String get categoryNew => '+ Novo';
 
   @override
+  String get categoryNewSheetTitle => 'Nova kategorija';
+
+  @override
+  String get categoryEditSheetTitle => 'Uredi kategoriju';
+
+  @override
   String get addAmal => 'Dodaj amel';
 
   @override

@@ -203,6 +203,12 @@ class AppLocalizationsKk extends AppLocalizations {
   String get categoryNew => '+ Жаңа';
 
   @override
+  String get categoryNewSheetTitle => 'Жаңа санат';
+
+  @override
+  String get categoryEditSheetTitle => 'Санатты өңдеу';
+
+  @override
   String get addAmal => 'Амал қосу';
 
   @override
