@@ -9,6 +9,7 @@ import '../../app/providers.dart';
 import '../../data/repositories/settings_repository.dart';
 import '../../domain/models/app_settings.dart';
 import '../../domain/utils/supported_languages.dart';
+import 'support_actions.dart';
 
 class SettingsScreen extends ConsumerWidget {
   const SettingsScreen({super.key});
@@ -110,6 +111,42 @@ class _SettingsList extends StatelessWidget {
                   await repo.setLocale(picked == '_system' ? null : picked);
                 }
               },
+            ),
+          ],
+        ),
+        const SizedBox(height: 8),
+
+        // Support group.
+        _SectionHeader(title: l.settingsSupport),
+        _CardGroup(
+          children: [
+            _SettingsItem(
+              icon: '⭐',
+              iconColor: Colors.orange,
+              title: l.settingsRate,
+              trailing: '',
+              onTap: () => requestAppReview(context),
+            ),
+            _SettingsItem(
+              icon: '✉️',
+              iconColor: Colors.orange,
+              title: l.settingsContact,
+              trailing: '',
+              onTap: () => sendContactEmail(context),
+            ),
+            _SettingsItem(
+              icon: '🐛',
+              iconColor: Colors.orange,
+              title: l.settingsReportBug,
+              trailing: '',
+              onTap: () => sendBugReportEmail(context),
+            ),
+            _SettingsItem(
+              icon: '💡',
+              iconColor: Colors.orange,
+              title: l.settingsRequestFeature,
+              trailing: '',
+              onTap: () => sendFeatureRequestEmail(context),
             ),
           ],
         ),

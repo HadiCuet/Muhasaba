@@ -610,6 +610,26 @@ class AppLocalizationsSw extends AppLocalizations {
   String get settingsDeveloper => 'Msanidi';
 
   @override
+  String get settingsSupport => 'Usaidizi';
+
+  @override
+  String get settingsRate => 'Kagua programu';
+
+  @override
+  String get settingsContact => 'Wasiliana nasi';
+
+  @override
+  String get settingsReportBug => 'Ripoti hitilafu';
+
+  @override
+  String get settingsRequestFeature => 'Omba kipengele';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'Imeshindwa kufungua barua. Tafadhali tuma barua pepe kwa $email.';
+  }
+
+  @override
   String get hadith20 =>
       '\"Anayefunga Ramadhani kwa imani na kutaraji thawabu, dhambi zake zilizopita zitasamehewa.\"\n— Bukhari na Muslim';
 

@@ -611,6 +611,26 @@ class AppLocalizationsHa extends AppLocalizations {
   String get settingsDeveloper => 'Mai haɓaka';
 
   @override
+  String get settingsSupport => 'Tallafi';
+
+  @override
+  String get settingsRate => 'Ƙiyasta app';
+
+  @override
+  String get settingsContact => 'Tuntube mu';
+
+  @override
+  String get settingsReportBug => 'Bayar da rahoton kwaro';
+
+  @override
+  String get settingsRequestFeature => 'Nemi fasali';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'An kasa buɗe saƙo. Don Allah aiko saƙo zuwa $email.';
+  }
+
+  @override
   String get hadith20 =>
       '\"Duk wanda ya yi azumin Ramadan da imani kuma yana neman lada, za a gafarta masa zunubansa na baya.\"\n— Bukhari da Muslim';
 

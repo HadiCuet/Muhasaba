@@ -611,6 +611,26 @@ class AppLocalizationsPs extends AppLocalizations {
   String get settingsDeveloper => 'جوړونکی';
 
   @override
+  String get settingsSupport => 'ملاتړ';
+
+  @override
+  String get settingsRate => 'اپلیکیشن ته درجه ورکړئ';
+
+  @override
+  String get settingsContact => 'موږ سره اړیکه ونیسئ';
+
+  @override
+  String get settingsReportBug => 'د ستونزې راپور ورکړئ';
+
+  @override
+  String get settingsRequestFeature => 'د ځانګړنې غوښتنه وکړئ';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'بریښنالیک نه خلاصیږي. مهرباني وکړئ $email ته بریښنالیک ولیږئ.';
+  }
+
+  @override
   String get hadith20 =>
       '\"هر څوک چې د ایمان او ثواب په نیت رمضان روژه ونیسي، د هغه تیرې ګناهونه بخښل کیږي.\"\n— بخاري او مسلم';
 

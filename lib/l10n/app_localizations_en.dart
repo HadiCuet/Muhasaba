@@ -611,6 +611,26 @@ class AppLocalizationsEn extends AppLocalizations {
   String get settingsDeveloper => 'Developer';
 
   @override
+  String get settingsSupport => 'Support';
+
+  @override
+  String get settingsRate => 'Rate the app';
+
+  @override
+  String get settingsContact => 'Contact us';
+
+  @override
+  String get settingsReportBug => 'Report a bug';
+
+  @override
+  String get settingsRequestFeature => 'Request a feature';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'Could not open mail. Please email $email.';
+  }
+
+  @override
   String get hadith20 =>
       '\"Whoever fasts Ramadan out of faith and seeking reward, his past sins will be forgiven.\"\n— Bukhari & Muslim';
 

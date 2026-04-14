@@ -615,6 +615,26 @@ class AppLocalizationsId extends AppLocalizations {
   String get settingsDeveloper => 'Pengembang';
 
   @override
+  String get settingsSupport => 'Dukungan';
+
+  @override
+  String get settingsRate => 'Beri nilai aplikasi';
+
+  @override
+  String get settingsContact => 'Hubungi kami';
+
+  @override
+  String get settingsReportBug => 'Laporkan bug';
+
+  @override
+  String get settingsRequestFeature => 'Minta fitur';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'Tidak dapat membuka surat. Silakan kirim email ke $email.';
+  }
+
+  @override
   String get hadith20 =>
       '\"Barangsiapa berpuasa Ramadan karena iman dan mengharap pahala, diampunilah dosa-dosanya yang telah lalu.\"\n— Bukhari & Muslim';
 

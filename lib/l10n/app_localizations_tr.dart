@@ -613,6 +613,26 @@ class AppLocalizationsTr extends AppLocalizations {
   String get settingsDeveloper => 'Geliştirici';
 
   @override
+  String get settingsSupport => 'Destek';
+
+  @override
+  String get settingsRate => 'Uygulamayı değerlendir';
+
+  @override
+  String get settingsContact => 'Bize ulaşın';
+
+  @override
+  String get settingsReportBug => 'Hata bildir';
+
+  @override
+  String get settingsRequestFeature => 'Özellik iste';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'Posta açılamadı. Lütfen $email adresine e-posta gönderin.';
+  }
+
+  @override
   String get hadith20 =>
       '\"Kim Ramazan\'da iman ederek ve sevabını umarak oruç tutarsa, geçmiş günahları bağışlanır.\"\n— Buhârî ve Müslim';
 

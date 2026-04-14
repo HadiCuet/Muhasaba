@@ -611,6 +611,26 @@ class AppLocalizationsKk extends AppLocalizations {
   String get settingsDeveloper => 'Әзірлеуші';
 
   @override
+  String get settingsSupport => 'Қолдау';
+
+  @override
+  String get settingsRate => 'Қолданбаны бағалау';
+
+  @override
+  String get settingsContact => 'Бізбен байланысу';
+
+  @override
+  String get settingsReportBug => 'Қате туралы хабарлау';
+
+  @override
+  String get settingsRequestFeature => 'Мүмкіндік сұрау';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'Поштаны ашу мүмкін болмады. Өтінеміз, $email мекенжайына жазыңыз.';
+  }
+
+  @override
   String get hadith20 =>
       '\"Кім Рамазанда иман мен сауап үмітімен ораза тұтса, оның өткен күнәлары кешіріледі.\"\n— Бұхари және Муслим';
 

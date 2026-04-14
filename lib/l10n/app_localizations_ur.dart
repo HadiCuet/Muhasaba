@@ -612,6 +612,26 @@ class AppLocalizationsUr extends AppLocalizations {
   String get settingsDeveloper => 'ڈیولپر';
 
   @override
+  String get settingsSupport => 'سپورٹ';
+
+  @override
+  String get settingsRate => 'ایپ کو ریٹ کریں';
+
+  @override
+  String get settingsContact => 'ہم سے رابطہ کریں';
+
+  @override
+  String get settingsReportBug => 'بگ کی اطلاع دیں';
+
+  @override
+  String get settingsRequestFeature => 'فیچر کی درخواست کریں';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'میل نہیں کھل سکی۔ براہ کرم $email پر ای میل کریں۔';
+  }
+
+  @override
   String get hadith20 =>
       '\"جو شخص ایمان اور ثواب کی نیت سے رمضان کے روزے رکھے، اس کے پچھلے گناہ معاف کر دیے جائیں گے۔\"\n— بخاری و مسلم';
 

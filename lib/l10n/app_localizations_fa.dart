@@ -612,6 +612,26 @@ class AppLocalizationsFa extends AppLocalizations {
   String get settingsDeveloper => 'توسعه‌دهنده';
 
   @override
+  String get settingsSupport => 'پشتیبانی';
+
+  @override
+  String get settingsRate => 'به برنامه امتیاز دهید';
+
+  @override
+  String get settingsContact => 'تماس با ما';
+
+  @override
+  String get settingsReportBug => 'گزارش اشکال';
+
+  @override
+  String get settingsRequestFeature => 'درخواست ویژگی';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'نمی‌توان ایمیل را باز کرد. لطفاً به $email ایمیل بزنید.';
+  }
+
+  @override
   String get hadith20 =>
       '«هر کس ماه رمضان را با ایمان و به امید ثواب روزه بدارد، گناهان گذشته‌اش آمرزیده می‌شود.»\n— بخاری و مسلم';
 

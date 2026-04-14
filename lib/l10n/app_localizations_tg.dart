@@ -614,6 +614,26 @@ class AppLocalizationsTg extends AppLocalizations {
   String get settingsDeveloper => 'Барномасоз';
 
   @override
+  String get settingsSupport => 'Дастгирӣ';
+
+  @override
+  String get settingsRate => 'Барномаро баҳо диҳед';
+
+  @override
+  String get settingsContact => 'Бо мо тамос гиред';
+
+  @override
+  String get settingsReportBug => 'Дар бораи хато хабар диҳед';
+
+  @override
+  String get settingsRequestFeature => 'Хусусият дархост кунед';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'Почтаро кушода натавонист. Илтимос, ба $email нома фиристед.';
+  }
+
+  @override
   String get hadith20 =>
       '\"Ҳар касе ки Рамазонро бо имон ва умеди савоб рӯза дорад, гуноҳони гузаштааш бахшида мешавад.\"\n— Бухорӣ ва Муслим';
 

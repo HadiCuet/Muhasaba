@@ -615,6 +615,26 @@ class AppLocalizationsSo extends AppLocalizations {
   String get settingsDeveloper => 'Sameeyaha';
 
   @override
+  String get settingsSupport => 'Taageero';
+
+  @override
+  String get settingsRate => 'Qiimee abka';
+
+  @override
+  String get settingsContact => 'Nala soo xiriir';
+
+  @override
+  String get settingsReportBug => 'Sheeg cillad';
+
+  @override
+  String get settingsRequestFeature => 'Codso astaan';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'Ma furmin boostada. Fadlan iimeel u dir $email.';
+  }
+
+  @override
   String get hadith20 =>
       '\"Qofkii sooma Ramadaan iimaankiisa iyo rajaynta ajar, dambiyadiisii hore waa loo cafiyaa.\"\n— Bukhaari & Muslim';
 

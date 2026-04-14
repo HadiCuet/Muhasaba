@@ -612,6 +612,26 @@ class AppLocalizationsBs extends AppLocalizations {
   String get settingsDeveloper => 'Programer';
 
   @override
+  String get settingsSupport => 'Podrška';
+
+  @override
+  String get settingsRate => 'Ocijenite aplikaciju';
+
+  @override
+  String get settingsContact => 'Kontaktirajte nas';
+
+  @override
+  String get settingsReportBug => 'Prijavite grešku';
+
+  @override
+  String get settingsRequestFeature => 'Zatražite funkciju';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'Nije moguće otvoriti poštu. Molimo pišite na $email.';
+  }
+
+  @override
   String get hadith20 =>
       '\"Ko posti Ramazan iz imana i nadajući se nagradi, bit će mu oprošteni prošli grijesi.\"\n— Buhari i Muslim';
 

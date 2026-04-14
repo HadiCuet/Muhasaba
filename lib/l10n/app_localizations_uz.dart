@@ -615,6 +615,26 @@ class AppLocalizationsUz extends AppLocalizations {
   String get settingsDeveloper => 'Dasturchi';
 
   @override
+  String get settingsSupport => 'Yordam';
+
+  @override
+  String get settingsRate => 'Ilovani baholash';
+
+  @override
+  String get settingsContact => 'Biz bilan bog\'lanish';
+
+  @override
+  String get settingsReportBug => 'Xato haqida xabar berish';
+
+  @override
+  String get settingsRequestFeature => 'Funksiya so\'rash';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'Pochtani ochib bo\'lmadi. Iltimos, $email manziliga xabar yuboring.';
+  }
+
+  @override
   String get hadith20 =>
       '\"Kim Ramazonni iymon bilan va savob umidida ro\'za tutsa, uning o\'tgan gunohlari kechiriladi.\"\n— Buxoriy va Muslim';
 

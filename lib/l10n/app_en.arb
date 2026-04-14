@@ -275,6 +275,19 @@
   "settingsAbout": "About",
   "settingsVersion": "Version",
   "settingsDeveloper": "Developer",
+  "settingsSupport": "Support",
+  "settingsRate": "Rate the app",
+  "settingsContact": "Contact us",
+  "settingsReportBug": "Report a bug",
+  "settingsRequestFeature": "Request a feature",
+  "settingsSupportFallback": "Could not open mail. Please email {email}.",
+  "@settingsSupportFallback": {
+    "placeholders": {
+      "email": {
+        "type": "String"
+      }
+    }
+  },
   "hadith20": "\"Whoever fasts Ramadan out of faith and seeking reward, his past sins will be forgiven.\"\n— Bukhari & Muslim",
   "hadith21": "\"Prayer is the pillar of religion.\"\n— Bayhaqi",
   "hadith22": "\"The supplication between the adhan and iqamah is not rejected.\"\n— Abu Dawud",

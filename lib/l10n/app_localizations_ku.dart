@@ -612,6 +612,26 @@ class AppLocalizationsKu extends AppLocalizations {
   String get settingsDeveloper => 'Pêşvebir';
 
   @override
+  String get settingsSupport => 'Piştgirî';
+
+  @override
+  String get settingsRate => 'Bernameyê binirxînin';
+
+  @override
+  String get settingsContact => 'Têkilî pê re bikin';
+
+  @override
+  String get settingsReportBug => 'Çewtiyekê ragihînin';
+
+  @override
+  String get settingsRequestFeature => 'Taybetmendiyek bixwazin';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'Posteyê venakir. Ji kerema xwe ji $email re e-name bişînin.';
+  }
+
+  @override
   String get hadith20 =>
       '\"Kî bi bawerî û bi hêviya xelatê Remezanê rojî bigire, gunehên wî yên berê têne baxişandin.\"\n— Buxarî û Muslim';
 

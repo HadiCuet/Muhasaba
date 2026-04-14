@@ -616,6 +616,26 @@ class AppLocalizationsFr extends AppLocalizations {
   String get settingsDeveloper => 'Développeur';
 
   @override
+  String get settingsSupport => 'Assistance';
+
+  @override
+  String get settingsRate => 'Évaluer l\'application';
+
+  @override
+  String get settingsContact => 'Nous contacter';
+
+  @override
+  String get settingsReportBug => 'Signaler un bug';
+
+  @override
+  String get settingsRequestFeature => 'Demander une fonctionnalité';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'Impossible d\'ouvrir la messagerie. Veuillez envoyer un e-mail à $email.';
+  }
+
+  @override
   String get hadith20 =>
       '\"Celui qui jeûne le Ramadan avec foi et en espérant la récompense verra ses péchés passés pardonnés.\"\n— Bukhari & Muslim';
 

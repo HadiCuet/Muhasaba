@@ -618,6 +618,26 @@ class AppLocalizationsAr extends AppLocalizations {
   String get settingsDeveloper => 'المطور';
 
   @override
+  String get settingsSupport => 'الدعم';
+
+  @override
+  String get settingsRate => 'قيّم التطبيق';
+
+  @override
+  String get settingsContact => 'اتصل بنا';
+
+  @override
+  String get settingsReportBug => 'الإبلاغ عن خطأ';
+
+  @override
+  String get settingsRequestFeature => 'طلب ميزة';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'تعذّر فتح البريد. يُرجى المراسلة على $email.';
+  }
+
+  @override
   String get hadith20 =>
       '«مَنْ صَامَ رَمَضَانَ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ.»\n— البخاري ومسلم';
 

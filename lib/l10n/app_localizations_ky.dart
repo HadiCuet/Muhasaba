@@ -612,6 +612,26 @@ class AppLocalizationsKy extends AppLocalizations {
   String get settingsDeveloper => 'Иштеп чыгуучу';
 
   @override
+  String get settingsSupport => 'Колдоо';
+
+  @override
+  String get settingsRate => 'Колдонмону баалоо';
+
+  @override
+  String get settingsContact => 'Биз менен байланышуу';
+
+  @override
+  String get settingsReportBug => 'Ката жөнүндө билдирүү';
+
+  @override
+  String get settingsRequestFeature => 'Функция суроо';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'Поштаны ачуу мүмкүн болбоду. $email дарегине жазыңыз.';
+  }
+
+  @override
   String get hadith20 =>
       '\"Ким Рамазанда ыйман жана сооп үмүтү менен орозо тутса, анын өткөн күнөөлөрү кечирилет.\"\n— Бухари жана Муслим';
 

@@ -611,6 +611,26 @@ class AppLocalizationsSq extends AppLocalizations {
   String get settingsDeveloper => 'Zhvilluesi';
 
   @override
+  String get settingsSupport => 'Mbështetje';
+
+  @override
+  String get settingsRate => 'Vlerësoni aplikacionin';
+
+  @override
+  String get settingsContact => 'Na kontaktoni';
+
+  @override
+  String get settingsReportBug => 'Raporto një gabim';
+
+  @override
+  String get settingsRequestFeature => 'Kërko një veçori';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'Posta nuk u hap. Ju lutemi shkruani në $email.';
+  }
+
+  @override
   String get hadith20 =>
       '\"Kush agjëron Ramazanin me besim dhe duke shpresuar shpërblimin, i falen mëkatet e kaluara.\"\n— Buhariu & Muslimi';
 

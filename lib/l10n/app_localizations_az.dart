@@ -612,6 +612,26 @@ class AppLocalizationsAz extends AppLocalizations {
   String get settingsDeveloper => 'Tərtibatçı';
 
   @override
+  String get settingsSupport => 'Dəstək';
+
+  @override
+  String get settingsRate => 'Tətbiqi qiymətləndirin';
+
+  @override
+  String get settingsContact => 'Bizimlə əlaqə';
+
+  @override
+  String get settingsReportBug => 'Xəta bildir';
+
+  @override
+  String get settingsRequestFeature => 'Funksiya tələb et';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'Poçt açıla bilmədi. Zəhmət olmasa $email ünvanına yazın.';
+  }
+
+  @override
   String get hadith20 =>
       '\"Kim Ramazanı iman və savab ümidi ilə oruc tutarsa, keçmiş günahları bağışlanar.\"\n— Buxari və Müslim';
 

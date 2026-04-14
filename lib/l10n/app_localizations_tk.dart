@@ -612,6 +612,26 @@ class AppLocalizationsTk extends AppLocalizations {
   String get settingsDeveloper => 'Dörediji';
 
   @override
+  String get settingsSupport => 'Goldaw';
+
+  @override
+  String get settingsRate => 'Goşundyny bahalandyryň';
+
+  @override
+  String get settingsContact => 'Biz bilen habarlaşyň';
+
+  @override
+  String get settingsReportBug => 'Säwligi habar beriň';
+
+  @override
+  String get settingsRequestFeature => 'Aýratynlyk talap ediň';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'Poçtany açyp bolmady. Iltimos, $email salgysyna ýazyň.';
+  }
+
+  @override
   String get hadith20 =>
       '\"Kim Ramazanda iman we sogap umydy bilen oraza tutsa, onuň geçen günäleri bagyşlanýar.\"\n— Buhari we Muslim';
 

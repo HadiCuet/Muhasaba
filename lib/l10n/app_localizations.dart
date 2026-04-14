@@ -1208,6 +1208,42 @@ abstract class AppLocalizations {
   /// **'Developer'**
   String get settingsDeveloper;
 
+  /// No description provided for @settingsSupport.
+  ///
+  /// In en, this message translates to:
+  /// **'Support'**
+  String get settingsSupport;
+
+  /// No description provided for @settingsRate.
+  ///
+  /// In en, this message translates to:
+  /// **'Rate the app'**
+  String get settingsRate;
+
+  /// No description provided for @settingsContact.
+  ///
+  /// In en, this message translates to:
+  /// **'Contact us'**
+  String get settingsContact;
+
+  /// No description provided for @settingsReportBug.
+  ///
+  /// In en, this message translates to:
+  /// **'Report a bug'**
+  String get settingsReportBug;
+
+  /// No description provided for @settingsRequestFeature.
+  ///
+  /// In en, this message translates to:
+  /// **'Request a feature'**
+  String get settingsRequestFeature;
+
+  /// No description provided for @settingsSupportFallback.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open mail. Please email {email}.'**
+  String settingsSupportFallback(String email);
+
   /// No description provided for @hadith20.
   ///
   /// In en, this message translates to:

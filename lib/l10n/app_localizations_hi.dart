@@ -612,6 +612,26 @@ class AppLocalizationsHi extends AppLocalizations {
   String get settingsDeveloper => 'डेवलपर';
 
   @override
+  String get settingsSupport => 'सहायता';
+
+  @override
+  String get settingsRate => 'ऐप को रेट करें';
+
+  @override
+  String get settingsContact => 'हमसे संपर्क करें';
+
+  @override
+  String get settingsReportBug => 'बग रिपोर्ट करें';
+
+  @override
+  String get settingsRequestFeature => 'फ़ीचर का अनुरोध करें';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'मेल नहीं खुल सका। कृपया $email पर ईमेल करें।';
+  }
+
+  @override
   String get hadith20 =>
       '\"जो रमज़ान के रोज़े ईमान और सवाब की उम्मीद से रखे, उसके पिछले गुनाह माफ़ कर दिए जाएंगे।\"\n— बुख़ारी व मुस्लिम';
 

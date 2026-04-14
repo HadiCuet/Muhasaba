@@ -611,6 +611,26 @@ class AppLocalizationsBn extends AppLocalizations {
   String get settingsDeveloper => 'ডেভেলপার';
 
   @override
+  String get settingsSupport => 'সহায়তা';
+
+  @override
+  String get settingsRate => 'অ্যাপটিকে রেট করুন';
+
+  @override
+  String get settingsContact => 'যোগাযোগ করুন';
+
+  @override
+  String get settingsReportBug => 'বাগ রিপোর্ট করুন';
+
+  @override
+  String get settingsRequestFeature => 'ফিচার অনুরোধ করুন';
+
+  @override
+  String settingsSupportFallback(String email) {
+    return 'মেল খুলতে পারেনি। অনুগ্রহ করে $email এ ইমেল করুন।';
+  }
+
+  @override
   String get hadith20 =>
       '\"যে ব্যক্তি ঈমান ও সওয়াবের আশায় রমজানে রোজা রাখবে, তার পূর্ববর্তী গুনাহ মাফ করা হবে।\"\n— বুখারি ও মুসলিম';
 
