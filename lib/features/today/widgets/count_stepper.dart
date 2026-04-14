@@ -114,12 +114,26 @@ class _CountStepperState extends State<CountStepper> {
             ),
           )
         else
-          InkWell(
-            borderRadius: BorderRadius.circular(8),
-            onTap: _startEditing,
-            child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8, vertical: 4),
-              child: Text(label, style: labelStyle),
+          SizedBox(
+            width: 56,
+            child: InkWell(
+              borderRadius: BorderRadius.circular(4),
+              onTap: _startEditing,
+              child: Container(
+                decoration: BoxDecoration(
+                  border: Border.all(color: theme.colorScheme.outline),
+                  borderRadius: BorderRadius.circular(4),
+                ),
+                padding: const EdgeInsets.symmetric(
+                  horizontal: 4,
+                  vertical: 4,
+                ),
+                child: Text(
+                  label,
+                  style: labelStyle,
+                  textAlign: TextAlign.center,
+                ),
+              ),
             ),
           ),
         IconButton(
