@@ -523,10 +523,6 @@ class AppLocalizationsAr extends AppLocalizations {
       '«أحب الأعمال إلى الله أدومها وإن قلّ.»\n— البخاري ومسلم';
 
   @override
-  String get hadith1 =>
-      '«خذوا من الأعمال ما تطيقون، فإن خير الأعمال أدومه وإن قلّ.»\n— ابن ماجه';
-
-  @override
   String get hadith2 =>
       '«إذا مات ابن آدم انقطع عمله إلا من ثلاث: صدقة جارية، أو علم يُنتفع به، أو ولد صالح يدعو له.»\n— مسلم';
 
@@ -536,9 +532,6 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get hadith4 =>
       '«إن الله لا ينظر إلى صوركم وأموالكم، ولكن ينظر إلى قلوبكم وأعمالكم.»\n— مسلم';
-
-  @override
-  String get hadith5 => '«خير الناس أنفعهم للناس.»\n— الطبراني';
 
   @override
   String get hadith6 => '«يسّروا ولا تعسّروا، وبشّروا ولا تنفّروا.»\n— البخاري';
@@ -557,10 +550,6 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get hadith10 =>
       '«من قال سبحان الله وبحمده في يوم مائة مرة حُطّت خطاياه وإن كانت مثل زبد البحر.»\n— البخاري';
-
-  @override
-  String get hadith11 =>
-      '«خير الدعاء دعاء يوم عرفة، وخير ما قلت أنا والنبيون من قبلي: لا إله إلا الله.»\n— الترمذي';
 
   @override
   String get hadith12 =>
@@ -642,9 +631,6 @@ class AppLocalizationsAr extends AppLocalizations {
       '«مَنْ صَامَ رَمَضَانَ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ.»\n— البخاري ومسلم';
 
   @override
-  String get hadith21 => '«الصَّلاةُ عِمَادُ الدِّينِ.»\n— البيهقي';
-
-  @override
   String get hadith22 =>
       '«الدُّعَاءُ بَيْنَ الأَذَانِ وَالإِقَامَةِ لا يُرَدُّ.»\n— أبو داود';
 
@@ -668,10 +654,6 @@ class AppLocalizationsAr extends AppLocalizations {
       '«الْمَاهِرُ بِالقُرْآنِ مَعَ السَّفَرَةِ الكِرَامِ البَرَرَةِ.»\n— البخاري ومسلم';
 
   @override
-  String get hadith28 =>
-      '«طَلَبُ العِلْمِ فَرِيضَةٌ عَلَى كُلِّ مُسْلِمٍ.»\n— ابن ماجه';
-
-  @override
   String get hadith29 => '«أَفْضَلُ الصَّدَقَةِ سَقْيُ المَاءِ.»\n— أحمد';
 
   @override
@@ -679,23 +661,12 @@ class AppLocalizationsAr extends AppLocalizations {
       '«مَنْ نَفَّسَ عَنْ مُؤْمِنٍ كُرْبَةً مِنْ كُرَبِ الدُّنْيَا نَفَّسَ اللَّهُ عَنْهُ كُرْبَةً مِنْ كُرَبِ يَوْمِ القِيَامَةِ.»\n— مسلم';
 
   @override
-  String get hadith31 =>
-      '«الرَّاحِمُونَ يَرْحَمُهُمُ الرَّحْمَنُ، ارْحَمُوا مَنْ فِي الأَرْضِ يَرْحَمْكُمْ مَنْ فِي السَّمَاءِ.»\n— أبو داود والترمذي';
-
-  @override
   String get hadith32 =>
       '«الحَيَاءُ شُعْبَةٌ مِنَ الإِيمَانِ.»\n— البخاري ومسلم';
 
   @override
-  String get hadith33 => '«الطُّهُورُ شَطْرُ الإِيمَانِ.»\n— مسلم';
-
-  @override
   String get hadith34 =>
       '«وَمَنْ يَتَصَبَّرْ يُصَبِّرْهُ اللَّهُ.»\n— البخاري ومسلم';
-
-  @override
-  String get hadith35 =>
-      '«خَيْرُ الرِّزْقِ لِسَانٌ ذَاكِرٌ، وَقَلْبٌ شَاكِرٌ، وَزَوْجَةٌ مُؤْمِنَةٌ تُعِينُهُ عَلَى إِيمَانِهِ.»\n— الطبراني';
 
   @override
   String get hadith36 =>
@@ -708,10 +679,6 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get hadith38 =>
       '«لَيْسَ الشَّدِيدُ بِالصُّرَعَةِ، إِنَّمَا الشَّدِيدُ الَّذِي يَمْلِكُ نَفْسَهُ عِنْدَ الغَضَبِ.»\n— البخاري ومسلم';
-
-  @override
-  String get hadith39 =>
-      '«مَنْ حَفِظَ مَا بَيْنَ لَحْيَيْهِ وَمَا بَيْنَ رِجْلَيْهِ دَخَلَ الجَنَّةَ.»\n— البخاري';
 
   @override
   String get hadith40 =>
@@ -746,21 +713,8 @@ class AppLocalizationsAr extends AppLocalizations {
       '«لَيْسَ الوَاصِلُ بِالمُكَافِئِ، وَلَكِنَّ الوَاصِلَ الَّذِي إِذَا قُطِعَتْ رَحِمُهُ وَصَلَهَا.»\n— البخاري';
 
   @override
-  String get hadith48 => '«كُلُّ مَعْرُوفٍ صَدَقَةٌ.»\n— البخاري ومسلم';
-
-  @override
   String get hadith49 =>
       '«مَنْ أَكَلَ طَعَامًا فَقَالَ: الحَمْدُ لِلَّهِ الَّذِي أَطْعَمَنِي هَذَا وَرَزَقَنِيهِ مِنْ غَيْرِ حَوْلٍ مِنِّي وَلا قُوَّةٍ، غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ.»\n— الترمذي';
-
-  @override
-  String get hadith50 => '«أحب الناس إلى الله أنفعهم للناس.»\n— الطبراني';
-
-  @override
-  String get hadith51 =>
-      '«من كظم غيظاً وهو قادر على أن يُنفذه دعاه الله على رؤوس الخلائق يوم القيامة حتى يخيّره من الحور ما شاء.»\n— الترمذي';
-
-  @override
-  String get hadith52 => '«باكروا بالصدقة فإن البلاء لا يتخطاها.»\n— الترمذي';
 
   @override
   String get hadith53 =>
@@ -783,27 +737,6 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get hadith58 =>
       '«من صلّى عليّ صلاة واحدة صلّى الله عليه بها عشراً.»\n— مسلم';
-
-  @override
-  String get hadith59 => '«المسجد بيت كل تقيّ.»\n— الطبراني';
-
-  @override
-  String get hadith60 =>
-      '«من قال لا حول ولا قوة إلا بالله كانت له دواءً من تسعة وتسعين داءً أيسرها الهمّ.»\n— الحاكم';
-
-  @override
-  String get hadith61 =>
-      '«إن الله يحب إذا عمل أحدكم عملاً أن يتقنه.»\n— الطبراني';
-
-  @override
-  String get hadith62 => '«الجنة تحت أقدام الأمهات.»\n— النسائي';
-
-  @override
-  String get hadith63 =>
-      '«أَحَبُّ الأَعْمَالِ إِلَى اللَّهِ: الصَّلاةُ لِوَقْتِهَا، ثُمَّ بِرُّ الوَالِدَيْنِ، ثُمَّ الجِهَادُ فِي سَبِيلِ اللَّهِ.»\n— البخاري ومسلم';
-
-  @override
-  String get hadith64 => '«من شكر القليل أُعطي الكثير.»\n— البيهقي';
 
   @override
   String get hadith65 => '«المؤمن مرآة المؤمن.»\n— أبو داود';
@@ -846,10 +779,6 @@ class AppLocalizationsAr extends AppLocalizations {
   String get hadith75 => '«ركعتا الفجر خير من الدنيا وما فيها.»\n— مسلم';
 
   @override
-  String get hadith76 =>
-      '«من لزم الاستغفار جعل الله له من كل ضيق مخرجاً.»\n— أبو داود';
-
-  @override
   String get hadith77 =>
       '«لو أنكم تتوكلون على الله حق توكله لرزقكم كما يرزق الطير.»\n— الترمذي';
 
@@ -874,13 +803,6 @@ class AppLocalizationsAr extends AppLocalizations {
       '«المرء على دين خليله فلينظر أحدكم من يخالل.»\n— أبو داود والترمذي';
 
   @override
-  String get hadith83 => '«أَكْثِرُوا ذِكْرَ هَاذِمِ اللَّذَّاتِ.»\n— الترمذي';
-
-  @override
-  String get hadith84 =>
-      '«أَفْضَلُ العِبَادَةِ انْتِظَارُ الفَرَجِ.»\n— الترمذي';
-
-  @override
   String get hadith85 =>
       '«مَنْ تَرَكَ شَيْئًا لِلَّهِ عَوَّضَهُ اللَّهُ خَيْرًا مِنْهُ.»\n— أحمد';
 
@@ -903,14 +825,6 @@ class AppLocalizationsAr extends AppLocalizations {
       '«إيّاكم والظن فإن الظن أكذب الحديث.»\n— البخاري ومسلم';
 
   @override
-  String get hadith91 =>
-      '«مَنْ تَرَكَ الكَذِبَ وَهُوَ مَازِحٌ بُنِيَ لَهُ فِي رَبَضِ الجَنَّةِ.»\n— أبو داود';
-
-  @override
-  String get hadith92 =>
-      '«أبواب الخير كثيرة: التسبيح، والتحميد، والصدقة، والأمر بالمعروف، وإماطة الأذى عن الطريق.»\n— مسلم';
-
-  @override
   String get hadith93 =>
       '«اجتمعوا على طعامكم واذكروا اسم الله يُبارَك لكم فيه.»\n— أبو داود';
 
@@ -929,8 +843,4 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get hadith98 =>
       '«المسلم أخو المسلم لا يظلمه ولا يخذله ولا يحقره.»\n— مسلم';
-
-  @override
-  String get hadith99 =>
-      '«أحب الكلام إلى الله: سبحان الله وبحمده، سبحان الله العظيم.»\n— البخاري ومسلم';
 }

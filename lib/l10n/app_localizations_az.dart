@@ -513,10 +513,6 @@ class AppLocalizationsAz extends AppLocalizations {
       '\"Allahın ən sevdiyi əməllər az da olsa davamlı olanlardır.\"\n— Buxari və Müslim';
 
   @override
-  String get hadith1 =>
-      '\"Bacardığınız qədər yaxşı əməllər görün, çünki ən yaxşı əməllər az olsa da davamlı olanlardır.\"\n— İbn Macə';
-
-  @override
   String get hadith2 =>
       '\"Adəm övladı öldüyü zaman əməlləri üç şeydən başqa kəsilir: davamlı sədəqə, faydalı elm və ya onun üçün dua edən saleh övlad.\"\n— Müslim';
 
@@ -527,10 +523,6 @@ class AppLocalizationsAz extends AppLocalizations {
   @override
   String get hadith4 =>
       '\"Allah sizin xarici görünüşünüzə və var-dövlətinizə baxmır, O sizin ürəklərinizə və əməllərinizə baxır.\"\n— Müslim';
-
-  @override
-  String get hadith5 =>
-      '\"İnsanların ən yaxşısı insanlara ən çox fayda verənidir.\"\n— Təbərani';
 
   @override
   String get hadith6 =>
@@ -550,10 +542,6 @@ class AppLocalizationsAz extends AppLocalizations {
   @override
   String get hadith10 =>
       '\"Kim gündə yüz dəfə \'SubhanAllahi və bihamdihi\' desə, günahları bağışlanar, hətta dənizin köpüyü qədər olsa belə.\"\n— Buxari';
-
-  @override
-  String get hadith11 =>
-      '\"Ən xeyirli dua Ərəfə günü edilən duadır, məndən əvvəlki peyğəmbərlərin və mənim dediyim ən xeyirli söz: La ilahə illəllah.\"\n— Tirmizi';
 
   @override
   String get hadith12 =>
@@ -636,9 +624,6 @@ class AppLocalizationsAz extends AppLocalizations {
       '\"Kim Ramazanı iman və savab ümidi ilə oruc tutarsa, keçmiş günahları bağışlanar.\"\n— Buxari və Müslim';
 
   @override
-  String get hadith21 => '\"Namaz dinin dirəyidir.\"\n— Beyhəqi';
-
-  @override
   String get hadith22 =>
       '\"Azan ilə iqamə arasındakı dua rədd edilməz.\"\n— Əbu Davud';
 
@@ -662,10 +647,6 @@ class AppLocalizationsAz extends AppLocalizations {
       '\"Quranı gözəl oxuyan şəxs kərim olan mələklərlə birlikdə olacaq.\"\n— Buxari və Müslim';
 
   @override
-  String get hadith28 =>
-      '\"Elm öyrənmək hər bir müsəlmana vacibdir.\"\n— İbn Macə';
-
-  @override
   String get hadith29 => '\"Sədəqənin ən yaxşısı su içirməkdir.\"\n— Əhməd';
 
   @override
@@ -673,22 +654,11 @@ class AppLocalizationsAz extends AppLocalizations {
       '\"Kim bir möminə bir çətinliyi aradan qaldırarsa, Allah da Qiyamət günü onun bir çətinliyini aradan qaldırar.\"\n— Müslim';
 
   @override
-  String get hadith31 =>
-      '\"Mərhəmətli olanlara Rəhman olan Allah mərhəmət edər.\"\n— Əbu Davud və Tirmizi';
-
-  @override
   String get hadith32 => '\"Həya imandandır.\"\n— Buxari və Müslim';
-
-  @override
-  String get hadith33 => '\"Təmizlik imanın yarısıdır.\"\n— Müslim';
 
   @override
   String get hadith34 =>
       '\"Kim səbr edərsə, Allah ona səbr verər.\"\n— Buxari və Müslim';
-
-  @override
-  String get hadith35 =>
-      '\"Ən yaxşı sərvət Allahı zikr edən dildir.\"\n— Təbərani';
 
   @override
   String get hadith36 =>
@@ -701,10 +671,6 @@ class AppLocalizationsAz extends AppLocalizations {
   @override
   String get hadith38 =>
       '\"Güclü insan güləşdə qalib gələn deyil, qəzəb anında özünə hakim olandır.\"\n— Buxari və Müslim';
-
-  @override
-  String get hadith39 =>
-      '\"Kim dilini və namusunu qoruyarsa, mən ona cənnəti zəmanət verirəm.\"\n— Buxari';
 
   @override
   String get hadith40 =>
@@ -738,23 +704,8 @@ class AppLocalizationsAz extends AppLocalizations {
       '\"Qohumluq əlaqəsini saxlayan ona qarşılıq verən deyil, əlaqəsi kəsilsə belə onu davam etdirəndir.\"\n— Buxari';
 
   @override
-  String get hadith48 => '\"Hər xeyirli əməl sədəqədir.\"\n— Buxari və Müslim';
-
-  @override
   String get hadith49 =>
       '\"Kim yemək yeyib: \'Bu yeməyi mənə yedirdən və heç bir güc və qüvvətim olmadan bunu mənə nəsib edən Allaha həmd olsun\' deyərsə, keçmiş günahları bağışlanar.\"\n— Tirmizi';
-
-  @override
-  String get hadith50 =>
-      '\"Allahın ən çox sevdiyi insanlar başqalarına ən çox fayda verənlərdir.\"\n— Təbərani';
-
-  @override
-  String get hadith51 =>
-      '\"Kim qəzəbini boğsa, halbuki onu həyata keçirə bilsə, Allah onu Qiyamət günü bütün yaradılmışların qarşısında çağırıb mükafatını seçməyini söyləyər.\"\n— Tirmizi';
-
-  @override
-  String get hadith52 =>
-      '\"Sədəqə verməyə tələsin, çünki o bəlanın qarşısını alır.\"\n— Tirmizi';
 
   @override
   String get hadith53 =>
@@ -779,27 +730,6 @@ class AppLocalizationsAz extends AppLocalizations {
   @override
   String get hadith58 =>
       '\"Kim mənə bir dəfə salavat göndərsə, Allah ona on dəfə rəhmət edər.\"\n— Müslim';
-
-  @override
-  String get hadith59 => '\"Məscid hər təqvalı insanın evidir.\"\n— Təbərani';
-
-  @override
-  String get hadith60 =>
-      '\"Kim \'La həvlə və la qüvvətə illə billah\' desə — bu doxsan doqquz xəstəliyin dərmanıdır, ən yüngülü narahatlıqdır.\"\n— Hakim';
-
-  @override
-  String get hadith61 =>
-      '\"Allah bir iş gördüyünüzdə onu ən yaxşı şəkildə görməyinizi sevir.\"\n— Təbərani';
-
-  @override
-  String get hadith62 => '\"Cənnət anaların ayaqları altındadır.\"\n— Nəsai';
-
-  @override
-  String get hadith63 =>
-      '\"Allahın ən sevdiyi əməllər: vaxtında qılınan namaz, sonra valideynlərə yaxşılıq, sonra Allah yolunda cihad.\"\n— Buxari və Müslim';
-
-  @override
-  String get hadith64 => '\"Aza şükür edənə çox verilər.\"\n— Beyhəqi';
 
   @override
   String get hadith65 => '\"Mömin möminin güzgüsüdür.\"\n— Əbu Davud';
@@ -845,10 +775,6 @@ class AppLocalizationsAz extends AppLocalizations {
       '\"Sübh namazının iki rəkəti dünyadan və ondakı hər şeydən xeyirlidir.\"\n— Müslim';
 
   @override
-  String get hadith76 =>
-      '\"Kim mütəmadi istiğfar etsə, Allah ona hər çətinlikdən çıxış yolu verər.\"\n— Əbu Davud';
-
-  @override
   String get hadith77 =>
       '\"Əgər siz Allaha layiqincə təvəkkül etsəydiniz, O sizi quşları ruzilədirdiyi kimi ruziləndirərdi.\"\n— Tirmizi';
 
@@ -871,14 +797,6 @@ class AppLocalizationsAz extends AppLocalizations {
   @override
   String get hadith82 =>
       '\"İnsan dostunun dini üzərindədir, ona görə hər biriniz kiminlə dost olduğuna baxsın.\"\n— Əbu Davud və Tirmizi';
-
-  @override
-  String get hadith83 =>
-      '\"Ölümü çox xatırlayın, çünki o qəlbi təmizləyir.\"\n— Tirmizi';
-
-  @override
-  String get hadith84 =>
-      '\"İbadətin ən fəzilətlisi — fərəc (rahatlıq) gözləməkdir.\"\n— Tirmizi';
 
   @override
   String get hadith85 =>
@@ -904,14 +822,6 @@ class AppLocalizationsAz extends AppLocalizations {
       '\"Şübhədən çəkinin, çünki şübhə ən yalan sözdür.\"\n— Buxari və Müslim';
 
   @override
-  String get hadith91 =>
-      '\"Kim Allah xatirinə yalanı tərk etsə, zarafatda olsa belə, mən ona cənnətin kənarında bir saray zəmanəti verirəm.\"\n— Əbu Davud';
-
-  @override
-  String get hadith92 =>
-      '\"Xeyir qapıları çoxdur: Allahı təsbih etmək, Ona həmd etmək, sədəqə, yaxşılığa əmr etmək və yoldan əziyyəti qaldırmaq.\"\n— Müslim';
-
-  @override
   String get hadith93 =>
       '\"Birlikdə yeyin və Allahın adını çəkin, sizin üçün bərəkətli olacaq.\"\n— Əbu Davud';
 
@@ -932,8 +842,4 @@ class AppLocalizationsAz extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Müsəlman müsəlmanın qardaşıdır: ona zülm etməz, onu tərk etməz, onu kiçik görməz.\"\n— Müslim';
-
-  @override
-  String get hadith99 =>
-      '\"Allahın ən sevdiyi söz: SubhanAllahi və bihamdihi, SubhanAllahil Azim.\"\n— Buxari və Müslim';
 }

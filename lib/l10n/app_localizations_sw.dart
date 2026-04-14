@@ -511,10 +511,6 @@ class AppLocalizationsSw extends AppLocalizations {
       '\"Amali zinazopendwa zaidi na Mwenyezi Mungu ni zile zinazofanywa kwa uthabiti, hata zikiwa ndogo.\"\n— Bukhari na Muslim';
 
   @override
-  String get hadith1 =>
-      '\"Fanyeni amali njema kadri mnavyoweza, kwani amali bora ni zile zinazofanywa kwa uthabiti hata zikiwa chache.\"\n— Ibn Majah';
-
-  @override
   String get hadith2 =>
       '\"Mwanaadamu anapokufa, amali zake zinakoma isipokuwa tatu: sadaka jariya, elimu yenye manufaa, au mtoto mwema anayemuombea dua.\"\n— Muslim';
 
@@ -525,10 +521,6 @@ class AppLocalizationsSw extends AppLocalizations {
   @override
   String get hadith4 =>
       '\"Mwenyezi Mungu haangalii sura zenu wala mali zenu, bali anaangalia nyoyo zenu na amali zenu.\"\n— Muslim';
-
-  @override
-  String get hadith5 =>
-      '\"Watu bora ni wale wanaowafaa zaidi watu wengine.\"\n— Tabarani';
 
   @override
   String get hadith6 =>
@@ -548,10 +540,6 @@ class AppLocalizationsSw extends AppLocalizations {
   @override
   String get hadith10 =>
       '\"Mtu anayesema \'SubhanAllah wa bihamdihi\' mara mia kwa siku, dhambi zake zitasamehewa hata kama zingekuwa kama povu la bahari.\"\n— Bukhari';
-
-  @override
-  String get hadith11 =>
-      '\"Dua bora zaidi ni ile ya siku ya Arafa, na bora zaidi niliyosema mimi na manabii kabla yangu ni: La ilaha illallah.\"\n— Tirmidhi';
 
   @override
   String get hadith12 =>
@@ -634,9 +622,6 @@ class AppLocalizationsSw extends AppLocalizations {
       '\"Anayefunga Ramadhani kwa imani na kutaraji thawabu, dhambi zake zilizopita zitasamehewa.\"\n— Bukhari na Muslim';
 
   @override
-  String get hadith21 => '\"Swala ni nguzo ya dini.\"\n— Bayhaqi';
-
-  @override
   String get hadith22 =>
       '\"Dua kati ya adhana na iqama hairudiwi.\"\n— Abu Dawud';
 
@@ -661,10 +646,6 @@ class AppLocalizationsSw extends AppLocalizations {
       '\"Aliye hodari katika Qurani atakuwa pamoja na malaika watukufu.\"\n— Bukhari na Muslim';
 
   @override
-  String get hadith28 =>
-      '\"Kutafuta elimu ni faradhi kwa kila Muislamu.\"\n— Ibn Majah';
-
-  @override
   String get hadith29 => '\"Sadaka bora ni kutoa maji ya kunywa.\"\n— Ahmad';
 
   @override
@@ -672,22 +653,11 @@ class AppLocalizationsSw extends AppLocalizations {
       '\"Anayemuondolea muumini shida, Mwenyezi Mungu atamwondolea shida Siku ya Hukumu.\"\n— Muslim';
 
   @override
-  String get hadith31 =>
-      '\"Wenye huruma huhurumiwa na Mwingi wa Huruma.\"\n— Abu Dawud na Tirmidhi';
-
-  @override
   String get hadith32 => '\"Haya ni sehemu ya imani.\"\n— Bukhari na Muslim';
-
-  @override
-  String get hadith33 => '\"Usafi ni nusu ya imani.\"\n— Muslim';
 
   @override
   String get hadith34 =>
       '\"Anayesubiri, Mwenyezi Mungu atampa subira.\"\n— Bukhari na Muslim';
-
-  @override
-  String get hadith35 =>
-      '\"Utajiri bora ni ulimi unaomkumbuka Mwenyezi Mungu.\"\n— Tabarani';
 
   @override
   String get hadith36 =>
@@ -700,10 +670,6 @@ class AppLocalizationsSw extends AppLocalizations {
   @override
   String get hadith38 =>
       '\"Mtu mwenye nguvu si yule anayeshinda katika mieleka, bali ni yule anayejizuia wakati wa hasira.\"\n— Bukhari na Muslim';
-
-  @override
-  String get hadith39 =>
-      '\"Anayehifadhi kile kilicho kati ya taya zake na miguu yake, ninamhakikishia Pepo.\"\n— Bukhari';
 
   @override
   String get hadith40 =>
@@ -737,23 +703,8 @@ class AppLocalizationsSw extends AppLocalizations {
       '\"Anayeunga udugu si yule anayerudisha, bali ni yule anayeendelea kuunga hata unapokatwa.\"\n— Bukhari';
 
   @override
-  String get hadith48 => '\"Kila tendo jema ni sadaka.\"\n— Bukhari na Muslim';
-
-  @override
   String get hadith49 =>
       '\"Anayekula chakula na kusema: \'Sifa zote njema ni za Mwenyezi Mungu aliyenilisha hiki na kuniruzuku bila nguvu wala uwezo wowote kutoka kwangu,\' dhambi zake zilizopita zitasamehewa.\"\n— Tirmidhi';
-
-  @override
-  String get hadith50 =>
-      '\"Watu wanaopendwa zaidi na Mwenyezi Mungu ni wale wanaowafaidia wengine zaidi.\"\n— Tabarani';
-
-  @override
-  String get hadith51 =>
-      '\"Yeyote anayezuia hasira yake hali ana uwezo wa kuitekeleza, Mwenyezi Mungu atamwita mbele ya viumbe vyote Siku ya Hukumu ili achague thawabu yake.\"\n— Tirmidhi';
-
-  @override
-  String get hadith52 =>
-      '\"Harakisheni kutoa sadaka, kwani inazuia maafa.\"\n— Tirmidhi';
 
   @override
   String get hadith53 =>
@@ -778,29 +729,6 @@ class AppLocalizationsSw extends AppLocalizations {
   @override
   String get hadith58 =>
       '\"Yeyote anayenitumia salawati mara moja, Mwenyezi Mungu anamtumia rehema mara kumi.\"\n— Muslim';
-
-  @override
-  String get hadith59 =>
-      '\"Msikiti ni nyumba ya kila mtu mcha Mungu.\"\n— Tabarani';
-
-  @override
-  String get hadith60 =>
-      '\"Yeyote anayesema \'La hawla wa la quwwata illa billah\' — ni dawa ya magonjwa tisini na tisa, dogo zaidi kati yake ni wasiwasi.\"\n— Hakim';
-
-  @override
-  String get hadith61 =>
-      '\"Mwenyezi Mungu anapenda mtu anapofanya jambo, alifanye kwa ubora.\"\n— Tabarani';
-
-  @override
-  String get hadith62 => '\"Pepo iko chini ya miguu ya mama.\"\n— Nasa\'i';
-
-  @override
-  String get hadith63 =>
-      '\"Amali zinazopendwa zaidi na Mwenyezi Mungu: swala kwa wakati wake, kisha wema kwa wazazi, kisha jihadi katika njia ya Mwenyezi Mungu.\"\n— Bukhari na Muslim';
-
-  @override
-  String get hadith64 =>
-      '\"Yeyote anayeshukuru kwa kidogo atapewa kingi.\"\n— Bayhaqi';
 
   @override
   String get hadith65 => '\"Muumini ni kioo cha muumini.\"\n— Abu Dawud';
@@ -846,10 +774,6 @@ class AppLocalizationsSw extends AppLocalizations {
       '\"Rakaa mbili za Alfajiri ni bora kuliko dunia na vyote vilivyomo.\"\n— Muslim';
 
   @override
-  String get hadith76 =>
-      '\"Anayeomba msamaha kwa Mwenyezi Mungu mara kwa mara, Mwenyezi Mungu atampa njia ya kutoka katika kila shida.\"\n— Abu Dawud';
-
-  @override
   String get hadith77 =>
       '\"Kama mngemtegemea Mwenyezi Mungu kama inavyostahili, Angewapa riziki kama Anavyowapa ndege.\"\n— Tirmidhi';
 
@@ -872,13 +796,6 @@ class AppLocalizationsSw extends AppLocalizations {
   @override
   String get hadith82 =>
       '\"Mtu anafuata dini ya rafiki yake wa karibu, basi kila mmoja wenu aangalie anayemfanya rafiki.\"\n— Abu Dawud na Tirmidhi';
-
-  @override
-  String get hadith83 =>
-      '\"Kumbukeni mauti mara kwa mara, kwani inasafisha moyo.\"\n— Tirmidhi';
-
-  @override
-  String get hadith84 => '\"Ibada bora zaidi ni kusubiri faraja.\"\n— Tirmidhi';
 
   @override
   String get hadith85 =>
@@ -905,14 +822,6 @@ class AppLocalizationsSw extends AppLocalizations {
       '\"Jiepusheni na dhana, kwani dhana ni usemi wa uongo zaidi.\"\n— Bukhari na Muslim';
 
   @override
-  String get hadith91 =>
-      '\"Anayeacha uongo kwa ajili ya Mwenyezi Mungu, hata katika utani, namhakikishia jumba pembezoni mwa Pepo.\"\n— Abu Dawud';
-
-  @override
-  String get hadith92 =>
-      '\"Milango ya wema ni mingi: kumtakasa Mwenyezi Mungu, kumhimidi, sadaka, kuamrisha mema na kuondoa vikwazo njiani.\"\n— Muslim';
-
-  @override
   String get hadith93 =>
       '\"Kuleni pamoja na mtajeni jina la Mwenyezi Mungu, mtabarikiwa.\"\n— Abu Dawud';
 
@@ -934,8 +843,4 @@ class AppLocalizationsSw extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Mwislamu ni ndugu wa Mwislamu: hamdhulumu, hamtelekezi, wala hamdharau.\"\n— Muslim';
-
-  @override
-  String get hadith99 =>
-      '\"Neno linalopendwa zaidi na Mwenyezi Mungu ni: SubhanAllahi wa bihamdihi, SubhanAllahil Azim.\"\n— Bukhari na Muslim';
 }

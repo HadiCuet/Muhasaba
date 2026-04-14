@@ -511,10 +511,6 @@ class AppLocalizationsSq extends AppLocalizations {
       '\"Veprat me te dashura tek Allahu jane ato qe behen rregullisht, edhe nese jane te vogla.\"\n— Buhariu & Muslimi';
 
   @override
-  String get hadith1 =>
-      '\"Merrni persiper vepra te mira aq sa keni mundesi, sepse veprat me te mira jane ato qe behen rregullisht edhe nese jane te pakta.\"\n— Ibn Maxhe';
-
-  @override
   String get hadith2 =>
       '\"Kur vdes biri i Ademit, veprat e tij ndërpriten përveç tre: sadakaja e vazhdueshme, dituria e dobishme, ose fëmija i mirë që lutet për të.\"\n— Muslimi';
 
@@ -525,10 +521,6 @@ class AppLocalizationsSq extends AppLocalizations {
   @override
   String get hadith4 =>
       '\"Allahu nuk shikon pamjen tuaj as pasurine tuaj, por shikon zemrat tuaja dhe veprat tuaja.\"\n— Muslimi';
-
-  @override
-  String get hadith5 =>
-      '\"Më të mirët e njerëzve janë ata që janë më të dobishmit për njerëzit.\"\n— Tabarani';
 
   @override
   String get hadith6 =>
@@ -548,10 +540,6 @@ class AppLocalizationsSq extends AppLocalizations {
   @override
   String get hadith10 =>
       '\"Kush thotë \'SubhanAllah ue bihamdihi\' njëqind herë në ditë, mëkatet e tij do të falen edhe sikur të ishin si shkuma e detit.\"\n— Buhariu';
-
-  @override
-  String get hadith11 =>
-      '\"Lutja më e mirë është ajo e ditës së Arafatit, dhe fjala më e mirë që unë dhe profetët para meje kemi thënë: La ilahe il-lAllah.\"\n— Tirmidhiu';
 
   @override
   String get hadith12 =>
@@ -635,9 +623,6 @@ class AppLocalizationsSq extends AppLocalizations {
       '\"Kush agjëron Ramazanin me besim dhe duke shpresuar shpërblimin, i falen mëkatet e kaluara.\"\n— Buhariu & Muslimi';
 
   @override
-  String get hadith21 => '\"Namazi është shtylla e fesë.\"\n— Bejhekiu';
-
-  @override
   String get hadith22 =>
       '\"Lutja midis ezanit dhe ikametit nuk refuzohet.\"\n— Ebu Davudi';
 
@@ -662,10 +647,6 @@ class AppLocalizationsSq extends AppLocalizations {
       '\"Ai që e lexon bukur Kuranin do të jetë me engjëjt fisnikë.\"\n— Buhariu & Muslimi';
 
   @override
-  String get hadith28 =>
-      '\"Kërkimi i dijes është detyrë e çdo myslimani.\"\n— Ibn Maxhe';
-
-  @override
   String get hadith29 =>
       '\"Sadakaja më e mirë është dhënia e ujit.\"\n— Ahmedi';
 
@@ -674,23 +655,12 @@ class AppLocalizationsSq extends AppLocalizations {
       '\"Kush ia largon një vështirësi besimtarit, Allahu do t\'ia largojë një vështirësi atij në Ditën e Gjykimit.\"\n— Muslimi';
 
   @override
-  String get hadith31 =>
-      '\"Mëshirëplotëve u tregon mëshirë i Gjithëmëshirshmi.\"\n— Ebu Davudi & Tirmidhiu';
-
-  @override
   String get hadith32 =>
       '\"Turpi është pjesë e besimit.\"\n— Buhariu & Muslimi';
 
   @override
-  String get hadith33 => '\"Pastërtia është gjysma e besimit.\"\n— Muslimi';
-
-  @override
   String get hadith34 =>
       '\"Kush duron, Allahu i jep durim.\"\n— Buhariu & Muslimi';
-
-  @override
-  String get hadith35 =>
-      '\"Pasuria më e mirë është gjuha që e përmend Allahun.\"\n— Taberaniu';
 
   @override
   String get hadith36 =>
@@ -703,10 +673,6 @@ class AppLocalizationsSq extends AppLocalizations {
   @override
   String get hadith38 =>
       '\"I forti nuk është ai që mund në mundje, por ai që e kontrollon veten në zemërim.\"\n— Buhariu & Muslimi';
-
-  @override
-  String get hadith39 =>
-      '\"Kush e ruan gjuhën dhe nderin e vet, unë i garantoj Xhenetin.\"\n— Buhariu';
 
   @override
   String get hadith40 =>
@@ -741,24 +707,8 @@ class AppLocalizationsSq extends AppLocalizations {
       '\"Ai që i mban lidhjet farefisnore nuk është ai që i kthen vizitat, por ai që i mban edhe kur i shkëputen.\"\n— Buhariu';
 
   @override
-  String get hadith48 =>
-      '\"Çdo vepër e mirë është sadaka.\"\n— Buhariu & Muslimi';
-
-  @override
   String get hadith49 =>
       '\"Kush ha ushqim dhe thotë: \'Falënderimi i takon Allahut që më ushqeu me këtë dhe ma mundësoi pa asnjë fuqi e forcë timen,\' i falen mëkatet e kaluara.\"\n— Tirmidhi';
-
-  @override
-  String get hadith50 =>
-      '\"Njerëzit më të dashur tek Allahu janë ata që u sjellin më shumë dobi të tjerëve.\"\n— Tabarani';
-
-  @override
-  String get hadith51 =>
-      '\"Kush e përmbajt zemërimin e tij ndërkohë që ka mundësi ta shprehë, Allahu do ta thërrasë para të gjithë krijesave Ditën e Gjykimit për të zgjedhur shpërblimin e tij.\"\n— Tirmidhi';
-
-  @override
-  String get hadith52 =>
-      '\"Nxitoni në dhënien e sadakasë, sepse ajo e ndalon fatkeqësinë.\"\n— Tirmidhi';
 
   @override
   String get hadith53 =>
@@ -783,29 +733,6 @@ class AppLocalizationsSq extends AppLocalizations {
   @override
   String get hadith58 =>
       '\"Kush dërgon salavat mbi mua një herë, Allahu dërgon dhjetë herë mëshirë mbi të.\"\n— Muslim';
-
-  @override
-  String get hadith59 =>
-      '\"Xhamia është shtëpia e çdo njeriu të devotshëm.\"\n— Tabarani';
-
-  @override
-  String get hadith60 =>
-      '\"Kush thotë \'La hawla we la kuwwete il-la bil-lah\' — kjo është ilaç për nëntëdhjetë e nëntë sëmundje, më e lehta e të cilave është shqetësimi.\"\n— Hakim';
-
-  @override
-  String get hadith61 =>
-      '\"Allahu e do kur dikush bën diçka, ta bëjë me përsosmëri.\"\n— Tabarani';
-
-  @override
-  String get hadith62 => '\"Xheneti ndodhet nën këmbët e nënave.\"\n— Nasa\'i';
-
-  @override
-  String get hadith63 =>
-      '\"Veprat më të dashura tek Allahu: namazi në kohën e tij, pastaj mirësia ndaj prindërve, pastaj xhihadi në rrugën e Allahut.\"\n— Buhariu & Muslimi';
-
-  @override
-  String get hadith64 =>
-      '\"Kush falënderon për pak, do t\'i jepet shumë.\"\n— Bejheki';
 
   @override
   String get hadith65 =>
@@ -852,10 +779,6 @@ class AppLocalizationsSq extends AppLocalizations {
       '\"Dy rekatet e sabahut janë më të mira se bota dhe gjithçka që gjendet në të.\"\n— Muslimi';
 
   @override
-  String get hadith76 =>
-      '\"Kush bën istigfar rregullisht, Allahu do t\'i japë rrugëdalje nga çdo vështirësi.\"\n— Ebu Davudi';
-
-  @override
   String get hadith77 =>
       '\"Nëse do të mbështeteshit tek Allahu siç duhet, Ai do t\'ju furnizonte ashtu siç i furnizon shpendët.\"\n— Tirmidhiu';
 
@@ -878,14 +801,6 @@ class AppLocalizationsSq extends AppLocalizations {
   @override
   String get hadith82 =>
       '\"Njeriu ndjek fenë e shokut të tij, prandaj le të shikojë secili prej jush me kë miqësohet.\"\n— Ebu Davudi dhe Tirmidhiu';
-
-  @override
-  String get hadith83 =>
-      '\"Kujtojeni vdekjen shpesh, sepse ajo e pastron zemrën.\"\n— Tirmidhiu';
-
-  @override
-  String get hadith84 =>
-      '\"Adhurimi më i mirë është pritja e lehtësimit.\"\n— Tirmidhiu';
 
   @override
   String get hadith85 =>
@@ -912,14 +827,6 @@ class AppLocalizationsSq extends AppLocalizations {
       '\"Largohuni nga dyshimi, sepse dyshimi është fjala më e rreme.\"\n— Buhariu dhe Muslimi';
 
   @override
-  String get hadith91 =>
-      '\"Kush e lë gënjeshtrën për hir të Allahut, edhe gjatë shakasë, unë i garantoj atij një pallat në skajin e xhenetit.\"\n— Ebu Davudi';
-
-  @override
-  String get hadith92 =>
-      '\"Dyert e mirësisë janë të shumta: madhërimi i Allahut, lavdërimi i Tij, sadakaja, urdhërimi për të mirë dhe largimi i pengesave nga rruga.\"\n— Muslimi';
-
-  @override
   String get hadith93 =>
       '\"Hani së bashku dhe përmendni emrin e Allahut, do të bekohet për ju.\"\n— Ebu Davudi';
 
@@ -941,8 +848,4 @@ class AppLocalizationsSq extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Muslimani është vëlla i muslimanit: nuk i bën padrejtësi, nuk e braktis dhe nuk e përbuz.\"\n— Muslimi';
-
-  @override
-  String get hadith99 =>
-      '\"Fjala më e dashur tek Allahu është: SubhanAllahi ue bihamdihi, SubhanAllahil Adhim.\"\n— Buhariu dhe Muslimi';
 }

@@ -515,10 +515,6 @@ class AppLocalizationsSo extends AppLocalizations {
       '\"Camalada Alle ugu jecel waa kuwa si joogto ah loo sameeyo, xitaa hadday yar yihiin.\"\n— Bukhaari & Muslim';
 
   @override
-  String get hadith1 =>
-      '\"Ku qaata camalo wanaagsan intaad awoodo, waayo camalada ugu wanaagsan waa kuwa si joogto ah loo sameeyo xitaa hadday yar yihiin.\"\n— Ibn Maajah';
-
-  @override
   String get hadith2 =>
       '\"Marka uu dhinto wiilka Aadam, camalladiisu way joogsataa marka laga reebo saddex: sadaqo socota, cilmi anfaca, ama ilmo fiican oo u duceeya.\"\n— Muslim';
 
@@ -529,10 +525,6 @@ class AppLocalizationsSo extends AppLocalizations {
   @override
   String get hadith4 =>
       '\"Allaahu ma eego muuqaalkaaga ama hantidaada, laakiin wuxuu eegaa qalbiyadaada iyo camalladaada.\"\n— Muslim';
-
-  @override
-  String get hadith5 =>
-      '\"Dadka ugu fiican waa kuwa ugu anfaca dadka.\"\n— Tabaraani';
 
   @override
   String get hadith6 =>
@@ -552,10 +544,6 @@ class AppLocalizationsSo extends AppLocalizations {
   @override
   String get hadith10 =>
       '\"Qofka maalin kasta boqol jeer yidhaahda \'SubhanAllahi wa bihamdihi\', dambiyadiisa waa la cafiyaa xitaa hadday la mid yihiin xumbada badda.\"\n— Bukhaari';
-
-  @override
-  String get hadith11 =>
-      '\"Ducadii ugu wanaagsanayd waa ducada maalinta Carafa, wixii ugu wanaagsanaa ee aan iyo anbiyada iga horreeyey dhaheen: Laa ilaaha illallaah.\"\n— Tirmidhi';
 
   @override
   String get hadith12 =>
@@ -639,9 +627,6 @@ class AppLocalizationsSo extends AppLocalizations {
       '\"Qofkii sooma Ramadaan iimaankiisa iyo rajaynta ajar, dambiyadiisii hore waa loo cafiyaa.\"\n— Bukhaari & Muslim';
 
   @override
-  String get hadith21 => '\"Salaaddu waa tiirka diinta.\"\n— Bayhaqi';
-
-  @override
   String get hadith22 =>
       '\"Ducada u dhexaysa adhaamka iyo iqaamaddu lama diido.\"\n— Abu Dawud';
 
@@ -665,10 +650,6 @@ class AppLocalizationsSo extends AppLocalizations {
       '\"Kan si fiican u akhriyo Quraanka wuxuu la jiri doonaa malaa\'igta sharafta leh.\"\n— Bukhaari & Muslim';
 
   @override
-  String get hadith28 =>
-      '\"Raadinta cilmigu waa waajib muslim kasta.\"\n— Ibn Maajah';
-
-  @override
   String get hadith29 =>
       '\"Sadaqada ugu wanaagsan waa biyaha cabbitaanka.\"\n— Ahmad';
 
@@ -677,24 +658,12 @@ class AppLocalizationsSo extends AppLocalizations {
       '\"Qofkii ka saara dhibaato mu\'min, Ilaahay wuxuu ka saari dhibaato Maalinta Qiyaamada.\"\n— Muslim';
 
   @override
-  String get hadith31 =>
-      '\"Kuwa naxariista leh, Kan ugu Naxariista Badan ayaa u naxariista.\"\n— Abu Dawud & Tirmidhi';
-
-  @override
   String get hadith32 =>
       '\"Xishmaddu waa qayb ka mid ah iimaanka.\"\n— Bukhaari & Muslim';
 
   @override
-  String get hadith33 =>
-      '\"Nadiifnimadu waa badh ka mid ah iimaanka.\"\n— Muslim';
-
-  @override
   String get hadith34 =>
       '\"Qofkii samiray, Ilaahay wuxuu siinayaa samir.\"\n— Bukhaari & Muslim';
-
-  @override
-  String get hadith35 =>
-      '\"Hantida ugu wanaagsan waa carrabka Ilaahay xusa.\"\n— Tabaraani';
 
   @override
   String get hadith36 =>
@@ -707,10 +676,6 @@ class AppLocalizationsSo extends AppLocalizations {
   @override
   String get hadith38 =>
       '\"Qofka xoogga leh maaha kan ku guulaysta legdanka, waa kan is-xakama markuu cadhaysan yahay.\"\n— Bukhaari & Muslim';
-
-  @override
-  String get hadith39 =>
-      '\"Qofkii dhawra waxa u dhexeeya afkiisa iyo lugihiisa, waxaan ugu dammaanad qaadayaa Jannada.\"\n— Bukhaari';
 
   @override
   String get hadith40 =>
@@ -745,24 +710,8 @@ class AppLocalizationsSo extends AppLocalizations {
       '\"Kan xiriirka qaraabada xajiya maaha kan ku abtirsa, waa kan xajiya xitaa markay go\'do.\"\n— Bukhaari';
 
   @override
-  String get hadith48 =>
-      '\"Fal wanaag kasta sadaqo weeye.\"\n— Bukhaari & Muslim';
-
-  @override
   String get hadith49 =>
       '\"Qofkii cuna oo yidhaahda: \'Mahad Allaah oo i siiyay cuntadan oo aan wax awood iyo xoog ah iigu samaynin ii soo fidiyey,\' dambiyadiisii hore waa la cafiyaa.\"\n— Tirmidhi';
-
-  @override
-  String get hadith50 =>
-      '\"Dadka Ilaahay ugu jecel waa kuwa dadka kale ugu wanaagsan ugu faa\'iideysa.\"\n— Tabaraani';
-
-  @override
-  String get hadith51 =>
-      '\"Qofkii xanaaqiisa celiyo isagoo awood u leh inuu ku dhaqmo, Ilaahay wuxuu ugu yeerayaa maalinta Qiyaamaha dhammaan uunka hortooda si uu u doorto abaalmarintiisa.\"\n— Tirmidhi';
-
-  @override
-  String get hadith52 =>
-      '\"Ku dhaqso sadaqada, maxaa yeelay waxay ka hor istaagaysaa musiibooyinka.\"\n— Tirmidhi';
 
   @override
   String get hadith53 =>
@@ -787,30 +736,6 @@ class AppLocalizationsSo extends AppLocalizations {
   @override
   String get hadith58 =>
       '\"Qofkii hal mar salaad iigu diro, Ilaahay toban jeer buu naxariis ugu diraa.\"\n— Muslim';
-
-  @override
-  String get hadith59 =>
-      '\"Masaajidku waa guriga qof kasta oo muttaqii ah.\"\n— Tabaraani';
-
-  @override
-  String get hadith60 =>
-      '\"Qofkii yidhaahda \'Laa hawla walaa quwwata illaa billaah\' — waa dawo sagaashan iyo sagaal cudur, kan ugu fududna waa walaac.\"\n— Haakim';
-
-  @override
-  String get hadith61 =>
-      '\"Ilaahay wuxuu jecel yahay marka aad wax qabsataan, inaad si heer sare leh u qabsataan.\"\n— Tabaraani';
-
-  @override
-  String get hadith62 =>
-      '\"Jannadu waxay ku hoos taallaa cagaha hooyooyinka.\"\n— Nasaa\'i';
-
-  @override
-  String get hadith63 =>
-      '\"Camalada Alle ugu jecel: salaadda waqtigeeda, ka dibna waalidka u nicmeyn, ka dibna jihaadka jidka Alle.\"\n— Bukhaari & Muslim';
-
-  @override
-  String get hadith64 =>
-      '\"Qofkii ku mahadiya wax yar, wax badan ayaa la siinayaa.\"\n— Bayhaqi';
 
   @override
   String get hadith65 =>
@@ -857,10 +782,6 @@ class AppLocalizationsSo extends AppLocalizations {
       '\"Laba rakcadood ee salaadda Fajr way ka wanaagsan yihiin adduunka iyo waxa ku jira oo dhan.\"\n— Muslim';
 
   @override
-  String get hadith76 =>
-      '\"Qofka joogtada ah istigfaar sameeya, Allaah wuxuu ka siinayaa meel uu kaga baxo dhib kasta.\"\n— Abu Dawud';
-
-  @override
   String get hadith77 =>
       '\"Haddii aad Allaah ku tawakushaan sida loo tawakuli lahaa, wuxuu idinku rizqin lahaa sida uu u rizqeeyo shimbiraha.\"\n— Tirmidhi';
 
@@ -883,14 +804,6 @@ class AppLocalizationsSo extends AppLocalizations {
   @override
   String get hadith82 =>
       '\"Qofku wuxuu ku socda diinta saaxiibkiis, sidaas darteed mid kastaaba ha eego qofka uu saaxiib la yahay.\"\n— Abu Dawud & Tirmidhi';
-
-  @override
-  String get hadith83 =>
-      '\"Badanaa xasuusta dhimashada, waayo, waxay nadiifisaa qalbiga.\"\n— Tirmidhi';
-
-  @override
-  String get hadith84 =>
-      '\"Cibaadada ugu wanaagsan waa sugitaanka fududaynta.\"\n— Tirmidhi';
 
   @override
   String get hadith85 =>
@@ -917,14 +830,6 @@ class AppLocalizationsSo extends AppLocalizations {
       '\"Ka fogaada tuhmada, waayo, tuhmadu waa hadalka ugu beenta badan.\"\n— Bukhari & Muslim';
 
   @override
-  String get hadith91 =>
-      '\"Qofka ka taga beenta Allaah daraaddiis, xitaa kaftan, waxaan u dammaanad qaadayaa guri ku yaal darfaha Jannada.\"\n— Abu Dawud';
-
-  @override
-  String get hadith92 =>
-      '\"Albaabbada khayrku way badan yihiin: Allaah ku weyneyn, Allaah ku ammaanid, sadaqo, wanaaga ku amrid, iyo jidka wax laga saaro.\"\n— Muslim';
-
-  @override
   String get hadith93 =>
       '\"Wada cuna oo magaca Allaah sheega, waxaa laydiin barakadeeyaa.\"\n— Abu Dawud';
 
@@ -947,8 +852,4 @@ class AppLocalizationsSo extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Muslimku waa walaalka Muslimka: ma dulmiyo, ma dayaco, mana quudhsado.\"\n— Muslim';
-
-  @override
-  String get hadith99 =>
-      '\"Hadalka Allaah ugu jecel waa: SubhanAllaahi wa bihamdihi, SubhanAllaahil Aziim.\"\n— Bukhari & Muslim';
 }

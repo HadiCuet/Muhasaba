@@ -515,10 +515,6 @@ class AppLocalizationsUz extends AppLocalizations {
       '\"Alloh uchun eng sevimli amallar doimiy qilinadigan amallardir, garchi oz bo\'lsa ham.\"\n— Buxoriy va Muslim';
 
   @override
-  String get hadith1 =>
-      '\"Yaxshi amallarni qo\'lingizdan kelgancha qiling, chunki eng yaxshi amallar doimiy qilinganlardir, garchi oz bo\'lsa ham.\"\n— Ibn Moja';
-
-  @override
   String get hadith2 =>
       '\"Odam farzandi vafot etganida, amallari to\'xtaydi, faqat uchta narsa bundan mustasno: doimiy sadaqa, foydali ilm yoki unga duo qiladigan solih farzand.\"\n— Muslim';
 
@@ -529,10 +525,6 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get hadith4 =>
       '\"Alloh sizning tashqi ko\'rinishingiz va boyligingizga qaramaydi, balki qalblaringiz va amallaringizga qaraydi.\"\n— Muslim';
-
-  @override
-  String get hadith5 =>
-      '\"Insonlarning eng yaxshisi odamlarga eng ko\'p foyda keltiradigan kishidir.\"\n— Tabaraniy';
 
   @override
   String get hadith6 =>
@@ -552,10 +544,6 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get hadith10 =>
       '\"Kim kuniga yuz marta \'SubhanAllohi va bihamdihi\' desa, uning gunohlari kechiriladi, hatto dengiz ko\'pigi kabi bo\'lsa ham.\"\n— Buxoriy';
-
-  @override
-  String get hadith11 =>
-      '\"Eng yaxshi duo — Arafa kunidagi duo, men va mendan oldingi payg\'ambarlar aytgan eng yaxshi so\'z: La ilaha illalloh.\"\n— Termiziy';
 
   @override
   String get hadith12 =>
@@ -639,9 +627,6 @@ class AppLocalizationsUz extends AppLocalizations {
       '\"Kim Ramazonni iymon bilan va savob umidida ro\'za tutsa, uning o\'tgan gunohlari kechiriladi.\"\n— Buxoriy va Muslim';
 
   @override
-  String get hadith21 => '\"Namoz dinning ustunidur.\"\n— Bayhaqiy';
-
-  @override
   String get hadith22 =>
       '\"Azon va iqomat orasidagi duo rad etilmaydi.\"\n— Abu Dovud';
 
@@ -665,10 +650,6 @@ class AppLocalizationsUz extends AppLocalizations {
       '\"Qur\'onni yaxshi biladigan kishi oliy farishtalar bilan birga bo\'ladi.\"\n— Buxoriy va Muslim';
 
   @override
-  String get hadith28 =>
-      '\"Ilm o\'rganish har bir musulmonga farzdir.\"\n— Ibn Moja';
-
-  @override
   String get hadith29 => '\"Sadaqaning eng yaxshisi suv berishdur.\"\n— Ahmad';
 
   @override
@@ -676,23 +657,12 @@ class AppLocalizationsUz extends AppLocalizations {
       '\"Kim mo\'mindan bir qiyinchilikni bartaraf qilsa, Alloh Qiyomat kunida undan bir qiyinchilikni bartaraf qiladi.\"\n— Muslim';
 
   @override
-  String get hadith31 =>
-      '\"Rahm qiluvchilarga Rahmoni Rahim rahm qiladi.\"\n— Abu Dovud va Termiziy';
-
-  @override
   String get hadith32 =>
       '\"Hayo — imonning bir qismidur.\"\n— Buxoriy va Muslim';
 
   @override
-  String get hadith33 => '\"Pokizalik — imonning yarmidir.\"\n— Muslim';
-
-  @override
   String get hadith34 =>
       '\"Kim sabr qilsa, Alloh unga sabr beradi.\"\n— Buxoriy va Muslim';
-
-  @override
-  String get hadith35 =>
-      '\"Eng yaxshi boylik — Allohni zikr qiluvchi tildir.\"\n— Tabaroniy';
 
   @override
   String get hadith36 =>
@@ -705,10 +675,6 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get hadith38 =>
       '\"Kuchli odam kurashda yengadigan emas, balki g\'azab paytida o\'zini tiya oladigan kishidir.\"\n— Buxoriy va Muslim';
-
-  @override
-  String get hadith39 =>
-      '\"Kim tilini va iffatini saqlasa, men unga jannatni kafolatlayman.\"\n— Buxoriy';
 
   @override
   String get hadith40 =>
@@ -742,24 +708,8 @@ class AppLocalizationsUz extends AppLocalizations {
       '\"Silai rahm qiluvchi javob qaytaruvchi emas, balki qarishilmasa ham aloqani saqlovchidir.\"\n— Buxoriy';
 
   @override
-  String get hadith48 =>
-      '\"Har bir yaxshi ish sadaqadur.\"\n— Buxoriy va Muslim';
-
-  @override
   String get hadith49 =>
       '\"Kim taom yeb: \'Menga buni yedirgan va mening hech qanday kuchim va quvvatim bo\'lmagan holda buni menga nasib etgan Allohga hamd bo\'lsin\' desa, uning o\'tgan gunohlari kechiriladi.\"\n— Termiziy';
-
-  @override
-  String get hadith50 =>
-      '\"Allohga eng sevimli odamlar boshqalarga eng ko\'p foyda keltiradigan odamlardir.\"\n— Tabaraniy';
-
-  @override
-  String get hadith51 =>
-      '\"Kim g\'azabini bosib tursa, holbuki uni amalga oshira olsa, Alloh uni Qiyomat kuni barcha maxluqotlar oldida chaqirib, mukofotini tanlashini so\'raydi.\"\n— Termiziy';
-
-  @override
-  String get hadith52 =>
-      '\"Sadaqa berishga shoshiling, chunki u balodan himoya qiladi.\"\n— Termiziy';
 
   @override
   String get hadith53 =>
@@ -784,29 +734,6 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get hadith58 =>
       '\"Kim menga bir marta salavot aytsa, Alloh unga o\'n marta rahmat yuboradi.\"\n— Muslim';
-
-  @override
-  String get hadith59 =>
-      '\"Masjid har bir taqvodor kishining uyidir.\"\n— Tabaraniy';
-
-  @override
-  String get hadith60 =>
-      '\"Kim \'La havla va la quvvata illa billah\' desa — bu to\'qson to\'qqizta dardning davosidir, ularning eng yengili tashvishdir.\"\n— Hokim';
-
-  @override
-  String get hadith61 =>
-      '\"Alloh biror ish qilganingizda uni mukammal qilishingizni yaxshi ko\'radi.\"\n— Tabaraniy';
-
-  @override
-  String get hadith62 => '\"Jannat onalarning oyoqlari ostidadir.\"\n— Nasoiy';
-
-  @override
-  String get hadith63 =>
-      '\"Allohga eng sevimli amallar: o\'z vaqtida o\'qilgan namoz, keyin ota-onaga yaxshilik, keyin Alloh yo\'lida jihod.\"\n— Buxoriy va Muslim';
-
-  @override
-  String get hadith64 =>
-      '\"Kim ozga shukr qilsa, unga ko\'p beriladi.\"\n— Bayhaqiy';
 
   @override
   String get hadith65 => '\"Mo\'min mo\'minning oynasi.\"\n— Abu Dovud';
@@ -852,10 +779,6 @@ class AppLocalizationsUz extends AppLocalizations {
       '\"Bomdod namozining ikki rakati dunyo va undagi barcha narsadan yaxshiroqdir.\"\n— Muslim';
 
   @override
-  String get hadith76 =>
-      '\"Kim muntazam istig\'for aytsa, Alloh unga har qiyinchilikdan chiqish yo\'lini beradi.\"\n— Abu Dovud';
-
-  @override
   String get hadith77 =>
       '\"Agar sizlar Allohga to\'g\'ri tawaqqul qilganingizda, U sizlarni qushlarni rizqlantirganidek rizqlantirgan bo\'lar edi.\"\n— Termiziy';
 
@@ -878,14 +801,6 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get hadith82 =>
       '\"Inson do\'stining dini ustidadir, shuning uchun har biringiz kim bilan do\'stlashayotganiga qarasin.\"\n— Abu Dovud va Termiziy';
-
-  @override
-  String get hadith83 =>
-      '\"O\'limni ko\'p eslang, chunki u qalbni poklaydi.\"\n— Termiziy';
-
-  @override
-  String get hadith84 =>
-      '\"Ibodat eng yaxshisi — yengillik kutishdir.\"\n— Termiziy';
 
   @override
   String get hadith85 =>
@@ -912,14 +827,6 @@ class AppLocalizationsUz extends AppLocalizations {
       '\"Gumondan saqlaning, chunki gumon eng yolg\'on so\'zdir.\"\n— Buxoriy va Muslim';
 
   @override
-  String get hadith91 =>
-      '\"Kim Alloh uchun yolg\'onni tark etsa, hazil paytida ham bo\'lsa, men unga jannat chekkasida bir qasr kafolatini beraman.\"\n— Abu Dovud';
-
-  @override
-  String get hadith92 =>
-      '\"Yaxshilik eshiklari ko\'p: Allohni ulug\'lash, Unga hamd aytish, sadaqa, yaxshilikka buyurish va yo\'ldan ozorni olib tashlash.\"\n— Muslim';
-
-  @override
   String get hadith93 =>
       '\"Birga ovqatlaning va Allohning nomini zikr qiling, sizlar uchun baraka bo\'ladi.\"\n— Abu Dovud';
 
@@ -941,8 +848,4 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Musulmon musulmonning birodaradir: unga zulm qilmaydi, uni tashlab ketmaydi va uni kamsitmaydi.\"\n— Muslim';
-
-  @override
-  String get hadith99 =>
-      '\"Allohga eng sevimli so\'z: SubhanAllohi va bihamdihi, SubhanAllohil Azim.\"\n— Buxoriy va Muslim';
 }

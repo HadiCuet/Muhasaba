@@ -512,10 +512,6 @@ class AppLocalizationsPs extends AppLocalizations {
       '\"د الله تعالی ته ترټولو خوښې عملونه هغه دي چې پرې دوام وشي، که لږ هم وي.\"\n— بخاري او مسلم';
 
   @override
-  String get hadith1 =>
-      '\"نیک عملونه هومره واخلئ څومره چې وکولی شئ، ځکه ترټولو غوره عملونه هغه دي چې دوامداره وي که لږ هم وي.\"\n— ابن ماجه';
-
-  @override
   String get hadith2 =>
       '\"کله چې د آدم زوی مړ شي، عملونه یې ودریږي پرته له دریو: صدقه جاریه، ګټور علم، یا نیک اولاد چې د هغه لپاره دعا کوي.\"\n— مسلم';
 
@@ -526,10 +522,6 @@ class AppLocalizationsPs extends AppLocalizations {
   @override
   String get hadith4 =>
       '\"الله ستاسو بڼه او شتمنۍ ته نه ګوري، بلکې ستاسو زړونو او عملونو ته ګوري.\"\n— مسلم';
-
-  @override
-  String get hadith5 =>
-      '\"ترټولو غوره خلک هغه دي چې خلکو ته ترټولو ډیر ګټور وي.\"\n— طبراني';
 
   @override
   String get hadith6 =>
@@ -549,10 +541,6 @@ class AppLocalizationsPs extends AppLocalizations {
   @override
   String get hadith10 =>
       '\"هر څوک چې په ورځ کې سل ځله \'سبحان الله وبحمده\' ووایی، د هغه ګناهونه بخښل کیږی که چیرې د سمندر د ګاز په شان وی.\"\n— بخاري';
-
-  @override
-  String get hadith11 =>
-      '\"غوره دعا د عرفې د ورځې دعا ده، او غوره خبره چې ما او ما نه مخکې پیغمبرانو ویلې: لا اله الا الله.\"\n— ترمذي';
 
   @override
   String get hadith12 =>
@@ -635,9 +623,6 @@ class AppLocalizationsPs extends AppLocalizations {
       '\"هر څوک چې د ایمان او ثواب په نیت رمضان روژه ونیسي، د هغه تیرې ګناهونه بخښل کیږي.\"\n— بخاري او مسلم';
 
   @override
-  String get hadith21 => '\"لمونځ د دین ستنه ده.\"\n— بیهقي';
-
-  @override
   String get hadith22 =>
       '\"د اذان او اقامت ترمنځ دعا رد نه کیږي.\"\n— ابو داود';
 
@@ -661,9 +646,6 @@ class AppLocalizationsPs extends AppLocalizations {
       '\"هغه څوک چې په قرآن کې ماهر وي، د عزتمنو پرښتو سره وي.\"\n— بخاري او مسلم';
 
   @override
-  String get hadith28 => '\"د علم لټول د هر مسلمان فرض دی.\"\n— ابن ماجه';
-
-  @override
   String get hadith29 => '\"غوره صدقه د اوبو ورکول دي.\"\n— احمد';
 
   @override
@@ -671,21 +653,11 @@ class AppLocalizationsPs extends AppLocalizations {
       '\"هر څوک چې له مؤمن څخه سختي لرې کړي، الله به ورته د قیامت په ورځ سختي لرې کړي.\"\n— مسلم';
 
   @override
-  String get hadith31 =>
-      '\"رحم کوونکو ته رحمان رحم کوي.\"\n— ابو داود او ترمذي';
-
-  @override
   String get hadith32 => '\"حیا د ایمان برخه ده.\"\n— بخاري او مسلم';
-
-  @override
-  String get hadith33 => '\"پاکوالی نیم ایمان دی.\"\n— مسلم';
 
   @override
   String get hadith34 =>
       '\"هر څوک چې صبر وکړي، الله به ورته صبر ورکړي.\"\n— بخاري او مسلم';
-
-  @override
-  String get hadith35 => '\"غوره شتمني هغه ژبه ده چې الله یادوي.\"\n— طبراني';
 
   @override
   String get hadith36 =>
@@ -698,10 +670,6 @@ class AppLocalizationsPs extends AppLocalizations {
   @override
   String get hadith38 =>
       '\"قوي سړی هغه نه دی چې لوبې کوي، بلکې هغه دی چې په غصه کې ځان کنترولوي.\"\n— بخاري او مسلم';
-
-  @override
-  String get hadith39 =>
-      '\"هر څوک چې خپله ژبه او عزت وساتي، زه ورته جنت تضمین کوم.\"\n— بخاري';
 
   @override
   String get hadith40 =>
@@ -734,23 +702,8 @@ class AppLocalizationsPs extends AppLocalizations {
       '\"صله رحمي کوونکی هغه نه دی چې بدله کوي، بلکې هغه دی چې کله رابطه پرې کړل شي بیا هم یې ساتي.\"\n— بخاري';
 
   @override
-  String get hadith48 => '\"هره نیکي صدقه ده.\"\n— بخاري او مسلم';
-
-  @override
   String get hadith49 =>
       '\"هر څوک چې خوراک وخوري او ووایي: \'الحمدلله چې ما ته یې دا خوراک ورکړ او بې له کومې ځواکې یا طاقتې زما ما ته رسولی دی،\' د هغه تېرې ګناهونه بخښل کیږي.\"\n— ترمذي';
-
-  @override
-  String get hadith50 =>
-      '\"د الله تعالی نزد ترټولو خوښ هغه خلک دي چې نورو ته ترټولو ډېر ګټور وي.\"\n— طبراني';
-
-  @override
-  String get hadith51 =>
-      '\"هر څوک چې خپله قهر ونیسي پداسې حال کې چې د عمل کولو وړتیا ولري، الله به یې د قیامت په ورځ د ټولو مخلوقاتو په وړاندې وبولي ترڅو خپل انعام غوره کړي.\"\n— ترمذي';
-
-  @override
-  String get hadith52 =>
-      '\"په صدقه کې ژر اقدام وکړئ، ځکه چې صدقه د بلا مخه نیسي.\"\n— ترمذي';
 
   @override
   String get hadith53 =>
@@ -775,28 +728,6 @@ class AppLocalizationsPs extends AppLocalizations {
   @override
   String get hadith58 =>
       '\"هر څوک چې پر ما یو ځل درود واستوي، الله به پرې لس ځله رحمت واستوي.\"\n— مسلم';
-
-  @override
-  String get hadith59 => '\"جومات د هر متقي کس کور دی.\"\n— طبراني';
-
-  @override
-  String get hadith60 =>
-      '\"هر څوک چې \'لا حول ولا قوة الا بالله\' ووایي — دا د نهه نوي ناروغیو درمل دی، چې ترټولو لږ یې اندیښنه ده.\"\n— حاکم';
-
-  @override
-  String get hadith61 =>
-      '\"الله خوښوي چې کله تاسو کار کوئ، هغه په غوره ډول ترسره کړئ.\"\n— طبراني';
-
-  @override
-  String get hadith62 => '\"جنت د مورو د پښو لاندې دی.\"\n— نسائي';
-
-  @override
-  String get hadith63 =>
-      '\"د الله تعالی نزد ترټولو خوښ عملونه: لمونځ په خپل وخت، بیا د والدینو سره نېکي، بیا د الله په لاره کې جهاد.\"\n— بخاري او مسلم';
-
-  @override
-  String get hadith64 =>
-      '\"هر څوک چې په لږ شکر وکړي، ورته به ډېر ورکړل شي.\"\n— بیهقي';
 
   @override
   String get hadith65 => '\"مؤمن د مؤمن آینه دی.\"\n— ابو داود';
@@ -842,10 +773,6 @@ class AppLocalizationsPs extends AppLocalizations {
       '\"د سهار دوه رکعتونه د دنیا او هرڅه چې پکې دي نه ښې دي.\"\n— مسلم';
 
   @override
-  String get hadith76 =>
-      '\"هرڅوک چې په منظم ډول استغفار کوي، الله به ورته د هرې ستونزې څخه لاره پیدا کړي.\"\n— ابوداود';
-
-  @override
   String get hadith77 =>
       '\"که تاسو په الله باندې داسې توکل کوئ لکه چې حق یې دی، نو هغه به تاسو ته داسې روزي درکوي لکه چې مرغیو ته ورکوي.\"\n— ترمذي';
 
@@ -868,12 +795,6 @@ class AppLocalizationsPs extends AppLocalizations {
   @override
   String get hadith82 =>
       '\"انسان د خپل ملګري په دین باندې دی، نو هر یو ستاسو دې وګوري چې د چا سره ملګرتیا کوي.\"\n— ابوداود او ترمذي';
-
-  @override
-  String get hadith83 => '\"مرګ ډیر یاد کړئ، ځکه چې دا زړه پاکوي.\"\n— ترمذي';
-
-  @override
-  String get hadith84 => '\"ترټولو غوره عبادت د خلاصون انتظار دی.\"\n— ترمذي';
 
   @override
   String get hadith85 =>
@@ -899,14 +820,6 @@ class AppLocalizationsPs extends AppLocalizations {
       '\"له بدګمانۍ څخه ځان ساتئ، ځکه چې بدګماني تر ټولو دروغجنه خبره ده.\"\n— بخاري او مسلم';
 
   @override
-  String get hadith91 =>
-      '\"هرڅوک چې د الله لپاره دروغ پریږدي، حتی په ټوکو کې هم، زه ورته د جنت په څنډه کې ماڼۍ تضمینوم.\"\n— ابوداود';
-
-  @override
-  String get hadith92 =>
-      '\"د نیکۍ دروازې ډیرې دي: د الله تسبیح، د هغه حمد، صدقه، د نیکۍ امر، او له لارې د تکلیف لرې کول.\"\n— مسلم';
-
-  @override
   String get hadith93 =>
       '\"یوځای خوراک وکړئ او د الله نوم واخلئ، نو ستاسو لپاره به برکت وي.\"\n— ابوداود';
 
@@ -925,8 +838,4 @@ class AppLocalizationsPs extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"مسلمان د مسلمان ورور دی: نه پرې ظلم کوي، نه یې پریږدي، نه یې سپکوي.\"\n— مسلم';
-
-  @override
-  String get hadith99 =>
-      '\"د الله نزد تر ټولو ګرانه خبره: سبحان الله وبحمده، سبحان الله العظیم.\"\n— بخاري او مسلم';
 }

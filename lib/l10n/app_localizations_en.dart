@@ -511,10 +511,6 @@ class AppLocalizationsEn extends AppLocalizations {
       '\"The most beloved deeds to Allah are those done consistently, even if small.\"\n— Bukhari & Muslim';
 
   @override
-  String get hadith1 =>
-      '\"Take up good deeds only as much as you are able, for the best deeds are those done consistently even if they are few.\"\n— Ibn Majah';
-
-  @override
   String get hadith2 =>
       '\"When the son of Adam dies, his deeds come to an end except three: ongoing charity, beneficial knowledge, or a righteous child who prays for him.\"\n— Muslim';
 
@@ -525,10 +521,6 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get hadith4 =>
       '\"Allah does not look at your appearance or your wealth, but He looks at your hearts and your deeds.\"\n— Muslim';
-
-  @override
-  String get hadith5 =>
-      '\"The best of people are those who are most beneficial to people.\"\n— Tabarani';
 
   @override
   String get hadith6 =>
@@ -548,10 +540,6 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get hadith10 =>
       '\"Whoever says \'SubhanAllah wa bihamdihi\' a hundred times a day will have his sins forgiven even if they were like the foam of the sea.\"\n— Bukhari';
-
-  @override
-  String get hadith11 =>
-      '\"The best supplication is that of the Day of Arafah, and the best thing that I and the Prophets before me said is: La ilaha illallah.\"\n— Tirmidhi';
 
   @override
   String get hadith12 =>
@@ -635,9 +623,6 @@ class AppLocalizationsEn extends AppLocalizations {
       '\"Whoever fasts Ramadan out of faith and seeking reward, his past sins will be forgiven.\"\n— Bukhari & Muslim';
 
   @override
-  String get hadith21 => '\"Prayer is the pillar of religion.\"\n— Bayhaqi';
-
-  @override
   String get hadith22 =>
       '\"The supplication between the adhan and iqamah is not rejected.\"\n— Abu Dawud';
 
@@ -662,10 +647,6 @@ class AppLocalizationsEn extends AppLocalizations {
       '\"The one who is proficient in the Quran will be with the noble angels.\"\n— Bukhari & Muslim';
 
   @override
-  String get hadith28 =>
-      '\"Seeking knowledge is an obligation upon every Muslim.\"\n— Ibn Majah';
-
-  @override
   String get hadith29 =>
       '\"The best of charity is giving water to drink.\"\n— Ahmad';
 
@@ -674,22 +655,11 @@ class AppLocalizationsEn extends AppLocalizations {
       '\"Whoever removes a hardship from a believer, Allah will remove a hardship from him on the Day of Judgment.\"\n— Muslim';
 
   @override
-  String get hadith31 =>
-      '\"The merciful are shown mercy by the Most Merciful.\"\n— Abu Dawud & Tirmidhi';
-
-  @override
   String get hadith32 => '\"Modesty is part of faith.\"\n— Bukhari & Muslim';
-
-  @override
-  String get hadith33 => '\"Cleanliness is half of faith.\"\n— Muslim';
 
   @override
   String get hadith34 =>
       '\"Whoever is patient, Allah will give him patience.\"\n— Bukhari & Muslim';
-
-  @override
-  String get hadith35 =>
-      '\"The best wealth is a tongue that remembers Allah.\"\n— Tabarani';
 
   @override
   String get hadith36 =>
@@ -702,10 +672,6 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get hadith38 =>
       '\"The strong person is not the one who wrestles, but the one who controls himself in anger.\"\n— Bukhari & Muslim';
-
-  @override
-  String get hadith39 =>
-      '\"Whoever guards what is between his jaws and his legs, I guarantee him Paradise.\"\n— Bukhari';
 
   @override
   String get hadith40 =>
@@ -739,23 +705,8 @@ class AppLocalizationsEn extends AppLocalizations {
       '\"The one who maintains family ties is not the one who reciprocates. It is the one who maintains them even when cut off.\"\n— Bukhari';
 
   @override
-  String get hadith48 => '\"Every good deed is charity.\"\n— Bukhari & Muslim';
-
-  @override
   String get hadith49 =>
       '\"Whoever eats food and says: \'Praise be to Allah who has fed me this and provided it without any power or strength on my part,\' his past sins will be forgiven.\"\n— Tirmidhi';
-
-  @override
-  String get hadith50 =>
-      '\"The most beloved people to Allah are those who are most beneficial to others.\"\n— Tabarani';
-
-  @override
-  String get hadith51 =>
-      '\"Whoever controls his anger while able to act, Allah will call him before all creation on the Day of Judgment to choose his reward.\"\n— Tirmidhi';
-
-  @override
-  String get hadith52 =>
-      '\"Give charity without delay, for it stands in the way of calamity.\"\n— Tirmidhi';
 
   @override
   String get hadith53 =>
@@ -780,30 +731,6 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get hadith58 =>
       '\"Whoever sends blessings upon me once, Allah will send blessings upon him tenfold.\"\n— Muslim';
-
-  @override
-  String get hadith59 =>
-      '\"The mosque is the house of every pious person.\"\n— Tabarani';
-
-  @override
-  String get hadith60 =>
-      '\"Whoever says \'La hawla wa la quwwata illa billah\' — it is a remedy for ninety-nine diseases, the least of which is worry.\"\n— Hakim';
-
-  @override
-  String get hadith61 =>
-      '\"Allah loves that when you do something, you do it with excellence.\"\n— Tabarani';
-
-  @override
-  String get hadith62 =>
-      '\"Paradise lies under the feet of mothers.\"\n— Nasa\'i';
-
-  @override
-  String get hadith63 =>
-      '\"The most beloved deeds to Allah: prayer at its proper time, then kindness to parents, then jihad in the cause of Allah.\"\n— Bukhari & Muslim';
-
-  @override
-  String get hadith64 =>
-      '\"Whoever is thankful for little will be given much.\"\n— Bayhaqi';
 
   @override
   String get hadith65 =>
@@ -850,10 +777,6 @@ class AppLocalizationsEn extends AppLocalizations {
       '\"The two rak\'ahs of Fajr are better than the world and everything in it.\"\n— Muslim';
 
   @override
-  String get hadith76 =>
-      '\"Whoever says \'Astaghfirullah\' regularly, Allah will provide a way out of every difficulty.\"\n— Abu Dawud';
-
-  @override
   String get hadith77 =>
       '\"If you relied on Allah as He should be relied upon, He would provide for you as He provides for the birds.\"\n— Tirmidhi';
 
@@ -876,14 +799,6 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get hadith82 =>
       '\"A person is upon the religion of his close friend, so let each of you look at whom he befriends.\"\n— Abu Dawud & Tirmidhi';
-
-  @override
-  String get hadith83 =>
-      '\"Remember death often, for it purifies the heart.\"\n— Tirmidhi';
-
-  @override
-  String get hadith84 =>
-      '\"The best of worship is awaiting relief.\"\n— Tirmidhi';
 
   @override
   String get hadith85 =>
@@ -910,14 +825,6 @@ class AppLocalizationsEn extends AppLocalizations {
       '\"Avoid suspicion, for suspicion is the most false of speech.\"\n— Bukhari & Muslim';
 
   @override
-  String get hadith91 =>
-      '\"Whoever gives up lying for the sake of Allah, even while joking, I guarantee him a palace in the outskirts of Paradise.\"\n— Abu Dawud';
-
-  @override
-  String get hadith92 =>
-      '\"The doors of goodness are many: glorifying Allah, praising Him, charity, enjoining good, and removing harm from the road.\"\n— Muslim';
-
-  @override
   String get hadith93 =>
       '\"Eat together and mention the name of Allah, and it will be blessed for you.\"\n— Abu Dawud';
 
@@ -939,8 +846,4 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"A Muslim is a brother to a Muslim: he does not wrong him, nor abandon him, nor despise him.\"\n— Muslim';
-
-  @override
-  String get hadith99 =>
-      '\"The most beloved speech to Allah is: SubhanAllahi wa bihamdihi, SubhanAllahil Azeem.\"\n— Bukhari & Muslim';
 }

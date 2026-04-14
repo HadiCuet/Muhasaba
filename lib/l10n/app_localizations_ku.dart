@@ -513,10 +513,6 @@ class AppLocalizationsKu extends AppLocalizations {
       '\"Kirinên herî delal li ber Xwedê ew in ku domdar in, heke piçûk bin jî.\"\n— Buxarî û Muslim';
 
   @override
-  String get hadith1 =>
-      '\"Kirinên qenc bikin bi qasî ku hûn dikarin, ji ber ku kirinên herî baş ew in ku domdar in heke hindik bin jî.\"\n— Îbn Mace';
-
-  @override
   String get hadith2 =>
       '\"Gava kurê Adem dimire, kirinên wî disekinin ji bilî sisiyan: xêra domdar, zanista bi kêr, an zarokek salih ku ji bo wî dua dike.\"\n— Muslim';
 
@@ -527,10 +523,6 @@ class AppLocalizationsKu extends AppLocalizations {
   @override
   String get hadith4 =>
       '\"Xwedê li rûyê we û malê we nanêre, lê li dilê we û kirinên we dinêre.\"\n— Muslim';
-
-  @override
-  String get hadith5 =>
-      '\"Yê herî baş di nav mirovan de ew e ku ji bo mirovan herî bi kêr be.\"\n— Tebranî';
 
   @override
   String get hadith6 =>
@@ -550,10 +542,6 @@ class AppLocalizationsKu extends AppLocalizations {
   @override
   String get hadith10 =>
       '\"Ew kesê ku di rojê de sed caran \'SubhanAllahi we bihamdihi\' bêje, gunahên wî têne baxişandin heke wek kefa behrê bin jî.\"\n— Buxarî';
-
-  @override
-  String get hadith11 =>
-      '\"Duaya herî baş ya roja Erefeyê ye, û baştirîn gotina ku min û pêxemberên beriya min gotine ev e: La ilaha illallah.\"\n— Tirmizî';
 
   @override
   String get hadith12 =>
@@ -636,9 +624,6 @@ class AppLocalizationsKu extends AppLocalizations {
       '\"Kî bi bawerî û bi hêviya xelatê Remezanê rojî bigire, gunehên wî yên berê têne baxişandin.\"\n— Buxarî û Muslim';
 
   @override
-  String get hadith21 => '\"Nimêj stûna dînê ye.\"\n— Beyhaqî';
-
-  @override
   String get hadith22 =>
       '\"Duaya di navbera ezan û îqameyê de nayê redkirin.\"\n— Ebû Dawûd';
 
@@ -662,10 +647,6 @@ class AppLocalizationsKu extends AppLocalizations {
       '\"Yê ku di xwendina Quranê de jêhatî be, dê bi milyaketên hêja re be.\"\n— Buxarî û Muslim';
 
   @override
-  String get hadith28 =>
-      '\"Lêgerîna zanistê li ser her misilmanekî farz e.\"\n— Îbn Mace';
-
-  @override
   String get hadith29 =>
       '\"Xêra herî baş dayîna avê ye ku were vexwarin.\"\n— Ehmed';
 
@@ -674,22 +655,11 @@ class AppLocalizationsKu extends AppLocalizations {
       '\"Kî tengahiyek ji bawermendekî rake, Xwedê dê Roja Qiyametê tengahiyek ji wî rake.\"\n— Muslim';
 
   @override
-  String get hadith31 =>
-      '\"Yên dilovan, Xwedayê herî Dilovan li wan dilovaniyê dike.\"\n— Ebû Dawûd û Tirmizî';
-
-  @override
   String get hadith32 => '\"Şerm beşek ji baweriyê ye.\"\n— Buxarî û Muslim';
-
-  @override
-  String get hadith33 => '\"Paqijî nîvê baweriyê ye.\"\n— Muslim';
 
   @override
   String get hadith34 =>
       '\"Kî sebir bike, Xwedê jê re sebir dide.\"\n— Buxarî û Muslim';
-
-  @override
-  String get hadith35 =>
-      '\"Dewlemendiya herî baş zimanê ku Xwedê bi bîr tîne ye.\"\n— Tebranî';
 
   @override
   String get hadith36 =>
@@ -702,10 +672,6 @@ class AppLocalizationsKu extends AppLocalizations {
   @override
   String get hadith38 =>
       '\"Yê bi hêz ne ew e ku di zordariyê de bi ser dikeve, lê ew e ku di dema hêrsê de xwe kontrol dike.\"\n— Buxarî û Muslim';
-
-  @override
-  String get hadith39 =>
-      '\"Kî tiştê di navbera çeneyê û lingên wî de biparêze, ez bihuştê jê re garantî dikim.\"\n— Buxarî';
 
   @override
   String get hadith40 =>
@@ -739,23 +705,8 @@ class AppLocalizationsKu extends AppLocalizations {
       '\"Yê ku xizmên xwe didomîne ne ew e ku bersivê dide, lê ew e ku dema têkilî têne qut kirin jî berdewam dike.\"\n— Buxarî';
 
   @override
-  String get hadith48 => '\"Her kirina qenc xêr e.\"\n— Buxarî û Muslim';
-
-  @override
   String get hadith49 =>
       '\"Kî xwarinê bixwe û bibêje: \'Spas ji Xwedê re ye ku ev xwarin da min û bêyî hêz û hîla min dabîn kir,\' gunehên wî yên berê têne baxişandin.\"\n— Tirmizî';
-
-  @override
-  String get hadith50 =>
-      '\"Kesên ku ji Xwedê re herî delal in, ew in ku ji bo kesên din herî bi kêr in.\"\n— Tebranî';
-
-  @override
-  String get hadith51 =>
-      '\"Kî hêrsa xwe kontrol bike dema ku karibe wê bi kar bîne, Xwedê wê roja Qiyametê li ber hemû mexlûqan gazî wî bike da ku xelata xwe hilbijêre.\"\n— Tirmizî';
-
-  @override
-  String get hadith52 =>
-      '\"Di dayîna xêrê de lez bikin, ji ber ku ew li ber belayê disekine.\"\n— Tirmizî';
 
   @override
   String get hadith53 =>
@@ -780,28 +731,6 @@ class AppLocalizationsKu extends AppLocalizations {
   @override
   String get hadith58 =>
       '\"Kî carekê li ser min selawat bîne, Xwedê deh caran rehmeta xwe li wî dike.\"\n— Muslim';
-
-  @override
-  String get hadith59 => '\"Mizgeft mala her kesê pîroz e.\"\n— Tebranî';
-
-  @override
-  String get hadith60 =>
-      '\"Kî bibêje \'La hewle we la quwwete il-la bil-lah\' — ev dermanê nod û neh nexweşiyan e, ya herî sivik jî xem e.\"\n— Hakim';
-
-  @override
-  String get hadith61 =>
-      '\"Xwedê hez dike ku gava hûn tiştekî dikin, wê bi awayekî herî baş bikin.\"\n— Tebranî';
-
-  @override
-  String get hadith62 => '\"Bihuşt di bin lingên dayikan de ye.\"\n— Nesaî';
-
-  @override
-  String get hadith63 =>
-      '\"Kirinên herî delal li ber Xwedê: nimêj di dema xwe de, paşê qenciya li dê û bavan, paşê cîhad di rêya Xwedê de.\"\n— Buxarî û Muslim';
-
-  @override
-  String get hadith64 =>
-      '\"Kî ji bo yê hindik şikir bike, pir jê re tê dayîn.\"\n— Beyhaqî';
 
   @override
   String get hadith65 => '\"Bawermend neynika bawermend e.\"\n— Ebû Dawûd';
@@ -847,10 +776,6 @@ class AppLocalizationsKu extends AppLocalizations {
       '\"Du rikatên nimêja Fecirê ji dinyayê û her tiştê ku tê de ye çêtir in.\"\n— Muslim';
 
   @override
-  String get hadith76 =>
-      '\"Kî bi domdarî \'Estexfirullah\' bibêje, Xwedê ji her tengasiyê rêyek jê re vedike.\"\n— Ebû Dawûd';
-
-  @override
   String get hadith77 =>
       '\"Heke hûn bi rastî pişta xwe bi Xwedê ve girêdana, ew ê wek çûkan rizqê we bida we.\"\n— Tirmizî';
 
@@ -873,14 +798,6 @@ class AppLocalizationsKu extends AppLocalizations {
   @override
   String get hadith82 =>
       '\"Mirov li ser dînê hevalê xwe ye, bila her yek ji we binêre ku bi kê re hevaltî dike.\"\n— Ebû Dawûd û Tirmizî';
-
-  @override
-  String get hadith83 =>
-      '\"Zêde li mirinê bifikirin, ji ber ku ew dilê we paqij dike.\"\n— Tirmizî';
-
-  @override
-  String get hadith84 =>
-      '\"Îbadeta herî baş li bendê bûna rehetiyê ye.\"\n— Tirmizî';
 
   @override
   String get hadith85 =>
@@ -907,14 +824,6 @@ class AppLocalizationsKu extends AppLocalizations {
       '\"Ji gumanê dûr bikevin, ji ber ku guman derewîntirîn axaftin e.\"\n— Buxarî û Muslim';
 
   @override
-  String get hadith91 =>
-      '\"Kî ji bo Xwedê dev ji derewan berde, tewra di henekê de jî, ez qesrekî li qeraxa Bihuştê jê re garantî dikim.\"\n— Ebû Dawûd';
-
-  @override
-  String get hadith92 =>
-      '\"Deriyên qenciyê gelek in: pesnê Xwedê dayîn, spasiya wî kirin, xêr, fermana bi qenciyê, û rakirina zirarê ji rê.\"\n— Muslim';
-
-  @override
   String get hadith93 =>
       '\"Bi hev re xwarinê bixwin û navê Xwedê bibêjin, dê ji we re bibe bereketê.\"\n— Ebû Dawûd';
 
@@ -936,8 +845,4 @@ class AppLocalizationsKu extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Misilman birayê Misilman e: ne zilm lê dike, ne dev jê berdide û ne jî wî piçûk dibîne.\"\n— Muslim';
-
-  @override
-  String get hadith99 =>
-      '\"Gotina herî delal li ber Xwedê: SubhanAllahi we bihamdihi, SubhanAllahil Ezîm.\"\n— Buxarî û Muslim';
 }

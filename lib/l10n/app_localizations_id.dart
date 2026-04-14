@@ -514,10 +514,6 @@ class AppLocalizationsId extends AppLocalizations {
       '\"Amalan yang paling dicintai Allah adalah yang dilakukan secara konsisten, meskipun sedikit.\"\n— Bukhari & Muslim';
 
   @override
-  String get hadith1 =>
-      '\"Lakukanlah amalan kebaikan sesuai kemampuanmu, karena amalan terbaik adalah yang dilakukan secara konsisten meskipun sedikit.\"\n— Ibnu Majah';
-
-  @override
   String get hadith2 =>
       '\"Apabila anak Adam meninggal dunia, terputuslah amalnya kecuali tiga perkara: sedekah jariyah, ilmu yang bermanfaat, atau anak saleh yang mendoakannya.\"\n— Muslim';
 
@@ -528,10 +524,6 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get hadith4 =>
       '\"Sesungguhnya Allah tidak melihat rupa dan hartamu, tetapi Dia melihat hati dan amalmu.\"\n— Muslim';
-
-  @override
-  String get hadith5 =>
-      '\"Sebaik-baik manusia adalah yang paling bermanfaat bagi manusia.\"\n— Thabrani';
 
   @override
   String get hadith6 =>
@@ -551,10 +543,6 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get hadith10 =>
       '\"Barangsiapa membaca \'SubhanAllah wa bihamdihi\' seratus kali dalam sehari, dosanya akan diampuni meski seperti buih di lautan.\"\n— Bukhari';
-
-  @override
-  String get hadith11 =>
-      '\"Doa terbaik adalah doa pada hari Arafah, dan sebaik-baik yang diucapkan olehku dan para nabi sebelumku adalah: La ilaha illallah.\"\n— Tirmidzi';
 
   @override
   String get hadith12 =>
@@ -639,9 +627,6 @@ class AppLocalizationsId extends AppLocalizations {
       '\"Barangsiapa berpuasa Ramadan karena iman dan mengharap pahala, diampunilah dosa-dosanya yang telah lalu.\"\n— Bukhari & Muslim';
 
   @override
-  String get hadith21 => '\"Shalat adalah tiang agama.\"\n— Baihaqi';
-
-  @override
   String get hadith22 =>
       '\"Doa antara adzan dan iqamah tidak ditolak.\"\n— Abu Dawud';
 
@@ -665,10 +650,6 @@ class AppLocalizationsId extends AppLocalizations {
       '\"Orang yang mahir membaca Al-Quran bersama para malaikat yang mulia.\"\n— Bukhari & Muslim';
 
   @override
-  String get hadith28 =>
-      '\"Menuntut ilmu wajib bagi setiap Muslim.\"\n— Ibnu Majah';
-
-  @override
   String get hadith29 =>
       '\"Sebaik-baik sedekah adalah memberi minum air.\"\n— Ahmad';
 
@@ -677,23 +658,12 @@ class AppLocalizationsId extends AppLocalizations {
       '\"Barangsiapa menghilangkan satu kesusahan dari seorang mukmin, Allah akan menghilangkan satu kesusahan darinya pada Hari Kiamat.\"\n— Muslim';
 
   @override
-  String get hadith31 =>
-      '\"Orang-orang yang penyayang akan disayangi oleh Yang Maha Penyayang.\"\n— Abu Dawud & Tirmidzi';
-
-  @override
   String get hadith32 =>
       '\"Malu adalah bagian dari iman.\"\n— Bukhari & Muslim';
 
   @override
-  String get hadith33 => '\"Kebersihan adalah sebagian dari iman.\"\n— Muslim';
-
-  @override
   String get hadith34 =>
       '\"Barangsiapa bersabar, Allah akan memberinya kesabaran.\"\n— Bukhari & Muslim';
-
-  @override
-  String get hadith35 =>
-      '\"Harta terbaik adalah lisan yang berdzikir kepada Allah.\"\n— Thabrani';
 
   @override
   String get hadith36 =>
@@ -706,10 +676,6 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get hadith38 =>
       '\"Orang yang kuat bukanlah yang pandai bergulat, melainkan yang mampu mengendalikan dirinya saat marah.\"\n— Bukhari & Muslim';
-
-  @override
-  String get hadith39 =>
-      '\"Barangsiapa menjaga apa yang ada di antara kedua rahangnya dan kedua kakinya, aku menjamin surga baginya.\"\n— Bukhari';
 
   @override
   String get hadith40 =>
@@ -744,24 +710,8 @@ class AppLocalizationsId extends AppLocalizations {
       '\"Orang yang menyambung tali silaturahmi bukanlah yang membalas kebaikan, melainkan yang tetap menyambungnya meskipun diputuskan.\"\n— Bukhari';
 
   @override
-  String get hadith48 =>
-      '\"Setiap perbuatan baik adalah sedekah.\"\n— Bukhari & Muslim';
-
-  @override
   String get hadith49 =>
       '\"Barangsiapa makan lalu berkata: \'Segala puji bagi Allah yang telah memberiku makan ini dan menganugerahkannya tanpa daya dan kekuatan dariku,\' maka dosa-dosanya yang lalu akan diampuni.\"\n— Tirmidzi';
-
-  @override
-  String get hadith50 =>
-      '\"Orang yang paling dicintai Allah adalah yang paling bermanfaat bagi orang lain.\"\n— Thabrani';
-
-  @override
-  String get hadith51 =>
-      '\"Barangsiapa menahan amarahnya padahal ia mampu melampiaskannya, Allah akan memanggilnya di hadapan seluruh makhluk pada Hari Kiamat untuk memilih pahalanya.\"\n— Tirmidzi';
-
-  @override
-  String get hadith52 =>
-      '\"Bersegeralah bersedekah, karena sedekah menghalangi datangnya musibah.\"\n— Tirmidzi';
 
   @override
   String get hadith53 =>
@@ -786,30 +736,6 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get hadith58 =>
       '\"Barangsiapa bershalawat kepadaku sekali, Allah akan bershalawat kepadanya sepuluh kali.\"\n— Muslim';
-
-  @override
-  String get hadith59 =>
-      '\"Masjid adalah rumah setiap orang bertakwa.\"\n— Thabrani';
-
-  @override
-  String get hadith60 =>
-      '\"Barangsiapa mengucapkan \'La hawla wa la quwwata illa billah\' — itu adalah obat bagi sembilan puluh sembilan penyakit, yang paling ringannya adalah kegelisahan.\"\n— Hakim';
-
-  @override
-  String get hadith61 =>
-      '\"Allah mencintai jika seseorang melakukan sesuatu, ia melakukannya dengan sebaik-baiknya.\"\n— Thabrani';
-
-  @override
-  String get hadith62 =>
-      '\"Surga berada di bawah telapak kaki ibu.\"\n— Nasa\'i';
-
-  @override
-  String get hadith63 =>
-      '\"Amalan yang paling dicintai Allah: shalat pada waktunya, kemudian berbakti kepada orang tua, kemudian jihad di jalan Allah.\"\n— Bukhari & Muslim';
-
-  @override
-  String get hadith64 =>
-      '\"Barangsiapa bersyukur atas yang sedikit, akan diberi yang banyak.\"\n— Baihaqi';
 
   @override
   String get hadith65 =>
@@ -856,10 +782,6 @@ class AppLocalizationsId extends AppLocalizations {
       '\"Dua rakaat Fajar lebih baik dari dunia dan segala isinya.\"\n— Muslim';
 
   @override
-  String get hadith76 =>
-      '\"Barang siapa yang istiqamah beristighfar, Allah akan memberikan jalan keluar dari setiap kesulitan.\"\n— Abu Dawud';
-
-  @override
   String get hadith77 =>
       '\"Seandainya kalian bertawakal kepada Allah dengan sebenar-benarnya, niscaya Dia akan memberi kalian rezeki sebagaimana Dia memberi rezeki kepada burung.\"\n— Tirmidzi';
 
@@ -882,14 +804,6 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get hadith82 =>
       '\"Seseorang itu mengikuti agama temannya, maka hendaklah salah seorang dari kalian melihat siapa yang ia jadikan teman.\"\n— Abu Dawud & Tirmidzi';
-
-  @override
-  String get hadith83 =>
-      '\"Perbanyaklah mengingat kematian, karena ia membersihkan hati.\"\n— Tirmidzi';
-
-  @override
-  String get hadith84 =>
-      '\"Sebaik-baik ibadah adalah menunggu datangnya kemudahan.\"\n— Tirmidzi';
 
   @override
   String get hadith85 =>
@@ -916,14 +830,6 @@ class AppLocalizationsId extends AppLocalizations {
       '\"Jauhilah prasangka, karena prasangka adalah ucapan yang paling dusta.\"\n— Bukhari & Muslim';
 
   @override
-  String get hadith91 =>
-      '\"Barang siapa yang meninggalkan dusta demi Allah, meskipun dalam bercanda, aku menjamin baginya sebuah istana di pinggiran surga.\"\n— Abu Dawud';
-
-  @override
-  String get hadith92 =>
-      '\"Pintu-pintu kebaikan itu banyak: bertasbih, memuji Allah, bersedekah, menyuruh kebaikan, dan menyingkirkan gangguan dari jalan.\"\n— Muslim';
-
-  @override
   String get hadith93 =>
       '\"Makanlah bersama-sama dan sebutlah nama Allah, niscaya akan diberkahi untuk kalian.\"\n— Abu Dawud';
 
@@ -946,8 +852,4 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Seorang muslim adalah saudara bagi muslim lainnya: ia tidak menzaliminya, tidak meninggalkannya, dan tidak menghinakannya.\"\n— Muslim';
-
-  @override
-  String get hadith99 =>
-      '\"Ucapan yang paling dicintai Allah adalah: SubhanAllahi wa bihamdihi, SubhanAllahil Azhim.\"\n— Bukhari & Muslim';
 }

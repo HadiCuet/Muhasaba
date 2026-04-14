@@ -513,10 +513,6 @@ class AppLocalizationsFa extends AppLocalizations {
       '«محبوب‌ترین اعمال نزد خداوند آن‌هایی هستند که مداومت داشته باشند، هرچند اندک باشند.»\n— بخاری و مسلم';
 
   @override
-  String get hadith1 =>
-      '«اعمال نیک را به اندازه توانتان انجام دهید، زیرا بهترین اعمال آن‌هایی هستند که با مداومت انجام شوند، هرچند اندک باشند.»\n— ابن ماجه';
-
-  @override
   String get hadith2 =>
       '«چون فرزند آدم بمیرد، عملش قطع می‌شود مگر از سه چیز: صدقه جاریه، علم سودمند، یا فرزند صالحی که برایش دعا کند.»\n— مسلم';
 
@@ -527,10 +523,6 @@ class AppLocalizationsFa extends AppLocalizations {
   @override
   String get hadith4 =>
       '«خداوند به ظاهر و ثروت شما نمی‌نگرد، بلکه به دل‌ها و اعمال شما می‌نگرد.»\n— مسلم';
-
-  @override
-  String get hadith5 =>
-      '«بهترین مردم کسانی هستند که بیشترین سود را به مردم برسانند.»\n— طبرانی';
 
   @override
   String get hadith6 =>
@@ -550,10 +542,6 @@ class AppLocalizationsFa extends AppLocalizations {
   @override
   String get hadith10 =>
       '«هر کس روزی صد بار \'سبحان‌الله و بحمده\' بگوید، گناهانش آمرزیده می‌شود حتی اگر مانند کف دریا باشد.»\n— بخاری';
-
-  @override
-  String get hadith11 =>
-      '«بهترین دعا، دعای روز عرفه است و بهترین چیزی که من و پیامبران پیش از من گفته‌ایم: لا اله الا الله.»\n— ترمذی';
 
   @override
   String get hadith12 =>
@@ -636,9 +624,6 @@ class AppLocalizationsFa extends AppLocalizations {
       '«هر کس ماه رمضان را با ایمان و به امید ثواب روزه بدارد، گناهان گذشته‌اش آمرزیده می‌شود.»\n— بخاری و مسلم';
 
   @override
-  String get hadith21 => '«نماز ستون دین است.»\n— بیهقی';
-
-  @override
   String get hadith22 => '«دعای بین اذان و اقامه رد نمی‌شود.»\n— ابوداوود';
 
   @override
@@ -661,9 +646,6 @@ class AppLocalizationsFa extends AppLocalizations {
       '«کسی که در خواندن قرآن ماهر باشد، با فرشتگان بزرگوار و نیکوکار همنشین است.»\n— بخاری و مسلم';
 
   @override
-  String get hadith28 => '«طلب علم بر هر مسلمانی واجب است.»\n— ابن ماجه';
-
-  @override
   String get hadith29 => '«بهترین صدقه آب دادن است.»\n— احمد';
 
   @override
@@ -671,22 +653,11 @@ class AppLocalizationsFa extends AppLocalizations {
       '«هر کس سختی‌ای را از مؤمنی برطرف کند، خداوند سختی‌ای را از او در روز قیامت برطرف می‌کند.»\n— مسلم';
 
   @override
-  String get hadith31 =>
-      '«مهربانان مورد رحمت خداوند رحمان قرار می‌گیرند.»\n— ابوداوود و ترمذی';
-
-  @override
   String get hadith32 => '«حیا از ایمان است.»\n— بخاری و مسلم';
-
-  @override
-  String get hadith33 => '«پاکیزگی نصف ایمان است.»\n— مسلم';
 
   @override
   String get hadith34 =>
       '«هر کس صبر کند، خداوند به او صبر عطا می‌کند.»\n— بخاری و مسلم';
-
-  @override
-  String get hadith35 =>
-      '«بهترین ثروت، زبانی است که خدا را یاد کند.»\n— طبرانی';
 
   @override
   String get hadith36 =>
@@ -699,10 +670,6 @@ class AppLocalizationsFa extends AppLocalizations {
   @override
   String get hadith38 =>
       '«قوی آن نیست که در کشتی غالب شود، بلکه قوی کسی است که هنگام خشم خود را کنترل کند.»\n— بخاری و مسلم';
-
-  @override
-  String get hadith39 =>
-      '«هر کس آنچه بین دو فکش و دو پایش است حفظ کند، بهشت را برایش تضمین می‌کنم.»\n— بخاری';
 
   @override
   String get hadith40 =>
@@ -736,23 +703,8 @@ class AppLocalizationsFa extends AppLocalizations {
       '«صله رحم‌کننده واقعی کسی نیست که مقابله‌به‌مثل کند، بلکه کسی است که حتی وقتی قطع رحم می‌شود، پیوند را حفظ کند.»\n— بخاری';
 
   @override
-  String get hadith48 => '«هر کار نیکی صدقه است.»\n— بخاری و مسلم';
-
-  @override
   String get hadith49 =>
       '«هر کس غذا بخورد و بگوید: \'سپاس خدایی را که این غذا را به من خوراند و بدون هیچ نیرو و توانی از جانب من آن را روزی‌ام کرد،\' گناهان گذشته‌اش آمرزیده می‌شود.»\n— ترمذی';
-
-  @override
-  String get hadith50 =>
-      '«محبوب‌ترین مردم نزد خداوند، سودمندترین آنها به دیگران هستند.»\n— طبرانی';
-
-  @override
-  String get hadith51 =>
-      '«هر کس خشمش را فرو خورد در حالی که توانایی اجرای آن را داشت، خداوند او را در روز قیامت در برابر همه مخلوقات فرا می‌خواند تا پاداشش را انتخاب کند.»\n— ترمذی';
-
-  @override
-  String get hadith52 =>
-      '«صدقه را بی‌درنگ بدهید، زیرا جلوی بلا را می‌گیرد.»\n— ترمذی';
 
   @override
   String get hadith53 =>
@@ -777,28 +729,6 @@ class AppLocalizationsFa extends AppLocalizations {
   @override
   String get hadith58 =>
       '«هر کس بر من یک بار صلوات بفرستد، خداوند ده بار بر او صلوات می‌فرستد.»\n— مسلم';
-
-  @override
-  String get hadith59 => '«مسجد خانه هر پرهیزکاری است.»\n— طبرانی';
-
-  @override
-  String get hadith60 =>
-      '«هر کس بگوید \'لا حول و لا قوه الا بالله\' این داروی نود و نه درد است که کمترینش غم است.»\n— حاکم';
-
-  @override
-  String get hadith61 =>
-      '«خداوند دوست دارد که هرگاه یکی از شما کاری انجام می‌دهد، آن را نیکو انجام دهد.»\n— طبرانی';
-
-  @override
-  String get hadith62 => '«بهشت زیر پای مادران است.»\n— نسائی';
-
-  @override
-  String get hadith63 =>
-      '«محبوب‌ترین اعمال نزد خداوند: نماز در وقتش، سپس نیکی به والدین، سپس جهاد در راه خدا.»\n— بخاری و مسلم';
-
-  @override
-  String get hadith64 =>
-      '«هر کس بر اندک شکر کند، زیاد به او داده می‌شود.»\n— بیهقی';
 
   @override
   String get hadith65 => '«مؤمن آینه مؤمن است.»\n— ابوداوود';
@@ -844,10 +774,6 @@ class AppLocalizationsFa extends AppLocalizations {
       '«دو رکعت سنت فجر از دنیا و آنچه در آن است بهتر است.»\n— مسلم';
 
   @override
-  String get hadith76 =>
-      '«هر کس پیوسته استغفار کند، خداوند از هر تنگنایی راه نجاتی برایش قرار می‌دهد.»\n— ابوداوود';
-
-  @override
   String get hadith77 =>
       '«اگر بر خداوند آن‌گونه که شایسته اوست توکل می‌کردید، شما را همان‌طور روزی می‌داد که پرندگان را روزی می‌دهد.»\n— ترمذی';
 
@@ -870,13 +796,6 @@ class AppLocalizationsFa extends AppLocalizations {
   @override
   String get hadith82 =>
       '«انسان بر دین دوستش است، پس هر یک از شما بنگرد با چه کسی دوستی می‌کند.»\n— ابوداوود و ترمذی';
-
-  @override
-  String get hadith83 =>
-      '«مرگ را بسیار یاد کنید، زیرا قلب را پاکیزه می‌کند.»\n— ترمذی';
-
-  @override
-  String get hadith84 => '«بهترین عبادت انتظار فرج است.»\n— ترمذی';
 
   @override
   String get hadith85 =>
@@ -902,14 +821,6 @@ class AppLocalizationsFa extends AppLocalizations {
       '«از گمان بپرهیزید، زیرا گمان دروغ‌ترین سخن است.»\n— بخاری و مسلم';
 
   @override
-  String get hadith91 =>
-      '«هر کس دروغ را ترک کند حتی در شوخی، خانه‌ای در کناره بهشت برایش تضمین می‌کنم.»\n— ابوداوود';
-
-  @override
-  String get hadith92 =>
-      '«درهای نیکی بسیار است: تسبیح خدا، حمد خدا، صدقه، امر به معروف و برداشتن آزار از سر راه.»\n— مسلم';
-
-  @override
   String get hadith93 =>
       '«با هم غذا بخورید و نام خدا را ببرید تا برایتان برکت داده شود.»\n— ابوداوود';
 
@@ -929,8 +840,4 @@ class AppLocalizationsFa extends AppLocalizations {
   @override
   String get hadith98 =>
       '«مسلمان برادر مسلمان است: به او ظلم نمی‌کند، رهایش نمی‌کند و تحقیرش نمی‌کند.»\n— مسلم';
-
-  @override
-  String get hadith99 =>
-      '«محبوب‌ترین سخن نزد خداوند: سبحان‌الله و بحمده، سبحان‌الله العظیم.»\n— بخاری و مسلم';
 }

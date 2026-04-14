@@ -512,10 +512,6 @@ class AppLocalizationsHa extends AppLocalizations {
       '\"Ayyukan da Allah ya fi so su ne wadanda ake yi a kai a kai, ko da kanana ne.\"\n— Bukhari da Muslim';
 
   @override
-  String get hadith1 =>
-      '\"Ku dauki ayyuka na alheri gwargwadon iyawar ku, domin mafi kyawun ayyuka su ne wadanda ake yi a kai a kai ko da kadan ne.\"\n— Ibn Majah';
-
-  @override
   String get hadith2 =>
       '\"Idan dan Adam ya mutu, ayyukansa sun yanke sai uku: sadaka mai gudana, ilmi mai amfani, ko da mai alheri da yake masa addu\'a.\"\n— Muslim';
 
@@ -526,10 +522,6 @@ class AppLocalizationsHa extends AppLocalizations {
   @override
   String get hadith4 =>
       '\"Allah ba ya duba kamanninku ko dukiyoyinku, amma yana duba zukatanku da ayyukanku.\"\n— Muslim';
-
-  @override
-  String get hadith5 =>
-      '\"Mafi alherin mutane su ne wadanda suka fi amfanar mutane.\"\n— Tabarani';
 
   @override
   String get hadith6 =>
@@ -549,10 +541,6 @@ class AppLocalizationsHa extends AppLocalizations {
   @override
   String get hadith10 =>
       '\"Duk wanda ya ce \'SubhanAllahi wa bihamdihi\' sau ɗari a rana, za a gafarta masa zunubansa ko da sun kasance kamar kumfar teku.\"\n— Bukhari';
-
-  @override
-  String get hadith11 =>
-      '\"Mafi kyawun addu\'a shi ne addu\'ar ranar Arafa, kuma mafi kyawun abin da na faɗa da Annabawan da suka gabace ni shi ne: La ilaha illallah.\"\n— Tirmizi';
 
   @override
   String get hadith12 =>
@@ -635,9 +623,6 @@ class AppLocalizationsHa extends AppLocalizations {
       '\"Duk wanda ya yi azumin Ramadan da imani kuma yana neman lada, za a gafarta masa zunubansa na baya.\"\n— Bukhari da Muslim';
 
   @override
-  String get hadith21 => '\"Sallah ginshikin addini ne.\"\n— Bayhaqi';
-
-  @override
   String get hadith22 =>
       '\"Addu\'ar da ke tsakanin azana da iqama ba ta komawa ba.\"\n— Abu Dawud';
 
@@ -662,10 +647,6 @@ class AppLocalizationsHa extends AppLocalizations {
       '\"Mai gwaninta wajen karatun Alqur\'ani zai kasance tare da mala\'iku masu daraja.\"\n— Bukhari da Muslim';
 
   @override
-  String get hadith28 =>
-      '\"Neman ilmi wajibi ne ga kowane musulmi.\"\n— Ibn Majah';
-
-  @override
   String get hadith29 =>
       '\"Mafi kyawun sadaka ita ce ba da ruwa a sha.\"\n— Ahmad';
 
@@ -674,23 +655,12 @@ class AppLocalizationsHa extends AppLocalizations {
       '\"Duk wanda ya kawar da wahala ga mumini, Allah zai kawar da wahala gare shi a Ranar Kiyama.\"\n— Muslim';
 
   @override
-  String get hadith31 =>
-      '\"Masu rahama, Mai rahamar kowa yana yi musu rahama.\"\n— Abu Dawud da Tirmizi';
-
-  @override
   String get hadith32 =>
       '\"Kunya wani bangare ne na imani.\"\n— Bukhari da Muslim';
 
   @override
-  String get hadith33 => '\"Tsarki rabin imani ne.\"\n— Muslim';
-
-  @override
   String get hadith34 =>
       '\"Duk wanda ya yi hakuri, Allah zai ba shi hakuri.\"\n— Bukhari da Muslim';
-
-  @override
-  String get hadith35 =>
-      '\"Mafi kyawun dukiya ita ce harshen da ke ambaton Allah.\"\n— Tabarani';
 
   @override
   String get hadith36 =>
@@ -703,10 +673,6 @@ class AppLocalizationsHa extends AppLocalizations {
   @override
   String get hadith38 =>
       '\"Mai karfi ba wanda ya ci nasara a kokawa ba ne, mai karfi shi ne wanda ya mallaki kansa a lokacin fushi.\"\n— Bukhari da Muslim';
-
-  @override
-  String get hadith39 =>
-      '\"Duk wanda ya kiyaye abin da ke tsakanin muƙaminsa da ƙafafunsa, zan ba shi lamunin Aljanna.\"\n— Bukhari';
 
   @override
   String get hadith40 =>
@@ -741,24 +707,8 @@ class AppLocalizationsHa extends AppLocalizations {
       '\"Mai hada zumunci ba wanda ke mayar da ziyara ba ne, sai dai wanda ke ci gaba da hadin kai ko da an yanke.\"\n— Bukhari';
 
   @override
-  String get hadith48 =>
-      '\"Kowace kyakkyawar aiki sadaka ce.\"\n— Bukhari da Muslim';
-
-  @override
   String get hadith49 =>
       '\"Duk wanda ya ci abinci ya ce: \'Godiya ta tabbata ga Allah wanda ya ciyar da ni wannan kuma ya azurta ni ba tare da wani iko ko karfi daga gare ni ba,\' za a gafarta masa zunubansa na baya.\"\n— Tirmizi';
-
-  @override
-  String get hadith50 =>
-      '\"Mutanen da Allah ya fi so su ne waɗanda suka fi amfanar da sauran mutane.\"\n— Tabarani';
-
-  @override
-  String get hadith51 =>
-      '\"Duk wanda ya riƙe fushinsa alhali yana iya aikata shi, Allah zai kira shi a gaban dukkan halittu a Ranar Ƙiyama don ya zaɓi ladansa.\"\n— Tirmizi';
-
-  @override
-  String get hadith52 =>
-      '\"Ku yi gaggawa da sadaka, domin tana hana masifa.\"\n— Tirmizi';
 
   @override
   String get hadith53 =>
@@ -783,29 +733,6 @@ class AppLocalizationsHa extends AppLocalizations {
   @override
   String get hadith58 =>
       '\"Duk wanda ya yi mini salati sau ɗaya, Allah zai yi masa rahama sau goma.\"\n— Muslim';
-
-  @override
-  String get hadith59 =>
-      '\"Masallaci gida ne ga kowane mutum mai ibada.\"\n— Tabarani';
-
-  @override
-  String get hadith60 =>
-      '\"Duk wanda ya ce \'La hawla wa la ƙuwwata illa billah\' — magani ne ga cututtuka casa\'in da tara, mafi sauƙinsu ita ce damuwa.\"\n— Hakim';
-
-  @override
-  String get hadith61 =>
-      '\"Allah yana son idan ɗayanku ya yi wani aiki, ya yi shi da kyau.\"\n— Tabarani';
-
-  @override
-  String get hadith62 => '\"Aljanna tana ƙarƙashin ƙafafun uwaye.\"\n— Nasa\'i';
-
-  @override
-  String get hadith63 =>
-      '\"Ayyukan da Allah ya fi so: salla a lokacinta, sannan kyautatawa ga iyaye, sannan jihadi a tafarkin Allah.\"\n— Bukhari da Muslim';
-
-  @override
-  String get hadith64 =>
-      '\"Duk wanda ya gode a kan ƙarami, za a ba shi mai yawa.\"\n— Bayhaqi';
 
   @override
   String get hadith65 => '\"Mumini madubi ne ga mumini.\"\n— Abu Dawud';
@@ -851,10 +778,6 @@ class AppLocalizationsHa extends AppLocalizations {
       '\"Raka\'a biyu na Sallar Asuba sun fi alheri fiye da duniya da duk abin da ke cikinta.\"\n— Muslim';
 
   @override
-  String get hadith76 =>
-      '\"Wanda ya lazimci istigfari, Allah zai ba shi mafita daga kowace wahala.\"\n— Abu Dawud';
-
-  @override
   String get hadith77 =>
       '\"Da kun dogara ga Allah kamar yadda ya kamata, da ya azurta ku kamar yadda yake azurtar tsuntsaye.\"\n— Tirmizi';
 
@@ -877,14 +800,6 @@ class AppLocalizationsHa extends AppLocalizations {
   @override
   String get hadith82 =>
       '\"Mutum yana bin addinin abokinsa, saboda haka kowannenku ya duba wanda yake abokantaka da shi.\"\n— Abu Dawud da Tirmizi';
-
-  @override
-  String get hadith83 =>
-      '\"Ku yawaita tuna da mutuwa, domin tana tsarkake zuciya.\"\n— Tirmizi';
-
-  @override
-  String get hadith84 =>
-      '\"Mafi kyawun ibada ita ce jiran samun sauƙi.\"\n— Tirmizi';
 
   @override
   String get hadith85 =>
@@ -911,14 +826,6 @@ class AppLocalizationsHa extends AppLocalizations {
       '\"Ku guji tunanin mugunta, domin tunanin mugunta shi ne magana mafi ƙarya.\"\n— Bukhari da Muslim';
 
   @override
-  String get hadith91 =>
-      '\"Wanda ya bar ƙarya saboda Allah, ko da a wasa, ina ba shi lamunin fada a gefen Aljanna.\"\n— Abu Dawud';
-
-  @override
-  String get hadith92 =>
-      '\"Ƙofofin alheri suna da yawa: tsarkake Allah, yabonsa, sadaka, umurni da alheri, da cire cikas daga hanya.\"\n— Muslim';
-
-  @override
   String get hadith93 =>
       '\"Ku ci tare kuma ku ambaci sunan Allah, za a sa muku albarka.\"\n— Abu Dawud';
 
@@ -939,8 +846,4 @@ class AppLocalizationsHa extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Musulmi ɗan\'uwan Musulmi ne: ba ya zaluntarsa, ba ya yashe shi, kuma ba ya rena shi.\"\n— Muslim';
-
-  @override
-  String get hadith99 =>
-      '\"Mafi soyuwar magana ga Allah ita ce: SubhanAllahi wa bihamdihi, SubhanAllahil Azim.\"\n— Bukhari da Muslim';
 }

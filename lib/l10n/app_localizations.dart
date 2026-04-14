@@ -1046,12 +1046,6 @@ abstract class AppLocalizations {
   /// **'\"The most beloved deeds to Allah are those done consistently, even if small.\"\n— Bukhari & Muslim'**
   String get hadith0;
 
-  /// No description provided for @hadith1.
-  ///
-  /// In en, this message translates to:
-  /// **'\"Take up good deeds only as much as you are able, for the best deeds are those done consistently even if they are few.\"\n— Ibn Majah'**
-  String get hadith1;
-
   /// No description provided for @hadith2.
   ///
   /// In en, this message translates to:
@@ -1069,12 +1063,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'\"Allah does not look at your appearance or your wealth, but He looks at your hearts and your deeds.\"\n— Muslim'**
   String get hadith4;
-
-  /// No description provided for @hadith5.
-  ///
-  /// In en, this message translates to:
-  /// **'\"The best of people are those who are most beneficial to people.\"\n— Tabarani'**
-  String get hadith5;
 
   /// No description provided for @hadith6.
   ///
@@ -1105,12 +1093,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'\"Whoever says \'SubhanAllah wa bihamdihi\' a hundred times a day will have his sins forgiven even if they were like the foam of the sea.\"\n— Bukhari'**
   String get hadith10;
-
-  /// No description provided for @hadith11.
-  ///
-  /// In en, this message translates to:
-  /// **'\"The best supplication is that of the Day of Arafah, and the best thing that I and the Prophets before me said is: La ilaha illallah.\"\n— Tirmidhi'**
-  String get hadith11;
 
   /// No description provided for @hadith12.
   ///
@@ -1250,12 +1232,6 @@ abstract class AppLocalizations {
   /// **'\"Whoever fasts Ramadan out of faith and seeking reward, his past sins will be forgiven.\"\n— Bukhari & Muslim'**
   String get hadith20;
 
-  /// No description provided for @hadith21.
-  ///
-  /// In en, this message translates to:
-  /// **'\"Prayer is the pillar of religion.\"\n— Bayhaqi'**
-  String get hadith21;
-
   /// No description provided for @hadith22.
   ///
   /// In en, this message translates to:
@@ -1292,12 +1268,6 @@ abstract class AppLocalizations {
   /// **'\"The one who is proficient in the Quran will be with the noble angels.\"\n— Bukhari & Muslim'**
   String get hadith27;
 
-  /// No description provided for @hadith28.
-  ///
-  /// In en, this message translates to:
-  /// **'\"Seeking knowledge is an obligation upon every Muslim.\"\n— Ibn Majah'**
-  String get hadith28;
-
   /// No description provided for @hadith29.
   ///
   /// In en, this message translates to:
@@ -1310,35 +1280,17 @@ abstract class AppLocalizations {
   /// **'\"Whoever removes a hardship from a believer, Allah will remove a hardship from him on the Day of Judgment.\"\n— Muslim'**
   String get hadith30;
 
-  /// No description provided for @hadith31.
-  ///
-  /// In en, this message translates to:
-  /// **'\"The merciful are shown mercy by the Most Merciful.\"\n— Abu Dawud & Tirmidhi'**
-  String get hadith31;
-
   /// No description provided for @hadith32.
   ///
   /// In en, this message translates to:
   /// **'\"Modesty is part of faith.\"\n— Bukhari & Muslim'**
   String get hadith32;
 
-  /// No description provided for @hadith33.
-  ///
-  /// In en, this message translates to:
-  /// **'\"Cleanliness is half of faith.\"\n— Muslim'**
-  String get hadith33;
-
   /// No description provided for @hadith34.
   ///
   /// In en, this message translates to:
   /// **'\"Whoever is patient, Allah will give him patience.\"\n— Bukhari & Muslim'**
   String get hadith34;
-
-  /// No description provided for @hadith35.
-  ///
-  /// In en, this message translates to:
-  /// **'\"The best wealth is a tongue that remembers Allah.\"\n— Tabarani'**
-  String get hadith35;
 
   /// No description provided for @hadith36.
   ///
@@ -1357,12 +1309,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'\"The strong person is not the one who wrestles, but the one who controls himself in anger.\"\n— Bukhari & Muslim'**
   String get hadith38;
-
-  /// No description provided for @hadith39.
-  ///
-  /// In en, this message translates to:
-  /// **'\"Whoever guards what is between his jaws and his legs, I guarantee him Paradise.\"\n— Bukhari'**
-  String get hadith39;
 
   /// No description provided for @hadith40.
   ///
@@ -1412,35 +1358,11 @@ abstract class AppLocalizations {
   /// **'\"The one who maintains family ties is not the one who reciprocates. It is the one who maintains them even when cut off.\"\n— Bukhari'**
   String get hadith47;
 
-  /// No description provided for @hadith48.
-  ///
-  /// In en, this message translates to:
-  /// **'\"Every good deed is charity.\"\n— Bukhari & Muslim'**
-  String get hadith48;
-
   /// No description provided for @hadith49.
   ///
   /// In en, this message translates to:
   /// **'\"Whoever eats food and says: \'Praise be to Allah who has fed me this and provided it without any power or strength on my part,\' his past sins will be forgiven.\"\n— Tirmidhi'**
   String get hadith49;
-
-  /// No description provided for @hadith50.
-  ///
-  /// In en, this message translates to:
-  /// **'\"The most beloved people to Allah are those who are most beneficial to others.\"\n— Tabarani'**
-  String get hadith50;
-
-  /// No description provided for @hadith51.
-  ///
-  /// In en, this message translates to:
-  /// **'\"Whoever controls his anger while able to act, Allah will call him before all creation on the Day of Judgment to choose his reward.\"\n— Tirmidhi'**
-  String get hadith51;
-
-  /// No description provided for @hadith52.
-  ///
-  /// In en, this message translates to:
-  /// **'\"Give charity without delay, for it stands in the way of calamity.\"\n— Tirmidhi'**
-  String get hadith52;
 
   /// No description provided for @hadith53.
   ///
@@ -1477,42 +1399,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'\"Whoever sends blessings upon me once, Allah will send blessings upon him tenfold.\"\n— Muslim'**
   String get hadith58;
-
-  /// No description provided for @hadith59.
-  ///
-  /// In en, this message translates to:
-  /// **'\"The mosque is the house of every pious person.\"\n— Tabarani'**
-  String get hadith59;
-
-  /// No description provided for @hadith60.
-  ///
-  /// In en, this message translates to:
-  /// **'\"Whoever says \'La hawla wa la quwwata illa billah\' — it is a remedy for ninety-nine diseases, the least of which is worry.\"\n— Hakim'**
-  String get hadith60;
-
-  /// No description provided for @hadith61.
-  ///
-  /// In en, this message translates to:
-  /// **'\"Allah loves that when you do something, you do it with excellence.\"\n— Tabarani'**
-  String get hadith61;
-
-  /// No description provided for @hadith62.
-  ///
-  /// In en, this message translates to:
-  /// **'\"Paradise lies under the feet of mothers.\"\n— Nasa\'i'**
-  String get hadith62;
-
-  /// No description provided for @hadith63.
-  ///
-  /// In en, this message translates to:
-  /// **'\"The most beloved deeds to Allah: prayer at its proper time, then kindness to parents, then jihad in the cause of Allah.\"\n— Bukhari & Muslim'**
-  String get hadith63;
-
-  /// No description provided for @hadith64.
-  ///
-  /// In en, this message translates to:
-  /// **'\"Whoever is thankful for little will be given much.\"\n— Bayhaqi'**
-  String get hadith64;
 
   /// No description provided for @hadith65.
   ///
@@ -1580,12 +1466,6 @@ abstract class AppLocalizations {
   /// **'\"The two rak\'ahs of Fajr are better than the world and everything in it.\"\n— Muslim'**
   String get hadith75;
 
-  /// No description provided for @hadith76.
-  ///
-  /// In en, this message translates to:
-  /// **'\"Whoever says \'Astaghfirullah\' regularly, Allah will provide a way out of every difficulty.\"\n— Abu Dawud'**
-  String get hadith76;
-
   /// No description provided for @hadith77.
   ///
   /// In en, this message translates to:
@@ -1621,18 +1501,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'\"A person is upon the religion of his close friend, so let each of you look at whom he befriends.\"\n— Abu Dawud & Tirmidhi'**
   String get hadith82;
-
-  /// No description provided for @hadith83.
-  ///
-  /// In en, this message translates to:
-  /// **'\"Remember death often, for it purifies the heart.\"\n— Tirmidhi'**
-  String get hadith83;
-
-  /// No description provided for @hadith84.
-  ///
-  /// In en, this message translates to:
-  /// **'\"The best of worship is awaiting relief.\"\n— Tirmidhi'**
-  String get hadith84;
 
   /// No description provided for @hadith85.
   ///
@@ -1670,18 +1538,6 @@ abstract class AppLocalizations {
   /// **'\"Avoid suspicion, for suspicion is the most false of speech.\"\n— Bukhari & Muslim'**
   String get hadith90;
 
-  /// No description provided for @hadith91.
-  ///
-  /// In en, this message translates to:
-  /// **'\"Whoever gives up lying for the sake of Allah, even while joking, I guarantee him a palace in the outskirts of Paradise.\"\n— Abu Dawud'**
-  String get hadith91;
-
-  /// No description provided for @hadith92.
-  ///
-  /// In en, this message translates to:
-  /// **'\"The doors of goodness are many: glorifying Allah, praising Him, charity, enjoining good, and removing harm from the road.\"\n— Muslim'**
-  String get hadith92;
-
   /// No description provided for @hadith93.
   ///
   /// In en, this message translates to:
@@ -1717,12 +1573,6 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'\"A Muslim is a brother to a Muslim: he does not wrong him, nor abandon him, nor despise him.\"\n— Muslim'**
   String get hadith98;
-
-  /// No description provided for @hadith99.
-  ///
-  /// In en, this message translates to:
-  /// **'\"The most beloved speech to Allah is: SubhanAllahi wa bihamdihi, SubhanAllahil Azeem.\"\n— Bukhari & Muslim'**
-  String get hadith99;
 }
 
 class _AppLocalizationsDelegate
