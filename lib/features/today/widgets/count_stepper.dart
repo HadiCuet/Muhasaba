@@ -77,7 +77,9 @@ class _CountStepperState extends State<CountStepper> {
     final labelStyle = theme.textTheme.titleMedium?.copyWith(
       fontFeatures: const [FontFeature.tabularFigures()],
     );
-    final label = '${widget.progress} / ${widget.target}';
+    // Drop the spaces around `/` so "100/100" (7 chars) fits, and pin the
+    // width wide enough for three-digit targets without wrapping.
+    final label = '${widget.progress}/${widget.target}';
 
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -94,7 +96,7 @@ class _CountStepperState extends State<CountStepper> {
         ),
         if (_editing)
           SizedBox(
-            width: 56,
+            width: 64,
             child: TextField(
               controller: _controller,
               focusNode: _focusNode,
@@ -115,7 +117,7 @@ class _CountStepperState extends State<CountStepper> {
           )
         else
           SizedBox(
-            width: 56,
+            width: 64,
             child: InkWell(
               borderRadius: BorderRadius.circular(4),
               onTap: _startEditing,
@@ -128,10 +130,18 @@ class _CountStepperState extends State<CountStepper> {
                   horizontal: 4,
                   vertical: 4,
                 ),
-                child: Text(
-                  label,
-                  style: labelStyle,
-                  textAlign: TextAlign.center,
+                child: FittedBox(
+                  // Scales the label down if the natural width is greater
+                  // than the 64-px box (e.g. "999/999"); otherwise renders
+                  // at full size. Always single-line, always inside the box.
+                  fit: BoxFit.scaleDown,
+                  child: Text(
+                    label,
+                    style: labelStyle,
+                    textAlign: TextAlign.center,
+                    maxLines: 1,
+                    softWrap: false,
+                  ),
                 ),
               ),
             ),
