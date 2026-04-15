@@ -97,7 +97,7 @@ AmalsCompanion _seed(
   String title,
   int order,
   DateTime createdAt, {
-  String? icon,
+  required String icon,
   String? category,
 }) {
   return AmalsCompanion.insert(

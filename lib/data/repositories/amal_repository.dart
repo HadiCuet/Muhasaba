@@ -25,7 +25,7 @@ class AmalRepository {
     bool defaultChecked = false,
     String? reminderTime,
     int sortOrder = 0,
-    String? icon,
+    required String icon,
     String? category,
   }) {
     return _dao.insertAmal(

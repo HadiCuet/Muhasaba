@@ -21,7 +21,7 @@ class AppDatabase extends _$AppDatabase {
     : super(executor ?? driftDatabase(name: 'muhasaba'));
 
   @override
-  int get schemaVersion => 3;
+  int get schemaVersion => 4;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -59,6 +59,34 @@ class AppDatabase extends _$AppDatabase {
           await m.addColumn(categories, categories.icon);
         }
         await assignSeedCategoryIcons(this);
+      }
+      if (from < 4) {
+        // Make Amals.icon mandatory. Backfill iconless rows with the
+        // matching category's icon when available, else ⭐. NULLIF turns
+        // empty-string category icons into NULL so COALESCE skips them.
+        await customStatement('''
+          UPDATE amals
+          SET icon = COALESCE(
+            NULLIF(
+              (SELECT icon FROM categories WHERE categories.name = amals.category),
+              ''
+            ),
+            '⭐'
+          )
+          WHERE icon IS NULL OR TRIM(icon) = ''
+        ''');
+        // Recreate the table with the new NOT NULL + DEFAULT '⭐' constraint.
+        // Defensive transformer in case any null slipped past the backfill.
+        await m.alterTable(
+          TableMigration(
+            amals,
+            columnTransformer: {
+              amals.icon: const CustomExpression<String>(
+                "COALESCE(icon, '⭐')",
+              ),
+            },
+          ),
+        );
       }
     },
     beforeOpen: (details) async {

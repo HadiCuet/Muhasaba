@@ -17,7 +17,8 @@ class Amals extends Table {
   TextColumn get reminderTime => text().nullable()(); // "HH:mm" local
   IntColumn get sortOrder => integer().withDefault(const Constant(0))();
   BoolColumn get isSeed => boolean().withDefault(const Constant(false))();
-  TextColumn get icon => text().nullable()(); // emoji, e.g. "🕌"
+  TextColumn get icon =>
+      text().withDefault(const Constant('⭐'))(); // emoji, defaults to ⭐
   TextColumn get category => text().nullable()(); // category name
   DateTimeColumn get createdAt => dateTime()();
   DateTimeColumn get archivedAt => dateTime().nullable()();

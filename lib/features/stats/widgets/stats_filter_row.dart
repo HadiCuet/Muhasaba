@@ -283,10 +283,8 @@ class _AmalDropdown extends ConsumerWidget {
               child: Row(
                 mainAxisSize: MainAxisSize.min,
                 children: [
-                  if (amal.icon != null) ...[
-                    Text(amal.icon!),
-                    const SizedBox(width: 8),
-                  ],
+                  Text(amal.icon),
+                  const SizedBox(width: 8),
                   Flexible(
                     child: Text(
                       amal.title,

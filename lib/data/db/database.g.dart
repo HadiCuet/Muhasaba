@@ -131,9 +131,10 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
   late final GeneratedColumn<String> icon = GeneratedColumn<String>(
     'icon',
     aliasedName,
-    true,
+    false,
     type: DriftSqlType.string,
     requiredDuringInsert: false,
+    defaultValue: const Constant('⭐'),
   );
   static const VerificationMeta _categoryMeta = const VerificationMeta(
     'category',
@@ -339,7 +340,7 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
       icon: attachedDatabase.typeMapping.read(
         DriftSqlType.string,
         data['${effectivePrefix}icon'],
-      ),
+      )!,
       category: attachedDatabase.typeMapping.read(
         DriftSqlType.string,
         data['${effectivePrefix}category'],
@@ -375,7 +376,7 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
   final String? reminderTime;
   final int sortOrder;
   final bool isSeed;
-  final String? icon;
+  final String icon;
   final String? category;
   final DateTime createdAt;
   final DateTime? archivedAt;
@@ -390,7 +391,7 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     this.reminderTime,
     required this.sortOrder,
     required this.isSeed,
-    this.icon,
+    required this.icon,
     this.category,
     required this.createdAt,
     this.archivedAt,
@@ -418,9 +419,7 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     }
     map['sort_order'] = Variable<int>(sortOrder);
     map['is_seed'] = Variable<bool>(isSeed);
-    if (!nullToAbsent || icon != null) {
-      map['icon'] = Variable<String>(icon);
-    }
+    map['icon'] = Variable<String>(icon);
     if (!nullToAbsent || category != null) {
       map['category'] = Variable<String>(category);
     }
@@ -449,7 +448,7 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
           : Value(reminderTime),
       sortOrder: Value(sortOrder),
       isSeed: Value(isSeed),
-      icon: icon == null && nullToAbsent ? const Value.absent() : Value(icon),
+      icon: Value(icon),
       category: category == null && nullToAbsent
           ? const Value.absent()
           : Value(category),
@@ -478,7 +477,7 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
       reminderTime: serializer.fromJson<String?>(json['reminderTime']),
       sortOrder: serializer.fromJson<int>(json['sortOrder']),
       isSeed: serializer.fromJson<bool>(json['isSeed']),
-      icon: serializer.fromJson<String?>(json['icon']),
+      icon: serializer.fromJson<String>(json['icon']),
       category: serializer.fromJson<String?>(json['category']),
       createdAt: serializer.fromJson<DateTime>(json['createdAt']),
       archivedAt: serializer.fromJson<DateTime?>(json['archivedAt']),
@@ -500,7 +499,7 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
       'reminderTime': serializer.toJson<String?>(reminderTime),
       'sortOrder': serializer.toJson<int>(sortOrder),
       'isSeed': serializer.toJson<bool>(isSeed),
-      'icon': serializer.toJson<String?>(icon),
+      'icon': serializer.toJson<String>(icon),
       'category': serializer.toJson<String?>(category),
       'createdAt': serializer.toJson<DateTime>(createdAt),
       'archivedAt': serializer.toJson<DateTime?>(archivedAt),
@@ -518,7 +517,7 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     Value<String?> reminderTime = const Value.absent(),
     int? sortOrder,
     bool? isSeed,
-    Value<String?> icon = const Value.absent(),
+    String? icon,
     Value<String?> category = const Value.absent(),
     DateTime? createdAt,
     Value<DateTime?> archivedAt = const Value.absent(),
@@ -533,7 +532,7 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     reminderTime: reminderTime.present ? reminderTime.value : this.reminderTime,
     sortOrder: sortOrder ?? this.sortOrder,
     isSeed: isSeed ?? this.isSeed,
-    icon: icon.present ? icon.value : this.icon,
+    icon: icon ?? this.icon,
     category: category.present ? category.value : this.category,
     createdAt: createdAt ?? this.createdAt,
     archivedAt: archivedAt.present ? archivedAt.value : this.archivedAt,
@@ -634,7 +633,7 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
   final Value<String?> reminderTime;
   final Value<int> sortOrder;
   final Value<bool> isSeed;
-  final Value<String?> icon;
+  final Value<String> icon;
   final Value<String?> category;
   final Value<DateTime> createdAt;
   final Value<DateTime?> archivedAt;
@@ -717,7 +716,7 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     Value<String?>? reminderTime,
     Value<int>? sortOrder,
     Value<bool>? isSeed,
-    Value<String?>? icon,
+    Value<String>? icon,
     Value<String?>? category,
     Value<DateTime>? createdAt,
     Value<DateTime?>? archivedAt,
@@ -1970,7 +1969,7 @@ typedef $$AmalsTableCreateCompanionBuilder =
       Value<String?> reminderTime,
       Value<int> sortOrder,
       Value<bool> isSeed,
-      Value<String?> icon,
+      Value<String> icon,
       Value<String?> category,
       required DateTime createdAt,
       Value<DateTime?> archivedAt,
@@ -1987,7 +1986,7 @@ typedef $$AmalsTableUpdateCompanionBuilder =
       Value<String?> reminderTime,
       Value<int> sortOrder,
       Value<bool> isSeed,
-      Value<String?> icon,
+      Value<String> icon,
       Value<String?> category,
       Value<DateTime> createdAt,
       Value<DateTime?> archivedAt,
@@ -2392,7 +2391,7 @@ class $$AmalsTableTableManager
                 Value<String?> reminderTime = const Value.absent(),
                 Value<int> sortOrder = const Value.absent(),
                 Value<bool> isSeed = const Value.absent(),
-                Value<String?> icon = const Value.absent(),
+                Value<String> icon = const Value.absent(),
                 Value<String?> category = const Value.absent(),
                 Value<DateTime> createdAt = const Value.absent(),
                 Value<DateTime?> archivedAt = const Value.absent(),
@@ -2424,7 +2423,7 @@ class $$AmalsTableTableManager
                 Value<String?> reminderTime = const Value.absent(),
                 Value<int> sortOrder = const Value.absent(),
                 Value<bool> isSeed = const Value.absent(),
-                Value<String?> icon = const Value.absent(),
+                Value<String> icon = const Value.absent(),
                 Value<String?> category = const Value.absent(),
                 required DateTime createdAt,
                 Value<DateTime?> archivedAt = const Value.absent(),

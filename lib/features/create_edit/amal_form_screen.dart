@@ -30,7 +30,9 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
   final _formKey = GlobalKey<FormState>();
   final _titleController = TextEditingController();
 
-  String? _icon;
+  // Default ⭐ for new blank amals; overwritten by hydrate (edit) or prefill
+  // (template). Since v4 of the schema, every amal has a non-null icon.
+  String _icon = '⭐';
   String? _category;
   bool _iconIsManual = false;
   Frequency _frequency = Frequency.daily;
@@ -71,7 +73,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
       if (row != null) {
         _titleController.text = row.title;
         _icon = row.icon;
-        _iconIsManual = row.icon != null;
+        _iconIsManual = true;
         _category = row.category;
         _frequency = row.frequency;
         _target = row.target;
@@ -97,11 +99,16 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
   }
 
   Future<void> _pickIcon() async {
-    final picked = await showEmojiPicker(context, ref, current: _icon);
-    if (picked != null) {
+    final picked = await showEmojiPicker(
+      context,
+      ref,
+      current: _icon,
+      allowNone: false,
+    );
+    if (picked != null && picked.isNotEmpty) {
       setState(() {
-        _icon = picked.isEmpty ? null : picked;
-        _iconIsManual = picked.isNotEmpty; // "None" resumes flowing
+        _icon = picked;
+        _iconIsManual = true;
       });
     }
   }
@@ -155,7 +162,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
               ),
               defaultChecked: _defaultChecked,
               reminderTime: Value(reminder),
-              icon: Value(_icon),
+              icon: _icon,
               category: Value(_category),
             ),
           );
@@ -258,12 +265,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                       borderRadius: BorderRadius.circular(12),
                     ),
                     alignment: Alignment.center,
-                    child: _icon != null
-                        ? Text(_icon!, style: const TextStyle(fontSize: 28))
-                        : Icon(
-                            Icons.add_reaction_outlined,
-                            color: theme.colorScheme.onSurfaceVariant,
-                          ),
+                    child: Text(_icon, style: const TextStyle(fontSize: 28)),
                   ),
                 ),
                 const SizedBox(width: 12),
@@ -302,13 +304,17 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                 _category = c;
                 if (!_iconIsManual) {
                   if (c == null) {
-                    _icon = null;
+                    _icon = '⭐';
                   } else {
                     final cats = ref.read(categoriesProvider).value ?? const [];
-                    _icon = cats
+                    final categoryIcon = cats
                         .cast<CategoryRow?>()
                         .firstWhere((x) => x?.name == c, orElse: () => null)
                         ?.icon;
+                    _icon =
+                        (categoryIcon != null && categoryIcon.isNotEmpty)
+                        ? categoryIcon
+                        : '⭐';
                   }
                 }
               }),

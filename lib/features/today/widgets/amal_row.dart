@@ -202,11 +202,9 @@ class _AmalRowTileState extends State<AmalRowTile> {
                   ),
                   child: Row(
                     children: [
-                      // Leading amal icon (emoji).
-                      if (amal.icon != null && amal.icon!.isNotEmpty) ...[
-                        Text(amal.icon!, style: const TextStyle(fontSize: 22)),
-                        const SizedBox(width: 10),
-                      ],
+                      // Leading amal icon (emoji) — always present since v4.
+                      Text(amal.icon, style: const TextStyle(fontSize: 22)),
+                      const SizedBox(width: 10),
 
                       // Title + optional note preview + streak badge.
                       Expanded(

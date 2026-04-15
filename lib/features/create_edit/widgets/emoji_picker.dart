@@ -34,28 +34,40 @@ const _sectionEmojis = <String, List<String>>{
   ],
 };
 
-/// Shows a modal bottom sheet for picking an emoji icon for an amal.
+/// Shows a modal bottom sheet for picking an emoji icon.
 ///
 /// Returns the selected emoji string, an empty string to clear the current
-/// icon, or `null` if the sheet was dismissed without a selection.
+/// icon (only when [allowNone] is true), or `null` if the sheet was dismissed
+/// without a selection.
+///
+/// Pass [allowNone] = false when the caller requires a non-empty icon (e.g.
+/// the amal form, since amals must always have an icon). The "None" button is
+/// hidden in that case so the user cannot clear back to empty.
 Future<String?> showEmojiPicker(
   BuildContext context,
   WidgetRef ref, {
   String? current,
+  bool allowNone = true,
 }) async {
   return showModalBottomSheet<String>(
     context: context,
     isScrollControlled: true,
     useSafeArea: true,
-    builder: (_) => _EmojiPickerSheet(current: current, ref: ref),
+    builder: (_) =>
+        _EmojiPickerSheet(current: current, ref: ref, allowNone: allowNone),
   );
 }
 
 class _EmojiPickerSheet extends StatelessWidget {
-  const _EmojiPickerSheet({this.current, required this.ref});
+  const _EmojiPickerSheet({
+    this.current,
+    required this.ref,
+    required this.allowNone,
+  });
 
   final String? current;
   final WidgetRef ref;
+  final bool allowNone;
 
   @override
   Widget build(BuildContext context) {
@@ -93,7 +105,7 @@ class _EmojiPickerSheet extends StatelessWidget {
                 ),
               ),
 
-              // Header row: title + "None" button
+              // Header row: title + (optional) "None" button
               SliverToBoxAdapter(
                 child: Padding(
                   padding: const EdgeInsets.only(bottom: 12),
@@ -101,10 +113,11 @@ class _EmojiPickerSheet extends StatelessWidget {
                     children: [
                       Text(l.chooseIcon, style: theme.textTheme.titleMedium),
                       const Spacer(),
-                      TextButton(
-                        onPressed: () => Navigator.of(context).pop(''),
-                        child: Text(l.iconNone),
-                      ),
+                      if (allowNone)
+                        TextButton(
+                          onPressed: () => Navigator.of(context).pop(''),
+                          child: Text(l.iconNone),
+                        ),
                     ],
                   ),
                 ),
