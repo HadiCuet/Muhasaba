@@ -438,35 +438,20 @@ class _TargetChips extends StatefulWidget {
 }
 
 class _TargetChipsState extends State<_TargetChips> {
-  final _controller = TextEditingController();
   static const _presets = [1, 3, 5, 7, 11, 33, 100];
 
   bool get _isCustom => !_presets.contains(widget.value);
 
-  @override
-  void initState() {
-    super.initState();
-    if (_isCustom && widget.value > 0) {
-      _controller.text = '${widget.value}';
+  Future<void> _editCustom() async {
+    final result = await showDialog<int>(
+      context: context,
+      builder: (_) => _CustomTargetDialog(
+        initial: _isCustom ? widget.value : null,
+      ),
+    );
+    if (result != null && result > 0) {
+      widget.onChanged(result);
     }
-  }
-
-  @override
-  void didUpdateWidget(_TargetChips old) {
-    super.didUpdateWidget(old);
-    if (widget.value != old.value) {
-      if (!_isCustom) {
-        _controller.clear();
-      } else if (_controller.text != '${widget.value}') {
-        _controller.text = '${widget.value}';
-      }
-    }
-  }
-
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
   }
 
   @override
@@ -487,42 +472,87 @@ class _TargetChipsState extends State<_TargetChips> {
                 label: Text('$p'),
                 selected: widget.value == p,
                 showCheckmark: false,
-                onSelected: (_) {
-                  _controller.clear();
-                  widget.onChanged(p);
-                },
+                onSelected: (_) => widget.onChanged(p),
+              ),
+            // Trailing custom chip — shows the custom value when one is set
+            // (selected, tap to edit), else "+ Custom" action chip to enter
+            // one. Mirrors the "+ New" pattern in CategoryPicker.
+            if (_isCustom)
+              ChoiceChip(
+                label: Text('${widget.value}'),
+                selected: true,
+                showCheckmark: false,
+                onSelected: (_) => _editCustom(),
+              )
+            else
+              ActionChip(
+                avatar: const Icon(Icons.add, size: 18),
+                label: Text(l.custom),
+                onPressed: _editCustom,
               ),
           ],
         ),
-        const SizedBox(height: 12),
-        Row(
-          children: [
-            Text(l.custom, style: theme.textTheme.bodyMedium),
-            const SizedBox(width: 12),
-            SizedBox(
-              width: 80,
-              child: TextField(
-                controller: _controller,
-                keyboardType: TextInputType.number,
-                decoration: InputDecoration(
-                  border: const OutlineInputBorder(),
-                  isDense: true,
-                  contentPadding: const EdgeInsets.symmetric(
-                    horizontal: 10,
-                    vertical: 8,
-                  ),
-                  hintText: _isCustom ? null : l.customTargetHint,
-                ),
-                onChanged: (v) {
-                  final parsed = int.tryParse(v.trim());
-                  if (parsed != null && parsed > 0) {
-                    widget.onChanged(parsed);
-                  }
-                },
-              ),
-            ),
-          ],
+      ],
+    );
+  }
+}
+
+/// Modal dialog for entering a custom target count. Returns the parsed
+/// positive integer on Save, or `null` on Cancel / invalid input.
+class _CustomTargetDialog extends StatefulWidget {
+  const _CustomTargetDialog({this.initial});
+
+  final int? initial;
+
+  @override
+  State<_CustomTargetDialog> createState() => _CustomTargetDialogState();
+}
+
+class _CustomTargetDialogState extends State<_CustomTargetDialog> {
+  late final TextEditingController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = TextEditingController(
+      text: widget.initial != null ? '${widget.initial}' : '',
+    );
+  }
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  void _submit() {
+    final parsed = int.tryParse(_controller.text.trim());
+    if (parsed != null && parsed > 0) {
+      Navigator.of(context).pop(parsed);
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
+    return AlertDialog(
+      title: Text(l.custom),
+      content: TextField(
+        controller: _controller,
+        keyboardType: TextInputType.number,
+        autofocus: true,
+        decoration: InputDecoration(
+          hintText: l.customTargetHint,
+          border: const OutlineInputBorder(),
         ),
+        onSubmitted: (_) => _submit(),
+      ),
+      actions: [
+        TextButton(
+          onPressed: () => Navigator.of(context).pop(),
+          child: Text(l.cancel),
+        ),
+        FilledButton(onPressed: _submit, child: Text(l.save)),
       ],
     );
   }
