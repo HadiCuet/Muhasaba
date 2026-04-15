@@ -97,38 +97,16 @@ Your device's operating system may back up the app's local data to iCloud (iOS) 
 
 In release builds of the app, we use **Google Firebase Analytics** (provided by Google LLC and, for EEA/UK/Swiss users, Google Ireland Limited) to collect anonymous usage telemetry. Firebase Analytics is **not enabled in debug or developer builds** of the app.
 
-**Events recorded.** Exactly the following events, with exactly the listed parameters, are logged. Nothing else.
+**Events recorded.** We log events when you interact with core features so we can understand what's used and spot regressions. They fall into these categories:
 
-| Event name | Parameters | When it fires |
-| --- | --- | --- |
-| `new_amal_started` | none | You tap the "new amal" button |
-| `amal_created` | `frequency`, `has_reminder` (0/1), `category` | You save a newly-created amal |
-| `amal_edited` | `frequency`, `has_reminder` (0/1), `category` | You save changes to an existing amal |
-| `amal_completed` | `frequency`, `target` | You mark an amal complete |
-| `amal_uncompleted` | `frequency` | You un-check a previously-completed amal |
-| `amal_removed` | `scope` (`today` or `tracking`) | You remove an amal from today's list or stop tracking it |
-| `amal_reordered` | `item_count` | You reorder amals on the Today screen |
-| `amal_note_saved` | `had_previous_note` (0/1) | You save a note on a completion |
-| `amal_template_selected` | template identifiers | You pick a template when creating an amal |
-| `reminder_scheduled` | `hour`, `had_previous_reminder` (0/1) | A local reminder is scheduled |
-| `reminder_canceled` | `source` (`tracking_removed` / `form_edit`) | A local reminder is canceled |
-| `notification_permission_result` | `platform` (`ios`/`android`), `granted` (0/1) | You respond to the OS notification permission prompt |
-| `category_created` | `category` | You create a category |
-| `category_edited` | `category` | You rename or re-icon a category |
-| `category_deleted` | `category` | You delete a category |
-| `category_selected` | `category` | You pick a category in the form |
-| `today_view_mode_changed` | `mode` (`flat`/`grouped`) | You toggle Today's layout |
-| `rollover_hour_changed` | `hour` | You change the day-rollover setting |
-| `start_of_week_changed` | `weekday` | You change the first-day-of-week setting |
-| `theme_changed` | `mode` | You change between light/dark/system theme |
-| `language_changed` | `locale` | You change the in-app language |
-| `stats_period_changed` | `period` | You switch the Stats time range |
-| `stats_category_filter_changed` | `active` (0/1) | You apply/remove a category filter on Stats |
-| `stats_amal_filter_changed` | `active` (0/1) | You apply/remove an amal filter on Stats |
-| `history_day_selected` | `days_back` | You tap a day on the History screen |
-| `history_date_picked` | `days_back` | You pick a date from the History date picker |
-| `rate_app_tapped` | none | You tap "Rate this app" in settings |
-| `support_email_opened` | `topic` (`contact`/`bug`/`feature`) | You open a support email draft |
+- **Amal interactions** — creating, editing, completing, uncompleting, reordering, removing amals; notes; reminders.
+- **Category management** — creating, editing, deleting, selecting categories.
+- **Settings changes** — theme, language, rollover hour, start-of-week, view mode.
+- **Navigation & filters** — day selection in History, filter changes in Stats.
+- **Support actions** — rate-the-app, contact-us, report-bug, feature-request.
+- **Notification permission outcome** — whether you granted or denied the OS notification prompt.
+
+Each event carries at most a handful of categorical parameters (e.g. `frequency: daily`, `theme_mode: light`). **No free-form text** — amal titles, category names, notes, etc. — is ever included. The complete, up-to-date list of event names and parameters is available on request at hadi.fiftytwo@gmail.com.
 
 **User properties recorded.** Two pseudonymous user properties are attached to the analytics stream:
 
@@ -150,11 +128,11 @@ When the app crashes or throws an uncaught exception in a release build, we use 
 
 - The crash type and exception message.
 - The stack trace (file names, method names, line numbers in our code).
-- Non-identifying device state: device model, OS version, orientation, free disk space, free memory, locale, whether a proxy is in use.
+- Non-identifying device state at the time of the crash (e.g. device model, OS version, free memory and disk, locale).
 - A Crashlytics Installation UUID (a pseudonymous identifier that Google uses to count distinct devices affected by a crash; not linked to any user account or advertising ID).
 - The app version and build number.
 
-We do **not** set a Crashlytics user identifier (`setUserIdentifier` is not called), we do **not** attach custom keys (`setCustomKey` is not called), and we do **not** manually log arbitrary strings (`Crashlytics.log` is not called from our code). Only Flutter-framework exceptions and uncaught Dart errors are reported, via `FlutterError.onError` and `PlatformDispatcher.onError`.
+We do **not** attach any custom user identifier, tags, or log messages to crash reports. Only uncaught Flutter and Dart exceptions are captured — nothing the app intentionally logs.
 
 Crashlytics is **explicitly disabled in debug builds** (`FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(!kDebugMode)`), so no crashes are reported from development builds.
 
@@ -375,8 +353,9 @@ The app requests the following permissions at the operating-system level. Each i
 | --- | --- |
 | `android.permission.POST_NOTIFICATIONS` | To display local reminder notifications at the times you choose |
 | `android.permission.RECEIVE_BOOT_COMPLETED` | To reschedule your reminder notifications after the device restarts (so reminders continue to fire) |
+| `android.permission.INTERNET` | Required by the Google Firebase SDKs to transmit the diagnostic data described in §3.2 and §3.3 |
 
-No `INTERNET` permission is declared explicitly — network calls to Firebase use the network stack provided by the Flutter engine and Google Play Services; no custom network calls are made by the app.
+No other permissions are requested. No custom network calls are made by the app's own code.
 
 ### 15.2 iOS / iPadOS
 
@@ -403,6 +382,7 @@ The app ships an **Apple Privacy Manifest** (`PrivacyInfo.xcprivacy`) declaring:
 | Apple App Store and StoreKit in-app review | Apple Inc. | App distribution and review prompt | https://www.apple.com/legal/privacy/ |
 | Google Play and In-App Review API | Google LLC | App distribution and review prompt | https://policies.google.com/privacy |
 | Gmail (inbound) | Google LLC | Our support email inbox | https://policies.google.com/privacy |
+| Web content (via WebView) | Various | The app uses an in-app browser (WebView) to display this policy and other help content. | Respective website's policy |
 
 We do not embed advertising SDKs, attribution SDKs, social-login SDKs, chat/support SDKs, or any other third-party component that collects personal data.
 
