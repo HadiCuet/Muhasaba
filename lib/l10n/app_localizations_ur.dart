@@ -626,6 +626,12 @@ class AppLocalizationsUr extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'رازداری کی پالیسی';
+
+  @override
+  String get settingsPrivacyOpenFailed => 'رازداری کی پالیسی نہیں کھل سکی۔';
+
+  @override
   String get hadith20 =>
       '\"جو شخص ایمان اور ثواب کی نیت سے رمضان کے روزے رکھے، اس کے پچھلے گناہ معاف کر دیے جائیں گے۔\"\n— بخاری و مسلم';
 

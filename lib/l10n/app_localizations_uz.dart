@@ -629,6 +629,13 @@ class AppLocalizationsUz extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'Maxfiylik siyosati';
+
+  @override
+  String get settingsPrivacyOpenFailed =>
+      'Maxfiylik siyosatini ochib bo\'lmadi.';
+
+  @override
   String get hadith20 =>
       '\"Kim Ramazonni iymon bilan va savob umidida ro\'za tutsa, uning o\'tgan gunohlari kechiriladi.\"\n— Buxoriy va Muslim';
 

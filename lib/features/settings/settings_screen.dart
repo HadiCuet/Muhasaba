@@ -187,6 +187,13 @@ class _SettingsList extends StatelessWidget {
               showChevron: false,
               onTap: () {},
             ),
+            _SettingsItem(
+              icon: '🛡️',
+              iconColor: Colors.teal,
+              title: l.settingsPrivacyPolicy,
+              trailing: '',
+              onTap: () => openPrivacyPolicy(context),
+            ),
           ],
         ),
       ],

@@ -625,6 +625,13 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'Politika e privatësisë';
+
+  @override
+  String get settingsPrivacyOpenFailed =>
+      'Politika e privatësisë nuk mund të hapet.';
+
+  @override
   String get hadith20 =>
       '\"Kush agjëron Ramazanin me besim dhe duke shpresuar shpërblimin, i falen mëkatet e kaluara.\"\n— Buhariu & Muslimi';
 

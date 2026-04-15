@@ -625,6 +625,12 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'Privacy Policy';
+
+  @override
+  String get settingsPrivacyOpenFailed => 'Could not open the privacy policy.';
+
+  @override
   String get hadith20 =>
       '\"Whoever fasts Ramadan out of faith and seeking reward, his past sins will be forgiven.\"\n— Bukhari & Muslim';
 

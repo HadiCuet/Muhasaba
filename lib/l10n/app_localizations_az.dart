@@ -626,6 +626,12 @@ class AppLocalizationsAz extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'Məxfilik siyasəti';
+
+  @override
+  String get settingsPrivacyOpenFailed => 'Məxfilik siyasəti açıla bilmədi.';
+
+  @override
   String get hadith20 =>
       '\"Kim Ramazanı iman və savab ümidi ilə oruc tutarsa, keçmiş günahları bağışlanar.\"\n— Buxari və Müslim';
 

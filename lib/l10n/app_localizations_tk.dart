@@ -626,6 +626,12 @@ class AppLocalizationsTk extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'Gizlilik syýasaty';
+
+  @override
+  String get settingsPrivacyOpenFailed => 'Gizlilik syýasatyny açyp bolmady.';
+
+  @override
   String get hadith20 =>
       '\"Kim Ramazanda iman we sogap umydy bilen oraza tutsa, onuň geçen günäleri bagyşlanýar.\"\n— Buhari we Muslim';
 

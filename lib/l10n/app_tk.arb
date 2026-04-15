@@ -183,6 +183,8 @@
   "settingsReportBug": "Säwligi habar beriň",
   "settingsRequestFeature": "Aýratynlyk talap ediň",
   "settingsSupportFallback": "Poçtany açyp bolmady. Iltimos, {email} salgysyna ýazyň.",
+  "settingsPrivacyPolicy": "Gizlilik syýasaty",
+  "settingsPrivacyOpenFailed": "Gizlilik syýasatyny açyp bolmady.",
   "hadith53": "\"Hiç bir ýagşylygy kiçeltme, hatda doganyň bilen ýylgyryp görüşmek bolsa-da.\"\n— Muslim",
   "hadith54": "\"Siziň iň gowuňyz maşgalasyna iň gowy garaýanyňyzdyr.\"\n— Tirmizi",
   "hadith55": "\"Kim gije Bakara süresiniň soňky iki aýatyny okasa, bu oňa ýeterlikdir.\"\n— Buhary we Muslim",

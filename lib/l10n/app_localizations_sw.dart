@@ -624,6 +624,13 @@ class AppLocalizationsSw extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'Sera ya Faragha';
+
+  @override
+  String get settingsPrivacyOpenFailed =>
+      'Sera ya faragha haikuweza kufunguliwa.';
+
+  @override
   String get hadith20 =>
       '\"Anayefunga Ramadhani kwa imani na kutaraji thawabu, dhambi zake zilizopita zitasamehewa.\"\n— Bukhari na Muslim';
 

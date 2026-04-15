@@ -183,6 +183,8 @@
   "settingsReportBug": "Xəta bildir",
   "settingsRequestFeature": "Funksiya tələb et",
   "settingsSupportFallback": "Poçt açıla bilmədi. Zəhmət olmasa {email} ünvanına yazın.",
+  "settingsPrivacyPolicy": "Məxfilik siyasəti",
+  "settingsPrivacyOpenFailed": "Məxfilik siyasəti açıla bilmədi.",
   "hadith53": "\"Heç bir yaxşılığı kiçik görmə, hətta qardaşını gülər üzlə qarşılamaq olsa belə.\"\n— Müslim",
   "hadith54": "\"Sizin ən xeyirliniz ailəsinə ən yaxşı davrananınızdır.\"\n— Tirmizi",
   "hadith55": "\"Kim gecə Bəqərə surəsinin son iki ayəsini oxusa, bu ona kifayət edər.\"\n— Buxari & Müslim",

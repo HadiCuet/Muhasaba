@@ -183,6 +183,8 @@
   "settingsReportBug": "Çewtiyekê ragihînin",
   "settingsRequestFeature": "Taybetmendiyek bixwazin",
   "settingsSupportFallback": "Posteyê venakir. Ji kerema xwe ji {email} re e-name bişînin.",
+  "settingsPrivacyPolicy": "سیاسەتی تایبەتمەندی",
+  "settingsPrivacyOpenFailed": "نەتوانرا سیاسەتی تایبەتمەندی بکرێتەوە.",
   "hadith53": "\"Tu qenciyê piçûk nebîne, heta ku bi rûyekî geş birayê xwe bibîne jî.\"\n— Muslim",
   "hadith54": "\"Yê we yê herî baş, yê ku ji bo malbata xwe herî baş be.\"\n— Tirmizî",
   "hadith55": "\"Kî şevê du ayetên dawî yên Sûreya Baqarayê bixwîne, ew jê re bes in.\"\n— Buxarî û Muslim",

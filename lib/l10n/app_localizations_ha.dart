@@ -625,6 +625,12 @@ class AppLocalizationsHa extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'Manufar Sirri';
+
+  @override
+  String get settingsPrivacyOpenFailed => 'Ba a iya buɗe manufar sirri ba.';
+
+  @override
   String get hadith20 =>
       '\"Duk wanda ya yi azumin Ramadan da imani kuma yana neman lada, za a gafarta masa zunubansa na baya.\"\n— Bukhari da Muslim';
 

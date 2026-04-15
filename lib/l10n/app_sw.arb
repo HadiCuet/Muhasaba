@@ -183,6 +183,8 @@
   "settingsReportBug": "Ripoti hitilafu",
   "settingsRequestFeature": "Omba kipengele",
   "settingsSupportFallback": "Imeshindwa kufungua barua. Tafadhali tuma barua pepe kwa {email}.",
+  "settingsPrivacyPolicy": "Sera ya Faragha",
+  "settingsPrivacyOpenFailed": "Sera ya faragha haikuweza kufunguliwa.",
   "hadith53": "\"Usidharau jambo lolote jema, hata kukutana na ndugu yako kwa uso wenye tabasamu.\"\n— Muslim",
   "hadith54": "\"Bora wenu ni yule aliye bora kwa familia yake.\"\n— Tirmidhi",
   "hadith55": "\"Yeyote anayesoma aya mbili za mwisho za Sura Al-Baqarah usiku, zinamtosha.\"\n— Bukhari na Muslim",

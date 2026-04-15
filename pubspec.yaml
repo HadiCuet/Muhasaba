@@ -47,6 +47,7 @@ dependencies:
   flutter_timezone: ^5.0.2
   flutter_email_sender: ^7.0.0
   in_app_review: ^2.0.10
+  url_launcher: ^6.3.2
   package_info_plus: ^8.1.0
   device_info_plus: ^11.2.0
   firebase_core: ^4.7.0

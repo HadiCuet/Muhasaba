@@ -626,6 +626,13 @@ class AppLocalizationsKy extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'Купуялык саясаты';
+
+  @override
+  String get settingsPrivacyOpenFailed =>
+      'Купуялык саясатын ачуу мүмкүн болгон жок.';
+
+  @override
   String get hadith20 =>
       '\"Ким Рамазанда ыйман жана сооп үмүтү менен орозо тутса, анын өткөн күнөөлөрү кечирилет.\"\n— Бухари жана Муслим';
 

@@ -626,6 +626,13 @@ class AppLocalizationsBs extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'Politika privatnosti';
+
+  @override
+  String get settingsPrivacyOpenFailed =>
+      'Politika privatnosti nije mogla biti otvorena.';
+
+  @override
   String get hadith20 =>
       '\"Ko posti Ramazan iz imana i nadajući se nagradi, bit će mu oprošteni prošli grijesi.\"\n— Buhari i Muslim';
 

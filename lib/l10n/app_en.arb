@@ -287,6 +287,8 @@
       }
     }
   },
+  "settingsPrivacyPolicy": "Privacy Policy",
+  "settingsPrivacyOpenFailed": "Could not open the privacy policy.",
   "hadith20": "\"Whoever fasts Ramadan out of faith and seeking reward, his past sins will be forgiven.\"\n— Bukhari & Muslim",
   "hadith22": "\"The supplication between the adhan and iqamah is not rejected.\"\n— Abu Dawud",
   "hadith23": "\"Whoever builds a mosque for Allah, Allah will build for him a house in Paradise.\"\n— Bukhari & Muslim",

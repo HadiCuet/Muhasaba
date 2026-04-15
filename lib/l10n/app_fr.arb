@@ -183,6 +183,8 @@
   "settingsReportBug": "Signaler un bug",
   "settingsRequestFeature": "Demander une fonctionnalité",
   "settingsSupportFallback": "Impossible d'ouvrir la messagerie. Veuillez envoyer un e-mail à {email}.",
+  "settingsPrivacyPolicy": "Politique de confidentialité",
+  "settingsPrivacyOpenFailed": "Impossible d'ouvrir la politique de confidentialité.",
   "hadith20": "\"Celui qui jeûne le Ramadan avec foi et en espérant la récompense verra ses péchés passés pardonnés.\"\n— Bukhari & Muslim",
   "hadith22": "\"L'invocation entre l'adhan et l'iqama n'est pas rejetée.\"\n— Abu Dawud",
   "hadith23": "\"Celui qui construit une mosquée pour Allah, Allah lui construira une maison au Paradis.\"\n— Bukhari & Muslim",

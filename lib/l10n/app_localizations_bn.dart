@@ -625,6 +625,12 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'গোপনীয়তা নীতি';
+
+  @override
+  String get settingsPrivacyOpenFailed => 'গোপনীয়তা নীতি খোলা যায়নি।';
+
+  @override
   String get hadith20 =>
       '\"যে ব্যক্তি ঈমান ও সওয়াবের আশায় রমজানে রোজা রাখবে, তার পূর্ববর্তী গুনাহ মাফ করা হবে।\"\n— বুখারি ও মুসলিম';
 

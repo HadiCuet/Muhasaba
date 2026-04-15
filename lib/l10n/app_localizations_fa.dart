@@ -626,6 +626,13 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'سیاست حفظ حریم خصوصی';
+
+  @override
+  String get settingsPrivacyOpenFailed =>
+      'باز کردن سیاست حفظ حریم خصوصی ممکن نشد.';
+
+  @override
   String get hadith20 =>
       '«هر کس ماه رمضان را با ایمان و به امید ثواب روزه بدارد، گناهان گذشته‌اش آمرزیده می‌شود.»\n— بخاری و مسلم';
 

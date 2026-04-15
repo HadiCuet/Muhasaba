@@ -626,6 +626,13 @@ class AppLocalizationsKu extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'سیاسەتی تایبەتمەندی';
+
+  @override
+  String get settingsPrivacyOpenFailed =>
+      'نەتوانرا سیاسەتی تایبەتمەندی بکرێتەوە.';
+
+  @override
   String get hadith20 =>
       '\"Kî bi bawerî û bi hêviya xelatê Remezanê rojî bigire, gunehên wî yên berê têne baxişandin.\"\n— Buxarî û Muslim';
 

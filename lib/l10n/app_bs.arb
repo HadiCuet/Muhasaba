@@ -183,6 +183,8 @@
   "settingsReportBug": "Prijavite grešku",
   "settingsRequestFeature": "Zatražite funkciju",
   "settingsSupportFallback": "Nije moguće otvoriti poštu. Molimo pišite na {email}.",
+  "settingsPrivacyPolicy": "Politika privatnosti",
+  "settingsPrivacyOpenFailed": "Politika privatnosti nije mogla biti otvorena.",
   "hadith53": "\"Ne potcjenjuj nijedno dobro djelo, pa makar to bilo da sretneš brata sa vedrim licem.\"\n— Muslim",
   "hadith54": "\"Najbolji među vama su oni koji su najbolji prema svojoj porodici.\"\n— Tirmizi",
   "hadith55": "\"Ko prouči posljednja dva ajeta sure El-Bekare noću, bit će mu dovoljno.\"\n— Buhari i Muslim",

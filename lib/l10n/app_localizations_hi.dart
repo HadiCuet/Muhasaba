@@ -626,6 +626,12 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'गोपनीयता नीति';
+
+  @override
+  String get settingsPrivacyOpenFailed => 'गोपनीयता नीति नहीं खोली जा सकी।';
+
+  @override
   String get hadith20 =>
       '\"जो रमज़ान के रोज़े ईमान और सवाब की उम्मीद से रखे, उसके पिछले गुनाह माफ़ कर दिए जाएंगे।\"\n— बुख़ारी व मुस्लिम';
 

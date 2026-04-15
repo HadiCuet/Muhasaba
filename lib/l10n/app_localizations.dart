@@ -1238,6 +1238,18 @@ abstract class AppLocalizations {
   /// **'Could not open mail. Please email {email}.'**
   String settingsSupportFallback(String email);
 
+  /// No description provided for @settingsPrivacyPolicy.
+  ///
+  /// In en, this message translates to:
+  /// **'Privacy Policy'**
+  String get settingsPrivacyPolicy;
+
+  /// No description provided for @settingsPrivacyOpenFailed.
+  ///
+  /// In en, this message translates to:
+  /// **'Could not open the privacy policy.'**
+  String get settingsPrivacyOpenFailed;
+
   /// No description provided for @hadith20.
   ///
   /// In en, this message translates to:

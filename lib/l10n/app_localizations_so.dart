@@ -629,6 +629,13 @@ class AppLocalizationsSo extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'Siyaasadda Asturnaanta';
+
+  @override
+  String get settingsPrivacyOpenFailed =>
+      'Lama furi karo siyaasadda asturnaanta.';
+
+  @override
   String get hadith20 =>
       '\"Qofkii sooma Ramadaan iimaankiisa iyo rajaynta ajar, dambiyadiisii hore waa loo cafiyaa.\"\n— Bukhaari & Muslim';
 

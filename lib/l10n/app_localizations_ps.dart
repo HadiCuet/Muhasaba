@@ -625,6 +625,12 @@ class AppLocalizationsPs extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'د محرمیت تګلاره';
+
+  @override
+  String get settingsPrivacyOpenFailed => 'د محرمیت تګلاره نه شوه پرانیستل.';
+
+  @override
   String get hadith20 =>
       '\"هر څوک چې د ایمان او ثواب په نیت رمضان روژه ونیسي، د هغه تیرې ګناهونه بخښل کیږي.\"\n— بخاري او مسلم';
 

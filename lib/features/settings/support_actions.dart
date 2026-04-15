@@ -6,11 +6,15 @@ import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:package_info_plus/package_info_plus.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 import '../../l10n/app_localizations.dart';
 
 /// Developer contact email for all support rows.
 const String kSupportEmail = 'hadi.fiftytwo@gmail.com';
+
+/// Hosted privacy policy (GitHub Pages).
+const String kPrivacyPolicyUrl = 'https://hadicuet.github.io/Muhasaba/privacy/';
 
 // Email subjects are hardcoded English — they're sent to the developer,
 // not shown translated to users.
@@ -69,6 +73,19 @@ Future<void> sendFeatureRequestEmail(BuildContext context) async {
   );
   final ok = await _sendEmail(subject: _subjectFeature);
   if (!ok && context.mounted) _showFallbackSnackBar(context);
+}
+
+/// Opens the hosted privacy policy in an in-app browser sheet
+/// (SFSafariViewController on iOS, Chrome Custom Tabs on Android). The user
+/// stays inside the app — this never launches the external system browser.
+Future<void> openPrivacyPolicy(BuildContext context) async {
+  final uri = Uri.parse(kPrivacyPolicyUrl);
+  try {
+    final ok = await launchUrl(uri, mode: LaunchMode.inAppBrowserView);
+    if (!ok && context.mounted) _showPrivacyFallback(context);
+  } catch (_) {
+    if (context.mounted) _showPrivacyFallback(context);
+  }
 }
 
 // ---------------------------------------------------------------------------
@@ -134,6 +151,18 @@ void _showFallbackSnackBar(BuildContext context) {
   messenger.showSnackBar(
     SnackBar(
       content: Text(l.settingsSupportFallback(kSupportEmail)),
+      behavior: SnackBarBehavior.floating,
+    ),
+  );
+}
+
+void _showPrivacyFallback(BuildContext context) {
+  final messenger = ScaffoldMessenger.maybeOf(context);
+  if (messenger == null) return;
+  final l = AppLocalizations.of(context);
+  messenger.showSnackBar(
+    SnackBar(
+      content: Text(l.settingsPrivacyOpenFailed),
       behavior: SnackBarBehavior.floating,
     ),
   );

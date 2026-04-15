@@ -630,6 +630,13 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'Politique de confidentialité';
+
+  @override
+  String get settingsPrivacyOpenFailed =>
+      'Impossible d\'ouvrir la politique de confidentialité.';
+
+  @override
   String get hadith20 =>
       '\"Celui qui jeûne le Ramadan avec foi et en espérant la récompense verra ses péchés passés pardonnés.\"\n— Bukhari & Muslim';
 

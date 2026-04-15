@@ -183,6 +183,8 @@
   "settingsReportBug": "Laporkan bug",
   "settingsRequestFeature": "Minta fitur",
   "settingsSupportFallback": "Tidak dapat membuka surat. Silakan kirim email ke {email}.",
+  "settingsPrivacyPolicy": "Kebijakan Privasi",
+  "settingsPrivacyOpenFailed": "Tidak dapat membuka kebijakan privasi.",
   "hadith20": "\"Barangsiapa berpuasa Ramadan karena iman dan mengharap pahala, diampunilah dosa-dosanya yang telah lalu.\"\n— Bukhari & Muslim",
   "hadith22": "\"Doa antara adzan dan iqamah tidak ditolak.\"\n— Abu Dawud",
   "hadith23": "\"Barangsiapa membangun masjid karena Allah, Allah akan membangunkan untuknya rumah di surga.\"\n— Bukhari & Muslim",

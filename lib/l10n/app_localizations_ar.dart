@@ -633,6 +633,12 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'سياسة الخصوصية';
+
+  @override
+  String get settingsPrivacyOpenFailed => 'تعذر فتح سياسة الخصوصية.';
+
+  @override
   String get hadith20 =>
       '«مَنْ صَامَ رَمَضَانَ إِيمَانًا وَاحْتِسَابًا غُفِرَ لَهُ مَا تَقَدَّمَ مِنْ ذَنْبِهِ.»\n— البخاري ومسلم';
 

@@ -627,6 +627,12 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'Gizlilik Politikası';
+
+  @override
+  String get settingsPrivacyOpenFailed => 'Gizlilik politikası açılamadı.';
+
+  @override
   String get hadith20 =>
       '\"Kim Ramazan\'da iman ederek ve sevabını umarak oruç tutarsa, geçmiş günahları bağışlanır.\"\n— Buhârî ve Müslim';
 

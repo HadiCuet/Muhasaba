@@ -627,6 +627,12 @@ class AppLocalizationsMs extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'Dasar Privasi';
+
+  @override
+  String get settingsPrivacyOpenFailed => 'Tidak dapat membuka dasar privasi.';
+
+  @override
   String get hadith20 =>
       '\"Sesiapa yang berpuasa pada bulan Ramadan kerana iman dan mengharapkan pahala, dosa-dosanya yang lalu akan diampunkan.\"\n— Bukhari & Muslim';
 

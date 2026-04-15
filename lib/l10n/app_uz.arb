@@ -183,6 +183,8 @@
   "settingsReportBug": "Xato haqida xabar berish",
   "settingsRequestFeature": "Funksiya so'rash",
   "settingsSupportFallback": "Pochtani ochib bo'lmadi. Iltimos, {email} manziliga xabar yuboring.",
+  "settingsPrivacyPolicy": "Maxfiylik siyosati",
+  "settingsPrivacyOpenFailed": "Maxfiylik siyosatini ochib bo'lmadi.",
   "hadith53": "\"Hech qanday yaxshilikni kichik ko'rmang, hatto birodaringizni ochiq chehra bilan kutish bo'lsa ham.\"\n— Muslim",
   "hadith54": "\"Sizlarning eng yaxshingiz oilasiga eng yaxshi bo'lganingizdir.\"\n— Termiziy",
   "hadith55": "\"Kim kechasi Baqara surasining oxirgi ikki oyatini o'qisa, bu unga kifoya qiladi.\"\n— Buxoriy va Muslim",

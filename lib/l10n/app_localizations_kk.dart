@@ -625,6 +625,13 @@ class AppLocalizationsKk extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'Құпиялылық саясаты';
+
+  @override
+  String get settingsPrivacyOpenFailed =>
+      'Құпиялылық саясатын ашу мүмкін болмады.';
+
+  @override
   String get hadith20 =>
       '\"Кім Рамазанда иман мен сауап үмітімен ораза тұтса, оның өткен күнәлары кешіріледі.\"\n— Бұхари және Муслим';
 

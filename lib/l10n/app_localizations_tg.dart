@@ -628,6 +628,12 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
+  String get settingsPrivacyPolicy => 'Сиёсати махфият';
+
+  @override
+  String get settingsPrivacyOpenFailed => 'Сиёсати махфият кушода нашуд.';
+
+  @override
   String get hadith20 =>
       '\"Ҳар касе ки Рамазонро бо имон ва умеди савоб рӯза дорад, гуноҳони гузаштааш бахшида мешавад.\"\n— Бухорӣ ва Муслим';
 

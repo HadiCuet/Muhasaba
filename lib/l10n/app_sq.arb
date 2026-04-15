@@ -183,6 +183,8 @@
   "settingsReportBug": "Raporto një gabim",
   "settingsRequestFeature": "Kërko një veçori",
   "settingsSupportFallback": "Posta nuk u hap. Ju lutemi shkruani në {email}.",
+  "settingsPrivacyPolicy": "Politika e privatësisë",
+  "settingsPrivacyOpenFailed": "Politika e privatësisë nuk mund të hapet.",
   "hadith53": "\"Mos e nënvlerëso asnjë vepër të mirë, qoftë edhe takimi me vëllanë tënd me fytyrë të buzëqeshur.\"\n— Muslim",
   "hadith54": "\"Më i miri prej jush është ai që është më i mirë me familjen e tij.\"\n— Tirmidhi",
   "hadith55": "\"Kush i lexon dy ajetet e fundit të sures El-Bekare natën, ato i mjaftojnë atij.\"\n— Bukhari & Muslim",
