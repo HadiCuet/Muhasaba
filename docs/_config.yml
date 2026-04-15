@@ -1,0 +1,17 @@
+title: Muhasaba
+description: Legal and privacy documentation for the Muhasaba app.
+theme: jekyll-theme-cayman
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+permalink: pretty
+
+# Do NOT publish internal design specs
+exclude:
+  - superpowers
+  - README.md
+  - .DS_Store
+
+# To update the hosted privacy policy: copy the latest /PRIVACY.md content
+# under the front-matter block in /docs/privacy/index.md and commit both files.
