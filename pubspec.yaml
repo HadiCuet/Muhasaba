@@ -45,10 +45,10 @@ dependencies:
   timezone: ^0.11.0
   intl: ^0.20.2
   flutter_timezone: ^5.0.2
-  flutter_email_sender: ^7.0.0
+  flutter_email_sender: ^8.0.0
   in_app_review: ^2.0.10
   webview_flutter: ^4.10.0
-  package_info_plus: ^8.1.0
+  package_info_plus: ^9.0.1
   device_info_plus: ^11.2.0
   firebase_core: ^4.7.0
   firebase_analytics: ^12.3.0
