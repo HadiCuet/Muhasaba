@@ -6,9 +6,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_email_sender/flutter_email_sender.dart';
 import 'package:in_app_review/in_app_review.dart';
 import 'package:package_info_plus/package_info_plus.dart';
-import 'package:url_launcher/url_launcher.dart';
 
 import '../../l10n/app_localizations.dart';
+import 'privacy_policy_screen.dart';
 
 /// Developer contact email for all support rows.
 const String kSupportEmail = 'hadi.fiftytwo@gmail.com';
@@ -75,17 +75,14 @@ Future<void> sendFeatureRequestEmail(BuildContext context) async {
   if (!ok && context.mounted) _showFallbackSnackBar(context);
 }
 
-/// Opens the hosted privacy policy in an in-app browser sheet
-/// (SFSafariViewController on iOS, Chrome Custom Tabs on Android). The user
-/// stays inside the app — this never launches the external system browser.
+/// Pushes a full-screen in-app WebView that renders the hosted privacy
+/// policy. The user stays inside the Flutter app — no system browser sheet,
+/// no task switch. Load failures render an error message inside the screen
+/// via `settingsPrivacyOpenFailed`.
 Future<void> openPrivacyPolicy(BuildContext context) async {
-  final uri = Uri.parse(kPrivacyPolicyUrl);
-  try {
-    final ok = await launchUrl(uri, mode: LaunchMode.inAppBrowserView);
-    if (!ok && context.mounted) _showPrivacyFallback(context);
-  } catch (_) {
-    if (context.mounted) _showPrivacyFallback(context);
-  }
+  await Navigator.of(context).push<void>(
+    MaterialPageRoute(builder: (_) => const PrivacyPolicyScreen()),
+  );
 }
 
 // ---------------------------------------------------------------------------
@@ -156,14 +153,3 @@ void _showFallbackSnackBar(BuildContext context) {
   );
 }
 
-void _showPrivacyFallback(BuildContext context) {
-  final messenger = ScaffoldMessenger.maybeOf(context);
-  if (messenger == null) return;
-  final l = AppLocalizations.of(context);
-  messenger.showSnackBar(
-    SnackBar(
-      content: Text(l.settingsPrivacyOpenFailed),
-      behavior: SnackBarBehavior.floating,
-    ),
-  );
-}
