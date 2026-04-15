@@ -96,6 +96,34 @@ final todayRowsProvider = FutureProvider.family<List<TodayRow>, DateTime>((
   );
 });
 
+/// Fallback rows for the History screen used only when
+/// [todayRowsProvider] returns an empty list for a given date (i.e. no amal
+/// was active on that muhasaba date). Returns every currently-active amal as
+/// a [TodayRow] whose `progress`/`note` are pulled from any existing
+/// Completion record for [date], defaulting to 0/`null`. This lets the user
+/// see their current tracker and retroactively log completions on historical
+/// days where their amal list had been fully archived.
+final historyFallbackRowsProvider =
+    FutureProvider.autoDispose.family<List<TodayRow>, DateTime>((
+      ref,
+      date,
+    ) async {
+      final amals = await ref.watch(_activeAmalsProvider.future);
+      if (amals.isEmpty) return const [];
+      final completions = await ref.watch(
+        _completionsForDateProvider(date).future,
+      );
+      final byAmalId = {for (final c in completions) c.amalId: c};
+      return [
+        for (final a in amals)
+          TodayRow(
+            amal: a,
+            progress: byAmalId[a.id]?.progress ?? 0,
+            note: byAmalId[a.id]?.note,
+          ),
+      ];
+    });
+
 /// Rolled-up stats for the current muhasaba date. Rebuilds whenever the
 /// amal list or settings change. Completion edits invalidate this through
 /// `ref.invalidate(statsSnapshotProvider)` from write sites — we don't

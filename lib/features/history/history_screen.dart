@@ -68,34 +68,25 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
               error: (e, _) =>
                   Center(child: Text(l.errorGeneric(e.toString()))),
               data: (rows) {
-                if (rows.isEmpty) {
-                  return _EmptyDay(date: selected);
+                if (rows.isNotEmpty) {
+                  return _buildRowsList(rows, selected, streaks);
                 }
-                return ListView.builder(
-                  padding: const EdgeInsets.fromLTRB(12, 8, 12, 16),
-                  // +1 for the day summary header
-                  itemCount: rows.length + 1,
-                  itemBuilder: (context, i) {
-                    if (i == 0) {
-                      return _DaySummary(
-                        date: selected,
-                        rows: rows,
-                      );
+                // Empty day → fall back to currently-active amals in
+                // incomplete state so the user still has a tracker to
+                // interact with.
+                final fallbackAsync = ref.watch(
+                  historyFallbackRowsProvider(selected),
+                );
+                return fallbackAsync.when(
+                  loading: () =>
+                      const Center(child: CircularProgressIndicator()),
+                  error: (e, _) =>
+                      Center(child: Text(l.errorGeneric(e.toString()))),
+                  data: (fallbackRows) {
+                    if (fallbackRows.isEmpty) {
+                      return _EmptyDay(date: selected);
                     }
-                    final row = rows[i - 1];
-                    return Padding(
-                      padding: const EdgeInsets.only(bottom: 8),
-                      child: AmalRowTile(
-                        row: row,
-                        streak: streaks[row.amal.id],
-                        onProgressChanged: (progress) =>
-                            _setProgress(row, selected, progress),
-                        onRemove: () =>
-                            _openRemoveSheet(context, row, selected),
-                        onEdit: () => context.push('/amal/${row.amal.id}'),
-                        onNoteChanged: (note) => _setNote(row, selected, note),
-                      ),
-                    );
+                    return _buildRowsList(fallbackRows, selected, streaks);
                   },
                 );
               },
@@ -132,11 +123,42 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
     }
   }
 
+  Widget _buildRowsList(
+    List<TodayRow> rows,
+    DateTime selected,
+    Map<int, int> streaks,
+  ) {
+    return ListView.builder(
+      padding: const EdgeInsets.fromLTRB(12, 8, 12, 16),
+      // +1 for the day summary header
+      itemCount: rows.length + 1,
+      itemBuilder: (context, i) {
+        if (i == 0) {
+          return _DaySummary(date: selected, rows: rows);
+        }
+        final row = rows[i - 1];
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 8),
+          child: AmalRowTile(
+            row: row,
+            streak: streaks[row.amal.id],
+            onProgressChanged: (progress) =>
+                _setProgress(row, selected, progress),
+            onRemove: () => _openRemoveSheet(context, row, selected),
+            onEdit: () => context.push('/amal/${row.amal.id}'),
+            onNoteChanged: (note) => _setNote(row, selected, note),
+          ),
+        );
+      },
+    );
+  }
+
   Future<void> _setNote(TodayRow row, DateTime date, String? note) async {
     await ref
         .read(completionRepositoryProvider)
         .setNote(amalId: row.amal.id, muhasabaDate: date, note: note);
     ref.invalidate(todayRowsProvider(date));
+    ref.invalidate(historyFallbackRowsProvider(date));
   }
 
   Future<void> _setProgress(TodayRow row, DateTime date, int progress) async {
@@ -149,6 +171,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
           target: row.amal.target,
         );
     ref.invalidate(todayRowsProvider(date));
+    ref.invalidate(historyFallbackRowsProvider(date));
     ref.invalidate(statsSnapshotProvider);
     ref.invalidate(currentStreaksProvider);
   }
@@ -171,6 +194,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
         return;
     }
     ref.invalidate(todayRowsProvider(date));
+    ref.invalidate(historyFallbackRowsProvider(date));
     ref.invalidate(statsSnapshotProvider);
     ref.invalidate(currentStreaksProvider);
   }
