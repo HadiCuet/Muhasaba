@@ -51,7 +51,7 @@ class _AmalRow extends StatelessWidget {
         SizedBox(
           width: 28,
           child: Text(
-            stats.icon ?? '\u{1F4CB}', // clipboard as default
+            stats.icon,
             style: const TextStyle(fontSize: 18),
             textAlign: TextAlign.center,
           ),

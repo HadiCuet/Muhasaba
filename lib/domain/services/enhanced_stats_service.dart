@@ -56,7 +56,7 @@ class EnhancedAmalStats {
   const EnhancedAmalStats({
     required this.amalId,
     required this.title,
-    this.icon,
+    required this.icon,
     this.category,
     required this.frequency,
     required this.completed,
@@ -66,7 +66,7 @@ class EnhancedAmalStats {
 
   final int amalId;
   final String title;
-  final String? icon;
+  final String icon;
   final String? category;
   final Frequency frequency;
   final int completed;

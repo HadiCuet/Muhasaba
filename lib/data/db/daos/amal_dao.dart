@@ -56,11 +56,11 @@ class AmalDao extends DatabaseAccessor<AppDatabase> with _$AmalDaoMixin {
     final rows =
         await (selectOnly(amals, distinct: true)
               ..addColumns([amals.icon])
-              ..where(amals.icon.isNotNull() & amals.archivedAt.isNull())
+              ..where(amals.archivedAt.isNull())
               ..orderBy([OrderingTerm.desc(amals.id)])
               ..limit(20))
             .get();
-    return rows.map((r) => r.read(amals.icon)).whereType<String>().toList();
+    return rows.map((r) => r.read(amals.icon)!).toList();
   }
 
   /// Batch-update sortOrder for multiple amal at once (drag-to-reorder).
