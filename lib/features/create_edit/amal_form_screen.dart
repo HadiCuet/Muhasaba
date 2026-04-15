@@ -486,6 +486,7 @@ class _TargetChipsState extends State<_TargetChips> {
               ChoiceChip(
                 label: Text('$p'),
                 selected: widget.value == p,
+                showCheckmark: false,
                 onSelected: (_) {
                   _controller.clear();
                   widget.onChanged(p);

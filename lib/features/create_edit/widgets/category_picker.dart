@@ -83,6 +83,7 @@ class _CategoryPickerState extends ConsumerState<CategoryPicker> {
                       : null,
                   label: Text(cat.name),
                   selected: cat.name == widget.selected,
+                  showCheckmark: false,
                   onSelected: (selected) {
                     if (selected) {
                       widget.onChanged(cat.name);
