@@ -180,19 +180,19 @@ class _SettingsList extends StatelessWidget {
         _CardGroup(
           children: [
             _SettingsItem(
+              icon: '🛡️',
+              iconColor: Colors.teal,
+              title: l.settingsPrivacyPolicy,
+              trailing: '',
+              onTap: () => openPrivacyPolicy(context),
+            ),
+            _SettingsItem(
               icon: 'ℹ️',
               iconColor: Colors.teal,
               title: l.settingsVersion,
               trailing: '1.0.0',
               showChevron: false,
               onTap: () {},
-            ),
-            _SettingsItem(
-              icon: '🛡️',
-              iconColor: Colors.teal,
-              title: l.settingsPrivacyPolicy,
-              trailing: '',
-              onTap: () => openPrivacyPolicy(context),
             ),
           ],
         ),
@@ -245,7 +245,11 @@ class _AppBrandCard extends StatefulWidget {
 }
 
 class _AppBrandCardState extends State<_AppBrandCard> {
-  late final List<String> _selected;
+  // Store only the shuffled indices, not the localized strings themselves, so
+  // the selection is fixed for the session but the rendered text re-reads
+  // from `widget.l` on every build — stays in sync when the user changes the
+  // app language at runtime.
+  late final List<int> _selectedIndices;
   late final PageController _pageController;
   int _currentPage = 0;
   Timer? _timer;
@@ -253,9 +257,9 @@ class _AppBrandCardState extends State<_AppBrandCard> {
   @override
   void initState() {
     super.initState();
-    final all = _hadiths(widget.l);
-    final indices = List.generate(all.length, (i) => i)..shuffle(Random());
-    _selected = indices.take(10).map((i) => all[i]).toList();
+    final count = _hadiths(widget.l).length;
+    final indices = List.generate(count, (i) => i)..shuffle(Random());
+    _selectedIndices = indices.take(10).toList();
     _pageController = PageController();
     _startTimer();
   }
@@ -263,7 +267,7 @@ class _AppBrandCardState extends State<_AppBrandCard> {
   void _startTimer() {
     _timer?.cancel();
     _timer = Timer.periodic(const Duration(seconds: 8), (_) {
-      final next = (_currentPage + 1) % _selected.length;
+      final next = (_currentPage + 1) % _selectedIndices.length;
       _pageController.animateToPage(
         next,
         duration: const Duration(milliseconds: 500),
@@ -283,6 +287,10 @@ class _AppBrandCardState extends State<_AppBrandCard> {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final seed = theme.colorScheme.primary;
+    // Resolve the localized hadith strings per-build so a locale change
+    // immediately flows through the carousel without requiring an app
+    // restart. The shuffled indices stay fixed for the session.
+    final allHadiths = _hadiths(widget.l);
 
     return Container(
       margin: const EdgeInsets.only(top: 8),
@@ -350,14 +358,14 @@ class _AppBrandCardState extends State<_AppBrandCard> {
                   height: 80,
                   child: PageView.builder(
                     controller: _pageController,
-                    itemCount: _selected.length,
+                    itemCount: _selectedIndices.length,
                     onPageChanged: (page) {
                       setState(() => _currentPage = page);
                       _startTimer(); // Reset timer on manual swipe.
                     },
                     itemBuilder: (_, i) => Center(
                       child: Text(
-                        _selected[i],
+                        allHadiths[_selectedIndices[i]],
                         textAlign: TextAlign.center,
                         style: theme.textTheme.bodySmall?.copyWith(
                           fontStyle: FontStyle.italic,
@@ -373,7 +381,7 @@ class _AppBrandCardState extends State<_AppBrandCard> {
                 Row(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    for (var i = 0; i < _selected.length; i++)
+                    for (var i = 0; i < _selectedIndices.length; i++)
                       AnimatedContainer(
                         duration: const Duration(milliseconds: 300),
                         margin: const EdgeInsets.symmetric(horizontal: 2),
