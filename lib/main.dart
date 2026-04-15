@@ -1,5 +1,6 @@
 import 'dart:async';
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:firebase_core/firebase_core.dart';
 import 'package:firebase_crashlytics/firebase_crashlytics.dart';
 import 'package:flutter/foundation.dart';
@@ -20,9 +21,11 @@ Future<void> main() async {
         options: DefaultFirebaseOptions.currentPlatform,
       );
 
-      // Don't collect crashes during development; only in release builds.
+      // Don't collect crashes or analytics during development; only in release builds.
       await FirebaseCrashlytics.instance
           .setCrashlyticsCollectionEnabled(!kDebugMode);
+      await FirebaseAnalytics.instance
+          .setAnalyticsCollectionEnabled(!kDebugMode);
 
       // Route Flutter framework errors to Crashlytics.
       FlutterError.onError =

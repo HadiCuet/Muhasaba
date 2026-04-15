@@ -2,6 +2,8 @@
     <!-- flutter_local_notifications: daily repeating reminders. -->
     <uses-permission android:name="android.permission.POST_NOTIFICATIONS"/>
     <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
+    <!-- Required for Firebase Analytics and Crashlytics to transmit data. -->
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:label="muhasaba"
