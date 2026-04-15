@@ -1,6 +1,7 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:intl/intl.dart';
 
 import '../stats_filter.dart';
 import '../stats_providers.dart';
@@ -13,6 +14,7 @@ class StatsFilterRow extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l = AppLocalizations.of(context);
     final filter = ref.watch(statsFilterProvider);
+    final locale = Localizations.localeOf(context).toString();
 
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 8),
@@ -21,7 +23,7 @@ class StatsFilterRow extends ConsumerWidget {
           Expanded(
             child: _FilterDropdown(
               label: l.statsFilterTime,
-              value: _periodLabel(l, filter.period),
+              value: _periodLabel(l, filter, locale),
               onSelected: (context) =>
                   _showTimePicker(context, ref, filter, l),
             ),
@@ -45,13 +47,24 @@ class StatsFilterRow extends ConsumerWidget {
     );
   }
 
-  String _periodLabel(AppLocalizations l, StatsPeriod period) {
-    return switch (period) {
+  String _periodLabel(
+    AppLocalizations l,
+    StatsFilter filter,
+    String locale,
+  ) {
+    return switch (filter.period) {
       StatsPeriod.today => l.statsToday,
       StatsPeriod.thisWeek => l.statsThisWeek,
       StatsPeriod.thisMonth => l.statsThisMonth,
       StatsPeriod.allTime => l.statsAllTime,
-      StatsPeriod.custom => l.statsCustomRange,
+      StatsPeriod.custom =>
+        (filter.customStart != null && filter.customEnd != null)
+            ? _formatCompactRange(
+                filter.customStart!,
+                filter.customEnd!,
+                locale,
+              )
+            : l.statsCustomRange,
     };
   }
 
@@ -161,13 +174,21 @@ class _FilterDropdown extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 1),
-                  Text(
-                    value,
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      fontWeight: FontWeight.w600,
+                  FittedBox(
+                    // Shrinks the value text down if the compact date range
+                    // (or long category / amal name) can't fit in the 1/3
+                    // column — keeps it single-line and readable instead of
+                    // ellipsing mid-word.
+                    fit: BoxFit.scaleDown,
+                    alignment: AlignmentDirectional.centerStart,
+                    child: Text(
+                      value,
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        fontWeight: FontWeight.w600,
+                      ),
+                      maxLines: 1,
+                      softWrap: false,
                     ),
-                    maxLines: 1,
-                    overflow: TextOverflow.ellipsis,
                   ),
                 ],
               ),
@@ -328,4 +349,39 @@ class _AmalDropdown extends ConsumerWidget {
       },
     );
   }
+}
+
+/// Context-aware compact date-range formatting for the Time filter's closed
+/// state. Collapses redundant month/year repetition so short ranges stay
+/// readable in ~80 px of text width:
+///
+///  * same day              → "Apr 1"
+///  * same month + year     → "Apr 1 – 15"
+///  * same year, diff month → "Apr 1 – May 15"
+///  * cross-year            → "Dec 15, 24 – Jan 5, 25"
+///
+/// Month names come from `intl`'s locale-aware `DateFormat`, so Bangla / Arabic
+/// / etc. render in-locale. The ASCII pattern `MMM d, yy` is deliberate — the
+/// two-digit year is kept ASCII regardless of locale so the output never blows
+/// up into "Dec 15, 2024" which won't fit. `FittedBox(scaleDown)` in
+/// `_FilterDropdown` is the final backstop if even this format overflows.
+String _formatCompactRange(DateTime start, DateTime end, String locale) {
+  final mmmD = DateFormat.MMMd(locale);
+  final mmmDyy = DateFormat('MMM d, yy', locale);
+
+  final sameDay = start.year == end.year &&
+      start.month == end.month &&
+      start.day == end.day;
+  if (sameDay) return mmmD.format(start);
+
+  final sameYear = start.year == end.year;
+  final sameMonth = sameYear && start.month == end.month;
+
+  if (sameMonth) {
+    return '${mmmD.format(start)} – ${DateFormat.d(locale).format(end)}';
+  }
+  if (sameYear) {
+    return '${mmmD.format(start)} – ${mmmD.format(end)}';
+  }
+  return '${mmmDyy.format(start)} – ${mmmDyy.format(end)}';
 }
