@@ -545,7 +545,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get hadith10 =>
-      '\"Whoever says \'SubhanAllah wa bihamdihi\' a hundred times a day will have his sins forgiven even if they were like the foam of the sea.\"\n— Bukhari';
+      '\"Whoever says \'SubhanAllah wa bihamdihi\' a hundred times a day will have his sins forgiven even if they were like the foam of the sea.\"\n— Bukhari & Muslim';
 
   @override
   String get hadith12 =>
@@ -560,7 +560,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get hadith15 =>
-      '\"The one who looks after a widow or a poor person is like a warrior in the cause of Allah.\"\n— Bukhari';
+      '\"The one who looks after a widow or a poor person is like a warrior in the cause of Allah.\"\n— Bukhari & Muslim';
 
   @override
   String get hadith16 =>
@@ -842,10 +842,11 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get hadith94 =>
-      '\"The best gathering is the most spacious.\"\n— Abu Dawud';
+      '\"No people sit remembering Allah except that the angels surround them, mercy covers them, and tranquility descends upon them.\"\n— Muslim';
 
   @override
-  String get hadith95 => '\"Forgive and you will be forgiven.\"\n— Ahmad';
+  String get hadith95 =>
+      '\"Allah does not increase a servant, through forgiving others, except in honor.\"\n— Muslim';
 
   @override
   String get hadith96 =>

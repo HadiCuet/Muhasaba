@@ -546,7 +546,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get hadith10 =>
-      '\"Sesiapa yang membaca \'SubhanAllah wa bihamdihi\' seratus kali sehari, dosanya akan diampunkan walaupun sebanyak buih di lautan.\"\n— Bukhari';
+      '\"Sesiapa yang membaca \'SubhanAllah wa bihamdihi\' seratus kali sehari, dosanya akan diampunkan walaupun sebanyak buih di lautan.\"\n— Bukhari & Muslim';
 
   @override
   String get hadith12 =>
@@ -562,7 +562,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get hadith15 =>
-      '\"Orang yang menjaga janda dan orang miskin adalah seperti pejuang di jalan Allah.\"\n— Bukhari';
+      '\"Orang yang menjaga janda dan orang miskin adalah seperti pejuang di jalan Allah.\"\n— Bukhari & Muslim';
 
   @override
   String get hadith16 =>
@@ -846,11 +846,11 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get hadith94 =>
-      '\"Sebaik-baik majlis ialah yang paling luas.\"\n— Abu Dawud';
+      '\"Tidak ada kaum yang duduk berzikir kepada Allah melainkan para malaikat mengelilingi mereka, rahmat menyelubungi mereka, dan ketenangan turun kepada mereka.\"\n— Muslim';
 
   @override
   String get hadith95 =>
-      '\"Maafkanlah, nescaya kamu akan dimaafkan.\"\n— Ahmad';
+      '\"Allah tidak menambah seorang hamba yang memaafkan melainkan dengan kemuliaan.\"\n— Muslim';
 
   @override
   String get hadith96 =>

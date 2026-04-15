@@ -547,7 +547,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get hadith10 =>
-      '\"Ew kesê ku di rojê de sed caran \'SubhanAllahi we bihamdihi\' bêje, gunahên wî têne baxişandin heke wek kefa behrê bin jî.\"\n— Buxarî';
+      '\"Ew kesê ku di rojê de sed caran \'SubhanAllahi we bihamdihi\' bêje, gunahên wî têne baxişandin heke wek kefa behrê bin jî.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith12 =>
@@ -562,7 +562,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get hadith15 =>
-      '\"Ew kesê ku li jinebîyê û feqîr miqate dibe, mîna mûcahidê di rêya Xwedê de ye.\"\n— Buxarî';
+      '\"Ew kesê ku li jinebîyê û feqîr miqate dibe, mîna mûcahidê di rêya Xwedê de ye.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith16 => '\"Bişirîna te li rûyê birayê te xêr e.\"\n— Tirmizî';
@@ -842,10 +842,11 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get hadith94 =>
-      '\"Civîna herî baş ew e ku herî fireh be.\"\n— Ebû Dawûd';
+      '\"Tu qewm li cihekî runanin ku Xwedê bi bîr bînin, ji bilî ku milyaket wan dorpêç bikin, rehmet wan bigire û aramî bi ser wan de were.\"\n— Muslim';
 
   @override
-  String get hadith95 => '\"Bibaxşînin û hûn jî tên baxişandin.\"\n— Ehmed';
+  String get hadith95 =>
+      '\"Xwedê bendeyê ku diborîne tenê bi rûmet zêde dike.\"\n— Muslim';
 
   @override
   String get hadith96 =>

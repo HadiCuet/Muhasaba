@@ -555,7 +555,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get hadith10 =>
-      '«من قال سبحان الله وبحمده في يوم مائة مرة حُطّت خطاياه وإن كانت مثل زبد البحر.»\n— البخاري';
+      '«من قال سبحان الله وبحمده في يوم مائة مرة حُطّت خطاياه وإن كانت مثل زبد البحر.»\n— البخاري ومسلم';
 
   @override
   String get hadith12 =>
@@ -570,7 +570,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get hadith15 =>
-      '«الساعي على الأرملة والمسكين كالمجاهد في سبيل الله.»\n— البخاري';
+      '«الساعي على الأرملة والمسكين كالمجاهد في سبيل الله.»\n— البخاري ومسلم';
 
   @override
   String get hadith16 => '«تبسّمك في وجه أخيك صدقة.»\n— الترمذي';
@@ -841,10 +841,11 @@ class AppLocalizationsAr extends AppLocalizations {
       '«اجتمعوا على طعامكم واذكروا اسم الله يُبارَك لكم فيه.»\n— أبو داود';
 
   @override
-  String get hadith94 => '«خير المجالس أوسعها.»\n— أبو داود';
+  String get hadith94 =>
+      '«لا يَقْعُدُ قَوْمٌ يَذْكُرُونَ اللَّهَ إِلَّا حَفَّتْهُمُ المَلائِكَةُ وَغَشِيَتْهُمُ الرَّحْمَةُ وَنَزَلَتْ عَلَيْهِمُ السَّكِينَةُ.»\n— مسلم';
 
   @override
-  String get hadith95 => '«اعفوا يُعفَ عنكم.»\n— أحمد';
+  String get hadith95 => '«ما زادَ اللهُ عبداً بعفوٍ إلا عِزّاً.»\n— مسلم';
 
   @override
   String get hadith96 => '«اعقلها وتوكل.»\n— الترمذي';

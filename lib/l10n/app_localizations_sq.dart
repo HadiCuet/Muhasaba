@@ -545,7 +545,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get hadith10 =>
-      '\"Kush thotë \'SubhanAllah ue bihamdihi\' njëqind herë në ditë, mëkatet e tij do të falen edhe sikur të ishin si shkuma e detit.\"\n— Buhariu';
+      '\"Kush thotë \'SubhanAllah ue bihamdihi\' njëqind herë në ditë, mëkatet e tij do të falen edhe sikur të ishin si shkuma e detit.\"\n— Buhariu & Muslimi';
 
   @override
   String get hadith12 =>
@@ -560,7 +560,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get hadith15 =>
-      '\"Ai që kujdeset për të vejën dhe të varfrin, është si luftëtar në rrugën e Allahut.\"\n— Buhariu';
+      '\"Ai që kujdeset për të vejën dhe të varfrin, është si luftëtar në rrugën e Allahut.\"\n— Buhariu & Muslimi';
 
   @override
   String get hadith16 =>
@@ -845,10 +845,11 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get hadith94 =>
-      '\"Tubimi më i mirë është ai më i gjeri.\"\n— Ebu Davudi';
+      '\"Nuk ulen njerëzit duke përmendur Allahun, pa i rrethuar engjëjt, pa i mbuluar mëshira dhe pa zbritur qetësia mbi ta.\"\n— Muslimi';
 
   @override
-  String get hadith95 => '\"Falni dhe do të faleni.\"\n— Ahmedi';
+  String get hadith95 =>
+      '\"Allahu nuk i shton robit që fal tjetër pos nderit.\"\n— Muslimi';
 
   @override
   String get hadith96 =>

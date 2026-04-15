@@ -547,7 +547,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith10 =>
-      '\"Kim günde ýüz gezek \'SubhanAllahi we bihamdihi\' diýse, günäleri bagyşlanar, deňziň köpügi ýaly bolsa-da.\"\n— Buhari';
+      '\"Kim günde ýüz gezek \'SubhanAllahi we bihamdihi\' diýse, günäleri bagyşlanar, deňziň köpügi ýaly bolsa-da.\"\n— Buhari we Muslim';
 
   @override
   String get hadith12 =>
@@ -562,7 +562,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith15 =>
-      '\"Dul aýala we garyba seretýän, Allah ýolunda söweşiji ýalydyr.\"\n— Buhari';
+      '\"Dul aýala we garyba seretýän, Allah ýolunda söweşiji ýalydyr.\"\n— Buhari we Muslim';
 
   @override
   String get hadith16 => '\"Doganyňa ýylgyrmagyň sadakadyr.\"\n— Tirmizi';
@@ -840,10 +840,12 @@ class AppLocalizationsTk extends AppLocalizations {
       '\"Bile naharlaňyň we Allanyň adyny tutuň, size bereketli bolar.\"\n— Abu Dawud';
 
   @override
-  String get hadith94 => '\"Iň gowy mejlis — iň giňi.\"\n— Abu Dawud';
+  String get hadith94 =>
+      '\"Allahy ýatlap oturan adamlary perişdeler gurşap alýar, rahmet olary örtýär, olaryň üstüne sükunat düşýär we Allah olary Öz ýanyndakylaryň arasynda ýatlaýar.\"\n— Muslim';
 
   @override
-  String get hadith95 => '\"Bagyşlaň, sizem bagyşlanarsyňyz.\"\n— Ahmad';
+  String get hadith95 =>
+      '\"Allah bagyşlamak sebäpli gula diňe şan-şöhrat artdyrýar.\"\n— Muslim';
 
   @override
   String get hadith96 => '\"Düýäňi daň, soňra Alla tewekkül et.\"\n— Tirmizi';

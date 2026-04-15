@@ -549,7 +549,7 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get hadith10 =>
-      '\"Kim kuniga yuz marta \'SubhanAllohi va bihamdihi\' desa, uning gunohlari kechiriladi, hatto dengiz ko\'pigi kabi bo\'lsa ham.\"\n— Buxoriy';
+      '\"Kim kuniga yuz marta \'SubhanAllohi va bihamdihi\' desa, uning gunohlari kechiriladi, hatto dengiz ko\'pigi kabi bo\'lsa ham.\"\n— Buxoriy va Muslim';
 
   @override
   String get hadith12 =>
@@ -564,7 +564,7 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get hadith15 =>
-      '\"Beva va miskinlarga g\'amxo\'rlik qiluvchi Alloh yo\'lida kurashuvchi kabidur.\"\n— Buxoriy';
+      '\"Beva va miskinlarga g\'amxo\'rlik qiluvchi Alloh yo\'lida kurashuvchi kabidur.\"\n— Buxoriy va Muslim';
 
   @override
   String get hadith16 =>
@@ -845,10 +845,11 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get hadith94 =>
-      '\"Eng yaxshi majlis — eng keng bo\'lganidir.\"\n— Abu Dovud';
+      '\"Qaysi bir qavm Allohni zikr qilib o\'tirsa, albatta farishtalar ularni o\'rab oladi, rahmat ularni qoplaydi va sakinat ularga nozil bo\'ladi.\"\n— Muslim';
 
   @override
-  String get hadith95 => '\"Kechiring, sizlar ham kechirilasiz.\"\n— Ahmad';
+  String get hadith95 =>
+      '\"Alloh kechiruvchi bandaning faqat izzatini ziyoda qiladi.\"\n— Muslim';
 
   @override
   String get hadith96 =>

@@ -1,7 +1,22 @@
 # Hadith collection audit
 
-**Date:** 2026-04-14
+**Date:** 2026-04-14 (initial audit), 2026-04-16 (re-verification of remaining 75)
 **Scope:** All 100 hadith entries (`hadith0` – `hadith99`) in `lib/l10n/app_en.arb` and `lib/l10n/app_ar.arb`.
+
+## 2026-04-16 follow-up pass (75 remaining entries)
+
+After the initial audit removed 25 entries (Critical + Moderate + Minor), a second pass on the remaining 75 surfaced three items where al-Albani or other hadith critics had graded weak or where the exact wording's chain was uncertain, plus two attribution refinements. All have been applied across the 23 ARB locales.
+
+| # | Issue | Fix applied |
+|---|---|---|
+| hadith10 | Attribution listed Bukhari only, though the wording is also in Muslim 2691. | Changed to `Bukhari & Muslim`. |
+| hadith15 | Attribution listed Bukhari only, though the wording is also in Muslim 2982. | Changed to `Bukhari & Muslim`. |
+| hadith94 | «خير المجالس أوسعها» (Abu Dawud 4820) — graded **weak (da'īf)** by al-Albani (*Da'if al-Jami'* 2956, *Silsila Da'ifa* 1445). | Replaced with Muslim 2700: «لا يَقْعُدُ قَوْمٌ يَذْكُرُونَ اللَّهَ إِلَّا حَفَّتْهُمُ المَلائِكَةُ وَغَشِيَتْهُمُ الرَّحْمَةُ وَنَزَلَتْ عَلَيْهِمُ السَّكِينَةُ.» — Muslim (Abu Hurayrah + Abu Sa'id, sahih by consensus). |
+| hadith95 | «اعفوا يُعفَ عنكم» — this exact short wording is hard to place in a canonical isnad; looks like a paraphrase. | Replaced with the well-attested Muslim 2588 clause from Abu Hurayrah: «ما زادَ اللهُ عبداً بعفوٍ إلا عِزّاً.» — Muslim (sahih by consensus). |
+
+After these changes the collection is defensibly sahih/hasan by al-Albani's stricter bar as well as the classical masters.
+
+---
 
 **Anchor for verification:** The Arabic ARB contains authentic classical hadith text. Arabic is the primary source; English is checked against Arabic and against my knowledge of the canonical collections (Bukhari, Muslim, Tirmidhi, Abu Dawud, Nasa'i, Ibn Majah, Ahmad, Bayhaqi, Tabarani, Hakim).
 

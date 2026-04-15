@@ -546,7 +546,7 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get hadith10 =>
-      '\"Duk wanda ya ce \'SubhanAllahi wa bihamdihi\' sau ɗari a rana, za a gafarta masa zunubansa ko da sun kasance kamar kumfar teku.\"\n— Bukhari';
+      '\"Duk wanda ya ce \'SubhanAllahi wa bihamdihi\' sau ɗari a rana, za a gafarta masa zunubansa ko da sun kasance kamar kumfar teku.\"\n— Bukhari da Muslim';
 
   @override
   String get hadith12 =>
@@ -561,7 +561,7 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get hadith15 =>
-      '\"Mai kula da gwauruwa da miskini kamar mai jihadi a tafarkin Allah ne.\"\n— Bukhari';
+      '\"Mai kula da gwauruwa da miskini kamar mai jihadi a tafarkin Allah ne.\"\n— Bukhari da Muslim';
 
   @override
   String get hadith16 => '\"Murmushinka ga ɗan\'uwanka sadaka ce.\"\n— Tirmizi';
@@ -842,10 +842,12 @@ class AppLocalizationsHa extends AppLocalizations {
       '\"Ku ci tare kuma ku ambaci sunan Allah, za a sa muku albarka.\"\n— Abu Dawud';
 
   @override
-  String get hadith94 => '\"Mafi alherin taro shi ne mafi fadi.\"\n— Abu Dawud';
+  String get hadith94 =>
+      '\"Babu mutanen da suke zaune suna ambaton Allah face mala\'iku sun kewaye su, rahama ta rufe su, sakina ta sauko a kansu, kuma Allah ya ambace su a wurin waɗanda suke wajen Sa.\"\n— Muslim';
 
   @override
-  String get hadith95 => '\"Ku yi afuwa, za a yi muku afuwa.\"\n— Ahmad';
+  String get hadith95 =>
+      '\"Allah ba Ya ƙara wa bawa saboda yafewa face daraja.\"\n— Muslim';
 
   @override
   String get hadith96 =>

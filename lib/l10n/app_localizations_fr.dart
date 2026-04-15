@@ -549,7 +549,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get hadith10 =>
-      '\"Celui qui dit \'SubhanAllah wa bihamdihi\' cent fois par jour verra ses péchés pardonnés, même s\'ils étaient comme l\'écume de la mer.\"\n— Bukhari';
+      '\"Celui qui dit \'SubhanAllah wa bihamdihi\' cent fois par jour verra ses péchés pardonnés, même s\'ils étaient comme l\'écume de la mer.\"\n— Bukhari & Muslim';
 
   @override
   String get hadith12 =>
@@ -565,7 +565,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get hadith15 =>
-      '\"Celui qui prend soin d\'une veuve ou d\'un pauvre est comme un combattant dans le sentier d\'Allah.\"\n— Bukhari';
+      '\"Celui qui prend soin d\'une veuve ou d\'un pauvre est comme un combattant dans le sentier d\'Allah.\"\n— Bukhari & Muslim';
 
   @override
   String get hadith16 =>
@@ -850,10 +850,11 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get hadith94 =>
-      '\"La meilleure des assemblées est la plus spacieuse.\"\n— Abu Dawud';
+      '\"Aucun groupe ne s\'assoit pour évoquer Allah sans que les anges ne l\'entourent, que la miséricorde ne le recouvre et que la sérénité ne descende sur lui.\"\n— Muslim';
 
   @override
-  String get hadith95 => '\"Pardonnez et vous serez pardonnés.\"\n— Ahmad';
+  String get hadith95 =>
+      '\"Allah n\'augmente un serviteur qui pardonne qu\'en honneur.\"\n— Muslim';
 
   @override
   String get hadith96 =>

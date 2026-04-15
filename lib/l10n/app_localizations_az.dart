@@ -547,7 +547,7 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get hadith10 =>
-      '\"Kim gündə yüz dəfə \'SubhanAllahi və bihamdihi\' desə, günahları bağışlanar, hətta dənizin köpüyü qədər olsa belə.\"\n— Buxari';
+      '\"Kim gündə yüz dəfə \'SubhanAllahi və bihamdihi\' desə, günahları bağışlanar, hətta dənizin köpüyü qədər olsa belə.\"\n— Buxari və Müslim';
 
   @override
   String get hadith12 =>
@@ -562,7 +562,7 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get hadith15 =>
-      '\"Dul qadına və miskinə baxan adam Allah yolunda mübarizə aparan kimidir.\"\n— Buxari';
+      '\"Dul qadına və miskinə baxan adam Allah yolunda mübarizə aparan kimidir.\"\n— Buxari və Müslim';
 
   @override
   String get hadith16 => '\"Qardaşına təbəssüm etməyin sədəqədir.\"\n— Tirmizi';
@@ -838,10 +838,12 @@ class AppLocalizationsAz extends AppLocalizations {
       '\"Birlikdə yeyin və Allahın adını çəkin, sizin üçün bərəkətli olacaq.\"\n— Əbu Davud';
 
   @override
-  String get hadith94 => '\"Ən yaxşı məclis ən geniş olanıdır.\"\n— Əbu Davud';
+  String get hadith94 =>
+      '\"Hər hansı bir qövm Allahı zikr edərək otursa, mütləq mələklər onları əhatə edər, rəhmət onları bürüyər və sükunət onların üstünə enər.\"\n— Müslim';
 
   @override
-  String get hadith95 => '\"Bağışlayın, siz də bağışlanacaqsınız.\"\n— Əhməd';
+  String get hadith95 =>
+      '\"Allah bağışlayan quluna ancaq izzət artırar.\"\n— Müslim';
 
   @override
   String get hadith96 =>

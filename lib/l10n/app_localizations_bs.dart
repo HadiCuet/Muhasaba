@@ -547,7 +547,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get hadith10 =>
-      '\"Ko kaže \'SubhanAllah ve bihamdihi\' stotinu puta dnevno, bit će mu oprošteni grijesi makar bili poput morske pjene.\"\n— Buhari';
+      '\"Ko kaže \'SubhanAllah ve bihamdihi\' stotinu puta dnevno, bit će mu oprošteni grijesi makar bili poput morske pjene.\"\n— Buhari i Muslim';
 
   @override
   String get hadith12 =>
@@ -562,7 +562,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get hadith15 =>
-      '\"Onaj ko se brine o udovici i siromahu je poput mudžahida na Allahovom putu.\"\n— Buhari';
+      '\"Onaj ko se brine o udovici i siromahu je poput mudžahida na Allahovom putu.\"\n— Buhari i Muslim';
 
   @override
   String get hadith16 => '\"Osmijeh tvom bratu je sadaka.\"\n— Tirmizi';
@@ -842,10 +842,11 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get hadith94 =>
-      '\"Najbolji skup je onaj koji je najprostraniji.\"\n— Ebu Davud';
+      '\"Nijedan narod ne sjedne spominjući Allaha, a da ih meleki ne okruže, milost ih ne obuhvati i smiraj ne siđe na njih.\"\n— Muslim';
 
   @override
-  String get hadith95 => '\"Oprostite i biće vam oprošteno.\"\n— Ahmed';
+  String get hadith95 =>
+      '\"Allah robu koji prašta samo uveća čast.\"\n— Muslim';
 
   @override
   String get hadith96 =>

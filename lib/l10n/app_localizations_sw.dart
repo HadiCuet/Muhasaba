@@ -545,7 +545,7 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get hadith10 =>
-      '\"Mtu anayesema \'SubhanAllah wa bihamdihi\' mara mia kwa siku, dhambi zake zitasamehewa hata kama zingekuwa kama povu la bahari.\"\n— Bukhari';
+      '\"Mtu anayesema \'SubhanAllah wa bihamdihi\' mara mia kwa siku, dhambi zake zitasamehewa hata kama zingekuwa kama povu la bahari.\"\n— Bukhari na Muslim';
 
   @override
   String get hadith12 =>
@@ -560,7 +560,7 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get hadith15 =>
-      '\"Anayemtunza mjane au maskini ni kama mpiganaji katika njia ya Mwenyezi Mungu.\"\n— Bukhari';
+      '\"Anayemtunza mjane au maskini ni kama mpiganaji katika njia ya Mwenyezi Mungu.\"\n— Bukhari na Muslim';
 
   @override
   String get hadith16 => '\"Kutabasamu kwa ndugu yako ni sadaka.\"\n— Tirmidhi';
@@ -840,10 +840,11 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get hadith94 =>
-      '\"Mkutano bora ni ule wenye wasaa zaidi.\"\n— Abu Dawud';
+      '\"Hakuna kaumu inayokaa ikimtaja Mwenyezi Mungu isipokuwa malaika wanawazunguka, rehema inawafunika, na utulivu unawashukia.\"\n— Muslim';
 
   @override
-  String get hadith95 => '\"Sameheni na mtasamehewa.\"\n— Ahmad';
+  String get hadith95 =>
+      '\"Mwenyezi Mungu hamzidishii mja kwa kusamehe isipokuwa heshima.\"\n— Muslim';
 
   @override
   String get hadith96 =>
