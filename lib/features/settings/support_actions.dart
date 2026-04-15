@@ -123,10 +123,6 @@ Future<String> _buildDeviceInfoBody() async {
       final android = await plugin.androidInfo;
       platform = 'Android ${android.version.release} (SDK ${android.version.sdkInt})';
       device = '${android.manufacturer} ${android.model}';
-    } else if (Platform.isMacOS) {
-      final mac = await plugin.macOsInfo;
-      platform = 'macOS ${mac.osRelease}';
-      device = mac.model;
     }
   } catch (_) {}
 

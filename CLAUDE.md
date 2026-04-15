@@ -9,7 +9,9 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - Static analysis / lint: `flutter analyze`
 - Format: `dart format .`
 - Regenerate l10n: `flutter gen-l10n`
-- Build release artifacts: `flutter build apk` / `flutter build ios` / `flutter build web` / `flutter build macos`
+- Build release artifacts: `flutter build apk` / `flutter build ios`
+
+Supported platforms: **iOS + Android only**. Web and desktop targets are intentionally not supported.
 
 Dart SDK constraint: `^3.11.4` (see `pubspec.yaml`).
 
