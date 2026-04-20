@@ -851,4 +851,22 @@ class AppLocalizationsPs extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"مسلمان د مسلمان ورور دی: نه پرې ظلم کوي، نه یې پریږدي، نه یې سپکوي.\"\n— مسلم';
+
+  @override
+  String get delete => 'ړنگول';
+
+  @override
+  String get remove => 'لرې کول';
+
+  @override
+  String get deleteAmalConfirmTitle => 'د تعقیب نه لرې کول؟';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '\"$title\" به ستاسو د لیست نه پټ به شي. ستاسو تاریخ به ساتل کیږي.';
+  }
+
+  @override
+  String get genericError =>
+      'یوه ستونزه رامنځ ته شوه. مهرباني وکړئ بیا هڅه وکړئ.';
 }

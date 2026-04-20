@@ -242,5 +242,10 @@
   "hadith45": "\"Mafi kyawun sallah bayan farilla ita ce sallar dare.\"\n— Muslim",
   "hadith46": "\"Sadaka tana kashe zunubi kamar yadda ruwa ke kashe wuta.\"\n— Tirmizi",
   "hadith47": "\"Mai hada zumunci ba wanda ke mayar da ziyara ba ne, sai dai wanda ke ci gaba da hadin kai ko da an yanke.\"\n— Bukhari",
-  "hadith49": "\"Duk wanda ya ci abinci ya ce: 'Godiya ta tabbata ga Allah wanda ya ciyar da ni wannan kuma ya azurta ni ba tare da wani iko ko karfi daga gare ni ba,' za a gafarta masa zunubansa na baya.\"\n— Tirmizi"
+  "hadith49": "\"Duk wanda ya ci abinci ya ce: 'Godiya ta tabbata ga Allah wanda ya ciyar da ni wannan kuma ya azurta ni ba tare da wani iko ko karfi daga gare ni ba,' za a gafarta masa zunubansa na baya.\"\n— Tirmizi",
+  "delete": "Share",
+  "remove": "Cire",
+  "deleteAmalConfirmTitle": "Cire daga bin diddigin?",
+  "deleteAmalConfirmBody": "\"{title}\" za a ɓoye a cikin jerin sunayen ku. An adana tarihin ku.",
+  "genericError": "Wani abu ya kasa. Da fatan a sake gwadawa."
 }

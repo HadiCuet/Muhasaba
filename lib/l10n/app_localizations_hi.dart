@@ -858,4 +858,21 @@ class AppLocalizationsHi extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"मुसलमान मुसलमान का भाई है: वह उस पर ज़ुल्म नहीं करता, न उसे छोड़ता है, न उसे तुच्छ समझता है।\"\n— मुस्लिम';
+
+  @override
+  String get delete => 'हटाएं';
+
+  @override
+  String get remove => 'निकालें';
+
+  @override
+  String get deleteAmalConfirmTitle => 'ट्रैकिंग से हटाएं?';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '\"$title\" आपकी सूची से छिपा दिया जाएगा। आपका इतिहास सुरक्षित रहेगा।';
+  }
+
+  @override
+  String get genericError => 'कुछ गलत हो गया। कृपया पुनः प्रयास करें।';
 }

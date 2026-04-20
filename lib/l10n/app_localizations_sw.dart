@@ -857,4 +857,22 @@ class AppLocalizationsSw extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Mwislamu ni ndugu wa Mwislamu: hamdhulumu, hamtelekezi, wala hamdharau.\"\n— Muslim';
+
+  @override
+  String get delete => 'Futa';
+
+  @override
+  String get remove => 'Ondoa';
+
+  @override
+  String get deleteAmalConfirmTitle => 'Ondoa kutoka ufuatiliaji?';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '\"$title\" itafichwa kwenye orodha yako. Historia yako itahifadhiwa.';
+  }
+
+  @override
+  String get genericError =>
+      'Kitu fulani kimekwenda vibaya. Tafadhali jaribu tena.';
 }

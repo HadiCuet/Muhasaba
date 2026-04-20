@@ -242,5 +242,10 @@
   "hadith95": "\"Allah n'augmente un serviteur qui pardonne qu'en honneur.\"\n— Muslim",
   "hadith96": "\"Attache ton chameau, puis place ta confiance en Allah.\"\n— Tirmidhi",
   "hadith97": "\"Comme l'affaire du croyant est merveilleuse — tout est un bien pour lui.\"\n— Muslim",
-  "hadith98": "\"Un musulman est le frère d'un musulman : il ne lui fait pas de tort, ne l'abandonne pas et ne le méprise pas.\"\n— Muslim"
+  "hadith98": "\"Un musulman est le frère d'un musulman : il ne lui fait pas de tort, ne l'abandonne pas et ne le méprise pas.\"\n— Muslim",
+  "delete": "Supprimer",
+  "remove": "Retirer",
+  "deleteAmalConfirmTitle": "Retirer du suivi ?",
+  "deleteAmalConfirmBody": "« {title} » sera masqué dans votre liste. Votre historique est conservé.",
+  "genericError": "Une erreur s'est produite. Veuillez réessayer."
 }

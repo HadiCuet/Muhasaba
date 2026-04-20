@@ -242,5 +242,10 @@
   "hadith95": "\"Allah tidak menambahkan kepada seorang hamba yang memaafkan kecuali kemuliaan.\"\n— Muslim",
   "hadith96": "\"Ikatlah untamu, kemudian bertawakallah kepada Allah.\"\n— Tirmidzi",
   "hadith97": "\"Sungguh menakjubkan urusan orang beriman — segala sesuatunya baik baginya.\"\n— Muslim",
-  "hadith98": "\"Seorang muslim adalah saudara bagi muslim lainnya: ia tidak menzaliminya, tidak meninggalkannya, dan tidak menghinakannya.\"\n— Muslim"
+  "hadith98": "\"Seorang muslim adalah saudara bagi muslim lainnya: ia tidak menzaliminya, tidak meninggalkannya, dan tidak menghinakannya.\"\n— Muslim",
+  "delete": "Hapus",
+  "remove": "Hapus",
+  "deleteAmalConfirmTitle": "Hapus dari pelacakan?",
+  "deleteAmalConfirmBody": "\"{title}\" akan disembunyikan dari daftar Anda. Riwayat Anda tetap tersimpan.",
+  "genericError": "Terjadi kesalahan. Silakan coba lagi."
 }

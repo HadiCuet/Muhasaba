@@ -867,4 +867,21 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Un musulman est le frère d\'un musulman : il ne lui fait pas de tort, ne l\'abandonne pas et ne le méprise pas.\"\n— Muslim';
+
+  @override
+  String get delete => 'Supprimer';
+
+  @override
+  String get remove => 'Retirer';
+
+  @override
+  String get deleteAmalConfirmTitle => 'Retirer du suivi ?';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '« $title » sera masqué dans votre liste. Votre historique est conservé.';
+  }
+
+  @override
+  String get genericError => 'Une erreur s\'est produite. Veuillez réessayer.';
 }

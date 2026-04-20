@@ -242,5 +242,10 @@
   "hadith95": "\"Allah tidak menambah seorang hamba yang memaafkan melainkan dengan kemuliaan.\"\n— Muslim",
   "hadith96": "\"Ikatlah untamu kemudian bertawakallah kepada Allah.\"\n— Tirmizi",
   "hadith97": "\"Sungguh menakjubkan urusan orang beriman — semuanya baik baginya.\"\n— Muslim",
-  "hadith98": "\"Seorang Muslim adalah saudara bagi Muslim yang lain: dia tidak menzaliminya, tidak membiarkannya, dan tidak menghinanya.\"\n— Muslim"
+  "hadith98": "\"Seorang Muslim adalah saudara bagi Muslim yang lain: dia tidak menzaliminya, tidak membiarkannya, dan tidak menghinanya.\"\n— Muslim",
+  "delete": "Padam",
+  "remove": "Alih keluar",
+  "deleteAmalConfirmTitle": "Alih keluar daripada penjejakan?",
+  "deleteAmalConfirmBody": "\"{title}\" akan disembunyikan daripada senarai anda. Sejarah anda disimpan.",
+  "genericError": "Sesuatu yang tidak kena telah berlaku. Sila cuba lagi."
 }

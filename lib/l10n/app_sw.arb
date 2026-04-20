@@ -242,5 +242,10 @@
   "hadith45": "\"Swala bora baada ya swala za faradhi ni swala ya usiku.\"\n— Muslim",
   "hadith46": "\"Sadaka inazima dhambi kama maji yanavyozima moto.\"\n— Tirmidhi",
   "hadith47": "\"Anayeunga udugu si yule anayerudisha, bali ni yule anayeendelea kuunga hata unapokatwa.\"\n— Bukhari",
-  "hadith49": "\"Anayekula chakula na kusema: 'Sifa zote njema ni za Mwenyezi Mungu aliyenilisha hiki na kuniruzuku bila nguvu wala uwezo wowote kutoka kwangu,' dhambi zake zilizopita zitasamehewa.\"\n— Tirmidhi"
+  "hadith49": "\"Anayekula chakula na kusema: 'Sifa zote njema ni za Mwenyezi Mungu aliyenilisha hiki na kuniruzuku bila nguvu wala uwezo wowote kutoka kwangu,' dhambi zake zilizopita zitasamehewa.\"\n— Tirmidhi",
+  "delete": "Futa",
+  "remove": "Ondoa",
+  "deleteAmalConfirmTitle": "Ondoa kutoka ufuatiliaji?",
+  "deleteAmalConfirmBody": "\"{title}\" itafichwa kwenye orodha yako. Historia yako itahifadhiwa.",
+  "genericError": "Kitu fulani kimekwenda vibaya. Tafadhali jaribu tena."
 }

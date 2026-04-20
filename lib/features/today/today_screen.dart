@@ -48,7 +48,10 @@ class TodayScreen extends ConsumerWidget {
           ),
         ],
       ),
-      body: rowsAsync.when(
+      body: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: rowsAsync.when(
         loading: () => const Center(child: CircularProgressIndicator()),
         error: (e, _) => Center(child: Text(l.errorGeneric(e.toString()))),
         data: (rows) {
@@ -60,6 +63,7 @@ class TodayScreen extends ConsumerWidget {
           }
           return _FlatView(rows: rows, date: date, streaks: streaks);
         },
+        ),
       ),
     );
   }

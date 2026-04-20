@@ -859,4 +859,21 @@ class AppLocalizationsTr extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Müslüman Müslüman\'ın kardeşidir: ona zulmetmez, onu yalnız bırakmaz, onu küçümsemez.\"\n— Müslim';
+
+  @override
+  String get delete => 'Sil';
+
+  @override
+  String get remove => 'Kaldır';
+
+  @override
+  String get deleteAmalConfirmTitle => 'Takipten kaldırılsın mı?';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '\"$title\" listenizden gizlenecek. Geçmişiniz korunacaktır.';
+  }
+
+  @override
+  String get genericError => 'Bir şeyler yanlış gitti. Lütfen tekrar deneyin.';
 }

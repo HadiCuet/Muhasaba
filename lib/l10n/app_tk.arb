@@ -242,5 +242,10 @@
   "hadith45": "\"Parz namazlardan soň iň gowy namaz — gije namazydyr.\"\n— Muslim",
   "hadith46": "\"Sadaka günäleri suw ody öçürişi ýaly öçürýär.\"\n— Tirmizi",
   "hadith47": "\"Garyndaşlyk gatnaşygyny saklaýjy — jogap beriji däl, aragatnaşyk üzülende-de ony dowam etdirýändir.\"\n— Buhari",
-  "hadith49": "\"Kim nahar iyip: 'Mana muny iydiren we mening hic hili guyc-kuwwatym bolmazdan muny nesip eden Allaha hamd bolsun' diyse, onun gecen gunaleri bagyslanyar.\"\n— Tirmizi"
+  "hadith49": "\"Kim nahar iyip: 'Mana muny iydiren we mening hic hili guyc-kuwwatym bolmazdan muny nesip eden Allaha hamd bolsun' diyse, onun gecen gunaleri bagyslanyar.\"\n— Tirmizi",
+  "delete": "Poz",
+  "remove": "Aýyr",
+  "deleteAmalConfirmTitle": "Yzarlamadan aýyrylsyn my?",
+  "deleteAmalConfirmBody": "\"{title}\" sanawyňyzdan gizleniler. Taryhyňyz saklanar.",
+  "genericError": "Bir zat ters gitdi. Ýene bir gezek synap görüň."
 }

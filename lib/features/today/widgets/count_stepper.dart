@@ -101,6 +101,7 @@ class _CountStepperState extends State<CountStepper> {
               controller: _controller,
               focusNode: _focusNode,
               keyboardType: TextInputType.number,
+              textInputAction: TextInputAction.done,
               autofocus: true,
               textAlign: TextAlign.center,
               style: labelStyle,

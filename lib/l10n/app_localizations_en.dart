@@ -859,4 +859,21 @@ class AppLocalizationsEn extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"A Muslim is a brother to a Muslim: he does not wrong him, nor abandon him, nor despise him.\"\n— Muslim';
+
+  @override
+  String get delete => 'Delete';
+
+  @override
+  String get remove => 'Remove';
+
+  @override
+  String get deleteAmalConfirmTitle => 'Remove from tracking?';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '\"$title\" will be hidden from your list. Your history is kept.';
+  }
+
+  @override
+  String get genericError => 'Something went wrong. Please try again.';
 }

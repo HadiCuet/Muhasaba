@@ -862,4 +862,22 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Musulmon musulmonning birodaradir: unga zulm qilmaydi, uni tashlab ketmaydi va uni kamsitmaydi.\"\n— Muslim';
+
+  @override
+  String get delete => 'O\'chirish';
+
+  @override
+  String get remove => 'Olib tashlash';
+
+  @override
+  String get deleteAmalConfirmTitle => 'Kuzatuvdan olib tashlansinmi?';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '\"$title\" ro\'yxatingizdan yashiriladi. Tarixingiz saqlanib qoladi.';
+  }
+
+  @override
+  String get genericError =>
+      'Nimadur noto\'g\'ri ketdi. Iltimos, qayta urinib ko\'ring.';
 }

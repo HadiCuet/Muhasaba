@@ -242,5 +242,10 @@
   "hadith45": "\"Fərz namazlardan sonra ən yaxşı namaz gecə namazıdır.\"\n— Müslim",
   "hadith46": "\"Sədəqə günahları suyun odu söndürdüyü kimi söndürür.\"\n— Tirmizi",
   "hadith47": "\"Qohumluq əlaqəsini saxlayan ona qarşılıq verən deyil, əlaqəsi kəsilsə belə onu davam etdirəndir.\"\n— Buxari",
-  "hadith49": "\"Kim yemək yeyib: 'Bu yeməyi mənə yedirdən və heç bir güc və qüvvətim olmadan bunu mənə nəsib edən Allaha həmd olsun' deyərsə, keçmiş günahları bağışlanar.\"\n— Tirmizi"
+  "hadith49": "\"Kim yemək yeyib: 'Bu yeməyi mənə yedirdən və heç bir güc və qüvvətim olmadan bunu mənə nəsib edən Allaha həmd olsun' deyərsə, keçmiş günahları bağışlanar.\"\n— Tirmizi",
+  "delete": "Sil",
+  "remove": "Çıxar",
+  "deleteAmalConfirmTitle": "İzləmədən çıxarılsın?",
+  "deleteAmalConfirmBody": "\"{title}\" siyahınızdan gizlədiləcək. Tarixçəniz saxlanılacaq.",
+  "genericError": "Xəta baş verdi. Zəhmət olmasa yenidən cəhd edin."
 }

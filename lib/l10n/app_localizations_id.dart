@@ -865,4 +865,21 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Seorang muslim adalah saudara bagi muslim lainnya: ia tidak menzaliminya, tidak meninggalkannya, dan tidak menghinakannya.\"\n— Muslim';
+
+  @override
+  String get delete => 'Hapus';
+
+  @override
+  String get remove => 'Hapus';
+
+  @override
+  String get deleteAmalConfirmTitle => 'Hapus dari pelacakan?';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '\"$title\" akan disembunyikan dari daftar Anda. Riwayat Anda tetap tersimpan.';
+  }
+
+  @override
+  String get genericError => 'Terjadi kesalahan. Silakan coba lagi.';
 }

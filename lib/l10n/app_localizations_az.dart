@@ -856,4 +856,21 @@ class AppLocalizationsAz extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Müsəlman müsəlmanın qardaşıdır: ona zülm etməz, onu tərk etməz, onu kiçik görməz.\"\n— Müslim';
+
+  @override
+  String get delete => 'Sil';
+
+  @override
+  String get remove => 'Çıxar';
+
+  @override
+  String get deleteAmalConfirmTitle => 'İzləmədən çıxarılsın?';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '\"$title\" siyahınızdan gizlədiləcək. Tarixçəniz saxlanılacaq.';
+  }
+
+  @override
+  String get genericError => 'Xəta baş verdi. Zəhmət olmasa yenidən cəhd edin.';
 }

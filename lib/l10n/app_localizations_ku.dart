@@ -859,4 +859,21 @@ class AppLocalizationsKu extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Misilman birayê Misilman e: ne zilm lê dike, ne dev jê berdide û ne jî wî piçûk dibîne.\"\n— Muslim';
+
+  @override
+  String get delete => 'Jêbirin';
+
+  @override
+  String get remove => 'Rakin';
+
+  @override
+  String get deleteAmalConfirmTitle => 'Ji şopandina derxin?';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '\"$title\" dê ji navnîşana we were veşartin. Dîroka we tê parastin.';
+  }
+
+  @override
+  String get genericError => 'Xeletiyek çêbû. Ji kerema xwe dîsa biceribîne.';
 }

@@ -856,4 +856,21 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String get hadith98 =>
       '«المسلم أخو المسلم لا يظلمه ولا يخذله ولا يحقره.»\n— مسلم';
+
+  @override
+  String get delete => 'حذف';
+
+  @override
+  String get remove => 'إزالة';
+
+  @override
+  String get deleteAmalConfirmTitle => 'إزالة من التتبع؟';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '\"$title\" سيتم إخفاؤه من قائمتك. سيتم الاحتفاظ بسجلك.';
+  }
+
+  @override
+  String get genericError => 'حدث خطأ ما. يرجى المحاولة مرة أخرى.';
 }

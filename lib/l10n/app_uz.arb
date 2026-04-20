@@ -242,5 +242,10 @@
   "hadith45": "\"Farz namazlaridan keyin eng yaxshi namoz — tungi namozdur.\"\n— Muslim",
   "hadith46": "\"Sadaqa gunohlarni suv o'tni o'chirganday o'chiradi.\"\n— Termiziy",
   "hadith47": "\"Silai rahm qiluvchi javob qaytaruvchi emas, balki qarishilmasa ham aloqani saqlovchidir.\"\n— Buxoriy",
-  "hadith49": "\"Kim taom yeb: 'Menga buni yedirgan va mening hech qanday kuchim va quvvatim bo'lmagan holda buni menga nasib etgan Allohga hamd bo'lsin' desa, uning o'tgan gunohlari kechiriladi.\"\n— Termiziy"
+  "hadith49": "\"Kim taom yeb: 'Menga buni yedirgan va mening hech qanday kuchim va quvvatim bo'lmagan holda buni menga nasib etgan Allohga hamd bo'lsin' desa, uning o'tgan gunohlari kechiriladi.\"\n— Termiziy",
+  "delete": "O'chirish",
+  "remove": "Olib tashlash",
+  "deleteAmalConfirmTitle": "Kuzatuvdan olib tashlansinmi?",
+  "deleteAmalConfirmBody": "\"{title}\" ro'yxatingizdan yashiriladi. Tarixingiz saqlanib qoladi.",
+  "genericError": "Nimadur noto'g'ri ketdi. Iltimos, qayta urinib ko'ring."
 }

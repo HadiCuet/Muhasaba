@@ -860,4 +860,21 @@ class AppLocalizationsHa extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Musulmi ɗan\'uwan Musulmi ne: ba ya zaluntarsa, ba ya yashe shi, kuma ba ya rena shi.\"\n— Muslim';
+
+  @override
+  String get delete => 'Share';
+
+  @override
+  String get remove => 'Cire';
+
+  @override
+  String get deleteAmalConfirmTitle => 'Cire daga bin diddigin?';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '\"$title\" za a ɓoye a cikin jerin sunayen ku. An adana tarihin ku.';
+  }
+
+  @override
+  String get genericError => 'Wani abu ya kasa. Da fatan a sake gwadawa.';
 }

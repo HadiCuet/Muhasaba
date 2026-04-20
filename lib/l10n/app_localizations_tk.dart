@@ -857,4 +857,21 @@ class AppLocalizationsTk extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Musulman musulmanyň doganydyr: oňa zulum etmez, taşlamaz, äsgermezlik etmez.\"\n— Muslim';
+
+  @override
+  String get delete => 'Poz';
+
+  @override
+  String get remove => 'Aýyr';
+
+  @override
+  String get deleteAmalConfirmTitle => 'Yzarlamadan aýyrylsyn my?';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '\"$title\" sanawyňyzdan gizleniler. Taryhyňyz saklanar.';
+  }
+
+  @override
+  String get genericError => 'Bir zat ters gitdi. Ýene bir gezek synap görüň.';
 }

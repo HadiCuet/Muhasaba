@@ -865,4 +865,21 @@ class AppLocalizationsSo extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Muslimku waa walaalka Muslimka: ma dulmiyo, ma dayaco, mana quudhsado.\"\n— Muslim';
+
+  @override
+  String get delete => 'Tirtir';
+
+  @override
+  String get remove => 'Ka saar';
+
+  @override
+  String get deleteAmalConfirmTitle => 'Ka saar raadraaca?';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '\"$title\" waxaa laga qariyaa liiskaaga. Taariikhda ku hadhsan.';
+  }
+
+  @override
+  String get genericError => 'Wax xun baa dhacay. Fadlan isku day mar kale.';
 }

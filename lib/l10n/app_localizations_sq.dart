@@ -862,4 +862,21 @@ class AppLocalizationsSq extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Muslimani është vëlla i muslimanit: nuk i bën padrejtësi, nuk e braktis dhe nuk e përbuz.\"\n— Muslimi';
+
+  @override
+  String get delete => 'Fshij';
+
+  @override
+  String get remove => 'Hiq';
+
+  @override
+  String get deleteAmalConfirmTitle => 'Të hiqet nga ndjekja?';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '\"$title\" do të fshihet nga lista juaj. Historia juaj ruhet.';
+  }
+
+  @override
+  String get genericError => 'Diçka shkoi keq. Ju lutemi provoni përsëri.';
 }

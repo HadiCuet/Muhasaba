@@ -857,4 +857,21 @@ class AppLocalizationsKk extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Мұсылман мұсылманның бауыры: оған зұлым жасамайды, тастамайды, кемсітпейді.\"\n— Муслим';
+
+  @override
+  String get delete => 'Жою';
+
+  @override
+  String get remove => 'Алып тастау';
+
+  @override
+  String get deleteAmalConfirmTitle => 'Бақылаудан алып тастайын ба?';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '\"$title\" тізімнен жасырылады. Тарихыңыз сақталады.';
+  }
+
+  @override
+  String get genericError => 'Бір қате болды. Қайталап көріңіз.';
 }

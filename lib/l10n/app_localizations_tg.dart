@@ -857,4 +857,21 @@ class AppLocalizationsTg extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Мусулмон бародари мусулмон аст: ба ӯ ситам намекунад, тарк намекунад ва таҳқир намекунад.\"\n— Муслим';
+
+  @override
+  String get delete => 'Ҳазф';
+
+  @override
+  String get remove => 'Хориҷ кардан';
+
+  @override
+  String get deleteAmalConfirmTitle => 'Аз назорат хориҷ карда шавад?';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '\"$title\" аз рӯйхати шумо пинҳон мешавад. Таърихи шумо нигоҳ дошта мешавад.';
+  }
+
+  @override
+  String get genericError => 'Хатогие рух дод. Лутфан дубора кӯшиш кунед.';
 }

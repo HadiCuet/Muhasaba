@@ -113,6 +113,55 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
     }
   }
 
+  Future<bool> _confirmDelete(AppLocalizations l) async {
+    final title = _titleController.text.trim().isEmpty
+        ? '—'
+        : _titleController.text.trim();
+    return await showDialog<bool>(
+          context: context,
+          builder: (ctx) => AlertDialog(
+            title: Text(l.deleteAmalConfirmTitle),
+            content: Text(l.deleteAmalConfirmBody(title)),
+            actions: [
+              TextButton(
+                onPressed: () => Navigator.of(ctx).pop(false),
+                child: Text(l.cancel),
+              ),
+              FilledButton(
+                style: FilledButton.styleFrom(
+                  backgroundColor: Theme.of(ctx).colorScheme.error,
+                ),
+                onPressed: () => Navigator.of(ctx).pop(true),
+                child: Text(l.remove),
+              ),
+            ],
+          ),
+        ) ??
+        false;
+  }
+
+  Future<void> _deleteAmal() async {
+    final l = AppLocalizations.of(context);
+    final confirmed = await _confirmDelete(l);
+    if (!confirmed || !mounted) return;
+    Object? deleteError;
+    try {
+      await ref
+          .read(amalRepositoryProvider)
+          .removeFromTracking(_existing!.id);
+    } catch (e) {
+      deleteError = e;
+    }
+    if (!mounted) return;
+    if (deleteError != null) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(content: Text(l.genericError)),
+      );
+      return;
+    }
+    context.pop();
+  }
+
   Future<void> _save() async {
     if (!_formKey.currentState!.validate()) return;
     final title = _titleController.text.trim();
@@ -233,7 +282,17 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
     final theme = Theme.of(context);
     final l = AppLocalizations.of(context);
     return Scaffold(
-      appBar: AppBar(title: Text(isEdit ? l.editAmal : l.newAmalTitle)),
+      appBar: AppBar(
+        title: Text(isEdit ? l.editAmal : l.newAmalTitle),
+        actions: [
+          if (isEdit)
+            IconButton(
+              icon: const Icon(Icons.delete_outline),
+              color: theme.colorScheme.error,
+              onPressed: _deleteAmal,
+            ),
+        ],
+      ),
       bottomNavigationBar: SafeArea(
         child: Padding(
           padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
@@ -246,9 +305,12 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
           ),
         ),
       ),
-      body: Form(
-        key: _formKey,
-        child: ListView(
+      body: GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () => FocusScope.of(context).unfocus(),
+        child: Form(
+          key: _formKey,
+          child: ListView(
           padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
           children: [
             // ── Icon + Title row ───────────────────────────────────────
@@ -272,6 +334,9 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                 Expanded(
                   child: TextFormField(
                     controller: _titleController,
+                    textInputAction: TextInputAction.done,
+                    onFieldSubmitted: (_) =>
+                        FocusScope.of(context).unfocus(),
                     decoration: InputDecoration(
                       labelText: l.titleLabel,
                       border: const OutlineInputBorder(),
@@ -376,6 +441,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
               },
             ),
           ],
+        ),
         ),
       ),
     );

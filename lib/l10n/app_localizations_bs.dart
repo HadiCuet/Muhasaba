@@ -859,4 +859,21 @@ class AppLocalizationsBs extends AppLocalizations {
   @override
   String get hadith98 =>
       '\"Musliman je brat muslimanu: ne čini mu nepravdu, ne napušta ga i ne prezire ga.\"\n— Muslim';
+
+  @override
+  String get delete => 'Izbriši';
+
+  @override
+  String get remove => 'Ukloni';
+
+  @override
+  String get deleteAmalConfirmTitle => 'Ukloniti iz praćenja?';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '\"$title\" će biti sakriveno s vašeg popisa. Vaša historija je sačuvana.';
+  }
+
+  @override
+  String get genericError => 'Nešto je pošlo po krivu. Pokušajte ponovo.';
 }

@@ -346,5 +346,17 @@
   "hadith95": "\"Allah does not increase a servant, through forgiving others, except in honor.\"\n— Muslim",
   "hadith96": "\"Tie your camel and then put your trust in Allah.\"\n— Tirmidhi",
   "hadith97": "\"Wondrous is the affair of the believer — everything is good for him.\"\n— Muslim",
-  "hadith98": "\"A Muslim is a brother to a Muslim: he does not wrong him, nor abandon him, nor despise him.\"\n— Muslim"
+  "hadith98": "\"A Muslim is a brother to a Muslim: he does not wrong him, nor abandon him, nor despise him.\"\n— Muslim",
+  "delete": "Delete",
+  "remove": "Remove",
+  "deleteAmalConfirmTitle": "Remove from tracking?",
+  "deleteAmalConfirmBody": "\"{title}\" will be hidden from your list. Your history is kept.",
+  "@deleteAmalConfirmBody": {
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "genericError": "Something went wrong. Please try again."
 }

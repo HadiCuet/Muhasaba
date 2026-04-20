@@ -242,5 +242,10 @@
   "hadith45": "\"Nimêja herî baş piştî farzê nimêja şevê ye.\"\n— Muslim",
   "hadith46": "\"Xêr gunahan vedimirandine wek ku av agir vedimirandine.\"\n— Tirmizî",
   "hadith47": "\"Yê ku xizmên xwe didomîne ne ew e ku bersivê dide, lê ew e ku dema têkilî têne qut kirin jî berdewam dike.\"\n— Buxarî",
-  "hadith49": "\"Kî xwarinê bixwe û bibêje: 'Spas ji Xwedê re ye ku ev xwarin da min û bêyî hêz û hîla min dabîn kir,' gunehên wî yên berê têne baxişandin.\"\n— Tirmizî"
+  "hadith49": "\"Kî xwarinê bixwe û bibêje: 'Spas ji Xwedê re ye ku ev xwarin da min û bêyî hêz û hîla min dabîn kir,' gunehên wî yên berê têne baxişandin.\"\n— Tirmizî",
+  "delete": "Jêbirin",
+  "remove": "Rakin",
+  "deleteAmalConfirmTitle": "Ji şopandina derxin?",
+  "deleteAmalConfirmBody": "\"{title}\" dê ji navnîşana we were veşartin. Dîroka we tê parastin.",
+  "genericError": "Xeletiyek çêbû. Ji kerema xwe dîsa biceribîne."
 }

@@ -242,5 +242,10 @@
   "hadith45": "\"Salaadda ugu wanaagsan ka dib fariidada waa salaadda habeenka.\"\n— Muslim",
   "hadith46": "\"Sadaqadu way demisaa dambiyada sida biyuhu ay demiyaan dabka.\"\n— Tirmidhi",
   "hadith47": "\"Kan xiriirka qaraabada xajiya maaha kan ku abtirsa, waa kan xajiya xitaa markay go'do.\"\n— Bukhaari",
-  "hadith49": "\"Qofkii cuna oo yidhaahda: 'Mahad Allaah oo i siiyay cuntadan oo aan wax awood iyo xoog ah iigu samaynin ii soo fidiyey,' dambiyadiisii hore waa la cafiyaa.\"\n— Tirmidhi"
+  "hadith49": "\"Qofkii cuna oo yidhaahda: 'Mahad Allaah oo i siiyay cuntadan oo aan wax awood iyo xoog ah iigu samaynin ii soo fidiyey,' dambiyadiisii hore waa la cafiyaa.\"\n— Tirmidhi",
+  "delete": "Tirtir",
+  "remove": "Ka saar",
+  "deleteAmalConfirmTitle": "Ka saar raadraaca?",
+  "deleteAmalConfirmBody": "\"{title}\" waxaa laga qariyaa liiskaaga. Taariikhda ku hadhsan.",
+  "genericError": "Wax xun baa dhacay. Fadlan isku day mar kale."
 }

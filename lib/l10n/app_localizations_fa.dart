@@ -854,4 +854,21 @@ class AppLocalizationsFa extends AppLocalizations {
   @override
   String get hadith98 =>
       '«مسلمان برادر مسلمان است: به او ظلم نمی‌کند، رهایش نمی‌کند و تحقیرش نمی‌کند.»\n— مسلم';
+
+  @override
+  String get delete => 'حذف';
+
+  @override
+  String get remove => 'حذف کن';
+
+  @override
+  String get deleteAmalConfirmTitle => 'از ردیابی حذف شود؟';
+
+  @override
+  String deleteAmalConfirmBody(String title) {
+    return '\"$title\" از فهرست شما پنهان می‌شود. تاریخچه‌ی شما حفظ می‌شود.';
+  }
+
+  @override
+  String get genericError => 'مشکلی پیش آمد. لطفاً دوباره تلاش کنید.';
 }

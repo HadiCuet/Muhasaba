@@ -242,5 +242,10 @@
   "hadith45": "\"Namazi më i mirë pas farzit është namazi i natës.\"\n— Muslimi",
   "hadith46": "\"Sadakaja i shuan mëkatet siç e shuan uji zjarrin.\"\n— Tirmidhiu",
   "hadith47": "\"Ai që i mban lidhjet farefisnore nuk është ai që i kthen vizitat, por ai që i mban edhe kur i shkëputen.\"\n— Buhariu",
-  "hadith49": "\"Kush ha ushqim dhe thotë: 'Falënderimi i takon Allahut që më ushqeu me këtë dhe ma mundësoi pa asnjë fuqi e forcë timen,' i falen mëkatet e kaluara.\"\n— Tirmidhi"
+  "hadith49": "\"Kush ha ushqim dhe thotë: 'Falënderimi i takon Allahut që më ushqeu me këtë dhe ma mundësoi pa asnjë fuqi e forcë timen,' i falen mëkatet e kaluara.\"\n— Tirmidhi",
+  "delete": "Fshij",
+  "remove": "Hiq",
+  "deleteAmalConfirmTitle": "Të hiqet nga ndjekja?",
+  "deleteAmalConfirmBody": "\"{title}\" do të fshihet nga lista juaj. Historia juaj ruhet.",
+  "genericError": "Diçka shkoi keq. Ju lutemi provoni përsëri."
 }

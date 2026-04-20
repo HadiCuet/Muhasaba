@@ -242,5 +242,10 @@
   "hadith45": "\"Najbolji namaz nakon farzova je noćni namaz.\"\n— Muslim",
   "hadith46": "\"Sadaka gasi grijehe kao što voda gasi vatru.\"\n— Tirmizi",
   "hadith47": "\"Onaj ko održava rodbinske veze nije onaj ko uzvraća, već onaj ko ih održava i kad su prekinute.\"\n— Buhari",
-  "hadith49": "\"Ko pojede i kaže: 'Hvala Allahu koji me nahranio ovim i opskrbio me bez ikakve moje moći i snage,' bit će mu oprošteni prošli grijesi.\"\n— Tirmizi"
+  "hadith49": "\"Ko pojede i kaže: 'Hvala Allahu koji me nahranio ovim i opskrbio me bez ikakve moje moći i snage,' bit će mu oprošteni prošli grijesi.\"\n— Tirmizi",
+  "delete": "Izbriši",
+  "remove": "Ukloni",
+  "deleteAmalConfirmTitle": "Ukloniti iz praćenja?",
+  "deleteAmalConfirmBody": "\"{title}\" će biti sakriveno s vašeg popisa. Vaša historija je sačuvana.",
+  "genericError": "Nešto je pošlo po krivu. Pokušajte ponovo."
 }

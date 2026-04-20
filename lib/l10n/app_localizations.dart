@@ -1597,6 +1597,36 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'\"A Muslim is a brother to a Muslim: he does not wrong him, nor abandon him, nor despise him.\"\n— Muslim'**
   String get hadith98;
+
+  /// No description provided for @delete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete'**
+  String get delete;
+
+  /// No description provided for @remove.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove'**
+  String get remove;
+
+  /// No description provided for @deleteAmalConfirmTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove from tracking?'**
+  String get deleteAmalConfirmTitle;
+
+  /// No description provided for @deleteAmalConfirmBody.
+  ///
+  /// In en, this message translates to:
+  /// **'\"{title}\" will be hidden from your list. Your history is kept.'**
+  String deleteAmalConfirmBody(String title);
+
+  /// No description provided for @genericError.
+  ///
+  /// In en, this message translates to:
+  /// **'Something went wrong. Please try again.'**
+  String get genericError;
 }
 
 class _AppLocalizationsDelegate
