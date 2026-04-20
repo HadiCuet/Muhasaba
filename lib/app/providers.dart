@@ -7,6 +7,7 @@ import '../data/repositories/category_repository.dart';
 import '../data/repositories/completion_repository.dart';
 import '../data/repositories/settings_repository.dart';
 import '../domain/models/app_settings.dart';
+import '../domain/models/frequency.dart';
 import '../domain/services/reminder_scheduler.dart';
 import '../domain/services/stats_service.dart';
 import '../domain/services/today_builder.dart';
@@ -96,19 +97,45 @@ final todayRowsProvider = FutureProvider.family<List<TodayRow>, DateTime>((
   );
 });
 
-/// Fallback rows for the History screen used only when
-/// [todayRowsProvider] returns an empty list for a given date (i.e. no amal
-/// was active on that muhasaba date). Returns every currently-active amal as
-/// a [TodayRow] whose `progress`/`note` are pulled from any existing
-/// Completion record for [date], defaulting to 0/`null`. This lets the user
-/// see their current tracker and retroactively log completions on historical
-/// days where their amal list had been fully archived.
+/// History-screen primary provider. Like [todayRowsProvider] but uses all
+/// amals (including archived) and omits transient hidden-day rows, so
+/// completed amals remain visible after being archived.
+final historyRowsProvider = FutureProvider.family<List<TodayRow>, DateTime>((
+  ref,
+  date,
+) async {
+  final settings = await ref.watch(settingsProvider.future);
+  final db = ref.watch(appDatabaseProvider);
+  final amals = await ref.watch(_allAmalsProvider.future);
+  // Exclude amals archived before this muhasaba date.
+  final amalsForDate = amals.where((a) {
+    if (a.archivedAt == null) return true;
+    final archDay = a.archivedAt!.toLocal();
+    final archDate = DateTime(archDay.year, archDay.month, archDay.day);
+    return !archDate.isBefore(date);
+  }).toList();
+  final completions = await ref.watch(_completionsForDateProvider(date).future);
+  return const TodayBuilder().build(
+    muhasabaDate: date,
+    settings: settings,
+    amals: amalsForDate,
+    completionsForDate: completions,
+    hiddenForDate: const [],
+    periodCompletionsOf: db.completionDao.getForAmalBetween,
+  );
+});
+
+/// Fallback rows for the History screen used only when [historyRowsProvider]
+/// returns an empty list for a given date (i.e. no amal was scheduled on that
+/// day). Only includes amals that were either scheduled on that date
+/// (frequency/day match) or have an actual completion record, to avoid
+/// showing e.g. a Friday-only amal on a Monday.
 final historyFallbackRowsProvider =
     FutureProvider.autoDispose.family<List<TodayRow>, DateTime>((
       ref,
       date,
     ) async {
-      final amals = await ref.watch(_activeAmalsProvider.future);
+      final amals = await ref.watch(_allAmalsProvider.future);
       if (amals.isEmpty) return const [];
       final completions = await ref.watch(
         _completionsForDateProvider(date).future,
@@ -116,11 +143,12 @@ final historyFallbackRowsProvider =
       final byAmalId = {for (final c in completions) c.amalId: c};
       return [
         for (final a in amals)
-          TodayRow(
-            amal: a,
-            progress: byAmalId[a.id]?.progress ?? 0,
-            note: byAmalId[a.id]?.note,
-          ),
+          if (_staticIsVisibleOnDate(a, date) || byAmalId[a.id] != null)
+            TodayRow(
+              amal: a,
+              progress: byAmalId[a.id]?.progress ?? 0,
+              note: byAmalId[a.id]?.note,
+            ),
       ];
     });
 
@@ -135,7 +163,7 @@ final statsSnapshotProvider = FutureProvider.autoDispose<StatsSnapshot>((
   final settings = await ref.watch(settingsProvider.future);
   final date = ref.watch(currentMuhasabaDateProvider);
   final db = ref.watch(appDatabaseProvider);
-  final amals = await ref.watch(_activeAmalsProvider.future);
+  final amals = await ref.watch(_allAmalsProvider.future);
   return const StatsService().compute(
     muhasabaDate: date,
     settings: settings,
@@ -157,6 +185,21 @@ final currentStreaksProvider = FutureProvider.autoDispose<Map<int, int>>((
 final _activeAmalsProvider = StreamProvider.autoDispose((ref) {
   return ref.watch(appDatabaseProvider).amalDao.watchActive();
 });
+
+final _allAmalsProvider = StreamProvider.autoDispose((ref) {
+  return ref.watch(appDatabaseProvider).amalDao.watchAll();
+});
+
+bool _staticIsVisibleOnDate(AmalRow a, DateTime date) {
+  switch (a.frequency) {
+    case Frequency.daily:
+      return true;
+    case Frequency.weekly:
+      return a.weeklyDay == null || date.weekday == a.weeklyDay;
+    case Frequency.monthly:
+      return a.monthlyDate == null || date.day == a.monthlyDate;
+  }
+}
 
 final _completionsForDateProvider = StreamProvider.autoDispose.family((
   ref,

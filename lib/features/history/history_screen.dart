@@ -29,7 +29,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
   Widget build(BuildContext context) {
     final today = ref.watch(currentMuhasabaDateProvider);
     final selected = _selected ?? today;
-    final rowsAsync = ref.watch(todayRowsProvider(selected));
+    final rowsAsync = ref.watch(historyRowsProvider(selected));
     final streaksAsync = ref.watch(currentStreaksProvider);
     final streaks = streaksAsync.value ?? const {};
 
@@ -158,6 +158,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
         .read(completionRepositoryProvider)
         .setNote(amalId: row.amal.id, muhasabaDate: date, note: note);
     ref.invalidate(todayRowsProvider(date));
+    ref.invalidate(historyRowsProvider(date));
     ref.invalidate(historyFallbackRowsProvider(date));
   }
 
@@ -171,6 +172,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
           target: row.amal.target,
         );
     ref.invalidate(todayRowsProvider(date));
+    ref.invalidate(historyRowsProvider(date));
     ref.invalidate(historyFallbackRowsProvider(date));
     ref.invalidate(statsSnapshotProvider);
     ref.invalidate(currentStreaksProvider);
@@ -194,6 +196,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
         return;
     }
     ref.invalidate(todayRowsProvider(date));
+    ref.invalidate(historyRowsProvider(date));
     ref.invalidate(historyFallbackRowsProvider(date));
     ref.invalidate(statsSnapshotProvider);
     ref.invalidate(currentStreaksProvider);

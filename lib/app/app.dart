@@ -51,6 +51,11 @@ class MuhasabaApp extends ConsumerWidget {
       darkTheme: buildDarkTheme(),
       themeMode: settings.themeMode,
       routerConfig: router,
+      builder: (context, child) => GestureDetector(
+        behavior: HitTestBehavior.opaque,
+        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+        child: child,
+      ),
       locale: locale,
       localizationsDelegates: const [
         AppLocalizations.delegate,

@@ -9,6 +9,16 @@ part 'amal_dao.g.dart';
 class AmalDao extends DatabaseAccessor<AppDatabase> with _$AmalDaoMixin {
   AmalDao(super.db);
 
+  /// All amals including archived, ordered by sortOrder then id.
+  Stream<List<AmalRow>> watchAll() {
+    return (select(amals)
+          ..orderBy([
+            (a) => OrderingTerm.asc(a.sortOrder),
+            (a) => OrderingTerm.asc(a.id),
+          ]))
+        .watch();
+  }
+
   /// All non-archived amal, ordered by sortOrder then id.
   Stream<List<AmalRow>> watchActive() {
     return (select(amals)
