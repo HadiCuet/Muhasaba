@@ -311,7 +311,6 @@ Future<void> _openRemoveSheet(
       );
     case RemoveChoice.tracking:
       await ref.read(amalRepositoryProvider).removeFromTracking(row.amal.id);
-      await ref.read(reminderSchedulerProvider).cancel(row.amal.id);
       FirebaseAnalytics.instance.logEvent(
         name: 'amal_removed',
         parameters: {'scope': 'tracking'},

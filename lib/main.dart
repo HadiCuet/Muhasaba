@@ -9,6 +9,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'app/app.dart';
 import 'app/providers.dart';
+import 'data/db/database.dart';
 import 'domain/services/reminder_scheduler.dart';
 import 'firebase_options.dart';
 
@@ -37,11 +38,31 @@ Future<void> main() async {
         return true;
       };
 
+      final db = AppDatabase();
       final scheduler = await ReminderScheduler.initialize();
+
+      // Startup recovery: re-register all active reminders so device restarts
+      // and OS notification clears don't silently kill reminders.
+      // scheduleDaily is idempotent — it cancels before re-scheduling.
+      final activeAmals = await db.amalDao.getActive();
+      for (final amal in activeAmals) {
+        final t = parseReminderTime(amal.reminderTime);
+        if (t != null) {
+          await scheduler.scheduleDaily(
+            amalId: amal.id,
+            title: amal.title,
+            hour: t.hour,
+            minute: t.minute,
+          );
+        }
+      }
 
       runApp(
         ProviderScope(
-          overrides: [reminderSchedulerProvider.overrideWithValue(scheduler)],
+          overrides: [
+            appDatabaseProvider.overrideWithValue(db),
+            reminderSchedulerProvider.overrideWithValue(scheduler),
+          ],
           child: const MuhasabaApp(),
         ),
       );

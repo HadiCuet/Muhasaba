@@ -191,7 +191,6 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
             .removeFromDay(row.amal.id, date);
       case RemoveChoice.tracking:
         await ref.read(amalRepositoryProvider).removeFromTracking(row.amal.id);
-        await ref.read(reminderSchedulerProvider).cancel(row.amal.id);
       case RemoveChoice.cancel:
         return;
     }

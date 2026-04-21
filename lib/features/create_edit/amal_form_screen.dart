@@ -196,9 +196,8 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
       );
     } else {
       await ref
-          .read(appDatabaseProvider)
-          .amalDao
-          .updateAmal(
+          .read(amalRepositoryProvider)
+          .update(
             _existing!.copyWith(
               title: title,
               frequency: _frequency,

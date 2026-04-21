@@ -37,7 +37,10 @@ final settingsRepositoryProvider = Provider<SettingsRepository>((ref) {
 });
 
 final amalRepositoryProvider = Provider<AmalRepository>((ref) {
-  return AmalRepository(ref.watch(appDatabaseProvider).amalDao);
+  return AmalRepository(
+    ref.watch(appDatabaseProvider).amalDao,
+    ref.watch(reminderSchedulerProvider),
+  );
 });
 
 final categoryRepositoryProvider = Provider<CategoryRepository>((ref) {
