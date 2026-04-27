@@ -37,18 +37,23 @@ Future<void> seedCategories(AppDatabase db) async {
         icon: const Value('🕌'),
       ),
       CategoriesCompanion.insert(
-        name: 'Dhikr',
+        name: 'Sunnah',
         sortOrder: const Value(1),
+        icon: const Value('🌟'),
+      ),
+      CategoriesCompanion.insert(
+        name: 'Dhikr',
+        sortOrder: const Value(2),
         icon: const Value('📿'),
       ),
       CategoriesCompanion.insert(
         name: 'Quran',
-        sortOrder: const Value(2),
+        sortOrder: const Value(3),
         icon: const Value('📖'),
       ),
       CategoriesCompanion.insert(
         name: 'Charity',
-        sortOrder: const Value(3),
+        sortOrder: const Value(4),
         icon: const Value('💰'),
       ),
     ], mode: InsertMode.insertOrIgnore);
@@ -61,6 +66,7 @@ Future<void> seedCategories(AppDatabase db) async {
 Future<void> assignSeedCategoryIcons(AppDatabase db) async {
   const mapping = <String, String>{
     'Salah': '🕌',
+    'Sunnah': '🌟',
     'Dhikr': '📿',
     'Quran': '📖',
     'Charity': '💰',
