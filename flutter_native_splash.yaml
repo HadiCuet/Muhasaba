@@ -1,29 +1,19 @@
 # Native splash configuration consumed by `dart run flutter_native_splash:create`.
 # Only covers the brief flash before the Flutter SplashScreen widget mounts.
 #
-# iOS uses the full Variant C gradient image so the cold-launch flash matches
-# the Flutter splash exactly — no visible color seam.
-# Android (pre-12 and 12+) uses solid #1F5740 because the Android 12+ Splash
-# Screens API only accepts a color, and we want Android consistent across
-# versions.
+# White (light) / black (dark) — neutral, unbranded. The animated Variant C
+# splash takes over as soon as Flutter boots and brings the gradient + icon
+# in via animation.
 #
-# Top-level `color` is intentionally NOT set: when it is, iOS picks color over
-# background_image and renders a 1×1 solid PNG instead of the gradient. So we
-# scope the colors per-platform via `color_android` and the `android_12:` block.
-#
-# No icon: the icon is drawn only by the Flutter SplashScreen widget, where it
-# enters with a fade + scale animation.
+# No icon: the icon is drawn only by the Flutter SplashScreen widget.
 
 flutter_native_splash:
-  background_image_ios: assets/splash/gradient_light.png
-  background_image_dark_ios: assets/splash/gradient_dark.png
-
-  color_android: "#1F5740"
-  color_dark_android: "#0E2B20"
+  color: "#FFFFFF"
+  color_dark: "#000000"
 
   android_12:
-    color: "#1F5740"
-    color_dark: "#0E2B20"
+    color: "#FFFFFF"
+    color_dark: "#000000"
 
   android: true
   ios: true
