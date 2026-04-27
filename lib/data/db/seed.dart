@@ -99,14 +99,21 @@ AmalsCompanion _seed(
   DateTime createdAt, {
   required String icon,
   String? category,
+  Frequency frequency = Frequency.daily,
+  int? weeklyDay,
+  int? monthlyDate,
+  int target = 1,
 }) {
   return AmalsCompanion.insert(
     title: title,
-    frequency: Frequency.daily,
+    frequency: frequency,
     createdAt: createdAt,
     sortOrder: Value(order),
     isSeed: const Value(true),
     icon: Value(icon),
     category: Value(category),
+    target: Value(target),
+    weeklyDay: Value(weeklyDay),
+    monthlyDate: Value(monthlyDate),
   );
 }
