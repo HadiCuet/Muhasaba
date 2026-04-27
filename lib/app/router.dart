@@ -7,6 +7,7 @@ import '../features/create_edit/amal_form_screen.dart';
 import '../features/create_edit/amal_templates.dart';
 import '../features/history/history_screen.dart';
 import '../features/settings/settings_screen.dart';
+import '../features/splash/splash_screen.dart';
 import '../features/stats/stats_screen.dart';
 import '../features/today/today_screen.dart';
 import 'shell.dart';
@@ -16,9 +17,16 @@ final routerProvider = Provider<GoRouter>((ref) {
     analytics: FirebaseAnalytics.instance,
   );
   return GoRouter(
-    initialLocation: '/',
+    initialLocation: '/splash',
     observers: [analyticsObserver],
     routes: [
+      // ── Splash (cold-launch only) ───────────────────────────────────
+      GoRoute(
+        path: '/splash',
+        name: 'splash',
+        builder: (context, state) => const SplashScreen(),
+      ),
+
       // ── Tabbed shell ────────────────────────────────────────────────
       StatefulShellRoute.indexedStack(
         builder: (context, state, navigationShell) {
