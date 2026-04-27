@@ -3,8 +3,9 @@ import 'package:drift/drift.dart';
 import '../../domain/models/frequency.dart';
 import 'database.dart';
 
-/// Inserts the first-run default amal list: Fajr, Dhuhr, Asr, Maghrib, Isha,
-/// Tilawah. Called from `AppDatabase.migration.onCreate`.
+/// Inserts the first-run default amal list: the five fard prayers plus a
+/// foundation set of sunnah prayers, daily adhkar, Quran routine, and a
+/// monthly Sadaqah token. Called from `AppDatabase.migration.onCreate`.
 Future<void> seedInitialAmals(AppDatabase db) async {
   final now = DateTime.now().toUtc();
   final entries = <AmalsCompanion>[
@@ -13,7 +14,28 @@ Future<void> seedInitialAmals(AppDatabase db) async {
     _seed('Asr', 2, now, icon: '🕌', category: 'Salah'),
     _seed('Maghrib', 3, now, icon: '🕌', category: 'Salah'),
     _seed('Isha', 4, now, icon: '🕌', category: 'Salah'),
-    _seed('Tilawah', 5, now, icon: '📖', category: 'Quran'),
+    _seed('Tahajjud', 5, now, icon: '🌙', category: 'Sunnah'),
+    _seed('Duha', 6, now, icon: '☀️', category: 'Sunnah'),
+    _seed('Morning Adhkar', 7, now, icon: '🌅', category: 'Dhikr'),
+    _seed('Evening Adhkar', 8, now, icon: '🌇', category: 'Dhikr'),
+    _seed('Tilawah', 9, now, icon: '📖', category: 'Quran'),
+    _seed(
+      'Surah Kahf',
+      10,
+      now,
+      icon: '📜',
+      category: 'Quran',
+      frequency: Frequency.weekly,
+      weeklyDay: DateTime.friday,
+    ),
+    _seed(
+      'Sadaqah',
+      11,
+      now,
+      icon: '💰',
+      category: 'Charity',
+      frequency: Frequency.monthly,
+    ),
   ];
   await db.batch((b) {
     b.insertAll(db.amals, entries);
@@ -60,7 +82,7 @@ Future<void> seedCategories(AppDatabase db) async {
   });
 }
 
-/// Assigns icons to the four seeded categories for existing installs that
+/// Assigns icons to the seeded categories for existing installs that
 /// upgraded from v2 (where `icon` didn't exist). The `IS NULL` guard means
 /// we don't clobber any icon a user might have already set via the editor.
 Future<void> assignSeedCategoryIcons(AppDatabase db) async {
