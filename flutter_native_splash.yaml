@@ -1,21 +1,18 @@
 # Native splash configuration consumed by `dart run flutter_native_splash:create`.
 # Only covers the brief flash before the Flutter SplashScreen widget mounts.
-# The full Variant C design (gradient, glow, bilingual text) lives in
-# lib/features/splash/splash_screen.dart.
+#
+# Intentionally NO image: the native splash is a solid green field that matches
+# the top of the Flutter splash's gradient. The icon is drawn only by the
+# Flutter SplashScreen widget, with a fade + scale entrance animation. This
+# avoids a static icon flashing on screen before the animated one appears.
 
 flutter_native_splash:
   color: "#1F5740"
   color_dark: "#0E2B20"
-  image: assets/icon/app_icon.png
-  image_dark: assets/icon/app_icon.png
 
-  # Android 12+ uses a different splash API. Use the same colors and image as
-  # the legacy splash so the cold-launch flash looks identical across versions.
   android_12:
     color: "#1F5740"
     color_dark: "#0E2B20"
-    image: assets/icon/app_icon.png
-    image_dark: assets/icon/app_icon.png
 
   android: true
   ios: true
