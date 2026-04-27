@@ -102,6 +102,10 @@ class _SplashScreenState extends ConsumerState<SplashScreen>
       if (next.hasValue) _maybeNavigate();
     });
 
+    // Follow platform brightness, not the user's themeMode setting:
+    //   - settingsProvider hasn't loaded yet on cold launch, and
+    //   - matching the native splash's brightness avoids a visible gradient
+    //     swap once settings resolves mid-splash.
     final isDark = MediaQuery.platformBrightnessOf(context) == Brightness.dark;
     final glowColor =
         isDark ? const Color(0xFF7FBE9C) : const Color(0xFF2E7D5B);
