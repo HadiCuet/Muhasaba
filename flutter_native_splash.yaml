@@ -1,11 +1,17 @@
 # Native splash configuration consumed by `dart run flutter_native_splash:create`.
 # Only covers the brief flash before the Flutter SplashScreen widget mounts.
 #
-# White (light) / black (dark) — neutral, unbranded. The animated Variant C
-# splash takes over as soon as Flutter boots and brings the gradient + icon
-# in via animation.
+# iOS is intentionally NOT regenerated here. The iOS LaunchScreen.storyboard is
+# hand-written as a minimal view-with-system-background — no imageViews, no
+# LaunchImage, no LaunchBackground references. This is because every config
+# flutter_native_splash generates leaves a centered <imageView image="LaunchImage">
+# in the storyboard, which renders a visible square on screen even when the
+# underlying PNG is a 1x1 placeholder. The hand-written storyboard removes
+# that view entirely and uses systemBackgroundColor (white in light, black
+# in dark) for the cold-launch flash.
 #
-# No icon: the icon is drawn only by the Flutter SplashScreen widget.
+# Android: white (light) / black (dark) — neutral, unbranded. The animated
+# Variant C splash takes over as soon as Flutter boots.
 
 flutter_native_splash:
   color: "#FFFFFF"
@@ -16,6 +22,6 @@ flutter_native_splash:
     color_dark: "#000000"
 
   android: true
-  ios: true
+  ios: false
   web: false
   fullscreen: false
