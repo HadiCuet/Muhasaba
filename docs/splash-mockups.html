@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Muhasaba — Splash Screen Variants</title>
+  <style>
+    /* ---------- Reset / page ---------- */
+    *, *::before, *::after { box-sizing: border-box; }
+    html, body { margin: 0; padding: 0; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", system-ui, sans-serif;
+      background: #F4F2EC;
+      color: #1B1F1C;
+      padding: 40px 24px 80px;
+      line-height: 1.5;
+    }
+
+    header {
+      max-width: 1100px;
+      margin: 0 auto 36px;
+    }
+    header h1 {
+      font-size: 28px;
+      margin: 0 0 8px;
+      font-weight: 600;
+      letter-spacing: -0.01em;
+    }
+    header p {
+      margin: 0;
+      color: #5C6660;
+      font-size: 15px;
+      max-width: 720px;
+    }
+    header .legend {
+      display: flex;
+      gap: 18px;
+      margin-top: 16px;
+      font-size: 13px;
+      color: #5C6660;
+    }
+    header .legend code {
+      background: rgba(46, 125, 91, 0.08);
+      color: #2E7D5B;
+      padding: 2px 6px;
+      border-radius: 4px;
+      font-size: 12px;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 40px;
+    }
+
+    /* ---------- Variant section ---------- */
+    .variant {
+      display: grid;
+      grid-template-columns: minmax(0, 320px) 1fr;
+      gap: 32px;
+      align-items: center;
+      padding: 28px;
+      background: #FFFFFF;
+      border-radius: 20px;
+      box-shadow: 0 1px 2px rgba(0,0,0,0.04), 0 8px 24px rgba(0,0,0,0.04);
+      border: 1px solid #E9E6DD;
+    }
+    .variant-info h2 {
+      font-size: 20px;
+      margin: 0 0 10px;
+      font-weight: 600;
+      letter-spacing: -0.005em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+    .variant-info p {
+      margin: 0 0 8px;
+      color: #5C6660;
+      font-size: 14px;
+    }
+    .variant-info .caveat {
+      margin-top: 8px;
+      font-size: 12.5px;
+      color: #B85C2E;
+      background: rgba(184, 92, 46, 0.08);
+      padding: 8px 10px;
+      border-radius: 6px;
+    }
+    .badge {
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      text-transform: uppercase;
+      background: #2E7D5B;
+      color: #fff;
+      padding: 3px 8px;
+      border-radius: 999px;
+    }
+
+    .phones {
+      display: flex;
+      gap: 24px;
+      justify-content: flex-start;
+      flex-wrap: wrap;
+    }
+
+    /* ---------- iPhone-15-style frame ---------- */
+    .phone {
+      position: relative;
+      width: 280px;
+      height: 580px;
+      border-radius: 48px;
+      overflow: hidden;
+      border: 8px solid #1A1A1C;
+      box-shadow:
+        0 0 0 2px #2A2A2C inset,
+        0 24px 48px rgba(0,0,0,0.18),
+        0 4px 12px rgba(0,0,0,0.08);
+      cursor: pointer;
+      transition: transform 200ms ease;
+      background: #fff;
+    }
+    .phone:hover { transform: translateY(-4px); }
+    .phone .dynamic-island {
+      position: absolute;
+      top: 12px;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 96px;
+      height: 28px;
+      background: #000;
+      border-radius: 16px;
+      z-index: 20;
+    }
+    .phone .theme-tag {
+      position: absolute;
+      bottom: -28px;
+      left: 0;
+      right: 0;
+      text-align: center;
+      font-size: 11px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: #8A938D;
+      font-weight: 500;
+    }
+
+    .splash {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0 24px;
+      overflow: hidden;
+    }
+    .splash .icon {
+      width: 30%;
+      height: auto;
+      display: block;
+      object-fit: contain;
+      /* iOS-style squircle so the icon's white background reads as an
+         intentional app-icon card rather than a hard-edged rectangle. */
+      border-radius: 22%;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+    }
+
+    /* =========================================================
+       VARIANT A — Calm Minimalist
+       ========================================================= */
+    .variant-a-phone.light .splash { background: #FBFAF6; }
+    .variant-a-phone.dark .splash { background: #101512; }
+    .variant-a-phone .icon { width: 28%; }
+    .variant-a-phone .wordmark {
+      margin-top: 22px;
+      font-family: "Lora", "Georgia", serif;
+      font-weight: 500;
+      font-size: 26px;
+      letter-spacing: 0.01em;
+      color: #2E7D5B;
+    }
+    .variant-a-phone.dark .wordmark { color: #7FBE9C; }
+    .variant-a-phone .tagline {
+      margin-top: 8px;
+      font-size: 13px;
+      color: #6B7B72;
+      letter-spacing: 0.02em;
+    }
+    .variant-a-phone.dark .tagline { color: #8B9B92; }
+
+    .variant-a-phone.animate .icon {
+      animation: a-icon-in 600ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .variant-a-phone.animate .wordmark {
+      opacity: 0;
+      animation: fade-in 240ms ease-out 400ms forwards;
+    }
+    .variant-a-phone.animate .tagline {
+      opacity: 0;
+      animation: fade-in 240ms ease-out 600ms forwards;
+    }
+    @keyframes a-icon-in {
+      from { opacity: 0; transform: scale(0.92); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @keyframes fade-in {
+      from { opacity: 0; transform: translateY(4px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* =========================================================
+       VARIANT B — Reverent Geometric
+       ========================================================= */
+    .variant-b-phone.light .splash { background: #FBFAF6; }
+    .variant-b-phone.dark .splash { background: #101512; }
+    .variant-b-phone .pattern {
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+    }
+    .variant-b-phone.light .pattern { opacity: 0.08; color: #2E7D5B; }
+    .variant-b-phone.dark .pattern  { opacity: 0.16; color: #5A9C7A; }
+    .variant-b-phone .icon { width: 32%; position: relative; z-index: 2; }
+
+    .variant-b-phone.animate .pattern {
+      opacity: 0;
+      animation: b-pattern-in 700ms ease-out forwards;
+    }
+    .variant-b-phone.animate .icon {
+      opacity: 0;
+      animation: b-icon-in 500ms cubic-bezier(0.16, 1, 0.3, 1) 300ms forwards;
+    }
+    @keyframes b-pattern-in {
+      from { opacity: 0; }
+      to   { opacity: 0.08; }
+    }
+    .variant-b-phone.dark.animate .pattern {
+      animation-name: b-pattern-in-dark;
+    }
+    @keyframes b-pattern-in-dark {
+      from { opacity: 0; }
+      to   { opacity: 0.16; }
+    }
+    @keyframes b-icon-in {
+      from { opacity: 0; transform: scale(0.95); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+
+    /* =========================================================
+       VARIANT C — Warm Gradient + Bilingual
+       ========================================================= */
+    .variant-c-phone.light .splash {
+      background: linear-gradient(180deg, #1F5740 0%, #4F8B6E 55%, #D4E4D8 100%);
+    }
+    .variant-c-phone.dark .splash {
+      background: linear-gradient(180deg, #0E2B20 0%, #163A2D 55%, #1F5740 100%);
+    }
+    .variant-c-phone .icon {
+      width: 30%;
+      filter: drop-shadow(0 0 28px rgba(46, 125, 91, 0.55));
+    }
+    .variant-c-phone.dark .icon {
+      filter: drop-shadow(0 0 28px rgba(127, 190, 156, 0.55));
+    }
+    .variant-c-phone .wordmark {
+      margin-top: 22px;
+      font-family: -apple-system, "Inter", system-ui, sans-serif;
+      font-weight: 600;
+      font-size: 26px;
+      color: rgba(255, 255, 255, 0.92);
+      letter-spacing: 0.005em;
+    }
+    .variant-c-phone .arabic {
+      margin-top: 6px;
+      font-family: "Amiri", "Scheherazade New", "Noto Naskh Arabic", "Geeza Pro", serif;
+      font-size: 22px;
+      color: rgba(255, 255, 255, 0.74);
+      direction: rtl;
+    }
+
+    .variant-c-phone.animate .icon {
+      opacity: 0;
+      animation: c-icon-in 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards,
+                 c-icon-pulse 2.6s ease-in-out 800ms infinite;
+    }
+    .variant-c-phone.animate .wordmark,
+    .variant-c-phone.animate .arabic {
+      opacity: 0;
+      animation: fade-in 280ms ease-out 500ms forwards;
+    }
+    .variant-c-phone.animate .arabic {
+      animation-delay: 620ms;
+    }
+    @keyframes c-icon-in {
+      from { opacity: 0; transform: scale(0.94); }
+      to   { opacity: 1; transform: scale(1); }
+    }
+    @keyframes c-icon-pulse {
+      0%, 100% { filter: drop-shadow(0 0 22px rgba(46, 125, 91, 0.45)); }
+      50%      { filter: drop-shadow(0 0 36px rgba(46, 125, 91, 0.65)); }
+    }
+    .variant-c-phone.dark.animate .icon {
+      animation: c-icon-in 700ms cubic-bezier(0.16, 1, 0.3, 1) forwards,
+                 c-icon-pulse-dark 2.6s ease-in-out 800ms infinite;
+    }
+    @keyframes c-icon-pulse-dark {
+      0%, 100% { filter: drop-shadow(0 0 22px rgba(127, 190, 156, 0.45)); }
+      50%      { filter: drop-shadow(0 0 36px rgba(127, 190, 156, 0.7)); }
+    }
+
+    /* =========================================================
+       VARIANT D — Growing Sapling Story
+       ========================================================= */
+    .variant-d-phone.light .splash { background: #FBFAF6; }
+    .variant-d-phone.dark .splash  { background: #101512; }
+    .variant-d-phone .grow-icon {
+      width: 38%;
+      height: auto;
+      overflow: visible;
+    }
+    .variant-d-phone .wordmark {
+      margin-top: 24px;
+      font-family: "Lora", "Georgia", serif;
+      font-weight: 500;
+      font-size: 26px;
+      color: #2E7D5B;
+    }
+    .variant-d-phone.dark .wordmark { color: #7FBE9C; }
+
+    /* SVG element styles */
+    .grow-icon .stem {
+      stroke: #5A8A4C;
+      stroke-width: 4;
+      stroke-linecap: round;
+      fill: none;
+      stroke-dasharray: 80;
+      stroke-dashoffset: 80;
+    }
+    .variant-d-phone.dark .grow-icon .stem { stroke: #87B074; }
+    .grow-icon .leaf {
+      fill: #6FA055;
+      transform-origin: var(--ox) var(--oy);
+      transform: scale(0);
+    }
+    .variant-d-phone.dark .grow-icon .leaf { fill: #93BD7C; }
+    .grow-icon .seed {
+      fill: #2E7D5B;
+      transform-origin: 100px 138px;
+      transform: scale(0);
+    }
+    .variant-d-phone.dark .grow-icon .seed { fill: #7FBE9C; }
+    .grow-icon .square {
+      fill: none;
+      stroke: #7AA67E;
+      stroke-width: 3;
+      stroke-dasharray: 400;
+      stroke-dashoffset: 400;
+    }
+    .variant-d-phone.dark .grow-icon .square { stroke: #9CC79F; }
+
+    .variant-d-phone.animate .seed {
+      animation: d-seed 200ms cubic-bezier(0.16, 1, 0.3, 1) forwards;
+    }
+    .variant-d-phone.animate .stem {
+      animation: d-stem 600ms cubic-bezier(0.4, 0, 0.4, 1) 100ms forwards;
+    }
+    .variant-d-phone.animate .leaf {
+      animation: d-leaf 360ms cubic-bezier(0.16, 1, 0.3, 1) 500ms forwards;
+    }
+    .variant-d-phone.animate .square {
+      animation: d-square 600ms cubic-bezier(0.4, 0, 0.4, 1) 750ms forwards;
+    }
+    .variant-d-phone.animate .wordmark {
+      opacity: 0;
+      animation: fade-in 280ms ease-out 1200ms forwards;
+    }
+    @keyframes d-seed {
+      to { transform: scale(1); }
+    }
+    @keyframes d-stem {
+      to { stroke-dashoffset: 0; }
+    }
+    @keyframes d-leaf {
+      to { transform: scale(1); }
+    }
+    @keyframes d-square {
+      to { stroke-dashoffset: 0; }
+    }
+
+    /* ---------- Responsive ---------- */
+    @media (max-width: 880px) {
+      .variant {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      .phones { justify-content: center; }
+    }
+
+    /* ---------- Reduce motion (accessibility) ---------- */
+    @media (prefers-reduced-motion: reduce) {
+      .phone *,
+      .phone *::before,
+      .phone *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Muhasaba — Splash Screen Variants</h1>
+    <p>Four splash-screen designs, each rendered in light and dark mode inside an iPhone-style frame. Hover any frame to replay its entrance animation. The real app icon is loaded from <code>../assets/icon/app_icon.png</code>.</p>
+    <div class="legend">
+      <span><strong>Brand seed:</strong> <code>#2E7D5B</code></span>
+      <span><strong>Vibe:</strong> gentle, not flashy</span>
+      <span><strong>Icon motif:</strong> sapling in 8-point star</span>
+    </div>
+  </header>
+
+  <main>
+
+    <!-- =================== VARIANT A =================== -->
+    <section class="variant">
+      <div class="variant-info">
+        <h2>A. Calm Minimalist <span class="badge">Recommended</span></h2>
+        <p>Cream background in light mode, deep ink in dark. Icon fades in with a subtle scale (0.92 → 1.00), wordmark and tagline follow. The closest match to the existing &ldquo;gentle, not flashy&rdquo; brand voice.</p>
+        <p style="font-size:13px;color:#7B847E;margin-top:8px;">
+          <strong>Why pick this:</strong> least visual noise, fastest perceived load, future-proof across all 23 locales.
+        </p>
+      </div>
+      <div class="phones">
+        <div class="phone variant-a-phone light animate">
+          <div class="dynamic-island"></div>
+          <div class="splash">
+            <img class="icon" src="../assets/icon/app_icon.png" alt="Muhasaba app icon" />
+            <div class="wordmark">Muhasaba</div>
+            <div class="tagline">Daily reflection</div>
+          </div>
+          <div class="theme-tag">light</div>
+        </div>
+        <div class="phone variant-a-phone dark animate">
+          <div class="dynamic-island"></div>
+          <div class="splash">
+            <img class="icon" src="../assets/icon/app_icon.png" alt="Muhasaba app icon" />
+            <div class="wordmark">Muhasaba</div>
+            <div class="tagline">Daily reflection</div>
+          </div>
+          <div class="theme-tag">dark</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== VARIANT B =================== -->
+    <section class="variant">
+      <div class="variant-info">
+        <h2>B. Reverent Geometric</h2>
+        <p>Faint repeating 8-point Islamic star pattern fills the background; the app icon settles in over it. No wordmark — the visual carries the meaning. Most explicitly &ldquo;Islamic-feeling&rdquo; without being heavy.</p>
+        <p style="font-size:13px;color:#7B847E;margin-top:8px;">
+          <strong>Why pick this:</strong> distinctive, culturally resonant, no localization concerns (image only).
+        </p>
+      </div>
+      <div class="phones">
+        <div class="phone variant-b-phone light animate">
+          <div class="dynamic-island"></div>
+          <div class="splash">
+            <svg class="pattern" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <pattern id="star8-light" width="80" height="80" patternUnits="userSpaceOnUse">
+                  <g transform="translate(40,40)" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <rect x="-22" y="-22" width="44" height="44" />
+                    <rect x="-22" y="-22" width="44" height="44" transform="rotate(45)" />
+                  </g>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#star8-light)" />
+            </svg>
+            <img class="icon" src="../assets/icon/app_icon.png" alt="Muhasaba app icon" />
+          </div>
+          <div class="theme-tag">light</div>
+        </div>
+        <div class="phone variant-b-phone dark animate">
+          <div class="dynamic-island"></div>
+          <div class="splash">
+            <svg class="pattern" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
+              <defs>
+                <pattern id="star8-dark" width="80" height="80" patternUnits="userSpaceOnUse">
+                  <g transform="translate(40,40)" fill="none" stroke="currentColor" stroke-width="1.4">
+                    <rect x="-22" y="-22" width="44" height="44" />
+                    <rect x="-22" y="-22" width="44" height="44" transform="rotate(45)" />
+                  </g>
+                </pattern>
+              </defs>
+              <rect width="100%" height="100%" fill="url(#star8-dark)" />
+            </svg>
+            <img class="icon" src="../assets/icon/app_icon.png" alt="Muhasaba app icon" />
+          </div>
+          <div class="theme-tag">dark</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== VARIANT C =================== -->
+    <section class="variant">
+      <div class="variant-info">
+        <h2>C. Warm Gradient + Bilingual</h2>
+        <p>Vertical gradient background, soft glowing icon (slow pulse), &ldquo;Muhasaba&rdquo; in Latin script with the Arabic <span dir="rtl" lang="ar">مُحَاسَبَة</span> beneath it. Most expressive of the four.</p>
+        <p style="font-size:13px;color:#7B847E;margin-top:8px;">
+          <strong>Why pick this:</strong> communicates the Islamic origin clearly, feels alive without being busy.
+        </p>
+      </div>
+      <div class="phones">
+        <div class="phone variant-c-phone light animate">
+          <div class="dynamic-island"></div>
+          <div class="splash">
+            <img class="icon" src="../assets/icon/app_icon.png" alt="Muhasaba app icon" />
+            <div class="wordmark">Muhasaba</div>
+            <div class="arabic" dir="rtl" lang="ar">مُحَاسَبَة</div>
+          </div>
+          <div class="theme-tag">light</div>
+        </div>
+        <div class="phone variant-c-phone dark animate">
+          <div class="dynamic-island"></div>
+          <div class="splash">
+            <img class="icon" src="../assets/icon/app_icon.png" alt="Muhasaba app icon" />
+            <div class="wordmark">Muhasaba</div>
+            <div class="arabic" dir="rtl" lang="ar">مُحَاسَبَة</div>
+          </div>
+          <div class="theme-tag">dark</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =================== VARIANT D =================== -->
+    <section class="variant">
+      <div class="variant-info">
+        <h2>D. Growing Sapling Story</h2>
+        <p>Tells the icon's own story: a seed appears, the stem grows, leaves unfurl, then the 8-point star is drawn around the plant. Wordmark fades in last.</p>
+        <p class="caveat">Longest animation — users wait ~1.5s before the app shows. Use only if you accept that trade-off.</p>
+      </div>
+      <div class="phones">
+        <div class="phone variant-d-phone light animate">
+          <div class="dynamic-island"></div>
+          <div class="splash">
+            <svg class="grow-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <!-- Outer 8-point star: two squares, drawn last -->
+              <g transform="translate(100 100)">
+                <rect class="square" x="-50" y="-50" width="100" height="100" />
+                <rect class="square" x="-50" y="-50" width="100" height="100" transform="rotate(45)" />
+              </g>
+              <!-- Plant group -->
+              <g class="plant">
+                <!-- Seed -->
+                <circle class="seed" cx="100" cy="138" r="6" />
+                <!-- Two stems with leaves -->
+                <path class="stem" d="M 100 138 Q 88 110 80 78" />
+                <path class="stem" d="M 100 138 Q 112 110 120 78" />
+                <!-- Leaves: small ellipses placed at stem tips -->
+                <ellipse class="leaf" cx="80" cy="78" rx="11" ry="20"
+                         transform="rotate(-30 80 78)"
+                         style="--ox: 80px; --oy: 78px;" />
+                <ellipse class="leaf" cx="120" cy="78" rx="11" ry="20"
+                         transform="rotate(30 120 78)"
+                         style="--ox: 120px; --oy: 78px;" />
+              </g>
+            </svg>
+            <div class="wordmark">Muhasaba</div>
+          </div>
+          <div class="theme-tag">light</div>
+        </div>
+        <div class="phone variant-d-phone dark animate">
+          <div class="dynamic-island"></div>
+          <div class="splash">
+            <svg class="grow-icon" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+              <g transform="translate(100 100)">
+                <rect class="square" x="-50" y="-50" width="100" height="100" />
+                <rect class="square" x="-50" y="-50" width="100" height="100" transform="rotate(45)" />
+              </g>
+              <g class="plant">
+                <circle class="seed" cx="100" cy="138" r="6" />
+                <path class="stem" d="M 100 138 Q 88 110 80 78" />
+                <path class="stem" d="M 100 138 Q 112 110 120 78" />
+                <ellipse class="leaf" cx="80" cy="78" rx="11" ry="20"
+                         transform="rotate(-30 80 78)"
+                         style="--ox: 80px; --oy: 78px;" />
+                <ellipse class="leaf" cx="120" cy="78" rx="11" ry="20"
+                         transform="rotate(30 120 78)"
+                         style="--ox: 120px; --oy: 78px;" />
+              </g>
+            </svg>
+            <div class="wordmark">Muhasaba</div>
+          </div>
+          <div class="theme-tag">dark</div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    // Replay animation on hover by toggling the .animate class.
+    document.querySelectorAll('.phone').forEach((phone) => {
+      phone.addEventListener('mouseenter', () => {
+        phone.classList.remove('animate');
+        // Force reflow so the next class addition restarts the animation.
+        void phone.offsetWidth;
+        phone.classList.add('animate');
+      });
+    });
+  </script>
+</body>
+</html>
