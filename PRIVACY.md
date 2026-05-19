@@ -56,7 +56,7 @@ The Muhasaba mobile application ("**Muhasaba**", "**the app**", "**we**", "**us*
 
 - **Name:** Abdullah Al Hadi (sole developer)
 - **Role:** Data controller for the purposes of the EU General Data Protection Regulation (Regulation (EU) 2016/679, "**GDPR**"), the UK GDPR, and the Swiss Federal Act on Data Protection ("**FADP**"), and "business" for the purposes of the California Consumer Privacy Act, as amended by the California Privacy Rights Act ("**CCPA/CPRA**").
-- **Contact email:** hadi.fiftytwo@gmail.com
+- **Contact email:** mukashi.dev@gmail.com
 - **Postal address:** Nakhargonj, Nageshwari, Kurigram — 5660, Bangladesh
 
 Because Muhasaba is an independent, single-developer project, we have not appointed a Data Protection Officer (DPO). A DPO is not mandatory under GDPR Art. 37 for our processing activities (no large-scale, systematic, or special-category processing). If this changes, this policy will be updated.
@@ -106,7 +106,7 @@ In release builds of the app, we use **Google Firebase Analytics** (provided by 
 - **Support actions** — rate-the-app, contact-us, report-bug, feature-request.
 - **Notification permission outcome** — whether you granted or denied the OS notification prompt.
 
-Each event carries at most a handful of categorical parameters (e.g. `frequency: daily`, `theme_mode: light`). **No free-form text** — amal titles, category names, notes, etc. — is ever included. The complete, up-to-date list of event names and parameters is available on request at hadi.fiftytwo@gmail.com.
+Each event carries at most a handful of categorical parameters (e.g. `frequency: daily`, `theme_mode: light`). **No free-form text** — amal titles, category names, notes, etc. — is ever included. The complete, up-to-date list of event names and parameters is available on request at mukashi.dev@gmail.com.
 
 **User properties recorded.** Two pseudonymous user properties are attached to the analytics stream:
 
@@ -142,11 +142,11 @@ Although crash stack traces are not designed to contain personal data, it is the
 
 The app contains three support options in Settings that open a pre-filled email in your email client:
 
-- **Contact us** — opens a blank draft addressed to `hadi.fiftytwo@gmail.com`.
+- **Contact us** — opens a blank draft addressed to `mukashi.dev@gmail.com`.
 - **Report a bug** — opens a draft that **pre-fills diagnostic information in the body**: app version, build number, platform (iOS/iPadOS/Android/macOS), OS version, device model (and on Android, manufacturer). You can edit or delete this text before sending.
 - **Request a feature** — opens a blank draft.
 
-Emails are sent through **your own email client** using the operating system's share sheet. We do not see or store anything until and unless you press "Send" in your email client, at which point the email reaches our inbox (`hadi.fiftytwo@gmail.com`) via Google Gmail.
+Emails are sent through **your own email client** using the operating system's share sheet. We do not see or store anything until and unless you press "Send" in your email client, at which point the email reaches our inbox (`mukashi.dev@gmail.com`) via Google Gmail.
 
 What we receive: your email address (as sender), anything you write, and — if you used "Report a bug" — the diagnostic body described above.
 
@@ -313,7 +313,7 @@ If you live elsewhere (for example, Australia, New Zealand, Japan, South Korea, 
 
 ## 12. How to exercise your rights
 
-Send an email to **hadi.fiftytwo@gmail.com** from an address you control, describing your request. To help us respond, please:
+Send an email to **mukashi.dev@gmail.com** from an address you control, describing your request. To help us respond, please:
 
 - Tell us what right you are exercising.
 - Tell us the approximate country/region you use the app from (this helps us identify the correct analytics/crash records).
@@ -331,7 +331,7 @@ We will respond **within 30 days** (GDPR/UK GDPR), which may be extended by a fu
 
 Muhasaba is a general-audience app and is not directed to children under **13** (United States — COPPA), under **16** (default threshold in the EEA for consent; some Member States have lowered this to 13, 14, or 15), or under **18** where local law sets that threshold for processing a child's data.
 
-We do not knowingly collect personal information from a child without verifiable parental consent. If you believe a child has used the app and we have received personal information about them (for example, through a support email), please contact us at hadi.fiftytwo@gmail.com and we will delete the information.
+We do not knowingly collect personal information from a child without verifiable parental consent. If you believe a child has used the app and we have received personal information about them (for example, through a support email), please contact us at mukashi.dev@gmail.com and we will delete the information.
 
 The religious-tracking nature of the app does not in itself constitute "special category" data about a child, because we do not transmit the content of amals or completions.
 
@@ -471,7 +471,7 @@ Continued use of the app after a non-material change constitutes acknowledgement
 
 For any privacy question, request, or complaint:
 
-- **Email:** hadi.fiftytwo@gmail.com (mark the subject line "Privacy request" for fastest handling)
+- **Email:** mukashi.dev@gmail.com (mark the subject line "Privacy request" for fastest handling)
 - **Postal:** Abdullah Al Hadi, Nakhargonj, Nageshwari, Kurigram — 5660, Bangladesh
 
 We aim to respond within **7 days** to simple questions and within the statutory time limits to formal rights requests (see §12).

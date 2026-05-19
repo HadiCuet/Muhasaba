@@ -31,19 +31,20 @@ class DefaultFirebaseOptions {
   }
 
   static const FirebaseOptions android = FirebaseOptions(
-    apiKey: 'AIzaSyAi9mGguacIdCUG7GBR6C4stKj0d6_iRYE',
-    appId: '1:525146256049:android:21db500909a9f24ac76890',
-    messagingSenderId: '525146256049',
-    projectId: 'muhasaba-dev',
-    storageBucket: 'muhasaba-dev.firebasestorage.app',
+    apiKey: 'AIzaSyDLMoXO41NYCAZnujxtRSkXGmRosrTzHTA',
+    appId: '1:234302098015:android:c051ef9a5485fb2b9d29ea',
+    messagingSenderId: '234302098015',
+    projectId: 'mukashi-muhasaba',
+    storageBucket: 'mukashi-muhasaba.firebasestorage.app',
   );
 
   static const FirebaseOptions ios = FirebaseOptions(
-    apiKey: 'AIzaSyCKrh2_AmvL75dhgR13dlKroMqh3sPonRQ',
-    appId: '1:525146256049:ios:de86f11be8661db7c76890',
-    messagingSenderId: '525146256049',
-    projectId: 'muhasaba-dev',
-    storageBucket: 'muhasaba-dev.firebasestorage.app',
-    iosBundleId: 'dev.hadi.muhasaba',
+    apiKey: 'AIzaSyBIE5Sv4AOuP07fpFB3oxfZ-wDZeoDnVek',
+    appId: '1:234302098015:ios:c37c918b01e8914b9d29ea',
+    messagingSenderId: '234302098015',
+    projectId: 'mukashi-muhasaba',
+    storageBucket: 'mukashi-muhasaba.firebasestorage.app',
+    iosBundleId: 'dev.mukashi.muhasaba',
   );
+
 }

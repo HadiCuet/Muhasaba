@@ -11,7 +11,7 @@ import '../../l10n/app_localizations.dart';
 import 'privacy_policy_screen.dart';
 
 /// Developer contact email for all support rows.
-const String kSupportEmail = 'hadi.fiftytwo@gmail.com';
+const String kSupportEmail = 'mukashi.dev@gmail.com';
 
 /// Hosted privacy policy (GitHub Pages).
 const String kPrivacyPolicyUrl = 'https://hadicuet.github.io/Muhasaba/privacy/';
