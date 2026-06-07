@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
+import 'package:package_info_plus/package_info_plus.dart';
 import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
@@ -186,14 +187,7 @@ class _SettingsList extends StatelessWidget {
               trailing: '',
               onTap: () => openPrivacyPolicy(context),
             ),
-            _SettingsItem(
-              icon: 'ℹ️',
-              iconColor: Colors.teal,
-              title: l.settingsVersion,
-              trailing: '1.0.0',
-              showChevron: false,
-              onTap: () {},
-            ),
+            const _VersionItem(),
           ],
         ),
       ],
@@ -206,6 +200,40 @@ class _SettingsList extends StatelessWidget {
       if (lang.code == locale) return lang.nativeName;
     }
     return locale;
+  }
+}
+
+// Reads the real app version from the platform so the About row always matches
+// the installed build (was previously a hardcoded string).
+class _VersionItem extends StatefulWidget {
+  const _VersionItem();
+
+  @override
+  State<_VersionItem> createState() => _VersionItemState();
+}
+
+class _VersionItemState extends State<_VersionItem> {
+  String _version = '';
+
+  @override
+  void initState() {
+    super.initState();
+    PackageInfo.fromPlatform().then((info) {
+      if (mounted) setState(() => _version = info.version);
+    });
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
+    return _SettingsItem(
+      icon: 'ℹ️',
+      iconColor: Colors.teal,
+      title: l.settingsVersion,
+      trailing: _version,
+      showChevron: false,
+      onTap: () {},
+    );
   }
 }
 
