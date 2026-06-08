@@ -167,7 +167,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get notCompleted => 'yerine yetirilmedi';
 
   @override
-  String progressOf(int progress, int target) {
+  String progressOf(String progress, String target) {
     return '$target-dan $progress yerine yetirildi';
   }
 
@@ -580,7 +580,7 @@ class AppLocalizationsTk extends AppLocalizations {
       '\"Allah ýumşakdyr we ähli işde ýumşaklygy söýýär.\"\n— Buhari we Muslim';
 
   @override
-  String historyDayCompleted(int completed, int total) {
+  String historyDayCompleted(String completed, String total) {
     return '$total-dan $completed ýerine ýetirildi';
   }
 

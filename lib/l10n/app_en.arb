@@ -81,10 +81,10 @@
   "@progressOf": {
     "placeholders": {
       "progress": {
-        "type": "int"
+        "type": "String"
       },
       "target": {
-        "type": "int"
+        "type": "String"
       }
     }
   },
@@ -260,10 +260,10 @@
   "@historyDayCompleted": {
     "placeholders": {
       "completed": {
-        "type": "int"
+        "type": "String"
       },
       "total": {
-        "type": "int"
+        "type": "String"
       }
     }
   },

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import '../../../domain/services/enhanced_stats_service.dart';
+import '../../../domain/utils/localized_number.dart';
 import '../../../l10n/app_localizations.dart';
 
 class CategoryBreakdownCard extends StatelessWidget {
@@ -73,7 +74,7 @@ class _CategoryRow extends StatelessWidget {
               ),
             ),
             Text(
-              '$pct%',
+              lpct(context, pct),
               style: theme.textTheme.bodyMedium?.copyWith(
                 fontWeight: FontWeight.w600,
                 color: barColor,

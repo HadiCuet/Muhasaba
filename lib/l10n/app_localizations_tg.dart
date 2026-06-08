@@ -169,7 +169,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get notCompleted => 'ичро нашуд';
 
   @override
-  String progressOf(int progress, int target) {
+  String progressOf(String progress, String target) {
     return '$progress аз $target ичро шуд';
   }
 
@@ -582,7 +582,7 @@ class AppLocalizationsTg extends AppLocalizations {
       '\"Аллоҳ мулоим аст ва дар ҳама корҳо мулоиматро дӯст медорад.\"\n— Бухорӣ ва Муслим';
 
   @override
-  String historyDayCompleted(int completed, int total) {
+  String historyDayCompleted(String completed, String total) {
     return '$completed аз $total иҷро шуд';
   }
 

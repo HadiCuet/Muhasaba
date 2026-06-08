@@ -167,7 +167,7 @@ class AppLocalizationsKk extends AppLocalizations {
   String get notCompleted => 'орындалмады';
 
   @override
-  String progressOf(int progress, int target) {
+  String progressOf(String progress, String target) {
     return '$target ішінен $progress орындалды';
   }
 
@@ -579,7 +579,7 @@ class AppLocalizationsKk extends AppLocalizations {
       '\"Аллаһ жұмсақ және барлық істе жұмсақтықты жақсы көреді.\"\n— Бұхари және Муслим';
 
   @override
-  String historyDayCompleted(int completed, int total) {
+  String historyDayCompleted(String completed, String total) {
     return '$total ішінен $completed орындалды';
   }
 

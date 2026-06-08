@@ -168,7 +168,7 @@ class AppLocalizationsTr extends AppLocalizations {
   String get notCompleted => 'tamamlanmadı';
 
   @override
-  String progressOf(int progress, int target) {
+  String progressOf(String progress, String target) {
     return '$target içerisinden $progress tamamlandı';
   }
 
@@ -581,7 +581,7 @@ class AppLocalizationsTr extends AppLocalizations {
       '\"Allah Refîk\'tir (yumuşaktır) ve her işte yumuşaklığı sever.\"\n— Buhari ve Müslim';
 
   @override
-  String historyDayCompleted(int completed, int total) {
+  String historyDayCompleted(String completed, String total) {
     return '$total üzerinden $completed tamamlandı';
   }
 

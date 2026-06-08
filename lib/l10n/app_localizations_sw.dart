@@ -166,7 +166,7 @@ class AppLocalizationsSw extends AppLocalizations {
   String get notCompleted => 'haijakamilika';
 
   @override
-  String progressOf(int progress, int target) {
+  String progressOf(String progress, String target) {
     return '$progress kati ya $target zimekamilika';
   }
 
@@ -578,7 +578,7 @@ class AppLocalizationsSw extends AppLocalizations {
       '\"Mwenyezi Mungu ni mpole na anapenda upole katika kila jambo.\"\n— Bukhari & Muslim';
 
   @override
-  String historyDayCompleted(int completed, int total) {
+  String historyDayCompleted(String completed, String total) {
     return '$completed kati ya $total yamekamilika';
   }
 

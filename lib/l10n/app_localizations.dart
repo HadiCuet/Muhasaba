@@ -438,7 +438,7 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'{progress} of {target} completed'**
-  String progressOf(int progress, int target);
+  String progressOf(String progress, String target);
 
   /// No description provided for @removeFromToday.
   ///
@@ -1158,7 +1158,7 @@ abstract class AppLocalizations {
   ///
   /// In en, this message translates to:
   /// **'{completed} of {total} completed'**
-  String historyDayCompleted(int completed, int total);
+  String historyDayCompleted(String completed, String total);
 
   /// No description provided for @settingsSchedule.
   ///

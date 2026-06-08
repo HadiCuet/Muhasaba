@@ -5,10 +5,10 @@ import 'package:flutter/material.dart';
 import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:intl/intl.dart';
 
 import '../../app/providers.dart';
 import '../../domain/services/today_builder.dart';
+import '../../domain/utils/localized_number.dart';
 import '../today/widgets/amal_row.dart';
 import '../today/widgets/remove_sheet.dart';
 
@@ -52,9 +52,11 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
             today: today,
             onSelected: (d) {
               setState(() => _selected = d);
-              final daysBack = DateTime.utc(today.year, today.month, today.day)
-                  .difference(DateTime.utc(d.year, d.month, d.day))
-                  .inDays;
+              final daysBack = DateTime.utc(
+                today.year,
+                today.month,
+                today.day,
+              ).difference(DateTime.utc(d.year, d.month, d.day)).inDays;
               FirebaseAnalytics.instance.logEvent(
                 name: 'history_day_selected',
                 parameters: {'days_back': daysBack},
@@ -113,9 +115,11 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
       setState(() {
         _selected = DateTime.utc(picked.year, picked.month, picked.day);
       });
-      final daysBack = DateTime.utc(today.year, today.month, today.day)
-          .difference(DateTime.utc(picked.year, picked.month, picked.day))
-          .inDays;
+      final daysBack = DateTime.utc(
+        today.year,
+        today.month,
+        today.day,
+      ).difference(DateTime.utc(picked.year, picked.month, picked.day)).inDays;
       FirebaseAnalytics.instance.logEvent(
         name: 'history_date_picked',
         parameters: {'days_back': daysBack},
@@ -287,10 +291,13 @@ class _DateChip extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             children: [
               Text(
-                DateFormat(
-                  'EEE',
-                  Localizations.localeOf(context).toString(),
-                ).format(date.toLocal()).toUpperCase(),
+                localizeDigits(
+                  context,
+                  safeDateFormat(
+                    'EEE',
+                    Localizations.localeOf(context).toString(),
+                  ).format(date.toLocal()).toUpperCase(),
+                ),
                 style: theme.textTheme.labelSmall?.copyWith(
                   color: fg.withValues(alpha: 0.75),
                   letterSpacing: 0.6,
@@ -300,10 +307,13 @@ class _DateChip extends StatelessWidget {
               ),
               const SizedBox(height: 3),
               Text(
-                DateFormat(
-                  'd',
-                  Localizations.localeOf(context).toString(),
-                ).format(date.toLocal()),
+                localizeDigits(
+                  context,
+                  safeDateFormat(
+                    'd',
+                    Localizations.localeOf(context).toString(),
+                  ).format(date.toLocal()),
+                ),
                 style: theme.textTheme.titleMedium?.copyWith(
                   color: fg,
                   fontWeight: FontWeight.w600,
@@ -312,10 +322,13 @@ class _DateChip extends StatelessWidget {
               ),
               const SizedBox(height: 3),
               Text(
-                DateFormat(
-                  'MMM',
-                  Localizations.localeOf(context).toString(),
-                ).format(date.toLocal()),
+                localizeDigits(
+                  context,
+                  safeDateFormat(
+                    'MMM',
+                    Localizations.localeOf(context).toString(),
+                  ).format(date.toLocal()),
+                ),
                 style: theme.textTheme.labelSmall?.copyWith(
                   color: fg.withValues(alpha: 0.75),
                   fontSize: 9,
@@ -366,7 +379,7 @@ class _DaySummary extends StatelessWidget {
               ),
               child: Center(
                 child: Text(
-                  '${(rate * 100).round()}%',
+                  lpct(context, (rate * 100).round()),
                   style: theme.textTheme.labelSmall?.copyWith(
                     fontWeight: FontWeight.w700,
                     color: theme.colorScheme.onSurface,
@@ -381,14 +394,17 @@ class _DaySummary extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
                 Text(
-                  DateFormat('EEEE, MMM d', locale).format(date.toLocal()),
+                  localizeDigits(
+                    context,
+                    safeDateFormat('EEEE, MMM d', locale).format(date.toLocal()),
+                  ),
                   style: theme.textTheme.titleSmall?.copyWith(
                     fontWeight: FontWeight.w500,
                   ),
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  l.historyDayCompleted(completed, total),
+                  l.historyDayCompleted(lnum(context, completed), lnum(context, total)),
                   style: theme.textTheme.bodySmall?.copyWith(
                     color: theme.colorScheme.onSurfaceVariant,
                   ),
@@ -461,21 +477,81 @@ class _MiniRingPainter extends CustomPainter {
 // narrations in Bukhari, Muslim, Tirmidhi, Abu Dawud, Nasa'i, Ibn Majah,
 // Ahmad, or other standard collections, with correct attribution.
 List<String> _hadiths(AppLocalizations l) => [
-  l.hadith0, l.hadith2, l.hadith3, l.hadith4, l.hadith6,
-  l.hadith7, l.hadith8, l.hadith9, l.hadith10, l.hadith12,
-  l.hadith13, l.hadith14, l.hadith15, l.hadith16, l.hadith17,
-  l.hadith18, l.hadith19, l.hadith20, l.hadith22, l.hadith23,
-  l.hadith24, l.hadith25, l.hadith26, l.hadith27, l.hadith29,
-  l.hadith30, l.hadith32, l.hadith34, l.hadith36, l.hadith37,
-  l.hadith38, l.hadith40, l.hadith41, l.hadith42, l.hadith43,
-  l.hadith44, l.hadith45, l.hadith46, l.hadith47, l.hadith49,
-  l.hadith53, l.hadith54, l.hadith55, l.hadith56, l.hadith57,
-  l.hadith58, l.hadith65, l.hadith66, l.hadith67, l.hadith68,
-  l.hadith69, l.hadith70, l.hadith71, l.hadith72, l.hadith73,
-  l.hadith74, l.hadith75, l.hadith77, l.hadith78, l.hadith79,
-  l.hadith80, l.hadith81, l.hadith82, l.hadith85, l.hadith86,
-  l.hadith87, l.hadith88, l.hadith89, l.hadith90, l.hadith93,
-  l.hadith94, l.hadith95, l.hadith96, l.hadith97, l.hadith98,
+  l.hadith0,
+  l.hadith2,
+  l.hadith3,
+  l.hadith4,
+  l.hadith6,
+  l.hadith7,
+  l.hadith8,
+  l.hadith9,
+  l.hadith10,
+  l.hadith12,
+  l.hadith13,
+  l.hadith14,
+  l.hadith15,
+  l.hadith16,
+  l.hadith17,
+  l.hadith18,
+  l.hadith19,
+  l.hadith20,
+  l.hadith22,
+  l.hadith23,
+  l.hadith24,
+  l.hadith25,
+  l.hadith26,
+  l.hadith27,
+  l.hadith29,
+  l.hadith30,
+  l.hadith32,
+  l.hadith34,
+  l.hadith36,
+  l.hadith37,
+  l.hadith38,
+  l.hadith40,
+  l.hadith41,
+  l.hadith42,
+  l.hadith43,
+  l.hadith44,
+  l.hadith45,
+  l.hadith46,
+  l.hadith47,
+  l.hadith49,
+  l.hadith53,
+  l.hadith54,
+  l.hadith55,
+  l.hadith56,
+  l.hadith57,
+  l.hadith58,
+  l.hadith65,
+  l.hadith66,
+  l.hadith67,
+  l.hadith68,
+  l.hadith69,
+  l.hadith70,
+  l.hadith71,
+  l.hadith72,
+  l.hadith73,
+  l.hadith74,
+  l.hadith75,
+  l.hadith77,
+  l.hadith78,
+  l.hadith79,
+  l.hadith80,
+  l.hadith81,
+  l.hadith82,
+  l.hadith85,
+  l.hadith86,
+  l.hadith87,
+  l.hadith88,
+  l.hadith89,
+  l.hadith90,
+  l.hadith93,
+  l.hadith94,
+  l.hadith95,
+  l.hadith96,
+  l.hadith97,
+  l.hadith98,
 ];
 
 class _EmptyDay extends StatelessWidget {
@@ -506,7 +582,10 @@ class _EmptyDay extends StatelessWidget {
             const SizedBox(height: 16),
             Text(
               l.historyEmptyDay(
-                DateFormat('EEEE, MMM d', locale).format(date.toLocal()),
+                localizeDigits(
+                  context,
+                  safeDateFormat('EEEE, MMM d', locale).format(date.toLocal()),
+                ),
               ),
               textAlign: TextAlign.center,
               style: theme.textTheme.bodyMedium,

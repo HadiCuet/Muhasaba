@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../domain/utils/localized_number.dart';
 import '../../../l10n/app_localizations.dart';
 
 class StreaksCard extends StatelessWidget {
@@ -79,7 +80,7 @@ class _StreakBox extends StatelessWidget {
           Text(icon, style: const TextStyle(fontSize: 22)),
           const SizedBox(height: 6),
           Text(
-            '$value',
+            lnum(context, value),
             style: theme.textTheme.headlineSmall?.copyWith(
               fontWeight: FontWeight.bold,
             ),

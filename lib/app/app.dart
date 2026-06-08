@@ -1,5 +1,6 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import '../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -62,6 +63,13 @@ class MuhasabaApp extends ConsumerWidget {
         GlobalMaterialLocalizations.delegate,
         GlobalCupertinoLocalizations.delegate,
         GlobalWidgetsLocalizations.delegate,
+        // flutter_localizations has no data for a few of our 23 languages
+        // (tk, tg, so, ha, ku); these fall back to English Material/Cupertino/
+        // Widgets strings so those locales render instead of throwing
+        // "No MaterialLocalizations found". App text stays in the language.
+        _FallbackMaterialDelegate(),
+        _FallbackCupertinoDelegate(),
+        _FallbackWidgetsDelegate(),
       ],
       supportedLocales: AppLocalizations.supportedLocales,
       // Graceful fallback: if the device locale isn't in our supported list,
@@ -86,4 +94,70 @@ class MuhasabaApp extends ConsumerWidget {
       },
     );
   }
+}
+
+// ---------------------------------------------------------------------------
+// Fallback localization delegates. For app languages that flutter_localizations
+// has no data for (tk, tg, so, ha, ku), serve the English Material/Cupertino/
+// Widgets localizations so those locales render instead of throwing. Placed
+// after the Global delegates so, being the last delegate of each type, they
+// win for every locale — delegating to the real locale when supported and to
+// English otherwise. The app's own text (AppLocalizations) stays localized.
+// ---------------------------------------------------------------------------
+
+class _FallbackMaterialDelegate
+    extends LocalizationsDelegate<MaterialLocalizations> {
+  const _FallbackMaterialDelegate();
+  @override
+  bool isSupported(Locale locale) => true;
+  @override
+  Future<MaterialLocalizations> load(Locale locale) {
+    final l = GlobalMaterialLocalizations.delegate.isSupported(locale)
+        ? locale
+        : const Locale('en');
+    return GlobalMaterialLocalizations.delegate.load(l);
+  }
+
+  @override
+  bool shouldReload(
+    covariant LocalizationsDelegate<MaterialLocalizations> old,
+  ) => false;
+}
+
+class _FallbackCupertinoDelegate
+    extends LocalizationsDelegate<CupertinoLocalizations> {
+  const _FallbackCupertinoDelegate();
+  @override
+  bool isSupported(Locale locale) => true;
+  @override
+  Future<CupertinoLocalizations> load(Locale locale) {
+    final l = GlobalCupertinoLocalizations.delegate.isSupported(locale)
+        ? locale
+        : const Locale('en');
+    return GlobalCupertinoLocalizations.delegate.load(l);
+  }
+
+  @override
+  bool shouldReload(
+    covariant LocalizationsDelegate<CupertinoLocalizations> old,
+  ) => false;
+}
+
+class _FallbackWidgetsDelegate
+    extends LocalizationsDelegate<WidgetsLocalizations> {
+  const _FallbackWidgetsDelegate();
+  @override
+  bool isSupported(Locale locale) => true;
+  @override
+  Future<WidgetsLocalizations> load(Locale locale) {
+    final l = GlobalWidgetsLocalizations.delegate.isSupported(locale)
+        ? locale
+        : const Locale('en');
+    return GlobalWidgetsLocalizations.delegate.load(l);
+  }
+
+  @override
+  bool shouldReload(
+    covariant LocalizationsDelegate<WidgetsLocalizations> old,
+  ) => false;
 }

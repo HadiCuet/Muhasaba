@@ -166,7 +166,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get notCompleted => 'e paperfunduar';
 
   @override
-  String progressOf(int progress, int target) {
+  String progressOf(String progress, String target) {
     return '$progress nga $target te perfunduara';
   }
 
@@ -579,7 +579,7 @@ class AppLocalizationsSq extends AppLocalizations {
       '\"Allahu është i butë dhe e do butësinë në çdo gjë.\"\n— Buhariu & Muslimi';
 
   @override
-  String historyDayCompleted(int completed, int total) {
+  String historyDayCompleted(String completed, String total) {
     return '$completed nga $total të përfunduara';
   }
 

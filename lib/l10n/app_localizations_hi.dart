@@ -166,7 +166,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get notCompleted => 'अपूर्ण';
 
   @override
-  String progressOf(int progress, int target) {
+  String progressOf(String progress, String target) {
     return '$target में से $progress पूर्ण';
   }
 
@@ -580,7 +580,7 @@ class AppLocalizationsHi extends AppLocalizations {
       '\"अल्लाह नरम है और हर मामले में नरमी पसंद करता है।\"\n— बुखारी व मुस्लिम';
 
   @override
-  String historyDayCompleted(int completed, int total) {
+  String historyDayCompleted(String completed, String total) {
     return '$total में से $completed पूर्ण';
   }
 

@@ -1,10 +1,10 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'package:intl/intl.dart';
 
 import '../stats_filter.dart';
 import '../stats_providers.dart';
+import '../../../domain/utils/localized_number.dart';
 import '../../../l10n/app_localizations.dart';
 
 class StatsFilterRow extends ConsumerWidget {
@@ -366,8 +366,8 @@ class _AmalDropdown extends ConsumerWidget {
 /// up into "Dec 15, 2024" which won't fit. `FittedBox(scaleDown)` in
 /// `_FilterDropdown` is the final backstop if even this format overflows.
 String _formatCompactRange(DateTime start, DateTime end, String locale) {
-  final mmmD = DateFormat.MMMd(locale);
-  final mmmDyy = DateFormat('MMM d, yy', locale);
+  final mmmD = safeDateFormat('MMMd', locale);
+  final mmmDyy = safeDateFormat('MMM d, yy', locale);
 
   final sameDay = start.year == end.year &&
       start.month == end.month &&
@@ -378,7 +378,7 @@ String _formatCompactRange(DateTime start, DateTime end, String locale) {
   final sameMonth = sameYear && start.month == end.month;
 
   if (sameMonth) {
-    return '${mmmD.format(start)} – ${DateFormat.d(locale).format(end)}';
+    return '${mmmD.format(start)} – ${safeDateFormat('d', locale).format(end)}';
   }
   if (sameYear) {
     return '${mmmD.format(start)} – ${mmmD.format(end)}';

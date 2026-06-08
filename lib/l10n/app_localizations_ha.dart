@@ -166,7 +166,7 @@ class AppLocalizationsHa extends AppLocalizations {
   String get notCompleted => 'ba a kammala ba';
 
   @override
-  String progressOf(int progress, int target) {
+  String progressOf(String progress, String target) {
     return '$progress daga cikin $target an kammala';
   }
 
@@ -579,7 +579,7 @@ class AppLocalizationsHa extends AppLocalizations {
       '\"Allah Mai tausayi ne, kuma Yana son tausayi a cikin komai.\"\n— Bukhari & Muslim';
 
   @override
-  String historyDayCompleted(int completed, int total) {
+  String historyDayCompleted(String completed, String total) {
     return '$completed daga $total an kammala';
   }
 

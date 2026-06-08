@@ -169,7 +169,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get notCompleted => 'lama dhammeeyo';
 
   @override
-  String progressOf(int progress, int target) {
+  String progressOf(String progress, String target) {
     return '$progress ka mid ah $target oo la dhammeeyay';
   }
 
@@ -583,7 +583,7 @@ class AppLocalizationsSo extends AppLocalizations {
       '\"Ilaahay waa naxariis leh yahay wuxuuna jecel yahay naxariista wax kasta.\"\n— Bukhaari & Muslim';
 
   @override
-  String historyDayCompleted(int completed, int total) {
+  String historyDayCompleted(String completed, String total) {
     return '$completed ka mid ah $total la dhammeeyey';
   }
 

@@ -167,7 +167,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get notCompleted => 'neqediya';
 
   @override
-  String progressOf(int progress, int target) {
+  String progressOf(String progress, String target) {
     return '$progress ji $target qediya';
   }
 
@@ -580,7 +580,7 @@ class AppLocalizationsKu extends AppLocalizations {
       '\"Xwedê nerm e û nermiyê di her tiştî de hez dike.\"\n— Buxarî & Muslim';
 
   @override
-  String historyDayCompleted(int completed, int total) {
+  String historyDayCompleted(String completed, String total) {
     return '$completed ji $total qediya';
   }
 

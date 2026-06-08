@@ -167,7 +167,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get notCompleted => 'انجام نشده';
 
   @override
-  String progressOf(int progress, int target) {
+  String progressOf(String progress, String target) {
     return '$progress از $target انجام شده';
   }
 
@@ -580,7 +580,7 @@ class AppLocalizationsFa extends AppLocalizations {
       '«خداوند مهربان است و در همه امور مهربانی را دوست دارد.»\n— بخاری و مسلم';
 
   @override
-  String historyDayCompleted(int completed, int total) {
+  String historyDayCompleted(String completed, String total) {
     return '$completed از $total انجام شده';
   }
 

@@ -4,6 +4,7 @@ import '../../../l10n/app_localizations.dart';
 
 import '../../../domain/models/frequency.dart';
 import '../../../domain/services/today_builder.dart';
+import '../../../domain/utils/localized_number.dart';
 import 'count_stepper.dart';
 
 /// Single amal row rendered as a tappable card.
@@ -154,7 +155,7 @@ class _AmalRowTileState extends State<AmalRowTile> {
     final l = AppLocalizations.of(context);
     final semanticsLabel = amal.target == 1
         ? '${amal.title}, ${isDone ? l.completed : l.notCompleted}'
-        : '${amal.title}, ${l.progressOf(row.progress, amal.target)}';
+        : '${amal.title}, ${l.progressOf(lnum(context, row.progress), lnum(context, amal.target))}';
 
     return Dismissible(
       key: ValueKey('amal-${amal.id}'),
@@ -449,7 +450,7 @@ class _StreakBadge extends StatelessWidget {
         borderRadius: BorderRadius.circular(8),
       ),
       child: Text(
-        '$streak$unit',
+        '${lnum(context, streak)}$unit',
         style: theme.textTheme.labelSmall?.copyWith(
           color: theme.colorScheme.onTertiaryContainer,
           fontWeight: FontWeight.w600,

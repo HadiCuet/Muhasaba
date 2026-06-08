@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'dart:math' as math;
 
 import '../../../domain/services/enhanced_stats_service.dart';
+import '../../../domain/utils/localized_number.dart';
 import '../../../l10n/app_localizations.dart';
 
 class ScoreRingCard extends StatelessWidget {
@@ -31,7 +32,7 @@ class ScoreRingCard extends StatelessWidget {
                 ),
                 child: Center(
                   child: Text(
-                    '$pct%',
+                    lpct(context, pct),
                     style: theme.textTheme.headlineLarge?.copyWith(
                       fontWeight: FontWeight.bold,
                       color: theme.colorScheme.primary,
@@ -45,7 +46,7 @@ class ScoreRingCard extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 _MetricColumn(
-                  value: '${snapshot.totalCompleted}',
+                  value: lnum(context, snapshot.totalCompleted),
                   label: l.statsCompleted,
                   color: theme.colorScheme.onSurface,
                 ),
@@ -55,7 +56,7 @@ class ScoreRingCard extends StatelessWidget {
                   color: theme.dividerColor,
                 ),
                 _MetricColumn(
-                  value: '${snapshot.totalExpected}',
+                  value: lnum(context, snapshot.totalExpected),
                   label: l.statsExpected,
                   color: theme.colorScheme.onSurface,
                 ),
@@ -147,7 +148,7 @@ class _VsPrevious extends StatelessWidget {
             Icon(icon, size: 16, color: diffColor),
             const SizedBox(width: 2),
             Text(
-              '$sign$diff%',
+              '$sign${lnum(context, diff)}%',
               style: theme.textTheme.titleLarge?.copyWith(
                 fontWeight: FontWeight.bold,
                 color: diffColor,

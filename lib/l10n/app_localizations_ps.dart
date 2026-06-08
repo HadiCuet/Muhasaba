@@ -166,7 +166,7 @@ class AppLocalizationsPs extends AppLocalizations {
   String get notCompleted => 'بشپړ نه دی شوی';
 
   @override
-  String progressOf(int progress, int target) {
+  String progressOf(String progress, String target) {
     return 'د $target څخه $progress بشپړ شوي';
   }
 
@@ -579,7 +579,7 @@ class AppLocalizationsPs extends AppLocalizations {
       '\"الله نرم دی او په هر کار کې نرمي خوښوي.\"\n— بخاري او مسلم';
 
   @override
-  String historyDayCompleted(int completed, int total) {
+  String historyDayCompleted(String completed, String total) {
     return '$total څخه $completed بشپړ شوي';
   }
 

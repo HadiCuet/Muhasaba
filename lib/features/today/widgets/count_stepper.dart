@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
+import '../../../domain/utils/localized_number.dart';
 
 /// Inline `- N / T +` control for count-based amal. Tapping the `N / T` label
 /// switches to an inline text field so the user can type a specific value
@@ -79,7 +80,7 @@ class _CountStepperState extends State<CountStepper> {
     );
     // Drop the spaces around `/` so "100/100" (7 chars) fits, and pin the
     // width wide enough for three-digit targets without wrapping.
-    final label = '${widget.progress}/${widget.target}';
+    final label = '${lnum(context, widget.progress)}/${lnum(context, widget.target)}';
 
     return Row(
       mainAxisSize: MainAxisSize.min,

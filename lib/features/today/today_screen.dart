@@ -3,11 +3,11 @@ import 'package:flutter/material.dart';
 import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
-import 'package:intl/intl.dart';
 
 import '../../app/providers.dart';
 import '../../data/db/database.dart';
 import '../../domain/services/today_builder.dart';
+import '../../domain/utils/localized_number.dart';
 import 'widgets/amal_row.dart';
 import 'widgets/remove_sheet.dart';
 
@@ -28,7 +28,12 @@ class TodayScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(DateFormat('EEEE, MMM d', locale).format(date.toLocal())),
+        title: Text(
+          localizeDigits(
+            context,
+            safeDateFormat('EEEE, MMM d', locale).format(date.toLocal()),
+          ),
+        ),
         actions: [
           IconButton(
             icon: Icon(
@@ -334,7 +339,7 @@ class _GroupHeader extends StatelessWidget {
           ),
           const SizedBox(width: 8),
           Text(
-            '${group.completedCount}/${group.totalCount}',
+            '${lnum(context, group.completedCount)}/${lnum(context, group.totalCount)}',
             style: theme.textTheme.bodySmall?.copyWith(
               color: theme.colorScheme.onSurfaceVariant,
             ),

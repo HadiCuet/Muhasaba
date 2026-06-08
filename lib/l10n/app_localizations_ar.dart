@@ -166,7 +166,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get notCompleted => 'غير مكتمل';
 
   @override
-  String progressOf(int progress, int target) {
+  String progressOf(String progress, String target) {
     return '$progress من $target مكتمل';
   }
 
@@ -587,7 +587,7 @@ class AppLocalizationsAr extends AppLocalizations {
       '«إن الله رفيق يحب الرفق في الأمر كله.»\n— البخاري ومسلم';
 
   @override
-  String historyDayCompleted(int completed, int total) {
+  String historyDayCompleted(String completed, String total) {
     return 'تم إنجاز $completed من $total';
   }
 

@@ -9,6 +9,7 @@ import '../../app/providers.dart';
 import '../../data/db/database.dart';
 import '../../domain/models/frequency.dart';
 import '../../domain/services/reminder_scheduler.dart';
+import '../../domain/utils/localized_number.dart';
 import 'amal_templates.dart';
 import 'widgets/category_picker.dart';
 import 'widgets/emoji_picker.dart';
@@ -534,7 +535,7 @@ class _TargetChipsState extends State<_TargetChips> {
           children: [
             for (final p in _presets)
               ChoiceChip(
-                label: Text('$p'),
+                label: Text(lnum(context, p)),
                 selected: widget.value == p,
                 showCheckmark: false,
                 onSelected: (_) => widget.onChanged(p),
@@ -544,7 +545,7 @@ class _TargetChipsState extends State<_TargetChips> {
             // one. Mirrors the "+ New" pattern in CategoryPicker.
             if (_isCustom)
               ChoiceChip(
-                label: Text('${widget.value}'),
+                label: Text(lnum(context, widget.value)),
                 selected: true,
                 showCheckmark: false,
                 onSelected: (_) => _editCustom(),

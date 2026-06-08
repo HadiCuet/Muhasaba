@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:intl/intl.dart';
 
 import '../../../domain/services/enhanced_stats_service.dart';
+import '../../../domain/utils/localized_number.dart';
 import '../../../l10n/app_localizations.dart';
 
 class DailyChartCard extends StatelessWidget {
@@ -125,9 +125,13 @@ class _SingleBar extends StatelessWidget {
     final barHeight = (rate * maxBarHeight).clamp(4.0, maxBarHeight);
     final pct = (rate * 100).round();
 
-    final dayLabel = isWeekView
-        ? DateFormat('E', locale).format(day.date).substring(0, 3)
-        : DateFormat('d', locale).format(day.date);
+    final String dayLabel;
+    if (isWeekView) {
+      final wd = safeDateFormat('E', locale).format(day.date);
+      dayLabel = wd.length <= 3 ? wd : wd.substring(0, 3);
+    } else {
+      dayLabel = localizeDigits(context, safeDateFormat('d', locale).format(day.date));
+    }
 
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
@@ -136,7 +140,7 @@ class _SingleBar extends StatelessWidget {
           Padding(
             padding: const EdgeInsets.only(bottom: 4),
             child: Text(
-              '$pct%',
+              lpct(context, pct),
               style: theme.textTheme.labelSmall?.copyWith(
                 color: theme.colorScheme.onSurfaceVariant,
                 fontSize: 9,

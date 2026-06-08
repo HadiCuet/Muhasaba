@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../domain/services/enhanced_stats_service.dart';
 import '../../../domain/models/frequency.dart';
+import '../../../domain/utils/localized_number.dart';
 import '../../../l10n/app_localizations.dart';
 
 class PerAmalCard extends StatelessWidget {
@@ -80,7 +81,7 @@ class _AmalRow extends StatelessWidget {
           crossAxisAlignment: CrossAxisAlignment.end,
           children: [
             Text(
-              '${stats.completed}/${stats.expected}',
+              '${lnum(context, stats.completed)}/${lnum(context, stats.expected)}',
               style: theme.textTheme.bodyMedium?.copyWith(
                 fontWeight: FontWeight.w600,
                 color: fractionColor,
@@ -96,7 +97,7 @@ class _AmalRow extends StatelessWidget {
                 ),
                 const SizedBox(width: 3),
                 Text(
-                  '${stats.currentStreak}',
+                  lnum(context, stats.currentStreak),
                   style: theme.textTheme.labelSmall?.copyWith(
                     color: theme.colorScheme.onSurfaceVariant,
                   ),
