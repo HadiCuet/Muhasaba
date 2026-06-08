@@ -11,7 +11,7 @@ import 'count_stepper.dart';
 /// Gesture mapping:
 ///   - **Tap** anywhere → toggle completion (target=1: 0↔1, target>1: 0↔target)
 ///   - **Double-tap** → navigate to edit form
-///   - **Long press** → navigate to edit form (alternative for accessibility)
+///   - **Long press** → reserved for drag-to-reorder in the Today lists
 ///   - **Swipe left** → handled by the parent via `Dismissible`
 ///
 /// Visual feedback:
@@ -38,7 +38,7 @@ class AmalRowTile extends StatefulWidget {
   /// Triggered by swipe-to-delete. Parent should show the remove sheet.
   final VoidCallback onRemove;
 
-  /// Triggered by double-tap or long-press. Parent should navigate to edit.
+  /// Triggered by double-tap. Parent should navigate to edit.
   final VoidCallback onEdit;
 
   /// Called when the user saves or clears a note for this completion.
@@ -194,7 +194,6 @@ class _AmalRowTileState extends State<AmalRowTile> {
                 borderRadius: BorderRadius.circular(12),
                 onTap: _toggleCompletion,
                 onDoubleTap: widget.onEdit,
-                onLongPress: widget.onEdit,
                 child: Padding(
                   padding: const EdgeInsets.symmetric(
                     horizontal: 12,
