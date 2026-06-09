@@ -9,7 +9,7 @@ class AppLocalizationsTr extends AppLocalizations {
   AppLocalizationsTr([String locale = 'tr']) : super(locale);
 
   @override
-  String get appTitle => 'Muhasaba';
+  String get appTitle => 'Muhasebe';
 
   @override
   String get tabToday => 'Bugün';

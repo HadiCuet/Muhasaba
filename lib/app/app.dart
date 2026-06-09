@@ -46,7 +46,7 @@ class MuhasabaApp extends ConsumerWidget {
     final locale = settings.locale != null ? Locale(settings.locale!) : null;
 
     return MaterialApp.router(
-      title: 'Muhasaba',
+      onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
       debugShowCheckedModeBanner: false,
       theme: buildLightTheme(),
       darkTheme: buildDarkTheme(),

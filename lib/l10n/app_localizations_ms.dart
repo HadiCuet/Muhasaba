@@ -9,7 +9,7 @@ class AppLocalizationsMs extends AppLocalizations {
   AppLocalizationsMs([String locale = 'ms']) : super(locale);
 
   @override
-  String get appTitle => 'Muhasaba';
+  String get appTitle => 'Muhasabah';
 
   @override
   String get tabToday => 'Hari Ini';
