@@ -7,6 +7,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app/providers.dart';
+import '../../app/widgets/max_width_body.dart';
 import '../../domain/services/today_builder.dart';
 import '../../domain/utils/localized_number.dart';
 import '../today/widgets/amal_row.dart';
@@ -45,56 +46,58 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          _DateStrip(
-            selected: selected,
-            today: today,
-            onSelected: (d) {
-              setState(() => _selected = d);
-              final daysBack = DateTime.utc(
-                today.year,
-                today.month,
-                today.day,
-              ).difference(DateTime.utc(d.year, d.month, d.day)).inDays;
-              FirebaseAnalytics.instance.logEvent(
-                name: 'history_day_selected',
-                parameters: {'days_back': daysBack},
-              );
-            },
-          ),
-          const Divider(height: 1),
-          Expanded(
-            child: rowsAsync.when(
-              loading: () => const Center(child: CircularProgressIndicator()),
-              error: (e, _) =>
-                  Center(child: Text(l.errorGeneric(e.toString()))),
-              data: (rows) {
-                if (rows.isNotEmpty) {
-                  return _buildRowsList(rows, selected, streaks);
-                }
-                // Empty day → fall back to currently-active amals in
-                // incomplete state so the user still has a tracker to
-                // interact with.
-                final fallbackAsync = ref.watch(
-                  historyFallbackRowsProvider(selected),
-                );
-                return fallbackAsync.when(
-                  loading: () =>
-                      const Center(child: CircularProgressIndicator()),
-                  error: (e, _) =>
-                      Center(child: Text(l.errorGeneric(e.toString()))),
-                  data: (fallbackRows) {
-                    if (fallbackRows.isEmpty) {
-                      return _EmptyDay(date: selected);
-                    }
-                    return _buildRowsList(fallbackRows, selected, streaks);
-                  },
+      body: MaxWidthBody(
+        child: Column(
+          children: [
+            _DateStrip(
+              selected: selected,
+              today: today,
+              onSelected: (d) {
+                setState(() => _selected = d);
+                final daysBack = DateTime.utc(
+                  today.year,
+                  today.month,
+                  today.day,
+                ).difference(DateTime.utc(d.year, d.month, d.day)).inDays;
+                FirebaseAnalytics.instance.logEvent(
+                  name: 'history_day_selected',
+                  parameters: {'days_back': daysBack},
                 );
               },
             ),
-          ),
-        ],
+            const Divider(height: 1),
+            Expanded(
+              child: rowsAsync.when(
+                loading: () => const Center(child: CircularProgressIndicator()),
+                error: (e, _) =>
+                    Center(child: Text(l.errorGeneric(e.toString()))),
+                data: (rows) {
+                  if (rows.isNotEmpty) {
+                    return _buildRowsList(rows, selected, streaks);
+                  }
+                  // Empty day → fall back to currently-active amals in
+                  // incomplete state so the user still has a tracker to
+                  // interact with.
+                  final fallbackAsync = ref.watch(
+                    historyFallbackRowsProvider(selected),
+                  );
+                  return fallbackAsync.when(
+                    loading: () =>
+                        const Center(child: CircularProgressIndicator()),
+                    error: (e, _) =>
+                        Center(child: Text(l.errorGeneric(e.toString()))),
+                    data: (fallbackRows) {
+                      if (fallbackRows.isEmpty) {
+                        return _EmptyDay(date: selected);
+                      }
+                      return _buildRowsList(fallbackRows, selected, streaks);
+                    },
+                  );
+                },
+              ),
+            ),
+          ],
+        ),
       ),
     );
   }
@@ -396,7 +399,10 @@ class _DaySummary extends StatelessWidget {
                 Text(
                   localizeDigits(
                     context,
-                    safeDateFormat('EEEE, MMM d', locale).format(date.toLocal()),
+                    safeDateFormat(
+                      'EEEE, MMM d',
+                      locale,
+                    ).format(date.toLocal()),
                   ),
                   style: theme.textTheme.titleSmall?.copyWith(
                     fontWeight: FontWeight.w500,
@@ -404,7 +410,10 @@ class _DaySummary extends StatelessWidget {
                 ),
                 const SizedBox(height: 2),
                 Text(
-                  l.historyDayCompleted(lnum(context, completed), lnum(context, total)),
+                  l.historyDayCompleted(
+                    lnum(context, completed),
+                    lnum(context, total),
+                  ),
                   style: theme.textTheme.bodySmall?.copyWith(
                     color: theme.colorScheme.onSurfaceVariant,
                   ),

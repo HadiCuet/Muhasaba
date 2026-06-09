@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app/providers.dart';
+import '../../app/widgets/max_width_body.dart';
 import '../../data/db/database.dart';
 import '../../domain/services/today_builder.dart';
 import '../../domain/utils/localized_number.dart';
@@ -53,18 +54,20 @@ class TodayScreen extends ConsumerWidget {
           ),
         ],
       ),
-      body: rowsAsync.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => Center(child: Text(l.errorGeneric(e.toString()))),
-        data: (rows) {
-          if (rows.isEmpty) {
-            return const _EmptyState();
-          }
-          if (viewMode == 'grouped') {
-            return _GroupedView(rows: rows, date: date, streaks: streaks);
-          }
-          return _FlatView(rows: rows, date: date, streaks: streaks);
-        },
+      body: MaxWidthBody(
+        child: rowsAsync.when(
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (e, _) => Center(child: Text(l.errorGeneric(e.toString()))),
+          data: (rows) {
+            if (rows.isEmpty) {
+              return const _EmptyState();
+            }
+            if (viewMode == 'grouped') {
+              return _GroupedView(rows: rows, date: date, streaks: streaks);
+            }
+            return _FlatView(rows: rows, date: date, streaks: streaks);
+          },
+        ),
       ),
     );
   }

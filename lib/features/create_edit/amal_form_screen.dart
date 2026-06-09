@@ -6,6 +6,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app/providers.dart';
+import '../../app/widgets/max_width_body.dart';
 import '../../data/db/database.dart';
 import '../../domain/models/frequency.dart';
 import '../../domain/services/reminder_scheduler.dart';
@@ -147,17 +148,15 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
     if (!confirmed || !mounted) return;
     Object? deleteError;
     try {
-      await ref
-          .read(amalRepositoryProvider)
-          .removeFromTracking(_existing!.id);
+      await ref.read(amalRepositoryProvider).removeFromTracking(_existing!.id);
     } catch (e) {
       deleteError = e;
     }
     if (!mounted) return;
     if (deleteError != null) {
-      ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(content: Text(l.genericError)),
-      );
+      ScaffoldMessenger.of(
+        context,
+      ).showSnackBar(SnackBar(content: Text(l.genericError)));
       return;
     }
     context.pop();
@@ -293,155 +292,171 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
             ),
         ],
       ),
+      // Centered + width-capped like the body, but height-safe for the
+      // bottom-bar slot: SafeArea fixes the height, Align(heightFactor: 1)
+      // centers the button horizontally without expanding vertically.
       bottomNavigationBar: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
-          child: FilledButton(
-            onPressed: _save,
-            style: FilledButton.styleFrom(
-              minimumSize: const Size.fromHeight(48),
+        child: Align(
+          alignment: Alignment.center,
+          heightFactor: 1,
+          child: ConstrainedBox(
+            constraints: const BoxConstraints(maxWidth: 640),
+            child: Padding(
+              padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
+              child: FilledButton(
+                onPressed: _save,
+                style: FilledButton.styleFrom(
+                  minimumSize: const Size.fromHeight(48),
+                ),
+                child: Text(l.save),
+              ),
             ),
-            child: Text(l.save),
           ),
         ),
       ),
-      body: GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onTap: () => FocusScope.of(context).unfocus(),
-        child: Form(
-          key: _formKey,
-          child: ListView(
-          padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
-          children: [
-            // ── Icon + Title row ───────────────────────────────────────
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.start,
+      body: MaxWidthBody(
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () => FocusScope.of(context).unfocus(),
+          child: Form(
+            key: _formKey,
+            child: ListView(
+              padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
               children: [
-                GestureDetector(
-                  onTap: _pickIcon,
-                  child: Container(
-                    width: 56,
-                    height: 56,
-                    decoration: BoxDecoration(
-                      color: theme.colorScheme.surfaceContainerHighest,
-                      borderRadius: BorderRadius.circular(12),
+                // ── Icon + Title row ───────────────────────────────────────
+                Row(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    GestureDetector(
+                      onTap: _pickIcon,
+                      child: Container(
+                        width: 56,
+                        height: 56,
+                        decoration: BoxDecoration(
+                          color: theme.colorScheme.surfaceContainerHighest,
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        alignment: Alignment.center,
+                        child: Text(
+                          _icon,
+                          style: const TextStyle(fontSize: 28),
+                        ),
+                      ),
                     ),
-                    alignment: Alignment.center,
-                    child: Text(_icon, style: const TextStyle(fontSize: 28)),
-                  ),
+                    const SizedBox(width: 12),
+                    Expanded(
+                      child: TextFormField(
+                        controller: _titleController,
+                        textInputAction: TextInputAction.done,
+                        onFieldSubmitted: (_) =>
+                            FocusScope.of(context).unfocus(),
+                        decoration: InputDecoration(
+                          labelText: l.titleLabel,
+                          border: const OutlineInputBorder(),
+                        ),
+                        validator: (v) {
+                          final s = v?.trim() ?? '';
+                          if (s.isEmpty) return l.titleRequired;
+                          if (s.length > 120) return l.titleTooLong;
+                          return null;
+                        },
+                      ),
+                    ),
+                  ],
                 ),
-                const SizedBox(width: 12),
-                Expanded(
-                  child: TextFormField(
-                    controller: _titleController,
-                    textInputAction: TextInputAction.done,
-                    onFieldSubmitted: (_) =>
-                        FocusScope.of(context).unfocus(),
-                    decoration: InputDecoration(
-                      labelText: l.titleLabel,
-                      border: const OutlineInputBorder(),
-                    ),
-                    validator: (v) {
-                      final s = v?.trim() ?? '';
-                      if (s.isEmpty) return l.titleRequired;
-                      if (s.length > 120) return l.titleTooLong;
-                      return null;
-                    },
+                const SizedBox(height: 20),
+
+                // ── Frequency ──────────────────────────────────────────────
+                _FrequencySelector(
+                  value: _frequency,
+                  onChanged: (f) => setState(() => _frequency = f),
+                ),
+                const SizedBox(height: 16),
+
+                // ── Category ───────────────────────────────────────────────
+                Text(l.categoryLabel, style: theme.textTheme.labelLarge),
+                const SizedBox(height: 8),
+                CategoryPicker(
+                  selected: _category,
+                  onChanged: (c) => setState(() {
+                    _category = c;
+                    if (!_iconIsManual) {
+                      if (c == null) {
+                        _icon = '⭐';
+                      } else {
+                        final cats =
+                            ref.read(categoriesProvider).value ?? const [];
+                        final categoryIcon = cats
+                            .cast<CategoryRow?>()
+                            .firstWhere((x) => x?.name == c, orElse: () => null)
+                            ?.icon;
+                        _icon =
+                            (categoryIcon != null && categoryIcon.isNotEmpty)
+                            ? categoryIcon
+                            : '⭐';
+                      }
+                    }
+                  }),
+                ),
+                const SizedBox(height: 16),
+
+                // ── Target ─────────────────────────────────────────────────
+                _TargetChips(
+                  value: _target,
+                  onChanged: (v) => setState(() => _target = v),
+                ),
+
+                if (_frequency == Frequency.weekly) ...[
+                  const SizedBox(height: 16),
+                  _WeeklyDayPicker(
+                    value: _weeklyDay,
+                    onChanged: (v) => setState(() => _weeklyDay = v),
                   ),
+                ],
+                if (_frequency == Frequency.monthly) ...[
+                  const SizedBox(height: 16),
+                  _MonthlyDatePicker(
+                    value: _monthlyDate,
+                    onChanged: (v) => setState(() => _monthlyDate = v),
+                  ),
+                ],
+                const SizedBox(height: 16),
+                SwitchListTile(
+                  contentPadding: EdgeInsets.zero,
+                  title: Text(l.startPreChecked),
+                  subtitle: Text(l.startPreCheckedSubtitle),
+                  value: _defaultChecked,
+                  onChanged: (v) => setState(() => _defaultChecked = v),
+                ),
+                const SizedBox(height: 8),
+                ListTile(
+                  contentPadding: EdgeInsets.zero,
+                  leading: const Icon(Icons.notifications_outlined),
+                  title: Text(l.reminder),
+                  subtitle: Text(
+                    _reminderTime == null
+                        ? l.reminderNone
+                        : _reminderTime!.format(context),
+                  ),
+                  trailing: _reminderTime == null
+                      ? null
+                      : IconButton(
+                          icon: const Icon(Icons.close),
+                          onPressed: () => setState(() => _reminderTime = null),
+                        ),
+                  onTap: () async {
+                    final picked = await showTimePicker(
+                      context: context,
+                      initialTime: _reminderTime ?? TimeOfDay.now(),
+                    );
+                    if (picked != null) {
+                      setState(() => _reminderTime = picked);
+                    }
+                  },
                 ),
               ],
             ),
-            const SizedBox(height: 20),
-
-            // ── Frequency ──────────────────────────────────────────────
-            _FrequencySelector(
-              value: _frequency,
-              onChanged: (f) => setState(() => _frequency = f),
-            ),
-            const SizedBox(height: 16),
-
-            // ── Category ───────────────────────────────────────────────
-            Text(l.categoryLabel, style: theme.textTheme.labelLarge),
-            const SizedBox(height: 8),
-            CategoryPicker(
-              selected: _category,
-              onChanged: (c) => setState(() {
-                _category = c;
-                if (!_iconIsManual) {
-                  if (c == null) {
-                    _icon = '⭐';
-                  } else {
-                    final cats = ref.read(categoriesProvider).value ?? const [];
-                    final categoryIcon = cats
-                        .cast<CategoryRow?>()
-                        .firstWhere((x) => x?.name == c, orElse: () => null)
-                        ?.icon;
-                    _icon =
-                        (categoryIcon != null && categoryIcon.isNotEmpty)
-                        ? categoryIcon
-                        : '⭐';
-                  }
-                }
-              }),
-            ),
-            const SizedBox(height: 16),
-
-            // ── Target ─────────────────────────────────────────────────
-            _TargetChips(
-              value: _target,
-              onChanged: (v) => setState(() => _target = v),
-            ),
-
-            if (_frequency == Frequency.weekly) ...[
-              const SizedBox(height: 16),
-              _WeeklyDayPicker(
-                value: _weeklyDay,
-                onChanged: (v) => setState(() => _weeklyDay = v),
-              ),
-            ],
-            if (_frequency == Frequency.monthly) ...[
-              const SizedBox(height: 16),
-              _MonthlyDatePicker(
-                value: _monthlyDate,
-                onChanged: (v) => setState(() => _monthlyDate = v),
-              ),
-            ],
-            const SizedBox(height: 16),
-            SwitchListTile(
-              contentPadding: EdgeInsets.zero,
-              title: Text(l.startPreChecked),
-              subtitle: Text(l.startPreCheckedSubtitle),
-              value: _defaultChecked,
-              onChanged: (v) => setState(() => _defaultChecked = v),
-            ),
-            const SizedBox(height: 8),
-            ListTile(
-              contentPadding: EdgeInsets.zero,
-              leading: const Icon(Icons.notifications_outlined),
-              title: Text(l.reminder),
-              subtitle: Text(
-                _reminderTime == null
-                    ? l.reminderNone
-                    : _reminderTime!.format(context),
-              ),
-              trailing: _reminderTime == null
-                  ? null
-                  : IconButton(
-                      icon: const Icon(Icons.close),
-                      onPressed: () => setState(() => _reminderTime = null),
-                    ),
-              onTap: () async {
-                final picked = await showTimePicker(
-                  context: context,
-                  initialTime: _reminderTime ?? TimeOfDay.now(),
-                );
-                if (picked != null) {
-                  setState(() => _reminderTime = picked);
-                }
-              },
-            ),
-          ],
-        ),
+          ),
         ),
       ),
     );
@@ -511,9 +526,8 @@ class _TargetChipsState extends State<_TargetChips> {
   Future<void> _editCustom() async {
     final result = await showDialog<int>(
       context: context,
-      builder: (_) => _CustomTargetDialog(
-        initial: _isCustom ? widget.value : null,
-      ),
+      builder: (_) =>
+          _CustomTargetDialog(initial: _isCustom ? widget.value : null),
     );
     if (result != null && result > 0) {
       widget.onChanged(result);

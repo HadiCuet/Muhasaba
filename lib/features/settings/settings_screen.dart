@@ -8,6 +8,7 @@ import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
+import '../../app/widgets/max_width_body.dart';
 import '../../data/repositories/settings_repository.dart';
 import '../../domain/models/app_settings.dart';
 import '../../domain/utils/supported_languages.dart';
@@ -24,10 +25,13 @@ class SettingsScreen extends ConsumerWidget {
 
     return Scaffold(
       appBar: AppBar(title: Text(l.settingsTitle)),
-      body: settingsAsync.when(
-        loading: () => const Center(child: CircularProgressIndicator()),
-        error: (e, _) => Center(child: Text(l.settingsLoadError(e.toString()))),
-        data: (settings) => _SettingsList(settings: settings, repo: repo),
+      body: MaxWidthBody(
+        child: settingsAsync.when(
+          loading: () => const Center(child: CircularProgressIndicator()),
+          error: (e, _) =>
+              Center(child: Text(l.settingsLoadError(e.toString()))),
+          data: (settings) => _SettingsList(settings: settings, repo: repo),
+        ),
       ),
     );
   }
@@ -246,21 +250,81 @@ class _VersionItemState extends State<_VersionItem> {
 // narrations in Bukhari, Muslim, Tirmidhi, Abu Dawud, Nasa'i, Ibn Majah,
 // Ahmad, or other standard collections, with correct attribution.
 List<String> _hadiths(AppLocalizations l) => [
-  l.hadith0, l.hadith2, l.hadith3, l.hadith4, l.hadith6,
-  l.hadith7, l.hadith8, l.hadith9, l.hadith10, l.hadith12,
-  l.hadith13, l.hadith14, l.hadith15, l.hadith16, l.hadith17,
-  l.hadith18, l.hadith19, l.hadith20, l.hadith22, l.hadith23,
-  l.hadith24, l.hadith25, l.hadith26, l.hadith27, l.hadith29,
-  l.hadith30, l.hadith32, l.hadith34, l.hadith36, l.hadith37,
-  l.hadith38, l.hadith40, l.hadith41, l.hadith42, l.hadith43,
-  l.hadith44, l.hadith45, l.hadith46, l.hadith47, l.hadith49,
-  l.hadith53, l.hadith54, l.hadith55, l.hadith56, l.hadith57,
-  l.hadith58, l.hadith65, l.hadith66, l.hadith67, l.hadith68,
-  l.hadith69, l.hadith70, l.hadith71, l.hadith72, l.hadith73,
-  l.hadith74, l.hadith75, l.hadith77, l.hadith78, l.hadith79,
-  l.hadith80, l.hadith81, l.hadith82, l.hadith85, l.hadith86,
-  l.hadith87, l.hadith88, l.hadith89, l.hadith90, l.hadith93,
-  l.hadith94, l.hadith95, l.hadith96, l.hadith97, l.hadith98,
+  l.hadith0,
+  l.hadith2,
+  l.hadith3,
+  l.hadith4,
+  l.hadith6,
+  l.hadith7,
+  l.hadith8,
+  l.hadith9,
+  l.hadith10,
+  l.hadith12,
+  l.hadith13,
+  l.hadith14,
+  l.hadith15,
+  l.hadith16,
+  l.hadith17,
+  l.hadith18,
+  l.hadith19,
+  l.hadith20,
+  l.hadith22,
+  l.hadith23,
+  l.hadith24,
+  l.hadith25,
+  l.hadith26,
+  l.hadith27,
+  l.hadith29,
+  l.hadith30,
+  l.hadith32,
+  l.hadith34,
+  l.hadith36,
+  l.hadith37,
+  l.hadith38,
+  l.hadith40,
+  l.hadith41,
+  l.hadith42,
+  l.hadith43,
+  l.hadith44,
+  l.hadith45,
+  l.hadith46,
+  l.hadith47,
+  l.hadith49,
+  l.hadith53,
+  l.hadith54,
+  l.hadith55,
+  l.hadith56,
+  l.hadith57,
+  l.hadith58,
+  l.hadith65,
+  l.hadith66,
+  l.hadith67,
+  l.hadith68,
+  l.hadith69,
+  l.hadith70,
+  l.hadith71,
+  l.hadith72,
+  l.hadith73,
+  l.hadith74,
+  l.hadith75,
+  l.hadith77,
+  l.hadith78,
+  l.hadith79,
+  l.hadith80,
+  l.hadith81,
+  l.hadith82,
+  l.hadith85,
+  l.hadith86,
+  l.hadith87,
+  l.hadith88,
+  l.hadith89,
+  l.hadith90,
+  l.hadith93,
+  l.hadith94,
+  l.hadith95,
+  l.hadith96,
+  l.hadith97,
+  l.hadith98,
 ];
 
 class _AppBrandCard extends StatefulWidget {
@@ -326,10 +390,7 @@ class _AppBrandCardState extends State<_AppBrandCard> {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
         gradient: LinearGradient(
-          colors: [
-            seed.withValues(alpha: 0.12),
-            seed.withValues(alpha: 0.04),
-          ],
+          colors: [seed.withValues(alpha: 0.12), seed.withValues(alpha: 0.04)],
           begin: AlignmentDirectional.topStart,
           end: AlignmentDirectional.bottomEnd,
         ),
@@ -377,7 +438,9 @@ class _AppBrandCardState extends State<_AppBrandCard> {
             width: double.infinity,
             padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
             decoration: BoxDecoration(
-              color: theme.colorScheme.surfaceContainerHighest.withValues(alpha: 0.5),
+              color: theme.colorScheme.surfaceContainerHighest.withValues(
+                alpha: 0.5,
+              ),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Column(
@@ -466,7 +529,9 @@ class _CardGroup extends StatelessWidget {
       decoration: BoxDecoration(
         color: theme.colorScheme.surfaceContainerLow,
         borderRadius: BorderRadius.circular(14),
-        border: Border.all(color: theme.colorScheme.outlineVariant.withValues(alpha: 0.5)),
+        border: Border.all(
+          color: theme.colorScheme.outlineVariant.withValues(alpha: 0.5),
+        ),
       ),
       clipBehavior: Clip.antiAlias,
       child: Column(
