@@ -1,5 +1,6 @@
 {
   "@@locale": "ms",
+  "repeatsOnDaysHint": "Berulang pada hari yang dipilih",
   "newDayStarted": "Hari baharu telah bermula",
   "appTitle": "Muhasabah",
   "tabToday": "Hari Ini",

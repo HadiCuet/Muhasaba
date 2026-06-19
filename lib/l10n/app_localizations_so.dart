@@ -9,6 +9,9 @@ class AppLocalizationsSo extends AppLocalizations {
   AppLocalizationsSo([String locale = 'so']) : super(locale);
 
   @override
+  String get repeatsOnDaysHint => 'Wuxuu ku celcelinayaa maalmaha la xushay';
+
+  @override
   String get newDayStarted => 'Maalin cusub ayaa bilaabatay';
 
   @override

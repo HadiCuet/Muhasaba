@@ -1,5 +1,6 @@
 {
   "@@locale": "az",
+  "repeatsOnDaysHint": "Seçilmiş günlərdə təkrarlanır",
   "newDayStarted": "Yeni bir gün başladı",
   "appTitle": "Mühasibat",
   "tabToday": "Bu gun",

@@ -1,5 +1,6 @@
 {
   "@@locale": "tr",
+  "repeatsOnDaysHint": "Seçili günlerde tekrarlanır",
   "newDayStarted": "Yeni bir gün başladı",
   "appTitle": "Muhasebe",
   "tabToday": "Bugün",

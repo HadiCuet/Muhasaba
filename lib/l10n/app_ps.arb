@@ -1,5 +1,6 @@
 {
   "@@locale": "ps",
+  "repeatsOnDaysHint": "په ټاکل شویو ورځو کې تکرار کیږي",
   "newDayStarted": "نوې ورځ پیل شوه",
   "appTitle": "محاسبه",
   "tabToday": "نن",

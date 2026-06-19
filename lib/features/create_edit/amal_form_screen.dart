@@ -11,6 +11,7 @@ import '../../data/db/database.dart';
 import '../../domain/models/frequency.dart';
 import '../../domain/services/reminder_scheduler.dart';
 import '../../domain/utils/localized_number.dart';
+import '../../domain/utils/weekly_days.dart';
 import 'amal_templates.dart';
 import 'widgets/category_picker.dart';
 import 'widgets/emoji_picker.dart';
@@ -39,7 +40,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
   bool _iconIsManual = false;
   Frequency _frequency = Frequency.daily;
   int _target = 1;
-  int? _weeklyDay = DateTime.friday;
+  Set<int> _weeklyDays = {DateTime.friday};
   int? _monthlyDate;
   bool _defaultChecked = true;
   TimeOfDay? _reminderTime;
@@ -79,7 +80,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
         _category = row.category;
         _frequency = row.frequency;
         _target = row.target;
-        _weeklyDay = row.weeklyDay;
+        _weeklyDays = parseWeeklyDays(row.weeklyDays);
         _monthlyDate = row.monthlyDate;
         _defaultChecked = row.defaultChecked;
         if (row.reminderTime != null) {
@@ -179,7 +180,9 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
             title: title,
             frequency: _frequency,
             target: _target,
-            weeklyDay: _frequency == Frequency.weekly ? _weeklyDay : null,
+            weeklyDays: _frequency == Frequency.weekly
+                ? formatWeeklyDays(_weeklyDays)
+                : null,
             monthlyDate: _frequency == Frequency.monthly ? _monthlyDate : null,
             defaultChecked: _defaultChecked,
             reminderTime: reminder,
@@ -202,8 +205,10 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
               title: title,
               frequency: _frequency,
               target: _target,
-              weeklyDay: Value(
-                _frequency == Frequency.weekly ? _weeklyDay : null,
+              weeklyDays: Value(
+                _frequency == Frequency.weekly
+                    ? formatWeeklyDays(_weeklyDays)
+                    : null,
               ),
               monthlyDate: Value(
                 _frequency == Frequency.monthly ? _monthlyDate : null,
@@ -409,8 +414,8 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                 if (_frequency == Frequency.weekly) ...[
                   const SizedBox(height: 16),
                   _WeeklyDayPicker(
-                    value: _weeklyDay,
-                    onChanged: (v) => setState(() => _weeklyDay = v),
+                    value: _weeklyDays,
+                    onChanged: (v) => setState(() => _weeklyDays = v),
                   ),
                 ],
                 if (_frequency == Frequency.monthly) ...[
@@ -645,8 +650,8 @@ class _CustomTargetDialogState extends State<_CustomTargetDialog> {
 class _WeeklyDayPicker extends StatelessWidget {
   const _WeeklyDayPicker({required this.value, required this.onChanged});
 
-  final int? value;
-  final ValueChanged<int?> onChanged;
+  final Set<int> value;
+  final ValueChanged<Set<int>> onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -660,29 +665,40 @@ class _WeeklyDayPicker extends StatelessWidget {
       DateTime.thursday: l.thursdayShort,
       DateTime.friday: l.fridayShort,
     };
+    final subtitle = value.isEmpty
+        ? l.anyDayHint
+        : value.length == 1
+        ? l.onlyDayHint(_fullName(value.first, l))
+        : l.repeatsOnDaysHint;
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(l.dayOfWeek, style: Theme.of(context).textTheme.labelLarge),
         const SizedBox(height: 4),
-        Text(
-          value == null ? l.anyDayHint : l.onlyDayHint(_fullName(value!, l)),
-          style: Theme.of(context).textTheme.bodySmall,
-        ),
+        Text(subtitle, style: Theme.of(context).textTheme.bodySmall),
         const SizedBox(height: 8),
         Wrap(
           spacing: 8,
           children: [
+            // "Any day" clears the set → floating (once a week, any day).
             ChoiceChip(
               label: Text(l.anyDay),
-              selected: value == null,
-              onSelected: (_) => onChanged(null),
+              selected: value.isEmpty,
+              onSelected: (_) => onChanged(<int>{}),
             ),
             for (final entry in names.entries)
-              ChoiceChip(
+              FilterChip(
                 label: Text(entry.value),
-                selected: value == entry.key,
-                onSelected: (_) => onChanged(entry.key),
+                selected: value.contains(entry.key),
+                onSelected: (sel) {
+                  final next = {...value};
+                  if (sel) {
+                    next.add(entry.key);
+                  } else {
+                    next.remove(entry.key);
+                  }
+                  onChanged(next);
+                },
               ),
           ],
         ),

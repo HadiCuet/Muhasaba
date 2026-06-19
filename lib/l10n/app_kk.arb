@@ -1,5 +1,6 @@
 {
   "@@locale": "kk",
+  "repeatsOnDaysHint": "Таңдалған күндері қайталанады",
   "newDayStarted": "Жаңа күн басталды",
   "appTitle": "Muhasaba",
   "tabToday": "Бүгін",

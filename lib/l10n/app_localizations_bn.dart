@@ -9,6 +9,9 @@ class AppLocalizationsBn extends AppLocalizations {
   AppLocalizationsBn([String locale = 'bn']) : super(locale);
 
   @override
+  String get repeatsOnDaysHint => 'নির্বাচিত দিনগুলিতে পুনরাবৃত্তি হয়';
+
+  @override
   String get newDayStarted => 'নতুন একটি দিন শুরু হয়েছে';
 
   @override

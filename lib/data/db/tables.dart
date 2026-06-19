@@ -10,7 +10,9 @@ class Amals extends Table {
   IntColumn get frequency => intEnum<Frequency>()();
   IntColumn get target => integer().withDefault(const Constant(1))();
   IntColumn get weeklyDay =>
-      integer().nullable()(); // 1..7, DateTime.monday == 1
+      integer().nullable()(); // 1..7; legacy single day, superseded by weeklyDays
+  TextColumn get weeklyDays =>
+      text().nullable()(); // CSV of 1..7 (Mon=1); null/empty = "any day"
   IntColumn get monthlyDate => integer().nullable()(); // 1..31
   BoolColumn get defaultChecked =>
       boolean().withDefault(const Constant(false))();

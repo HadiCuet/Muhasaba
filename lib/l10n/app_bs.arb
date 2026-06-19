@@ -1,5 +1,6 @@
 {
   "@@locale": "bs",
+  "repeatsOnDaysHint": "Ponavlja se odabranim danima",
   "newDayStarted": "Počeo je novi dan",
   "appTitle": "Muhasaba",
   "tabToday": "Danas",

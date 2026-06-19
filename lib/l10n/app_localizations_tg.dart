@@ -9,6 +9,9 @@ class AppLocalizationsTg extends AppLocalizations {
   AppLocalizationsTg([String locale = 'tg']) : super(locale);
 
   @override
+  String get repeatsOnDaysHint => 'Дар рӯзҳои интихобшуда такрор мешавад';
+
+  @override
   String get newDayStarted => 'Рӯзи нав оғоз ёфт';
 
   @override

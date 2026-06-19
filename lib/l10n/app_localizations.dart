@@ -140,6 +140,12 @@ abstract class AppLocalizations {
     Locale('uz'),
   ];
 
+  /// Weekly day-picker subtitle when more than one weekday is selected
+  ///
+  /// In en, this message translates to:
+  /// **'Repeats on the selected days'**
+  String get repeatsOnDaysHint;
+
   /// Toast shown when the muhasaba day rolls over while the app is open
   ///
   /// In en, this message translates to:

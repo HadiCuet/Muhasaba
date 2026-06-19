@@ -9,6 +9,9 @@ class AppLocalizationsId extends AppLocalizations {
   AppLocalizationsId([String locale = 'id']) : super(locale);
 
   @override
+  String get repeatsOnDaysHint => 'Berulang pada hari yang dipilih';
+
+  @override
   String get newDayStarted => 'Hari baru telah dimulai';
 
   @override

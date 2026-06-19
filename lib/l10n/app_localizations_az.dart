@@ -9,6 +9,9 @@ class AppLocalizationsAz extends AppLocalizations {
   AppLocalizationsAz([String locale = 'az']) : super(locale);
 
   @override
+  String get repeatsOnDaysHint => 'Seçilmiş günlərdə təkrarlanır';
+
+  @override
   String get newDayStarted => 'Yeni bir gün başladı';
 
   @override

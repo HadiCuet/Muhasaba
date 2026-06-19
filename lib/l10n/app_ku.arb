@@ -1,5 +1,6 @@
 {
   "@@locale": "ku",
+  "repeatsOnDaysHint": "Di rojên hilbijartî de dubare dibe",
   "newDayStarted": "Rojeke nû dest pê kir",
   "appTitle": "Muhasaba",
   "tabToday": "Îro",

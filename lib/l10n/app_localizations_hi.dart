@@ -9,6 +9,9 @@ class AppLocalizationsHi extends AppLocalizations {
   AppLocalizationsHi([String locale = 'hi']) : super(locale);
 
   @override
+  String get repeatsOnDaysHint => 'चयनित दिनों में दोहराता है';
+
+  @override
   String get newDayStarted => 'एक नया दिन शुरू हो गया है';
 
   @override

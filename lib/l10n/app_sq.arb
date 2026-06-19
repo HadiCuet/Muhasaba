@@ -1,5 +1,6 @@
 {
   "@@locale": "sq",
+  "repeatsOnDaysHint": "Përsëritet në ditët e zgjedhura",
   "newDayStarted": "Një ditë e re ka filluar",
   "appTitle": "Muhasaba",
   "tabToday": "Sot",

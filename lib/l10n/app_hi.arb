@@ -1,5 +1,6 @@
 {
   "@@locale": "hi",
+  "repeatsOnDaysHint": "चयनित दिनों में दोहराता है",
   "newDayStarted": "एक नया दिन शुरू हो गया है",
   "appTitle": "Muhasaba",
   "tabToday": "आज",

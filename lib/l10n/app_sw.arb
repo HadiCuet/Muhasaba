@@ -1,5 +1,6 @@
 {
   "@@locale": "sw",
+  "repeatsOnDaysHint": "Hurudiwa katika siku zilizochaguliwa",
   "newDayStarted": "Siku mpya imeanza",
   "appTitle": "Muhasaba",
   "tabToday": "Leo",

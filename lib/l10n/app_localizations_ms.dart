@@ -9,6 +9,9 @@ class AppLocalizationsMs extends AppLocalizations {
   AppLocalizationsMs([String locale = 'ms']) : super(locale);
 
   @override
+  String get repeatsOnDaysHint => 'Berulang pada hari yang dipilih';
+
+  @override
   String get newDayStarted => 'Hari baharu telah bermula';
 
   @override

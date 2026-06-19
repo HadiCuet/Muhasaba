@@ -64,6 +64,17 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
     type: DriftSqlType.int,
     requiredDuringInsert: false,
   );
+  static const VerificationMeta _weeklyDaysMeta = const VerificationMeta(
+    'weeklyDays',
+  );
+  @override
+  late final GeneratedColumn<String> weeklyDays = GeneratedColumn<String>(
+    'weekly_days',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
   static const VerificationMeta _monthlyDateMeta = const VerificationMeta(
     'monthlyDate',
   );
@@ -176,6 +187,7 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
     frequency,
     target,
     weeklyDay,
+    weeklyDays,
     monthlyDate,
     defaultChecked,
     reminderTime,
@@ -219,6 +231,12 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
       context.handle(
         _weeklyDayMeta,
         weeklyDay.isAcceptableOrUnknown(data['weekly_day']!, _weeklyDayMeta),
+      );
+    }
+    if (data.containsKey('weekly_days')) {
+      context.handle(
+        _weeklyDaysMeta,
+        weeklyDays.isAcceptableOrUnknown(data['weekly_days']!, _weeklyDaysMeta),
       );
     }
     if (data.containsKey('monthly_date')) {
@@ -317,6 +335,10 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
         DriftSqlType.int,
         data['${effectivePrefix}weekly_day'],
       ),
+      weeklyDays: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}weekly_days'],
+      ),
       monthlyDate: attachedDatabase.typeMapping.read(
         DriftSqlType.int,
         data['${effectivePrefix}monthly_date'],
@@ -371,6 +393,7 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
   final Frequency frequency;
   final int target;
   final int? weeklyDay;
+  final String? weeklyDays;
   final int? monthlyDate;
   final bool defaultChecked;
   final String? reminderTime;
@@ -386,6 +409,7 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     required this.frequency,
     required this.target,
     this.weeklyDay,
+    this.weeklyDays,
     this.monthlyDate,
     required this.defaultChecked,
     this.reminderTime,
@@ -409,6 +433,9 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     map['target'] = Variable<int>(target);
     if (!nullToAbsent || weeklyDay != null) {
       map['weekly_day'] = Variable<int>(weeklyDay);
+    }
+    if (!nullToAbsent || weeklyDays != null) {
+      map['weekly_days'] = Variable<String>(weeklyDays);
     }
     if (!nullToAbsent || monthlyDate != null) {
       map['monthly_date'] = Variable<int>(monthlyDate);
@@ -439,6 +466,9 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
       weeklyDay: weeklyDay == null && nullToAbsent
           ? const Value.absent()
           : Value(weeklyDay),
+      weeklyDays: weeklyDays == null && nullToAbsent
+          ? const Value.absent()
+          : Value(weeklyDays),
       monthlyDate: monthlyDate == null && nullToAbsent
           ? const Value.absent()
           : Value(monthlyDate),
@@ -472,6 +502,7 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
       ),
       target: serializer.fromJson<int>(json['target']),
       weeklyDay: serializer.fromJson<int?>(json['weeklyDay']),
+      weeklyDays: serializer.fromJson<String?>(json['weeklyDays']),
       monthlyDate: serializer.fromJson<int?>(json['monthlyDate']),
       defaultChecked: serializer.fromJson<bool>(json['defaultChecked']),
       reminderTime: serializer.fromJson<String?>(json['reminderTime']),
@@ -494,6 +525,7 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
       ),
       'target': serializer.toJson<int>(target),
       'weeklyDay': serializer.toJson<int?>(weeklyDay),
+      'weeklyDays': serializer.toJson<String?>(weeklyDays),
       'monthlyDate': serializer.toJson<int?>(monthlyDate),
       'defaultChecked': serializer.toJson<bool>(defaultChecked),
       'reminderTime': serializer.toJson<String?>(reminderTime),
@@ -512,6 +544,7 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     Frequency? frequency,
     int? target,
     Value<int?> weeklyDay = const Value.absent(),
+    Value<String?> weeklyDays = const Value.absent(),
     Value<int?> monthlyDate = const Value.absent(),
     bool? defaultChecked,
     Value<String?> reminderTime = const Value.absent(),
@@ -527,6 +560,7 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     frequency: frequency ?? this.frequency,
     target: target ?? this.target,
     weeklyDay: weeklyDay.present ? weeklyDay.value : this.weeklyDay,
+    weeklyDays: weeklyDays.present ? weeklyDays.value : this.weeklyDays,
     monthlyDate: monthlyDate.present ? monthlyDate.value : this.monthlyDate,
     defaultChecked: defaultChecked ?? this.defaultChecked,
     reminderTime: reminderTime.present ? reminderTime.value : this.reminderTime,
@@ -544,6 +578,9 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
       frequency: data.frequency.present ? data.frequency.value : this.frequency,
       target: data.target.present ? data.target.value : this.target,
       weeklyDay: data.weeklyDay.present ? data.weeklyDay.value : this.weeklyDay,
+      weeklyDays: data.weeklyDays.present
+          ? data.weeklyDays.value
+          : this.weeklyDays,
       monthlyDate: data.monthlyDate.present
           ? data.monthlyDate.value
           : this.monthlyDate,
@@ -572,6 +609,7 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
           ..write('frequency: $frequency, ')
           ..write('target: $target, ')
           ..write('weeklyDay: $weeklyDay, ')
+          ..write('weeklyDays: $weeklyDays, ')
           ..write('monthlyDate: $monthlyDate, ')
           ..write('defaultChecked: $defaultChecked, ')
           ..write('reminderTime: $reminderTime, ')
@@ -592,6 +630,7 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     frequency,
     target,
     weeklyDay,
+    weeklyDays,
     monthlyDate,
     defaultChecked,
     reminderTime,
@@ -611,6 +650,7 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
           other.frequency == this.frequency &&
           other.target == this.target &&
           other.weeklyDay == this.weeklyDay &&
+          other.weeklyDays == this.weeklyDays &&
           other.monthlyDate == this.monthlyDate &&
           other.defaultChecked == this.defaultChecked &&
           other.reminderTime == this.reminderTime &&
@@ -628,6 +668,7 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
   final Value<Frequency> frequency;
   final Value<int> target;
   final Value<int?> weeklyDay;
+  final Value<String?> weeklyDays;
   final Value<int?> monthlyDate;
   final Value<bool> defaultChecked;
   final Value<String?> reminderTime;
@@ -643,6 +684,7 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     this.frequency = const Value.absent(),
     this.target = const Value.absent(),
     this.weeklyDay = const Value.absent(),
+    this.weeklyDays = const Value.absent(),
     this.monthlyDate = const Value.absent(),
     this.defaultChecked = const Value.absent(),
     this.reminderTime = const Value.absent(),
@@ -659,6 +701,7 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     required Frequency frequency,
     this.target = const Value.absent(),
     this.weeklyDay = const Value.absent(),
+    this.weeklyDays = const Value.absent(),
     this.monthlyDate = const Value.absent(),
     this.defaultChecked = const Value.absent(),
     this.reminderTime = const Value.absent(),
@@ -677,6 +720,7 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     Expression<int>? frequency,
     Expression<int>? target,
     Expression<int>? weeklyDay,
+    Expression<String>? weeklyDays,
     Expression<int>? monthlyDate,
     Expression<bool>? defaultChecked,
     Expression<String>? reminderTime,
@@ -693,6 +737,7 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
       if (frequency != null) 'frequency': frequency,
       if (target != null) 'target': target,
       if (weeklyDay != null) 'weekly_day': weeklyDay,
+      if (weeklyDays != null) 'weekly_days': weeklyDays,
       if (monthlyDate != null) 'monthly_date': monthlyDate,
       if (defaultChecked != null) 'default_checked': defaultChecked,
       if (reminderTime != null) 'reminder_time': reminderTime,
@@ -711,6 +756,7 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     Value<Frequency>? frequency,
     Value<int>? target,
     Value<int?>? weeklyDay,
+    Value<String?>? weeklyDays,
     Value<int?>? monthlyDate,
     Value<bool>? defaultChecked,
     Value<String?>? reminderTime,
@@ -727,6 +773,7 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
       frequency: frequency ?? this.frequency,
       target: target ?? this.target,
       weeklyDay: weeklyDay ?? this.weeklyDay,
+      weeklyDays: weeklyDays ?? this.weeklyDays,
       monthlyDate: monthlyDate ?? this.monthlyDate,
       defaultChecked: defaultChecked ?? this.defaultChecked,
       reminderTime: reminderTime ?? this.reminderTime,
@@ -758,6 +805,9 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     }
     if (weeklyDay.present) {
       map['weekly_day'] = Variable<int>(weeklyDay.value);
+    }
+    if (weeklyDays.present) {
+      map['weekly_days'] = Variable<String>(weeklyDays.value);
     }
     if (monthlyDate.present) {
       map['monthly_date'] = Variable<int>(monthlyDate.value);
@@ -797,6 +847,7 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
           ..write('frequency: $frequency, ')
           ..write('target: $target, ')
           ..write('weeklyDay: $weeklyDay, ')
+          ..write('weeklyDays: $weeklyDays, ')
           ..write('monthlyDate: $monthlyDate, ')
           ..write('defaultChecked: $defaultChecked, ')
           ..write('reminderTime: $reminderTime, ')
@@ -1964,6 +2015,7 @@ typedef $$AmalsTableCreateCompanionBuilder =
       required Frequency frequency,
       Value<int> target,
       Value<int?> weeklyDay,
+      Value<String?> weeklyDays,
       Value<int?> monthlyDate,
       Value<bool> defaultChecked,
       Value<String?> reminderTime,
@@ -1981,6 +2033,7 @@ typedef $$AmalsTableUpdateCompanionBuilder =
       Value<Frequency> frequency,
       Value<int> target,
       Value<int?> weeklyDay,
+      Value<String?> weeklyDays,
       Value<int?> monthlyDate,
       Value<bool> defaultChecked,
       Value<String?> reminderTime,
@@ -2064,6 +2117,11 @@ class $$AmalsTableFilterComposer extends Composer<_$AppDatabase, $AmalsTable> {
 
   ColumnFilters<int> get weeklyDay => $composableBuilder(
     column: $table.weeklyDay,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get weeklyDays => $composableBuilder(
+    column: $table.weeklyDays,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -2197,6 +2255,11 @@ class $$AmalsTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<String> get weeklyDays => $composableBuilder(
+    column: $table.weeklyDays,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<int> get monthlyDate => $composableBuilder(
     column: $table.monthlyDate,
     builder: (column) => ColumnOrderings(column),
@@ -2266,6 +2329,11 @@ class $$AmalsTableAnnotationComposer
 
   GeneratedColumn<int> get weeklyDay =>
       $composableBuilder(column: $table.weeklyDay, builder: (column) => column);
+
+  GeneratedColumn<String> get weeklyDays => $composableBuilder(
+    column: $table.weeklyDays,
+    builder: (column) => column,
+  );
 
   GeneratedColumn<int> get monthlyDate => $composableBuilder(
     column: $table.monthlyDate,
@@ -2386,6 +2454,7 @@ class $$AmalsTableTableManager
                 Value<Frequency> frequency = const Value.absent(),
                 Value<int> target = const Value.absent(),
                 Value<int?> weeklyDay = const Value.absent(),
+                Value<String?> weeklyDays = const Value.absent(),
                 Value<int?> monthlyDate = const Value.absent(),
                 Value<bool> defaultChecked = const Value.absent(),
                 Value<String?> reminderTime = const Value.absent(),
@@ -2401,6 +2470,7 @@ class $$AmalsTableTableManager
                 frequency: frequency,
                 target: target,
                 weeklyDay: weeklyDay,
+                weeklyDays: weeklyDays,
                 monthlyDate: monthlyDate,
                 defaultChecked: defaultChecked,
                 reminderTime: reminderTime,
@@ -2418,6 +2488,7 @@ class $$AmalsTableTableManager
                 required Frequency frequency,
                 Value<int> target = const Value.absent(),
                 Value<int?> weeklyDay = const Value.absent(),
+                Value<String?> weeklyDays = const Value.absent(),
                 Value<int?> monthlyDate = const Value.absent(),
                 Value<bool> defaultChecked = const Value.absent(),
                 Value<String?> reminderTime = const Value.absent(),
@@ -2433,6 +2504,7 @@ class $$AmalsTableTableManager
                 frequency: frequency,
                 target: target,
                 weeklyDay: weeklyDay,
+                weeklyDays: weeklyDays,
                 monthlyDate: monthlyDate,
                 defaultChecked: defaultChecked,
                 reminderTime: reminderTime,

@@ -9,6 +9,9 @@ class AppLocalizationsHa extends AppLocalizations {
   AppLocalizationsHa([String locale = 'ha']) : super(locale);
 
   @override
+  String get repeatsOnDaysHint => 'Yana maimaituwa a kwanakin da aka zaɓa';
+
+  @override
   String get newDayStarted => 'Sabuwar rana ta fara';
 
   @override

@@ -9,6 +9,9 @@ class AppLocalizationsTk extends AppLocalizations {
   AppLocalizationsTk([String locale = 'tk']) : super(locale);
 
   @override
+  String get repeatsOnDaysHint => 'Saýlanan günlerde gaýtalanýar';
+
+  @override
   String get newDayStarted => 'Täze gün başlady';
 
   @override

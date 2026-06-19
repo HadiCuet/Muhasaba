@@ -1,5 +1,9 @@
 {
   "@@locale": "en",
+  "repeatsOnDaysHint": "Repeats on the selected days",
+  "@repeatsOnDaysHint": {
+    "description": "Weekly day-picker subtitle when more than one weekday is selected"
+  },
   "newDayStarted": "A new day has begun",
   "@newDayStarted": {
     "description": "Toast shown when the muhasaba day rolls over while the app is open"

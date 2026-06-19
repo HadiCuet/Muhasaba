@@ -26,7 +26,7 @@ Future<void> seedInitialAmals(AppDatabase db) async {
       icon: '📜',
       category: 'Quran',
       frequency: Frequency.weekly,
-      weeklyDay: DateTime.friday,
+      weeklyDays: '5',
     ),
     _seed(
       'Sadaqah',
@@ -128,7 +128,7 @@ AmalsCompanion _seed(
   required String icon,
   String? category,
   Frequency frequency = Frequency.daily,
-  int? weeklyDay,
+  String? weeklyDays,
   int? monthlyDate,
   int target = 1,
 }) {
@@ -141,7 +141,7 @@ AmalsCompanion _seed(
     icon: Value(icon),
     category: Value(category),
     target: Value(target),
-    weeklyDay: Value(weeklyDay),
+    weeklyDays: Value(weeklyDays),
     monthlyDate: Value(monthlyDate),
   );
 }

@@ -21,7 +21,7 @@ class AppDatabase extends _$AppDatabase {
     : super(executor ?? driftDatabase(name: 'muhasaba'));
 
   @override
-  int get schemaVersion => 4;
+  int get schemaVersion => 5;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -86,6 +86,17 @@ class AppDatabase extends _$AppDatabase {
               ),
             },
           ),
+        );
+      }
+      if (from < 5) {
+        if (!await _hasColumn('amals', 'weekly_days')) {
+          await m.addColumn(amals, amals.weeklyDays);
+        }
+        // Carry single-day weekly amals into the multi-day column.
+        await customStatement(
+          "UPDATE amals SET weekly_days = CAST(weekly_day AS TEXT) "
+          "WHERE weekly_day IS NOT NULL "
+          "AND (weekly_days IS NULL OR weekly_days = '')",
         );
       }
     },

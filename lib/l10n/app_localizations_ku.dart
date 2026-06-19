@@ -9,6 +9,9 @@ class AppLocalizationsKu extends AppLocalizations {
   AppLocalizationsKu([String locale = 'ku']) : super(locale);
 
   @override
+  String get repeatsOnDaysHint => 'Di rojên hilbijartî de dubare dibe';
+
+  @override
   String get newDayStarted => 'Rojeke nû dest pê kir';
 
   @override

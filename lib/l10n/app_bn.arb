@@ -1,5 +1,6 @@
 {
   "@@locale": "bn",
+  "repeatsOnDaysHint": "নির্বাচিত দিনগুলিতে পুনরাবৃত্তি হয়",
   "newDayStarted": "নতুন একটি দিন শুরু হয়েছে",
   "appTitle": "মুহাসাবা",
   "tabToday": "আজ",

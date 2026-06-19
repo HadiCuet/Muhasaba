@@ -1,5 +1,6 @@
 {
   "@@locale": "ur",
+  "repeatsOnDaysHint": "منتخب دنوں میں دہرایا جاتا ہے",
   "newDayStarted": "نیا دن شروع ہو گیا",
   "appTitle": "محاسبہ",
   "tabToday": "آج",

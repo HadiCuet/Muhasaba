@@ -9,6 +9,9 @@ class AppLocalizationsSq extends AppLocalizations {
   AppLocalizationsSq([String locale = 'sq']) : super(locale);
 
   @override
+  String get repeatsOnDaysHint => 'Përsëritet në ditët e zgjedhura';
+
+  @override
   String get newDayStarted => 'Një ditë e re ka filluar';
 
   @override

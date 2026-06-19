@@ -9,6 +9,9 @@ class AppLocalizationsPs extends AppLocalizations {
   AppLocalizationsPs([String locale = 'ps']) : super(locale);
 
   @override
+  String get repeatsOnDaysHint => 'په ټاکل شویو ورځو کې تکرار کیږي';
+
+  @override
   String get newDayStarted => 'نوې ورځ پیل شوه';
 
   @override

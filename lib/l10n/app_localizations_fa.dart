@@ -9,6 +9,9 @@ class AppLocalizationsFa extends AppLocalizations {
   AppLocalizationsFa([String locale = 'fa']) : super(locale);
 
   @override
+  String get repeatsOnDaysHint => 'در روزهای انتخاب‌شده تکرار می‌شود';
+
+  @override
   String get newDayStarted => 'روز جدیدی آغاز شد';
 
   @override

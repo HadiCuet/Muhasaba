@@ -1,5 +1,6 @@
 {
   "@@locale": "ha",
+  "repeatsOnDaysHint": "Yana maimaituwa a kwanakin da aka zaɓa",
   "newDayStarted": "Sabuwar rana ta fara",
   "appTitle": "Muhasaba",
   "tabToday": "Yau",

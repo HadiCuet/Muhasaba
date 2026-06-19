@@ -4,6 +4,7 @@ import '../../core/time/period.dart';
 import '../../data/db/database.dart';
 import '../models/app_settings.dart';
 import '../models/frequency.dart';
+import '../utils/weekly_days.dart';
 
 /// View-model for a single amal row in the Today / History list.
 @immutable
@@ -143,11 +144,12 @@ class TodayBuilder {
         return true;
 
       case Frequency.weekly:
-        if (amal.weeklyDay != null) {
-          return date.weekday == amal.weeklyDay;
+        final days = parseWeeklyDays(amal.weeklyDays);
+        if (days.isNotEmpty) {
+          return days.contains(date.weekday);
         }
-        // Only check completions BEFORE today so that today's completion
-        // keeps the amal visible (as "done") for the rest of the day.
+        // Floating ("any day"): visible until completed once this week. Check
+        // completions BEFORE today so today's completion keeps it visible.
         final week = weekPeriodOf(date, settings.startOfWeek);
         final inWeek = await periodCompletionsOf(amal.id, week.start, date);
         return !inWeek.any((c) => c.progress >= amal.target);

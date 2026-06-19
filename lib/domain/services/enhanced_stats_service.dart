@@ -5,6 +5,7 @@ import '../../data/db/database.dart';
 import '../../features/stats/stats_filter.dart';
 import '../models/app_settings.dart';
 import '../models/frequency.dart';
+import '../utils/weekly_days.dart';
 import 'today_builder.dart' show PeriodCompletionsLookup;
 
 // ─── Models ──────────────────────────────────────────────────────────────────
@@ -278,15 +279,25 @@ class EnhancedStatsService {
   // ── Expected completions ─────────────────────────────────────────────────
 
   int _expectedInPeriod(AmalRow amal, Period period) {
-    final days = period.endExclusive.difference(period.start).inDays;
+    final spanDays = period.endExclusive.difference(period.start).inDays;
     switch (amal.frequency) {
       case Frequency.daily:
-        return days;
+        return spanDays;
       case Frequency.weekly:
-        final weeks = (days / 7).round();
+        final weekdays = parseWeeklyDays(amal.weeklyDays);
+        if (weekdays.isNotEmpty) {
+          var count = 0;
+          for (var d = period.start;
+              d.isBefore(period.endExclusive);
+              d = d.add(const Duration(days: 1))) {
+            if (weekdays.contains(d.weekday)) count++;
+          }
+          return count;
+        }
+        final weeks = (spanDays / 7).round();
         return weeks < 1 ? 1 : weeks;
       case Frequency.monthly:
-        return days >= 21 ? 1 : 0;
+        return spanDays >= 21 ? 1 : 0;
     }
   }
 
@@ -314,10 +325,17 @@ class EnhancedStatsService {
           final match = rows.where((r) => _dayKey(r.muhasabaDate) == key);
           if (match.any((r) => r.progress >= amal.target)) completed++;
         } else {
-          // Non-daily: count only if there's activity on this day.
           final rows = completionsByAmal[amal.id] ?? [];
           final match = rows.where((r) => _dayKey(r.muhasabaDate) == key);
-          if (match.isNotEmpty) {
+          final weekdays = amal.frequency == Frequency.weekly
+              ? parseWeeklyDays(amal.weeklyDays)
+              : const <int>{};
+          if (weekdays.contains(date.weekday)) {
+            // Pinned multi-day weekly: this day is a scheduled occurrence.
+            expected++;
+            if (match.any((r) => r.progress >= amal.target)) completed++;
+          } else if (match.isNotEmpty) {
+            // Floating weekly / monthly: count only days with activity.
             expected++;
             if (match.any((r) => r.progress >= amal.target)) completed++;
           }
@@ -443,6 +461,23 @@ class EnhancedStatsService {
         return streak;
 
       case Frequency.weekly:
+        final weekdays = parseWeeklyDays(amal.weeklyDays);
+        if (weekdays.isNotEmpty) {
+          final start =
+              today.subtract(const Duration(days: _dailyStreakLookback));
+          final end = today.add(const Duration(days: 1));
+          final rows = await lookup(amal.id, start, end);
+          final done = {
+            for (final r in rows)
+              if (r.progress >= amal.target) _dayKey(r.muhasabaDate),
+          };
+          return weeklyOccurrenceStreak(
+            scheduledWeekdays: weekdays,
+            isCompleted: (d) => done.contains(_dayKey(d)),
+            today: today,
+            lookbackDays: _dailyStreakLookback,
+          ).current;
+        }
         var week = weekPeriodOf(today, settings.startOfWeek);
         var streak = 0;
         for (var i = 0; i < 52; i++) {

@@ -1,5 +1,6 @@
 {
   "@@locale": "uz",
+  "repeatsOnDaysHint": "Tanlangan kunlarda takrorlanadi",
   "newDayStarted": "Yangi kun boshlandi",
   "appTitle": "Muhosaba",
   "tabToday": "Bugun",

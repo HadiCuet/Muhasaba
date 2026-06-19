@@ -1,5 +1,6 @@
 {
   "@@locale": "tk",
+  "repeatsOnDaysHint": "Saýlanan günlerde gaýtalanýar",
   "newDayStarted": "Täze gün başlady",
   "appTitle": "Muhasaba",
   "tabToday": "Bu gun",

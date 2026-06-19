@@ -4,6 +4,7 @@ import '../../core/time/period.dart';
 import '../../data/db/database.dart';
 import '../models/app_settings.dart';
 import '../models/frequency.dart';
+import '../utils/weekly_days.dart';
 import 'today_builder.dart' show PeriodCompletionsLookup;
 
 /// Per-amal rolled-up stats over the current week and month plus streak.
@@ -162,12 +163,13 @@ class StatsService {
       case Frequency.daily:
         return period.endExclusive.difference(period.start).inDays;
       case Frequency.weekly:
-        // Weekly amal count as one expected completion per 7-day slice that
-        // overlaps the period. For the "current week" window, that's always 1.
-        // For the "current month" window, count full weeks that start within
-        // the month. Simplification: round(days / 7), min 1.
-        final days = period.endExclusive.difference(period.start).inDays;
-        final weeks = (days / 7).round();
+        final days = parseWeeklyDays(amal.weeklyDays);
+        if (days.isNotEmpty) {
+          return _scheduledDaysInPeriod(days, period);
+        }
+        // Floating: one expected completion per 7-day slice, min 1.
+        final span = period.endExclusive.difference(period.start).inDays;
+        final weeks = (span / 7).round();
         return weeks < 1 ? 1 : weeks;
       case Frequency.monthly:
         // One per month. For a weekly period this is 0 or 1; for a monthly
@@ -175,6 +177,17 @@ class StatsService {
         final days = period.endExclusive.difference(period.start).inDays;
         return days >= 21 ? 1 : 0;
     }
+  }
+
+  /// Count of dates in [period] whose weekday is in [weekdays].
+  int _scheduledDaysInPeriod(Set<int> weekdays, Period period) {
+    var count = 0;
+    for (var d = period.start;
+        d.isBefore(period.endExclusive);
+        d = d.add(const Duration(days: 1))) {
+      if (weekdays.contains(d.weekday)) count++;
+    }
+    return count;
   }
 
   Future<_StreakPair> _computeStreaks({
@@ -187,6 +200,10 @@ class StatsService {
       case Frequency.daily:
         return _dailyStreaks(amal, today, periodCompletionsOf);
       case Frequency.weekly:
+        final days = parseWeeklyDays(amal.weeklyDays);
+        if (days.isNotEmpty) {
+          return _weeklyPinnedStreaks(amal, today, days, periodCompletionsOf);
+        }
         return _weeklyStreaks(amal, today, settings, periodCompletionsOf);
       case Frequency.monthly:
         return _monthlyStreaks(amal, today, settings, periodCompletionsOf);
@@ -284,6 +301,29 @@ class StatsService {
     if (current > longest) longest = current;
 
     return _StreakPair(current: current, longest: longest);
+  }
+
+  /// Per-occurrence streak for a weekly amal pinned to specific weekdays.
+  Future<_StreakPair> _weeklyPinnedStreaks(
+    AmalRow amal,
+    DateTime today,
+    Set<int> days,
+    PeriodCompletionsLookup lookup,
+  ) async {
+    final start = today.subtract(const Duration(days: _dailyLookbackDays));
+    final endExclusive = today.add(const Duration(days: 1));
+    final rows = await lookup(amal.id, start, endExclusive);
+    final completed = <int>{
+      for (final r in rows)
+        if (r.progress >= amal.target) _dayKey(r.muhasabaDate),
+    };
+    final s = weeklyOccurrenceStreak(
+      scheduledWeekdays: days,
+      isCompleted: (d) => completed.contains(_dayKey(d)),
+      today: today,
+      lookbackDays: _dailyLookbackDays,
+    );
+    return _StreakPair(current: s.current, longest: s.longest);
   }
 
   Future<_StreakPair> _monthlyStreaks(

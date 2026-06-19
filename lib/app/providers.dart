@@ -13,6 +13,7 @@ import '../domain/models/frequency.dart';
 import '../domain/services/reminder_scheduler.dart';
 import '../domain/services/stats_service.dart';
 import '../domain/services/today_builder.dart';
+import '../domain/utils/weekly_days.dart';
 
 /// The single `AppDatabase` instance, owned by the provider container.
 /// Tests should override this with an in-memory database.
@@ -224,7 +225,8 @@ bool _staticIsVisibleOnDate(AmalRow a, DateTime date) {
     case Frequency.daily:
       return true;
     case Frequency.weekly:
-      return a.weeklyDay == null || date.weekday == a.weeklyDay;
+      final days = parseWeeklyDays(a.weeklyDays);
+      return days.isEmpty || days.contains(date.weekday);
     case Frequency.monthly:
       return a.monthlyDate == null || date.day == a.monthlyDate;
   }

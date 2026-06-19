@@ -9,6 +9,9 @@ class AppLocalizationsTr extends AppLocalizations {
   AppLocalizationsTr([String locale = 'tr']) : super(locale);
 
   @override
+  String get repeatsOnDaysHint => 'Seçili günlerde tekrarlanır';
+
+  @override
   String get newDayStarted => 'Yeni bir gün başladı';
 
   @override

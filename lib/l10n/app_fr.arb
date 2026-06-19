@@ -1,5 +1,6 @@
 {
   "@@locale": "fr",
+  "repeatsOnDaysHint": "Se répète les jours sélectionnés",
   "newDayStarted": "Un nouveau jour a commencé",
   "appTitle": "Muhasaba",
   "tabToday": "Aujourd'hui",
