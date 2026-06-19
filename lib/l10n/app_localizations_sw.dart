@@ -9,6 +9,9 @@ class AppLocalizationsSw extends AppLocalizations {
   AppLocalizationsSw([String locale = 'sw']) : super(locale);
 
   @override
+  String get newDayStarted => 'Siku mpya imeanza';
+
+  @override
   String get appTitle => 'Muhasaba';
 
   @override

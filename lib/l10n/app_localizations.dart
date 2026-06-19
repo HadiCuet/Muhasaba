@@ -140,6 +140,12 @@ abstract class AppLocalizations {
     Locale('uz'),
   ];
 
+  /// Toast shown when the muhasaba day rolls over while the app is open
+  ///
+  /// In en, this message translates to:
+  /// **'A new day has begun'**
+  String get newDayStarted;
+
   /// No description provided for @appTitle.
   ///
   /// In en, this message translates to:

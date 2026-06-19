@@ -1,5 +1,6 @@
 {
   "@@locale": "uz",
+  "newDayStarted": "Yangi kun boshlandi",
   "appTitle": "Muhosaba",
   "tabToday": "Bugun",
   "tabStats": "Statistika",

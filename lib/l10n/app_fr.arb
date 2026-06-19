@@ -1,5 +1,6 @@
 {
   "@@locale": "fr",
+  "newDayStarted": "Un nouveau jour a commencé",
   "appTitle": "Muhasaba",
   "tabToday": "Aujourd'hui",
   "tabStats": "Statistiques",

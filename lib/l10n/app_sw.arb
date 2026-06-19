@@ -1,5 +1,6 @@
 {
   "@@locale": "sw",
+  "newDayStarted": "Siku mpya imeanza",
   "appTitle": "Muhasaba",
   "tabToday": "Leo",
   "tabStats": "Takwimu",

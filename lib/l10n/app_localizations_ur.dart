@@ -9,6 +9,9 @@ class AppLocalizationsUr extends AppLocalizations {
   AppLocalizationsUr([String locale = 'ur']) : super(locale);
 
   @override
+  String get newDayStarted => 'نیا دن شروع ہو گیا';
+
+  @override
   String get appTitle => 'محاسبہ';
 
   @override

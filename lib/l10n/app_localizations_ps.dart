@@ -9,6 +9,9 @@ class AppLocalizationsPs extends AppLocalizations {
   AppLocalizationsPs([String locale = 'ps']) : super(locale);
 
   @override
+  String get newDayStarted => 'نوې ورځ پیل شوه';
+
+  @override
   String get appTitle => 'محاسبه';
 
   @override

@@ -1,5 +1,6 @@
 {
   "@@locale": "az",
+  "newDayStarted": "Yeni bir gün başladı",
   "appTitle": "Mühasibat",
   "tabToday": "Bu gun",
   "tabStats": "Statistika",

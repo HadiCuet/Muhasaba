@@ -1,5 +1,6 @@
 {
   "@@locale": "ar",
+  "newDayStarted": "بدأ يوم جديد",
   "appTitle": "محاسبة",
   "tabToday": "اليوم",
   "tabStats": "الإحصائيات",

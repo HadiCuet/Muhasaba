@@ -1,5 +1,6 @@
 {
   "@@locale": "id",
+  "newDayStarted": "Hari baru telah dimulai",
   "appTitle": "Muhasabah",
   "tabToday": "Hari Ini",
   "tabStats": "Statistik",

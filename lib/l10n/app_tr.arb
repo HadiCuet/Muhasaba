@@ -1,5 +1,6 @@
 {
   "@@locale": "tr",
+  "newDayStarted": "Yeni bir gün başladı",
   "appTitle": "Muhasebe",
   "tabToday": "Bugün",
   "tabStats": "İstatistik",

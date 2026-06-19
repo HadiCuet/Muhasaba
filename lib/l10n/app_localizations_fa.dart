@@ -9,6 +9,9 @@ class AppLocalizationsFa extends AppLocalizations {
   AppLocalizationsFa([String locale = 'fa']) : super(locale);
 
   @override
+  String get newDayStarted => 'روز جدیدی آغاز شد';
+
+  @override
   String get appTitle => 'محاسبه';
 
   @override

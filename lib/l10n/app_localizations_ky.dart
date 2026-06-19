@@ -9,6 +9,9 @@ class AppLocalizationsKy extends AppLocalizations {
   AppLocalizationsKy([String locale = 'ky']) : super(locale);
 
   @override
+  String get newDayStarted => 'Жаңы күн башталды';
+
+  @override
   String get appTitle => 'Muhasaba';
 
   @override

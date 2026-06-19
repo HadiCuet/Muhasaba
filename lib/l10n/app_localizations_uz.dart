@@ -9,6 +9,9 @@ class AppLocalizationsUz extends AppLocalizations {
   AppLocalizationsUz([String locale = 'uz']) : super(locale);
 
   @override
+  String get newDayStarted => 'Yangi kun boshlandi';
+
+  @override
   String get appTitle => 'Muhosaba';
 
   @override

@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../core/time/day_boundary.dart';
@@ -67,12 +69,36 @@ final settingsProvider = StreamProvider<AppSettings>((ref) {
 });
 
 /// The current muhasaba date given the user's rollover-hour setting and the
-/// wall-clock instant at provider construction time. Not auto-refreshing —
-/// call `ref.invalidate` to re-read across the rollover boundary.
+/// wall-clock instant the provider was (re)built.
+///
+/// Stays current two ways: an `AppLifecycleListener` invalidates it on resume
+/// (see `MuhasabaApp`), and it arms a one-shot timer to invalidate itself at
+/// the next rollover so the date refreshes even while the app stays in the
+/// foreground. Recomputing to an unchanged date is a no-op — Riverpod
+/// suppresses the rebuild — so a same-day resume costs nothing visible.
 final currentMuhasabaDateProvider = Provider<DateTime>((ref) {
   final settings = ref.watch(settingsProvider).value ?? AppSettings.defaults;
-  return muhasabaDateOf(DateTime.now(), settings.rolloverHour);
+  final now = DateTime.now();
+
+  // Timers don't fire while the app is suspended, so this covers the
+  // foreground case; background resume is handled by the lifecycle listener.
+  final timer = Timer(
+    _nextRolloverInstant(now, settings.rolloverHour).difference(now),
+    ref.invalidateSelf,
+  );
+  ref.onDispose(timer.cancel);
+
+  return muhasabaDateOf(now, settings.rolloverHour);
 });
+
+/// The next local wall-clock instant at which the muhasaba day increments:
+/// the upcoming `rolloverHour:00` (today's if still ahead, otherwise tomorrow's).
+DateTime _nextRolloverInstant(DateTime now, int rolloverHour) {
+  final local = now.toLocal();
+  var next = DateTime(local.year, local.month, local.day, rolloverHour);
+  if (!next.isAfter(local)) next = next.add(const Duration(days: 1));
+  return next;
+}
 
 /// A small value type so the family key is comparable / const-friendly.
 /// Using the raw `DateTime` directly works fine because `DateTime` has

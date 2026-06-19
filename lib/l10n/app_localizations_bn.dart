@@ -9,6 +9,9 @@ class AppLocalizationsBn extends AppLocalizations {
   AppLocalizationsBn([String locale = 'bn']) : super(locale);
 
   @override
+  String get newDayStarted => 'নতুন একটি দিন শুরু হয়েছে';
+
+  @override
   String get appTitle => 'মুহাসাবা';
 
   @override

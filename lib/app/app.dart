@@ -10,11 +10,39 @@ import 'providers.dart';
 import 'router.dart';
 import 'theme.dart';
 
-class MuhasabaApp extends ConsumerWidget {
+/// Lets the day-rollover toast post a SnackBar from above the per-screen
+/// Scaffolds.
+final _scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
+
+class MuhasabaApp extends ConsumerStatefulWidget {
   const MuhasabaApp({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<MuhasabaApp> createState() => _MuhasabaAppState();
+}
+
+class _MuhasabaAppState extends ConsumerState<MuhasabaApp> {
+  late final AppLifecycleListener _lifecycle;
+
+  @override
+  void initState() {
+    super.initState();
+    // Recompute the muhasaba "today" when the app returns to the foreground, so
+    // a day rollover crossed while backgrounded refreshes Today/History/Stats
+    // instead of showing yesterday until the app is force-quit and relaunched.
+    _lifecycle = AppLifecycleListener(
+      onResume: () => ref.invalidate(currentMuhasabaDateProvider),
+    );
+  }
+
+  @override
+  void dispose() {
+    _lifecycle.dispose();
+    super.dispose();
+  }
+
+  @override
+  Widget build(BuildContext context) {
     final router = ref.watch(routerProvider);
     // Fall back to defaults until the first settings row lands — keeps the
     // very first frame from flashing the wrong theme.
@@ -46,16 +74,19 @@ class MuhasabaApp extends ConsumerWidget {
     final locale = settings.locale != null ? Locale(settings.locale!) : null;
 
     return MaterialApp.router(
+      scaffoldMessengerKey: _scaffoldMessengerKey,
       onGenerateTitle: (context) => AppLocalizations.of(context).appTitle,
       debugShowCheckedModeBanner: false,
       theme: buildLightTheme(),
       darkTheme: buildDarkTheme(),
       themeMode: settings.themeMode,
       routerConfig: router,
-      builder: (context, child) => GestureDetector(
-        behavior: HitTestBehavior.opaque,
-        onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-        child: child,
+      builder: (context, child) => _DayRolloverToast(
+        child: GestureDetector(
+          behavior: HitTestBehavior.opaque,
+          onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
+          child: child,
+        ),
       ),
       locale: locale,
       localizationsDelegates: const [
@@ -93,6 +124,60 @@ class MuhasabaApp extends ConsumerWidget {
         return const Locale('en');
       },
     );
+  }
+}
+
+/// Shows a transient toast when the muhasaba day rolls over while the app is
+/// open, so the Today list resetting to a fresh day reads as intentional and
+/// not as lost progress. Lives inside [MaterialApp] so [AppLocalizations] and
+/// the scaffold messenger are in scope.
+class _DayRolloverToast extends ConsumerStatefulWidget {
+  const _DayRolloverToast({required this.child});
+
+  final Widget child;
+
+  @override
+  ConsumerState<_DayRolloverToast> createState() => _DayRolloverToastState();
+}
+
+class _DayRolloverToastState extends ConsumerState<_DayRolloverToast> {
+  DateTime? _seenDate;
+  int? _seenRollover;
+
+  @override
+  Widget build(BuildContext context) {
+    final date = ref.watch(currentMuhasabaDateProvider);
+    final rollover = ref.watch(
+      settingsProvider.select((s) => s.value?.rolloverHour),
+    );
+
+    // A real rollover = the date advanced while the rollover-hour setting held
+    // steady. This excludes the initial settings load and Settings edits, which
+    // also shift the computed date but aren't a new day. First resolution
+    // (_seenDate == null) is the baseline, never a toast.
+    final rolledOver = _seenDate != null &&
+        date != _seenDate &&
+        rollover != null &&
+        rollover == _seenRollover;
+    _seenDate = date;
+    _seenRollover = rollover;
+
+    if (rolledOver) {
+      final l = AppLocalizations.of(context);
+      // Defer past the current build — showSnackBar mutates the messenger.
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        _scaffoldMessengerKey.currentState
+          ?..hideCurrentSnackBar()
+          ..showSnackBar(
+            SnackBar(
+              content: Text(l.newDayStarted),
+              behavior: SnackBarBehavior.floating,
+              duration: const Duration(seconds: 4),
+            ),
+          );
+      });
+    }
+    return widget.child;
   }
 }
 

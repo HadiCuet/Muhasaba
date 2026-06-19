@@ -1,5 +1,9 @@
 {
   "@@locale": "en",
+  "newDayStarted": "A new day has begun",
+  "@newDayStarted": {
+    "description": "Toast shown when the muhasaba day rolls over while the app is open"
+  },
   "appTitle": "Muhasaba",
   "tabToday": "Today",
   "tabStats": "Stats",

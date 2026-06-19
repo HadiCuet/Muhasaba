@@ -1,5 +1,6 @@
 {
   "@@locale": "hi",
+  "newDayStarted": "एक नया दिन शुरू हो गया है",
   "appTitle": "Muhasaba",
   "tabToday": "आज",
   "tabStats": "आँकड़े",

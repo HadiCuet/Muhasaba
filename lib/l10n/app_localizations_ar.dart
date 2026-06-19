@@ -9,6 +9,9 @@ class AppLocalizationsAr extends AppLocalizations {
   AppLocalizationsAr([String locale = 'ar']) : super(locale);
 
   @override
+  String get newDayStarted => 'بدأ يوم جديد';
+
+  @override
   String get appTitle => 'محاسبة';
 
   @override

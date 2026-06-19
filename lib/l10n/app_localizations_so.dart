@@ -9,6 +9,9 @@ class AppLocalizationsSo extends AppLocalizations {
   AppLocalizationsSo([String locale = 'so']) : super(locale);
 
   @override
+  String get newDayStarted => 'Maalin cusub ayaa bilaabatay';
+
+  @override
   String get appTitle => 'Muhasaba';
 
   @override

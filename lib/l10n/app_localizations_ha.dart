@@ -9,6 +9,9 @@ class AppLocalizationsHa extends AppLocalizations {
   AppLocalizationsHa([String locale = 'ha']) : super(locale);
 
   @override
+  String get newDayStarted => 'Sabuwar rana ta fara';
+
+  @override
   String get appTitle => 'Muhasaba';
 
   @override
