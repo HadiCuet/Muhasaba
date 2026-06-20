@@ -1,0 +1,215 @@
+# Muhasaba — fastlane
+#
+# Lanes (iOS):
+#   verify  — read-only: confirm the ASC API key authenticates and the app exists
+#   beta    — build iOS with Flutter; upload to TestFlight with localized
+#             "What's New" when run with upload:true
+#
+# Guardrails: nothing uploads without upload:true, the build is never submitted
+# for review, and it is never auto-distributed to external testers.
+
+opt_out_usage
+fastlane_version "2.222.0"
+
+APP_IDENTIFIER = "dev.mukashi.muhasaba".freeze
+
+# Repo root whether fastlane runs from the repo root or fastlane/.
+def repo_root
+  pwd = Dir.pwd
+  File.basename(pwd) == "fastlane" ? File.expand_path("..", pwd) : pwd
+end
+
+# App language code -> App Store Connect locale for TestFlight build "What's New".
+# Only ASC-supported locales are valid; everything else falls back to "default".
+def whatsnew_locale_map
+  {
+    "en" => "en-US",
+    "ar" => "ar-SA",
+    "bn" => "bn-BD",
+    "ur" => "ur-PK",
+    "id" => "id",
+    "tr" => "tr",
+    "fr" => "fr-FR",
+    "ms" => "ms",
+    "hi" => "hi",
+  }
+end
+
+# Build the upload_to_testflight localized_build_info hash from
+# fastlane/whatsnew/<lang>.txt. English seeds the "default" fallback.
+def load_localized_whatsnew
+  dir = File.join(repo_root, "fastlane", "whatsnew")
+  info = {}
+
+  en_path = File.join(dir, "en.txt")
+  if File.exist?(en_path)
+    text = File.read(en_path).strip
+    info["default"] = { whats_new: text } unless text.empty?
+  end
+
+  whatsnew_locale_map.each do |lang, asc_locale|
+    path = File.join(dir, "#{lang}.txt")
+    next unless File.exist?(path)
+    text = File.read(path).strip
+    next if text.empty?
+    info[asc_locale] = { whats_new: text }
+  end
+
+  info
+end
+
+# Loads the ASC API key into lane_context. Runs as a lane so the action resolves.
+private_lane :ensure_api_key do
+  missing = %w[ASC_KEY_ID ASC_ISSUER_ID ASC_KEY_FILEPATH].select { |k| ENV[k].to_s.strip.empty? }
+  UI.user_error!("Missing #{missing.join(', ')}. Copy fastlane/.env.example -> fastlane/.env " \
+                 "and fill it in (see docs/fastlane-setup.md).") unless missing.empty?
+
+  raw_key_path = ENV["ASC_KEY_FILEPATH"].to_s
+  key_path = File.expand_path(raw_key_path, repo_root)
+  unless File.exist?(key_path)
+    fallback = File.join(repo_root, "fastlane", ".keys", File.basename(raw_key_path))
+    key_path = fallback if File.exist?(fallback)
+  end
+  UI.user_error!("ASC key not found for ASC_KEY_FILEPATH=#{raw_key_path}. " \
+                 "Put the .p8 in fastlane/.keys/ (see docs/fastlane-setup.md).") unless File.exist?(key_path)
+
+  app_store_connect_api_key(
+    key_id: ENV["ASC_KEY_ID"],
+    issuer_id: ENV["ASC_ISSUER_ID"],
+    key_filepath: key_path,
+    in_house: false,
+  )
+end
+
+platform :ios do
+  desc "Read-only: confirm the ASC API key authenticates and the app record exists"
+  lane :verify do
+    ensure_api_key
+    key = lane_context[SharedValues::APP_STORE_CONNECT_API_KEY]
+    require "spaceship"
+    Spaceship::ConnectAPI.token = Spaceship::ConnectAPI::Token.create(
+      key_id: key[:key_id], issuer_id: key[:issuer_id], key: key[:key],
+    )
+    app = Spaceship::ConnectAPI::App.find(APP_IDENTIFIER)
+    UI.user_error!("Authenticated OK, but no app record for #{APP_IDENTIFIER} on this team. " \
+                   "Create the app in App Store Connect first.") if app.nil?
+    UI.success("ASC auth OK — app: #{app.name} (id #{app.id})")
+
+    info = load_localized_whatsnew
+    UI.message("What's New locales staged: #{info.keys.sort.join(', ')}")
+  end
+
+  desc "Read-only: list the locale codes this app actually uses on its App Store version"
+  lane :locales do
+    ensure_api_key
+    key = lane_context[SharedValues::APP_STORE_CONNECT_API_KEY]
+    require "spaceship"
+    Spaceship::ConnectAPI.token = Spaceship::ConnectAPI::Token.create(
+      key_id: key[:key_id], issuer_id: key[:issuer_id], key: key[:key],
+    )
+    app = Spaceship::ConnectAPI::App.find(APP_IDENTIFIER)
+    %i[live edit].each do |which|
+      v = which == :live ? app.get_live_app_store_version : app.get_edit_app_store_version
+      next unless v
+      locs = v.get_app_store_version_localizations.map(&:locale).sort
+      UI.header("#{which} version #{v.version_string} — App Store locales")
+      UI.message(locs.join(", "))
+    end
+  end
+
+  desc "Attach localized What's New to the latest processed TestFlight build (no rebuild/upload)"
+  lane :notes do
+    ensure_api_key
+    key = lane_context[SharedValues::APP_STORE_CONNECT_API_KEY]
+    require "spaceship"
+    Spaceship::ConnectAPI.token = Spaceship::ConnectAPI::Token.create(
+      key_id: key[:key_id], issuer_id: key[:issuer_id], key: key[:key],
+    )
+    app = Spaceship::ConnectAPI::App.find(APP_IDENTIFIER)
+    build = app.get_builds(sort: "-uploadedDate", includes: "preReleaseVersion").first
+    UI.user_error!("No builds found for #{APP_IDENTIFIER}.") unless build
+    UI.message("Latest build: #{build.app_version} (#{build.version})")
+
+    info = load_localized_whatsnew
+    existing = build.get_beta_build_localizations.each_with_object({}) { |l, h| h[l.locale] = l }
+    info.each do |locale, data|
+      next if locale == "default"
+      text = data[:whats_new]
+      if existing[locale]
+        Spaceship::ConnectAPI.patch_beta_build_localizations(
+          localization_id: existing[locale].id, attributes: { whatsNew: text },
+        )
+        UI.success("Updated #{locale}")
+      else
+        Spaceship::ConnectAPI.post_beta_build_localizations(
+          build_id: build.id, attributes: { locale: locale, whatsNew: text },
+        )
+        UI.success("Created #{locale}")
+      end
+    end
+  end
+
+  desc "Set ONLY the localized 'What's New' (release notes) on the editable App Store version. Touches no other metadata; never submits."
+  lane :release_notes do
+    ensure_api_key
+    key = lane_context[SharedValues::APP_STORE_CONNECT_API_KEY]
+    require "spaceship"
+    Spaceship::ConnectAPI.token = Spaceship::ConnectAPI::Token.create(
+      key_id: key[:key_id], issuer_id: key[:issuer_id], key: key[:key],
+    )
+    app = Spaceship::ConnectAPI::App.find(APP_IDENTIFIER)
+    version = app.get_edit_app_store_version
+    UI.user_error!("No editable App Store version (Prepare for Submission) found for #{APP_IDENTIFIER}.") unless version
+    UI.message("Editable version: #{version.version_string}")
+
+    info = load_localized_whatsnew
+    locs = version.get_app_store_version_localizations.each_with_object({}) { |l, h| h[l.locale] = l }
+    info.each do |locale, data|
+      next if locale == "default"
+      loc = locs[locale]
+      unless loc
+        UI.important("Skipping #{locale} — no App Store localization on this version")
+        next
+      end
+      Spaceship::ConnectAPI.patch_app_store_version_localization(
+        app_store_version_localization_id: loc.id, attributes: { whatsNew: data[:whats_new] },
+      )
+      UI.success("Set What's New for #{locale}")
+    end
+    UI.success("Done — only 'What's New' was changed on version #{version.version_string}.")
+  end
+
+  desc "Build iOS with Flutter; with upload:true upload to TestFlight with localized What's New. Never submits."
+  lane :beta do |options|
+    Dir.chdir(repo_root) do
+      sh("flutter", "build", "ipa", "--release", "--export-method", "app-store")
+    end
+
+    ipa = Dir[File.join(repo_root, "build", "ios", "ipa", "*.ipa")].max_by { |f| File.mtime(f) }
+    UI.user_error!("No .ipa found under build/ios/ipa/ — did the Flutter build succeed?") unless ipa
+    UI.success("Built IPA: #{ipa}")
+
+    info = load_localized_whatsnew
+    UI.user_error!("No What's New text found in fastlane/whatsnew/.") if info.empty?
+
+    unless options[:upload]
+      UI.important("Build complete — not uploaded.")
+      UI.message("What's New locales ready: #{info.keys.sort.join(', ')}")
+      UI.message("Run: bundle exec fastlane ios beta upload:true")
+      next
+    end
+
+    ensure_api_key
+    # localized_build_info is applied after the build finishes processing, so we
+    # must wait for processing (skip_waiting_for_build_processing: false).
+    upload_to_testflight(
+      api_key: lane_context[SharedValues::APP_STORE_CONNECT_API_KEY],
+      ipa: ipa,
+      skip_submission: true,
+      distribute_external: false,
+      skip_waiting_for_build_processing: false,
+      localized_build_info: info,
+    )
+    UI.success("Uploaded to TestFlight with localized What's New — NOT submitted, NOT distributed externally.")
+  end
+end

@@ -1,0 +1,7 @@
+# Auth is via the App Store Connect API key (configured in the Fastfile from
+# fastlane/.env). With key-based auth no Apple ID / password is needed.
+
+app_identifier("dev.mukashi.muhasaba")
+
+# Apple Developer Portal team (signing) — also read from fastlane/.env.
+# team_id(ENV["ASC_TEAM_ID"])

@@ -54,3 +54,10 @@ app.*.map.json
 /android/key.properties
 *.jks
 *.keystore
+
+# fastlane — never commit secrets or generated output
+/fastlane/.env
+/fastlane/.keys/
+/fastlane/report.xml
+/fastlane/README.md
+/fastlane/test_output/
