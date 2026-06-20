@@ -101,6 +101,24 @@ DateTime _nextRolloverInstant(DateTime now, int rolloverHour) {
   return next;
 }
 
+/// Earliest muhasaba date the user has history for — the muhasaba date of the
+/// oldest amal's `createdAt`. Seed amals are created at first run, so this is
+/// effectively the install day; it needs no extra storage and works for
+/// already-installed users. Floors the History screen so days before the user
+/// started tracking aren't navigable. Falls back to today while amals load or
+/// when none exist, and never returns a date after today.
+final historyFloorDateProvider = Provider<DateTime>((ref) {
+  final today = ref.watch(currentMuhasabaDateProvider);
+  final settings = ref.watch(settingsProvider).value ?? AppSettings.defaults;
+  final amals = ref.watch(_allAmalsProvider).value ?? const <AmalRow>[];
+  if (amals.isEmpty) return today;
+  final earliest = amals
+      .map((a) => a.createdAt)
+      .reduce((a, b) => a.isBefore(b) ? a : b);
+  final floor = muhasabaDateOf(earliest, settings.rolloverHour);
+  return floor.isAfter(today) ? today : floor;
+});
+
 /// A small value type so the family key is comparable / const-friendly.
 /// Using the raw `DateTime` directly works fine because `DateTime` has
 /// value equality.
@@ -160,11 +178,8 @@ final historyRowsProvider = FutureProvider.family<List<TodayRow>, DateTime>((
 /// day). Only includes amals that were either scheduled on that date
 /// (frequency/day match) or have an actual completion record, to avoid
 /// showing e.g. a Friday-only amal on a Monday.
-final historyFallbackRowsProvider =
-    FutureProvider.autoDispose.family<List<TodayRow>, DateTime>((
-      ref,
-      date,
-    ) async {
+final historyFallbackRowsProvider = FutureProvider.autoDispose
+    .family<List<TodayRow>, DateTime>((ref, date) async {
       final amals = await ref.watch(_allAmalsProvider.future);
       if (amals.isEmpty) return const [];
       final completions = await ref.watch(

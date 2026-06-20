@@ -29,6 +29,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
   @override
   Widget build(BuildContext context) {
     final today = ref.watch(currentMuhasabaDateProvider);
+    final floor = ref.watch(historyFloorDateProvider);
     final selected = _selected ?? today;
     final rowsAsync = ref.watch(historyRowsProvider(selected));
     final streaksAsync = ref.watch(currentStreaksProvider);
@@ -42,7 +43,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
           IconButton(
             tooltip: l.jumpToDate,
             icon: const Icon(Icons.event),
-            onPressed: () => _jumpToDate(context, today, selected),
+            onPressed: () => _jumpToDate(context, today, selected, floor),
           ),
         ],
       ),
@@ -52,6 +53,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
             _DateStrip(
               selected: selected,
               today: today,
+              floor: floor,
               onSelected: (d) {
                 setState(() => _selected = d);
                 final daysBack = DateTime.utc(
@@ -106,12 +108,14 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
     BuildContext context,
     DateTime today,
     DateTime current,
+    DateTime floor,
   ) async {
-    // Clamp the picker to muhasaba-date space: UTC midnights, no future.
+    // Clamp the picker to muhasaba-date space: UTC midnights, no future, and no
+    // earlier than the install-day floor.
     final picked = await showDatePicker(
       context: context,
       initialDate: DateTime(current.year, current.month, current.day),
-      firstDate: DateTime(today.year - 5),
+      firstDate: DateTime(floor.year, floor.month, floor.day),
       lastDate: DateTime(today.year, today.month, today.day),
     );
     if (picked != null) {
@@ -215,11 +219,13 @@ class _DateStrip extends StatelessWidget {
   const _DateStrip({
     required this.selected,
     required this.today,
+    required this.floor,
     required this.onSelected,
   });
 
   final DateTime selected;
   final DateTime today;
+  final DateTime floor;
   final ValueChanged<DateTime> onSelected;
 
   static const _windowDays = 30;
@@ -239,10 +245,12 @@ class _DateStrip extends StatelessWidget {
         itemBuilder: (context, i) {
           // With reverse=true, index 0 is the rightmost (newest = today).
           final date = todayUtc.subtract(Duration(days: i));
+          final enabled = !date.isBefore(floor);
           return _DateChip(
             date: date,
             selected: _sameDay(date, selected),
             isToday: _sameDay(date, today),
+            enabled: enabled,
             onTap: () => onSelected(date),
           );
         },
@@ -259,12 +267,14 @@ class _DateChip extends StatelessWidget {
     required this.date,
     required this.selected,
     required this.isToday,
+    required this.enabled,
     required this.onTap,
   });
 
   final DateTime date;
   final bool selected;
   final bool isToday;
+  final bool enabled;
   final VoidCallback onTap;
 
   @override
@@ -276,69 +286,72 @@ class _DateChip extends StatelessWidget {
 
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 4),
-      child: InkWell(
-        borderRadius: BorderRadius.circular(14),
-        onTap: onTap,
-        child: Container(
-          width: 56,
-          decoration: BoxDecoration(
-            color: bg,
-            borderRadius: BorderRadius.circular(14),
-            border: isToday && !selected
-                ? Border.all(color: scheme.primary, width: 1.5)
-                : null,
-          ),
-          padding: const EdgeInsets.symmetric(vertical: 6),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.center,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              Text(
-                localizeDigits(
-                  context,
-                  safeDateFormat(
-                    'EEE',
-                    Localizations.localeOf(context).toString(),
-                  ).format(date.toLocal()).toUpperCase(),
+      child: Opacity(
+        opacity: enabled ? 1.0 : 0.35,
+        child: InkWell(
+          borderRadius: BorderRadius.circular(14),
+          onTap: enabled ? onTap : null,
+          child: Container(
+            width: 56,
+            decoration: BoxDecoration(
+              color: bg,
+              borderRadius: BorderRadius.circular(14),
+              border: isToday && !selected
+                  ? Border.all(color: scheme.primary, width: 1.5)
+                  : null,
+            ),
+            padding: const EdgeInsets.symmetric(vertical: 6),
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.center,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Text(
+                  localizeDigits(
+                    context,
+                    safeDateFormat(
+                      'EEE',
+                      Localizations.localeOf(context).toString(),
+                    ).format(date.toLocal()).toUpperCase(),
+                  ),
+                  style: theme.textTheme.labelSmall?.copyWith(
+                    color: fg.withValues(alpha: 0.75),
+                    letterSpacing: 0.6,
+                    fontSize: 9,
+                    height: 1,
+                  ),
                 ),
-                style: theme.textTheme.labelSmall?.copyWith(
-                  color: fg.withValues(alpha: 0.75),
-                  letterSpacing: 0.6,
-                  fontSize: 9,
-                  height: 1,
+                const SizedBox(height: 3),
+                Text(
+                  localizeDigits(
+                    context,
+                    safeDateFormat(
+                      'd',
+                      Localizations.localeOf(context).toString(),
+                    ).format(date.toLocal()),
+                  ),
+                  style: theme.textTheme.titleMedium?.copyWith(
+                    color: fg,
+                    fontWeight: FontWeight.w600,
+                    height: 1,
+                  ),
                 ),
-              ),
-              const SizedBox(height: 3),
-              Text(
-                localizeDigits(
-                  context,
-                  safeDateFormat(
-                    'd',
-                    Localizations.localeOf(context).toString(),
-                  ).format(date.toLocal()),
+                const SizedBox(height: 3),
+                Text(
+                  localizeDigits(
+                    context,
+                    safeDateFormat(
+                      'MMM',
+                      Localizations.localeOf(context).toString(),
+                    ).format(date.toLocal()),
+                  ),
+                  style: theme.textTheme.labelSmall?.copyWith(
+                    color: fg.withValues(alpha: 0.75),
+                    fontSize: 9,
+                    height: 1,
+                  ),
                 ),
-                style: theme.textTheme.titleMedium?.copyWith(
-                  color: fg,
-                  fontWeight: FontWeight.w600,
-                  height: 1,
-                ),
-              ),
-              const SizedBox(height: 3),
-              Text(
-                localizeDigits(
-                  context,
-                  safeDateFormat(
-                    'MMM',
-                    Localizations.localeOf(context).toString(),
-                  ).format(date.toLocal()),
-                ),
-                style: theme.textTheme.labelSmall?.copyWith(
-                  color: fg.withValues(alpha: 0.75),
-                  fontSize: 9,
-                  height: 1,
-                ),
-              ),
-            ],
+              ],
+            ),
           ),
         ),
       ),
