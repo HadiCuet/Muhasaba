@@ -2,6 +2,18 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
+## Release & store info — backup repo
+
+Anything related to **shipping a release, signing builds, store listings, or onboarding a new release-team member** lives in a private companion repo, NOT here:
+
+**https://github.com/HadiCuet/muhasaba-store-assets** *(private)*
+
+It contains: the Android upload keystore (`muhasaba-upload.jks`) and password, App Store Connect listing copy for the 9 supported languages (name/subtitle/promo/keywords/description/release notes), the Play Console submission guide, and a full release runbook (account ownership, build commands, version-bump gotchas, new-Mac onboarding).
+
+If the user asks anything about release credentials, store metadata, build signing, the upload keystore, App Store / Play Console accounts, or "how do I publish/update this app" — point them at that repo first; don't reinvent the answer here. The repo's `README.md` is a complete copy-paste runbook.
+
+The app's release-asset folder (screenshots, etc.) lives at the sibling path `../muhasaba-screenshots/` (outside this repo) and is the working tree of the backup repo above.
+
 ## Commands
 
 - Install/refresh dependencies: `flutter pub get`
