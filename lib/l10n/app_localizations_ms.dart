@@ -146,6 +146,23 @@ class AppLocalizationsMs extends AppLocalizations {
       'Peringatan disimpan, tetapi notifikasi tidak dibenarkan. Aktifkannya di tetapan sistem untuk menerima makluman.';
 
   @override
+  String get settingsReminders => 'Peringatan';
+
+  @override
+  String get dailyReminder => 'Peringatan harian';
+
+  @override
+  String get dailyReminderSubtitle =>
+      'Peringatan lembut untuk menjejaki amal anda';
+
+  @override
+  String get dailyReminderTimeLabel => 'Masa peringatan';
+
+  @override
+  String get dailyReminderBody =>
+      'Luangkan sedikit masa untuk menjejaki amal hari ini.';
+
+  @override
   String get groupByCategory => 'Kumpul mengikut kategori';
 
   @override

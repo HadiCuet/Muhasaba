@@ -53,6 +53,10 @@ abstract class ReminderScheduler {
   /// tests and other environments without a real notifications plugin.
   const factory ReminderScheduler.noop() = _NoopReminderScheduler;
 
+  /// Fixed notification id for the single app-level daily reminder. Amal ids
+  /// are SQLite autoincrement starting at 1, so 0 never collides.
+  static const int appReminderId = 0;
+
   Future<bool> requestPermissions();
 
   /// Schedule (or re-schedule) a daily repeating reminder for `amalId` at
@@ -67,6 +71,15 @@ abstract class ReminderScheduler {
     required String title,
     required int hour,
     required int minute,
+  });
+
+  /// Schedule (or replace) the single app-level daily reminder at `hour:minute`
+  /// in local time, with the given already-localized `body`. Title is the app
+  /// name. Cancel via `cancel(ReminderScheduler.appReminderId)`.
+  Future<void> scheduleAppReminder({
+    required int hour,
+    required int minute,
+    required String body,
   });
 
   Future<void> cancel(int amalId);
@@ -122,8 +135,35 @@ class _LocalReminderScheduler extends ReminderScheduler {
     required String title,
     required int hour,
     required int minute,
+  }) => _scheduleDailyAt(
+    id: amalId,
+    title: 'Muhasaba',
+    body: title,
+    hour: hour,
+    minute: minute,
+  );
+
+  @override
+  Future<void> scheduleAppReminder({
+    required int hour,
+    required int minute,
+    required String body,
+  }) => _scheduleDailyAt(
+    id: ReminderScheduler.appReminderId,
+    title: 'Muhasaba',
+    body: body,
+    hour: hour,
+    minute: minute,
+  );
+
+  Future<void> _scheduleDailyAt({
+    required int id,
+    required String title,
+    required String body,
+    required int hour,
+    required int minute,
   }) async {
-    await cancel(amalId);
+    await _plugin.cancel(id: id);
 
     final now = tz.TZDateTime.now(tz.local);
     var first = tz.TZDateTime(
@@ -139,9 +179,9 @@ class _LocalReminderScheduler extends ReminderScheduler {
     }
 
     await _plugin.zonedSchedule(
-      id: amalId,
-      title: 'Muhasaba',
-      body: title,
+      id: id,
+      title: title,
+      body: body,
       scheduledDate: first,
       notificationDetails: const NotificationDetails(
         android: AndroidNotificationDetails(
@@ -177,6 +217,13 @@ class _NoopReminderScheduler extends ReminderScheduler {
     required String title,
     required int hour,
     required int minute,
+  }) async {}
+
+  @override
+  Future<void> scheduleAppReminder({
+    required int hour,
+    required int minute,
+    required String body,
   }) async {}
 
   @override

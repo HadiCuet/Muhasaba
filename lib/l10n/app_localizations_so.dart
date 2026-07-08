@@ -148,6 +148,23 @@ class AppLocalizationsSo extends AppLocalizations {
       'Xusuusinta waa la kaydiyay, laakiin ogeysiisyada lama ogola. Ka fur dejinta nidaamka si aad u hesho digniinadda.';
 
   @override
+  String get settingsReminders => 'Xusuusinta';
+
+  @override
+  String get dailyReminder => 'Xusuusin maalinlaha ah';
+
+  @override
+  String get dailyReminderSubtitle =>
+      'Xusuusin jilicsan si aad u raadraacdo camalladaada';
+
+  @override
+  String get dailyReminderTimeLabel => 'Wakhtiga xusuusinta';
+
+  @override
+  String get dailyReminderBody =>
+      'Wax yar wakhti u qaado si aad u raadraacdo camallada maanta.';
+
+  @override
   String get groupByCategory => 'U koobi qaybaha';
 
   @override

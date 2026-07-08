@@ -146,6 +146,21 @@ class AppLocalizationsAr extends AppLocalizations {
       'تم حفظ التذكير، لكن الإشعارات غير مسموح بها. فعّلها من إعدادات النظام لتلقي التنبيهات.';
 
   @override
+  String get settingsReminders => 'التذكيرات';
+
+  @override
+  String get dailyReminder => 'التذكير اليومي';
+
+  @override
+  String get dailyReminderSubtitle => 'تذكير لطيف لتتبع أعمالك';
+
+  @override
+  String get dailyReminderTimeLabel => 'وقت التذكير';
+
+  @override
+  String get dailyReminderBody => 'خذ لحظة لتتبع أعمال اليوم.';
+
+  @override
   String get groupByCategory => 'تجميع حسب الفئة';
 
   @override

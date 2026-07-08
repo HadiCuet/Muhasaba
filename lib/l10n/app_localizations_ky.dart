@@ -146,6 +146,23 @@ class AppLocalizationsKy extends AppLocalizations {
       'Эскертме сакталды, бирок билдирмелерге уруксат берилген эмес. Эскертүүлөрдү алуу үчүн тутум жөндөөлөрүндө иштетиңиз.';
 
   @override
+  String get settingsReminders => 'Эскертмелер';
+
+  @override
+  String get dailyReminder => 'Күнүмдүк эскертме';
+
+  @override
+  String get dailyReminderSubtitle =>
+      'Амалдарыңызды көзөмөлдөө үчүн жумшак эскертме';
+
+  @override
+  String get dailyReminderTimeLabel => 'Эскертме убактысы';
+
+  @override
+  String get dailyReminderBody =>
+      'Бүгүнкү амалдарыңызды көзөмөлдөө үчүн бир азга убакыт бөлүңүз.';
+
+  @override
   String get groupByCategory => 'Категория боюнча топтоо';
 
   @override

@@ -148,6 +148,23 @@ class AppLocalizationsId extends AppLocalizations {
       'Pengingat disimpan, tetapi notifikasi tidak diizinkan. Aktifkan di pengaturan sistem untuk menerima notifikasi.';
 
   @override
+  String get settingsReminders => 'Pengingat';
+
+  @override
+  String get dailyReminder => 'Pengingat harian';
+
+  @override
+  String get dailyReminderSubtitle =>
+      'Pengingat lembut untuk melacak amal Anda';
+
+  @override
+  String get dailyReminderTimeLabel => 'Waktu pengingat';
+
+  @override
+  String get dailyReminderBody =>
+      'Luangkan waktu sejenak untuk melacak amal hari ini.';
+
+  @override
   String get groupByCategory => 'Kelompokkan berdasarkan kategori';
 
   @override

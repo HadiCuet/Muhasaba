@@ -146,6 +146,23 @@ class AppLocalizationsPs extends AppLocalizations {
       'یادونه خوندی شوه، خو خبرتیاوې اجازه نه لري. د هوښیارتیاوو لپاره یې د سیسټم تنظیماتو کې فعاله کړئ.';
 
   @override
+  String get settingsReminders => 'یادونې';
+
+  @override
+  String get dailyReminder => 'ورځنۍ یادونه';
+
+  @override
+  String get dailyReminderSubtitle =>
+      'ستاسو د عملونو تعقیب لپاره یوه نرمه یادونه';
+
+  @override
+  String get dailyReminderTimeLabel => 'د یادونې وخت';
+
+  @override
+  String get dailyReminderBody =>
+      'د نن ورځې عملونه تعقیبولو لپاره لږ وخت ورکړئ.';
+
+  @override
   String get groupByCategory => 'د کټګورۍ له مخې ګروپ کول';
 
   @override

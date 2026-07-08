@@ -146,6 +146,23 @@ class AppLocalizationsSq extends AppLocalizations {
       'Kujtesa u ruajt, por njoftimet nuk jane te lejuara. Aktivizoni ato ne cilesimet e sistemit per te marre njoftime.';
 
   @override
+  String get settingsReminders => 'Kujtesat';
+
+  @override
+  String get dailyReminder => 'Kujtese ditore';
+
+  @override
+  String get dailyReminderSubtitle =>
+      'Nje kujtese e bute per te ndjekur amalet tuaja';
+
+  @override
+  String get dailyReminderTimeLabel => 'Ora e kujteses';
+
+  @override
+  String get dailyReminderBody =>
+      'Ndani nje moment per te ndjekur amalet e sotme.';
+
+  @override
   String get groupByCategory => 'Grupo sipas kategorise';
 
   @override

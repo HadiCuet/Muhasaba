@@ -146,6 +146,23 @@ class AppLocalizationsKu extends AppLocalizations {
       'Bîranîn hat tomarkirin, lê agahdarî destûr nehatiye dayîn. Di mîhengên pergalê de wan çalak bike.';
 
   @override
+  String get settingsReminders => 'Bîranîn';
+
+  @override
+  String get dailyReminder => 'Bîranîna rojane';
+
+  @override
+  String get dailyReminderSubtitle =>
+      'Bîranînek nerm ji bo şopandina kirinên te';
+
+  @override
+  String get dailyReminderTimeLabel => 'Dema bîranînê';
+
+  @override
+  String get dailyReminderBody =>
+      'Kêliyekê veqetîne da ku kirinên îro bişopînî.';
+
+  @override
   String get groupByCategory => 'Li gorî beşê kom bike';
 
   @override

@@ -147,6 +147,22 @@ class AppLocalizationsFa extends AppLocalizations {
       'یادآوری ذخیره شد، اما اعلان‌ها مجاز نیستند. برای دریافت هشدارها، اعلان‌ها را در تنظیمات سیستم فعال کنید.';
 
   @override
+  String get settingsReminders => 'یادآوری‌ها';
+
+  @override
+  String get dailyReminder => 'یادآوری روزانه';
+
+  @override
+  String get dailyReminderSubtitle => 'یادآوری ملایمی برای پیگیری اعمال شما';
+
+  @override
+  String get dailyReminderTimeLabel => 'زمان یادآوری';
+
+  @override
+  String get dailyReminderBody =>
+      'کمی وقت بگذارید تا اعمال امروز را پیگیری کنید.';
+
+  @override
   String get groupByCategory => 'گروه‌بندی بر اساس دسته';
 
   @override

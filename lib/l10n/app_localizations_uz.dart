@@ -148,6 +148,23 @@ class AppLocalizationsUz extends AppLocalizations {
       'Eslatma saqlandi, lekin bildirishnomalarga ruxsat berilmagan. Ogohlantirishlar olish uchun tizim sozlamalarida yoqing.';
 
   @override
+  String get settingsReminders => 'Eslatmalar';
+
+  @override
+  String get dailyReminder => 'Kunlik eslatma';
+
+  @override
+  String get dailyReminderSubtitle =>
+      'Amallaringizni kuzatish uchun yumshoq eslatma';
+
+  @override
+  String get dailyReminderTimeLabel => 'Eslatma vaqti';
+
+  @override
+  String get dailyReminderBody =>
+      'Bugungi amallaringizni kuzatish uchun bir zum ajrating.';
+
+  @override
   String get groupByCategory => 'Turkum bo\'yicha guruhlash';
 
   @override

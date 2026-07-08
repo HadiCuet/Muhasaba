@@ -146,6 +146,22 @@ class AppLocalizationsBn extends AppLocalizations {
       'রিমাইন্ডার সংরক্ষিত হয়েছে, তবে নোটিফিকেশনের অনুমতি নেই। সতর্কতা পেতে সিস্টেম সেটিংস থেকে চালু করুন।';
 
   @override
+  String get settingsReminders => 'রিমাইন্ডার';
+
+  @override
+  String get dailyReminder => 'দৈনিক রিমাইন্ডার';
+
+  @override
+  String get dailyReminderSubtitle =>
+      'আপনার আমল ট্র্যাক করার একটি কোমল অনুস্মারক';
+
+  @override
+  String get dailyReminderTimeLabel => 'রিমাইন্ডারের সময়';
+
+  @override
+  String get dailyReminderBody => 'আজকের আমল ট্র্যাক করতে কিছুটা সময় নিন।';
+
+  @override
   String get groupByCategory => 'বিভাগ অনুযায়ী';
 
   @override

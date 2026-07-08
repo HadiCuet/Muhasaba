@@ -147,6 +147,23 @@ class AppLocalizationsAz extends AppLocalizations {
       'Xatirlatma saxlanildi, lakin bildirisler icaze verilmeyib. Xeberdar olmaq ucun sistem parametrlerinde aktiv edin.';
 
   @override
+  String get settingsReminders => 'Xatirlatmalar';
+
+  @override
+  String get dailyReminder => 'Gundelik xatirlatma';
+
+  @override
+  String get dailyReminderSubtitle =>
+      'Emellerinizi izlemek ucun yumsaq bir xatirlatma';
+
+  @override
+  String get dailyReminderTimeLabel => 'Xatirlatma saati';
+
+  @override
+  String get dailyReminderBody =>
+      'Bugunku emellerinizi izlemek ucun bir an ayirin.';
+
+  @override
   String get groupByCategory => 'Kateqoriyaya gore qrupla';
 
   @override

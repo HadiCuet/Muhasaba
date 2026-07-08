@@ -6,6 +6,7 @@ import '../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../domain/models/app_settings.dart';
+import '../domain/services/daily_reminder.dart';
 import 'providers.dart';
 import 'router.dart';
 import 'theme.dart';
@@ -33,12 +34,28 @@ class _MuhasabaAppState extends ConsumerState<MuhasabaApp> {
     _lifecycle = AppLifecycleListener(
       onResume: () => ref.invalidate(currentMuhasabaDateProvider),
     );
+    WidgetsBinding.instance.addPostFrameCallback(
+      (_) => _bootstrapDailyReminderPermission(),
+    );
   }
 
   @override
   void dispose() {
     _lifecycle.dispose();
     super.dispose();
+  }
+
+  /// On the first launch that reaches the Today frame, ask for notification
+  /// permission once (the reminder is ON by default). Gated by a persisted flag
+  /// so it never re-prompts. Re-applies the schedule afterwards so iOS has the
+  /// request registered post-authorization.
+  Future<void> _bootstrapDailyReminderPermission() async {
+    final repo = ref.read(settingsRepositoryProvider);
+    if (await repo.getDailyReminderPermissionAsked()) return;
+    final scheduler = ref.read(reminderSchedulerProvider);
+    await scheduler.requestPermissions();
+    await repo.setDailyReminderPermissionAsked(true);
+    await applyDailyReminder(scheduler, await repo.get());
   }
 
   @override
@@ -155,7 +172,8 @@ class _DayRolloverToastState extends ConsumerState<_DayRolloverToast> {
     // steady. This excludes the initial settings load and Settings edits, which
     // also shift the computed date but aren't a new day. First resolution
     // (_seenDate == null) is the baseline, never a toast.
-    final rolledOver = _seenDate != null &&
+    final rolledOver =
+        _seenDate != null &&
         date != _seenDate &&
         rollover != null &&
         rollover == _seenRollover;

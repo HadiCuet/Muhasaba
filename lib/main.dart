@@ -10,6 +10,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'app/app.dart';
 import 'app/providers.dart';
 import 'data/db/database.dart';
+import 'data/repositories/settings_repository.dart';
+import 'domain/services/daily_reminder.dart';
 import 'domain/services/reminder_scheduler.dart';
 import 'firebase_options.dart';
 
@@ -23,10 +25,12 @@ Future<void> main() async {
       );
 
       // Don't collect crashes or analytics during development; only in release builds.
-      await FirebaseCrashlytics.instance
-          .setCrashlyticsCollectionEnabled(!kDebugMode);
-      await FirebaseAnalytics.instance
-          .setAnalyticsCollectionEnabled(!kDebugMode);
+      await FirebaseCrashlytics.instance.setCrashlyticsCollectionEnabled(
+        !kDebugMode,
+      );
+      await FirebaseAnalytics.instance.setAnalyticsCollectionEnabled(
+        !kDebugMode,
+      );
 
       // Route Flutter framework errors to Crashlytics.
       FlutterError.onError =
@@ -56,6 +60,12 @@ Future<void> main() async {
           );
         }
       }
+
+      // App-level daily reminder: (re)register on every launch so reboots and
+      // OS notification clears don't silently kill it — same rationale as the
+      // per-amal recovery above. No-ops (cancels) when disabled.
+      final settings = await SettingsRepository(db.settingsDao).get();
+      await applyDailyReminder(scheduler, settings);
 
       runApp(
         ProviderScope(
