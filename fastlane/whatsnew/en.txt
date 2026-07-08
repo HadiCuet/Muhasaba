@@ -1,5 +1,4 @@
-JazakAllah for using Muhasaba.
+JazakAllah for using Muhasaba. May Allah accept and make it easy.
 
-• Weekly amals, your way — set a recurring deed on several weekdays at once.
-• Always today — the Home screen rolls over to the new day on its own, no need to reopen the app.
-• Tidier history — History now starts from the day you began, with no empty days before it.
+• Daily reminder — a gentle nudge to check in on your deeds each day, at a time you choose. On by default at 8:00 PM; change it or turn it off anytime in Settings.
+• Clearer monthly stats — the daily breakdown chart now reads cleanly on every screen, with no cramped or broken day numbers.

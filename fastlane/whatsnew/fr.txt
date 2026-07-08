@@ -1,5 +1,4 @@
-JazakAllah d'utiliser Muhasaba.
+JazakAllah d'utiliser Muhasaba. Qu'Allah l'accepte et la rende facile.
 
-• Des amals hebdomadaires à votre façon — programmez une bonne action récurrente sur plusieurs jours de la semaine à la fois.
-• Toujours aujourd'hui — l'écran d'accueil passe au nouveau jour tout seul, sans rouvrir l'application.
-• Un historique plus net — l'historique commence désormais le jour où vous avez débuté, sans jours vides avant.
+• Rappel quotidien — une douce invitation à faire le point sur vos actes chaque jour, à l'heure de votre choix. Activé par défaut à 20:00 ; modifiez-le ou désactivez-le à tout moment dans Paramètres.
+• Statistiques mensuelles plus claires — le graphique du détail quotidien s'affiche désormais nettement sur tous les écrans, sans numéros de jour tassés ni tronqués.
