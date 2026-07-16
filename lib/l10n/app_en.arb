@@ -32,6 +32,7 @@
   "categoryDhikr": "Dhikr",
   "categoryQuran": "Quran",
   "categoryCharity": "Charity",
+  "categorySunnah": "Sunnah",
   "timesPerPeriod": "Times per period",
   "custom": "Custom",
   "customTargetHint": "e.g. 50",
@@ -110,12 +111,20 @@
   "categoryEditSheetTitle": "Edit category",
   "addAmal": "Add Amal",
   "customAmal": "Custom Amal",
-  "templateTasbih": "Tasbih 33x",
-  "templateIstighfar": "Istighfar 100x",
-  "templateSurahKahf": "Surah Kahf",
-  "templateSadaqah": "Sadaqah",
-  "templateTahajjud": "Tahajjud",
-  "templateDuhaPrayer": "Duha Prayer",
+  "amalTasbih": "Tasbih 33x",
+  "amalIstighfar": "Istighfar 100x",
+  "amalSurahKahf": "Surah Kahf",
+  "amalSadaqah": "Sadaqah",
+  "amalTahajjud": "Tahajjud",
+  "amalDuha": "Duha",
+  "amalFajr": "Fajr",
+  "amalDhuhr": "Dhuhr",
+  "amalAsr": "Asr",
+  "amalMaghrib": "Maghrib",
+  "amalIsha": "Isha",
+  "amalMorningAdhkar": "Morning Adhkar",
+  "amalEveningAdhkar": "Evening Adhkar",
+  "amalTilawah": "Tilawah",
   "settingsTitle": "Settings",
   "settingsLoadError": "Failed to load settings:\n{error}",
   "@settingsLoadError": {
@@ -366,5 +375,8 @@
       }
     }
   },
-  "genericError": "Something went wrong. Please try again."
+  "genericError": "Something went wrong. Please try again.",
+  "notificationChannelName": "Amal reminders",
+  "notificationChannelDescription": "Daily reminders for your tracked amal.",
+  "invalidAmalId": "Invalid amal id"
 }

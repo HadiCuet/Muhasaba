@@ -5,6 +5,7 @@ import '../../l10n/app_localizations.dart';
 String localizedCategoryName(String dbName, AppLocalizations l) {
   return switch (dbName) {
     'Salah' => l.categorySalah,
+    'Sunnah' => l.categorySunnah,
     'Dhikr' => l.categoryDhikr,
     'Quran' => l.categoryQuran,
     'Charity' => l.categoryCharity,

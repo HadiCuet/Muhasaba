@@ -1,27 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../app/providers.dart';
+import '../../../data/db/database.dart';
 import '../../../domain/services/enhanced_stats_service.dart';
+import '../../../domain/utils/localized_category.dart';
 import '../../../domain/utils/localized_number.dart';
 import '../../../l10n/app_localizations.dart';
 
-class CategoryBreakdownCard extends StatelessWidget {
+class CategoryBreakdownCard extends ConsumerWidget {
   const CategoryBreakdownCard({super.key, required this.categories});
 
   final List<CategoryBreakdown> categories;
 
-  static const _categoryIcons = <String, String>{
-    'Salah': '\u{1F54C}',   // mosque
-    'Quran': '\u{1F4D6}',   // open book
-    'Dhikr': '\u{1F4BF}',   // prayer beads (disc as proxy)
-    'Charity': '\u{1F49D}', // ribbon heart
-  };
-
   static const _defaultIcon = '\u{1F4C2}'; // folder
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final l = AppLocalizations.of(context);
+
+    // Icons come from the categories table, which is also what the picker and
+    // the seed write to — so user-created categories get their icon here too,
+    // and seed icons can't drift out of sync with a duplicate list.
+    final rows = ref.watch(categoriesProvider).value ?? const <CategoryRow>[];
+    final icons = <String, String?>{for (final c in rows) c.name: c.icon};
 
     return Card(
       child: Padding(
@@ -32,7 +35,13 @@ class CategoryBreakdownCard extends StatelessWidget {
             Text(l.statsByCategory, style: theme.textTheme.titleMedium),
             const SizedBox(height: 12),
             for (var i = 0; i < categories.length; i++) ...[
-              _CategoryRow(category: categories[i]),
+              _CategoryRow(
+                category: categories[i],
+                // Falls back for uncategorized amal, and for a category that
+                // was deleted from the pick-list while amal still carry its
+                // name.
+                icon: icons[categories[i].name] ?? _defaultIcon,
+              ),
               if (i < categories.length - 1) const SizedBox(height: 10),
             ],
           ],
@@ -43,17 +52,20 @@ class CategoryBreakdownCard extends StatelessWidget {
 }
 
 class _CategoryRow extends StatelessWidget {
-  const _CategoryRow({required this.category});
+  const _CategoryRow({required this.category, required this.icon});
 
   final CategoryBreakdown category;
+  final String icon;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final l = AppLocalizations.of(context);
     final rate = category.rate.clamp(0.0, 1.0);
     final pct = (rate * 100).round();
-    final icon = CategoryBreakdownCard._categoryIcons[category.name] ??
-        CategoryBreakdownCard._defaultIcon;
+    final name = category.name == null
+        ? l.categoryOther
+        : localizedCategoryName(category.name!, l);
 
     final barColor = _rateColor(theme, rate);
 
@@ -66,7 +78,7 @@ class _CategoryRow extends StatelessWidget {
             const SizedBox(width: 8),
             Expanded(
               child: Text(
-                category.name,
+                name,
                 style: theme.textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.w500,
                 ),

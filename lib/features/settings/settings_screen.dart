@@ -11,6 +11,9 @@ import '../../app/providers.dart';
 import '../../app/widgets/max_width_body.dart';
 import '../../data/repositories/settings_repository.dart';
 import '../../domain/models/app_settings.dart';
+import '../../domain/services/reminder_sync.dart';
+import '../../domain/utils/app_locale.dart';
+import '../../domain/utils/localized_number.dart';
 import '../../domain/utils/supported_languages.dart';
 import 'support_actions.dart';
 
@@ -37,14 +40,14 @@ class SettingsScreen extends ConsumerWidget {
   }
 }
 
-class _SettingsList extends StatelessWidget {
+class _SettingsList extends ConsumerWidget {
   const _SettingsList({required this.settings, required this.repo});
 
   final AppSettings settings;
   final SettingsRepository repo;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final l = AppLocalizations.of(context);
 
     return ListView(
@@ -63,7 +66,7 @@ class _SettingsList extends StatelessWidget {
               iconColor: Colors.blue,
               title: l.rolloverHour,
               subtitle: l.settingsRolloverSub,
-              trailing: _formatHour(settings.rolloverHour),
+              trailing: _formatHour(context, settings.rolloverHour),
               onTap: () async {
                 final picked = await _pickRolloverHour(
                   context,
@@ -82,7 +85,7 @@ class _SettingsList extends StatelessWidget {
               icon: '📅',
               iconColor: Colors.blue,
               title: l.startOfWeek,
-              trailing: _weekdayName(settings.startOfWeek),
+              trailing: _weekdayName(context, settings.startOfWeek),
               onTap: () async {
                 final picked = await _pickStartOfWeek(
                   context,
@@ -132,10 +135,25 @@ class _SettingsList extends StatelessWidget {
               onTap: () async {
                 final picked = await _pickLanguage(context, settings.locale);
                 if (picked != null) {
-                  await repo.setLocale(picked == '_system' ? null : picked);
+                  final tag = picked == '_system' ? null : picked;
+                  await repo.setLocale(tag);
                   FirebaseAnalytics.instance.logEvent(
                     name: 'language_changed',
                     parameters: {'locale': picked},
+                  );
+                  // Pending reminders carry their text from when they were
+                  // scheduled, so they have to be rewritten in the new
+                  // language. Load the delegate directly rather than reading
+                  // it off this context, which is still on the old locale.
+                  await syncReminders(
+                    ref.read(appDatabaseProvider),
+                    ref.read(reminderSchedulerProvider),
+                    await AppLocalizations.delegate.load(
+                      resolveAppLocale(
+                        tag,
+                        WidgetsBinding.instance.platformDispatcher.locales,
+                      ),
+                    ),
                   );
                 }
               },
@@ -655,7 +673,10 @@ Future<int?> _pickStartOfWeek(BuildContext context, int current) {
             mainAxisSize: MainAxisSize.min,
             children: [
               for (var day = 1; day <= 7; day++)
-                RadioListTile<int>(title: Text(_weekdayName(day)), value: day),
+                RadioListTile<int>(
+                  title: Text(_weekdayName(ctx, day)),
+                  value: day,
+                ),
             ],
           ),
         ),
@@ -736,25 +757,26 @@ Future<String?> _pickLanguage(BuildContext context, String? current) {
 // Formatting helpers
 // ---------------------------------------------------------------------------
 
-String _weekdayName(int day) {
-  const names = [
-    'Monday',
-    'Tuesday',
-    'Wednesday',
-    'Thursday',
-    'Friday',
-    'Saturday',
-    'Sunday',
-  ];
+String _weekdayName(BuildContext context, int day) {
   if (day < 1 || day > 7) return '—';
-  return names[day - 1];
+  // 2024-01-01 was a Monday, so day 1..7 maps onto Jan 1..7 — the same
+  // Monday=1..Sunday=7 numbering DateTime.weekday uses.
+  return safeDateFormat(
+    'EEEE',
+    Localizations.localeOf(context).toString(),
+  ).format(DateTime(2024, 1, day));
 }
 
-String _formatHour(int hour) {
-  final h = hour.clamp(0, 23);
-  final suffix = h < 12 ? 'AM' : 'PM';
-  final display = h == 0 ? 12 : (h > 12 ? h - 12 : h);
-  return '$display:00 $suffix';
+String _formatHour(BuildContext context, int hour) {
+  // Defers to MaterialLocalizations, so this follows the locale's clock and
+  // the device's 12h/24h preference instead of forcing English AM/PM.
+  // localizeDigits keeps the numerals in sync with the rest of the app, which
+  // forces Arabic-Indic digits for ar/ur.
+  final formatted = TimeOfDay(
+    hour: hour.clamp(0, 23),
+    minute: 0,
+  ).format(context);
+  return localizeDigits(context, formatted);
 }
 
 String _themeLabel(BuildContext context, ThemeMode mode) {

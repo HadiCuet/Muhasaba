@@ -8,6 +8,8 @@ import '../../app/providers.dart';
 import '../../app/widgets/max_width_body.dart';
 import '../../data/db/database.dart';
 import '../../domain/services/today_builder.dart';
+import '../../domain/utils/localized_amal_title.dart';
+import '../../domain/utils/localized_category.dart';
 import '../../domain/utils/localized_number.dart';
 import 'widgets/amal_row.dart';
 import 'widgets/remove_sheet.dart';
@@ -328,7 +330,9 @@ class _GroupHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final l = AppLocalizations.of(context);
-    final name = group.categoryName ?? l.categoryOther;
+    final name = group.categoryName == null
+        ? l.categoryOther
+        : localizedCategoryName(group.categoryName!, l);
     return Padding(
       padding: const EdgeInsets.fromLTRB(4, 12, 4, 6),
       child: Row(
@@ -419,7 +423,10 @@ Future<void> _openRemoveSheet(
   TodayRow row,
   DateTime date,
 ) async {
-  final choice = await showRemoveSheet(context, amalTitle: row.amal.title);
+  final choice = await showRemoveSheet(
+    context,
+    amalTitle: localizedAmalTitle(row.amal.title, AppLocalizations.of(context)),
+  );
   switch (choice) {
     case RemoveChoice.today:
       await ref

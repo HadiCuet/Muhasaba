@@ -87,6 +87,9 @@ class AppLocalizationsUz extends AppLocalizations {
   String get categoryCharity => 'Sadaqa';
 
   @override
+  String get categorySunnah => 'Sunnat';
+
+  @override
   String get timesPerPeriod => 'Davr ichida marta';
 
   @override
@@ -224,22 +227,46 @@ class AppLocalizationsUz extends AppLocalizations {
   String get customAmal => 'Maxsus amal';
 
   @override
-  String get templateTasbih => 'Tasbih 33x';
+  String get amalTasbih => 'Tasbih 33x';
 
   @override
-  String get templateIstighfar => 'Istighfor 100x';
+  String get amalIstighfar => 'Istighfor 100x';
 
   @override
-  String get templateSurahKahf => 'Kahf surasi';
+  String get amalSurahKahf => 'Kahf surasi';
 
   @override
-  String get templateSadaqah => 'Sadaqa';
+  String get amalSadaqah => 'Sadaqa';
 
   @override
-  String get templateTahajjud => 'Tahajjud';
+  String get amalTahajjud => 'Tahajjud';
 
   @override
-  String get templateDuhaPrayer => 'Duho namozi';
+  String get amalDuha => 'Duho namozi';
+
+  @override
+  String get amalFajr => 'Bomdod';
+
+  @override
+  String get amalDhuhr => 'Peshin';
+
+  @override
+  String get amalAsr => 'Asr';
+
+  @override
+  String get amalMaghrib => 'Shom';
+
+  @override
+  String get amalIsha => 'Xufton';
+
+  @override
+  String get amalMorningAdhkar => 'Ertalabki zikrlar';
+
+  @override
+  String get amalEveningAdhkar => 'Kechki zikrlar';
+
+  @override
+  String get amalTilawah => 'Tilovat';
 
   @override
   String get settingsTitle => 'Sozlamalar';
@@ -886,4 +913,14 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get genericError =>
       'Nimadur noto\'g\'ri ketdi. Iltimos, qayta urinib ko\'ring.';
+
+  @override
+  String get notificationChannelName => 'Amal eslatmalari';
+
+  @override
+  String get notificationChannelDescription =>
+      'Siz kuzatayotgan amallar uchun kunlik eslatmalar.';
+
+  @override
+  String get invalidAmalId => 'Yaroqsiz amal identifikatori';
 }

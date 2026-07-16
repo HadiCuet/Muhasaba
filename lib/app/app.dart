@@ -6,6 +6,7 @@ import '../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../domain/models/app_settings.dart';
+import '../domain/utils/app_locale.dart';
 import 'providers.dart';
 import 'router.dart';
 import 'theme.dart';
@@ -104,25 +105,10 @@ class _MuhasabaAppState extends ConsumerState<MuhasabaApp> {
       ],
       supportedLocales: AppLocalizations.supportedLocales,
       // Graceful fallback: if the device locale isn't in our supported list,
-      // try matching just the language code, then fall back to English.
-      localeResolutionCallback: (deviceLocale, supportedLocales) {
-        if (locale != null) return locale; // User override.
-        if (deviceLocale == null) return const Locale('en');
-        // Exact match first.
-        for (final supported in supportedLocales) {
-          if (supported.languageCode == deviceLocale.languageCode &&
-              supported.countryCode == deviceLocale.countryCode) {
-            return supported;
-          }
-        }
-        // Language-only match.
-        for (final supported in supportedLocales) {
-          if (supported.languageCode == deviceLocale.languageCode) {
-            return supported;
-          }
-        }
-        return const Locale('en');
-      },
+      // try matching just the language code, then fall back to English. Shared
+      // with main()'s startup reminder sync via [resolveAppLocale].
+      localeResolutionCallback: (deviceLocale, supportedLocales) =>
+          resolveAppLocale(settings.locale, [?deviceLocale]),
     );
   }
 }
@@ -155,7 +141,8 @@ class _DayRolloverToastState extends ConsumerState<_DayRolloverToast> {
     // steady. This excludes the initial settings load and Settings edits, which
     // also shift the computed date but aren't a new day. First resolution
     // (_seenDate == null) is the baseline, never a toast.
-    final rolledOver = _seenDate != null &&
+    final rolledOver =
+        _seenDate != null &&
         date != _seenDate &&
         rollover != null &&
         rollover == _seenRollover;

@@ -4,6 +4,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../stats_filter.dart';
 import '../stats_providers.dart';
+import '../../../domain/utils/localized_amal_title.dart';
+import '../../../domain/utils/localized_category.dart';
 import '../../../domain/utils/localized_number.dart';
 import '../../../l10n/app_localizations.dart';
 
@@ -24,8 +26,7 @@ class StatsFilterRow extends ConsumerWidget {
             child: _FilterDropdown(
               label: l.statsFilterTime,
               value: _periodLabel(l, filter, locale),
-              onSelected: (context) =>
-                  _showTimePicker(context, ref, filter, l),
+              onSelected: (context) => _showTimePicker(context, ref, filter, l),
             ),
           ),
           const SizedBox(width: 8),
@@ -37,21 +38,14 @@ class StatsFilterRow extends ConsumerWidget {
           ),
           const SizedBox(width: 8),
           Expanded(
-            child: _AmalDropdown(
-              label: l.statsFilterAmal,
-              filter: filter,
-            ),
+            child: _AmalDropdown(label: l.statsFilterAmal, filter: filter),
           ),
         ],
       ),
     );
   }
 
-  String _periodLabel(
-    AppLocalizations l,
-    StatsFilter filter,
-    String locale,
-  ) {
+  String _periodLabel(AppLocalizations l, StatsFilter filter, String locale) {
     return switch (filter.period) {
       StatsPeriod.today => l.statsToday,
       StatsPeriod.thisWeek => l.statsThisWeek,
@@ -78,10 +72,11 @@ class StatsFilterRow extends ConsumerWidget {
       PopupMenuItem(value: StatsPeriod.today, child: Text(l.statsToday)),
       PopupMenuItem(value: StatsPeriod.thisWeek, child: Text(l.statsThisWeek)),
       PopupMenuItem(
-          value: StatsPeriod.thisMonth, child: Text(l.statsThisMonth)),
+        value: StatsPeriod.thisMonth,
+        child: Text(l.statsThisMonth),
+      ),
       PopupMenuItem(value: StatsPeriod.allTime, child: Text(l.statsAllTime)),
-      PopupMenuItem(
-          value: StatsPeriod.custom, child: Text(l.statsCustomRange)),
+      PopupMenuItem(value: StatsPeriod.custom, child: Text(l.statsCustomRange)),
     ];
 
     final button = context.findRenderObject() as RenderBox;
@@ -90,8 +85,10 @@ class StatsFilterRow extends ConsumerWidget {
     final position = RelativeRect.fromRect(
       Rect.fromPoints(
         button.localToGlobal(Offset.zero, ancestor: overlay),
-        button.localToGlobal(button.size.bottomLeft(Offset.zero),
-            ancestor: overlay),
+        button.localToGlobal(
+          button.size.bottomLeft(Offset.zero),
+          ancestor: overlay,
+        ),
       ),
       Offset.zero & overlay.size,
     );
@@ -109,25 +106,33 @@ class StatsFilterRow extends ConsumerWidget {
           context: context,
           firstDate: DateTime(2020),
           lastDate: DateTime.now(),
-          initialDateRange: filter.customStart != null && filter.customEnd != null
+          initialDateRange:
+              filter.customStart != null && filter.customEnd != null
               ? DateTimeRange(
-                  start: filter.customStart!, end: filter.customEnd!)
+                  start: filter.customStart!,
+                  end: filter.customEnd!,
+                )
               : null,
         );
         if (range != null) {
-          ref.read(statsFilterProvider.notifier).update(filter.copyWith(
-            period: StatsPeriod.custom,
-            customStart: () => range.start,
-            customEnd: () => range.end,
-          ));
+          ref
+              .read(statsFilterProvider.notifier)
+              .update(
+                filter.copyWith(
+                  period: StatsPeriod.custom,
+                  customStart: () => range.start,
+                  customEnd: () => range.end,
+                ),
+              );
           FirebaseAnalytics.instance.logEvent(
             name: 'stats_period_changed',
             parameters: {'period': 'custom'},
           );
         }
       } else {
-        ref.read(statsFilterProvider.notifier).update(
-            filter.copyWith(period: value));
+        ref
+            .read(statsFilterProvider.notifier)
+            .update(filter.copyWith(period: value));
         FirebaseAnalytics.instance.logEvent(
           name: 'stats_period_changed',
           parameters: {'period': value.name},
@@ -206,10 +211,7 @@ class _FilterDropdown extends StatelessWidget {
 }
 
 class _CategoryDropdown extends ConsumerWidget {
-  const _CategoryDropdown({
-    required this.label,
-    required this.filter,
-  });
+  const _CategoryDropdown({required this.label, required this.filter});
 
   final String label;
   final StatsFilter filter;
@@ -218,7 +220,9 @@ class _CategoryDropdown extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final l = AppLocalizations.of(context);
     final categoriesAsync = ref.watch(allCategoriesProvider);
-    final displayValue = filter.category ?? l.statsAllCategories;
+    final displayValue = filter.category == null
+        ? l.statsAllCategories
+        : localizedCategoryName(filter.category!, l);
 
     return _FilterDropdown(
       label: label,
@@ -227,53 +231,49 @@ class _CategoryDropdown extends ConsumerWidget {
         final categories = categoriesAsync.value ?? [];
         // Use '' as sentinel for "All" since null means menu dismissed.
         final entries = <PopupMenuEntry<String>>[
-          PopupMenuItem<String>(
-            value: '',
-            child: Text(l.statsAllCategories),
-          ),
+          PopupMenuItem<String>(value: '', child: Text(l.statsAllCategories)),
+          // `value` stays the raw DB name — it's the filter key, not display text.
           for (final cat in categories)
-            PopupMenuItem<String>(value: cat, child: Text(cat)),
+            PopupMenuItem<String>(
+              value: cat,
+              child: Text(localizedCategoryName(cat, l)),
+            ),
         ];
 
         final button = ctx.findRenderObject() as RenderBox;
-        final overlay = Navigator.of(ctx)
-            .overlay!
-            .context
-            .findRenderObject() as RenderBox;
+        final overlay =
+            Navigator.of(ctx).overlay!.context.findRenderObject() as RenderBox;
         final position = RelativeRect.fromRect(
           Rect.fromPoints(
             button.localToGlobal(Offset.zero, ancestor: overlay),
-            button.localToGlobal(button.size.bottomLeft(Offset.zero),
-                ancestor: overlay),
+            button.localToGlobal(
+              button.size.bottomLeft(Offset.zero),
+              ancestor: overlay,
+            ),
           ),
           Offset.zero & overlay.size,
         );
 
-        showMenu<String>(
-          context: ctx,
-          position: position,
-          items: entries,
-        ).then((value) {
-          if (value == null) return; // dismissed
-          final newCategory = value.isEmpty ? null : value;
-          ref.read(statsFilterProvider.notifier).update(filter.copyWith(
-            category: () => newCategory,
-          ));
-          FirebaseAnalytics.instance.logEvent(
-            name: 'stats_category_filter_changed',
-            parameters: {'active': newCategory != null ? 1 : 0},
-          );
-        });
+        showMenu<String>(context: ctx, position: position, items: entries).then(
+          (value) {
+            if (value == null) return; // dismissed
+            final newCategory = value.isEmpty ? null : value;
+            ref
+                .read(statsFilterProvider.notifier)
+                .update(filter.copyWith(category: () => newCategory));
+            FirebaseAnalytics.instance.logEvent(
+              name: 'stats_category_filter_changed',
+              parameters: {'active': newCategory != null ? 1 : 0},
+            );
+          },
+        );
       },
     );
   }
 }
 
 class _AmalDropdown extends ConsumerWidget {
-  const _AmalDropdown({
-    required this.label,
-    required this.filter,
-  });
+  const _AmalDropdown({required this.label, required this.filter});
 
   final String label;
   final StatsFilter filter;
@@ -283,9 +283,12 @@ class _AmalDropdown extends ConsumerWidget {
     final l = AppLocalizations.of(context);
     final amalsAsync = ref.watch(allActiveAmalsProvider);
     final amals = amalsAsync.value ?? [];
-    final selected = filter.amalId != null
+    final selectedTitle = filter.amalId != null
         ? amals.where((a) => a.id == filter.amalId).firstOrNull?.title
         : null;
+    final selected = selectedTitle == null
+        ? null
+        : localizedAmalTitle(selectedTitle, l);
     final displayValue = selected ?? l.statsAllAmals;
 
     return _FilterDropdown(
@@ -294,10 +297,7 @@ class _AmalDropdown extends ConsumerWidget {
       onSelected: (ctx) {
         // Use -1 as sentinel for "All" since null means menu dismissed.
         final entries = <PopupMenuEntry<int>>[
-          PopupMenuItem<int>(
-            value: -1,
-            child: Text(l.statsAllAmals),
-          ),
+          PopupMenuItem<int>(value: -1, child: Text(l.statsAllAmals)),
           for (final amal in amals)
             PopupMenuItem<int>(
               value: amal.id,
@@ -308,7 +308,7 @@ class _AmalDropdown extends ConsumerWidget {
                   const SizedBox(width: 8),
                   Flexible(
                     child: Text(
-                      amal.title,
+                      localizedAmalTitle(amal.title, l),
                       overflow: TextOverflow.ellipsis,
                     ),
                   ),
@@ -318,29 +318,27 @@ class _AmalDropdown extends ConsumerWidget {
         ];
 
         final button = ctx.findRenderObject() as RenderBox;
-        final overlay = Navigator.of(ctx)
-            .overlay!
-            .context
-            .findRenderObject() as RenderBox;
+        final overlay =
+            Navigator.of(ctx).overlay!.context.findRenderObject() as RenderBox;
         final position = RelativeRect.fromRect(
           Rect.fromPoints(
             button.localToGlobal(Offset.zero, ancestor: overlay),
-            button.localToGlobal(button.size.bottomLeft(Offset.zero),
-                ancestor: overlay),
+            button.localToGlobal(
+              button.size.bottomLeft(Offset.zero),
+              ancestor: overlay,
+            ),
           ),
           Offset.zero & overlay.size,
         );
 
-        showMenu<int>(
-          context: ctx,
-          position: position,
-          items: entries,
-        ).then((value) {
+        showMenu<int>(context: ctx, position: position, items: entries).then((
+          value,
+        ) {
           if (value == null) return; // dismissed
           final newAmalId = value == -1 ? null : value;
-          ref.read(statsFilterProvider.notifier).update(filter.copyWith(
-            amalId: () => newAmalId,
-          ));
+          ref
+              .read(statsFilterProvider.notifier)
+              .update(filter.copyWith(amalId: () => newAmalId));
           FirebaseAnalytics.instance.logEvent(
             name: 'stats_amal_filter_changed',
             parameters: {'active': newAmalId != null ? 1 : 0},
@@ -369,7 +367,8 @@ String _formatCompactRange(DateTime start, DateTime end, String locale) {
   final mmmD = safeDateFormat('MMMd', locale);
   final mmmDyy = safeDateFormat('MMM d, yy', locale);
 
-  final sameDay = start.year == end.year &&
+  final sameDay =
+      start.year == end.year &&
       start.month == end.month &&
       start.day == end.day;
   if (sameDay) return mmmD.format(start);

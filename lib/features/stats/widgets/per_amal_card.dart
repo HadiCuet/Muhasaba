@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../domain/services/enhanced_stats_service.dart';
 import '../../../domain/models/frequency.dart';
+import '../../../domain/utils/localized_amal_title.dart';
 import '../../../domain/utils/localized_number.dart';
 import '../../../l10n/app_localizations.dart';
 
@@ -64,7 +65,7 @@ class _AmalRow extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                stats.title,
+                localizedAmalTitle(stats.title, AppLocalizations.of(context)),
                 style: theme.textTheme.bodyMedium?.copyWith(
                   fontWeight: FontWeight.w500,
                 ),

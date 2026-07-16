@@ -9,6 +9,7 @@ import 'package:go_router/go_router.dart';
 import '../../app/providers.dart';
 import '../../app/widgets/max_width_body.dart';
 import '../../domain/services/today_builder.dart';
+import '../../domain/utils/localized_amal_title.dart';
 import '../../domain/utils/localized_number.dart';
 import '../today/widgets/amal_row.dart';
 import '../today/widgets/remove_sheet.dart';
@@ -194,7 +195,13 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen> {
     TodayRow row,
     DateTime date,
   ) async {
-    final choice = await showRemoveSheet(context, amalTitle: row.amal.title);
+    final choice = await showRemoveSheet(
+      context,
+      amalTitle: localizedAmalTitle(
+        row.amal.title,
+        AppLocalizations.of(context),
+      ),
+    );
     switch (choice) {
       case RemoveChoice.today:
         await ref

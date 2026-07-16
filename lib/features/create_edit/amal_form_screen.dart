@@ -10,6 +10,7 @@ import '../../app/widgets/max_width_body.dart';
 import '../../data/db/database.dart';
 import '../../domain/models/frequency.dart';
 import '../../domain/services/reminder_scheduler.dart';
+import '../../domain/utils/localized_amal_title.dart';
 import '../../domain/utils/localized_number.dart';
 import '../../domain/utils/weekly_days.dart';
 import 'amal_templates.dart';
@@ -46,6 +47,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
   TimeOfDay? _reminderTime;
 
   bool _loading = false;
+  bool _titlePrefilled = false;
   AmalRow? _existing;
 
   @override
@@ -58,11 +60,40 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
       final t = widget.prefill!;
       _icon = t.icon;
       _iconIsManual = true;
-      _titleController.text = t.title;
       _category = t.category;
       _frequency = t.frequency;
       _target = t.target;
     }
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Localizations aren't available in initState, so the template title is
+    // prefilled here instead. Once only: a re-run must not overwrite what the
+    // user has since typed. Edit mode is _hydrate's job, not this.
+    if (!_titlePrefilled && widget.amalId == null && widget.prefill != null) {
+      _titlePrefilled = true;
+      _titleController.text = localizedAmalTitle(
+        widget.prefill!.title,
+        AppLocalizations.of(context),
+      );
+    }
+  }
+
+  /// Reverses the localized display title back to the canonical English key
+  /// we store. The field is prefilled with the localized rendering, so text
+  /// the user never touched must round-trip to the original — otherwise
+  /// merely opening the form and saving would "rename" a seeded amal into a
+  /// hardcoded translation.
+  String _canonicalTitle(String typed, AppLocalizations l) {
+    final original =
+        _existing?.title ??
+        (widget.amalId == null ? widget.prefill?.title : null);
+    if (original != null && typed == localizedAmalTitle(original, l)) {
+      return original;
+    }
+    return typed;
   }
 
   Future<void> _hydrate() async {
@@ -74,7 +105,10 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
     setState(() {
       _existing = row;
       if (row != null) {
-        _titleController.text = row.title;
+        _titleController.text = localizedAmalTitle(
+          row.title,
+          AppLocalizations.of(context),
+        );
         _icon = row.icon;
         _iconIsManual = true;
         _category = row.category;
@@ -165,8 +199,9 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
 
   Future<void> _save() async {
     if (!_formKey.currentState!.validate()) return;
-    final title = _titleController.text.trim();
-    final permWarning = AppLocalizations.of(context).reminderPermissionWarning;
+    final l = AppLocalizations.of(context);
+    final title = _canonicalTitle(_titleController.text.trim(), l);
+    final permWarning = l.reminderPermissionWarning;
     final reminder = _reminderTime == null
         ? null
         : '${_reminderTime!.hour.toString().padLeft(2, '0')}:'
@@ -178,6 +213,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
           .read(amalRepositoryProvider)
           .create(
             title: title,
+            notificationTitle: localizedAmalTitle(title, l),
             frequency: _frequency,
             target: _target,
             weeklyDays: _frequency == Frequency.weekly
@@ -218,6 +254,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
               icon: _icon,
               category: Value(_category),
             ),
+            notificationTitle: localizedAmalTitle(title, l),
           );
       amalId = _existing!.id;
       FirebaseAnalytics.instance.logEvent(
@@ -244,7 +281,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
       if (granted) {
         await scheduler.scheduleDaily(
           amalId: amalId,
-          title: title,
+          title: localizedAmalTitle(title, l),
           hour: parsed.hour,
           minute: parsed.minute,
         );
@@ -441,7 +478,10 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                   subtitle: Text(
                     _reminderTime == null
                         ? l.reminderNone
-                        : _reminderTime!.format(context),
+                        : localizeDigits(
+                            context,
+                            _reminderTime!.format(context),
+                          ),
                   ),
                   trailing: _reminderTime == null
                       ? null

@@ -55,9 +55,17 @@ abstract class ReminderScheduler {
 
   Future<bool> requestPermissions();
 
+  /// Sets the localized Android channel strings. Call once at startup and
+  /// again whenever the app locale changes — Android picks up the new name
+  /// and description the next time a notification is posted on the channel.
+  void setChannelStrings({required String name, required String description});
+
   /// Schedule (or re-schedule) a daily repeating reminder for `amalId` at
   /// `hour:minute` in the user's local timezone. Any existing notification
   /// with the same id is replaced.
+  ///
+  /// `title` is used verbatim as the notification body, so callers pass the
+  /// already-localized display title, not the raw stored one.
   ///
   /// We repeat daily even for weekly/monthly amal — the app's visibility
   /// rules handle "should it actually show this day?" at the UI layer, and
@@ -78,6 +86,16 @@ class _LocalReminderScheduler extends ReminderScheduler {
   _LocalReminderScheduler(this._plugin);
 
   final FlutterLocalNotificationsPlugin _plugin;
+
+  // English defaults until main() resolves the user's locale.
+  String _channelName = 'Amal reminders';
+  String _channelDescription = 'Daily reminders for your tracked amal.';
+
+  @override
+  void setChannelStrings({required String name, required String description}) {
+    _channelName = name;
+    _channelDescription = description;
+  }
 
   @override
   Future<bool> requestPermissions() async {
@@ -143,15 +161,15 @@ class _LocalReminderScheduler extends ReminderScheduler {
       title: 'Muhasaba',
       body: title,
       scheduledDate: first,
-      notificationDetails: const NotificationDetails(
+      notificationDetails: NotificationDetails(
         android: AndroidNotificationDetails(
           'muhasaba_reminders',
-          'Amal reminders',
-          channelDescription: 'Daily reminders for your tracked amal.',
+          _channelName,
+          channelDescription: _channelDescription,
           importance: Importance.defaultImportance,
           priority: Priority.defaultPriority,
         ),
-        iOS: DarwinNotificationDetails(),
+        iOS: const DarwinNotificationDetails(),
       ),
       androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
       matchDateTimeComponents: DateTimeComponents.time,
@@ -170,6 +188,9 @@ class _NoopReminderScheduler extends ReminderScheduler {
 
   @override
   Future<bool> requestPermissions() async => true;
+
+  @override
+  void setChannelStrings({required String name, required String description}) {}
 
   @override
   Future<void> scheduleDaily({

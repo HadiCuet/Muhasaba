@@ -87,6 +87,9 @@ class AppLocalizationsHa extends AppLocalizations {
   String get categoryCharity => 'Sadaka';
 
   @override
+  String get categorySunnah => 'Sunnah';
+
+  @override
   String get timesPerPeriod => 'Sau a kowane lokaci';
 
   @override
@@ -221,22 +224,46 @@ class AppLocalizationsHa extends AppLocalizations {
   String get customAmal => 'Amali Na Musamman';
 
   @override
-  String get templateTasbih => 'Tasbihi 33x';
+  String get amalTasbih => 'Tasbihi 33x';
 
   @override
-  String get templateIstighfar => 'Istigfari 100x';
+  String get amalIstighfar => 'Istigfari 100x';
 
   @override
-  String get templateSurahKahf => 'Suratul Kahfi';
+  String get amalSurahKahf => 'Suratul Kahfi';
 
   @override
-  String get templateSadaqah => 'Sadaka';
+  String get amalSadaqah => 'Sadaka';
 
   @override
-  String get templateTahajjud => 'Tahajjud';
+  String get amalTahajjud => 'Tahajjud';
 
   @override
-  String get templateDuhaPrayer => 'Sallar Duha';
+  String get amalDuha => 'Sallar Duha';
+
+  @override
+  String get amalFajr => 'Asuba';
+
+  @override
+  String get amalDhuhr => 'Azahar';
+
+  @override
+  String get amalAsr => 'La\'asar';
+
+  @override
+  String get amalMaghrib => 'Magariba';
+
+  @override
+  String get amalIsha => 'Isha\'i';
+
+  @override
+  String get amalMorningAdhkar => 'Azkar na safe';
+
+  @override
+  String get amalEveningAdhkar => 'Azkar na yamma';
+
+  @override
+  String get amalTilawah => 'Tilawa';
 
   @override
   String get settingsTitle => 'Saituna';
@@ -883,4 +910,14 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get genericError => 'Wani abu ya kasa. Da fatan a sake gwadawa.';
+
+  @override
+  String get notificationChannelName => 'Tunatarwar ayyuka';
+
+  @override
+  String get notificationChannelDescription =>
+      'Tunatarwa ta yau da kullum don ayyukan da kuke bibiya.';
+
+  @override
+  String get invalidAmalId => 'ID na aiki mara inganci';
 }

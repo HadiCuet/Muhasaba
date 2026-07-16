@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../app/providers.dart';
 import '../../../data/db/database.dart';
+import '../../../domain/utils/localized_category.dart';
 import '../../../l10n/app_localizations.dart';
 import 'category_editor_sheet.dart';
 
@@ -81,7 +82,12 @@ class _CategoryPickerState extends ConsumerState<CategoryPicker> {
                   avatar: cat.icon != null
                       ? Text(cat.icon!, style: const TextStyle(fontSize: 16))
                       : null,
-                  label: Text(cat.name),
+                  label: Text(
+                    localizedCategoryName(
+                      cat.name,
+                      AppLocalizations.of(context),
+                    ),
+                  ),
                   selected: cat.name == widget.selected,
                   showCheckmark: false,
                   onSelected: (selected) {

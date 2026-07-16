@@ -296,6 +296,12 @@ abstract class AppLocalizations {
   /// **'Charity'**
   String get categoryCharity;
 
+  /// No description provided for @categorySunnah.
+  ///
+  /// In en, this message translates to:
+  /// **'Sunnah'**
+  String get categorySunnah;
+
   /// No description provided for @timesPerPeriod.
   ///
   /// In en, this message translates to:
@@ -536,41 +542,89 @@ abstract class AppLocalizations {
   /// **'Custom Amal'**
   String get customAmal;
 
-  /// No description provided for @templateTasbih.
+  /// No description provided for @amalTasbih.
   ///
   /// In en, this message translates to:
   /// **'Tasbih 33x'**
-  String get templateTasbih;
+  String get amalTasbih;
 
-  /// No description provided for @templateIstighfar.
+  /// No description provided for @amalIstighfar.
   ///
   /// In en, this message translates to:
   /// **'Istighfar 100x'**
-  String get templateIstighfar;
+  String get amalIstighfar;
 
-  /// No description provided for @templateSurahKahf.
+  /// No description provided for @amalSurahKahf.
   ///
   /// In en, this message translates to:
   /// **'Surah Kahf'**
-  String get templateSurahKahf;
+  String get amalSurahKahf;
 
-  /// No description provided for @templateSadaqah.
+  /// No description provided for @amalSadaqah.
   ///
   /// In en, this message translates to:
   /// **'Sadaqah'**
-  String get templateSadaqah;
+  String get amalSadaqah;
 
-  /// No description provided for @templateTahajjud.
+  /// No description provided for @amalTahajjud.
   ///
   /// In en, this message translates to:
   /// **'Tahajjud'**
-  String get templateTahajjud;
+  String get amalTahajjud;
 
-  /// No description provided for @templateDuhaPrayer.
+  /// No description provided for @amalDuha.
   ///
   /// In en, this message translates to:
-  /// **'Duha Prayer'**
-  String get templateDuhaPrayer;
+  /// **'Duha'**
+  String get amalDuha;
+
+  /// No description provided for @amalFajr.
+  ///
+  /// In en, this message translates to:
+  /// **'Fajr'**
+  String get amalFajr;
+
+  /// No description provided for @amalDhuhr.
+  ///
+  /// In en, this message translates to:
+  /// **'Dhuhr'**
+  String get amalDhuhr;
+
+  /// No description provided for @amalAsr.
+  ///
+  /// In en, this message translates to:
+  /// **'Asr'**
+  String get amalAsr;
+
+  /// No description provided for @amalMaghrib.
+  ///
+  /// In en, this message translates to:
+  /// **'Maghrib'**
+  String get amalMaghrib;
+
+  /// No description provided for @amalIsha.
+  ///
+  /// In en, this message translates to:
+  /// **'Isha'**
+  String get amalIsha;
+
+  /// No description provided for @amalMorningAdhkar.
+  ///
+  /// In en, this message translates to:
+  /// **'Morning Adhkar'**
+  String get amalMorningAdhkar;
+
+  /// No description provided for @amalEveningAdhkar.
+  ///
+  /// In en, this message translates to:
+  /// **'Evening Adhkar'**
+  String get amalEveningAdhkar;
+
+  /// No description provided for @amalTilawah.
+  ///
+  /// In en, this message translates to:
+  /// **'Tilawah'**
+  String get amalTilawah;
 
   /// No description provided for @settingsTitle.
   ///
@@ -1639,6 +1693,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Something went wrong. Please try again.'**
   String get genericError;
+
+  /// No description provided for @notificationChannelName.
+  ///
+  /// In en, this message translates to:
+  /// **'Amal reminders'**
+  String get notificationChannelName;
+
+  /// No description provided for @notificationChannelDescription.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily reminders for your tracked amal.'**
+  String get notificationChannelDescription;
+
+  /// No description provided for @invalidAmalId.
+  ///
+  /// In en, this message translates to:
+  /// **'Invalid amal id'**
+  String get invalidAmalId;
 }
 
 class _AppLocalizationsDelegate

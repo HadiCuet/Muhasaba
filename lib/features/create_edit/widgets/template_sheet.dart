@@ -3,6 +3,8 @@ import 'package:flutter/material.dart';
 import '../../../l10n/app_localizations.dart';
 
 import '../../../domain/models/frequency.dart';
+import '../../../domain/utils/localized_amal_title.dart';
+import '../../../domain/utils/localized_category.dart';
 import '../amal_templates.dart';
 
 /// Shows the template selection sheet.
@@ -110,19 +112,7 @@ class _TemplateCard extends StatelessWidget {
       Frequency.weekly => l.frequencyWeekly,
       Frequency.monthly => l.frequencyMonthly,
     };
-    return '$freq \u00B7 ${template.category}';
-  }
-
-  String _localizedTitle(AppLocalizations l) {
-    return switch (template.title) {
-      'Tasbih 33x' => l.templateTasbih,
-      'Istighfar 100x' => l.templateIstighfar,
-      'Surah Kahf' => l.templateSurahKahf,
-      'Sadaqah' => l.templateSadaqah,
-      'Tahajjud' => l.templateTahajjud,
-      'Duha Prayer' => l.templateDuhaPrayer,
-      _ => template.title,
-    };
+    return '$freq \u00B7 ${localizedCategoryName(template.category, l)}';
   }
 
   @override
@@ -153,7 +143,7 @@ class _TemplateCard extends StatelessWidget {
               Text(template.icon, style: const TextStyle(fontSize: 24)),
               const SizedBox(height: 6),
               Text(
-                _localizedTitle(l),
+                localizedAmalTitle(template.title, l),
                 style: theme.textTheme.bodySmall?.copyWith(
                   fontWeight: FontWeight.bold,
                   fontSize: 13,

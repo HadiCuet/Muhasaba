@@ -35,7 +35,10 @@ class CategoryBreakdown {
     required this.expected,
   });
 
-  final String name;
+  /// The raw DB category name, or `null` for amal with no category. Kept null
+  /// rather than an 'Other' sentinel so the UI can localize the label and so a
+  /// user-created category actually named "Other" stays distinct.
+  final String? name;
   final int completed;
   final int expected;
 
@@ -148,8 +151,7 @@ class EnhancedStatsService {
       );
       completionsByAmal[amal.id] = rows;
 
-      final completed =
-          rows.where((r) => r.progress >= amal.target).length;
+      final completed = rows.where((r) => r.progress >= amal.target).length;
       final expected = _expectedInPeriod(amal, period);
 
       totalCompleted += completed;
@@ -162,20 +164,23 @@ class EnhancedStatsService {
         periodCompletionsOf,
       );
 
-      perAmalResults.add(EnhancedAmalStats(
-        amalId: amal.id,
-        title: amal.title,
-        icon: amal.icon,
-        category: amal.category,
-        frequency: amal.frequency,
-        completed: completed,
-        expected: expected,
-        currentStreak: streak,
-      ));
+      perAmalResults.add(
+        EnhancedAmalStats(
+          amalId: amal.id,
+          title: amal.title,
+          icon: amal.icon,
+          category: amal.category,
+          frequency: amal.frequency,
+          completed: completed,
+          expected: expected,
+          currentStreak: streak,
+        ),
+      );
     }
 
-    final overallRate =
-        totalExpected > 0 ? totalCompleted / totalExpected : 0.0;
+    final overallRate = totalExpected > 0
+        ? totalCompleted / totalExpected
+        : 0.0;
 
     // ── Previous-period comparison ──────────────────────────────────────────
     double? prevRate;
@@ -208,8 +213,9 @@ class EnhancedStatsService {
     );
 
     // ── Global streaks ──────────────────────────────────────────────────────
-    final dailyAmals =
-        amals.where((a) => a.frequency == Frequency.daily).toList();
+    final dailyAmals = amals
+        .where((a) => a.frequency == Frequency.daily)
+        .toList();
     final globalStreaks = await _globalStreaks(
       dailyAmals,
       muhasabaDate,
@@ -270,8 +276,9 @@ class EnhancedStatsService {
       case StatsPeriod.custom:
         return Period(
           start: filter.customStart ?? muhasabaDate,
-          endExclusive: (filter.customEnd ?? muhasabaDate)
-              .add(const Duration(days: 1)),
+          endExclusive: (filter.customEnd ?? muhasabaDate).add(
+            const Duration(days: 1),
+          ),
         );
     }
   }
@@ -287,9 +294,11 @@ class EnhancedStatsService {
         final weekdays = parseWeeklyDays(amal.weeklyDays);
         if (weekdays.isNotEmpty) {
           var count = 0;
-          for (var d = period.start;
-              d.isBefore(period.endExclusive);
-              d = d.add(const Duration(days: 1))) {
+          for (
+            var d = period.start;
+            d.isBefore(period.endExclusive);
+            d = d.add(const Duration(days: 1))
+          ) {
             if (weekdays.contains(d.weekday)) count++;
           }
           return count;
@@ -342,12 +351,14 @@ class EnhancedStatsService {
         }
       }
 
-      result.add(DailyBreakdown(
-        date: date,
-        completed: completed,
-        expected: expected,
-        isToday: key == _dayKey(today),
-      ));
+      result.add(
+        DailyBreakdown(
+          date: date,
+          completed: completed,
+          expected: expected,
+          isToday: key == _dayKey(today),
+        ),
+      );
     }
 
     return result;
@@ -358,10 +369,9 @@ class EnhancedStatsService {
   List<CategoryBreakdown> _buildCategoryBreakdown(
     List<EnhancedAmalStats> perAmal,
   ) {
-    final map = <String, List<EnhancedAmalStats>>{};
+    final map = <String?, List<EnhancedAmalStats>>{};
     for (final s in perAmal) {
-      final cat = s.category ?? 'Other';
-      (map[cat] ??= []).add(s);
+      (map[s.category] ??= []).add(s);
     }
 
     final result = map.entries.map((e) {
@@ -390,8 +400,9 @@ class EnhancedStatsService {
     List<AmalRow> amals,
     PeriodCompletionsLookup lookup,
   ) async {
-    final dailyAmals =
-        amals.where((a) => a.frequency == Frequency.daily).toList();
+    final dailyAmals = amals
+        .where((a) => a.frequency == Frequency.daily)
+        .toList();
     if (dailyAmals.isEmpty) return [];
 
     final start = today.subtract(const Duration(days: _heatmapDays - 1));
@@ -417,16 +428,17 @@ class EnhancedStatsService {
 
       var completed = 0;
       for (final amal in dailyAmals) {
-        if (rows.any(
-            (r) => r.amalId == amal.id && r.progress >= amal.target)) {
+        if (rows.any((r) => r.amalId == amal.id && r.progress >= amal.target)) {
           completed++;
         }
       }
 
-      result.add(HeatmapDay(
-        date: date,
-        rate: dailyAmals.isEmpty ? 0 : completed / dailyAmals.length,
-      ));
+      result.add(
+        HeatmapDay(
+          date: date,
+          rate: dailyAmals.isEmpty ? 0 : completed / dailyAmals.length,
+        ),
+      );
     }
     return result;
   }
@@ -441,8 +453,9 @@ class EnhancedStatsService {
   ) async {
     switch (amal.frequency) {
       case Frequency.daily:
-        final start =
-            today.subtract(const Duration(days: _dailyStreakLookback));
+        final start = today.subtract(
+          const Duration(days: _dailyStreakLookback),
+        );
         final end = today.add(const Duration(days: 1));
         final rows = await lookup(amal.id, start, end);
         final done = {
@@ -463,8 +476,9 @@ class EnhancedStatsService {
       case Frequency.weekly:
         final weekdays = parseWeeklyDays(amal.weeklyDays);
         if (weekdays.isNotEmpty) {
-          final start =
-              today.subtract(const Duration(days: _dailyStreakLookback));
+          final start = today.subtract(
+            const Duration(days: _dailyStreakLookback),
+          );
           final end = today.add(const Duration(days: 1));
           final rows = await lookup(amal.id, start, end);
           final done = {

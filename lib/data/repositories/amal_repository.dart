@@ -20,8 +20,14 @@ class AmalRepository {
 
   /// Creates a new amal and schedules its OS notification if a valid
   /// reminder time is provided.
+  ///
+  /// [title] is the canonical value stored in the DB; [notificationTitle] is
+  /// its localized rendering, used for the notification body. They differ for
+  /// seeded and template titles, which are stored in English and translated at
+  /// display time.
   Future<int> create({
     required String title,
+    required String notificationTitle,
     required Frequency frequency,
     int target = 1,
     String? weeklyDays,
@@ -51,7 +57,7 @@ class AmalRepository {
     if (t != null) {
       await _scheduler.scheduleDaily(
         amalId: id,
-        title: title,
+        title: notificationTitle,
         hour: t.hour,
         minute: t.minute,
       );
@@ -61,13 +67,15 @@ class AmalRepository {
 
   /// Updates an amal and syncs its OS notification to match the new
   /// reminder time. Schedules if a valid reminder exists, cancels otherwise.
-  Future<bool> update(AmalRow row) async {
+  ///
+  /// See [create] for why [notificationTitle] is passed separately.
+  Future<bool> update(AmalRow row, {required String notificationTitle}) async {
     final result = await _dao.updateAmal(row);
     final t = parseReminderTime(row.reminderTime);
     if (t != null) {
       await _scheduler.scheduleDaily(
         amalId: row.id,
-        title: row.title,
+        title: notificationTitle,
         hour: t.hour,
         minute: t.minute,
       );

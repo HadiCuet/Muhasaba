@@ -87,6 +87,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get categoryCharity => 'Sedekah';
 
   @override
+  String get categorySunnah => 'Sunnah';
+
+  @override
   String get timesPerPeriod => 'Kali per periode';
 
   @override
@@ -223,22 +226,46 @@ class AppLocalizationsId extends AppLocalizations {
   String get customAmal => 'Amal Kustom';
 
   @override
-  String get templateTasbih => 'Tasbih 33x';
+  String get amalTasbih => 'Tasbih 33x';
 
   @override
-  String get templateIstighfar => 'Istighfar 100x';
+  String get amalIstighfar => 'Istighfar 100x';
 
   @override
-  String get templateSurahKahf => 'Surah Al-Kahfi';
+  String get amalSurahKahf => 'Surah Al-Kahfi';
 
   @override
-  String get templateSadaqah => 'Sedekah';
+  String get amalSadaqah => 'Sedekah';
 
   @override
-  String get templateTahajjud => 'Tahajud';
+  String get amalTahajjud => 'Tahajud';
 
   @override
-  String get templateDuhaPrayer => 'Shalat Dhuha';
+  String get amalDuha => 'Shalat Dhuha';
+
+  @override
+  String get amalFajr => 'Subuh';
+
+  @override
+  String get amalDhuhr => 'Zuhur';
+
+  @override
+  String get amalAsr => 'Ashar';
+
+  @override
+  String get amalMaghrib => 'Maghrib';
+
+  @override
+  String get amalIsha => 'Isya';
+
+  @override
+  String get amalMorningAdhkar => 'Dzikir Pagi';
+
+  @override
+  String get amalEveningAdhkar => 'Dzikir Petang';
+
+  @override
+  String get amalTilawah => 'Tilawah';
 
   @override
   String get settingsTitle => 'Pengaturan';
@@ -888,4 +915,14 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get genericError => 'Terjadi kesalahan. Silakan coba lagi.';
+
+  @override
+  String get notificationChannelName => 'Pengingat amal';
+
+  @override
+  String get notificationChannelDescription =>
+      'Pengingat harian untuk amal yang Anda lacak.';
+
+  @override
+  String get invalidAmalId => 'ID amal tidak valid';
 }

@@ -87,6 +87,9 @@ class AppLocalizationsSw extends AppLocalizations {
   String get categoryCharity => 'Sadaka';
 
   @override
+  String get categorySunnah => 'Sunnah';
+
+  @override
   String get timesPerPeriod => 'Mara kwa kipindi';
 
   @override
@@ -220,22 +223,46 @@ class AppLocalizationsSw extends AppLocalizations {
   String get customAmal => 'Amali Maalum';
 
   @override
-  String get templateTasbih => 'Tasbihi 33x';
+  String get amalTasbih => 'Tasbihi 33x';
 
   @override
-  String get templateIstighfar => 'Istighfari 100x';
+  String get amalIstighfar => 'Istighfari 100x';
 
   @override
-  String get templateSurahKahf => 'Suratul Kahf';
+  String get amalSurahKahf => 'Suratul Kahf';
 
   @override
-  String get templateSadaqah => 'Sadaka';
+  String get amalSadaqah => 'Sadaka';
 
   @override
-  String get templateTahajjud => 'Tahajudi';
+  String get amalTahajjud => 'Tahajudi';
 
   @override
-  String get templateDuhaPrayer => 'Swala ya Dhuha';
+  String get amalDuha => 'Swala ya Dhuha';
+
+  @override
+  String get amalFajr => 'Alfajiri';
+
+  @override
+  String get amalDhuhr => 'Adhuhuri';
+
+  @override
+  String get amalAsr => 'Alasiri';
+
+  @override
+  String get amalMaghrib => 'Magharibi';
+
+  @override
+  String get amalIsha => 'Isha';
+
+  @override
+  String get amalMorningAdhkar => 'Adhkari za asubuhi';
+
+  @override
+  String get amalEveningAdhkar => 'Adhkari za jioni';
+
+  @override
+  String get amalTilawah => 'Tilawa';
 
   @override
   String get settingsTitle => 'Mipangilio';
@@ -881,4 +908,14 @@ class AppLocalizationsSw extends AppLocalizations {
   @override
   String get genericError =>
       'Kitu fulani kimekwenda vibaya. Tafadhali jaribu tena.';
+
+  @override
+  String get notificationChannelName => 'Vikumbusho vya amali';
+
+  @override
+  String get notificationChannelDescription =>
+      'Vikumbusho vya kila siku vya amali unazofuatilia.';
+
+  @override
+  String get invalidAmalId => 'Kitambulisho batili cha amali';
 }

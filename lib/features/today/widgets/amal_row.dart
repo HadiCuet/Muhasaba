@@ -4,6 +4,7 @@ import '../../../l10n/app_localizations.dart';
 
 import '../../../domain/models/frequency.dart';
 import '../../../domain/services/today_builder.dart';
+import '../../../domain/utils/localized_amal_title.dart';
 import '../../../domain/utils/localized_number.dart';
 import 'count_stepper.dart';
 
@@ -153,9 +154,10 @@ class _AmalRowTileState extends State<AmalRowTile> {
     )!;
 
     final l = AppLocalizations.of(context);
+    final title = localizedAmalTitle(amal.title, l);
     final semanticsLabel = amal.target == 1
-        ? '${amal.title}, ${isDone ? l.completed : l.notCompleted}'
-        : '${amal.title}, ${l.progressOf(lnum(context, row.progress), lnum(context, amal.target))}';
+        ? '$title, ${isDone ? l.completed : l.notCompleted}'
+        : '$title, ${l.progressOf(lnum(context, row.progress), lnum(context, amal.target))}';
 
     return Dismissible(
       key: ValueKey('amal-${amal.id}'),
@@ -215,7 +217,7 @@ class _AmalRowTileState extends State<AmalRowTile> {
                               children: [
                                 Flexible(
                                   child: Text(
-                                    amal.title,
+                                    title,
                                     style: theme.textTheme.bodyLarge?.copyWith(
                                       fontWeight: FontWeight.w600,
                                       // No strikethrough — just dim when done.

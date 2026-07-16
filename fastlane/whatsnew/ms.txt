@@ -1,5 +1,5 @@
 JazakAllah kerana menggunakan Muhasaba.
 
-• Amal mingguan ikut cara anda — tetapkan amalan berulang pada beberapa hari dalam seminggu sekali gus.
-• Sentiasa hari ini — skrin Utama bertukar ke hari baharu dengan sendirinya, tanpa perlu membuka semula aplikasi.
-• Sejarah lebih kemas — Sejarah kini bermula dari hari anda mula, tanpa hari kosong sebelumnya.
+• Terjemahan penuh — nama solat, kategori, dan peringatan kini dipaparkan dalam bahasa pilihan anda, bukan bahasa Inggeris.
+• Tetapan kini memaparkan waktu dan hari dalam bahasa anda, dengan angka yang sepadan.
+• Membetulkan beberapa ikon yang tidak sepadan dalam Statistik.

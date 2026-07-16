@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
+import '../l10n/app_localizations.dart';
 import '../features/create_edit/amal_form_screen.dart';
 import '../features/create_edit/amal_templates.dart';
 import '../features/history/history_screen.dart';
@@ -93,7 +94,11 @@ final routerProvider = Provider<GoRouter>((ref) {
         builder: (context, state) {
           final id = int.tryParse(state.pathParameters['id'] ?? '');
           if (id == null) {
-            return const Scaffold(body: Center(child: Text('Invalid amal id')));
+            return Scaffold(
+              body: Center(
+                child: Text(AppLocalizations.of(context).invalidAmalId),
+              ),
+            );
           }
           return AmalFormScreen(amalId: id);
         },
