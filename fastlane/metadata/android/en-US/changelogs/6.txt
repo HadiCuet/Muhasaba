@@ -1,0 +1,5 @@
+JazakAllah for using Muhasaba.
+
+• Full translation — prayer names, categories, and reminders now show in your chosen language instead of English.
+• Settings now shows times and days in your language, with matching numerals.
+• Fixed a few mismatched icons in Stats.

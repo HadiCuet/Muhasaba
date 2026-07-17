@@ -5,13 +5,20 @@
 #   beta    — build iOS with Flutter; upload to TestFlight with localized
 #             "What's New" when run with upload:true
 #
-# Guardrails: nothing uploads without upload:true, the build is never submitted
-# for review, and it is never auto-distributed to external testers.
+# Lanes (Android):
+#   verify   — read-only: confirm the Play service account key authenticates
+#   internal — build the AAB with Flutter; upload to the Play "internal" testing
+#              track (never production) when run with upload:true
+#
+# Guardrails: nothing uploads without upload:true, the iOS build is never
+# submitted for review or distributed to external testers, and the Android
+# build only ever goes to the internal testing track — never production.
 
 opt_out_usage
 fastlane_version "2.222.0"
 
 APP_IDENTIFIER = "dev.mukashi.muhasaba".freeze
+PLAY_PACKAGE_NAME = "dev.mukashi.muhasaba".freeze
 
 # Repo root whether fastlane runs from the repo root or fastlane/.
 def repo_root
@@ -211,5 +218,55 @@ platform :ios do
       localized_build_info: info,
     )
     UI.success("Uploaded to TestFlight with localized What's New — NOT submitted, NOT distributed externally.")
+  end
+end
+
+# Resolves the Play service account key path and hands it to lane_context.
+private_lane :ensure_play_credentials do
+  raw_key_path = ENV["PLAY_JSON_KEY_FILEPATH"].to_s
+  raw_key_path = "fastlane/.keys/play-service-account.json" if raw_key_path.strip.empty?
+  key_path = File.expand_path(raw_key_path, repo_root)
+  UI.user_error!("Play service account key not found at #{key_path}. " \
+                 "Put the service account JSON at fastlane/.keys/play-service-account.json " \
+                 "or set PLAY_JSON_KEY_FILEPATH in fastlane/.env.") unless File.exist?(key_path)
+  lane_context[:PLAY_JSON_KEY_PATH] = key_path
+end
+
+platform :android do
+  desc "Read-only: confirm the Play service account key authenticates"
+  lane :verify do
+    ensure_play_credentials
+    validate_play_store_json_key(json_key: lane_context[:PLAY_JSON_KEY_PATH])
+    UI.success("Play service account key is valid.")
+  end
+
+  desc "Build the AAB with Flutter; with upload:true upload to the Play 'internal' testing track. Never production."
+  lane :internal do |options|
+    Dir.chdir(repo_root) do
+      sh("flutter", "build", "appbundle", "--release")
+    end
+
+    aab = File.join(repo_root, "build", "app", "outputs", "bundle", "release", "app-release.aab")
+    UI.user_error!("No .aab found at #{aab} — did the Flutter build succeed?") unless File.exist?(aab)
+    UI.success("Built AAB: #{aab}")
+
+    unless options[:upload]
+      UI.important("Build complete — not uploaded.")
+      UI.message("Run: bundle exec fastlane android internal upload:true")
+      next
+    end
+
+    ensure_play_credentials
+    upload_to_play_store(
+      json_key: lane_context[:PLAY_JSON_KEY_PATH],
+      package_name: PLAY_PACKAGE_NAME,
+      aab: aab,
+      track: "internal",
+      skip_upload_metadata: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+      skip_upload_changelogs: false,
+    )
+    UI.success("Uploaded to Play Console 'internal' testing track — NOT production, NOT closed/open testing.")
   end
 end
