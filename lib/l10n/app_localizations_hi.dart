@@ -149,6 +149,23 @@ class AppLocalizationsHi extends AppLocalizations {
       'रिमाइंडर सहेजा गया, लेकिन नोटिफ़िकेशन की अनुमति नहीं है। अलर्ट पाने के लिए सिस्टम सेटिंग्स में सक्षम करें।';
 
   @override
+  String get settingsReminders => 'रिमाइंडर';
+
+  @override
+  String get dailyReminder => 'दैनिक रिमाइंडर';
+
+  @override
+  String get dailyReminderSubtitle =>
+      'आपके अमल को ट्रैक करने के लिए एक कोमल रिमाइंडर';
+
+  @override
+  String get dailyReminderTimeLabel => 'रिमाइंडर का समय';
+
+  @override
+  String get dailyReminderBody =>
+      'आज के अमल को ट्रैक करने के लिए थोड़ा समय निकालें।';
+
+  @override
   String get groupByCategory => 'श्रेणी के अनुसार';
 
   @override

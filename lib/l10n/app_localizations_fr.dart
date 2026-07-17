@@ -151,6 +151,22 @@ class AppLocalizationsFr extends AppLocalizations {
       'Rappel enregistré, mais les notifications ne sont pas autorisées. Activez-les dans les réglages du système pour recevoir des alertes.';
 
   @override
+  String get settingsReminders => 'Rappels';
+
+  @override
+  String get dailyReminder => 'Rappel quotidien';
+
+  @override
+  String get dailyReminderSubtitle => 'Un doux rappel pour suivre vos amal';
+
+  @override
+  String get dailyReminderTimeLabel => 'Heure du rappel';
+
+  @override
+  String get dailyReminderBody =>
+      'Prenez un instant pour suivre les amal d\'aujourd\'hui.';
+
+  @override
   String get groupByCategory => 'Grouper par catégorie';
 
   @override

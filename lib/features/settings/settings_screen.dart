@@ -11,6 +11,8 @@ import '../../app/providers.dart';
 import '../../app/widgets/max_width_body.dart';
 import '../../data/repositories/settings_repository.dart';
 import '../../domain/models/app_settings.dart';
+import '../../domain/services/daily_reminder.dart';
+import '../../domain/services/reminder_scheduler.dart';
 import '../../domain/services/reminder_sync.dart';
 import '../../domain/utils/app_locale.dart';
 import '../../domain/utils/localized_number.dart';
@@ -24,6 +26,7 @@ class SettingsScreen extends ConsumerWidget {
   Widget build(BuildContext context, WidgetRef ref) {
     final settingsAsync = ref.watch(settingsProvider);
     final repo = ref.watch(settingsRepositoryProvider);
+    final scheduler = ref.watch(reminderSchedulerProvider);
     final l = AppLocalizations.of(context);
 
     return Scaffold(
@@ -33,7 +36,11 @@ class SettingsScreen extends ConsumerWidget {
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (e, _) =>
               Center(child: Text(l.settingsLoadError(e.toString()))),
-          data: (settings) => _SettingsList(settings: settings, repo: repo),
+          data: (settings) => _SettingsList(
+            settings: settings,
+            repo: repo,
+            scheduler: scheduler,
+          ),
         ),
       ),
     );
@@ -41,10 +48,15 @@ class SettingsScreen extends ConsumerWidget {
 }
 
 class _SettingsList extends ConsumerWidget {
-  const _SettingsList({required this.settings, required this.repo});
+  const _SettingsList({
+    required this.settings,
+    required this.repo,
+    required this.scheduler,
+  });
 
   final AppSettings settings;
   final SettingsRepository repo;
+  final ReminderScheduler scheduler;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -100,6 +112,70 @@ class _SettingsList extends ConsumerWidget {
                 }
               },
             ),
+          ],
+        ),
+        const SizedBox(height: 8),
+
+        // Reminders group.
+        _SectionHeader(title: l.settingsReminders),
+        _CardGroup(
+          children: [
+            _SettingsSwitchItem(
+              icon: '🔔',
+              iconColor: Colors.green,
+              title: l.dailyReminder,
+              subtitle: l.dailyReminderSubtitle,
+              value: settings.dailyReminderEnabled,
+              onChanged: (v) async {
+                await repo.setDailyReminderEnabled(v);
+                final updated = settings.copyWith(dailyReminderEnabled: v);
+                var granted = true;
+                if (v) granted = await scheduler.requestPermissions();
+                await applyDailyReminder(scheduler, updated);
+                FirebaseAnalytics.instance.logEvent(
+                  name: 'daily_reminder_toggled',
+                  parameters: {'enabled': v ? 1 : 0},
+                );
+                if (v && !granted && context.mounted) {
+                  ScaffoldMessenger.of(context).showSnackBar(
+                    SnackBar(content: Text(l.reminderPermissionWarning)),
+                  );
+                }
+              },
+            ),
+            if (settings.dailyReminderEnabled)
+              _SettingsItem(
+                icon: '⏰',
+                iconColor: Colors.green,
+                title: l.dailyReminderTimeLabel,
+                trailing: _formatReminderTime(
+                  context,
+                  settings.dailyReminderTime,
+                ),
+                onTap: () async {
+                  final parsed = parseReminderTime(settings.dailyReminderTime);
+                  final picked = await showTimePicker(
+                    context: context,
+                    initialTime: TimeOfDay(
+                      hour: parsed?.hour ?? 20,
+                      minute: parsed?.minute ?? 0,
+                    ),
+                  );
+                  if (picked == null) return;
+                  final time =
+                      '${picked.hour.toString().padLeft(2, '0')}:'
+                      '${picked.minute.toString().padLeft(2, '0')}';
+                  await repo.setDailyReminderTime(time);
+                  await applyDailyReminder(
+                    scheduler,
+                    settings.copyWith(dailyReminderTime: time),
+                  );
+                  FirebaseAnalytics.instance.logEvent(
+                    name: 'daily_reminder_time_changed',
+                    parameters: {'hour': picked.hour, 'minute': picked.minute},
+                  );
+                },
+              ),
           ],
         ),
         const SizedBox(height: 8),
@@ -655,6 +731,70 @@ class _SettingsItem extends StatelessWidget {
   }
 }
 
+class _SettingsSwitchItem extends StatelessWidget {
+  const _SettingsSwitchItem({
+    required this.icon,
+    required this.iconColor,
+    required this.title,
+    this.subtitle,
+    required this.value,
+    required this.onChanged,
+  });
+
+  final String icon;
+  final Color iconColor;
+  final String title;
+  final String? subtitle;
+  final bool value;
+  final ValueChanged<bool> onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
+      child: Row(
+        children: [
+          Container(
+            width: 30,
+            height: 30,
+            decoration: BoxDecoration(
+              color: iconColor.withValues(alpha: 0.12),
+              borderRadius: BorderRadius.circular(8),
+            ),
+            alignment: Alignment.center,
+            child: Text(icon, style: const TextStyle(fontSize: 15)),
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                Text(
+                  title,
+                  style: theme.textTheme.bodyMedium?.copyWith(
+                    fontWeight: FontWeight.w500,
+                  ),
+                ),
+                if (subtitle != null) ...[
+                  const SizedBox(height: 1),
+                  Text(
+                    subtitle!,
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),
+                  ),
+                ],
+              ],
+            ),
+          ),
+          Switch(value: value, onChanged: onChanged),
+        ],
+      ),
+    );
+  }
+}
+
 // ---------------------------------------------------------------------------
 // Pickers (unchanged)
 // ---------------------------------------------------------------------------
@@ -777,6 +917,12 @@ String _formatHour(BuildContext context, int hour) {
     minute: 0,
   ).format(context);
   return localizeDigits(context, formatted);
+}
+
+String _formatReminderTime(BuildContext context, String hhmm) {
+  final t = parseReminderTime(hhmm);
+  if (t == null) return '';
+  return TimeOfDay(hour: t.hour, minute: t.minute).format(context);
 }
 
 String _themeLabel(BuildContext context, ThemeMode mode) {

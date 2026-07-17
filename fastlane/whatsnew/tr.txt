@@ -1,5 +1,7 @@
 Muhasaba'yı kullandığınız için Allah razı olsun.
 
+• Günlük hatırlatıcı — her gün dilediğiniz saatte amellerinizi takip etmek için nazik bir hatırlatma. Varsayılan olarak saat 20:00'de açıktır; Ayarlar'dan istediğiniz zaman değiştirebilir ya da kapatabilirsiniz.
+• Daha net aylık istatistikler — Günlük Dağılım grafiği artık her ekranda düzgün görünüyor, sıkışık ya da bozuk gün numaraları kalmadı.
 • Tam çeviri — namaz isimleri, kategoriler ve hatırlatıcılar artık İngilizce yerine seçtiğiniz dilde görünüyor.
 • Ayarlar artık saat ve günleri kendi dilinizde, doğru rakamlarla gösteriyor.
 • İstatistikler'deki birkaç uyumsuz simge düzeltildi.

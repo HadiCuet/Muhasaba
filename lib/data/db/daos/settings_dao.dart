@@ -15,6 +15,10 @@ class SettingKeys {
   static const themeMode = 'theme_mode'; // system | light | dark
   static const todayViewMode = 'today_view_mode'; // flat | grouped
   static const locale = 'locale'; // BCP-47 tag e.g. "ar", "bn", null=system
+  static const dailyReminderEnabled = 'daily_reminder_enabled'; // "1" | "0"
+  static const dailyReminderTime = 'daily_reminder_time'; // "HH:mm"
+  static const dailyReminderPermissionAsked =
+      'daily_reminder_permission_asked'; // "1" | "0"
 }
 
 @DriftAccessor(tables: [SettingsKv])

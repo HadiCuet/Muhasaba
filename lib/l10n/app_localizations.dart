@@ -404,6 +404,36 @@ abstract class AppLocalizations {
   /// **'Reminder saved, but notifications are not permitted. Enable them in system settings to get alerts.'**
   String get reminderPermissionWarning;
 
+  /// No description provided for @settingsReminders.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders'**
+  String get settingsReminders;
+
+  /// No description provided for @dailyReminder.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily reminder'**
+  String get dailyReminder;
+
+  /// No description provided for @dailyReminderSubtitle.
+  ///
+  /// In en, this message translates to:
+  /// **'A gentle nudge to track your deeds'**
+  String get dailyReminderSubtitle;
+
+  /// No description provided for @dailyReminderTimeLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Reminder time'**
+  String get dailyReminderTimeLabel;
+
+  /// No description provided for @dailyReminderBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Take a moment to track today\'s deeds.'**
+  String get dailyReminderBody;
+
   /// No description provided for @groupByCategory.
   ///
   /// In en, this message translates to:

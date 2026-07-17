@@ -150,6 +150,23 @@ class AppLocalizationsTk extends AppLocalizations {
       'Yatlatma saklandy, emma bildirislere rugsat berilmedik. Duydurys almak ucin ulgam sazlamalarynda acyn.';
 
   @override
+  String get settingsReminders => 'Yatlatmalar';
+
+  @override
+  String get dailyReminder => 'Gundelik yatlatma';
+
+  @override
+  String get dailyReminderSubtitle =>
+      'Amallarynyzy yzarlamak ucin yumsak yatlatma';
+
+  @override
+  String get dailyReminderTimeLabel => 'Yatlatma wagty';
+
+  @override
+  String get dailyReminderBody =>
+      'Bu gunki amallarynyzy yzarlamak ucin biraz wagt ayryn.';
+
+  @override
   String get groupByCategory => 'Kategoriia boyunca toparlamak';
 
   @override

@@ -11,6 +11,8 @@ import 'app/app.dart';
 import 'app/providers.dart';
 import 'data/db/daos/settings_dao.dart';
 import 'data/db/database.dart';
+import 'data/repositories/settings_repository.dart';
+import 'domain/services/daily_reminder.dart';
 import 'domain/services/reminder_scheduler.dart';
 import 'domain/services/reminder_sync.dart';
 import 'domain/utils/app_locale.dart';
@@ -56,6 +58,12 @@ Future<void> main() async {
         resolveAppLocale(storedLocale, PlatformDispatcher.instance.locales),
       );
       await syncReminders(db, scheduler, l);
+
+      // App-level daily reminder: (re)register on every launch so reboots and
+      // OS notification clears don't silently kill it — same rationale as the
+      // per-amal recovery above. No-ops (cancels) when disabled.
+      final settings = await SettingsRepository(db.settingsDao).get();
+      await applyDailyReminder(scheduler, settings);
 
       runApp(
         ProviderScope(

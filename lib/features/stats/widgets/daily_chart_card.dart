@@ -64,6 +64,14 @@ class DailyChartCard extends StatelessWidget {
   }
 }
 
+/// Minimum horizontal room, in logical pixels, to give each day-number label.
+/// Drives how many labels are shown: at ~18pt a two-digit number sits with a
+/// small gap from its neighbour, so we show one label per this much width and
+/// skip the rest. Wide layouts (iPad, landscape) end up showing every day;
+/// a narrow phone month view thins them out. Lower it to show more labels,
+/// raise it to show fewer.
+const double _kMinLabelSpacing = 18.0;
+
 class _BarGroup extends StatelessWidget {
   const _BarGroup({
     required this.breakdown,
@@ -83,21 +91,33 @@ class _BarGroup extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: width,
-      child: Row(
-        crossAxisAlignment: CrossAxisAlignment.end,
-        children: [
-          for (var i = 0; i < breakdown.length; i++) ...[
-            Expanded(
-              child: _SingleBar(
-                day: breakdown[i],
-                maxBarHeight: maxBarHeight,
-                showLabel: showLabels,
-                locale: locale,
-                isWeekView: breakdown.length <= 7,
-              ),
-            ),
-          ],
-        ],
+      child: LayoutBuilder(
+        builder: (context, constraints) {
+          // How many days share one label slot, based on the real rendered
+          // width. stride 1 = label every day (wide screens); higher strides
+          // thin the labels on narrow ones so 2-digit numbers never crowd.
+          final columnWidth = constraints.maxWidth / breakdown.length;
+          final labelStride = columnWidth.isFinite && columnWidth > 0
+              ? (_kMinLabelSpacing / columnWidth).ceil().clamp(1, breakdown.length)
+              : 1;
+          return Row(
+            crossAxisAlignment: CrossAxisAlignment.end,
+            children: [
+              for (var i = 0; i < breakdown.length; i++) ...[
+                Expanded(
+                  child: _SingleBar(
+                    day: breakdown[i],
+                    maxBarHeight: maxBarHeight,
+                    showLabel: showLabels,
+                    showDayLabel: i % labelStride == 0,
+                    locale: locale,
+                    isWeekView: breakdown.length <= 7,
+                  ),
+                ),
+              ],
+            ],
+          );
+        },
       ),
     );
   }
@@ -108,6 +128,7 @@ class _SingleBar extends StatelessWidget {
     required this.day,
     required this.maxBarHeight,
     required this.showLabel,
+    required this.showDayLabel,
     required this.locale,
     required this.isWeekView,
   });
@@ -115,6 +136,7 @@ class _SingleBar extends StatelessWidget {
   final DailyBreakdown day;
   final double maxBarHeight;
   final bool showLabel;
+  final bool showDayLabel;
   final String locale;
   final bool isWeekView;
 
@@ -164,14 +186,30 @@ class _SingleBar extends StatelessWidget {
           ),
         ),
         const SizedBox(height: 4),
-        Text(
-          dayLabel,
-          style: theme.textTheme.labelSmall?.copyWith(
-            fontSize: 9,
-            color: day.isToday
-                ? theme.colorScheme.primary
-                : theme.colorScheme.onSurfaceVariant,
-            fontWeight: day.isToday ? FontWeight.bold : null,
+        // Reserve the label's height even when hidden so every bar keeps the
+        // same baseline. When shown, a narrow month-view column (~10pt) would
+        // wrap a 2-digit number onto two lines, splitting e.g. "20" into
+        // "2"/"0"; FittedBox keeps it on one line and shrinks to fit — a no-op
+        // for wider week / two-week columns.
+        Visibility(
+          visible: showDayLabel,
+          maintainSize: true,
+          maintainAnimation: true,
+          maintainState: true,
+          child: FittedBox(
+            fit: BoxFit.scaleDown,
+            child: Text(
+              dayLabel,
+              maxLines: 1,
+              softWrap: false,
+              style: theme.textTheme.labelSmall?.copyWith(
+                fontSize: 9,
+                color: day.isToday
+                    ? theme.colorScheme.primary
+                    : theme.colorScheme.onSurfaceVariant,
+                fontWeight: day.isToday ? FontWeight.bold : null,
+              ),
+            ),
           ),
         ),
       ],

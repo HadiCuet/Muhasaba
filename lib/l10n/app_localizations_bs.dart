@@ -151,6 +151,22 @@ class AppLocalizationsBs extends AppLocalizations {
       'Podsjetnik je sacuvan, ali obavijesti nisu dozvoljene. Omogucite ih u postavkama sistema za primanje upozorenja.';
 
   @override
+  String get settingsReminders => 'Podsjetnici';
+
+  @override
+  String get dailyReminder => 'Dnevni podsjetnik';
+
+  @override
+  String get dailyReminderSubtitle => 'Blagi podsjetnik da pratite svoje amele';
+
+  @override
+  String get dailyReminderTimeLabel => 'Vrijeme podsjetnika';
+
+  @override
+  String get dailyReminderBody =>
+      'Odvojite trenutak da pratite danasnje amele.';
+
+  @override
   String get groupByCategory => 'Grupiraj po kategoriji';
 
   @override

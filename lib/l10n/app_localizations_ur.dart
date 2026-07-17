@@ -150,6 +150,23 @@ class AppLocalizationsUr extends AppLocalizations {
       'یاد دہانی محفوظ ہو گئی، لیکن اطلاعات کی اجازت نہیں ہے۔ الرٹ حاصل کرنے کے لیے سسٹم ترتیبات سے انہیں فعال کریں۔';
 
   @override
+  String get settingsReminders => 'یاد دہانیاں';
+
+  @override
+  String get dailyReminder => 'روزانہ یاد دہانی';
+
+  @override
+  String get dailyReminderSubtitle =>
+      'آپ کے اعمال کو ٹریک کرنے کے لیے ایک نرم یاد دہانی';
+
+  @override
+  String get dailyReminderTimeLabel => 'یاد دہانی کا وقت';
+
+  @override
+  String get dailyReminderBody =>
+      'آج کے اعمال ٹریک کرنے کے لیے تھوڑا وقت نکالیں۔';
+
+  @override
   String get groupByCategory => 'زمرے کے مطابق';
 
   @override

@@ -1,5 +1,7 @@
-JazakAllah telah menggunakan Muhasaba.
+JazakAllah telah menggunakan Muhasaba. Semoga Allah menerima dan memudahkan.
 
+• Pengingat harian — pengingat lembut untuk melacak amal Anda setiap hari, pada waktu yang Anda pilih. Aktif secara default pukul 20.00; ubah atau matikan kapan saja di Pengaturan.
+• Statistik bulanan lebih jelas — grafik rincian harian kini tampil rapi di semua ukuran layar, tanpa angka hari yang berdesakan atau terpotong.
 • Terjemahan lengkap — nama salat, kategori, dan pengingat kini tampil dalam bahasa pilihan Anda, bukan bahasa Inggris.
 • Pengaturan kini menampilkan waktu dan hari dalam bahasa Anda, dengan angka yang sesuai.
 • Memperbaiki beberapa ikon yang tidak cocok di Statistik.

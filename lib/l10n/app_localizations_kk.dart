@@ -149,6 +149,23 @@ class AppLocalizationsKk extends AppLocalizations {
       'Еске салу сақталды, бірақ хабарландыруларға рұқсат берілмеген. Ескертулер алу үшін жүйе баптауларында қосыңыз.';
 
   @override
+  String get settingsReminders => 'Еске салу';
+
+  @override
+  String get dailyReminder => 'Күнделікті еске салу';
+
+  @override
+  String get dailyReminderSubtitle =>
+      'Амалдарыңызды бақылау үшін жұмсақ еске салу';
+
+  @override
+  String get dailyReminderTimeLabel => 'Еске салу уақыты';
+
+  @override
+  String get dailyReminderBody =>
+      'Бүгінгі амалдарыңызды бақылау үшін бір сәт бөліңіз.';
+
+  @override
   String get groupByCategory => 'Санат бойынша топтау';
 
   @override

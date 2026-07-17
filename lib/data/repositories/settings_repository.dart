@@ -42,6 +42,20 @@ class SettingsRepository {
     }
   }
 
+  Future<void> setDailyReminderEnabled(bool enabled) =>
+      _dao.set(SettingKeys.dailyReminderEnabled, enabled ? '1' : '0');
+
+  Future<void> setDailyReminderTime(String time) =>
+      _dao.set(SettingKeys.dailyReminderTime, time);
+
+  Future<void> setDailyReminderPermissionAsked(bool asked) =>
+      _dao.set(SettingKeys.dailyReminderPermissionAsked, asked ? '1' : '0');
+
+  Future<bool> getDailyReminderPermissionAsked() async {
+    final v = await _dao.get(SettingKeys.dailyReminderPermissionAsked);
+    return v == '1';
+  }
+
   AppSettings _fromMap(Map<String, String> m) {
     return AppSettings(
       startOfWeek:
@@ -56,6 +70,10 @@ class SettingsRepository {
       themeMode: _parseTheme(m[SettingKeys.themeMode]),
       todayViewMode: m[SettingKeys.todayViewMode] ?? 'grouped',
       locale: _parseLocale(m[SettingKeys.locale]),
+      dailyReminderEnabled: (m[SettingKeys.dailyReminderEnabled] ?? '1') != '0',
+      dailyReminderTime:
+          m[SettingKeys.dailyReminderTime] ??
+          AppSettings.defaults.dailyReminderTime,
     );
   }
 

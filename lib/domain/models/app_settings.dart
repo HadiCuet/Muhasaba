@@ -12,6 +12,8 @@ class AppSettings {
     required this.themeMode,
     this.todayViewMode = 'grouped',
     this.locale,
+    this.dailyReminderEnabled = true,
+    this.dailyReminderTime = '20:00',
   });
 
   /// 1..7, `DateTime.monday == 1`, `DateTime.saturday == 6`. Default: Saturday.
@@ -31,6 +33,12 @@ class AppSettings {
   /// BCP-47 language tag (e.g. "ar", "bn"). `null` = follow device locale.
   final String? locale;
 
+  /// Whether the app-level daily reminder notification is enabled. Default: on.
+  final bool dailyReminderEnabled;
+
+  /// Local "HH:mm" time the daily reminder fires. Default: "20:00".
+  final String dailyReminderTime;
+
   static const defaults = AppSettings(
     startOfWeek: DateTime.saturday,
     startOfMonth: 1,
@@ -45,6 +53,8 @@ class AppSettings {
     ThemeMode? themeMode,
     String? todayViewMode,
     String? Function()? locale,
+    bool? dailyReminderEnabled,
+    String? dailyReminderTime,
   }) {
     return AppSettings(
       startOfWeek: startOfWeek ?? this.startOfWeek,
@@ -53,6 +63,8 @@ class AppSettings {
       themeMode: themeMode ?? this.themeMode,
       todayViewMode: todayViewMode ?? this.todayViewMode,
       locale: locale != null ? locale() : this.locale,
+      dailyReminderEnabled: dailyReminderEnabled ?? this.dailyReminderEnabled,
+      dailyReminderTime: dailyReminderTime ?? this.dailyReminderTime,
     );
   }
 
@@ -65,7 +77,9 @@ class AppSettings {
           other.rolloverHour == rolloverHour &&
           other.themeMode == themeMode &&
           other.todayViewMode == todayViewMode &&
-          other.locale == locale;
+          other.locale == locale &&
+          other.dailyReminderEnabled == dailyReminderEnabled &&
+          other.dailyReminderTime == dailyReminderTime;
 
   @override
   int get hashCode => Object.hash(
@@ -75,5 +89,7 @@ class AppSettings {
     themeMode,
     todayViewMode,
     locale,
+    dailyReminderEnabled,
+    dailyReminderTime,
   );
 }

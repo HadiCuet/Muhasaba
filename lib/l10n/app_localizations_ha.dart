@@ -149,6 +149,23 @@ class AppLocalizationsHa extends AppLocalizations {
       'An ajiye tunatar da kai, amma ba a ba da izinin sanarwa ba. Ka kunna su a saituna na tsarin don samun fadar.';
 
   @override
+  String get settingsReminders => 'Tunatarwa';
+
+  @override
+  String get dailyReminder => 'Tunatarwa ta kowace rana';
+
+  @override
+  String get dailyReminderSubtitle =>
+      'Tunatarwa mai laushi don bin diddigin amalinka';
+
+  @override
+  String get dailyReminderTimeLabel => 'Lokacin tunatarwa';
+
+  @override
+  String get dailyReminderBody =>
+      'Ɗauki ɗan lokaci don bin diddigin amalinka na yau.';
+
+  @override
   String get groupByCategory => 'Tsara ta nau\'i';
 
   @override

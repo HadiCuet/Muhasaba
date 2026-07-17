@@ -151,6 +151,23 @@ class AppLocalizationsTr extends AppLocalizations {
       'Hatırlatıcı kaydedildi, ancak bildirim izni verilmemiş. Uyarı almak için sistem ayarlarından bildirimleri etkinleştirin.';
 
   @override
+  String get settingsReminders => 'Hatırlatıcılar';
+
+  @override
+  String get dailyReminder => 'Günlük hatırlatıcı';
+
+  @override
+  String get dailyReminderSubtitle =>
+      'Amellerinizi takip etmek için nazik bir hatırlatma';
+
+  @override
+  String get dailyReminderTimeLabel => 'Hatırlatıcı saati';
+
+  @override
+  String get dailyReminderBody =>
+      'Bugünün amellerini takip etmek için bir an ayırın.';
+
+  @override
   String get groupByCategory => 'Kategoriye göre grupla';
 
   @override

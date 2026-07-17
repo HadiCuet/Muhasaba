@@ -1,5 +1,7 @@
-JazakAllah d'utiliser Muhasaba.
+JazakAllah d'utiliser Muhasaba. Qu'Allah l'accepte et la rende facile.
 
+• Rappel quotidien — une douce invitation à faire le point sur vos actes chaque jour, à l'heure de votre choix. Activé par défaut à 20:00 ; modifiez-le ou désactivez-le à tout moment dans Paramètres.
+• Statistiques mensuelles plus claires — le graphique du détail quotidien s'affiche désormais nettement sur tous les écrans, sans numéros de jour tassés ni tronqués.
 • Traduction complète — les noms des prières, les catégories et les rappels s'affichent désormais dans la langue choisie, plus en anglais.
 • Les réglages affichent maintenant l'heure et les jours dans votre langue, avec les bons chiffres.
 • Correction de quelques icônes incorrectes dans les statistiques.

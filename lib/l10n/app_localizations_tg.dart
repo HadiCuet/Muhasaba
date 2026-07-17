@@ -151,6 +151,23 @@ class AppLocalizationsTg extends AppLocalizations {
       'Ёдоварй захира шуд, вале огохиномахо ичозат нест. Барои гирифтани огохинома онхоро дар танзимоти система фаъол кунед.';
 
   @override
+  String get settingsReminders => 'Ёдоварй';
+
+  @override
+  String get dailyReminder => 'Ёдоварии харруза';
+
+  @override
+  String get dailyReminderSubtitle =>
+      'Ёдоварии мулоим барои пайгирии амалхои шумо';
+
+  @override
+  String get dailyReminderTimeLabel => 'Вакти ёдоварй';
+
+  @override
+  String get dailyReminderBody =>
+      'Барои пайгирии амали имруза каме вакт чудо кунед.';
+
+  @override
   String get groupByCategory => 'Аз руи гурух';
 
   @override

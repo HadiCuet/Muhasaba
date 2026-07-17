@@ -149,6 +149,22 @@ class AppLocalizationsSw extends AppLocalizations {
       'Kikumbusho kimehifadhiwa, lakini arifa hazijaruhusiwa. Ziruhusu kwenye mipangilio ya mfumo ili kupata tahadhari.';
 
   @override
+  String get settingsReminders => 'Vikumbusho';
+
+  @override
+  String get dailyReminder => 'Kikumbusho cha kila siku';
+
+  @override
+  String get dailyReminderSubtitle =>
+      'Kikumbusho laini cha kufuatilia amali zako';
+
+  @override
+  String get dailyReminderTimeLabel => 'Muda wa kikumbusho';
+
+  @override
+  String get dailyReminderBody => 'Chukua muda kufuatilia amali za leo.';
+
+  @override
   String get groupByCategory => 'Pangilia kwa aina';
 
   @override

@@ -1,5 +1,7 @@
-JazakAllah for using Muhasaba.
+JazakAllah for using Muhasaba. May Allah accept and make it easy.
 
+• Daily reminder — a gentle nudge to check in on your deeds each day, at a time you choose. On by default at 8:00 PM; change it or turn it off anytime in Settings.
+• Clearer monthly stats — the daily breakdown chart now reads cleanly on every screen, with no cramped or broken day numbers.
 • Full translation — prayer names, categories, and reminders now show in your chosen language instead of English.
 • Settings now shows times and days in your language, with matching numerals.
 • Fixed a few mismatched icons in Stats.

@@ -149,6 +149,21 @@ class AppLocalizationsEn extends AppLocalizations {
       'Reminder saved, but notifications are not permitted. Enable them in system settings to get alerts.';
 
   @override
+  String get settingsReminders => 'Reminders';
+
+  @override
+  String get dailyReminder => 'Daily reminder';
+
+  @override
+  String get dailyReminderSubtitle => 'A gentle nudge to track your deeds';
+
+  @override
+  String get dailyReminderTimeLabel => 'Reminder time';
+
+  @override
+  String get dailyReminderBody => 'Take a moment to track today\'s deeds.';
+
+  @override
   String get groupByCategory => 'Group by category';
 
   @override
