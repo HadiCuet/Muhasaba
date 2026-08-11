@@ -30,6 +30,24 @@ class AppLocalizationsTg extends AppLocalizations {
   String get tabSettings => 'Танзимот';
 
   @override
+  String get tabChallenge => 'Мақсад';
+
+  @override
+  String get tabInsights => 'Омор';
+
+  @override
+  String get insightsTitle => 'Омор';
+
+  @override
+  String get insightsOverview => 'Умумӣ';
+
+  @override
+  String get insightsDaily => 'Рӯзона';
+
+  @override
+  String get newChallenge => 'Мақсади нав';
+
+  @override
   String get newAmal => 'Амали нав';
 
   @override
@@ -1057,4 +1075,158 @@ class AppLocalizationsTg extends AppLocalizations {
   @override
   String get tutorialViewBody =>
       'Байни аз рӯи гурӯҳ ҷудо кардан ва як рӯйхати содда иваз кунед.';
+
+  @override
+  String get challengesActive => 'Ҷорӣ';
+
+  @override
+  String get challengesPast => 'Гузашта';
+
+  @override
+  String get challengesEmptyTitle => 'Ҳанӯз мақсад нест';
+
+  @override
+  String get challengesEmptyBody =>
+      'Барои худ мақсад гузоред — масалан, 20 ракъат дар 7 рӯз — ва онро дар ин ҷо пайгирӣ кунед.';
+
+  @override
+  String get editChallenge => 'Тағйири мақсад';
+
+  @override
+  String get deleteChallenge => 'Ҳазфи мақсад';
+
+  @override
+  String get deleteChallengeConfirm =>
+      'Ин мақсад ва тамоми пешрафти сабтшудаи он ҳазф шавад?';
+
+  @override
+  String get challengeModeLabel => 'Чиро мешуморед?';
+
+  @override
+  String get challengeModeCount => 'Миқдори умумӣ';
+
+  @override
+  String get challengeModeDays => 'Шумораи рӯзҳо';
+
+  @override
+  String get challengeTargetLabel => 'Ҳадаф';
+
+  @override
+  String get challengeTargetRequired => 'Ҳадафи аз сифр калон ворид кунед';
+
+  @override
+  String get challengeUnitLabel => 'Воҳид (ихтиёрӣ)';
+
+  @override
+  String get challengeUnitHint => 'ракъат, саҳифа, маротиба';
+
+  @override
+  String get challengeStepLabel => 'Ҳар пахш илова мекунад';
+
+  @override
+  String get challengeWindowLabel => 'Маҳдудияти вақт';
+
+  @override
+  String get challengeWindowDuration => 'Шумораи рӯзҳо';
+
+  @override
+  String get challengeWindowDates => 'Санаҳои мушаххас';
+
+  @override
+  String get challengeWindowNone => 'Бемуҳлат';
+
+  @override
+  String challengeDurationLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count рӯз',
+      one: 'як рӯз',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeStartDate => 'Оғоз';
+
+  @override
+  String get challengeEndDate => 'Анҷом';
+
+  @override
+  String challengeProgressCount(String done, String target, String unit) {
+    return '$done аз $target $unit';
+  }
+
+  @override
+  String challengeProgressPlain(String done, String target) {
+    return '$done аз $target';
+  }
+
+  @override
+  String challengeProgressDays(String done, String target) {
+    return '$done аз $target рӯз';
+  }
+
+  @override
+  String challengeDaysLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count рӯз мондааст',
+      one: 'як рӯз мондааст',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeNoDeadline => 'Бемуҳлат';
+
+  @override
+  String challengeOnTrack(String rate) {
+    return 'Дар нақша · $rate/рӯз';
+  }
+
+  @override
+  String challengeBehind(String rate) {
+    return 'Ақиб · $rate/рӯз лозим';
+  }
+
+  @override
+  String challengeLastDay(String remaining) {
+    return 'Рӯзи охир · $remaining монд';
+  }
+
+  @override
+  String get challengeReached => 'Ҳадаф иҷро шуд';
+
+  @override
+  String get challengeCompleted => 'Иҷро шуд';
+
+  @override
+  String challengeEnded(String done, String target) {
+    return 'Тамом · $done аз $target';
+  }
+
+  @override
+  String get challengeExpiredTitle => 'Мақсад ба анҷом расид';
+
+  @override
+  String challengeExpiredBody(String title, String done, String target) {
+    return '$title бо $done аз $target ба анҷом расид.';
+  }
+
+  @override
+  String get challengeExtend => 'Дароз кардан';
+
+  @override
+  String get challengeRestart => 'Аз нав оғоз кардан';
+
+  @override
+  String get challengeArchive => 'Бойгонӣ кардан';
+
+  @override
+  String get challengeDailyBreakdown => 'Сабти рӯзона';
+
+  @override
+  String get listSeparator => ' · ';
 }

@@ -182,6 +182,42 @@ abstract class AppLocalizations {
   /// **'Settings'**
   String get tabSettings;
 
+  /// Bottom navigation label for the Challenge tab
+  ///
+  /// In en, this message translates to:
+  /// **'Challenge'**
+  String get tabChallenge;
+
+  /// Bottom navigation label for the merged Stats + History tab
+  ///
+  /// In en, this message translates to:
+  /// **'Insights'**
+  String get tabInsights;
+
+  /// App bar title of the merged Insights screen
+  ///
+  /// In en, this message translates to:
+  /// **'Insights'**
+  String get insightsTitle;
+
+  /// Insights sub-tab showing aggregate stats
+  ///
+  /// In en, this message translates to:
+  /// **'Overview'**
+  String get insightsOverview;
+
+  /// Insights sub-tab showing one editable day at a time
+  ///
+  /// In en, this message translates to:
+  /// **'Daily'**
+  String get insightsDaily;
+
+  /// FAB label and app bar title for creating a challenge
+  ///
+  /// In en, this message translates to:
+  /// **'New challenge'**
+  String get newChallenge;
+
   /// No description provided for @newAmal.
   ///
   /// In en, this message translates to:
@@ -1921,6 +1957,246 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Switch between grouping by category and one flat list.'**
   String get tutorialViewBody;
+
+  /// Section header above in-progress challenges
+  ///
+  /// In en, this message translates to:
+  /// **'Active'**
+  String get challengesActive;
+
+  /// Section header above finished or expired challenges
+  ///
+  /// In en, this message translates to:
+  /// **'Past'**
+  String get challengesPast;
+
+  /// Empty-state heading on the Challenge tab
+  ///
+  /// In en, this message translates to:
+  /// **'No challenges yet'**
+  String get challengesEmptyTitle;
+
+  /// Empty-state explanation of what a challenge is
+  ///
+  /// In en, this message translates to:
+  /// **'Set yourself a goal — like 20 rakah in 7 days — and track it here.'**
+  String get challengesEmptyBody;
+
+  /// App bar title when editing an existing challenge
+  ///
+  /// In en, this message translates to:
+  /// **'Edit challenge'**
+  String get editChallenge;
+
+  /// Destructive action in the challenge detail screen
+  ///
+  /// In en, this message translates to:
+  /// **'Delete challenge'**
+  String get deleteChallenge;
+
+  /// Confirmation dialog body before deleting a challenge
+  ///
+  /// In en, this message translates to:
+  /// **'Delete this challenge and all its logged progress?'**
+  String get deleteChallengeConfirm;
+
+  /// Form field label for the challenge mode selector
+  ///
+  /// In en, this message translates to:
+  /// **'What are you counting?'**
+  String get challengeModeLabel;
+
+  /// Challenge mode: cumulative units, e.g. 20 rakah
+  ///
+  /// In en, this message translates to:
+  /// **'A total amount'**
+  String get challengeModeCount;
+
+  /// Challenge mode: one check-in per day
+  ///
+  /// In en, this message translates to:
+  /// **'A number of days'**
+  String get challengeModeDays;
+
+  /// Form field label for the number to reach
+  ///
+  /// In en, this message translates to:
+  /// **'Target'**
+  String get challengeTargetLabel;
+
+  /// Validation error for an empty or zero target
+  ///
+  /// In en, this message translates to:
+  /// **'Enter a target above zero'**
+  String get challengeTargetRequired;
+
+  /// Form field label for a user-typed unit like rakah
+  ///
+  /// In en, this message translates to:
+  /// **'Unit (optional)'**
+  String get challengeUnitLabel;
+
+  /// Placeholder examples for the unit field
+  ///
+  /// In en, this message translates to:
+  /// **'rakah, pages, times'**
+  String get challengeUnitHint;
+
+  /// Form field label for the stepper increment
+  ///
+  /// In en, this message translates to:
+  /// **'Each tap adds'**
+  String get challengeStepLabel;
+
+  /// Form section label for the challenge window
+  ///
+  /// In en, this message translates to:
+  /// **'Time limit'**
+  String get challengeWindowLabel;
+
+  /// Window type: fixed duration from the start date
+  ///
+  /// In en, this message translates to:
+  /// **'A number of days'**
+  String get challengeWindowDuration;
+
+  /// Window type: explicit start and end dates
+  ///
+  /// In en, this message translates to:
+  /// **'Specific dates'**
+  String get challengeWindowDates;
+
+  /// Window type: open-ended challenge
+  ///
+  /// In en, this message translates to:
+  /// **'No deadline'**
+  String get challengeWindowNone;
+
+  /// Length of the challenge window
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{{count} day} other{{count} days}}'**
+  String challengeDurationLabel(int count);
+
+  /// Form label for the challenge start date
+  ///
+  /// In en, this message translates to:
+  /// **'Starts'**
+  String get challengeStartDate;
+
+  /// Form label for the challenge end date, inclusive
+  ///
+  /// In en, this message translates to:
+  /// **'Ends'**
+  String get challengeEndDate;
+
+  /// Progress line for a count challenge, e.g. 8 of 20 rakah
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {target} {unit}'**
+  String challengeProgressCount(String done, String target, String unit);
+
+  /// Progress line when the challenge has no unit
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {target}'**
+  String challengeProgressPlain(String done, String target);
+
+  /// Progress line for a day-count challenge
+  ///
+  /// In en, this message translates to:
+  /// **'{done} of {target} days'**
+  String challengeProgressDays(String done, String target);
+
+  /// Time remaining in the challenge window
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{1 day left} other{{count} days left}}'**
+  String challengeDaysLeft(int count);
+
+  /// Pace chip for an open-ended challenge
+  ///
+  /// In en, this message translates to:
+  /// **'No deadline'**
+  String get challengeNoDeadline;
+
+  /// Pace chip when the challenge is on schedule
+  ///
+  /// In en, this message translates to:
+  /// **'On track · {rate}/day'**
+  String challengeOnTrack(String rate);
+
+  /// Pace chip when more than one day's share behind
+  ///
+  /// In en, this message translates to:
+  /// **'Behind · {rate}/day to finish'**
+  String challengeBehind(String rate);
+
+  /// Pace chip on the final day of the window
+  ///
+  /// In en, this message translates to:
+  /// **'Last day · {remaining} left'**
+  String challengeLastDay(String remaining);
+
+  /// Pace chip once the target is met
+  ///
+  /// In en, this message translates to:
+  /// **'Target reached'**
+  String get challengeReached;
+
+  /// Chip on a finished challenge in the Past section
+  ///
+  /// In en, this message translates to:
+  /// **'Completed'**
+  String get challengeCompleted;
+
+  /// Chip on an expired challenge showing final progress
+  ///
+  /// In en, this message translates to:
+  /// **'Ended · {done} of {target}'**
+  String challengeEnded(String done, String target);
+
+  /// Dialog title when a challenge window closes unmet
+  ///
+  /// In en, this message translates to:
+  /// **'Challenge ended'**
+  String get challengeExpiredTitle;
+
+  /// Dialog body showing the final progress of an expired challenge
+  ///
+  /// In en, this message translates to:
+  /// **'{title} ended at {done} of {target}.'**
+  String challengeExpiredBody(String title, String done, String target);
+
+  /// Expiry action: push the deadline out
+  ///
+  /// In en, this message translates to:
+  /// **'Extend'**
+  String get challengeExtend;
+
+  /// Expiry action: begin a fresh challenge with the same settings
+  ///
+  /// In en, this message translates to:
+  /// **'Start again'**
+  String get challengeRestart;
+
+  /// Expiry action: accept the result and file it away
+  ///
+  /// In en, this message translates to:
+  /// **'Archive'**
+  String get challengeArchive;
+
+  /// Detail-screen section header above per-day entries
+  ///
+  /// In en, this message translates to:
+  /// **'Daily log'**
+  String get challengeDailyBreakdown;
+
+  /// Separator between clauses on a challenge card. Arabic-script locales use an en dash because the middot is indistinguishable from their digit zero.
+  ///
+  /// In en, this message translates to:
+  /// **' · '**
+  String get listSeparator;
 }
 
 class _AppLocalizationsDelegate

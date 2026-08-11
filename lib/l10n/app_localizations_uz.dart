@@ -30,6 +30,24 @@ class AppLocalizationsUz extends AppLocalizations {
   String get tabSettings => 'Sozlamalar';
 
   @override
+  String get tabChallenge => 'Maqsad';
+
+  @override
+  String get tabInsights => 'Statistika';
+
+  @override
+  String get insightsTitle => 'Statistika';
+
+  @override
+  String get insightsOverview => 'Umumiy';
+
+  @override
+  String get insightsDaily => 'Kunlik';
+
+  @override
+  String get newChallenge => 'Yangi maqsad';
+
+  @override
   String get newAmal => 'Yangi amal';
 
   @override
@@ -1061,4 +1079,156 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String get tutorialViewBody =>
       'Turkum bo\'yicha guruhlash va bitta oddiy ro\'yxat o\'rtasida almashing.';
+
+  @override
+  String get challengesActive => 'Faol';
+
+  @override
+  String get challengesPast => 'O\'tgan';
+
+  @override
+  String get challengesEmptyTitle => 'Hali maqsad yo\'q';
+
+  @override
+  String get challengesEmptyBody =>
+      'O\'zingizga bir maqsad qo\'ying — masalan, 7 kunda 20 rakat — va uni shu yerda kuzating.';
+
+  @override
+  String get editChallenge => 'Maqsadni tahrirlash';
+
+  @override
+  String get deleteChallenge => 'Maqsadni o\'chirish';
+
+  @override
+  String get deleteChallengeConfirm =>
+      'Bu maqsad va uning barcha qayd etilgan natijalari o\'chirilsinmi?';
+
+  @override
+  String get challengeModeLabel => 'Nimani sanayapsiz?';
+
+  @override
+  String get challengeModeCount => 'Umumiy miqdor';
+
+  @override
+  String get challengeModeDays => 'Kunlar soni';
+
+  @override
+  String get challengeTargetLabel => 'Maqsad soni';
+
+  @override
+  String get challengeTargetRequired => 'Noldan katta son kiriting';
+
+  @override
+  String get challengeUnitLabel => 'Birlik (ixtiyoriy)';
+
+  @override
+  String get challengeUnitHint => 'rakat, sahifa, marta';
+
+  @override
+  String get challengeStepLabel => 'Har bosishda qo\'shiladi';
+
+  @override
+  String get challengeWindowLabel => 'Muddat';
+
+  @override
+  String get challengeWindowDuration => 'Kunlar soni';
+
+  @override
+  String get challengeWindowDates => 'Aniq sanalar';
+
+  @override
+  String get challengeWindowNone => 'Muddatsiz';
+
+  @override
+  String challengeDurationLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count kun',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeStartDate => 'Boshlanishi';
+
+  @override
+  String get challengeEndDate => 'Tugashi';
+
+  @override
+  String challengeProgressCount(String done, String target, String unit) {
+    return '$target $unit ichidan $done';
+  }
+
+  @override
+  String challengeProgressPlain(String done, String target) {
+    return '$target dan $done';
+  }
+
+  @override
+  String challengeProgressDays(String done, String target) {
+    return '$target kundan $done';
+  }
+
+  @override
+  String challengeDaysLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count kun qoldi',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeNoDeadline => 'Muddatsiz';
+
+  @override
+  String challengeOnTrack(String rate) {
+    return 'Rejada · $rate/kun';
+  }
+
+  @override
+  String challengeBehind(String rate) {
+    return 'Orqada · $rate/kun kerak';
+  }
+
+  @override
+  String challengeLastDay(String remaining) {
+    return 'Oxirgi kun · $remaining qoldi';
+  }
+
+  @override
+  String get challengeReached => 'Maqsadga erishildi';
+
+  @override
+  String get challengeCompleted => 'Bajarildi';
+
+  @override
+  String challengeEnded(String done, String target) {
+    return 'Tugadi · $target dan $done';
+  }
+
+  @override
+  String get challengeExpiredTitle => 'Maqsad tugadi';
+
+  @override
+  String challengeExpiredBody(String title, String done, String target) {
+    return '$title $target dan $done bilan tugadi.';
+  }
+
+  @override
+  String get challengeExtend => 'Muddatni uzaytirish';
+
+  @override
+  String get challengeRestart => 'Qaytadan boshlash';
+
+  @override
+  String get challengeArchive => 'Arxivlash';
+
+  @override
+  String get challengeDailyBreakdown => 'Kunlik yozuv';
+
+  @override
+  String get listSeparator => ' · ';
 }

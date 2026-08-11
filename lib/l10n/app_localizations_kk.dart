@@ -30,6 +30,24 @@ class AppLocalizationsKk extends AppLocalizations {
   String get tabSettings => 'Баптаулар';
 
   @override
+  String get tabChallenge => 'Мақсат';
+
+  @override
+  String get tabInsights => 'Статистика';
+
+  @override
+  String get insightsTitle => 'Статистика';
+
+  @override
+  String get insightsOverview => 'Шолу';
+
+  @override
+  String get insightsDaily => 'Күнделікті';
+
+  @override
+  String get newChallenge => 'Жаңа мақсат';
+
+  @override
   String get newAmal => 'Жаңа амал';
 
   @override
@@ -1054,4 +1072,156 @@ class AppLocalizationsKk extends AppLocalizations {
   @override
   String get tutorialViewBody =>
       'Санат бойынша топтау мен бір жай тізім арасында ауысыңыз.';
+
+  @override
+  String get challengesActive => 'Ағымдағы';
+
+  @override
+  String get challengesPast => 'Өткен';
+
+  @override
+  String get challengesEmptyTitle => 'Әзірге мақсат жоқ';
+
+  @override
+  String get challengesEmptyBody =>
+      'Өзіңізге мақсат қойыңыз — мысалы, 7 күнде 20 рәкат — және оны осында бақылаңыз.';
+
+  @override
+  String get editChallenge => 'Мақсатты өзгерту';
+
+  @override
+  String get deleteChallenge => 'Мақсатты жою';
+
+  @override
+  String get deleteChallengeConfirm =>
+      'Бұл мақсат пен оның барлық белгіленген нәтижесі жойылсын ба?';
+
+  @override
+  String get challengeModeLabel => 'Нені санайсыз?';
+
+  @override
+  String get challengeModeCount => 'Жалпы саны';
+
+  @override
+  String get challengeModeDays => 'Күн саны';
+
+  @override
+  String get challengeTargetLabel => 'Межелі сан';
+
+  @override
+  String get challengeTargetRequired => 'Нөлден үлкен сан енгізіңіз';
+
+  @override
+  String get challengeUnitLabel => 'Бірлік (міндетті емес)';
+
+  @override
+  String get challengeUnitHint => 'рәкат, бет, рет';
+
+  @override
+  String get challengeStepLabel => 'Әр басқанда қосылады';
+
+  @override
+  String get challengeWindowLabel => 'Уақыт шегі';
+
+  @override
+  String get challengeWindowDuration => 'Күн саны';
+
+  @override
+  String get challengeWindowDates => 'Нақты күндер';
+
+  @override
+  String get challengeWindowNone => 'Мерзімсіз';
+
+  @override
+  String challengeDurationLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count күн',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeStartDate => 'Басталуы';
+
+  @override
+  String get challengeEndDate => 'Аяқталуы';
+
+  @override
+  String challengeProgressCount(String done, String target, String unit) {
+    return '$target $unit ішінен $done';
+  }
+
+  @override
+  String challengeProgressPlain(String done, String target) {
+    return '$target ішінен $done';
+  }
+
+  @override
+  String challengeProgressDays(String done, String target) {
+    return '$target күннен $done';
+  }
+
+  @override
+  String challengeDaysLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count күн қалды',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeNoDeadline => 'Мерзімсіз';
+
+  @override
+  String challengeOnTrack(String rate) {
+    return 'Жоспарда · $rate/күн';
+  }
+
+  @override
+  String challengeBehind(String rate) {
+    return 'Артта · $rate/күн қажет';
+  }
+
+  @override
+  String challengeLastDay(String remaining) {
+    return 'Соңғы күн · $remaining қалды';
+  }
+
+  @override
+  String get challengeReached => 'Мақсатқа жетті';
+
+  @override
+  String get challengeCompleted => 'Аяқталды';
+
+  @override
+  String challengeEnded(String done, String target) {
+    return 'Бітті · $done/$target';
+  }
+
+  @override
+  String get challengeExpiredTitle => 'Мақсат аяқталды';
+
+  @override
+  String challengeExpiredBody(String title, String done, String target) {
+    return '$title $done/$target нәтижесімен аяқталды.';
+  }
+
+  @override
+  String get challengeExtend => 'Ұзарту';
+
+  @override
+  String get challengeRestart => 'Қайта бастау';
+
+  @override
+  String get challengeArchive => 'Мұрағаттау';
+
+  @override
+  String get challengeDailyBreakdown => 'Күнделікті жазба';
+
+  @override
+  String get listSeparator => ' · ';
 }

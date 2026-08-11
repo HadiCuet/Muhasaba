@@ -30,6 +30,24 @@ class AppLocalizationsSw extends AppLocalizations {
   String get tabSettings => 'Mipangilio';
 
   @override
+  String get tabChallenge => 'Lengo';
+
+  @override
+  String get tabInsights => 'Takwimu';
+
+  @override
+  String get insightsTitle => 'Takwimu';
+
+  @override
+  String get insightsOverview => 'Muhtasari';
+
+  @override
+  String get insightsDaily => 'Kwa siku';
+
+  @override
+  String get newChallenge => 'Lengo jipya';
+
+  @override
   String get newAmal => 'Amali mpya';
 
   @override
@@ -1056,4 +1074,158 @@ class AppLocalizationsSw extends AppLocalizations {
   @override
   String get tutorialViewBody =>
       'Badilisha kati ya kupanga kwa aina na orodha moja tambarare.';
+
+  @override
+  String get challengesActive => 'Yanayoendelea';
+
+  @override
+  String get challengesPast => 'Yaliyopita';
+
+  @override
+  String get challengesEmptyTitle => 'Bado hakuna lengo';
+
+  @override
+  String get challengesEmptyBody =>
+      'Jiwekee lengo — kama rakaa 20 ndani ya siku 7 — na ulifuatilie hapa.';
+
+  @override
+  String get editChallenge => 'Hariri lengo';
+
+  @override
+  String get deleteChallenge => 'Futa lengo';
+
+  @override
+  String get deleteChallengeConfirm =>
+      'Ufute lengo hili na maendeleo yote yaliyorekodiwa?';
+
+  @override
+  String get challengeModeLabel => 'Unahesabu nini?';
+
+  @override
+  String get challengeModeCount => 'Jumla ya kiasi';
+
+  @override
+  String get challengeModeDays => 'Idadi ya siku';
+
+  @override
+  String get challengeTargetLabel => 'Shabaha';
+
+  @override
+  String get challengeTargetRequired => 'Weka shabaha zaidi ya sifuri';
+
+  @override
+  String get challengeUnitLabel => 'Kipimo (hiari)';
+
+  @override
+  String get challengeUnitHint => 'rakaa, kurasa, mara';
+
+  @override
+  String get challengeStepLabel => 'Kila mgusa huongeza';
+
+  @override
+  String get challengeWindowLabel => 'Muda';
+
+  @override
+  String get challengeWindowDuration => 'Idadi ya siku';
+
+  @override
+  String get challengeWindowDates => 'Tarehe maalum';
+
+  @override
+  String get challengeWindowNone => 'Bila muda';
+
+  @override
+  String challengeDurationLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'siku $count',
+      one: 'siku $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeStartDate => 'Huanza';
+
+  @override
+  String get challengeEndDate => 'Huisha';
+
+  @override
+  String challengeProgressCount(String done, String target, String unit) {
+    return '$done kati ya $unit $target';
+  }
+
+  @override
+  String challengeProgressPlain(String done, String target) {
+    return '$done kati ya $target';
+  }
+
+  @override
+  String challengeProgressDays(String done, String target) {
+    return '$done kati ya siku $target';
+  }
+
+  @override
+  String challengeDaysLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'siku $count zimesalia',
+      one: 'siku $count imesalia',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeNoDeadline => 'Bila muda';
+
+  @override
+  String challengeOnTrack(String rate) {
+    return 'Kwenye njia · $rate/siku';
+  }
+
+  @override
+  String challengeBehind(String rate) {
+    return 'Nyuma · $rate/siku';
+  }
+
+  @override
+  String challengeLastDay(String remaining) {
+    return 'Siku ya mwisho · $remaining zimebaki';
+  }
+
+  @override
+  String get challengeReached => 'Shabaha imefikiwa';
+
+  @override
+  String get challengeCompleted => 'Imekamilika';
+
+  @override
+  String challengeEnded(String done, String target) {
+    return 'Imeisha · $done/$target';
+  }
+
+  @override
+  String get challengeExpiredTitle => 'Lengo limeisha';
+
+  @override
+  String challengeExpiredBody(String title, String done, String target) {
+    return '$title limeisha kwa $done kati ya $target.';
+  }
+
+  @override
+  String get challengeExtend => 'Ongeza muda';
+
+  @override
+  String get challengeRestart => 'Anza upya';
+
+  @override
+  String get challengeArchive => 'Weka kwenye kumbukumbu';
+
+  @override
+  String get challengeDailyBreakdown => 'Rekodi ya kila siku';
+
+  @override
+  String get listSeparator => ' · ';
 }

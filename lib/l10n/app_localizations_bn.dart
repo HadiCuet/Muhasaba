@@ -30,6 +30,24 @@ class AppLocalizationsBn extends AppLocalizations {
   String get tabSettings => 'সেটিংস';
 
   @override
+  String get tabChallenge => 'সংকল্প';
+
+  @override
+  String get tabInsights => 'পরিসংখ্যান';
+
+  @override
+  String get insightsTitle => 'পরিসংখ্যান';
+
+  @override
+  String get insightsOverview => 'সারসংক্ষেপ';
+
+  @override
+  String get insightsDaily => 'দৈনিক';
+
+  @override
+  String get newChallenge => 'নতুন সংকল্প';
+
+  @override
   String get newAmal => 'নতুন আমল';
 
   @override
@@ -1055,4 +1073,158 @@ class AppLocalizationsBn extends AppLocalizations {
   @override
   String get tutorialViewBody =>
       'বিভাগ অনুযায়ী গ্রুপ করা ও একটি সমতল তালিকার মধ্যে বদল করুন।';
+
+  @override
+  String get challengesActive => 'চলমান';
+
+  @override
+  String get challengesPast => 'পূর্ববর্তী';
+
+  @override
+  String get challengesEmptyTitle => 'এখনো কোনো সংকল্প নেই';
+
+  @override
+  String get challengesEmptyBody =>
+      'নিজের জন্য একটি লক্ষ্য ঠিক করুন — যেমন ৭ দিনে ২০ রাকাত — এবং এখানে তার হিসাব রাখুন।';
+
+  @override
+  String get editChallenge => 'সংকল্প সম্পাদনা';
+
+  @override
+  String get deleteChallenge => 'সংকল্প মুছুন';
+
+  @override
+  String get deleteChallengeConfirm =>
+      'এই সংকল্প ও এর সব রেকর্ড করা অগ্রগতি মুছে ফেলবেন?';
+
+  @override
+  String get challengeModeLabel => 'আপনি কী গুনছেন?';
+
+  @override
+  String get challengeModeCount => 'মোট পরিমাণ';
+
+  @override
+  String get challengeModeDays => 'দিনের সংখ্যা';
+
+  @override
+  String get challengeTargetLabel => 'লক্ষ্য';
+
+  @override
+  String get challengeTargetRequired => 'শূন্যের বেশি লক্ষ্য দিন';
+
+  @override
+  String get challengeUnitLabel => 'একক (ঐচ্ছিক)';
+
+  @override
+  String get challengeUnitHint => 'রাকাত, পৃষ্ঠা, বার';
+
+  @override
+  String get challengeStepLabel => 'প্রতি চাপে যোগ হবে';
+
+  @override
+  String get challengeWindowLabel => 'সময়সীমা';
+
+  @override
+  String get challengeWindowDuration => 'দিনের সংখ্যা';
+
+  @override
+  String get challengeWindowDates => 'নির্দিষ্ট তারিখ';
+
+  @override
+  String get challengeWindowNone => 'সময়সীমা নেই';
+
+  @override
+  String challengeDurationLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count দিন',
+      one: 'এক দিন',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeStartDate => 'শুরু';
+
+  @override
+  String get challengeEndDate => 'শেষ';
+
+  @override
+  String challengeProgressCount(String done, String target, String unit) {
+    return '$target $unit এর মধ্যে $done';
+  }
+
+  @override
+  String challengeProgressPlain(String done, String target) {
+    return '$target এর মধ্যে $done';
+  }
+
+  @override
+  String challengeProgressDays(String done, String target) {
+    return '$target দিনের মধ্যে $done';
+  }
+
+  @override
+  String challengeDaysLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count দিন বাকি',
+      one: 'এক দিন বাকি',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeNoDeadline => 'সময়সীমা নেই';
+
+  @override
+  String challengeOnTrack(String rate) {
+    return 'ঠিক পথে · $rate/দিন';
+  }
+
+  @override
+  String challengeBehind(String rate) {
+    return 'পিছিয়ে · দিনে $rate দরকার';
+  }
+
+  @override
+  String challengeLastDay(String remaining) {
+    return 'শেষ দিন · $remaining বাকি';
+  }
+
+  @override
+  String get challengeReached => 'লক্ষ্য পূর্ণ';
+
+  @override
+  String get challengeCompleted => 'সম্পন্ন';
+
+  @override
+  String challengeEnded(String done, String target) {
+    return 'শেষ · $done/$target';
+  }
+
+  @override
+  String get challengeExpiredTitle => 'সংকল্প শেষ';
+
+  @override
+  String challengeExpiredBody(String title, String done, String target) {
+    return '$title শেষ হয়েছে, $target-এর মধ্যে $done।';
+  }
+
+  @override
+  String get challengeExtend => 'সময় বাড়ান';
+
+  @override
+  String get challengeRestart => 'আবার শুরু করুন';
+
+  @override
+  String get challengeArchive => 'আর্কাইভ করুন';
+
+  @override
+  String get challengeDailyBreakdown => 'দৈনিক তালিকা';
+
+  @override
+  String get listSeparator => ' · ';
 }

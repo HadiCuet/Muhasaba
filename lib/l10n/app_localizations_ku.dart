@@ -30,6 +30,24 @@ class AppLocalizationsKu extends AppLocalizations {
   String get tabSettings => 'Mîheng';
 
   @override
+  String get tabChallenge => 'Armanc';
+
+  @override
+  String get tabInsights => 'Amar';
+
+  @override
+  String get insightsTitle => 'Amar';
+
+  @override
+  String get insightsOverview => 'Nêrîna giştî';
+
+  @override
+  String get insightsDaily => 'Roj bi roj';
+
+  @override
+  String get newChallenge => 'Armanca nû';
+
+  @override
   String get newAmal => 'Kirina nû';
 
   @override
@@ -1058,4 +1076,158 @@ class AppLocalizationsKu extends AppLocalizations {
   @override
   String get tutorialViewBody =>
       'Di navbera komkirina li gorî beşê û lîsteyek sade de biguhere.';
+
+  @override
+  String get challengesActive => 'Çalak';
+
+  @override
+  String get challengesPast => 'Borî';
+
+  @override
+  String get challengesEmptyTitle => 'Hîn armanc tune';
+
+  @override
+  String get challengesEmptyBody =>
+      'Ji xwe re armancekê deyne — wek 20 rekat di 7 rojan de — û li vir bişopîne.';
+
+  @override
+  String get editChallenge => 'Armancê biguherîne';
+
+  @override
+  String get deleteChallenge => 'Armancê jê bibe';
+
+  @override
+  String get deleteChallengeConfirm =>
+      'Ev armanc û hemû pêşketina tomarkirî jê bên birin?';
+
+  @override
+  String get challengeModeLabel => 'Tu çi dijmêrî?';
+
+  @override
+  String get challengeModeCount => 'Hejmara giştî';
+
+  @override
+  String get challengeModeDays => 'Hejmara rojan';
+
+  @override
+  String get challengeTargetLabel => 'Hedef';
+
+  @override
+  String get challengeTargetRequired => 'Hedefek ji sifirê mezintir binivîse';
+
+  @override
+  String get challengeUnitLabel => 'Yeke (bijarte)';
+
+  @override
+  String get challengeUnitHint => 'rekat, rûpel, car';
+
+  @override
+  String get challengeStepLabel => 'Her tikandin zêde dike';
+
+  @override
+  String get challengeWindowLabel => 'Sînorê demê';
+
+  @override
+  String get challengeWindowDuration => 'Hejmara rojan';
+
+  @override
+  String get challengeWindowDates => 'Dîrokên diyar';
+
+  @override
+  String get challengeWindowNone => 'Bê sînor';
+
+  @override
+  String challengeDurationLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count roj',
+      one: '$count roj',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeStartDate => 'Destpêk';
+
+  @override
+  String get challengeEndDate => 'Dawî';
+
+  @override
+  String challengeProgressCount(String done, String target, String unit) {
+    return '$done ji $target $unit';
+  }
+
+  @override
+  String challengeProgressPlain(String done, String target) {
+    return '$done ji $target';
+  }
+
+  @override
+  String challengeProgressDays(String done, String target) {
+    return '$done ji $target rojan';
+  }
+
+  @override
+  String challengeDaysLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count roj mane',
+      one: '$count roj maye',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeNoDeadline => 'Bê sînor';
+
+  @override
+  String challengeOnTrack(String rate) {
+    return 'Li ser rê · $rate/roj';
+  }
+
+  @override
+  String challengeBehind(String rate) {
+    return 'Paşve · $rate/roj';
+  }
+
+  @override
+  String challengeLastDay(String remaining) {
+    return 'Roja dawî · $remaining maye';
+  }
+
+  @override
+  String get challengeReached => 'Hedef pêk hat';
+
+  @override
+  String get challengeCompleted => 'Qediya';
+
+  @override
+  String challengeEnded(String done, String target) {
+    return 'Dawî · $done ji $target';
+  }
+
+  @override
+  String get challengeExpiredTitle => 'Armanc qediya';
+
+  @override
+  String challengeExpiredBody(String title, String done, String target) {
+    return '$title bi $done ji $target qediya.';
+  }
+
+  @override
+  String get challengeExtend => 'Dirêj bike';
+
+  @override
+  String get challengeRestart => 'Ji nû ve dest pê bike';
+
+  @override
+  String get challengeArchive => 'Arşîv bike';
+
+  @override
+  String get challengeDailyBreakdown => 'Tomara rojane';
+
+  @override
+  String get listSeparator => ' · ';
 }

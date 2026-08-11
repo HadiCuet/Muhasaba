@@ -12,115 +12,122 @@ import 'widgets/streaks_card.dart';
 import 'widgets/heatmap_card.dart';
 import 'widgets/per_amal_card.dart';
 
-class StatsScreen extends ConsumerWidget {
+class StatsScreen extends ConsumerStatefulWidget {
   const StatsScreen({super.key});
 
   @override
-  Widget build(BuildContext context, WidgetRef ref) {
+  ConsumerState<StatsScreen> createState() => _StatsScreenState();
+}
+
+class _StatsScreenState extends ConsumerState<StatsScreen>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
+
+  @override
+  Widget build(BuildContext context) {
+    super.build(context);
     final l = AppLocalizations.of(context);
     final snapshotAsync = ref.watch(enhancedStatsProvider);
     final filter = ref.watch(statsFilterProvider);
     final locale = Localizations.localeOf(context).toString();
 
-    return Scaffold(
-      appBar: AppBar(title: Text(l.statsTitle)),
-      body: MaxWidthBody(
-        child: RefreshIndicator(
-          onRefresh: () async => ref.invalidate(enhancedStatsProvider),
-          child: CustomScrollView(
-            slivers: [
-              // Filter row — always visible at top
-              const SliverToBoxAdapter(child: StatsFilterRow()),
-              // Stats content
-              ...snapshotAsync.when(
-                loading: () => [
-                  const SliverFillRemaining(
-                    child: Center(child: CircularProgressIndicator()),
-                  ),
-                ],
-                error: (e, _) => [
-                  SliverFillRemaining(
-                    child: Center(
-                      child: Padding(
-                        padding: const EdgeInsetsDirectional.all(32),
-                        child: Text(
-                          l.statsLoadError(e.toString()),
-                          textAlign: TextAlign.center,
-                        ),
+    return MaxWidthBody(
+      child: RefreshIndicator(
+        onRefresh: () async => ref.invalidate(enhancedStatsProvider),
+        child: CustomScrollView(
+          slivers: [
+            // Filter row — always visible at top
+            const SliverToBoxAdapter(child: StatsFilterRow()),
+            // Stats content
+            ...snapshotAsync.when(
+              loading: () => [
+                const SliverFillRemaining(
+                  child: Center(child: CircularProgressIndicator()),
+                ),
+              ],
+              error: (e, _) => [
+                SliverFillRemaining(
+                  child: Center(
+                    child: Padding(
+                      padding: const EdgeInsetsDirectional.all(32),
+                      child: Text(
+                        l.statsLoadError(e.toString()),
+                        textAlign: TextAlign.center,
                       ),
                     ),
                   ),
-                ],
-                data: (snap) {
-                  if (snap.perAmal.isEmpty) {
-                    return [const SliverFillRemaining(child: _EmptyState())];
-                  }
+                ),
+              ],
+              data: (snap) {
+                if (snap.perAmal.isEmpty) {
+                  return [const SliverFillRemaining(child: _EmptyState())];
+                }
 
-                  final isSingleAmal = filter.amalId != null;
-                  final children = <Widget>[];
+                final isSingleAmal = filter.amalId != null;
+                final children = <Widget>[];
 
-                  // 1. Score ring
-                  children.add(ScoreRingCard(snapshot: snap));
-                  children.add(const SizedBox(height: 12));
+                // 1. Score ring
+                children.add(ScoreRingCard(snapshot: snap));
+                children.add(const SizedBox(height: 12));
 
-                  // 2. Daily chart (hide if <= 1 day)
-                  if (snap.dailyBreakdown.length > 1) {
-                    children.add(
-                      DailyChartCard(
-                        dailyBreakdown: snap.dailyBreakdown,
-                        locale: locale,
-                      ),
-                    );
-                    children.add(const SizedBox(height: 12));
-                  }
-
-                  // 3. Category breakdown (hide if empty or single-amal filter)
-                  if (snap.categoryBreakdown.isNotEmpty && !isSingleAmal) {
-                    children.add(
-                      CategoryBreakdownCard(categories: snap.categoryBreakdown),
-                    );
-                    children.add(const SizedBox(height: 12));
-                  }
-
-                  // 4. Streaks
+                // 2. Daily chart (hide if <= 1 day)
+                if (snap.dailyBreakdown.length > 1) {
                   children.add(
-                    StreaksCard(
-                      currentStreak: snap.currentStreak,
-                      longestStreak: snap.longestStreak,
-                      totalCompletedDays: snap.totalCompletedDays,
+                    DailyChartCard(
+                      dailyBreakdown: snap.dailyBreakdown,
+                      locale: locale,
                     ),
                   );
                   children.add(const SizedBox(height: 12));
+                }
 
-                  // 5. Heatmap (hide if empty)
-                  if (snap.heatmapData.isNotEmpty) {
-                    children.add(HeatmapCard(heatmapData: snap.heatmapData));
-                    children.add(const SizedBox(height: 12));
-                  }
+                // 3. Category breakdown (hide if empty or single-amal filter)
+                if (snap.categoryBreakdown.isNotEmpty && !isSingleAmal) {
+                  children.add(
+                    CategoryBreakdownCard(categories: snap.categoryBreakdown),
+                  );
+                  children.add(const SizedBox(height: 12));
+                }
 
-                  // 6. Per-amal list (hide if <= 1 amal and single-amal filter)
-                  if (!(snap.perAmal.length <= 1 && isSingleAmal)) {
-                    children.add(PerAmalCard(perAmal: snap.perAmal));
-                    children.add(const SizedBox(height: 12));
-                  }
+                // 4. Streaks
+                children.add(
+                  StreaksCard(
+                    currentStreak: snap.currentStreak,
+                    longestStreak: snap.longestStreak,
+                    totalCompletedDays: snap.totalCompletedDays,
+                  ),
+                );
+                children.add(const SizedBox(height: 12));
 
-                  return [
-                    SliverPadding(
-                      padding: const EdgeInsetsDirectional.fromSTEB(
-                        16,
-                        0,
-                        16,
-                        16,
-                      ),
-                      sliver: SliverList(
-                        delegate: SliverChildListDelegate(children),
-                      ),
+                // 5. Heatmap (hide if empty)
+                if (snap.heatmapData.isNotEmpty) {
+                  children.add(HeatmapCard(heatmapData: snap.heatmapData));
+                  children.add(const SizedBox(height: 12));
+                }
+
+                // 6. Per-amal list (hide if <= 1 amal and single-amal filter)
+                if (!(snap.perAmal.length <= 1 && isSingleAmal)) {
+                  children.add(PerAmalCard(perAmal: snap.perAmal));
+                  children.add(const SizedBox(height: 12));
+                }
+
+                return [
+                  SliverPadding(
+                    padding: const EdgeInsetsDirectional.fromSTEB(
+                      16,
+                      0,
+                      16,
+                      16,
                     ),
-                  ];
-                },
-              ),
-            ],
-          ),
+                    sliver: SliverList(
+                      delegate: SliverChildListDelegate(children),
+                    ),
+                  ),
+                ];
+              },
+            ),
+          ],
         ),
       ),
     );

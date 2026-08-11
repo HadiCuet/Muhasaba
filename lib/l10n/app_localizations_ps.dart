@@ -30,6 +30,24 @@ class AppLocalizationsPs extends AppLocalizations {
   String get tabSettings => 'تنظیمات';
 
   @override
+  String get tabChallenge => 'هدف';
+
+  @override
+  String get tabInsights => 'احصایې';
+
+  @override
+  String get insightsTitle => 'احصایې';
+
+  @override
+  String get insightsOverview => 'عمومي کتنه';
+
+  @override
+  String get insightsDaily => 'ورځنی';
+
+  @override
+  String get newChallenge => 'نوی هدف';
+
+  @override
   String get newAmal => 'نوی عمل';
 
   @override
@@ -1051,4 +1069,158 @@ class AppLocalizationsPs extends AppLocalizations {
   @override
   String get tutorialViewBody =>
       'د کټګورۍ له مخې ګروپ کولو او یوه ساده لیست ترمنځ بدلون وکړئ.';
+
+  @override
+  String get challengesActive => 'روان';
+
+  @override
+  String get challengesPast => 'پخواني';
+
+  @override
+  String get challengesEmptyTitle => 'تر اوسه هیڅ هدف نشته';
+
+  @override
+  String get challengesEmptyBody =>
+      'د ځان لپاره یو هدف وټاکئ — لکه په ۷ ورځو کې ۲۰ رکعته — او دلته یې تعقیب کړئ.';
+
+  @override
+  String get editChallenge => 'هدف سمول';
+
+  @override
+  String get deleteChallenge => 'هدف ړنګول';
+
+  @override
+  String get deleteChallengeConfirm =>
+      'دا هدف او ټول ثبت شوی پرمختګ یې ړنګ شي؟';
+
+  @override
+  String get challengeModeLabel => 'څه شمېرئ؟';
+
+  @override
+  String get challengeModeCount => 'ټوله اندازه';
+
+  @override
+  String get challengeModeDays => 'د ورځو شمېر';
+
+  @override
+  String get challengeTargetLabel => 'موخه';
+
+  @override
+  String get challengeTargetRequired => 'له صفر څخه لوړه موخه ولیکئ';
+
+  @override
+  String get challengeUnitLabel => 'واحد (اختیاري)';
+
+  @override
+  String get challengeUnitHint => 'رکعت، مخ، ځل';
+
+  @override
+  String get challengeStepLabel => 'هر ټک اضافه کوي';
+
+  @override
+  String get challengeWindowLabel => 'د وخت حد';
+
+  @override
+  String get challengeWindowDuration => 'د ورځو شمېر';
+
+  @override
+  String get challengeWindowDates => 'ټاکلې نیټې';
+
+  @override
+  String get challengeWindowNone => 'د وخت حد نشته';
+
+  @override
+  String challengeDurationLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ورځې',
+      one: 'یوه ورځ',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeStartDate => 'پیل';
+
+  @override
+  String get challengeEndDate => 'پای';
+
+  @override
+  String challengeProgressCount(String done, String target, String unit) {
+    return 'د $target $unit څخه $done';
+  }
+
+  @override
+  String challengeProgressPlain(String done, String target) {
+    return 'د $target څخه $done';
+  }
+
+  @override
+  String challengeProgressDays(String done, String target) {
+    return 'د $target ورځو څخه $done';
+  }
+
+  @override
+  String challengeDaysLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ورځې پاتې',
+      one: 'یوه ورځ پاتې',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeNoDeadline => 'د وخت حد نشته';
+
+  @override
+  String challengeOnTrack(String rate) {
+    return 'په لار – $rate/ورځ';
+  }
+
+  @override
+  String challengeBehind(String rate) {
+    return 'شاته – $rate/ورځ اړین';
+  }
+
+  @override
+  String challengeLastDay(String remaining) {
+    return 'وروستۍ ورځ – $remaining پاتې';
+  }
+
+  @override
+  String get challengeReached => 'موخه ترلاسه شوه';
+
+  @override
+  String get challengeCompleted => 'بشپړ شو';
+
+  @override
+  String challengeEnded(String done, String target) {
+    return 'پای – $done/$target';
+  }
+
+  @override
+  String get challengeExpiredTitle => 'هدف پای ته ورسید';
+
+  @override
+  String challengeExpiredBody(String title, String done, String target) {
+    return '$title پای ته ورسید، له $target څخه $done.';
+  }
+
+  @override
+  String get challengeExtend => 'وخت اوږدول';
+
+  @override
+  String get challengeRestart => 'بیا پیل';
+
+  @override
+  String get challengeArchive => 'آرشیف کول';
+
+  @override
+  String get challengeDailyBreakdown => 'ورځنی ریکارډ';
+
+  @override
+  String get listSeparator => ' – ';
 }

@@ -30,6 +30,24 @@ class AppLocalizationsSq extends AppLocalizations {
   String get tabSettings => 'Cilesimet';
 
   @override
+  String get tabChallenge => 'Sfida';
+
+  @override
+  String get tabInsights => 'Statistikat';
+
+  @override
+  String get insightsTitle => 'Statistikat';
+
+  @override
+  String get insightsOverview => 'Përmbledhje';
+
+  @override
+  String get insightsDaily => 'Ditore';
+
+  @override
+  String get newChallenge => 'Sfidë e re';
+
+  @override
   String get newAmal => 'Amal i ri';
 
   @override
@@ -1061,4 +1079,158 @@ class AppLocalizationsSq extends AppLocalizations {
   @override
   String get tutorialViewBody =>
       'Kaloni midis grupimit sipas kategorisë dhe një liste të thjeshtë.';
+
+  @override
+  String get challengesActive => 'Në vazhdim';
+
+  @override
+  String get challengesPast => 'Të kaluara';
+
+  @override
+  String get challengesEmptyTitle => 'Ende asnjë sfidë';
+
+  @override
+  String get challengesEmptyBody =>
+      'Vendosni një synim për veten — si 20 rekate në 7 ditë — dhe ndiqeni këtu.';
+
+  @override
+  String get editChallenge => 'Ndrysho sfidën';
+
+  @override
+  String get deleteChallenge => 'Fshi sfidën';
+
+  @override
+  String get deleteChallengeConfirm =>
+      'Të fshihet kjo sfidë dhe i gjithë progresi i regjistruar?';
+
+  @override
+  String get challengeModeLabel => 'Çfarë po numëroni?';
+
+  @override
+  String get challengeModeCount => 'Sasi totale';
+
+  @override
+  String get challengeModeDays => 'Numër ditësh';
+
+  @override
+  String get challengeTargetLabel => 'Synimi';
+
+  @override
+  String get challengeTargetRequired => 'Vendosni një synim mbi zero';
+
+  @override
+  String get challengeUnitLabel => 'Njësia (opsionale)';
+
+  @override
+  String get challengeUnitHint => 'rekate, faqe, herë';
+
+  @override
+  String get challengeStepLabel => 'Çdo prekje shton';
+
+  @override
+  String get challengeWindowLabel => 'Afati kohor';
+
+  @override
+  String get challengeWindowDuration => 'Numër ditësh';
+
+  @override
+  String get challengeWindowDates => 'Data të caktuara';
+
+  @override
+  String get challengeWindowNone => 'Pa afat';
+
+  @override
+  String challengeDurationLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ditë',
+      one: '$count ditë',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeStartDate => 'Fillon';
+
+  @override
+  String get challengeEndDate => 'Mbaron';
+
+  @override
+  String challengeProgressCount(String done, String target, String unit) {
+    return '$done nga $target $unit';
+  }
+
+  @override
+  String challengeProgressPlain(String done, String target) {
+    return '$done nga $target';
+  }
+
+  @override
+  String challengeProgressDays(String done, String target) {
+    return '$done nga $target ditë';
+  }
+
+  @override
+  String challengeDaysLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ditë të mbetura',
+      one: '1 ditë e mbetur',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeNoDeadline => 'Pa afat';
+
+  @override
+  String challengeOnTrack(String rate) {
+    return 'Në rrugë · $rate/ditë';
+  }
+
+  @override
+  String challengeBehind(String rate) {
+    return 'Prapa · duhen $rate/ditë';
+  }
+
+  @override
+  String challengeLastDay(String remaining) {
+    return 'Dita e fundit · $remaining mbetur';
+  }
+
+  @override
+  String get challengeReached => 'Synimi u arrit';
+
+  @override
+  String get challengeCompleted => 'Përfunduar';
+
+  @override
+  String challengeEnded(String done, String target) {
+    return 'Mbaroi · $done nga $target';
+  }
+
+  @override
+  String get challengeExpiredTitle => 'Sfida përfundoi';
+
+  @override
+  String challengeExpiredBody(String title, String done, String target) {
+    return '$title përfundoi me $done nga $target.';
+  }
+
+  @override
+  String get challengeExtend => 'Zgjate';
+
+  @override
+  String get challengeRestart => 'Fillo sërish';
+
+  @override
+  String get challengeArchive => 'Arkivo';
+
+  @override
+  String get challengeDailyBreakdown => 'Regjistri ditor';
+
+  @override
+  String get listSeparator => ' · ';
 }

@@ -6,6 +6,7 @@ import '../core/time/day_boundary.dart';
 import '../data/db/database.dart';
 import '../data/repositories/amal_repository.dart';
 import '../data/repositories/category_repository.dart';
+import '../data/repositories/challenge_repository.dart';
 import '../data/repositories/completion_repository.dart';
 import '../data/repositories/settings_repository.dart';
 import '../domain/models/app_settings.dart';
@@ -57,6 +58,10 @@ final categoriesProvider = StreamProvider<List<CategoryRow>>((ref) {
 
 final recentIconsProvider = FutureProvider<List<String>>((ref) {
   return ref.watch(amalRepositoryProvider).getRecentIcons();
+});
+
+final challengeRepositoryProvider = Provider<ChallengeRepository>((ref) {
+  return ChallengeRepository(ref.watch(appDatabaseProvider).challengeDao);
 });
 
 final completionRepositoryProvider = Provider<CompletionRepository>((ref) {
@@ -262,3 +267,19 @@ final _hiddenForDateProvider = StreamProvider.autoDispose.family((
 ) {
   return ref.watch(appDatabaseProvider).hiddenDayDao.watchForDate(date);
 });
+
+class HistorySelectedDateNotifier extends Notifier<DateTime?> {
+  @override
+  DateTime? build() => null;
+
+  void select(DateTime date) => state = date;
+}
+
+/// Muhasaba date shown on the Insights → Daily sub-screen. `null` means
+/// "today", so the selection follows a day rollover instead of pinning to a
+/// stale date. Lives here rather than in widget state because the date picker
+/// is in the Insights app bar, above the sub-screen that renders it.
+final historySelectedDateProvider =
+    NotifierProvider<HistorySelectedDateNotifier, DateTime?>(
+      HistorySelectedDateNotifier.new,
+    );

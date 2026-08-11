@@ -2067,6 +2067,1089 @@ class CategoriesCompanion extends UpdateCompanion<CategoryRow> {
   }
 }
 
+class $ChallengesTable extends Challenges
+    with TableInfo<$ChallengesTable, ChallengeRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $ChallengesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<int> id = GeneratedColumn<int>(
+    'id',
+    aliasedName,
+    false,
+    hasAutoIncrement: true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'PRIMARY KEY AUTOINCREMENT',
+    ),
+  );
+  static const VerificationMeta _titleMeta = const VerificationMeta('title');
+  @override
+  late final GeneratedColumn<String> title = GeneratedColumn<String>(
+    'title',
+    aliasedName,
+    false,
+    additionalChecks: GeneratedColumn.checkTextLength(
+      minTextLength: 1,
+      maxTextLength: 120,
+    ),
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _iconMeta = const VerificationMeta('icon');
+  @override
+  late final GeneratedColumn<String> icon = GeneratedColumn<String>(
+    'icon',
+    aliasedName,
+    false,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+    defaultValue: const Constant('🚩'),
+  );
+  @override
+  late final GeneratedColumnWithTypeConverter<ChallengeMode, int> mode =
+      GeneratedColumn<int>(
+        'mode',
+        aliasedName,
+        false,
+        type: DriftSqlType.int,
+        requiredDuringInsert: true,
+      ).withConverter<ChallengeMode>($ChallengesTable.$convertermode);
+  static const VerificationMeta _targetMeta = const VerificationMeta('target');
+  @override
+  late final GeneratedColumn<int> target = GeneratedColumn<int>(
+    'target',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _stepSizeMeta = const VerificationMeta(
+    'stepSize',
+  );
+  @override
+  late final GeneratedColumn<int> stepSize = GeneratedColumn<int>(
+    'step_size',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(1),
+  );
+  static const VerificationMeta _unitMeta = const VerificationMeta('unit');
+  @override
+  late final GeneratedColumn<String> unit = GeneratedColumn<String>(
+    'unit',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _startDateMeta = const VerificationMeta(
+    'startDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> startDate = GeneratedColumn<DateTime>(
+    'start_date',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _endExclusiveMeta = const VerificationMeta(
+    'endExclusive',
+  );
+  @override
+  late final GeneratedColumn<DateTime> endExclusive = GeneratedColumn<DateTime>(
+    'end_exclusive',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
+  @override
+  late final GeneratedColumnWithTypeConverter<ChallengeStatus, int> status =
+      GeneratedColumn<int>(
+        'status',
+        aliasedName,
+        false,
+        type: DriftSqlType.int,
+        requiredDuringInsert: true,
+      ).withConverter<ChallengeStatus>($ChallengesTable.$converterstatus);
+  static const VerificationMeta _expiryHandledMeta = const VerificationMeta(
+    'expiryHandled',
+  );
+  @override
+  late final GeneratedColumn<bool> expiryHandled = GeneratedColumn<bool>(
+    'expiry_handled',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("expiry_handled" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _completedAtMeta = const VerificationMeta(
+    'completedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> completedAt = GeneratedColumn<DateTime>(
+    'completed_at',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _sortOrderMeta = const VerificationMeta(
+    'sortOrder',
+  );
+  @override
+  late final GeneratedColumn<int> sortOrder = GeneratedColumn<int>(
+    'sort_order',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    title,
+    icon,
+    mode,
+    target,
+    stepSize,
+    unit,
+    startDate,
+    endExclusive,
+    status,
+    expiryHandled,
+    createdAt,
+    completedAt,
+    sortOrder,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'challenges';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<ChallengeRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    }
+    if (data.containsKey('title')) {
+      context.handle(
+        _titleMeta,
+        title.isAcceptableOrUnknown(data['title']!, _titleMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_titleMeta);
+    }
+    if (data.containsKey('icon')) {
+      context.handle(
+        _iconMeta,
+        icon.isAcceptableOrUnknown(data['icon']!, _iconMeta),
+      );
+    }
+    if (data.containsKey('target')) {
+      context.handle(
+        _targetMeta,
+        target.isAcceptableOrUnknown(data['target']!, _targetMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_targetMeta);
+    }
+    if (data.containsKey('step_size')) {
+      context.handle(
+        _stepSizeMeta,
+        stepSize.isAcceptableOrUnknown(data['step_size']!, _stepSizeMeta),
+      );
+    }
+    if (data.containsKey('unit')) {
+      context.handle(
+        _unitMeta,
+        unit.isAcceptableOrUnknown(data['unit']!, _unitMeta),
+      );
+    }
+    if (data.containsKey('start_date')) {
+      context.handle(
+        _startDateMeta,
+        startDate.isAcceptableOrUnknown(data['start_date']!, _startDateMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_startDateMeta);
+    }
+    if (data.containsKey('end_exclusive')) {
+      context.handle(
+        _endExclusiveMeta,
+        endExclusive.isAcceptableOrUnknown(
+          data['end_exclusive']!,
+          _endExclusiveMeta,
+        ),
+      );
+    }
+    if (data.containsKey('expiry_handled')) {
+      context.handle(
+        _expiryHandledMeta,
+        expiryHandled.isAcceptableOrUnknown(
+          data['expiry_handled']!,
+          _expiryHandledMeta,
+        ),
+      );
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    if (data.containsKey('completed_at')) {
+      context.handle(
+        _completedAtMeta,
+        completedAt.isAcceptableOrUnknown(
+          data['completed_at']!,
+          _completedAtMeta,
+        ),
+      );
+    }
+    if (data.containsKey('sort_order')) {
+      context.handle(
+        _sortOrderMeta,
+        sortOrder.isAcceptableOrUnknown(data['sort_order']!, _sortOrderMeta),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  ChallengeRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return ChallengeRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}id'],
+      )!,
+      title: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}title'],
+      )!,
+      icon: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}icon'],
+      )!,
+      mode: $ChallengesTable.$convertermode.fromSql(
+        attachedDatabase.typeMapping.read(
+          DriftSqlType.int,
+          data['${effectivePrefix}mode'],
+        )!,
+      ),
+      target: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}target'],
+      )!,
+      stepSize: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}step_size'],
+      )!,
+      unit: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}unit'],
+      ),
+      startDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}start_date'],
+      )!,
+      endExclusive: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}end_exclusive'],
+      ),
+      status: $ChallengesTable.$converterstatus.fromSql(
+        attachedDatabase.typeMapping.read(
+          DriftSqlType.int,
+          data['${effectivePrefix}status'],
+        )!,
+      ),
+      expiryHandled: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}expiry_handled'],
+      )!,
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+      completedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}completed_at'],
+      ),
+      sortOrder: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}sort_order'],
+      )!,
+    );
+  }
+
+  @override
+  $ChallengesTable createAlias(String alias) {
+    return $ChallengesTable(attachedDatabase, alias);
+  }
+
+  static JsonTypeConverter2<ChallengeMode, int, int> $convertermode =
+      const EnumIndexConverter<ChallengeMode>(ChallengeMode.values);
+  static JsonTypeConverter2<ChallengeStatus, int, int> $converterstatus =
+      const EnumIndexConverter<ChallengeStatus>(ChallengeStatus.values);
+}
+
+class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
+  final int id;
+  final String title;
+  final String icon;
+  final ChallengeMode mode;
+  final int target;
+  final int stepSize;
+  final String? unit;
+  final DateTime startDate;
+  final DateTime? endExclusive;
+  final ChallengeStatus status;
+  final bool expiryHandled;
+  final DateTime createdAt;
+  final DateTime? completedAt;
+  final int sortOrder;
+  const ChallengeRow({
+    required this.id,
+    required this.title,
+    required this.icon,
+    required this.mode,
+    required this.target,
+    required this.stepSize,
+    this.unit,
+    required this.startDate,
+    this.endExclusive,
+    required this.status,
+    required this.expiryHandled,
+    required this.createdAt,
+    this.completedAt,
+    required this.sortOrder,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<int>(id);
+    map['title'] = Variable<String>(title);
+    map['icon'] = Variable<String>(icon);
+    {
+      map['mode'] = Variable<int>($ChallengesTable.$convertermode.toSql(mode));
+    }
+    map['target'] = Variable<int>(target);
+    map['step_size'] = Variable<int>(stepSize);
+    if (!nullToAbsent || unit != null) {
+      map['unit'] = Variable<String>(unit);
+    }
+    map['start_date'] = Variable<DateTime>(startDate);
+    if (!nullToAbsent || endExclusive != null) {
+      map['end_exclusive'] = Variable<DateTime>(endExclusive);
+    }
+    {
+      map['status'] = Variable<int>(
+        $ChallengesTable.$converterstatus.toSql(status),
+      );
+    }
+    map['expiry_handled'] = Variable<bool>(expiryHandled);
+    map['created_at'] = Variable<DateTime>(createdAt);
+    if (!nullToAbsent || completedAt != null) {
+      map['completed_at'] = Variable<DateTime>(completedAt);
+    }
+    map['sort_order'] = Variable<int>(sortOrder);
+    return map;
+  }
+
+  ChallengesCompanion toCompanion(bool nullToAbsent) {
+    return ChallengesCompanion(
+      id: Value(id),
+      title: Value(title),
+      icon: Value(icon),
+      mode: Value(mode),
+      target: Value(target),
+      stepSize: Value(stepSize),
+      unit: unit == null && nullToAbsent ? const Value.absent() : Value(unit),
+      startDate: Value(startDate),
+      endExclusive: endExclusive == null && nullToAbsent
+          ? const Value.absent()
+          : Value(endExclusive),
+      status: Value(status),
+      expiryHandled: Value(expiryHandled),
+      createdAt: Value(createdAt),
+      completedAt: completedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(completedAt),
+      sortOrder: Value(sortOrder),
+    );
+  }
+
+  factory ChallengeRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return ChallengeRow(
+      id: serializer.fromJson<int>(json['id']),
+      title: serializer.fromJson<String>(json['title']),
+      icon: serializer.fromJson<String>(json['icon']),
+      mode: $ChallengesTable.$convertermode.fromJson(
+        serializer.fromJson<int>(json['mode']),
+      ),
+      target: serializer.fromJson<int>(json['target']),
+      stepSize: serializer.fromJson<int>(json['stepSize']),
+      unit: serializer.fromJson<String?>(json['unit']),
+      startDate: serializer.fromJson<DateTime>(json['startDate']),
+      endExclusive: serializer.fromJson<DateTime?>(json['endExclusive']),
+      status: $ChallengesTable.$converterstatus.fromJson(
+        serializer.fromJson<int>(json['status']),
+      ),
+      expiryHandled: serializer.fromJson<bool>(json['expiryHandled']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      completedAt: serializer.fromJson<DateTime?>(json['completedAt']),
+      sortOrder: serializer.fromJson<int>(json['sortOrder']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<int>(id),
+      'title': serializer.toJson<String>(title),
+      'icon': serializer.toJson<String>(icon),
+      'mode': serializer.toJson<int>(
+        $ChallengesTable.$convertermode.toJson(mode),
+      ),
+      'target': serializer.toJson<int>(target),
+      'stepSize': serializer.toJson<int>(stepSize),
+      'unit': serializer.toJson<String?>(unit),
+      'startDate': serializer.toJson<DateTime>(startDate),
+      'endExclusive': serializer.toJson<DateTime?>(endExclusive),
+      'status': serializer.toJson<int>(
+        $ChallengesTable.$converterstatus.toJson(status),
+      ),
+      'expiryHandled': serializer.toJson<bool>(expiryHandled),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+      'completedAt': serializer.toJson<DateTime?>(completedAt),
+      'sortOrder': serializer.toJson<int>(sortOrder),
+    };
+  }
+
+  ChallengeRow copyWith({
+    int? id,
+    String? title,
+    String? icon,
+    ChallengeMode? mode,
+    int? target,
+    int? stepSize,
+    Value<String?> unit = const Value.absent(),
+    DateTime? startDate,
+    Value<DateTime?> endExclusive = const Value.absent(),
+    ChallengeStatus? status,
+    bool? expiryHandled,
+    DateTime? createdAt,
+    Value<DateTime?> completedAt = const Value.absent(),
+    int? sortOrder,
+  }) => ChallengeRow(
+    id: id ?? this.id,
+    title: title ?? this.title,
+    icon: icon ?? this.icon,
+    mode: mode ?? this.mode,
+    target: target ?? this.target,
+    stepSize: stepSize ?? this.stepSize,
+    unit: unit.present ? unit.value : this.unit,
+    startDate: startDate ?? this.startDate,
+    endExclusive: endExclusive.present ? endExclusive.value : this.endExclusive,
+    status: status ?? this.status,
+    expiryHandled: expiryHandled ?? this.expiryHandled,
+    createdAt: createdAt ?? this.createdAt,
+    completedAt: completedAt.present ? completedAt.value : this.completedAt,
+    sortOrder: sortOrder ?? this.sortOrder,
+  );
+  ChallengeRow copyWithCompanion(ChallengesCompanion data) {
+    return ChallengeRow(
+      id: data.id.present ? data.id.value : this.id,
+      title: data.title.present ? data.title.value : this.title,
+      icon: data.icon.present ? data.icon.value : this.icon,
+      mode: data.mode.present ? data.mode.value : this.mode,
+      target: data.target.present ? data.target.value : this.target,
+      stepSize: data.stepSize.present ? data.stepSize.value : this.stepSize,
+      unit: data.unit.present ? data.unit.value : this.unit,
+      startDate: data.startDate.present ? data.startDate.value : this.startDate,
+      endExclusive: data.endExclusive.present
+          ? data.endExclusive.value
+          : this.endExclusive,
+      status: data.status.present ? data.status.value : this.status,
+      expiryHandled: data.expiryHandled.present
+          ? data.expiryHandled.value
+          : this.expiryHandled,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      completedAt: data.completedAt.present
+          ? data.completedAt.value
+          : this.completedAt,
+      sortOrder: data.sortOrder.present ? data.sortOrder.value : this.sortOrder,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ChallengeRow(')
+          ..write('id: $id, ')
+          ..write('title: $title, ')
+          ..write('icon: $icon, ')
+          ..write('mode: $mode, ')
+          ..write('target: $target, ')
+          ..write('stepSize: $stepSize, ')
+          ..write('unit: $unit, ')
+          ..write('startDate: $startDate, ')
+          ..write('endExclusive: $endExclusive, ')
+          ..write('status: $status, ')
+          ..write('expiryHandled: $expiryHandled, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('completedAt: $completedAt, ')
+          ..write('sortOrder: $sortOrder')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(
+    id,
+    title,
+    icon,
+    mode,
+    target,
+    stepSize,
+    unit,
+    startDate,
+    endExclusive,
+    status,
+    expiryHandled,
+    createdAt,
+    completedAt,
+    sortOrder,
+  );
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is ChallengeRow &&
+          other.id == this.id &&
+          other.title == this.title &&
+          other.icon == this.icon &&
+          other.mode == this.mode &&
+          other.target == this.target &&
+          other.stepSize == this.stepSize &&
+          other.unit == this.unit &&
+          other.startDate == this.startDate &&
+          other.endExclusive == this.endExclusive &&
+          other.status == this.status &&
+          other.expiryHandled == this.expiryHandled &&
+          other.createdAt == this.createdAt &&
+          other.completedAt == this.completedAt &&
+          other.sortOrder == this.sortOrder);
+}
+
+class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
+  final Value<int> id;
+  final Value<String> title;
+  final Value<String> icon;
+  final Value<ChallengeMode> mode;
+  final Value<int> target;
+  final Value<int> stepSize;
+  final Value<String?> unit;
+  final Value<DateTime> startDate;
+  final Value<DateTime?> endExclusive;
+  final Value<ChallengeStatus> status;
+  final Value<bool> expiryHandled;
+  final Value<DateTime> createdAt;
+  final Value<DateTime?> completedAt;
+  final Value<int> sortOrder;
+  const ChallengesCompanion({
+    this.id = const Value.absent(),
+    this.title = const Value.absent(),
+    this.icon = const Value.absent(),
+    this.mode = const Value.absent(),
+    this.target = const Value.absent(),
+    this.stepSize = const Value.absent(),
+    this.unit = const Value.absent(),
+    this.startDate = const Value.absent(),
+    this.endExclusive = const Value.absent(),
+    this.status = const Value.absent(),
+    this.expiryHandled = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.completedAt = const Value.absent(),
+    this.sortOrder = const Value.absent(),
+  });
+  ChallengesCompanion.insert({
+    this.id = const Value.absent(),
+    required String title,
+    this.icon = const Value.absent(),
+    required ChallengeMode mode,
+    required int target,
+    this.stepSize = const Value.absent(),
+    this.unit = const Value.absent(),
+    required DateTime startDate,
+    this.endExclusive = const Value.absent(),
+    required ChallengeStatus status,
+    this.expiryHandled = const Value.absent(),
+    required DateTime createdAt,
+    this.completedAt = const Value.absent(),
+    this.sortOrder = const Value.absent(),
+  }) : title = Value(title),
+       mode = Value(mode),
+       target = Value(target),
+       startDate = Value(startDate),
+       status = Value(status),
+       createdAt = Value(createdAt);
+  static Insertable<ChallengeRow> custom({
+    Expression<int>? id,
+    Expression<String>? title,
+    Expression<String>? icon,
+    Expression<int>? mode,
+    Expression<int>? target,
+    Expression<int>? stepSize,
+    Expression<String>? unit,
+    Expression<DateTime>? startDate,
+    Expression<DateTime>? endExclusive,
+    Expression<int>? status,
+    Expression<bool>? expiryHandled,
+    Expression<DateTime>? createdAt,
+    Expression<DateTime>? completedAt,
+    Expression<int>? sortOrder,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (title != null) 'title': title,
+      if (icon != null) 'icon': icon,
+      if (mode != null) 'mode': mode,
+      if (target != null) 'target': target,
+      if (stepSize != null) 'step_size': stepSize,
+      if (unit != null) 'unit': unit,
+      if (startDate != null) 'start_date': startDate,
+      if (endExclusive != null) 'end_exclusive': endExclusive,
+      if (status != null) 'status': status,
+      if (expiryHandled != null) 'expiry_handled': expiryHandled,
+      if (createdAt != null) 'created_at': createdAt,
+      if (completedAt != null) 'completed_at': completedAt,
+      if (sortOrder != null) 'sort_order': sortOrder,
+    });
+  }
+
+  ChallengesCompanion copyWith({
+    Value<int>? id,
+    Value<String>? title,
+    Value<String>? icon,
+    Value<ChallengeMode>? mode,
+    Value<int>? target,
+    Value<int>? stepSize,
+    Value<String?>? unit,
+    Value<DateTime>? startDate,
+    Value<DateTime?>? endExclusive,
+    Value<ChallengeStatus>? status,
+    Value<bool>? expiryHandled,
+    Value<DateTime>? createdAt,
+    Value<DateTime?>? completedAt,
+    Value<int>? sortOrder,
+  }) {
+    return ChallengesCompanion(
+      id: id ?? this.id,
+      title: title ?? this.title,
+      icon: icon ?? this.icon,
+      mode: mode ?? this.mode,
+      target: target ?? this.target,
+      stepSize: stepSize ?? this.stepSize,
+      unit: unit ?? this.unit,
+      startDate: startDate ?? this.startDate,
+      endExclusive: endExclusive ?? this.endExclusive,
+      status: status ?? this.status,
+      expiryHandled: expiryHandled ?? this.expiryHandled,
+      createdAt: createdAt ?? this.createdAt,
+      completedAt: completedAt ?? this.completedAt,
+      sortOrder: sortOrder ?? this.sortOrder,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<int>(id.value);
+    }
+    if (title.present) {
+      map['title'] = Variable<String>(title.value);
+    }
+    if (icon.present) {
+      map['icon'] = Variable<String>(icon.value);
+    }
+    if (mode.present) {
+      map['mode'] = Variable<int>(
+        $ChallengesTable.$convertermode.toSql(mode.value),
+      );
+    }
+    if (target.present) {
+      map['target'] = Variable<int>(target.value);
+    }
+    if (stepSize.present) {
+      map['step_size'] = Variable<int>(stepSize.value);
+    }
+    if (unit.present) {
+      map['unit'] = Variable<String>(unit.value);
+    }
+    if (startDate.present) {
+      map['start_date'] = Variable<DateTime>(startDate.value);
+    }
+    if (endExclusive.present) {
+      map['end_exclusive'] = Variable<DateTime>(endExclusive.value);
+    }
+    if (status.present) {
+      map['status'] = Variable<int>(
+        $ChallengesTable.$converterstatus.toSql(status.value),
+      );
+    }
+    if (expiryHandled.present) {
+      map['expiry_handled'] = Variable<bool>(expiryHandled.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (completedAt.present) {
+      map['completed_at'] = Variable<DateTime>(completedAt.value);
+    }
+    if (sortOrder.present) {
+      map['sort_order'] = Variable<int>(sortOrder.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ChallengesCompanion(')
+          ..write('id: $id, ')
+          ..write('title: $title, ')
+          ..write('icon: $icon, ')
+          ..write('mode: $mode, ')
+          ..write('target: $target, ')
+          ..write('stepSize: $stepSize, ')
+          ..write('unit: $unit, ')
+          ..write('startDate: $startDate, ')
+          ..write('endExclusive: $endExclusive, ')
+          ..write('status: $status, ')
+          ..write('expiryHandled: $expiryHandled, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('completedAt: $completedAt, ')
+          ..write('sortOrder: $sortOrder')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $ChallengeEntriesTable extends ChallengeEntries
+    with TableInfo<$ChallengeEntriesTable, ChallengeEntryRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $ChallengeEntriesTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _challengeIdMeta = const VerificationMeta(
+    'challengeId',
+  );
+  @override
+  late final GeneratedColumn<int> challengeId = GeneratedColumn<int>(
+    'challenge_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES challenges (id) ON DELETE CASCADE',
+    ),
+  );
+  static const VerificationMeta _muhasabaDateMeta = const VerificationMeta(
+    'muhasabaDate',
+  );
+  @override
+  late final GeneratedColumn<DateTime> muhasabaDate = GeneratedColumn<DateTime>(
+    'muhasaba_date',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _amountMeta = const VerificationMeta('amount');
+  @override
+  late final GeneratedColumn<int> amount = GeneratedColumn<int>(
+    'amount',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  @override
+  List<GeneratedColumn> get $columns => [challengeId, muhasabaDate, amount];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'challenge_entries';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<ChallengeEntryRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('challenge_id')) {
+      context.handle(
+        _challengeIdMeta,
+        challengeId.isAcceptableOrUnknown(
+          data['challenge_id']!,
+          _challengeIdMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_challengeIdMeta);
+    }
+    if (data.containsKey('muhasaba_date')) {
+      context.handle(
+        _muhasabaDateMeta,
+        muhasabaDate.isAcceptableOrUnknown(
+          data['muhasaba_date']!,
+          _muhasabaDateMeta,
+        ),
+      );
+    } else if (isInserting) {
+      context.missing(_muhasabaDateMeta);
+    }
+    if (data.containsKey('amount')) {
+      context.handle(
+        _amountMeta,
+        amount.isAcceptableOrUnknown(data['amount']!, _amountMeta),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {challengeId, muhasabaDate};
+  @override
+  ChallengeEntryRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return ChallengeEntryRow(
+      challengeId: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}challenge_id'],
+      )!,
+      muhasabaDate: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}muhasaba_date'],
+      )!,
+      amount: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}amount'],
+      )!,
+    );
+  }
+
+  @override
+  $ChallengeEntriesTable createAlias(String alias) {
+    return $ChallengeEntriesTable(attachedDatabase, alias);
+  }
+}
+
+class ChallengeEntryRow extends DataClass
+    implements Insertable<ChallengeEntryRow> {
+  final int challengeId;
+  final DateTime muhasabaDate;
+  final int amount;
+  const ChallengeEntryRow({
+    required this.challengeId,
+    required this.muhasabaDate,
+    required this.amount,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['challenge_id'] = Variable<int>(challengeId);
+    map['muhasaba_date'] = Variable<DateTime>(muhasabaDate);
+    map['amount'] = Variable<int>(amount);
+    return map;
+  }
+
+  ChallengeEntriesCompanion toCompanion(bool nullToAbsent) {
+    return ChallengeEntriesCompanion(
+      challengeId: Value(challengeId),
+      muhasabaDate: Value(muhasabaDate),
+      amount: Value(amount),
+    );
+  }
+
+  factory ChallengeEntryRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return ChallengeEntryRow(
+      challengeId: serializer.fromJson<int>(json['challengeId']),
+      muhasabaDate: serializer.fromJson<DateTime>(json['muhasabaDate']),
+      amount: serializer.fromJson<int>(json['amount']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'challengeId': serializer.toJson<int>(challengeId),
+      'muhasabaDate': serializer.toJson<DateTime>(muhasabaDate),
+      'amount': serializer.toJson<int>(amount),
+    };
+  }
+
+  ChallengeEntryRow copyWith({
+    int? challengeId,
+    DateTime? muhasabaDate,
+    int? amount,
+  }) => ChallengeEntryRow(
+    challengeId: challengeId ?? this.challengeId,
+    muhasabaDate: muhasabaDate ?? this.muhasabaDate,
+    amount: amount ?? this.amount,
+  );
+  ChallengeEntryRow copyWithCompanion(ChallengeEntriesCompanion data) {
+    return ChallengeEntryRow(
+      challengeId: data.challengeId.present
+          ? data.challengeId.value
+          : this.challengeId,
+      muhasabaDate: data.muhasabaDate.present
+          ? data.muhasabaDate.value
+          : this.muhasabaDate,
+      amount: data.amount.present ? data.amount.value : this.amount,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ChallengeEntryRow(')
+          ..write('challengeId: $challengeId, ')
+          ..write('muhasabaDate: $muhasabaDate, ')
+          ..write('amount: $amount')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode => Object.hash(challengeId, muhasabaDate, amount);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is ChallengeEntryRow &&
+          other.challengeId == this.challengeId &&
+          other.muhasabaDate == this.muhasabaDate &&
+          other.amount == this.amount);
+}
+
+class ChallengeEntriesCompanion extends UpdateCompanion<ChallengeEntryRow> {
+  final Value<int> challengeId;
+  final Value<DateTime> muhasabaDate;
+  final Value<int> amount;
+  final Value<int> rowid;
+  const ChallengeEntriesCompanion({
+    this.challengeId = const Value.absent(),
+    this.muhasabaDate = const Value.absent(),
+    this.amount = const Value.absent(),
+    this.rowid = const Value.absent(),
+  });
+  ChallengeEntriesCompanion.insert({
+    required int challengeId,
+    required DateTime muhasabaDate,
+    this.amount = const Value.absent(),
+    this.rowid = const Value.absent(),
+  }) : challengeId = Value(challengeId),
+       muhasabaDate = Value(muhasabaDate);
+  static Insertable<ChallengeEntryRow> custom({
+    Expression<int>? challengeId,
+    Expression<DateTime>? muhasabaDate,
+    Expression<int>? amount,
+    Expression<int>? rowid,
+  }) {
+    return RawValuesInsertable({
+      if (challengeId != null) 'challenge_id': challengeId,
+      if (muhasabaDate != null) 'muhasaba_date': muhasabaDate,
+      if (amount != null) 'amount': amount,
+      if (rowid != null) 'rowid': rowid,
+    });
+  }
+
+  ChallengeEntriesCompanion copyWith({
+    Value<int>? challengeId,
+    Value<DateTime>? muhasabaDate,
+    Value<int>? amount,
+    Value<int>? rowid,
+  }) {
+    return ChallengeEntriesCompanion(
+      challengeId: challengeId ?? this.challengeId,
+      muhasabaDate: muhasabaDate ?? this.muhasabaDate,
+      amount: amount ?? this.amount,
+      rowid: rowid ?? this.rowid,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (challengeId.present) {
+      map['challenge_id'] = Variable<int>(challengeId.value);
+    }
+    if (muhasabaDate.present) {
+      map['muhasaba_date'] = Variable<DateTime>(muhasabaDate.value);
+    }
+    if (amount.present) {
+      map['amount'] = Variable<int>(amount.value);
+    }
+    if (rowid.present) {
+      map['rowid'] = Variable<int>(rowid.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('ChallengeEntriesCompanion(')
+          ..write('challengeId: $challengeId, ')
+          ..write('muhasabaDate: $muhasabaDate, ')
+          ..write('amount: $amount, ')
+          ..write('rowid: $rowid')
+          ..write(')'))
+        .toString();
+  }
+}
+
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
@@ -2075,11 +3158,16 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   late final $HiddenDaysTable hiddenDays = $HiddenDaysTable(this);
   late final $SettingsKvTable settingsKv = $SettingsKvTable(this);
   late final $CategoriesTable categories = $CategoriesTable(this);
+  late final $ChallengesTable challenges = $ChallengesTable(this);
+  late final $ChallengeEntriesTable challengeEntries = $ChallengeEntriesTable(
+    this,
+  );
   late final AmalDao amalDao = AmalDao(this as AppDatabase);
   late final CategoryDao categoryDao = CategoryDao(this as AppDatabase);
   late final CompletionDao completionDao = CompletionDao(this as AppDatabase);
   late final HiddenDayDao hiddenDayDao = HiddenDayDao(this as AppDatabase);
   late final SettingsDao settingsDao = SettingsDao(this as AppDatabase);
+  late final ChallengeDao challengeDao = ChallengeDao(this as AppDatabase);
   @override
   Iterable<TableInfo<Table, Object?>> get allTables =>
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
@@ -2090,6 +3178,8 @@ abstract class _$AppDatabase extends GeneratedDatabase {
     hiddenDays,
     settingsKv,
     categories,
+    challenges,
+    challengeEntries,
   ];
   @override
   StreamQueryUpdateRules get streamUpdateRules => const StreamQueryUpdateRules([
@@ -2106,6 +3196,13 @@ abstract class _$AppDatabase extends GeneratedDatabase {
         limitUpdateKind: UpdateKind.delete,
       ),
       result: [TableUpdate('hidden_days', kind: UpdateKind.delete)],
+    ),
+    WritePropagation(
+      on: TableUpdateQuery.onTableName(
+        'challenges',
+        limitUpdateKind: UpdateKind.delete,
+      ),
+      result: [TableUpdate('challenge_entries', kind: UpdateKind.delete)],
     ),
   ]);
   @override
@@ -3639,6 +4736,785 @@ typedef $$CategoriesTableProcessedTableManager =
       CategoryRow,
       PrefetchHooks Function()
     >;
+typedef $$ChallengesTableCreateCompanionBuilder =
+    ChallengesCompanion Function({
+      Value<int> id,
+      required String title,
+      Value<String> icon,
+      required ChallengeMode mode,
+      required int target,
+      Value<int> stepSize,
+      Value<String?> unit,
+      required DateTime startDate,
+      Value<DateTime?> endExclusive,
+      required ChallengeStatus status,
+      Value<bool> expiryHandled,
+      required DateTime createdAt,
+      Value<DateTime?> completedAt,
+      Value<int> sortOrder,
+    });
+typedef $$ChallengesTableUpdateCompanionBuilder =
+    ChallengesCompanion Function({
+      Value<int> id,
+      Value<String> title,
+      Value<String> icon,
+      Value<ChallengeMode> mode,
+      Value<int> target,
+      Value<int> stepSize,
+      Value<String?> unit,
+      Value<DateTime> startDate,
+      Value<DateTime?> endExclusive,
+      Value<ChallengeStatus> status,
+      Value<bool> expiryHandled,
+      Value<DateTime> createdAt,
+      Value<DateTime?> completedAt,
+      Value<int> sortOrder,
+    });
+
+final class $$ChallengesTableReferences
+    extends BaseReferences<_$AppDatabase, $ChallengesTable, ChallengeRow> {
+  $$ChallengesTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static MultiTypedResultKey<$ChallengeEntriesTable, List<ChallengeEntryRow>>
+  _challengeEntriesRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.challengeEntries,
+    aliasName: $_aliasNameGenerator(
+      db.challenges.id,
+      db.challengeEntries.challengeId,
+    ),
+  );
+
+  $$ChallengeEntriesTableProcessedTableManager get challengeEntriesRefs {
+    final manager = $$ChallengeEntriesTableTableManager(
+      $_db,
+      $_db.challengeEntries,
+    ).filter((f) => f.challengeId.id.sqlEquals($_itemColumn<int>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(
+      _challengeEntriesRefsTable($_db),
+    );
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+}
+
+class $$ChallengesTableFilterComposer
+    extends Composer<_$AppDatabase, $ChallengesTable> {
+  $$ChallengesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get title => $composableBuilder(
+    column: $table.title,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get icon => $composableBuilder(
+    column: $table.icon,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnWithTypeConverterFilters<ChallengeMode, ChallengeMode, int> get mode =>
+      $composableBuilder(
+        column: $table.mode,
+        builder: (column) => ColumnWithTypeConverterFilters(column),
+      );
+
+  ColumnFilters<int> get target => $composableBuilder(
+    column: $table.target,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get stepSize => $composableBuilder(
+    column: $table.stepSize,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get unit => $composableBuilder(
+    column: $table.unit,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get startDate => $composableBuilder(
+    column: $table.startDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get endExclusive => $composableBuilder(
+    column: $table.endExclusive,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnWithTypeConverterFilters<ChallengeStatus, ChallengeStatus, int>
+  get status => $composableBuilder(
+    column: $table.status,
+    builder: (column) => ColumnWithTypeConverterFilters(column),
+  );
+
+  ColumnFilters<bool> get expiryHandled => $composableBuilder(
+    column: $table.expiryHandled,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get completedAt => $composableBuilder(
+    column: $table.completedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get sortOrder => $composableBuilder(
+    column: $table.sortOrder,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  Expression<bool> challengeEntriesRefs(
+    Expression<bool> Function($$ChallengeEntriesTableFilterComposer f) f,
+  ) {
+    final $$ChallengeEntriesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.challengeEntries,
+      getReferencedColumn: (t) => t.challengeId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$ChallengeEntriesTableFilterComposer(
+            $db: $db,
+            $table: $db.challengeEntries,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+}
+
+class $$ChallengesTableOrderingComposer
+    extends Composer<_$AppDatabase, $ChallengesTable> {
+  $$ChallengesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get title => $composableBuilder(
+    column: $table.title,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get icon => $composableBuilder(
+    column: $table.icon,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get mode => $composableBuilder(
+    column: $table.mode,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get target => $composableBuilder(
+    column: $table.target,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get stepSize => $composableBuilder(
+    column: $table.stepSize,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get unit => $composableBuilder(
+    column: $table.unit,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get startDate => $composableBuilder(
+    column: $table.startDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get endExclusive => $composableBuilder(
+    column: $table.endExclusive,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get status => $composableBuilder(
+    column: $table.status,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<bool> get expiryHandled => $composableBuilder(
+    column: $table.expiryHandled,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get completedAt => $composableBuilder(
+    column: $table.completedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get sortOrder => $composableBuilder(
+    column: $table.sortOrder,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$ChallengesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $ChallengesTable> {
+  $$ChallengesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get title =>
+      $composableBuilder(column: $table.title, builder: (column) => column);
+
+  GeneratedColumn<String> get icon =>
+      $composableBuilder(column: $table.icon, builder: (column) => column);
+
+  GeneratedColumnWithTypeConverter<ChallengeMode, int> get mode =>
+      $composableBuilder(column: $table.mode, builder: (column) => column);
+
+  GeneratedColumn<int> get target =>
+      $composableBuilder(column: $table.target, builder: (column) => column);
+
+  GeneratedColumn<int> get stepSize =>
+      $composableBuilder(column: $table.stepSize, builder: (column) => column);
+
+  GeneratedColumn<String> get unit =>
+      $composableBuilder(column: $table.unit, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get startDate =>
+      $composableBuilder(column: $table.startDate, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get endExclusive => $composableBuilder(
+    column: $table.endExclusive,
+    builder: (column) => column,
+  );
+
+  GeneratedColumnWithTypeConverter<ChallengeStatus, int> get status =>
+      $composableBuilder(column: $table.status, builder: (column) => column);
+
+  GeneratedColumn<bool> get expiryHandled => $composableBuilder(
+    column: $table.expiryHandled,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get completedAt => $composableBuilder(
+    column: $table.completedAt,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get sortOrder =>
+      $composableBuilder(column: $table.sortOrder, builder: (column) => column);
+
+  Expression<T> challengeEntriesRefs<T extends Object>(
+    Expression<T> Function($$ChallengeEntriesTableAnnotationComposer a) f,
+  ) {
+    final $$ChallengeEntriesTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.challengeEntries,
+      getReferencedColumn: (t) => t.challengeId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$ChallengeEntriesTableAnnotationComposer(
+            $db: $db,
+            $table: $db.challengeEntries,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+}
+
+class $$ChallengesTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $ChallengesTable,
+          ChallengeRow,
+          $$ChallengesTableFilterComposer,
+          $$ChallengesTableOrderingComposer,
+          $$ChallengesTableAnnotationComposer,
+          $$ChallengesTableCreateCompanionBuilder,
+          $$ChallengesTableUpdateCompanionBuilder,
+          (ChallengeRow, $$ChallengesTableReferences),
+          ChallengeRow,
+          PrefetchHooks Function({bool challengeEntriesRefs})
+        > {
+  $$ChallengesTableTableManager(_$AppDatabase db, $ChallengesTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$ChallengesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$ChallengesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$ChallengesTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                Value<String> title = const Value.absent(),
+                Value<String> icon = const Value.absent(),
+                Value<ChallengeMode> mode = const Value.absent(),
+                Value<int> target = const Value.absent(),
+                Value<int> stepSize = const Value.absent(),
+                Value<String?> unit = const Value.absent(),
+                Value<DateTime> startDate = const Value.absent(),
+                Value<DateTime?> endExclusive = const Value.absent(),
+                Value<ChallengeStatus> status = const Value.absent(),
+                Value<bool> expiryHandled = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<DateTime?> completedAt = const Value.absent(),
+                Value<int> sortOrder = const Value.absent(),
+              }) => ChallengesCompanion(
+                id: id,
+                title: title,
+                icon: icon,
+                mode: mode,
+                target: target,
+                stepSize: stepSize,
+                unit: unit,
+                startDate: startDate,
+                endExclusive: endExclusive,
+                status: status,
+                expiryHandled: expiryHandled,
+                createdAt: createdAt,
+                completedAt: completedAt,
+                sortOrder: sortOrder,
+              ),
+          createCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                required String title,
+                Value<String> icon = const Value.absent(),
+                required ChallengeMode mode,
+                required int target,
+                Value<int> stepSize = const Value.absent(),
+                Value<String?> unit = const Value.absent(),
+                required DateTime startDate,
+                Value<DateTime?> endExclusive = const Value.absent(),
+                required ChallengeStatus status,
+                Value<bool> expiryHandled = const Value.absent(),
+                required DateTime createdAt,
+                Value<DateTime?> completedAt = const Value.absent(),
+                Value<int> sortOrder = const Value.absent(),
+              }) => ChallengesCompanion.insert(
+                id: id,
+                title: title,
+                icon: icon,
+                mode: mode,
+                target: target,
+                stepSize: stepSize,
+                unit: unit,
+                startDate: startDate,
+                endExclusive: endExclusive,
+                status: status,
+                expiryHandled: expiryHandled,
+                createdAt: createdAt,
+                completedAt: completedAt,
+                sortOrder: sortOrder,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable(table),
+                  $$ChallengesTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({challengeEntriesRefs = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [
+                if (challengeEntriesRefs) db.challengeEntries,
+              ],
+              addJoins: null,
+              getPrefetchedDataCallback: (items) async {
+                return [
+                  if (challengeEntriesRefs)
+                    await $_getPrefetchedData<
+                      ChallengeRow,
+                      $ChallengesTable,
+                      ChallengeEntryRow
+                    >(
+                      currentTable: table,
+                      referencedTable: $$ChallengesTableReferences
+                          ._challengeEntriesRefsTable(db),
+                      managerFromTypedResult: (p0) =>
+                          $$ChallengesTableReferences(
+                            db,
+                            table,
+                            p0,
+                          ).challengeEntriesRefs,
+                      referencedItemsForCurrentItem: (item, referencedItems) =>
+                          referencedItems.where(
+                            (e) => e.challengeId == item.id,
+                          ),
+                      typedResults: items,
+                    ),
+                ];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$ChallengesTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $ChallengesTable,
+      ChallengeRow,
+      $$ChallengesTableFilterComposer,
+      $$ChallengesTableOrderingComposer,
+      $$ChallengesTableAnnotationComposer,
+      $$ChallengesTableCreateCompanionBuilder,
+      $$ChallengesTableUpdateCompanionBuilder,
+      (ChallengeRow, $$ChallengesTableReferences),
+      ChallengeRow,
+      PrefetchHooks Function({bool challengeEntriesRefs})
+    >;
+typedef $$ChallengeEntriesTableCreateCompanionBuilder =
+    ChallengeEntriesCompanion Function({
+      required int challengeId,
+      required DateTime muhasabaDate,
+      Value<int> amount,
+      Value<int> rowid,
+    });
+typedef $$ChallengeEntriesTableUpdateCompanionBuilder =
+    ChallengeEntriesCompanion Function({
+      Value<int> challengeId,
+      Value<DateTime> muhasabaDate,
+      Value<int> amount,
+      Value<int> rowid,
+    });
+
+final class $$ChallengeEntriesTableReferences
+    extends
+        BaseReferences<
+          _$AppDatabase,
+          $ChallengeEntriesTable,
+          ChallengeEntryRow
+        > {
+  $$ChallengeEntriesTableReferences(
+    super.$_db,
+    super.$_table,
+    super.$_typedResult,
+  );
+
+  static $ChallengesTable _challengeIdTable(_$AppDatabase db) =>
+      db.challenges.createAlias(
+        $_aliasNameGenerator(db.challengeEntries.challengeId, db.challenges.id),
+      );
+
+  $$ChallengesTableProcessedTableManager get challengeId {
+    final $_column = $_itemColumn<int>('challenge_id')!;
+
+    final manager = $$ChallengesTableTableManager(
+      $_db,
+      $_db.challenges,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_challengeIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+}
+
+class $$ChallengeEntriesTableFilterComposer
+    extends Composer<_$AppDatabase, $ChallengeEntriesTable> {
+  $$ChallengeEntriesTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<DateTime> get muhasabaDate => $composableBuilder(
+    column: $table.muhasabaDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get amount => $composableBuilder(
+    column: $table.amount,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$ChallengesTableFilterComposer get challengeId {
+    final $$ChallengesTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.challengeId,
+      referencedTable: $db.challenges,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$ChallengesTableFilterComposer(
+            $db: $db,
+            $table: $db.challenges,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$ChallengeEntriesTableOrderingComposer
+    extends Composer<_$AppDatabase, $ChallengeEntriesTable> {
+  $$ChallengeEntriesTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<DateTime> get muhasabaDate => $composableBuilder(
+    column: $table.muhasabaDate,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get amount => $composableBuilder(
+    column: $table.amount,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$ChallengesTableOrderingComposer get challengeId {
+    final $$ChallengesTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.challengeId,
+      referencedTable: $db.challenges,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$ChallengesTableOrderingComposer(
+            $db: $db,
+            $table: $db.challenges,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$ChallengeEntriesTableAnnotationComposer
+    extends Composer<_$AppDatabase, $ChallengeEntriesTable> {
+  $$ChallengeEntriesTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<DateTime> get muhasabaDate => $composableBuilder(
+    column: $table.muhasabaDate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get amount =>
+      $composableBuilder(column: $table.amount, builder: (column) => column);
+
+  $$ChallengesTableAnnotationComposer get challengeId {
+    final $$ChallengesTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.challengeId,
+      referencedTable: $db.challenges,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$ChallengesTableAnnotationComposer(
+            $db: $db,
+            $table: $db.challenges,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$ChallengeEntriesTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $ChallengeEntriesTable,
+          ChallengeEntryRow,
+          $$ChallengeEntriesTableFilterComposer,
+          $$ChallengeEntriesTableOrderingComposer,
+          $$ChallengeEntriesTableAnnotationComposer,
+          $$ChallengeEntriesTableCreateCompanionBuilder,
+          $$ChallengeEntriesTableUpdateCompanionBuilder,
+          (ChallengeEntryRow, $$ChallengeEntriesTableReferences),
+          ChallengeEntryRow,
+          PrefetchHooks Function({bool challengeId})
+        > {
+  $$ChallengeEntriesTableTableManager(
+    _$AppDatabase db,
+    $ChallengeEntriesTable table,
+  ) : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$ChallengeEntriesTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$ChallengeEntriesTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$ChallengeEntriesTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<int> challengeId = const Value.absent(),
+                Value<DateTime> muhasabaDate = const Value.absent(),
+                Value<int> amount = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => ChallengeEntriesCompanion(
+                challengeId: challengeId,
+                muhasabaDate: muhasabaDate,
+                amount: amount,
+                rowid: rowid,
+              ),
+          createCompanionCallback:
+              ({
+                required int challengeId,
+                required DateTime muhasabaDate,
+                Value<int> amount = const Value.absent(),
+                Value<int> rowid = const Value.absent(),
+              }) => ChallengeEntriesCompanion.insert(
+                challengeId: challengeId,
+                muhasabaDate: muhasabaDate,
+                amount: amount,
+                rowid: rowid,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable(table),
+                  $$ChallengeEntriesTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({challengeId = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [],
+              addJoins:
+                  <
+                    T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic
+                    >
+                  >(state) {
+                    if (challengeId) {
+                      state =
+                          state.withJoin(
+                                currentTable: table,
+                                currentColumn: table.challengeId,
+                                referencedTable:
+                                    $$ChallengeEntriesTableReferences
+                                        ._challengeIdTable(db),
+                                referencedColumn:
+                                    $$ChallengeEntriesTableReferences
+                                        ._challengeIdTable(db)
+                                        .id,
+                              )
+                              as T;
+                    }
+
+                    return state;
+                  },
+              getPrefetchedDataCallback: (items) async {
+                return [];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$ChallengeEntriesTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $ChallengeEntriesTable,
+      ChallengeEntryRow,
+      $$ChallengeEntriesTableFilterComposer,
+      $$ChallengeEntriesTableOrderingComposer,
+      $$ChallengeEntriesTableAnnotationComposer,
+      $$ChallengeEntriesTableCreateCompanionBuilder,
+      $$ChallengeEntriesTableUpdateCompanionBuilder,
+      (ChallengeEntryRow, $$ChallengeEntriesTableReferences),
+      ChallengeEntryRow,
+      PrefetchHooks Function({bool challengeId})
+    >;
 
 class $AppDatabaseManager {
   final _$AppDatabase _db;
@@ -3653,4 +5529,8 @@ class $AppDatabaseManager {
       $$SettingsKvTableTableManager(_db, _db.settingsKv);
   $$CategoriesTableTableManager get categories =>
       $$CategoriesTableTableManager(_db, _db.categories);
+  $$ChallengesTableTableManager get challenges =>
+      $$ChallengesTableTableManager(_db, _db.challenges);
+  $$ChallengeEntriesTableTableManager get challengeEntries =>
+      $$ChallengeEntriesTableTableManager(_db, _db.challengeEntries);
 }

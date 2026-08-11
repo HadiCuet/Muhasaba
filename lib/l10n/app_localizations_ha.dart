@@ -30,6 +30,24 @@ class AppLocalizationsHa extends AppLocalizations {
   String get tabSettings => 'Saituna';
 
   @override
+  String get tabChallenge => 'Buri';
+
+  @override
+  String get tabInsights => 'Kididdiga';
+
+  @override
+  String get insightsTitle => 'Kididdiga';
+
+  @override
+  String get insightsOverview => 'Taƙaitawa';
+
+  @override
+  String get insightsDaily => 'Kowace rana';
+
+  @override
+  String get newChallenge => 'Sabon buri';
+
+  @override
   String get newAmal => 'Sabon amali';
 
   @override
@@ -1059,4 +1077,158 @@ class AppLocalizationsHa extends AppLocalizations {
   @override
   String get tutorialViewBody =>
       'Canza tsakanin tsara ta nau\'i da jerin shimfida ɗaya.';
+
+  @override
+  String get challengesActive => 'Mai gudana';
+
+  @override
+  String get challengesPast => 'Da suka wuce';
+
+  @override
+  String get challengesEmptyTitle => 'Babu buri tukuna';
+
+  @override
+  String get challengesEmptyBody =>
+      'Ka sanya wa kanka buri — kamar raka\'a 20 cikin kwana 7 — sannan ka bi shi a nan.';
+
+  @override
+  String get editChallenge => 'Gyara buri';
+
+  @override
+  String get deleteChallenge => 'Share buri';
+
+  @override
+  String get deleteChallengeConfirm =>
+      'A share wannan buri da duk ci gaban da aka rubuta?';
+
+  @override
+  String get challengeModeLabel => 'Me kake kirgawa?';
+
+  @override
+  String get challengeModeCount => 'Jimillar adadi';
+
+  @override
+  String get challengeModeDays => 'Adadin kwanaki';
+
+  @override
+  String get challengeTargetLabel => 'Manufa';
+
+  @override
+  String get challengeTargetRequired => 'Shigar da adadi sama da sifiri';
+
+  @override
+  String get challengeUnitLabel => 'Ma\'auni (na zaɓi)';
+
+  @override
+  String get challengeUnitHint => 'raka\'a, shafi, sau';
+
+  @override
+  String get challengeStepLabel => 'Kowane danna yana ƙarawa';
+
+  @override
+  String get challengeWindowLabel => 'Iyakar lokaci';
+
+  @override
+  String get challengeWindowDuration => 'Adadin kwanaki';
+
+  @override
+  String get challengeWindowDates => 'Ranaku takamaimai';
+
+  @override
+  String get challengeWindowNone => 'Babu iyakar lokaci';
+
+  @override
+  String challengeDurationLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'kwanaki $count',
+      one: 'kwana $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeStartDate => 'Farawa';
+
+  @override
+  String get challengeEndDate => 'Ƙarewa';
+
+  @override
+  String challengeProgressCount(String done, String target, String unit) {
+    return '$done daga cikin $unit $target';
+  }
+
+  @override
+  String challengeProgressPlain(String done, String target) {
+    return '$done daga cikin $target';
+  }
+
+  @override
+  String challengeProgressDays(String done, String target) {
+    return '$done daga cikin kwanaki $target';
+  }
+
+  @override
+  String challengeDaysLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'saura kwanaki $count',
+      one: 'saura kwana $count',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeNoDeadline => 'Babu iyaka';
+
+  @override
+  String challengeOnTrack(String rate) {
+    return 'Kan hanya · $rate/rana';
+  }
+
+  @override
+  String challengeBehind(String rate) {
+    return 'A baya · $rate/rana';
+  }
+
+  @override
+  String challengeLastDay(String remaining) {
+    return 'Rana ta ƙarshe · saura $remaining';
+  }
+
+  @override
+  String get challengeReached => 'An cimma manufa';
+
+  @override
+  String get challengeCompleted => 'An kammala';
+
+  @override
+  String challengeEnded(String done, String target) {
+    return 'Ya ƙare · $done/$target';
+  }
+
+  @override
+  String get challengeExpiredTitle => 'Burin ya ƙare';
+
+  @override
+  String challengeExpiredBody(String title, String done, String target) {
+    return '$title ya ƙare a kan $done daga cikin $target.';
+  }
+
+  @override
+  String get challengeExtend => 'Ƙara lokaci';
+
+  @override
+  String get challengeRestart => 'Fara sabo';
+
+  @override
+  String get challengeArchive => 'Ajiye a tarihi';
+
+  @override
+  String get challengeDailyBreakdown => 'Bayanan kowace rana';
+
+  @override
+  String get listSeparator => ' · ';
 }

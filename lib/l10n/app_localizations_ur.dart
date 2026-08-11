@@ -30,6 +30,24 @@ class AppLocalizationsUr extends AppLocalizations {
   String get tabSettings => 'ترتیبات';
 
   @override
+  String get tabChallenge => 'عزم';
+
+  @override
+  String get tabInsights => 'اعداد و شمار';
+
+  @override
+  String get insightsTitle => 'اعداد و شمار';
+
+  @override
+  String get insightsOverview => 'مجموعی جائزہ';
+
+  @override
+  String get insightsDaily => 'روزانہ';
+
+  @override
+  String get newChallenge => 'نیا عزم';
+
+  @override
   String get newAmal => 'نیا عمل';
 
   @override
@@ -1055,4 +1073,158 @@ class AppLocalizationsUr extends AppLocalizations {
   @override
   String get tutorialViewBody =>
       'زمرے کے مطابق گروپ بندی اور ایک سادہ فہرست کے درمیان بدلیں۔';
+
+  @override
+  String get challengesActive => 'جاری';
+
+  @override
+  String get challengesPast => 'سابقہ';
+
+  @override
+  String get challengesEmptyTitle => 'ابھی کوئی عزم نہیں';
+
+  @override
+  String get challengesEmptyBody =>
+      'اپنے لیے ایک ہدف مقرر کریں — جیسے ۷ دن میں ۲۰ رکعت — اور یہاں اس کا حساب رکھیں۔';
+
+  @override
+  String get editChallenge => 'عزم میں ترمیم';
+
+  @override
+  String get deleteChallenge => 'عزم حذف کریں';
+
+  @override
+  String get deleteChallengeConfirm =>
+      'کیا یہ عزم اور اس کی تمام درج شدہ پیش رفت حذف کر دی جائے؟';
+
+  @override
+  String get challengeModeLabel => 'آپ کیا شمار کر رہے ہیں؟';
+
+  @override
+  String get challengeModeCount => 'کل مقدار';
+
+  @override
+  String get challengeModeDays => 'دنوں کی تعداد';
+
+  @override
+  String get challengeTargetLabel => 'ہدف';
+
+  @override
+  String get challengeTargetRequired => 'صفر سے زیادہ ہدف درج کریں';
+
+  @override
+  String get challengeUnitLabel => 'اکائی (اختیاری)';
+
+  @override
+  String get challengeUnitHint => 'رکعت، صفحہ، مرتبہ';
+
+  @override
+  String get challengeStepLabel => 'ہر دبانے پر اضافہ';
+
+  @override
+  String get challengeWindowLabel => 'مدت';
+
+  @override
+  String get challengeWindowDuration => 'دنوں کی تعداد';
+
+  @override
+  String get challengeWindowDates => 'مخصوص تاریخیں';
+
+  @override
+  String get challengeWindowNone => 'کوئی مدت نہیں';
+
+  @override
+  String challengeDurationLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count دن',
+      one: 'ایک دن',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeStartDate => 'آغاز';
+
+  @override
+  String get challengeEndDate => 'اختتام';
+
+  @override
+  String challengeProgressCount(String done, String target, String unit) {
+    return '$target $unit میں سے $done';
+  }
+
+  @override
+  String challengeProgressPlain(String done, String target) {
+    return '$target میں سے $done';
+  }
+
+  @override
+  String challengeProgressDays(String done, String target) {
+    return '$target دن میں سے $done';
+  }
+
+  @override
+  String challengeDaysLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count دن باقی',
+      one: 'ایک دن باقی',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeNoDeadline => 'کوئی مدت نہیں';
+
+  @override
+  String challengeOnTrack(String rate) {
+    return 'درست رفتار – $rate/دن';
+  }
+
+  @override
+  String challengeBehind(String rate) {
+    return 'پیچھے – $rate/دن درکار';
+  }
+
+  @override
+  String challengeLastDay(String remaining) {
+    return 'آخری دن – $remaining باقی';
+  }
+
+  @override
+  String get challengeReached => 'ہدف مکمل';
+
+  @override
+  String get challengeCompleted => 'مکمل';
+
+  @override
+  String challengeEnded(String done, String target) {
+    return 'ختم – $target میں سے $done';
+  }
+
+  @override
+  String get challengeExpiredTitle => 'عزم ختم ہوا';
+
+  @override
+  String challengeExpiredBody(String title, String done, String target) {
+    return '$title ختم ہوا، $target میں سے $done۔';
+  }
+
+  @override
+  String get challengeExtend => 'مدت بڑھائیں';
+
+  @override
+  String get challengeRestart => 'دوبارہ شروع کریں';
+
+  @override
+  String get challengeArchive => 'آرکائیو کریں';
+
+  @override
+  String get challengeDailyBreakdown => 'روزانہ ریکارڈ';
+
+  @override
+  String get listSeparator => ' – ';
 }

@@ -4,12 +4,14 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../l10n/app_localizations.dart';
+import '../features/challenge/challenge_detail_screen.dart';
+import '../features/challenge/challenge_form_screen.dart';
+import '../features/challenge/challenge_screen.dart';
 import '../features/create_edit/amal_form_screen.dart';
 import '../features/create_edit/amal_templates.dart';
-import '../features/history/history_screen.dart';
+import '../features/insights/insights_screen.dart';
 import '../features/settings/settings_screen.dart';
 import '../features/splash/splash_screen.dart';
-import '../features/stats/stats_screen.dart';
 import '../features/today/today_screen.dart';
 import 'shell.dart';
 
@@ -44,27 +46,27 @@ final routerProvider = Provider<GoRouter>((ref) {
               ),
             ],
           ),
-          // Tab 1 — Stats
+          // Tab 1 — Challenge
           StatefulShellBranch(
             routes: [
               GoRoute(
-                path: '/stats',
-                name: 'stats',
-                builder: (context, state) => const StatsScreen(),
+                path: '/challenge',
+                name: 'challenge',
+                builder: (context, state) => const ChallengeScreen(),
               ),
             ],
           ),
-          // Tab 2 — History
+          // Tab 2 — Insights (Overview + Daily)
           StatefulShellBranch(
             routes: [
               GoRoute(
-                path: '/history',
-                name: 'history',
-                builder: (context, state) => const HistoryScreen(),
+                path: '/insights',
+                name: 'insights',
+                builder: (context, state) => const InsightsScreen(),
               ),
             ],
           ),
-          // Tab 3 ��� Settings
+          // Tab 3 — Settings
           StatefulShellBranch(
             routes: [
               GoRoute(
@@ -103,6 +105,43 @@ final routerProvider = Provider<GoRouter>((ref) {
           return AmalFormScreen(amalId: id);
         },
       ),
+      GoRoute(
+        path: '/challenge/new',
+        name: 'challenge-new',
+        builder: (context, state) => const ChallengeFormScreen(),
+      ),
+      GoRoute(
+        path: '/challenge/:id/edit',
+        name: 'challenge-edit',
+        builder: (context, state) {
+          final id = int.tryParse(state.pathParameters['id'] ?? '');
+          if (id == null) {
+            return Scaffold(
+              body: Center(
+                child: Text(AppLocalizations.of(context).invalidAmalId),
+              ),
+            );
+          }
+          return ChallengeFormScreen(challengeId: id);
+        },
+      ),
+      GoRoute(
+        path: '/challenge/:id',
+        name: 'challenge-detail',
+        builder: (context, state) {
+          final id = int.tryParse(state.pathParameters['id'] ?? '');
+          if (id == null) {
+            return Scaffold(
+              body: Center(
+                child: Text(AppLocalizations.of(context).invalidAmalId),
+              ),
+            );
+          }
+          return ChallengeDetailScreen(challengeId: id);
+        },
+      ),
+      GoRoute(path: '/stats', redirect: (_, _) => '/insights'),
+      GoRoute(path: '/history', redirect: (_, _) => '/insights'),
     ],
   );
 });

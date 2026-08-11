@@ -24,115 +24,76 @@ class HistoryScreen extends ConsumerStatefulWidget {
   ConsumerState<HistoryScreen> createState() => _HistoryScreenState();
 }
 
-class _HistoryScreenState extends ConsumerState<HistoryScreen> {
-  DateTime? _selected;
+class _HistoryScreenState extends ConsumerState<HistoryScreen>
+    with AutomaticKeepAliveClientMixin {
+  @override
+  bool get wantKeepAlive => true;
 
   @override
   Widget build(BuildContext context) {
+    super.build(context);
     final today = ref.watch(currentMuhasabaDateProvider);
     final floor = ref.watch(historyFloorDateProvider);
-    final selected = _selected ?? today;
+    final selected = ref.watch(historySelectedDateProvider) ?? today;
     final rowsAsync = ref.watch(historyRowsProvider(selected));
     final streaksAsync = ref.watch(currentStreaksProvider);
     final streaks = streaksAsync.value ?? const {};
 
     final l = AppLocalizations.of(context);
-    return Scaffold(
-      appBar: AppBar(
-        title: Text(l.historyTitle),
-        actions: [
-          IconButton(
-            tooltip: l.jumpToDate,
-            icon: const Icon(Icons.event),
-            onPressed: () => _jumpToDate(context, today, selected, floor),
+    return MaxWidthBody(
+      child: Column(
+        children: [
+          _DateStrip(
+            selected: selected,
+            today: today,
+            floor: floor,
+            onSelected: (d) {
+              ref.read(historySelectedDateProvider.notifier).select(d);
+              final daysBack = DateTime.utc(
+                today.year,
+                today.month,
+                today.day,
+              ).difference(DateTime.utc(d.year, d.month, d.day)).inDays;
+              FirebaseAnalytics.instance.logEvent(
+                name: 'history_day_selected',
+                parameters: {'days_back': daysBack},
+              );
+            },
           ),
-        ],
-      ),
-      body: MaxWidthBody(
-        child: Column(
-          children: [
-            _DateStrip(
-              selected: selected,
-              today: today,
-              floor: floor,
-              onSelected: (d) {
-                setState(() => _selected = d);
-                final daysBack = DateTime.utc(
-                  today.year,
-                  today.month,
-                  today.day,
-                ).difference(DateTime.utc(d.year, d.month, d.day)).inDays;
-                FirebaseAnalytics.instance.logEvent(
-                  name: 'history_day_selected',
-                  parameters: {'days_back': daysBack},
+          const Divider(height: 1),
+          Expanded(
+            child: rowsAsync.when(
+              loading: () => const Center(child: CircularProgressIndicator()),
+              error: (e, _) =>
+                  Center(child: Text(l.errorGeneric(e.toString()))),
+              data: (rows) {
+                if (rows.isNotEmpty) {
+                  return _buildRowsList(rows, selected, streaks);
+                }
+                // Empty day → fall back to currently-active amals in
+                // incomplete state so the user still has a tracker to
+                // interact with.
+                final fallbackAsync = ref.watch(
+                  historyFallbackRowsProvider(selected),
+                );
+                return fallbackAsync.when(
+                  loading: () =>
+                      const Center(child: CircularProgressIndicator()),
+                  error: (e, _) =>
+                      Center(child: Text(l.errorGeneric(e.toString()))),
+                  data: (fallbackRows) {
+                    if (fallbackRows.isEmpty) {
+                      return _EmptyDay(date: selected);
+                    }
+                    return _buildRowsList(fallbackRows, selected, streaks);
+                  },
                 );
               },
             ),
-            const Divider(height: 1),
-            Expanded(
-              child: rowsAsync.when(
-                loading: () => const Center(child: CircularProgressIndicator()),
-                error: (e, _) =>
-                    Center(child: Text(l.errorGeneric(e.toString()))),
-                data: (rows) {
-                  if (rows.isNotEmpty) {
-                    return _buildRowsList(rows, selected, streaks);
-                  }
-                  // Empty day → fall back to currently-active amals in
-                  // incomplete state so the user still has a tracker to
-                  // interact with.
-                  final fallbackAsync = ref.watch(
-                    historyFallbackRowsProvider(selected),
-                  );
-                  return fallbackAsync.when(
-                    loading: () =>
-                        const Center(child: CircularProgressIndicator()),
-                    error: (e, _) =>
-                        Center(child: Text(l.errorGeneric(e.toString()))),
-                    data: (fallbackRows) {
-                      if (fallbackRows.isEmpty) {
-                        return _EmptyDay(date: selected);
-                      }
-                      return _buildRowsList(fallbackRows, selected, streaks);
-                    },
-                  );
-                },
-              ),
-            ),
-          ],
-        ),
+          ),
+        ],
       ),
     );
-  }
-
-  Future<void> _jumpToDate(
-    BuildContext context,
-    DateTime today,
-    DateTime current,
-    DateTime floor,
-  ) async {
-    // Clamp the picker to muhasaba-date space: UTC midnights, no future, and no
-    // earlier than the install-day floor.
-    final picked = await showDatePicker(
-      context: context,
-      initialDate: DateTime(current.year, current.month, current.day),
-      firstDate: DateTime(floor.year, floor.month, floor.day),
-      lastDate: DateTime(today.year, today.month, today.day),
-    );
-    if (picked != null) {
-      setState(() {
-        _selected = DateTime.utc(picked.year, picked.month, picked.day);
-      });
-      final daysBack = DateTime.utc(
-        today.year,
-        today.month,
-        today.day,
-      ).difference(DateTime.utc(picked.year, picked.month, picked.day)).inDays;
-      FirebaseAnalytics.instance.logEvent(
-        name: 'history_date_picked',
-        parameters: {'days_back': daysBack},
-      );
-    }
   }
 
   Widget _buildRowsList(

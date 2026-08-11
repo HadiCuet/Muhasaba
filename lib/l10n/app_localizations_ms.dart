@@ -30,6 +30,24 @@ class AppLocalizationsMs extends AppLocalizations {
   String get tabSettings => 'Tetapan';
 
   @override
+  String get tabChallenge => 'Cabaran';
+
+  @override
+  String get tabInsights => 'Statistik';
+
+  @override
+  String get insightsTitle => 'Statistik';
+
+  @override
+  String get insightsOverview => 'Ringkasan';
+
+  @override
+  String get insightsDaily => 'Harian';
+
+  @override
+  String get newChallenge => 'Cabaran baharu';
+
+  @override
   String get newAmal => 'Amal baharu';
 
   @override
@@ -1060,4 +1078,156 @@ class AppLocalizationsMs extends AppLocalizations {
   @override
   String get tutorialViewBody =>
       'Tukar antara pengumpulan mengikut kategori dan satu senarai rata.';
+
+  @override
+  String get challengesActive => 'Aktif';
+
+  @override
+  String get challengesPast => 'Lepas';
+
+  @override
+  String get challengesEmptyTitle => 'Belum ada cabaran';
+
+  @override
+  String get challengesEmptyBody =>
+      'Tetapkan satu sasaran untuk diri anda — seperti 20 rakaat dalam 7 hari — dan jejaki di sini.';
+
+  @override
+  String get editChallenge => 'Sunting cabaran';
+
+  @override
+  String get deleteChallenge => 'Padam cabaran';
+
+  @override
+  String get deleteChallengeConfirm =>
+      'Padam cabaran ini dan semua kemajuan yang direkodkan?';
+
+  @override
+  String get challengeModeLabel => 'Apa yang anda kira?';
+
+  @override
+  String get challengeModeCount => 'Jumlah keseluruhan';
+
+  @override
+  String get challengeModeDays => 'Bilangan hari';
+
+  @override
+  String get challengeTargetLabel => 'Sasaran';
+
+  @override
+  String get challengeTargetRequired => 'Masukkan sasaran melebihi sifar';
+
+  @override
+  String get challengeUnitLabel => 'Unit (pilihan)';
+
+  @override
+  String get challengeUnitHint => 'rakaat, muka surat, kali';
+
+  @override
+  String get challengeStepLabel => 'Setiap ketikan menambah';
+
+  @override
+  String get challengeWindowLabel => 'Had masa';
+
+  @override
+  String get challengeWindowDuration => 'Bilangan hari';
+
+  @override
+  String get challengeWindowDates => 'Tarikh tertentu';
+
+  @override
+  String get challengeWindowNone => 'Tiada had masa';
+
+  @override
+  String challengeDurationLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count hari',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeStartDate => 'Mula';
+
+  @override
+  String get challengeEndDate => 'Tamat';
+
+  @override
+  String challengeProgressCount(String done, String target, String unit) {
+    return '$done daripada $target $unit';
+  }
+
+  @override
+  String challengeProgressPlain(String done, String target) {
+    return '$done daripada $target';
+  }
+
+  @override
+  String challengeProgressDays(String done, String target) {
+    return '$done daripada $target hari';
+  }
+
+  @override
+  String challengeDaysLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count hari lagi',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeNoDeadline => 'Tiada had masa';
+
+  @override
+  String challengeOnTrack(String rate) {
+    return 'Ikut jadual · $rate/hari';
+  }
+
+  @override
+  String challengeBehind(String rate) {
+    return 'Ketinggalan · perlu $rate/hari';
+  }
+
+  @override
+  String challengeLastDay(String remaining) {
+    return 'Hari terakhir · $remaining lagi';
+  }
+
+  @override
+  String get challengeReached => 'Sasaran dicapai';
+
+  @override
+  String get challengeCompleted => 'Selesai';
+
+  @override
+  String challengeEnded(String done, String target) {
+    return 'Berakhir · $done/$target';
+  }
+
+  @override
+  String get challengeExpiredTitle => 'Cabaran berakhir';
+
+  @override
+  String challengeExpiredBody(String title, String done, String target) {
+    return '$title berakhir pada $done daripada $target.';
+  }
+
+  @override
+  String get challengeExtend => 'Lanjutkan';
+
+  @override
+  String get challengeRestart => 'Mula semula';
+
+  @override
+  String get challengeArchive => 'Arkibkan';
+
+  @override
+  String get challengeDailyBreakdown => 'Log harian';
+
+  @override
+  String get listSeparator => ' · ';
 }

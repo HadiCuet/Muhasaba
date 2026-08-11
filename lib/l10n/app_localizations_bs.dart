@@ -30,6 +30,24 @@ class AppLocalizationsBs extends AppLocalizations {
   String get tabSettings => 'Postavke';
 
   @override
+  String get tabChallenge => 'Izazov';
+
+  @override
+  String get tabInsights => 'Statistika';
+
+  @override
+  String get insightsTitle => 'Statistika';
+
+  @override
+  String get insightsOverview => 'Pregled';
+
+  @override
+  String get insightsDaily => 'Po danima';
+
+  @override
+  String get newChallenge => 'Novi izazov';
+
+  @override
   String get newAmal => 'Novi amel';
 
   @override
@@ -1060,4 +1078,160 @@ class AppLocalizationsBs extends AppLocalizations {
   @override
   String get tutorialViewBody =>
       'Prebacujte između grupiranja po kategoriji i jedne obične liste.';
+
+  @override
+  String get challengesActive => 'Aktivni';
+
+  @override
+  String get challengesPast => 'Prošli';
+
+  @override
+  String get challengesEmptyTitle => 'Još nema izazova';
+
+  @override
+  String get challengesEmptyBody =>
+      'Postavite sebi cilj — poput 20 rekata za 7 dana — i pratite ga ovdje.';
+
+  @override
+  String get editChallenge => 'Uredi izazov';
+
+  @override
+  String get deleteChallenge => 'Izbriši izazov';
+
+  @override
+  String get deleteChallengeConfirm =>
+      'Izbrisati ovaj izazov i sav zabilježeni napredak?';
+
+  @override
+  String get challengeModeLabel => 'Šta brojite?';
+
+  @override
+  String get challengeModeCount => 'Ukupan iznos';
+
+  @override
+  String get challengeModeDays => 'Broj dana';
+
+  @override
+  String get challengeTargetLabel => 'Cilj';
+
+  @override
+  String get challengeTargetRequired => 'Unesite cilj veći od nule';
+
+  @override
+  String get challengeUnitLabel => 'Jedinica (opcionalno)';
+
+  @override
+  String get challengeUnitHint => 'rekat, stranica, puta';
+
+  @override
+  String get challengeStepLabel => 'Svaki dodir dodaje';
+
+  @override
+  String get challengeWindowLabel => 'Vremenski rok';
+
+  @override
+  String get challengeWindowDuration => 'Broj dana';
+
+  @override
+  String get challengeWindowDates => 'Određeni datumi';
+
+  @override
+  String get challengeWindowNone => 'Bez roka';
+
+  @override
+  String challengeDurationLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count dana',
+      few: '$count dana',
+      one: '$count dan',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeStartDate => 'Počinje';
+
+  @override
+  String get challengeEndDate => 'Završava';
+
+  @override
+  String challengeProgressCount(String done, String target, String unit) {
+    return '$done od $target $unit';
+  }
+
+  @override
+  String challengeProgressPlain(String done, String target) {
+    return '$done od $target';
+  }
+
+  @override
+  String challengeProgressDays(String done, String target) {
+    return '$done od $target dana';
+  }
+
+  @override
+  String challengeDaysLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'još $count dana',
+      few: 'još $count dana',
+      one: 'još $count dan',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeNoDeadline => 'Bez roka';
+
+  @override
+  String challengeOnTrack(String rate) {
+    return 'U planu · $rate/dan';
+  }
+
+  @override
+  String challengeBehind(String rate) {
+    return 'Zaostatak · $rate/dan';
+  }
+
+  @override
+  String challengeLastDay(String remaining) {
+    return 'Zadnji dan · još $remaining';
+  }
+
+  @override
+  String get challengeReached => 'Cilj postignut';
+
+  @override
+  String get challengeCompleted => 'Završeno';
+
+  @override
+  String challengeEnded(String done, String target) {
+    return 'Isteklo · $done od $target';
+  }
+
+  @override
+  String get challengeExpiredTitle => 'Izazov je završen';
+
+  @override
+  String challengeExpiredBody(String title, String done, String target) {
+    return '$title je završen sa $done od $target.';
+  }
+
+  @override
+  String get challengeExtend => 'Produži';
+
+  @override
+  String get challengeRestart => 'Počni ponovo';
+
+  @override
+  String get challengeArchive => 'Arhiviraj';
+
+  @override
+  String get challengeDailyBreakdown => 'Dnevni zapis';
+
+  @override
+  String get listSeparator => ' · ';
 }

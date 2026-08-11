@@ -1,9 +1,11 @@
 import 'package:drift/drift.dart';
 import 'package:drift_flutter/drift_flutter.dart';
 
+import '../../domain/models/challenge.dart';
 import '../../domain/models/frequency.dart';
 import 'daos/amal_dao.dart';
 import 'daos/category_dao.dart';
+import 'daos/challenge_dao.dart';
 import 'daos/completion_dao.dart';
 import 'daos/hidden_day_dao.dart';
 import 'daos/settings_dao.dart';
@@ -13,15 +15,30 @@ import 'tables.dart';
 part 'database.g.dart';
 
 @DriftDatabase(
-  tables: [Amals, Completions, HiddenDays, SettingsKv, Categories],
-  daos: [AmalDao, CategoryDao, CompletionDao, HiddenDayDao, SettingsDao],
+  tables: [
+    Amals,
+    Completions,
+    HiddenDays,
+    SettingsKv,
+    Categories,
+    Challenges,
+    ChallengeEntries,
+  ],
+  daos: [
+    AmalDao,
+    CategoryDao,
+    CompletionDao,
+    HiddenDayDao,
+    SettingsDao,
+    ChallengeDao,
+  ],
 )
 class AppDatabase extends _$AppDatabase {
   AppDatabase([QueryExecutor? executor])
     : super(executor ?? driftDatabase(name: 'muhasaba'));
 
   @override
-  int get schemaVersion => 6;
+  int get schemaVersion => 7;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -110,6 +127,14 @@ class AppDatabase extends _$AppDatabase {
           "WHERE monthly_date IS NOT NULL "
           "AND (monthly_dates IS NULL OR monthly_dates = '')",
         );
+      }
+      if (from < 7) {
+        if (!await _hasTable('challenges')) {
+          await m.createTable(challenges);
+        }
+        if (!await _hasTable('challenge_entries')) {
+          await m.createTable(challengeEntries);
+        }
       }
     },
     beforeOpen: (details) async {

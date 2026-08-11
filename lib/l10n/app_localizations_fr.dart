@@ -30,6 +30,24 @@ class AppLocalizationsFr extends AppLocalizations {
   String get tabSettings => 'Paramètres';
 
   @override
+  String get tabChallenge => 'Défi';
+
+  @override
+  String get tabInsights => 'Statistiques';
+
+  @override
+  String get insightsTitle => 'Statistiques';
+
+  @override
+  String get insightsOverview => 'Vue d\'ensemble';
+
+  @override
+  String get insightsDaily => 'Quotidien';
+
+  @override
+  String get newChallenge => 'Nouveau défi';
+
+  @override
   String get newAmal => 'Nouvel amal';
 
   @override
@@ -1065,4 +1083,158 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get tutorialViewBody =>
       'Basculez entre le regroupement par catégorie et une liste simple.';
+
+  @override
+  String get challengesActive => 'En cours';
+
+  @override
+  String get challengesPast => 'Terminés';
+
+  @override
+  String get challengesEmptyTitle => 'Aucun défi pour le moment';
+
+  @override
+  String get challengesEmptyBody =>
+      'Fixez-vous un objectif — comme 20 rakaat en 7 jours — et suivez-le ici.';
+
+  @override
+  String get editChallenge => 'Modifier le défi';
+
+  @override
+  String get deleteChallenge => 'Supprimer le défi';
+
+  @override
+  String get deleteChallengeConfirm =>
+      'Supprimer ce défi et toute la progression enregistrée ?';
+
+  @override
+  String get challengeModeLabel => 'Que comptez-vous ?';
+
+  @override
+  String get challengeModeCount => 'Un total';
+
+  @override
+  String get challengeModeDays => 'Un nombre de jours';
+
+  @override
+  String get challengeTargetLabel => 'Objectif';
+
+  @override
+  String get challengeTargetRequired => 'Entrez un objectif supérieur à zéro';
+
+  @override
+  String get challengeUnitLabel => 'Unité (facultatif)';
+
+  @override
+  String get challengeUnitHint => 'rakaat, pages, fois';
+
+  @override
+  String get challengeStepLabel => 'Chaque appui ajoute';
+
+  @override
+  String get challengeWindowLabel => 'Limite de temps';
+
+  @override
+  String get challengeWindowDuration => 'Un nombre de jours';
+
+  @override
+  String get challengeWindowDates => 'Dates précises';
+
+  @override
+  String get challengeWindowNone => 'Sans échéance';
+
+  @override
+  String challengeDurationLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count jours',
+      one: '$count jour',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeStartDate => 'Début';
+
+  @override
+  String get challengeEndDate => 'Fin';
+
+  @override
+  String challengeProgressCount(String done, String target, String unit) {
+    return '$done sur $target $unit';
+  }
+
+  @override
+  String challengeProgressPlain(String done, String target) {
+    return '$done sur $target';
+  }
+
+  @override
+  String challengeProgressDays(String done, String target) {
+    return '$done jours sur $target';
+  }
+
+  @override
+  String challengeDaysLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count jours restants',
+      one: '1 jour restant',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeNoDeadline => 'Sans échéance';
+
+  @override
+  String challengeOnTrack(String rate) {
+    return 'Dans les temps · $rate/jour';
+  }
+
+  @override
+  String challengeBehind(String rate) {
+    return 'En retard · $rate/jour requis';
+  }
+
+  @override
+  String challengeLastDay(String remaining) {
+    return 'Dernier jour · $remaining restant';
+  }
+
+  @override
+  String get challengeReached => 'Objectif atteint';
+
+  @override
+  String get challengeCompleted => 'Terminé';
+
+  @override
+  String challengeEnded(String done, String target) {
+    return 'Clôturé · $done sur $target';
+  }
+
+  @override
+  String get challengeExpiredTitle => 'Défi clôturé';
+
+  @override
+  String challengeExpiredBody(String title, String done, String target) {
+    return '$title s\'est clôturé à $done sur $target.';
+  }
+
+  @override
+  String get challengeExtend => 'Prolonger';
+
+  @override
+  String get challengeRestart => 'Recommencer';
+
+  @override
+  String get challengeArchive => 'Archiver';
+
+  @override
+  String get challengeDailyBreakdown => 'Journal quotidien';
+
+  @override
+  String get listSeparator => ' · ';
 }

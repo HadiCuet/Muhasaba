@@ -1,5 +1,6 @@
 import 'package:drift/drift.dart';
 
+import '../../domain/models/challenge.dart';
 import '../../domain/models/frequency.dart';
 
 /// User-defined (or seeded) acts of worship the user wants to track.
@@ -80,4 +81,38 @@ class SettingsKv extends Table {
 
   @override
   Set<Column> get primaryKey => {key};
+}
+
+/// A self-directed goal: reach [target] within an optional window.
+@DataClassName('ChallengeRow')
+class Challenges extends Table {
+  IntColumn get id => integer().autoIncrement()();
+  TextColumn get title => text().withLength(min: 1, max: 120)();
+  TextColumn get icon => text().withDefault(const Constant('🚩'))();
+  IntColumn get mode => intEnum<ChallengeMode>()();
+  IntColumn get target => integer()();
+  IntColumn get stepSize => integer().withDefault(const Constant(1))();
+  TextColumn get unit => text().nullable()(); // user-typed, e.g. "rakah"
+  DateTimeColumn get startDate => dateTime()(); // date-only (UTC midnight)
+  DateTimeColumn get endExclusive =>
+      dateTime().nullable()(); // date-only; null = no deadline
+  IntColumn get status => intEnum<ChallengeStatus>()();
+  BoolColumn get expiryHandled =>
+      boolean().withDefault(const Constant(false))();
+  DateTimeColumn get createdAt => dateTime()();
+  DateTimeColumn get completedAt => dateTime().nullable()();
+  IntColumn get sortOrder => integer().withDefault(const Constant(0))();
+}
+
+/// One row per (challenge, muhasabaDate). Progress is `SUM(amount)` over these
+/// — never a column on [Challenges] — so undo and back-dated edits stay exact.
+@DataClassName('ChallengeEntryRow')
+class ChallengeEntries extends Table {
+  IntColumn get challengeId =>
+      integer().references(Challenges, #id, onDelete: KeyAction.cascade)();
+  DateTimeColumn get muhasabaDate => dateTime()(); // date-only (UTC midnight)
+  IntColumn get amount => integer().withDefault(const Constant(0))();
+
+  @override
+  Set<Column> get primaryKey => {challengeId, muhasabaDate};
 }

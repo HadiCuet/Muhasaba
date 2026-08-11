@@ -30,6 +30,24 @@ class AppLocalizationsSo extends AppLocalizations {
   String get tabSettings => 'Dejinta';
 
   @override
+  String get tabChallenge => 'Yool';
+
+  @override
+  String get tabInsights => 'Tirakoob';
+
+  @override
+  String get insightsTitle => 'Tirakoob';
+
+  @override
+  String get insightsOverview => 'Guud ahaan';
+
+  @override
+  String get insightsDaily => 'Maalinle';
+
+  @override
+  String get newChallenge => 'Yool cusub';
+
+  @override
   String get newAmal => 'Camal cusub';
 
   @override
@@ -1064,4 +1082,158 @@ class AppLocalizationsSo extends AppLocalizations {
   @override
   String get tutorialViewBody =>
       'U beddel inta u dhaxaysa koobidda qaybaha iyo hal liis fudud.';
+
+  @override
+  String get challengesActive => 'Socda';
+
+  @override
+  String get challengesPast => 'Hore';
+
+  @override
+  String get challengesEmptyTitle => 'Wali yool ma jiro';
+
+  @override
+  String get challengesEmptyBody =>
+      'Yool iska dhig — sida 20 rakcadood 7 maalmood gudahood — kuna raadraac halkan.';
+
+  @override
+  String get editChallenge => 'Wax ka beddel yoolka';
+
+  @override
+  String get deleteChallenge => 'Tirtir yoolka';
+
+  @override
+  String get deleteChallengeConfirm =>
+      'Ma tirtiraysaa yoolkan iyo dhammaan horumarkii la diiwaangeliyay?';
+
+  @override
+  String get challengeModeLabel => 'Maxaad tirinaysaa?';
+
+  @override
+  String get challengeModeCount => 'Wadar guud';
+
+  @override
+  String get challengeModeDays => 'Tirada maalmaha';
+
+  @override
+  String get challengeTargetLabel => 'Bartilmaameed';
+
+  @override
+  String get challengeTargetRequired => 'Geli tiro ka weyn eber';
+
+  @override
+  String get challengeUnitLabel => 'Halbeeg (ikhtiyaari)';
+
+  @override
+  String get challengeUnitHint => 'rakcad, bog, jeer';
+
+  @override
+  String get challengeStepLabel => 'Taabasho kastaa way ku dartaa';
+
+  @override
+  String get challengeWindowLabel => 'Muddada';
+
+  @override
+  String get challengeWindowDuration => 'Tirada maalmaha';
+
+  @override
+  String get challengeWindowDates => 'Taariikho gaar ah';
+
+  @override
+  String get challengeWindowNone => 'Muddo ma leh';
+
+  @override
+  String challengeDurationLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count maalmood',
+      one: '$count maalin',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeStartDate => 'Bilaabmaya';
+
+  @override
+  String get challengeEndDate => 'Dhammaanaya';
+
+  @override
+  String challengeProgressCount(String done, String target, String unit) {
+    return '$done ka mid ah $target $unit';
+  }
+
+  @override
+  String challengeProgressPlain(String done, String target) {
+    return '$done ka mid ah $target';
+  }
+
+  @override
+  String challengeProgressDays(String done, String target) {
+    return '$done ka mid ah $target maalmood';
+  }
+
+  @override
+  String challengeDaysLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count maalmood ayaa hadhay',
+      one: '$count maalin ayaa hadhay',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeNoDeadline => 'Muddo ma leh';
+
+  @override
+  String challengeOnTrack(String rate) {
+    return 'Jidka saaran · $rate/maalin';
+  }
+
+  @override
+  String challengeBehind(String rate) {
+    return 'Dib u dhac · $rate/maalin';
+  }
+
+  @override
+  String challengeLastDay(String remaining) {
+    return 'Maalinta dambe · $remaining hadhay';
+  }
+
+  @override
+  String get challengeReached => 'Waa la gaadhay';
+
+  @override
+  String get challengeCompleted => 'Dhammaystiran';
+
+  @override
+  String challengeEnded(String done, String target) {
+    return 'Dhammaaday · $done/$target';
+  }
+
+  @override
+  String get challengeExpiredTitle => 'Yoolku waa dhammaaday';
+
+  @override
+  String challengeExpiredBody(String title, String done, String target) {
+    return '$title wuxuu ku dhammaaday $done ka mid ah $target.';
+  }
+
+  @override
+  String get challengeExtend => 'Kordhi';
+
+  @override
+  String get challengeRestart => 'Dib u bilow';
+
+  @override
+  String get challengeArchive => 'Arkiifi';
+
+  @override
+  String get challengeDailyBreakdown => 'Diiwaanka maalinlaha ah';
+
+  @override
+  String get listSeparator => ' · ';
 }

@@ -30,6 +30,24 @@ class AppLocalizationsTk extends AppLocalizations {
   String get tabSettings => 'Sazlamalar';
 
   @override
+  String get tabChallenge => 'Maksat';
+
+  @override
+  String get tabInsights => 'Statistika';
+
+  @override
+  String get insightsTitle => 'Statistika';
+
+  @override
+  String get insightsOverview => 'Umumy';
+
+  @override
+  String get insightsDaily => 'Günlük';
+
+  @override
+  String get newChallenge => 'Täze maksat';
+
+  @override
   String get newAmal => 'Taze amal';
 
   @override
@@ -1054,4 +1072,156 @@ class AppLocalizationsTk extends AppLocalizations {
   @override
   String get tutorialViewBody =>
       'Kategoriýa boýunça toparlamak bilen bir düz sanawyň arasynda çalşyň.';
+
+  @override
+  String get challengesActive => 'Dowam edýän';
+
+  @override
+  String get challengesPast => 'Geçen';
+
+  @override
+  String get challengesEmptyTitle => 'Entek maksat ýok';
+
+  @override
+  String get challengesEmptyBody =>
+      'Özüňize bir maksat goýuň — meselem, 7 günde 20 rekagat — we ony şu ýerde yzarlaň.';
+
+  @override
+  String get editChallenge => 'Maksady üýtgetmek';
+
+  @override
+  String get deleteChallenge => 'Maksady pozmak';
+
+  @override
+  String get deleteChallengeConfirm =>
+      'Bu maksat we onuň ähli bellenen öňegidişligi pozulsynmy?';
+
+  @override
+  String get challengeModeLabel => 'Nämäni sanaýarsyňyz?';
+
+  @override
+  String get challengeModeCount => 'Umumy mukdar';
+
+  @override
+  String get challengeModeDays => 'Gün sany';
+
+  @override
+  String get challengeTargetLabel => 'Maksat sany';
+
+  @override
+  String get challengeTargetRequired => 'Noldan uly san giriziň';
+
+  @override
+  String get challengeUnitLabel => 'Birlik (islege bagly)';
+
+  @override
+  String get challengeUnitHint => 'rekagat, sahypa, gezek';
+
+  @override
+  String get challengeStepLabel => 'Her basyşda goşulýar';
+
+  @override
+  String get challengeWindowLabel => 'Wagt çägi';
+
+  @override
+  String get challengeWindowDuration => 'Gün sany';
+
+  @override
+  String get challengeWindowDates => 'Anyk seneler';
+
+  @override
+  String get challengeWindowNone => 'Möhletsiz';
+
+  @override
+  String challengeDurationLabel(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count gün',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeStartDate => 'Başlanýar';
+
+  @override
+  String get challengeEndDate => 'Tamamlanýar';
+
+  @override
+  String challengeProgressCount(String done, String target, String unit) {
+    return '$target $unit içinden $done';
+  }
+
+  @override
+  String challengeProgressPlain(String done, String target) {
+    return '$target-dan $done';
+  }
+
+  @override
+  String challengeProgressDays(String done, String target) {
+    return '$target günden $done';
+  }
+
+  @override
+  String challengeDaysLeft(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count gün galdy',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeNoDeadline => 'Möhletsiz';
+
+  @override
+  String challengeOnTrack(String rate) {
+    return 'Meýilnamada · $rate/gün';
+  }
+
+  @override
+  String challengeBehind(String rate) {
+    return 'Yzda · $rate/gün gerek';
+  }
+
+  @override
+  String challengeLastDay(String remaining) {
+    return 'Soňky gün · $remaining galdy';
+  }
+
+  @override
+  String get challengeReached => 'Maksada ýetildi';
+
+  @override
+  String get challengeCompleted => 'Tamamlandy';
+
+  @override
+  String challengeEnded(String done, String target) {
+    return 'Gutardy · $done/$target';
+  }
+
+  @override
+  String get challengeExpiredTitle => 'Maksat tamamlandy';
+
+  @override
+  String challengeExpiredBody(String title, String done, String target) {
+    return '$title $done/$target bilen tamamlandy.';
+  }
+
+  @override
+  String get challengeExtend => 'Uzaltmak';
+
+  @override
+  String get challengeRestart => 'Täzeden başlamak';
+
+  @override
+  String get challengeArchive => 'Arhiwe geçirmek';
+
+  @override
+  String get challengeDailyBreakdown => 'Günlük ýazgy';
+
+  @override
+  String get listSeparator => ' · ';
 }

@@ -13,6 +13,30 @@
   "tabStats": "Stats",
   "tabHistory": "History",
   "tabSettings": "Settings",
+  "tabChallenge": "Challenge",
+  "@tabChallenge": {
+    "description": "Bottom navigation label for the Challenge tab"
+  },
+  "tabInsights": "Insights",
+  "@tabInsights": {
+    "description": "Bottom navigation label for the merged Stats + History tab"
+  },
+  "insightsTitle": "Insights",
+  "@insightsTitle": {
+    "description": "App bar title of the merged Insights screen"
+  },
+  "insightsOverview": "Overview",
+  "@insightsOverview": {
+    "description": "Insights sub-tab showing aggregate stats"
+  },
+  "insightsDaily": "Daily",
+  "@insightsDaily": {
+    "description": "Insights sub-tab showing one editable day at a time"
+  },
+  "newChallenge": "New challenge",
+  "@newChallenge": {
+    "description": "FAB label and app bar title for creating a challenge"
+  },
   "newAmal": "New amal",
   "editAmal": "Edit amal",
   "newAmalTitle": "New amal",
@@ -444,5 +468,236 @@
   "tutorialCountTitle": "Counting repetitions",
   "tutorialCountBody": "For amal with a target above one, use − and + for each repetition.",
   "tutorialViewTitle": "Group or flatten",
-  "tutorialViewBody": "Switch between grouping by category and one flat list."
+  "tutorialViewBody": "Switch between grouping by category and one flat list.",
+  "challengesActive": "Active",
+  "@challengesActive": {
+    "description": "Section header above in-progress challenges"
+  },
+  "challengesPast": "Past",
+  "@challengesPast": {
+    "description": "Section header above finished or expired challenges"
+  },
+  "challengesEmptyTitle": "No challenges yet",
+  "@challengesEmptyTitle": {
+    "description": "Empty-state heading on the Challenge tab"
+  },
+  "challengesEmptyBody": "Set yourself a goal — like 20 rakah in 7 days — and track it here.",
+  "@challengesEmptyBody": {
+    "description": "Empty-state explanation of what a challenge is"
+  },
+  "editChallenge": "Edit challenge",
+  "@editChallenge": {
+    "description": "App bar title when editing an existing challenge"
+  },
+  "deleteChallenge": "Delete challenge",
+  "@deleteChallenge": {
+    "description": "Destructive action in the challenge detail screen"
+  },
+  "deleteChallengeConfirm": "Delete this challenge and all its logged progress?",
+  "@deleteChallengeConfirm": {
+    "description": "Confirmation dialog body before deleting a challenge"
+  },
+  "challengeModeLabel": "What are you counting?",
+  "@challengeModeLabel": {
+    "description": "Form field label for the challenge mode selector"
+  },
+  "challengeModeCount": "A total amount",
+  "@challengeModeCount": {
+    "description": "Challenge mode: cumulative units, e.g. 20 rakah"
+  },
+  "challengeModeDays": "A number of days",
+  "@challengeModeDays": {
+    "description": "Challenge mode: one check-in per day"
+  },
+  "challengeTargetLabel": "Target",
+  "@challengeTargetLabel": {
+    "description": "Form field label for the number to reach"
+  },
+  "challengeTargetRequired": "Enter a target above zero",
+  "@challengeTargetRequired": {
+    "description": "Validation error for an empty or zero target"
+  },
+  "challengeUnitLabel": "Unit (optional)",
+  "@challengeUnitLabel": {
+    "description": "Form field label for a user-typed unit like rakah"
+  },
+  "challengeUnitHint": "rakah, pages, times",
+  "@challengeUnitHint": {
+    "description": "Placeholder examples for the unit field"
+  },
+  "challengeStepLabel": "Each tap adds",
+  "@challengeStepLabel": {
+    "description": "Form field label for the stepper increment"
+  },
+  "challengeWindowLabel": "Time limit",
+  "@challengeWindowLabel": {
+    "description": "Form section label for the challenge window"
+  },
+  "challengeWindowDuration": "A number of days",
+  "@challengeWindowDuration": {
+    "description": "Window type: fixed duration from the start date"
+  },
+  "challengeWindowDates": "Specific dates",
+  "@challengeWindowDates": {
+    "description": "Window type: explicit start and end dates"
+  },
+  "challengeWindowNone": "No deadline",
+  "@challengeWindowNone": {
+    "description": "Window type: open-ended challenge"
+  },
+  "challengeDurationLabel": "{count, plural, =1{{count} day} other{{count} days}}",
+  "@challengeDurationLabel": {
+    "description": "Length of the challenge window",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeStartDate": "Starts",
+  "@challengeStartDate": {
+    "description": "Form label for the challenge start date"
+  },
+  "challengeEndDate": "Ends",
+  "@challengeEndDate": {
+    "description": "Form label for the challenge end date, inclusive"
+  },
+  "challengeProgressCount": "{done} of {target} {unit}",
+  "@challengeProgressCount": {
+    "description": "Progress line for a count challenge, e.g. 8 of 20 rakah",
+    "placeholders": {
+      "done": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeProgressPlain": "{done} of {target}",
+  "@challengeProgressPlain": {
+    "description": "Progress line when the challenge has no unit",
+    "placeholders": {
+      "done": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeProgressDays": "{done} of {target} days",
+  "@challengeProgressDays": {
+    "description": "Progress line for a day-count challenge",
+    "placeholders": {
+      "done": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeDaysLeft": "{count, plural, =1{1 day left} other{{count} days left}}",
+  "@challengeDaysLeft": {
+    "description": "Time remaining in the challenge window",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "challengeNoDeadline": "No deadline",
+  "@challengeNoDeadline": {
+    "description": "Pace chip for an open-ended challenge"
+  },
+  "challengeOnTrack": "On track · {rate}/day",
+  "@challengeOnTrack": {
+    "description": "Pace chip when the challenge is on schedule",
+    "placeholders": {
+      "rate": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeBehind": "Behind · {rate}/day to finish",
+  "@challengeBehind": {
+    "description": "Pace chip when more than one day's share behind",
+    "placeholders": {
+      "rate": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeLastDay": "Last day · {remaining} left",
+  "@challengeLastDay": {
+    "description": "Pace chip on the final day of the window",
+    "placeholders": {
+      "remaining": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeReached": "Target reached",
+  "@challengeReached": {
+    "description": "Pace chip once the target is met"
+  },
+  "challengeCompleted": "Completed",
+  "@challengeCompleted": {
+    "description": "Chip on a finished challenge in the Past section"
+  },
+  "challengeEnded": "Ended · {done} of {target}",
+  "@challengeEnded": {
+    "description": "Chip on an expired challenge showing final progress",
+    "placeholders": {
+      "done": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeExpiredTitle": "Challenge ended",
+  "@challengeExpiredTitle": {
+    "description": "Dialog title when a challenge window closes unmet"
+  },
+  "challengeExpiredBody": "{title} ended at {done} of {target}.",
+  "@challengeExpiredBody": {
+    "description": "Dialog body showing the final progress of an expired challenge",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "done": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeExtend": "Extend",
+  "@challengeExtend": {
+    "description": "Expiry action: push the deadline out"
+  },
+  "challengeRestart": "Start again",
+  "@challengeRestart": {
+    "description": "Expiry action: begin a fresh challenge with the same settings"
+  },
+  "challengeArchive": "Archive",
+  "@challengeArchive": {
+    "description": "Expiry action: accept the result and file it away"
+  },
+  "challengeDailyBreakdown": "Daily log",
+  "@challengeDailyBreakdown": {
+    "description": "Detail-screen section header above per-day entries"
+  },
+  "listSeparator": " · ",
+  "@listSeparator": {
+    "description": "Separator between clauses on a challenge card. Arabic-script locales use an en dash because the middot is indistinguishable from their digit zero."
+  }
 }
