@@ -445,18 +445,6 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                 ),
                 const SizedBox(height: 20),
 
-                // ── Frequency ──────────────────────────────────────────────
-                _FrequencySelector(
-                  value: _frequency,
-                  onChanged: (f) => setState(() {
-                    _frequency = f;
-                    if (_periodTarget > _periodTargetMax) {
-                      _periodTarget = _periodTargetMax;
-                    }
-                  }),
-                ),
-                const SizedBox(height: 16),
-
                 // ── Category ───────────────────────────────────────────────
                 Text(l.categoryLabel, style: theme.textTheme.labelLarge),
                 const SizedBox(height: 8),
@@ -488,6 +476,20 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                 _TargetChips(
                   value: _target,
                   onChanged: (v) => setState(() => _target = v),
+                ),
+                const SizedBox(height: 20),
+
+                // ── Frequency ──────────────────────────────────────────────
+                // Kept adjacent to the repeat mode, day/date picker and
+                // preview below — they all reconfigure when this changes.
+                _FrequencySelector(
+                  value: _frequency,
+                  onChanged: (f) => setState(() {
+                    _frequency = f;
+                    if (_periodTarget > _periodTargetMax) {
+                      _periodTarget = _periodTargetMax;
+                    }
+                  }),
                 ),
 
                 if (_frequency != Frequency.daily) ...[
