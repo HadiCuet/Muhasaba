@@ -266,5 +266,19 @@
   "genericError": "Sesuatu yang tidak kena telah berlaku. Sila cuba lagi.",
   "notificationChannelName": "Peringatan amal",
   "notificationChannelDescription": "Peringatan harian untuk amal yang anda jejaki.",
-  "invalidAmalId": "ID amal tidak sah"
+  "invalidAmalId": "ID amal tidak sah",
+  "repeatMode": "Ulangan",
+  "onSetDays": "Pada hari tertentu",
+  "onSetDates": "Pada tarikh tertentu",
+  "anyDayMode": "Mana-mana hari",
+  "datesOfMonth": "Tarikh",
+  "daysPerWeekQuestion": "Berapa hari dalam seminggu?",
+  "daysPerMonthQuestion": "Berapa hari dalam sebulan?",
+  "pickAtLeastOneDay": "Pilih sekurang-kurangnya satu hari",
+  "pickAtLeastOneDate": "Pilih sekurang-kurangnya satu tarikh",
+  "previewDaily": "Berulang setiap hari",
+  "previewWeeklyDays": "Berulang setiap {days}",
+  "previewWeeklyAny": "Berulang mana-mana {count, plural, other{{count} hari}} seminggu",
+  "previewMonthlyDates": "{count, plural, other{Berulang pada {dates} haribulan setiap bulan}}",
+  "previewMonthlyAny": "Berulang mana-mana {count, plural, other{{count} hari}} sebulan"
 }

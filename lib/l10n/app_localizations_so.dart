@@ -117,6 +117,74 @@ class AppLocalizationsSo extends AppLocalizations {
   String get dateOfMonth => 'Taariikhda bisha';
 
   @override
+  String get repeatMode => 'Ku celcelin';
+
+  @override
+  String get onSetDays => 'Maalmo la go\'aamiyay';
+
+  @override
+  String get onSetDates => 'Taariikho la go\'aamiyay';
+
+  @override
+  String get anyDayMode => 'Maalin kasta';
+
+  @override
+  String get datesOfMonth => 'Taariikhaha';
+
+  @override
+  String get daysPerWeekQuestion => 'Immisa maalmood toddobaadkii?';
+
+  @override
+  String get daysPerMonthQuestion => 'Immisa maalmood bishii?';
+
+  @override
+  String get pickAtLeastOneDay => 'Dooro ugu yaraan hal maalin';
+
+  @override
+  String get pickAtLeastOneDate => 'Dooro ugu yaraan hal taariikh';
+
+  @override
+  String get previewDaily => 'Wuxuu ku celcelinayaa maalin kasta';
+
+  @override
+  String previewWeeklyDays(String days) {
+    return 'Wuxuu ku celcelinayaa $days';
+  }
+
+  @override
+  String previewWeeklyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count maalmood',
+      one: 'hal maalin',
+    );
+    return 'Wuxuu ku celcelinayaa $_temp0 toddobaadkii';
+  }
+
+  @override
+  String previewMonthlyDates(int count, String dates) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Wuxuu ku celcelinayaa maalmaha $dates ee bil kasta',
+      one: 'Wuxuu ku celcelinayaa maalinta $dates ee bil kasta',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String previewMonthlyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count maalmood',
+      one: 'hal maalin',
+    );
+    return 'Wuxuu ku celcelinayaa $_temp0 bishii';
+  }
+
+  @override
   String get anyDate => 'Taariikh kasta';
 
   @override

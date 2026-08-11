@@ -4,6 +4,7 @@ import '../../core/time/period.dart';
 import '../../data/db/database.dart';
 import '../models/app_settings.dart';
 import '../models/frequency.dart';
+import '../utils/monthly_dates.dart';
 import '../utils/weekly_days.dart';
 
 /// View-model for a single amal row in the Today / History list.
@@ -148,23 +149,26 @@ class TodayBuilder {
         if (days.isNotEmpty) {
           return days.contains(date.weekday);
         }
-        // Floating ("any day"): visible until completed once this week. Check
-        // completions BEFORE today so today's completion keeps it visible.
+        // Floating: visible until the week's day quota is met. The lookup ends
+        // at `date` (exclusive) so today's own completion keeps it visible for
+        // the rest of today, and it hides from tomorrow.
         final week = weekPeriodOf(date, settings.startOfWeek);
         final inWeek = await periodCompletionsOf(amal.id, week.start, date);
-        return !inWeek.any((c) => c.progress >= amal.target);
+        return _doneDays(inWeek, amal.target) < amal.periodTarget;
 
       case Frequency.monthly:
-        if (amal.monthlyDate != null) {
-          final dim = daysInMonth(date.year, date.month);
-          final targetDay = amal.monthlyDate! > dim ? dim : amal.monthlyDate!;
-          return date.day == targetDay;
+        final dates = parseMonthlyDates(amal.monthlyDates);
+        if (dates.isNotEmpty) {
+          return isScheduledMonthDate(dates, date);
         }
-        // Same as weekly: exclude today so the amal stays visible when
-        // completed, then hides starting tomorrow.
         final month = monthPeriodOf(date, settings.startOfMonth);
         final inMonth = await periodCompletionsOf(amal.id, month.start, date);
-        return !inMonth.any((c) => c.progress >= amal.target);
+        return _doneDays(inMonth, amal.target) < amal.periodTarget;
     }
   }
+
+  /// Number of days in [rows] that met [target]. `Completions` is unique per
+  /// (amalId, muhasabaDate), so one row is one day.
+  int _doneDays(List<CompletionRow> rows, int target) =>
+      rows.where((r) => r.progress >= target).length;
 }

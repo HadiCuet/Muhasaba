@@ -117,6 +117,74 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dateOfMonth => 'Date du mois';
 
   @override
+  String get repeatMode => 'Répétition';
+
+  @override
+  String get onSetDays => 'Jours définis';
+
+  @override
+  String get onSetDates => 'Dates définies';
+
+  @override
+  String get anyDayMode => 'N\'importe quel jour';
+
+  @override
+  String get datesOfMonth => 'Dates';
+
+  @override
+  String get daysPerWeekQuestion => 'Combien de jours par semaine ?';
+
+  @override
+  String get daysPerMonthQuestion => 'Combien de jours par mois ?';
+
+  @override
+  String get pickAtLeastOneDay => 'Choisissez au moins un jour';
+
+  @override
+  String get pickAtLeastOneDate => 'Choisissez au moins une date';
+
+  @override
+  String get previewDaily => 'Se répète tous les jours';
+
+  @override
+  String previewWeeklyDays(String days) {
+    return 'Se répète les $days';
+  }
+
+  @override
+  String previewWeeklyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count jours',
+      one: 'un jour',
+    );
+    return 'Se répète $_temp0 au choix par semaine';
+  }
+
+  @override
+  String previewMonthlyDates(int count, String dates) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Se répète les $dates de chaque mois',
+      one: 'Se répète le $dates de chaque mois',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String previewMonthlyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count jours',
+      one: 'un jour',
+    );
+    return 'Se répète $_temp0 au choix par mois';
+  }
+
+  @override
   String get anyDate => 'Toutes';
 
   @override

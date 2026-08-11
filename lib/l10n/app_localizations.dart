@@ -350,6 +350,90 @@ abstract class AppLocalizations {
   /// **'Date of month'**
   String get dateOfMonth;
 
+  /// No description provided for @repeatMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeat'**
+  String get repeatMode;
+
+  /// No description provided for @onSetDays.
+  ///
+  /// In en, this message translates to:
+  /// **'On set days'**
+  String get onSetDays;
+
+  /// No description provided for @onSetDates.
+  ///
+  /// In en, this message translates to:
+  /// **'On set dates'**
+  String get onSetDates;
+
+  /// No description provided for @anyDayMode.
+  ///
+  /// In en, this message translates to:
+  /// **'Any day'**
+  String get anyDayMode;
+
+  /// No description provided for @datesOfMonth.
+  ///
+  /// In en, this message translates to:
+  /// **'Dates'**
+  String get datesOfMonth;
+
+  /// No description provided for @daysPerWeekQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'On how many days a week?'**
+  String get daysPerWeekQuestion;
+
+  /// No description provided for @daysPerMonthQuestion.
+  ///
+  /// In en, this message translates to:
+  /// **'On how many days a month?'**
+  String get daysPerMonthQuestion;
+
+  /// No description provided for @pickAtLeastOneDay.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick at least one day'**
+  String get pickAtLeastOneDay;
+
+  /// No description provided for @pickAtLeastOneDate.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick at least one date'**
+  String get pickAtLeastOneDate;
+
+  /// No description provided for @previewDaily.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeats every day'**
+  String get previewDaily;
+
+  /// No description provided for @previewWeeklyDays.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeats every {days}'**
+  String previewWeeklyDays(String days);
+
+  /// No description provided for @previewWeeklyAny.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeats any {count, plural, =1{1 day} other{{count} days}} a week'**
+  String previewWeeklyAny(int count);
+
+  /// No description provided for @previewMonthlyDates.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Repeats on day {dates} of each month} other{Repeats on days {dates} of each month}}'**
+  String previewMonthlyDates(int count, String dates);
+
+  /// No description provided for @previewMonthlyAny.
+  ///
+  /// In en, this message translates to:
+  /// **'Repeats any {count, plural, =1{1 day} other{{count} days}} a month'**
+  String previewMonthlyAny(int count);
+
   /// No description provided for @anyDate.
   ///
   /// In en, this message translates to:

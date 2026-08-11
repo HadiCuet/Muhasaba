@@ -116,6 +116,72 @@ class AppLocalizationsTk extends AppLocalizations {
   String get dateOfMonth => 'Ayyn senesi';
 
   @override
+  String get repeatMode => 'Gaýtalanma';
+
+  @override
+  String get onSetDays => 'Bellenen günlerde';
+
+  @override
+  String get onSetDates => 'Bellenen senelerde';
+
+  @override
+  String get anyDayMode => 'Islendik gün';
+
+  @override
+  String get datesOfMonth => 'Seneler';
+
+  @override
+  String get daysPerWeekQuestion => 'Hepdede näçe gün?';
+
+  @override
+  String get daysPerMonthQuestion => 'Aýda näçe gün?';
+
+  @override
+  String get pickAtLeastOneDay => 'Iň bolmanda bir gün saýlaň';
+
+  @override
+  String get pickAtLeastOneDate => 'Iň bolmanda bir sene saýlaň';
+
+  @override
+  String get previewDaily => 'Her gün gaýtalanýar';
+
+  @override
+  String previewWeeklyDays(String days) {
+    return 'Her $days gaýtalanýar';
+  }
+
+  @override
+  String previewWeeklyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count gün',
+    );
+    return 'Hepdede islendik $_temp0 gaýtalanýar';
+  }
+
+  @override
+  String previewMonthlyDates(int count, String dates) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Her aýyň $dates günlerinde gaýtalanýar',
+      one: 'Her aýyň $dates gününde gaýtalanýar',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String previewMonthlyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count gün',
+    );
+    return 'Aýda islendik $_temp0 gaýtalanýar';
+  }
+
+  @override
   String get anyDate => 'Islendik';
 
   @override

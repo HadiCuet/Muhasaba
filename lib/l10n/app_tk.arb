@@ -266,5 +266,19 @@
   "genericError": "Bir zat ters gitdi. Ýene bir gezek synap görüň.",
   "notificationChannelName": "Amal ýatlatmalary",
   "notificationChannelDescription": "Yzarlaýan amallaryňyz üçin gündelik ýatlatmalar.",
-  "invalidAmalId": "Nädogry amal ID-si"
+  "invalidAmalId": "Nädogry amal ID-si",
+  "repeatMode": "Gaýtalanma",
+  "onSetDays": "Bellenen günlerde",
+  "onSetDates": "Bellenen senelerde",
+  "anyDayMode": "Islendik gün",
+  "datesOfMonth": "Seneler",
+  "daysPerWeekQuestion": "Hepdede näçe gün?",
+  "daysPerMonthQuestion": "Aýda näçe gün?",
+  "pickAtLeastOneDay": "Iň bolmanda bir gün saýlaň",
+  "pickAtLeastOneDate": "Iň bolmanda bir sene saýlaň",
+  "previewDaily": "Her gün gaýtalanýar",
+  "previewWeeklyDays": "Her {days} gaýtalanýar",
+  "previewWeeklyAny": "Hepdede islendik {count, plural, other{{count} gün}} gaýtalanýar",
+  "previewMonthlyDates": "{count, plural, =1{Her aýyň {dates} gününde gaýtalanýar} other{Her aýyň {dates} günlerinde gaýtalanýar}}",
+  "previewMonthlyAny": "Aýda islendik {count, plural, other{{count} gün}} gaýtalanýar"
 }

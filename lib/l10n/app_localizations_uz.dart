@@ -117,6 +117,72 @@ class AppLocalizationsUz extends AppLocalizations {
   String get dateOfMonth => 'Oy sanasi';
 
   @override
+  String get repeatMode => 'Takrorlanish';
+
+  @override
+  String get onSetDays => 'Belgilangan kunlarda';
+
+  @override
+  String get onSetDates => 'Belgilangan sanalarda';
+
+  @override
+  String get anyDayMode => 'Har qanday kun';
+
+  @override
+  String get datesOfMonth => 'Sanalar';
+
+  @override
+  String get daysPerWeekQuestion => 'Haftada necha kun?';
+
+  @override
+  String get daysPerMonthQuestion => 'Oyda necha kun?';
+
+  @override
+  String get pickAtLeastOneDay => 'Kamida bitta kun tanlang';
+
+  @override
+  String get pickAtLeastOneDate => 'Kamida bitta sana tanlang';
+
+  @override
+  String get previewDaily => 'Har kuni takrorlanadi';
+
+  @override
+  String previewWeeklyDays(String days) {
+    return 'Har $days takrorlanadi';
+  }
+
+  @override
+  String previewWeeklyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count kun',
+    );
+    return 'Haftada istalgan $_temp0 takrorlanadi';
+  }
+
+  @override
+  String previewMonthlyDates(int count, String dates) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Har oyning $dates kunlarida takrorlanadi',
+      one: 'Har oyning $dates kunida takrorlanadi',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String previewMonthlyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count kun',
+    );
+    return 'Oyda istalgan $_temp0 takrorlanadi';
+  }
+
+  @override
   String get anyDate => 'Har qanday';
 
   @override

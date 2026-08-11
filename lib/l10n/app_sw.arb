@@ -266,5 +266,19 @@
   "genericError": "Kitu fulani kimekwenda vibaya. Tafadhali jaribu tena.",
   "notificationChannelName": "Vikumbusho vya amali",
   "notificationChannelDescription": "Vikumbusho vya kila siku vya amali unazofuatilia.",
-  "invalidAmalId": "Kitambulisho batili cha amali"
+  "invalidAmalId": "Kitambulisho batili cha amali",
+  "repeatMode": "Kurudia",
+  "onSetDays": "Siku maalum",
+  "onSetDates": "Tarehe maalum",
+  "anyDayMode": "Siku yoyote",
+  "datesOfMonth": "Tarehe",
+  "daysPerWeekQuestion": "Siku ngapi kwa wiki?",
+  "daysPerMonthQuestion": "Siku ngapi kwa mwezi?",
+  "pickAtLeastOneDay": "Chagua angalau siku moja",
+  "pickAtLeastOneDate": "Chagua angalau tarehe moja",
+  "previewDaily": "Hurudiwa kila siku",
+  "previewWeeklyDays": "Hurudiwa kila {days}",
+  "previewWeeklyAny": "Hurudiwa {count, plural, =1{siku moja yoyote} other{siku {count} zozote}} kwa wiki",
+  "previewMonthlyDates": "{count, plural, =1{Hurudiwa tarehe {dates} ya kila mwezi} other{Hurudiwa tarehe {dates} za kila mwezi}}",
+  "previewMonthlyAny": "Hurudiwa {count, plural, =1{siku moja yoyote} other{siku {count} zozote}} kwa mwezi"
 }

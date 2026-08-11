@@ -117,6 +117,74 @@ class AppLocalizationsTg extends AppLocalizations {
   String get dateOfMonth => 'Санаи мох';
 
   @override
+  String get repeatMode => 'Такрор';
+
+  @override
+  String get onSetDays => 'Дар рӯзҳои муайян';
+
+  @override
+  String get onSetDates => 'Дар санаҳои муайян';
+
+  @override
+  String get anyDayMode => 'Ҳар рӯз';
+
+  @override
+  String get datesOfMonth => 'Санаҳо';
+
+  @override
+  String get daysPerWeekQuestion => 'Дар як ҳафта чанд рӯз?';
+
+  @override
+  String get daysPerMonthQuestion => 'Дар як моҳ чанд рӯз?';
+
+  @override
+  String get pickAtLeastOneDay => 'Ҳадди ақал як рӯзро интихоб кунед';
+
+  @override
+  String get pickAtLeastOneDate => 'Ҳадди ақал як санаро интихоб кунед';
+
+  @override
+  String get previewDaily => 'Ҳар рӯз такрор мешавад';
+
+  @override
+  String previewWeeklyDays(String days) {
+    return 'Ҳар $days такрор мешавад';
+  }
+
+  @override
+  String previewWeeklyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count рӯз',
+      one: 'як рӯз',
+    );
+    return 'Дар як ҳафта дар ҳар $_temp0 такрор мешавад';
+  }
+
+  @override
+  String previewMonthlyDates(int count, String dates) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Дар рӯзҳои $dates-и ҳар моҳ такрор мешавад',
+      one: 'Дар рӯзи $dates-и ҳар моҳ такрор мешавад',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String previewMonthlyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count рӯз',
+      one: 'як рӯз',
+    );
+    return 'Дар як моҳ дар ҳар $_temp0 такрор мешавад';
+  }
+
+  @override
   String get anyDate => 'Хар сана';
 
   @override

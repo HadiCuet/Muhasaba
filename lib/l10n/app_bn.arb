@@ -266,5 +266,19 @@
   "genericError": "কিছু একটা ভুল হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।",
   "notificationChannelName": "আমলের রিমাইন্ডার",
   "notificationChannelDescription": "আপনার ট্র্যাক করা আমলের দৈনিক রিমাইন্ডার।",
-  "invalidAmalId": "অবৈধ আমল আইডি"
+  "invalidAmalId": "অবৈধ আমল আইডি",
+  "repeatMode": "পুনরাবৃত্তির ধরন",
+  "onSetDays": "নির্দিষ্ট দিনে",
+  "onSetDates": "নির্দিষ্ট তারিখে",
+  "anyDayMode": "যেকোনো দিন",
+  "datesOfMonth": "তারিখ",
+  "daysPerWeekQuestion": "সপ্তাহে কয় দিন?",
+  "daysPerMonthQuestion": "মাসে কয় দিন?",
+  "pickAtLeastOneDay": "অন্তত একটি দিন নির্বাচন করুন",
+  "pickAtLeastOneDate": "অন্তত একটি তারিখ নির্বাচন করুন",
+  "previewDaily": "প্রতিদিন পুনরাবৃত্তি হয়",
+  "previewWeeklyDays": "প্রতি {days} পুনরাবৃত্তি হয়",
+  "previewWeeklyAny": "সপ্তাহে যেকোনো {count, plural, =1{এক দিন} other{{count} দিন}} পুনরাবৃত্তি হয়",
+  "previewMonthlyDates": "{count, plural, other{প্রতি মাসের {dates} তারিখে পুনরাবৃত্তি হয়}}",
+  "previewMonthlyAny": "মাসে যেকোনো {count, plural, =1{এক দিন} other{{count} দিন}} পুনরাবৃত্তি হয়"
 }

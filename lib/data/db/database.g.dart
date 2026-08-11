@@ -86,6 +86,29 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
     type: DriftSqlType.int,
     requiredDuringInsert: false,
   );
+  static const VerificationMeta _monthlyDatesMeta = const VerificationMeta(
+    'monthlyDates',
+  );
+  @override
+  late final GeneratedColumn<String> monthlyDates = GeneratedColumn<String>(
+    'monthly_dates',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _periodTargetMeta = const VerificationMeta(
+    'periodTarget',
+  );
+  @override
+  late final GeneratedColumn<int> periodTarget = GeneratedColumn<int>(
+    'period_target',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(1),
+  );
   static const VerificationMeta _defaultCheckedMeta = const VerificationMeta(
     'defaultChecked',
   );
@@ -189,6 +212,8 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
     weeklyDay,
     weeklyDays,
     monthlyDate,
+    monthlyDates,
+    periodTarget,
     defaultChecked,
     reminderTime,
     sortOrder,
@@ -245,6 +270,24 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
         monthlyDate.isAcceptableOrUnknown(
           data['monthly_date']!,
           _monthlyDateMeta,
+        ),
+      );
+    }
+    if (data.containsKey('monthly_dates')) {
+      context.handle(
+        _monthlyDatesMeta,
+        monthlyDates.isAcceptableOrUnknown(
+          data['monthly_dates']!,
+          _monthlyDatesMeta,
+        ),
+      );
+    }
+    if (data.containsKey('period_target')) {
+      context.handle(
+        _periodTargetMeta,
+        periodTarget.isAcceptableOrUnknown(
+          data['period_target']!,
+          _periodTargetMeta,
         ),
       );
     }
@@ -343,6 +386,14 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
         DriftSqlType.int,
         data['${effectivePrefix}monthly_date'],
       ),
+      monthlyDates: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}monthly_dates'],
+      ),
+      periodTarget: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}period_target'],
+      )!,
       defaultChecked: attachedDatabase.typeMapping.read(
         DriftSqlType.bool,
         data['${effectivePrefix}default_checked'],
@@ -395,6 +446,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
   final int? weeklyDay;
   final String? weeklyDays;
   final int? monthlyDate;
+  final String? monthlyDates;
+  final int periodTarget;
   final bool defaultChecked;
   final String? reminderTime;
   final int sortOrder;
@@ -411,6 +464,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     this.weeklyDay,
     this.weeklyDays,
     this.monthlyDate,
+    this.monthlyDates,
+    required this.periodTarget,
     required this.defaultChecked,
     this.reminderTime,
     required this.sortOrder,
@@ -440,6 +495,10 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     if (!nullToAbsent || monthlyDate != null) {
       map['monthly_date'] = Variable<int>(monthlyDate);
     }
+    if (!nullToAbsent || monthlyDates != null) {
+      map['monthly_dates'] = Variable<String>(monthlyDates);
+    }
+    map['period_target'] = Variable<int>(periodTarget);
     map['default_checked'] = Variable<bool>(defaultChecked);
     if (!nullToAbsent || reminderTime != null) {
       map['reminder_time'] = Variable<String>(reminderTime);
@@ -472,6 +531,10 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
       monthlyDate: monthlyDate == null && nullToAbsent
           ? const Value.absent()
           : Value(monthlyDate),
+      monthlyDates: monthlyDates == null && nullToAbsent
+          ? const Value.absent()
+          : Value(monthlyDates),
+      periodTarget: Value(periodTarget),
       defaultChecked: Value(defaultChecked),
       reminderTime: reminderTime == null && nullToAbsent
           ? const Value.absent()
@@ -504,6 +567,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
       weeklyDay: serializer.fromJson<int?>(json['weeklyDay']),
       weeklyDays: serializer.fromJson<String?>(json['weeklyDays']),
       monthlyDate: serializer.fromJson<int?>(json['monthlyDate']),
+      monthlyDates: serializer.fromJson<String?>(json['monthlyDates']),
+      periodTarget: serializer.fromJson<int>(json['periodTarget']),
       defaultChecked: serializer.fromJson<bool>(json['defaultChecked']),
       reminderTime: serializer.fromJson<String?>(json['reminderTime']),
       sortOrder: serializer.fromJson<int>(json['sortOrder']),
@@ -527,6 +592,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
       'weeklyDay': serializer.toJson<int?>(weeklyDay),
       'weeklyDays': serializer.toJson<String?>(weeklyDays),
       'monthlyDate': serializer.toJson<int?>(monthlyDate),
+      'monthlyDates': serializer.toJson<String?>(monthlyDates),
+      'periodTarget': serializer.toJson<int>(periodTarget),
       'defaultChecked': serializer.toJson<bool>(defaultChecked),
       'reminderTime': serializer.toJson<String?>(reminderTime),
       'sortOrder': serializer.toJson<int>(sortOrder),
@@ -546,6 +613,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     Value<int?> weeklyDay = const Value.absent(),
     Value<String?> weeklyDays = const Value.absent(),
     Value<int?> monthlyDate = const Value.absent(),
+    Value<String?> monthlyDates = const Value.absent(),
+    int? periodTarget,
     bool? defaultChecked,
     Value<String?> reminderTime = const Value.absent(),
     int? sortOrder,
@@ -562,6 +631,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     weeklyDay: weeklyDay.present ? weeklyDay.value : this.weeklyDay,
     weeklyDays: weeklyDays.present ? weeklyDays.value : this.weeklyDays,
     monthlyDate: monthlyDate.present ? monthlyDate.value : this.monthlyDate,
+    monthlyDates: monthlyDates.present ? monthlyDates.value : this.monthlyDates,
+    periodTarget: periodTarget ?? this.periodTarget,
     defaultChecked: defaultChecked ?? this.defaultChecked,
     reminderTime: reminderTime.present ? reminderTime.value : this.reminderTime,
     sortOrder: sortOrder ?? this.sortOrder,
@@ -584,6 +655,12 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
       monthlyDate: data.monthlyDate.present
           ? data.monthlyDate.value
           : this.monthlyDate,
+      monthlyDates: data.monthlyDates.present
+          ? data.monthlyDates.value
+          : this.monthlyDates,
+      periodTarget: data.periodTarget.present
+          ? data.periodTarget.value
+          : this.periodTarget,
       defaultChecked: data.defaultChecked.present
           ? data.defaultChecked.value
           : this.defaultChecked,
@@ -611,6 +688,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
           ..write('weeklyDay: $weeklyDay, ')
           ..write('weeklyDays: $weeklyDays, ')
           ..write('monthlyDate: $monthlyDate, ')
+          ..write('monthlyDates: $monthlyDates, ')
+          ..write('periodTarget: $periodTarget, ')
           ..write('defaultChecked: $defaultChecked, ')
           ..write('reminderTime: $reminderTime, ')
           ..write('sortOrder: $sortOrder, ')
@@ -632,6 +711,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     weeklyDay,
     weeklyDays,
     monthlyDate,
+    monthlyDates,
+    periodTarget,
     defaultChecked,
     reminderTime,
     sortOrder,
@@ -652,6 +733,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
           other.weeklyDay == this.weeklyDay &&
           other.weeklyDays == this.weeklyDays &&
           other.monthlyDate == this.monthlyDate &&
+          other.monthlyDates == this.monthlyDates &&
+          other.periodTarget == this.periodTarget &&
           other.defaultChecked == this.defaultChecked &&
           other.reminderTime == this.reminderTime &&
           other.sortOrder == this.sortOrder &&
@@ -670,6 +753,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
   final Value<int?> weeklyDay;
   final Value<String?> weeklyDays;
   final Value<int?> monthlyDate;
+  final Value<String?> monthlyDates;
+  final Value<int> periodTarget;
   final Value<bool> defaultChecked;
   final Value<String?> reminderTime;
   final Value<int> sortOrder;
@@ -686,6 +771,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     this.weeklyDay = const Value.absent(),
     this.weeklyDays = const Value.absent(),
     this.monthlyDate = const Value.absent(),
+    this.monthlyDates = const Value.absent(),
+    this.periodTarget = const Value.absent(),
     this.defaultChecked = const Value.absent(),
     this.reminderTime = const Value.absent(),
     this.sortOrder = const Value.absent(),
@@ -703,6 +790,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     this.weeklyDay = const Value.absent(),
     this.weeklyDays = const Value.absent(),
     this.monthlyDate = const Value.absent(),
+    this.monthlyDates = const Value.absent(),
+    this.periodTarget = const Value.absent(),
     this.defaultChecked = const Value.absent(),
     this.reminderTime = const Value.absent(),
     this.sortOrder = const Value.absent(),
@@ -722,6 +811,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     Expression<int>? weeklyDay,
     Expression<String>? weeklyDays,
     Expression<int>? monthlyDate,
+    Expression<String>? monthlyDates,
+    Expression<int>? periodTarget,
     Expression<bool>? defaultChecked,
     Expression<String>? reminderTime,
     Expression<int>? sortOrder,
@@ -739,6 +830,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
       if (weeklyDay != null) 'weekly_day': weeklyDay,
       if (weeklyDays != null) 'weekly_days': weeklyDays,
       if (monthlyDate != null) 'monthly_date': monthlyDate,
+      if (monthlyDates != null) 'monthly_dates': monthlyDates,
+      if (periodTarget != null) 'period_target': periodTarget,
       if (defaultChecked != null) 'default_checked': defaultChecked,
       if (reminderTime != null) 'reminder_time': reminderTime,
       if (sortOrder != null) 'sort_order': sortOrder,
@@ -758,6 +851,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     Value<int?>? weeklyDay,
     Value<String?>? weeklyDays,
     Value<int?>? monthlyDate,
+    Value<String?>? monthlyDates,
+    Value<int>? periodTarget,
     Value<bool>? defaultChecked,
     Value<String?>? reminderTime,
     Value<int>? sortOrder,
@@ -775,6 +870,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
       weeklyDay: weeklyDay ?? this.weeklyDay,
       weeklyDays: weeklyDays ?? this.weeklyDays,
       monthlyDate: monthlyDate ?? this.monthlyDate,
+      monthlyDates: monthlyDates ?? this.monthlyDates,
+      periodTarget: periodTarget ?? this.periodTarget,
       defaultChecked: defaultChecked ?? this.defaultChecked,
       reminderTime: reminderTime ?? this.reminderTime,
       sortOrder: sortOrder ?? this.sortOrder,
@@ -811,6 +908,12 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     }
     if (monthlyDate.present) {
       map['monthly_date'] = Variable<int>(monthlyDate.value);
+    }
+    if (monthlyDates.present) {
+      map['monthly_dates'] = Variable<String>(monthlyDates.value);
+    }
+    if (periodTarget.present) {
+      map['period_target'] = Variable<int>(periodTarget.value);
     }
     if (defaultChecked.present) {
       map['default_checked'] = Variable<bool>(defaultChecked.value);
@@ -849,6 +952,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
           ..write('weeklyDay: $weeklyDay, ')
           ..write('weeklyDays: $weeklyDays, ')
           ..write('monthlyDate: $monthlyDate, ')
+          ..write('monthlyDates: $monthlyDates, ')
+          ..write('periodTarget: $periodTarget, ')
           ..write('defaultChecked: $defaultChecked, ')
           ..write('reminderTime: $reminderTime, ')
           ..write('sortOrder: $sortOrder, ')
@@ -2017,6 +2122,8 @@ typedef $$AmalsTableCreateCompanionBuilder =
       Value<int?> weeklyDay,
       Value<String?> weeklyDays,
       Value<int?> monthlyDate,
+      Value<String?> monthlyDates,
+      Value<int> periodTarget,
       Value<bool> defaultChecked,
       Value<String?> reminderTime,
       Value<int> sortOrder,
@@ -2035,6 +2142,8 @@ typedef $$AmalsTableUpdateCompanionBuilder =
       Value<int?> weeklyDay,
       Value<String?> weeklyDays,
       Value<int?> monthlyDate,
+      Value<String?> monthlyDates,
+      Value<int> periodTarget,
       Value<bool> defaultChecked,
       Value<String?> reminderTime,
       Value<int> sortOrder,
@@ -2127,6 +2236,16 @@ class $$AmalsTableFilterComposer extends Composer<_$AppDatabase, $AmalsTable> {
 
   ColumnFilters<int> get monthlyDate => $composableBuilder(
     column: $table.monthlyDate,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get monthlyDates => $composableBuilder(
+    column: $table.monthlyDates,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get periodTarget => $composableBuilder(
+    column: $table.periodTarget,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -2265,6 +2384,16 @@ class $$AmalsTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<String> get monthlyDates => $composableBuilder(
+    column: $table.monthlyDates,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get periodTarget => $composableBuilder(
+    column: $table.periodTarget,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<bool> get defaultChecked => $composableBuilder(
     column: $table.defaultChecked,
     builder: (column) => ColumnOrderings(column),
@@ -2337,6 +2466,16 @@ class $$AmalsTableAnnotationComposer
 
   GeneratedColumn<int> get monthlyDate => $composableBuilder(
     column: $table.monthlyDate,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<String> get monthlyDates => $composableBuilder(
+    column: $table.monthlyDates,
+    builder: (column) => column,
+  );
+
+  GeneratedColumn<int> get periodTarget => $composableBuilder(
+    column: $table.periodTarget,
     builder: (column) => column,
   );
 
@@ -2456,6 +2595,8 @@ class $$AmalsTableTableManager
                 Value<int?> weeklyDay = const Value.absent(),
                 Value<String?> weeklyDays = const Value.absent(),
                 Value<int?> monthlyDate = const Value.absent(),
+                Value<String?> monthlyDates = const Value.absent(),
+                Value<int> periodTarget = const Value.absent(),
                 Value<bool> defaultChecked = const Value.absent(),
                 Value<String?> reminderTime = const Value.absent(),
                 Value<int> sortOrder = const Value.absent(),
@@ -2472,6 +2613,8 @@ class $$AmalsTableTableManager
                 weeklyDay: weeklyDay,
                 weeklyDays: weeklyDays,
                 monthlyDate: monthlyDate,
+                monthlyDates: monthlyDates,
+                periodTarget: periodTarget,
                 defaultChecked: defaultChecked,
                 reminderTime: reminderTime,
                 sortOrder: sortOrder,
@@ -2490,6 +2633,8 @@ class $$AmalsTableTableManager
                 Value<int?> weeklyDay = const Value.absent(),
                 Value<String?> weeklyDays = const Value.absent(),
                 Value<int?> monthlyDate = const Value.absent(),
+                Value<String?> monthlyDates = const Value.absent(),
+                Value<int> periodTarget = const Value.absent(),
                 Value<bool> defaultChecked = const Value.absent(),
                 Value<String?> reminderTime = const Value.absent(),
                 Value<int> sortOrder = const Value.absent(),
@@ -2506,6 +2651,8 @@ class $$AmalsTableTableManager
                 weeklyDay: weeklyDay,
                 weeklyDays: weeklyDays,
                 monthlyDate: monthlyDate,
+                monthlyDates: monthlyDates,
+                periodTarget: periodTarget,
                 defaultChecked: defaultChecked,
                 reminderTime: reminderTime,
                 sortOrder: sortOrder,

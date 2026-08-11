@@ -116,6 +116,71 @@ class AppLocalizationsMs extends AppLocalizations {
   String get dateOfMonth => 'Tarikh dalam bulan';
 
   @override
+  String get repeatMode => 'Ulangan';
+
+  @override
+  String get onSetDays => 'Pada hari tertentu';
+
+  @override
+  String get onSetDates => 'Pada tarikh tertentu';
+
+  @override
+  String get anyDayMode => 'Mana-mana hari';
+
+  @override
+  String get datesOfMonth => 'Tarikh';
+
+  @override
+  String get daysPerWeekQuestion => 'Berapa hari dalam seminggu?';
+
+  @override
+  String get daysPerMonthQuestion => 'Berapa hari dalam sebulan?';
+
+  @override
+  String get pickAtLeastOneDay => 'Pilih sekurang-kurangnya satu hari';
+
+  @override
+  String get pickAtLeastOneDate => 'Pilih sekurang-kurangnya satu tarikh';
+
+  @override
+  String get previewDaily => 'Berulang setiap hari';
+
+  @override
+  String previewWeeklyDays(String days) {
+    return 'Berulang setiap $days';
+  }
+
+  @override
+  String previewWeeklyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count hari',
+    );
+    return 'Berulang mana-mana $_temp0 seminggu';
+  }
+
+  @override
+  String previewMonthlyDates(int count, String dates) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Berulang pada $dates haribulan setiap bulan',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String previewMonthlyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count hari',
+    );
+    return 'Berulang mana-mana $_temp0 sebulan';
+  }
+
+  @override
   String get anyDate => 'Mana-mana';
 
   @override

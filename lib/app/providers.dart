@@ -13,6 +13,7 @@ import '../domain/models/frequency.dart';
 import '../domain/services/reminder_scheduler.dart';
 import '../domain/services/stats_service.dart';
 import '../domain/services/today_builder.dart';
+import '../domain/utils/monthly_dates.dart';
 import '../domain/utils/weekly_days.dart';
 
 /// The single `AppDatabase` instance, owned by the provider container.
@@ -243,7 +244,8 @@ bool _staticIsVisibleOnDate(AmalRow a, DateTime date) {
       final days = parseWeeklyDays(a.weeklyDays);
       return days.isEmpty || days.contains(date.weekday);
     case Frequency.monthly:
-      return a.monthlyDate == null || date.day == a.monthlyDate;
+      final dates = parseMonthlyDates(a.monthlyDates);
+      return dates.isEmpty || isScheduledMonthDate(dates, date);
   }
 }
 

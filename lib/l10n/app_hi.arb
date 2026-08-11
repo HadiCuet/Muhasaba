@@ -266,5 +266,19 @@
   "genericError": "कुछ गलत हो गया। कृपया पुनः प्रयास करें।",
   "notificationChannelName": "अमल रिमाइंडर",
   "notificationChannelDescription": "आपके ट्रैक किए गए अमल के लिए दैनिक रिमाइंडर।",
-  "invalidAmalId": "अमान्य अमल आईडी"
+  "invalidAmalId": "अमान्य अमल आईडी",
+  "repeatMode": "दोहराव",
+  "onSetDays": "निश्चित दिनों में",
+  "onSetDates": "निश्चित तारीख़ों में",
+  "anyDayMode": "कोई भी दिन",
+  "datesOfMonth": "तारीख़ें",
+  "daysPerWeekQuestion": "सप्ताह में कितने दिन?",
+  "daysPerMonthQuestion": "महीने में कितने दिन?",
+  "pickAtLeastOneDay": "कम से कम एक दिन चुनें",
+  "pickAtLeastOneDate": "कम से कम एक तारीख़ चुनें",
+  "previewDaily": "हर दिन दोहराता है",
+  "previewWeeklyDays": "हर {days} को दोहराता है",
+  "previewWeeklyAny": "सप्ताह में किसी भी {count, plural, =1{एक दिन} other{{count} दिनों}} को दोहराता है",
+  "previewMonthlyDates": "{count, plural, =1{हर महीने की {dates} तारीख़ को दोहराता है} other{हर महीने की {dates} तारीख़ों को दोहराता है}}",
+  "previewMonthlyAny": "महीने में किसी भी {count, plural, =1{एक दिन} other{{count} दिनों}} को दोहराता है"
 }

@@ -266,5 +266,19 @@
   "genericError": "Хатогие рух дод. Лутфан дубора кӯшиш кунед.",
   "notificationChannelName": "Ёдоварии амалҳо",
   "notificationChannelDescription": "Барои амалҳои пайгиришавандаи шумо ёдоварии ҳаррӯза.",
-  "invalidAmalId": "Идентификатори амали нодуруст"
+  "invalidAmalId": "Идентификатори амали нодуруст",
+  "repeatMode": "Такрор",
+  "onSetDays": "Дар рӯзҳои муайян",
+  "onSetDates": "Дар санаҳои муайян",
+  "anyDayMode": "Ҳар рӯз",
+  "datesOfMonth": "Санаҳо",
+  "daysPerWeekQuestion": "Дар як ҳафта чанд рӯз?",
+  "daysPerMonthQuestion": "Дар як моҳ чанд рӯз?",
+  "pickAtLeastOneDay": "Ҳадди ақал як рӯзро интихоб кунед",
+  "pickAtLeastOneDate": "Ҳадди ақал як санаро интихоб кунед",
+  "previewDaily": "Ҳар рӯз такрор мешавад",
+  "previewWeeklyDays": "Ҳар {days} такрор мешавад",
+  "previewWeeklyAny": "Дар як ҳафта дар ҳар {count, plural, =1{як рӯз} other{{count} рӯз}} такрор мешавад",
+  "previewMonthlyDates": "{count, plural, =1{Дар рӯзи {dates}-и ҳар моҳ такрор мешавад} other{Дар рӯзҳои {dates}-и ҳар моҳ такрор мешавад}}",
+  "previewMonthlyAny": "Дар як моҳ дар ҳар {count, plural, =1{як рӯз} other{{count} рӯз}} такрор мешавад"
 }

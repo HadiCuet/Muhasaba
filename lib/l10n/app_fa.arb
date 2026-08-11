@@ -266,5 +266,19 @@
   "genericError": "مشکلی پیش آمد. لطفاً دوباره تلاش کنید.",
   "notificationChannelName": "یادآوری اعمال",
   "notificationChannelDescription": "یادآوری‌های روزانه برای اعمالی که دنبال می‌کنید.",
-  "invalidAmalId": "شناسه عمل نامعتبر"
+  "invalidAmalId": "شناسه عمل نامعتبر",
+  "repeatMode": "نوع تکرار",
+  "onSetDays": "در روزهای مشخص",
+  "onSetDates": "در تاریخ‌های مشخص",
+  "anyDayMode": "هر روز",
+  "datesOfMonth": "تاریخ‌ها",
+  "daysPerWeekQuestion": "چند روز در هفته؟",
+  "daysPerMonthQuestion": "چند روز در ماه؟",
+  "pickAtLeastOneDay": "حداقل یک روز انتخاب کنید",
+  "pickAtLeastOneDate": "حداقل یک تاریخ انتخاب کنید",
+  "previewDaily": "هر روز تکرار می‌شود",
+  "previewWeeklyDays": "هر {days} تکرار می‌شود",
+  "previewWeeklyAny": "هفته‌ای {count, plural, =1{یک روز} other{{count} روز}} دلخواه تکرار می‌شود",
+  "previewMonthlyDates": "{count, plural, =1{روز {dates} هر ماه تکرار می‌شود} other{روزهای {dates} هر ماه تکرار می‌شود}}",
+  "previewMonthlyAny": "ماهی {count, plural, =1{یک روز} other{{count} روز}} دلخواه تکرار می‌شود"
 }

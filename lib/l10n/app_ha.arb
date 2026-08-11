@@ -266,5 +266,19 @@
   "genericError": "Wani abu ya kasa. Da fatan a sake gwadawa.",
   "notificationChannelName": "Tunatarwar ayyuka",
   "notificationChannelDescription": "Tunatarwa ta yau da kullum don ayyukan da kuke bibiya.",
-  "invalidAmalId": "ID na aiki mara inganci"
+  "invalidAmalId": "ID na aiki mara inganci",
+  "repeatMode": "Maimaitawa",
+  "onSetDays": "A kwanakin da aka ƙayyade",
+  "onSetDates": "A kwanan watan da aka ƙayyade",
+  "anyDayMode": "Kowace rana",
+  "datesOfMonth": "Kwanakin wata",
+  "daysPerWeekQuestion": "Kwana nawa a mako?",
+  "daysPerMonthQuestion": "Kwana nawa a wata?",
+  "pickAtLeastOneDay": "Zaɓi aƙalla rana ɗaya",
+  "pickAtLeastOneDate": "Zaɓi aƙalla kwana ɗaya",
+  "previewDaily": "Yana maimaituwa kowace rana",
+  "previewWeeklyDays": "Yana maimaituwa kowace {days}",
+  "previewWeeklyAny": "Yana maimaituwa {count, plural, =1{rana ɗaya} other{ranaku {count}}} a kowane mako",
+  "previewMonthlyDates": "{count, plural, =1{Yana maimaituwa a ranar {dates} ta kowane wata} other{Yana maimaituwa a kwanakin {dates} na kowane wata}}",
+  "previewMonthlyAny": "Yana maimaituwa {count, plural, =1{rana ɗaya} other{ranaku {count}}} a kowane wata"
 }

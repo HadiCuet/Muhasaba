@@ -266,5 +266,19 @@
   "genericError": "Terjadi kesalahan. Silakan coba lagi.",
   "notificationChannelName": "Pengingat amal",
   "notificationChannelDescription": "Pengingat harian untuk amal yang Anda lacak.",
-  "invalidAmalId": "ID amal tidak valid"
+  "invalidAmalId": "ID amal tidak valid",
+  "repeatMode": "Pengulangan",
+  "onSetDays": "Pada hari tertentu",
+  "onSetDates": "Pada tanggal tertentu",
+  "anyDayMode": "Hari apa saja",
+  "datesOfMonth": "Tanggal",
+  "daysPerWeekQuestion": "Berapa hari dalam seminggu?",
+  "daysPerMonthQuestion": "Berapa hari dalam sebulan?",
+  "pickAtLeastOneDay": "Pilih setidaknya satu hari",
+  "pickAtLeastOneDate": "Pilih setidaknya satu tanggal",
+  "previewDaily": "Berulang setiap hari",
+  "previewWeeklyDays": "Berulang setiap {days}",
+  "previewWeeklyAny": "Berulang {count, plural, other{{count} hari}} mana saja dalam seminggu",
+  "previewMonthlyDates": "{count, plural, other{Berulang pada tanggal {dates} setiap bulan}}",
+  "previewMonthlyAny": "Berulang {count, plural, other{{count} hari}} mana saja dalam sebulan"
 }

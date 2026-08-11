@@ -21,7 +21,7 @@ class AppDatabase extends _$AppDatabase {
     : super(executor ?? driftDatabase(name: 'muhasaba'));
 
   @override
-  int get schemaVersion => 5;
+  int get schemaVersion => 6;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -81,9 +81,7 @@ class AppDatabase extends _$AppDatabase {
           TableMigration(
             amals,
             columnTransformer: {
-              amals.icon: const CustomExpression<String>(
-                "COALESCE(icon, '⭐')",
-              ),
+              amals.icon: const CustomExpression<String>("COALESCE(icon, '⭐')"),
             },
           ),
         );
@@ -97,6 +95,20 @@ class AppDatabase extends _$AppDatabase {
           "UPDATE amals SET weekly_days = CAST(weekly_day AS TEXT) "
           "WHERE weekly_day IS NOT NULL "
           "AND (weekly_days IS NULL OR weekly_days = '')",
+        );
+      }
+      if (from < 6) {
+        if (!await _hasColumn('amals', 'monthly_dates')) {
+          await m.addColumn(amals, amals.monthlyDates);
+        }
+        if (!await _hasColumn('amals', 'period_target')) {
+          await m.addColumn(amals, amals.periodTarget);
+        }
+        // Carry single-date monthly amals into the multi-date column.
+        await customStatement(
+          "UPDATE amals SET monthly_dates = CAST(monthly_date AS TEXT) "
+          "WHERE monthly_date IS NOT NULL "
+          "AND (monthly_dates IS NULL OR monthly_dates = '')",
         );
       }
     },

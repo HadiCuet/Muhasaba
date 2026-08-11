@@ -116,6 +116,74 @@ class AppLocalizationsFa extends AppLocalizations {
   String get dateOfMonth => 'تاریخ ماه';
 
   @override
+  String get repeatMode => 'نوع تکرار';
+
+  @override
+  String get onSetDays => 'در روزهای مشخص';
+
+  @override
+  String get onSetDates => 'در تاریخ‌های مشخص';
+
+  @override
+  String get anyDayMode => 'هر روز';
+
+  @override
+  String get datesOfMonth => 'تاریخ‌ها';
+
+  @override
+  String get daysPerWeekQuestion => 'چند روز در هفته؟';
+
+  @override
+  String get daysPerMonthQuestion => 'چند روز در ماه؟';
+
+  @override
+  String get pickAtLeastOneDay => 'حداقل یک روز انتخاب کنید';
+
+  @override
+  String get pickAtLeastOneDate => 'حداقل یک تاریخ انتخاب کنید';
+
+  @override
+  String get previewDaily => 'هر روز تکرار می‌شود';
+
+  @override
+  String previewWeeklyDays(String days) {
+    return 'هر $days تکرار می‌شود';
+  }
+
+  @override
+  String previewWeeklyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count روز',
+      one: 'یک روز',
+    );
+    return 'هفته‌ای $_temp0 دلخواه تکرار می‌شود';
+  }
+
+  @override
+  String previewMonthlyDates(int count, String dates) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'روزهای $dates هر ماه تکرار می‌شود',
+      one: 'روز $dates هر ماه تکرار می‌شود',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String previewMonthlyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count روز',
+      one: 'یک روز',
+    );
+    return 'ماهی $_temp0 دلخواه تکرار می‌شود';
+  }
+
+  @override
   String get anyDate => 'هر تاریخ';
 
   @override

@@ -266,5 +266,19 @@
   "genericError": "Nimadur noto'g'ri ketdi. Iltimos, qayta urinib ko'ring.",
   "notificationChannelName": "Amal eslatmalari",
   "notificationChannelDescription": "Siz kuzatayotgan amallar uchun kunlik eslatmalar.",
-  "invalidAmalId": "Yaroqsiz amal identifikatori"
+  "invalidAmalId": "Yaroqsiz amal identifikatori",
+  "repeatMode": "Takrorlanish",
+  "onSetDays": "Belgilangan kunlarda",
+  "onSetDates": "Belgilangan sanalarda",
+  "anyDayMode": "Har qanday kun",
+  "datesOfMonth": "Sanalar",
+  "daysPerWeekQuestion": "Haftada necha kun?",
+  "daysPerMonthQuestion": "Oyda necha kun?",
+  "pickAtLeastOneDay": "Kamida bitta kun tanlang",
+  "pickAtLeastOneDate": "Kamida bitta sana tanlang",
+  "previewDaily": "Har kuni takrorlanadi",
+  "previewWeeklyDays": "Har {days} takrorlanadi",
+  "previewWeeklyAny": "Haftada istalgan {count, plural, other{{count} kun}} takrorlanadi",
+  "previewMonthlyDates": "{count, plural, =1{Har oyning {dates} kunida takrorlanadi} other{Har oyning {dates} kunlarida takrorlanadi}}",
+  "previewMonthlyAny": "Oyda istalgan {count, plural, other{{count} kun}} takrorlanadi"
 }

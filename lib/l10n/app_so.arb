@@ -266,5 +266,19 @@
   "genericError": "Wax xun baa dhacay. Fadlan isku day mar kale.",
   "notificationChannelName": "Xasuusinta camalka",
   "notificationChannelDescription": "Xasuusin maalmeed oo loogu talagalay camalladaada aad raacdo.",
-  "invalidAmalId": "Aqoonsi camal oo aan sax ahayn"
+  "invalidAmalId": "Aqoonsi camal oo aan sax ahayn",
+  "repeatMode": "Ku celcelin",
+  "onSetDays": "Maalmo la go'aamiyay",
+  "onSetDates": "Taariikho la go'aamiyay",
+  "anyDayMode": "Maalin kasta",
+  "datesOfMonth": "Taariikhaha",
+  "daysPerWeekQuestion": "Immisa maalmood toddobaadkii?",
+  "daysPerMonthQuestion": "Immisa maalmood bishii?",
+  "pickAtLeastOneDay": "Dooro ugu yaraan hal maalin",
+  "pickAtLeastOneDate": "Dooro ugu yaraan hal taariikh",
+  "previewDaily": "Wuxuu ku celcelinayaa maalin kasta",
+  "previewWeeklyDays": "Wuxuu ku celcelinayaa {days}",
+  "previewWeeklyAny": "Wuxuu ku celcelinayaa {count, plural, =1{hal maalin} other{{count} maalmood}} toddobaadkii",
+  "previewMonthlyDates": "{count, plural, =1{Wuxuu ku celcelinayaa maalinta {dates} ee bil kasta} other{Wuxuu ku celcelinayaa maalmaha {dates} ee bil kasta}}",
+  "previewMonthlyAny": "Wuxuu ku celcelinayaa {count, plural, =1{hal maalin} other{{count} maalmood}} bishii"
 }

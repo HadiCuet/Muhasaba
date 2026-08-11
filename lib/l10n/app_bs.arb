@@ -266,5 +266,19 @@
   "genericError": "Nešto je pošlo po krivu. Pokušajte ponovo.",
   "notificationChannelName": "Podsjetnici za amel",
   "notificationChannelDescription": "Dnevni podsjetnici za amele koje pratite.",
-  "invalidAmalId": "Nevažeći ID amela"
+  "invalidAmalId": "Nevažeći ID amela",
+  "repeatMode": "Ponavljanje",
+  "onSetDays": "Određenim danima",
+  "onSetDates": "Određenim datumima",
+  "anyDayMode": "Bilo koji dan",
+  "datesOfMonth": "Datumi",
+  "daysPerWeekQuestion": "Koliko dana sedmično?",
+  "daysPerMonthQuestion": "Koliko dana mjesečno?",
+  "pickAtLeastOneDay": "Odaberite barem jedan dan",
+  "pickAtLeastOneDate": "Odaberite barem jedan datum",
+  "previewDaily": "Ponavlja se svaki dan",
+  "previewWeeklyDays": "Ponavlja se danima: {days}",
+  "previewWeeklyAny": "{count, plural, =1{Ponavlja se bilo koji {count} dan sedmično} few{Ponavlja se bilo koja {count} dana sedmično} other{Ponavlja se bilo kojih {count} dana sedmično}}",
+  "previewMonthlyDates": "{count, plural, =1{Ponavlja se svakog mjeseca na dan: {dates}} other{Ponavlja se svakog mjeseca na dane: {dates}}}",
+  "previewMonthlyAny": "{count, plural, =1{Ponavlja se bilo koji {count} dan mjesečno} few{Ponavlja se bilo koja {count} dana mjesečno} other{Ponavlja se bilo kojih {count} dana mjesečno}}"
 }

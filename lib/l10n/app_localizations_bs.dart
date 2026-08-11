@@ -117,6 +117,76 @@ class AppLocalizationsBs extends AppLocalizations {
   String get dateOfMonth => 'Datum u mjesecu';
 
   @override
+  String get repeatMode => 'Ponavljanje';
+
+  @override
+  String get onSetDays => 'Određenim danima';
+
+  @override
+  String get onSetDates => 'Određenim datumima';
+
+  @override
+  String get anyDayMode => 'Bilo koji dan';
+
+  @override
+  String get datesOfMonth => 'Datumi';
+
+  @override
+  String get daysPerWeekQuestion => 'Koliko dana sedmično?';
+
+  @override
+  String get daysPerMonthQuestion => 'Koliko dana mjesečno?';
+
+  @override
+  String get pickAtLeastOneDay => 'Odaberite barem jedan dan';
+
+  @override
+  String get pickAtLeastOneDate => 'Odaberite barem jedan datum';
+
+  @override
+  String get previewDaily => 'Ponavlja se svaki dan';
+
+  @override
+  String previewWeeklyDays(String days) {
+    return 'Ponavlja se danima: $days';
+  }
+
+  @override
+  String previewWeeklyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Ponavlja se bilo kojih $count dana sedmično',
+      few: 'Ponavlja se bilo koja $count dana sedmično',
+      one: 'Ponavlja se bilo koji $count dan sedmično',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String previewMonthlyDates(int count, String dates) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Ponavlja se svakog mjeseca na dane: $dates',
+      one: 'Ponavlja se svakog mjeseca na dan: $dates',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String previewMonthlyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Ponavlja se bilo kojih $count dana mjesečno',
+      few: 'Ponavlja se bilo koja $count dana mjesečno',
+      one: 'Ponavlja se bilo koji $count dan mjesečno',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String get anyDate => 'Bilo koji';
 
   @override

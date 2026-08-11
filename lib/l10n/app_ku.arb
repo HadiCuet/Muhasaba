@@ -266,5 +266,19 @@
   "genericError": "Xeletiyek çêbû. Ji kerema xwe dîsa biceribîne.",
   "notificationChannelName": "Bîrxistinên amelan",
   "notificationChannelDescription": "Ji bo amelên ku tu dişopînî bîrxistinên rojane.",
-  "invalidAmalId": "Nasnameya amelê ya nederbasdar"
+  "invalidAmalId": "Nasnameya amelê ya nederbasdar",
+  "repeatMode": "Awayê dubarebûnê",
+  "onSetDays": "Di rojên diyarkirî de",
+  "onSetDates": "Di dîrokên diyarkirî de",
+  "anyDayMode": "Her roj",
+  "datesOfMonth": "Dîrok",
+  "daysPerWeekQuestion": "Di hefteyê de çend roj?",
+  "daysPerMonthQuestion": "Di mehê de çend roj?",
+  "pickAtLeastOneDay": "Bi kêmî yek rojê hilbijêre",
+  "pickAtLeastOneDate": "Bi kêmî yek dîrokê hilbijêre",
+  "previewDaily": "Her roj dubare dibe",
+  "previewWeeklyDays": "Her {days} dubare dibe",
+  "previewWeeklyAny": "Di hefteyê de her {count, plural, =1{rojek} other{{count} roj}} dubare dibe",
+  "previewMonthlyDates": "{count, plural, =1{Di roja {dates} ya her mehê de dubare dibe} other{Di rojên {dates} yên her mehê de dubare dibe}}",
+  "previewMonthlyAny": "Di mehê de her {count, plural, =1{rojek} other{{count} roj}} dubare dibe"
 }

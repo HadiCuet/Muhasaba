@@ -266,5 +266,19 @@
   "genericError": "کچھ غلط ہو گیا۔ براہ کرم دوبارہ کوشش کریں۔",
   "notificationChannelName": "اعمال کی یاد دہانیاں",
   "notificationChannelDescription": "آپ کے ٹریک کیے گئے اعمال کی روزانہ یاد دہانیاں۔",
-  "invalidAmalId": "غلط عمل شناخت"
+  "invalidAmalId": "غلط عمل شناخت",
+  "repeatMode": "تکرار کا انداز",
+  "onSetDays": "مقررہ دنوں میں",
+  "onSetDates": "مقررہ تاریخوں میں",
+  "anyDayMode": "کوئی بھی دن",
+  "datesOfMonth": "تاریخیں",
+  "daysPerWeekQuestion": "ہفتے میں کتنے دن؟",
+  "daysPerMonthQuestion": "مہینے میں کتنے دن؟",
+  "pickAtLeastOneDay": "کم از کم ایک دن منتخب کریں",
+  "pickAtLeastOneDate": "کم از کم ایک تاریخ منتخب کریں",
+  "previewDaily": "ہر روز دہرایا جاتا ہے",
+  "previewWeeklyDays": "ہر {days} کو دہرایا جاتا ہے",
+  "previewWeeklyAny": "ہفتے میں کسی بھی {count, plural, =1{ایک دن} other{{count} دنوں}} کو دہرایا جاتا ہے",
+  "previewMonthlyDates": "{count, plural, =1{ہر مہینے کی {dates} تاریخ کو دہرایا جاتا ہے} other{ہر مہینے کی {dates} تاریخوں کو دہرایا جاتا ہے}}",
+  "previewMonthlyAny": "مہینے میں کسی بھی {count, plural, =1{ایک دن} other{{count} دنوں}} کو دہرایا جاتا ہے"
 }

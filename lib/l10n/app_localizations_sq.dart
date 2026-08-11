@@ -116,6 +116,74 @@ class AppLocalizationsSq extends AppLocalizations {
   String get dateOfMonth => 'Data e muajit';
 
   @override
+  String get repeatMode => 'Përsëritja';
+
+  @override
+  String get onSetDays => 'Në ditë të caktuara';
+
+  @override
+  String get onSetDates => 'Në data të caktuara';
+
+  @override
+  String get anyDayMode => 'Cilado ditë';
+
+  @override
+  String get datesOfMonth => 'Datat';
+
+  @override
+  String get daysPerWeekQuestion => 'Në sa ditë në javë?';
+
+  @override
+  String get daysPerMonthQuestion => 'Në sa ditë në muaj?';
+
+  @override
+  String get pickAtLeastOneDay => 'Zgjidhni të paktën një ditë';
+
+  @override
+  String get pickAtLeastOneDate => 'Zgjidhni të paktën një datë';
+
+  @override
+  String get previewDaily => 'Përsëritet çdo ditë';
+
+  @override
+  String previewWeeklyDays(String days) {
+    return 'Përsëritet çdo $days';
+  }
+
+  @override
+  String previewWeeklyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ditë të çfarëdoshme',
+      one: 'një ditë të çfarëdoshme',
+    );
+    return 'Përsëritet $_temp0 në javë';
+  }
+
+  @override
+  String previewMonthlyDates(int count, String dates) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Përsëritet në datat $dates të çdo muaji',
+      one: 'Përsëritet në datën $dates të çdo muaji',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String previewMonthlyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ditë të çfarëdoshme',
+      one: 'një ditë të çfarëdoshme',
+    );
+    return 'Përsëritet $_temp0 në muaj';
+  }
+
+  @override
   String get anyDate => 'Cilado';
 
   @override

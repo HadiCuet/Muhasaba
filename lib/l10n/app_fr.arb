@@ -266,5 +266,19 @@
   "genericError": "Une erreur s'est produite. Veuillez réessayer.",
   "notificationChannelName": "Rappels d'amal",
   "notificationChannelDescription": "Rappels quotidiens pour vos amal suivis.",
-  "invalidAmalId": "Identifiant d'amal invalide"
+  "invalidAmalId": "Identifiant d'amal invalide",
+  "repeatMode": "Répétition",
+  "onSetDays": "Jours définis",
+  "onSetDates": "Dates définies",
+  "anyDayMode": "N'importe quel jour",
+  "datesOfMonth": "Dates",
+  "daysPerWeekQuestion": "Combien de jours par semaine ?",
+  "daysPerMonthQuestion": "Combien de jours par mois ?",
+  "pickAtLeastOneDay": "Choisissez au moins un jour",
+  "pickAtLeastOneDate": "Choisissez au moins une date",
+  "previewDaily": "Se répète tous les jours",
+  "previewWeeklyDays": "Se répète les {days}",
+  "previewWeeklyAny": "Se répète {count, plural, =1{un jour} other{{count} jours}} au choix par semaine",
+  "previewMonthlyDates": "{count, plural, =1{Se répète le {dates} de chaque mois} other{Se répète les {dates} de chaque mois}}",
+  "previewMonthlyAny": "Se répète {count, plural, =1{un jour} other{{count} jours}} au choix par mois"
 }

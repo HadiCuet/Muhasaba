@@ -116,6 +116,74 @@ class AppLocalizationsKu extends AppLocalizations {
   String get dateOfMonth => 'Roja mehê';
 
   @override
+  String get repeatMode => 'Awayê dubarebûnê';
+
+  @override
+  String get onSetDays => 'Di rojên diyarkirî de';
+
+  @override
+  String get onSetDates => 'Di dîrokên diyarkirî de';
+
+  @override
+  String get anyDayMode => 'Her roj';
+
+  @override
+  String get datesOfMonth => 'Dîrok';
+
+  @override
+  String get daysPerWeekQuestion => 'Di hefteyê de çend roj?';
+
+  @override
+  String get daysPerMonthQuestion => 'Di mehê de çend roj?';
+
+  @override
+  String get pickAtLeastOneDay => 'Bi kêmî yek rojê hilbijêre';
+
+  @override
+  String get pickAtLeastOneDate => 'Bi kêmî yek dîrokê hilbijêre';
+
+  @override
+  String get previewDaily => 'Her roj dubare dibe';
+
+  @override
+  String previewWeeklyDays(String days) {
+    return 'Her $days dubare dibe';
+  }
+
+  @override
+  String previewWeeklyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count roj',
+      one: 'rojek',
+    );
+    return 'Di hefteyê de her $_temp0 dubare dibe';
+  }
+
+  @override
+  String previewMonthlyDates(int count, String dates) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Di rojên $dates yên her mehê de dubare dibe',
+      one: 'Di roja $dates ya her mehê de dubare dibe',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String previewMonthlyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count roj',
+      one: 'rojek',
+    );
+    return 'Di mehê de her $_temp0 dubare dibe';
+  }
+
+  @override
   String get anyDate => 'Her roj';
 
   @override

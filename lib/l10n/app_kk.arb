@@ -266,5 +266,19 @@
   "genericError": "Бір қате болды. Қайталап көріңіз.",
   "notificationChannelName": "Амал еске салғыштары",
   "notificationChannelDescription": "Сіз бақылап отырған амалдар үшін күнделікті еске салғыштар.",
-  "invalidAmalId": "Жарамсыз амал идентификаторы"
+  "invalidAmalId": "Жарамсыз амал идентификаторы",
+  "repeatMode": "Қайталану",
+  "onSetDays": "Белгілі апта күндері",
+  "onSetDates": "Белгілі ай күндері",
+  "anyDayMode": "Кез келген күн",
+  "datesOfMonth": "Айдың күндері",
+  "daysPerWeekQuestion": "Аптасына неше күн?",
+  "daysPerMonthQuestion": "Айына неше күн?",
+  "pickAtLeastOneDay": "Кемінде бір күн таңдаңыз",
+  "pickAtLeastOneDate": "Айдың кемінде бір күнін таңдаңыз",
+  "previewDaily": "Күн сайын қайталанады",
+  "previewWeeklyDays": "{days} күндері қайталанады",
+  "previewWeeklyAny": "Аптасына кез келген {count, plural, other{{count} күн}} қайталанады",
+  "previewMonthlyDates": "{count, plural, =1{Әр айдың {dates} күні қайталанады} other{Әр айдың {dates} күндері қайталанады}}",
+  "previewMonthlyAny": "Айына кез келген {count, plural, other{{count} күн}} қайталанады"
 }

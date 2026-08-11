@@ -129,7 +129,7 @@ AmalsCompanion _seed(
   String? category,
   Frequency frequency = Frequency.daily,
   String? weeklyDays,
-  int? monthlyDate,
+  String? monthlyDates,
   int target = 1,
 }) {
   return AmalsCompanion.insert(
@@ -142,6 +142,6 @@ AmalsCompanion _seed(
     category: Value(category),
     target: Value(target),
     weeklyDays: Value(weeklyDays),
-    monthlyDate: Value(monthlyDate),
+    monthlyDates: Value(monthlyDates),
   );
 }

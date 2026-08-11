@@ -266,5 +266,19 @@
   "genericError": "Xəta baş verdi. Zəhmət olmasa yenidən cəhd edin.",
   "notificationChannelName": "Əməl xatırlatmaları",
   "notificationChannelDescription": "İzlədiyiniz əməllər üçün gündəlik xatırlatmalar.",
-  "invalidAmalId": "Yanlış əməl identifikatoru"
+  "invalidAmalId": "Yanlış əməl identifikatoru",
+  "repeatMode": "Təkrar",
+  "onSetDays": "Müəyyən günlərdə",
+  "onSetDates": "Müəyyən tarixlərdə",
+  "anyDayMode": "İstənilən gün",
+  "datesOfMonth": "Tarixlər",
+  "daysPerWeekQuestion": "Həftədə neçə gün?",
+  "daysPerMonthQuestion": "Ayda neçə gün?",
+  "pickAtLeastOneDay": "Ən azı bir gün seçin",
+  "pickAtLeastOneDate": "Ən azı bir tarix seçin",
+  "previewDaily": "Hər gün təkrarlanır",
+  "previewWeeklyDays": "Hər {days} təkrarlanır",
+  "previewWeeklyAny": "Həftədə istənilən {count, plural, other{{count} gün}} təkrarlanır",
+  "previewMonthlyDates": "{count, plural, =1{Hər ayın {dates} günündə təkrarlanır} other{Hər ayın {dates} günlərində təkrarlanır}}",
+  "previewMonthlyAny": "Ayda istənilən {count, plural, other{{count} gün}} təkrarlanır"
 }

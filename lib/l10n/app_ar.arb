@@ -266,5 +266,19 @@
   "genericError": "حدث خطأ ما. يرجى المحاولة مرة أخرى.",
   "notificationChannelName": "تذكيرات الأعمال",
   "notificationChannelDescription": "تذكيرات يومية للأعمال التي تتابعها.",
-  "invalidAmalId": "معرّف عمل غير صالح"
+  "invalidAmalId": "معرّف عمل غير صالح",
+  "repeatMode": "نمط التكرار",
+  "onSetDays": "في أيام محددة",
+  "onSetDates": "في تواريخ محددة",
+  "anyDayMode": "أي يوم",
+  "datesOfMonth": "التواريخ",
+  "daysPerWeekQuestion": "في كم يوم من الأسبوع؟",
+  "daysPerMonthQuestion": "في كم يوم من الشهر؟",
+  "pickAtLeastOneDay": "اختر يومًا واحدًا على الأقل",
+  "pickAtLeastOneDate": "اختر تاريخًا واحدًا على الأقل",
+  "previewDaily": "يتكرر كل يوم",
+  "previewWeeklyDays": "يتكرر كل {days}",
+  "previewWeeklyAny": "يتكرر أي {count, plural, =1{يوم واحد} =2{يومين} few{{count} أيام} many{{count} يومًا} other{{count} يوم}} في الأسبوع",
+  "previewMonthlyDates": "{count, plural, =1{يتكرر في يوم {dates} من كل شهر} =2{يتكرر في يومي {dates} من كل شهر} other{يتكرر في أيام {dates} من كل شهر}}",
+  "previewMonthlyAny": "يتكرر أي {count, plural, =1{يوم واحد} =2{يومين} few{{count} أيام} many{{count} يومًا} other{{count} يوم}} في الشهر"
 }

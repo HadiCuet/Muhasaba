@@ -266,5 +266,19 @@
   "genericError": "Бир нерсе туура эмес болду. Кайра аракет кылыңыз.",
   "notificationChannelName": "Амал эскертүүлөрү",
   "notificationChannelDescription": "Сиз көзөмөлдөгөн амалдар үчүн күнүмдүк эскертүүлөр.",
-  "invalidAmalId": "Жараксыз амал идентификатору"
+  "invalidAmalId": "Жараксыз амал идентификатору",
+  "repeatMode": "Кайталануу",
+  "onSetDays": "Белгилүү жума күндөрү",
+  "onSetDates": "Белгилүү ай күндөрү",
+  "anyDayMode": "Каалаган күн",
+  "datesOfMonth": "Айдын күндөрү",
+  "daysPerWeekQuestion": "Жумасына канча күн?",
+  "daysPerMonthQuestion": "Айына канча күн?",
+  "pickAtLeastOneDay": "Жок дегенде бир күн тандаңыз",
+  "pickAtLeastOneDate": "Айдын жок дегенде бир күнүн тандаңыз",
+  "previewDaily": "Күн сайын кайталанат",
+  "previewWeeklyDays": "{days} күндөрү кайталанат",
+  "previewWeeklyAny": "Жумасына каалаган {count, plural, other{{count} күн}} кайталанат",
+  "previewMonthlyDates": "{count, plural, =1{Ар айдын {dates} күнү кайталанат} other{Ар айдын {dates} күндөрү кайталанат}}",
+  "previewMonthlyAny": "Айына каалаган {count, plural, other{{count} күн}} кайталанат"
 }

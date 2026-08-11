@@ -116,6 +116,74 @@ class AppLocalizationsHa extends AppLocalizations {
   String get dateOfMonth => 'Kwanan wata';
 
   @override
+  String get repeatMode => 'Maimaitawa';
+
+  @override
+  String get onSetDays => 'A kwanakin da aka ƙayyade';
+
+  @override
+  String get onSetDates => 'A kwanan watan da aka ƙayyade';
+
+  @override
+  String get anyDayMode => 'Kowace rana';
+
+  @override
+  String get datesOfMonth => 'Kwanakin wata';
+
+  @override
+  String get daysPerWeekQuestion => 'Kwana nawa a mako?';
+
+  @override
+  String get daysPerMonthQuestion => 'Kwana nawa a wata?';
+
+  @override
+  String get pickAtLeastOneDay => 'Zaɓi aƙalla rana ɗaya';
+
+  @override
+  String get pickAtLeastOneDate => 'Zaɓi aƙalla kwana ɗaya';
+
+  @override
+  String get previewDaily => 'Yana maimaituwa kowace rana';
+
+  @override
+  String previewWeeklyDays(String days) {
+    return 'Yana maimaituwa kowace $days';
+  }
+
+  @override
+  String previewWeeklyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'ranaku $count',
+      one: 'rana ɗaya',
+    );
+    return 'Yana maimaituwa $_temp0 a kowane mako';
+  }
+
+  @override
+  String previewMonthlyDates(int count, String dates) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Yana maimaituwa a kwanakin $dates na kowane wata',
+      one: 'Yana maimaituwa a ranar $dates ta kowane wata',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String previewMonthlyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'ranaku $count',
+      one: 'rana ɗaya',
+    );
+    return 'Yana maimaituwa $_temp0 a kowane wata';
+  }
+
+  @override
   String get anyDate => 'Kowace';
 
   @override

@@ -1,70 +1,42 @@
-// Helpers for the multi-day weekly schedule stored in `Amals.weeklyDays`.
-//
-// Storage format: `null`/empty string means "floating" (the amal may be done
-// on any one day of the week). A non-empty value is an ascending, comma-
-// separated list of `DateTime` weekday ints (Mon=1 … Sun=7), e.g. "5,6" for
-// Friday + Saturday.
+import 'day_csv.dart';
 
-/// Parses the CSV in `Amals.weeklyDays` into a set of weekday ints (1..7).
-/// Returns an empty set for null/empty/garbage input.
-Set<int> parseWeeklyDays(String? csv) {
-  if (csv == null || csv.trim().isEmpty) return {};
-  final out = <int>{};
-  for (final part in csv.split(',')) {
-    final n = int.tryParse(part.trim());
-    if (n != null && n >= 1 && n <= 7) out.add(n);
-  }
-  return out;
-}
+/// Parses the CSV in `Amals.weeklyDays` into a set of weekday ints (Mon=1).
+Set<int> parseWeeklyDays(String? csv) => parseDayCsv(csv, max: 7);
 
 /// Formats weekday ints into the canonical ascending CSV, or null when empty.
-String? formatWeeklyDays(Set<int> days) {
-  final valid = days.where((d) => d >= 1 && d <= 7).toList()..sort();
-  if (valid.isEmpty) return null;
-  return valid.join(',');
-}
+String? formatWeeklyDays(Set<int> days) => formatDayCsv(days, max: 7);
 
-/// Current + longest per-occurrence streak for a weekly amal pinned to
-/// [scheduledWeekdays]. Counts consecutive completed scheduled days; an
-/// as-yet-undone [today] does not break the current streak (same grace as
-/// daily streaks). [isCompleted] reports whether a given day met target.
-({int current, int longest}) weeklyOccurrenceStreak({
-  required Set<int> scheduledWeekdays,
+/// Current + longest streak counted over scheduled occurrences rather than
+/// calendar days. [isScheduled] decides which days count as occurrences, so
+/// this serves both pinned-weekday and pinned-month-date amal. An as-yet-
+/// undone latest occurrence does not break the current streak.
+({int current, int longest}) occurrenceStreak({
+  required bool Function(DateTime day) isScheduled,
   required bool Function(DateTime day) isCompleted,
   required DateTime today,
   required int lookbackDays,
 }) {
-  assert(scheduledWeekdays.isNotEmpty);
-
-  DateTime prevScheduled(DateTime d) {
-    var c = d.subtract(const Duration(days: 1));
-    while (!scheduledWeekdays.contains(c.weekday)) {
-      c = c.subtract(const Duration(days: 1));
-    }
-    return c;
+  final earliest = today.subtract(Duration(days: lookbackDays));
+  final scheduled = <DateTime>[];
+  for (
+    var d = today;
+    !d.isBefore(earliest);
+    d = d.subtract(const Duration(days: 1))
+  ) {
+    if (isScheduled(d)) scheduled.add(d);
   }
+  if (scheduled.isEmpty) return (current: 0, longest: 0);
 
-  // Align to the most recent scheduled day on or before today.
-  var cursor = today;
-  while (!scheduledWeekdays.contains(cursor.weekday)) {
-    cursor = cursor.subtract(const Duration(days: 1));
-  }
-  // Grace: don't break the streak if the latest scheduled day isn't done yet.
-  if (!isCompleted(cursor)) cursor = prevScheduled(cursor);
+  var i = isCompleted(scheduled.first) ? 0 : 1;
   var current = 0;
-  while (isCompleted(cursor)) {
+  while (i < scheduled.length && isCompleted(scheduled[i])) {
     current++;
-    cursor = prevScheduled(cursor);
+    i++;
   }
 
-  // Longest run over the lookback window.
-  final start = today.subtract(Duration(days: lookbackDays));
   var longest = 0;
   var run = 0;
-  for (var d = today;
-      !d.isBefore(start);
-      d = d.subtract(const Duration(days: 1))) {
-    if (!scheduledWeekdays.contains(d.weekday)) continue;
+  for (final d in scheduled.reversed) {
     if (isCompleted(d)) {
       run++;
       if (run > longest) longest = run;
@@ -75,4 +47,20 @@ String? formatWeeklyDays(Set<int> days) {
   if (current > longest) longest = current;
 
   return (current: current, longest: longest);
+}
+
+/// Occurrence streak for an amal pinned to specific weekdays.
+({int current, int longest}) weeklyOccurrenceStreak({
+  required Set<int> scheduledWeekdays,
+  required bool Function(DateTime day) isCompleted,
+  required DateTime today,
+  required int lookbackDays,
+}) {
+  assert(scheduledWeekdays.isNotEmpty);
+  return occurrenceStreak(
+    isScheduled: (d) => scheduledWeekdays.contains(d.weekday),
+    isCompleted: isCompleted,
+    today: today,
+    lookbackDays: lookbackDays,
+  );
 }

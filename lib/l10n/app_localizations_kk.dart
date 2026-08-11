@@ -116,6 +116,72 @@ class AppLocalizationsKk extends AppLocalizations {
   String get dateOfMonth => 'Ай күні';
 
   @override
+  String get repeatMode => 'Қайталану';
+
+  @override
+  String get onSetDays => 'Белгілі апта күндері';
+
+  @override
+  String get onSetDates => 'Белгілі ай күндері';
+
+  @override
+  String get anyDayMode => 'Кез келген күн';
+
+  @override
+  String get datesOfMonth => 'Айдың күндері';
+
+  @override
+  String get daysPerWeekQuestion => 'Аптасына неше күн?';
+
+  @override
+  String get daysPerMonthQuestion => 'Айына неше күн?';
+
+  @override
+  String get pickAtLeastOneDay => 'Кемінде бір күн таңдаңыз';
+
+  @override
+  String get pickAtLeastOneDate => 'Айдың кемінде бір күнін таңдаңыз';
+
+  @override
+  String get previewDaily => 'Күн сайын қайталанады';
+
+  @override
+  String previewWeeklyDays(String days) {
+    return '$days күндері қайталанады';
+  }
+
+  @override
+  String previewWeeklyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count күн',
+    );
+    return 'Аптасына кез келген $_temp0 қайталанады';
+  }
+
+  @override
+  String previewMonthlyDates(int count, String dates) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Әр айдың $dates күндері қайталанады',
+      one: 'Әр айдың $dates күні қайталанады',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String previewMonthlyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count күн',
+    );
+    return 'Айына кез келген $_temp0 қайталанады';
+  }
+
+  @override
   String get anyDate => 'Кез келген';
 
   @override

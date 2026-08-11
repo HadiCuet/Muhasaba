@@ -12,6 +12,7 @@ import '../../domain/models/frequency.dart';
 import '../../domain/services/reminder_scheduler.dart';
 import '../../domain/utils/localized_amal_title.dart';
 import '../../domain/utils/localized_number.dart';
+import '../../domain/utils/monthly_dates.dart';
 import '../../domain/utils/weekly_days.dart';
 import 'amal_templates.dart';
 import 'widgets/category_picker.dart';
@@ -42,7 +43,12 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
   Frequency _frequency = Frequency.daily;
   int _target = 1;
   Set<int> _weeklyDays = {DateTime.friday};
-  int? _monthlyDate;
+  Set<int> _monthlyDates = {1};
+  int _periodTarget = 1;
+  // Pinned = "on set days/dates". Kept as explicit flags rather than derived
+  // from the sets, so toggling to "any day" and back restores the selection.
+  bool _weeklyPinned = true;
+  bool _monthlyPinned = true;
   bool _defaultChecked = true;
   TimeOfDay? _reminderTime;
 
@@ -96,6 +102,19 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
     return typed;
   }
 
+  bool get _pinnedForCurrentFrequency => switch (_frequency) {
+    Frequency.daily => true,
+    Frequency.weekly => _weeklyPinned,
+    Frequency.monthly => _monthlyPinned,
+  };
+
+  int _periodTargetMaxFor(Frequency f) => f == Frequency.weekly ? 7 : 28;
+
+  int get _periodTargetMax => _periodTargetMaxFor(_frequency);
+
+  int get _periodTargetForSave =>
+      _pinnedForCurrentFrequency ? 1 : _periodTarget.clamp(1, _periodTargetMax);
+
   Future<void> _hydrate() async {
     final row = await ref
         .read(appDatabaseProvider)
@@ -114,8 +133,20 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
         _category = row.category;
         _frequency = row.frequency;
         _target = row.target;
-        _weeklyDays = parseWeeklyDays(row.weeklyDays);
-        _monthlyDate = row.monthlyDate;
+        final hydratedWeekly = parseWeeklyDays(row.weeklyDays);
+        _weeklyPinned = row.frequency == Frequency.weekly
+            ? hydratedWeekly.isNotEmpty
+            : true;
+        if (hydratedWeekly.isNotEmpty) _weeklyDays = hydratedWeekly;
+        final hydratedMonthly = parseMonthlyDates(row.monthlyDates);
+        _monthlyPinned = row.frequency == Frequency.monthly
+            ? hydratedMonthly.isNotEmpty
+            : true;
+        if (hydratedMonthly.isNotEmpty) _monthlyDates = hydratedMonthly;
+        _periodTarget = row.periodTarget.clamp(
+          1,
+          _periodTargetMaxFor(row.frequency),
+        );
         _defaultChecked = row.defaultChecked;
         if (row.reminderTime != null) {
           final parts = row.reminderTime!.split(':');
@@ -216,10 +247,13 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
             notificationTitle: localizedAmalTitle(title, l),
             frequency: _frequency,
             target: _target,
-            weeklyDays: _frequency == Frequency.weekly
+            weeklyDays: _frequency == Frequency.weekly && _weeklyPinned
                 ? formatWeeklyDays(_weeklyDays)
                 : null,
-            monthlyDate: _frequency == Frequency.monthly ? _monthlyDate : null,
+            monthlyDates: _frequency == Frequency.monthly && _monthlyPinned
+                ? formatMonthlyDates(_monthlyDates)
+                : null,
+            periodTarget: _periodTargetForSave,
             defaultChecked: _defaultChecked,
             reminderTime: reminder,
             icon: _icon,
@@ -242,13 +276,16 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
               frequency: _frequency,
               target: _target,
               weeklyDays: Value(
-                _frequency == Frequency.weekly
+                _frequency == Frequency.weekly && _weeklyPinned
                     ? formatWeeklyDays(_weeklyDays)
                     : null,
               ),
-              monthlyDate: Value(
-                _frequency == Frequency.monthly ? _monthlyDate : null,
+              monthlyDates: Value(
+                _frequency == Frequency.monthly && _monthlyPinned
+                    ? formatMonthlyDates(_monthlyDates)
+                    : null,
               ),
+              periodTarget: _periodTargetForSave,
               defaultChecked: _defaultChecked,
               reminderTime: Value(reminder),
               icon: _icon,
@@ -411,7 +448,12 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                 // ── Frequency ──────────────────────────────────────────────
                 _FrequencySelector(
                   value: _frequency,
-                  onChanged: (f) => setState(() => _frequency = f),
+                  onChanged: (f) => setState(() {
+                    _frequency = f;
+                    if (_periodTarget > _periodTargetMax) {
+                      _periodTarget = _periodTargetMax;
+                    }
+                  }),
                 ),
                 const SizedBox(height: 16),
 
@@ -448,20 +490,55 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                   onChanged: (v) => setState(() => _target = v),
                 ),
 
-                if (_frequency == Frequency.weekly) ...[
+                if (_frequency != Frequency.daily) ...[
+                  const SizedBox(height: 16),
+                  _RepeatModeToggle(
+                    pinned: _pinnedForCurrentFrequency,
+                    pinnedLabel: _frequency == Frequency.weekly
+                        ? l.onSetDays
+                        : l.onSetDates,
+                    onChanged: (v) => setState(() {
+                      if (_frequency == Frequency.weekly) {
+                        _weeklyPinned = v;
+                      } else {
+                        _monthlyPinned = v;
+                      }
+                    }),
+                  ),
+                ],
+                if (_frequency == Frequency.weekly && _weeklyPinned) ...[
                   const SizedBox(height: 16),
                   _WeeklyDayPicker(
                     value: _weeklyDays,
                     onChanged: (v) => setState(() => _weeklyDays = v),
                   ),
                 ],
-                if (_frequency == Frequency.monthly) ...[
+                if (_frequency == Frequency.monthly && _monthlyPinned) ...[
                   const SizedBox(height: 16),
                   _MonthlyDatePicker(
-                    value: _monthlyDate,
-                    onChanged: (v) => setState(() => _monthlyDate = v),
+                    value: _monthlyDates,
+                    onChanged: (v) => setState(() => _monthlyDates = v),
                   ),
                 ],
+                if (!_pinnedForCurrentFrequency) ...[
+                  const SizedBox(height: 16),
+                  _PeriodTargetStepper(
+                    value: _periodTarget,
+                    max: _periodTargetMax,
+                    label: _frequency == Frequency.weekly
+                        ? l.daysPerWeekQuestion
+                        : l.daysPerMonthQuestion,
+                    onChanged: (v) => setState(() => _periodTarget = v),
+                  ),
+                ],
+                const SizedBox(height: 16),
+                _FrequencyPreview(
+                  frequency: _frequency,
+                  pinned: _pinnedForCurrentFrequency,
+                  weeklyDays: _weeklyDays,
+                  monthlyDates: _monthlyDates,
+                  periodTarget: _periodTarget,
+                ),
                 const SizedBox(height: 16),
                 SwitchListTile(
                   contentPadding: EdgeInsets.zero,
@@ -687,6 +764,17 @@ class _CustomTargetDialogState extends State<_CustomTargetDialog> {
 // Weekly day picker (unchanged)
 // ---------------------------------------------------------------------------
 
+String _weekdayFullName(int d, AppLocalizations l) => switch (d) {
+  DateTime.saturday => l.saturdayFull,
+  DateTime.sunday => l.sundayFull,
+  DateTime.monday => l.mondayFull,
+  DateTime.tuesday => l.tuesdayFull,
+  DateTime.wednesday => l.wednesdayFull,
+  DateTime.thursday => l.thursdayFull,
+  DateTime.friday => l.fridayFull,
+  _ => '',
+};
+
 class _WeeklyDayPicker extends StatelessWidget {
   const _WeeklyDayPicker({required this.value, required this.onChanged});
 
@@ -705,70 +793,143 @@ class _WeeklyDayPicker extends StatelessWidget {
       DateTime.thursday: l.thursdayShort,
       DateTime.friday: l.fridayShort,
     };
-    final subtitle = value.isEmpty
-        ? l.anyDayHint
-        : value.length == 1
-        ? l.onlyDayHint(_fullName(value.first, l))
-        : l.repeatsOnDaysHint;
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(l.dayOfWeek, style: Theme.of(context).textTheme.labelLarge),
-        const SizedBox(height: 4),
-        Text(subtitle, style: Theme.of(context).textTheme.bodySmall),
-        const SizedBox(height: 8),
-        Wrap(
-          spacing: 8,
-          children: [
-            // "Any day" clears the set → floating (once a week, any day).
-            ChoiceChip(
-              label: Text(l.anyDay),
-              selected: value.isEmpty,
-              onSelected: (_) => onChanged(<int>{}),
-            ),
-            for (final entry in names.entries)
-              FilterChip(
-                label: Text(entry.value),
-                selected: value.contains(entry.key),
-                onSelected: (sel) {
-                  final next = {...value};
-                  if (sel) {
-                    next.add(entry.key);
-                  } else {
-                    next.remove(entry.key);
-                  }
-                  onChanged(next);
-                },
+    return FormField<Set<int>>(
+      initialValue: value,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      validator: (_) => value.isEmpty ? l.pickAtLeastOneDay : null,
+      builder: (state) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(l.dayOfWeek, style: Theme.of(context).textTheme.labelLarge),
+          const SizedBox(height: 8),
+          Wrap(
+            spacing: 8,
+            children: [
+              for (final entry in names.entries)
+                FilterChip(
+                  label: Text(entry.value),
+                  selected: value.contains(entry.key),
+                  onSelected: (sel) {
+                    final next = {...value};
+                    if (sel) {
+                      next.add(entry.key);
+                    } else {
+                      next.remove(entry.key);
+                    }
+                    onChanged(next);
+                    state.didChange(next);
+                  },
+                ),
+            ],
+          ),
+          if (state.hasError) ...[
+            const SizedBox(height: 6),
+            Text(
+              state.errorText!,
+              style: Theme.of(context).textTheme.bodySmall?.copyWith(
+                color: Theme.of(context).colorScheme.error,
               ),
+            ),
           ],
-        ),
-      ],
+        ],
+      ),
     );
-  }
-
-  String _fullName(int d, AppLocalizations l) {
-    final full = {
-      DateTime.saturday: l.saturdayFull,
-      DateTime.sunday: l.sundayFull,
-      DateTime.monday: l.mondayFull,
-      DateTime.tuesday: l.tuesdayFull,
-      DateTime.wednesday: l.wednesdayFull,
-      DateTime.thursday: l.thursdayFull,
-      DateTime.friday: l.fridayFull,
-    };
-    return full[d] ?? '';
   }
 }
 
 // ---------------------------------------------------------------------------
-// Monthly date picker (unchanged)
+// Monthly date picker
 // ---------------------------------------------------------------------------
 
 class _MonthlyDatePicker extends StatelessWidget {
   const _MonthlyDatePicker({required this.value, required this.onChanged});
 
-  final int? value;
-  final ValueChanged<int?> onChanged;
+  final Set<int> value;
+  final ValueChanged<Set<int>> onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+    return FormField<Set<int>>(
+      initialValue: value,
+      autovalidateMode: AutovalidateMode.onUserInteraction,
+      validator: (_) => value.isEmpty ? l.pickAtLeastOneDate : null,
+      builder: (state) => Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Text(l.datesOfMonth, style: theme.textTheme.labelLarge),
+          const SizedBox(height: 8),
+          GridView.builder(
+            shrinkWrap: true,
+            physics: const NeverScrollableScrollPhysics(),
+            gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
+              crossAxisCount: 7,
+              mainAxisSpacing: 6,
+              crossAxisSpacing: 6,
+            ),
+            itemCount: 31,
+            itemBuilder: (context, i) {
+              final d = i + 1;
+              final selected = value.contains(d);
+              return InkWell(
+                customBorder: const CircleBorder(),
+                onTap: () {
+                  final next = {...value};
+                  if (selected) {
+                    next.remove(d);
+                  } else {
+                    next.add(d);
+                  }
+                  onChanged(next);
+                  state.didChange(next);
+                },
+                child: Container(
+                  alignment: Alignment.center,
+                  decoration: BoxDecoration(
+                    shape: BoxShape.circle,
+                    color: selected
+                        ? theme.colorScheme.primary
+                        : theme.colorScheme.surfaceContainerHighest,
+                  ),
+                  child: Text(
+                    lnum(context, d),
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: selected
+                          ? theme.colorScheme.onPrimary
+                          : theme.colorScheme.onSurfaceVariant,
+                      fontWeight: selected ? FontWeight.bold : null,
+                    ),
+                  ),
+                ),
+              );
+            },
+          ),
+          if (state.hasError) ...[
+            const SizedBox(height: 6),
+            Text(
+              state.errorText!,
+              style: theme.textTheme.bodySmall?.copyWith(
+                color: theme.colorScheme.error,
+              ),
+            ),
+          ],
+        ],
+      ),
+    );
+  }
+}
+
+class _RepeatModeToggle extends StatelessWidget {
+  const _RepeatModeToggle({
+    required this.pinned,
+    required this.pinnedLabel,
+    required this.onChanged,
+  });
+
+  final bool pinned;
+  final String pinnedLabel;
+  final ValueChanged<bool> onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -776,54 +937,141 @@ class _MonthlyDatePicker extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(l.dateOfMonth, style: Theme.of(context).textTheme.labelLarge),
-        const SizedBox(height: 4),
-        Text(
-          value == null ? l.anyDateHint : l.onlyDateHint(_ordinal(value!)),
-          style: Theme.of(context).textTheme.bodySmall,
+        Text(l.repeatMode, style: Theme.of(context).textTheme.labelLarge),
+        const SizedBox(height: 8),
+        SegmentedButton<bool>(
+          segments: [
+            ButtonSegment(value: true, label: Text(pinnedLabel)),
+            ButtonSegment(value: false, label: Text(l.anyDayMode)),
+          ],
+          selected: {pinned},
+          showSelectedIcon: false,
+          onSelectionChanged: (s) => onChanged(s.first),
         ),
+      ],
+    );
+  }
+}
+
+class _PeriodTargetStepper extends StatelessWidget {
+  const _PeriodTargetStepper({
+    required this.value,
+    required this.max,
+    required this.label,
+    required this.onChanged,
+  });
+
+  final int value;
+  final int max;
+  final String label;
+  final ValueChanged<int> onChanged;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(label, style: theme.textTheme.labelLarge),
         const SizedBox(height: 8),
         Row(
           children: [
-            FilterChip(
-              label: Text(l.anyDate),
-              selected: value == null,
-              onSelected: (_) => onChanged(null),
+            IconButton.outlined(
+              onPressed: value > 1 ? () => onChanged(value - 1) : null,
+              icon: const Icon(Icons.remove),
             ),
-            const SizedBox(width: 8),
-            Expanded(
-              child: DropdownButtonFormField<int?>(
-                initialValue: value,
-                isExpanded: true,
-                decoration: const InputDecoration(
-                  border: OutlineInputBorder(),
-                  isDense: true,
-                ),
-                items: [
-                  DropdownMenuItem<int?>(value: null, child: Text(l.anyDate)),
-                  for (var d = 1; d <= 31; d++)
-                    DropdownMenuItem<int?>(value: d, child: Text(_ordinal(d))),
-                ],
-                onChanged: onChanged,
+            Padding(
+              padding: const EdgeInsetsDirectional.only(start: 16, end: 16),
+              child: Text(
+                lnum(context, value),
+                style: theme.textTheme.titleLarge,
               ),
+            ),
+            IconButton.outlined(
+              onPressed: value < max ? () => onChanged(value + 1) : null,
+              icon: const Icon(Icons.add),
             ),
           ],
         ),
       ],
     );
   }
+}
 
-  String _ordinal(int n) {
-    if (n >= 11 && n <= 13) return '${n}th';
-    switch (n % 10) {
-      case 1:
-        return '${n}st';
-      case 2:
-        return '${n}nd';
-      case 3:
-        return '${n}rd';
-      default:
-        return '${n}th';
-    }
+class _FrequencyPreview extends StatelessWidget {
+  const _FrequencyPreview({
+    required this.frequency,
+    required this.pinned,
+    required this.weeklyDays,
+    required this.monthlyDates,
+    required this.periodTarget,
+  });
+
+  final Frequency frequency;
+  final bool pinned;
+  final Set<int> weeklyDays;
+  final Set<int> monthlyDates;
+  final int periodTarget;
+
+  @override
+  Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+    final text = switch (frequency) {
+      Frequency.daily => l.previewDaily,
+      Frequency.weekly =>
+        !pinned
+            ? l.previewWeeklyAny(periodTarget)
+            : weeklyDays.isEmpty
+            ? l.pickAtLeastOneDay
+            : l.previewWeeklyDays(
+                (weeklyDays.toList()..sort())
+                    .map((d) => _weekdayFullName(d, l))
+                    .join(', '),
+              ),
+      Frequency.monthly =>
+        !pinned
+            ? l.previewMonthlyAny(periodTarget)
+            : monthlyDates.isEmpty
+            ? l.pickAtLeastOneDate
+            : l.previewMonthlyDates(
+                monthlyDates.length,
+                (monthlyDates.toList()..sort())
+                    .map((d) => lnum(context, d))
+                    .join(', '),
+              ),
+    };
+    return Container(
+      width: double.infinity,
+      padding: const EdgeInsetsDirectional.only(
+        start: 14,
+        end: 14,
+        top: 12,
+        bottom: 12,
+      ),
+      decoration: BoxDecoration(
+        color: theme.colorScheme.primaryContainer,
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(
+            Icons.repeat,
+            size: 18,
+            color: theme.colorScheme.onPrimaryContainer,
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            child: Text(
+              text,
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: theme.colorScheme.onPrimaryContainer,
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
   }
 }

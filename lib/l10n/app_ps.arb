@@ -266,5 +266,19 @@
   "genericError": "یوه ستونزه رامنځ ته شوه. مهرباني وکړئ بیا هڅه وکړئ.",
   "notificationChannelName": "د اعمالو یادونې",
   "notificationChannelDescription": "ستاسو د تعقیب شویو اعمالو لپاره ورځنۍ یادونې.",
-  "invalidAmalId": "ناسم د عمل پېژندنه"
+  "invalidAmalId": "ناسم د عمل پېژندنه",
+  "repeatMode": "د تکرار ډول",
+  "onSetDays": "په ټاکلو ورځو کې",
+  "onSetDates": "په ټاکلو نیټو کې",
+  "anyDayMode": "هره ورځ",
+  "datesOfMonth": "نیټې",
+  "daysPerWeekQuestion": "په اونۍ کې څو ورځې؟",
+  "daysPerMonthQuestion": "په میاشت کې څو ورځې؟",
+  "pickAtLeastOneDay": "لږ تر لږه یوه ورځ وټاکئ",
+  "pickAtLeastOneDate": "لږ تر لږه یوه نیټه وټاکئ",
+  "previewDaily": "هره ورځ تکرار کیږي",
+  "previewWeeklyDays": "هره {days} تکرار کیږي",
+  "previewWeeklyAny": "په اونۍ کې هره {count, plural, =1{یوه ورځ} other{{count} ورځې}} تکرار کیږي",
+  "previewMonthlyDates": "{count, plural, =1{د هرې میاشتې په {dates} نیټه کې تکرار کیږي} other{د هرې میاشتې په {dates} نیټو کې تکرار کیږي}}",
+  "previewMonthlyAny": "په میاشت کې هره {count, plural, =1{یوه ورځ} other{{count} ورځې}} تکرار کیږي"
 }

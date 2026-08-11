@@ -5,6 +5,7 @@ import '../../data/db/database.dart';
 import '../../features/stats/stats_filter.dart';
 import '../models/app_settings.dart';
 import '../models/frequency.dart';
+import '../utils/monthly_dates.dart';
 import '../utils/weekly_days.dart';
 import 'today_builder.dart' show PeriodCompletionsLookup;
 
@@ -124,6 +125,7 @@ class EnhancedStatsService {
   const EnhancedStatsService();
 
   static const int _dailyStreakLookback = 365;
+  static const int _monthlyPinnedLookback = 744;
   static const int _heatmapDays = 35; // 5 weeks
 
   Future<EnhancedSnapshot> compute({
@@ -304,9 +306,23 @@ class EnhancedStatsService {
           return count;
         }
         final weeks = (spanDays / 7).round();
-        return weeks < 1 ? 1 : weeks;
+        final expected = amal.periodTarget * (weeks < 1 ? 1 : weeks);
+        return expected > spanDays ? spanDays : expected;
       case Frequency.monthly:
-        return spanDays >= 21 ? 1 : 0;
+        final dates = parseMonthlyDates(amal.monthlyDates);
+        if (dates.isNotEmpty) {
+          var count = 0;
+          for (
+            var d = period.start;
+            d.isBefore(period.endExclusive);
+            d = d.add(const Duration(days: 1))
+          ) {
+            if (isScheduledMonthDate(dates, d)) count++;
+          }
+          return count;
+        }
+        if (spanDays < 21) return 0;
+        return amal.periodTarget > spanDays ? spanDays : amal.periodTarget;
     }
   }
 
@@ -336,10 +352,13 @@ class EnhancedStatsService {
         } else {
           final rows = completionsByAmal[amal.id] ?? [];
           final match = rows.where((r) => _dayKey(r.muhasabaDate) == key);
-          final weekdays = amal.frequency == Frequency.weekly
-              ? parseWeeklyDays(amal.weeklyDays)
-              : const <int>{};
-          if (weekdays.contains(date.weekday)) {
+          final isPinnedOccurrence = amal.frequency == Frequency.weekly
+              ? parseWeeklyDays(amal.weeklyDays).contains(date.weekday)
+              : isScheduledMonthDate(
+                  parseMonthlyDates(amal.monthlyDates),
+                  date,
+                );
+          if (isPinnedOccurrence) {
             // Pinned multi-day weekly: this day is a scheduled occurrence.
             expected++;
             if (match.any((r) => r.progress >= amal.target)) completed++;
@@ -496,7 +515,9 @@ class EnhancedStatsService {
         var streak = 0;
         for (var i = 0; i < 52; i++) {
           final rows = await lookup(amal.id, week.start, week.endExclusive);
-          final done = rows.any((r) => r.progress >= amal.target);
+          final done =
+              rows.where((r) => r.progress >= amal.target).length >=
+              amal.periodTarget;
           if (i == 0 && !done) {
             // Current week still open.
             week = weekPeriodOf(
@@ -518,11 +539,31 @@ class EnhancedStatsService {
         return streak;
 
       case Frequency.monthly:
+        final dates = parseMonthlyDates(amal.monthlyDates);
+        if (dates.isNotEmpty) {
+          final start = today.subtract(
+            const Duration(days: _monthlyPinnedLookback),
+          );
+          final end = today.add(const Duration(days: 1));
+          final rows = await lookup(amal.id, start, end);
+          final done = {
+            for (final r in rows)
+              if (r.progress >= amal.target) _dayKey(r.muhasabaDate),
+          };
+          return occurrenceStreak(
+            isScheduled: (d) => isScheduledMonthDate(dates, d),
+            isCompleted: (d) => done.contains(_dayKey(d)),
+            today: today,
+            lookbackDays: _monthlyPinnedLookback,
+          ).current;
+        }
         var month = monthPeriodOf(today, settings.startOfMonth);
         var streak = 0;
         for (var i = 0; i < 24; i++) {
           final rows = await lookup(amal.id, month.start, month.endExclusive);
-          final done = rows.any((r) => r.progress >= amal.target);
+          final done =
+              rows.where((r) => r.progress >= amal.target).length >=
+              amal.periodTarget;
           if (i == 0 && !done) {
             month = monthPeriodOf(
               month.start.subtract(const Duration(days: 1)),

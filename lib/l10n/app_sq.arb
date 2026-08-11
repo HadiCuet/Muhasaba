@@ -266,5 +266,19 @@
   "genericError": "Diçka shkoi keq. Ju lutemi provoni përsëri.",
   "notificationChannelName": "Kujtesat e amaleve",
   "notificationChannelDescription": "Kujtesa ditore për amalet që ndiqni.",
-  "invalidAmalId": "ID e pavlefshme e amalit"
+  "invalidAmalId": "ID e pavlefshme e amalit",
+  "repeatMode": "Përsëritja",
+  "onSetDays": "Në ditë të caktuara",
+  "onSetDates": "Në data të caktuara",
+  "anyDayMode": "Cilado ditë",
+  "datesOfMonth": "Datat",
+  "daysPerWeekQuestion": "Në sa ditë në javë?",
+  "daysPerMonthQuestion": "Në sa ditë në muaj?",
+  "pickAtLeastOneDay": "Zgjidhni të paktën një ditë",
+  "pickAtLeastOneDate": "Zgjidhni të paktën një datë",
+  "previewDaily": "Përsëritet çdo ditë",
+  "previewWeeklyDays": "Përsëritet çdo {days}",
+  "previewWeeklyAny": "Përsëritet {count, plural, =1{një ditë të çfarëdoshme} other{{count} ditë të çfarëdoshme}} në javë",
+  "previewMonthlyDates": "{count, plural, =1{Përsëritet në datën {dates} të çdo muaji} other{Përsëritet në datat {dates} të çdo muaji}}",
+  "previewMonthlyAny": "Përsëritet {count, plural, =1{një ditë të çfarëdoshme} other{{count} ditë të çfarëdoshme}} në muaj"
 }

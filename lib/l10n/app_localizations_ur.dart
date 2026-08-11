@@ -116,6 +116,74 @@ class AppLocalizationsUr extends AppLocalizations {
   String get dateOfMonth => 'مہینے کی تاریخ';
 
   @override
+  String get repeatMode => 'تکرار کا انداز';
+
+  @override
+  String get onSetDays => 'مقررہ دنوں میں';
+
+  @override
+  String get onSetDates => 'مقررہ تاریخوں میں';
+
+  @override
+  String get anyDayMode => 'کوئی بھی دن';
+
+  @override
+  String get datesOfMonth => 'تاریخیں';
+
+  @override
+  String get daysPerWeekQuestion => 'ہفتے میں کتنے دن؟';
+
+  @override
+  String get daysPerMonthQuestion => 'مہینے میں کتنے دن؟';
+
+  @override
+  String get pickAtLeastOneDay => 'کم از کم ایک دن منتخب کریں';
+
+  @override
+  String get pickAtLeastOneDate => 'کم از کم ایک تاریخ منتخب کریں';
+
+  @override
+  String get previewDaily => 'ہر روز دہرایا جاتا ہے';
+
+  @override
+  String previewWeeklyDays(String days) {
+    return 'ہر $days کو دہرایا جاتا ہے';
+  }
+
+  @override
+  String previewWeeklyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count دنوں',
+      one: 'ایک دن',
+    );
+    return 'ہفتے میں کسی بھی $_temp0 کو دہرایا جاتا ہے';
+  }
+
+  @override
+  String previewMonthlyDates(int count, String dates) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'ہر مہینے کی $dates تاریخوں کو دہرایا جاتا ہے',
+      one: 'ہر مہینے کی $dates تاریخ کو دہرایا جاتا ہے',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String previewMonthlyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count دنوں',
+      one: 'ایک دن',
+    );
+    return 'مہینے میں کسی بھی $_temp0 کو دہرایا جاتا ہے';
+  }
+
+  @override
   String get anyDate => 'کوئی بھی';
 
   @override

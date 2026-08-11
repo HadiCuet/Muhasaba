@@ -48,6 +48,51 @@
     }
   },
   "dateOfMonth": "Date of month",
+  "repeatMode": "Repeat",
+  "onSetDays": "On set days",
+  "onSetDates": "On set dates",
+  "anyDayMode": "Any day",
+  "datesOfMonth": "Dates",
+  "daysPerWeekQuestion": "On how many days a week?",
+  "daysPerMonthQuestion": "On how many days a month?",
+  "pickAtLeastOneDay": "Pick at least one day",
+  "pickAtLeastOneDate": "Pick at least one date",
+  "previewDaily": "Repeats every day",
+  "previewWeeklyDays": "Repeats every {days}",
+  "@previewWeeklyDays": {
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "previewWeeklyAny": "Repeats any {count, plural, =1{1 day} other{{count} days}} a week",
+  "@previewWeeklyAny": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "previewMonthlyDates": "{count, plural, =1{Repeats on day {dates} of each month} other{Repeats on days {dates} of each month}}",
+  "@previewMonthlyDates": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "dates": {
+        "type": "String"
+      }
+    }
+  },
+  "previewMonthlyAny": "Repeats any {count, plural, =1{1 day} other{{count} days}} a month",
+  "@previewMonthlyAny": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
   "anyDate": "Any",
   "anyDateHint": "Any date (stays visible today, hides next day)",
   "onlyDateHint": "Only on the {date}",

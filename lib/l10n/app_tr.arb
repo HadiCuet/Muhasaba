@@ -266,5 +266,19 @@
   "genericError": "Bir şeyler yanlış gitti. Lütfen tekrar deneyin.",
   "notificationChannelName": "Amel hatırlatıcıları",
   "notificationChannelDescription": "Takip ettiğiniz ameller için günlük hatırlatıcılar.",
-  "invalidAmalId": "Geçersiz amel kimliği"
+  "invalidAmalId": "Geçersiz amel kimliği",
+  "repeatMode": "Tekrar",
+  "onSetDays": "Belirli günlerde",
+  "onSetDates": "Belirli tarihlerde",
+  "anyDayMode": "Herhangi bir gün",
+  "datesOfMonth": "Ayın günleri",
+  "daysPerWeekQuestion": "Haftada kaç gün?",
+  "daysPerMonthQuestion": "Ayda kaç gün?",
+  "pickAtLeastOneDay": "En az bir gün seçin",
+  "pickAtLeastOneDate": "En az bir tarih seçin",
+  "previewDaily": "Her gün tekrarlanır",
+  "previewWeeklyDays": "Her {days} tekrarlanır",
+  "previewWeeklyAny": "Haftada herhangi {count, plural, other{{count} gün}} tekrarlanır",
+  "previewMonthlyDates": "{count, plural, =1{Her ayın {dates} gününde tekrarlanır} other{Her ayın {dates} günlerinde tekrarlanır}}",
+  "previewMonthlyAny": "Ayda herhangi {count, plural, other{{count} gün}} tekrarlanır"
 }

@@ -116,6 +116,81 @@ class AppLocalizationsAr extends AppLocalizations {
   String get dateOfMonth => 'تاريخ الشهر';
 
   @override
+  String get repeatMode => 'نمط التكرار';
+
+  @override
+  String get onSetDays => 'في أيام محددة';
+
+  @override
+  String get onSetDates => 'في تواريخ محددة';
+
+  @override
+  String get anyDayMode => 'أي يوم';
+
+  @override
+  String get datesOfMonth => 'التواريخ';
+
+  @override
+  String get daysPerWeekQuestion => 'في كم يوم من الأسبوع؟';
+
+  @override
+  String get daysPerMonthQuestion => 'في كم يوم من الشهر؟';
+
+  @override
+  String get pickAtLeastOneDay => 'اختر يومًا واحدًا على الأقل';
+
+  @override
+  String get pickAtLeastOneDate => 'اختر تاريخًا واحدًا على الأقل';
+
+  @override
+  String get previewDaily => 'يتكرر كل يوم';
+
+  @override
+  String previewWeeklyDays(String days) {
+    return 'يتكرر كل $days';
+  }
+
+  @override
+  String previewWeeklyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count يوم',
+      many: '$count يومًا',
+      few: '$count أيام',
+      two: 'يومين',
+      one: 'يوم واحد',
+    );
+    return 'يتكرر أي $_temp0 في الأسبوع';
+  }
+
+  @override
+  String previewMonthlyDates(int count, String dates) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'يتكرر في أيام $dates من كل شهر',
+      two: 'يتكرر في يومي $dates من كل شهر',
+      one: 'يتكرر في يوم $dates من كل شهر',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String previewMonthlyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count يوم',
+      many: '$count يومًا',
+      few: '$count أيام',
+      two: 'يومين',
+      one: 'يوم واحد',
+    );
+    return 'يتكرر أي $_temp0 في الشهر';
+  }
+
+  @override
   String get anyDate => 'أي تاريخ';
 
   @override

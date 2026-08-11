@@ -116,6 +116,74 @@ class AppLocalizationsSw extends AppLocalizations {
   String get dateOfMonth => 'Tarehe ya mwezi';
 
   @override
+  String get repeatMode => 'Kurudia';
+
+  @override
+  String get onSetDays => 'Siku maalum';
+
+  @override
+  String get onSetDates => 'Tarehe maalum';
+
+  @override
+  String get anyDayMode => 'Siku yoyote';
+
+  @override
+  String get datesOfMonth => 'Tarehe';
+
+  @override
+  String get daysPerWeekQuestion => 'Siku ngapi kwa wiki?';
+
+  @override
+  String get daysPerMonthQuestion => 'Siku ngapi kwa mwezi?';
+
+  @override
+  String get pickAtLeastOneDay => 'Chagua angalau siku moja';
+
+  @override
+  String get pickAtLeastOneDate => 'Chagua angalau tarehe moja';
+
+  @override
+  String get previewDaily => 'Hurudiwa kila siku';
+
+  @override
+  String previewWeeklyDays(String days) {
+    return 'Hurudiwa kila $days';
+  }
+
+  @override
+  String previewWeeklyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'siku $count zozote',
+      one: 'siku moja yoyote',
+    );
+    return 'Hurudiwa $_temp0 kwa wiki';
+  }
+
+  @override
+  String previewMonthlyDates(int count, String dates) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Hurudiwa tarehe $dates za kila mwezi',
+      one: 'Hurudiwa tarehe $dates ya kila mwezi',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String previewMonthlyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'siku $count zozote',
+      one: 'siku moja yoyote',
+    );
+    return 'Hurudiwa $_temp0 kwa mwezi';
+  }
+
+  @override
   String get anyDate => 'Yoyote';
 
   @override

@@ -116,6 +116,74 @@ class AppLocalizationsPs extends AppLocalizations {
   String get dateOfMonth => 'د میاشتې نیټه';
 
   @override
+  String get repeatMode => 'د تکرار ډول';
+
+  @override
+  String get onSetDays => 'په ټاکلو ورځو کې';
+
+  @override
+  String get onSetDates => 'په ټاکلو نیټو کې';
+
+  @override
+  String get anyDayMode => 'هره ورځ';
+
+  @override
+  String get datesOfMonth => 'نیټې';
+
+  @override
+  String get daysPerWeekQuestion => 'په اونۍ کې څو ورځې؟';
+
+  @override
+  String get daysPerMonthQuestion => 'په میاشت کې څو ورځې؟';
+
+  @override
+  String get pickAtLeastOneDay => 'لږ تر لږه یوه ورځ وټاکئ';
+
+  @override
+  String get pickAtLeastOneDate => 'لږ تر لږه یوه نیټه وټاکئ';
+
+  @override
+  String get previewDaily => 'هره ورځ تکرار کیږي';
+
+  @override
+  String previewWeeklyDays(String days) {
+    return 'هره $days تکرار کیږي';
+  }
+
+  @override
+  String previewWeeklyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ورځې',
+      one: 'یوه ورځ',
+    );
+    return 'په اونۍ کې هره $_temp0 تکرار کیږي';
+  }
+
+  @override
+  String previewMonthlyDates(int count, String dates) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'د هرې میاشتې په $dates نیټو کې تکرار کیږي',
+      one: 'د هرې میاشتې په $dates نیټه کې تکرار کیږي',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String previewMonthlyAny(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count ورځې',
+      one: 'یوه ورځ',
+    );
+    return 'په میاشت کې هره $_temp0 تکرار کیږي';
+  }
+
+  @override
   String get anyDate => 'هره';
 
   @override
