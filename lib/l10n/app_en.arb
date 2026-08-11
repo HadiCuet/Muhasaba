@@ -428,5 +428,21 @@
   "genericError": "Something went wrong. Please try again.",
   "notificationChannelName": "Amal reminders",
   "notificationChannelDescription": "Daily reminders for your tracked amal.",
-  "invalidAmalId": "Invalid amal id"
+  "invalidAmalId": "Invalid amal id",
+  "tutorialSettingsRow": "How to use Muhasaba",
+  "tutorialSkip": "Skip",
+  "tutorialNext": "Next",
+  "tutorialDone": "Done",
+  "tutorialTapTitle": "Tap to complete",
+  "tutorialTapBody": "One tap marks an amal done for today. Tap again to undo.",
+  "tutorialEditTitle": "Double-tap to edit",
+  "tutorialEditBody": "Opens the edit form — rename it, or change how often it repeats.",
+  "tutorialReorderTitle": "Press and hold to reorder",
+  "tutorialReorderBody": "Hold a row, then drag it. Your order is saved.",
+  "tutorialRemoveTitle": "Swipe to remove",
+  "tutorialRemoveBody": "Swipe the row aside to hide it for today, or stop tracking it.",
+  "tutorialCountTitle": "Counting repetitions",
+  "tutorialCountBody": "For amal with a target above one, use − and + for each repetition.",
+  "tutorialViewTitle": "Group or flatten",
+  "tutorialViewBody": "Switch between grouping by category and one flat list."
 }

@@ -280,5 +280,21 @@
   "previewWeeklyDays": "{days} күндері қайталанады",
   "previewWeeklyAny": "Аптасына кез келген {count, plural, other{{count} күн}} қайталанады",
   "previewMonthlyDates": "{count, plural, =1{Әр айдың {dates} күні қайталанады} other{Әр айдың {dates} күндері қайталанады}}",
-  "previewMonthlyAny": "Айына кез келген {count, plural, other{{count} күн}} қайталанады"
+  "previewMonthlyAny": "Айына кез келген {count, plural, other{{count} күн}} қайталанады",
+  "tutorialSettingsRow": "Muhasaba қалай қолданылады",
+  "tutorialSkip": "Өткізу",
+  "tutorialNext": "Келесі",
+  "tutorialDone": "Дайын",
+  "tutorialTapTitle": "Орындау үшін түртіңіз",
+  "tutorialTapBody": "Бір рет түрту амалды бүгінге орындалды деп белгілейді. Қайтару үшін қайта түртіңіз.",
+  "tutorialEditTitle": "Өзгерту үшін екі рет түртіңіз",
+  "tutorialEditBody": "Өңдеу пішінін ашады — атауын өзгертіңіз немесе қайталану жиілігін ауыстырыңыз.",
+  "tutorialReorderTitle": "Ретін өзгерту үшін басып тұрыңыз",
+  "tutorialReorderBody": "Жолды басып тұрып, сүйреңіз. Реттілігіңіз сақталады.",
+  "tutorialRemoveTitle": "Жою үшін сырғытыңыз",
+  "tutorialRemoveBody": "Жолды шетке сырғытып, оны бүгінге жасырыңыз немесе бақылауды тоқтатыңыз.",
+  "tutorialCountTitle": "Қайталауларды санау",
+  "tutorialCountBody": "Мақсаты бірден көп амалдар үшін әр қайталауда − және + пайдаланыңыз.",
+  "tutorialViewTitle": "Топтау немесе жай тізім",
+  "tutorialViewBody": "Санат бойынша топтау мен бір жай тізім арасында ауысыңыз."
 }

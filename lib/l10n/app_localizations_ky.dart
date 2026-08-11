@@ -1002,4 +1002,58 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'Жараксыз амал идентификатору';
+
+  @override
+  String get tutorialSettingsRow => 'Muhasaba кантип колдонулат';
+
+  @override
+  String get tutorialSkip => 'Өткөрүп жиберүү';
+
+  @override
+  String get tutorialNext => 'Кийинки';
+
+  @override
+  String get tutorialDone => 'Даяр';
+
+  @override
+  String get tutorialTapTitle => 'Аткаруу үчүн басыңыз';
+
+  @override
+  String get tutorialTapBody =>
+      'Бир жолу басуу амалды бүгүнкүгө аткарылды деп белгилейт. Жокко чыгаруу үчүн кайра басыңыз.';
+
+  @override
+  String get tutorialEditTitle => 'Өзгөртүү үчүн эки жолу басыңыз';
+
+  @override
+  String get tutorialEditBody =>
+      'Түзөтүү формасын ачат — атын өзгөртүңүз же кайталануу жыштыгын өзгөртүңүз.';
+
+  @override
+  String get tutorialReorderTitle => 'Иретин өзгөртүү үчүн басып туруңуз';
+
+  @override
+  String get tutorialReorderBody =>
+      'Сапты басып туруп, сүйрөңүз. Иретиңиз сакталат.';
+
+  @override
+  String get tutorialRemoveTitle => 'Алып салуу үчүн жылдырыңыз';
+
+  @override
+  String get tutorialRemoveBody =>
+      'Сапты четке жылдырып, аны бүгүнкүгө жашырыңыз же көзөмөлдөн чыгарыңыз.';
+
+  @override
+  String get tutorialCountTitle => 'Кайталоолорду эсептөө';
+
+  @override
+  String get tutorialCountBody =>
+      'Максаты бирден көп амалдар үчүн ар бир кайталоодо − жана + колдонуңуз.';
+
+  @override
+  String get tutorialViewTitle => 'Топтоо же жөнөкөй тизме';
+
+  @override
+  String get tutorialViewBody =>
+      'Категория боюнча топтоо менен бир жөнөкөй тизменин ортосунда алмашыңыз.';
 }

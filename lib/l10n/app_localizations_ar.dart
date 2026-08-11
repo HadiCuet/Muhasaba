@@ -1006,4 +1006,58 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'معرّف عمل غير صالح';
+
+  @override
+  String get tutorialSettingsRow => 'كيفية استخدام محاسبة';
+
+  @override
+  String get tutorialSkip => 'تخطي';
+
+  @override
+  String get tutorialNext => 'التالي';
+
+  @override
+  String get tutorialDone => 'تم';
+
+  @override
+  String get tutorialTapTitle => 'اضغط للإكمال';
+
+  @override
+  String get tutorialTapBody =>
+      'ضغطة واحدة تُعلّم العمل كمكتمل لليوم. اضغط مرة أخرى للتراجع.';
+
+  @override
+  String get tutorialEditTitle => 'اضغط مرتين للتعديل';
+
+  @override
+  String get tutorialEditBody =>
+      'يفتح نموذج التعديل — غيّر الاسم أو عدد مرات التكرار.';
+
+  @override
+  String get tutorialReorderTitle => 'اضغط مطولاً لإعادة الترتيب';
+
+  @override
+  String get tutorialReorderBody =>
+      'اضغط مطولاً على الصف ثم اسحبه. يُحفظ ترتيبك.';
+
+  @override
+  String get tutorialRemoveTitle => 'اسحب للإزالة';
+
+  @override
+  String get tutorialRemoveBody =>
+      'اسحب الصف جانباً لإخفائه اليوم، أو لإيقاف تتبعه.';
+
+  @override
+  String get tutorialCountTitle => 'عدّ التكرارات';
+
+  @override
+  String get tutorialCountBody =>
+      'للأعمال التي هدفها أكثر من واحد، استخدم − و + لكل تكرار.';
+
+  @override
+  String get tutorialViewTitle => 'التجميع أو القائمة المسطحة';
+
+  @override
+  String get tutorialViewBody =>
+      'بدّل بين التجميع حسب الفئة وقائمة واحدة مسطحة.';
 }

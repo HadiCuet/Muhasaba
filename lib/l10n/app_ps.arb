@@ -280,5 +280,21 @@
   "previewWeeklyDays": "هره {days} تکرار کیږي",
   "previewWeeklyAny": "په اونۍ کې هره {count, plural, =1{یوه ورځ} other{{count} ورځې}} تکرار کیږي",
   "previewMonthlyDates": "{count, plural, =1{د هرې میاشتې په {dates} نیټه کې تکرار کیږي} other{د هرې میاشتې په {dates} نیټو کې تکرار کیږي}}",
-  "previewMonthlyAny": "په میاشت کې هره {count, plural, =1{یوه ورځ} other{{count} ورځې}} تکرار کیږي"
+  "previewMonthlyAny": "په میاشت کې هره {count, plural, =1{یوه ورځ} other{{count} ورځې}} تکرار کیږي",
+  "tutorialSettingsRow": "محاسبه څنګه وکاروئ",
+  "tutorialSkip": "پرېښودل",
+  "tutorialNext": "بل",
+  "tutorialDone": "پای",
+  "tutorialTapTitle": "د بشپړولو لپاره ټک وکړئ",
+  "tutorialTapBody": "یو ټک عمل د نن ورځې لپاره بشپړ نښه کوي. د بېرته کولو لپاره بیا ټک وکړئ.",
+  "tutorialEditTitle": "د سمولو لپاره دوه ځله ټک وکړئ",
+  "tutorialEditBody": "د سمون فورمه پرانیزي — نوم یې بدل کړئ، یا د تکرار موده بدله کړئ.",
+  "tutorialReorderTitle": "د بیا ترتیب لپاره ټینګ ونیسئ",
+  "tutorialReorderBody": "یوه کرښه ونیسئ، بیا یې راکاږئ. ستاسو ترتیب خوندي کیږي.",
+  "tutorialRemoveTitle": "د لرې کولو لپاره یې وښویوئ",
+  "tutorialRemoveBody": "کرښه څنګ ته وښویوئ چې د نن لپاره پټه شي، یا یې تعقیب ودروئ.",
+  "tutorialCountTitle": "د تکرارونو شمېرل",
+  "tutorialCountBody": "د هغو عملونو لپاره چې موخه یې له یو څخه ډېره ده، د هر تکرار لپاره − او + وکاروئ.",
+  "tutorialViewTitle": "ګروپ یا ساده لیست",
+  "tutorialViewBody": "د کټګورۍ له مخې ګروپ کولو او یوه ساده لیست ترمنځ بدلون وکړئ."
 }

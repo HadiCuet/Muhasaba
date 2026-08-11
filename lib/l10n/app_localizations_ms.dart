@@ -1006,4 +1006,58 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'ID amal tidak sah';
+
+  @override
+  String get tutorialSettingsRow => 'Cara menggunakan Muhasabah';
+
+  @override
+  String get tutorialSkip => 'Langkau';
+
+  @override
+  String get tutorialNext => 'Seterusnya';
+
+  @override
+  String get tutorialDone => 'Selesai';
+
+  @override
+  String get tutorialTapTitle => 'Ketik untuk selesai';
+
+  @override
+  String get tutorialTapBody =>
+      'Satu ketikan menanda amal sebagai selesai untuk hari ini. Ketik sekali lagi untuk membatalkannya.';
+
+  @override
+  String get tutorialEditTitle => 'Ketik dua kali untuk sunting';
+
+  @override
+  String get tutorialEditBody =>
+      'Membuka borang suntingan — tukar namanya, atau ubah kekerapan ulangannya.';
+
+  @override
+  String get tutorialReorderTitle => 'Tekan dan tahan untuk menyusun semula';
+
+  @override
+  String get tutorialReorderBody =>
+      'Tahan satu baris, kemudian seret. Susunan anda disimpan.';
+
+  @override
+  String get tutorialRemoveTitle => 'Leret untuk membuang';
+
+  @override
+  String get tutorialRemoveBody =>
+      'Leret baris ke tepi untuk menyembunyikannya hari ini, atau berhenti menjejakinya.';
+
+  @override
+  String get tutorialCountTitle => 'Mengira ulangan';
+
+  @override
+  String get tutorialCountBody =>
+      'Bagi amal yang sasarannya lebih daripada satu, gunakan − dan + untuk setiap ulangan.';
+
+  @override
+  String get tutorialViewTitle => 'Kumpulkan atau ratakan';
+
+  @override
+  String get tutorialViewBody =>
+      'Tukar antara pengumpulan mengikut kategori dan satu senarai rata.';
 }

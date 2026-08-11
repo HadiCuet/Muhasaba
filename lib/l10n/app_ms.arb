@@ -280,5 +280,21 @@
   "previewWeeklyDays": "Berulang setiap {days}",
   "previewWeeklyAny": "Berulang mana-mana {count, plural, other{{count} hari}} seminggu",
   "previewMonthlyDates": "{count, plural, other{Berulang pada {dates} haribulan setiap bulan}}",
-  "previewMonthlyAny": "Berulang mana-mana {count, plural, other{{count} hari}} sebulan"
+  "previewMonthlyAny": "Berulang mana-mana {count, plural, other{{count} hari}} sebulan",
+  "tutorialSettingsRow": "Cara menggunakan Muhasabah",
+  "tutorialSkip": "Langkau",
+  "tutorialNext": "Seterusnya",
+  "tutorialDone": "Selesai",
+  "tutorialTapTitle": "Ketik untuk selesai",
+  "tutorialTapBody": "Satu ketikan menanda amal sebagai selesai untuk hari ini. Ketik sekali lagi untuk membatalkannya.",
+  "tutorialEditTitle": "Ketik dua kali untuk sunting",
+  "tutorialEditBody": "Membuka borang suntingan — tukar namanya, atau ubah kekerapan ulangannya.",
+  "tutorialReorderTitle": "Tekan dan tahan untuk menyusun semula",
+  "tutorialReorderBody": "Tahan satu baris, kemudian seret. Susunan anda disimpan.",
+  "tutorialRemoveTitle": "Leret untuk membuang",
+  "tutorialRemoveBody": "Leret baris ke tepi untuk menyembunyikannya hari ini, atau berhenti menjejakinya.",
+  "tutorialCountTitle": "Mengira ulangan",
+  "tutorialCountBody": "Bagi amal yang sasarannya lebih daripada satu, gunakan − dan + untuk setiap ulangan.",
+  "tutorialViewTitle": "Kumpulkan atau ratakan",
+  "tutorialViewBody": "Tukar antara pengumpulan mengikut kategori dan satu senarai rata."
 }

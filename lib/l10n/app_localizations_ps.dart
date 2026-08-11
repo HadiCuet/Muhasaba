@@ -997,4 +997,58 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'ناسم د عمل پېژندنه';
+
+  @override
+  String get tutorialSettingsRow => 'محاسبه څنګه وکاروئ';
+
+  @override
+  String get tutorialSkip => 'پرېښودل';
+
+  @override
+  String get tutorialNext => 'بل';
+
+  @override
+  String get tutorialDone => 'پای';
+
+  @override
+  String get tutorialTapTitle => 'د بشپړولو لپاره ټک وکړئ';
+
+  @override
+  String get tutorialTapBody =>
+      'یو ټک عمل د نن ورځې لپاره بشپړ نښه کوي. د بېرته کولو لپاره بیا ټک وکړئ.';
+
+  @override
+  String get tutorialEditTitle => 'د سمولو لپاره دوه ځله ټک وکړئ';
+
+  @override
+  String get tutorialEditBody =>
+      'د سمون فورمه پرانیزي — نوم یې بدل کړئ، یا د تکرار موده بدله کړئ.';
+
+  @override
+  String get tutorialReorderTitle => 'د بیا ترتیب لپاره ټینګ ونیسئ';
+
+  @override
+  String get tutorialReorderBody =>
+      'یوه کرښه ونیسئ، بیا یې راکاږئ. ستاسو ترتیب خوندي کیږي.';
+
+  @override
+  String get tutorialRemoveTitle => 'د لرې کولو لپاره یې وښویوئ';
+
+  @override
+  String get tutorialRemoveBody =>
+      'کرښه څنګ ته وښویوئ چې د نن لپاره پټه شي، یا یې تعقیب ودروئ.';
+
+  @override
+  String get tutorialCountTitle => 'د تکرارونو شمېرل';
+
+  @override
+  String get tutorialCountBody =>
+      'د هغو عملونو لپاره چې موخه یې له یو څخه ډېره ده، د هر تکرار لپاره − او + وکاروئ.';
+
+  @override
+  String get tutorialViewTitle => 'ګروپ یا ساده لیست';
+
+  @override
+  String get tutorialViewBody =>
+      'د کټګورۍ له مخې ګروپ کولو او یوه ساده لیست ترمنځ بدلون وکړئ.';
 }

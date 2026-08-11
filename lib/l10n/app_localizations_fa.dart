@@ -998,4 +998,58 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'شناسه عمل نامعتبر';
+
+  @override
+  String get tutorialSettingsRow => 'روش استفاده از محاسبه';
+
+  @override
+  String get tutorialSkip => 'رد کردن';
+
+  @override
+  String get tutorialNext => 'بعدی';
+
+  @override
+  String get tutorialDone => 'تمام';
+
+  @override
+  String get tutorialTapTitle => 'برای انجام ضربه بزنید';
+
+  @override
+  String get tutorialTapBody =>
+      'یک ضربه، عمل را برای امروز انجام‌شده علامت می‌زند. برای برگرداندن دوباره ضربه بزنید.';
+
+  @override
+  String get tutorialEditTitle => 'برای ویرایش دو بار ضربه بزنید';
+
+  @override
+  String get tutorialEditBody =>
+      'فرم ویرایش را باز می‌کند — نام را تغییر دهید یا تکرار آن را عوض کنید.';
+
+  @override
+  String get tutorialReorderTitle => 'برای تغییر ترتیب نگه دارید';
+
+  @override
+  String get tutorialReorderBody =>
+      'یک ردیف را نگه دارید و بکشید. ترتیب شما ذخیره می‌شود.';
+
+  @override
+  String get tutorialRemoveTitle => 'برای حذف بکشید';
+
+  @override
+  String get tutorialRemoveBody =>
+      'ردیف را به کنار بکشید تا برای امروز پنهان شود یا پیگیری آن متوقف شود.';
+
+  @override
+  String get tutorialCountTitle => 'شمردن تکرارها';
+
+  @override
+  String get tutorialCountBody =>
+      'برای اعمالی که هدفشان بیش از یک است، برای هر تکرار از − و + استفاده کنید.';
+
+  @override
+  String get tutorialViewTitle => 'گروه‌بندی یا لیست ساده';
+
+  @override
+  String get tutorialViewBody =>
+      'بین گروه‌بندی بر اساس دسته و یک لیست ساده جابه‌جا شوید.';
 }

@@ -1004,4 +1004,58 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'Nasnameya amelê ya nederbasdar';
+
+  @override
+  String get tutorialSettingsRow => 'Muhasaba çawa tê bikaranîn';
+
+  @override
+  String get tutorialSkip => 'Derbas bike';
+
+  @override
+  String get tutorialNext => 'Pêş';
+
+  @override
+  String get tutorialDone => 'Temam';
+
+  @override
+  String get tutorialTapTitle => 'Ji bo temamkirinê bitikîne';
+
+  @override
+  String get tutorialTapBody =>
+      'Tikandinek kirinê ji bo îro wek qediyayî nîşan dike. Ji bo vegerandinê dîsa bitikîne.';
+
+  @override
+  String get tutorialEditTitle => 'Ji bo guhertinê du caran bitikîne';
+
+  @override
+  String get tutorialEditBody =>
+      'Forma guhertinê vedike — navê wê biguhere, an jî dubarebûna wê biguhere.';
+
+  @override
+  String get tutorialReorderTitle => 'Ji bo rêzkirinê bitepisîne û bigire';
+
+  @override
+  String get tutorialReorderBody =>
+      'Rêzekê bigire, paşê bikişîne. Rêza te tê tomarkirin.';
+
+  @override
+  String get tutorialRemoveTitle => 'Ji bo rakirinê bişemitîne';
+
+  @override
+  String get tutorialRemoveBody =>
+      'Rêzê ber bi kêlekê ve bişemitîne da ku ji bo îro veşêre, an jî şopandina wê rawestîne.';
+
+  @override
+  String get tutorialCountTitle => 'Jimartina dubarebûnan';
+
+  @override
+  String get tutorialCountBody =>
+      'Ji bo kirinên ku armanca wan ji yekê zêdetir e, ji bo her dubarebûnê − û + bi kar bîne.';
+
+  @override
+  String get tutorialViewTitle => 'Kom bike an lîsteya sade';
+
+  @override
+  String get tutorialViewBody =>
+      'Di navbera komkirina li gorî beşê û lîsteyek sade de biguhere.';
 }

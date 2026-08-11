@@ -280,5 +280,21 @@
   "previewWeeklyDays": "Har {days} takrorlanadi",
   "previewWeeklyAny": "Haftada istalgan {count, plural, other{{count} kun}} takrorlanadi",
   "previewMonthlyDates": "{count, plural, =1{Har oyning {dates} kunida takrorlanadi} other{Har oyning {dates} kunlarida takrorlanadi}}",
-  "previewMonthlyAny": "Oyda istalgan {count, plural, other{{count} kun}} takrorlanadi"
+  "previewMonthlyAny": "Oyda istalgan {count, plural, other{{count} kun}} takrorlanadi",
+  "tutorialSettingsRow": "Muhosabadan qanday foydalanish",
+  "tutorialSkip": "O'tkazib yuborish",
+  "tutorialNext": "Keyingi",
+  "tutorialDone": "Tayyor",
+  "tutorialTapTitle": "Bajarish uchun bosing",
+  "tutorialTapBody": "Bir marta bosish amalni bugun uchun bajarilgan deb belgilaydi. Bekor qilish uchun yana bosing.",
+  "tutorialEditTitle": "Tahrirlash uchun ikki marta bosing",
+  "tutorialEditBody": "Tahrirlash shaklini ochadi — nomini o'zgartiring yoki takrorlanish tartibini o'zgartiring.",
+  "tutorialReorderTitle": "Tartibni o'zgartirish uchun bosib turing",
+  "tutorialReorderBody": "Qatorni bosib turing, so'ng suring. Tartibingiz saqlanadi.",
+  "tutorialRemoveTitle": "Olib tashlash uchun suring",
+  "tutorialRemoveBody": "Qatorni chetga surib, uni bugun uchun yashiring yoki kuzatuvni to'xtating.",
+  "tutorialCountTitle": "Takrorlarni sanash",
+  "tutorialCountBody": "Maqsadi birdan ortiq amallar uchun har bir takrorda − va + dan foydalaning.",
+  "tutorialViewTitle": "Guruhlash yoki oddiy ro'yxat",
+  "tutorialViewBody": "Turkum bo'yicha guruhlash va bitta oddiy ro'yxat o'rtasida almashing."
 }

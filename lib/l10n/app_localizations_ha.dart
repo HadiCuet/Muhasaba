@@ -1005,4 +1005,58 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'ID na aiki mara inganci';
+
+  @override
+  String get tutorialSettingsRow => 'Yadda ake amfani da Muhasaba';
+
+  @override
+  String get tutorialSkip => 'Tsallake';
+
+  @override
+  String get tutorialNext => 'Na gaba';
+
+  @override
+  String get tutorialDone => 'An gama';
+
+  @override
+  String get tutorialTapTitle => 'Danna don kammalawa';
+
+  @override
+  String get tutorialTapBody =>
+      'Danna sau ɗaya yana yiwa amali alamar an kammala don yau. Danna kuma don warwarewa.';
+
+  @override
+  String get tutorialEditTitle => 'Danna sau biyu don gyara';
+
+  @override
+  String get tutorialEditBody =>
+      'Yana buɗe fom ɗin gyara — canza sunansa, ko canza yawan maimaitawarsa.';
+
+  @override
+  String get tutorialReorderTitle => 'Danna ka riƙe don sake tsarawa';
+
+  @override
+  String get tutorialReorderBody =>
+      'Riƙe layi, sannan ka jawo shi. Ana adana tsarinka.';
+
+  @override
+  String get tutorialRemoveTitle => 'Zare don cirewa';
+
+  @override
+  String get tutorialRemoveBody =>
+      'Zare layin zuwa gefe don ɓoye shi na yau, ko dakatar da bin diddigin sa.';
+
+  @override
+  String get tutorialCountTitle => 'Ƙidaya maimaitawa';
+
+  @override
+  String get tutorialCountBody =>
+      'Ga amalin da burinsa ya wuce ɗaya, yi amfani da − da + ga kowace maimaitawa.';
+
+  @override
+  String get tutorialViewTitle => 'Tsarawa ta nau\'i ko jerin shimfida';
+
+  @override
+  String get tutorialViewBody =>
+      'Canza tsakanin tsara ta nau\'i da jerin shimfida ɗaya.';
 }

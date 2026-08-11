@@ -1825,6 +1825,102 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Invalid amal id'**
   String get invalidAmalId;
+
+  /// No description provided for @tutorialSettingsRow.
+  ///
+  /// In en, this message translates to:
+  /// **'How to use Muhasaba'**
+  String get tutorialSettingsRow;
+
+  /// No description provided for @tutorialSkip.
+  ///
+  /// In en, this message translates to:
+  /// **'Skip'**
+  String get tutorialSkip;
+
+  /// No description provided for @tutorialNext.
+  ///
+  /// In en, this message translates to:
+  /// **'Next'**
+  String get tutorialNext;
+
+  /// No description provided for @tutorialDone.
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get tutorialDone;
+
+  /// No description provided for @tutorialTapTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to complete'**
+  String get tutorialTapTitle;
+
+  /// No description provided for @tutorialTapBody.
+  ///
+  /// In en, this message translates to:
+  /// **'One tap marks an amal done for today. Tap again to undo.'**
+  String get tutorialTapBody;
+
+  /// No description provided for @tutorialEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Double-tap to edit'**
+  String get tutorialEditTitle;
+
+  /// No description provided for @tutorialEditBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Opens the edit form — rename it, or change how often it repeats.'**
+  String get tutorialEditBody;
+
+  /// No description provided for @tutorialReorderTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Press and hold to reorder'**
+  String get tutorialReorderTitle;
+
+  /// No description provided for @tutorialReorderBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Hold a row, then drag it. Your order is saved.'**
+  String get tutorialReorderBody;
+
+  /// No description provided for @tutorialRemoveTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Swipe to remove'**
+  String get tutorialRemoveTitle;
+
+  /// No description provided for @tutorialRemoveBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Swipe the row aside to hide it for today, or stop tracking it.'**
+  String get tutorialRemoveBody;
+
+  /// No description provided for @tutorialCountTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Counting repetitions'**
+  String get tutorialCountTitle;
+
+  /// No description provided for @tutorialCountBody.
+  ///
+  /// In en, this message translates to:
+  /// **'For amal with a target above one, use − and + for each repetition.'**
+  String get tutorialCountBody;
+
+  /// No description provided for @tutorialViewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Group or flatten'**
+  String get tutorialViewTitle;
+
+  /// No description provided for @tutorialViewBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Switch between grouping by category and one flat list.'**
+  String get tutorialViewBody;
 }
 
 class _AppLocalizationsDelegate

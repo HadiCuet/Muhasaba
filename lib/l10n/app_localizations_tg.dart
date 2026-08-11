@@ -1002,4 +1002,59 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'Идентификатори амали нодуруст';
+
+  @override
+  String get tutorialSettingsRow => 'Тарзи истифодаи муҳосиба';
+
+  @override
+  String get tutorialSkip => 'Гузаштан';
+
+  @override
+  String get tutorialNext => 'Баъдӣ';
+
+  @override
+  String get tutorialDone => 'Тайёр';
+
+  @override
+  String get tutorialTapTitle => 'Барои иҷро зер кунед';
+
+  @override
+  String get tutorialTapBody =>
+      'Як зеркунӣ амалро барои имрӯз иҷрошуда қайд мекунад. Барои бекор кардан дубора зер кунед.';
+
+  @override
+  String get tutorialEditTitle => 'Барои таҳрир ду бор зер кунед';
+
+  @override
+  String get tutorialEditBody =>
+      'Шакли таҳрирро мекушояд — номашро иваз кунед ё басомади такрорро тағйир диҳед.';
+
+  @override
+  String get tutorialReorderTitle =>
+      'Барои тағйири тартиб пахш карда нигоҳ доред';
+
+  @override
+  String get tutorialReorderBody =>
+      'Сатрро нигоҳ доред, сипас кашед. Тартиби шумо нигоҳ дошта мешавад.';
+
+  @override
+  String get tutorialRemoveTitle => 'Барои хориҷ кардан кашед';
+
+  @override
+  String get tutorialRemoveBody =>
+      'Сатрро ба канор кашед, то барои имрӯз пинҳон шавад ё пайгирии он қатъ гардад.';
+
+  @override
+  String get tutorialCountTitle => 'Ҳисоби такрорҳо';
+
+  @override
+  String get tutorialCountBody =>
+      'Барои амалҳое, ки ҳадафашон аз як зиёд аст, дар ҳар такрор − ва + -ро истифода баред.';
+
+  @override
+  String get tutorialViewTitle => 'Гурӯҳбандӣ ё рӯйхати содда';
+
+  @override
+  String get tutorialViewBody =>
+      'Байни аз рӯи гурӯҳ ҷудо кардан ва як рӯйхати содда иваз кунед.';
 }

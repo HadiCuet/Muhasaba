@@ -1003,4 +1003,58 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'अमान्य अमल आईडी';
+
+  @override
+  String get tutorialSettingsRow => 'Muhasaba कैसे इस्तेमाल करें';
+
+  @override
+  String get tutorialSkip => 'छोड़ें';
+
+  @override
+  String get tutorialNext => 'आगे';
+
+  @override
+  String get tutorialDone => 'हो गया';
+
+  @override
+  String get tutorialTapTitle => 'पूरा करने के लिए टैप करें';
+
+  @override
+  String get tutorialTapBody =>
+      'एक टैप से अमल आज के लिए पूरा चिह्नित हो जाता है। पूर्ववत करने के लिए फिर से टैप करें।';
+
+  @override
+  String get tutorialEditTitle => 'संपादित करने के लिए डबल-टैप करें';
+
+  @override
+  String get tutorialEditBody =>
+      'संपादन फ़ॉर्म खुलता है — नाम बदलें, या यह कितनी बार दोहराया जाए वह बदलें।';
+
+  @override
+  String get tutorialReorderTitle => 'क्रम बदलने के लिए दबाकर रखें';
+
+  @override
+  String get tutorialReorderBody =>
+      'पंक्ति को दबाकर रखें, फिर खींचें। आपका क्रम सहेजा जाता है।';
+
+  @override
+  String get tutorialRemoveTitle => 'हटाने के लिए स्वाइप करें';
+
+  @override
+  String get tutorialRemoveBody =>
+      'पंक्ति को बगल में स्वाइप करके आज के लिए छुपाएँ, या उसकी ट्रैकिंग बंद करें।';
+
+  @override
+  String get tutorialCountTitle => 'पुनरावृत्ति गिनना';
+
+  @override
+  String get tutorialCountBody =>
+      'जिन अमल का लक्ष्य एक से अधिक है, हर पुनरावृत्ति के लिए − और + का उपयोग करें।';
+
+  @override
+  String get tutorialViewTitle => 'समूह या सपाट सूची';
+
+  @override
+  String get tutorialViewBody =>
+      'श्रेणी के अनुसार समूह और एक सपाट सूची के बीच बदलें।';
 }

@@ -3,6 +3,7 @@ import 'dart:math';
 
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
+import 'package:go_router/go_router.dart';
 import 'package:package_info_plus/package_info_plus.dart';
 import '../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
@@ -17,6 +18,7 @@ import '../../domain/services/reminder_sync.dart';
 import '../../domain/utils/app_locale.dart';
 import '../../domain/utils/localized_number.dart';
 import '../../domain/utils/supported_languages.dart';
+import '../tutorial/tutorial_controller.dart';
 import 'support_actions.dart';
 
 class SettingsScreen extends ConsumerWidget {
@@ -242,6 +244,13 @@ class _SettingsList extends ConsumerWidget {
         _SectionHeader(title: l.settingsSupport),
         _CardGroup(
           children: [
+            _SettingsItem(
+              icon: '🧭',
+              iconColor: Colors.orange,
+              title: l.tutorialSettingsRow,
+              trailing: '',
+              onTap: () => _replayTutorial(context, ref),
+            ),
             _SettingsItem(
               icon: '⭐',
               iconColor: Colors.orange,
@@ -935,4 +944,14 @@ String _themeLabel(BuildContext context, ThemeMode mode) {
     case ThemeMode.dark:
       return l.themeDark;
   }
+}
+
+/// The tour anchors to Today, so switch tabs and let that branch paint a
+/// frame before starting — otherwise the spotlight lands on coordinates the
+/// user can't see, because Settings is still what's on screen.
+Future<void> _replayTutorial(BuildContext context, WidgetRef ref) async {
+  context.go('/');
+  await WidgetsBinding.instance.endOfFrame;
+  if (!context.mounted) return;
+  await runTutorial(context, ref, source: 'settings', force: true);
 }

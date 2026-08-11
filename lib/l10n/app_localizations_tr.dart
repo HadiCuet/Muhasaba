@@ -1002,4 +1002,58 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'Geçersiz amel kimliği';
+
+  @override
+  String get tutorialSettingsRow => 'Muhasebe nasıl kullanılır';
+
+  @override
+  String get tutorialSkip => 'Atla';
+
+  @override
+  String get tutorialNext => 'İleri';
+
+  @override
+  String get tutorialDone => 'Bitti';
+
+  @override
+  String get tutorialTapTitle => 'Tamamlamak için dokunun';
+
+  @override
+  String get tutorialTapBody =>
+      'Tek dokunuş ameli bugün için tamamlandı olarak işaretler. Geri almak için tekrar dokunun.';
+
+  @override
+  String get tutorialEditTitle => 'Düzenlemek için çift dokunun';
+
+  @override
+  String get tutorialEditBody =>
+      'Düzenleme formunu açar — adını değiştirin veya ne sıklıkta tekrarlandığını ayarlayın.';
+
+  @override
+  String get tutorialReorderTitle => 'Sıralamak için basılı tutun';
+
+  @override
+  String get tutorialReorderBody =>
+      'Bir satırı basılı tutun, sonra sürükleyin. Sıralamanız kaydedilir.';
+
+  @override
+  String get tutorialRemoveTitle => 'Kaldırmak için kaydırın';
+
+  @override
+  String get tutorialRemoveBody =>
+      'Satırı yana kaydırarak bugünlük gizleyin veya takibi bırakın.';
+
+  @override
+  String get tutorialCountTitle => 'Tekrarları sayma';
+
+  @override
+  String get tutorialCountBody =>
+      'Hedefi birden fazla olan ameller için her tekrarda − ve + kullanın.';
+
+  @override
+  String get tutorialViewTitle => 'Grupla veya düzleştir';
+
+  @override
+  String get tutorialViewBody =>
+      'Kategoriye göre gruplama ile tek düz liste arasında geçiş yapın.';
 }

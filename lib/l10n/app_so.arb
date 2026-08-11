@@ -280,5 +280,21 @@
   "previewWeeklyDays": "Wuxuu ku celcelinayaa {days}",
   "previewWeeklyAny": "Wuxuu ku celcelinayaa {count, plural, =1{hal maalin} other{{count} maalmood}} toddobaadkii",
   "previewMonthlyDates": "{count, plural, =1{Wuxuu ku celcelinayaa maalinta {dates} ee bil kasta} other{Wuxuu ku celcelinayaa maalmaha {dates} ee bil kasta}}",
-  "previewMonthlyAny": "Wuxuu ku celcelinayaa {count, plural, =1{hal maalin} other{{count} maalmood}} bishii"
+  "previewMonthlyAny": "Wuxuu ku celcelinayaa {count, plural, =1{hal maalin} other{{count} maalmood}} bishii",
+  "tutorialSettingsRow": "Sida loo isticmaalo Muhasaba",
+  "tutorialSkip": "Ka bood",
+  "tutorialNext": "Xiga",
+  "tutorialDone": "Dhammaad",
+  "tutorialTapTitle": "Taabo si aad u dhammaystirto",
+  "tutorialTapBody": "Hal taabasho ayaa camalka u calaamadaysa mid maanta la dhammaystiray. Mar kale taabo si aad u celiso.",
+  "tutorialEditTitle": "Laba jeer taabo si aad wax uga beddesho",
+  "tutorialEditBody": "Waxay furaysaa foomka wax ka beddelka — magaca beddel, ama beddel inta jeer ee la celceliyo.",
+  "tutorialReorderTitle": "Riix oo hay si aad u kala habayso",
+  "tutorialReorderBody": "Hay safka, kadibna jiid. Habayntaada waa la kaydiyaa.",
+  "tutorialRemoveTitle": "Iska jiid si aad u saarto",
+  "tutorialRemoveBody": "Safka dhinac u jiid si aad maanta u qariso, ama aad raadraaca uga joojiso.",
+  "tutorialCountTitle": "Tirinta celcelinta",
+  "tutorialCountBody": "Camallada bartilmaameedkoodu ka badan yahay mid, isticmaal − iyo + celcelin kasta.",
+  "tutorialViewTitle": "Koobid ama liis fudud",
+  "tutorialViewBody": "U beddel inta u dhaxaysa koobidda qaybaha iyo hal liis fudud."
 }

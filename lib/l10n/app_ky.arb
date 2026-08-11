@@ -280,5 +280,21 @@
   "previewWeeklyDays": "{days} күндөрү кайталанат",
   "previewWeeklyAny": "Жумасына каалаган {count, plural, other{{count} күн}} кайталанат",
   "previewMonthlyDates": "{count, plural, =1{Ар айдын {dates} күнү кайталанат} other{Ар айдын {dates} күндөрү кайталанат}}",
-  "previewMonthlyAny": "Айына каалаган {count, plural, other{{count} күн}} кайталанат"
+  "previewMonthlyAny": "Айына каалаган {count, plural, other{{count} күн}} кайталанат",
+  "tutorialSettingsRow": "Muhasaba кантип колдонулат",
+  "tutorialSkip": "Өткөрүп жиберүү",
+  "tutorialNext": "Кийинки",
+  "tutorialDone": "Даяр",
+  "tutorialTapTitle": "Аткаруу үчүн басыңыз",
+  "tutorialTapBody": "Бир жолу басуу амалды бүгүнкүгө аткарылды деп белгилейт. Жокко чыгаруу үчүн кайра басыңыз.",
+  "tutorialEditTitle": "Өзгөртүү үчүн эки жолу басыңыз",
+  "tutorialEditBody": "Түзөтүү формасын ачат — атын өзгөртүңүз же кайталануу жыштыгын өзгөртүңүз.",
+  "tutorialReorderTitle": "Иретин өзгөртүү үчүн басып туруңуз",
+  "tutorialReorderBody": "Сапты басып туруп, сүйрөңүз. Иретиңиз сакталат.",
+  "tutorialRemoveTitle": "Алып салуу үчүн жылдырыңыз",
+  "tutorialRemoveBody": "Сапты четке жылдырып, аны бүгүнкүгө жашырыңыз же көзөмөлдөн чыгарыңыз.",
+  "tutorialCountTitle": "Кайталоолорду эсептөө",
+  "tutorialCountBody": "Максаты бирден көп амалдар үчүн ар бир кайталоодо − жана + колдонуңуз.",
+  "tutorialViewTitle": "Топтоо же жөнөкөй тизме",
+  "tutorialViewBody": "Категория боюнча топтоо менен бир жөнөкөй тизменин ортосунда алмашыңыз."
 }

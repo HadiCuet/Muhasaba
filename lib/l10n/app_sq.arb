@@ -280,5 +280,21 @@
   "previewWeeklyDays": "Përsëritet çdo {days}",
   "previewWeeklyAny": "Përsëritet {count, plural, =1{një ditë të çfarëdoshme} other{{count} ditë të çfarëdoshme}} në javë",
   "previewMonthlyDates": "{count, plural, =1{Përsëritet në datën {dates} të çdo muaji} other{Përsëritet në datat {dates} të çdo muaji}}",
-  "previewMonthlyAny": "Përsëritet {count, plural, =1{një ditë të çfarëdoshme} other{{count} ditë të çfarëdoshme}} në muaj"
+  "previewMonthlyAny": "Përsëritet {count, plural, =1{një ditë të çfarëdoshme} other{{count} ditë të çfarëdoshme}} në muaj",
+  "tutorialSettingsRow": "Si të përdorni Muhasaba",
+  "tutorialSkip": "Kapërce",
+  "tutorialNext": "Vazhdo",
+  "tutorialDone": "U krye",
+  "tutorialTapTitle": "Prekni për ta përfunduar",
+  "tutorialTapBody": "Një prekje e shënon amalin si të përfunduar për sot. Prekni sërish për ta zhbërë.",
+  "tutorialEditTitle": "Prekni dy herë për ta ndryshuar",
+  "tutorialEditBody": "Hap formularin e ndryshimit — riemërtojeni ose ndryshoni sa shpesh përsëritet.",
+  "tutorialReorderTitle": "Shtypni dhe mbani për ta risistemuar",
+  "tutorialReorderBody": "Mbani një rresht, pastaj zvarriteni. Renditja juaj ruhet.",
+  "tutorialRemoveTitle": "Rrëshqitni për ta hequr",
+  "tutorialRemoveBody": "Rrëshqitni rreshtin anash për ta fshehur për sot, ose ndaloni ndjekjen e tij.",
+  "tutorialCountTitle": "Numërimi i përsëritjeve",
+  "tutorialCountBody": "Për amalet me objektiv më shumë se një, përdorni − dhe + për çdo përsëritje.",
+  "tutorialViewTitle": "Grupo ose thjeshto",
+  "tutorialViewBody": "Kaloni midis grupimit sipas kategorisë dhe një liste të thjeshtë."
 }

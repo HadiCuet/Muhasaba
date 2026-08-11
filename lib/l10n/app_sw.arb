@@ -280,5 +280,21 @@
   "previewWeeklyDays": "Hurudiwa kila {days}",
   "previewWeeklyAny": "Hurudiwa {count, plural, =1{siku moja yoyote} other{siku {count} zozote}} kwa wiki",
   "previewMonthlyDates": "{count, plural, =1{Hurudiwa tarehe {dates} ya kila mwezi} other{Hurudiwa tarehe {dates} za kila mwezi}}",
-  "previewMonthlyAny": "Hurudiwa {count, plural, =1{siku moja yoyote} other{siku {count} zozote}} kwa mwezi"
+  "previewMonthlyAny": "Hurudiwa {count, plural, =1{siku moja yoyote} other{siku {count} zozote}} kwa mwezi",
+  "tutorialSettingsRow": "Jinsi ya kutumia Muhasaba",
+  "tutorialSkip": "Ruka",
+  "tutorialNext": "Endelea",
+  "tutorialDone": "Maliza",
+  "tutorialTapTitle": "Gusa ili kukamilisha",
+  "tutorialTapBody": "Kugusa mara moja huweka alama kuwa amali imekamilika leo. Gusa tena ili kutendua.",
+  "tutorialEditTitle": "Gusa mara mbili ili kuhariri",
+  "tutorialEditBody": "Hufungua fomu ya kuhariri — badilisha jina, au badilisha jinsi inavyojirudia.",
+  "tutorialReorderTitle": "Bonyeza na ushikilie ili kupanga upya",
+  "tutorialReorderBody": "Shikilia safu, kisha uiburute. Mpangilio wako huhifadhiwa.",
+  "tutorialRemoveTitle": "Telezesha ili kuondoa",
+  "tutorialRemoveBody": "Telezesha safu kando ili kuificha kwa leo, au kuacha kuifuatilia.",
+  "tutorialCountTitle": "Kuhesabu marudio",
+  "tutorialCountBody": "Kwa amali yenye lengo zaidi ya moja, tumia − na + kwa kila rudio.",
+  "tutorialViewTitle": "Panga kwa vikundi au orodha tambarare",
+  "tutorialViewBody": "Badilisha kati ya kupanga kwa aina na orodha moja tambarare."
 }

@@ -1010,4 +1010,58 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'Aqoonsi camal oo aan sax ahayn';
+
+  @override
+  String get tutorialSettingsRow => 'Sida loo isticmaalo Muhasaba';
+
+  @override
+  String get tutorialSkip => 'Ka bood';
+
+  @override
+  String get tutorialNext => 'Xiga';
+
+  @override
+  String get tutorialDone => 'Dhammaad';
+
+  @override
+  String get tutorialTapTitle => 'Taabo si aad u dhammaystirto';
+
+  @override
+  String get tutorialTapBody =>
+      'Hal taabasho ayaa camalka u calaamadaysa mid maanta la dhammaystiray. Mar kale taabo si aad u celiso.';
+
+  @override
+  String get tutorialEditTitle => 'Laba jeer taabo si aad wax uga beddesho';
+
+  @override
+  String get tutorialEditBody =>
+      'Waxay furaysaa foomka wax ka beddelka — magaca beddel, ama beddel inta jeer ee la celceliyo.';
+
+  @override
+  String get tutorialReorderTitle => 'Riix oo hay si aad u kala habayso';
+
+  @override
+  String get tutorialReorderBody =>
+      'Hay safka, kadibna jiid. Habayntaada waa la kaydiyaa.';
+
+  @override
+  String get tutorialRemoveTitle => 'Iska jiid si aad u saarto';
+
+  @override
+  String get tutorialRemoveBody =>
+      'Safka dhinac u jiid si aad maanta u qariso, ama aad raadraaca uga joojiso.';
+
+  @override
+  String get tutorialCountTitle => 'Tirinta celcelinta';
+
+  @override
+  String get tutorialCountBody =>
+      'Camallada bartilmaameedkoodu ka badan yahay mid, isticmaal − iyo + celcelin kasta.';
+
+  @override
+  String get tutorialViewTitle => 'Koobid ama liis fudud';
+
+  @override
+  String get tutorialViewBody =>
+      'U beddel inta u dhaxaysa koobidda qaybaha iyo hal liis fudud.';
 }

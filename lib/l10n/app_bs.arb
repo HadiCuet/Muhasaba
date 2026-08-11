@@ -280,5 +280,21 @@
   "previewWeeklyDays": "Ponavlja se danima: {days}",
   "previewWeeklyAny": "{count, plural, =1{Ponavlja se bilo koji {count} dan sedmično} few{Ponavlja se bilo koja {count} dana sedmično} other{Ponavlja se bilo kojih {count} dana sedmično}}",
   "previewMonthlyDates": "{count, plural, =1{Ponavlja se svakog mjeseca na dan: {dates}} other{Ponavlja se svakog mjeseca na dane: {dates}}}",
-  "previewMonthlyAny": "{count, plural, =1{Ponavlja se bilo koji {count} dan mjesečno} few{Ponavlja se bilo koja {count} dana mjesečno} other{Ponavlja se bilo kojih {count} dana mjesečno}}"
+  "previewMonthlyAny": "{count, plural, =1{Ponavlja se bilo koji {count} dan mjesečno} few{Ponavlja se bilo koja {count} dana mjesečno} other{Ponavlja se bilo kojih {count} dana mjesečno}}",
+  "tutorialSettingsRow": "Kako koristiti aplikaciju Muhasaba",
+  "tutorialSkip": "Preskoči",
+  "tutorialNext": "Dalje",
+  "tutorialDone": "Gotovo",
+  "tutorialTapTitle": "Dodirnite da završite",
+  "tutorialTapBody": "Jedan dodir označava amel završenim za danas. Dodirnite ponovo da poništite.",
+  "tutorialEditTitle": "Dvaput dodirnite za uređivanje",
+  "tutorialEditBody": "Otvara obrazac za uređivanje — promijenite naziv ili koliko se često ponavlja.",
+  "tutorialReorderTitle": "Pritisnite i držite za promjenu redoslijeda",
+  "tutorialReorderBody": "Držite red, zatim ga povucite. Vaš redoslijed se čuva.",
+  "tutorialRemoveTitle": "Prevucite da uklonite",
+  "tutorialRemoveBody": "Prevucite red u stranu da ga sakrijete za danas ili da prestanete pratiti.",
+  "tutorialCountTitle": "Brojanje ponavljanja",
+  "tutorialCountBody": "Za amele s ciljem većim od jedan, koristite − i + za svako ponavljanje.",
+  "tutorialViewTitle": "Grupiranje ili obična lista",
+  "tutorialViewBody": "Prebacujte između grupiranja po kategoriji i jedne obične liste."
 }

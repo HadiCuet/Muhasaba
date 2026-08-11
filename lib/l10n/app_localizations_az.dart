@@ -999,4 +999,58 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'Yanlış əməl identifikatoru';
+
+  @override
+  String get tutorialSettingsRow => 'Mühasibat necə istifadə olunur';
+
+  @override
+  String get tutorialSkip => 'Keç';
+
+  @override
+  String get tutorialNext => 'İrəli';
+
+  @override
+  String get tutorialDone => 'Hazır';
+
+  @override
+  String get tutorialTapTitle => 'Tamamlamaq üçün toxunun';
+
+  @override
+  String get tutorialTapBody =>
+      'Bir toxunuş əməli bu gün üçün tamamlanmış kimi işarələyir. Geri almaq üçün yenidən toxunun.';
+
+  @override
+  String get tutorialEditTitle => 'Redaktə üçün iki dəfə toxunun';
+
+  @override
+  String get tutorialEditBody =>
+      'Redaktə formasını açır — adını dəyişin və ya nə qədər tez-tez təkrarlandığını dəyişin.';
+
+  @override
+  String get tutorialReorderTitle => 'Sıralamaq üçün basıb saxlayın';
+
+  @override
+  String get tutorialReorderBody =>
+      'Sətri basıb saxlayın, sonra sürüşdürün. Sıranız yadda saxlanılır.';
+
+  @override
+  String get tutorialRemoveTitle => 'Silmək üçün sürüşdürün';
+
+  @override
+  String get tutorialRemoveBody =>
+      'Sətri yana sürüşdürərək bu gün üçün gizlədin və ya izləməni dayandırın.';
+
+  @override
+  String get tutorialCountTitle => 'Təkrarların sayılması';
+
+  @override
+  String get tutorialCountBody =>
+      'Hədəfi birdən çox olan əməllər üçün hər təkrarda − və + istifadə edin.';
+
+  @override
+  String get tutorialViewTitle => 'Qruplaşdır və ya sadə siyahı';
+
+  @override
+  String get tutorialViewBody =>
+      'Kateqoriyaya görə qruplaşdırma ilə tək sadə siyahı arasında keçid edin.';
 }

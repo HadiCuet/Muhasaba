@@ -280,5 +280,21 @@
   "previewWeeklyDays": "يتكرر كل {days}",
   "previewWeeklyAny": "يتكرر أي {count, plural, =1{يوم واحد} =2{يومين} few{{count} أيام} many{{count} يومًا} other{{count} يوم}} في الأسبوع",
   "previewMonthlyDates": "{count, plural, =1{يتكرر في يوم {dates} من كل شهر} =2{يتكرر في يومي {dates} من كل شهر} other{يتكرر في أيام {dates} من كل شهر}}",
-  "previewMonthlyAny": "يتكرر أي {count, plural, =1{يوم واحد} =2{يومين} few{{count} أيام} many{{count} يومًا} other{{count} يوم}} في الشهر"
+  "previewMonthlyAny": "يتكرر أي {count, plural, =1{يوم واحد} =2{يومين} few{{count} أيام} many{{count} يومًا} other{{count} يوم}} في الشهر",
+  "tutorialSettingsRow": "كيفية استخدام محاسبة",
+  "tutorialSkip": "تخطي",
+  "tutorialNext": "التالي",
+  "tutorialDone": "تم",
+  "tutorialTapTitle": "اضغط للإكمال",
+  "tutorialTapBody": "ضغطة واحدة تُعلّم العمل كمكتمل لليوم. اضغط مرة أخرى للتراجع.",
+  "tutorialEditTitle": "اضغط مرتين للتعديل",
+  "tutorialEditBody": "يفتح نموذج التعديل — غيّر الاسم أو عدد مرات التكرار.",
+  "tutorialReorderTitle": "اضغط مطولاً لإعادة الترتيب",
+  "tutorialReorderBody": "اضغط مطولاً على الصف ثم اسحبه. يُحفظ ترتيبك.",
+  "tutorialRemoveTitle": "اسحب للإزالة",
+  "tutorialRemoveBody": "اسحب الصف جانباً لإخفائه اليوم، أو لإيقاف تتبعه.",
+  "tutorialCountTitle": "عدّ التكرارات",
+  "tutorialCountBody": "للأعمال التي هدفها أكثر من واحد، استخدم − و + لكل تكرار.",
+  "tutorialViewTitle": "التجميع أو القائمة المسطحة",
+  "tutorialViewBody": "بدّل بين التجميع حسب الفئة وقائمة واحدة مسطحة."
 }

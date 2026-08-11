@@ -280,5 +280,21 @@
   "previewWeeklyDays": "Her {days} dubare dibe",
   "previewWeeklyAny": "Di hefteyê de her {count, plural, =1{rojek} other{{count} roj}} dubare dibe",
   "previewMonthlyDates": "{count, plural, =1{Di roja {dates} ya her mehê de dubare dibe} other{Di rojên {dates} yên her mehê de dubare dibe}}",
-  "previewMonthlyAny": "Di mehê de her {count, plural, =1{rojek} other{{count} roj}} dubare dibe"
+  "previewMonthlyAny": "Di mehê de her {count, plural, =1{rojek} other{{count} roj}} dubare dibe",
+  "tutorialSettingsRow": "Muhasaba çawa tê bikaranîn",
+  "tutorialSkip": "Derbas bike",
+  "tutorialNext": "Pêş",
+  "tutorialDone": "Temam",
+  "tutorialTapTitle": "Ji bo temamkirinê bitikîne",
+  "tutorialTapBody": "Tikandinek kirinê ji bo îro wek qediyayî nîşan dike. Ji bo vegerandinê dîsa bitikîne.",
+  "tutorialEditTitle": "Ji bo guhertinê du caran bitikîne",
+  "tutorialEditBody": "Forma guhertinê vedike — navê wê biguhere, an jî dubarebûna wê biguhere.",
+  "tutorialReorderTitle": "Ji bo rêzkirinê bitepisîne û bigire",
+  "tutorialReorderBody": "Rêzekê bigire, paşê bikişîne. Rêza te tê tomarkirin.",
+  "tutorialRemoveTitle": "Ji bo rakirinê bişemitîne",
+  "tutorialRemoveBody": "Rêzê ber bi kêlekê ve bişemitîne da ku ji bo îro veşêre, an jî şopandina wê rawestîne.",
+  "tutorialCountTitle": "Jimartina dubarebûnan",
+  "tutorialCountBody": "Ji bo kirinên ku armanca wan ji yekê zêdetir e, ji bo her dubarebûnê − û + bi kar bîne.",
+  "tutorialViewTitle": "Kom bike an lîsteya sade",
+  "tutorialViewBody": "Di navbera komkirina li gorî beşê û lîsteyek sade de biguhere."
 }

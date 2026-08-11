@@ -1011,4 +1011,58 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'Identifiant d\'amal invalide';
+
+  @override
+  String get tutorialSettingsRow => 'Comment utiliser Muhasaba';
+
+  @override
+  String get tutorialSkip => 'Passer';
+
+  @override
+  String get tutorialNext => 'Suivant';
+
+  @override
+  String get tutorialDone => 'Terminé';
+
+  @override
+  String get tutorialTapTitle => 'Appuyez pour accomplir';
+
+  @override
+  String get tutorialTapBody =>
+      'Une pression marque un amal comme accompli pour aujourd\'hui. Appuyez à nouveau pour annuler.';
+
+  @override
+  String get tutorialEditTitle => 'Double-appui pour modifier';
+
+  @override
+  String get tutorialEditBody =>
+      'Ouvre le formulaire de modification — renommez-le ou changez sa fréquence.';
+
+  @override
+  String get tutorialReorderTitle => 'Appui long pour réorganiser';
+
+  @override
+  String get tutorialReorderBody =>
+      'Maintenez une ligne, puis faites-la glisser. Votre ordre est enregistré.';
+
+  @override
+  String get tutorialRemoveTitle => 'Balayez pour retirer';
+
+  @override
+  String get tutorialRemoveBody =>
+      'Balayez la ligne sur le côté pour la masquer aujourd\'hui, ou arrêtez son suivi.';
+
+  @override
+  String get tutorialCountTitle => 'Compter les répétitions';
+
+  @override
+  String get tutorialCountBody =>
+      'Pour un amal dont l\'objectif dépasse un, utilisez − et + à chaque répétition.';
+
+  @override
+  String get tutorialViewTitle => 'Grouper ou aplatir';
+
+  @override
+  String get tutorialViewBody =>
+      'Basculez entre le regroupement par catégorie et une liste simple.';
 }

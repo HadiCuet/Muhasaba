@@ -280,5 +280,21 @@
   "previewWeeklyDays": "هر {days} تکرار می‌شود",
   "previewWeeklyAny": "هفته‌ای {count, plural, =1{یک روز} other{{count} روز}} دلخواه تکرار می‌شود",
   "previewMonthlyDates": "{count, plural, =1{روز {dates} هر ماه تکرار می‌شود} other{روزهای {dates} هر ماه تکرار می‌شود}}",
-  "previewMonthlyAny": "ماهی {count, plural, =1{یک روز} other{{count} روز}} دلخواه تکرار می‌شود"
+  "previewMonthlyAny": "ماهی {count, plural, =1{یک روز} other{{count} روز}} دلخواه تکرار می‌شود",
+  "tutorialSettingsRow": "روش استفاده از محاسبه",
+  "tutorialSkip": "رد کردن",
+  "tutorialNext": "بعدی",
+  "tutorialDone": "تمام",
+  "tutorialTapTitle": "برای انجام ضربه بزنید",
+  "tutorialTapBody": "یک ضربه، عمل را برای امروز انجام‌شده علامت می‌زند. برای برگرداندن دوباره ضربه بزنید.",
+  "tutorialEditTitle": "برای ویرایش دو بار ضربه بزنید",
+  "tutorialEditBody": "فرم ویرایش را باز می‌کند — نام را تغییر دهید یا تکرار آن را عوض کنید.",
+  "tutorialReorderTitle": "برای تغییر ترتیب نگه دارید",
+  "tutorialReorderBody": "یک ردیف را نگه دارید و بکشید. ترتیب شما ذخیره می‌شود.",
+  "tutorialRemoveTitle": "برای حذف بکشید",
+  "tutorialRemoveBody": "ردیف را به کنار بکشید تا برای امروز پنهان شود یا پیگیری آن متوقف شود.",
+  "tutorialCountTitle": "شمردن تکرارها",
+  "tutorialCountBody": "برای اعمالی که هدفشان بیش از یک است، برای هر تکرار از − و + استفاده کنید.",
+  "tutorialViewTitle": "گروه‌بندی یا لیست ساده",
+  "tutorialViewBody": "بین گروه‌بندی بر اساس دسته و یک لیست ساده جابه‌جا شوید."
 }

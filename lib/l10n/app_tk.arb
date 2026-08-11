@@ -280,5 +280,21 @@
   "previewWeeklyDays": "Her {days} gaýtalanýar",
   "previewWeeklyAny": "Hepdede islendik {count, plural, other{{count} gün}} gaýtalanýar",
   "previewMonthlyDates": "{count, plural, =1{Her aýyň {dates} gününde gaýtalanýar} other{Her aýyň {dates} günlerinde gaýtalanýar}}",
-  "previewMonthlyAny": "Aýda islendik {count, plural, other{{count} gün}} gaýtalanýar"
+  "previewMonthlyAny": "Aýda islendik {count, plural, other{{count} gün}} gaýtalanýar",
+  "tutorialSettingsRow": "Muhasaba nädip ulanmaly",
+  "tutorialSkip": "Geç",
+  "tutorialNext": "Indiki",
+  "tutorialDone": "Taýýar",
+  "tutorialTapTitle": "Ýerine ýetirmek üçin basyň",
+  "tutorialTapBody": "Bir gezek basmak amaly şu güne ýerine ýetirildi diýip bellär. Yzyna almak üçin gaýtadan basyň.",
+  "tutorialEditTitle": "Üýtgetmek üçin iki gezek basyň",
+  "tutorialEditBody": "Üýtgetme formasyny açýar — adyny üýtgediň ýa-da näçe gezek gaýtalanýandygyny üýtgediň.",
+  "tutorialReorderTitle": "Tertibi üýtgetmek üçin basyp saklaň",
+  "tutorialReorderBody": "Setiri basyp saklaň, soňra süýşüriň. Tertibiňiz ýatda saklanýar.",
+  "tutorialRemoveTitle": "Aýyrmak üçin süýşüriň",
+  "tutorialRemoveBody": "Setiri gyra süýşürip, ony şu güne gizläň ýa-da yzarlamany bes ediň.",
+  "tutorialCountTitle": "Gaýtalanmalary sanamak",
+  "tutorialCountBody": "Maksady birden köp amallar üçin her gaýtalanmada − we + ulanyň.",
+  "tutorialViewTitle": "Toparlamak ýa-da düz sanaw",
+  "tutorialViewBody": "Kategoriýa boýunça toparlamak bilen bir düz sanawyň arasynda çalşyň."
 }

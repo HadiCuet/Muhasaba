@@ -280,5 +280,21 @@
   "previewWeeklyDays": "Her {days} tekrarlanır",
   "previewWeeklyAny": "Haftada herhangi {count, plural, other{{count} gün}} tekrarlanır",
   "previewMonthlyDates": "{count, plural, =1{Her ayın {dates} gününde tekrarlanır} other{Her ayın {dates} günlerinde tekrarlanır}}",
-  "previewMonthlyAny": "Ayda herhangi {count, plural, other{{count} gün}} tekrarlanır"
+  "previewMonthlyAny": "Ayda herhangi {count, plural, other{{count} gün}} tekrarlanır",
+  "tutorialSettingsRow": "Muhasebe nasıl kullanılır",
+  "tutorialSkip": "Atla",
+  "tutorialNext": "İleri",
+  "tutorialDone": "Bitti",
+  "tutorialTapTitle": "Tamamlamak için dokunun",
+  "tutorialTapBody": "Tek dokunuş ameli bugün için tamamlandı olarak işaretler. Geri almak için tekrar dokunun.",
+  "tutorialEditTitle": "Düzenlemek için çift dokunun",
+  "tutorialEditBody": "Düzenleme formunu açar — adını değiştirin veya ne sıklıkta tekrarlandığını ayarlayın.",
+  "tutorialReorderTitle": "Sıralamak için basılı tutun",
+  "tutorialReorderBody": "Bir satırı basılı tutun, sonra sürükleyin. Sıralamanız kaydedilir.",
+  "tutorialRemoveTitle": "Kaldırmak için kaydırın",
+  "tutorialRemoveBody": "Satırı yana kaydırarak bugünlük gizleyin veya takibi bırakın.",
+  "tutorialCountTitle": "Tekrarları sayma",
+  "tutorialCountBody": "Hedefi birden fazla olan ameller için her tekrarda − ve + kullanın.",
+  "tutorialViewTitle": "Grupla veya düzleştir",
+  "tutorialViewBody": "Kategoriye göre gruplama ile tek düz liste arasında geçiş yapın."
 }

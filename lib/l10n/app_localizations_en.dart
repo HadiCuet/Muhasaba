@@ -1002,4 +1002,58 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'Invalid amal id';
+
+  @override
+  String get tutorialSettingsRow => 'How to use Muhasaba';
+
+  @override
+  String get tutorialSkip => 'Skip';
+
+  @override
+  String get tutorialNext => 'Next';
+
+  @override
+  String get tutorialDone => 'Done';
+
+  @override
+  String get tutorialTapTitle => 'Tap to complete';
+
+  @override
+  String get tutorialTapBody =>
+      'One tap marks an amal done for today. Tap again to undo.';
+
+  @override
+  String get tutorialEditTitle => 'Double-tap to edit';
+
+  @override
+  String get tutorialEditBody =>
+      'Opens the edit form — rename it, or change how often it repeats.';
+
+  @override
+  String get tutorialReorderTitle => 'Press and hold to reorder';
+
+  @override
+  String get tutorialReorderBody =>
+      'Hold a row, then drag it. Your order is saved.';
+
+  @override
+  String get tutorialRemoveTitle => 'Swipe to remove';
+
+  @override
+  String get tutorialRemoveBody =>
+      'Swipe the row aside to hide it for today, or stop tracking it.';
+
+  @override
+  String get tutorialCountTitle => 'Counting repetitions';
+
+  @override
+  String get tutorialCountBody =>
+      'For amal with a target above one, use − and + for each repetition.';
+
+  @override
+  String get tutorialViewTitle => 'Group or flatten';
+
+  @override
+  String get tutorialViewBody =>
+      'Switch between grouping by category and one flat list.';
 }

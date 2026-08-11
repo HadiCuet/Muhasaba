@@ -280,5 +280,21 @@
   "previewWeeklyDays": "Yana maimaituwa kowace {days}",
   "previewWeeklyAny": "Yana maimaituwa {count, plural, =1{rana ɗaya} other{ranaku {count}}} a kowane mako",
   "previewMonthlyDates": "{count, plural, =1{Yana maimaituwa a ranar {dates} ta kowane wata} other{Yana maimaituwa a kwanakin {dates} na kowane wata}}",
-  "previewMonthlyAny": "Yana maimaituwa {count, plural, =1{rana ɗaya} other{ranaku {count}}} a kowane wata"
+  "previewMonthlyAny": "Yana maimaituwa {count, plural, =1{rana ɗaya} other{ranaku {count}}} a kowane wata",
+  "tutorialSettingsRow": "Yadda ake amfani da Muhasaba",
+  "tutorialSkip": "Tsallake",
+  "tutorialNext": "Na gaba",
+  "tutorialDone": "An gama",
+  "tutorialTapTitle": "Danna don kammalawa",
+  "tutorialTapBody": "Danna sau ɗaya yana yiwa amali alamar an kammala don yau. Danna kuma don warwarewa.",
+  "tutorialEditTitle": "Danna sau biyu don gyara",
+  "tutorialEditBody": "Yana buɗe fom ɗin gyara — canza sunansa, ko canza yawan maimaitawarsa.",
+  "tutorialReorderTitle": "Danna ka riƙe don sake tsarawa",
+  "tutorialReorderBody": "Riƙe layi, sannan ka jawo shi. Ana adana tsarinka.",
+  "tutorialRemoveTitle": "Zare don cirewa",
+  "tutorialRemoveBody": "Zare layin zuwa gefe don ɓoye shi na yau, ko dakatar da bin diddigin sa.",
+  "tutorialCountTitle": "Ƙidaya maimaitawa",
+  "tutorialCountBody": "Ga amalin da burinsa ya wuce ɗaya, yi amfani da − da + ga kowace maimaitawa.",
+  "tutorialViewTitle": "Tsarawa ta nau'i ko jerin shimfida",
+  "tutorialViewBody": "Canza tsakanin tsara ta nau'i da jerin shimfida ɗaya."
 }

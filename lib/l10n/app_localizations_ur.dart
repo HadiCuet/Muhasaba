@@ -1001,4 +1001,58 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'غلط عمل شناخت';
+
+  @override
+  String get tutorialSettingsRow => 'محاسبہ کیسے استعمال کریں';
+
+  @override
+  String get tutorialSkip => 'چھوڑیں';
+
+  @override
+  String get tutorialNext => 'اگلا';
+
+  @override
+  String get tutorialDone => 'ہو گیا';
+
+  @override
+  String get tutorialTapTitle => 'مکمل کرنے کے لیے دبائیں';
+
+  @override
+  String get tutorialTapBody =>
+      'ایک بار دبانے سے عمل آج کے لیے مکمل ہو جاتا ہے۔ واپس لینے کے لیے دوبارہ دبائیں۔';
+
+  @override
+  String get tutorialEditTitle => 'ترمیم کے لیے دو بار دبائیں';
+
+  @override
+  String get tutorialEditBody =>
+      'ترمیم کا فارم کھلتا ہے — نام بدلیں، یا تکرار کی مدت بدلیں۔';
+
+  @override
+  String get tutorialReorderTitle => 'ترتیب بدلنے کے لیے دبا کر رکھیں';
+
+  @override
+  String get tutorialReorderBody =>
+      'قطار کو دبا کر رکھیں، پھر کھینچیں۔ آپ کی ترتیب محفوظ ہو جاتی ہے۔';
+
+  @override
+  String get tutorialRemoveTitle => 'ہٹانے کے لیے سوائپ کریں';
+
+  @override
+  String get tutorialRemoveBody =>
+      'قطار کو ایک طرف سوائپ کر کے آج کے لیے چھپائیں، یا اس کی ٹریکنگ بند کریں۔';
+
+  @override
+  String get tutorialCountTitle => 'تکرار کی گنتی';
+
+  @override
+  String get tutorialCountBody =>
+      'جن اعمال کا ہدف ایک سے زیادہ ہو، ہر تکرار کے لیے − اور + استعمال کریں۔';
+
+  @override
+  String get tutorialViewTitle => 'گروپ یا سادہ فہرست';
+
+  @override
+  String get tutorialViewBody =>
+      'زمرے کے مطابق گروپ بندی اور ایک سادہ فہرست کے درمیان بدلیں۔';
 }

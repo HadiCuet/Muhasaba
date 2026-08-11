@@ -1000,4 +1000,58 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'Nädogry amal ID-si';
+
+  @override
+  String get tutorialSettingsRow => 'Muhasaba nädip ulanmaly';
+
+  @override
+  String get tutorialSkip => 'Geç';
+
+  @override
+  String get tutorialNext => 'Indiki';
+
+  @override
+  String get tutorialDone => 'Taýýar';
+
+  @override
+  String get tutorialTapTitle => 'Ýerine ýetirmek üçin basyň';
+
+  @override
+  String get tutorialTapBody =>
+      'Bir gezek basmak amaly şu güne ýerine ýetirildi diýip bellär. Yzyna almak üçin gaýtadan basyň.';
+
+  @override
+  String get tutorialEditTitle => 'Üýtgetmek üçin iki gezek basyň';
+
+  @override
+  String get tutorialEditBody =>
+      'Üýtgetme formasyny açýar — adyny üýtgediň ýa-da näçe gezek gaýtalanýandygyny üýtgediň.';
+
+  @override
+  String get tutorialReorderTitle => 'Tertibi üýtgetmek üçin basyp saklaň';
+
+  @override
+  String get tutorialReorderBody =>
+      'Setiri basyp saklaň, soňra süýşüriň. Tertibiňiz ýatda saklanýar.';
+
+  @override
+  String get tutorialRemoveTitle => 'Aýyrmak üçin süýşüriň';
+
+  @override
+  String get tutorialRemoveBody =>
+      'Setiri gyra süýşürip, ony şu güne gizläň ýa-da yzarlamany bes ediň.';
+
+  @override
+  String get tutorialCountTitle => 'Gaýtalanmalary sanamak';
+
+  @override
+  String get tutorialCountBody =>
+      'Maksady birden köp amallar üçin her gaýtalanmada − we + ulanyň.';
+
+  @override
+  String get tutorialViewTitle => 'Toparlamak ýa-da düz sanaw';
+
+  @override
+  String get tutorialViewBody =>
+      'Kategoriýa boýunça toparlamak bilen bir düz sanawyň arasynda çalşyň.';
 }

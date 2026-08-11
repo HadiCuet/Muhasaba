@@ -280,5 +280,21 @@
   "previewWeeklyDays": "Se répète les {days}",
   "previewWeeklyAny": "Se répète {count, plural, =1{un jour} other{{count} jours}} au choix par semaine",
   "previewMonthlyDates": "{count, plural, =1{Se répète le {dates} de chaque mois} other{Se répète les {dates} de chaque mois}}",
-  "previewMonthlyAny": "Se répète {count, plural, =1{un jour} other{{count} jours}} au choix par mois"
+  "previewMonthlyAny": "Se répète {count, plural, =1{un jour} other{{count} jours}} au choix par mois",
+  "tutorialSettingsRow": "Comment utiliser Muhasaba",
+  "tutorialSkip": "Passer",
+  "tutorialNext": "Suivant",
+  "tutorialDone": "Terminé",
+  "tutorialTapTitle": "Appuyez pour accomplir",
+  "tutorialTapBody": "Une pression marque un amal comme accompli pour aujourd'hui. Appuyez à nouveau pour annuler.",
+  "tutorialEditTitle": "Double-appui pour modifier",
+  "tutorialEditBody": "Ouvre le formulaire de modification — renommez-le ou changez sa fréquence.",
+  "tutorialReorderTitle": "Appui long pour réorganiser",
+  "tutorialReorderBody": "Maintenez une ligne, puis faites-la glisser. Votre ordre est enregistré.",
+  "tutorialRemoveTitle": "Balayez pour retirer",
+  "tutorialRemoveBody": "Balayez la ligne sur le côté pour la masquer aujourd'hui, ou arrêtez son suivi.",
+  "tutorialCountTitle": "Compter les répétitions",
+  "tutorialCountBody": "Pour un amal dont l'objectif dépasse un, utilisez − et + à chaque répétition.",
+  "tutorialViewTitle": "Grouper ou aplatir",
+  "tutorialViewBody": "Basculez entre le regroupement par catégorie et une liste simple."
 }

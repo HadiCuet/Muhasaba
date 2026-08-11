@@ -280,5 +280,21 @@
   "previewWeeklyDays": "Ҳар {days} такрор мешавад",
   "previewWeeklyAny": "Дар як ҳафта дар ҳар {count, plural, =1{як рӯз} other{{count} рӯз}} такрор мешавад",
   "previewMonthlyDates": "{count, plural, =1{Дар рӯзи {dates}-и ҳар моҳ такрор мешавад} other{Дар рӯзҳои {dates}-и ҳар моҳ такрор мешавад}}",
-  "previewMonthlyAny": "Дар як моҳ дар ҳар {count, plural, =1{як рӯз} other{{count} рӯз}} такрор мешавад"
+  "previewMonthlyAny": "Дар як моҳ дар ҳар {count, plural, =1{як рӯз} other{{count} рӯз}} такрор мешавад",
+  "tutorialSettingsRow": "Тарзи истифодаи муҳосиба",
+  "tutorialSkip": "Гузаштан",
+  "tutorialNext": "Баъдӣ",
+  "tutorialDone": "Тайёр",
+  "tutorialTapTitle": "Барои иҷро зер кунед",
+  "tutorialTapBody": "Як зеркунӣ амалро барои имрӯз иҷрошуда қайд мекунад. Барои бекор кардан дубора зер кунед.",
+  "tutorialEditTitle": "Барои таҳрир ду бор зер кунед",
+  "tutorialEditBody": "Шакли таҳрирро мекушояд — номашро иваз кунед ё басомади такрорро тағйир диҳед.",
+  "tutorialReorderTitle": "Барои тағйири тартиб пахш карда нигоҳ доред",
+  "tutorialReorderBody": "Сатрро нигоҳ доред, сипас кашед. Тартиби шумо нигоҳ дошта мешавад.",
+  "tutorialRemoveTitle": "Барои хориҷ кардан кашед",
+  "tutorialRemoveBody": "Сатрро ба канор кашед, то барои имрӯз пинҳон шавад ё пайгирии он қатъ гардад.",
+  "tutorialCountTitle": "Ҳисоби такрорҳо",
+  "tutorialCountBody": "Барои амалҳое, ки ҳадафашон аз як зиёд аст, дар ҳар такрор − ва + -ро истифода баред.",
+  "tutorialViewTitle": "Гурӯҳбандӣ ё рӯйхати содда",
+  "tutorialViewBody": "Байни аз рӯи гурӯҳ ҷудо кардан ва як рӯйхати содда иваз кунед."
 }

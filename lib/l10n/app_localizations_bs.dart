@@ -1005,4 +1005,59 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'Nevažeći ID amela';
+
+  @override
+  String get tutorialSettingsRow => 'Kako koristiti aplikaciju Muhasaba';
+
+  @override
+  String get tutorialSkip => 'Preskoči';
+
+  @override
+  String get tutorialNext => 'Dalje';
+
+  @override
+  String get tutorialDone => 'Gotovo';
+
+  @override
+  String get tutorialTapTitle => 'Dodirnite da završite';
+
+  @override
+  String get tutorialTapBody =>
+      'Jedan dodir označava amel završenim za danas. Dodirnite ponovo da poništite.';
+
+  @override
+  String get tutorialEditTitle => 'Dvaput dodirnite za uređivanje';
+
+  @override
+  String get tutorialEditBody =>
+      'Otvara obrazac za uređivanje — promijenite naziv ili koliko se često ponavlja.';
+
+  @override
+  String get tutorialReorderTitle =>
+      'Pritisnite i držite za promjenu redoslijeda';
+
+  @override
+  String get tutorialReorderBody =>
+      'Držite red, zatim ga povucite. Vaš redoslijed se čuva.';
+
+  @override
+  String get tutorialRemoveTitle => 'Prevucite da uklonite';
+
+  @override
+  String get tutorialRemoveBody =>
+      'Prevucite red u stranu da ga sakrijete za danas ili da prestanete pratiti.';
+
+  @override
+  String get tutorialCountTitle => 'Brojanje ponavljanja';
+
+  @override
+  String get tutorialCountBody =>
+      'Za amele s ciljem većim od jedan, koristite − i + za svako ponavljanje.';
+
+  @override
+  String get tutorialViewTitle => 'Grupiranje ili obična lista';
+
+  @override
+  String get tutorialViewBody =>
+      'Prebacujte između grupiranja po kategoriji i jedne obične liste.';
 }

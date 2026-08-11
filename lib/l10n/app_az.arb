@@ -280,5 +280,21 @@
   "previewWeeklyDays": "Hər {days} təkrarlanır",
   "previewWeeklyAny": "Həftədə istənilən {count, plural, other{{count} gün}} təkrarlanır",
   "previewMonthlyDates": "{count, plural, =1{Hər ayın {dates} günündə təkrarlanır} other{Hər ayın {dates} günlərində təkrarlanır}}",
-  "previewMonthlyAny": "Ayda istənilən {count, plural, other{{count} gün}} təkrarlanır"
+  "previewMonthlyAny": "Ayda istənilən {count, plural, other{{count} gün}} təkrarlanır",
+  "tutorialSettingsRow": "Mühasibat necə istifadə olunur",
+  "tutorialSkip": "Keç",
+  "tutorialNext": "İrəli",
+  "tutorialDone": "Hazır",
+  "tutorialTapTitle": "Tamamlamaq üçün toxunun",
+  "tutorialTapBody": "Bir toxunuş əməli bu gün üçün tamamlanmış kimi işarələyir. Geri almaq üçün yenidən toxunun.",
+  "tutorialEditTitle": "Redaktə üçün iki dəfə toxunun",
+  "tutorialEditBody": "Redaktə formasını açır — adını dəyişin və ya nə qədər tez-tez təkrarlandığını dəyişin.",
+  "tutorialReorderTitle": "Sıralamaq üçün basıb saxlayın",
+  "tutorialReorderBody": "Sətri basıb saxlayın, sonra sürüşdürün. Sıranız yadda saxlanılır.",
+  "tutorialRemoveTitle": "Silmək üçün sürüşdürün",
+  "tutorialRemoveBody": "Sətri yana sürüşdürərək bu gün üçün gizlədin və ya izləməni dayandırın.",
+  "tutorialCountTitle": "Təkrarların sayılması",
+  "tutorialCountBody": "Hədəfi birdən çox olan əməllər üçün hər təkrarda − və + istifadə edin.",
+  "tutorialViewTitle": "Qruplaşdır və ya sadə siyahı",
+  "tutorialViewBody": "Kateqoriyaya görə qruplaşdırma ilə tək sadə siyahı arasında keçid edin."
 }

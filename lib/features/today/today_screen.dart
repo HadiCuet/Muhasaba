@@ -11,6 +11,7 @@ import '../../domain/services/today_builder.dart';
 import '../../domain/utils/localized_amal_title.dart';
 import '../../domain/utils/localized_category.dart';
 import '../../domain/utils/localized_number.dart';
+import '../tutorial/tutorial_anchors.dart';
 import 'widgets/amal_row.dart';
 import 'widgets/remove_sheet.dart';
 
@@ -39,6 +40,7 @@ class TodayScreen extends ConsumerWidget {
         ),
         actions: [
           IconButton(
+            key: tutorialViewToggleKey,
             icon: Icon(
               viewMode == 'grouped'
                   ? Icons.view_list_rounded
@@ -152,6 +154,7 @@ class _FlatViewState extends ConsumerState<_FlatView> {
 
   @override
   Widget build(BuildContext context) {
+    final anchors = _tutorialAnchorIds(_rows);
     return ReorderableListView.builder(
       padding: const EdgeInsets.fromLTRB(12, 8, 12, 80),
       itemCount: _rows.length,
@@ -162,14 +165,16 @@ class _FlatViewState extends ConsumerState<_FlatView> {
         return Padding(
           key: ValueKey(row.amal.id),
           padding: const EdgeInsets.only(bottom: 8),
-          child: _buildTile(row),
+          child: _buildTile(row, anchors),
         );
       },
     );
   }
 
-  Widget _buildTile(TodayRow row) {
+  Widget _buildTile(TodayRow row, ({int? firstId, int? stepperId}) anchors) {
     return AmalRowTile(
+      key: row.amal.id == anchors.firstId ? tutorialFirstRowKey : null,
+      stepperKey: row.amal.id == anchors.stepperId ? tutorialStepperKey : null,
       row: row,
       streak: widget.streaks[row.amal.id],
       onProgressChanged: (progress) =>
@@ -245,6 +250,7 @@ class _GroupedViewState extends ConsumerState<_GroupedView> {
     final slivers = <Widget>[
       const SliverToBoxAdapter(child: SizedBox(height: 8)),
     ];
+    final anchors = _tutorialAnchorIds([for (final g in groups) ...g.rows]);
     for (var gi = 0; gi < groups.length; gi++) {
       final group = groups[gi];
       slivers.add(
@@ -269,6 +275,12 @@ class _GroupedViewState extends ConsumerState<_GroupedView> {
               child: Padding(
                 padding: const EdgeInsets.fromLTRB(12, 0, 12, 8),
                 child: AmalRowTile(
+                  key: row.amal.id == anchors.firstId
+                      ? tutorialFirstRowKey
+                      : null,
+                  stepperKey: row.amal.id == anchors.stepperId
+                      ? tutorialStepperKey
+                      : null,
                   row: row,
                   streak: widget.streaks[row.amal.id],
                   onProgressChanged: (progress) =>
@@ -589,4 +601,17 @@ class _EmptyState extends StatelessWidget {
       ),
     );
   }
+}
+
+/// Ids of the rows that carry tutorial anchors: the first row overall, and
+/// the first row whose target is above one (which may not exist).
+({int? firstId, int? stepperId}) _tutorialAnchorIds(List<TodayRow> rows) {
+  int? first;
+  int? stepper;
+  for (final r in rows) {
+    first ??= r.amal.id;
+    if (stepper == null && r.amal.target > 1) stepper = r.amal.id;
+    if (stepper != null) break;
+  }
+  return (firstId: first, stepperId: stepper);
 }

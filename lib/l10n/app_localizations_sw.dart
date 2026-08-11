@@ -1002,4 +1002,58 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'Kitambulisho batili cha amali';
+
+  @override
+  String get tutorialSettingsRow => 'Jinsi ya kutumia Muhasaba';
+
+  @override
+  String get tutorialSkip => 'Ruka';
+
+  @override
+  String get tutorialNext => 'Endelea';
+
+  @override
+  String get tutorialDone => 'Maliza';
+
+  @override
+  String get tutorialTapTitle => 'Gusa ili kukamilisha';
+
+  @override
+  String get tutorialTapBody =>
+      'Kugusa mara moja huweka alama kuwa amali imekamilika leo. Gusa tena ili kutendua.';
+
+  @override
+  String get tutorialEditTitle => 'Gusa mara mbili ili kuhariri';
+
+  @override
+  String get tutorialEditBody =>
+      'Hufungua fomu ya kuhariri — badilisha jina, au badilisha jinsi inavyojirudia.';
+
+  @override
+  String get tutorialReorderTitle => 'Bonyeza na ushikilie ili kupanga upya';
+
+  @override
+  String get tutorialReorderBody =>
+      'Shikilia safu, kisha uiburute. Mpangilio wako huhifadhiwa.';
+
+  @override
+  String get tutorialRemoveTitle => 'Telezesha ili kuondoa';
+
+  @override
+  String get tutorialRemoveBody =>
+      'Telezesha safu kando ili kuificha kwa leo, au kuacha kuifuatilia.';
+
+  @override
+  String get tutorialCountTitle => 'Kuhesabu marudio';
+
+  @override
+  String get tutorialCountBody =>
+      'Kwa amali yenye lengo zaidi ya moja, tumia − na + kwa kila rudio.';
+
+  @override
+  String get tutorialViewTitle => 'Panga kwa vikundi au orodha tambarare';
+
+  @override
+  String get tutorialViewBody =>
+      'Badilisha kati ya kupanga kwa aina na orodha moja tambarare.';
 }

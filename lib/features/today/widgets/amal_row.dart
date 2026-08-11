@@ -30,6 +30,7 @@ class AmalRowTile extends StatefulWidget {
     required this.onEdit,
     required this.onNoteChanged,
     this.streak,
+    this.stepperKey,
   });
 
   final TodayRow row;
@@ -48,6 +49,9 @@ class AmalRowTile extends StatefulWidget {
 
   /// Current streak for this amal. Shown as a badge when >= 2.
   final int? streak;
+
+  /// Tutorial anchor for the count stepper. Non-null on exactly one row.
+  final Key? stepperKey;
 
   @override
   State<AmalRowTile> createState() => _AmalRowTileState();
@@ -313,6 +317,7 @@ class _AmalRowTileState extends State<AmalRowTile> {
                         ),
                         ExcludeSemantics(
                           child: CountStepper(
+                            key: widget.stepperKey,
                             progress: row.progress,
                             target: amal.target,
                             onChanged: _handleStepperProgress,

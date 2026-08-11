@@ -280,5 +280,21 @@
   "previewWeeklyDays": "প্রতি {days} পুনরাবৃত্তি হয়",
   "previewWeeklyAny": "সপ্তাহে যেকোনো {count, plural, =1{এক দিন} other{{count} দিন}} পুনরাবৃত্তি হয়",
   "previewMonthlyDates": "{count, plural, other{প্রতি মাসের {dates} তারিখে পুনরাবৃত্তি হয়}}",
-  "previewMonthlyAny": "মাসে যেকোনো {count, plural, =1{এক দিন} other{{count} দিন}} পুনরাবৃত্তি হয়"
+  "previewMonthlyAny": "মাসে যেকোনো {count, plural, =1{এক দিন} other{{count} দিন}} পুনরাবৃত্তি হয়",
+  "tutorialSettingsRow": "মুহাসাবা কীভাবে ব্যবহার করবেন",
+  "tutorialSkip": "এড়িয়ে যান",
+  "tutorialNext": "পরবর্তী",
+  "tutorialDone": "সম্পন্ন",
+  "tutorialTapTitle": "সম্পন্ন করতে ট্যাপ করুন",
+  "tutorialTapBody": "একবার ট্যাপ করলে আজকের জন্য আমল সম্পন্ন হিসেবে চিহ্নিত হয়। আবার ট্যাপ করলে বাতিল হয়।",
+  "tutorialEditTitle": "সম্পাদনা করতে ডাবল-ট্যাপ",
+  "tutorialEditBody": "সম্পাদনা ফর্ম খোলে — নাম বদলান, বা কত ঘন ঘন পুনরাবৃত্তি হবে তা বদলান।",
+  "tutorialReorderTitle": "ক্রম বদলাতে চেপে ধরুন",
+  "tutorialReorderBody": "একটি সারি চেপে ধরে টেনে নিন। আপনার ক্রম সংরক্ষিত হয়।",
+  "tutorialRemoveTitle": "সরাতে সোয়াইপ করুন",
+  "tutorialRemoveBody": "সারিটি পাশে সোয়াইপ করে আজকের জন্য লুকান, বা ট্র্যাক করা বন্ধ করুন।",
+  "tutorialCountTitle": "পুনরাবৃত্তি গণনা",
+  "tutorialCountBody": "যেসব আমলের লক্ষ্য একের বেশি, প্রতিটি পুনরাবৃত্তির জন্য − ও + ব্যবহার করুন।",
+  "tutorialViewTitle": "গ্রুপ বা সমতল তালিকা",
+  "tutorialViewBody": "বিভাগ অনুযায়ী গ্রুপ করা ও একটি সমতল তালিকার মধ্যে বদল করুন।"
 }

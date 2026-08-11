@@ -1001,4 +1001,58 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'অবৈধ আমল আইডি';
+
+  @override
+  String get tutorialSettingsRow => 'মুহাসাবা কীভাবে ব্যবহার করবেন';
+
+  @override
+  String get tutorialSkip => 'এড়িয়ে যান';
+
+  @override
+  String get tutorialNext => 'পরবর্তী';
+
+  @override
+  String get tutorialDone => 'সম্পন্ন';
+
+  @override
+  String get tutorialTapTitle => 'সম্পন্ন করতে ট্যাপ করুন';
+
+  @override
+  String get tutorialTapBody =>
+      'একবার ট্যাপ করলে আজকের জন্য আমল সম্পন্ন হিসেবে চিহ্নিত হয়। আবার ট্যাপ করলে বাতিল হয়।';
+
+  @override
+  String get tutorialEditTitle => 'সম্পাদনা করতে ডাবল-ট্যাপ';
+
+  @override
+  String get tutorialEditBody =>
+      'সম্পাদনা ফর্ম খোলে — নাম বদলান, বা কত ঘন ঘন পুনরাবৃত্তি হবে তা বদলান।';
+
+  @override
+  String get tutorialReorderTitle => 'ক্রম বদলাতে চেপে ধরুন';
+
+  @override
+  String get tutorialReorderBody =>
+      'একটি সারি চেপে ধরে টেনে নিন। আপনার ক্রম সংরক্ষিত হয়।';
+
+  @override
+  String get tutorialRemoveTitle => 'সরাতে সোয়াইপ করুন';
+
+  @override
+  String get tutorialRemoveBody =>
+      'সারিটি পাশে সোয়াইপ করে আজকের জন্য লুকান, বা ট্র্যাক করা বন্ধ করুন।';
+
+  @override
+  String get tutorialCountTitle => 'পুনরাবৃত্তি গণনা';
+
+  @override
+  String get tutorialCountBody =>
+      'যেসব আমলের লক্ষ্য একের বেশি, প্রতিটি পুনরাবৃত্তির জন্য − ও + ব্যবহার করুন।';
+
+  @override
+  String get tutorialViewTitle => 'গ্রুপ বা সমতল তালিকা';
+
+  @override
+  String get tutorialViewBody =>
+      'বিভাগ অনুযায়ী গ্রুপ করা ও একটি সমতল তালিকার মধ্যে বদল করুন।';
 }

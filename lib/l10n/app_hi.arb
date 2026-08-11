@@ -280,5 +280,21 @@
   "previewWeeklyDays": "हर {days} को दोहराता है",
   "previewWeeklyAny": "सप्ताह में किसी भी {count, plural, =1{एक दिन} other{{count} दिनों}} को दोहराता है",
   "previewMonthlyDates": "{count, plural, =1{हर महीने की {dates} तारीख़ को दोहराता है} other{हर महीने की {dates} तारीख़ों को दोहराता है}}",
-  "previewMonthlyAny": "महीने में किसी भी {count, plural, =1{एक दिन} other{{count} दिनों}} को दोहराता है"
+  "previewMonthlyAny": "महीने में किसी भी {count, plural, =1{एक दिन} other{{count} दिनों}} को दोहराता है",
+  "tutorialSettingsRow": "Muhasaba कैसे इस्तेमाल करें",
+  "tutorialSkip": "छोड़ें",
+  "tutorialNext": "आगे",
+  "tutorialDone": "हो गया",
+  "tutorialTapTitle": "पूरा करने के लिए टैप करें",
+  "tutorialTapBody": "एक टैप से अमल आज के लिए पूरा चिह्नित हो जाता है। पूर्ववत करने के लिए फिर से टैप करें।",
+  "tutorialEditTitle": "संपादित करने के लिए डबल-टैप करें",
+  "tutorialEditBody": "संपादन फ़ॉर्म खुलता है — नाम बदलें, या यह कितनी बार दोहराया जाए वह बदलें।",
+  "tutorialReorderTitle": "क्रम बदलने के लिए दबाकर रखें",
+  "tutorialReorderBody": "पंक्ति को दबाकर रखें, फिर खींचें। आपका क्रम सहेजा जाता है।",
+  "tutorialRemoveTitle": "हटाने के लिए स्वाइप करें",
+  "tutorialRemoveBody": "पंक्ति को बगल में स्वाइप करके आज के लिए छुपाएँ, या उसकी ट्रैकिंग बंद करें।",
+  "tutorialCountTitle": "पुनरावृत्ति गिनना",
+  "tutorialCountBody": "जिन अमल का लक्ष्य एक से अधिक है, हर पुनरावृत्ति के लिए − और + का उपयोग करें।",
+  "tutorialViewTitle": "समूह या सपाट सूची",
+  "tutorialViewBody": "श्रेणी के अनुसार समूह और एक सपाट सूची के बीच बदलें।"
 }

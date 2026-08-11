@@ -1007,4 +1007,58 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'ID amal tidak valid';
+
+  @override
+  String get tutorialSettingsRow => 'Cara menggunakan Muhasabah';
+
+  @override
+  String get tutorialSkip => 'Lewati';
+
+  @override
+  String get tutorialNext => 'Berikutnya';
+
+  @override
+  String get tutorialDone => 'Selesai';
+
+  @override
+  String get tutorialTapTitle => 'Ketuk untuk menyelesaikan';
+
+  @override
+  String get tutorialTapBody =>
+      'Satu ketukan menandai amal selesai untuk hari ini. Ketuk lagi untuk membatalkan.';
+
+  @override
+  String get tutorialEditTitle => 'Ketuk dua kali untuk mengedit';
+
+  @override
+  String get tutorialEditBody =>
+      'Membuka formulir edit — ubah namanya, atau ubah seberapa sering diulang.';
+
+  @override
+  String get tutorialReorderTitle => 'Tekan dan tahan untuk menyusun ulang';
+
+  @override
+  String get tutorialReorderBody =>
+      'Tahan sebuah baris, lalu seret. Urutan Anda tersimpan.';
+
+  @override
+  String get tutorialRemoveTitle => 'Geser untuk menghapus';
+
+  @override
+  String get tutorialRemoveBody =>
+      'Geser baris ke samping untuk menyembunyikannya hari ini, atau berhenti melacaknya.';
+
+  @override
+  String get tutorialCountTitle => 'Menghitung pengulangan';
+
+  @override
+  String get tutorialCountBody =>
+      'Untuk amal dengan target lebih dari satu, gunakan − dan + untuk setiap pengulangan.';
+
+  @override
+  String get tutorialViewTitle => 'Kelompokkan atau ratakan';
+
+  @override
+  String get tutorialViewBody =>
+      'Beralih antara pengelompokan berdasarkan kategori dan satu daftar biasa.';
 }

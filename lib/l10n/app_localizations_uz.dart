@@ -1006,4 +1006,59 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'Yaroqsiz amal identifikatori';
+
+  @override
+  String get tutorialSettingsRow => 'Muhosabadan qanday foydalanish';
+
+  @override
+  String get tutorialSkip => 'O\'tkazib yuborish';
+
+  @override
+  String get tutorialNext => 'Keyingi';
+
+  @override
+  String get tutorialDone => 'Tayyor';
+
+  @override
+  String get tutorialTapTitle => 'Bajarish uchun bosing';
+
+  @override
+  String get tutorialTapBody =>
+      'Bir marta bosish amalni bugun uchun bajarilgan deb belgilaydi. Bekor qilish uchun yana bosing.';
+
+  @override
+  String get tutorialEditTitle => 'Tahrirlash uchun ikki marta bosing';
+
+  @override
+  String get tutorialEditBody =>
+      'Tahrirlash shaklini ochadi — nomini o\'zgartiring yoki takrorlanish tartibini o\'zgartiring.';
+
+  @override
+  String get tutorialReorderTitle =>
+      'Tartibni o\'zgartirish uchun bosib turing';
+
+  @override
+  String get tutorialReorderBody =>
+      'Qatorni bosib turing, so\'ng suring. Tartibingiz saqlanadi.';
+
+  @override
+  String get tutorialRemoveTitle => 'Olib tashlash uchun suring';
+
+  @override
+  String get tutorialRemoveBody =>
+      'Qatorni chetga surib, uni bugun uchun yashiring yoki kuzatuvni to\'xtating.';
+
+  @override
+  String get tutorialCountTitle => 'Takrorlarni sanash';
+
+  @override
+  String get tutorialCountBody =>
+      'Maqsadi birdan ortiq amallar uchun har bir takrorda − va + dan foydalaning.';
+
+  @override
+  String get tutorialViewTitle => 'Guruhlash yoki oddiy ro\'yxat';
+
+  @override
+  String get tutorialViewBody =>
+      'Turkum bo\'yicha guruhlash va bitta oddiy ro\'yxat o\'rtasida almashing.';
 }

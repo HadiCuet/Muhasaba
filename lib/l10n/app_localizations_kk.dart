@@ -1000,4 +1000,58 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'Жарамсыз амал идентификаторы';
+
+  @override
+  String get tutorialSettingsRow => 'Muhasaba қалай қолданылады';
+
+  @override
+  String get tutorialSkip => 'Өткізу';
+
+  @override
+  String get tutorialNext => 'Келесі';
+
+  @override
+  String get tutorialDone => 'Дайын';
+
+  @override
+  String get tutorialTapTitle => 'Орындау үшін түртіңіз';
+
+  @override
+  String get tutorialTapBody =>
+      'Бір рет түрту амалды бүгінге орындалды деп белгілейді. Қайтару үшін қайта түртіңіз.';
+
+  @override
+  String get tutorialEditTitle => 'Өзгерту үшін екі рет түртіңіз';
+
+  @override
+  String get tutorialEditBody =>
+      'Өңдеу пішінін ашады — атауын өзгертіңіз немесе қайталану жиілігін ауыстырыңыз.';
+
+  @override
+  String get tutorialReorderTitle => 'Ретін өзгерту үшін басып тұрыңыз';
+
+  @override
+  String get tutorialReorderBody =>
+      'Жолды басып тұрып, сүйреңіз. Реттілігіңіз сақталады.';
+
+  @override
+  String get tutorialRemoveTitle => 'Жою үшін сырғытыңыз';
+
+  @override
+  String get tutorialRemoveBody =>
+      'Жолды шетке сырғытып, оны бүгінге жасырыңыз немесе бақылауды тоқтатыңыз.';
+
+  @override
+  String get tutorialCountTitle => 'Қайталауларды санау';
+
+  @override
+  String get tutorialCountBody =>
+      'Мақсаты бірден көп амалдар үшін әр қайталауда − және + пайдаланыңыз.';
+
+  @override
+  String get tutorialViewTitle => 'Топтау немесе жай тізім';
+
+  @override
+  String get tutorialViewBody =>
+      'Санат бойынша топтау мен бір жай тізім арасында ауысыңыз.';
 }

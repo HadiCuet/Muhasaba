@@ -8,6 +8,8 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../domain/models/app_settings.dart';
 import '../domain/services/daily_reminder.dart';
 import '../domain/utils/app_locale.dart';
+import '../features/tutorial/tutorial_anchors.dart';
+import '../features/tutorial/tutorial_controller.dart';
 import 'providers.dart';
 import 'router.dart';
 import 'theme.dart';
@@ -35,9 +37,7 @@ class _MuhasabaAppState extends ConsumerState<MuhasabaApp> {
     _lifecycle = AppLifecycleListener(
       onResume: () => ref.invalidate(currentMuhasabaDateProvider),
     );
-    WidgetsBinding.instance.addPostFrameCallback(
-      (_) => _bootstrapDailyReminderPermission(),
-    );
+    WidgetsBinding.instance.addPostFrameCallback((_) => _bootstrapFirstRun());
   }
 
   @override
@@ -57,6 +57,37 @@ class _MuhasabaAppState extends ConsumerState<MuhasabaApp> {
     await scheduler.requestPermissions();
     await repo.setDailyReminderPermissionAsked(true);
     await applyDailyReminder(scheduler, await repo.get());
+  }
+
+  /// Permission prompt first, then the tutorial — otherwise the OS dialog
+  /// covers the spotlight on the first launch.
+  ///
+  /// The seen flag is checked here rather than left to `runTutorial` so a
+  /// returning user never pays for the anchor poll below.
+  Future<void> _bootstrapFirstRun() async {
+    await _bootstrapDailyReminderPermission();
+    if (!mounted) return;
+    if (await ref.read(settingsRepositoryProvider).getTutorialSeen()) return;
+    final tourContext = await _awaitTodayAnchored();
+    if (tourContext == null) return;
+    if (!tourContext.mounted) return;
+    await runTutorial(tourContext, ref, source: 'first_run');
+  }
+
+  /// The tour needs the router's navigator to hang its overlay on — this State
+  /// sits above [MaterialApp], so its own context has none. Waiting on the
+  /// first-row anchor also holds the tour back past the splash, which paints
+  /// the frame this post-frame callback fires on.
+  Future<BuildContext?> _awaitTodayAnchored() async {
+    final navigator = ref.read(routerProvider).routerDelegate.navigatorKey;
+    for (var attempt = 0; attempt < 40; attempt++) {
+      if (!mounted) return null;
+      if (tutorialFirstRowKey.currentContext != null) {
+        return navigator.currentContext;
+      }
+      await Future<void>.delayed(const Duration(milliseconds: 100));
+    }
+    return null;
   }
 
   @override

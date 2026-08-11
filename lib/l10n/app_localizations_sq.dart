@@ -1007,4 +1007,58 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get invalidAmalId => 'ID e pavlefshme e amalit';
+
+  @override
+  String get tutorialSettingsRow => 'Si të përdorni Muhasaba';
+
+  @override
+  String get tutorialSkip => 'Kapërce';
+
+  @override
+  String get tutorialNext => 'Vazhdo';
+
+  @override
+  String get tutorialDone => 'U krye';
+
+  @override
+  String get tutorialTapTitle => 'Prekni për ta përfunduar';
+
+  @override
+  String get tutorialTapBody =>
+      'Një prekje e shënon amalin si të përfunduar për sot. Prekni sërish për ta zhbërë.';
+
+  @override
+  String get tutorialEditTitle => 'Prekni dy herë për ta ndryshuar';
+
+  @override
+  String get tutorialEditBody =>
+      'Hap formularin e ndryshimit — riemërtojeni ose ndryshoni sa shpesh përsëritet.';
+
+  @override
+  String get tutorialReorderTitle => 'Shtypni dhe mbani për ta risistemuar';
+
+  @override
+  String get tutorialReorderBody =>
+      'Mbani një rresht, pastaj zvarriteni. Renditja juaj ruhet.';
+
+  @override
+  String get tutorialRemoveTitle => 'Rrëshqitni për ta hequr';
+
+  @override
+  String get tutorialRemoveBody =>
+      'Rrëshqitni rreshtin anash për ta fshehur për sot, ose ndaloni ndjekjen e tij.';
+
+  @override
+  String get tutorialCountTitle => 'Numërimi i përsëritjeve';
+
+  @override
+  String get tutorialCountBody =>
+      'Për amalet me objektiv më shumë se një, përdorni − dhe + për çdo përsëritje.';
+
+  @override
+  String get tutorialViewTitle => 'Grupo ose thjeshto';
+
+  @override
+  String get tutorialViewBody =>
+      'Kaloni midis grupimit sipas kategorisë dhe një liste të thjeshtë.';
 }

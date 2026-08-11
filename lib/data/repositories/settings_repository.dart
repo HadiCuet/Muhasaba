@@ -56,6 +56,14 @@ class SettingsRepository {
     return v == '1';
   }
 
+  Future<void> setTutorialSeen(bool seen) =>
+      _dao.set(SettingKeys.tutorialSeen, seen ? '1' : '0');
+
+  Future<bool> getTutorialSeen() async {
+    final v = await _dao.get(SettingKeys.tutorialSeen);
+    return v == '1';
+  }
+
   AppSettings _fromMap(Map<String, String> m) {
     return AppSettings(
       startOfWeek:

@@ -280,5 +280,21 @@
   "previewWeeklyDays": "ہر {days} کو دہرایا جاتا ہے",
   "previewWeeklyAny": "ہفتے میں کسی بھی {count, plural, =1{ایک دن} other{{count} دنوں}} کو دہرایا جاتا ہے",
   "previewMonthlyDates": "{count, plural, =1{ہر مہینے کی {dates} تاریخ کو دہرایا جاتا ہے} other{ہر مہینے کی {dates} تاریخوں کو دہرایا جاتا ہے}}",
-  "previewMonthlyAny": "مہینے میں کسی بھی {count, plural, =1{ایک دن} other{{count} دنوں}} کو دہرایا جاتا ہے"
+  "previewMonthlyAny": "مہینے میں کسی بھی {count, plural, =1{ایک دن} other{{count} دنوں}} کو دہرایا جاتا ہے",
+  "tutorialSettingsRow": "محاسبہ کیسے استعمال کریں",
+  "tutorialSkip": "چھوڑیں",
+  "tutorialNext": "اگلا",
+  "tutorialDone": "ہو گیا",
+  "tutorialTapTitle": "مکمل کرنے کے لیے دبائیں",
+  "tutorialTapBody": "ایک بار دبانے سے عمل آج کے لیے مکمل ہو جاتا ہے۔ واپس لینے کے لیے دوبارہ دبائیں۔",
+  "tutorialEditTitle": "ترمیم کے لیے دو بار دبائیں",
+  "tutorialEditBody": "ترمیم کا فارم کھلتا ہے — نام بدلیں، یا تکرار کی مدت بدلیں۔",
+  "tutorialReorderTitle": "ترتیب بدلنے کے لیے دبا کر رکھیں",
+  "tutorialReorderBody": "قطار کو دبا کر رکھیں، پھر کھینچیں۔ آپ کی ترتیب محفوظ ہو جاتی ہے۔",
+  "tutorialRemoveTitle": "ہٹانے کے لیے سوائپ کریں",
+  "tutorialRemoveBody": "قطار کو ایک طرف سوائپ کر کے آج کے لیے چھپائیں، یا اس کی ٹریکنگ بند کریں۔",
+  "tutorialCountTitle": "تکرار کی گنتی",
+  "tutorialCountBody": "جن اعمال کا ہدف ایک سے زیادہ ہو، ہر تکرار کے لیے − اور + استعمال کریں۔",
+  "tutorialViewTitle": "گروپ یا سادہ فہرست",
+  "tutorialViewBody": "زمرے کے مطابق گروپ بندی اور ایک سادہ فہرست کے درمیان بدلیں۔"
 }
