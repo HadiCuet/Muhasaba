@@ -95,6 +95,8 @@ class _ChallengeDetailScreenState extends ConsumerState<ChallengeDetailScreen> {
                               child: CircularProgressIndicator(
                                 value: fraction,
                                 strokeWidth: 10,
+                                backgroundColor:
+                                    theme.colorScheme.surfaceContainerHighest,
                               ),
                             ),
                             Text(
