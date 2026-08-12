@@ -99,8 +99,17 @@ class ChallengeDao extends DatabaseAccessor<AppDatabase>
     );
   }
 
-  Future<int> insertChallenge(ChallengesCompanion entry) =>
-      into(challenges).insert(entry);
+  /// Appends at the end of the user's order. Without an explicit sortOrder the
+  /// column defaults to 0, which would sort a new challenge above everything
+  /// already dragged.
+  Future<int> insertChallenge(ChallengesCompanion entry) async {
+    final maxOrder = await customSelect(
+      'SELECT COALESCE(MAX(sort_order), -1) AS m FROM challenges',
+    ).getSingle();
+    return into(
+      challenges,
+    ).insert(entry.copyWith(sortOrder: Value(maxOrder.read<int>('m') + 1)));
+  }
 
   Future<bool> updateChallenge(ChallengeRow row) =>
       update(challenges).replace(row);
@@ -129,5 +138,18 @@ class ChallengeDao extends DatabaseAccessor<AppDatabase>
     return (select(challengeEntries)..where((e) => e.muhasabaDate.equals(date)))
         .watch()
         .map((rows) => {for (final e in rows) e.challengeId: e.amount});
+  }
+
+  /// Batch-update sortOrder for multiple challenges at once (drag-to-reorder).
+  Future<void> updateSortOrders(Map<int, int> idToSortOrder) async {
+    await db.batch((b) {
+      for (final entry in idToSortOrder.entries) {
+        b.update(
+          challenges,
+          ChallengesCompanion(sortOrder: Value(entry.value)),
+          where: (c) => c.id.equals(entry.key),
+        );
+      }
+    });
   }
 }

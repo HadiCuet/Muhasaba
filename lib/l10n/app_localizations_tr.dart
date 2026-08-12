@@ -1076,6 +1076,34 @@ class AppLocalizationsTr extends AppLocalizations {
       'Kategoriye göre gruplama ile tek düz liste arasında geçiş yapın.';
 
   @override
+  String get tutorialChallengeLogTitle => 'Bugünü kaydetmek için dokunun';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'Tek dokunuş bugünü kaydeder. Sayılı hedeflerde her dokunuş bir adım ekler.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'Açmak için çift dokunun';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'Hedefi açar — her günü görün, kaçırdığınız günü düzeltin veya silin.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'Hedefi silmek için kartı yana kaydırın.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'Tam miktarı kaydetme';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'Değiştirmek için − ve + kullanın veya sayıya dokunup tam miktarı yazın.';
+
+  @override
+  String get challengeOpenDetailsAction => 'Hedef ayrıntılarını aç';
+
+  @override
   String get challengesActive => 'Devam eden';
 
   @override

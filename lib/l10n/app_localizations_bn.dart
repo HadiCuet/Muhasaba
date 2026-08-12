@@ -1075,6 +1075,34 @@ class AppLocalizationsBn extends AppLocalizations {
       'বিভাগ অনুযায়ী গ্রুপ করা ও একটি সমতল তালিকার মধ্যে বদল করুন।';
 
   @override
+  String get tutorialChallengeLogTitle => 'আজকের হিসাব রাখতে ট্যাপ করুন';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'একবার ট্যাপ করলে আজকের দিন লেখা হয়। গণনার সংকল্পে প্রতি ট্যাপে এক ধাপ যোগ হয়।';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'খুলতে ডাবল-ট্যাপ';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'সংকল্পটি খোলে — প্রতিটি দিন দেখুন, বাদ পড়া দিন ঠিক করুন, বা মুছে ফেলুন।';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'সংকল্পটি মুছতে কার্ডটি পাশে সোয়াইপ করুন।';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'নির্দিষ্ট পরিমাণ লেখা';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      '− ও + দিয়ে বাড়ান-কমান, বা সংখ্যায় ট্যাপ করে নির্দিষ্ট পরিমাণ লিখুন।';
+
+  @override
+  String get challengeOpenDetailsAction => 'সংকল্পের বিবরণ খুলুন';
+
+  @override
   String get challengesActive => 'চলমান';
 
   @override

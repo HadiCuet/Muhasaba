@@ -102,13 +102,16 @@ class _TutorialTourState extends State<_TutorialTour> {
     final rect = _rect;
     final step = widget.steps[_i];
 
+    final dragRoom = step.gesture == GestureKind.longPress
+        ? GestureHint.dragTravel
+        : 0.0;
     final hole = rect == null
         ? null
         : Rect.fromLTRB(
             rect.left - _holeInset,
             rect.top - _holeInset,
             rect.right + _holeInset,
-            rect.bottom + _holeInset,
+            rect.bottom + _holeInset + dragRoom,
           );
 
     final below = (hole?.bottom ?? 0) + 16;
@@ -146,11 +149,15 @@ class _TutorialTourState extends State<_TutorialTour> {
                 ),
               ),
             ),
-            if (hole != null)
+            if (rect != null)
               Positioned(
-                left: hole.center.dx - GestureHint.size / 2,
-                top: hole.center.dy - GestureHint.size / 2,
-                child: GestureHint(key: ValueKey(_i), kind: step.gesture),
+                left: hole!.center.dx - GestureHint.size / 2,
+                top: rect.center.dy - GestureHint.size / 2,
+                child: GestureHint(
+                  key: ValueKey(_i),
+                  kind: step.gesture,
+                  targetSize: rect.size,
+                ),
               ),
             PositionedDirectional(
               start: 16,

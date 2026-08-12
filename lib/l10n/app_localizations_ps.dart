@@ -1071,6 +1071,34 @@ class AppLocalizationsPs extends AppLocalizations {
       'د کټګورۍ له مخې ګروپ کولو او یوه ساده لیست ترمنځ بدلون وکړئ.';
 
   @override
+  String get tutorialChallengeLogTitle => 'د نن ثبتولو لپاره ټک وکړئ';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'یو ټک نن ورځ ثبتوي. په شمېرنیز هدف کې هر ټک یو ګام زیاتوي.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'د پرانیستلو لپاره دوه ځله ټک وکړئ';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'هدف پرانیزي — هره ورځ وګورئ، پاتې شوې ورځ سمه کړئ، یا یې ړنګ کړئ.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'د هدف د ړنګولو لپاره کارت څنګ ته وښویوئ.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'د دقیقې اندازې ثبتول';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'د بدلون لپاره − او + وکاروئ، یا په شمېره ټک وکړئ او دقیقه اندازه ولیکئ.';
+
+  @override
+  String get challengeOpenDetailsAction => 'د هدف توضیحات پرانیستل';
+
+  @override
   String get challengesActive => 'روان';
 
   @override

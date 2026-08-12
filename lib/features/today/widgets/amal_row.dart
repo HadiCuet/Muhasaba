@@ -6,7 +6,7 @@ import '../../../domain/models/frequency.dart';
 import '../../../domain/services/today_builder.dart';
 import '../../../domain/utils/localized_amal_title.dart';
 import '../../../domain/utils/localized_number.dart';
-import 'count_stepper.dart';
+import '../../../app/widgets/stepper_field.dart';
 
 /// Single amal row rendered as a tappable card.
 ///
@@ -129,6 +129,28 @@ class _AmalRowTileState extends State<AmalRowTile> {
   void _clearNote() {
     widget.onNoteChanged(null);
     _collapseNote();
+  }
+
+  Widget _noteToggle(ThemeData theme) {
+    final hasNote = widget.row.note != null && widget.row.note!.isNotEmpty;
+    return InkResponse(
+      onTap: _noteExpanded ? _collapseNote : _expandNote,
+      radius: 24,
+      containedInkWell: true,
+      child: SizedBox(
+        width: 48,
+        height: 48,
+        child: Icon(
+          _noteExpanded
+              ? Icons.expand_less
+              : (hasNote ? Icons.sticky_note_2 : Icons.sticky_note_2_outlined),
+          size: 18,
+          color: _noteExpanded || hasNote
+              ? theme.colorScheme.primary
+              : theme.colorScheme.outlineVariant,
+        ),
+      ),
+    );
   }
 
   // ---------------------------------------------------------------------------
@@ -296,64 +318,39 @@ class _AmalRowTileState extends State<AmalRowTile> {
                       // Trailing controls.
                       if (amal.target > 1) ...[
                         // Note toggle for count-based amal.
-                        GestureDetector(
-                          onTap: _noteExpanded ? _collapseNote : _expandNote,
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.only(end: 4),
-                            child: Icon(
-                              _noteExpanded
-                                  ? Icons.expand_less
-                                  : (row.note != null && row.note!.isNotEmpty
-                                        ? Icons.sticky_note_2
-                                        : Icons.sticky_note_2_outlined),
-                              size: 18,
-                              color:
-                                  _noteExpanded ||
-                                      (row.note != null && row.note!.isNotEmpty)
-                                  ? theme.colorScheme.primary
-                                  : theme.colorScheme.outlineVariant,
-                            ),
-                          ),
-                        ),
+                        ExcludeSemantics(child: _noteToggle(theme)),
                         ExcludeSemantics(
-                          child: CountStepper(
+                          child: StepperField(
                             key: widget.stepperKey,
-                            progress: row.progress,
-                            target: amal.target,
+                            value: row.progress,
+                            step: 1,
+                            max: amal.target,
+                            label:
+                                '${lnum(context, row.progress)}/${lnum(context, amal.target)}',
                             onChanged: _handleStepperProgress,
                           ),
                         ),
                       ] else ...[
                         // Note toggle + trailing check circle for target=1.
-                        GestureDetector(
-                          onTap: _noteExpanded ? _collapseNote : _expandNote,
-                          child: Padding(
-                            padding: const EdgeInsetsDirectional.only(end: 4),
-                            child: Icon(
-                              _noteExpanded
-                                  ? Icons.expand_less
-                                  : (row.note != null && row.note!.isNotEmpty
-                                        ? Icons.sticky_note_2
-                                        : Icons.sticky_note_2_outlined),
-                              size: 18,
-                              color:
-                                  _noteExpanded ||
-                                      (row.note != null && row.note!.isNotEmpty)
-                                  ? theme.colorScheme.primary
-                                  : theme.colorScheme.outlineVariant,
+                        ExcludeSemantics(child: _noteToggle(theme)),
+                        ExcludeSemantics(
+                          child: InkResponse(
+                            onTap: _toggleCompletion,
+                            radius: 24,
+                            containedInkWell: true,
+                            child: SizedBox(
+                              width: 48,
+                              height: 48,
+                              child: Icon(
+                                isDone
+                                    ? Icons.check_circle
+                                    : Icons.radio_button_unchecked,
+                                color: isDone
+                                    ? theme.colorScheme.primary
+                                    : theme.colorScheme.onSurfaceVariant,
+                                size: 28,
+                              ),
                             ),
-                          ),
-                        ),
-                        Padding(
-                          padding: const EdgeInsetsDirectional.only(start: 4),
-                          child: Icon(
-                            isDone
-                                ? Icons.check_circle
-                                : Icons.radio_button_unchecked,
-                            color: isDone
-                                ? theme.colorScheme.primary
-                                : theme.colorScheme.onSurfaceVariant,
-                            size: 28,
                           ),
                         ),
                       ],

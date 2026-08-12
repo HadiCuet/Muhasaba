@@ -1072,6 +1072,34 @@ class AppLocalizationsFa extends AppLocalizations {
       'بین گروه‌بندی بر اساس دسته و یک لیست ساده جابه‌جا شوید.';
 
   @override
+  String get tutorialChallengeLogTitle => 'برای ثبت امروز ضربه بزنید';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'یک ضربه امروز را ثبت می‌کند. در چالش شمارشی، هر ضربه یک گام اضافه می‌کند.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'برای باز کردن دو بار ضربه بزنید';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'چالش را باز می‌کند — هر روز را ببینید، روز جامانده را درست کنید یا آن را حذف کنید.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'برای حذف چالش، کارت را به کنار بکشید.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'ثبت مقدار دقیق';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'برای تغییر از − و + استفاده کنید، یا روی عدد ضربه بزنید و مقدار دقیق را بنویسید.';
+
+  @override
+  String get challengeOpenDetailsAction => 'باز کردن جزئیات چالش';
+
+  @override
   String get challengesActive => 'در جریان';
 
   @override

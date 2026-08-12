@@ -1077,6 +1077,34 @@ class AppLocalizationsHi extends AppLocalizations {
       'श्रेणी के अनुसार समूह और एक सपाट सूची के बीच बदलें।';
 
   @override
+  String get tutorialChallengeLogTitle => 'आज दर्ज करने के लिए टैप करें';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'एक टैप से आज दर्ज हो जाता है। गिनती वाले संकल्प में हर टैप एक कदम जोड़ता है।';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'खोलने के लिए डबल-टैप करें';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'संकल्प खुलता है — हर दिन देखें, छूटा दिन सुधारें, या उसे हटाएं।';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'संकल्प हटाने के लिए कार्ड को बगल में स्वाइप करें।';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'सटीक मात्रा दर्ज करना';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'बदलने के लिए − और + का उपयोग करें, या संख्या पर टैप करके सटीक मात्रा लिखें।';
+
+  @override
+  String get challengeOpenDetailsAction => 'संकल्प का विवरण खोलें';
+
+  @override
   String get challengesActive => 'चालू';
 
   @override

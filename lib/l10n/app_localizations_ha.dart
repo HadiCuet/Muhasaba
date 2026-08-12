@@ -1079,6 +1079,34 @@ class AppLocalizationsHa extends AppLocalizations {
       'Canza tsakanin tsara ta nau\'i da jerin shimfida ɗaya.';
 
   @override
+  String get tutorialChallengeLogTitle => 'Danna don rubuta yau';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'Danna sau ɗaya yana rubuta yau. A burin da ake ƙidaya, kowace dannawa tana ƙara mataki ɗaya.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'Danna sau biyu don buɗewa';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'Yana buɗe burin — duba kowace rana, gyara wadda ka rasa, ko ka share shi.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'Zare katin zuwa gefe don share burin.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'Rubuta ainihin adadi';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'Yi amfani da − da + don canzawa, ko danna lambar don rubuta ainihin adadi.';
+
+  @override
+  String get challengeOpenDetailsAction => 'Buɗe bayanin buri';
+
+  @override
   String get challengesActive => 'Mai gudana';
 
   @override

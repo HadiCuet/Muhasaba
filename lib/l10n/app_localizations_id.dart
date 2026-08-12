@@ -1081,6 +1081,34 @@ class AppLocalizationsId extends AppLocalizations {
       'Beralih antara pengelompokan berdasarkan kategori dan satu daftar biasa.';
 
   @override
+  String get tutorialChallengeLogTitle => 'Ketuk untuk mencatat hari ini';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'Satu ketukan mencatat hari ini. Pada tantangan berhitung, tiap ketukan menambah satu langkah.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'Ketuk dua kali untuk membuka';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'Membuka tantangan — lihat tiap hari, perbaiki yang terlewat, atau hapus.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'Geser kartu ke samping untuk menghapus tantangan.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'Mencatat jumlah tepat';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'Gunakan − dan + untuk mengubah, atau ketuk angkanya untuk mengetik jumlah tepat.';
+
+  @override
+  String get challengeOpenDetailsAction => 'Buka detail tantangan';
+
+  @override
   String get challengesActive => 'Aktif';
 
   @override

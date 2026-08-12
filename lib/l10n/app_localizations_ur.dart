@@ -1075,6 +1075,34 @@ class AppLocalizationsUr extends AppLocalizations {
       'زمرے کے مطابق گروپ بندی اور ایک سادہ فہرست کے درمیان بدلیں۔';
 
   @override
+  String get tutorialChallengeLogTitle => 'آج درج کرنے کے لیے دبائیں';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'ایک بار دبانے سے آج درج ہو جاتا ہے۔ گنتی والے عزم میں ہر دباؤ ایک قدم بڑھاتا ہے۔';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'کھولنے کے لیے دو بار دبائیں';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'عزم کھلتا ہے — ہر دن دیکھیں، چھوٹا ہوا دن درست کریں، یا اسے حذف کریں۔';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'عزم حذف کرنے کے لیے کارڈ کو ایک طرف سوائپ کریں۔';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'درست مقدار درج کرنا';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      '− اور + سے کم زیادہ کریں، یا عدد پر دبا کر درست مقدار لکھیں۔';
+
+  @override
+  String get challengeOpenDetailsAction => 'عزم کی تفصیل کھولیں';
+
+  @override
   String get challengesActive => 'جاری';
 
   @override

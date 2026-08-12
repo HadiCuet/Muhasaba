@@ -1076,6 +1076,34 @@ class AppLocalizationsEn extends AppLocalizations {
       'Switch between grouping by category and one flat list.';
 
   @override
+  String get tutorialChallengeLogTitle => 'Tap to log today';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'One tap records today. For a counted challenge, each tap adds one step.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'Double-tap to open';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'Opens the challenge — see every day, fix one you missed, or delete it.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'Swipe the card aside to delete the challenge.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'Logging an exact amount';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'Use − and + to step, or tap the number to type an exact amount.';
+
+  @override
+  String get challengeOpenDetailsAction => 'Open challenge details';
+
+  @override
   String get challengesActive => 'Active';
 
   @override

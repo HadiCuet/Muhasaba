@@ -1074,6 +1074,34 @@ class AppLocalizationsTk extends AppLocalizations {
       'Kategoriýa boýunça toparlamak bilen bir düz sanawyň arasynda çalşyň.';
 
   @override
+  String get tutorialChallengeLogTitle => 'Şu güni bellemek üçin basyň';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'Bir basyş şu güni belleýär. Sanalýan maksatda her basyş bir ädim goşýar.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'Açmak üçin iki gezek basyň';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'Maksady açýar — her güni görüň, sypdyran günüňizi düzediň ýa-da ony pozuň.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'Maksady pozmak üçin kartany gyra süýşüriň.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'Takyk mukdary bellemek';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'Üýtgetmek üçin − we + ulanyň ýa-da sana basyp takyk mukdary ýazyň.';
+
+  @override
+  String get challengeOpenDetailsAction => 'Maksadyň jikme-jigini açmak';
+
+  @override
   String get challengesActive => 'Dowam edýän';
 
   @override

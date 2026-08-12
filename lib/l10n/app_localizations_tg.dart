@@ -1077,6 +1077,34 @@ class AppLocalizationsTg extends AppLocalizations {
       'Байни аз рӯи гурӯҳ ҷудо кардан ва як рӯйхати содда иваз кунед.';
 
   @override
+  String get tutorialChallengeLogTitle => 'Барои сабти имрӯз зер кунед';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'Як зеркунӣ имрӯзро сабт мекунад. Дар мақсади ҳисобӣ ҳар зеркунӣ як қадам илова мекунад.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'Барои кушодан ду бор зер кунед';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'Мақсадро мекушояд — ҳар рӯзро бинед, рӯзи аз даст рафтаро ислоҳ кунед ё онро ҳазф кунед.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'Барои ҳазфи мақсад кортро ба канор кашед.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'Сабти миқдори дақиқ';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'Барои тағйир − ва + -ро истифода баред ё рақамро зер карда миқдори дақиқро нависед.';
+
+  @override
+  String get challengeOpenDetailsAction => 'Кушодани тафсилоти мақсад';
+
+  @override
   String get challengesActive => 'Ҷорӣ';
 
   @override

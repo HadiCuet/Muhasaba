@@ -469,6 +469,14 @@
   "tutorialCountBody": "For amal with a target above one, use − and + for each repetition.",
   "tutorialViewTitle": "Group or flatten",
   "tutorialViewBody": "Switch between grouping by category and one flat list.",
+  "tutorialChallengeLogTitle": "Tap to log today",
+  "tutorialChallengeLogBody": "One tap records today. For a counted challenge, each tap adds one step.",
+  "tutorialChallengeOpenTitle": "Double-tap to open",
+  "tutorialChallengeOpenBody": "Opens the challenge — see every day, fix one you missed, or delete it.",
+  "tutorialChallengeDeleteBody": "Swipe the card aside to delete the challenge.",
+  "tutorialChallengeAmountTitle": "Logging an exact amount",
+  "tutorialChallengeAmountBody": "Use − and + to step, or tap the number to type an exact amount.",
+  "challengeOpenDetailsAction": "Open challenge details",
   "challengesActive": "Active",
   "@challengesActive": {
     "description": "Section header above in-progress challenges"

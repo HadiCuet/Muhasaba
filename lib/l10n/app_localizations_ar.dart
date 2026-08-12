@@ -1080,6 +1080,33 @@ class AppLocalizationsAr extends AppLocalizations {
       'بدّل بين التجميع حسب الفئة وقائمة واحدة مسطحة.';
 
   @override
+  String get tutorialChallengeLogTitle => 'اضغط لتسجيل اليوم';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'ضغطة واحدة تسجّل اليوم. في التحدي المعدود، كل ضغطة تضيف خطوة.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'اضغط مرتين للفتح';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'يفتح التحدي — راجع كل يوم، أو صحّح يومًا فاتك، أو احذفه.';
+
+  @override
+  String get tutorialChallengeDeleteBody => 'اسحب البطاقة جانباً لحذف التحدي.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'تسجيل مقدار محدد';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'استخدم − و + للتغيير، أو اضغط على الرقم لكتابة مقدار محدد.';
+
+  @override
+  String get challengeOpenDetailsAction => 'فتح تفاصيل التحدي';
+
+  @override
   String get challengesActive => 'النشطة';
 
   @override

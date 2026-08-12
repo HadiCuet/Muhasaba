@@ -1076,6 +1076,34 @@ class AppLocalizationsKy extends AppLocalizations {
       'Категория боюнча топтоо менен бир жөнөкөй тизменин ортосунда алмашыңыз.';
 
   @override
+  String get tutorialChallengeLogTitle => 'Бүгүнкүнү жазуу үчүн басыңыз';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'Бир жолу басуу бүгүнкүнү жазат. Сандык максатта ар бир басуу бир кадам кошот.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'Ачуу үчүн эки жолу басыңыз';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'Максатты ачат — ар бир күндү көрүңүз, өткөрүп жиберген күндү оңдоңуз же аны өчүрүңүз.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'Максатты өчүрүү үчүн картаны четке жылдырыңыз.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'Так өлчөмдү жазуу';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'Өзгөртүү үчүн − жана + колдонуңуз же санды басып так өлчөмдү жазыңыз.';
+
+  @override
+  String get challengeOpenDetailsAction => 'Максат маалыматын ачуу';
+
+  @override
   String get challengesActive => 'Учурдагы';
 
   @override

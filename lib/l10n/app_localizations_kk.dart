@@ -1074,6 +1074,34 @@ class AppLocalizationsKk extends AppLocalizations {
       'Санат бойынша топтау мен бір жай тізім арасында ауысыңыз.';
 
   @override
+  String get tutorialChallengeLogTitle => 'Бүгінді жазу үшін түртіңіз';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'Бір рет түрту бүгінді жазады. Санақ мақсатында әр түрту бір қадам қосады.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'Ашу үшін екі рет түртіңіз';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'Мақсатты ашады — әр күнді көріңіз, өткізіп алған күнді түзетіңіз немесе оны жойыңыз.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'Мақсатты жою үшін карточканы шетке сырғытыңыз.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'Нақты мөлшерді жазу';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'Өзгерту үшін − және + пайдаланыңыз немесе санды түртіп нақты мөлшерді енгізіңіз.';
+
+  @override
+  String get challengeOpenDetailsAction => 'Мақсат мәліметтерін ашу';
+
+  @override
   String get challengesActive => 'Ағымдағы';
 
   @override

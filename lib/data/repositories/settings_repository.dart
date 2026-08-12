@@ -64,6 +64,14 @@ class SettingsRepository {
     return v == '1';
   }
 
+  Future<void> setChallengeTutorialSeen(bool seen) =>
+      _dao.set(SettingKeys.challengeTutorialSeen, seen ? '1' : '0');
+
+  Future<bool> getChallengeTutorialSeen() async {
+    final v = await _dao.get(SettingKeys.challengeTutorialSeen);
+    return v == '1';
+  }
+
   AppSettings _fromMap(Map<String, String> m) {
     return AppSettings(
       startOfWeek:

@@ -1084,6 +1084,34 @@ class AppLocalizationsSo extends AppLocalizations {
       'U beddel inta u dhaxaysa koobidda qaybaha iyo hal liis fudud.';
 
   @override
+  String get tutorialChallengeLogTitle => 'Taabo si aad maanta u diiwaangeliso';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'Hal taabasho ayaa maanta diiwaan gelisa. Yool la tiriyo, taabasho kastaa waxay ku dartaa hal tallaabo.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'Laba jeer taabo si aad u furto';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'Waxay furaysaa yoolka — maalin walba arag, mid aad seegtay saxo, ama tirtir.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'Kaadhka dhinac u jiid si aad yoolka u tirtirto.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'Diiwaangelinta tiro sax ah';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'Isticmaal − iyo + si aad u beddesho, ama taabo lambarka si aad u qorto tiro sax ah.';
+
+  @override
+  String get challengeOpenDetailsAction => 'Fur faahfaahinta yoolka';
+
+  @override
   String get challengesActive => 'Socda';
 
   @override

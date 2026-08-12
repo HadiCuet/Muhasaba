@@ -1081,6 +1081,34 @@ class AppLocalizationsUz extends AppLocalizations {
       'Turkum bo\'yicha guruhlash va bitta oddiy ro\'yxat o\'rtasida almashing.';
 
   @override
+  String get tutorialChallengeLogTitle => 'Bugunni qayd etish uchun bosing';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'Bir marta bosish bugunni qayd etadi. Sanaladigan maqsadda har bosish bir qadam qo\'shadi.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'Ochish uchun ikki marta bosing';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'Maqsadni ochadi — har kunni ko\'ring, o\'tkazib yuborilgan kunni to\'g\'rilang yoki uni o\'chiring.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'Maqsadni o\'chirish uchun kartani chetga suring.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'Aniq miqdorni qayd etish';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'O\'zgartirish uchun − va + dan foydalaning yoki raqamga bosib aniq miqdorni yozing.';
+
+  @override
+  String get challengeOpenDetailsAction => 'Maqsad tafsilotlarini ochish';
+
+  @override
   String get challengesActive => 'Faol';
 
   @override

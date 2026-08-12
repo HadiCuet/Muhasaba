@@ -1073,6 +1073,34 @@ class AppLocalizationsAz extends AppLocalizations {
       'Kateqoriyaya görə qruplaşdırma ilə tək sadə siyahı arasında keçid edin.';
 
   @override
+  String get tutorialChallengeLogTitle => 'Bu günü qeyd etmək üçün toxunun';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'Bir toxunuş bu günü qeyd edir. Sayılan hədəfdə hər toxunuş bir addım əlavə edir.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'Açmaq üçün iki dəfə toxunun';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'Hədəfi açır — hər günü görün, buraxdığınız günü düzəldin və ya onu silin.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'Hədəfi silmək üçün kartı yana sürüşdürün.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'Dəqiq miqdarın qeydi';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'Dəyişmək üçün − və + istifadə edin, ya da rəqəmə toxunub dəqiq miqdarı yazın.';
+
+  @override
+  String get challengeOpenDetailsAction => 'Hədəf təfərrüatlarını aç';
+
+  @override
   String get challengesActive => 'Davam edən';
 
   @override

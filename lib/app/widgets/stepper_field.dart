@@ -1,28 +1,36 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 
-import '../../../domain/utils/localized_number.dart';
-
-/// `− N +` control for a challenge's *today* amount. Each press moves by
-/// [stepSize]; tapping the number types an exact value, matching the
-/// interaction users already meet on `CountStepper`.
-class ChallengeStepper extends StatefulWidget {
-  const ChallengeStepper({
+/// Inline `− N +` control. Tapping the number switches to a text field so an
+/// exact value can be typed instead of pressing `+` dozens of times.
+///
+/// Fires no haptics: the owner decides what a change means, so feedback lives
+/// at the callback site.
+class StepperField extends StatefulWidget {
+  const StepperField({
     super.key,
-    required this.todayAmount,
-    required this.stepSize,
+    required this.value,
+    required this.step,
+    required this.label,
     required this.onChanged,
+    this.max,
   });
 
-  final int todayAmount;
-  final int stepSize;
+  final int value;
+  final int step;
+
+  /// Upper bound, or null for unbounded.
+  final int? max;
+
+  /// Rendered inside the box, e.g. `12/33` on Today or `5` on Challenge.
+  final String label;
+
   final ValueChanged<int> onChanged;
 
   @override
-  State<ChallengeStepper> createState() => _ChallengeStepperState();
+  State<StepperField> createState() => _StepperFieldState();
 }
 
-class _ChallengeStepperState extends State<ChallengeStepper> {
+class _StepperFieldState extends State<StepperField> {
   bool _editing = false;
   late final TextEditingController _controller;
   late final FocusNode _focusNode;
@@ -42,17 +50,24 @@ class _ChallengeStepperState extends State<ChallengeStepper> {
     super.dispose();
   }
 
+  int _clamp(int v) {
+    if (v < 0) return 0;
+    final max = widget.max;
+    if (max != null && v > max) return max;
+    return v;
+  }
+
   void _startEditing() {
     setState(() {
       _editing = true;
-      _controller.text = widget.todayAmount.toString();
+      _controller.text = widget.value.toString();
     });
   }
 
   void _commitEdit() {
     if (!_editing) return;
-    final parsed = int.tryParse(_controller.text.trim()) ?? widget.todayAmount;
-    widget.onChanged(parsed < 0 ? 0 : parsed);
+    final parsed = int.tryParse(_controller.text.trim()) ?? widget.value;
+    widget.onChanged(_clamp(parsed));
     setState(() => _editing = false);
   }
 
@@ -66,6 +81,8 @@ class _ChallengeStepperState extends State<ChallengeStepper> {
     final labelStyle = theme.textTheme.titleMedium?.copyWith(
       fontFeatures: const [FontFeature.tabularFigures()],
     );
+    final max = widget.max;
+    final atMax = max != null && widget.value >= max;
 
     return Row(
       mainAxisSize: MainAxisSize.min,
@@ -73,16 +90,13 @@ class _ChallengeStepperState extends State<ChallengeStepper> {
         IconButton(
           visualDensity: VisualDensity.compact,
           icon: const Icon(Icons.remove_circle_outline),
-          onPressed: widget.todayAmount > 0
-              ? () {
-                  HapticFeedback.selectionClick();
-                  final next = widget.todayAmount - widget.stepSize;
-                  widget.onChanged(next < 0 ? 0 : next);
-                }
+          onPressed: widget.value > 0
+              ? () => widget.onChanged(_clamp(widget.value - widget.step))
               : null,
         ),
+        // Wide enough for Today's three-digit worst case, "999/999".
         SizedBox(
-          width: 56,
+          width: 64,
           child: _editing
               ? TextField(
                   controller: _controller,
@@ -117,9 +131,11 @@ class _ChallengeStepperState extends State<ChallengeStepper> {
                     child: FittedBox(
                       fit: BoxFit.scaleDown,
                       child: Text(
-                        lnum(context, widget.todayAmount),
+                        widget.label,
                         style: labelStyle,
+                        textAlign: TextAlign.center,
                         maxLines: 1,
+                        softWrap: false,
                       ),
                     ),
                   ),
@@ -128,10 +144,9 @@ class _ChallengeStepperState extends State<ChallengeStepper> {
         IconButton(
           visualDensity: VisualDensity.compact,
           icon: const Icon(Icons.add_circle_outline),
-          onPressed: () {
-            HapticFeedback.selectionClick();
-            widget.onChanged(widget.todayAmount + widget.stepSize);
-          },
+          onPressed: atMax
+              ? null
+              : () => widget.onChanged(_clamp(widget.value + widget.step)),
         ),
       ],
     );

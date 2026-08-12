@@ -1080,6 +1080,34 @@ class AppLocalizationsMs extends AppLocalizations {
       'Tukar antara pengumpulan mengikut kategori dan satu senarai rata.';
 
   @override
+  String get tutorialChallengeLogTitle => 'Ketik untuk merekod hari ini';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'Satu ketikan merekod hari ini. Bagi cabaran berkira, setiap ketikan menambah satu langkah.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'Ketik dua kali untuk membuka';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'Membuka cabaran — lihat setiap hari, betulkan hari yang terlepas, atau padamkannya.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'Leret kad ke tepi untuk memadam cabaran.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'Merekod jumlah tepat';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'Gunakan − dan + untuk mengubah, atau ketik nombornya untuk menaip jumlah tepat.';
+
+  @override
+  String get challengeOpenDetailsAction => 'Buka butiran cabaran';
+
+  @override
   String get challengesActive => 'Aktif';
 
   @override

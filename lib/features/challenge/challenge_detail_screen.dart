@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app/providers.dart';
 import '../../app/widgets/max_width_body.dart';
+import '../../app/widgets/stepper_field.dart';
 import '../../domain/models/challenge.dart';
 import '../../domain/utils/localized_number.dart';
 import '../../l10n/app_localizations.dart';
 import 'challenge_providers.dart';
-import 'widgets/challenge_stepper.dart';
+import 'widgets/challenge_delete.dart';
 
 class ChallengeDetailScreen extends ConsumerStatefulWidget {
   const ChallengeDetailScreen({super.key, required this.challengeId});
@@ -71,7 +73,14 @@ class _ChallengeDetailScreenState extends ConsumerState<ChallengeDetailScreen> {
           ),
           IconButton(
             icon: const Icon(Icons.delete_outline),
-            onPressed: () => _confirmDelete(context, l),
+            onPressed: () async {
+              final deleted = await confirmDeleteChallenge(
+                context,
+                ref,
+                challengeId,
+              );
+              if (deleted && context.mounted) context.pop();
+            },
           ),
         ],
       ),
@@ -189,6 +198,11 @@ class _ChallengeDetailScreenState extends ConsumerState<ChallengeDetailScreen> {
   }
 
   Future<void> _setDay(ChallengeView view, DateTime day, int amount) async {
+    if (view.row.mode == ChallengeMode.days && amount > 0) {
+      HapticFeedback.mediumImpact();
+    } else {
+      HapticFeedback.selectionClick();
+    }
     await ref
         .read(challengeRepositoryProvider)
         .setDayAmount(
@@ -213,29 +227,6 @@ class _ChallengeDetailScreenState extends ConsumerState<ChallengeDetailScreen> {
             ? l.challengeProgressCount(done, target, view.row.unit!)
             : l.challengeProgressPlain(done, target),
     };
-  }
-
-  Future<void> _confirmDelete(BuildContext context, AppLocalizations l) async {
-    final ok = await showDialog<bool>(
-      context: context,
-      builder: (ctx) => AlertDialog(
-        title: Text(l.deleteChallenge),
-        content: Text(l.deleteChallengeConfirm),
-        actions: [
-          TextButton(
-            onPressed: () => Navigator.pop(ctx, false),
-            child: Text(l.cancel),
-          ),
-          FilledButton(
-            onPressed: () => Navigator.pop(ctx, true),
-            child: Text(l.delete),
-          ),
-        ],
-      ),
-    );
-    if (ok != true || !context.mounted) return;
-    await ref.read(challengeRepositoryProvider).remove(challengeId);
-    if (context.mounted) context.pop();
   }
 }
 
@@ -276,9 +267,10 @@ class _DayRow extends StatelessWidget {
             ),
             onPressed: () => onChanged(amount > 0 ? 0 : 1),
           )
-        : ChallengeStepper(
-            todayAmount: amount,
-            stepSize: stepSize,
+        : StepperField(
+            value: amount,
+            step: stepSize,
+            label: lnum(context, amount),
             onChanged: onChanged,
           );
 

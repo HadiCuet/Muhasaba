@@ -1076,6 +1076,34 @@ class AppLocalizationsSw extends AppLocalizations {
       'Badilisha kati ya kupanga kwa aina na orodha moja tambarare.';
 
   @override
+  String get tutorialChallengeLogTitle => 'Gusa ili kurekodi leo';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'Kugusa mara moja hurekodi leo. Kwa lengo lenye kuhesabu, kila mgusa huongeza hatua moja.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'Gusa mara mbili ili kufungua';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'Hufungua lengo — ona kila siku, rekebisha siku uliyokosa, au lifute.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'Telezesha kadi kando ili kufuta lengo.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'Kurekodi kiasi kamili';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'Tumia − na + kubadilisha, au gusa nambari ili kuandika kiasi kamili.';
+
+  @override
+  String get challengeOpenDetailsAction => 'Fungua maelezo ya lengo';
+
+  @override
   String get challengesActive => 'Yanayoendelea';
 
   @override

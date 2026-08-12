@@ -1080,6 +1080,34 @@ class AppLocalizationsBs extends AppLocalizations {
       'Prebacujte između grupiranja po kategoriji i jedne obične liste.';
 
   @override
+  String get tutorialChallengeLogTitle => 'Dodirnite da zabilježite danas';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'Jedan dodir bilježi današnji dan. Kod izazova s brojanjem, svaki dodir dodaje jedan korak.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'Dvaput dodirnite da otvorite';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'Otvara izazov — vidite svaki dan, ispravite propušteni ili ga izbrišite.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'Prevucite karticu u stranu da izbrišete izazov.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'Bilježenje tačne količine';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'Koristite − i + za promjenu ili dodirnite broj da upišete tačnu količinu.';
+
+  @override
+  String get challengeOpenDetailsAction => 'Otvori detalje izazova';
+
+  @override
   String get challengesActive => 'Aktivni';
 
   @override

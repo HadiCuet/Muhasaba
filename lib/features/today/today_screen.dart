@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../app/providers.dart';
 import '../../app/widgets/max_width_body.dart';
+import '../../app/widgets/reorder_proxy_decorator.dart';
 import '../../data/db/database.dart';
 import '../../domain/services/today_builder.dart';
 import '../../domain/utils/localized_amal_title.dart';
@@ -81,29 +82,6 @@ class TodayScreen extends ConsumerWidget {
 // Flat view with drag-to-reorder
 // ---------------------------------------------------------------------------
 
-/// Lift styling shared by the flat and grouped reorderable lists. Shadow and a
-/// subtle scale ease in/out with the drag animation so releasing an item
-/// settles smoothly instead of snapping.
-Widget _proxyDecorator(Widget child, int index, Animation<double> animation) {
-  return AnimatedBuilder(
-    animation: animation,
-    builder: (context, child) {
-      final t = Curves.easeInOut.transform(animation.value);
-      return Transform.scale(
-        scale: 1 + 0.02 * t,
-        child: Material(
-          elevation: 6 * t,
-          shadowColor: Colors.black54,
-          color: Colors.transparent,
-          borderRadius: BorderRadius.circular(12),
-          child: child,
-        ),
-      );
-    },
-    child: child,
-  );
-}
-
 /// Merges an upstream rows list into a possibly locally-reordered one. When the
 /// set of amal ids is unchanged (e.g. just after an optimistic drag-reorder, or
 /// a completion toggle), the local order is preserved and only row content is
@@ -158,7 +136,7 @@ class _FlatViewState extends ConsumerState<_FlatView> {
     return ReorderableListView.builder(
       padding: const EdgeInsets.fromLTRB(12, 8, 12, 80),
       itemCount: _rows.length,
-      proxyDecorator: _proxyDecorator,
+      proxyDecorator: reorderProxyDecorator,
       onReorder: _reorder,
       itemBuilder: (context, i) {
         final row = _rows[i];
@@ -264,7 +242,7 @@ class _GroupedViewState extends ConsumerState<_GroupedView> {
       slivers.add(
         SliverReorderableList(
           itemCount: group.rows.length,
-          proxyDecorator: _proxyDecorator,
+          proxyDecorator: reorderProxyDecorator,
           onReorder: (oldIndex, newIndex) =>
               _reorderWithinGroup(groups, gi, oldIndex, newIndex),
           itemBuilder: (context, i) {

@@ -1958,6 +1958,54 @@ abstract class AppLocalizations {
   /// **'Switch between grouping by category and one flat list.'**
   String get tutorialViewBody;
 
+  /// No description provided for @tutorialChallengeLogTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Tap to log today'**
+  String get tutorialChallengeLogTitle;
+
+  /// No description provided for @tutorialChallengeLogBody.
+  ///
+  /// In en, this message translates to:
+  /// **'One tap records today. For a counted challenge, each tap adds one step.'**
+  String get tutorialChallengeLogBody;
+
+  /// No description provided for @tutorialChallengeOpenTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Double-tap to open'**
+  String get tutorialChallengeOpenTitle;
+
+  /// No description provided for @tutorialChallengeOpenBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Opens the challenge — see every day, fix one you missed, or delete it.'**
+  String get tutorialChallengeOpenBody;
+
+  /// No description provided for @tutorialChallengeDeleteBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Swipe the card aside to delete the challenge.'**
+  String get tutorialChallengeDeleteBody;
+
+  /// No description provided for @tutorialChallengeAmountTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Logging an exact amount'**
+  String get tutorialChallengeAmountTitle;
+
+  /// No description provided for @tutorialChallengeAmountBody.
+  ///
+  /// In en, this message translates to:
+  /// **'Use − and + to step, or tap the number to type an exact amount.'**
+  String get tutorialChallengeAmountBody;
+
+  /// No description provided for @challengeOpenDetailsAction.
+  ///
+  /// In en, this message translates to:
+  /// **'Open challenge details'**
+  String get challengeOpenDetailsAction;
+
   /// Section header above in-progress challenges
   ///
   /// In en, this message translates to:

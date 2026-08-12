@@ -149,4 +149,8 @@ class ChallengeRepository {
       ),
     );
   }
+
+  /// Batch-update sort orders for drag-to-reorder.
+  Future<void> reorder(Map<int, int> idToSortOrder) =>
+      _dao.updateSortOrders(idToSortOrder);
 }

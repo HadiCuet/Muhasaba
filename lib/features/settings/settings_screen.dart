@@ -946,10 +946,17 @@ String _themeLabel(BuildContext context, ThemeMode mode) {
   }
 }
 
-/// The tour anchors to Today, so switch tabs and let that branch paint a
+/// The Today tour anchors to Today, so switch tabs and let that branch paint a
 /// frame before starting — otherwise the spotlight lands on coordinates the
 /// user can't see, because Settings is still what's on screen.
+///
+/// The Challenge tour is not run from here — starting it would spotlight a card
+/// on a tab the user isn't looking at. Clearing its flag and bumping the epoch
+/// re-arms it; `ChallengeScreen` picks it up when that tab next becomes active.
 Future<void> _replayTutorial(BuildContext context, WidgetRef ref) async {
+  await ref.read(settingsRepositoryProvider).setChallengeTutorialSeen(false);
+  rearmChallengeTutorial();
+  if (!context.mounted) return;
   context.go('/');
   await WidgetsBinding.instance.endOfFrame;
   if (!context.mounted) return;

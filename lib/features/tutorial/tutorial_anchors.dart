@@ -13,3 +13,11 @@ final tutorialStepperKey = GlobalKey();
 
 /// The grouped/flat toggle in the Today app bar.
 final tutorialViewToggleKey = GlobalKey();
+
+/// The first challenge card in render order — the active section when it has
+/// any, otherwise the first past card.
+final tutorialChallengeCardKey = GlobalKey();
+
+/// The stepper on the first count-mode challenge. Absent when every challenge
+/// counts days.
+final tutorialChallengeStepperKey = GlobalKey();

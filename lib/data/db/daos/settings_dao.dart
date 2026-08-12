@@ -20,6 +20,7 @@ class SettingKeys {
   static const dailyReminderPermissionAsked =
       'daily_reminder_permission_asked'; // "1" | "0"
   static const tutorialSeen = 'tutorial_seen'; // "1" | "0"
+  static const challengeTutorialSeen = 'challenge_tutorial_seen'; // "1" | "0"
 }
 
 @DriftAccessor(tables: [SettingsKv])

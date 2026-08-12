@@ -1081,6 +1081,34 @@ class AppLocalizationsSq extends AppLocalizations {
       'Kaloni midis grupimit sipas kategorisë dhe një liste të thjeshtë.';
 
   @override
+  String get tutorialChallengeLogTitle => 'Prekni për të shënuar sot';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'Një prekje regjistron ditën e sotme. Në një sfidë me numërim, çdo prekje shton një hap.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'Prekni dy herë për ta hapur';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'Hap sfidën — shihni çdo ditë, ndreqni një ditë të humbur ose fshijeni.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'Rrëshqitni kartën anash për ta fshirë sfidën.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'Regjistrimi i një sasie të saktë';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'Përdorni − dhe + për ta ndryshuar, ose prekni numrin për të shkruar sasinë e saktë.';
+
+  @override
+  String get challengeOpenDetailsAction => 'Hap detajet e sfidës';
+
+  @override
   String get challengesActive => 'Në vazhdim';
 
   @override

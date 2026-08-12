@@ -1078,6 +1078,34 @@ class AppLocalizationsKu extends AppLocalizations {
       'Di navbera komkirina li gorî beşê û lîsteyek sade de biguhere.';
 
   @override
+  String get tutorialChallengeLogTitle => 'Ji bo tomarkirina îro bitikîne';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'Tikandinek îro tomar dike. Di armanca hejmarî de, her tikandin gavekê zêde dike.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'Ji bo vekirinê du caran bitikîne';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'Armancê vedike — her rojê bibîne, roja ku te ji bîr kiriye rast bike, an jê bibe.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'Ji bo jêbirina armancê kartê ber bi kêlekê ve bişemitîne.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'Tomarkirina hejmareke rast';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'Ji bo guhertinê − û + bi kar bîne, an jî li hejmarê bitikîne û hejmara rast binivîse.';
+
+  @override
+  String get challengeOpenDetailsAction => 'Hûrgiliyên armancê veke';
+
+  @override
   String get challengesActive => 'Çalak';
 
   @override

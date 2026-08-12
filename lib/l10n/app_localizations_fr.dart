@@ -1085,6 +1085,34 @@ class AppLocalizationsFr extends AppLocalizations {
       'Basculez entre le regroupement par catégorie et une liste simple.';
 
   @override
+  String get tutorialChallengeLogTitle => 'Appuyez pour enregistrer le jour';
+
+  @override
+  String get tutorialChallengeLogBody =>
+      'Une pression enregistre le jour. Dans un défi compté, chaque pression ajoute un pas.';
+
+  @override
+  String get tutorialChallengeOpenTitle => 'Double-appui pour ouvrir';
+
+  @override
+  String get tutorialChallengeOpenBody =>
+      'Ouvre le défi — voyez chaque jour, corrigez un oubli ou supprimez-le.';
+
+  @override
+  String get tutorialChallengeDeleteBody =>
+      'Balayez la carte sur le côté pour supprimer le défi.';
+
+  @override
+  String get tutorialChallengeAmountTitle => 'Enregistrer une quantité exacte';
+
+  @override
+  String get tutorialChallengeAmountBody =>
+      'Utilisez − et + pour ajuster, ou appuyez sur le nombre pour saisir une quantité exacte.';
+
+  @override
+  String get challengeOpenDetailsAction => 'Ouvrir les détails du défi';
+
+  @override
   String get challengesActive => 'En cours';
 
   @override
