@@ -1276,7 +1276,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get challengeTmplKhatm => 'Khatm en 30 jours';
 
   @override
-  String get challengeTmplFajrJamaah => '30 jours Fajr en jamaah';
+  String get challengeTmplFajrJamaah => '30 jours Fajr en groupe';
 
   @override
   String get challengeTmplSadaqah => 'Sadaqa 30 jours';

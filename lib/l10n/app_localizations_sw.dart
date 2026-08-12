@@ -1267,7 +1267,7 @@ class AppLocalizationsSw extends AppLocalizations {
   String get challengeTmplKhatm => 'Hitima ya Qurani siku 30';
 
   @override
-  String get challengeTmplFajrJamaah => 'Alfajiri kwa jamaa siku 30';
+  String get challengeTmplFajrJamaah => 'Alfajiri ya jamaa siku 30';
 
   @override
   String get challengeTmplSadaqah => 'Sadaka siku 30';
