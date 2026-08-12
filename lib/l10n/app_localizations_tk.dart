@@ -1108,6 +1108,23 @@ class AppLocalizationsTk extends AppLocalizations {
   String get challengesPast => 'Geçen';
 
   @override
+  String challengeJustFinished(int count, String title) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count maksat gutardy — iň soňkusy $title',
+      one: '$title gutardy',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeSectionEnded => 'Gutardy';
+
+  @override
+  String get challengesPastEmpty => 'Entek tamamlanan zat ýok.';
+
+  @override
   String get challengesEmptyTitle => 'Entek maksat ýok';
 
   @override

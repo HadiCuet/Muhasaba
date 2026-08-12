@@ -1110,6 +1110,23 @@ class AppLocalizationsKy extends AppLocalizations {
   String get challengesPast => 'Өткөн';
 
   @override
+  String challengeJustFinished(int count, String title) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count максат бүттү — акыркысы $title',
+      one: '$title бүттү',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeSectionEnded => 'Бүттү';
+
+  @override
+  String get challengesPastEmpty => 'Азырынча аяктаган эч нерсе жок.';
+
+  @override
   String get challengesEmptyTitle => 'Азырынча максат жок';
 
   @override

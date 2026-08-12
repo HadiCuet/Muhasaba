@@ -126,7 +126,12 @@ class ChallengeRepository {
         ReminderScheduler.challengeReminderId(challenge.id),
       );
     } else if (!done && challenge.status == ChallengeStatus.completed) {
-      await _dao.setStatus(challenge.id, ChallengeStatus.active);
+      await _dao.setStatus(
+        challenge.id,
+        ChallengeStatus.active,
+        completionSeen: false,
+      );
+      await _dao.moveToEnd(challenge.id);
       await _applyReminder(
         challenge.id,
         challenge.title,
@@ -153,4 +158,6 @@ class ChallengeRepository {
   /// Batch-update sort orders for drag-to-reorder.
   Future<void> reorder(Map<int, int> idToSortOrder) =>
       _dao.updateSortOrders(idToSortOrder);
+
+  Future<void> markCompletionsSeen() => _dao.markCompletionsSeen();
 }

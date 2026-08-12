@@ -1113,6 +1113,23 @@ class AppLocalizationsHa extends AppLocalizations {
   String get challengesPast => 'Da suka wuce';
 
   @override
+  String challengeJustFinished(int count, String title) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Buri $count sun ƙare — na ƙarshe $title',
+      one: '$title ya ƙare',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeSectionEnded => 'Ya ƙare';
+
+  @override
+  String get challengesPastEmpty => 'Babu abin da ya ƙare tukuna.';
+
+  @override
   String get challengesEmptyTitle => 'Babu buri tukuna';
 
   @override

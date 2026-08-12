@@ -111,17 +111,33 @@ class ChallengeDao extends DatabaseAccessor<AppDatabase>
     ).insert(entry.copyWith(sortOrder: Value(maxOrder.read<int>('m') + 1)));
   }
 
+  /// Sends a row to the end of the user's order. Past challenges are no longer
+  /// renumbered, so one returning to Active carries a stale sortOrder that
+  /// would otherwise drop it into an arbitrary position on the next launch.
+  Future<void> moveToEnd(int id) async {
+    final maxOrder = await customSelect(
+      'SELECT COALESCE(MAX(sort_order), -1) AS m FROM challenges',
+    ).getSingle();
+    await (update(challenges)..where((c) => c.id.equals(id))).write(
+      ChallengesCompanion(sortOrder: Value(maxOrder.read<int>('m') + 1)),
+    );
+  }
+
   Future<bool> updateChallenge(ChallengeRow row) =>
       update(challenges).replace(row);
 
   Future<int> deleteChallenge(int id) =>
       (delete(challenges)..where((c) => c.id.equals(id))).go();
 
+  /// Omitting [completedAt] *clears* it, unlike [expiryHandled] and
+  /// [completionSeen], which are left untouched. The un-complete path relies
+  /// on that clear.
   Future<int> setStatus(
     int id,
     ChallengeStatus status, {
     DateTime? completedAt,
     bool? expiryHandled,
+    bool? completionSeen,
   }) {
     return (update(challenges)..where((c) => c.id.equals(id))).write(
       ChallengesCompanion(
@@ -130,6 +146,9 @@ class ChallengeDao extends DatabaseAccessor<AppDatabase>
         expiryHandled: expiryHandled == null
             ? const Value.absent()
             : Value(expiryHandled),
+        completionSeen: completionSeen == null
+            ? const Value.absent()
+            : Value(completionSeen),
       ),
     );
   }
@@ -151,5 +170,16 @@ class ChallengeDao extends DatabaseAccessor<AppDatabase>
         );
       }
     });
+  }
+
+  /// The already-seen clause matters: a zero-row update notifies no stream,
+  /// so repeat calls from tab selection leave the challenge list alone.
+  Future<void> markCompletionsSeen() {
+    return (update(challenges)..where(
+          (c) =>
+              c.status.equalsValue(ChallengeStatus.active).not() &
+              c.completionSeen.equals(false),
+        ))
+        .write(const ChallengesCompanion(completionSeen: Value(true)));
   }
 }

@@ -1113,6 +1113,26 @@ class AppLocalizationsAr extends AppLocalizations {
   String get challengesPast => 'السابقة';
 
   @override
+  String challengeJustFinished(int count, String title) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'انتهى $count تحدٍ — آخرها $title',
+      many: 'انتهى $count تحديًا — آخرها $title',
+      few: 'انتهت $count تحديات — آخرها $title',
+      two: 'انتهى تحديان — آخرهما $title',
+      one: 'انتهى $title',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeSectionEnded => 'انتهى';
+
+  @override
+  String get challengesPastEmpty => 'لم ينتهِ شيء بعد.';
+
+  @override
   String get challengesEmptyTitle => 'لا توجد تحديات بعد';
 
   @override

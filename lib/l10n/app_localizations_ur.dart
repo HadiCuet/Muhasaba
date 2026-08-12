@@ -1109,6 +1109,23 @@ class AppLocalizationsUr extends AppLocalizations {
   String get challengesPast => 'سابقہ';
 
   @override
+  String challengeJustFinished(int count, String title) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count عزم ختم ہوئے — تازہ ترین $title',
+      one: '$title ختم ہوا',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeSectionEnded => 'ختم';
+
+  @override
+  String get challengesPastEmpty => 'ابھی کچھ ختم نہیں ہوا۔';
+
+  @override
   String get challengesEmptyTitle => 'ابھی کوئی عزم نہیں';
 
   @override

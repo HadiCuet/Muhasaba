@@ -169,13 +169,11 @@ class ChallengeCard extends StatelessWidget {
             ? l.challengeProgressCount(done, target, view.row.unit!)
             : l.challengeProgressPlain(done, target),
     };
+    // Past cards only render under a section header that already names the
+    // outcome, so repeating it here would say it twice — and challengeEnded
+    // would repeat the count a third time.
+    if (view.isPast) return base;
     final sep = l.listSeparator;
-    if (view.row.status == ChallengeStatus.completed) {
-      return '$base$sep${l.challengeCompleted}';
-    }
-    if (view.row.status == ChallengeStatus.ended) {
-      return '$base$sep${l.challengeEnded(done, target)}';
-    }
     if (view.row.endExclusive == null) return base;
     return switch (view.pace.state) {
       PaceState.onTrack || PaceState.behind || PaceState.lastDay =>

@@ -38,7 +38,7 @@ class AppDatabase extends _$AppDatabase {
     : super(executor ?? driftDatabase(name: 'muhasaba'));
 
   @override
-  int get schemaVersion => 8;
+  int get schemaVersion => 9;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -143,6 +143,20 @@ class AppDatabase extends _$AppDatabase {
         if (!await _hasColumn('challenges', 'reminder_time')) {
           await m.addColumn(challenges, challenges.reminderTime);
         }
+      }
+      if (from < 9) {
+        if (!await _hasColumn('challenges', 'completion_seen')) {
+          await m.addColumn(challenges, challenges.completionSeen);
+        }
+        // Everything already finished is history, not news — without this
+        // the first launch after upgrading announces a year of old
+        // completions as though they just happened. Ended rows are covered
+        // too: the strip ignores them today, but this is the only chance to
+        // mark them, and a later change could not reach back for them.
+        await customStatement(
+          'UPDATE challenges SET completion_seen = 1 WHERE status IN (?, ?)',
+          [ChallengeStatus.completed.index, ChallengeStatus.ended.index],
+        );
       }
     },
     beforeOpen: (details) async {

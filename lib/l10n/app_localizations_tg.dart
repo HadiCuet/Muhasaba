@@ -1111,6 +1111,23 @@ class AppLocalizationsTg extends AppLocalizations {
   String get challengesPast => 'Гузашта';
 
   @override
+  String challengeJustFinished(int count, String title) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count мақсад тамом шуд — охиринашон $title',
+      one: '$title тамом шуд',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeSectionEnded => 'Тамом';
+
+  @override
+  String get challengesPastEmpty => 'Ҳанӯз чизе тамом нашудааст.';
+
+  @override
   String get challengesEmptyTitle => 'Ҳанӯз мақсад нест';
 
   @override

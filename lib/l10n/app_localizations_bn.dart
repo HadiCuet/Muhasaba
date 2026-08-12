@@ -1109,6 +1109,23 @@ class AppLocalizationsBn extends AppLocalizations {
   String get challengesPast => 'পূর্ববর্তী';
 
   @override
+  String challengeJustFinished(int count, String title) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countটি সংকল্প শেষ হয়েছে — সর্বশেষ $title',
+      one: '$title শেষ হয়েছে',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeSectionEnded => 'শেষ';
+
+  @override
+  String get challengesPastEmpty => 'এখনো কিছু শেষ হয়নি।';
+
+  @override
   String get challengesEmptyTitle => 'এখনো কোনো সংকল্প নেই';
 
   @override

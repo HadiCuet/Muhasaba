@@ -1107,6 +1107,23 @@ class AppLocalizationsAz extends AppLocalizations {
   String get challengesPast => 'Keçmiş';
 
   @override
+  String challengeJustFinished(int count, String title) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count hədəf bitdi — sonuncu $title',
+      one: '$title bitdi',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeSectionEnded => 'Bitdi';
+
+  @override
+  String get challengesPastEmpty => 'Hələ bitən yoxdur.';
+
+  @override
   String get challengesEmptyTitle => 'Hələ hədəf yoxdur';
 
   @override

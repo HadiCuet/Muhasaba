@@ -9,6 +9,7 @@ import '../../app/widgets/max_width_body.dart';
 import '../../app/widgets/reorder_proxy_decorator.dart';
 import '../../domain/models/challenge.dart';
 import '../../domain/services/challenge_pace.dart';
+import '../../domain/utils/localized_challenge_title.dart';
 import '../../l10n/app_localizations.dart';
 import '../tutorial/tutorial_anchors.dart';
 import '../tutorial/tutorial_controller.dart';
@@ -16,6 +17,7 @@ import 'challenge_providers.dart';
 import 'widgets/challenge_card.dart';
 import 'widgets/challenge_delete.dart';
 import 'widgets/expiry_prompt.dart';
+import 'widgets/just_finished_strip.dart';
 
 class ChallengeScreen extends ConsumerStatefulWidget {
   const ChallengeScreen({super.key});
@@ -24,50 +26,203 @@ class ChallengeScreen extends ConsumerStatefulWidget {
   ConsumerState<ChallengeScreen> createState() => _ChallengeScreenState();
 }
 
-class _ChallengeScreenState extends ConsumerState<ChallengeScreen> {
+class _ChallengeScreenState extends ConsumerState<ChallengeScreen>
+    with SingleTickerProviderStateMixin {
+  late final TabController _tabs;
   bool _promptShown = false;
   bool _promptPending = false;
   int _tourCheckedEpoch = -1;
   // Local copy so a drag-reorder updates synchronously (smooth drop); the DB
   // write flows back through the stream and is reconciled in place.
   List<ChallengeView>? _ordered;
+  DateTime _today = DateTime.now().toUtc();
+  Map<int, int> _todayAmounts = const {};
+
+  @override
+  void initState() {
+    super.initState();
+    _tabs = TabController(length: 2, vsync: this)..addListener(_onTabChanged);
+  }
+
+  @override
+  void dispose() {
+    _tabs.removeListener(_onTabChanged);
+    _tabs.dispose();
+    super.dispose();
+  }
+
+  void _onTabChanged() {
+    if (_tabs.indexIsChanging) return;
+    setState(() {});
+    if (_tabs.index == 1) {
+      ref.read(challengeRepositoryProvider).markCompletionsSeen();
+    }
+    FirebaseAnalytics.instance.logEvent(
+      name: 'challenge_tab_selected',
+      parameters: {'tab': _tabs.index == 0 ? 'active' : 'past'},
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
     final viewsAsync = ref.watch(challengeViewsProvider);
-    final todayAmounts = ref.watch(todayAmountsProvider).value ?? const {};
-    final today = ref.watch(currentMuhasabaDateProvider);
+    _todayAmounts = ref.watch(todayAmountsProvider).value ?? const {};
+    _today = ref.watch(currentMuhasabaDateProvider);
 
     return Scaffold(
-      appBar: AppBar(title: Text(l.tabChallenge)),
-      body: MaxWidthBody(
-        child: viewsAsync.when(
-          loading: () => const Center(child: CircularProgressIndicator()),
-          error: (e, _) => Center(child: Text(l.errorGeneric(e.toString()))),
-          data: (views) {
-            _maybePrompt(views);
-            if (views.isEmpty) return const _EmptyState();
-            if (!_promptPending) _maybeRunTutorial();
-            _ordered = _reconcile(views);
-            final active = _ordered!.where((v) => !v.isPast).toList();
-            final past = _ordered!.where((v) => v.isPast).toList();
-            final anchors = _challengeAnchorIds([...active, ...past]);
-            return CustomScrollView(
-              slivers: [
-                const SliverToBoxAdapter(child: SizedBox(height: 12)),
-                if (active.isNotEmpty)
-                  SliverToBoxAdapter(child: _SectionHeader(l.challengesActive)),
-                _section(active, today, todayAmounts, anchors),
-                if (past.isNotEmpty)
-                  SliverToBoxAdapter(child: _SectionHeader(l.challengesPast)),
-                _section(past, today, todayAmounts, anchors),
-                const SliverToBoxAdapter(child: SizedBox(height: 88)),
-              ],
-            );
-          },
+      appBar: AppBar(
+        title: Text(l.tabChallenge),
+        bottom: TabBar(
+          controller: _tabs,
+          tabs: [
+            Tab(text: l.challengesActive),
+            Tab(text: l.challengesPast),
+          ],
         ),
       ),
+      body: viewsAsync.when(
+        loading: () => const Center(child: CircularProgressIndicator()),
+        error: (e, _) => Center(child: Text(l.errorGeneric(e.toString()))),
+        data: (views) {
+          _maybePrompt(views);
+          _ordered = _reconcile(views.where((v) => !v.isPast).toList());
+          final active = _ordered!;
+          final past = views.where((v) => v.isPast).toList();
+          final unseen =
+              past
+                  .where(
+                    (v) =>
+                        v.row.status == ChallengeStatus.completed &&
+                        !v.row.completionSeen,
+                  )
+                  .toList()
+                ..sort(_byRecency);
+          // Only from the Active tab: TabBarView unmounts the other page, so
+          // the anchors would not resolve and the arming would be spent.
+          if (active.isNotEmpty && !_promptPending && _tabs.index == 0) {
+            _maybeRunTutorial();
+          }
+          final anchors = _challengeAnchorIds(active);
+          return TabBarView(
+            controller: _tabs,
+            children: [
+              _activeTab(l, active, unseen, anchors),
+              _pastTab(l, past),
+            ],
+          );
+        },
+      ),
+    );
+  }
+
+  Widget _activeTab(
+    AppLocalizations l,
+    List<ChallengeView> active,
+    List<ChallengeView> unseen,
+    ({int? cardId, int? stepperId}) anchors,
+  ) {
+    return MaxWidthBody(
+      child: CustomScrollView(
+        slivers: [
+          const SliverToBoxAdapter(child: SizedBox(height: 12)),
+          if (unseen.isNotEmpty)
+            SliverToBoxAdapter(
+              child: JustFinishedStrip(
+                count: unseen.length,
+                mostRecentTitle: localizedChallengeTitle(
+                  unseen.first.row.title,
+                  l,
+                ),
+                onTap: () => _tabs.animateTo(1),
+              ),
+            ),
+          if (active.isEmpty)
+            const SliverFillRemaining(
+              hasScrollBody: false,
+              child: _EmptyState(),
+            )
+          else ...[
+            _section(active, anchors),
+            const SliverToBoxAdapter(child: SizedBox(height: 88)),
+          ],
+        ],
+      ),
+    );
+  }
+
+  Widget _pastTab(AppLocalizations l, List<ChallengeView> past) {
+    if (past.isEmpty) {
+      return MaxWidthBody(
+        child: Center(
+          child: Padding(
+            padding: const EdgeInsetsDirectional.all(32),
+            child: Text(
+              l.challengesPastEmpty,
+              textAlign: TextAlign.center,
+              style: Theme.of(context).textTheme.bodyMedium?.copyWith(
+                color: Theme.of(context).colorScheme.onSurfaceVariant,
+              ),
+            ),
+          ),
+        ),
+      );
+    }
+    final completed =
+        past.where((v) => v.row.status == ChallengeStatus.completed).toList()
+          ..sort(_byRecency);
+    final ended =
+        past.where((v) => v.row.status == ChallengeStatus.ended).toList()
+          ..sort(_byRecency);
+
+    return MaxWidthBody(
+      child: CustomScrollView(
+        slivers: [
+          const SliverToBoxAdapter(child: SizedBox(height: 12)),
+          if (completed.isNotEmpty) ...[
+            SliverToBoxAdapter(child: _SectionHeader(l.challengeCompleted)),
+            _pastSection(completed),
+          ],
+          if (ended.isNotEmpty) ...[
+            SliverToBoxAdapter(child: _SectionHeader(l.challengeSectionEnded)),
+            _pastSection(ended),
+          ],
+          const SliverToBoxAdapter(child: SizedBox(height: 88)),
+        ],
+      ),
+    );
+  }
+
+  /// Newest first, with a stable tiebreak so the strip and the Past tab
+  /// cannot disagree about which challenge is the most recent.
+  int _byRecency(ChallengeView a, ChallengeView b) {
+    final byDate = _pastKey(b).compareTo(_pastKey(a));
+    return byDate != 0 ? byDate : b.row.id.compareTo(a.row.id);
+  }
+
+  /// When it finished, or when its window closed if it never did.
+  DateTime _pastKey(ChallengeView v) =>
+      v.row.completedAt ?? v.row.endExclusive ?? v.row.createdAt;
+
+  Widget _pastSection(List<ChallengeView> views) {
+    return SliverList.builder(
+      itemCount: views.length,
+      itemBuilder: (context, i) {
+        final v = views[i];
+        return Padding(
+          key: ValueKey('challenge-${v.row.id}'),
+          padding: const EdgeInsetsDirectional.symmetric(horizontal: 12),
+          child: ChallengeCard(
+            view: v,
+            todayAmount: _todayAmounts[v.row.id] ?? 0,
+            onSetToday: (amount) => _setToday(ref, v, _today, amount),
+            onTap: () => context.push('/challenge/${v.row.id}'),
+            onLogToday: () =>
+                _logToday(ref, v, _today, _todayAmounts[v.row.id] ?? 0),
+            onDelete: () => confirmDeleteChallenge(context, ref, v.row.id),
+          ),
+        );
+      },
     );
   }
 
@@ -86,14 +241,13 @@ class _ChallengeScreenState extends ConsumerState<ChallengeScreen> {
   }
 
   ({int? cardId, int? stepperId}) _challengeAnchorIds(
-    List<ChallengeView> views,
+    List<ChallengeView> active,
   ) {
     int? card;
     int? stepper;
-    for (final v in views) {
+    for (final v in active) {
       card ??= v.row.id;
-      if (v.row.mode == ChallengeMode.count &&
-          v.row.status != ChallengeStatus.ended) {
+      if (v.row.mode == ChallengeMode.count) {
         stepper = v.row.id;
         break;
       }
@@ -103,8 +257,6 @@ class _ChallengeScreenState extends ConsumerState<ChallengeScreen> {
 
   Widget _section(
     List<ChallengeView> views,
-    DateTime today,
-    Map<int, int> amounts,
     ({int? cardId, int? stepperId}) anchors,
   ) {
     return SliverReorderableList(
@@ -124,11 +276,11 @@ class _ChallengeScreenState extends ConsumerState<ChallengeScreen> {
                   ? tutorialChallengeStepperKey
                   : null,
               view: v,
-              todayAmount: amounts[v.row.id] ?? 0,
-              onSetToday: (amount) => _setToday(ref, v, today, amount),
+              todayAmount: _todayAmounts[v.row.id] ?? 0,
+              onSetToday: (amount) => _setToday(ref, v, _today, amount),
               onTap: () => context.push('/challenge/${v.row.id}'),
               onLogToday: () =>
-                  _logToday(ref, v, today, amounts[v.row.id] ?? 0),
+                  _logToday(ref, v, _today, _todayAmounts[v.row.id] ?? 0),
               onDelete: () => confirmDeleteChallenge(context, ref, v.row.id),
             ),
           ),
@@ -137,31 +289,19 @@ class _ChallengeScreenState extends ConsumerState<ChallengeScreen> {
     );
   }
 
-  void _reorder(List<ChallengeView> section, int oldIndex, int newIndex) {
+  void _reorder(List<ChallengeView> active, int oldIndex, int newIndex) {
     if (oldIndex < newIndex) newIndex -= 1;
-    final reordered = List<ChallengeView>.of(section);
-    final item = reordered.removeAt(oldIndex);
-    reordered.insert(newIndex, item);
-
-    // Renumber the whole list, active section first, so both sections stay
-    // consistent with the query's ORDER BY.
-    final isPastSection = section.first.isPast;
-    final others = [
-      for (final v in _ordered!)
-        if (v.isPast != isPastSection) v,
-    ];
-    final merged = isPastSection
-        ? [...others, ...reordered]
-        : [...reordered, ...others];
-    setState(() => _ordered = merged);
+    final reordered = List<ChallengeView>.of(active);
+    reordered.insert(newIndex, reordered.removeAt(oldIndex));
+    setState(() => _ordered = reordered);
 
     ref.read(challengeRepositoryProvider).reorder({
-      for (var i = 0; i < merged.length; i++) merged[i].row.id: i,
+      for (var i = 0; i < reordered.length; i++) reordered[i].row.id: i,
     });
 
     FirebaseAnalytics.instance.logEvent(
       name: 'challenge_reordered',
-      parameters: {'item_count': merged.length},
+      parameters: {'item_count': reordered.length},
     );
   }
 

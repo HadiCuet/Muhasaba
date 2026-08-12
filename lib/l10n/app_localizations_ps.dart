@@ -1105,6 +1105,23 @@ class AppLocalizationsPs extends AppLocalizations {
   String get challengesPast => 'پخواني';
 
   @override
+  String challengeJustFinished(int count, String title) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count هدفونه پای ته ورسېدل — وروستی یې $title',
+      one: '$title پای ته ورسېد',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeSectionEnded => 'پای';
+
+  @override
+  String get challengesPastEmpty => 'تر اوسه څه نه دي پای ته رسېدلي.';
+
+  @override
   String get challengesEmptyTitle => 'تر اوسه هیڅ هدف نشته';
 
   @override

@@ -1112,6 +1112,23 @@ class AppLocalizationsKu extends AppLocalizations {
   String get challengesPast => 'Borî';
 
   @override
+  String challengeJustFinished(int count, String title) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count armanc bi dawî bûn — ya dawî $title',
+      one: '$title bi dawî bû',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeSectionEnded => 'Dawî';
+
+  @override
+  String get challengesPastEmpty => 'Hîn tiştek bi dawî nebûye.';
+
+  @override
   String get challengesEmptyTitle => 'Hîn armanc tune';
 
   @override

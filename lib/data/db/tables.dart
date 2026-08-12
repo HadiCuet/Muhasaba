@@ -105,6 +105,10 @@ class Challenges extends Table {
   DateTimeColumn get createdAt => dateTime()();
   DateTimeColumn get completedAt => dateTime().nullable()();
   IntColumn get sortOrder => integer().withDefault(const Constant(0))();
+
+  /// Whether the user has been shown that this challenge finished.
+  BoolColumn get completionSeen =>
+      boolean().withDefault(const Constant(false))();
 }
 
 /// One row per (challenge, muhasabaDate). Progress is `SUM(amount)` over these

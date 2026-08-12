@@ -2250,6 +2250,21 @@ class $ChallengesTable extends Challenges
     requiredDuringInsert: false,
     defaultValue: const Constant(0),
   );
+  static const VerificationMeta _completionSeenMeta = const VerificationMeta(
+    'completionSeen',
+  );
+  @override
+  late final GeneratedColumn<bool> completionSeen = GeneratedColumn<bool>(
+    'completion_seen',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("completion_seen" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
   @override
   List<GeneratedColumn> get $columns => [
     id,
@@ -2268,6 +2283,7 @@ class $ChallengesTable extends Challenges
     createdAt,
     completedAt,
     sortOrder,
+    completionSeen,
   ];
   @override
   String get aliasedName => _alias ?? actualTableName;
@@ -2382,6 +2398,15 @@ class $ChallengesTable extends Challenges
         sortOrder.isAcceptableOrUnknown(data['sort_order']!, _sortOrderMeta),
       );
     }
+    if (data.containsKey('completion_seen')) {
+      context.handle(
+        _completionSeenMeta,
+        completionSeen.isAcceptableOrUnknown(
+          data['completion_seen']!,
+          _completionSeenMeta,
+        ),
+      );
+    }
     return context;
   }
 
@@ -2459,6 +2484,10 @@ class $ChallengesTable extends Challenges
         DriftSqlType.int,
         data['${effectivePrefix}sort_order'],
       )!,
+      completionSeen: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}completion_seen'],
+      )!,
     );
   }
 
@@ -2490,6 +2519,9 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
   final DateTime createdAt;
   final DateTime? completedAt;
   final int sortOrder;
+
+  /// Whether the user has been shown that this challenge finished.
+  final bool completionSeen;
   const ChallengeRow({
     required this.id,
     required this.title,
@@ -2507,6 +2539,7 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
     required this.createdAt,
     this.completedAt,
     required this.sortOrder,
+    required this.completionSeen,
   });
   @override
   Map<String, Expression> toColumns(bool nullToAbsent) {
@@ -2543,6 +2576,7 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
       map['completed_at'] = Variable<DateTime>(completedAt);
     }
     map['sort_order'] = Variable<int>(sortOrder);
+    map['completion_seen'] = Variable<bool>(completionSeen);
     return map;
   }
 
@@ -2572,6 +2606,7 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
           ? const Value.absent()
           : Value(completedAt),
       sortOrder: Value(sortOrder),
+      completionSeen: Value(completionSeen),
     );
   }
 
@@ -2601,6 +2636,7 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
       createdAt: serializer.fromJson<DateTime>(json['createdAt']),
       completedAt: serializer.fromJson<DateTime?>(json['completedAt']),
       sortOrder: serializer.fromJson<int>(json['sortOrder']),
+      completionSeen: serializer.fromJson<bool>(json['completionSeen']),
     );
   }
   @override
@@ -2627,6 +2663,7 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
       'createdAt': serializer.toJson<DateTime>(createdAt),
       'completedAt': serializer.toJson<DateTime?>(completedAt),
       'sortOrder': serializer.toJson<int>(sortOrder),
+      'completionSeen': serializer.toJson<bool>(completionSeen),
     };
   }
 
@@ -2647,6 +2684,7 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
     DateTime? createdAt,
     Value<DateTime?> completedAt = const Value.absent(),
     int? sortOrder,
+    bool? completionSeen,
   }) => ChallengeRow(
     id: id ?? this.id,
     title: title ?? this.title,
@@ -2664,6 +2702,7 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
     createdAt: createdAt ?? this.createdAt,
     completedAt: completedAt.present ? completedAt.value : this.completedAt,
     sortOrder: sortOrder ?? this.sortOrder,
+    completionSeen: completionSeen ?? this.completionSeen,
   );
   ChallengeRow copyWithCompanion(ChallengesCompanion data) {
     return ChallengeRow(
@@ -2691,6 +2730,9 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
           ? data.completedAt.value
           : this.completedAt,
       sortOrder: data.sortOrder.present ? data.sortOrder.value : this.sortOrder,
+      completionSeen: data.completionSeen.present
+          ? data.completionSeen.value
+          : this.completionSeen,
     );
   }
 
@@ -2712,7 +2754,8 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
           ..write('expiryHandled: $expiryHandled, ')
           ..write('createdAt: $createdAt, ')
           ..write('completedAt: $completedAt, ')
-          ..write('sortOrder: $sortOrder')
+          ..write('sortOrder: $sortOrder, ')
+          ..write('completionSeen: $completionSeen')
           ..write(')'))
         .toString();
   }
@@ -2735,6 +2778,7 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
     createdAt,
     completedAt,
     sortOrder,
+    completionSeen,
   );
   @override
   bool operator ==(Object other) =>
@@ -2755,7 +2799,8 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
           other.expiryHandled == this.expiryHandled &&
           other.createdAt == this.createdAt &&
           other.completedAt == this.completedAt &&
-          other.sortOrder == this.sortOrder);
+          other.sortOrder == this.sortOrder &&
+          other.completionSeen == this.completionSeen);
 }
 
 class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
@@ -2775,6 +2820,7 @@ class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
   final Value<DateTime> createdAt;
   final Value<DateTime?> completedAt;
   final Value<int> sortOrder;
+  final Value<bool> completionSeen;
   const ChallengesCompanion({
     this.id = const Value.absent(),
     this.title = const Value.absent(),
@@ -2792,6 +2838,7 @@ class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
     this.createdAt = const Value.absent(),
     this.completedAt = const Value.absent(),
     this.sortOrder = const Value.absent(),
+    this.completionSeen = const Value.absent(),
   });
   ChallengesCompanion.insert({
     this.id = const Value.absent(),
@@ -2810,6 +2857,7 @@ class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
     required DateTime createdAt,
     this.completedAt = const Value.absent(),
     this.sortOrder = const Value.absent(),
+    this.completionSeen = const Value.absent(),
   }) : title = Value(title),
        mode = Value(mode),
        target = Value(target),
@@ -2833,6 +2881,7 @@ class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
     Expression<DateTime>? createdAt,
     Expression<DateTime>? completedAt,
     Expression<int>? sortOrder,
+    Expression<bool>? completionSeen,
   }) {
     return RawValuesInsertable({
       if (id != null) 'id': id,
@@ -2851,6 +2900,7 @@ class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
       if (createdAt != null) 'created_at': createdAt,
       if (completedAt != null) 'completed_at': completedAt,
       if (sortOrder != null) 'sort_order': sortOrder,
+      if (completionSeen != null) 'completion_seen': completionSeen,
     });
   }
 
@@ -2871,6 +2921,7 @@ class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
     Value<DateTime>? createdAt,
     Value<DateTime?>? completedAt,
     Value<int>? sortOrder,
+    Value<bool>? completionSeen,
   }) {
     return ChallengesCompanion(
       id: id ?? this.id,
@@ -2889,6 +2940,7 @@ class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
       createdAt: createdAt ?? this.createdAt,
       completedAt: completedAt ?? this.completedAt,
       sortOrder: sortOrder ?? this.sortOrder,
+      completionSeen: completionSeen ?? this.completionSeen,
     );
   }
 
@@ -2947,6 +2999,9 @@ class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
     if (sortOrder.present) {
       map['sort_order'] = Variable<int>(sortOrder.value);
     }
+    if (completionSeen.present) {
+      map['completion_seen'] = Variable<bool>(completionSeen.value);
+    }
     return map;
   }
 
@@ -2968,7 +3023,8 @@ class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
           ..write('expiryHandled: $expiryHandled, ')
           ..write('createdAt: $createdAt, ')
           ..write('completedAt: $completedAt, ')
-          ..write('sortOrder: $sortOrder')
+          ..write('sortOrder: $sortOrder, ')
+          ..write('completionSeen: $completionSeen')
           ..write(')'))
         .toString();
   }
@@ -4857,6 +4913,7 @@ typedef $$ChallengesTableCreateCompanionBuilder =
       required DateTime createdAt,
       Value<DateTime?> completedAt,
       Value<int> sortOrder,
+      Value<bool> completionSeen,
     });
 typedef $$ChallengesTableUpdateCompanionBuilder =
     ChallengesCompanion Function({
@@ -4876,6 +4933,7 @@ typedef $$ChallengesTableUpdateCompanionBuilder =
       Value<DateTime> createdAt,
       Value<DateTime?> completedAt,
       Value<int> sortOrder,
+      Value<bool> completionSeen,
     });
 
 final class $$ChallengesTableReferences
@@ -4997,6 +5055,11 @@ class $$ChallengesTableFilterComposer
     builder: (column) => ColumnFilters(column),
   );
 
+  ColumnFilters<bool> get completionSeen => $composableBuilder(
+    column: $table.completionSeen,
+    builder: (column) => ColumnFilters(column),
+  );
+
   Expression<bool> challengeEntriesRefs(
     Expression<bool> Function($$ChallengeEntriesTableFilterComposer f) f,
   ) {
@@ -5111,6 +5174,11 @@ class $$ChallengesTableOrderingComposer
     column: $table.sortOrder,
     builder: (column) => ColumnOrderings(column),
   );
+
+  ColumnOrderings<bool> get completionSeen => $composableBuilder(
+    column: $table.completionSeen,
+    builder: (column) => ColumnOrderings(column),
+  );
 }
 
 class $$ChallengesTableAnnotationComposer
@@ -5177,6 +5245,11 @@ class $$ChallengesTableAnnotationComposer
 
   GeneratedColumn<int> get sortOrder =>
       $composableBuilder(column: $table.sortOrder, builder: (column) => column);
+
+  GeneratedColumn<bool> get completionSeen => $composableBuilder(
+    column: $table.completionSeen,
+    builder: (column) => column,
+  );
 
   Expression<T> challengeEntriesRefs<T extends Object>(
     Expression<T> Function($$ChallengeEntriesTableAnnotationComposer a) f,
@@ -5248,6 +5321,7 @@ class $$ChallengesTableTableManager
                 Value<DateTime> createdAt = const Value.absent(),
                 Value<DateTime?> completedAt = const Value.absent(),
                 Value<int> sortOrder = const Value.absent(),
+                Value<bool> completionSeen = const Value.absent(),
               }) => ChallengesCompanion(
                 id: id,
                 title: title,
@@ -5265,6 +5339,7 @@ class $$ChallengesTableTableManager
                 createdAt: createdAt,
                 completedAt: completedAt,
                 sortOrder: sortOrder,
+                completionSeen: completionSeen,
               ),
           createCompanionCallback:
               ({
@@ -5284,6 +5359,7 @@ class $$ChallengesTableTableManager
                 required DateTime createdAt,
                 Value<DateTime?> completedAt = const Value.absent(),
                 Value<int> sortOrder = const Value.absent(),
+                Value<bool> completionSeen = const Value.absent(),
               }) => ChallengesCompanion.insert(
                 id: id,
                 title: title,
@@ -5301,6 +5377,7 @@ class $$ChallengesTableTableManager
                 createdAt: createdAt,
                 completedAt: completedAt,
                 sortOrder: sortOrder,
+                completionSeen: completionSeen,
               ),
           withReferenceMapper: (p0) => p0
               .map(

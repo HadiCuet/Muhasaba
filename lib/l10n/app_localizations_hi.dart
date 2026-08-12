@@ -1111,6 +1111,23 @@ class AppLocalizationsHi extends AppLocalizations {
   String get challengesPast => 'पिछले';
 
   @override
+  String challengeJustFinished(int count, String title) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count संकल्प समाप्त हुए — सबसे हाल का $title',
+      one: '$title समाप्त हुआ',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeSectionEnded => 'समाप्त';
+
+  @override
+  String get challengesPastEmpty => 'अभी कुछ समाप्त नहीं हुआ।';
+
+  @override
   String get challengesEmptyTitle => 'अभी कोई संकल्प नहीं';
 
   @override

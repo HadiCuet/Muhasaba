@@ -1106,6 +1106,23 @@ class AppLocalizationsFa extends AppLocalizations {
   String get challengesPast => 'گذشته';
 
   @override
+  String challengeJustFinished(int count, String title) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count چالش به پایان رسید — آخرین آن‌ها $title',
+      one: '$title به پایان رسید',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeSectionEnded => 'پایان یافت';
+
+  @override
+  String get challengesPastEmpty => 'هنوز چیزی به پایان نرسیده است.';
+
+  @override
   String get challengesEmptyTitle => 'هنوز چالشی ندارید';
 
   @override

@@ -1110,6 +1110,23 @@ class AppLocalizationsSw extends AppLocalizations {
   String get challengesPast => 'Yaliyopita';
 
   @override
+  String challengeJustFinished(int count, String title) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Malengo $count yameisha — la mwisho $title',
+      one: '$title imeisha',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeSectionEnded => 'Imeisha';
+
+  @override
+  String get challengesPastEmpty => 'Bado hakuna lililoisha.';
+
+  @override
   String get challengesEmptyTitle => 'Bado hakuna lengo';
 
   @override

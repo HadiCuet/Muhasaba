@@ -2018,6 +2018,24 @@ abstract class AppLocalizations {
   /// **'Past'**
   String get challengesPast;
 
+  /// Strip on the Active tab announcing challenges that just moved to Past. Tapping it opens the Past tab.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Finished {title}} other{Finished {count} challenges — {title} most recently}}'**
+  String challengeJustFinished(int count, String title);
+
+  /// Past tab section header above challenges whose deadline passed unmet. challengeEnded takes arguments so it cannot be reused here.
+  ///
+  /// In en, this message translates to:
+  /// **'Ended'**
+  String get challengeSectionEnded;
+
+  /// Empty state on the Challenge screen's Past tab
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing finished yet.'**
+  String get challengesPastEmpty;
+
   /// Empty-state heading on the Challenge tab
   ///
   /// In en, this message translates to:
@@ -2192,7 +2210,7 @@ abstract class AppLocalizations {
   /// **'Target reached'**
   String get challengeReached;
 
-  /// Chip on a finished challenge in the Past section
+  /// Status label on a finished challenge — used both as a chip and as the Past tab's section header
   ///
   /// In en, this message translates to:
   /// **'Completed'**

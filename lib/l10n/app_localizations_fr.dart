@@ -1116,7 +1116,24 @@ class AppLocalizationsFr extends AppLocalizations {
   String get challengesActive => 'En cours';
 
   @override
-  String get challengesPast => 'Terminés';
+  String get challengesPast => 'Passés';
+
+  @override
+  String challengeJustFinished(int count, String title) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count défis terminés — $title en dernier',
+      one: 'Défi terminé : $title',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeSectionEnded => 'Clôturé';
+
+  @override
+  String get challengesPastEmpty => 'Rien de terminé pour l\'instant.';
 
   @override
   String get challengesEmptyTitle => 'Aucun défi pour le moment';

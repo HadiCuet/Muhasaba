@@ -485,6 +485,26 @@
   "@challengesPast": {
     "description": "Section header above finished or expired challenges"
   },
+  "challengeJustFinished": "{count, plural, =1{Finished {title}} other{Finished {count} challenges — {title} most recently}}",
+  "@challengeJustFinished": {
+    "description": "Strip on the Active tab announcing challenges that just moved to Past. Tapping it opens the Past tab.",
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeSectionEnded": "Ended",
+  "@challengeSectionEnded": {
+    "description": "Past tab section header above challenges whose deadline passed unmet. challengeEnded takes arguments so it cannot be reused here."
+  },
+  "challengesPastEmpty": "Nothing finished yet.",
+  "@challengesPastEmpty": {
+    "description": "Empty state on the Challenge screen's Past tab"
+  },
   "challengesEmptyTitle": "No challenges yet",
   "@challengesEmptyTitle": {
     "description": "Empty-state heading on the Challenge tab"
@@ -655,7 +675,7 @@
   },
   "challengeCompleted": "Completed",
   "@challengeCompleted": {
-    "description": "Chip on a finished challenge in the Past section"
+    "description": "Status label on a finished challenge — used both as a chip and as the Past tab's section header"
   },
   "challengeEnded": "Ended · {done} of {target}",
   "@challengeEnded": {
