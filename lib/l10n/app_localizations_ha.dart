@@ -1230,5 +1230,15 @@ class AppLocalizationsHa extends AppLocalizations {
   String get challengeDailyBreakdown => 'Bayanan kowace rana';
 
   @override
+  String challengeNudgeBody(String title, String rate) {
+    return '$title: $rate kowace rana don kammalawa cikin lokaci.';
+  }
+
+  @override
+  String challengeLastDayBody(String title, String remaining) {
+    return '$title: rana ta ƙarshe — saura $remaining.';
+  }
+
+  @override
   String get listSeparator => ' · ';
 }

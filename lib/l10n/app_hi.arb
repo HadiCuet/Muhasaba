@@ -342,5 +342,7 @@
   "challengeRestart": "फिर से शुरू करें",
   "challengeArchive": "संग्रहित करें",
   "challengeDailyBreakdown": "दैनिक रिकॉर्ड",
+  "challengeNudgeBody": "{title}: समय पर पूरा करने के लिए रोज़ {rate}।",
+  "challengeLastDayBody": "{title}: आख़िरी दिन — {remaining} शेष।",
   "listSeparator": " · "
 }

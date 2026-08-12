@@ -1227,5 +1227,15 @@ class AppLocalizationsSw extends AppLocalizations {
   String get challengeDailyBreakdown => 'Rekodi ya kila siku';
 
   @override
+  String challengeNudgeBody(String title, String rate) {
+    return '$title: $rate kwa siku ili kumaliza kwa wakati.';
+  }
+
+  @override
+  String challengeLastDayBody(String title, String remaining) {
+    return '$title: siku ya mwisho — $remaining zimebaki.';
+  }
+
+  @override
   String get listSeparator => ' · ';
 }

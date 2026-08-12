@@ -1237,5 +1237,15 @@ class AppLocalizationsAr extends AppLocalizations {
   String get challengeDailyBreakdown => 'السجل اليومي';
 
   @override
+  String challengeNudgeBody(String title, String rate) {
+    return '$title: $rate يوميًا لإتمامه في الموعد.';
+  }
+
+  @override
+  String challengeLastDayBody(String title, String remaining) {
+    return '$title: آخر يوم – بقي $remaining.';
+  }
+
+  @override
   String get listSeparator => ' – ';
 }

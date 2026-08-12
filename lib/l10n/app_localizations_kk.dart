@@ -1223,5 +1223,15 @@ class AppLocalizationsKk extends AppLocalizations {
   String get challengeDailyBreakdown => 'Күнделікті жазба';
 
   @override
+  String challengeNudgeBody(String title, String rate) {
+    return '$title: уақытында аяқтау үшін күніне $rate.';
+  }
+
+  @override
+  String challengeLastDayBody(String title, String remaining) {
+    return '$title: соңғы күн — $remaining қалды.';
+  }
+
+  @override
   String get listSeparator => ' · ';
 }

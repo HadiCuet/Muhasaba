@@ -342,5 +342,7 @@
   "challengeRestart": "Fillo sërish",
   "challengeArchive": "Arkivo",
   "challengeDailyBreakdown": "Regjistri ditor",
+  "challengeNudgeBody": "{title}: {rate} në ditë për ta mbaruar në kohë.",
+  "challengeLastDayBody": "{title}: dita e fundit — {remaining} mbetur.",
   "listSeparator": " · "
 }

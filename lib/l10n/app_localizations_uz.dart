@@ -1230,5 +1230,15 @@ class AppLocalizationsUz extends AppLocalizations {
   String get challengeDailyBreakdown => 'Kunlik yozuv';
 
   @override
+  String challengeNudgeBody(String title, String rate) {
+    return '$title: o‘z vaqtida tugatish uchun kuniga $rate.';
+  }
+
+  @override
+  String challengeLastDayBody(String title, String remaining) {
+    return '$title: oxirgi kun — $remaining qoldi.';
+  }
+
+  @override
   String get listSeparator => ' · ';
 }

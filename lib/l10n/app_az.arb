@@ -342,5 +342,7 @@
   "challengeRestart": "Yenidən başla",
   "challengeArchive": "Arxivləşdir",
   "challengeDailyBreakdown": "Gündəlik qeyd",
+  "challengeNudgeBody": "{title}: vaxtında bitirmək üçün gündə {rate}.",
+  "challengeLastDayBody": "{title}: son gün — {remaining} qalıb.",
   "listSeparator": " · "
 }

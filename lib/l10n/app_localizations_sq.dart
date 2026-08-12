@@ -1232,5 +1232,15 @@ class AppLocalizationsSq extends AppLocalizations {
   String get challengeDailyBreakdown => 'Regjistri ditor';
 
   @override
+  String challengeNudgeBody(String title, String rate) {
+    return '$title: $rate në ditë për ta mbaruar në kohë.';
+  }
+
+  @override
+  String challengeLastDayBody(String title, String remaining) {
+    return '$title: dita e fundit — $remaining mbetur.';
+  }
+
+  @override
   String get listSeparator => ' · ';
 }

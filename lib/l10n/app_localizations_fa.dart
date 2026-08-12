@@ -1223,5 +1223,15 @@ class AppLocalizationsFa extends AppLocalizations {
   String get challengeDailyBreakdown => 'گزارش روزانه';
 
   @override
+  String challengeNudgeBody(String title, String rate) {
+    return '$title: روزی $rate برای اتمام به‌موقع.';
+  }
+
+  @override
+  String challengeLastDayBody(String title, String remaining) {
+    return '$title: روز آخر – $remaining مانده.';
+  }
+
+  @override
   String get listSeparator => ' – ';
 }

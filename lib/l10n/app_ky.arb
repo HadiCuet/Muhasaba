@@ -342,5 +342,7 @@
   "challengeRestart": "Кайра баштоо",
   "challengeArchive": "Архивдөө",
   "challengeDailyBreakdown": "Күндөлүк жазуу",
+  "challengeNudgeBody": "{title}: убагында аяктоо үчүн күнүнө {rate}.",
+  "challengeLastDayBody": "{title}: акыркы күн — {remaining} калды.",
   "listSeparator": " · "
 }

@@ -1222,5 +1222,15 @@ class AppLocalizationsAz extends AppLocalizations {
   String get challengeDailyBreakdown => 'Gündəlik qeyd';
 
   @override
+  String challengeNudgeBody(String title, String rate) {
+    return '$title: vaxtında bitirmək üçün gündə $rate.';
+  }
+
+  @override
+  String challengeLastDayBody(String title, String remaining) {
+    return '$title: son gün — $remaining qalıb.';
+  }
+
+  @override
   String get listSeparator => ' · ';
 }

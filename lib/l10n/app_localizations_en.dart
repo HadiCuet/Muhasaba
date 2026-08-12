@@ -1227,5 +1227,15 @@ class AppLocalizationsEn extends AppLocalizations {
   String get challengeDailyBreakdown => 'Daily log';
 
   @override
+  String challengeNudgeBody(String title, String rate) {
+    return '$title: $rate a day to finish on time.';
+  }
+
+  @override
+  String challengeLastDayBody(String title, String remaining) {
+    return '$title: last day — $remaining to go.';
+  }
+
+  @override
   String get listSeparator => ' · ';
 }

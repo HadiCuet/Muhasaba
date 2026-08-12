@@ -342,5 +342,7 @@
   "challengeRestart": "Qaytadan boshlash",
   "challengeArchive": "Arxivlash",
   "challengeDailyBreakdown": "Kunlik yozuv",
+  "challengeNudgeBody": "{title}: o‘z vaqtida tugatish uchun kuniga {rate}.",
+  "challengeLastDayBody": "{title}: oxirgi kun — {remaining} qoldi.",
   "listSeparator": " · "
 }

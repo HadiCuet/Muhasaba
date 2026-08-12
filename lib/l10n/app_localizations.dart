@@ -2192,6 +2192,18 @@ abstract class AppLocalizations {
   /// **'Daily log'**
   String get challengeDailyBreakdown;
 
+  /// Notification sent when a challenge falls behind pace
+  ///
+  /// In en, this message translates to:
+  /// **'{title}: {rate} a day to finish on time.'**
+  String challengeNudgeBody(String title, String rate);
+
+  /// Notification sent on the final day of a challenge window
+  ///
+  /// In en, this message translates to:
+  /// **'{title}: last day — {remaining} to go.'**
+  String challengeLastDayBody(String title, String remaining);
+
   /// Separator between clauses on a challenge card. Arabic-script locales use an en dash because the middot is indistinguishable from their digit zero.
   ///
   /// In en, this message translates to:

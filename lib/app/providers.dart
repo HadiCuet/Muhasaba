@@ -61,7 +61,10 @@ final recentIconsProvider = FutureProvider<List<String>>((ref) {
 });
 
 final challengeRepositoryProvider = Provider<ChallengeRepository>((ref) {
-  return ChallengeRepository(ref.watch(appDatabaseProvider).challengeDao);
+  return ChallengeRepository(
+    ref.watch(appDatabaseProvider).challengeDao,
+    ref.watch(reminderSchedulerProvider),
+  );
 });
 
 final completionRepositoryProvider = Provider<CompletionRepository>((ref) {

@@ -1226,5 +1226,15 @@ class AppLocalizationsBn extends AppLocalizations {
   String get challengeDailyBreakdown => 'দৈনিক তালিকা';
 
   @override
+  String challengeNudgeBody(String title, String rate) {
+    return '$title: সময়মতো শেষ করতে দিনে $rate।';
+  }
+
+  @override
+  String challengeLastDayBody(String title, String remaining) {
+    return '$title: শেষ দিন — আর $remaining বাকি।';
+  }
+
+  @override
   String get listSeparator => ' · ';
 }

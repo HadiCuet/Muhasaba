@@ -342,5 +342,7 @@
   "challengeRestart": "আবার শুরু করুন",
   "challengeArchive": "আর্কাইভ করুন",
   "challengeDailyBreakdown": "দৈনিক তালিকা",
+  "challengeNudgeBody": "{title}: সময়মতো শেষ করতে দিনে {rate}।",
+  "challengeLastDayBody": "{title}: শেষ দিন — আর {remaining} বাকি।",
   "listSeparator": " · "
 }

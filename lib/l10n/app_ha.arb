@@ -342,5 +342,7 @@
   "challengeRestart": "Fara sabo",
   "challengeArchive": "Ajiye a tarihi",
   "challengeDailyBreakdown": "Bayanan kowace rana",
+  "challengeNudgeBody": "{title}: {rate} kowace rana don kammalawa cikin lokaci.",
+  "challengeLastDayBody": "{title}: rana ta ƙarshe — saura {remaining}.",
   "listSeparator": " · "
 }

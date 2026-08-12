@@ -342,5 +342,7 @@
   "challengeRestart": "Dib u bilow",
   "challengeArchive": "Arkiifi",
   "challengeDailyBreakdown": "Diiwaanka maalinlaha ah",
+  "challengeNudgeBody": "{title}: {rate} maalintii si aad waqtiga u dhammaysid.",
+  "challengeLastDayBody": "{title}: maalinta dambe — {remaining} hadhay.",
   "listSeparator": " · "
 }

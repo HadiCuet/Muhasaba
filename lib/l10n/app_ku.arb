@@ -342,5 +342,7 @@
   "challengeRestart": "Ji nû ve dest pê bike",
   "challengeArchive": "Arşîv bike",
   "challengeDailyBreakdown": "Tomara rojane",
+  "challengeNudgeBody": "{title}: rojê {rate} ji bo temamkirina di wextê xwe de.",
+  "challengeLastDayBody": "{title}: roja dawî — {remaining} maye.",
   "listSeparator": " · "
 }

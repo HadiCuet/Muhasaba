@@ -342,5 +342,7 @@
   "challengeRestart": "Täzeden başlamak",
   "challengeArchive": "Arhiwe geçirmek",
   "challengeDailyBreakdown": "Günlük ýazgy",
+  "challengeNudgeBody": "{title}: wagtynda tamamlamak üçin günde {rate}.",
+  "challengeLastDayBody": "{title}: soňky gün — {remaining} galdy.",
   "listSeparator": " · "
 }

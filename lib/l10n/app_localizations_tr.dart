@@ -1225,5 +1225,15 @@ class AppLocalizationsTr extends AppLocalizations {
   String get challengeDailyBreakdown => 'Günlük kayıt';
 
   @override
+  String challengeNudgeBody(String title, String rate) {
+    return '$title: zamanında bitirmek için günde $rate.';
+  }
+
+  @override
+  String challengeLastDayBody(String title, String remaining) {
+    return '$title: son gün — $remaining kaldı.';
+  }
+
+  @override
   String get listSeparator => ' · ';
 }

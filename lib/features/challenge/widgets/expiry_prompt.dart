@@ -6,6 +6,7 @@ import '../../../app/providers.dart';
 import '../../../data/db/database.dart';
 import '../../../domain/utils/localized_number.dart';
 import '../../../l10n/app_localizations.dart';
+import '../challenge_providers.dart';
 
 /// Asks what to do about a challenge whose window closed unmet. Neutral
 /// wording by design — a missed goal is not a defeat.
@@ -72,6 +73,8 @@ Future<void> showExpiryPrompt(
     case 'archive':
       await repo.markEnded(row.id);
   }
+
+  await refreshChallengeNudges(ref);
 
   FirebaseAnalytics.instance.logEvent(
     name: 'challenge_expiry_action',

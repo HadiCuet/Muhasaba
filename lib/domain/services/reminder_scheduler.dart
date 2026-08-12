@@ -57,6 +57,13 @@ abstract class ReminderScheduler {
   /// are SQLite autoincrement starting at 1, so 0 never collides.
   static const int appReminderId = 0;
 
+  /// Notification IDs for challenge nudges live above every amal ID (which are
+  /// autoincrement row IDs starting at 1) so the two can never collide.
+  static const int challengeIdBase = 1000000;
+
+  static int challengeNotificationId(int challengeId, int dayOffset) =>
+      challengeIdBase + challengeId * 8 + dayOffset;
+
   Future<bool> requestPermissions();
 
   /// Sets the localized Android channel strings. Call once at startup and
@@ -88,6 +95,15 @@ abstract class ReminderScheduler {
     required int hour,
     required int minute,
     required String body,
+  });
+
+  /// Schedules a single notification at an absolute local date-time. Unlike
+  /// [scheduleDaily] this does not repeat — the body is pre-computed for one
+  /// specific day.
+  Future<void> scheduleOneShot({
+    required int id,
+    required String body,
+    required DateTime when,
   });
 
   Future<void> cancel(int amalId);
@@ -217,6 +233,35 @@ class _LocalReminderScheduler extends ReminderScheduler {
   }
 
   @override
+  Future<void> scheduleOneShot({
+    required int id,
+    required String body,
+    required DateTime when,
+  }) async {
+    await _plugin.cancel(id: id);
+    final scheduled = tz.TZDateTime.from(when, tz.local);
+    if (!scheduled.isAfter(tz.TZDateTime.now(tz.local))) return;
+
+    await _plugin.zonedSchedule(
+      id: id,
+      title: 'Muhasaba',
+      body: body,
+      scheduledDate: scheduled,
+      notificationDetails: NotificationDetails(
+        android: AndroidNotificationDetails(
+          'muhasaba_reminders',
+          _channelName,
+          channelDescription: _channelDescription,
+          importance: Importance.defaultImportance,
+          priority: Priority.defaultPriority,
+        ),
+        iOS: const DarwinNotificationDetails(),
+      ),
+      androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+    );
+  }
+
+  @override
   Future<void> cancel(int amalId) => _plugin.cancel(id: amalId);
 
   @override
@@ -245,6 +290,13 @@ class _NoopReminderScheduler extends ReminderScheduler {
     required int hour,
     required int minute,
     required String body,
+  }) async {}
+
+  @override
+  Future<void> scheduleOneShot({
+    required int id,
+    required String body,
+    required DateTime when,
   }) async {}
 
   @override

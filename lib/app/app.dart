@@ -8,6 +8,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import '../domain/models/app_settings.dart';
 import '../domain/services/daily_reminder.dart';
 import '../domain/utils/app_locale.dart';
+import '../features/challenge/challenge_providers.dart';
 import '../features/tutorial/tutorial_anchors.dart';
 import '../features/tutorial/tutorial_controller.dart';
 import 'providers.dart';
@@ -35,7 +36,10 @@ class _MuhasabaAppState extends ConsumerState<MuhasabaApp> {
     // a day rollover crossed while backgrounded refreshes Today/History/Stats
     // instead of showing yesterday until the app is force-quit and relaunched.
     _lifecycle = AppLifecycleListener(
-      onResume: () => ref.invalidate(currentMuhasabaDateProvider),
+      onResume: () {
+        ref.invalidate(currentMuhasabaDateProvider);
+        refreshChallengeNudges(ref);
+      },
     );
     WidgetsBinding.instance.addPostFrameCallback((_) => _bootstrapFirstRun());
   }

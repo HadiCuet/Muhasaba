@@ -11,6 +11,7 @@ import '../../domain/models/challenge.dart';
 import '../../domain/utils/localized_number.dart';
 import '../../l10n/app_localizations.dart';
 import '../create_edit/widgets/emoji_picker.dart';
+import 'challenge_providers.dart';
 
 enum _WindowKind { duration, dates, none }
 
@@ -161,6 +162,7 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
         },
       );
     }
+    await refreshChallengeNudges(ref);
     if (mounted) context.pop();
   }
 

@@ -342,5 +342,7 @@
   "challengeRestart": "بیا پیل",
   "challengeArchive": "آرشیف کول",
   "challengeDailyBreakdown": "ورځنی ریکارډ",
+  "challengeNudgeBody": "{title}: په ورځ کې {rate} چې په وخت بشپړ شي.",
+  "challengeLastDayBody": "{title}: وروستۍ ورځ – {remaining} پاتې.",
   "listSeparator": " – "
 }

@@ -1226,5 +1226,15 @@ class AppLocalizationsUr extends AppLocalizations {
   String get challengeDailyBreakdown => 'روزانہ ریکارڈ';
 
   @override
+  String challengeNudgeBody(String title, String rate) {
+    return '$title: وقت پر مکمل کرنے کے لیے روزانہ $rate۔';
+  }
+
+  @override
+  String challengeLastDayBody(String title, String remaining) {
+    return '$title: آخری دن – $remaining باقی۔';
+  }
+
+  @override
   String get listSeparator => ' – ';
 }

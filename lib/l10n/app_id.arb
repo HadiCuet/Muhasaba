@@ -342,5 +342,7 @@
   "challengeRestart": "Mulai lagi",
   "challengeArchive": "Arsipkan",
   "challengeDailyBreakdown": "Catatan harian",
+  "challengeNudgeBody": "{title}: {rate} per hari agar selesai tepat waktu.",
+  "challengeLastDayBody": "{title}: hari terakhir — sisa {remaining}.",
   "listSeparator": " · "
 }

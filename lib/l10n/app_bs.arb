@@ -342,5 +342,7 @@
   "challengeRestart": "Počni ponovo",
   "challengeArchive": "Arhiviraj",
   "challengeDailyBreakdown": "Dnevni zapis",
+  "challengeNudgeBody": "{title}: {rate} dnevno da završiš na vrijeme.",
+  "challengeLastDayBody": "{title}: zadnji dan — još {remaining}.",
   "listSeparator": " · "
 }

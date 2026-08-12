@@ -342,5 +342,7 @@
   "challengeRestart": "Anza upya",
   "challengeArchive": "Weka kwenye kumbukumbu",
   "challengeDailyBreakdown": "Rekodi ya kila siku",
+  "challengeNudgeBody": "{title}: {rate} kwa siku ili kumaliza kwa wakati.",
+  "challengeLastDayBody": "{title}: siku ya mwisho — {remaining} zimebaki.",
   "listSeparator": " · "
 }

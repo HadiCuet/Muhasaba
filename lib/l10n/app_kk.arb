@@ -342,5 +342,7 @@
   "challengeRestart": "Қайта бастау",
   "challengeArchive": "Мұрағаттау",
   "challengeDailyBreakdown": "Күнделікті жазба",
+  "challengeNudgeBody": "{title}: уақытында аяқтау үшін күніне {rate}.",
+  "challengeLastDayBody": "{title}: соңғы күн — {remaining} қалды.",
   "listSeparator": " · "
 }

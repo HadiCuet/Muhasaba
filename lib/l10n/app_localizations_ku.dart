@@ -1229,5 +1229,15 @@ class AppLocalizationsKu extends AppLocalizations {
   String get challengeDailyBreakdown => 'Tomara rojane';
 
   @override
+  String challengeNudgeBody(String title, String rate) {
+    return '$title: rojê $rate ji bo temamkirina di wextê xwe de.';
+  }
+
+  @override
+  String challengeLastDayBody(String title, String remaining) {
+    return '$title: roja dawî — $remaining maye.';
+  }
+
+  @override
   String get listSeparator => ' · ';
 }

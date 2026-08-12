@@ -696,6 +696,30 @@
   "@challengeDailyBreakdown": {
     "description": "Detail-screen section header above per-day entries"
   },
+  "challengeNudgeBody": "{title}: {rate} a day to finish on time.",
+  "@challengeNudgeBody": {
+    "description": "Notification sent when a challenge falls behind pace",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "rate": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeLastDayBody": "{title}: last day — {remaining} to go.",
+  "@challengeLastDayBody": {
+    "description": "Notification sent on the final day of a challenge window",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      },
+      "remaining": {
+        "type": "String"
+      }
+    }
+  },
   "listSeparator": " · ",
   "@listSeparator": {
     "description": "Separator between clauses on a challenge card. Arabic-script locales use an en dash because the middot is indistinguishable from their digit zero."

@@ -1228,5 +1228,15 @@ class AppLocalizationsTg extends AppLocalizations {
   String get challengeDailyBreakdown => 'Сабти рӯзона';
 
   @override
+  String challengeNudgeBody(String title, String rate) {
+    return '$title: барои саривақт анҷом додан рӯзе $rate.';
+  }
+
+  @override
+  String challengeLastDayBody(String title, String remaining) {
+    return '$title: рӯзи охир — $remaining монд.';
+  }
+
+  @override
   String get listSeparator => ' · ';
 }

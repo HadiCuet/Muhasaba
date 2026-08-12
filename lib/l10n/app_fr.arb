@@ -342,5 +342,7 @@
   "challengeRestart": "Recommencer",
   "challengeArchive": "Archiver",
   "challengeDailyBreakdown": "Journal quotidien",
+  "challengeNudgeBody": "{title} : {rate} par jour pour finir à temps.",
+  "challengeLastDayBody": "{title} : dernier jour — {remaining} restant.",
   "listSeparator": " · "
 }

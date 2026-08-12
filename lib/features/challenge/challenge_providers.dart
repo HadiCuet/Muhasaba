@@ -1,9 +1,16 @@
+import 'dart:ui';
+
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../app/providers.dart';
 import '../../data/db/database.dart';
+import '../../domain/models/app_settings.dart';
 import '../../domain/models/challenge.dart';
+import '../../domain/services/challenge_nudge.dart';
 import '../../domain/services/challenge_pace.dart';
+import '../../domain/services/reminder_scheduler.dart';
+import '../../domain/utils/app_locale.dart';
+import '../../l10n/app_localizations.dart';
 
 /// A challenge plus its derived progress and pace — what every widget needs.
 class ChallengeView {
@@ -67,3 +74,23 @@ final challengeEntriesProvider = StreamProvider.autoDispose
     .family<List<ChallengeEntryRow>, int>((ref, id) {
       return ref.watch(challengeRepositoryProvider).watchEntries(id);
     });
+
+/// Recomputes challenge nudges. Called from every site that can change a
+/// challenge's progress, definition, or the app's idea of "today".
+Future<void> refreshChallengeNudges(WidgetRef ref) async {
+  final settings = ref.read(settingsProvider).value ?? AppSettings.defaults;
+  final l = await AppLocalizations.delegate.load(
+    resolveAppLocale(settings.locale, PlatformDispatcher.instance.locales),
+  );
+  final t = settings.dailyReminderEnabled
+      ? parseReminderTime(settings.dailyReminderTime)
+      : null;
+  await syncChallengeNudges(
+    db: ref.read(appDatabaseProvider),
+    scheduler: ref.read(reminderSchedulerProvider),
+    l: l,
+    today: ref.read(currentMuhasabaDateProvider),
+    hour: t?.hour ?? 20,
+    minute: t?.minute ?? 0,
+  );
+}

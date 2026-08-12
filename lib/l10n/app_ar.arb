@@ -342,5 +342,7 @@
   "challengeRestart": "البدء من جديد",
   "challengeArchive": "أرشفة",
   "challengeDailyBreakdown": "السجل اليومي",
+  "challengeNudgeBody": "{title}: {rate} يوميًا لإتمامه في الموعد.",
+  "challengeLastDayBody": "{title}: آخر يوم – بقي {remaining}.",
   "listSeparator": " – "
 }

@@ -83,13 +83,13 @@ class _ChallengeScreenState extends ConsumerState<ChallengeScreen> {
     });
   }
 
-  void _setToday(
+  Future<void> _setToday(
     WidgetRef ref,
     ChallengeView view,
     DateTime today,
     int amount,
-  ) {
-    ref
+  ) async {
+    await ref
         .read(challengeRepositoryProvider)
         .setDayAmount(
           challenge: view.row,
@@ -102,6 +102,7 @@ class _ChallengeScreenState extends ConsumerState<ChallengeScreen> {
         'mode': view.row.mode == ChallengeMode.days ? 'days' : 'count',
       },
     );
+    await refreshChallengeNudges(ref);
   }
 }
 

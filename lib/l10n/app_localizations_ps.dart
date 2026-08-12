@@ -1222,5 +1222,15 @@ class AppLocalizationsPs extends AppLocalizations {
   String get challengeDailyBreakdown => 'ورځنی ریکارډ';
 
   @override
+  String challengeNudgeBody(String title, String rate) {
+    return '$title: په ورځ کې $rate چې په وخت بشپړ شي.';
+  }
+
+  @override
+  String challengeLastDayBody(String title, String remaining) {
+    return '$title: وروستۍ ورځ – $remaining پاتې.';
+  }
+
+  @override
   String get listSeparator => ' – ';
 }

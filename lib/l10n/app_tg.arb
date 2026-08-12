@@ -342,5 +342,7 @@
   "challengeRestart": "Аз нав оғоз кардан",
   "challengeArchive": "Бойгонӣ кардан",
   "challengeDailyBreakdown": "Сабти рӯзона",
+  "challengeNudgeBody": "{title}: барои саривақт анҷом додан рӯзе {rate}.",
+  "challengeLastDayBody": "{title}: рӯзи охир — {remaining} монд.",
   "listSeparator": " · "
 }

@@ -342,5 +342,7 @@
   "challengeRestart": "شروع دوباره",
   "challengeArchive": "بایگانی",
   "challengeDailyBreakdown": "گزارش روزانه",
+  "challengeNudgeBody": "{title}: روزی {rate} برای اتمام به‌موقع.",
+  "challengeLastDayBody": "{title}: روز آخر – {remaining} مانده.",
   "listSeparator": " – "
 }

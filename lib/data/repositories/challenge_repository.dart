@@ -1,15 +1,17 @@
 import 'package:drift/drift.dart';
 
 import '../../domain/models/challenge.dart';
+import '../../domain/services/reminder_scheduler.dart';
 import '../db/daos/challenge_dao.dart';
 import '../db/database.dart';
 
 /// Thin wrapper over [ChallengeDao] for the UI layer, matching the shape of
 /// `AmalRepository`.
 class ChallengeRepository {
-  ChallengeRepository(this._dao);
+  ChallengeRepository(this._dao, this._scheduler);
 
   final ChallengeDao _dao;
+  final ReminderScheduler _scheduler;
 
   Stream<List<ChallengeRow>> watchAll() => _dao.watchAll();
   Stream<Map<int, int>> watchProgress() => _dao.watchProgress();
@@ -46,7 +48,13 @@ class ChallengeRepository {
 
   Future<bool> update(ChallengeRow row) => _dao.updateChallenge(row);
 
-  Future<int> remove(int id) => _dao.deleteChallenge(id);
+  Future<int> remove(int id) async {
+    final deleted = await _dao.deleteChallenge(id);
+    for (var d = 0; d < 8; d++) {
+      await _scheduler.cancel(ReminderScheduler.challengeNotificationId(id, d));
+    }
+    return deleted;
+  }
 
   Future<void> setDayAmount({
     required ChallengeRow challenge,
