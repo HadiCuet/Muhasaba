@@ -317,7 +317,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
       final granted = await scheduler.requestPermissions();
       if (granted) {
         await scheduler.scheduleDaily(
-          amalId: amalId,
+          id: amalId,
           title: localizedAmalTitle(title, l),
           hour: parsed.hour,
           minute: parsed.minute,

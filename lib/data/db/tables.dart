@@ -93,6 +93,9 @@ class Challenges extends Table {
   IntColumn get target => integer()();
   IntColumn get stepSize => integer().withDefault(const Constant(1))();
   TextColumn get unit => text().nullable()(); // user-typed, e.g. "rakah"
+  TextColumn get category =>
+      text().nullable()(); // shares the amal `categories` table
+  TextColumn get reminderTime => text().nullable()(); // "HH:mm" local
   DateTimeColumn get startDate => dateTime()(); // date-only (UTC midnight)
   DateTimeColumn get endExclusive =>
       dateTime().nullable()(); // date-only; null = no deadline

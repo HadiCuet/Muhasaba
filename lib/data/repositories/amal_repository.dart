@@ -58,7 +58,7 @@ class AmalRepository {
     final t = parseReminderTime(reminderTime);
     if (t != null) {
       await _scheduler.scheduleDaily(
-        amalId: id,
+        id: id,
         title: notificationTitle,
         hour: t.hour,
         minute: t.minute,
@@ -76,7 +76,7 @@ class AmalRepository {
     final t = parseReminderTime(row.reminderTime);
     if (t != null) {
       await _scheduler.scheduleDaily(
-        amalId: row.id,
+        id: row.id,
         title: notificationTitle,
         hour: t.hour,
         minute: t.minute,

@@ -10,8 +10,8 @@ import 'package:timezone/timezone.dart' as tz;
 /// it. Also owns permission requests.
 ///
 /// Notification IDs are the amal row's primary key, which is stable for the
-/// lifetime of the amal — so `cancel(amalId)` always undoes a previous
-/// `scheduleDaily(amalId: ...)` without any extra bookkeeping.
+/// lifetime of the amal — so `cancel(id)` always undoes a previous
+/// `scheduleDaily(id: ...)` without any extra bookkeeping.
 ///
 /// This is deliberately an abstract class so tests can swap in a no-op
 /// implementation without touching platform channels.
@@ -64,6 +64,14 @@ abstract class ReminderScheduler {
   static int challengeNotificationId(int challengeId, int dayOffset) =>
       challengeIdBase + challengeId * 8 + dayOffset;
 
+  /// Per-challenge daily reminders. Deliberately outside the
+  /// `challengeIdBase` block: `syncChallengeNudges` cancels all eight slots
+  /// there on every recompute, which would silently drop the reminder.
+  static const int challengeReminderIdBase = 2000000;
+
+  static int challengeReminderId(int challengeId) =>
+      challengeReminderIdBase + challengeId;
+
   Future<bool> requestPermissions();
 
   /// Sets the localized Android channel strings. Call once at startup and
@@ -71,7 +79,7 @@ abstract class ReminderScheduler {
   /// and description the next time a notification is posted on the channel.
   void setChannelStrings({required String name, required String description});
 
-  /// Schedule (or re-schedule) a daily repeating reminder for `amalId` at
+  /// Schedule (or re-schedule) a daily repeating reminder for `id` at
   /// `hour:minute` in the user's local timezone. Any existing notification
   /// with the same id is replaced.
   ///
@@ -82,7 +90,7 @@ abstract class ReminderScheduler {
   /// rules handle "should it actually show this day?" at the UI layer, and
   /// a gentle daily ping is a fine v1 behavior.
   Future<void> scheduleDaily({
-    required int amalId,
+    required int id,
     required String title,
     required int hour,
     required int minute,
@@ -106,7 +114,7 @@ abstract class ReminderScheduler {
     required DateTime when,
   });
 
-  Future<void> cancel(int amalId);
+  Future<void> cancel(int id);
 
   Future<void> cancelAll();
 }
@@ -165,12 +173,12 @@ class _LocalReminderScheduler extends ReminderScheduler {
 
   @override
   Future<void> scheduleDaily({
-    required int amalId,
+    required int id,
     required String title,
     required int hour,
     required int minute,
   }) => _scheduleDailyAt(
-    id: amalId,
+    id: id,
     title: 'Muhasaba',
     body: title,
     hour: hour,
@@ -262,7 +270,7 @@ class _LocalReminderScheduler extends ReminderScheduler {
   }
 
   @override
-  Future<void> cancel(int amalId) => _plugin.cancel(id: amalId);
+  Future<void> cancel(int id) => _plugin.cancel(id: id);
 
   @override
   Future<void> cancelAll() => _plugin.cancelAll();
@@ -279,7 +287,7 @@ class _NoopReminderScheduler extends ReminderScheduler {
 
   @override
   Future<void> scheduleDaily({
-    required int amalId,
+    required int id,
     required String title,
     required int hour,
     required int minute,
@@ -300,7 +308,7 @@ class _NoopReminderScheduler extends ReminderScheduler {
   }) async {}
 
   @override
-  Future<void> cancel(int amalId) async {}
+  Future<void> cancel(int id) async {}
 
   @override
   Future<void> cancelAll() async {}

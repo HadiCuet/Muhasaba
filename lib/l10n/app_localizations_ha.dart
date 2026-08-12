@@ -1108,7 +1108,7 @@ class AppLocalizationsHa extends AppLocalizations {
   String get challengeModeCount => 'Jimillar adadi';
 
   @override
-  String get challengeModeDays => 'Adadin kwanaki';
+  String get challengeModeDays => 'Kwanakin da aka cika';
 
   @override
   String get challengeTargetLabel => 'Manufa';
@@ -1123,16 +1123,16 @@ class AppLocalizationsHa extends AppLocalizations {
   String get challengeUnitHint => 'raka\'a, shafi, sau';
 
   @override
-  String get challengeStepLabel => 'Kowane danna yana ƙarawa';
+  String get challengeStepLabel => 'Danna ɗaya yana ƙarawa';
 
   @override
-  String get challengeWindowLabel => 'Iyakar lokaci';
+  String get challengeWindowLabel => 'Lokaci nawa kake da shi?';
 
   @override
-  String get challengeWindowDuration => 'Adadin kwanaki';
+  String get challengeWindowDuration => 'Kammala cikin';
 
   @override
-  String get challengeWindowDates => 'Ranaku takamaimai';
+  String get challengeWindowDates => 'Tsakanin ranaku biyu';
 
   @override
   String get challengeWindowNone => 'Babu iyakar lokaci';
@@ -1238,6 +1238,42 @@ class AppLocalizationsHa extends AppLocalizations {
   String challengeLastDayBody(String title, String remaining) {
     return '$title: rana ta ƙarshe — saura $remaining.';
   }
+
+  @override
+  String get challengeGroupGoal => 'Manufarka';
+
+  @override
+  String get challengeGroupCounts => 'Abin da ake kirgawa';
+
+  @override
+  String get challengeGroupTime => 'Lokaci';
+
+  @override
+  String get challengeGroupReminders => 'Tunatarwa';
+
+  @override
+  String get challengeStartFromTemplate => 'Fara daga samfuri';
+
+  @override
+  String get challengeTemplateBlank => 'Fanko';
+
+  @override
+  String get challengePreview => 'Duba tukuna';
+
+  @override
+  String get challengeTmplTahajjud => 'Tahajjud dare 40';
+
+  @override
+  String get challengeTmplSalawat => 'Salati 1000';
+
+  @override
+  String get challengeTmplKhatm => 'Sauke Alqur\'ani kwanaki 30';
+
+  @override
+  String get challengeTmplFajrJamaah => 'Asuba a jam\'i kwanaki 30';
+
+  @override
+  String get challengeTmplSadaqah => 'Sadaka kwanaki 30';
 
   @override
   String get listSeparator => ' · ';

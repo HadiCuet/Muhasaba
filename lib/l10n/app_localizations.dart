@@ -2006,16 +2006,16 @@ abstract class AppLocalizations {
   /// **'What are you counting?'**
   String get challengeModeLabel;
 
-  /// Challenge mode: cumulative units, e.g. 20 rakah
+  /// Challenge mode: a cumulative running total, e.g. 20 rakah
   ///
   /// In en, this message translates to:
-  /// **'A total amount'**
+  /// **'A running total'**
   String get challengeModeCount;
 
-  /// Challenge mode: one check-in per day
+  /// Challenge mode: number of days completed, one check-in per day
   ///
   /// In en, this message translates to:
-  /// **'A number of days'**
+  /// **'Days completed'**
   String get challengeModeDays;
 
   /// Form field label for the number to reach
@@ -2042,34 +2042,34 @@ abstract class AppLocalizations {
   /// **'rakah, pages, times'**
   String get challengeUnitHint;
 
-  /// Form field label for the stepper increment
+  /// Form label above the chips choosing how much one tap of the stepper logs
   ///
   /// In en, this message translates to:
-  /// **'Each tap adds'**
+  /// **'One tap logs'**
   String get challengeStepLabel;
 
-  /// Form section label for the challenge window
+  /// Form section asking how much time the user has to finish
   ///
   /// In en, this message translates to:
-  /// **'Time limit'**
+  /// **'How long do you have?'**
   String get challengeWindowLabel;
 
-  /// Window type: fixed duration from the start date
+  /// Window type: finish within a number of days from the start
   ///
   /// In en, this message translates to:
-  /// **'A number of days'**
+  /// **'Finish within'**
   String get challengeWindowDuration;
 
-  /// Window type: explicit start and end dates
+  /// Window type: an explicit start and end date
   ///
   /// In en, this message translates to:
-  /// **'Specific dates'**
+  /// **'Between two dates'**
   String get challengeWindowDates;
 
-  /// Window type: open-ended challenge
+  /// Window type: open-ended, no time limit
   ///
   /// In en, this message translates to:
-  /// **'No deadline'**
+  /// **'No time limit'**
   String get challengeWindowNone;
 
   /// Length of the challenge window
@@ -2203,6 +2203,78 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{title}: last day — {remaining} to go.'**
   String challengeLastDayBody(String title, String remaining);
+
+  /// Form group header: name, icon and category of the challenge
+  ///
+  /// In en, this message translates to:
+  /// **'The goal'**
+  String get challengeGroupGoal;
+
+  /// Form group header: what is tallied and by how much
+  ///
+  /// In en, this message translates to:
+  /// **'What counts'**
+  String get challengeGroupCounts;
+
+  /// Form group header: the challenge's time window
+  ///
+  /// In en, this message translates to:
+  /// **'Time'**
+  String get challengeGroupTime;
+
+  /// Form group header: the per-challenge daily reminder
+  ///
+  /// In en, this message translates to:
+  /// **'Reminders'**
+  String get challengeGroupReminders;
+
+  /// Label above the horizontal row of challenge templates
+  ///
+  /// In en, this message translates to:
+  /// **'Start from a template'**
+  String get challengeStartFromTemplate;
+
+  /// Template row entry that clears the form back to defaults
+  ///
+  /// In en, this message translates to:
+  /// **'Blank'**
+  String get challengeTemplateBlank;
+
+  /// Label above the live preview of the challenge being created
+  ///
+  /// In en, this message translates to:
+  /// **'Preview'**
+  String get challengePreview;
+
+  /// Challenge template: pray Tahajjud on 40 nights
+  ///
+  /// In en, this message translates to:
+  /// **'40 nights Tahajjud'**
+  String get challengeTmplTahajjud;
+
+  /// Challenge template: send 1000 salawat, no time limit
+  ///
+  /// In en, this message translates to:
+  /// **'1000 Salawat'**
+  String get challengeTmplSalawat;
+
+  /// Challenge template: complete a full reading of the Quran (30 juz) in 30 days
+  ///
+  /// In en, this message translates to:
+  /// **'Khatm in 30 days'**
+  String get challengeTmplKhatm;
+
+  /// Challenge template: pray Fajr in congregation for 30 days
+  ///
+  /// In en, this message translates to:
+  /// **'30 days Fajr in jamaah'**
+  String get challengeTmplFajrJamaah;
+
+  /// Challenge template: give charity on 30 days
+  ///
+  /// In en, this message translates to:
+  /// **'Sadaqah 30 days'**
+  String get challengeTmplSadaqah;
 
   /// Separator between clauses on a challenge card. Arabic-script locales use an en dash because the middot is indistinguishable from their digit zero.
   ///

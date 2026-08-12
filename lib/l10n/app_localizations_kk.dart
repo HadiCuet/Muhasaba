@@ -1100,10 +1100,10 @@ class AppLocalizationsKk extends AppLocalizations {
   String get challengeModeLabel => 'Нені санайсыз?';
 
   @override
-  String get challengeModeCount => 'Жалпы саны';
+  String get challengeModeCount => 'Жиналған саны';
 
   @override
-  String get challengeModeDays => 'Күн саны';
+  String get challengeModeDays => 'Орындалған күндер';
 
   @override
   String get challengeTargetLabel => 'Межелі сан';
@@ -1118,19 +1118,19 @@ class AppLocalizationsKk extends AppLocalizations {
   String get challengeUnitHint => 'рәкат, бет, рет';
 
   @override
-  String get challengeStepLabel => 'Әр басқанда қосылады';
+  String get challengeStepLabel => 'Бір басу қосады';
 
   @override
-  String get challengeWindowLabel => 'Уақыт шегі';
+  String get challengeWindowLabel => 'Қанша уақытыңыз бар?';
 
   @override
-  String get challengeWindowDuration => 'Күн саны';
+  String get challengeWindowDuration => 'Мерзім';
 
   @override
   String get challengeWindowDates => 'Нақты күндер';
 
   @override
-  String get challengeWindowNone => 'Мерзімсіз';
+  String get challengeWindowNone => 'Уақыт шегі жоқ';
 
   @override
   String challengeDurationLabel(int count) {
@@ -1231,6 +1231,42 @@ class AppLocalizationsKk extends AppLocalizations {
   String challengeLastDayBody(String title, String remaining) {
     return '$title: соңғы күн — $remaining қалды.';
   }
+
+  @override
+  String get challengeGroupGoal => 'Мақсат';
+
+  @override
+  String get challengeGroupCounts => 'Не саналады';
+
+  @override
+  String get challengeGroupTime => 'Уақыт';
+
+  @override
+  String get challengeGroupReminders => 'Еске салу';
+
+  @override
+  String get challengeStartFromTemplate => 'Үлгіден бастау';
+
+  @override
+  String get challengeTemplateBlank => 'Бос';
+
+  @override
+  String get challengePreview => 'Алдын ала қарау';
+
+  @override
+  String get challengeTmplTahajjud => '40 түн Тахажжуд';
+
+  @override
+  String get challengeTmplSalawat => '1000 салауат';
+
+  @override
+  String get challengeTmplKhatm => '30 күнде Құран хатымы';
+
+  @override
+  String get challengeTmplFajrJamaah => '30 күн Таң намазы жамағатпен';
+
+  @override
+  String get challengeTmplSadaqah => '30 күн Садақа';
 
   @override
   String get listSeparator => ' · ';

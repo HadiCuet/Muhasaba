@@ -1106,10 +1106,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get challengeModeLabel => 'ماذا تحسب؟';
 
   @override
-  String get challengeModeCount => 'مقدار إجمالي';
+  String get challengeModeCount => 'مجموع تراكمي';
 
   @override
-  String get challengeModeDays => 'عدد الأيام';
+  String get challengeModeDays => 'أيام مكتملة';
 
   @override
   String get challengeTargetLabel => 'الهدف';
@@ -1124,19 +1124,19 @@ class AppLocalizationsAr extends AppLocalizations {
   String get challengeUnitHint => 'ركعة، صفحة، مرة';
 
   @override
-  String get challengeStepLabel => 'كل ضغطة تضيف';
+  String get challengeStepLabel => 'الضغطة الواحدة تسجّل';
 
   @override
-  String get challengeWindowLabel => 'المدة الزمنية';
+  String get challengeWindowLabel => 'كم من الوقت لديك؟';
 
   @override
-  String get challengeWindowDuration => 'عدد من الأيام';
+  String get challengeWindowDuration => 'الإنجاز خلال';
 
   @override
-  String get challengeWindowDates => 'تواريخ محددة';
+  String get challengeWindowDates => 'بين تاريخين';
 
   @override
-  String get challengeWindowNone => 'بدون موعد نهائي';
+  String get challengeWindowNone => 'بلا حد زمني';
 
   @override
   String challengeDurationLabel(int count) {
@@ -1245,6 +1245,42 @@ class AppLocalizationsAr extends AppLocalizations {
   String challengeLastDayBody(String title, String remaining) {
     return '$title: آخر يوم – بقي $remaining.';
   }
+
+  @override
+  String get challengeGroupGoal => 'هدفك';
+
+  @override
+  String get challengeGroupCounts => 'ما يُحتسب';
+
+  @override
+  String get challengeGroupTime => 'الوقت';
+
+  @override
+  String get challengeGroupReminders => 'التذكيرات';
+
+  @override
+  String get challengeStartFromTemplate => 'ابدأ من قالب';
+
+  @override
+  String get challengeTemplateBlank => 'فارغ';
+
+  @override
+  String get challengePreview => 'معاينة';
+
+  @override
+  String get challengeTmplTahajjud => '٤٠ ليلة تهجد';
+
+  @override
+  String get challengeTmplSalawat => '١٠٠٠ صلاة على النبي';
+
+  @override
+  String get challengeTmplKhatm => 'ختم القرآن في ٣٠ يومًا';
+
+  @override
+  String get challengeTmplFajrJamaah => 'الفجر في جماعة ٣٠ يومًا';
+
+  @override
+  String get challengeTmplSadaqah => 'صدقة ٣٠ يومًا';
 
   @override
   String get listSeparator => ' – ';

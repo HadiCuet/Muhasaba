@@ -4,6 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../app/providers.dart';
 import '../../../data/db/database.dart';
+import '../../../domain/utils/localized_challenge_title.dart';
 import '../../../domain/utils/localized_number.dart';
 import '../../../l10n/app_localizations.dart';
 import '../challenge_providers.dart';
@@ -56,11 +57,14 @@ Future<void> showExpiryPrompt(
       await repo.markEnded(row.id);
       await repo.create(
         title: row.title,
+        notificationTitle: localizedChallengeTitle(row.title, l),
         icon: row.icon,
         mode: row.mode,
         target: row.target,
         stepSize: row.stepSize,
         unit: row.unit,
+        category: row.category,
+        reminderTime: row.reminderTime,
         startDate: today,
         endExclusive: row.endExclusive == null
             ? null

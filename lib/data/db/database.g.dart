@@ -2148,6 +2148,28 @@ class $ChallengesTable extends Challenges
     type: DriftSqlType.string,
     requiredDuringInsert: false,
   );
+  static const VerificationMeta _categoryMeta = const VerificationMeta(
+    'category',
+  );
+  @override
+  late final GeneratedColumn<String> category = GeneratedColumn<String>(
+    'category',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _reminderTimeMeta = const VerificationMeta(
+    'reminderTime',
+  );
+  @override
+  late final GeneratedColumn<String> reminderTime = GeneratedColumn<String>(
+    'reminder_time',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
   static const VerificationMeta _startDateMeta = const VerificationMeta(
     'startDate',
   );
@@ -2237,6 +2259,8 @@ class $ChallengesTable extends Challenges
     target,
     stepSize,
     unit,
+    category,
+    reminderTime,
     startDate,
     endExclusive,
     status,
@@ -2292,6 +2316,21 @@ class $ChallengesTable extends Challenges
       context.handle(
         _unitMeta,
         unit.isAcceptableOrUnknown(data['unit']!, _unitMeta),
+      );
+    }
+    if (data.containsKey('category')) {
+      context.handle(
+        _categoryMeta,
+        category.isAcceptableOrUnknown(data['category']!, _categoryMeta),
+      );
+    }
+    if (data.containsKey('reminder_time')) {
+      context.handle(
+        _reminderTimeMeta,
+        reminderTime.isAcceptableOrUnknown(
+          data['reminder_time']!,
+          _reminderTimeMeta,
+        ),
       );
     }
     if (data.containsKey('start_date')) {
@@ -2382,6 +2421,14 @@ class $ChallengesTable extends Challenges
         DriftSqlType.string,
         data['${effectivePrefix}unit'],
       ),
+      category: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}category'],
+      ),
+      reminderTime: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}reminder_time'],
+      ),
       startDate: attachedDatabase.typeMapping.read(
         DriftSqlType.dateTime,
         data['${effectivePrefix}start_date'],
@@ -2434,6 +2481,8 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
   final int target;
   final int stepSize;
   final String? unit;
+  final String? category;
+  final String? reminderTime;
   final DateTime startDate;
   final DateTime? endExclusive;
   final ChallengeStatus status;
@@ -2449,6 +2498,8 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
     required this.target,
     required this.stepSize,
     this.unit,
+    this.category,
+    this.reminderTime,
     required this.startDate,
     this.endExclusive,
     required this.status,
@@ -2470,6 +2521,12 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
     map['step_size'] = Variable<int>(stepSize);
     if (!nullToAbsent || unit != null) {
       map['unit'] = Variable<String>(unit);
+    }
+    if (!nullToAbsent || category != null) {
+      map['category'] = Variable<String>(category);
+    }
+    if (!nullToAbsent || reminderTime != null) {
+      map['reminder_time'] = Variable<String>(reminderTime);
     }
     map['start_date'] = Variable<DateTime>(startDate);
     if (!nullToAbsent || endExclusive != null) {
@@ -2498,6 +2555,12 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
       target: Value(target),
       stepSize: Value(stepSize),
       unit: unit == null && nullToAbsent ? const Value.absent() : Value(unit),
+      category: category == null && nullToAbsent
+          ? const Value.absent()
+          : Value(category),
+      reminderTime: reminderTime == null && nullToAbsent
+          ? const Value.absent()
+          : Value(reminderTime),
       startDate: Value(startDate),
       endExclusive: endExclusive == null && nullToAbsent
           ? const Value.absent()
@@ -2527,6 +2590,8 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
       target: serializer.fromJson<int>(json['target']),
       stepSize: serializer.fromJson<int>(json['stepSize']),
       unit: serializer.fromJson<String?>(json['unit']),
+      category: serializer.fromJson<String?>(json['category']),
+      reminderTime: serializer.fromJson<String?>(json['reminderTime']),
       startDate: serializer.fromJson<DateTime>(json['startDate']),
       endExclusive: serializer.fromJson<DateTime?>(json['endExclusive']),
       status: $ChallengesTable.$converterstatus.fromJson(
@@ -2551,6 +2616,8 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
       'target': serializer.toJson<int>(target),
       'stepSize': serializer.toJson<int>(stepSize),
       'unit': serializer.toJson<String?>(unit),
+      'category': serializer.toJson<String?>(category),
+      'reminderTime': serializer.toJson<String?>(reminderTime),
       'startDate': serializer.toJson<DateTime>(startDate),
       'endExclusive': serializer.toJson<DateTime?>(endExclusive),
       'status': serializer.toJson<int>(
@@ -2571,6 +2638,8 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
     int? target,
     int? stepSize,
     Value<String?> unit = const Value.absent(),
+    Value<String?> category = const Value.absent(),
+    Value<String?> reminderTime = const Value.absent(),
     DateTime? startDate,
     Value<DateTime?> endExclusive = const Value.absent(),
     ChallengeStatus? status,
@@ -2586,6 +2655,8 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
     target: target ?? this.target,
     stepSize: stepSize ?? this.stepSize,
     unit: unit.present ? unit.value : this.unit,
+    category: category.present ? category.value : this.category,
+    reminderTime: reminderTime.present ? reminderTime.value : this.reminderTime,
     startDate: startDate ?? this.startDate,
     endExclusive: endExclusive.present ? endExclusive.value : this.endExclusive,
     status: status ?? this.status,
@@ -2603,6 +2674,10 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
       target: data.target.present ? data.target.value : this.target,
       stepSize: data.stepSize.present ? data.stepSize.value : this.stepSize,
       unit: data.unit.present ? data.unit.value : this.unit,
+      category: data.category.present ? data.category.value : this.category,
+      reminderTime: data.reminderTime.present
+          ? data.reminderTime.value
+          : this.reminderTime,
       startDate: data.startDate.present ? data.startDate.value : this.startDate,
       endExclusive: data.endExclusive.present
           ? data.endExclusive.value
@@ -2629,6 +2704,8 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
           ..write('target: $target, ')
           ..write('stepSize: $stepSize, ')
           ..write('unit: $unit, ')
+          ..write('category: $category, ')
+          ..write('reminderTime: $reminderTime, ')
           ..write('startDate: $startDate, ')
           ..write('endExclusive: $endExclusive, ')
           ..write('status: $status, ')
@@ -2649,6 +2726,8 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
     target,
     stepSize,
     unit,
+    category,
+    reminderTime,
     startDate,
     endExclusive,
     status,
@@ -2668,6 +2747,8 @@ class ChallengeRow extends DataClass implements Insertable<ChallengeRow> {
           other.target == this.target &&
           other.stepSize == this.stepSize &&
           other.unit == this.unit &&
+          other.category == this.category &&
+          other.reminderTime == this.reminderTime &&
           other.startDate == this.startDate &&
           other.endExclusive == this.endExclusive &&
           other.status == this.status &&
@@ -2685,6 +2766,8 @@ class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
   final Value<int> target;
   final Value<int> stepSize;
   final Value<String?> unit;
+  final Value<String?> category;
+  final Value<String?> reminderTime;
   final Value<DateTime> startDate;
   final Value<DateTime?> endExclusive;
   final Value<ChallengeStatus> status;
@@ -2700,6 +2783,8 @@ class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
     this.target = const Value.absent(),
     this.stepSize = const Value.absent(),
     this.unit = const Value.absent(),
+    this.category = const Value.absent(),
+    this.reminderTime = const Value.absent(),
     this.startDate = const Value.absent(),
     this.endExclusive = const Value.absent(),
     this.status = const Value.absent(),
@@ -2716,6 +2801,8 @@ class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
     required int target,
     this.stepSize = const Value.absent(),
     this.unit = const Value.absent(),
+    this.category = const Value.absent(),
+    this.reminderTime = const Value.absent(),
     required DateTime startDate,
     this.endExclusive = const Value.absent(),
     required ChallengeStatus status,
@@ -2737,6 +2824,8 @@ class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
     Expression<int>? target,
     Expression<int>? stepSize,
     Expression<String>? unit,
+    Expression<String>? category,
+    Expression<String>? reminderTime,
     Expression<DateTime>? startDate,
     Expression<DateTime>? endExclusive,
     Expression<int>? status,
@@ -2753,6 +2842,8 @@ class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
       if (target != null) 'target': target,
       if (stepSize != null) 'step_size': stepSize,
       if (unit != null) 'unit': unit,
+      if (category != null) 'category': category,
+      if (reminderTime != null) 'reminder_time': reminderTime,
       if (startDate != null) 'start_date': startDate,
       if (endExclusive != null) 'end_exclusive': endExclusive,
       if (status != null) 'status': status,
@@ -2771,6 +2862,8 @@ class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
     Value<int>? target,
     Value<int>? stepSize,
     Value<String?>? unit,
+    Value<String?>? category,
+    Value<String?>? reminderTime,
     Value<DateTime>? startDate,
     Value<DateTime?>? endExclusive,
     Value<ChallengeStatus>? status,
@@ -2787,6 +2880,8 @@ class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
       target: target ?? this.target,
       stepSize: stepSize ?? this.stepSize,
       unit: unit ?? this.unit,
+      category: category ?? this.category,
+      reminderTime: reminderTime ?? this.reminderTime,
       startDate: startDate ?? this.startDate,
       endExclusive: endExclusive ?? this.endExclusive,
       status: status ?? this.status,
@@ -2822,6 +2917,12 @@ class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
     }
     if (unit.present) {
       map['unit'] = Variable<String>(unit.value);
+    }
+    if (category.present) {
+      map['category'] = Variable<String>(category.value);
+    }
+    if (reminderTime.present) {
+      map['reminder_time'] = Variable<String>(reminderTime.value);
     }
     if (startDate.present) {
       map['start_date'] = Variable<DateTime>(startDate.value);
@@ -2859,6 +2960,8 @@ class ChallengesCompanion extends UpdateCompanion<ChallengeRow> {
           ..write('target: $target, ')
           ..write('stepSize: $stepSize, ')
           ..write('unit: $unit, ')
+          ..write('category: $category, ')
+          ..write('reminderTime: $reminderTime, ')
           ..write('startDate: $startDate, ')
           ..write('endExclusive: $endExclusive, ')
           ..write('status: $status, ')
@@ -4745,6 +4848,8 @@ typedef $$ChallengesTableCreateCompanionBuilder =
       required int target,
       Value<int> stepSize,
       Value<String?> unit,
+      Value<String?> category,
+      Value<String?> reminderTime,
       required DateTime startDate,
       Value<DateTime?> endExclusive,
       required ChallengeStatus status,
@@ -4762,6 +4867,8 @@ typedef $$ChallengesTableUpdateCompanionBuilder =
       Value<int> target,
       Value<int> stepSize,
       Value<String?> unit,
+      Value<String?> category,
+      Value<String?> reminderTime,
       Value<DateTime> startDate,
       Value<DateTime?> endExclusive,
       Value<ChallengeStatus> status,
@@ -4841,6 +4948,16 @@ class $$ChallengesTableFilterComposer
 
   ColumnFilters<String> get unit => $composableBuilder(
     column: $table.unit,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get category => $composableBuilder(
+    column: $table.category,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get reminderTime => $composableBuilder(
+    column: $table.reminderTime,
     builder: (column) => ColumnFilters(column),
   );
 
@@ -4950,6 +5067,16 @@ class $$ChallengesTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<String> get category => $composableBuilder(
+    column: $table.category,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get reminderTime => $composableBuilder(
+    column: $table.reminderTime,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<DateTime> get startDate => $composableBuilder(
     column: $table.startDate,
     builder: (column) => ColumnOrderings(column),
@@ -5015,6 +5142,14 @@ class $$ChallengesTableAnnotationComposer
 
   GeneratedColumn<String> get unit =>
       $composableBuilder(column: $table.unit, builder: (column) => column);
+
+  GeneratedColumn<String> get category =>
+      $composableBuilder(column: $table.category, builder: (column) => column);
+
+  GeneratedColumn<String> get reminderTime => $composableBuilder(
+    column: $table.reminderTime,
+    builder: (column) => column,
+  );
 
   GeneratedColumn<DateTime> get startDate =>
       $composableBuilder(column: $table.startDate, builder: (column) => column);
@@ -5104,6 +5239,8 @@ class $$ChallengesTableTableManager
                 Value<int> target = const Value.absent(),
                 Value<int> stepSize = const Value.absent(),
                 Value<String?> unit = const Value.absent(),
+                Value<String?> category = const Value.absent(),
+                Value<String?> reminderTime = const Value.absent(),
                 Value<DateTime> startDate = const Value.absent(),
                 Value<DateTime?> endExclusive = const Value.absent(),
                 Value<ChallengeStatus> status = const Value.absent(),
@@ -5119,6 +5256,8 @@ class $$ChallengesTableTableManager
                 target: target,
                 stepSize: stepSize,
                 unit: unit,
+                category: category,
+                reminderTime: reminderTime,
                 startDate: startDate,
                 endExclusive: endExclusive,
                 status: status,
@@ -5136,6 +5275,8 @@ class $$ChallengesTableTableManager
                 required int target,
                 Value<int> stepSize = const Value.absent(),
                 Value<String?> unit = const Value.absent(),
+                Value<String?> category = const Value.absent(),
+                Value<String?> reminderTime = const Value.absent(),
                 required DateTime startDate,
                 Value<DateTime?> endExclusive = const Value.absent(),
                 required ChallengeStatus status,
@@ -5151,6 +5292,8 @@ class $$ChallengesTableTableManager
                 target: target,
                 stepSize: stepSize,
                 unit: unit,
+                category: category,
+                reminderTime: reminderTime,
                 startDate: startDate,
                 endExclusive: endExclusive,
                 status: status,

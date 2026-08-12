@@ -1110,7 +1110,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get challengeModeCount => 'Sasi totale';
 
   @override
-  String get challengeModeDays => 'Numër ditësh';
+  String get challengeModeDays => 'Ditë të plotësuara';
 
   @override
   String get challengeTargetLabel => 'Synimi';
@@ -1125,19 +1125,19 @@ class AppLocalizationsSq extends AppLocalizations {
   String get challengeUnitHint => 'rekate, faqe, herë';
 
   @override
-  String get challengeStepLabel => 'Çdo prekje shton';
+  String get challengeStepLabel => 'Një prekje shton';
 
   @override
-  String get challengeWindowLabel => 'Afati kohor';
+  String get challengeWindowLabel => 'Sa kohë keni?';
 
   @override
-  String get challengeWindowDuration => 'Numër ditësh';
+  String get challengeWindowDuration => 'Përfundim brenda';
 
   @override
-  String get challengeWindowDates => 'Data të caktuara';
+  String get challengeWindowDates => 'Mes dy datave';
 
   @override
-  String get challengeWindowNone => 'Pa afat';
+  String get challengeWindowNone => 'Pa kufi kohor';
 
   @override
   String challengeDurationLabel(int count) {
@@ -1240,6 +1240,42 @@ class AppLocalizationsSq extends AppLocalizations {
   String challengeLastDayBody(String title, String remaining) {
     return '$title: dita e fundit — $remaining mbetur.';
   }
+
+  @override
+  String get challengeGroupGoal => 'Qëllimi';
+
+  @override
+  String get challengeGroupCounts => 'Çfarë numërohet';
+
+  @override
+  String get challengeGroupTime => 'Koha';
+
+  @override
+  String get challengeGroupReminders => 'Kujtesat';
+
+  @override
+  String get challengeStartFromTemplate => 'Nis nga një model';
+
+  @override
+  String get challengeTemplateBlank => 'Bosh';
+
+  @override
+  String get challengePreview => 'Parapamje';
+
+  @override
+  String get challengeTmplTahajjud => '40 net tehexhud';
+
+  @override
+  String get challengeTmplSalawat => '1000 salavate';
+
+  @override
+  String get challengeTmplKhatm => 'Hatme e Kuranit për 30 ditë';
+
+  @override
+  String get challengeTmplFajrJamaah => '30 ditë sabahu me xhemat';
+
+  @override
+  String get challengeTmplSadaqah => 'Sadaka 30 ditë';
 
   @override
   String get listSeparator => ' · ';

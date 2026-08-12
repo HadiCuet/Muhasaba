@@ -1106,7 +1106,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get challengeModeCount => 'Миқдори умумӣ';
 
   @override
-  String get challengeModeDays => 'Шумораи рӯзҳо';
+  String get challengeModeDays => 'Рӯзҳои иҷрошуда';
 
   @override
   String get challengeTargetLabel => 'Ҳадаф';
@@ -1121,19 +1121,19 @@ class AppLocalizationsTg extends AppLocalizations {
   String get challengeUnitHint => 'ракъат, саҳифа, маротиба';
 
   @override
-  String get challengeStepLabel => 'Ҳар пахш илова мекунад';
+  String get challengeStepLabel => 'Як пахш илова мекунад';
 
   @override
-  String get challengeWindowLabel => 'Маҳдудияти вақт';
+  String get challengeWindowLabel => 'Чанд вақт доред?';
 
   @override
-  String get challengeWindowDuration => 'Шумораи рӯзҳо';
+  String get challengeWindowDuration => 'Мӯҳлати муайян';
 
   @override
   String get challengeWindowDates => 'Санаҳои мушаххас';
 
   @override
-  String get challengeWindowNone => 'Бемуҳлат';
+  String get challengeWindowNone => 'Бе маҳдудияти вақт';
 
   @override
   String challengeDurationLabel(int count) {
@@ -1236,6 +1236,42 @@ class AppLocalizationsTg extends AppLocalizations {
   String challengeLastDayBody(String title, String remaining) {
     return '$title: рӯзи охир — $remaining монд.';
   }
+
+  @override
+  String get challengeGroupGoal => 'Мақсад';
+
+  @override
+  String get challengeGroupCounts => 'Чӣ ҳисоб мешавад';
+
+  @override
+  String get challengeGroupTime => 'Вақт';
+
+  @override
+  String get challengeGroupReminders => 'Ёдоварй';
+
+  @override
+  String get challengeStartFromTemplate => 'Аз намуна оғоз кунед';
+
+  @override
+  String get challengeTemplateBlank => 'Холӣ';
+
+  @override
+  String get challengePreview => 'Пешнамоиш';
+
+  @override
+  String get challengeTmplTahajjud => '40 шаб Тахачуд';
+
+  @override
+  String get challengeTmplSalawat => '1000 салавот';
+
+  @override
+  String get challengeTmplKhatm => 'Хатми Қуръон дар 30 рӯз';
+
+  @override
+  String get challengeTmplFajrJamaah => '30 рӯз Бомдод бо ҷамоат';
+
+  @override
+  String get challengeTmplSadaqah => '30 рӯз Садака';
 
   @override
   String get listSeparator => ' · ';

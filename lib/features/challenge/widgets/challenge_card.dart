@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 import '../../../domain/models/challenge.dart';
 import '../../../domain/services/challenge_pace.dart';
+import '../../../domain/utils/localized_challenge_title.dart';
 import '../../../domain/utils/localized_number.dart';
 import '../../../l10n/app_localizations.dart';
 import '../challenge_providers.dart';
@@ -51,7 +52,7 @@ class ChallengeCard extends StatelessWidget {
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
                         Text(
-                          row.title,
+                          localizedChallengeTitle(row.title, l),
                           style: theme.textTheme.titleMedium,
                           maxLines: 2,
                           overflow: TextOverflow.ellipsis,

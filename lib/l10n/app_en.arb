@@ -501,13 +501,13 @@
   "@challengeModeLabel": {
     "description": "Form field label for the challenge mode selector"
   },
-  "challengeModeCount": "A total amount",
+  "challengeModeCount": "A running total",
   "@challengeModeCount": {
-    "description": "Challenge mode: cumulative units, e.g. 20 rakah"
+    "description": "Challenge mode: a cumulative running total, e.g. 20 rakah"
   },
-  "challengeModeDays": "A number of days",
+  "challengeModeDays": "Days completed",
   "@challengeModeDays": {
-    "description": "Challenge mode: one check-in per day"
+    "description": "Challenge mode: number of days completed, one check-in per day"
   },
   "challengeTargetLabel": "Target",
   "@challengeTargetLabel": {
@@ -525,25 +525,25 @@
   "@challengeUnitHint": {
     "description": "Placeholder examples for the unit field"
   },
-  "challengeStepLabel": "Each tap adds",
+  "challengeStepLabel": "One tap logs",
   "@challengeStepLabel": {
-    "description": "Form field label for the stepper increment"
+    "description": "Form label above the chips choosing how much one tap of the stepper logs"
   },
-  "challengeWindowLabel": "Time limit",
+  "challengeWindowLabel": "How long do you have?",
   "@challengeWindowLabel": {
-    "description": "Form section label for the challenge window"
+    "description": "Form section asking how much time the user has to finish"
   },
-  "challengeWindowDuration": "A number of days",
+  "challengeWindowDuration": "Finish within",
   "@challengeWindowDuration": {
-    "description": "Window type: fixed duration from the start date"
+    "description": "Window type: finish within a number of days from the start"
   },
-  "challengeWindowDates": "Specific dates",
+  "challengeWindowDates": "Between two dates",
   "@challengeWindowDates": {
-    "description": "Window type: explicit start and end dates"
+    "description": "Window type: an explicit start and end date"
   },
-  "challengeWindowNone": "No deadline",
+  "challengeWindowNone": "No time limit",
   "@challengeWindowNone": {
-    "description": "Window type: open-ended challenge"
+    "description": "Window type: open-ended, no time limit"
   },
   "challengeDurationLabel": "{count, plural, =1{{count} day} other{{count} days}}",
   "@challengeDurationLabel": {
@@ -719,6 +719,54 @@
         "type": "String"
       }
     }
+  },
+  "challengeGroupGoal": "The goal",
+  "@challengeGroupGoal": {
+    "description": "Form group header: name, icon and category of the challenge"
+  },
+  "challengeGroupCounts": "What counts",
+  "@challengeGroupCounts": {
+    "description": "Form group header: what is tallied and by how much"
+  },
+  "challengeGroupTime": "Time",
+  "@challengeGroupTime": {
+    "description": "Form group header: the challenge's time window"
+  },
+  "challengeGroupReminders": "Reminders",
+  "@challengeGroupReminders": {
+    "description": "Form group header: the per-challenge daily reminder"
+  },
+  "challengeStartFromTemplate": "Start from a template",
+  "@challengeStartFromTemplate": {
+    "description": "Label above the horizontal row of challenge templates"
+  },
+  "challengeTemplateBlank": "Blank",
+  "@challengeTemplateBlank": {
+    "description": "Template row entry that clears the form back to defaults"
+  },
+  "challengePreview": "Preview",
+  "@challengePreview": {
+    "description": "Label above the live preview of the challenge being created"
+  },
+  "challengeTmplTahajjud": "40 nights Tahajjud",
+  "@challengeTmplTahajjud": {
+    "description": "Challenge template: pray Tahajjud on 40 nights"
+  },
+  "challengeTmplSalawat": "1000 Salawat",
+  "@challengeTmplSalawat": {
+    "description": "Challenge template: send 1000 salawat, no time limit"
+  },
+  "challengeTmplKhatm": "Khatm in 30 days",
+  "@challengeTmplKhatm": {
+    "description": "Challenge template: complete a full reading of the Quran (30 juz) in 30 days"
+  },
+  "challengeTmplFajrJamaah": "30 days Fajr in jamaah",
+  "@challengeTmplFajrJamaah": {
+    "description": "Challenge template: pray Fajr in congregation for 30 days"
+  },
+  "challengeTmplSadaqah": "Sadaqah 30 days",
+  "@challengeTmplSadaqah": {
+    "description": "Challenge template: give charity on 30 days"
   },
   "listSeparator": " · ",
   "@listSeparator": {

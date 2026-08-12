@@ -1113,7 +1113,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get challengeModeCount => 'Wadar guud';
 
   @override
-  String get challengeModeDays => 'Tirada maalmaha';
+  String get challengeModeDays => 'Maalmo la dhammeeyay';
 
   @override
   String get challengeTargetLabel => 'Bartilmaameed';
@@ -1128,19 +1128,19 @@ class AppLocalizationsSo extends AppLocalizations {
   String get challengeUnitHint => 'rakcad, bog, jeer';
 
   @override
-  String get challengeStepLabel => 'Taabasho kastaa way ku dartaa';
+  String get challengeStepLabel => 'Hal taabasho way ku dartaa';
 
   @override
-  String get challengeWindowLabel => 'Muddada';
+  String get challengeWindowLabel => 'Waqti intee le\'eg ayaad haysataa?';
 
   @override
-  String get challengeWindowDuration => 'Tirada maalmaha';
+  String get challengeWindowDuration => 'Muddo go\'an';
 
   @override
-  String get challengeWindowDates => 'Taariikho gaar ah';
+  String get challengeWindowDates => 'Laba taariikh dhexdood';
 
   @override
-  String get challengeWindowNone => 'Muddo ma leh';
+  String get challengeWindowNone => 'Xad waqti ma leh';
 
   @override
   String challengeDurationLabel(int count) {
@@ -1243,6 +1243,42 @@ class AppLocalizationsSo extends AppLocalizations {
   String challengeLastDayBody(String title, String remaining) {
     return '$title: maalinta dambe — $remaining hadhay.';
   }
+
+  @override
+  String get challengeGroupGoal => 'Yoolka';
+
+  @override
+  String get challengeGroupCounts => 'Waxa la tirinayo';
+
+  @override
+  String get challengeGroupTime => 'Waqtiga';
+
+  @override
+  String get challengeGroupReminders => 'Xusuusinta';
+
+  @override
+  String get challengeStartFromTemplate => 'Ka bilow qaab diyaarsan';
+
+  @override
+  String get challengeTemplateBlank => 'Madhan';
+
+  @override
+  String get challengePreview => 'Hordhac';
+
+  @override
+  String get challengeTmplTahajjud => '40 habeen Tahajjud';
+
+  @override
+  String get challengeTmplSalawat => '1000 salawaat';
+
+  @override
+  String get challengeTmplKhatm => 'Khatmi Quraanka 30 maalmood';
+
+  @override
+  String get challengeTmplFajrJamaah => '30 maalmood Subax jamaaco';
+
+  @override
+  String get challengeTmplSadaqah => 'Sadaqo 30 maalmood';
 
   @override
   String get listSeparator => ' · ';

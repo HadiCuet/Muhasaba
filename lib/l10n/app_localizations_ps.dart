@@ -1100,7 +1100,7 @@ class AppLocalizationsPs extends AppLocalizations {
   String get challengeModeCount => 'ټوله اندازه';
 
   @override
-  String get challengeModeDays => 'د ورځو شمېر';
+  String get challengeModeDays => 'بشپړې شوې ورځې';
 
   @override
   String get challengeTargetLabel => 'موخه';
@@ -1115,19 +1115,19 @@ class AppLocalizationsPs extends AppLocalizations {
   String get challengeUnitHint => 'رکعت، مخ، ځل';
 
   @override
-  String get challengeStepLabel => 'هر ټک اضافه کوي';
+  String get challengeStepLabel => 'یو ټک اضافه کوي';
 
   @override
-  String get challengeWindowLabel => 'د وخت حد';
+  String get challengeWindowLabel => 'څومره وخت لرئ؟';
 
   @override
-  String get challengeWindowDuration => 'د ورځو شمېر';
+  String get challengeWindowDuration => 'ټاکلې موده';
 
   @override
-  String get challengeWindowDates => 'ټاکلې نیټې';
+  String get challengeWindowDates => 'د دوو نیټو ترمنځ';
 
   @override
-  String get challengeWindowNone => 'د وخت حد نشته';
+  String get challengeWindowNone => 'د وخت محدودیت نشته';
 
   @override
   String challengeDurationLabel(int count) {
@@ -1230,6 +1230,42 @@ class AppLocalizationsPs extends AppLocalizations {
   String challengeLastDayBody(String title, String remaining) {
     return '$title: وروستۍ ورځ – $remaining پاتې.';
   }
+
+  @override
+  String get challengeGroupGoal => 'ستاسو موخه';
+
+  @override
+  String get challengeGroupCounts => 'څه شمېرل کېږي';
+
+  @override
+  String get challengeGroupTime => 'وخت';
+
+  @override
+  String get challengeGroupReminders => 'یادونې';
+
+  @override
+  String get challengeStartFromTemplate => 'له بېلګې پیل وکړئ';
+
+  @override
+  String get challengeTemplateBlank => 'خالي';
+
+  @override
+  String get challengePreview => 'مخکتنه';
+
+  @override
+  String get challengeTmplTahajjud => '۴۰ شپې تهجد';
+
+  @override
+  String get challengeTmplSalawat => '۱۰۰۰ درود';
+
+  @override
+  String get challengeTmplKhatm => 'په ۳۰ ورځو کې د قرآن ختم';
+
+  @override
+  String get challengeTmplFajrJamaah => '۳۰ ورځې فجر په جماعت کې';
+
+  @override
+  String get challengeTmplSadaqah => 'صدقه ۳۰ ورځې';
 
   @override
   String get listSeparator => ' – ';

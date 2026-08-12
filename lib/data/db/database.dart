@@ -38,7 +38,7 @@ class AppDatabase extends _$AppDatabase {
     : super(executor ?? driftDatabase(name: 'muhasaba'));
 
   @override
-  int get schemaVersion => 7;
+  int get schemaVersion => 8;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -134,6 +134,14 @@ class AppDatabase extends _$AppDatabase {
         }
         if (!await _hasTable('challenge_entries')) {
           await m.createTable(challengeEntries);
+        }
+      }
+      if (from < 8) {
+        if (!await _hasColumn('challenges', 'category')) {
+          await m.addColumn(challenges, challenges.category);
+        }
+        if (!await _hasColumn('challenges', 'reminder_time')) {
+          await m.addColumn(challenges, challenges.reminderTime);
         }
       }
     },

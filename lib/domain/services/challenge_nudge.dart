@@ -51,6 +51,13 @@ Future<void> syncChallengeNudges({
     if (scheduled >= _maxChallengeNotifications) break;
     final progress = progressById[row.id] ?? 0;
 
+    final ownReminder = parseReminderTime(row.reminderTime);
+    if (ownReminder != null &&
+        ownReminder.hour == hour &&
+        ownReminder.minute == minute) {
+      continue;
+    }
+
     for (var offset = 0; offset < _horizonDays; offset++) {
       if (scheduled >= _maxChallengeNotifications) break;
       final day = today.add(Duration(days: offset));

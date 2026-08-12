@@ -1105,7 +1105,7 @@ class AppLocalizationsSw extends AppLocalizations {
   String get challengeModeCount => 'Jumla ya kiasi';
 
   @override
-  String get challengeModeDays => 'Idadi ya siku';
+  String get challengeModeDays => 'Siku zilizokamilika';
 
   @override
   String get challengeTargetLabel => 'Shabaha';
@@ -1120,19 +1120,19 @@ class AppLocalizationsSw extends AppLocalizations {
   String get challengeUnitHint => 'rakaa, kurasa, mara';
 
   @override
-  String get challengeStepLabel => 'Kila mgusa huongeza';
+  String get challengeStepLabel => 'Mgusa mmoja huongeza';
 
   @override
-  String get challengeWindowLabel => 'Muda';
+  String get challengeWindowLabel => 'Una muda gani?';
 
   @override
-  String get challengeWindowDuration => 'Idadi ya siku';
+  String get challengeWindowDuration => 'Kipindi maalum';
 
   @override
-  String get challengeWindowDates => 'Tarehe maalum';
+  String get challengeWindowDates => 'Kati ya tarehe mbili';
 
   @override
-  String get challengeWindowNone => 'Bila muda';
+  String get challengeWindowNone => 'Bila kikomo cha muda';
 
   @override
   String challengeDurationLabel(int count) {
@@ -1235,6 +1235,42 @@ class AppLocalizationsSw extends AppLocalizations {
   String challengeLastDayBody(String title, String remaining) {
     return '$title: siku ya mwisho — $remaining zimebaki.';
   }
+
+  @override
+  String get challengeGroupGoal => 'Lengo';
+
+  @override
+  String get challengeGroupCounts => 'Kinachohesabiwa';
+
+  @override
+  String get challengeGroupTime => 'Muda';
+
+  @override
+  String get challengeGroupReminders => 'Vikumbusho';
+
+  @override
+  String get challengeStartFromTemplate => 'Anza na kiolezo';
+
+  @override
+  String get challengeTemplateBlank => 'Tupu';
+
+  @override
+  String get challengePreview => 'Onyesho la awali';
+
+  @override
+  String get challengeTmplTahajjud => 'Tahajudi usiku 40';
+
+  @override
+  String get challengeTmplSalawat => 'Salawati 1000';
+
+  @override
+  String get challengeTmplKhatm => 'Hitima ya Qurani siku 30';
+
+  @override
+  String get challengeTmplFajrJamaah => 'Alfajiri kwa jamaa siku 30';
+
+  @override
+  String get challengeTmplSadaqah => 'Sadaka siku 30';
 
   @override
   String get listSeparator => ' · ';
