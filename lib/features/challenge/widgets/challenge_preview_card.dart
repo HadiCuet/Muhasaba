@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import '../../../app/theme.dart';
 import '../../../domain/models/challenge.dart';
 import '../../../domain/services/challenge_pace.dart';
 import '../../../domain/utils/localized_number.dart';
@@ -94,7 +95,7 @@ class ChallengePreviewCard extends StatelessWidget {
               color:
                   pace.state == PaceState.behind ||
                       pace.state == PaceState.lastDay
-                  ? scheme.tertiary
+                  ? scheme.behind
                   : scheme.primary,
             ),
           ),
@@ -129,13 +130,13 @@ class ChallengePreviewCard extends StatelessWidget {
       ),
       PaceState.behind => (
         l.challengeBehind(lnum(context, pace.requiredPerDay)),
-        scheme.tertiaryContainer,
-        scheme.onTertiaryContainer,
+        scheme.behindContainer,
+        scheme.onBehindContainer,
       ),
       PaceState.lastDay => (
         l.challengeLastDay(lnum(context, pace.remaining)),
-        scheme.tertiaryContainer,
-        scheme.onTertiaryContainer,
+        scheme.behindContainer,
+        scheme.onBehindContainer,
       ),
       PaceState.onTrack => (
         l.challengeOnTrack(lnum(context, pace.requiredPerDay)),
