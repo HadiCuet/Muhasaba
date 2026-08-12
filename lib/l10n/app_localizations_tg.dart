@@ -45,6 +45,26 @@ class AppLocalizationsTg extends AppLocalizations {
   String get insightsDaily => 'Рӯзона';
 
   @override
+  String get insightsArchive => 'Бойгонӣ';
+
+  @override
+  String get archivedEmpty =>
+      'Дар ин ҷо ҳанӯз чизе нест. Амалҳое, ки аз пайгирӣ хориҷ мекунед, дар ин ҷо мемонанд, то шумо онҳоро баргардонед.';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return 'Дар $date хориҷ карда шуд';
+  }
+
+  @override
+  String get archivedRestore => 'Баргардонидан';
+
+  @override
+  String archivedRestored(String title) {
+    return '\"$title\" ба рӯйхати шумо баргардонида шуд.';
+  }
+
+  @override
   String get newChallenge => 'Мақсади нав';
 
   @override

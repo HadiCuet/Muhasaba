@@ -33,6 +33,36 @@
   "@insightsDaily": {
     "description": "Insights sub-tab showing one editable day at a time"
   },
+  "insightsArchive": "Archive",
+  "@insightsArchive": {
+    "description": "Insights sub-tab listing amal the user has stopped tracking"
+  },
+  "archivedEmpty": "Nothing here yet. Amal you remove from tracking appear here, so you can bring them back.",
+  "@archivedEmpty": {
+    "description": "Archive sub-tab empty state, shown when nothing has been stopped"
+  },
+  "archivedStoppedOn": "Stopped on {date}",
+  "@archivedStoppedOn": {
+    "description": "Secondary line on an archived amal card: the day it was removed from tracking",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "archivedRestore": "Restore",
+  "@archivedRestore": {
+    "description": "Action on an archived amal card: put it back on the tracked list"
+  },
+  "archivedRestored": "\"{title}\" is back on your list.",
+  "@archivedRestored": {
+    "description": "Confirmation shown after an archived amal is restored",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
   "newChallenge": "New challenge",
   "@newChallenge": {
     "description": "FAB label and app bar title for creating a challenge"

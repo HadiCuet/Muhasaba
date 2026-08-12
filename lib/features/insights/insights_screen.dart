@@ -6,10 +6,12 @@ import '../../app/providers.dart';
 import '../../l10n/app_localizations.dart';
 import '../history/history_screen.dart';
 import '../stats/stats_screen.dart';
+import 'archived_amal_screen.dart';
 
-/// Hosts the two former top-level tabs: aggregate stats (Overview) and the
-/// editable single-day view (Daily). Owns the only app bar; the sub-screens
-/// are plain bodies.
+/// Hosts the app's looking-back surfaces: aggregate stats (Overview), the
+/// editable single-day view (Daily) and the amal the user has stopped
+/// tracking (Archive). Owns the only app bar; the sub-screens are plain
+/// bodies.
 class InsightsScreen extends ConsumerStatefulWidget {
   const InsightsScreen({super.key});
 
@@ -19,12 +21,15 @@ class InsightsScreen extends ConsumerStatefulWidget {
 
 class _InsightsScreenState extends ConsumerState<InsightsScreen>
     with SingleTickerProviderStateMixin {
+  static const _tabNames = ['overview', 'daily', 'archive'];
+
   late final TabController _tabs;
 
   @override
   void initState() {
     super.initState();
-    _tabs = TabController(length: 2, vsync: this)..addListener(_onTabChanged);
+    _tabs = TabController(length: _tabNames.length, vsync: this)
+      ..addListener(_onTabChanged);
   }
 
   @override
@@ -39,7 +44,7 @@ class _InsightsScreenState extends ConsumerState<InsightsScreen>
     setState(() {});
     FirebaseAnalytics.instance.logEvent(
       name: 'insights_tab_selected',
-      parameters: {'tab': _tabs.index == 0 ? 'overview' : 'daily'},
+      parameters: {'tab': _tabNames[_tabs.index]},
     );
   }
 
@@ -82,17 +87,22 @@ class _InsightsScreenState extends ConsumerState<InsightsScreen>
               onPressed: _jumpToDate,
             ),
         ],
+        // Scrollable so labels size to their text: at three fixed tabs a
+        // phone gives each ~88 dp, which several locales overflow.
         bottom: TabBar(
           controller: _tabs,
+          isScrollable: true,
+          tabAlignment: TabAlignment.center,
           tabs: [
             Tab(text: l.insightsOverview),
             Tab(text: l.insightsDaily),
+            Tab(text: l.insightsArchive),
           ],
         ),
       ),
       body: TabBarView(
         controller: _tabs,
-        children: const [StatsScreen(), HistoryScreen()],
+        children: const [StatsScreen(), HistoryScreen(), ArchivedAmalScreen()],
       ),
     );
   }

@@ -45,6 +45,26 @@ class AppLocalizationsSo extends AppLocalizations {
   String get insightsDaily => 'Maalinle';
 
   @override
+  String get insightsArchive => 'Arkiifka';
+
+  @override
+  String get archivedEmpty =>
+      'Weli waxba halkan ma jiraan. Camalada aad ka saarto raadraaca halkan ayay ku sii jiraan, si aad dib ugu soo celiso.';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return 'Waa laga saaray $date';
+  }
+
+  @override
+  String get archivedRestore => 'Soo celi';
+
+  @override
+  String archivedRestored(String title) {
+    return '\"$title\" ayaa liiskaaga ku soo laabtay.';
+  }
+
+  @override
   String get newChallenge => 'Yool cusub';
 
   @override
@@ -1123,13 +1143,13 @@ class AppLocalizationsSo extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count yool ayaa dhammaaday — kii ugu dambeeyay $title',
-      one: '$title wuu dhammaaday',
+      one: 'Yool ayaa dhammaaday — $title',
     );
     return '$_temp0';
   }
 
   @override
-  String get challengeSectionEnded => 'Dhammaaday';
+  String get challengeSectionEnded => 'Muddo dhaaf';
 
   @override
   String get challengesPastEmpty => 'Weli waxba ma dhammaanin.';

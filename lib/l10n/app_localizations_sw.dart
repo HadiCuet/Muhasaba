@@ -45,6 +45,26 @@ class AppLocalizationsSw extends AppLocalizations {
   String get insightsDaily => 'Kwa siku';
 
   @override
+  String get insightsArchive => 'Kumbukumbu';
+
+  @override
+  String get archivedEmpty =>
+      'Bado hakuna kitu hapa. Amali unazoondoa kwenye ufuatiliaji zinabaki hapa, tayari kurudishwa.';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return 'Iliondolewa tarehe $date';
+  }
+
+  @override
+  String get archivedRestore => 'Rudisha';
+
+  @override
+  String archivedRestored(String title) {
+    return '\"$title\" imerudishwa kwenye orodha yako.';
+  }
+
+  @override
   String get newChallenge => 'Lengo jipya';
 
   @override

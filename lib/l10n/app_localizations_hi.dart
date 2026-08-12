@@ -45,6 +45,26 @@ class AppLocalizationsHi extends AppLocalizations {
   String get insightsDaily => 'दैनिक';
 
   @override
+  String get insightsArchive => 'संग्रह';
+
+  @override
+  String get archivedEmpty =>
+      'यहाँ अभी कुछ नहीं है। ट्रैकिंग से हटाए गए अमल यहाँ रहते हैं, ताकि आप उन्हें वापस ला सकें।';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return '$date को हटाया गया';
+  }
+
+  @override
+  String get archivedRestore => 'वापस लाएँ';
+
+  @override
+  String archivedRestored(String title) {
+    return '\"$title\" फिर से आपकी सूची में आ गया।';
+  }
+
+  @override
   String get newChallenge => 'नया संकल्प';
 
   @override
@@ -1116,7 +1136,7 @@ class AppLocalizationsHi extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count संकल्प समाप्त हुए — सबसे हाल का $title',
-      one: '$title समाप्त हुआ',
+      one: 'संकल्प समाप्त हुआ — $title',
     );
     return '$_temp0';
   }

@@ -45,6 +45,26 @@ class AppLocalizationsId extends AppLocalizations {
   String get insightsDaily => 'Harian';
 
   @override
+  String get insightsArchive => 'Arsip';
+
+  @override
+  String get archivedEmpty =>
+      'Belum ada apa pun di sini. Amal yang Anda hapus dari pelacakan muncul di sini, siap dipulihkan.';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return 'Dihentikan pada $date';
+  }
+
+  @override
+  String get archivedRestore => 'Pulihkan';
+
+  @override
+  String archivedRestored(String title) {
+    return '\"$title\" kembali ke daftar Anda.';
+  }
+
+  @override
   String get newChallenge => 'Tantangan baru';
 
   @override

@@ -45,6 +45,26 @@ class AppLocalizationsEn extends AppLocalizations {
   String get insightsDaily => 'Daily';
 
   @override
+  String get insightsArchive => 'Archive';
+
+  @override
+  String get archivedEmpty =>
+      'Nothing here yet. Amal you remove from tracking appear here, so you can bring them back.';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return 'Stopped on $date';
+  }
+
+  @override
+  String get archivedRestore => 'Restore';
+
+  @override
+  String archivedRestored(String title) {
+    return '\"$title\" is back on your list.';
+  }
+
+  @override
   String get newChallenge => 'New challenge';
 
   @override

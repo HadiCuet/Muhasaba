@@ -45,6 +45,26 @@ class AppLocalizationsKu extends AppLocalizations {
   String get insightsDaily => 'Roj bi roj';
 
   @override
+  String get insightsArchive => 'Arşîv';
+
+  @override
+  String get archivedEmpty =>
+      'Li vir hîn tiştek tune. Kirinên ku tu ji şopandinê radikî li vir dimînin, da ku tu wan vegerînî.';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return 'Di $date de hat rakirin';
+  }
+
+  @override
+  String get archivedRestore => 'Vegerîne';
+
+  @override
+  String archivedRestored(String title) {
+    return '\"$title\" vegeriya navnîşana te.';
+  }
+
+  @override
   String get newChallenge => 'Armanca nû';
 
   @override

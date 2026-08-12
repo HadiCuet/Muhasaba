@@ -212,6 +212,36 @@ abstract class AppLocalizations {
   /// **'Daily'**
   String get insightsDaily;
 
+  /// Insights sub-tab listing amal the user has stopped tracking
+  ///
+  /// In en, this message translates to:
+  /// **'Archive'**
+  String get insightsArchive;
+
+  /// Archive sub-tab empty state, shown when nothing has been stopped
+  ///
+  /// In en, this message translates to:
+  /// **'Nothing here yet. Amal you remove from tracking appear here, so you can bring them back.'**
+  String get archivedEmpty;
+
+  /// Secondary line on an archived amal card: the day it was removed from tracking
+  ///
+  /// In en, this message translates to:
+  /// **'Stopped on {date}'**
+  String archivedStoppedOn(String date);
+
+  /// Action on an archived amal card: put it back on the tracked list
+  ///
+  /// In en, this message translates to:
+  /// **'Restore'**
+  String get archivedRestore;
+
+  /// Confirmation shown after an archived amal is restored
+  ///
+  /// In en, this message translates to:
+  /// **'\"{title}\" is back on your list.'**
+  String archivedRestored(String title);
+
   /// FAB label and app bar title for creating a challenge
   ///
   /// In en, this message translates to:

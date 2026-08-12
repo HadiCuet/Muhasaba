@@ -45,6 +45,26 @@ class AppLocalizationsSq extends AppLocalizations {
   String get insightsDaily => 'Ditore';
 
   @override
+  String get insightsArchive => 'Arkivi';
+
+  @override
+  String get archivedEmpty =>
+      'Këtu ende nuk ka asgjë. Amalet që hiqni nga ndjekja qëndrojnë këtu, gati për t\'u rikthyer.';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return 'Hequr më $date';
+  }
+
+  @override
+  String get archivedRestore => 'Riktheje';
+
+  @override
+  String archivedRestored(String title) {
+    return '\"$title\" u kthye në listën tuaj.';
+  }
+
+  @override
   String get newChallenge => 'Sfidë e re';
 
   @override

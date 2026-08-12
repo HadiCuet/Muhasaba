@@ -45,6 +45,26 @@ class AppLocalizationsUr extends AppLocalizations {
   String get insightsDaily => 'روزانہ';
 
   @override
+  String get insightsArchive => 'آرکائیو';
+
+  @override
+  String get archivedEmpty =>
+      'یہاں ابھی کچھ نہیں۔ ٹریکنگ سے ہٹائے گئے اعمال یہاں محفوظ رہتے ہیں، تاکہ آپ انہیں واپس لا سکیں۔';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return '$date کو ہٹایا گیا';
+  }
+
+  @override
+  String get archivedRestore => 'بحال کریں';
+
+  @override
+  String archivedRestored(String title) {
+    return '\"$title\" دوبارہ آپ کی فہرست میں آ گیا۔';
+  }
+
+  @override
   String get newChallenge => 'نیا عزم';
 
   @override
@@ -1114,7 +1134,7 @@ class AppLocalizationsUr extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count عزم ختم ہوئے — تازہ ترین $title',
-      one: '$title ختم ہوا',
+      one: 'عزم ختم ہوا — $title',
     );
     return '$_temp0';
   }

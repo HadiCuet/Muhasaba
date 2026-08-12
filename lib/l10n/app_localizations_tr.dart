@@ -45,6 +45,26 @@ class AppLocalizationsTr extends AppLocalizations {
   String get insightsDaily => 'Günlük';
 
   @override
+  String get insightsArchive => 'Arşiv';
+
+  @override
+  String get archivedEmpty =>
+      'Burada henüz bir şey yok. Takipten kaldırdığınız ameller, geri getirebilmeniz için burada durur.';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return '$date tarihinde kaldırıldı';
+  }
+
+  @override
+  String get archivedRestore => 'Geri getir';
+
+  @override
+  String archivedRestored(String title) {
+    return '\"$title\" listenize geri döndü.';
+  }
+
+  @override
   String get newChallenge => 'Yeni hedef';
 
   @override

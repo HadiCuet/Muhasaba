@@ -45,6 +45,26 @@ class AppLocalizationsPs extends AppLocalizations {
   String get insightsDaily => 'ورځنی';
 
   @override
+  String get insightsArchive => 'آرشیف';
+
+  @override
+  String get archivedEmpty =>
+      'دلته تر اوسه څه نشته. هغه عملونه چې د تعقیب څخه یې لرې کوئ دلته پاتې کیږي، ترڅو یې بېرته راوړئ.';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return 'په $date کې لرې شو';
+  }
+
+  @override
+  String get archivedRestore => 'بېرته راوړل';
+
+  @override
+  String archivedRestored(String title) {
+    return '\"$title\" بېرته ستاسو لیست ته راغی.';
+  }
+
+  @override
   String get newChallenge => 'نوی هدف';
 
   @override

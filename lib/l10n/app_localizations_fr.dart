@@ -45,6 +45,26 @@ class AppLocalizationsFr extends AppLocalizations {
   String get insightsDaily => 'Quotidien';
 
   @override
+  String get insightsArchive => 'Archives';
+
+  @override
+  String get archivedEmpty =>
+      'Rien ici pour l\'instant. Les amal que vous retirez du suivi apparaissent ici, prêts à être restaurés.';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return 'Retiré le $date';
+  }
+
+  @override
+  String get archivedRestore => 'Restaurer';
+
+  @override
+  String archivedRestored(String title) {
+    return '« $title » est de retour dans votre liste.';
+  }
+
+  @override
   String get newChallenge => 'Nouveau défi';
 
   @override

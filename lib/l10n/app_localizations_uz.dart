@@ -45,6 +45,26 @@ class AppLocalizationsUz extends AppLocalizations {
   String get insightsDaily => 'Kunlik';
 
   @override
+  String get insightsArchive => 'Arxiv';
+
+  @override
+  String get archivedEmpty =>
+      'Bu yerda hozircha hech narsa yo\'q. Kuzatuvdan olib tashlagan amallaringiz shu yerda qoladi va ularni qaytarishingiz mumkin.';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return '$date sanasida olib tashlangan';
+  }
+
+  @override
+  String get archivedRestore => 'Qaytarish';
+
+  @override
+  String archivedRestored(String title) {
+    return '\"$title\" ro\'yxatingizga qaytarildi.';
+  }
+
+  @override
   String get newChallenge => 'Yangi maqsad';
 
   @override

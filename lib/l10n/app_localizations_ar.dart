@@ -45,6 +45,26 @@ class AppLocalizationsAr extends AppLocalizations {
   String get insightsDaily => 'يومي';
 
   @override
+  String get insightsArchive => 'الأرشيف';
+
+  @override
+  String get archivedEmpty =>
+      'لا يوجد شيء هنا بعد. الأعمال التي تزيلها من المتابعة تظهر هنا لتتمكن من استعادتها.';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return 'أُزيل في $date';
+  }
+
+  @override
+  String get archivedRestore => 'استعادة';
+
+  @override
+  String archivedRestored(String title) {
+    return 'عاد \"$title\" إلى قائمتك.';
+  }
+
+  @override
   String get newChallenge => 'تحدٍ جديد';
 
   @override

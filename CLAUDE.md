@@ -79,7 +79,7 @@ import '../../l10n/app_localizations.dart';  // relative from feature files
 
 - **Category names are NOT localized** — Salah, Dhikr, Quran, Charity stay as raw DB names everywhere.
 - **DateFormat must pass locale:** `DateFormat('EEEE, MMM d', Localizations.localeOf(context).toString())`
-- **RTL support:** Use `EdgeInsetsDirectional` (not `EdgeInsets.only`) for start/end padding. RTL languages: ar, ur, fa, ps, ku.
+- **RTL support:** Use `EdgeInsetsDirectional` (not `EdgeInsets.only`) for start/end padding. RTL languages: ar, ur, fa, ps. (`ku` here is Latin-script Kurmanji and renders LTR — Flutter's RTL set is ar/fa/he/ps/sd/ur.)
 - **Locale setting:** `AppSettings.locale` — `null` = system default, non-null = user-picked BCP-47 tag.
 - **Plurals use ICU MessageFormat:** `{count, plural, =1{day} other{days}}`
 

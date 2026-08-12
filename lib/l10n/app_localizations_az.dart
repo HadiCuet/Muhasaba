@@ -45,6 +45,26 @@ class AppLocalizationsAz extends AppLocalizations {
   String get insightsDaily => 'Günlük';
 
   @override
+  String get insightsArchive => 'Arxiv';
+
+  @override
+  String get archivedEmpty =>
+      'Burada hələ heç nə yoxdur. İzləmədən çıxardığınız əməllər burada qalır və onları geri qaytara bilərsiniz.';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return '$date tarixində çıxarıldı';
+  }
+
+  @override
+  String get archivedRestore => 'Geri qaytar';
+
+  @override
+  String archivedRestored(String title) {
+    return '\"$title\" siyahınıza qaytarıldı.';
+  }
+
+  @override
   String get newChallenge => 'Yeni hədəf';
 
   @override

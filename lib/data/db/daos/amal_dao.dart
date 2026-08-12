@@ -11,11 +11,10 @@ class AmalDao extends DatabaseAccessor<AppDatabase> with _$AmalDaoMixin {
 
   /// All amals including archived, ordered by sortOrder then id.
   Stream<List<AmalRow>> watchAll() {
-    return (select(amals)
-          ..orderBy([
-            (a) => OrderingTerm.asc(a.sortOrder),
-            (a) => OrderingTerm.asc(a.id),
-          ]))
+    return (select(amals)..orderBy([
+          (a) => OrderingTerm.asc(a.sortOrder),
+          (a) => OrderingTerm.asc(a.id),
+        ]))
         .watch();
   }
 
@@ -52,6 +51,32 @@ class AmalDao extends DatabaseAccessor<AppDatabase> with _$AmalDaoMixin {
   Future<int> archive(int id, DateTime at) {
     return (update(amals)..where((a) => a.id.equals(id))).write(
       AmalsCompanion(archivedAt: Value(at)),
+    );
+  }
+
+  /// Archived amal, most recently stopped first.
+  Stream<List<AmalRow>> watchArchived() {
+    return (select(amals)
+          ..where((a) => a.archivedAt.isNotNull())
+          ..orderBy([
+            (a) => OrderingTerm.desc(a.archivedAt),
+            (a) => OrderingTerm.asc(a.id),
+          ]))
+        .watch();
+  }
+
+  /// Returns an amal to the tracked list, at the end of the user's order so it
+  /// cannot reappear mid-list on a stale sortOrder.
+  Future<void> unarchive(int id) async {
+    final maxOrder = await customSelect(
+      'SELECT COALESCE(MAX(sort_order), -1) AS m FROM amals '
+      'WHERE archived_at IS NULL',
+    ).getSingle();
+    await (update(amals)..where((a) => a.id.equals(id))).write(
+      AmalsCompanion(
+        archivedAt: const Value(null),
+        sortOrder: Value(maxOrder.read<int>('m') + 1),
+      ),
     );
   }
 

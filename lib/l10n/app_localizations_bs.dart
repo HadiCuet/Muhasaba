@@ -45,6 +45,26 @@ class AppLocalizationsBs extends AppLocalizations {
   String get insightsDaily => 'Po danima';
 
   @override
+  String get insightsArchive => 'Arhiva';
+
+  @override
+  String get archivedEmpty =>
+      'Ovdje još nema ničega. Ameli koje uklonite iz praćenja ostaju ovdje, spremni da ih vratite.';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return 'Uklonjeno $date';
+  }
+
+  @override
+  String get archivedRestore => 'Vrati';
+
+  @override
+  String archivedRestored(String title) {
+    return '\"$title\" je vraćeno na vašu listu.';
+  }
+
+  @override
   String get newChallenge => 'Novi izazov';
 
   @override

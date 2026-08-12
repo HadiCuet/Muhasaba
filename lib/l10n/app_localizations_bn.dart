@@ -45,6 +45,26 @@ class AppLocalizationsBn extends AppLocalizations {
   String get insightsDaily => 'দৈনিক';
 
   @override
+  String get insightsArchive => 'আর্কাইভ';
+
+  @override
+  String get archivedEmpty =>
+      'এখানে এখনো কিছু নেই। ট্র্যাকিং থেকে সরানো আমল এখানে জমা থাকে, যাতে আপনি সেগুলো আবার ফিরিয়ে আনতে পারেন।';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return '$date তারিখে সরানো হয়েছে';
+  }
+
+  @override
+  String get archivedRestore => 'ফিরিয়ে আনুন';
+
+  @override
+  String archivedRestored(String title) {
+    return '\"$title\" আবার আপনার তালিকায় ফিরেছে।';
+  }
+
+  @override
   String get newChallenge => 'নতুন সংকল্প';
 
   @override

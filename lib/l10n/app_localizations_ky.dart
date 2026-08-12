@@ -45,6 +45,26 @@ class AppLocalizationsKy extends AppLocalizations {
   String get insightsDaily => 'Күндөлүк';
 
   @override
+  String get insightsArchive => 'Архив';
+
+  @override
+  String get archivedEmpty =>
+      'Бул жерде азырынча эч нерсе жок. Көзөмөлдөн алып салган амалдарыңыз ушул жерде сакталат, аларды кайра кошсоңуз болот.';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return '$date күнү алып салынды';
+  }
+
+  @override
+  String get archivedRestore => 'Кайра кошуу';
+
+  @override
+  String archivedRestored(String title) {
+    return '\"$title\" тизмеңизге кайра кошулду.';
+  }
+
+  @override
   String get newChallenge => 'Жаңы максат';
 
   @override
@@ -1121,7 +1141,7 @@ class AppLocalizationsKy extends AppLocalizations {
   }
 
   @override
-  String get challengeSectionEnded => 'Бүттү';
+  String get challengeSectionEnded => 'Мөөнөтү өттү';
 
   @override
   String get challengesPastEmpty => 'Азырынча аяктаган эч нерсе жок.';

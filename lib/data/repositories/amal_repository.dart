@@ -95,6 +95,30 @@ class AmalRepository {
     await _scheduler.cancel(id);
   }
 
+  Stream<List<AmalRow>> watchArchived() => _dao.watchArchived();
+
+  /// Puts an archived amal back on the tracked list. Its completions were
+  /// never deleted, so streaks and stats resume from what is already there.
+  ///
+  /// See [create] for why [notificationTitle] is passed separately.
+  Future<void> restoreToTracking(
+    int id, {
+    required String notificationTitle,
+  }) async {
+    await _dao.unarchive(id);
+    final row = await _dao.getById(id);
+    if (row == null) return;
+    final t = parseReminderTime(row.reminderTime);
+    if (t != null) {
+      await _scheduler.scheduleDaily(
+        id: row.id,
+        title: notificationTitle,
+        hour: t.hour,
+        minute: t.minute,
+      );
+    }
+  }
+
   /// Returns distinct emoji icons used by active amal.
   Future<List<String>> getRecentIcons() => _dao.getRecentIcons();
 

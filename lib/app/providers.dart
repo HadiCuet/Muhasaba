@@ -60,6 +60,12 @@ final recentIconsProvider = FutureProvider<List<String>>((ref) {
   return ref.watch(amalRepositoryProvider).getRecentIcons();
 });
 
+/// Amal the user has stopped tracking, most recently stopped first. Backs the
+/// Insights → Archive tab.
+final archivedAmalsProvider = StreamProvider.autoDispose<List<AmalRow>>((ref) {
+  return ref.watch(amalRepositoryProvider).watchArchived();
+});
+
 final challengeRepositoryProvider = Provider<ChallengeRepository>((ref) {
   return ChallengeRepository(
     ref.watch(appDatabaseProvider).challengeDao,

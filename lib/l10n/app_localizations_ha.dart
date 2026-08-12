@@ -45,6 +45,26 @@ class AppLocalizationsHa extends AppLocalizations {
   String get insightsDaily => 'Kowace rana';
 
   @override
+  String get insightsArchive => 'Ajiya';
+
+  @override
+  String get archivedEmpty =>
+      'Babu kome a nan tukuna. Amalin da ka cire daga bin diddigi suna nan a ajiye, don ka iya mayar da su.';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return 'An cire a ranar $date';
+  }
+
+  @override
+  String get archivedRestore => 'Mayar';
+
+  @override
+  String archivedRestored(String title) {
+    return 'An mayar da \"$title\" cikin jerin ka.';
+  }
+
+  @override
   String get newChallenge => 'Sabon buri';
 
   @override

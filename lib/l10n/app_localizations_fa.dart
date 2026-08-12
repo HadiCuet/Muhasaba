@@ -45,6 +45,26 @@ class AppLocalizationsFa extends AppLocalizations {
   String get insightsDaily => 'روزانه';
 
   @override
+  String get insightsArchive => 'بایگانی';
+
+  @override
+  String get archivedEmpty =>
+      'هنوز چیزی اینجا نیست. اعمالی که از پیگیری حذف می‌کنید اینجا می‌مانند تا بتوانید آن‌ها را بازگردانید.';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return 'در $date حذف شد';
+  }
+
+  @override
+  String get archivedRestore => 'بازگرداندن';
+
+  @override
+  String archivedRestored(String title) {
+    return '\"$title\" به فهرست شما بازگشت.';
+  }
+
+  @override
   String get newChallenge => 'چالش جدید';
 
   @override

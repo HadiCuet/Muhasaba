@@ -45,6 +45,26 @@ class AppLocalizationsTk extends AppLocalizations {
   String get insightsDaily => 'Günlük';
 
   @override
+  String get insightsArchive => 'Arhiw';
+
+  @override
+  String get archivedEmpty =>
+      'Bu ýerde entek zat ýok. Yzarlamadan aýran amallaryňyz şu ýerde saklanýar, olary yzyna gaýtaryp bilersiňiz.';
+
+  @override
+  String archivedStoppedOn(String date) {
+    return '$date senesinde aýryldy';
+  }
+
+  @override
+  String get archivedRestore => 'Yzyna gaýtar';
+
+  @override
+  String archivedRestored(String title) {
+    return '\"$title\" sanawyňyza gaýtaryldy.';
+  }
+
+  @override
   String get newChallenge => 'Täze maksat';
 
   @override
