@@ -96,6 +96,12 @@ class _GestureHintState extends State<GestureHint>
 
   @override
   Widget build(BuildContext context) {
+    // A parked controller sits at t=0, which is a resting frame for some
+    // curves and not others — the swipe variant starts transparent and
+    // offset. Draw one static dot instead of trusting every curve's origin.
+    if (MediaQuery.disableAnimationsOf(context)) {
+      return IgnorePointer(child: _dot(1));
+    }
     final rtl = Directionality.of(context) == TextDirection.rtl;
     return IgnorePointer(
       child: AnimatedBuilder(
