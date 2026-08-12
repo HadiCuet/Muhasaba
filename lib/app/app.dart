@@ -56,8 +56,8 @@ class _MuhasabaAppState extends ConsumerState<MuhasabaApp> {
   /// request registered post-authorization.
   Future<void> _bootstrapDailyReminderPermission() async {
     final repo = ref.read(settingsRepositoryProvider);
-    if (await repo.getDailyReminderPermissionAsked()) return;
     final scheduler = ref.read(reminderSchedulerProvider);
+    if (await repo.getDailyReminderPermissionAsked()) return;
     await scheduler.requestPermissions();
     await repo.setDailyReminderPermissionAsked(true);
     await applyDailyReminder(scheduler, await repo.get());

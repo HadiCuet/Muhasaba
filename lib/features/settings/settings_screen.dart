@@ -211,6 +211,10 @@ class _SettingsList extends ConsumerWidget {
               title: l.language,
               trailing: _currentLanguageLabel(context, settings.locale),
               onTap: () async {
+                // Resolved before the picker: `ref.read` throws once this
+                // screen unmounts.
+                final db = ref.read(appDatabaseProvider);
+                final scheduler = ref.read(reminderSchedulerProvider);
                 final picked = await _pickLanguage(context, settings.locale);
                 if (picked != null) {
                   final tag = picked == '_system' ? null : picked;
@@ -224,8 +228,8 @@ class _SettingsList extends ConsumerWidget {
                   // language. Load the delegate directly rather than reading
                   // it off this context, which is still on the old locale.
                   await syncReminders(
-                    ref.read(appDatabaseProvider),
-                    ref.read(reminderSchedulerProvider),
+                    db,
+                    scheduler,
                     await AppLocalizations.delegate.load(
                       resolveAppLocale(
                         tag,

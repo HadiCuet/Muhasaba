@@ -230,6 +230,9 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
 
   Future<void> _save() async {
     if (!_formKey.currentState!.validate()) return;
+    // Resolved up front: `ref.read` throws once this form unmounts, and the
+    // writes below suspend.
+    final scheduler = ref.read(reminderSchedulerProvider);
     final l = AppLocalizations.of(context);
     final title = _canonicalTitle(_titleController.text.trim(), l);
     final permWarning = l.reminderPermissionWarning;
@@ -309,7 +312,6 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
 
     // Schedule or cancel the OS-level notification to match the saved
     // reminder.
-    final scheduler = ref.read(reminderSchedulerProvider);
     final parsed = parseReminderTime(reminder);
     final hadPreviousReminder = _existing?.reminderTime != null;
     String? permissionMessage;
