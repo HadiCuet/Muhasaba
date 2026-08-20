@@ -72,12 +72,37 @@ class _TutorialTourState extends State<_TutorialTour> {
       );
     }
     if (!mounted || !ctx.mounted) return;
+    await _awaitScrollsIdle(ctx);
+    if (!mounted || !ctx.mounted) return;
     final box = ctx.findRenderObject();
     if (box is! RenderBox || !box.hasSize) {
       _next();
       return;
     }
     setState(() => _rect = box.localToGlobal(Offset.zero) & box.size);
+  }
+
+  /// Waits for every enclosing scrollable to come to rest. `ensureVisible`
+  /// settles the scrolls it starts but not one already in flight: landing on
+  /// the Challenge tab while the `TabBarView` is still settling would
+  /// otherwise freeze the hole where the card was, not where it lands.
+  Future<void> _awaitScrollsIdle(BuildContext ctx) async {
+    var frames = 0;
+    while (frames++ < 60 && _isScrolling(ctx)) {
+      await WidgetsBinding.instance.endOfFrame;
+      if (!mounted || !ctx.mounted) return;
+    }
+  }
+
+  bool _isScrolling(BuildContext ctx) {
+    BuildContext? cursor = ctx;
+    var scrollable = Scrollable.maybeOf(cursor);
+    while (scrollable != null) {
+      if (scrollable.position.isScrollingNotifier.value) return true;
+      cursor = scrollable.context;
+      scrollable = Scrollable.maybeOf(cursor);
+    }
+    return false;
   }
 
   void _next() {
