@@ -1204,10 +1204,10 @@ class AppLocalizationsKu extends AppLocalizations {
   String get challengeHowManyDays => 'Çend roj?';
 
   @override
-  String get challengeReachHowMuch => 'Çiqas bigihîje?';
+  String get challengeReachHowMuch => 'Armanc çiqas e?';
 
   @override
-  String get challengeSpreadOver => 'Belavkirî di';
+  String get challengeSpreadOver => 'Mawe';
 
   @override
   String get challengeSpreadEveryDay => 'Her roj';

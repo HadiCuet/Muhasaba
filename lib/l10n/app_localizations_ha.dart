@@ -1208,7 +1208,7 @@ class AppLocalizationsHa extends AppLocalizations {
   String get challengeReachHowMuch => 'Kai adadi nawa?';
 
   @override
-  String get challengeSpreadOver => 'A shimfiɗa cikin';
+  String get challengeSpreadOver => 'Tsawon lokaci';
 
   @override
   String get challengeSpreadEveryDay => 'Kowace rana';
@@ -1232,7 +1232,7 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String challengePlanExact(String start, String end) {
-    return '$start zuwa $end · ɗaya kowace rana, kowace rana';
+    return '$start zuwa $end · ɗaya kowace rana, ba tare da tsallakewa ba';
   }
 
   @override

@@ -1214,7 +1214,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get challengeReachHowMuch => 'Atteindre combien ?';
 
   @override
-  String get challengeSpreadOver => 'Réparti sur';
+  String get challengeSpreadOver => 'Durée';
 
   @override
   String get challengeSpreadEveryDay => 'Chaque jour';
@@ -1249,7 +1249,7 @@ class AppLocalizationsFr extends AppLocalizations {
     String window,
     String slack,
   ) {
-    return 'Du $start au $end · $target jours sur $window — $slack à manquer possibles';
+    return 'Du $start au $end · $target jours sur $window — vous pouvez en manquer $slack';
   }
 
   @override

@@ -1203,7 +1203,7 @@ class AppLocalizationsKk extends AppLocalizations {
   String get challengeReachHowMuch => 'Қанша жинау керек?';
 
   @override
-  String get challengeSpreadOver => 'Қанша күнге таратылады';
+  String get challengeSpreadOver => 'Мерзімі';
 
   @override
   String get challengeSpreadEveryDay => 'Күн сайын';

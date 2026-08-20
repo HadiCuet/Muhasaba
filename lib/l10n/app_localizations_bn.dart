@@ -1204,7 +1204,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get challengeReachHowMuch => 'কত পর্যন্ত?';
 
   @override
-  String get challengeSpreadOver => 'যত দিনে ছড়ানো';
+  String get challengeSpreadOver => 'মেয়াদ';
 
   @override
   String get challengeSpreadEveryDay => 'প্রতিদিন';

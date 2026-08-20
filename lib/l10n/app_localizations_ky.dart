@@ -1205,7 +1205,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get challengeReachHowMuch => 'Канчага жетүү керек?';
 
   @override
-  String get challengeSpreadOver => 'Канча күнгө жайылат';
+  String get challengeSpreadOver => 'Мөөнөтү';
 
   @override
   String get challengeSpreadEveryDay => 'Күн сайын';

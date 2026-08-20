@@ -1171,7 +1171,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get challengeShapeQuestion => 'Ин чӣ навъ мақсад аст?';
 
   @override
-  String get challengeShapeTotal => 'Миқдори умумии расиданӣ';
+  String get challengeShapeTotal => 'Ҳадафи умумӣ';
 
   @override
   String get challengeShapeTotalBody =>
@@ -1206,7 +1206,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get challengeReachHowMuch => 'То чӣ миқдор?';
 
   @override
-  String get challengeSpreadOver => 'Паҳн дар';
+  String get challengeSpreadOver => 'Мӯҳлат';
 
   @override
   String get challengeSpreadEveryDay => 'Ҳар рӯз';
@@ -1256,7 +1256,7 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String challengeTooTight(String target, String window) {
-    return '$target рӯз дар $window рӯз ҷой намешавад — идома рӯзе якро мешуморад.';
+    return '$target рӯз дар $window рӯз ҷойгир намешавад — идома рӯзе якро мешуморад.';
   }
 
   @override

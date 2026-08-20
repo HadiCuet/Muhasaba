@@ -1197,10 +1197,10 @@ class AppLocalizationsPs extends AppLocalizations {
   String get challengeHowManyDays => 'څو ورځې؟';
 
   @override
-  String get challengeReachHowMuch => 'څومره ته رسېدل؟';
+  String get challengeReachHowMuch => 'څومره ته ورسېږئ؟';
 
   @override
-  String get challengeSpreadOver => 'په څو ورځو ویشل شوی';
+  String get challengeSpreadOver => 'موده';
 
   @override
   String get challengeSpreadEveryDay => 'هره ورځ';

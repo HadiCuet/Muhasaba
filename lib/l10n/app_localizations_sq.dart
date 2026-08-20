@@ -1207,10 +1207,10 @@ class AppLocalizationsSq extends AppLocalizations {
   String get challengeHowManyDays => 'Sa ditë?';
 
   @override
-  String get challengeReachHowMuch => 'Të arrihet sa?';
+  String get challengeReachHowMuch => 'Sa duhet arritur?';
 
   @override
-  String get challengeSpreadOver => 'Shpërndarë në';
+  String get challengeSpreadOver => 'Kohëzgjatja';
 
   @override
   String get challengeSpreadEveryDay => 'Çdo ditë';

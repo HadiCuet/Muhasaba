@@ -1201,7 +1201,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get challengeReachHowMuch => 'به چه مقدار؟';
 
   @override
-  String get challengeSpreadOver => 'پخش‌شده در';
+  String get challengeSpreadOver => 'بازه زمانی';
 
   @override
   String get challengeSpreadEveryDay => 'هر روز';

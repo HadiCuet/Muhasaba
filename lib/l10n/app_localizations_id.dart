@@ -1210,7 +1210,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get challengeReachHowMuch => 'Mencapai berapa?';
 
   @override
-  String get challengeSpreadOver => 'Tersebar dalam';
+  String get challengeSpreadOver => 'Rentang waktu';
 
   @override
   String get challengeSpreadEveryDay => 'Setiap hari';

@@ -1209,7 +1209,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get challengeReachHowMuch => 'Capai berapa?';
 
   @override
-  String get challengeSpreadOver => 'Tersebar dalam';
+  String get challengeSpreadOver => 'Tempoh masa';
 
   @override
   String get challengeSpreadEveryDay => 'Setiap hari';

@@ -1205,7 +1205,7 @@ class AppLocalizationsSw extends AppLocalizations {
   String get challengeReachHowMuch => 'Kufikia kiasi gani?';
 
   @override
-  String get challengeSpreadOver => 'Kusambazwa katika';
+  String get challengeSpreadOver => 'Kipindi';
 
   @override
   String get challengeSpreadEveryDay => 'Kila siku';

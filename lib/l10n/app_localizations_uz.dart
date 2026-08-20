@@ -1210,7 +1210,7 @@ class AppLocalizationsUz extends AppLocalizations {
   String get challengeReachHowMuch => 'Qanchaga yetish kerak?';
 
   @override
-  String get challengeSpreadOver => 'Qancha kunga taqsimlanadi';
+  String get challengeSpreadOver => 'Muddat';
 
   @override
   String get challengeSpreadEveryDay => 'Har kuni';

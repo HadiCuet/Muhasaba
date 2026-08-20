@@ -1182,11 +1182,11 @@ class AppLocalizationsBs extends AppLocalizations {
       '1000 salavata, 30 džuzova. Bilježite količine i one se sabiraju.';
 
   @override
-  String get challengeShapeStreak => 'Niz iz dana u dan';
+  String get challengeShapeStreak => 'Niz dan za danom';
 
   @override
   String get challengeShapeStreakBody =>
-      'Tehedždžud, sabah u džematu. Jedna oznaka dnevno, količina nije važna.';
+      'Tehedžud, sabah u džematu. Jedna oznaka dnevno, količina nije važna.';
 
   @override
   String get challengeTargetLabel => 'Cilj';
@@ -1210,7 +1210,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get challengeReachHowMuch => 'Do koje količine?';
 
   @override
-  String get challengeSpreadOver => 'Raspoređeno na';
+  String get challengeSpreadOver => 'Vremenski okvir';
 
   @override
   String get challengeSpreadEveryDay => 'Svaki dan';

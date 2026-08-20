@@ -1185,7 +1185,7 @@ class AppLocalizationsSo extends AppLocalizations {
       '1000 salawaat, 30 juz. Waxaad qoraysaa tirooyin oo way isku darsamaan.';
 
   @override
-  String get challengeShapeStreak => 'Xidhitaan maalin kasta';
+  String get challengeShapeStreak => 'Joogtayn maalin kasta';
 
   @override
   String get challengeShapeStreakBody =>
@@ -1213,7 +1213,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get challengeReachHowMuch => 'Immisa la gaarayo?';
 
   @override
-  String get challengeSpreadOver => 'Loo qaybiyay';
+  String get challengeSpreadOver => 'Muddada';
 
   @override
   String get challengeSpreadEveryDay => 'Maalin kasta';
@@ -1263,7 +1263,7 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String challengeTooTight(String target, String window) {
-    return '$target maalmood kuma habboona $window maalmood — xidhitaanku wuxuu tirinayaa mid maalintii.';
+    return '$target maalmood kuma qasno $window maalmood — joogtayntu waxay tirinaysaa hal maalintii.';
   }
 
   @override

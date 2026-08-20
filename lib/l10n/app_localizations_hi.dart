@@ -1206,7 +1206,7 @@ class AppLocalizationsHi extends AppLocalizations {
   String get challengeReachHowMuch => 'कितना तक पहुँचना है?';
 
   @override
-  String get challengeSpreadOver => 'इतने दिनों में';
+  String get challengeSpreadOver => 'अवधि';
 
   @override
   String get challengeSpreadEveryDay => 'हर दिन';
@@ -1256,7 +1256,7 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String challengeTooTight(String target, String window) {
-    return '$target दिन $window दिनों में नहीं आ सकते — निरंतरता में रोज़ एक ही गिना जाता है।';
+    return '$target दिन $window दिनों में नहीं समा सकते — निरंतरता में रोज़ एक ही गिना जाता है।';
   }
 
   @override

@@ -1211,7 +1211,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get challengeReachHowMuch => 'ما المقدار المطلوب؟';
 
   @override
-  String get challengeSpreadOver => 'موزّعة على';
+  String get challengeSpreadOver => 'الإطار الزمني';
 
   @override
   String get challengeSpreadEveryDay => 'كل يوم';
@@ -1261,7 +1261,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String challengeTooTight(String target, String window) {
-    return '$target يومًا لا تتسع في $window يومًا — الالتزام اليومي يحتسب واحدًا في اليوم.';
+    return '$target يومًا أطول من $window يومًا — الالتزام اليومي يُحتسب مرة واحدة في اليوم.';
   }
 
   @override

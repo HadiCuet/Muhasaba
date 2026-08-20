@@ -1204,7 +1204,7 @@ class AppLocalizationsUr extends AppLocalizations {
   String get challengeReachHowMuch => 'کتنا پورا کرنا ہے؟';
 
   @override
-  String get challengeSpreadOver => 'کتنے دنوں میں';
+  String get challengeSpreadOver => 'مدت';
 
   @override
   String get challengeSpreadEveryDay => 'ہر دن';
