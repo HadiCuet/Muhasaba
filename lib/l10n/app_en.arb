@@ -555,17 +555,25 @@
   "@deleteChallengeConfirm": {
     "description": "Confirmation dialog body before deleting a challenge"
   },
-  "challengeModeLabel": "What are you counting?",
-  "@challengeModeLabel": {
-    "description": "Form field label for the challenge mode selector"
+  "challengeShapeQuestion": "What kind of challenge is this?",
+  "@challengeShapeQuestion": {
+    "description": "Form question above the two challenge-shape cards"
   },
-  "challengeModeCount": "A running total",
-  "@challengeModeCount": {
-    "description": "Challenge mode: a cumulative running total, e.g. 20 rakah"
+  "challengeShapeTotal": "A total to reach",
+  "@challengeShapeTotal": {
+    "description": "Challenge shape: a cumulative total, e.g. 1000 salawat"
   },
-  "challengeModeDays": "Days completed",
-  "@challengeModeDays": {
-    "description": "Challenge mode: number of days completed, one check-in per day"
+  "challengeShapeTotalBody": "1000 salawat, 30 juz. You log amounts and it counts up.",
+  "@challengeShapeTotalBody": {
+    "description": "Explanatory line under the 'a total to reach' shape card"
+  },
+  "challengeShapeStreak": "A day-by-day streak",
+  "@challengeShapeStreak": {
+    "description": "Challenge shape: one check-in per day, amount irrelevant"
+  },
+  "challengeShapeStreakBody": "Tahajjud, Fajr in jamaah. One tick a day, the amount doesn't matter.",
+  "@challengeShapeStreakBody": {
+    "description": "Explanatory line under the 'day-by-day streak' shape card"
   },
   "challengeTargetLabel": "Target",
   "@challengeTargetLabel": {
@@ -583,25 +591,122 @@
   "@challengeUnitHint": {
     "description": "Placeholder examples for the unit field"
   },
-  "challengeStepLabel": "One tap logs",
-  "@challengeStepLabel": {
-    "description": "Form label above the chips choosing how much one tap of the stepper logs"
+  "challengeOneTapAdds": "One tap adds",
+  "@challengeOneTapAdds": {
+    "description": "Form label above the chips choosing how much one tap of the stepper adds"
   },
-  "challengeWindowLabel": "How long do you have?",
-  "@challengeWindowLabel": {
-    "description": "Form section asking how much time the user has to finish"
+  "challengeHowManyDays": "How many days?",
+  "@challengeHowManyDays": {
+    "description": "Form question for a streak challenge's day target"
+  },
+  "challengeReachHowMuch": "Reach how much?",
+  "@challengeReachHowMuch": {
+    "description": "Form question for a total challenge's amount and unit"
+  },
+  "challengeSpreadOver": "Spread over",
+  "@challengeSpreadOver": {
+    "description": "Form label above the streak window selector"
+  },
+  "challengeSpreadEveryDay": "Every day",
+  "@challengeSpreadEveryDay": {
+    "description": "Streak window option: the window equals the day target, so the streak must be kept every day"
+  },
+  "challengeSpreadLonger": "A longer window",
+  "@challengeSpreadLonger": {
+    "description": "Streak window option: allow more days than the target, so some can be missed"
+  },
+  "challengeByWhen": "By when?",
+  "@challengeByWhen": {
+    "description": "Form label above the total challenge's deadline selector"
   },
   "challengeWindowDuration": "Finish within",
   "@challengeWindowDuration": {
     "description": "Window type: finish within a number of days from the start"
   },
-  "challengeWindowDates": "Between two dates",
-  "@challengeWindowDates": {
-    "description": "Window type: an explicit start and end date"
+  "challengeByDate": "By a date",
+  "@challengeByDate": {
+    "description": "Deadline option: finish by an explicitly picked last day"
   },
-  "challengeWindowNone": "No time limit",
-  "@challengeWindowNone": {
-    "description": "Window type: open-ended, no time limit"
+  "challengePlanRange": "{start} to {end}",
+  "@challengePlanRange": {
+    "description": "Resolved challenge window when there is no pace to report yet",
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "challengePlanExact": "{start} to {end} · one a day, every day",
+  "@challengePlanExact": {
+    "description": "Resolved plan for a streak whose window exactly matches its day target",
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      }
+    }
+  },
+  "challengePlanSlack": "{start} to {end} · {target} of {window} days — {slack} you can miss",
+  "@challengePlanSlack": {
+    "description": "Resolved plan for a streak with a window longer than its day target",
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      },
+      "target": {
+        "type": "String"
+      },
+      "window": {
+        "type": "String"
+      },
+      "slack": {
+        "type": "String"
+      }
+    }
+  },
+  "challengePlanRate": "{start} to {end} · about {rate} a day",
+  "@challengePlanRate": {
+    "description": "Resolved plan for a total challenge with a deadline",
+    "placeholders": {
+      "start": {
+        "type": "String"
+      },
+      "end": {
+        "type": "String"
+      },
+      "rate": {
+        "type": "String"
+      }
+    }
+  },
+  "challengePlanOpen": "Starts {start} · no deadline",
+  "@challengePlanOpen": {
+    "description": "Resolved plan for a challenge with no deadline",
+    "placeholders": {
+      "start": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeTooTight": "{target} days can't fit in {window} days — a streak counts one a day.",
+  "@challengeTooTight": {
+    "description": "Warning when a streak's day target exceeds its window",
+    "placeholders": {
+      "target": {
+        "type": "String"
+      },
+      "window": {
+        "type": "String"
+      }
+    }
   },
   "challengeDurationLabel": "{count, plural, =1{{count} day} other{{count} days}}",
   "@challengeDurationLabel": {
@@ -782,13 +887,13 @@
   "@challengeGroupGoal": {
     "description": "Form group header: name, icon and category of the challenge"
   },
-  "challengeGroupCounts": "What counts",
-  "@challengeGroupCounts": {
-    "description": "Form group header: what is tallied and by how much"
+  "challengeGroupShape": "Shape",
+  "@challengeGroupShape": {
+    "description": "Form group header: which kind of challenge this is"
   },
-  "challengeGroupTime": "Time",
-  "@challengeGroupTime": {
-    "description": "Form group header: the challenge's time window"
+  "challengeGroupPlan": "The plan",
+  "@challengeGroupPlan": {
+    "description": "Form group header: the target, the window and the per-tap step"
   },
   "challengeGroupReminders": "Reminders",
   "@challengeGroupReminders": {

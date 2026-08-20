@@ -1165,13 +1165,21 @@ class AppLocalizationsHi extends AppLocalizations {
       'इस संकल्प और इसकी सारी दर्ज प्रगति को हटाएं?';
 
   @override
-  String get challengeModeLabel => 'आप क्या गिन रहे हैं?';
+  String get challengeShapeQuestion => 'यह किस तरह का संकल्प है?';
 
   @override
-  String get challengeModeCount => 'कुल मात्रा';
+  String get challengeShapeTotal => 'एक कुल लक्ष्य';
 
   @override
-  String get challengeModeDays => 'पूरे किए दिन';
+  String get challengeShapeTotalBody =>
+      '1000 दरूद, 30 पारे। आप मात्रा दर्ज करते हैं और वह जुड़ती जाती है।';
+
+  @override
+  String get challengeShapeStreak => 'रोज़ की निरंतरता';
+
+  @override
+  String get challengeShapeStreakBody =>
+      'तहज्जुद, जमात में फ़ज्र। दिन में एक निशान, मात्रा मायने नहीं रखती।';
 
   @override
   String get challengeTargetLabel => 'लक्ष्य';
@@ -1186,19 +1194,67 @@ class AppLocalizationsHi extends AppLocalizations {
   String get challengeUnitHint => 'रकात, पृष्ठ, बार';
 
   @override
-  String get challengeStepLabel => 'एक टैप में जुड़ेगा';
+  String get challengeOneTapAdds => 'एक टैप में जुड़ेगा';
 
   @override
-  String get challengeWindowLabel => 'आपके पास कितना समय है?';
+  String get challengeHowManyDays => 'कितने दिन?';
+
+  @override
+  String get challengeReachHowMuch => 'कितना तक पहुँचना है?';
+
+  @override
+  String get challengeSpreadOver => 'इतने दिनों में';
+
+  @override
+  String get challengeSpreadEveryDay => 'हर दिन';
+
+  @override
+  String get challengeSpreadLonger => 'अधिक समय';
+
+  @override
+  String get challengeByWhen => 'कब तक?';
 
   @override
   String get challengeWindowDuration => 'तय अवधि';
 
   @override
-  String get challengeWindowDates => 'दो तिथियों के बीच';
+  String get challengeByDate => 'एक तारीख़ तक';
 
   @override
-  String get challengeWindowNone => 'बिना समय सीमा';
+  String challengePlanRange(String start, String end) {
+    return '$start से $end';
+  }
+
+  @override
+  String challengePlanExact(String start, String end) {
+    return '$start से $end · रोज़ एक, हर दिन';
+  }
+
+  @override
+  String challengePlanSlack(
+    String start,
+    String end,
+    String target,
+    String window,
+    String slack,
+  ) {
+    return '$start से $end · $window दिनों में $target — $slack छोड़ सकते हैं';
+  }
+
+  @override
+  String challengePlanRate(String start, String end, String rate) {
+    return '$start से $end · रोज़ लगभग $rate';
+  }
+
+  @override
+  String challengePlanOpen(String start) {
+    return '$start से शुरू · समय सीमा नहीं';
+  }
+
+  @override
+  String challengeTooTight(String target, String window) {
+    return '$target दिन $window दिनों में नहीं आ सकते — निरंतरता में रोज़ एक ही गिना जाता है।';
+  }
 
   @override
   String challengeDurationLabel(int count) {
@@ -1306,10 +1362,10 @@ class AppLocalizationsHi extends AppLocalizations {
   String get challengeGroupGoal => 'आपका लक्ष्य';
 
   @override
-  String get challengeGroupCounts => 'क्या गिना जाएगा';
+  String get challengeGroupShape => 'प्रकार';
 
   @override
-  String get challengeGroupTime => 'समय';
+  String get challengeGroupPlan => 'योजना';
 
   @override
   String get challengeGroupReminders => 'रिमाइंडर';

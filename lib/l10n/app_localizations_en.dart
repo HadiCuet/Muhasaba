@@ -1164,13 +1164,21 @@ class AppLocalizationsEn extends AppLocalizations {
       'Delete this challenge and all its logged progress?';
 
   @override
-  String get challengeModeLabel => 'What are you counting?';
+  String get challengeShapeQuestion => 'What kind of challenge is this?';
 
   @override
-  String get challengeModeCount => 'A running total';
+  String get challengeShapeTotal => 'A total to reach';
 
   @override
-  String get challengeModeDays => 'Days completed';
+  String get challengeShapeTotalBody =>
+      '1000 salawat, 30 juz. You log amounts and it counts up.';
+
+  @override
+  String get challengeShapeStreak => 'A day-by-day streak';
+
+  @override
+  String get challengeShapeStreakBody =>
+      'Tahajjud, Fajr in jamaah. One tick a day, the amount doesn\'t matter.';
 
   @override
   String get challengeTargetLabel => 'Target';
@@ -1185,19 +1193,67 @@ class AppLocalizationsEn extends AppLocalizations {
   String get challengeUnitHint => 'rakah, pages, times';
 
   @override
-  String get challengeStepLabel => 'One tap logs';
+  String get challengeOneTapAdds => 'One tap adds';
 
   @override
-  String get challengeWindowLabel => 'How long do you have?';
+  String get challengeHowManyDays => 'How many days?';
+
+  @override
+  String get challengeReachHowMuch => 'Reach how much?';
+
+  @override
+  String get challengeSpreadOver => 'Spread over';
+
+  @override
+  String get challengeSpreadEveryDay => 'Every day';
+
+  @override
+  String get challengeSpreadLonger => 'A longer window';
+
+  @override
+  String get challengeByWhen => 'By when?';
 
   @override
   String get challengeWindowDuration => 'Finish within';
 
   @override
-  String get challengeWindowDates => 'Between two dates';
+  String get challengeByDate => 'By a date';
 
   @override
-  String get challengeWindowNone => 'No time limit';
+  String challengePlanRange(String start, String end) {
+    return '$start to $end';
+  }
+
+  @override
+  String challengePlanExact(String start, String end) {
+    return '$start to $end · one a day, every day';
+  }
+
+  @override
+  String challengePlanSlack(
+    String start,
+    String end,
+    String target,
+    String window,
+    String slack,
+  ) {
+    return '$start to $end · $target of $window days — $slack you can miss';
+  }
+
+  @override
+  String challengePlanRate(String start, String end, String rate) {
+    return '$start to $end · about $rate a day';
+  }
+
+  @override
+  String challengePlanOpen(String start) {
+    return 'Starts $start · no deadline';
+  }
+
+  @override
+  String challengeTooTight(String target, String window) {
+    return '$target days can\'t fit in $window days — a streak counts one a day.';
+  }
 
   @override
   String challengeDurationLabel(int count) {
@@ -1305,10 +1361,10 @@ class AppLocalizationsEn extends AppLocalizations {
   String get challengeGroupGoal => 'The goal';
 
   @override
-  String get challengeGroupCounts => 'What counts';
+  String get challengeGroupShape => 'Shape';
 
   @override
-  String get challengeGroupTime => 'Time';
+  String get challengeGroupPlan => 'The plan';
 
   @override
   String get challengeGroupReminders => 'Reminders';

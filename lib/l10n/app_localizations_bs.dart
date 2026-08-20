@@ -1169,13 +1169,21 @@ class AppLocalizationsBs extends AppLocalizations {
       'Izbrisati ovaj izazov i sav zabilježeni napredak?';
 
   @override
-  String get challengeModeLabel => 'Šta brojite?';
+  String get challengeShapeQuestion => 'Kakva je vrsta ovog izazova?';
 
   @override
-  String get challengeModeCount => 'Ukupan zbir';
+  String get challengeShapeTotal => 'Ukupan cilj';
 
   @override
-  String get challengeModeDays => 'Ispunjeni dani';
+  String get challengeShapeTotalBody =>
+      '1000 salavata, 30 džuzova. Bilježite količine i one se sabiraju.';
+
+  @override
+  String get challengeShapeStreak => 'Niz iz dana u dan';
+
+  @override
+  String get challengeShapeStreakBody =>
+      'Tehedždžud, sabah u džematu. Jedna oznaka dnevno, količina nije važna.';
 
   @override
   String get challengeTargetLabel => 'Cilj';
@@ -1190,19 +1198,67 @@ class AppLocalizationsBs extends AppLocalizations {
   String get challengeUnitHint => 'rekat, stranica, puta';
 
   @override
-  String get challengeStepLabel => 'Jedan dodir bilježi';
+  String get challengeOneTapAdds => 'Jedan dodir dodaje';
 
   @override
-  String get challengeWindowLabel => 'Koliko vremena imate?';
+  String get challengeHowManyDays => 'Koliko dana?';
+
+  @override
+  String get challengeReachHowMuch => 'Do koje količine?';
+
+  @override
+  String get challengeSpreadOver => 'Raspoređeno na';
+
+  @override
+  String get challengeSpreadEveryDay => 'Svaki dan';
+
+  @override
+  String get challengeSpreadLonger => 'Duži rok';
+
+  @override
+  String get challengeByWhen => 'Do kada?';
 
   @override
   String get challengeWindowDuration => 'U roku od';
 
   @override
-  String get challengeWindowDates => 'Između dva datuma';
+  String get challengeByDate => 'Do datuma';
 
   @override
-  String get challengeWindowNone => 'Bez ograničenja';
+  String challengePlanRange(String start, String end) {
+    return '$start do $end';
+  }
+
+  @override
+  String challengePlanExact(String start, String end) {
+    return '$start do $end · jedan dnevno, svaki dan';
+  }
+
+  @override
+  String challengePlanSlack(
+    String start,
+    String end,
+    String target,
+    String window,
+    String slack,
+  ) {
+    return '$start do $end · $target od $window dana — $slack možete propustiti';
+  }
+
+  @override
+  String challengePlanRate(String start, String end, String rate) {
+    return '$start do $end · oko $rate dnevno';
+  }
+
+  @override
+  String challengePlanOpen(String start) {
+    return 'Počinje $start · bez roka';
+  }
+
+  @override
+  String challengeTooTight(String target, String window) {
+    return '$target dana ne može stati u $window dana — niz računa jedan dnevno.';
+  }
 
   @override
   String challengeDurationLabel(int count) {
@@ -1312,10 +1368,10 @@ class AppLocalizationsBs extends AppLocalizations {
   String get challengeGroupGoal => 'Vaš cilj';
 
   @override
-  String get challengeGroupCounts => 'Šta se broji';
+  String get challengeGroupShape => 'Vrsta';
 
   @override
-  String get challengeGroupTime => 'Vrijeme';
+  String get challengeGroupPlan => 'Plan';
 
   @override
   String get challengeGroupReminders => 'Podsjetnici';

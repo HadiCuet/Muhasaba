@@ -1162,13 +1162,21 @@ class AppLocalizationsKk extends AppLocalizations {
       'Бұл мақсат пен оның барлық белгіленген нәтижесі жойылсын ба?';
 
   @override
-  String get challengeModeLabel => 'Нені санайсыз?';
+  String get challengeShapeQuestion => 'Бұл қандай мақсат?';
 
   @override
-  String get challengeModeCount => 'Жиналған саны';
+  String get challengeShapeTotal => 'Жететін жалпы сан';
 
   @override
-  String get challengeModeDays => 'Орындалған күндер';
+  String get challengeShapeTotalBody =>
+      '1000 салауат, 30 жүз. Санын жазасыз, ол жинала береді.';
+
+  @override
+  String get challengeShapeStreak => 'Күн сайынғы жүйелілік';
+
+  @override
+  String get challengeShapeStreakBody =>
+      'Тәһәжжуд, жамағатпен бамдат. Күніне бір белгі, саны маңызды емес.';
 
   @override
   String get challengeTargetLabel => 'Межелі сан';
@@ -1183,19 +1191,67 @@ class AppLocalizationsKk extends AppLocalizations {
   String get challengeUnitHint => 'рәкат, бет, рет';
 
   @override
-  String get challengeStepLabel => 'Бір басу қосады';
+  String get challengeOneTapAdds => 'Бір басу қосады';
 
   @override
-  String get challengeWindowLabel => 'Қанша уақытыңыз бар?';
+  String get challengeHowManyDays => 'Қанша күн?';
+
+  @override
+  String get challengeReachHowMuch => 'Қанша жинау керек?';
+
+  @override
+  String get challengeSpreadOver => 'Қанша күнге таратылады';
+
+  @override
+  String get challengeSpreadEveryDay => 'Күн сайын';
+
+  @override
+  String get challengeSpreadLonger => 'Ұзақ мерзім';
+
+  @override
+  String get challengeByWhen => 'Қашанға дейін?';
 
   @override
   String get challengeWindowDuration => 'Мерзім';
 
   @override
-  String get challengeWindowDates => 'Нақты күндер';
+  String get challengeByDate => 'Белгілі күнге';
 
   @override
-  String get challengeWindowNone => 'Уақыт шегі жоқ';
+  String challengePlanRange(String start, String end) {
+    return '$start – $end';
+  }
+
+  @override
+  String challengePlanExact(String start, String end) {
+    return '$start – $end · күніне бір, күн сайын';
+  }
+
+  @override
+  String challengePlanSlack(
+    String start,
+    String end,
+    String target,
+    String window,
+    String slack,
+  ) {
+    return '$start – $end · $window күннің $target — $slack өткізіп алуға болады';
+  }
+
+  @override
+  String challengePlanRate(String start, String end, String rate) {
+    return '$start – $end · күніне шамамен $rate';
+  }
+
+  @override
+  String challengePlanOpen(String start) {
+    return '$start басталады · мерзімсіз';
+  }
+
+  @override
+  String challengeTooTight(String target, String window) {
+    return '$target күн $window күнге сыймайды — жүйелілік күніне бірді санайды.';
+  }
 
   @override
   String challengeDurationLabel(int count) {
@@ -1301,10 +1357,10 @@ class AppLocalizationsKk extends AppLocalizations {
   String get challengeGroupGoal => 'Мақсат';
 
   @override
-  String get challengeGroupCounts => 'Не саналады';
+  String get challengeGroupShape => 'Түрі';
 
   @override
-  String get challengeGroupTime => 'Уақыт';
+  String get challengeGroupPlan => 'Жоспар';
 
   @override
   String get challengeGroupReminders => 'Еске салу';

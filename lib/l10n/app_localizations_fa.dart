@@ -1160,13 +1160,21 @@ class AppLocalizationsFa extends AppLocalizations {
       'این چالش و همهٔ پیشرفت ثبت‌شدهٔ آن حذف شود؟';
 
   @override
-  String get challengeModeLabel => 'چه چیزی را می‌شمارید؟';
+  String get challengeShapeQuestion => 'این چالش از چه نوعی است؟';
 
   @override
-  String get challengeModeCount => 'جمع کل';
+  String get challengeShapeTotal => 'رسیدن به یک مجموع';
 
   @override
-  String get challengeModeDays => 'روزهای انجام‌شده';
+  String get challengeShapeTotalBody =>
+      '۱۰۰۰ صلوات، ۳۰ جزء. مقدار را ثبت می‌کنید و جمع می‌شود.';
+
+  @override
+  String get challengeShapeStreak => 'استمرار روزانه';
+
+  @override
+  String get challengeShapeStreakBody =>
+      'تهجد، نماز صبح به جماعت. روزی یک علامت، مقدار مهم نیست.';
 
   @override
   String get challengeTargetLabel => 'هدف';
@@ -1181,19 +1189,67 @@ class AppLocalizationsFa extends AppLocalizations {
   String get challengeUnitHint => 'رکعت، صفحه، بار';
 
   @override
-  String get challengeStepLabel => 'هر ضربه ثبت می‌کند';
+  String get challengeOneTapAdds => 'هر ضربه اضافه می‌کند';
 
   @override
-  String get challengeWindowLabel => 'چقدر زمان دارید؟';
+  String get challengeHowManyDays => 'چند روز؟';
+
+  @override
+  String get challengeReachHowMuch => 'به چه مقدار؟';
+
+  @override
+  String get challengeSpreadOver => 'پخش‌شده در';
+
+  @override
+  String get challengeSpreadEveryDay => 'هر روز';
+
+  @override
+  String get challengeSpreadLonger => 'مدت بیشتر';
+
+  @override
+  String get challengeByWhen => 'تا چه زمانی؟';
 
   @override
   String get challengeWindowDuration => 'در مدت';
 
   @override
-  String get challengeWindowDates => 'بین دو تاریخ';
+  String get challengeByDate => 'تا تاریخ معین';
 
   @override
-  String get challengeWindowNone => 'بدون محدودیت زمانی';
+  String challengePlanRange(String start, String end) {
+    return 'از $start تا $end';
+  }
+
+  @override
+  String challengePlanExact(String start, String end) {
+    return 'از $start تا $end · روزی یکی، هر روز';
+  }
+
+  @override
+  String challengePlanSlack(
+    String start,
+    String end,
+    String target,
+    String window,
+    String slack,
+  ) {
+    return 'از $start تا $end · $target از $window روز — $slack روز را می‌توانید از دست بدهید';
+  }
+
+  @override
+  String challengePlanRate(String start, String end, String rate) {
+    return 'از $start تا $end · روزی حدود $rate';
+  }
+
+  @override
+  String challengePlanOpen(String start) {
+    return 'شروع $start · بدون مهلت';
+  }
+
+  @override
+  String challengeTooTight(String target, String window) {
+    return '$target روز در $window روز جا نمی‌شود — استمرار روزی یکی حساب می‌شود.';
+  }
 
   @override
   String challengeDurationLabel(int count) {
@@ -1301,10 +1357,10 @@ class AppLocalizationsFa extends AppLocalizations {
   String get challengeGroupGoal => 'هدف شما';
 
   @override
-  String get challengeGroupCounts => 'آنچه شمرده می‌شود';
+  String get challengeGroupShape => 'نوع';
 
   @override
-  String get challengeGroupTime => 'زمان';
+  String get challengeGroupPlan => 'برنامه';
 
   @override
   String get challengeGroupReminders => 'یادآوری‌ها';

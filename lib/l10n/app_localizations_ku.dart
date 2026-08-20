@@ -1166,13 +1166,21 @@ class AppLocalizationsKu extends AppLocalizations {
       'Ev armanc û hemû pêşketina tomarkirî jê bên birin?';
 
   @override
-  String get challengeModeLabel => 'Tu çi dijmêrî?';
+  String get challengeShapeQuestion => 'Ev çi cure armanc e?';
 
   @override
-  String get challengeModeCount => 'Hejmara giştî';
+  String get challengeShapeTotal => 'Hejmareke ku bigihîjî';
 
   @override
-  String get challengeModeDays => 'Rojên temamkirî';
+  String get challengeShapeTotalBody =>
+      '1000 salawat, 30 cuz. Tu hejmaran tomar dikî û ew kom dibin.';
+
+  @override
+  String get challengeShapeStreak => 'Domandina rojane';
+
+  @override
+  String get challengeShapeStreakBody =>
+      'Teheccud, sibê bi cemaet. Rojê nîşanek, hejmar ne girîng e.';
 
   @override
   String get challengeTargetLabel => 'Hedef';
@@ -1187,19 +1195,67 @@ class AppLocalizationsKu extends AppLocalizations {
   String get challengeUnitHint => 'rekat, rûpel, car';
 
   @override
-  String get challengeStepLabel => 'Yek tikandin zêde dike';
+  String get challengeOneTapAdds => 'Yek tikandin zêde dike';
 
   @override
-  String get challengeWindowLabel => 'Çiqas wextê te heye?';
+  String get challengeHowManyDays => 'Çend roj?';
+
+  @override
+  String get challengeReachHowMuch => 'Çiqas bigihîje?';
+
+  @override
+  String get challengeSpreadOver => 'Belavkirî di';
+
+  @override
+  String get challengeSpreadEveryDay => 'Her roj';
+
+  @override
+  String get challengeSpreadLonger => 'Maweyeke dirêjtir';
+
+  @override
+  String get challengeByWhen => 'Heta kengî?';
 
   @override
   String get challengeWindowDuration => 'Mawe';
 
   @override
-  String get challengeWindowDates => 'Dîrokên diyar';
+  String get challengeByDate => 'Heta dîrokek';
 
   @override
-  String get challengeWindowNone => 'Bê sînorê demê';
+  String challengePlanRange(String start, String end) {
+    return '$start heta $end';
+  }
+
+  @override
+  String challengePlanExact(String start, String end) {
+    return '$start heta $end · rojê yek, her roj';
+  }
+
+  @override
+  String challengePlanSlack(
+    String start,
+    String end,
+    String target,
+    String window,
+    String slack,
+  ) {
+    return '$start heta $end · $target ji $window rojan — $slack dikarî bihêlî';
+  }
+
+  @override
+  String challengePlanRate(String start, String end, String rate) {
+    return '$start heta $end · rojê nêzîkî $rate';
+  }
+
+  @override
+  String challengePlanOpen(String start) {
+    return '$start dest pê dike · bê sînor';
+  }
+
+  @override
+  String challengeTooTight(String target, String window) {
+    return '$target roj di $window rojan de cih nagire — domandin rojê yek dijmêre.';
+  }
 
   @override
   String challengeDurationLabel(int count) {
@@ -1307,10 +1363,10 @@ class AppLocalizationsKu extends AppLocalizations {
   String get challengeGroupGoal => 'Armanc';
 
   @override
-  String get challengeGroupCounts => 'Çi tê jimartin';
+  String get challengeGroupShape => 'Cure';
 
   @override
-  String get challengeGroupTime => 'Dem';
+  String get challengeGroupPlan => 'Plan';
 
   @override
   String get challengeGroupReminders => 'Bîranîn';

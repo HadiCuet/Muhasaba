@@ -1165,13 +1165,21 @@ class AppLocalizationsTg extends AppLocalizations {
       'Ин мақсад ва тамоми пешрафти сабтшудаи он ҳазф шавад?';
 
   @override
-  String get challengeModeLabel => 'Чиро мешуморед?';
+  String get challengeShapeQuestion => 'Ин чӣ навъ мақсад аст?';
 
   @override
-  String get challengeModeCount => 'Миқдори умумӣ';
+  String get challengeShapeTotal => 'Миқдори умумии расиданӣ';
 
   @override
-  String get challengeModeDays => 'Рӯзҳои иҷрошуда';
+  String get challengeShapeTotalBody =>
+      '1000 салавот, 30 ҷузъ. Миқдорро сабт мекунед ва он ҷамъ мешавад.';
+
+  @override
+  String get challengeShapeStreak => 'Идомаи ҳарруза';
+
+  @override
+  String get challengeShapeStreakBody =>
+      'Таҳаҷҷуд, бомдод бо ҷамоат. Рӯзе як нишона, миқдор муҳим нест.';
 
   @override
   String get challengeTargetLabel => 'Ҳадаф';
@@ -1186,19 +1194,67 @@ class AppLocalizationsTg extends AppLocalizations {
   String get challengeUnitHint => 'ракъат, саҳифа, маротиба';
 
   @override
-  String get challengeStepLabel => 'Як пахш илова мекунад';
+  String get challengeOneTapAdds => 'Як пахш илова мекунад';
 
   @override
-  String get challengeWindowLabel => 'Чанд вақт доред?';
+  String get challengeHowManyDays => 'Чанд рӯз?';
+
+  @override
+  String get challengeReachHowMuch => 'То чӣ миқдор?';
+
+  @override
+  String get challengeSpreadOver => 'Паҳн дар';
+
+  @override
+  String get challengeSpreadEveryDay => 'Ҳар рӯз';
+
+  @override
+  String get challengeSpreadLonger => 'Мӯҳлати дарозтар';
+
+  @override
+  String get challengeByWhen => 'То кай?';
 
   @override
   String get challengeWindowDuration => 'Мӯҳлати муайян';
 
   @override
-  String get challengeWindowDates => 'Санаҳои мушаххас';
+  String get challengeByDate => 'То санаи муайян';
 
   @override
-  String get challengeWindowNone => 'Бе маҳдудияти вақт';
+  String challengePlanRange(String start, String end) {
+    return '$start то $end';
+  }
+
+  @override
+  String challengePlanExact(String start, String end) {
+    return '$start то $end · рӯзе як, ҳар рӯз';
+  }
+
+  @override
+  String challengePlanSlack(
+    String start,
+    String end,
+    String target,
+    String window,
+    String slack,
+  ) {
+    return '$start то $end · $target аз $window рӯз — $slack рӯзро гузаронда метавонед';
+  }
+
+  @override
+  String challengePlanRate(String start, String end, String rate) {
+    return '$start то $end · рӯзе тақрибан $rate';
+  }
+
+  @override
+  String challengePlanOpen(String start) {
+    return '$start оғоз мешавад · бемуҳлат';
+  }
+
+  @override
+  String challengeTooTight(String target, String window) {
+    return '$target рӯз дар $window рӯз ҷой намешавад — идома рӯзе якро мешуморад.';
+  }
 
   @override
   String challengeDurationLabel(int count) {
@@ -1306,10 +1362,10 @@ class AppLocalizationsTg extends AppLocalizations {
   String get challengeGroupGoal => 'Мақсад';
 
   @override
-  String get challengeGroupCounts => 'Чӣ ҳисоб мешавад';
+  String get challengeGroupShape => 'Навъ';
 
   @override
-  String get challengeGroupTime => 'Вақт';
+  String get challengeGroupPlan => 'Нақша';
 
   @override
   String get challengeGroupReminders => 'Ёдоварй';

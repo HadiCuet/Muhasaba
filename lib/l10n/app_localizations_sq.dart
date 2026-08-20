@@ -1169,13 +1169,21 @@ class AppLocalizationsSq extends AppLocalizations {
       'Të fshihet kjo sfidë dhe i gjithë progresi i regjistruar?';
 
   @override
-  String get challengeModeLabel => 'Çfarë po numëroni?';
+  String get challengeShapeQuestion => 'Çfarë lloj sfide është kjo?';
 
   @override
-  String get challengeModeCount => 'Sasi totale';
+  String get challengeShapeTotal => 'Një total për t\'u arritur';
 
   @override
-  String get challengeModeDays => 'Ditë të plotësuara';
+  String get challengeShapeTotalBody =>
+      '1000 salavate, 30 xhuze. Shënoni sasi dhe totali rritet.';
+
+  @override
+  String get challengeShapeStreak => 'Vazhdimësi ditë pas dite';
+
+  @override
+  String get challengeShapeStreakBody =>
+      'Tehexhud, sabahu me xhemat. Një shenjë në ditë, sasia nuk ka rëndësi.';
 
   @override
   String get challengeTargetLabel => 'Synimi';
@@ -1190,19 +1198,67 @@ class AppLocalizationsSq extends AppLocalizations {
   String get challengeUnitHint => 'rekate, faqe, herë';
 
   @override
-  String get challengeStepLabel => 'Një prekje shton';
+  String get challengeOneTapAdds => 'Një prekje shton';
 
   @override
-  String get challengeWindowLabel => 'Sa kohë keni?';
+  String get challengeHowManyDays => 'Sa ditë?';
+
+  @override
+  String get challengeReachHowMuch => 'Të arrihet sa?';
+
+  @override
+  String get challengeSpreadOver => 'Shpërndarë në';
+
+  @override
+  String get challengeSpreadEveryDay => 'Çdo ditë';
+
+  @override
+  String get challengeSpreadLonger => 'Një afat më i gjatë';
+
+  @override
+  String get challengeByWhen => 'Deri kur?';
 
   @override
   String get challengeWindowDuration => 'Përfundim brenda';
 
   @override
-  String get challengeWindowDates => 'Mes dy datave';
+  String get challengeByDate => 'Deri në një datë';
 
   @override
-  String get challengeWindowNone => 'Pa kufi kohor';
+  String challengePlanRange(String start, String end) {
+    return '$start deri $end';
+  }
+
+  @override
+  String challengePlanExact(String start, String end) {
+    return '$start deri $end · një në ditë, çdo ditë';
+  }
+
+  @override
+  String challengePlanSlack(
+    String start,
+    String end,
+    String target,
+    String window,
+    String slack,
+  ) {
+    return '$start deri $end · $target nga $window ditë — $slack mund t\'i humbni';
+  }
+
+  @override
+  String challengePlanRate(String start, String end, String rate) {
+    return '$start deri $end · rreth $rate në ditë';
+  }
+
+  @override
+  String challengePlanOpen(String start) {
+    return 'Fillon $start · pa afat';
+  }
+
+  @override
+  String challengeTooTight(String target, String window) {
+    return '$target ditë nuk hyjnë në $window ditë — vazhdimësia numëron një në ditë.';
+  }
 
   @override
   String challengeDurationLabel(int count) {
@@ -1310,10 +1366,10 @@ class AppLocalizationsSq extends AppLocalizations {
   String get challengeGroupGoal => 'Qëllimi';
 
   @override
-  String get challengeGroupCounts => 'Çfarë numërohet';
+  String get challengeGroupShape => 'Lloji';
 
   @override
-  String get challengeGroupTime => 'Koha';
+  String get challengeGroupPlan => 'Plani';
 
   @override
   String get challengeGroupReminders => 'Kujtesat';

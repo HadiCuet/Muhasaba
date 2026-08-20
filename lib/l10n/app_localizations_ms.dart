@@ -1168,13 +1168,21 @@ class AppLocalizationsMs extends AppLocalizations {
       'Padam cabaran ini dan semua kemajuan yang direkodkan?';
 
   @override
-  String get challengeModeLabel => 'Apa yang anda kira?';
+  String get challengeShapeQuestion => 'Apakah jenis cabaran ini?';
 
   @override
-  String get challengeModeCount => 'Jumlah terkumpul';
+  String get challengeShapeTotal => 'Jumlah yang hendak dicapai';
 
   @override
-  String get challengeModeDays => 'Hari selesai';
+  String get challengeShapeTotalBody =>
+      '1000 selawat, 30 juzuk. Anda catat kuantiti dan jumlahnya bertambah.';
+
+  @override
+  String get challengeShapeStreak => 'Rentetan harian';
+
+  @override
+  String get challengeShapeStreakBody =>
+      'Tahajud, Subuh berjemaah. Satu tanda sehari, kuantiti tidak penting.';
 
   @override
   String get challengeTargetLabel => 'Sasaran';
@@ -1189,19 +1197,67 @@ class AppLocalizationsMs extends AppLocalizations {
   String get challengeUnitHint => 'rakaat, muka surat, kali';
 
   @override
-  String get challengeStepLabel => 'Satu ketikan menambah';
+  String get challengeOneTapAdds => 'Satu ketikan menambah';
 
   @override
-  String get challengeWindowLabel => 'Berapa lama masa anda?';
+  String get challengeHowManyDays => 'Berapa hari?';
+
+  @override
+  String get challengeReachHowMuch => 'Capai berapa?';
+
+  @override
+  String get challengeSpreadOver => 'Tersebar dalam';
+
+  @override
+  String get challengeSpreadEveryDay => 'Setiap hari';
+
+  @override
+  String get challengeSpreadLonger => 'Tempoh lebih panjang';
+
+  @override
+  String get challengeByWhen => 'Sampai bila?';
 
   @override
   String get challengeWindowDuration => 'Selesai dalam';
 
   @override
-  String get challengeWindowDates => 'Antara dua tarikh';
+  String get challengeByDate => 'Sehingga tarikh';
 
   @override
-  String get challengeWindowNone => 'Tanpa had masa';
+  String challengePlanRange(String start, String end) {
+    return '$start hingga $end';
+  }
+
+  @override
+  String challengePlanExact(String start, String end) {
+    return '$start hingga $end · satu sehari, setiap hari';
+  }
+
+  @override
+  String challengePlanSlack(
+    String start,
+    String end,
+    String target,
+    String window,
+    String slack,
+  ) {
+    return '$start hingga $end · $target daripada $window hari — $slack boleh terlepas';
+  }
+
+  @override
+  String challengePlanRate(String start, String end, String rate) {
+    return '$start hingga $end · kira-kira $rate sehari';
+  }
+
+  @override
+  String challengePlanOpen(String start) {
+    return 'Mula $start · tanpa had masa';
+  }
+
+  @override
+  String challengeTooTight(String target, String window) {
+    return '$target hari tidak cukup dalam $window hari — rentetan dikira satu sehari.';
+  }
 
   @override
   String challengeDurationLabel(int count) {
@@ -1307,10 +1363,10 @@ class AppLocalizationsMs extends AppLocalizations {
   String get challengeGroupGoal => 'Matlamat';
 
   @override
-  String get challengeGroupCounts => 'Yang dikira';
+  String get challengeGroupShape => 'Jenis';
 
   @override
-  String get challengeGroupTime => 'Masa';
+  String get challengeGroupPlan => 'Rancangan';
 
   @override
   String get challengeGroupReminders => 'Peringatan';

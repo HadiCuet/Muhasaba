@@ -1164,13 +1164,21 @@ class AppLocalizationsSw extends AppLocalizations {
       'Ufute lengo hili na maendeleo yote yaliyorekodiwa?';
 
   @override
-  String get challengeModeLabel => 'Unahesabu nini?';
+  String get challengeShapeQuestion => 'Hili ni lengo la aina gani?';
 
   @override
-  String get challengeModeCount => 'Jumla ya kiasi';
+  String get challengeShapeTotal => 'Jumla ya kufikia';
 
   @override
-  String get challengeModeDays => 'Siku zilizokamilika';
+  String get challengeShapeTotalBody =>
+      'Salawat 1000, juzuu 30. Unaandika kiasi na jumla inaongezeka.';
+
+  @override
+  String get challengeShapeStreak => 'Mfululizo wa kila siku';
+
+  @override
+  String get challengeShapeStreakBody =>
+      'Tahajjud, Alfajiri kwa jamaa. Alama moja kwa siku, kiasi hakijalishi.';
 
   @override
   String get challengeTargetLabel => 'Shabaha';
@@ -1185,19 +1193,67 @@ class AppLocalizationsSw extends AppLocalizations {
   String get challengeUnitHint => 'rakaa, kurasa, mara';
 
   @override
-  String get challengeStepLabel => 'Mgusa mmoja huongeza';
+  String get challengeOneTapAdds => 'Mgusa mmoja huongeza';
 
   @override
-  String get challengeWindowLabel => 'Una muda gani?';
+  String get challengeHowManyDays => 'Siku ngapi?';
+
+  @override
+  String get challengeReachHowMuch => 'Kufikia kiasi gani?';
+
+  @override
+  String get challengeSpreadOver => 'Kusambazwa katika';
+
+  @override
+  String get challengeSpreadEveryDay => 'Kila siku';
+
+  @override
+  String get challengeSpreadLonger => 'Muda mrefu zaidi';
+
+  @override
+  String get challengeByWhen => 'Hadi lini?';
 
   @override
   String get challengeWindowDuration => 'Kipindi maalum';
 
   @override
-  String get challengeWindowDates => 'Kati ya tarehe mbili';
+  String get challengeByDate => 'Hadi tarehe';
 
   @override
-  String get challengeWindowNone => 'Bila kikomo cha muda';
+  String challengePlanRange(String start, String end) {
+    return '$start hadi $end';
+  }
+
+  @override
+  String challengePlanExact(String start, String end) {
+    return '$start hadi $end · moja kwa siku, kila siku';
+  }
+
+  @override
+  String challengePlanSlack(
+    String start,
+    String end,
+    String target,
+    String window,
+    String slack,
+  ) {
+    return '$start hadi $end · $target kati ya siku $window — $slack unaweza kukosa';
+  }
+
+  @override
+  String challengePlanRate(String start, String end, String rate) {
+    return '$start hadi $end · takriban $rate kwa siku';
+  }
+
+  @override
+  String challengePlanOpen(String start) {
+    return 'Huanza $start · bila muda';
+  }
+
+  @override
+  String challengeTooTight(String target, String window) {
+    return 'Siku $target haziingii katika siku $window — mfululizo huhesabu moja kwa siku.';
+  }
 
   @override
   String challengeDurationLabel(int count) {
@@ -1305,10 +1361,10 @@ class AppLocalizationsSw extends AppLocalizations {
   String get challengeGroupGoal => 'Lengo';
 
   @override
-  String get challengeGroupCounts => 'Kinachohesabiwa';
+  String get challengeGroupShape => 'Aina';
 
   @override
-  String get challengeGroupTime => 'Muda';
+  String get challengeGroupPlan => 'Mpango';
 
   @override
   String get challengeGroupReminders => 'Vikumbusho';

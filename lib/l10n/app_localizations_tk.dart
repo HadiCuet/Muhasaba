@@ -1162,13 +1162,21 @@ class AppLocalizationsTk extends AppLocalizations {
       'Bu maksat we onuň ähli bellenen öňegidişligi pozulsynmy?';
 
   @override
-  String get challengeModeLabel => 'Nämäni sanaýarsyňyz?';
+  String get challengeShapeQuestion => 'Bu nähili maksat?';
 
   @override
-  String get challengeModeCount => 'Umumy mukdar';
+  String get challengeShapeTotal => 'Ýetilmeli umumy san';
 
   @override
-  String get challengeModeDays => 'Tamamlanan günler';
+  String get challengeShapeTotalBody =>
+      '1000 salawat, 30 jüz. Mukdary ýazýarsyňyz, ol jemlenýär.';
+
+  @override
+  String get challengeShapeStreak => 'Her günki dowamlylyk';
+
+  @override
+  String get challengeShapeStreakBody =>
+      'Tähejjüd, jemagat bilen ertir namazy. Günde bir bellik, mukdar wajyp däl.';
 
   @override
   String get challengeTargetLabel => 'Maksat sany';
@@ -1183,19 +1191,67 @@ class AppLocalizationsTk extends AppLocalizations {
   String get challengeUnitHint => 'rekagat, sahypa, gezek';
 
   @override
-  String get challengeStepLabel => 'Bir basyş goşýar';
+  String get challengeOneTapAdds => 'Bir basyş goşýar';
 
   @override
-  String get challengeWindowLabel => 'Näçe wagtyňyz bar?';
+  String get challengeHowManyDays => 'Näçe gün?';
+
+  @override
+  String get challengeReachHowMuch => 'Näçä ýetmeli?';
+
+  @override
+  String get challengeSpreadOver => 'Ýaýradylan möhlet';
+
+  @override
+  String get challengeSpreadEveryDay => 'Her gün';
+
+  @override
+  String get challengeSpreadLonger => 'Uzyn möhlet';
+
+  @override
+  String get challengeByWhen => 'Haçana çenli?';
 
   @override
   String get challengeWindowDuration => 'Bellenen möhlet';
 
   @override
-  String get challengeWindowDates => 'Anyk seneler';
+  String get challengeByDate => 'Belli senä çenli';
 
   @override
-  String get challengeWindowNone => 'Wagt çägi ýok';
+  String challengePlanRange(String start, String end) {
+    return '$start – $end';
+  }
+
+  @override
+  String challengePlanExact(String start, String end) {
+    return '$start – $end · günde bir, her gün';
+  }
+
+  @override
+  String challengePlanSlack(
+    String start,
+    String end,
+    String target,
+    String window,
+    String slack,
+  ) {
+    return '$start – $end · $window günüň $target — $slack sypdyryp bilersiňiz';
+  }
+
+  @override
+  String challengePlanRate(String start, String end, String rate) {
+    return '$start – $end · günde takmynan $rate';
+  }
+
+  @override
+  String challengePlanOpen(String start) {
+    return '$start başlaýar · möhletsiz';
+  }
+
+  @override
+  String challengeTooTight(String target, String window) {
+    return '$target gün $window güne sygmaýar — dowamlylyk günde biri hasaplaýar.';
+  }
 
   @override
   String challengeDurationLabel(int count) {
@@ -1301,10 +1357,10 @@ class AppLocalizationsTk extends AppLocalizations {
   String get challengeGroupGoal => 'Maksat';
 
   @override
-  String get challengeGroupCounts => 'Näme sanalýar';
+  String get challengeGroupShape => 'Görnüşi';
 
   @override
-  String get challengeGroupTime => 'Wagt';
+  String get challengeGroupPlan => 'Meýilnama';
 
   @override
   String get challengeGroupReminders => 'Yatlatmalar';

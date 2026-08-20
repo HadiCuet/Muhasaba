@@ -101,9 +101,23 @@ class ChallengePreviewCard extends StatelessWidget {
           ),
           // `computePace` reports a zero target as `reached`, so a form the
           // user has not filled in yet would otherwise greet them with it.
-          if (target > 0) ...[
+          if (target > 0 || endExclusive != null) ...[
             const SizedBox(height: 8),
-            _paceChip(context, l, theme, pace),
+            Wrap(
+              spacing: 6,
+              runSpacing: 6,
+              children: [
+                if (target > 0) _paceChip(context, l, theme, pace),
+                if (endExclusive != null)
+                  _chip(
+                    theme,
+                    '${l.challengeEndDate} '
+                    '${_lastDay(context, endExclusive!)}',
+                    scheme.surfaceContainerHigh,
+                    scheme.onSurfaceVariant,
+                  ),
+              ],
+            ),
           ],
         ],
       ),
@@ -145,19 +159,39 @@ class ChallengePreviewCard extends StatelessWidget {
       ),
     };
 
+    return _chip(theme, chip, chipBg, chipFg);
+  }
+
+  Widget _chip(
+    ThemeData theme,
+    String text,
+    Color background,
+    Color foreground,
+  ) {
     return Container(
       padding: const EdgeInsetsDirectional.symmetric(
         horizontal: 8,
         vertical: 3,
       ),
       decoration: BoxDecoration(
-        color: chipBg,
+        color: background,
         borderRadius: BorderRadius.circular(99),
       ),
       child: Text(
-        chip,
-        style: theme.textTheme.labelSmall?.copyWith(color: chipFg),
+        text,
+        style: theme.textTheme.labelSmall?.copyWith(color: foreground),
       ),
+    );
+  }
+
+  String _lastDay(BuildContext context, DateTime endExclusive) {
+    final locale = Localizations.localeOf(context).toString();
+    return localizeDigits(
+      context,
+      safeDateFormat(
+        'MMM d',
+        locale,
+      ).format(endExclusive.subtract(const Duration(days: 1))),
     );
   }
 }

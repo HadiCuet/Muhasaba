@@ -1169,13 +1169,21 @@ class AppLocalizationsUz extends AppLocalizations {
       'Bu maqsad va uning barcha qayd etilgan natijalari o\'chirilsinmi?';
 
   @override
-  String get challengeModeLabel => 'Nimani sanayapsiz?';
+  String get challengeShapeQuestion => 'Bu qanday maqsad?';
 
   @override
-  String get challengeModeCount => 'Umumiy miqdor';
+  String get challengeShapeTotal => 'Yetib boriladigan umumiy son';
 
   @override
-  String get challengeModeDays => 'Bajarilgan kunlar';
+  String get challengeShapeTotalBody =>
+      '1000 salavot, 30 juz. Miqdorni yozasiz va u to\'planadi.';
+
+  @override
+  String get challengeShapeStreak => 'Kunlik davomiylik';
+
+  @override
+  String get challengeShapeStreakBody =>
+      'Tahajjud, jamoat bilan bomdod. Kuniga bitta belgi, miqdor muhim emas.';
 
   @override
   String get challengeTargetLabel => 'Maqsad soni';
@@ -1190,19 +1198,67 @@ class AppLocalizationsUz extends AppLocalizations {
   String get challengeUnitHint => 'rakat, sahifa, marta';
 
   @override
-  String get challengeStepLabel => 'Bir bosishda qo\'shiladi';
+  String get challengeOneTapAdds => 'Bir bosishda qo\'shiladi';
 
   @override
-  String get challengeWindowLabel => 'Qancha vaqtingiz bor?';
+  String get challengeHowManyDays => 'Necha kun?';
+
+  @override
+  String get challengeReachHowMuch => 'Qanchaga yetish kerak?';
+
+  @override
+  String get challengeSpreadOver => 'Qancha kunga taqsimlanadi';
+
+  @override
+  String get challengeSpreadEveryDay => 'Har kuni';
+
+  @override
+  String get challengeSpreadLonger => 'Uzoqroq muddat';
+
+  @override
+  String get challengeByWhen => 'Qachonga qadar?';
 
   @override
   String get challengeWindowDuration => 'Belgilangan muddat';
 
   @override
-  String get challengeWindowDates => 'Aniq sanalar';
+  String get challengeByDate => 'Belgilangan sanaga';
 
   @override
-  String get challengeWindowNone => 'Vaqt chegarasi yo\'q';
+  String challengePlanRange(String start, String end) {
+    return '$start – $end';
+  }
+
+  @override
+  String challengePlanExact(String start, String end) {
+    return '$start – $end · kuniga bitta, har kuni';
+  }
+
+  @override
+  String challengePlanSlack(
+    String start,
+    String end,
+    String target,
+    String window,
+    String slack,
+  ) {
+    return '$start – $end · $window kundan $target — $slack tashlab ketishingiz mumkin';
+  }
+
+  @override
+  String challengePlanRate(String start, String end, String rate) {
+    return '$start – $end · kuniga taxminan $rate';
+  }
+
+  @override
+  String challengePlanOpen(String start) {
+    return '$start dan boshlanadi · muddatsiz';
+  }
+
+  @override
+  String challengeTooTight(String target, String window) {
+    return '$target kun $window kunga sig\'maydi — davomiylik kuniga bittani hisoblaydi.';
+  }
 
   @override
   String challengeDurationLabel(int count) {
@@ -1308,10 +1364,10 @@ class AppLocalizationsUz extends AppLocalizations {
   String get challengeGroupGoal => 'Maqsad';
 
   @override
-  String get challengeGroupCounts => 'Nima sanaladi';
+  String get challengeGroupShape => 'Turi';
 
   @override
-  String get challengeGroupTime => 'Vaqt';
+  String get challengeGroupPlan => 'Reja';
 
   @override
   String get challengeGroupReminders => 'Eslatmalar';

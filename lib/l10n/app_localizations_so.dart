@@ -1172,13 +1172,21 @@ class AppLocalizationsSo extends AppLocalizations {
       'Ma tirtiraysaa yoolkan iyo dhammaan horumarkii la diiwaangeliyay?';
 
   @override
-  String get challengeModeLabel => 'Maxaad tirinaysaa?';
+  String get challengeShapeQuestion => 'Waa yool noocee?';
 
   @override
-  String get challengeModeCount => 'Wadar guud';
+  String get challengeShapeTotal => 'Wadar la gaarayo';
 
   @override
-  String get challengeModeDays => 'Maalmo la dhammeeyay';
+  String get challengeShapeTotalBody =>
+      '1000 salawaat, 30 juz. Waxaad qoraysaa tirooyin oo way isku darsamaan.';
+
+  @override
+  String get challengeShapeStreak => 'Xidhitaan maalin kasta';
+
+  @override
+  String get challengeShapeStreakBody =>
+      'Tahajjud, Subax jamaacada. Hal calaamad maalintii, tirada muhiim ma aha.';
 
   @override
   String get challengeTargetLabel => 'Bartilmaameed';
@@ -1193,19 +1201,67 @@ class AppLocalizationsSo extends AppLocalizations {
   String get challengeUnitHint => 'rakcad, bog, jeer';
 
   @override
-  String get challengeStepLabel => 'Hal taabasho way ku dartaa';
+  String get challengeOneTapAdds => 'Hal taabasho way ku dartaa';
 
   @override
-  String get challengeWindowLabel => 'Waqti intee le\'eg ayaad haysataa?';
+  String get challengeHowManyDays => 'Immisa maalin?';
+
+  @override
+  String get challengeReachHowMuch => 'Immisa la gaarayo?';
+
+  @override
+  String get challengeSpreadOver => 'Loo qaybiyay';
+
+  @override
+  String get challengeSpreadEveryDay => 'Maalin kasta';
+
+  @override
+  String get challengeSpreadLonger => 'Muddo dheer';
+
+  @override
+  String get challengeByWhen => 'Ilaa goorma?';
 
   @override
   String get challengeWindowDuration => 'Muddo go\'an';
 
   @override
-  String get challengeWindowDates => 'Laba taariikh dhexdood';
+  String get challengeByDate => 'Ilaa taariikh';
 
   @override
-  String get challengeWindowNone => 'Xad waqti ma leh';
+  String challengePlanRange(String start, String end) {
+    return '$start ilaa $end';
+  }
+
+  @override
+  String challengePlanExact(String start, String end) {
+    return '$start ilaa $end · mid maalintii, maalin kasta';
+  }
+
+  @override
+  String challengePlanSlack(
+    String start,
+    String end,
+    String target,
+    String window,
+    String slack,
+  ) {
+    return '$start ilaa $end · $target ka $window maalmood — $slack waad ka tegi kartaa';
+  }
+
+  @override
+  String challengePlanRate(String start, String end, String rate) {
+    return '$start ilaa $end · qiyaastii $rate maalintii';
+  }
+
+  @override
+  String challengePlanOpen(String start) {
+    return 'Wuxuu bilaabmayaa $start · muddo ma leh';
+  }
+
+  @override
+  String challengeTooTight(String target, String window) {
+    return '$target maalmood kuma habboona $window maalmood — xidhitaanku wuxuu tirinayaa mid maalintii.';
+  }
 
   @override
   String challengeDurationLabel(int count) {
@@ -1313,10 +1369,10 @@ class AppLocalizationsSo extends AppLocalizations {
   String get challengeGroupGoal => 'Yoolka';
 
   @override
-  String get challengeGroupCounts => 'Waxa la tirinayo';
+  String get challengeGroupShape => 'Nooca';
 
   @override
-  String get challengeGroupTime => 'Waqtiga';
+  String get challengeGroupPlan => 'Qorshaha';
 
   @override
   String get challengeGroupReminders => 'Xusuusinta';

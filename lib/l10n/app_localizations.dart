@@ -2096,23 +2096,35 @@ abstract class AppLocalizations {
   /// **'Delete this challenge and all its logged progress?'**
   String get deleteChallengeConfirm;
 
-  /// Form field label for the challenge mode selector
+  /// Form question above the two challenge-shape cards
   ///
   /// In en, this message translates to:
-  /// **'What are you counting?'**
-  String get challengeModeLabel;
+  /// **'What kind of challenge is this?'**
+  String get challengeShapeQuestion;
 
-  /// Challenge mode: a cumulative running total, e.g. 20 rakah
+  /// Challenge shape: a cumulative total, e.g. 1000 salawat
   ///
   /// In en, this message translates to:
-  /// **'A running total'**
-  String get challengeModeCount;
+  /// **'A total to reach'**
+  String get challengeShapeTotal;
 
-  /// Challenge mode: number of days completed, one check-in per day
+  /// Explanatory line under the 'a total to reach' shape card
   ///
   /// In en, this message translates to:
-  /// **'Days completed'**
-  String get challengeModeDays;
+  /// **'1000 salawat, 30 juz. You log amounts and it counts up.'**
+  String get challengeShapeTotalBody;
+
+  /// Challenge shape: one check-in per day, amount irrelevant
+  ///
+  /// In en, this message translates to:
+  /// **'A day-by-day streak'**
+  String get challengeShapeStreak;
+
+  /// Explanatory line under the 'day-by-day streak' shape card
+  ///
+  /// In en, this message translates to:
+  /// **'Tahajjud, Fajr in jamaah. One tick a day, the amount doesn\'t matter.'**
+  String get challengeShapeStreakBody;
 
   /// Form field label for the number to reach
   ///
@@ -2138,17 +2150,47 @@ abstract class AppLocalizations {
   /// **'rakah, pages, times'**
   String get challengeUnitHint;
 
-  /// Form label above the chips choosing how much one tap of the stepper logs
+  /// Form label above the chips choosing how much one tap of the stepper adds
   ///
   /// In en, this message translates to:
-  /// **'One tap logs'**
-  String get challengeStepLabel;
+  /// **'One tap adds'**
+  String get challengeOneTapAdds;
 
-  /// Form section asking how much time the user has to finish
+  /// Form question for a streak challenge's day target
   ///
   /// In en, this message translates to:
-  /// **'How long do you have?'**
-  String get challengeWindowLabel;
+  /// **'How many days?'**
+  String get challengeHowManyDays;
+
+  /// Form question for a total challenge's amount and unit
+  ///
+  /// In en, this message translates to:
+  /// **'Reach how much?'**
+  String get challengeReachHowMuch;
+
+  /// Form label above the streak window selector
+  ///
+  /// In en, this message translates to:
+  /// **'Spread over'**
+  String get challengeSpreadOver;
+
+  /// Streak window option: the window equals the day target, so the streak must be kept every day
+  ///
+  /// In en, this message translates to:
+  /// **'Every day'**
+  String get challengeSpreadEveryDay;
+
+  /// Streak window option: allow more days than the target, so some can be missed
+  ///
+  /// In en, this message translates to:
+  /// **'A longer window'**
+  String get challengeSpreadLonger;
+
+  /// Form label above the total challenge's deadline selector
+  ///
+  /// In en, this message translates to:
+  /// **'By when?'**
+  String get challengeByWhen;
 
   /// Window type: finish within a number of days from the start
   ///
@@ -2156,17 +2198,53 @@ abstract class AppLocalizations {
   /// **'Finish within'**
   String get challengeWindowDuration;
 
-  /// Window type: an explicit start and end date
+  /// Deadline option: finish by an explicitly picked last day
   ///
   /// In en, this message translates to:
-  /// **'Between two dates'**
-  String get challengeWindowDates;
+  /// **'By a date'**
+  String get challengeByDate;
 
-  /// Window type: open-ended, no time limit
+  /// Resolved challenge window when there is no pace to report yet
   ///
   /// In en, this message translates to:
-  /// **'No time limit'**
-  String get challengeWindowNone;
+  /// **'{start} to {end}'**
+  String challengePlanRange(String start, String end);
+
+  /// Resolved plan for a streak whose window exactly matches its day target
+  ///
+  /// In en, this message translates to:
+  /// **'{start} to {end} · one a day, every day'**
+  String challengePlanExact(String start, String end);
+
+  /// Resolved plan for a streak with a window longer than its day target
+  ///
+  /// In en, this message translates to:
+  /// **'{start} to {end} · {target} of {window} days — {slack} you can miss'**
+  String challengePlanSlack(
+    String start,
+    String end,
+    String target,
+    String window,
+    String slack,
+  );
+
+  /// Resolved plan for a total challenge with a deadline
+  ///
+  /// In en, this message translates to:
+  /// **'{start} to {end} · about {rate} a day'**
+  String challengePlanRate(String start, String end, String rate);
+
+  /// Resolved plan for a challenge with no deadline
+  ///
+  /// In en, this message translates to:
+  /// **'Starts {start} · no deadline'**
+  String challengePlanOpen(String start);
+
+  /// Warning when a streak's day target exceeds its window
+  ///
+  /// In en, this message translates to:
+  /// **'{target} days can\'t fit in {window} days — a streak counts one a day.'**
+  String challengeTooTight(String target, String window);
 
   /// Length of the challenge window
   ///
@@ -2306,17 +2384,17 @@ abstract class AppLocalizations {
   /// **'The goal'**
   String get challengeGroupGoal;
 
-  /// Form group header: what is tallied and by how much
+  /// Form group header: which kind of challenge this is
   ///
   /// In en, this message translates to:
-  /// **'What counts'**
-  String get challengeGroupCounts;
+  /// **'Shape'**
+  String get challengeGroupShape;
 
-  /// Form group header: the challenge's time window
+  /// Form group header: the target, the window and the per-tap step
   ///
   /// In en, this message translates to:
-  /// **'Time'**
-  String get challengeGroupTime;
+  /// **'The plan'**
+  String get challengeGroupPlan;
 
   /// Form group header: the per-challenge daily reminder
   ///

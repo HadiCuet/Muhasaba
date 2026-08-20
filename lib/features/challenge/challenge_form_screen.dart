@@ -5,6 +5,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:go_router/go_router.dart';
 
 import '../../app/providers.dart';
+import '../../app/theme.dart';
 import '../../app/widgets/max_width_body.dart';
 import '../../data/db/database.dart';
 import '../../domain/models/challenge.dart';
@@ -20,7 +21,10 @@ import 'widgets/challenge_form_group.dart';
 import 'widgets/challenge_preview_card.dart';
 import 'widgets/custom_number_dialog.dart';
 
-enum _WindowKind { duration, dates, none }
+/// How the window is expressed. [exact] mirrors the day target, so a streak
+/// kept every day carries one number rather than two that must agree; it is
+/// offered for [ChallengeMode.days] only.
+enum _Deadline { exact, within, byDate, none }
 
 class ChallengeFormScreen extends ConsumerStatefulWidget {
   const ChallengeFormScreen({super.key, this.challengeId});
@@ -35,12 +39,16 @@ class ChallengeFormScreen extends ConsumerStatefulWidget {
 class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
   final _formKey = GlobalKey<FormState>();
   final _title = TextEditingController();
-  final _target = TextEditingController();
+  final _amount = TextEditingController();
   final _unit = TextEditingController();
 
   String _icon = '🚩';
   ChallengeMode _mode = ChallengeMode.count;
-  _WindowKind _window = _WindowKind.duration;
+  _Deadline _deadline = _Deadline.within;
+
+  /// The streak target. Kept apart from [_amount] so switching shape does not
+  /// reinterpret "1000 salawat" as 1000 days.
+  int _dayTarget = 30;
   int _durationDays = 7;
   int _stepSize = 1;
   DateTime? _start;
@@ -52,7 +60,7 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
   ChallengeRow? _existing;
   bool _loaded = false;
 
-  static const _durations = [7, 10, 30, 40, 90];
+  static const _dayCounts = [7, 10, 30, 40, 90];
   static const _steps = [1, 2, 5, 10, 33, 100];
 
   @override
@@ -68,7 +76,7 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
   @override
   void dispose() {
     _title.dispose();
-    _target.dispose();
+    _amount.dispose();
     _unit.dispose();
     super.dispose();
   }
@@ -81,7 +89,6 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
       _existing = row;
       _templateTitle = row.title;
       _title.text = localizedChallengeTitle(row.title, l);
-      _target.text = row.target.toString();
       _unit.text = row.unit ?? '';
       _icon = row.icon;
       _mode = row.mode;
@@ -89,16 +96,25 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
       _start = row.startDate;
       _category = row.category;
       _iconIsManual = true;
+      if (row.mode == ChallengeMode.days) {
+        _dayTarget = row.target;
+      } else {
+        _amount.text = row.target.toString();
+      }
       final t = parseReminderTime(row.reminderTime);
       _reminderTime = t == null
           ? null
           : TimeOfDay(hour: t.hour, minute: t.minute);
-      if (row.endExclusive == null) {
-        _window = _WindowKind.none;
+      final end = row.endExclusive;
+      if (end == null) {
+        _deadline = _Deadline.none;
       } else {
-        _durationDays = row.endExclusive!.difference(row.startDate).inDays;
-        _end = row.endExclusive!.subtract(const Duration(days: 1));
-        _window = _WindowKind.duration;
+        _durationDays = end.difference(row.startDate).inDays;
+        _end = end.subtract(const Duration(days: 1));
+        _deadline =
+            row.mode == ChallengeMode.days && _durationDays == row.target
+            ? _Deadline.exact
+            : _Deadline.within;
       }
       _loaded = true;
     });
@@ -106,12 +122,27 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
 
   DateTime get _startOrToday => _start ?? ref.read(currentMuhasabaDateProvider);
 
+  int get _target => _mode == ChallengeMode.days
+      ? _dayTarget
+      : (int.tryParse(_amount.text.trim()) ?? 0);
+
   DateTime? _resolveEndExclusive() {
-    return switch (_window) {
-      _WindowKind.none => null,
-      _WindowKind.duration => _startOrToday.add(Duration(days: _durationDays)),
-      _WindowKind.dates => (_end ?? _startOrToday).add(const Duration(days: 1)),
+    return switch (_deadline) {
+      _Deadline.none => null,
+      _Deadline.exact => _startOrToday.add(Duration(days: _dayTarget)),
+      _Deadline.within => _startOrToday.add(Duration(days: _durationDays)),
+      _Deadline.byDate => (_end ?? _startOrToday).add(const Duration(days: 1)),
     };
+  }
+
+  int? get _windowDays =>
+      _resolveEndExclusive()?.difference(_startOrToday).inDays;
+
+  /// A streak can only ever log one a day, so a target past the window's length
+  /// is unreachable however hard the user tries.
+  bool get _tooTight {
+    final window = _windowDays;
+    return _mode == ChallengeMode.days && window != null && _dayTarget > window;
   }
 
   String? get _reminderString => _reminderTime == null
@@ -131,6 +162,52 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
     return typed == localized ? _templateTitle! : typed;
   }
 
+  /// The shortest offered window that is genuinely longer than the streak
+  /// target, so "a longer window" never lands on one that cannot hold it.
+  int get _seededLongerWindow {
+    for (final d in _dayCounts) {
+      if (d > _dayTarget) return d;
+    }
+    return _dayTarget + 7;
+  }
+
+  void _setMode(ChallengeMode mode) {
+    setState(() {
+      _mode = mode;
+      if (mode == ChallengeMode.count) {
+        if (_deadline == _Deadline.exact) {
+          _durationDays = _dayTarget;
+          _deadline = _Deadline.within;
+        }
+        return;
+      }
+      if (_deadline == _Deadline.byDate) {
+        _durationDays = _windowDays ?? _durationDays;
+        _deadline = _Deadline.within;
+      }
+      // A count challenge's window says nothing about how many days a streak
+      // needs; matching the target is the only default that always holds.
+      if (_deadline == _Deadline.within && _durationDays <= _dayTarget) {
+        _deadline = _Deadline.exact;
+      }
+    });
+  }
+
+  void _setDeadline(_Deadline deadline) {
+    setState(() {
+      if (deadline == _Deadline.byDate) {
+        final span = _windowDays ?? _durationDays;
+        _end ??= _startOrToday.add(Duration(days: span - 1));
+      }
+      if (deadline == _Deadline.within &&
+          _mode == ChallengeMode.days &&
+          _durationDays <= _dayTarget) {
+        _durationDays = _seededLongerWindow;
+      }
+      _deadline = deadline;
+    });
+  }
+
   void _applyTemplate(ChallengeTemplate t) {
     FirebaseAnalytics.instance.logEvent(
       name: 'challenge_template_used',
@@ -145,14 +222,24 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
       );
       _templateTitle = t.title;
       _mode = t.mode;
-      _target.text = t.target.toString();
       _unit.text = t.unit ?? '';
       _stepSize = t.stepSize;
       _category = t.category;
-      _window = t.durationDays == null
-          ? _WindowKind.none
-          : _WindowKind.duration;
-      if (t.durationDays != null) _durationDays = t.durationDays!;
+      if (t.mode == ChallengeMode.days) {
+        _dayTarget = t.target;
+        _amount.clear();
+      } else {
+        _amount.text = t.target.toString();
+      }
+      final days = t.durationDays;
+      if (days == null) {
+        _deadline = _Deadline.none;
+      } else if (t.mode == ChallengeMode.days && days == t.target) {
+        _deadline = _Deadline.exact;
+      } else {
+        _durationDays = days;
+        _deadline = _Deadline.within;
+      }
     });
   }
 
@@ -162,13 +249,14 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
       _iconIsManual = false;
       _templateTitle = null;
       _title.clear();
-      _target.clear();
+      _amount.clear();
       _unit.clear();
       _mode = ChallengeMode.count;
       _stepSize = 1;
       _category = null;
       _reminderTime = null;
-      _window = _WindowKind.duration;
+      _deadline = _Deadline.within;
+      _dayTarget = 30;
       _durationDays = 7;
       _end = null;
     });
@@ -210,10 +298,23 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
 
   Future<void> _save() async {
     if (!_formKey.currentState!.validate()) return;
-    final repo = ref.read(challengeRepositoryProvider);
     final l = AppLocalizations.of(context);
+    if (_tooTight) {
+      ScaffoldMessenger.of(context).showSnackBar(
+        SnackBar(
+          content: Text(
+            l.challengeTooTight(
+              lnum(context, _dayTarget),
+              lnum(context, _windowDays!),
+            ),
+          ),
+        ),
+      );
+      return;
+    }
+    final repo = ref.read(challengeRepositoryProvider);
     final title = _titleToStore;
-    final target = int.parse(_target.text.trim());
+    final target = _target;
     final unit = _unit.text.trim().isEmpty ? null : _unit.text.trim();
     final endExclusive = _resolveEndExclusive();
     final reminder = _reminderString;
@@ -262,7 +363,7 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
         name: 'challenge_created',
         parameters: {
           'mode': _mode == ChallengeMode.days ? 'days' : 'count',
-          'window': _window.name,
+          'window': _deadline.name,
           'has_category': _category == null ? 0 : 1,
           'has_reminder': _reminderTime == null ? 0 : 1,
           'from_template': _templateTitle == null ? 0 : 1,
@@ -335,155 +436,302 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
     );
   }
 
-  List<Widget> _countsChildren(AppLocalizations l) {
-    final theme = Theme.of(context);
+  List<Widget> _shapeChildren(AppLocalizations l) {
     return [
-      Text(l.challengeModeLabel, style: theme.textTheme.labelLarge),
+      Text(
+        l.challengeShapeQuestion,
+        style: Theme.of(context).textTheme.labelLarge,
+      ),
+      const SizedBox(height: 10),
+      _ShapeCard(
+        icon: '📿',
+        title: l.challengeShapeTotal,
+        body: l.challengeShapeTotalBody,
+        selected: _mode == ChallengeMode.count,
+        onTap: () => _setMode(ChallengeMode.count),
+      ),
       const SizedBox(height: 8),
-      SegmentedButton<ChallengeMode>(
-        segments: [
-          ButtonSegment(
-            value: ChallengeMode.count,
-            label: Text(l.challengeModeCount),
+      _ShapeCard(
+        icon: '🌙',
+        title: l.challengeShapeStreak,
+        body: l.challengeShapeStreakBody,
+        selected: _mode == ChallengeMode.days,
+        onTap: () => _setMode(ChallengeMode.days),
+      ),
+    ];
+  }
+
+  Widget _segmentLabel(String text) => Text(
+    text,
+    textAlign: TextAlign.center,
+    maxLines: 2,
+    overflow: TextOverflow.ellipsis,
+  );
+
+  Widget _numberChips({
+    required List<int> values,
+    required int selected,
+    required String Function(int) label,
+    required ValueChanged<int> onPick,
+  }) {
+    final l = AppLocalizations.of(context);
+    final isPreset = values.contains(selected);
+    return Wrap(
+      spacing: 8,
+      runSpacing: 8,
+      children: [
+        for (final v in values)
+          ChoiceChip(
+            label: Text(label(v)),
+            selected: selected == v,
+            onSelected: (_) => onPick(v),
           ),
-          ButtonSegment(
-            value: ChallengeMode.days,
-            label: Text(l.challengeModeDays),
-          ),
-        ],
-        selected: {_mode},
-        onSelectionChanged: (s) => setState(() => _mode = s.first),
+        ChoiceChip(
+          label: Text(isPreset ? l.custom : label(selected)),
+          selected: !isPreset,
+          onSelected: (_) async {
+            final picked = await showCustomNumberDialog(
+              context,
+              initial: isPreset ? null : selected,
+            );
+            if (picked != null && mounted) onPick(picked);
+          },
+        ),
+      ],
+    );
+  }
+
+  List<Widget> _streakPlan(AppLocalizations l, ThemeData theme) {
+    return [
+      Text(l.challengeHowManyDays, style: theme.textTheme.labelLarge),
+      const SizedBox(height: 8),
+      _numberChips(
+        values: _dayCounts,
+        selected: _dayTarget,
+        label: (n) => lnum(context, n),
+        onPick: (n) => setState(() {
+          _dayTarget = n;
+          if (_deadline == _Deadline.within && _durationDays <= _dayTarget) {
+            _durationDays = _seededLongerWindow;
+          }
+        }),
       ),
       const SizedBox(height: 20),
-      TextFormField(
-        controller: _target,
-        keyboardType: TextInputType.number,
-        decoration: InputDecoration(labelText: l.challengeTargetLabel),
-        onChanged: (_) => setState(() {}),
-        validator: (v) {
-          final n = int.tryParse((v ?? '').trim());
-          return (n == null || n <= 0) ? l.challengeTargetRequired : null;
-        },
-      ),
-      if (_mode == ChallengeMode.count) ...[
-        const SizedBox(height: 16),
-        TextFormField(
-          controller: _unit,
-          decoration: InputDecoration(
-            labelText: l.challengeUnitLabel,
-            hintText: l.challengeUnitHint,
+      Text(l.challengeSpreadOver, style: theme.textTheme.labelLarge),
+      const SizedBox(height: 8),
+      SegmentedButton<_Deadline>(
+        showSelectedIcon: false,
+        segments: [
+          ButtonSegment(
+            value: _Deadline.exact,
+            label: _segmentLabel(l.challengeSpreadEveryDay),
           ),
-          onChanged: (_) => setState(() {}),
-        ),
-        const SizedBox(height: 20),
-        Text(l.challengeStepLabel, style: theme.textTheme.labelLarge),
-        const SizedBox(height: 8),
-        Wrap(
-          spacing: 8,
-          runSpacing: 8,
-          children: [
-            for (final s in _steps)
-              ChoiceChip(
-                label: Text(lnum(context, s)),
-                selected: _stepSize == s,
-                onSelected: (_) => setState(() => _stepSize = s),
-              ),
-            ChoiceChip(
-              label: Text(
-                _steps.contains(_stepSize)
-                    ? l.custom
-                    : lnum(context, _stepSize),
-              ),
-              selected: !_steps.contains(_stepSize),
-              onSelected: (_) async {
-                final v = await showCustomNumberDialog(
-                  context,
-                  initial: _steps.contains(_stepSize) ? null : _stepSize,
-                );
-                if (v != null && mounted) setState(() => _stepSize = v);
-              },
-            ),
-          ],
+          ButtonSegment(
+            value: _Deadline.within,
+            label: _segmentLabel(l.challengeSpreadLonger),
+          ),
+          ButtonSegment(
+            value: _Deadline.none,
+            label: _segmentLabel(l.challengeNoDeadline),
+          ),
+        ],
+        selected: {
+          _deadline == _Deadline.byDate ? _Deadline.within : _deadline,
+        },
+        onSelectionChanged: (s) => _setDeadline(s.first),
+      ),
+      if (_deadline == _Deadline.within) ...[
+        const SizedBox(height: 12),
+        _numberChips(
+          values: _dayCounts.where((d) => d > _dayTarget).toList(),
+          selected: _durationDays,
+          label: (n) => localizeDigits(context, l.challengeDurationLabel(n)),
+          onPick: (n) => setState(() => _durationDays = n),
         ),
       ],
     ];
   }
 
-  List<Widget> _timeChildren(AppLocalizations l) {
-    final theme = Theme.of(context);
+  List<Widget> _totalPlan(AppLocalizations l, ThemeData theme) {
     return [
-      Text(l.challengeWindowLabel, style: theme.textTheme.labelLarge),
-      const SizedBox(height: 8),
-      SegmentedButton<_WindowKind>(
-        segments: [
-          ButtonSegment(
-            value: _WindowKind.duration,
-            label: Text(l.challengeWindowDuration),
-          ),
-          ButtonSegment(
-            value: _WindowKind.dates,
-            label: Text(l.challengeWindowDates),
-          ),
-          ButtonSegment(
-            value: _WindowKind.none,
-            label: Text(l.challengeWindowNone),
-          ),
-        ],
-        selected: {_window},
-        onSelectionChanged: (s) => setState(() => _window = s.first),
-      ),
-      if (_window == _WindowKind.duration) ...[
-        const SizedBox(height: 12),
-        Wrap(
-          spacing: 8,
-          runSpacing: 8,
-          children: [
-            for (final d in _durations)
-              ChoiceChip(
-                label: Text(
-                  localizeDigits(context, l.challengeDurationLabel(d)),
-                ),
-                selected: _durationDays == d,
-                onSelected: (_) => setState(() => _durationDays = d),
+      Text(l.challengeReachHowMuch, style: theme.textTheme.labelLarge),
+      const SizedBox(height: 12),
+      Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Expanded(
+            flex: 2,
+            child: TextFormField(
+              controller: _amount,
+              keyboardType: TextInputType.number,
+              decoration: InputDecoration(
+                labelText: l.challengeTargetLabel,
+                errorMaxLines: 2,
               ),
-            ChoiceChip(
-              label: Text(
-                _durations.contains(_durationDays)
-                    ? l.custom
-                    : localizeDigits(
-                        context,
-                        l.challengeDurationLabel(_durationDays),
-                      ),
-              ),
-              selected: !_durations.contains(_durationDays),
-              onSelected: (_) async {
-                final v = await showCustomNumberDialog(
-                  context,
-                  initial: _durations.contains(_durationDays)
-                      ? null
-                      : _durationDays,
-                );
-                if (v != null && mounted) setState(() => _durationDays = v);
+              onChanged: (_) => setState(() {}),
+              validator: (v) {
+                final n = int.tryParse((v ?? '').trim());
+                return (n == null || n <= 0) ? l.challengeTargetRequired : null;
               },
             ),
-          ],
+          ),
+          const SizedBox(width: 10),
+          Expanded(
+            flex: 3,
+            child: TextFormField(
+              controller: _unit,
+              decoration: InputDecoration(
+                labelText: l.challengeUnitLabel,
+                hintText: l.challengeUnitHint,
+              ),
+              onChanged: (_) => setState(() {}),
+            ),
+          ),
+        ],
+      ),
+      const SizedBox(height: 20),
+      Text(l.challengeByWhen, style: theme.textTheme.labelLarge),
+      const SizedBox(height: 8),
+      SegmentedButton<_Deadline>(
+        showSelectedIcon: false,
+        segments: [
+          ButtonSegment(
+            value: _Deadline.within,
+            label: _segmentLabel(l.challengeWindowDuration),
+          ),
+          ButtonSegment(
+            value: _Deadline.byDate,
+            label: _segmentLabel(l.challengeByDate),
+          ),
+          ButtonSegment(
+            value: _Deadline.none,
+            label: _segmentLabel(l.challengeNoDeadline),
+          ),
+        ],
+        selected: {_deadline == _Deadline.exact ? _Deadline.within : _deadline},
+        onSelectionChanged: (s) => _setDeadline(s.first),
+      ),
+      if (_deadline == _Deadline.within) ...[
+        const SizedBox(height: 12),
+        _numberChips(
+          values: _dayCounts,
+          selected: _durationDays,
+          label: (n) => localizeDigits(context, l.challengeDurationLabel(n)),
+          onPick: (n) => setState(() => _durationDays = n),
         ),
       ],
-      if (_window == _WindowKind.dates) ...[
-        const SizedBox(height: 8),
-        ListTile(
-          contentPadding: EdgeInsets.zero,
-          title: Text(l.challengeStartDate),
-          trailing: Text(_formatDate(_startOrToday)),
-          onTap: () => _pickDate(isStart: true),
-        ),
+      if (_deadline == _Deadline.byDate)
         ListTile(
           contentPadding: EdgeInsets.zero,
           title: Text(l.challengeEndDate),
           trailing: Text(_formatDate(_end ?? _startOrToday)),
           onTap: () => _pickDate(isStart: false),
         ),
-      ],
+      const SizedBox(height: 20),
+      Text(l.challengeOneTapAdds, style: theme.textTheme.labelLarge),
+      const SizedBox(height: 8),
+      _numberChips(
+        values: _steps,
+        selected: _stepSize,
+        label: (n) => '+${lnum(context, n)}',
+        onPick: (n) => setState(() => _stepSize = n),
+      ),
+    ];
+  }
+
+  /// The window the form currently describes, spelled out in dates and pace so
+  /// neither has to be inferred from the controls above.
+  String _planSummary(AppLocalizations l) {
+    final start = _formatDate(_startOrToday);
+    final end = _resolveEndExclusive();
+    if (end == null) return l.challengePlanOpen(start);
+    final last = _formatDate(end.subtract(const Duration(days: 1)));
+    final window = end.difference(_startOrToday).inDays;
+    if (_mode == ChallengeMode.days) {
+      if (_tooTight) return l.challengePlanRange(start, last);
+      if (_dayTarget >= window) return l.challengePlanExact(start, last);
+      return l.challengePlanSlack(
+        start,
+        last,
+        lnum(context, _dayTarget),
+        lnum(context, window),
+        lnum(context, window - _dayTarget),
+      );
+    }
+    if (_target <= 0) return l.challengePlanRange(start, last);
+    return l.challengePlanRate(
+      start,
+      last,
+      lnum(context, (_target / window).ceil()),
+    );
+  }
+
+  Widget _noticeRow(
+    ThemeData theme, {
+    required IconData icon,
+    required String text,
+    required Color background,
+    required Color foreground,
+  }) {
+    return Container(
+      margin: const EdgeInsetsDirectional.only(top: 8),
+      padding: const EdgeInsetsDirectional.symmetric(
+        horizontal: 10,
+        vertical: 8,
+      ),
+      decoration: BoxDecoration(
+        color: background,
+        borderRadius: BorderRadius.circular(10),
+      ),
+      child: Row(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Icon(icon, size: 16, color: foreground),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text(
+              text,
+              style: theme.textTheme.bodySmall?.copyWith(color: foreground),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+
+  List<Widget> _planChildren(AppLocalizations l) {
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    return [
+      if (_mode == ChallengeMode.days)
+        ..._streakPlan(l, theme)
+      else
+        ..._totalPlan(l, theme),
+      const SizedBox(height: 4),
+      ListTile(
+        contentPadding: EdgeInsets.zero,
+        title: Text(l.challengeStartDate),
+        trailing: Text(_formatDate(_startOrToday)),
+        onTap: () => _pickDate(isStart: true),
+      ),
+      _noticeRow(
+        theme,
+        icon: Icons.event_outlined,
+        text: _planSummary(l),
+        background: scheme.surfaceContainerHighest,
+        foreground: scheme.onSurfaceVariant,
+      ),
+      if (_tooTight)
+        _noticeRow(
+          theme,
+          icon: Icons.warning_amber_rounded,
+          text: l.challengeTooTight(
+            lnum(context, _dayTarget),
+            lnum(context, _windowDays!),
+          ),
+          background: scheme.behindContainer,
+          foreground: scheme.onBehindContainer,
+        ),
     ];
   }
 
@@ -544,12 +792,12 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
                 ],
               ),
               ChallengeFormGroup(
-                title: l.challengeGroupCounts,
-                children: _countsChildren(l),
+                title: l.challengeGroupShape,
+                children: _shapeChildren(l),
               ),
               ChallengeFormGroup(
-                title: l.challengeGroupTime,
-                children: _timeChildren(l),
+                title: l.challengeGroupPlan,
+                children: _planChildren(l),
               ),
               ChallengeFormGroup(
                 title: l.challengeGroupReminders,
@@ -567,7 +815,7 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
                 icon: _icon,
                 title: _title.text.trim(),
                 mode: _mode,
-                target: int.tryParse(_target.text.trim()) ?? 0,
+                target: _target,
                 unit: _unit.text.trim(),
                 startDate: _startOrToday,
                 endExclusive: _resolveEndExclusive(),
@@ -576,6 +824,73 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
               const SizedBox(height: 40),
             ],
           ),
+        ),
+      ),
+    );
+  }
+}
+
+/// One of the two challenge shapes, with an example line — the distinction
+/// between a running total and a daily streak is what the rest of the form
+/// hangs off, and a segmented button has no room to explain it.
+class _ShapeCard extends StatelessWidget {
+  const _ShapeCard({
+    required this.icon,
+    required this.title,
+    required this.body,
+    required this.selected,
+    required this.onTap,
+  });
+
+  final String icon;
+  final String title;
+  final String body;
+  final bool selected;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    return InkWell(
+      onTap: onTap,
+      borderRadius: BorderRadius.circular(12),
+      child: Container(
+        padding: EdgeInsetsDirectional.all(selected ? 10 : 11),
+        decoration: BoxDecoration(
+          color: selected ? scheme.primary.withValues(alpha: 0.06) : null,
+          border: Border.all(
+            color: selected ? scheme.primary : scheme.outlineVariant,
+            width: selected ? 2 : 1,
+          ),
+          borderRadius: BorderRadius.circular(12),
+        ),
+        child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Text(icon, style: const TextStyle(fontSize: 17)),
+            const SizedBox(width: 9),
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    title,
+                    style: theme.textTheme.titleSmall?.copyWith(
+                      fontWeight: FontWeight.w600,
+                    ),
+                  ),
+                  const SizedBox(height: 2),
+                  Text(
+                    body,
+                    style: theme.textTheme.bodySmall?.copyWith(
+                      color: scheme.onSurfaceVariant,
+                    ),
+                  ),
+                ],
+              ),
+            ),
+          ],
         ),
       ),
     );
