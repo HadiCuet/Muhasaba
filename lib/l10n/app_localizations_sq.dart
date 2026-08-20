@@ -83,6 +83,9 @@ class AppLocalizationsSq extends AppLocalizations {
   String get cancel => 'Anulo';
 
   @override
+  String get ok => 'OK';
+
+  @override
   String get clear => 'Pastro';
 
   @override

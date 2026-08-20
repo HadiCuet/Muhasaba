@@ -83,6 +83,9 @@ class AppLocalizationsKu extends AppLocalizations {
   String get cancel => 'Dev jê berde';
 
   @override
+  String get ok => 'OK';
+
+  @override
   String get clear => 'Paqij bike';
 
   @override

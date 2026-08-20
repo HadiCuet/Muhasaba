@@ -83,6 +83,9 @@ class AppLocalizationsKy extends AppLocalizations {
   String get cancel => 'Жокко чыгаруу';
 
   @override
+  String get ok => 'OK';
+
+  @override
   String get clear => 'Тазалоо';
 
   @override

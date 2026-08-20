@@ -83,6 +83,9 @@ class AppLocalizationsUz extends AppLocalizations {
   String get cancel => 'Bekor qilish';
 
   @override
+  String get ok => 'OK';
+
+  @override
   String get clear => 'Tozalash';
 
   @override

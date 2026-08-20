@@ -83,6 +83,9 @@ class AppLocalizationsSo extends AppLocalizations {
   String get cancel => 'Ka noqo';
 
   @override
+  String get ok => 'OK';
+
+  @override
   String get clear => 'Nadiifi';
 
   @override

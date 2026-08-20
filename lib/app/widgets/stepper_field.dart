@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'keyboard_dismiss_bar.dart';
+
 /// Inline `− N +` control. Tapping the number switches to a text field so an
 /// exact value can be typed instead of pressing `+` dozens of times.
 ///
@@ -98,23 +100,26 @@ class _StepperFieldState extends State<StepperField> {
         SizedBox(
           width: 64,
           child: _editing
-              ? TextField(
-                  controller: _controller,
+              ? KeyboardDismissBar(
                   focusNode: _focusNode,
-                  keyboardType: TextInputType.number,
-                  textInputAction: TextInputAction.done,
-                  autofocus: true,
-                  textAlign: TextAlign.center,
-                  style: labelStyle,
-                  decoration: const InputDecoration(
-                    border: OutlineInputBorder(),
-                    isDense: true,
-                    contentPadding: EdgeInsets.symmetric(
-                      horizontal: 4,
-                      vertical: 4,
+                  child: TextField(
+                    controller: _controller,
+                    focusNode: _focusNode,
+                    keyboardType: TextInputType.number,
+                    textInputAction: TextInputAction.done,
+                    autofocus: true,
+                    textAlign: TextAlign.center,
+                    style: labelStyle,
+                    decoration: const InputDecoration(
+                      border: OutlineInputBorder(),
+                      isDense: true,
+                      contentPadding: EdgeInsets.symmetric(
+                        horizontal: 4,
+                        vertical: 4,
+                      ),
                     ),
+                    onSubmitted: (_) => _commitEdit(),
                   ),
-                  onSubmitted: (_) => _commitEdit(),
                 )
               : InkWell(
                   borderRadius: BorderRadius.circular(4),

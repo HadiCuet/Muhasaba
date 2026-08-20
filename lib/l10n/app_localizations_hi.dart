@@ -83,6 +83,9 @@ class AppLocalizationsHi extends AppLocalizations {
   String get cancel => 'रद्द करें';
 
   @override
+  String get ok => 'ठीक है';
+
+  @override
   String get clear => 'साफ़ करें';
 
   @override

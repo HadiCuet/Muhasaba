@@ -83,6 +83,9 @@ class AppLocalizationsPs extends AppLocalizations {
   String get cancel => 'لغوه';
 
   @override
+  String get ok => 'ښه';
+
+  @override
   String get clear => 'پاکول';
 
   @override

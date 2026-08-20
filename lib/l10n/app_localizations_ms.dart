@@ -83,6 +83,9 @@ class AppLocalizationsMs extends AppLocalizations {
   String get cancel => 'Batal';
 
   @override
+  String get ok => 'OK';
+
+  @override
   String get clear => 'Kosongkan';
 
   @override

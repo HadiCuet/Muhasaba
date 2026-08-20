@@ -83,6 +83,9 @@ class AppLocalizationsHa extends AppLocalizations {
   String get cancel => 'Soke';
 
   @override
+  String get ok => 'OK';
+
+  @override
   String get clear => 'Share';
 
   @override

@@ -83,6 +83,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get cancel => 'إلغاء';
 
   @override
+  String get ok => 'حسنًا';
+
+  @override
   String get clear => 'مسح';
 
   @override

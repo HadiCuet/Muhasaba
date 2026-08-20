@@ -83,6 +83,9 @@ class AppLocalizationsFa extends AppLocalizations {
   String get cancel => 'لغو';
 
   @override
+  String get ok => 'تأیید';
+
+  @override
   String get clear => 'پاک کردن';
 
   @override

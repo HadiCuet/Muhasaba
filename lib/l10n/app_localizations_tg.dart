@@ -83,6 +83,9 @@ class AppLocalizationsTg extends AppLocalizations {
   String get cancel => 'Бекор кардан';
 
   @override
+  String get ok => 'OK';
+
+  @override
   String get clear => 'Тоза кардан';
 
   @override

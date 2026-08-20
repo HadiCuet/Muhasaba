@@ -6,6 +6,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../app/providers.dart';
 import '../../app/theme.dart';
+import '../../app/widgets/keyboard_dismiss_bar.dart';
 import '../../app/widgets/max_width_body.dart';
 import '../../data/db/database.dart';
 import '../../domain/models/challenge.dart';
@@ -41,6 +42,7 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
   final _title = TextEditingController();
   final _amount = TextEditingController();
   final _unit = TextEditingController();
+  final _amountFocus = FocusNode();
 
   String _icon = '🚩';
   ChallengeMode _mode = ChallengeMode.count;
@@ -77,6 +79,7 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
   void dispose() {
     _title.dispose();
     _amount.dispose();
+    _amountFocus.dispose();
     _unit.dispose();
     super.dispose();
   }
@@ -561,18 +564,24 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
         children: [
           Expanded(
             flex: 2,
-            child: TextFormField(
-              controller: _amount,
-              keyboardType: TextInputType.number,
-              decoration: InputDecoration(
-                labelText: l.challengeTargetLabel,
-                errorMaxLines: 2,
+            child: KeyboardDismissBar(
+              focusNode: _amountFocus,
+              child: TextFormField(
+                controller: _amount,
+                focusNode: _amountFocus,
+                keyboardType: TextInputType.number,
+                decoration: InputDecoration(
+                  labelText: l.challengeTargetLabel,
+                  errorMaxLines: 2,
+                ),
+                onChanged: (_) => setState(() {}),
+                validator: (v) {
+                  final n = int.tryParse((v ?? '').trim());
+                  return (n == null || n <= 0)
+                      ? l.challengeTargetRequired
+                      : null;
+                },
               ),
-              onChanged: (_) => setState(() {}),
-              validator: (v) {
-                final n = int.tryParse((v ?? '').trim());
-                return (n == null || n <= 0) ? l.challengeTargetRequired : null;
-              },
             ),
           ),
           const SizedBox(width: 10),

@@ -278,6 +278,12 @@ abstract class AppLocalizations {
   /// **'Cancel'**
   String get cancel;
 
+  /// Button above the number keyboard that dismisses it
+  ///
+  /// In en, this message translates to:
+  /// **'OK'**
+  String get ok;
+
   /// No description provided for @clear.
   ///
   /// In en, this message translates to:

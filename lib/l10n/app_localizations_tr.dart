@@ -83,6 +83,9 @@ class AppLocalizationsTr extends AppLocalizations {
   String get cancel => 'İptal';
 
   @override
+  String get ok => 'Tamam';
+
+  @override
   String get clear => 'Temizle';
 
   @override

@@ -72,6 +72,10 @@
   "newAmalTitle": "New amal",
   "save": "Save",
   "cancel": "Cancel",
+  "ok": "OK",
+  "@ok": {
+    "description": "Button above the number keyboard that dismisses it"
+  },
   "clear": "Clear",
   "titleLabel": "Title",
   "titleRequired": "Title is required",

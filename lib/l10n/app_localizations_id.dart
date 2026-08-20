@@ -83,6 +83,9 @@ class AppLocalizationsId extends AppLocalizations {
   String get cancel => 'Batal';
 
   @override
+  String get ok => 'OK';
+
+  @override
   String get clear => 'Hapus';
 
   @override

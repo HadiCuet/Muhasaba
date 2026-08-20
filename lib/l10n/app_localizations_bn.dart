@@ -83,6 +83,9 @@ class AppLocalizationsBn extends AppLocalizations {
   String get cancel => 'বাতিল';
 
   @override
+  String get ok => 'ঠিক আছে';
+
+  @override
   String get clear => 'মুছুন';
 
   @override

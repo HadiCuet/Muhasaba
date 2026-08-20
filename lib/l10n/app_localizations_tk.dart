@@ -83,6 +83,9 @@ class AppLocalizationsTk extends AppLocalizations {
   String get cancel => 'Goybolsun';
 
   @override
+  String get ok => 'OK';
+
+  @override
   String get clear => 'Arassalamak';
 
   @override

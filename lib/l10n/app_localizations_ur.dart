@@ -83,6 +83,9 @@ class AppLocalizationsUr extends AppLocalizations {
   String get cancel => 'منسوخ';
 
   @override
+  String get ok => 'ٹھیک ہے';
+
+  @override
   String get clear => 'صاف کریں';
 
   @override

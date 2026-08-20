@@ -83,6 +83,9 @@ class AppLocalizationsAz extends AppLocalizations {
   String get cancel => 'Legv et';
 
   @override
+  String get ok => 'OK';
+
+  @override
   String get clear => 'Temizle';
 
   @override

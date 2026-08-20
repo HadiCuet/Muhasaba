@@ -83,6 +83,9 @@ class AppLocalizationsBs extends AppLocalizations {
   String get cancel => 'Otkazi';
 
   @override
+  String get ok => 'OK';
+
+  @override
   String get clear => 'Ocisti';
 
   @override

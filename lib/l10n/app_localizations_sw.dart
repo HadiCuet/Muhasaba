@@ -83,6 +83,9 @@ class AppLocalizationsSw extends AppLocalizations {
   String get cancel => 'Ghairi';
 
   @override
+  String get ok => 'OK';
+
+  @override
   String get clear => 'Futa';
 
   @override
