@@ -1,0 +1,10 @@
+scripts:
+  setup: |
+    set -eu
+    flutter pub get
+
+defaultTabs:
+  - title: agent
+    color: "#7c9cff"
+  - title: run
+    color: "#5fbf6a"
