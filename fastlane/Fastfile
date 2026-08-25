@@ -6,13 +6,16 @@
 #             "What's New" when run with upload:true
 #
 # Lanes (Android):
-#   verify   — read-only: confirm the Play service account key authenticates
-#   internal — build the AAB with Flutter; upload to the Play "internal" testing
-#              track (never production) when run with upload:true
+#   verify     — read-only: confirm the Play service account key authenticates
+#   internal   — build the AAB; upload to the Play "internal" testing track
+#   production — build the AAB; upload to PRODUCTION with the localized listing,
+#                screenshots and changelogs. Staged rollout by default.
 #
-# Guardrails: nothing uploads without upload:true, the iOS build is never
-# submitted for review or distributed to external testers, and the Android
-# build only ever goes to the internal testing track — never production.
+# Guardrails: nothing uploads without upload:true, and the iOS build is never
+# submitted for review or distributed to external testers. The Android
+# production lane DOES release to the public — it defaults to a 10% staged
+# rollout, and validate:true does a full dry run against Play without
+# committing anything.
 
 opt_out_usage
 fastlane_version "2.222.0"
@@ -186,6 +189,39 @@ platform :ios do
     UI.success("Done — only 'What's New' was changed on version #{version.version_string}.")
   end
 
+
+  desc "Push App Store metadata + screenshots to the EDITABLE version. With upload:true. Never submits for review."
+  lane :metadata do |options|
+    md  = File.join(repo_root, "fastlane", "metadata", "ios")
+    sc  = File.join(repo_root, "fastlane", "screenshots")
+    UI.user_error!("No metadata at #{md}") unless Dir.exist?(md)
+    UI.user_error!("No screenshots at #{sc}") unless Dir.exist?(sc)
+    shots = Dir[File.join(sc, "*", "*.png")].count
+    UI.message("Staged: #{Dir.children(md).sort.join(', ')} — #{shots} screenshots")
+
+    unless options[:upload]
+      UI.important("Dry run — nothing sent. Run: fastlane ios metadata upload:true")
+      next
+    end
+
+    ensure_api_key
+    deliver(
+      api_key: lane_context[SharedValues::APP_STORE_CONNECT_API_KEY],
+      metadata_path: md,
+      screenshots_path: sc,
+      skip_binary_upload: true,
+      skip_metadata: false,
+      skip_screenshots: false,
+      overwrite_screenshots: true,
+      submit_for_review: false,
+      automatic_release: false,
+      run_precheck_before_submit: false,
+      force: true,
+      precheck_include_in_app_purchases: false,
+  )
+    UI.success("Metadata + screenshots pushed to the editable version — NOT submitted for review.")
+  end
+
   desc "Build iOS with Flutter; with upload:true upload to TestFlight with localized What's New. Never submits."
   lane :beta do |options|
     Dir.chdir(repo_root) do
@@ -232,7 +268,77 @@ private_lane :ensure_play_credentials do
   lane_context[:PLAY_JSON_KEY_PATH] = key_path
 end
 
+
+# Release signing must be present, or Gradle silently produces an AAB Play rejects.
+private_lane :ensure_android_signing do
+  props = File.join(repo_root, "android", "key.properties")
+  unless File.exist?(props)
+    UI.user_error!("Missing android/key.properties. Install signing first:\n" \
+      "  cp ../muhasaba-screenshots/signing/muhasaba-upload.jks android/\n" \
+      "  cp ../muhasaba-screenshots/signing/key.properties android/")
+  end
+  store = File.read(props)[/storeFile=(.+)/, 1].to_s.strip
+  path  = File.expand_path(store, File.join(repo_root, "android"))
+  UI.user_error!("key.properties points at #{store}, which does not exist.") unless File.exist?(path)
+  UI.success("Release signing present.")
+end
+
 platform :android do
+
+  desc "Build the AAB and release to PRODUCTION with the localized listing, screenshots and changelogs. Staged rollout; validate:true for a dry run."
+  lane :production do |options|
+    ensure_android_signing
+
+    Dir.chdir(repo_root) { sh("flutter", "build", "appbundle", "--release") }
+    aab = File.join(repo_root, "build", "app", "outputs", "bundle", "release", "app-release.aab")
+    UI.user_error!("No .aab at #{aab} — did the Flutter build succeed?") unless File.exist?(aab)
+    UI.success("Built AAB: #{aab} (#{(File.size(aab) / 1_048_576.0).round(1)} MB)")
+
+    md = File.join(repo_root, "fastlane", "metadata", "android")
+    locales = Dir.exist?(md) ? Dir.children(md).select { |d| File.directory?(File.join(md, d)) }.sort : []
+    shots = Dir[File.join(md, "*", "images", "phoneScreenshots", "*.png")].count
+    UI.message("Listing locales: #{locales.empty? ? '(none)' : locales.join(', ')} — #{shots} phone screenshots")
+
+    rollout = (options[:rollout] || "0.1").to_s
+    UI.user_error!("rollout must be between 0 and 1 (e.g. 0.1 for 10%)") unless rollout.to_f > 0 && rollout.to_f <= 1
+
+    unless options[:upload]
+      UI.important("Dry run — nothing sent to Play.")
+      UI.message("Release:   fastlane android production upload:true")
+      UI.message("Validate:  fastlane android production upload:true validate:true")
+      next
+    end
+
+    ensure_play_credentials
+    if options[:validate]
+      UI.important("VALIDATE ONLY — Play checks the upload and discards it. Nothing is released.")
+    else
+      UI.important("Releasing to PRODUCTION at #{(rollout.to_f * 100).round}% staged rollout.")
+    end
+
+    upload_to_play_store(
+      json_key: lane_context[:PLAY_JSON_KEY_PATH],
+      package_name: PLAY_PACKAGE_NAME,
+      aab: aab,
+      track: "production",
+      release_status: rollout.to_f >= 1.0 ? "completed" : "inProgress",
+      rollout: rollout.to_f >= 1.0 ? nil : rollout,
+      metadata_path: md,
+      skip_upload_metadata: locales.empty?,
+      skip_upload_images: locales.empty?,
+      skip_upload_screenshots: locales.empty?,
+      skip_upload_changelogs: false,
+      validate_only: options[:validate] ? true : false,
+      version_codes_to_retain: nil,
+    )
+
+    if options[:validate]
+      UI.success("Validation passed — Play accepted the upload and discarded it. Nothing released.")
+    else
+      UI.success("Released to production at #{(rollout.to_f * 100).round}%. " \
+                 "Raise it with: fastlane android production upload:true rollout:1.0")
+    end
+  end
   desc "Read-only: confirm the Play service account key authenticates"
   lane :verify do
     ensure_play_credentials

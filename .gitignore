@@ -61,3 +61,7 @@ app.*.map.json
 /fastlane/report.xml
 /fastlane/README.md
 /fastlane/test_output/
+
+# fastlane deliver staging — 116MB of PNGs + credentials, regenerable
+/fastlane/screenshots/
+/fastlane/metadata/ios/
