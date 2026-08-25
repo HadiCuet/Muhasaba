@@ -1,8 +1,8 @@
 # Privacy Policy for Muhasaba
 
-**Effective date:** 15 April 2026
-**Last updated:** 15 April 2026
-**Version:** 1.0
+**Effective date:** 25 August 2026
+**Last updated:** 25 August 2026
+**Version:** 1.1
 
 ---
 
@@ -89,7 +89,9 @@ The app stores the following locally in an SQLite database on your device, using
 | Categories: name, icon, sort order | Device SQLite (`Categories` table) | No |
 | Daily completions and your personal notes | Device SQLite (`Completions` table) | No |
 | Hidden-day markers (transient) | Device SQLite (`HiddenDays` table) | No |
-| App settings: locale, theme, rollover hour, start-of-week, view mode | Device SQLite (`SettingsKv` table) | No |
+| Challenges: title, icon, mode (count or day-streak), target, step size, unit, category, reminder time, start/end dates, status, timestamps | Device SQLite (`Challenges` table) | No |
+| Challenge daily entries: the date and the amount you logged on it | Device SQLite (`ChallengeEntries` table) | No |
+| App settings: locale, theme, rollover hour, start-of-week, view mode, reminder preferences, and flags for whether you have seen the first-run walkthrough | Device SQLite (`SettingsKv` table) | No |
 
 Your device's operating system may back up the app's local data to iCloud (iOS) or Google Drive (Android) as part of **OS-level backups you control in system settings**. Those backups are governed by Apple's or Google's terms and are outside our access. You can disable them in your device settings.
 
@@ -99,10 +101,12 @@ In release builds of the app, we use **Google Firebase Analytics** (provided by 
 
 **Events recorded.** We log events when you interact with core features so we can understand what's used and spot regressions. They fall into these categories:
 
-- **Amal interactions** — creating, editing, completing, uncompleting, reordering, removing amals; notes; reminders.
+- **Amal interactions** — creating, editing, completing, uncompleting, reordering, removing and restoring amals; notes; reminders.
 - **Category management** — creating, editing, deleting, selecting categories.
 - **Settings changes** — theme, language, rollover hour, start-of-week, view mode.
-- **Navigation & filters** — day selection in History, filter changes in Stats.
+- **Challenge interactions** — creating a challenge, logging progress against it, reordering, starting one from a template, switching between the Active and Past tabs, and which option you pick when a challenge ends.
+- **First-run walkthrough** — whether the introductory tutorial was started or skipped.
+- **Navigation & filters** — day and tab selection in Insights, and filter changes there.
 - **Support actions** — rate-the-app, contact-us, report-bug, feature-request.
 - **Notification permission outcome** — whether you granted or denied the OS notification prompt.
 
