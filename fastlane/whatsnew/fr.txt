@@ -1,7 +1,7 @@
-JazakAllah d'utiliser Muhasaba. Qu'Allah l'accepte et la rende facile.
+JazakAllah d'utiliser Muhasaba.
 
-• Rappel quotidien — une douce invitation à faire le point sur vos actes chaque jour, à l'heure de votre choix. Activé par défaut à 20:00 ; modifiez-le ou désactivez-le à tout moment dans Paramètres.
-• Statistiques mensuelles plus claires — le graphique du détail quotidien s'affiche désormais nettement sur tous les écrans, sans numéros de jour tassés ni tronqués.
-• Traduction complète — les noms des prières, les catégories et les rappels s'affichent désormais dans la langue choisie, plus en anglais.
-• Les réglages affichent maintenant l'heure et les jours dans votre langue, avec les bons chiffres.
-• Correction de quelques icônes incorrectes dans les statistiques.
+• Défi — fixez-vous un objectif comme 40 nuits de Tahajjud ou 1000 salawat, et voyez si vous tenez le rythme. Si vous glissez, l'app vous prévient.
+• Statistiques — l'Historique et les Stats ne font plus qu'un onglet : séries, grille de régularité et progression par amal.
+• Les actes mensuels peuvent tomber sur plusieurs dates.
+• Une courte visite au premier lancement.
+• Les actes arrêtés peuvent être restaurés.

@@ -1,7 +1,7 @@
-JazakAllah kerana menggunakan Muhasaba. Semoga Allah menerima dan memudahkan.
+JazakAllah kerana menggunakan Muhasaba.
 
-• Peringatan harian — dorongan lembut untuk menjejaki amal anda setiap hari, pada masa pilihan anda. Aktif secara lalai pada pukul 8:00 malam; anda boleh menukar atau mematikannya bila-bila masa dalam Tetapan.
-• Statistik bulanan lebih jelas — carta Pecahan Harian kini kelihatan kemas pada setiap skrin, tanpa nombor hari yang berhimpit atau terpotong.
-• Terjemahan penuh — nama solat, kategori, dan peringatan kini dipaparkan dalam bahasa pilihan anda, bukan bahasa Inggeris.
-• Tetapan kini memaparkan waktu dan hari dalam bahasa anda, dengan angka yang sepadan.
-• Membetulkan beberapa ikon yang tidak sepadan dalam Statistik.
+• Cabaran — tetapkan sasaran seperti 40 malam Tahajud atau 1000 selawat, dan lihat sama ada anda kekal rentak. Jika ketinggalan, apl memberitahu.
+• Statistik — Sejarah dan Statistik kini satu tab: rentak, petak konsistensi, dan kemajuan setiap amal.
+• Amal bulanan boleh jatuh pada beberapa tarikh.
+• Panduan ringkas kali pertama anda membukanya.
+• Amal yang dihentikan boleh dipulihkan.
