@@ -54,6 +54,14 @@ dependencies:
   firebase_analytics: ^12.3.0
   firebase_crashlytics: ^5.2.0
 
+# path_provider_foundation 2.6.0 switched to an FFI implementation backed by
+# package:objective_c native assets, which Flutter 3.41 cannot resolve at
+# runtime on iOS — the app dies in getApplicationDocumentsDirectory before
+# runApp and shows a white screen. 2.5.1 is the newest release without it.
+# Remove this once the project is on Flutter 3.44+ (flutter/flutter#178915).
+dependency_overrides:
+  path_provider_foundation: 2.5.1
+
 dev_dependencies:
   flutter_test:
     sdk: flutter
