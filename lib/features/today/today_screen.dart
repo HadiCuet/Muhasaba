@@ -61,6 +61,7 @@ class TodayScreen extends ConsumerWidget {
       ),
       body: MaxWidthBody(
         child: rowsAsync.when(
+          skipLoadingOnReload: true,
           loading: () => const Center(child: CircularProgressIndicator()),
           error: (e, _) => Center(child: Text(l.errorGeneric(e.toString()))),
           data: (rows) {
@@ -360,7 +361,6 @@ Future<void> _setNote(
   await ref
       .read(completionRepositoryProvider)
       .setNote(amalId: row.amal.id, muhasabaDate: date, note: note);
-  ref.invalidate(todayRowsProvider(date));
 
   // Only log actual saves (not clears). Don't include note content.
   if (note != null && note.isNotEmpty) {
@@ -402,7 +402,6 @@ Future<void> _setProgress(
       parameters: {'frequency': row.amal.frequency.name},
     );
   }
-  ref.invalidate(todayRowsProvider(date));
   ref.invalidate(statsSnapshotProvider);
   ref.invalidate(currentStreaksProvider);
 }
@@ -441,7 +440,6 @@ Future<void> _openRemoveSheet(
     case RemoveChoice.cancel:
       return;
   }
-  ref.invalidate(todayRowsProvider(date));
   ref.invalidate(statsSnapshotProvider);
   ref.invalidate(currentStreaksProvider);
 }

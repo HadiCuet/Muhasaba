@@ -63,6 +63,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen>
           const Divider(height: 1),
           Expanded(
             child: rowsAsync.when(
+              skipLoadingOnReload: true,
               loading: () => const Center(child: CircularProgressIndicator()),
               error: (e, _) =>
                   Center(child: Text(l.errorGeneric(e.toString()))),
@@ -77,6 +78,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen>
                   historyFallbackRowsProvider(selected),
                 );
                 return fallbackAsync.when(
+                  skipLoadingOnReload: true,
                   loading: () =>
                       const Center(child: CircularProgressIndicator()),
                   error: (e, _) =>
@@ -130,9 +132,6 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen>
     await ref
         .read(completionRepositoryProvider)
         .setNote(amalId: row.amal.id, muhasabaDate: date, note: note);
-    ref.invalidate(todayRowsProvider(date));
-    ref.invalidate(historyRowsProvider(date));
-    ref.invalidate(historyFallbackRowsProvider(date));
   }
 
   Future<void> _setProgress(TodayRow row, DateTime date, int progress) async {
@@ -144,9 +143,6 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen>
           progress: progress,
           target: row.amal.target,
         );
-    ref.invalidate(todayRowsProvider(date));
-    ref.invalidate(historyRowsProvider(date));
-    ref.invalidate(historyFallbackRowsProvider(date));
     ref.invalidate(statsSnapshotProvider);
     ref.invalidate(currentStreaksProvider);
   }
@@ -173,9 +169,6 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen>
       case RemoveChoice.cancel:
         return;
     }
-    ref.invalidate(todayRowsProvider(date));
-    ref.invalidate(historyRowsProvider(date));
-    ref.invalidate(historyFallbackRowsProvider(date));
     ref.invalidate(statsSnapshotProvider);
     ref.invalidate(currentStreaksProvider);
   }
