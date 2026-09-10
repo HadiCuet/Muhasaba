@@ -1,3 +1,5 @@
+import 'dart:math' as math;
+
 import 'package:flutter/material.dart';
 
 import '../../../domain/services/enhanced_stats_service.dart';
@@ -27,8 +29,7 @@ class DailyChartCard extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            Text(l.statsDailyBreakdown,
-                style: theme.textTheme.titleMedium),
+            Text(l.statsDailyBreakdown, style: theme.textTheme.titleMedium),
             const SizedBox(height: 2),
             Text(
               l.statsCompletionRate,
@@ -72,6 +73,24 @@ class DailyChartCard extends StatelessWidget {
 /// raise it to show fewer.
 const double _kMinLabelSpacing = 18.0;
 
+/// Shortest bar drawn for a day that has any progress. A day at 0% draws no bar
+/// at all — only the ground rule — so an empty day can never be mistaken for a
+/// small one.
+const double _kMinBarHeight = 3.0;
+
+const double _kBarRadius = 3.0;
+const double _kGroundHeight = 1.5;
+
+/// Height reserved for the day-number row, enough for the 9pt label at any
+/// text scale the chart uses.
+const double _kDayLabelHeight = 12.0;
+
+/// Rounds a logical height to a whole device pixel. Neighbouring bars whose
+/// heights differ by a fraction of a pixel otherwise antialias differently and
+/// make a row of short bars look ragged.
+double _snapToDevicePixels(double logical, double devicePixelRatio) =>
+    (logical * devicePixelRatio).roundToDouble() / devicePixelRatio;
+
 class _BarGroup extends StatelessWidget {
   const _BarGroup({
     required this.breakdown,
@@ -98,7 +117,10 @@ class _BarGroup extends StatelessWidget {
           // thin the labels on narrow ones so 2-digit numbers never crowd.
           final columnWidth = constraints.maxWidth / breakdown.length;
           final labelStride = columnWidth.isFinite && columnWidth > 0
-              ? (_kMinLabelSpacing / columnWidth).ceil().clamp(1, breakdown.length)
+              ? (_kMinLabelSpacing / columnWidth).ceil().clamp(
+                  1,
+                  breakdown.length,
+                )
               : 1;
           return Row(
             crossAxisAlignment: CrossAxisAlignment.end,
@@ -144,15 +166,28 @@ class _SingleBar extends StatelessWidget {
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final rate = day.rate.clamp(0.0, 1.0);
-    final barHeight = (rate * maxBarHeight).clamp(4.0, maxBarHeight);
     final pct = (rate * 100).round();
+
+    final double barHeight;
+    if (rate <= 0) {
+      barHeight = 0;
+    } else {
+      barHeight = _snapToDevicePixels(
+        (rate * maxBarHeight).clamp(_kMinBarHeight, maxBarHeight),
+        MediaQuery.devicePixelRatioOf(context),
+      );
+    }
+    final barRadius = math.min(_kBarRadius, barHeight / 3);
 
     final String dayLabel;
     if (isWeekView) {
       final wd = safeDateFormat('E', locale).format(day.date);
       dayLabel = wd.length <= 3 ? wd : wd.substring(0, 3);
     } else {
-      dayLabel = localizeDigits(context, safeDateFormat('d', locale).format(day.date));
+      dayLabel = localizeDigits(
+        context,
+        safeDateFormat('d', locale).format(day.date),
+      );
     }
 
     return Column(
@@ -169,45 +204,55 @@ class _SingleBar extends StatelessWidget {
               ),
             ),
           ),
-        Container(
-          height: barHeight,
-          margin: const EdgeInsetsDirectional.symmetric(horizontal: 1.5),
-          decoration: BoxDecoration(
-            color: day.isToday
-                ? theme.colorScheme.primary.withValues(alpha: 0.3)
-                : theme.colorScheme.primary,
-            borderRadius: const BorderRadius.vertical(top: Radius.circular(3)),
-            border: day.isToday
-                ? Border.all(
-                    color: theme.colorScheme.primary,
-                    width: 1.5,
-                  )
-                : null,
+        // Today is drawn like any other day; its bold primary day number is the
+        // only marker, matching how the challenge detail screen marks today.
+        if (barHeight > 0)
+          Container(
+            height: barHeight,
+            margin: const EdgeInsetsDirectional.symmetric(horizontal: 1.5),
+            decoration: BoxDecoration(
+              color: theme.colorScheme.primary,
+              borderRadius: BorderRadius.vertical(
+                top: Radius.circular(barRadius),
+              ),
+            ),
           ),
+        // Spans the full column width, unlike the bar, so neighbouring columns
+        // join into one unbroken ground line. Today is not tinted here — it is
+        // already marked by its outlined bar and its bold day number, and a
+        // full-strength segment under a 30%-alpha bar reads as a stray foot.
+        Container(
+          height: _kGroundHeight,
+          color: theme.colorScheme.outlineVariant,
         ),
         const SizedBox(height: 4),
-        // Reserve the label's height even when hidden so every bar keeps the
-        // same baseline. When shown, a narrow month-view column (~10pt) would
-        // wrap a 2-digit number onto two lines, splitting e.g. "20" into
-        // "2"/"0"; FittedBox keeps it on one line and shrinks to fit — a no-op
-        // for wider week / two-week columns.
-        Visibility(
-          visible: showDayLabel,
-          maintainSize: true,
-          maintainAnimation: true,
-          maintainState: true,
-          child: FittedBox(
-            fit: BoxFit.scaleDown,
-            child: Text(
-              dayLabel,
-              maxLines: 1,
-              softWrap: false,
-              style: theme.textTheme.labelSmall?.copyWith(
-                fontSize: 9,
-                color: day.isToday
-                    ? theme.colorScheme.primary
-                    : theme.colorScheme.onSurfaceVariant,
-                fontWeight: day.isToday ? FontWeight.bold : null,
+        // Fixed height, not the label's own. Columns are bottom-aligned, so any
+        // variation here lifts the whole bar and its ground segment: FittedBox
+        // shrinks a wide 2-digit number to fit a narrow month column, and that
+        // scales its height down too, which is enough to make the ground line
+        // visibly step between columns.
+        SizedBox(
+          height: _kDayLabelHeight,
+          child: Visibility(
+            visible: showDayLabel,
+            maintainSize: true,
+            maintainAnimation: true,
+            maintainState: true,
+            // Keeps a 2-digit number on one line in a narrow month column,
+            // which would otherwise wrap and split e.g. "20" into "2"/"0".
+            child: FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Text(
+                dayLabel,
+                maxLines: 1,
+                softWrap: false,
+                style: theme.textTheme.labelSmall?.copyWith(
+                  fontSize: 9,
+                  color: day.isToday
+                      ? theme.colorScheme.primary
+                      : theme.colorScheme.onSurfaceVariant,
+                  fontWeight: day.isToday ? FontWeight.bold : null,
+                ),
               ),
             ),
           ),
