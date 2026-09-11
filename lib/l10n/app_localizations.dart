@@ -2461,6 +2461,210 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **' · '**
   String get listSeparator;
+
+  /// Badge title for the $0.99 tip. A transliterated Arabic given name — spell it the way this language writes the name, never translate it
+  ///
+  /// In en, this message translates to:
+  /// **'Rafiq'**
+  String get tierRafiq;
+
+  /// Badge title for the $4.99 tip. Transliterate, never translate
+  ///
+  /// In en, this message translates to:
+  /// **'Nasir'**
+  String get tierNasir;
+
+  /// Badge title for the $9.99 tip. Transliterate, never translate
+  ///
+  /// In en, this message translates to:
+  /// **'Muhsin'**
+  String get tierMuhsin;
+
+  /// Badge title for the $19.99 tip — the Helpers of Madinah. Transliterate, never translate
+  ///
+  /// In en, this message translates to:
+  /// **'Ansar'**
+  String get tierAnsar;
+
+  /// One-word meaning shown under the Rafiq title. Leave empty in languages where the title itself is this word (Arabic-script locales)
+  ///
+  /// In en, this message translates to:
+  /// **'companion'**
+  String get tierRafiqMeaning;
+
+  /// One-word meaning shown under the Nasir title. Leave empty where the title itself is this word
+  ///
+  /// In en, this message translates to:
+  /// **'supporter'**
+  String get tierNasirMeaning;
+
+  /// One-word meaning shown under the Muhsin title. Leave empty where the title itself is this word
+  ///
+  /// In en, this message translates to:
+  /// **'benefactor'**
+  String get tierMuhsinMeaning;
+
+  /// One-word meaning shown under the Ansar title. Leave empty where the title itself is this word
+  ///
+  /// In en, this message translates to:
+  /// **'helper'**
+  String get tierAnsarMeaning;
+
+  /// Settings top card, before the first tip. 'its' = the app's
+  ///
+  /// In en, this message translates to:
+  /// **'Free, with no ads and no account. You can support its development with a tip — any amount, whenever you like.'**
+  String get supportCardBody;
+
+  /// Button on the Settings card before the first tip; opens the tip sheet
+  ///
+  /// In en, this message translates to:
+  /// **'Support Muhasaba'**
+  String get supportCta;
+
+  /// Button on the Settings card once the user is a supporter
+  ///
+  /// In en, this message translates to:
+  /// **'Support again'**
+  String get supportAgain;
+
+  /// Badge line on the Settings card, e.g. 'Ansar · Supporter'. Arabic-script locales: use an en dash, the middot looks like a zero
+  ///
+  /// In en, this message translates to:
+  /// **'{tier} · Supporter'**
+  String supporterTitle(String tier);
+
+  /// One line of thanks under the badge on the Settings card
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you — Muhasaba stays free and ad-free because of you.'**
+  String get supporterThanks;
+
+  /// Small line on the Settings card; month is a localized 'September 2026'
+  ///
+  /// In en, this message translates to:
+  /// **'Supporter since {month}'**
+  String supporterSince(String month);
+
+  /// Title of the one-time support prompt shown on the 30th active day
+  ///
+  /// In en, this message translates to:
+  /// **'Thirty days with Muhasaba'**
+  String get supportPromptTitle;
+
+  /// Body of the support prompt. Three sentences, no guilt, no 'donate'
+  ///
+  /// In en, this message translates to:
+  /// **'Muhasaba is free, with no ads and no account. You can support its development with a tip — any amount, whenever you like. Nothing is locked behind it.'**
+  String get supportPromptBody;
+
+  /// Primary button of the support prompt
+  ///
+  /// In en, this message translates to:
+  /// **'Support now'**
+  String get supportPromptNow;
+
+  /// Secondary button of the support prompt
+  ///
+  /// In en, this message translates to:
+  /// **'Remind me later'**
+  String get supportPromptLater;
+
+  /// Tertiary button of the support prompt
+  ///
+  /// In en, this message translates to:
+  /// **'Don\'t ask again'**
+  String get supportPromptNever;
+
+  /// Title of the tip sheet
+  ///
+  /// In en, this message translates to:
+  /// **'Support Muhasaba'**
+  String get tipSheetTitle;
+
+  /// Body of the tip sheet above the four amounts
+  ///
+  /// In en, this message translates to:
+  /// **'Choose any amount, as often as you like. Tips go toward keeping the app maintained, free, and ad-free. As a thank-you, you\'ll be marked as a supporter in Settings.'**
+  String get tipSheetBody;
+
+  /// First line of the strip shown at the top of the tip sheet to an existing supporter
+  ///
+  /// In en, this message translates to:
+  /// **'{tier} — thank you for your support.'**
+  String tipSheetSupporterLine(String tier);
+
+  /// Second line of the supporter strip on the tip sheet
+  ///
+  /// In en, this message translates to:
+  /// **'Support again whenever you like.'**
+  String get tipSheetSupporterAgain;
+
+  /// Fine print under the amounts. store is 'App Store' or 'Google Play', keep those names in English
+  ///
+  /// In en, this message translates to:
+  /// **'Handled by {store} — we never see your payment details.'**
+  String tipSheetStoreNote(String store);
+
+  /// Fine print line before the 'Write to us' link. Must not mention paying or amounts
+  ///
+  /// In en, this message translates to:
+  /// **'Want to support Muhasaba another way?'**
+  String get tipSheetOtherWays;
+
+  /// Link that opens an email to the developer
+  ///
+  /// In en, this message translates to:
+  /// **'Write to us'**
+  String get tipSheetWriteToUs;
+
+  /// Shown with a spinner while the store's purchase UI is opening
+  ///
+  /// In en, this message translates to:
+  /// **'Opening {store}…'**
+  String tipBusy(String store);
+
+  /// Headline of the thank-you stage after a successful tip
+  ///
+  /// In en, this message translates to:
+  /// **'Thank you — your support keeps Muhasaba going.'**
+  String get tipThanks;
+
+  /// Thank-you stage, when this tip raised the badge
+  ///
+  /// In en, this message translates to:
+  /// **'Your badge is now {tier}'**
+  String tipBadgeRaised(String tier);
+
+  /// Thank-you stage, when the user already held this tier or a higher one
+  ///
+  /// In en, this message translates to:
+  /// **'Your badge stays {tier}'**
+  String tipBadgeStays(String tier);
+
+  /// Closes the thank-you stage
+  ///
+  /// In en, this message translates to:
+  /// **'Done'**
+  String get tipDone;
+
+  /// Shown inside the tip sheet after a store error
+  ///
+  /// In en, this message translates to:
+  /// **'The purchase didn\'t go through. Nothing was charged.'**
+  String get tipFailed;
+
+  /// Shown on the tip sheet when the store reports a purchase as pending, e.g. a deferred payment method
+  ///
+  /// In en, this message translates to:
+  /// **'Your tip is pending with {store} — your badge will be added once it\'s confirmed.'**
+  String tipPending(String store);
+
+  /// Replaces the amounts when the store cannot be reached or products fail to load
+  ///
+  /// In en, this message translates to:
+  /// **'Purchases aren\'t available on this device right now.'**
+  String get tipUnavailable;
 }
 
 class _AppLocalizationsDelegate

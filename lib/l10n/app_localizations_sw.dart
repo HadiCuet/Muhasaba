@@ -1398,4 +1398,130 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get listSeparator => ' · ';
+
+  @override
+  String get tierRafiq => 'Rafiki';
+
+  @override
+  String get tierNasir => 'Nasir';
+
+  @override
+  String get tierMuhsin => 'Muhsin';
+
+  @override
+  String get tierAnsar => 'Ansari';
+
+  @override
+  String get tierRafiqMeaning => 'mwenzi';
+
+  @override
+  String get tierNasirMeaning => 'mwunga mkono';
+
+  @override
+  String get tierMuhsinMeaning => 'mfadhili';
+
+  @override
+  String get tierAnsarMeaning => 'msaidizi';
+
+  @override
+  String get supportCardBody =>
+      'Bila malipo, bila matangazo na bila akaunti. Unaweza kuunga mkono maendeleo yake kwa zawadi ndogo — kiasi chochote, wakati wowote.';
+
+  @override
+  String get supportCta => 'Unga mkono Muhasaba';
+
+  @override
+  String get supportAgain => 'Unga mkono tena';
+
+  @override
+  String supporterTitle(String tier) {
+    return '$tier · Mwunga mkono';
+  }
+
+  @override
+  String get supporterThanks =>
+      'Asante — kwa sababu yako, Muhasaba inabaki bila malipo na bila matangazo.';
+
+  @override
+  String supporterSince(String month) {
+    return 'Mwunga mkono tangu $month';
+  }
+
+  @override
+  String get supportPromptTitle => 'Siku thelathini na Muhasaba';
+
+  @override
+  String get supportPromptBody =>
+      'Muhasaba ni bila malipo, bila matangazo na bila akaunti. Unaweza kuunga mkono maendeleo yake kwa zawadi ndogo — kiasi chochote, wakati wowote. Hakuna kipengele kilichofungwa.';
+
+  @override
+  String get supportPromptNow => 'Unga mkono sasa';
+
+  @override
+  String get supportPromptLater => 'Nikumbushe baadaye';
+
+  @override
+  String get supportPromptNever => 'Usiulize tena';
+
+  @override
+  String get tipSheetTitle => 'Unga mkono Muhasaba';
+
+  @override
+  String get tipSheetBody =>
+      'Chagua kiasi chochote, mara nyingi upendavyo. Zawadi hizi hutumika kuiweka programu ikitunzwa, bila malipo na bila matangazo. Kama shukrani, utaonyeshwa kama mwunga mkono katika Mipangilio.';
+
+  @override
+  String tipSheetSupporterLine(String tier) {
+    return '$tier — asante kwa kuunga mkono.';
+  }
+
+  @override
+  String get tipSheetSupporterAgain =>
+      'Unga mkono tena wakati wowote upendavyo.';
+
+  @override
+  String tipSheetStoreNote(String store) {
+    return 'Inashughulikiwa na $store — hatuoni kamwe maelezo yako ya malipo.';
+  }
+
+  @override
+  String get tipSheetOtherWays =>
+      'Unataka kuunga mkono Muhasaba kwa njia nyingine?';
+
+  @override
+  String get tipSheetWriteToUs => 'Tuandikie';
+
+  @override
+  String tipBusy(String store) {
+    return 'Inafungua $store…';
+  }
+
+  @override
+  String get tipThanks =>
+      'Asante — kuunga mkono kwako kunaifanya Muhasaba iendelee.';
+
+  @override
+  String tipBadgeRaised(String tier) {
+    return 'Beji yako sasa ni $tier';
+  }
+
+  @override
+  String tipBadgeStays(String tier) {
+    return 'Beji yako inabaki $tier';
+  }
+
+  @override
+  String get tipDone => 'Maliza';
+
+  @override
+  String get tipFailed => 'Ununuzi haukukamilika. Hukutozwa chochote.';
+
+  @override
+  String tipPending(String store) {
+    return 'Zawadi yako bado inasubiri uthibitisho kutoka $store — beji yako itaongezwa mara itakapothibitishwa.';
+  }
+
+  @override
+  String get tipUnavailable =>
+      'Ununuzi haupatikani kwenye kifaa hiki kwa sasa.';
 }

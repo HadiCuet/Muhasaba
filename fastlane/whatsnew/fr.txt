@@ -1,7 +1,5 @@
 JazakAllah d'utiliser Muhasaba.
 
-• Défi — fixez-vous un objectif comme 40 nuits de Tahajjud ou 1000 salawat, et voyez si vous tenez le rythme. Si vous glissez, l'app vous prévient.
-• Statistiques — l'Historique et les Stats ne font plus qu'un onglet : séries, grille de régularité et progression par amal.
-• Les actes mensuels peuvent tomber sur plusieurs dates.
-• Une courte visite au premier lancement.
-• Les actes arrêtés peuvent être restaurés.
+• Vous pouvez désormais soutenir l'application avec un pourboire — le montant de votre choix, quand vous le souhaitez. Rien n'est verrouillé derrière : Muhasaba reste gratuite, sans publicité ni compte.
+• Les soutiens reçoivent un badge de remerciement dans les Réglages.
+• Les Réglages sont plus clairs — une seule carte en haut, et le hadith en bas de l'écran.

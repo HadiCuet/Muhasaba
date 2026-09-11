@@ -1406,4 +1406,130 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get listSeparator => ' · ';
+
+  @override
+  String get tierRafiq => 'Rafiiq';
+
+  @override
+  String get tierNasir => 'Naasir';
+
+  @override
+  String get tierMuhsin => 'Muxsin';
+
+  @override
+  String get tierAnsar => 'Ansaar';
+
+  @override
+  String get tierRafiqMeaning => 'saaxiib';
+
+  @override
+  String get tierNasirMeaning => 'taageere';
+
+  @override
+  String get tierMuhsinMeaning => 'samafale';
+
+  @override
+  String get tierAnsarMeaning => 'caawiye';
+
+  @override
+  String get supportCardBody =>
+      'Waa bilaash, xayeysiis iyo akoon la\'aan. Horumarinteeda waxaad ku taageeri kartaa wax yar oo aad bixiso — lacag kasta, mar kasta oo aad doonto.';
+
+  @override
+  String get supportCta => 'Taageer Muhasaba';
+
+  @override
+  String get supportAgain => 'Mar kale taageer';
+
+  @override
+  String supporterTitle(String tier) {
+    return '$tier · Taageere';
+  }
+
+  @override
+  String get supporterThanks =>
+      'Mahadsanid — adiga dartaa Muhasaba waxay sii ahaanaysaa mid bilaash ah oo xayeysiis la\'aan.';
+
+  @override
+  String supporterSince(String month) {
+    return 'Taageere tan iyo $month';
+  }
+
+  @override
+  String get supportPromptTitle =>
+      'Soddon maalmood oo aad Muhasaba isticmaalaysay';
+
+  @override
+  String get supportPromptBody =>
+      'Muhasaba waa bilaash, xayeysiis iyo akoon la\'aan. Horumarinteeda waxaad ku taageeri kartaa wax yar oo aad bixiso — lacag kasta, mar kasta oo aad doonto. Wax astaan ah oo xiran ma jiro.';
+
+  @override
+  String get supportPromptNow => 'Hadda taageer';
+
+  @override
+  String get supportPromptLater => 'Mar dambe i xasuusi';
+
+  @override
+  String get supportPromptNever => 'Mar dambe ha i weydiin';
+
+  @override
+  String get tipSheetTitle => 'Taageer Muhasaba';
+
+  @override
+  String get tipSheetBody =>
+      'Dooro lacag kasta, inta jeer ee aad doonto. Lacagtu waxay u adeegtaa in abka la dayactiro, uu bilaash ahaado oo xayeysiis la\'aan sii ahaado. Mahadnaq ahaan, Dejinta waxaa lagugu calaamadin doonaa taageere ahaan.';
+
+  @override
+  String tipSheetSupporterLine(String tier) {
+    return '$tier — mahadsanid taageeradaada.';
+  }
+
+  @override
+  String get tipSheetSupporterAgain =>
+      'Mar kale taageer mar kasta oo aad doonto.';
+
+  @override
+  String tipSheetStoreNote(String store) {
+    return 'Waxaa maareeya $store — annagu weligayo ma aragno faahfaahinta lacag-bixintaada.';
+  }
+
+  @override
+  String get tipSheetOtherWays =>
+      'Ma doonaysaa inaad Muhasaba si kale u taageerto?';
+
+  @override
+  String get tipSheetWriteToUs => 'Noo qor';
+
+  @override
+  String tipBusy(String store) {
+    return '$store waa la furayaa…';
+  }
+
+  @override
+  String get tipThanks =>
+      'Mahadsanid — taageeradaadu waxay Muhasaba sii wadaa.';
+
+  @override
+  String tipBadgeRaised(String tier) {
+    return 'Calaamaddaadu hadda waa $tier';
+  }
+
+  @override
+  String tipBadgeStays(String tier) {
+    return 'Calaamaddaadu waxay sii ahaanaysaa $tier';
+  }
+
+  @override
+  String get tipDone => 'Dhammaad';
+
+  @override
+  String get tipFailed => 'Iibsashadu ma dhammaystirmin. Waxba lagaama jarin.';
+
+  @override
+  String tipPending(String store) {
+    return 'Lacagtaadu wali $store ayay ku sugan tahay — calaamaddaada waxaa lagu dari doonaa marka la xaqiijiyo.';
+  }
+
+  @override
+  String get tipUnavailable => 'Iibsashada hadda laguma heli karo qalabkan.';
 }

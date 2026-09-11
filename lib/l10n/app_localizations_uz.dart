@@ -1401,4 +1401,129 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get listSeparator => ' · ';
+
+  @override
+  String get tierRafiq => 'Rafiq';
+
+  @override
+  String get tierNasir => 'Nosir';
+
+  @override
+  String get tierMuhsin => 'Muhsin';
+
+  @override
+  String get tierAnsar => 'Ansor';
+
+  @override
+  String get tierRafiqMeaning => 'hamroh';
+
+  @override
+  String get tierNasirMeaning => 'madadkor';
+
+  @override
+  String get tierMuhsinMeaning => 'saxiy';
+
+  @override
+  String get tierAnsarMeaning => 'yordamchi';
+
+  @override
+  String get supportCardBody =>
+      'Bepul, reklamasiz va hisobsiz. Xohlasangiz, rivojiga kichik hissa qo\'shib qo\'llab-quvvatlashingiz mumkin — istalgan miqdorda, istalgan vaqtda.';
+
+  @override
+  String get supportCta => 'Muhasabani qo\'llab-quvvatlash';
+
+  @override
+  String get supportAgain => 'Yana qo\'llab-quvvatlash';
+
+  @override
+  String supporterTitle(String tier) {
+    return '$tier · Homiy';
+  }
+
+  @override
+  String get supporterThanks =>
+      'Rahmat — Muhasaba siz tufayli bepul va reklamasiz qolmoqda.';
+
+  @override
+  String supporterSince(String month) {
+    return '$month oyidan beri homiy';
+  }
+
+  @override
+  String get supportPromptTitle => 'Muhasaba bilan o\'ttiz kun';
+
+  @override
+  String get supportPromptBody =>
+      'Muhasaba bepul, reklamasiz va hisobsiz. Xohlasangiz, rivojiga kichik hissa qo\'shib qo\'llab-quvvatlashingiz mumkin — istalgan miqdorda, istalgan vaqtda. Hech qanday funksiya bunga bog\'liq emas.';
+
+  @override
+  String get supportPromptNow => 'Hozir qo\'llab-quvvatlash';
+
+  @override
+  String get supportPromptLater => 'Keyinroq eslatish';
+
+  @override
+  String get supportPromptNever => 'Boshqa so\'ralmasin';
+
+  @override
+  String get tipSheetTitle => 'Muhasabani qo\'llab-quvvatlash';
+
+  @override
+  String get tipSheetBody =>
+      'Istalgan miqdorni tanlang, istagancha marta. Bu mablag\' ilovani ishlab turgan, bepul va reklamasiz holda saqlashga sarflanadi. Minnatdorchilik sifatida Sozlamalarda homiy sifatida ko\'rsatilasiz.';
+
+  @override
+  String tipSheetSupporterLine(String tier) {
+    return '$tier — qo\'llab-quvvatlaganingiz uchun rahmat.';
+  }
+
+  @override
+  String get tipSheetSupporterAgain =>
+      'Istalgan vaqtda yana qo\'llab-quvvatlashingiz mumkin.';
+
+  @override
+  String tipSheetStoreNote(String store) {
+    return 'To\'lov $store orqali amalga oshiriladi — to\'lov ma\'lumotlaringizni biz hech qachon ko\'rmaymiz.';
+  }
+
+  @override
+  String get tipSheetOtherWays =>
+      'Muhasabani boshqa yo\'l bilan qo\'llab-quvvatlamoqchimisiz?';
+
+  @override
+  String get tipSheetWriteToUs => 'Bizga yozing';
+
+  @override
+  String tipBusy(String store) {
+    return '$store ochilmoqda…';
+  }
+
+  @override
+  String get tipThanks =>
+      'Rahmat — sizning yordamingiz bilan Muhasaba davom etmoqda.';
+
+  @override
+  String tipBadgeRaised(String tier) {
+    return 'Nishoningiz endi $tier';
+  }
+
+  @override
+  String tipBadgeStays(String tier) {
+    return 'Nishoningiz $tier bo\'lib qoladi';
+  }
+
+  @override
+  String get tipDone => 'Tayyor';
+
+  @override
+  String get tipFailed => 'Xarid amalga oshmadi. Hech qanday to\'lov olinmadi.';
+
+  @override
+  String tipPending(String store) {
+    return 'Hissangiz $store tomonida kutilmoqda — tasdiqlangach nishoningiz qo\'shiladi.';
+  }
+
+  @override
+  String get tipUnavailable => 'Hozircha bu qurilmada xarid qilib bo\'lmaydi.';
 }

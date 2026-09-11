@@ -1,7 +1,7 @@
-import 'dart:async';
 import 'dart:math';
 
 import 'package:firebase_analytics/firebase_analytics.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:go_router/go_router.dart';
 import 'package:package_info_plus/package_info_plus.dart';
@@ -18,6 +18,8 @@ import '../../domain/services/reminder_sync.dart';
 import '../../domain/utils/app_locale.dart';
 import '../../domain/utils/localized_number.dart';
 import '../../domain/utils/supported_languages.dart';
+import '../support/support_card.dart';
+import '../support/support_prompt.dart';
 import '../tutorial/tutorial_controller.dart';
 import 'support_actions.dart';
 
@@ -67,8 +69,7 @@ class _SettingsList extends ConsumerWidget {
     return ListView(
       padding: const EdgeInsets.fromLTRB(16, 8, 16, 24),
       children: [
-        // App branding card.
-        _AppBrandCard(l: l),
+        const SupportCard(),
         const SizedBox(height: 8),
 
         // Schedule group.
@@ -301,6 +302,7 @@ class _SettingsList extends ConsumerWidget {
             const _VersionItem(),
           ],
         ),
+        const _HadithFooter(),
       ],
     );
   }
@@ -316,14 +318,14 @@ class _SettingsList extends ConsumerWidget {
 
 // Reads the real app version from the platform so the About row always matches
 // the installed build (was previously a hardcoded string).
-class _VersionItem extends StatefulWidget {
+class _VersionItem extends ConsumerStatefulWidget {
   const _VersionItem();
 
   @override
-  State<_VersionItem> createState() => _VersionItemState();
+  ConsumerState<_VersionItem> createState() => _VersionItemState();
 }
 
-class _VersionItemState extends State<_VersionItem> {
+class _VersionItemState extends ConsumerState<_VersionItem> {
   String _version = '';
 
   @override
@@ -344,6 +346,9 @@ class _VersionItemState extends State<_VersionItem> {
       trailing: _version,
       showChevron: false,
       onTap: () {},
+      onLongPress: kDebugMode
+          ? () => showSupportPromptForDebug(context, ref)
+          : null,
     );
   }
 }
@@ -434,170 +439,26 @@ List<String> _hadiths(AppLocalizations l) => [
   l.hadith98,
 ];
 
-class _AppBrandCard extends StatefulWidget {
-  const _AppBrandCard({required this.l});
+int? _sessionHadithIndex;
 
-  final AppLocalizations l;
-
-  @override
-  State<_AppBrandCard> createState() => _AppBrandCardState();
-}
-
-class _AppBrandCardState extends State<_AppBrandCard> {
-  // Store only the shuffled indices, not the localized strings themselves, so
-  // the selection is fixed for the session but the rendered text re-reads
-  // from `widget.l` on every build — stays in sync when the user changes the
-  // app language at runtime.
-  late final List<int> _selectedIndices;
-  late final PageController _pageController;
-  int _currentPage = 0;
-  Timer? _timer;
-
-  @override
-  void initState() {
-    super.initState();
-    final count = _hadiths(widget.l).length;
-    final indices = List.generate(count, (i) => i)..shuffle(Random());
-    _selectedIndices = indices.take(10).toList();
-    _pageController = PageController();
-    _startTimer();
-  }
-
-  void _startTimer() {
-    _timer?.cancel();
-    _timer = Timer.periodic(const Duration(seconds: 8), (_) {
-      final next = (_currentPage + 1) % _selectedIndices.length;
-      _pageController.animateToPage(
-        next,
-        duration: const Duration(milliseconds: 500),
-        curve: Curves.easeInOut,
-      );
-    });
-  }
-
-  @override
-  void dispose() {
-    _timer?.cancel();
-    _pageController.dispose();
-    super.dispose();
-  }
+class _HadithFooter extends StatelessWidget {
+  const _HadithFooter();
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final seed = theme.colorScheme.primary;
-    // Resolve the localized hadith strings per-build so a locale change
-    // immediately flows through the carousel without requiring an app
-    // restart. The shuffled indices stay fixed for the session.
-    final allHadiths = _hadiths(widget.l);
-
-    return Container(
-      margin: const EdgeInsets.only(top: 8),
-      padding: const EdgeInsets.all(14),
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(14),
-        gradient: LinearGradient(
-          colors: [seed.withValues(alpha: 0.12), seed.withValues(alpha: 0.04)],
-          begin: AlignmentDirectional.topStart,
-          end: AlignmentDirectional.bottomEnd,
+    final hadiths = _hadiths(AppLocalizations.of(context));
+    final index = _sessionHadithIndex ??= Random().nextInt(hadiths.length);
+    return Padding(
+      padding: const EdgeInsets.fromLTRB(12, 18, 12, 4),
+      child: Text(
+        hadiths[index],
+        textAlign: TextAlign.center,
+        style: theme.textTheme.bodySmall?.copyWith(
+          fontStyle: FontStyle.italic,
+          color: theme.colorScheme.onSurfaceVariant,
+          height: 1.5,
         ),
-        border: Border.all(color: seed.withValues(alpha: 0.10)),
-      ),
-      child: Column(
-        children: [
-          // App info row.
-          Row(
-            children: [
-              ClipRRect(
-                borderRadius: BorderRadius.circular(12),
-                child: Image.asset(
-                  'assets/icon/app_icon.png',
-                  width: 44,
-                  height: 44,
-                ),
-              ),
-              const SizedBox(width: 12),
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      widget.l.aboutTitle,
-                      style: theme.textTheme.titleMedium?.copyWith(
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                    const SizedBox(height: 2),
-                    Text(
-                      widget.l.settingsAboutTagline,
-                      style: theme.textTheme.labelSmall?.copyWith(
-                        color: theme.colorScheme.outline,
-                      ),
-                    ),
-                  ],
-                ),
-              ),
-            ],
-          ),
-          const SizedBox(height: 10),
-          // Hadith inset card.
-          Container(
-            width: double.infinity,
-            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 10),
-            decoration: BoxDecoration(
-              color: theme.colorScheme.surfaceContainerHighest.withValues(
-                alpha: 0.5,
-              ),
-              borderRadius: BorderRadius.circular(10),
-            ),
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 80,
-                  child: PageView.builder(
-                    controller: _pageController,
-                    itemCount: _selectedIndices.length,
-                    onPageChanged: (page) {
-                      setState(() => _currentPage = page);
-                      _startTimer(); // Reset timer on manual swipe.
-                    },
-                    itemBuilder: (_, i) => Center(
-                      child: Text(
-                        allHadiths[_selectedIndices[i]],
-                        textAlign: TextAlign.center,
-                        style: theme.textTheme.bodySmall?.copyWith(
-                          fontStyle: FontStyle.italic,
-                          color: theme.colorScheme.onSurfaceVariant,
-                          height: 1.5,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-                const SizedBox(height: 8),
-                // Dot indicators.
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    for (var i = 0; i < _selectedIndices.length; i++)
-                      AnimatedContainer(
-                        duration: const Duration(milliseconds: 300),
-                        margin: const EdgeInsets.symmetric(horizontal: 2),
-                        width: i == _currentPage ? 10 : 4,
-                        height: 4,
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(2),
-                          color: i == _currentPage
-                              ? seed
-                              : theme.colorScheme.outlineVariant,
-                        ),
-                      ),
-                  ],
-                ),
-              ],
-            ),
-          ),
-        ],
       ),
     );
   }
@@ -668,6 +529,7 @@ class _SettingsItem extends StatelessWidget {
     required this.trailing,
     this.showChevron = true,
     required this.onTap,
+    this.onLongPress,
   });
 
   final String icon;
@@ -677,12 +539,14 @@ class _SettingsItem extends StatelessWidget {
   final String trailing;
   final bool showChevron;
   final VoidCallback onTap;
+  final VoidCallback? onLongPress;
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     return InkWell(
       onTap: onTap,
+      onLongPress: onLongPress,
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 12),
         child: Row(

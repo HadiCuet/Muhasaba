@@ -1,7 +1,5 @@
 JazakAllah telah menggunakan Muhasaba.
 
-• Tantangan — tetapkan target seperti 40 malam Tahajud atau 1000 salawat, lalu lihat apakah kamu masih sesuai ritme. Kalau tertinggal, aplikasi memberi tahu.
-• Statistik — Riwayat dan Statistik kini satu tab: streak, kisi konsistensi, dan progres tiap amal.
-• Amal bulanan bisa jatuh pada beberapa tanggal.
-• Panduan singkat saat pertama membuka aplikasi.
-• Amal yang dihentikan bisa dipulihkan.
+• Kini Anda bisa mendukung aplikasi ini dengan memberi tip — berapa pun, kapan pun Anda mau. Tidak ada fitur yang dikunci: Muhasaba tetap gratis, tanpa iklan dan tanpa akun.
+• Pendukung mendapat lencana terima kasih di Setelan.
+• Setelan jadi lebih rapi — kartu aplikasi dan kartu dukungan kini menyatu, dan hadis berada di bagian bawah.

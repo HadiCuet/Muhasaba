@@ -77,4 +77,13 @@ class CompletionDao extends DatabaseAccessor<AppDatabase>
           ..where((c) => c.amalId.equals(amalId) & c.muhasabaDate.equals(date)))
         .go();
   }
+
+  Future<int> countActiveDays() async {
+    final distinctDays = completions.muhasabaDate.count(distinct: true);
+    final query = selectOnly(completions)
+      ..addColumns([distinctDays])
+      ..where(completions.progress.isBiggerThanValue(0));
+    final row = await query.getSingle();
+    return row.read(distinctDays) ?? 0;
+  }
 }

@@ -1400,4 +1400,127 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get listSeparator => ' · ';
+
+  @override
+  String get tierRafiq => 'Refîq';
+
+  @override
+  String get tierNasir => 'Nasir';
+
+  @override
+  String get tierMuhsin => 'Muhsîn';
+
+  @override
+  String get tierAnsar => 'Ensar';
+
+  @override
+  String get tierRafiqMeaning => 'heval';
+
+  @override
+  String get tierNasirMeaning => 'piştgir';
+
+  @override
+  String get tierMuhsinMeaning => 'qencîkar';
+
+  @override
+  String get tierAnsarMeaning => 'alîkar';
+
+  @override
+  String get supportCardBody =>
+      'Belaş e, bê reklam û bê hesab. Hûn dikarin bi tiştekî biçûk piştgiriya pêşxistina wê bikin — çi qas bixwazin, kengî bixwazin.';
+
+  @override
+  String get supportCta => 'Piştgiriya Muhasaba bikin';
+
+  @override
+  String get supportAgain => 'Dîsa piştgirî bikin';
+
+  @override
+  String supporterTitle(String tier) {
+    return '$tier · Piştgir';
+  }
+
+  @override
+  String get supporterThanks =>
+      'Spas — bi saya we Muhasaba belaş û bê reklam dimîne.';
+
+  @override
+  String supporterSince(String month) {
+    return 'Piştgir ji $month ve';
+  }
+
+  @override
+  String get supportPromptTitle => 'Sî roj bi Muhasaba re';
+
+  @override
+  String get supportPromptBody =>
+      'Muhasaba belaş e, bê reklam û bê hesab. Hûn dikarin bi tiştekî biçûk piştgiriya pêşxistina wê bikin — çi qas bixwazin, kengî bixwazin. Qet taybetmendiyek li pişt wê ne girtî ye.';
+
+  @override
+  String get supportPromptNow => 'Niha piştgirî bikin';
+
+  @override
+  String get supportPromptLater => 'Paşê bi bîra min bînin';
+
+  @override
+  String get supportPromptNever => 'Careke din nepirsin';
+
+  @override
+  String get tipSheetTitle => 'Piştgiriya Muhasaba bikin';
+
+  @override
+  String get tipSheetBody =>
+      'Çi qas bixwazin hilbijêrin, çend caran bixwazin. Ev pere ji bo ku bername were parastin û belaş û bê reklam bimîne tê xerckirin. Wekî spasî, hûn di Mîhengan de wekî piştgir tên nîşandan.';
+
+  @override
+  String tipSheetSupporterLine(String tier) {
+    return '$tier — ji bo piştgiriya we spas.';
+  }
+
+  @override
+  String get tipSheetSupporterAgain => 'Kengî bixwazin dîsa piştgirî bikin.';
+
+  @override
+  String tipSheetStoreNote(String store) {
+    return 'Bi rêya $store tê kirin — em tu carî agahiyên dayîna we nabînin.';
+  }
+
+  @override
+  String get tipSheetOtherWays =>
+      'Dixwazin bi awayekî din piştgiriya Muhasaba bikin?';
+
+  @override
+  String get tipSheetWriteToUs => 'Ji me re binivîsin';
+
+  @override
+  String tipBusy(String store) {
+    return '$store tê vekirin…';
+  }
+
+  @override
+  String get tipThanks => 'Spas — piştgiriya we Muhasaba li ser piyan digire.';
+
+  @override
+  String tipBadgeRaised(String tier) {
+    return 'Nîşana we niha $tier e';
+  }
+
+  @override
+  String tipBadgeStays(String tier) {
+    return 'Nîşana we $tier dimîne';
+  }
+
+  @override
+  String get tipDone => 'Temam';
+
+  @override
+  String get tipFailed => 'Kirîn pêk nehat. Qet pere nehat standin.';
+
+  @override
+  String tipPending(String store) {
+    return 'Piştgiriya we li $store li benda pejirandinê ye — gava were pejirandin, nîşana we dê were zêdekirin.';
+  }
+
+  @override
+  String get tipUnavailable => 'Niha li ser vê amûrê kirîn ne mumkin e.';
 }

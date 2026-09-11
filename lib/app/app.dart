@@ -32,6 +32,7 @@ class _MuhasabaAppState extends ConsumerState<MuhasabaApp> {
   @override
   void initState() {
     super.initState();
+    ref.read(tipServiceProvider).start();
     // Recompute the muhasaba "today" when the app returns to the foreground, so
     // a day rollover crossed while backgrounded refreshes Today/History/Stats
     // instead of showing yesterday until the app is force-quit and relaunched.

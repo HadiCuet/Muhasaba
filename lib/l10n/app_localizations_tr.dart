@@ -1396,4 +1396,129 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get listSeparator => ' · ';
+
+  @override
+  String get tierRafiq => 'Refik';
+
+  @override
+  String get tierNasir => 'Nasır';
+
+  @override
+  String get tierMuhsin => 'Muhsin';
+
+  @override
+  String get tierAnsar => 'Ensar';
+
+  @override
+  String get tierRafiqMeaning => 'yoldaş';
+
+  @override
+  String get tierNasirMeaning => 'destekçi';
+
+  @override
+  String get tierMuhsinMeaning => 'iyiliksever';
+
+  @override
+  String get tierAnsarMeaning => 'yardımcı';
+
+  @override
+  String get supportCardBody =>
+      'Ücretsiz; reklam yok, hesap yok. Geliştirilmesine küçük bir katkıyla destek olabilirsiniz — dilediğiniz tutarda, dilediğiniz zaman.';
+
+  @override
+  String get supportCta => 'Muhasaba\'ya destek ol';
+
+  @override
+  String get supportAgain => 'Yeniden destek ol';
+
+  @override
+  String supporterTitle(String tier) {
+    return '$tier · Destekçi';
+  }
+
+  @override
+  String get supporterThanks =>
+      'Teşekkürler — Muhasaba sizin sayenizde ücretsiz ve reklamsız kalıyor.';
+
+  @override
+  String supporterSince(String month) {
+    return '$month tarihinden beri destekçi';
+  }
+
+  @override
+  String get supportPromptTitle => 'Muhasaba ile otuz gün';
+
+  @override
+  String get supportPromptBody =>
+      'Muhasaba ücretsiz; reklam yok, hesap yok. Geliştirilmesine küçük bir katkıyla destek olabilirsiniz — dilediğiniz tutarda, dilediğiniz zaman. Hiçbir özellik buna bağlı değil.';
+
+  @override
+  String get supportPromptNow => 'Şimdi destek ol';
+
+  @override
+  String get supportPromptLater => 'Sonra hatırlat';
+
+  @override
+  String get supportPromptNever => 'Bir daha sorma';
+
+  @override
+  String get tipSheetTitle => 'Muhasaba\'ya destek ol';
+
+  @override
+  String get tipSheetBody =>
+      'Dilediğiniz tutarı seçin, dilediğiniz sıklıkta. Katkılar uygulamanın bakımlı, ücretsiz ve reklamsız kalmasını sağlar. Teşekkür olarak Ayarlar\'da destekçi olarak görünürsünüz.';
+
+  @override
+  String tipSheetSupporterLine(String tier) {
+    return '$tier — desteğiniz için teşekkürler.';
+  }
+
+  @override
+  String get tipSheetSupporterAgain =>
+      'Dilediğiniz zaman yeniden destek olabilirsiniz.';
+
+  @override
+  String tipSheetStoreNote(String store) {
+    return 'Ödeme $store üzerinden yapılır — ödeme bilgilerinizi hiçbir zaman görmeyiz.';
+  }
+
+  @override
+  String get tipSheetOtherWays =>
+      'Muhasaba\'ya başka bir şekilde destek olmak ister misiniz?';
+
+  @override
+  String get tipSheetWriteToUs => 'Bize yazın';
+
+  @override
+  String tipBusy(String store) {
+    return '$store açılıyor…';
+  }
+
+  @override
+  String get tipThanks =>
+      'Teşekkürler — desteğiniz Muhasaba\'yı ayakta tutuyor.';
+
+  @override
+  String tipBadgeRaised(String tier) {
+    return 'Rozetiniz artık $tier';
+  }
+
+  @override
+  String tipBadgeStays(String tier) {
+    return 'Rozetiniz $tier olarak kalıyor';
+  }
+
+  @override
+  String get tipDone => 'Tamam';
+
+  @override
+  String get tipFailed => 'Satın alma tamamlanamadı. Ücret alınmadı.';
+
+  @override
+  String tipPending(String store) {
+    return 'Katkınız $store tarafında beklemede — onaylandığında rozetiniz eklenecek.';
+  }
+
+  @override
+  String get tipUnavailable => 'Satın alma şu anda bu cihazda kullanılamıyor.';
 }

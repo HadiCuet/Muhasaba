@@ -1399,4 +1399,128 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get listSeparator => ' · ';
+
+  @override
+  String get tierRafiq => 'Рафиқ';
+
+  @override
+  String get tierNasir => 'Носир';
+
+  @override
+  String get tierMuhsin => 'Муҳсин';
+
+  @override
+  String get tierAnsar => 'Ансор';
+
+  @override
+  String get tierRafiqMeaning => 'ҳамроҳ';
+
+  @override
+  String get tierNasirMeaning => 'мададгор';
+
+  @override
+  String get tierMuhsinMeaning => 'некӯкор';
+
+  @override
+  String get tierAnsarMeaning => 'ёвар';
+
+  @override
+  String get supportCardBody =>
+      'Ройгон, бе таблиғот ва бе ҳисоб. Метавонед бо маблағи дилхоҳ рушди онро дастгирӣ кунед — ҳар қадар ки хоҳед, ҳар вақт ки хоҳед.';
+
+  @override
+  String get supportCta => 'Muhasaba-ро дастгирӣ кунед';
+
+  @override
+  String get supportAgain => 'Боз дастгирӣ кунед';
+
+  @override
+  String supporterTitle(String tier) {
+    return '$tier · Ҳомӣ';
+  }
+
+  @override
+  String get supporterThanks =>
+      'Ташаккур — ба шарофати шумо Muhasaba ройгон ва бе таблиғот мемонад.';
+
+  @override
+  String supporterSince(String month) {
+    return 'Ҳомӣ аз $month';
+  }
+
+  @override
+  String get supportPromptTitle => 'Сӣ рӯз бо Muhasaba';
+
+  @override
+  String get supportPromptBody =>
+      'Muhasaba ройгон аст, бе таблиғот ва бе ҳисоб. Метавонед бо маблағи дилхоҳ рушди онро дастгирӣ кунед — ҳар қадар ки хоҳед, ҳар вақт ки хоҳед. Ҳеҷ як хусусият ба ин вобаста нест.';
+
+  @override
+  String get supportPromptNow => 'Ҳозир дастгирӣ кунед';
+
+  @override
+  String get supportPromptLater => 'Баъдтар ёдовар шавед';
+
+  @override
+  String get supportPromptNever => 'Дигар напурсед';
+
+  @override
+  String get tipSheetTitle => 'Muhasaba-ро дастгирӣ кунед';
+
+  @override
+  String get tipSheetBody =>
+      'Ҳар маблағеро, ки мехоҳед, интихоб кунед, ҳар чанд бор ки хоҳед. Ин маблағ барои нигоҳдории барнома ва ройгону бе таблиғот мондани он сарф мешавад. Ба нишони сипос, дар Танзимот ҳамчун ҳомӣ нишон дода мешавед.';
+
+  @override
+  String tipSheetSupporterLine(String tier) {
+    return '$tier — барои дастгириатон ташаккур.';
+  }
+
+  @override
+  String get tipSheetSupporterAgain =>
+      'Ҳар вақт ки хоҳед, боз дастгирӣ карда метавонед.';
+
+  @override
+  String tipSheetStoreNote(String store) {
+    return 'Пардохт тавассути $store анҷом мешавад — мо маълумоти пардохти шуморо ҳеҷ гоҳ намебинем.';
+  }
+
+  @override
+  String get tipSheetOtherWays =>
+      'Мехоҳед Muhasaba-ро бо роҳи дигар дастгирӣ кунед?';
+
+  @override
+  String get tipSheetWriteToUs => 'Ба мо нависед';
+
+  @override
+  String tipBusy(String store) {
+    return '$store кушода мешавад…';
+  }
+
+  @override
+  String get tipThanks => 'Ташаккур — дастгирии шумо Muhasaba-ро пеш мебарад.';
+
+  @override
+  String tipBadgeRaised(String tier) {
+    return 'Нишони шумо акнун $tier аст';
+  }
+
+  @override
+  String tipBadgeStays(String tier) {
+    return 'Нишони шумо $tier мемонад';
+  }
+
+  @override
+  String get tipDone => 'Тайёр';
+
+  @override
+  String get tipFailed => 'Харид анҷом наёфт. Ҳеҷ маблағ гирифта нашуд.';
+
+  @override
+  String tipPending(String store) {
+    return 'Пардохти шумо дар $store дар интизори тасдиқ аст — ҳамин ки тасдиқ шуд, нишони шумо илова мешавад.';
+  }
+
+  @override
+  String get tipUnavailable => 'Ҳоло дар ин дастгоҳ харид дастрас нест.';
 }

@@ -1403,4 +1403,128 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get listSeparator => ' · ';
+
+  @override
+  String get tierRafiq => 'Refik';
+
+  @override
+  String get tierNasir => 'Nasir';
+
+  @override
+  String get tierMuhsin => 'Muhsin';
+
+  @override
+  String get tierAnsar => 'Ensar';
+
+  @override
+  String get tierRafiqMeaning => 'shok';
+
+  @override
+  String get tierNasirMeaning => 'mbështetës';
+
+  @override
+  String get tierMuhsinMeaning => 'bamirës';
+
+  @override
+  String get tierAnsarMeaning => 'ndihmës';
+
+  @override
+  String get supportCardBody =>
+      'Falas, pa reklama dhe pa llogari. Mund ta mbështetni zhvillimin e tij me një kontribut të vogël — çfarëdo shume, kur të doni.';
+
+  @override
+  String get supportCta => 'Mbështet Muhasaba-n';
+
+  @override
+  String get supportAgain => 'Mbështet sërish';
+
+  @override
+  String supporterTitle(String tier) {
+    return '$tier · Mbështetës';
+  }
+
+  @override
+  String get supporterThanks =>
+      'Faleminderit — falë jush, Muhasaba mbetet falas dhe pa reklama.';
+
+  @override
+  String supporterSince(String month) {
+    return 'Mbështetës që nga $month';
+  }
+
+  @override
+  String get supportPromptTitle => 'Tridhjetë ditë me Muhasaba';
+
+  @override
+  String get supportPromptBody =>
+      'Muhasaba është falas, pa reklama dhe pa llogari. Mund ta mbështetni zhvillimin e tij me një kontribut të vogël — çfarëdo shume, kur të doni. Asnjë veçori nuk është e kyçur.';
+
+  @override
+  String get supportPromptNow => 'Mbështet tani';
+
+  @override
+  String get supportPromptLater => 'Më kujto më vonë';
+
+  @override
+  String get supportPromptNever => 'Mos pyet më';
+
+  @override
+  String get tipSheetTitle => 'Mbështet Muhasaba-n';
+
+  @override
+  String get tipSheetBody =>
+      'Zgjidhni çfarëdo shume, sa herë të doni. Kontributet shkojnë për ta mbajtur aplikacionin të mirëmbajtur, falas dhe pa reklama. Si falënderim, do të shfaqeni si mbështetës te Cilësimet.';
+
+  @override
+  String tipSheetSupporterLine(String tier) {
+    return '$tier — faleminderit për mbështetjen tuaj.';
+  }
+
+  @override
+  String get tipSheetSupporterAgain => 'Mbështeteni sërish kur të doni.';
+
+  @override
+  String tipSheetStoreNote(String store) {
+    return 'Pagesa kryhet nga $store — ne nuk i shohim kurrë të dhënat e pagesës suaj.';
+  }
+
+  @override
+  String get tipSheetOtherWays => 'Doni ta mbështetni Muhasaba-n ndryshe?';
+
+  @override
+  String get tipSheetWriteToUs => 'Na shkruani';
+
+  @override
+  String tipBusy(String store) {
+    return 'Po hapet $store…';
+  }
+
+  @override
+  String get tipThanks =>
+      'Faleminderit — mbështetja juaj e mban Muhasaba-n në këmbë.';
+
+  @override
+  String tipBadgeRaised(String tier) {
+    return 'Stema juaj tani është $tier';
+  }
+
+  @override
+  String tipBadgeStays(String tier) {
+    return 'Stema juaj mbetet $tier';
+  }
+
+  @override
+  String get tipDone => 'U krye';
+
+  @override
+  String get tipFailed => 'Blerja nuk u krye. Nuk u tarifua asgjë.';
+
+  @override
+  String tipPending(String store) {
+    return 'Kontributi juaj është në pritje te $store — stema juaj do të shtohet sapo të konfirmohet.';
+  }
+
+  @override
+  String get tipUnavailable =>
+      'Blerjet nuk janë të disponueshme në këtë pajisje për momentin.';
 }

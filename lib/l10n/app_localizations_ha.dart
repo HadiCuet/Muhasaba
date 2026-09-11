@@ -1401,4 +1401,128 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get listSeparator => ' · ';
+
+  @override
+  String get tierRafiq => 'Rafiq';
+
+  @override
+  String get tierNasir => 'Nasir';
+
+  @override
+  String get tierMuhsin => 'Muhsin';
+
+  @override
+  String get tierAnsar => 'Ansar';
+
+  @override
+  String get tierRafiqMeaning => 'aboki';
+
+  @override
+  String get tierNasirMeaning => 'mai goyon baya';
+
+  @override
+  String get tierMuhsinMeaning => 'mai kyautatawa';
+
+  @override
+  String get tierAnsarMeaning => 'mai taimako';
+
+  @override
+  String get supportCardBody =>
+      'Kyauta ne, babu talla, babu buƙatar asusu. Kuna iya tallafa wa ci gabansa da ɗan abu — kowane adadi, a duk lokacin da kuke so.';
+
+  @override
+  String get supportCta => 'Tallafa wa Muhasaba';
+
+  @override
+  String get supportAgain => 'Sake tallafawa';
+
+  @override
+  String supporterTitle(String tier) {
+    return '$tier · Mai tallafi';
+  }
+
+  @override
+  String get supporterThanks =>
+      'Mun gode — saboda ku ne Muhasaba ke ci gaba da zama kyauta ba tare da talla ba.';
+
+  @override
+  String supporterSince(String month) {
+    return 'Mai tallafi tun $month';
+  }
+
+  @override
+  String get supportPromptTitle => 'Kwana talatin da Muhasaba';
+
+  @override
+  String get supportPromptBody =>
+      'Muhasaba kyauta ne, babu talla, babu buƙatar asusu. Kuna iya tallafa wa ci gabansa da ɗan abu — kowane adadi, a duk lokacin da kuke so. Babu wani fasali da aka kulle.';
+
+  @override
+  String get supportPromptNow => 'Tallafa yanzu';
+
+  @override
+  String get supportPromptLater => 'Tunatar da ni daga baya';
+
+  @override
+  String get supportPromptNever => 'Kada a sake tambaya';
+
+  @override
+  String get tipSheetTitle => 'Tallafa wa Muhasaba';
+
+  @override
+  String get tipSheetBody =>
+      'Zaɓi kowane adadi, a duk lokacin da kuke so. Kuɗin na taimakawa wajen kula da app ɗin, ya ci gaba da zama kyauta ba tare da talla ba. A matsayin godiya, za a sanya muku alamar mai tallafi a Saituna.';
+
+  @override
+  String tipSheetSupporterLine(String tier) {
+    return '$tier — mun gode da tallafinku.';
+  }
+
+  @override
+  String get tipSheetSupporterAgain =>
+      'Sake tallafawa a duk lokacin da kuke so.';
+
+  @override
+  String tipSheetStoreNote(String store) {
+    return '$store ne ke gudanar da biyan kuɗi — ba ma taɓa ganin bayanan biyan kuɗinku.';
+  }
+
+  @override
+  String get tipSheetOtherWays => 'Kuna son tallafa wa Muhasaba ta wata hanya?';
+
+  @override
+  String get tipSheetWriteToUs => 'Rubuto mana';
+
+  @override
+  String tipBusy(String store) {
+    return 'Ana buɗe $store…';
+  }
+
+  @override
+  String get tipThanks =>
+      'Mun gode — tallafinku ne ke ci gaba da rayar da Muhasaba.';
+
+  @override
+  String tipBadgeRaised(String tier) {
+    return 'Bajinku yanzu $tier ne';
+  }
+
+  @override
+  String tipBadgeStays(String tier) {
+    return 'Bajinku ya ci gaba da zama $tier';
+  }
+
+  @override
+  String get tipDone => 'An gama';
+
+  @override
+  String get tipFailed => 'Sayen bai yi nasara ba. Ba a cire komai ba.';
+
+  @override
+  String tipPending(String store) {
+    return 'Tallafinku yana jiran tabbatarwa a $store — za a ƙara bajinku da zarar an tabbatar da shi.';
+  }
+
+  @override
+  String get tipUnavailable => 'A halin yanzu ba a iya saye a wannan na\'ura.';
 }

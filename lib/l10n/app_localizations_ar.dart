@@ -1410,4 +1410,126 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get listSeparator => ' – ';
+
+  @override
+  String get tierRafiq => 'رفيق';
+
+  @override
+  String get tierNasir => 'ناصر';
+
+  @override
+  String get tierMuhsin => 'محسن';
+
+  @override
+  String get tierAnsar => 'أنصار';
+
+  @override
+  String get tierRafiqMeaning => '';
+
+  @override
+  String get tierNasirMeaning => '';
+
+  @override
+  String get tierMuhsinMeaning => '';
+
+  @override
+  String get tierAnsarMeaning => '';
+
+  @override
+  String get supportCardBody =>
+      'مجاني، بلا إعلانات ولا حساب. يمكنك دعم تطويره بمبلغ رمزي — أي مبلغ، ومتى شئت.';
+
+  @override
+  String get supportCta => 'ادعم Muhasaba';
+
+  @override
+  String get supportAgain => 'ادعم مجددًا';
+
+  @override
+  String supporterTitle(String tier) {
+    return '$tier – داعم';
+  }
+
+  @override
+  String get supporterThanks =>
+      'شكرًا لك — بفضلك يبقى Muhasaba مجانيًا وبلا إعلانات.';
+
+  @override
+  String supporterSince(String month) {
+    return 'داعم منذ $month';
+  }
+
+  @override
+  String get supportPromptTitle => 'ثلاثون يومًا مع Muhasaba';
+
+  @override
+  String get supportPromptBody =>
+      'Muhasaba مجاني، بلا إعلانات ولا حساب. يمكنك دعم تطويره بمبلغ رمزي — أي مبلغ، ومتى شئت. لا شيء مقفل خلف ذلك.';
+
+  @override
+  String get supportPromptNow => 'ادعم الآن';
+
+  @override
+  String get supportPromptLater => 'ذكّرني لاحقًا';
+
+  @override
+  String get supportPromptNever => 'لا تسألني مجددًا';
+
+  @override
+  String get tipSheetTitle => 'ادعم Muhasaba';
+
+  @override
+  String get tipSheetBody =>
+      'اختر أي مبلغ، كلما شئت. تذهب المبالغ إلى إبقاء التطبيق مُصانًا ومجانيًا وبلا إعلانات. وتقديرًا لدعمك، ستظهر كداعم في الإعدادات.';
+
+  @override
+  String tipSheetSupporterLine(String tier) {
+    return '$tier — شكرًا لدعمك.';
+  }
+
+  @override
+  String get tipSheetSupporterAgain => 'يمكنك الدعم مجددًا متى شئت.';
+
+  @override
+  String tipSheetStoreNote(String store) {
+    return 'تتم المعاملة عبر $store — لا نطّلع أبدًا على بيانات الدفع.';
+  }
+
+  @override
+  String get tipSheetOtherWays => 'تودّ دعم Muhasaba بطريقة أخرى؟';
+
+  @override
+  String get tipSheetWriteToUs => 'راسلنا';
+
+  @override
+  String tipBusy(String store) {
+    return 'جارٍ فتح $store…';
+  }
+
+  @override
+  String get tipThanks => 'شكرًا لك — دعمك يُبقي Muhasaba مستمرًا.';
+
+  @override
+  String tipBadgeRaised(String tier) {
+    return 'شارتك الآن $tier';
+  }
+
+  @override
+  String tipBadgeStays(String tier) {
+    return 'تبقى شارتك $tier';
+  }
+
+  @override
+  String get tipDone => 'تم';
+
+  @override
+  String get tipFailed => 'لم تكتمل عملية الشراء. لم يُخصم أي مبلغ.';
+
+  @override
+  String tipPending(String store) {
+    return 'دفعتك قيد المعالجة لدى $store — ستُضاف شارتك بمجرد تأكيدها.';
+  }
+
+  @override
+  String get tipUnavailable => 'عمليات الشراء غير متاحة على هذا الجهاز حاليًا.';
 }

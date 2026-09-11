@@ -1407,4 +1407,129 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get listSeparator => ' · ';
+
+  @override
+  String get tierRafiq => 'Rafiq';
+
+  @override
+  String get tierNasir => 'Nasir';
+
+  @override
+  String get tierMuhsin => 'Muhsin';
+
+  @override
+  String get tierAnsar => 'Ansar';
+
+  @override
+  String get tierRafiqMeaning => 'compagnon';
+
+  @override
+  String get tierNasirMeaning => 'soutien';
+
+  @override
+  String get tierMuhsinMeaning => 'bienfaiteur';
+
+  @override
+  String get tierAnsarMeaning => 'auxiliaire';
+
+  @override
+  String get supportCardBody =>
+      'Gratuite, sans publicité ni compte. Vous pouvez soutenir son développement avec un pourboire — le montant de votre choix, quand vous le souhaitez.';
+
+  @override
+  String get supportCta => 'Soutenir Muhasaba';
+
+  @override
+  String get supportAgain => 'Soutenir à nouveau';
+
+  @override
+  String supporterTitle(String tier) {
+    return '$tier · Soutien';
+  }
+
+  @override
+  String get supporterThanks =>
+      'Merci — grâce à vous, Muhasaba reste gratuite et sans publicité.';
+
+  @override
+  String supporterSince(String month) {
+    return 'Soutien depuis $month';
+  }
+
+  @override
+  String get supportPromptTitle => 'Trente jours avec Muhasaba';
+
+  @override
+  String get supportPromptBody =>
+      'Muhasaba est gratuite, sans publicité ni compte. Vous pouvez soutenir son développement avec un pourboire — le montant de votre choix, quand vous le souhaitez. Aucune fonctionnalité n\'est verrouillée.';
+
+  @override
+  String get supportPromptNow => 'Soutenir maintenant';
+
+  @override
+  String get supportPromptLater => 'Me le rappeler plus tard';
+
+  @override
+  String get supportPromptNever => 'Ne plus demander';
+
+  @override
+  String get tipSheetTitle => 'Soutenir Muhasaba';
+
+  @override
+  String get tipSheetBody =>
+      'Choisissez le montant que vous voulez, aussi souvent que vous le souhaitez. Les pourboires servent à entretenir l\'application et à la garder gratuite et sans publicité. En remerciement, vous apparaîtrez comme soutien dans les Paramètres.';
+
+  @override
+  String tipSheetSupporterLine(String tier) {
+    return '$tier — merci pour votre soutien.';
+  }
+
+  @override
+  String get tipSheetSupporterAgain =>
+      'Soutenez à nouveau quand vous le souhaitez.';
+
+  @override
+  String tipSheetStoreNote(String store) {
+    return 'Paiement géré par $store — nous ne voyons jamais vos informations de paiement.';
+  }
+
+  @override
+  String get tipSheetOtherWays => 'Envie de soutenir Muhasaba autrement ?';
+
+  @override
+  String get tipSheetWriteToUs => 'Écrivez-nous';
+
+  @override
+  String tipBusy(String store) {
+    return 'Ouverture de $store…';
+  }
+
+  @override
+  String get tipThanks => 'Merci — votre soutien fait vivre Muhasaba.';
+
+  @override
+  String tipBadgeRaised(String tier) {
+    return 'Votre badge est maintenant $tier';
+  }
+
+  @override
+  String tipBadgeStays(String tier) {
+    return 'Votre badge reste $tier';
+  }
+
+  @override
+  String get tipDone => 'Terminé';
+
+  @override
+  String get tipFailed =>
+      'L\'achat n\'a pas abouti. Rien ne vous a été facturé.';
+
+  @override
+  String tipPending(String store) {
+    return 'Votre pourboire est en attente auprès de $store — votre badge sera ajouté dès qu\'il sera confirmé.';
+  }
+
+  @override
+  String get tipUnavailable =>
+      'Les achats ne sont pas disponibles sur cet appareil pour le moment.';
 }

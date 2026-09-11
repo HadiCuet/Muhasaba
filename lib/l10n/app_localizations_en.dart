@@ -1398,4 +1398,128 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get listSeparator => ' · ';
+
+  @override
+  String get tierRafiq => 'Rafiq';
+
+  @override
+  String get tierNasir => 'Nasir';
+
+  @override
+  String get tierMuhsin => 'Muhsin';
+
+  @override
+  String get tierAnsar => 'Ansar';
+
+  @override
+  String get tierRafiqMeaning => 'companion';
+
+  @override
+  String get tierNasirMeaning => 'supporter';
+
+  @override
+  String get tierMuhsinMeaning => 'benefactor';
+
+  @override
+  String get tierAnsarMeaning => 'helper';
+
+  @override
+  String get supportCardBody =>
+      'Free, with no ads and no account. You can support its development with a tip — any amount, whenever you like.';
+
+  @override
+  String get supportCta => 'Support Muhasaba';
+
+  @override
+  String get supportAgain => 'Support again';
+
+  @override
+  String supporterTitle(String tier) {
+    return '$tier · Supporter';
+  }
+
+  @override
+  String get supporterThanks =>
+      'Thank you — Muhasaba stays free and ad-free because of you.';
+
+  @override
+  String supporterSince(String month) {
+    return 'Supporter since $month';
+  }
+
+  @override
+  String get supportPromptTitle => 'Thirty days with Muhasaba';
+
+  @override
+  String get supportPromptBody =>
+      'Muhasaba is free, with no ads and no account. You can support its development with a tip — any amount, whenever you like. Nothing is locked behind it.';
+
+  @override
+  String get supportPromptNow => 'Support now';
+
+  @override
+  String get supportPromptLater => 'Remind me later';
+
+  @override
+  String get supportPromptNever => 'Don\'t ask again';
+
+  @override
+  String get tipSheetTitle => 'Support Muhasaba';
+
+  @override
+  String get tipSheetBody =>
+      'Choose any amount, as often as you like. Tips go toward keeping the app maintained, free, and ad-free. As a thank-you, you\'ll be marked as a supporter in Settings.';
+
+  @override
+  String tipSheetSupporterLine(String tier) {
+    return '$tier — thank you for your support.';
+  }
+
+  @override
+  String get tipSheetSupporterAgain => 'Support again whenever you like.';
+
+  @override
+  String tipSheetStoreNote(String store) {
+    return 'Handled by $store — we never see your payment details.';
+  }
+
+  @override
+  String get tipSheetOtherWays => 'Want to support Muhasaba another way?';
+
+  @override
+  String get tipSheetWriteToUs => 'Write to us';
+
+  @override
+  String tipBusy(String store) {
+    return 'Opening $store…';
+  }
+
+  @override
+  String get tipThanks => 'Thank you — your support keeps Muhasaba going.';
+
+  @override
+  String tipBadgeRaised(String tier) {
+    return 'Your badge is now $tier';
+  }
+
+  @override
+  String tipBadgeStays(String tier) {
+    return 'Your badge stays $tier';
+  }
+
+  @override
+  String get tipDone => 'Done';
+
+  @override
+  String get tipFailed =>
+      'The purchase didn\'t go through. Nothing was charged.';
+
+  @override
+  String tipPending(String store) {
+    return 'Your tip is pending with $store — your badge will be added once it\'s confirmed.';
+  }
+
+  @override
+  String get tipUnavailable =>
+      'Purchases aren\'t available on this device right now.';
 }

@@ -12,6 +12,7 @@ import '../../domain/services/today_builder.dart';
 import '../../domain/utils/localized_amal_title.dart';
 import '../../domain/utils/localized_category.dart';
 import '../../domain/utils/localized_number.dart';
+import '../support/support_prompt.dart';
 import '../tutorial/tutorial_anchors.dart';
 import 'widgets/amal_row.dart';
 import 'widgets/remove_sheet.dart';
@@ -157,7 +158,7 @@ class _FlatViewState extends ConsumerState<_FlatView> {
       row: row,
       streak: widget.streaks[row.amal.id],
       onProgressChanged: (progress) =>
-          _setProgress(ref, row, widget.date, progress),
+          _setProgress(context, ref, row, widget.date, progress),
       onRemove: () => _openRemoveSheet(context, ref, row, widget.date),
       onEdit: () => context.push('/amal/${row.amal.id}'),
       onNoteChanged: (note) => _setNote(ref, row, widget.date, note),
@@ -263,7 +264,7 @@ class _GroupedViewState extends ConsumerState<_GroupedView> {
                   row: row,
                   streak: widget.streaks[row.amal.id],
                   onProgressChanged: (progress) =>
-                      _setProgress(ref, row, widget.date, progress),
+                      _setProgress(context, ref, row, widget.date, progress),
                   onRemove: () =>
                       _openRemoveSheet(context, ref, row, widget.date),
                   onEdit: () => context.push('/amal/${row.amal.id}'),
@@ -373,6 +374,7 @@ Future<void> _setNote(
 }
 
 Future<void> _setProgress(
+  BuildContext context,
   WidgetRef ref,
   TodayRow row,
   DateTime date,
@@ -404,6 +406,9 @@ Future<void> _setProgress(
   }
   ref.invalidate(statsSnapshotProvider);
   ref.invalidate(currentStreaksProvider);
+  if (!wasCompleted && nowCompleted && context.mounted) {
+    await maybeShowSupportPrompt(context, ref, completedDate: date);
+  }
 }
 
 Future<void> _openRemoveSheet(

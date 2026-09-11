@@ -21,6 +21,13 @@ class SettingKeys {
       'daily_reminder_permission_asked'; // "1" | "0"
   static const tutorialSeen = 'tutorial_seen'; // "1" | "0"
   static const challengeTutorialSeen = 'challenge_tutorial_seen'; // "1" | "0"
+  static const supporterTier = 'supporter_tier'; // 0..4, TipTier.rank
+  static const supportTipCount = 'support_tip_count';
+  static const supporterSince = 'supporter_since'; // ISO-8601, empty = none
+  static const supportPromptState =
+      'support_prompt_state'; // pending | snoozed | never | done
+  static const supportSnoozedAtActiveDays = 'support_snoozed_at_active_days';
+  static const supportAskCount = 'support_ask_count'; // 0..3
 }
 
 @DriftAccessor(tables: [SettingsKv])
@@ -53,6 +60,15 @@ class SettingsDao extends DatabaseAccessor<AppDatabase>
   }
 
   Future<void> setInt(String key, int value) => set(key, value.toString());
+
+  Future<void> setAll(Map<String, String> values) {
+    return batch((b) {
+      b.insertAllOnConflictUpdate(settingsKv, [
+        for (final e in values.entries)
+          SettingsKvCompanion.insert(key: e.key, value: e.value),
+      ]);
+    });
+  }
 
   Future<int?> getInt(String key) async {
     final v = await get(key);

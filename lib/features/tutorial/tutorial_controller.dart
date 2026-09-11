@@ -15,6 +15,8 @@ import 'tutorial_step.dart';
 /// check while the first is still reading the seen flag.
 bool _running = false;
 
+bool get isTutorialRunning => _running;
+
 /// Every step the tour can show, in order. Steps whose anchor isn't mounted
 /// are dropped before the tour starts — no seeded amal has a target above
 /// one, so the stepper step is normally absent on a first run.

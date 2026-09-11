@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'support_prompt_state.dart';
+
 /// Strongly-typed snapshot of user settings. Persisted as key/value rows in
 /// the `settings_kv` table and hydrated into this object by
 /// `SettingsRepository`.
@@ -14,6 +16,12 @@ class AppSettings {
     this.locale,
     this.dailyReminderEnabled = true,
     this.dailyReminderTime = '20:00',
+    this.supporterTier = 0,
+    this.supportTipCount = 0,
+    this.supporterSince,
+    this.supportPromptState = SupportPromptState.pending,
+    this.supportSnoozedAtActiveDays = 0,
+    this.supportAskCount = 0,
   });
 
   /// 1..7, `DateTime.monday == 1`, `DateTime.saturday == 6`. Default: Saturday.
@@ -39,6 +47,20 @@ class AppSettings {
   /// Local "HH:mm" time the daily reminder fires. Default: "20:00".
   final String dailyReminderTime;
 
+  /// Highest `TipTier.rank` ever tipped; 0 = not a supporter.
+  final int supporterTier;
+
+  final int supportTipCount;
+
+  final DateTime? supporterSince;
+
+  final SupportPromptState supportPromptState;
+
+  /// Active-day count at the moment the prompt was last snoozed.
+  final int supportSnoozedAtActiveDays;
+
+  final int supportAskCount;
+
   static const defaults = AppSettings(
     startOfWeek: DateTime.saturday,
     startOfMonth: 1,
@@ -55,6 +77,12 @@ class AppSettings {
     String? Function()? locale,
     bool? dailyReminderEnabled,
     String? dailyReminderTime,
+    int? supporterTier,
+    int? supportTipCount,
+    DateTime? Function()? supporterSince,
+    SupportPromptState? supportPromptState,
+    int? supportSnoozedAtActiveDays,
+    int? supportAskCount,
   }) {
     return AppSettings(
       startOfWeek: startOfWeek ?? this.startOfWeek,
@@ -65,6 +93,15 @@ class AppSettings {
       locale: locale != null ? locale() : this.locale,
       dailyReminderEnabled: dailyReminderEnabled ?? this.dailyReminderEnabled,
       dailyReminderTime: dailyReminderTime ?? this.dailyReminderTime,
+      supporterTier: supporterTier ?? this.supporterTier,
+      supportTipCount: supportTipCount ?? this.supportTipCount,
+      supporterSince: supporterSince != null
+          ? supporterSince()
+          : this.supporterSince,
+      supportPromptState: supportPromptState ?? this.supportPromptState,
+      supportSnoozedAtActiveDays:
+          supportSnoozedAtActiveDays ?? this.supportSnoozedAtActiveDays,
+      supportAskCount: supportAskCount ?? this.supportAskCount,
     );
   }
 
@@ -79,7 +116,13 @@ class AppSettings {
           other.todayViewMode == todayViewMode &&
           other.locale == locale &&
           other.dailyReminderEnabled == dailyReminderEnabled &&
-          other.dailyReminderTime == dailyReminderTime;
+          other.dailyReminderTime == dailyReminderTime &&
+          other.supporterTier == supporterTier &&
+          other.supportTipCount == supportTipCount &&
+          other.supporterSince == supporterSince &&
+          other.supportPromptState == supportPromptState &&
+          other.supportSnoozedAtActiveDays == supportSnoozedAtActiveDays &&
+          other.supportAskCount == supportAskCount;
 
   @override
   int get hashCode => Object.hash(
@@ -91,5 +134,11 @@ class AppSettings {
     locale,
     dailyReminderEnabled,
     dailyReminderTime,
+    supporterTier,
+    supportTipCount,
+    supporterSince,
+    supportPromptState,
+    supportSnoozedAtActiveDays,
+    supportAskCount,
   );
 }

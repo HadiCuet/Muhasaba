@@ -13,6 +13,7 @@ import '../domain/models/app_settings.dart';
 import '../domain/models/frequency.dart';
 import '../domain/services/reminder_scheduler.dart';
 import '../domain/services/stats_service.dart';
+import '../domain/services/tip_service.dart';
 import '../domain/services/today_builder.dart';
 import '../domain/utils/monthly_dates.dart';
 import '../domain/utils/weekly_days.dart';
@@ -39,6 +40,12 @@ final reminderSchedulerProvider = Provider<ReminderScheduler>((ref) {
 
 final settingsRepositoryProvider = Provider<SettingsRepository>((ref) {
   return SettingsRepository(ref.watch(appDatabaseProvider).settingsDao);
+});
+
+final tipServiceProvider = Provider<TipService>((ref) {
+  final service = TipService(ref.watch(settingsRepositoryProvider));
+  ref.onDispose(service.dispose);
+  return service;
 });
 
 final amalRepositoryProvider = Provider<AmalRepository>((ref) {

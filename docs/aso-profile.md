@@ -5,7 +5,7 @@ Loaded by the `app-store-aso` and `google-play-aso` skills before any metadata,
 keyword, or creative work. Nothing here may be carried over from another app,
 and nothing in those skills may override what is written here.
 
-Last reviewed: **2026-08-25**, against version **2.0.0 (build 8)**.
+Last reviewed: **2026-09-11**, against version **2.1.0 (build 9)**.
 
 ---
 
@@ -15,8 +15,8 @@ Last reviewed: **2026-08-25**, against version **2.0.0 (build 8)**.
 |---|---|
 | Name | **Muhasaba** |
 | Bundle / application ID | `dev.mukashi.muhasaba` |
-| Version | 2.0.0 (8) |
-| Price | **Free.** No in-app purchases, no subscriptions, no ads. |
+| Version | 2.1.0 (9) |
+| Price | **Free.** Optional in-app tips ($0.99–$19.99, consumable, unlock nothing); no subscriptions, no ads. |
 | Platforms | iOS/iPadOS **and** Android — both listings are maintained, neither is a port afterthought |
 | App Store Connect | mukashi.dev@gmail.com |
 | Google Play Console | hadi.cuet@gmail.com |
@@ -240,6 +240,18 @@ should be worked into the Play copy instead of being dropped.
 - [ ] Rebuild the Play feature graphic for 2.0.0.
 - [ ] Write 2.0.0 release notes (Challenges, Insights) for both stores, 9+ locales.
 - [ ] Reword screenshot file 10's "No internet." caption at the next asset pass.
+- [ ] First release with tips: App Store listing will show "In-App Purchases";
+      Play Data Safety and Apple's privacy label need no new declaration (no
+      purchase history collected by us) — confirm at submission.
+      Done already: 2.1.0 release notes in all 9 ASC locales
+      (`fastlane/whatsnew/`) and the Play changelog
+      (`fastlane/metadata/android/en-US/changelogs/9.txt`); build 9 is on the
+      Play **internal** track.
+- [ ] Create the four tip products in **both** consoles. Play:
+      `python3 tool/play_products.py` (uses Play's own currency conversion for
+      all 173 regions). App Store Connect: create them by hand, price points
+      $0.99 / $4.99 / $9.99 / $19.99, and apply for the **Small Business
+      Program** — unlike Play's 15% tier, Apple's needs an application.
 
 ---
 

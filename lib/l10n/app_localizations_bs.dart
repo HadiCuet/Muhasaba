@@ -1405,4 +1405,129 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get listSeparator => ' · ';
+
+  @override
+  String get tierRafiq => 'Refik';
+
+  @override
+  String get tierNasir => 'Nasir';
+
+  @override
+  String get tierMuhsin => 'Muhsin';
+
+  @override
+  String get tierAnsar => 'Ensar';
+
+  @override
+  String get tierRafiqMeaning => 'prijatelj';
+
+  @override
+  String get tierNasirMeaning => 'zaštitnik';
+
+  @override
+  String get tierMuhsinMeaning => 'dobročinitelj';
+
+  @override
+  String get tierAnsarMeaning => 'pomagač';
+
+  @override
+  String get supportCardBody =>
+      'Besplatna, bez reklama i bez računa. Razvoj možete podržati malim doprinosom — bilo kojim iznosom, kad god želite.';
+
+  @override
+  String get supportCta => 'Podržite aplikaciju Muhasaba';
+
+  @override
+  String get supportAgain => 'Podržite ponovo';
+
+  @override
+  String supporterTitle(String tier) {
+    return '$tier · Pokrovitelj';
+  }
+
+  @override
+  String get supporterThanks =>
+      'Hvala vam — zahvaljujući vama Muhasaba ostaje besplatna i bez reklama.';
+
+  @override
+  String supporterSince(String month) {
+    return 'Pokrovitelj od $month';
+  }
+
+  @override
+  String get supportPromptTitle => 'Trideset dana uz aplikaciju Muhasaba';
+
+  @override
+  String get supportPromptBody =>
+      'Muhasaba je besplatna, bez reklama i bez računa. Razvoj možete podržati malim doprinosom — bilo kojim iznosom, kad god želite. Nijedna funkcija nije zaključana.';
+
+  @override
+  String get supportPromptNow => 'Podržite sada';
+
+  @override
+  String get supportPromptLater => 'Podsjeti me kasnije';
+
+  @override
+  String get supportPromptNever => 'Ne pitaj više';
+
+  @override
+  String get tipSheetTitle => 'Podržite aplikaciju Muhasaba';
+
+  @override
+  String get tipSheetBody =>
+      'Odaberite bilo koji iznos, koliko god često želite. Doprinosi idu na održavanje aplikacije, da ostane besplatna i bez reklama. U znak zahvalnosti, u Postavkama ćete biti označeni kao pokrovitelj.';
+
+  @override
+  String tipSheetSupporterLine(String tier) {
+    return '$tier — hvala vam na podršci.';
+  }
+
+  @override
+  String get tipSheetSupporterAgain => 'Podržite ponovo kad god želite.';
+
+  @override
+  String tipSheetStoreNote(String store) {
+    return 'Plaćanje obavlja $store — mi nikada ne vidimo vaše podatke o plaćanju.';
+  }
+
+  @override
+  String get tipSheetOtherWays =>
+      'Želite podržati aplikaciju Muhasaba na drugi način?';
+
+  @override
+  String get tipSheetWriteToUs => 'Pišite nam';
+
+  @override
+  String tipBusy(String store) {
+    return 'Otvaranje $store…';
+  }
+
+  @override
+  String get tipThanks =>
+      'Hvala vam — vaša podrška održava aplikaciju Muhasaba.';
+
+  @override
+  String tipBadgeRaised(String tier) {
+    return 'Vaša značka je sada $tier';
+  }
+
+  @override
+  String tipBadgeStays(String tier) {
+    return 'Vaša značka ostaje $tier';
+  }
+
+  @override
+  String get tipDone => 'Gotovo';
+
+  @override
+  String get tipFailed => 'Kupovina nije uspjela. Ništa nije naplaćeno.';
+
+  @override
+  String tipPending(String store) {
+    return '$store još obrađuje vaš doprinos — značka će biti dodana čim bude potvrđen.';
+  }
+
+  @override
+  String get tipUnavailable =>
+      'Kupovine trenutno nisu dostupne na ovom uređaju.';
 }

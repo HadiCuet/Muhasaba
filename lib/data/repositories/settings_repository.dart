@@ -1,6 +1,10 @@
+import 'dart:math';
+
 import 'package:flutter/material.dart';
 
 import '../../domain/models/app_settings.dart';
+import '../../domain/models/support_prompt_state.dart';
+import '../../domain/models/tip_tier.dart';
 import '../db/daos/settings_dao.dart';
 
 /// Hydrates `AppSettings` from the `settings_kv` key/value table and writes
@@ -72,6 +76,31 @@ class SettingsRepository {
     return v == '1';
   }
 
+  Future<void> setSupportPromptState(SupportPromptState state) =>
+      _dao.set(SettingKeys.supportPromptState, state.name);
+
+  Future<void> setSupportAskCount(int count) =>
+      _dao.setInt(SettingKeys.supportAskCount, count);
+
+  Future<void> snoozeSupportPrompt({required int activeDays}) => _dao.setAll({
+    SettingKeys.supportPromptState: SupportPromptState.snoozed.name,
+    SettingKeys.supportSnoozedAtActiveDays: activeDays.toString(),
+  });
+
+  Future<void> recordTip(TipTier tier, {required DateTime now}) async {
+    final current = await get();
+    await _dao.setAll({
+      SettingKeys.supporterTier: max(
+        current.supporterTier,
+        tier.rank,
+      ).toString(),
+      SettingKeys.supportTipCount: (current.supportTipCount + 1).toString(),
+      SettingKeys.supporterSince: (current.supporterSince ?? now)
+          .toIso8601String(),
+      SettingKeys.supportPromptState: SupportPromptState.done.name,
+    });
+  }
+
   AppSettings _fromMap(Map<String, String> m) {
     return AppSettings(
       startOfWeek:
@@ -90,12 +119,26 @@ class SettingsRepository {
       dailyReminderTime:
           m[SettingKeys.dailyReminderTime] ??
           AppSettings.defaults.dailyReminderTime,
+      supporterTier: int.tryParse(m[SettingKeys.supporterTier] ?? '') ?? 0,
+      supportTipCount: int.tryParse(m[SettingKeys.supportTipCount] ?? '') ?? 0,
+      supporterSince: _parseDate(m[SettingKeys.supporterSince]),
+      supportPromptState: SupportPromptState.parse(
+        m[SettingKeys.supportPromptState],
+      ),
+      supportSnoozedAtActiveDays:
+          int.tryParse(m[SettingKeys.supportSnoozedAtActiveDays] ?? '') ?? 0,
+      supportAskCount: int.tryParse(m[SettingKeys.supportAskCount] ?? '') ?? 0,
     );
   }
 
   String? _parseLocale(String? v) {
     if (v == null || v.isEmpty) return null;
     return v;
+  }
+
+  DateTime? _parseDate(String? v) {
+    if (v == null || v.isEmpty) return null;
+    return DateTime.tryParse(v);
   }
 
   ThemeMode _parseTheme(String? v) {

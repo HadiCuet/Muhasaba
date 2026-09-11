@@ -21,6 +21,7 @@ const String kPrivacyPolicyUrl = 'https://hadicuet.github.io/Muhasaba/privacy/';
 const String _subjectContact = 'Muhasaba — Contact';
 const String _subjectBug = 'Muhasaba — Bug Report';
 const String _subjectFeature = 'Muhasaba — Feature Request';
+const String _subjectSupport = 'Muhasaba — Support';
 
 /// Asks for an in-app review using the native iOS dialog. Falls back to the
 /// App Store listing, and finally a SnackBar with the support email if
@@ -72,6 +73,12 @@ Future<void> sendFeatureRequestEmail(BuildContext context) async {
     parameters: {'topic': 'feature'},
   );
   final ok = await _sendEmail(subject: _subjectFeature);
+  if (!ok && context.mounted) _showFallbackSnackBar(context);
+}
+
+Future<void> sendSupportEmail(BuildContext context) async {
+  FirebaseAnalytics.instance.logEvent(name: 'support_contact_tapped');
+  final ok = await _sendEmail(subject: _subjectSupport);
   if (!ok && context.mounted) _showFallbackSnackBar(context);
 }
 

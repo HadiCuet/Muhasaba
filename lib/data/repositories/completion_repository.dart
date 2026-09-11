@@ -23,6 +23,8 @@ class CompletionRepository {
     DateTime endExclusive,
   ) => _completions.getForAmalBetween(amalId, start, endExclusive);
 
+  Future<int> countActiveDays() => _completions.countActiveDays();
+
   Future<void> setProgress({
     required int amalId,
     required DateTime muhasabaDate,

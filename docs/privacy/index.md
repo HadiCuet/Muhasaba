@@ -1,13 +1,13 @@
 ---
 layout: default
 title: Privacy Policy for Muhasaba
-description: Effective 25 August 2026
+description: Effective 11 September 2026
 permalink: /privacy/
 ---
 
-**Effective date:** 25 August 2026
-**Last updated:** 25 August 2026
-**Version:** 1.1
+**Effective date:** 11 September 2026
+**Last updated:** 11 September 2026
+**Version:** 1.2
 
 ---
 
@@ -23,6 +23,8 @@ In release builds of the app, we collect two kinds of anonymous diagnostic data 
 We do not know who you are. We do not collect your name, email, phone number, precise location, contacts, photos, or any advertising identifier. We do not sell or share your data with advertisers. We do not profile you, target you with ads, or combine your data with other sources.
 
 If you email our support address, we will see whatever you write (and, if you choose "Send Bug Report," your device model and app version). That is the only way personal data would ever reach us, and only if you choose to write to us.
+
+You can optionally tip the developer inside the app. Tips are in-app purchases processed entirely by Apple (App Store) or Google (Google Play). We never see your payment card, billing address, or any payment details — only that a tip of a given tier was made, stored on your device so the app can thank you.
 
 The rest of this policy is the long, legally-precise version of the paragraphs above.
 
@@ -130,15 +132,26 @@ Although crash stack traces are not designed to contain personal data, it is the
 
 ### 3.4 Data you send us by email (only if you choose to)
 
-The app contains three support options in Settings that open a pre-filled email in your email client:
+The app contains four support options in Settings and on the tip sheet that open a pre-filled email in your email client:
 
 - **Contact us** — opens a blank draft addressed to `mukashi.dev@gmail.com`.
 - **Report a bug** — opens a draft that **pre-fills diagnostic information in the body**: app version, build number, platform (iOS/iPadOS/Android/macOS), OS version, device model (and on Android, manufacturer). You can edit or delete this text before sending.
 - **Request a feature** — opens a blank draft.
+- **Write to us** (on the tip sheet) — opens a blank draft with the subject "Muhasaba — Support".
 
 Emails are sent through **your own email client** using the operating system's share sheet. We do not see or store anything until and unless you press "Send" in your email client, at which point the email reaches our inbox (`mukashi.dev@gmail.com`) via Google Gmail.
 
 What we receive: your email address (as sender), anything you write, and — if you used "Report a bug" — the diagnostic body described above.
+
+### 3.5 Optional tips (in-app purchases)
+
+Muhasaba is free. Settings offers an optional, repeatable tip in four fixed amounts. A tip unlocks nothing; as a thank-you the app shows a supporter badge in Settings.
+
+Tips are **in-app purchases processed by Apple (App Store / StoreKit) or Google (Google Play Billing)**. The payment relationship is between you and Apple or Google under their terms and privacy policies. **We never receive your payment details** — no card number, billing address, or transaction identifier reaches us.
+
+What the app stores **on your device only**: the highest tip tier you have reached, how many tips you have made, the month of your first tip, and whether you have asked not to be prompted again. This is kept in the same local database as your amals and is deleted with the app.
+
+What we receive through Firebase Analytics (release builds only, see §3.2): categorical events that a tip was started, completed, or failed, and which of the four tiers it was — never an amount in your currency, never anything about you.
 
 ---
 
@@ -196,8 +209,8 @@ We share data only with the following categories of recipients, and only for the
 | --- | --- | --- | --- |
 | Google LLC (US) / Google Ireland Limited (Ireland) — **Firebase Analytics, Firebase Crashlytics, Firebase Core** | Processor on our behalf (GDPR Art. 28) | Event stream (§3.2), crash reports (§3.3), automatically-collected device signals | Analytics and crash reporting |
 | Google LLC — **Gmail** | Independent controller (inbound email service) | The contents of any support email you send | Email delivery to our inbox |
-| Apple Inc. — **App Store, in-app review** | Independent controller | Whatever Apple collects when you install, review, or interact with the App Store listing | Distribution and reviews |
-| Google LLC — **Google Play, in-app review** | Independent controller | Whatever Google collects when you install, review, or interact with the Play Store listing | Distribution and reviews |
+| Apple Inc. — **App Store, StoreKit in-app purchases, in-app review** | Independent controller | Whatever Apple collects when you install, review, tip, or interact with the App Store listing | Distribution, reviews, and processing optional tips |
+| Google LLC — **Google Play, Google Play Billing, in-app review** | Independent controller | Whatever Google collects when you install, review, tip, or interact with the Play Store listing | Distribution, reviews, and processing optional tips |
 | Legal and law-enforcement authorities | Independent controllers | Only what is required by valid legal process | Compliance with law |
 | A successor entity if Muhasaba is transferred, sold, or merged | Controller | Whatever data exists at the time | Continuity of service |
 
@@ -369,8 +382,8 @@ The app ships an **Apple Privacy Manifest** (`PrivacyInfo.xcprivacy`) declaring:
 | Firebase Analytics | Google LLC / Google Ireland Limited | Usage analytics (release builds) | https://firebase.google.com/support/privacy and https://policies.google.com/privacy |
 | Firebase Crashlytics | Google LLC / Google Ireland Limited | Crash reporting (release builds) | https://firebase.google.com/support/privacy |
 | Firebase Core | Google LLC / Google Ireland Limited | SDK initialisation | https://firebase.google.com/support/privacy |
-| Apple App Store and StoreKit in-app review | Apple Inc. | App distribution and review prompt | https://www.apple.com/legal/privacy/ |
-| Google Play and In-App Review API | Google LLC | App distribution and review prompt | https://policies.google.com/privacy |
+| Apple App Store, StoreKit (in-app purchases and review prompt) | Apple Inc. | App distribution, optional tips, review prompt | https://www.apple.com/legal/privacy/ |
+| Google Play, Google Play Billing, In-App Review API | Google LLC | App distribution, optional tips, review prompt | https://policies.google.com/privacy |
 | Gmail (inbound) | Google LLC | Our support email inbox | https://policies.google.com/privacy |
 | Web content (via WebView) | Various | The app uses an in-app browser (WebView) to display this policy and other help content. | Respective website's policy |
 

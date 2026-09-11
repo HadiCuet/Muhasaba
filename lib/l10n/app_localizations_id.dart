@@ -1401,4 +1401,129 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get listSeparator => ' · ';
+
+  @override
+  String get tierRafiq => 'Rafiq';
+
+  @override
+  String get tierNasir => 'Nasir';
+
+  @override
+  String get tierMuhsin => 'Muhsin';
+
+  @override
+  String get tierAnsar => 'Ansar';
+
+  @override
+  String get tierRafiqMeaning => 'sahabat';
+
+  @override
+  String get tierNasirMeaning => 'pendukung';
+
+  @override
+  String get tierMuhsinMeaning => 'pemurah';
+
+  @override
+  String get tierAnsarMeaning => 'penolong';
+
+  @override
+  String get supportCardBody =>
+      'Gratis, tanpa iklan dan tanpa akun. Anda bisa mendukung pengembangannya dengan memberi tip — berapa pun, kapan pun Anda mau.';
+
+  @override
+  String get supportCta => 'Dukung Muhasaba';
+
+  @override
+  String get supportAgain => 'Dukung lagi';
+
+  @override
+  String supporterTitle(String tier) {
+    return '$tier · Pendukung';
+  }
+
+  @override
+  String get supporterThanks =>
+      'Terima kasih — berkat Anda, Muhasaba tetap gratis dan bebas iklan.';
+
+  @override
+  String supporterSince(String month) {
+    return 'Pendukung sejak $month';
+  }
+
+  @override
+  String get supportPromptTitle => 'Tiga puluh hari bersama Muhasaba';
+
+  @override
+  String get supportPromptBody =>
+      'Muhasaba gratis, tanpa iklan dan tanpa akun. Anda bisa mendukung pengembangannya dengan memberi tip — berapa pun, kapan pun Anda mau. Tidak ada fitur yang dikunci.';
+
+  @override
+  String get supportPromptNow => 'Dukung sekarang';
+
+  @override
+  String get supportPromptLater => 'Ingatkan nanti';
+
+  @override
+  String get supportPromptNever => 'Jangan tanya lagi';
+
+  @override
+  String get tipSheetTitle => 'Dukung Muhasaba';
+
+  @override
+  String get tipSheetBody =>
+      'Pilih jumlah berapa pun, sesering yang Anda mau. Tip digunakan untuk menjaga aplikasi tetap terawat, gratis, dan bebas iklan. Sebagai ucapan terima kasih, Anda akan ditandai sebagai pendukung di Pengaturan.';
+
+  @override
+  String tipSheetSupporterLine(String tier) {
+    return '$tier — terima kasih atas dukungan Anda.';
+  }
+
+  @override
+  String get tipSheetSupporterAgain => 'Dukung lagi kapan pun Anda mau.';
+
+  @override
+  String tipSheetStoreNote(String store) {
+    return 'Diproses oleh $store — kami tidak pernah melihat detail pembayaran Anda.';
+  }
+
+  @override
+  String get tipSheetOtherWays => 'Ingin mendukung Muhasaba dengan cara lain?';
+
+  @override
+  String get tipSheetWriteToUs => 'Tulis kepada kami';
+
+  @override
+  String tipBusy(String store) {
+    return 'Membuka $store…';
+  }
+
+  @override
+  String get tipThanks =>
+      'Terima kasih — dukungan Anda membuat Muhasaba terus berjalan.';
+
+  @override
+  String tipBadgeRaised(String tier) {
+    return 'Lencana Anda sekarang $tier';
+  }
+
+  @override
+  String tipBadgeStays(String tier) {
+    return 'Lencana Anda tetap $tier';
+  }
+
+  @override
+  String get tipDone => 'Selesai';
+
+  @override
+  String get tipFailed =>
+      'Pembelian tidak berhasil. Tidak ada biaya yang ditagihkan.';
+
+  @override
+  String tipPending(String store) {
+    return 'Tip Anda masih tertunda di $store — lencana Anda akan ditambahkan begitu dikonfirmasi.';
+  }
+
+  @override
+  String get tipUnavailable =>
+      'Pembelian tidak tersedia di perangkat ini saat ini.';
 }

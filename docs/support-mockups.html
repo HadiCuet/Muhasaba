@@ -1,0 +1,561 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Muhasaba — Support &amp; Tips</title>
+<style>
+  *,*::before,*::after{box-sizing:border-box}
+  html,body{margin:0;padding:0}
+  :root{
+    --seed:#2E7D5B;--page:#F4F2EC;--ink:#1B1F1C;--muted:#5C6660;--line:#E9E6DD;
+  }
+  body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",system-ui,sans-serif;
+    background:var(--page);color:var(--ink);padding:40px 24px 90px;line-height:1.5}
+  header{max-width:1180px;margin:0 auto 26px}
+  header h1{font-size:28px;margin:0 0 10px;font-weight:600;letter-spacing:-.01em}
+  header p{margin:0 0 10px;color:var(--muted);font-size:15px;max-width:800px}
+  header code,.vinfo code,.ladder code{background:rgba(46,125,91,.08);color:#2b5c47;padding:1px 5px;border-radius:4px;font-size:12.5px}
+  .controls{display:flex;gap:26px;flex-wrap:wrap;align-items:flex-end;margin-top:18px;
+    background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px 20px}
+  .ctl>span{display:block;font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);font-weight:700;margin-bottom:7px}
+  .seg2{display:inline-flex;border:1px solid #cfd6d1;border-radius:999px;overflow:hidden;background:#fff}
+  .seg2 button{appearance:none;border:0;background:transparent;font:inherit;font-size:13px;padding:7px 14px;cursor:pointer;color:var(--ink);border-inline-start:1px solid #e3e8e4}
+  .seg2 button:first-child{border-inline-start:0}
+  .seg2 button.on{background:#D3E8D8;font-weight:600}
+  .ctl label{font-size:13.5px;display:flex;gap:8px;align-items:center;cursor:pointer;padding-bottom:6px}
+  .ctl .reset{font-size:13px;color:#2b5c47;background:none;border:1px solid #cfd6d1;border-radius:999px;padding:7px 14px;cursor:pointer;font-family:inherit}
+
+  main{max-width:1180px;margin:0 auto;display:flex;flex-direction:column;gap:34px}
+  section.variant{display:grid;grid-template-columns:360px minmax(0,1fr);gap:38px;align-items:start;
+    padding:26px;background:#fff;border-radius:20px;border:1px solid var(--line);
+    box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.04)}
+  @media (max-width:900px){section.variant{grid-template-columns:1fr}}
+  .vinfo h2{font-size:20px;margin:0 0 4px;font-weight:600;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .vinfo .tag{font-size:11px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:var(--seed);color:#fff;padding:3px 9px;border-radius:999px}
+  .vinfo .lede{color:var(--muted);font-size:14px;margin:8px 0 14px}
+  .vinfo h3{font-size:12px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);margin:16px 0 7px;font-weight:700}
+  .vinfo ul{margin:0;padding-inline-start:18px;font-size:13.5px;color:#33403a}
+  .vinfo ul li{margin-bottom:5px}
+  .vinfo .cost{margin-top:14px;font-size:12.5px;color:#7a4a1e;background:rgba(184,92,46,.09);padding:9px 11px;border-radius:8px}
+  .vinfo .try{margin-top:12px;font-size:12.5px;color:#1f4d3a;background:rgba(46,125,91,.09);padding:9px 11px;border-radius:8px}
+  .vinfo .rec{margin-top:12px;font-size:12.5px;color:#33403a;border-left:3px solid var(--seed);padding:4px 10px}
+  .pills{display:flex;gap:6px;flex-wrap:wrap;margin:10px 0 4px}
+  .pills button{appearance:none;font:inherit;font-size:12.5px;padding:6px 12px;border-radius:999px;border:1px solid #cfd6d1;background:#fff;cursor:pointer;color:var(--ink)}
+  .pills button.on{background:var(--seed);border-color:var(--seed);color:#fff;font-weight:600}
+  .stage{display:flex;gap:22px;flex-wrap:wrap;align-items:flex-start}
+  .stagenote{font-size:12px;color:var(--muted);width:100%;margin-top:-6px}
+
+  /* ---------- ladder ---------- */
+  .ladder{max-width:1180px;margin:0 auto;background:#fff;border:1px solid var(--line);border-radius:20px;padding:26px;
+    box-shadow:0 1px 2px rgba(0,0,0,.04),0 8px 24px rgba(0,0,0,.04)}
+  .ladder h2{font-size:20px;margin:0 0 4px;font-weight:600}
+  .ladder .lede{color:var(--muted);font-size:14px;margin:6px 0 16px;max-width:820px}
+  .ladder table{border-collapse:collapse;width:100%;font-size:13.5px}
+  .ladder th{text-align:left;font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:var(--muted);padding:6px 10px;border-bottom:1px solid var(--line)}
+  .ladder td{padding:10px;border-bottom:1px solid var(--line);vertical-align:top}
+  .ladder td.e{font-size:24px;line-height:1}
+  .ladder td.n{font-weight:600}
+  .ladder td.n small{display:block;font-weight:400;color:var(--muted);font-size:12px;direction:rtl;text-align:left}
+  .ladder td.why{color:#33403a;font-size:12.5px;max-width:440px}
+  .rules{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:20px}
+  @media (max-width:760px){.rules{grid-template-columns:1fr}}
+  .rule{border:1px solid var(--line);border-radius:14px;padding:14px 16px;font-size:13.5px}
+  .rule.rec{border-color:var(--seed);background:rgba(46,125,91,.05)}
+  .rule h4{margin:0 0 6px;font-size:14px;display:flex;gap:8px;align-items:center}
+  .rule h4 .tag{font-size:10px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;background:var(--seed);color:#fff;padding:2px 7px;border-radius:999px}
+  .rule p{margin:0 0 8px;color:#33403a}
+  .rule .cols{font-size:12px;color:var(--muted);margin-top:8px}
+  .rule .cols code{display:inline-block;margin:2px 4px 2px 0}
+
+  /* ---------- phone ---------- */
+  .phone{
+    --surface:#F6FBF4;--scl:#F0F6EE;--scc:#EAF0E8;--sch:#E4EBE3;--schst:#DFE5DD;
+    --onsurf:#171D19;--onsv:#404943;--ov:#C0C9C1;--outline:#707973;
+    --primary:#226A4B;--onprimary:#FFFFFF;--pc:#A9F2C7;--opc:#00512F;
+    --sc:#D3E8D8;--osc:#101F17;--inv:#2C322E;--oninv:#EEF2EC;--scrim:rgba(0,0,0,.32);
+    position:relative;width:322px;height:660px;border-radius:44px;overflow:hidden;
+    border:8px solid #1A1A1C;background:var(--surface);flex:none;
+    box-shadow:0 0 0 2px #2A2A2C inset,0 18px 40px rgba(0,0,0,.18);
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,system-ui,sans-serif;
+  }
+  .phone[data-theme="dark"]{
+    --surface:#0F1511;--scl:#171D19;--scc:#1B211D;--sch:#262C28;--schst:#303632;
+    --onsurf:#DEE4DE;--onsv:#C0C9C1;--ov:#404943;--outline:#8A938C;
+    --primary:#8DD5AC;--onprimary:#00382A;--pc:#00512F;--opc:#A9F2C7;
+    --sc:#3A4B40;--osc:#D3E8D8;--inv:#DEE4DE;--oninv:#2C322E;--scrim:rgba(0,0,0,.5);
+  }
+  .screen{position:absolute;inset:0;display:flex;flex-direction:column;color:var(--onsurf);background:var(--surface)}
+  .appbar{display:flex;align-items:center;justify-content:space-between;padding:46px 16px 10px;font-size:20px;font-weight:500;flex:none}
+  .body{flex:1;overflow-y:auto;padding:4px 14px 20px}
+  .body::-webkit-scrollbar{width:5px}
+  .body::-webkit-scrollbar-thumb{background:rgba(0,0,0,.16);border-radius:9px}
+  .nav{flex:none;height:76px;background:var(--scc);display:flex;justify-content:space-around;align-items:flex-start;padding-top:10px}
+  .nav div{display:flex;flex-direction:column;align-items:center;gap:3px;font-size:11px;color:var(--onsv);width:64px}
+  .nav div i{width:56px;height:28px;border-radius:14px;display:flex;align-items:center;justify-content:center;font-style:normal;font-size:16px}
+  .nav div.on{color:var(--onsurf);font-weight:600}
+  .nav div.on i{background:var(--sc)}
+
+  /* today rows */
+  .amal{display:flex;align-items:center;gap:10px;padding:10px 12px;border:1px solid var(--ov);border-radius:12px;margin-bottom:8px;background:var(--surface)}
+  .amal.done{background:color-mix(in srgb,var(--pc) 45%,var(--surface));border-color:transparent}
+  .amal .e{font-size:22px;line-height:1}
+  .amal .t{flex:1;font-size:14px;font-weight:500}
+  .amal .t small{display:block;font-size:11.5px;color:var(--onsv);font-weight:400}
+  .amal .k{width:24px;height:24px;border-radius:999px;border:2px solid var(--outline);display:flex;align-items:center;justify-content:center;font-size:13px}
+  .amal.done .k{background:var(--primary);border-color:var(--primary);color:var(--onprimary)}
+  .streak{font-size:10.5px;background:var(--sc);color:var(--osc);padding:1px 6px;border-radius:8px;margin-inline-start:6px;font-weight:600}
+  .datechip{font-size:12px;color:var(--onsv);font-weight:400}
+
+  /* settings */
+  .sh{font-size:11px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--primary);padding:14px 4px 6px}
+  .grp{background:var(--scl);border:1px solid color-mix(in srgb,var(--ov) 50%,transparent);border-radius:14px;overflow:hidden}
+  .row{display:flex;align-items:center;gap:10px;padding:11px 12px;cursor:pointer}
+  .row + .row{border-top:.5px solid color-mix(in srgb,var(--ov) 50%,transparent)}
+  .row .ic{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-size:15px;flex:none}
+  .row .tx{flex:1;min-width:0}
+  .row .tx b{display:block;font-size:14px;font-weight:500}
+  .row .tx small{display:block;font-size:12px;color:var(--onsv);margin-top:1px}
+  .row .tr{font-size:12px;color:var(--onsv);white-space:nowrap}
+  .row .ch{color:var(--onsv);font-size:16px;margin-inline-start:2px}
+  .thanks-card{display:flex;align-items:center;gap:12px;padding:12px 14px;border-radius:14px;margin-bottom:8px;cursor:pointer;
+    background:color-mix(in srgb,var(--pc) 55%,var(--surface));border:1px solid color-mix(in srgb,var(--pc) 80%,var(--outline))}
+  .thanks-card .be{font-size:30px;line-height:1}
+  .thanks-card .bt{flex:1}
+  .thanks-card .bt b{display:block;font-size:14.5px;font-weight:600;color:var(--onsurf)}
+  .thanks-card .bt small{display:block;font-size:12px;color:var(--onsv);margin-top:1px}
+  .thanks-card .bt em{display:block;font-style:normal;font-size:12px;color:var(--primary);font-weight:600;margin-top:4px}
+
+  /* brand card + support section */
+  .brand{margin:8px 0 8px;padding:14px;border-radius:14px;border:1px solid color-mix(in srgb,var(--primary) 10%,transparent);
+    background:linear-gradient(135deg,color-mix(in srgb,var(--primary) 12%,transparent),color-mix(in srgb,var(--primary) 4%,transparent))}
+  .brand .top{display:flex;align-items:center;gap:12px;margin-bottom:10px}
+  .brand .logo{width:44px;height:44px;border-radius:12px;background:var(--primary);display:flex;align-items:center;justify-content:center;font-size:24px;flex:none}
+  .brand .top b{display:block;font-size:15px;font-weight:600}
+  .brand .top small{display:block;font-size:11.5px;color:var(--onsv);line-height:1.3}
+  .brand .hadith{background:color-mix(in srgb,var(--schst) 50%,transparent);border-radius:10px;padding:10px 12px;text-align:center;font-size:11.5px;font-style:italic;color:var(--onsv);line-height:1.5}
+  .brand .dots{display:flex;justify-content:center;gap:4px;margin-top:8px}
+  .brand .dots i{display:block;width:4px;height:4px;border-radius:2px;background:var(--ov)}
+  .brand .dots i:first-child{width:10px;background:var(--primary)}
+  .sec{border-radius:14px;padding:13px 14px 12px;margin-bottom:8px;
+    background:color-mix(in srgb,var(--pc) 42%,var(--surface));border:1px solid color-mix(in srgb,var(--pc) 85%,var(--outline))}
+  .sec .head{display:flex;align-items:center;gap:12px}
+  .sec .head .be{font-size:34px;line-height:1;flex:none}
+  .sec .head .bt{flex:1;min-width:0}
+  .sec .head b{display:block;font-size:15px;font-weight:600}
+  .sec .head small{display:block;font-size:12px;color:var(--onsv);line-height:1.35;margin-top:2px}
+  .sec .since{font-size:11px;color:var(--primary);font-weight:600;margin-top:4px;display:block}
+  .sec .again{font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--onsv);margin:12px 0 6px}
+  .chips{display:grid;grid-template-columns:1fr 1fr;gap:6px}
+  .chipx{display:flex;flex-direction:column;align-items:flex-start;gap:3px;padding:8px 10px;border-radius:10px;border:1px solid color-mix(in srgb,var(--outline) 45%,transparent);background:var(--surface);cursor:pointer;min-width:0}
+  .chipx .l1{display:flex;align-items:center;gap:6px;font-size:12.5px;font-weight:600;line-height:1.15}
+  .chipx .e{font-size:17px;line-height:1;flex:none}
+  .chipx .p{font-size:12px;font-weight:700;color:var(--primary)}
+  .chipx.cur{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary) inset}
+  .chipx.busy .p{width:14px;height:14px;border:2px solid var(--ov);border-top-color:var(--primary);border-radius:50%;animation:spin .9s linear infinite;font-size:0}
+  .secbtn{width:100%;margin-top:12px}
+  .brand.merged{margin-top:8px}
+  .brand .tierlogo{background:color-mix(in srgb,var(--pc) 70%,var(--surface));font-size:28px}
+  .mdiv{height:1px;background:color-mix(in srgb,var(--primary) 14%,transparent);margin:2px 0 10px}
+  .msup b{display:block;font-size:14.5px;font-weight:600}
+  .msup small{display:block;font-size:12px;color:var(--onsv);line-height:1.35;margin-top:2px}
+  .msup .since{font-size:11px;color:var(--primary);font-weight:600;margin-top:4px;display:block}
+  .hfoot{text-align:center;font-size:11px;font-style:italic;color:var(--onsv);line-height:1.5;padding:18px 12px 4px}
+  .sw{width:34px;height:20px;border-radius:10px;background:var(--primary);position:relative;flex:none}
+  .sw::after{content:"";position:absolute;top:2px;right:2px;width:16px;height:16px;border-radius:8px;background:var(--onprimary)}
+
+  /* overlays */
+  .scrim{position:absolute;inset:0;background:var(--scrim);display:flex;align-items:center;justify-content:center;padding:0 24px}
+  .scrim.bottom{align-items:flex-end;padding:0}
+  .dialog{width:100%;background:var(--sch);border-radius:28px;padding:22px 22px 18px;color:var(--onsurf)}
+  .dialog .di{text-align:center;font-size:28px;line-height:1;margin-bottom:12px}
+  .dialog h5{margin:0 0 12px;font-size:21px;font-weight:500;text-align:center;line-height:1.25}
+  .dialog p{margin:0 0 16px;font-size:13.5px;color:var(--onsv);line-height:1.45}
+  .sheet{width:100%;background:var(--scl);border-radius:28px 28px 0 0;padding:8px 22px 26px;color:var(--onsurf)}
+  .sheet .handle{width:32px;height:4px;border-radius:2px;background:color-mix(in srgb,var(--onsv) 40%,transparent);margin:0 auto 14px}
+  .sheet h5{margin:0 0 8px;font-size:21px;font-weight:500;line-height:1.25}
+  .sheet p{margin:0 0 14px;font-size:13.5px;color:var(--onsv);line-height:1.45}
+  .sheet p.fine{font-size:11px;margin:12px 0 0;color:var(--onsv);opacity:.85}
+  .sheet p.fine.other{margin-top:6px}
+  .sheet p.fine.other a{color:var(--primary);font-weight:600;text-decoration:none}
+  .btns{display:flex;flex-direction:column;gap:2px}
+  .btn{appearance:none;font:inherit;border:0;border-radius:20px;height:40px;padding:0 20px;cursor:pointer;font-size:14px;font-weight:600;
+    display:flex;align-items:center;justify-content:center;background:transparent;color:var(--primary)}
+  .btn.fill{background:var(--primary);color:var(--onprimary)}
+  .btn.quiet{color:var(--onsv);font-weight:500}
+  .sup{display:flex;align-items:center;gap:10px;padding:10px 12px;border-radius:12px;margin-bottom:12px;
+    background:color-mix(in srgb,var(--pc) 45%,var(--surface))}
+  .sup .e{font-size:24px;line-height:1}
+  .sup b{display:block;font-size:13.5px;font-weight:600}
+  .sup small{display:block;font-size:12px;color:var(--onsv)}
+  .tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .tile{border:1px solid var(--ov);border-radius:14px;padding:10px 10px 9px;cursor:pointer;background:var(--surface);text-align:center;position:relative;min-width:0}
+  .tile .e{font-size:26px;line-height:1;margin-bottom:5px}
+  .tile b{display:block;font-size:14px;font-weight:600;line-height:1.2}
+  .tile small{display:block;font-size:11.5px;color:var(--onsv);line-height:1.25;margin-top:1px}
+  .tile .p{display:inline-block;margin-top:7px;font-size:12.5px;font-weight:600;color:var(--primary)}
+  .tile.cur{border-color:var(--primary);box-shadow:0 0 0 1px var(--primary) inset}
+  .tile.cur::after{content:"✓";position:absolute;top:6px;inset-inline-end:8px;font-size:11px;color:var(--primary);font-weight:700}
+  .rows{display:flex;flex-direction:column;border:1px solid var(--ov);border-radius:14px;overflow:hidden;background:var(--surface)}
+  .rrow{display:flex;align-items:center;gap:10px;padding:10px 12px;cursor:pointer}
+  .rrow + .rrow{border-top:.5px solid color-mix(in srgb,var(--ov) 60%,transparent)}
+  .rrow .e{font-size:22px;line-height:1;width:28px;text-align:center}
+  .rrow .tx{flex:1;min-width:0}
+  .rrow .tx b{display:block;font-size:14px;font-weight:600}
+  .rrow .tx small{display:block;font-size:11.5px;color:var(--onsv)}
+  .rrow .p{font-size:12.5px;font-weight:600;color:var(--primary);background:color-mix(in srgb,var(--pc) 45%,var(--surface));padding:4px 10px;border-radius:999px;white-space:nowrap}
+  .rrow.cur .p::before{content:"✓ "}
+  .busy{text-align:center;padding:26px 0 10px;color:var(--onsv);font-size:13.5px}
+  .busy .spin{width:26px;height:26px;border:3px solid var(--ov);border-top-color:var(--primary);border-radius:50%;margin:0 auto 12px;animation:spin .9s linear infinite}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .thanks{text-align:center;padding:8px 0 4px}
+  .thanks .be{font-size:52px;line-height:1;margin:6px 0 10px}
+  .thanks h5{text-align:center}
+  .thanks p{text-align:center}
+  .thanks .badge{display:inline-flex;align-items:center;gap:8px;background:color-mix(in srgb,var(--pc) 55%,var(--surface));border-radius:999px;padding:6px 14px 6px 10px;font-size:13.5px;font-weight:600;margin-bottom:16px}
+  .toast{position:absolute;left:14px;right:14px;bottom:88px;background:var(--inv);color:var(--oninv);font-size:12.5px;padding:11px 14px;border-radius:8px;line-height:1.35;
+    box-shadow:0 4px 14px rgba(0,0,0,.25);animation:pop .18s ease-out}
+  @keyframes pop{from{transform:translateY(8px);opacity:0}to{transform:none;opacity:1}}
+</style>
+</head>
+<body>
+<header>
+  <h1>Muhasaba — Support &amp; Tips</h1>
+  <p>Locked so far: consumable tips at <code>$0.99 · $4.99 · $9.99 · $19.99</code>, repeatable any time; a thank-you badge with a title per tier; one custom popup on the 30th active day (max 3 asks, then silent); a permanent place in Settings to tip from. Picked so far: badge rule = highest tier ever tipped · popup = bottom sheet · tip sheet = list rows. Still open: the Settings section that holds the badge and the tier buttons.</p>
+  <p>Every phone shares one state — tip in one, and the others update. Copy is the approved English; the stress test swaps in Turkish-length strings (a length stand-in, not the final translation).</p>
+  <div class="controls">
+    <div class="ctl"><span>Phone theme</span>
+      <div class="seg2" id="themeSeg"><button data-v="light" class="on">Light</button><button data-v="dark">Dark</button></div></div>
+    <div class="ctl"><span>Supporter state — shared by every phone</span>
+      <div class="seg2" id="tierSeg"><button data-v="0" class="on">Not yet</button><button data-v="1">🌱 Rafiq</button><button data-v="2">🌿 Nasir</button><button data-v="3">🌳 Muhsin</button><button data-v="4">🌴 Ansar</button></div></div>
+    <div class="ctl"><label><input type="checkbox" id="stress"> Stress-test long labels</label></div>
+    <div class="ctl"><button class="reset" id="reset">Reset demo</button></div>
+  </div>
+</header>
+
+<main>
+  <div class="ladder">
+    <h2>0 · The badge ladder</h2>
+    <p class="lede">You set <b>$19.99 = Ansar (helper)</b>. The other three follow the same idea — a word for someone who stands with you, rising in weight. All four are everyday given names across every one of the app's 23 language communities, so each translator knows the local spelling on sight (Ensar / Anshar / আনসার / انصار) and nothing gets "translated" into a paraphrase. The icons grow with the tier; the palm at the top is a quiet nod to the date-farmers of Madinah.</p>
+    <table>
+      <thead><tr><th>Amount</th><th></th><th>Title</th><th>Meaning shown</th><th>Why this word</th></tr></thead>
+      <tbody>
+        <tr><td>$0.99</td><td class="e">🌱</td><td class="n">Rafiq<small>رفيق</small></td><td>companion</td><td class="why">Someone who walks the road with you. The lightest, warmest word — right for a first, small tip.</td></tr>
+        <tr><td>$4.99</td><td class="e">🌿</td><td class="n">Nasir<small>ناصر</small></td><td>supporter</td><td class="why">One who supports — same root as Ansar, so the ladder audibly climbs toward the top tier.</td></tr>
+        <tr><td>$9.99</td><td class="e">🌳</td><td class="n">Muhsin<small>محسن</small></td><td>benefactor</td><td class="why">One who does good with excellence (ihsan); the everyday word for a benefactor in Arabic, Urdu and Bengali.</td></tr>
+        <tr><td>$19.99</td><td class="e">🌴</td><td class="n">Ansar<small>أنصار</small></td><td>helper</td><td class="why">Your pick. The Helpers of Madinah — the strongest word of the four, reserved for the top.</td></tr>
+      </tbody>
+    </table>
+    <div class="rules">
+      <div class="rule rec">
+        <h4>Badge rule: highest tier you have ever tipped <span class="tag">recommended</span></h4>
+        <p>Tip $19.99 once → Ansar, for good. Repeat tips never lower it; a bigger tip raises it. Each tile on the sheet maps 1:1 to a title, so what you get is obvious before you tap.</p>
+        <div class="cols">Stored in <code>AppSettings</code>: <code>supporterTier 0–4</code> <code>supportTipCount</code> <code>supportAskCount 0–3</code> <code>supportPromptState pending|snoozed|never|done</code> <code>supportSnoozedAtActiveDays</code></div>
+      </div>
+      <div class="rule">
+        <h4>Alternative: cumulative total</h4>
+        <p>Tips add up in tier points (2 / 5 / 10 / 20); four $4.99 tips make an Ansar. Kinder to repeat tippers, but the sheet then wants a progress line ("$5 more to Muhsin") — and that is the collection-plate feel we are avoiding.</p>
+        <div class="cols">Adds <code>supportPoints</code>; the tile ↔ title mapping stops being true.</div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 1 · popup -->
+  <section class="variant" id="q-popup">
+    <div class="vinfo">
+      <h2>1 · The popup <span class="tag">30th active day</span></h2>
+      <p class="lede">Appears once, on the Today tab, right after the completion that makes it the 30th active day. Three actions, always all visible.</p>
+      <div class="pills" data-q="popup"><button data-v="A">A · Centered dialog</button><button data-v="B" class="on">B · Bottom sheet</button></div>
+      <div id="popupInfo"></div>
+    </div>
+    <div class="stage"><div class="phone" id="p1"></div></div>
+  </section>
+
+  <!-- 2 · sheet -->
+  <section class="variant" id="q-sheet">
+    <div class="vinfo">
+      <h2>2 · The tip sheet</h2>
+      <p class="lede">Opened from the Settings row or from "Support now". Prices arrive from the store already in the user's currency — only the titles, meanings and copy are ours to translate.</p>
+      <div class="pills" data-q="sheet"><button data-v="A">A · 2×2 tiles</button><button data-v="B" class="on">B · List rows</button></div>
+      <div id="sheetInfo"></div>
+    </div>
+    <div class="stage"><div class="phone" id="p2"></div></div>
+  </section>
+
+  <!-- 3 · badge -->
+  <section class="variant" id="q-badge">
+    <div class="vinfo">
+      <h2>3 · The Support section</h2>
+      <p class="lede">One card at the top of Settings, there from day one, replacing both the row in the Support group and the hadith carousel. Before the first tip: app icon, name, the privacy line, the short copy, one button. After: the tier icon takes the app icon's place, then the badge line, one line of thanks, "Supporter since", and the same button as "Support again". The hadith survives as a single quiet line at the very bottom of Settings — a different one each time the screen opens, no carousel, no timer.</p>
+      <h3>Layout</h3>
+      <div class="pills" data-q="badge"><button data-v="F" class="on">F · One merged card, hadith as footer</button><button data-v="E">E · Two cards (previous)</button></div>
+      <div id="badgeInfo"></div>
+    </div>
+    <div class="stage"><div class="phone" id="p3"></div></div>
+  </section>
+</main>
+
+<script>
+const TIERS=[
+  {n:1,name:'Rafiq',gloss:'companion',glossTr:'yol arkadaşı',price:'$0.99',e:'🌱'},
+  {n:2,name:'Nasir',gloss:'supporter',glossTr:'destekçi',price:'$4.99',e:'🌿'},
+  {n:3,name:'Muhsin',gloss:'benefactor',glossTr:'hayırsever',price:'$9.99',e:'🌳'},
+  {n:4,name:'Ansar',gloss:'helper',glossTr:'yardımcı',price:'$19.99',e:'🌴'},
+];
+const tier=n=>TIERS.find(t=>t.n===n);
+
+const COPY={
+  en:{
+    supportRow:'Support Muhasaba', supporterSub:t=>`${t.name} · Supporter — thank you 💚`,
+    popupTitle:'Thirty days with Muhasaba',
+    popupBody:'Muhasaba is free, with no ads and no account. You can support its development with a tip — any amount, whenever you like. Nothing is locked behind it.',
+    now:'Support now', later:'Remind me later', never:'Don\'t ask again',
+    sheetTitle:'Support Muhasaba',
+    sheetBody:'Choose any amount, as often as you like. Tips go toward keeping the app maintained, free, and ad-free. As a thank-you, you\'ll be marked as a supporter in Settings.',
+    fine:'Handled by the App Store — we never see your payment details.',
+    other:'Want to support Muhasaba another way?', otherLink:'Write to us',
+    supStrip:t=>[`${t.name} — thank you for your support.`,'Support again whenever you like.'],
+    busy:'Opening the App Store…',
+    thanks:'Thank you — your support keeps Muhasaba going.',
+    nowA:t=>`Your badge is now ${t.name}`, stays:t=>`Your badge stays ${t.name}`, done:'Done',
+    secTitle:'Support Muhasaba',
+    secBody:'Free, with no ads and no account. You can support its development with a tip — any amount, whenever you like.',
+    secBtn:'Support Muhasaba',
+    secSupTitle:t=>`${t.name} · Supporter`,
+    secThanks:'Thank you — Muhasaba stays free and ad-free because of you.',
+    secSince:'Supporter since September 2026',
+    secAgain:'Support again', secTiers:'Choose an amount',
+    brandSub:'A personal deen accountability journal. All data stays on this device.',
+    hadith:'"The most beloved deeds to Allah are those done consistently, even if small."\n— Bukhari & Muslim',
+  },
+  tr:{
+    supportRow:'Muhasaba\'ya destek ol', supporterSub:t=>`${t.name} · Destekçi — teşekkürler 💚`,
+    popupTitle:'Muhasaba ile otuz gün',
+    popupBody:'Muhasaba ücretsizdir; reklamı ve hesabı yoktur. Geliştirilmesine bir bahşişle destek olabilirsin — istediğin tutar, istediğin zaman. Hiçbir şey bunun arkasına kilitli değil.',
+    now:'Şimdi destek ol', later:'Daha sonra hatırlat', never:'Bir daha sorma',
+    sheetTitle:'Muhasaba\'ya destek ol',
+    sheetBody:'İstediğin tutarı seç, dilediğin kadar tekrarla. Desteğin uygulamanın bakımlı, ücretsiz ve reklamsız kalmasına gider. Teşekkür olarak Ayarlar\'da destekçi olarak işaretlenirsin.',
+    fine:'Ödeme App Store üzerinden yapılır — ödeme bilgilerini asla görmeyiz.',
+    other:'Muhasaba\'ya başka bir şekilde destek olmak ister misin?', otherLink:'Bize yaz',
+    supStrip:t=>[`${t.name} — desteğin için teşekkürler.`,'İstediğin zaman yeniden destek olabilirsin.'],
+    busy:'App Store açılıyor…',
+    thanks:'Teşekkürler — desteğin Muhasaba\'yı ayakta tutuyor.',
+    nowA:t=>`Artık bir ${t.name}'sın`, stays:t=>`Rozetin ${t.name} olarak kalıyor`, done:'Tamam',
+    secTitle:'Muhasaba\'ya destek ol',
+    secBody:'Ücretsiz; reklamı ve hesabı yok. Geliştirilmesine bir bahşişle destek olabilirsin — istediğin tutar, istediğin zaman.',
+    secBtn:'Muhasaba\'ya destek ol',
+    secSupTitle:t=>`${t.name} · Destekçi`,
+    secThanks:'Teşekkürler — Muhasaba senin sayende ücretsiz ve reklamsız kalıyor.',
+    secSince:'Eylül 2026\'dan beri destekçi',
+    secAgain:'Yeniden destek ol', secTiers:'Bir tutar seç',
+    brandSub:'Kişisel bir din muhasebesi günlüğü. Tüm veriler bu cihazda kalır.',
+    hadith:'"Allah\'a en sevimli ameller, az da olsa devamlı olanlardır."\n— Buhârî & Müslim',
+  }
+};
+
+const G={theme:'light',tier:0,stress:false,popup:'B',sheet:'B',badge:'F'};
+const C=()=>COPY[G.stress?'tr':'en'];
+const gl=t=>G.stress?t.glossTr:t.gloss;
+
+const P={
+  p1:{mode:'today',overlay:'popup',stage:null,pick:0,toast:'',asks:1},
+  p2:{mode:'settings',overlay:'sheet',stage:'tiers',pick:0,toast:''},
+  p3:{mode:'settings',overlay:'none',stage:null,pick:0,toast:'',busyChip:0},
+};
+
+function todayBody(){
+  const rows=[
+    ['🕌','Fajr','','5d',true],['📖','Quran','one page · 1/1','12d',true],['📿','Morning adhkar','','30d',true],
+    ['🤲','Dua after salah','','',false],['🌙','Tahajjud','','',false],
+  ];
+  return rows.map(([e,t,s,st,d])=>`<div class="amal ${d?'done':''}"><span class="e">${e}</span><span class="t">${t}${st?`<span class="streak">${st}</span>`:''}${s?`<small>${s}</small>`:''}</span><span class="k">${d?'✓':''}</span></div>`).join('');
+}
+
+function brandCard(){
+  const c=C();
+  return `<div class="brand"><div class="top"><div class="logo">🌱</div><div><b>Muhasaba</b><small>${c.brandSub}</small></div></div>
+    <div class="hadith">${c.hadith.replace('\n','<br>')}</div><div class="dots"><i></i><i></i><i></i><i></i><i></i></div></div>`;
+}
+
+function supportSection(id){
+  const c=C(), cur=G.tier?tier(G.tier):null, s=P[id];
+  const btn=label=>`<button class="btn fill secbtn" data-act="open-sheet" data-p="${id}">${label}</button>`;
+  if(cur){
+    return `<div class="sec"><div class="head"><span class="be">${cur.e}</span><span class="bt"><b>${c.secSupTitle(cur)}</b><small>${c.secThanks}</small><span class="since">${c.secSince}</span></span></div>${btn(c.secAgain)}</div>`;
+  }
+  return `<div class="sec"><div class="head"><span class="be">🌱</span><span class="bt"><b>${c.secTitle}</b><small>${c.secBody}</small></span></div>${btn(c.secBtn)}</div>`;
+}
+
+function mergedCard(id){
+  const c=C(), cur=G.tier?tier(G.tier):null;
+  const btn=label=>`<button class="btn fill secbtn" data-act="open-sheet" data-p="${id}">${label}</button>`;
+  const icon = cur ? `<div class="logo tierlogo">${cur.e}</div>` : `<div class="logo">🌱</div>`;
+  const support = cur
+    ? `<div class="mdiv"></div><div class="msup"><b>${cur.e} ${c.secSupTitle(cur)}</b><small>${c.secThanks}</small><span class="since">${c.secSince}</span></div>${btn(c.secAgain)}`
+    : `<div class="mdiv"></div><div class="msup"><small>${c.secBody}</small></div>${btn(c.secBtn)}`;
+  return `<div class="brand merged"><div class="top">${icon}<div><b>Muhasaba</b><small>${c.brandSub}</small></div></div>${support}</div>`;
+}
+function hadithFooter(){ const c=C(); return `<div class="hfoot">${c.hadith.replace('\n','<br>')}</div>`; }
+
+function settingsBody(id){
+  const c=C(), t=G.tier?tier(G.tier):null;
+  const row=(ic,col,title,sub,tr,extra='')=>`<div class="row" ${extra}><span class="ic" style="background:${col}1F">${ic}</span><span class="tx"><b>${title}</b>${sub?`<small>${sub}</small>`:''}</span>${tr?`<span class="tr">${tr}</span>`:''}<span class="ch">›</span></div>`;
+  const showSection = true;
+  const sec = showSection ? supportSection(id) : '';
+  const supportRow = showSection ? '' : row('🌱','#2E7D5B',c.supportRow,'','',`data-act="open-sheet" data-p="${id}"`);
+  const secHeader = showSection && G.badge==='E' ? `<div class="sh">${t?'Supporter':'Support'}</div>` : '';
+  const merged = G.badge==='F';
+  return `
+    ${merged?mergedCard(id):brandCard()}
+    ${!merged&&showSection?secHeader+sec:''}
+    <div class="sh">Schedule</div>
+    <div class="grp">${row('🌅','#FF7043','Day rollover','New day starts at','4:00')}${row('📅','#FF7043','Start of week','','Monday')}</div>
+    <div class="sh">Reminders</div>
+    <div class="grp"><div class="row"><span class="ic" style="background:#1E88E51F">🔔</span><span class="tx"><b>Daily reminder</b><small>A gentle nudge to check in</small></span><span class="sw"></span></div></div>
+    <div class="sh">Appearance</div>
+    <div class="grp">${row('🎨','#7E57C2','Theme','','System')}${row('🌐','#7E57C2','Language','','English')}</div>
+    <div class="sh">Support</div>
+    <div class="grp">
+      ${row('🧭','#FF9800','Replay tutorial','','')}
+      ${row('⭐','#FF9800','Rate Muhasaba','','')}
+      ${supportRow}
+      ${row('✉️','#FF9800','Contact us','','')}
+      ${row('🐛','#FF9800','Report a bug','','')}
+      ${row('💡','#FF9800','Request a feature','','')}
+    </div>
+    <div class="sh">About</div>
+    <div class="grp">${row('🛡️','#009688','Privacy policy','','')}${row('ℹ️','#607D8B','Version','','2.1.0 (9)')}</div>
+    ${merged?hadithFooter():''}`;
+}
+
+function popupOverlay(id){
+  const c=C();
+  const inner=`<h5>${c.popupTitle}</h5><p>${c.popupBody}</p>
+    <div class="btns"><button class="btn fill" data-act="now" data-p="${id}">${c.now}</button>
+    <button class="btn" data-act="later" data-p="${id}">${c.later}</button>
+    <button class="btn quiet" data-act="never" data-p="${id}">${c.never}</button></div>`;
+  if(G.popup==='A') return `<div class="scrim"><div class="dialog"><div class="di">🌱</div>${inner}</div></div>`;
+  return `<div class="scrim bottom"><div class="sheet"><div class="handle"></div>${inner}</div></div>`;
+}
+
+function sheetOverlay(id){
+  const c=C(), s=P[id], cur=G.tier?tier(G.tier):null;
+  let content='';
+  if(s.stage==='busy'){
+    content=`<h5>${c.sheetTitle}</h5><div class="busy"><div class="spin"></div>${c.busy}</div>`;
+  }else if(s.stage==='thanks'){
+    const line=s.raisedNow?c.nowA(cur):c.stays(cur);
+    content=`<div class="thanks"><div class="be">${cur.e}</div><h5>${c.thanks}</h5><div class="badge">${cur.e} ${line}</div>
+      <div class="btns"><button class="btn fill" data-act="done" data-p="${id}">${c.done}</button></div></div>`;
+  }else{
+    const strip=cur?`<div class="sup"><span class="e">${cur.e}</span><span><b>${c.supStrip(cur)[0]}</b><small>${c.supStrip(cur)[1]}</small></span></div>`:'';
+    const tiles=G.sheet==='A'
+      ?`<div class="tiles">${TIERS.map(t=>`<div class="tile ${cur&&t.n===cur.n?'cur':''}" data-act="tip" data-t="${t.n}" data-p="${id}"><div class="e">${t.e}</div><b>${t.name}</b><small>${gl(t)}</small><span class="p">${t.price}</span></div>`).join('')}</div>`
+      :`<div class="rows">${TIERS.map(t=>`<div class="rrow ${cur&&t.n===cur.n?'cur':''}" data-act="tip" data-t="${t.n}" data-p="${id}"><span class="e">${t.e}</span><span class="tx"><b>${t.name}</b><small>${gl(t)}</small></span><span class="p">${t.price}</span></div>`).join('')}</div>`;
+    content=`<h5>${c.sheetTitle}</h5>${strip}<p>${c.sheetBody}</p>${tiles}<p class="fine">${c.fine}</p><p class="fine other">${c.other} <a href="mailto:mukashi.dev@gmail.com?subject=Muhasaba%20%E2%80%94%20Support">${c.otherLink}</a></p>`;
+  }
+  return `<div class="scrim bottom" data-act="dismiss" data-p="${id}"><div class="sheet"><div class="handle"></div>${content}</div></div>`;
+}
+
+function render(id){
+  const el=document.getElementById(id), s=P[id];
+  el.dataset.theme=G.theme;
+  const isToday=s.mode==='today';
+  const nav=`<div class="nav"><div class="${isToday?'on':''}"><i>✓</i>Today</div><div><i>⚑</i>Challenge</div><div><i>📈</i>Insights</div><div class="${isToday?'':'on'}"><i>⚙</i>Settings</div></div>`;
+  const appbar=isToday?`<div class="appbar">Friday, Sep 11</div>`:`<div class="appbar">Settings</div>`;
+  const body=isToday?todayBody():settingsBody(id);
+  let overlay='';
+  if(s.overlay==='popup') overlay=popupOverlay(id);
+  if(s.overlay==='sheet') overlay=sheetOverlay(id);
+  const toast=s.toast?`<div class="toast">${s.toast}</div>`:'';
+  const keep=el.querySelector('.body')?.scrollTop||0;
+  el.innerHTML=`<div class="screen">${appbar}<div class="body">${body}</div>${nav}</div>${overlay}${toast}`;
+  const b=el.querySelector('.body'); if(b) b.scrollTop=keep;
+}
+function renderAll(){ ['p1','p2','p3'].forEach(render); renderInfo(); }
+function toast(id,msg){ P[id].toast=msg; render(id); clearTimeout(P[id].tt); P[id].tt=setTimeout(()=>{P[id].toast='';render(id);},2600); }
+
+function purchase(id,n,after){
+  const s=P[id];
+  setTimeout(()=>{ s.raisedNow = n>G.tier; if(n>G.tier) G.tier=n; s.pick=n; after(); syncTierSeg(); renderAll(); },900);
+}
+
+document.addEventListener('click',e=>{
+  const a=e.target.closest('[data-act]'); if(!a) return;
+  if(a.dataset.act==='dismiss' && e.target!==a) return;
+  const id=a.dataset.p, s=P[id];
+  switch(a.dataset.act){
+    case 'now': s.overlay='sheet'; s.stage='tiers'; render(id); break;
+    case 'later': s.overlay='none'; render(id); toast(id,`Recorded: snoozed · next ask after 30 more active days · ${3-s.asks} asks left`); break;
+    case 'never': s.overlay='none'; render(id); toast(id,'Recorded: never ask again · the Settings section stays'); break;
+    case 'open-sheet': s.overlay='sheet'; s.stage='tiers'; render(id); break;
+    case 'dismiss': s.overlay= id==='p2' ? 'sheet' : 'none'; s.stage='tiers'; render(id); break;
+    case 'tip': s.stage='busy'; render(id); purchase(id,+a.dataset.t,()=>{s.stage='thanks';}); break;
+    case 'done': s.stage='tiers'; s.overlay= id==='p2' ? 'sheet' : 'none'; render(id);
+      if(id==='p1') toast(id,'Recorded: supporter · the popup never shows again');
+      break;
+  }
+});
+
+document.getElementById('themeSeg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;G.theme=b.dataset.v;seg('themeSeg',G.theme);renderAll();});
+document.getElementById('tierSeg').addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;G.tier=+b.dataset.v;seg('tierSeg',G.tier);['p1','p2','p3'].forEach(k=>{if(P[k].stage==='thanks'){P[k].stage='tiers';if(k==='p3')P[k].overlay='none';}});renderAll();});
+document.getElementById('stress').addEventListener('change',e=>{G.stress=e.target.checked;renderAll();});
+document.getElementById('reset').addEventListener('click',()=>{G.tier=0;G.stress=false;document.getElementById('stress').checked=false;seg('tierSeg',0);
+  Object.assign(P.p1,{overlay:'popup',stage:null,toast:'',asks:1});Object.assign(P.p2,{overlay:'sheet',stage:'tiers',toast:''});Object.assign(P.p3,{overlay:'none',stage:null,toast:'',busyChip:0});renderAll();});
+function seg(id,v){document.querySelectorAll('#'+id+' button').forEach(b=>b.classList.toggle('on',String(b.dataset.v)===String(v)));}
+function syncTierSeg(){seg('tierSeg',G.tier);}
+document.querySelectorAll('.pills').forEach(p=>p.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;
+  G[p.dataset.q]=b.dataset.v;p.querySelectorAll('button').forEach(x=>x.classList.toggle('on',x===b));
+  if(p.dataset.q==='popup'){P.p1.overlay='popup';P.p1.stage=null;}
+  renderAll();}));
+
+const INFO={
+  popup:{
+    A:{pros:['Reads as a moment, not a menu — the app pauses to say something once.','Native M3 <code>AlertDialog</code>; three stacked actions stay legible in every language.','Nothing else on screen competes for the tap.'],
+       cost:'Covers the row that was just ticked, so the proud moment is briefly hidden. Dialogs also read as system interruptions — fine at ≤3 in a lifetime, not more.',
+       try:'Try: tap each of the three buttons — the toast says exactly what the app would record. "Support now" walks straight into the tip sheet.',
+       rec:'The alternative you did not pick.'},
+    B:{pros:['Softer entrance; the ticked row stays visible behind it.','Buttons sit under the thumb.','Swipe-down to dismiss is natural — it counts as "Remind me later".'],
+       cost:'Long copy pushes the primary button lower on small phones — one reason the "one person" sentence is gone. Keep the body to three sentences.',
+       try:'Try: tap each of the three buttons — the toast says exactly what the app would record. "Support now" walks straight into the tip sheet.',
+       rec:'Your pick. Copy now: free / no ads / no account → the ask → nothing is locked.'}
+  },
+  sheet:{
+    A:{pros:['All four tiers visible at once, no scrolling.','Icon + title + meaning + price in one glance.'],
+       cost:'Two columns give each tile ~120px; a long meaning in Indonesian, Bengali or Uzbek wraps and makes one row taller than the other.',
+       try:'Try: tap a tier — after the (simulated) store sheet, the thank-you shows the badge you earned, and section 3 already reflects it.',
+       rec:'The alternative you did not pick.'},
+    B:{pros:['Long labels wrap gracefully — safest across 23 languages and trivially RTL.','Price sits in its own chip at the end of the row, always aligned.','The tier you hold gets a ✓ in its price chip.'],
+       cost:'The top tier is last in reading order. Needs a little scroll on small phones once the supporter strip is present.',
+       try:'Try: tap a tier. After the (simulated) store sheet, the thank-you shows the badge you earned — and section 3 already reflects it. Flip the supporter state at the top to see how an existing supporter is greeted.',
+       rec:'Your pick.'}
+  },
+  badge:{
+    F:{pros:['One card instead of two — Settings gets its first group back on screen.','Identity and support are the same thought: this is the app, this is how it stays free.','The icon swap is the badge: app icon before, your tier after — no extra row, no extra chrome.','The hadith keeps its place in the app without a carousel ticking in a settings screen.'],
+       cost:'Losing the carousel means the ~60 hadith strings × 23 languages are read one at a time instead of ten per visit — nothing is deleted, the rotation just moves to once per screen open. The card is doing two jobs, so the privacy line and the support copy must stay short.',
+       try:'Try: tap the button — the tip sheet opens, pick a tier, the thank-you follows and the card updates. Then flip Not yet → Ansar at the top and scroll to the bottom for the hadith line.',
+       rec:'Recommended — your idea, and it fixes the "two big cards" problem cleanly.'},
+    E:{pros:['Reads as a continuation of "about this app": identity card, hadith, then how to support it — the natural order.','Has a section header like every other group, so it looks native.','One button, no prices on the card — the amounts and the meaning of each title stay on the tip sheet, where there is room to explain them.'],
+       cost:'Pushes Schedule down by one card. Acceptable; Settings is not a screen people scroll for speed.',
+       try:'Try: tap the button — the tip sheet opens, pick a tier, the thank-you follows and the card updates. Then flip Not yet → Ansar at the top.',
+       rec:'Recommended.'}
+  }
+};
+function renderInfo(){
+  for(const q of ['popup','sheet','badge']){
+    const i=INFO[q][G[q]];
+    document.getElementById(q+'Info').innerHTML=`<h3>Why</h3><ul>${i.pros.map(x=>`<li>${x}</li>`).join('')}</ul><div class="cost"><b>Cost:</b> ${i.cost}</div><div class="try">${i.try}</div><div class="rec">${i.rec}</div>`;
+  }
+}
+// URL presets for screenshots: ?theme=dark&tier=4&stress=1&popup=B&sheet=B&badge=D&pre=row&stage=thanks
+{ const q=new URLSearchParams(location.search);
+  if(q.get('theme')){G.theme=q.get('theme');seg('themeSeg',G.theme);}
+  if(q.get('tier')){G.tier=+q.get('tier');seg('tierSeg',G.tier);}
+  if(q.get('stress')==='1'){G.stress=true;document.getElementById('stress').checked=true;}
+  for(const k of ['popup','sheet','badge']) if(q.get(k)){G[k]=q.get(k);document.querySelectorAll(`.pills[data-q="${k}"] button`).forEach(b=>b.classList.toggle('on',b.dataset.v===G[k]));}
+  if(q.get('stage')==='thanks'){P.p2.stage='thanks';P.p2.pick=G.tier||2;P.p2.raisedNow=true;if(!G.tier){G.tier=2;seg('tierSeg',2);}}
+}
+renderAll();
+</script>
+</body>
+</html>

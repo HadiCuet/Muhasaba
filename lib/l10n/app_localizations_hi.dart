@@ -1399,4 +1399,127 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get listSeparator => ' · ';
+
+  @override
+  String get tierRafiq => 'रफ़ीक़';
+
+  @override
+  String get tierNasir => 'नासिर';
+
+  @override
+  String get tierMuhsin => 'मुहसिन';
+
+  @override
+  String get tierAnsar => 'अंसार';
+
+  @override
+  String get tierRafiqMeaning => 'साथी';
+
+  @override
+  String get tierNasirMeaning => 'सहायक';
+
+  @override
+  String get tierMuhsinMeaning => 'उपकारी';
+
+  @override
+  String get tierAnsarMeaning => 'मददगार';
+
+  @override
+  String get supportCardBody =>
+      'मुफ़्त, बिना विज्ञापन और बिना अकाउंट के। आप चाहें तो थोड़ी-सी राशि से इसके विकास में सहयोग कर सकते हैं — जितनी चाहें, जब चाहें।';
+
+  @override
+  String get supportCta => 'Muhasaba को सहयोग दें';
+
+  @override
+  String get supportAgain => 'फिर से सहयोग दें';
+
+  @override
+  String supporterTitle(String tier) {
+    return '$tier · सहयोगी';
+  }
+
+  @override
+  String get supporterThanks =>
+      'धन्यवाद — आपकी वजह से Muhasaba मुफ़्त और विज्ञापन-मुक्त बना हुआ है।';
+
+  @override
+  String supporterSince(String month) {
+    return '$month से सहयोगी';
+  }
+
+  @override
+  String get supportPromptTitle => 'Muhasaba के साथ तीस दिन';
+
+  @override
+  String get supportPromptBody =>
+      'Muhasaba मुफ़्त है, बिना विज्ञापन और बिना अकाउंट के। आप चाहें तो थोड़ी-सी राशि से इसके विकास में सहयोग कर सकते हैं — जितनी चाहें, जब चाहें। कोई भी फ़ीचर इसके पीछे बंद नहीं है।';
+
+  @override
+  String get supportPromptNow => 'अभी सहयोग दें';
+
+  @override
+  String get supportPromptLater => 'बाद में याद दिलाएँ';
+
+  @override
+  String get supportPromptNever => 'दोबारा न पूछें';
+
+  @override
+  String get tipSheetTitle => 'Muhasaba को सहयोग दें';
+
+  @override
+  String get tipSheetBody =>
+      'कोई भी राशि चुनें, जितनी बार चाहें। यह राशि ऐप को चालू, मुफ़्त और विज्ञापन-मुक्त रखने में लगती है। धन्यवाद के रूप में, सेटिंग्स में आपको सहयोगी के तौर पर दिखाया जाएगा।';
+
+  @override
+  String tipSheetSupporterLine(String tier) {
+    return '$tier — आपके सहयोग के लिए धन्यवाद।';
+  }
+
+  @override
+  String get tipSheetSupporterAgain => 'जब चाहें फिर से सहयोग दें।';
+
+  @override
+  String tipSheetStoreNote(String store) {
+    return 'भुगतान $store के ज़रिए होता है — आपके भुगतान की जानकारी हम कभी नहीं देखते।';
+  }
+
+  @override
+  String get tipSheetOtherWays =>
+      'Muhasaba को किसी और तरह से सहयोग देना चाहते हैं?';
+
+  @override
+  String get tipSheetWriteToUs => 'हमें लिखें';
+
+  @override
+  String tipBusy(String store) {
+    return '$store खुल रहा है…';
+  }
+
+  @override
+  String get tipThanks => 'धन्यवाद — आपके सहयोग से Muhasaba चलता रहता है।';
+
+  @override
+  String tipBadgeRaised(String tier) {
+    return 'आपका बैज अब $tier है';
+  }
+
+  @override
+  String tipBadgeStays(String tier) {
+    return 'आपका बैज $tier ही रहेगा';
+  }
+
+  @override
+  String get tipDone => 'हो गया';
+
+  @override
+  String get tipFailed => 'खरीदारी पूरी नहीं हो सकी। कोई राशि नहीं ली गई।';
+
+  @override
+  String tipPending(String store) {
+    return 'आपका भुगतान $store पर अभी लंबित है — पुष्टि होते ही आपका बैज जोड़ दिया जाएगा।';
+  }
+
+  @override
+  String get tipUnavailable => 'इस डिवाइस पर अभी खरीदारी उपलब्ध नहीं है।';
 }

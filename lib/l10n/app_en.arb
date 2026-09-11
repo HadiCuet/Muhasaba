@@ -938,5 +938,181 @@
   "listSeparator": " · ",
   "@listSeparator": {
     "description": "Separator between clauses on a challenge card. Arabic-script locales use an en dash because the middot is indistinguishable from their digit zero."
+  },
+  "tierRafiq": "Rafiq",
+  "@tierRafiq": {
+    "description": "Badge title for the $0.99 tip. A transliterated Arabic given name — spell it the way this language writes the name, never translate it"
+  },
+  "tierNasir": "Nasir",
+  "@tierNasir": {
+    "description": "Badge title for the $4.99 tip. Transliterate, never translate"
+  },
+  "tierMuhsin": "Muhsin",
+  "@tierMuhsin": {
+    "description": "Badge title for the $9.99 tip. Transliterate, never translate"
+  },
+  "tierAnsar": "Ansar",
+  "@tierAnsar": {
+    "description": "Badge title for the $19.99 tip — the Helpers of Madinah. Transliterate, never translate"
+  },
+  "tierRafiqMeaning": "companion",
+  "@tierRafiqMeaning": {
+    "description": "One-word meaning shown under the Rafiq title. Leave empty in languages where the title itself is this word (Arabic-script locales)"
+  },
+  "tierNasirMeaning": "supporter",
+  "@tierNasirMeaning": {
+    "description": "One-word meaning shown under the Nasir title. Leave empty where the title itself is this word"
+  },
+  "tierMuhsinMeaning": "benefactor",
+  "@tierMuhsinMeaning": {
+    "description": "One-word meaning shown under the Muhsin title. Leave empty where the title itself is this word"
+  },
+  "tierAnsarMeaning": "helper",
+  "@tierAnsarMeaning": {
+    "description": "One-word meaning shown under the Ansar title. Leave empty where the title itself is this word"
+  },
+  "supportCardBody": "Free, with no ads and no account. You can support its development with a tip — any amount, whenever you like.",
+  "@supportCardBody": {
+    "description": "Settings top card, before the first tip. 'its' = the app's"
+  },
+  "supportCta": "Support Muhasaba",
+  "@supportCta": {
+    "description": "Button on the Settings card before the first tip; opens the tip sheet"
+  },
+  "supportAgain": "Support again",
+  "@supportAgain": {
+    "description": "Button on the Settings card once the user is a supporter"
+  },
+  "supporterTitle": "{tier} · Supporter",
+  "@supporterTitle": {
+    "description": "Badge line on the Settings card, e.g. 'Ansar · Supporter'. Arabic-script locales: use an en dash, the middot looks like a zero",
+    "placeholders": {
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "supporterThanks": "Thank you — Muhasaba stays free and ad-free because of you.",
+  "@supporterThanks": {
+    "description": "One line of thanks under the badge on the Settings card"
+  },
+  "supporterSince": "Supporter since {month}",
+  "@supporterSince": {
+    "description": "Small line on the Settings card; month is a localized 'September 2026'",
+    "placeholders": {
+      "month": {
+        "type": "String"
+      }
+    }
+  },
+  "supportPromptTitle": "Thirty days with Muhasaba",
+  "@supportPromptTitle": {
+    "description": "Title of the one-time support prompt shown on the 30th active day"
+  },
+  "supportPromptBody": "Muhasaba is free, with no ads and no account. You can support its development with a tip — any amount, whenever you like. Nothing is locked behind it.",
+  "@supportPromptBody": {
+    "description": "Body of the support prompt. Three sentences, no guilt, no 'donate'"
+  },
+  "supportPromptNow": "Support now",
+  "@supportPromptNow": {
+    "description": "Primary button of the support prompt"
+  },
+  "supportPromptLater": "Remind me later",
+  "@supportPromptLater": {
+    "description": "Secondary button of the support prompt"
+  },
+  "supportPromptNever": "Don't ask again",
+  "@supportPromptNever": {
+    "description": "Tertiary button of the support prompt"
+  },
+  "tipSheetTitle": "Support Muhasaba",
+  "@tipSheetTitle": {
+    "description": "Title of the tip sheet"
+  },
+  "tipSheetBody": "Choose any amount, as often as you like. Tips go toward keeping the app maintained, free, and ad-free. As a thank-you, you'll be marked as a supporter in Settings.",
+  "@tipSheetBody": {
+    "description": "Body of the tip sheet above the four amounts"
+  },
+  "tipSheetSupporterLine": "{tier} — thank you for your support.",
+  "@tipSheetSupporterLine": {
+    "description": "First line of the strip shown at the top of the tip sheet to an existing supporter",
+    "placeholders": {
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "tipSheetSupporterAgain": "Support again whenever you like.",
+  "@tipSheetSupporterAgain": {
+    "description": "Second line of the supporter strip on the tip sheet"
+  },
+  "tipSheetStoreNote": "Handled by {store} — we never see your payment details.",
+  "@tipSheetStoreNote": {
+    "description": "Fine print under the amounts. store is 'App Store' or 'Google Play', keep those names in English",
+    "placeholders": {
+      "store": {
+        "type": "String"
+      }
+    }
+  },
+  "tipSheetOtherWays": "Want to support Muhasaba another way?",
+  "@tipSheetOtherWays": {
+    "description": "Fine print line before the 'Write to us' link. Must not mention paying or amounts"
+  },
+  "tipSheetWriteToUs": "Write to us",
+  "@tipSheetWriteToUs": {
+    "description": "Link that opens an email to the developer"
+  },
+  "tipBusy": "Opening {store}…",
+  "@tipBusy": {
+    "description": "Shown with a spinner while the store's purchase UI is opening",
+    "placeholders": {
+      "store": {
+        "type": "String"
+      }
+    }
+  },
+  "tipThanks": "Thank you — your support keeps Muhasaba going.",
+  "@tipThanks": {
+    "description": "Headline of the thank-you stage after a successful tip"
+  },
+  "tipBadgeRaised": "Your badge is now {tier}",
+  "@tipBadgeRaised": {
+    "description": "Thank-you stage, when this tip raised the badge",
+    "placeholders": {
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "tipBadgeStays": "Your badge stays {tier}",
+  "@tipBadgeStays": {
+    "description": "Thank-you stage, when the user already held this tier or a higher one",
+    "placeholders": {
+      "tier": {
+        "type": "String"
+      }
+    }
+  },
+  "tipDone": "Done",
+  "@tipDone": {
+    "description": "Closes the thank-you stage"
+  },
+  "tipFailed": "The purchase didn't go through. Nothing was charged.",
+  "@tipFailed": {
+    "description": "Shown inside the tip sheet after a store error"
+  },
+  "tipPending": "Your tip is pending with {store} — your badge will be added once it's confirmed.",
+  "@tipPending": {
+    "description": "Shown on the tip sheet when the store reports a purchase as pending, e.g. a deferred payment method",
+    "placeholders": {
+      "store": {
+        "type": "String"
+      }
+    }
+  },
+  "tipUnavailable": "Purchases aren't available on this device right now.",
+  "@tipUnavailable": {
+    "description": "Replaces the amounts when the store cannot be reached or products fail to load"
   }
 }

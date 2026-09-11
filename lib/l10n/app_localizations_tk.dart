@@ -1394,4 +1394,128 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get listSeparator => ' · ';
+
+  @override
+  String get tierRafiq => 'Rafyk';
+
+  @override
+  String get tierNasir => 'Nasyr';
+
+  @override
+  String get tierMuhsin => 'Muhsin';
+
+  @override
+  String get tierAnsar => 'Ensar';
+
+  @override
+  String get tierRafiqMeaning => 'ýoldaş';
+
+  @override
+  String get tierNasirMeaning => 'goldawçy';
+
+  @override
+  String get tierMuhsinMeaning => 'ýagşylyk edýän';
+
+  @override
+  String get tierAnsarMeaning => 'kömekçi';
+
+  @override
+  String get supportCardBody =>
+      'Mugt, mahabatsyz we hasapsyz. Isleseňiz, kiçijik goşant bilen ösüşini goldap bilersiňiz — islendik möçberde, islendik wagt.';
+
+  @override
+  String get supportCta => 'Muhasabany goldaň';
+
+  @override
+  String get supportAgain => 'Ýene goldaň';
+
+  @override
+  String supporterTitle(String tier) {
+    return '$tier · Goldawçy';
+  }
+
+  @override
+  String get supporterThanks =>
+      'Sag boluň — siziň saýaňyzda Muhasaba mugt we mahabatsyz galýar.';
+
+  @override
+  String supporterSince(String month) {
+    return '$month aýyndan bäri goldawçy';
+  }
+
+  @override
+  String get supportPromptTitle => 'Muhasaba bilen otuz gün';
+
+  @override
+  String get supportPromptBody =>
+      'Muhasaba mugt, mahabatsyz we hasapsyz. Isleseňiz, kiçijik goşant bilen ösüşini goldap bilersiňiz — islendik möçberde, islendik wagt. Hiç bir aýratynlyk muňa bagly däl.';
+
+  @override
+  String get supportPromptNow => 'Häzir goldaň';
+
+  @override
+  String get supportPromptLater => 'Soňrak ýatladyň';
+
+  @override
+  String get supportPromptNever => 'Gaýtadan soramaň';
+
+  @override
+  String get tipSheetTitle => 'Muhasabany goldaň';
+
+  @override
+  String get tipSheetBody =>
+      'Islendik möçberi saýlaň, näçe gezek isleseňiz. Bu serişdeler goşundyny işjeň, mugt we mahabatsyz saklamaga sarp edilýär. Minnetdarlyk hökmünde Sazlamalarda goldawçy hökmünde görkezilersiňiz.';
+
+  @override
+  String tipSheetSupporterLine(String tier) {
+    return '$tier — goldawyňyz üçin sag boluň.';
+  }
+
+  @override
+  String get tipSheetSupporterAgain => 'Islän wagtyňyz ýene goldap bilersiňiz.';
+
+  @override
+  String tipSheetStoreNote(String store) {
+    return 'Töleg $store arkaly amala aşyrylýar — töleg maglumatlaryňyzy biz hiç haçan görmeýäris.';
+  }
+
+  @override
+  String get tipSheetOtherWays =>
+      'Muhasabany başga usul bilen goldamak isleýärsiňizmi?';
+
+  @override
+  String get tipSheetWriteToUs => 'Bize ýazyň';
+
+  @override
+  String tipBusy(String store) {
+    return '$store açylýar…';
+  }
+
+  @override
+  String get tipThanks =>
+      'Sag boluň — siziň goldawyňyz Muhasabany öňe alyp barýar.';
+
+  @override
+  String tipBadgeRaised(String tier) {
+    return 'Nyşanyňyz indi $tier';
+  }
+
+  @override
+  String tipBadgeStays(String tier) {
+    return 'Nyşanyňyz $tier bolup galýar';
+  }
+
+  @override
+  String get tipDone => 'Taýýar';
+
+  @override
+  String get tipFailed => 'Satyn alma tamamlanmady. Töleg alynmady.';
+
+  @override
+  String tipPending(String store) {
+    return 'Goşandyňyz $store tarapynda garaşmakda — tassyklanan badyna nyşanyňyz goşular.';
+  }
+
+  @override
+  String get tipUnavailable => 'Häzir bu enjamda satyn almak mümkin däl.';
 }
