@@ -247,11 +247,12 @@ should be worked into the Play copy instead of being dropped.
       (`fastlane/whatsnew/`) and the Play changelog
       (`fastlane/metadata/android/en-US/changelogs/9.txt`); build 9 is on the
       Play **internal** track.
-- [ ] Create the four tip products in **both** consoles. Play:
-      `python3 tool/play_products.py` (uses Play's own currency conversion for
-      all 173 regions). App Store Connect: create them by hand, price points
-      $0.99 / $4.99 / $9.99 / $19.99, and apply for the **Small Business
-      Program** — unlike Play's 15% tier, Apple's needs an application.
+- [x] Play tip products — created and ACTIVE (4 × 173 regions, 2026-09-11,
+      `python3 tool/play_products.py`; `--activate` is a separate step).
+- [ ] App Store Connect tip products — create by hand at $0.99 / $4.99 /
+      $9.99 / $19.99 with the same IDs, and apply for the **Small Business
+      Program** (unlike Play's 15% tier, Apple's needs an application).
+- [ ] Play license testers + on-device purchase pass against build 9.
 
 ---
 
