@@ -29,6 +29,13 @@ class Amals extends Table {
   TextColumn get icon =>
       text().withDefault(const Constant('⭐'))(); // emoji, defaults to ⭐
   TextColumn get category => text().nullable()(); // category name
+  IntColumn get optionSetId => integer().nullable().references(
+    OptionSets,
+    #id,
+    onDelete: KeyAction.setNull,
+  )();
+  BoolColumn get requireChoice =>
+      boolean().withDefault(const Constant(false))();
   DateTimeColumn get createdAt => dateTime()();
   DateTimeColumn get archivedAt => dateTime().nullable()();
 }
@@ -54,6 +61,11 @@ class Completions extends Table {
   DateTimeColumn get muhasabaDate => dateTime()(); // date-only (UTC midnight)
   IntColumn get progress => integer().withDefault(const Constant(0))();
   TextColumn get note => text().nullable()();
+  IntColumn get optionItemId => integer().nullable().references(
+    OptionSetItems,
+    #id,
+    onDelete: KeyAction.setNull,
+  )();
   DateTimeColumn get completedAt => dateTime().nullable()();
 
   @override
@@ -122,4 +134,30 @@ class ChallengeEntries extends Table {
 
   @override
   Set<Column> get primaryKey => {challengeId, muhasabaDate};
+}
+
+/// A reusable, named list of choices an amal can offer, e.g. "Jamaa".
+@DataClassName('OptionSetRow')
+class OptionSets extends Table {
+  IntColumn get id => integer().autoIncrement()();
+  TextColumn get name => text().withLength(min: 1, max: 60)();
+
+  /// Identifies a seeded set so its name can be localized. Cleared the moment
+  /// the user renames it, which makes their wording win in every language.
+  TextColumn get seedKey => text().nullable()();
+  IntColumn get sortOrder => integer().withDefault(const Constant(0))();
+  DateTimeColumn get createdAt => dateTime()();
+  DateTimeColumn get archivedAt => dateTime().nullable()();
+}
+
+/// One choice within an [OptionSets] row.
+@DataClassName('OptionSetItemRow')
+class OptionSetItems extends Table {
+  IntColumn get id => integer().autoIncrement()();
+  IntColumn get setId =>
+      integer().references(OptionSets, #id, onDelete: KeyAction.cascade)();
+  TextColumn get label => text().withLength(min: 1, max: 40)();
+  TextColumn get seedKey => text().nullable()();
+  IntColumn get sortOrder => integer().withDefault(const Constant(0))();
+  DateTimeColumn get archivedAt => dateTime().nullable()();
 }

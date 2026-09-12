@@ -23,6 +23,8 @@ part 'database.g.dart';
     Categories,
     Challenges,
     ChallengeEntries,
+    OptionSets,
+    OptionSetItems,
   ],
   daos: [
     AmalDao,
@@ -38,7 +40,7 @@ class AppDatabase extends _$AppDatabase {
     : super(executor ?? driftDatabase(name: 'muhasaba'));
 
   @override
-  int get schemaVersion => 10;
+  int get schemaVersion => 11;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -46,6 +48,7 @@ class AppDatabase extends _$AppDatabase {
       await m.createAll();
       await seedInitialAmals(this);
       await seedCategories(this);
+      // await seedOptionSets(this);
     },
     onUpgrade: (m, from, to) async {
       // All DDL below is guarded with existence checks so the migration is
@@ -179,6 +182,24 @@ class AppDatabase extends _$AppDatabase {
         await customStatement(
           "DELETE FROM settings_kv WHERE key = 'supporter_tier'",
         );
+      }
+      if (from < 11) {
+        if (!await _hasTable('option_sets')) {
+          await m.createTable(optionSets);
+        }
+        if (!await _hasTable('option_set_items')) {
+          await m.createTable(optionSetItems);
+        }
+        if (!await _hasColumn('amals', 'option_set_id')) {
+          await m.addColumn(amals, amals.optionSetId);
+        }
+        if (!await _hasColumn('amals', 'require_choice')) {
+          await m.addColumn(amals, amals.requireChoice);
+        }
+        if (!await _hasColumn('completions', 'option_item_id')) {
+          await m.addColumn(completions, completions.optionItemId);
+        }
+        // await seedOptionSets(this);
       }
     },
     beforeOpen: (details) async {

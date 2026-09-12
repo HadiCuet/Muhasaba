@@ -3,6 +3,413 @@
 part of 'database.dart';
 
 // ignore_for_file: type=lint
+class $OptionSetsTable extends OptionSets
+    with TableInfo<$OptionSetsTable, OptionSetRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $OptionSetsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<int> id = GeneratedColumn<int>(
+    'id',
+    aliasedName,
+    false,
+    hasAutoIncrement: true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'PRIMARY KEY AUTOINCREMENT',
+    ),
+  );
+  static const VerificationMeta _nameMeta = const VerificationMeta('name');
+  @override
+  late final GeneratedColumn<String> name = GeneratedColumn<String>(
+    'name',
+    aliasedName,
+    false,
+    additionalChecks: GeneratedColumn.checkTextLength(
+      minTextLength: 1,
+      maxTextLength: 60,
+    ),
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _seedKeyMeta = const VerificationMeta(
+    'seedKey',
+  );
+  @override
+  late final GeneratedColumn<String> seedKey = GeneratedColumn<String>(
+    'seed_key',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _sortOrderMeta = const VerificationMeta(
+    'sortOrder',
+  );
+  @override
+  late final GeneratedColumn<int> sortOrder = GeneratedColumn<int>(
+    'sort_order',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _createdAtMeta = const VerificationMeta(
+    'createdAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> createdAt = GeneratedColumn<DateTime>(
+    'created_at',
+    aliasedName,
+    false,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _archivedAtMeta = const VerificationMeta(
+    'archivedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> archivedAt = GeneratedColumn<DateTime>(
+    'archived_at',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    name,
+    seedKey,
+    sortOrder,
+    createdAt,
+    archivedAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'option_sets';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<OptionSetRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    }
+    if (data.containsKey('name')) {
+      context.handle(
+        _nameMeta,
+        name.isAcceptableOrUnknown(data['name']!, _nameMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_nameMeta);
+    }
+    if (data.containsKey('seed_key')) {
+      context.handle(
+        _seedKeyMeta,
+        seedKey.isAcceptableOrUnknown(data['seed_key']!, _seedKeyMeta),
+      );
+    }
+    if (data.containsKey('sort_order')) {
+      context.handle(
+        _sortOrderMeta,
+        sortOrder.isAcceptableOrUnknown(data['sort_order']!, _sortOrderMeta),
+      );
+    }
+    if (data.containsKey('created_at')) {
+      context.handle(
+        _createdAtMeta,
+        createdAt.isAcceptableOrUnknown(data['created_at']!, _createdAtMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_createdAtMeta);
+    }
+    if (data.containsKey('archived_at')) {
+      context.handle(
+        _archivedAtMeta,
+        archivedAt.isAcceptableOrUnknown(data['archived_at']!, _archivedAtMeta),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  OptionSetRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return OptionSetRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}id'],
+      )!,
+      name: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}name'],
+      )!,
+      seedKey: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}seed_key'],
+      ),
+      sortOrder: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}sort_order'],
+      )!,
+      createdAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}created_at'],
+      )!,
+      archivedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}archived_at'],
+      ),
+    );
+  }
+
+  @override
+  $OptionSetsTable createAlias(String alias) {
+    return $OptionSetsTable(attachedDatabase, alias);
+  }
+}
+
+class OptionSetRow extends DataClass implements Insertable<OptionSetRow> {
+  final int id;
+  final String name;
+
+  /// Identifies a seeded set so its name can be localized. Cleared the moment
+  /// the user renames it, which makes their wording win in every language.
+  final String? seedKey;
+  final int sortOrder;
+  final DateTime createdAt;
+  final DateTime? archivedAt;
+  const OptionSetRow({
+    required this.id,
+    required this.name,
+    this.seedKey,
+    required this.sortOrder,
+    required this.createdAt,
+    this.archivedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<int>(id);
+    map['name'] = Variable<String>(name);
+    if (!nullToAbsent || seedKey != null) {
+      map['seed_key'] = Variable<String>(seedKey);
+    }
+    map['sort_order'] = Variable<int>(sortOrder);
+    map['created_at'] = Variable<DateTime>(createdAt);
+    if (!nullToAbsent || archivedAt != null) {
+      map['archived_at'] = Variable<DateTime>(archivedAt);
+    }
+    return map;
+  }
+
+  OptionSetsCompanion toCompanion(bool nullToAbsent) {
+    return OptionSetsCompanion(
+      id: Value(id),
+      name: Value(name),
+      seedKey: seedKey == null && nullToAbsent
+          ? const Value.absent()
+          : Value(seedKey),
+      sortOrder: Value(sortOrder),
+      createdAt: Value(createdAt),
+      archivedAt: archivedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(archivedAt),
+    );
+  }
+
+  factory OptionSetRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return OptionSetRow(
+      id: serializer.fromJson<int>(json['id']),
+      name: serializer.fromJson<String>(json['name']),
+      seedKey: serializer.fromJson<String?>(json['seedKey']),
+      sortOrder: serializer.fromJson<int>(json['sortOrder']),
+      createdAt: serializer.fromJson<DateTime>(json['createdAt']),
+      archivedAt: serializer.fromJson<DateTime?>(json['archivedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<int>(id),
+      'name': serializer.toJson<String>(name),
+      'seedKey': serializer.toJson<String?>(seedKey),
+      'sortOrder': serializer.toJson<int>(sortOrder),
+      'createdAt': serializer.toJson<DateTime>(createdAt),
+      'archivedAt': serializer.toJson<DateTime?>(archivedAt),
+    };
+  }
+
+  OptionSetRow copyWith({
+    int? id,
+    String? name,
+    Value<String?> seedKey = const Value.absent(),
+    int? sortOrder,
+    DateTime? createdAt,
+    Value<DateTime?> archivedAt = const Value.absent(),
+  }) => OptionSetRow(
+    id: id ?? this.id,
+    name: name ?? this.name,
+    seedKey: seedKey.present ? seedKey.value : this.seedKey,
+    sortOrder: sortOrder ?? this.sortOrder,
+    createdAt: createdAt ?? this.createdAt,
+    archivedAt: archivedAt.present ? archivedAt.value : this.archivedAt,
+  );
+  OptionSetRow copyWithCompanion(OptionSetsCompanion data) {
+    return OptionSetRow(
+      id: data.id.present ? data.id.value : this.id,
+      name: data.name.present ? data.name.value : this.name,
+      seedKey: data.seedKey.present ? data.seedKey.value : this.seedKey,
+      sortOrder: data.sortOrder.present ? data.sortOrder.value : this.sortOrder,
+      createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
+      archivedAt: data.archivedAt.present
+          ? data.archivedAt.value
+          : this.archivedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('OptionSetRow(')
+          ..write('id: $id, ')
+          ..write('name: $name, ')
+          ..write('seedKey: $seedKey, ')
+          ..write('sortOrder: $sortOrder, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('archivedAt: $archivedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(id, name, seedKey, sortOrder, createdAt, archivedAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is OptionSetRow &&
+          other.id == this.id &&
+          other.name == this.name &&
+          other.seedKey == this.seedKey &&
+          other.sortOrder == this.sortOrder &&
+          other.createdAt == this.createdAt &&
+          other.archivedAt == this.archivedAt);
+}
+
+class OptionSetsCompanion extends UpdateCompanion<OptionSetRow> {
+  final Value<int> id;
+  final Value<String> name;
+  final Value<String?> seedKey;
+  final Value<int> sortOrder;
+  final Value<DateTime> createdAt;
+  final Value<DateTime?> archivedAt;
+  const OptionSetsCompanion({
+    this.id = const Value.absent(),
+    this.name = const Value.absent(),
+    this.seedKey = const Value.absent(),
+    this.sortOrder = const Value.absent(),
+    this.createdAt = const Value.absent(),
+    this.archivedAt = const Value.absent(),
+  });
+  OptionSetsCompanion.insert({
+    this.id = const Value.absent(),
+    required String name,
+    this.seedKey = const Value.absent(),
+    this.sortOrder = const Value.absent(),
+    required DateTime createdAt,
+    this.archivedAt = const Value.absent(),
+  }) : name = Value(name),
+       createdAt = Value(createdAt);
+  static Insertable<OptionSetRow> custom({
+    Expression<int>? id,
+    Expression<String>? name,
+    Expression<String>? seedKey,
+    Expression<int>? sortOrder,
+    Expression<DateTime>? createdAt,
+    Expression<DateTime>? archivedAt,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (name != null) 'name': name,
+      if (seedKey != null) 'seed_key': seedKey,
+      if (sortOrder != null) 'sort_order': sortOrder,
+      if (createdAt != null) 'created_at': createdAt,
+      if (archivedAt != null) 'archived_at': archivedAt,
+    });
+  }
+
+  OptionSetsCompanion copyWith({
+    Value<int>? id,
+    Value<String>? name,
+    Value<String?>? seedKey,
+    Value<int>? sortOrder,
+    Value<DateTime>? createdAt,
+    Value<DateTime?>? archivedAt,
+  }) {
+    return OptionSetsCompanion(
+      id: id ?? this.id,
+      name: name ?? this.name,
+      seedKey: seedKey ?? this.seedKey,
+      sortOrder: sortOrder ?? this.sortOrder,
+      createdAt: createdAt ?? this.createdAt,
+      archivedAt: archivedAt ?? this.archivedAt,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<int>(id.value);
+    }
+    if (name.present) {
+      map['name'] = Variable<String>(name.value);
+    }
+    if (seedKey.present) {
+      map['seed_key'] = Variable<String>(seedKey.value);
+    }
+    if (sortOrder.present) {
+      map['sort_order'] = Variable<int>(sortOrder.value);
+    }
+    if (createdAt.present) {
+      map['created_at'] = Variable<DateTime>(createdAt.value);
+    }
+    if (archivedAt.present) {
+      map['archived_at'] = Variable<DateTime>(archivedAt.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('OptionSetsCompanion(')
+          ..write('id: $id, ')
+          ..write('name: $name, ')
+          ..write('seedKey: $seedKey, ')
+          ..write('sortOrder: $sortOrder, ')
+          ..write('createdAt: $createdAt, ')
+          ..write('archivedAt: $archivedAt')
+          ..write(')'))
+        .toString();
+  }
+}
+
 class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
   @override
   final GeneratedDatabase attachedDatabase;
@@ -181,6 +588,35 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
     type: DriftSqlType.string,
     requiredDuringInsert: false,
   );
+  static const VerificationMeta _optionSetIdMeta = const VerificationMeta(
+    'optionSetId',
+  );
+  @override
+  late final GeneratedColumn<int> optionSetId = GeneratedColumn<int>(
+    'option_set_id',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES option_sets (id) ON DELETE SET NULL',
+    ),
+  );
+  static const VerificationMeta _requireChoiceMeta = const VerificationMeta(
+    'requireChoice',
+  );
+  @override
+  late final GeneratedColumn<bool> requireChoice = GeneratedColumn<bool>(
+    'require_choice',
+    aliasedName,
+    false,
+    type: DriftSqlType.bool,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'CHECK ("require_choice" IN (0, 1))',
+    ),
+    defaultValue: const Constant(false),
+  );
   static const VerificationMeta _createdAtMeta = const VerificationMeta(
     'createdAt',
   );
@@ -220,6 +656,8 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
     isSeed,
     icon,
     category,
+    optionSetId,
+    requireChoice,
     createdAt,
     archivedAt,
   ];
@@ -333,6 +771,24 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
         category.isAcceptableOrUnknown(data['category']!, _categoryMeta),
       );
     }
+    if (data.containsKey('option_set_id')) {
+      context.handle(
+        _optionSetIdMeta,
+        optionSetId.isAcceptableOrUnknown(
+          data['option_set_id']!,
+          _optionSetIdMeta,
+        ),
+      );
+    }
+    if (data.containsKey('require_choice')) {
+      context.handle(
+        _requireChoiceMeta,
+        requireChoice.isAcceptableOrUnknown(
+          data['require_choice']!,
+          _requireChoiceMeta,
+        ),
+      );
+    }
     if (data.containsKey('created_at')) {
       context.handle(
         _createdAtMeta,
@@ -418,6 +874,14 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
         DriftSqlType.string,
         data['${effectivePrefix}category'],
       ),
+      optionSetId: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}option_set_id'],
+      ),
+      requireChoice: attachedDatabase.typeMapping.read(
+        DriftSqlType.bool,
+        data['${effectivePrefix}require_choice'],
+      )!,
       createdAt: attachedDatabase.typeMapping.read(
         DriftSqlType.dateTime,
         data['${effectivePrefix}created_at'],
@@ -454,6 +918,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
   final bool isSeed;
   final String icon;
   final String? category;
+  final int? optionSetId;
+  final bool requireChoice;
   final DateTime createdAt;
   final DateTime? archivedAt;
   const AmalRow({
@@ -472,6 +938,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     required this.isSeed,
     required this.icon,
     this.category,
+    this.optionSetId,
+    required this.requireChoice,
     required this.createdAt,
     this.archivedAt,
   });
@@ -509,6 +977,10 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     if (!nullToAbsent || category != null) {
       map['category'] = Variable<String>(category);
     }
+    if (!nullToAbsent || optionSetId != null) {
+      map['option_set_id'] = Variable<int>(optionSetId);
+    }
+    map['require_choice'] = Variable<bool>(requireChoice);
     map['created_at'] = Variable<DateTime>(createdAt);
     if (!nullToAbsent || archivedAt != null) {
       map['archived_at'] = Variable<DateTime>(archivedAt);
@@ -545,6 +1017,10 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
       category: category == null && nullToAbsent
           ? const Value.absent()
           : Value(category),
+      optionSetId: optionSetId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(optionSetId),
+      requireChoice: Value(requireChoice),
       createdAt: Value(createdAt),
       archivedAt: archivedAt == null && nullToAbsent
           ? const Value.absent()
@@ -575,6 +1051,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
       isSeed: serializer.fromJson<bool>(json['isSeed']),
       icon: serializer.fromJson<String>(json['icon']),
       category: serializer.fromJson<String?>(json['category']),
+      optionSetId: serializer.fromJson<int?>(json['optionSetId']),
+      requireChoice: serializer.fromJson<bool>(json['requireChoice']),
       createdAt: serializer.fromJson<DateTime>(json['createdAt']),
       archivedAt: serializer.fromJson<DateTime?>(json['archivedAt']),
     );
@@ -600,6 +1078,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
       'isSeed': serializer.toJson<bool>(isSeed),
       'icon': serializer.toJson<String>(icon),
       'category': serializer.toJson<String?>(category),
+      'optionSetId': serializer.toJson<int?>(optionSetId),
+      'requireChoice': serializer.toJson<bool>(requireChoice),
       'createdAt': serializer.toJson<DateTime>(createdAt),
       'archivedAt': serializer.toJson<DateTime?>(archivedAt),
     };
@@ -621,6 +1101,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     bool? isSeed,
     String? icon,
     Value<String?> category = const Value.absent(),
+    Value<int?> optionSetId = const Value.absent(),
+    bool? requireChoice,
     DateTime? createdAt,
     Value<DateTime?> archivedAt = const Value.absent(),
   }) => AmalRow(
@@ -639,6 +1121,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     isSeed: isSeed ?? this.isSeed,
     icon: icon ?? this.icon,
     category: category.present ? category.value : this.category,
+    optionSetId: optionSetId.present ? optionSetId.value : this.optionSetId,
+    requireChoice: requireChoice ?? this.requireChoice,
     createdAt: createdAt ?? this.createdAt,
     archivedAt: archivedAt.present ? archivedAt.value : this.archivedAt,
   );
@@ -671,6 +1155,12 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
       isSeed: data.isSeed.present ? data.isSeed.value : this.isSeed,
       icon: data.icon.present ? data.icon.value : this.icon,
       category: data.category.present ? data.category.value : this.category,
+      optionSetId: data.optionSetId.present
+          ? data.optionSetId.value
+          : this.optionSetId,
+      requireChoice: data.requireChoice.present
+          ? data.requireChoice.value
+          : this.requireChoice,
       createdAt: data.createdAt.present ? data.createdAt.value : this.createdAt,
       archivedAt: data.archivedAt.present
           ? data.archivedAt.value
@@ -696,6 +1186,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
           ..write('isSeed: $isSeed, ')
           ..write('icon: $icon, ')
           ..write('category: $category, ')
+          ..write('optionSetId: $optionSetId, ')
+          ..write('requireChoice: $requireChoice, ')
           ..write('createdAt: $createdAt, ')
           ..write('archivedAt: $archivedAt')
           ..write(')'))
@@ -719,6 +1211,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
     isSeed,
     icon,
     category,
+    optionSetId,
+    requireChoice,
     createdAt,
     archivedAt,
   );
@@ -741,6 +1235,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
           other.isSeed == this.isSeed &&
           other.icon == this.icon &&
           other.category == this.category &&
+          other.optionSetId == this.optionSetId &&
+          other.requireChoice == this.requireChoice &&
           other.createdAt == this.createdAt &&
           other.archivedAt == this.archivedAt);
 }
@@ -761,6 +1257,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
   final Value<bool> isSeed;
   final Value<String> icon;
   final Value<String?> category;
+  final Value<int?> optionSetId;
+  final Value<bool> requireChoice;
   final Value<DateTime> createdAt;
   final Value<DateTime?> archivedAt;
   const AmalsCompanion({
@@ -779,6 +1277,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     this.isSeed = const Value.absent(),
     this.icon = const Value.absent(),
     this.category = const Value.absent(),
+    this.optionSetId = const Value.absent(),
+    this.requireChoice = const Value.absent(),
     this.createdAt = const Value.absent(),
     this.archivedAt = const Value.absent(),
   });
@@ -798,6 +1298,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     this.isSeed = const Value.absent(),
     this.icon = const Value.absent(),
     this.category = const Value.absent(),
+    this.optionSetId = const Value.absent(),
+    this.requireChoice = const Value.absent(),
     required DateTime createdAt,
     this.archivedAt = const Value.absent(),
   }) : title = Value(title),
@@ -819,6 +1321,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     Expression<bool>? isSeed,
     Expression<String>? icon,
     Expression<String>? category,
+    Expression<int>? optionSetId,
+    Expression<bool>? requireChoice,
     Expression<DateTime>? createdAt,
     Expression<DateTime>? archivedAt,
   }) {
@@ -838,6 +1342,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
       if (isSeed != null) 'is_seed': isSeed,
       if (icon != null) 'icon': icon,
       if (category != null) 'category': category,
+      if (optionSetId != null) 'option_set_id': optionSetId,
+      if (requireChoice != null) 'require_choice': requireChoice,
       if (createdAt != null) 'created_at': createdAt,
       if (archivedAt != null) 'archived_at': archivedAt,
     });
@@ -859,6 +1365,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     Value<bool>? isSeed,
     Value<String>? icon,
     Value<String?>? category,
+    Value<int?>? optionSetId,
+    Value<bool>? requireChoice,
     Value<DateTime>? createdAt,
     Value<DateTime?>? archivedAt,
   }) {
@@ -878,6 +1386,8 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
       isSeed: isSeed ?? this.isSeed,
       icon: icon ?? this.icon,
       category: category ?? this.category,
+      optionSetId: optionSetId ?? this.optionSetId,
+      requireChoice: requireChoice ?? this.requireChoice,
       createdAt: createdAt ?? this.createdAt,
       archivedAt: archivedAt ?? this.archivedAt,
     );
@@ -933,6 +1443,12 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
     if (category.present) {
       map['category'] = Variable<String>(category.value);
     }
+    if (optionSetId.present) {
+      map['option_set_id'] = Variable<int>(optionSetId.value);
+    }
+    if (requireChoice.present) {
+      map['require_choice'] = Variable<bool>(requireChoice.value);
+    }
     if (createdAt.present) {
       map['created_at'] = Variable<DateTime>(createdAt.value);
     }
@@ -960,7 +1476,415 @@ class AmalsCompanion extends UpdateCompanion<AmalRow> {
           ..write('isSeed: $isSeed, ')
           ..write('icon: $icon, ')
           ..write('category: $category, ')
+          ..write('optionSetId: $optionSetId, ')
+          ..write('requireChoice: $requireChoice, ')
           ..write('createdAt: $createdAt, ')
+          ..write('archivedAt: $archivedAt')
+          ..write(')'))
+        .toString();
+  }
+}
+
+class $OptionSetItemsTable extends OptionSetItems
+    with TableInfo<$OptionSetItemsTable, OptionSetItemRow> {
+  @override
+  final GeneratedDatabase attachedDatabase;
+  final String? _alias;
+  $OptionSetItemsTable(this.attachedDatabase, [this._alias]);
+  static const VerificationMeta _idMeta = const VerificationMeta('id');
+  @override
+  late final GeneratedColumn<int> id = GeneratedColumn<int>(
+    'id',
+    aliasedName,
+    false,
+    hasAutoIncrement: true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'PRIMARY KEY AUTOINCREMENT',
+    ),
+  );
+  static const VerificationMeta _setIdMeta = const VerificationMeta('setId');
+  @override
+  late final GeneratedColumn<int> setId = GeneratedColumn<int>(
+    'set_id',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: true,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES option_sets (id) ON DELETE CASCADE',
+    ),
+  );
+  static const VerificationMeta _labelMeta = const VerificationMeta('label');
+  @override
+  late final GeneratedColumn<String> label = GeneratedColumn<String>(
+    'label',
+    aliasedName,
+    false,
+    additionalChecks: GeneratedColumn.checkTextLength(
+      minTextLength: 1,
+      maxTextLength: 40,
+    ),
+    type: DriftSqlType.string,
+    requiredDuringInsert: true,
+  );
+  static const VerificationMeta _seedKeyMeta = const VerificationMeta(
+    'seedKey',
+  );
+  @override
+  late final GeneratedColumn<String> seedKey = GeneratedColumn<String>(
+    'seed_key',
+    aliasedName,
+    true,
+    type: DriftSqlType.string,
+    requiredDuringInsert: false,
+  );
+  static const VerificationMeta _sortOrderMeta = const VerificationMeta(
+    'sortOrder',
+  );
+  @override
+  late final GeneratedColumn<int> sortOrder = GeneratedColumn<int>(
+    'sort_order',
+    aliasedName,
+    false,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultValue: const Constant(0),
+  );
+  static const VerificationMeta _archivedAtMeta = const VerificationMeta(
+    'archivedAt',
+  );
+  @override
+  late final GeneratedColumn<DateTime> archivedAt = GeneratedColumn<DateTime>(
+    'archived_at',
+    aliasedName,
+    true,
+    type: DriftSqlType.dateTime,
+    requiredDuringInsert: false,
+  );
+  @override
+  List<GeneratedColumn> get $columns => [
+    id,
+    setId,
+    label,
+    seedKey,
+    sortOrder,
+    archivedAt,
+  ];
+  @override
+  String get aliasedName => _alias ?? actualTableName;
+  @override
+  String get actualTableName => $name;
+  static const String $name = 'option_set_items';
+  @override
+  VerificationContext validateIntegrity(
+    Insertable<OptionSetItemRow> instance, {
+    bool isInserting = false,
+  }) {
+    final context = VerificationContext();
+    final data = instance.toColumns(true);
+    if (data.containsKey('id')) {
+      context.handle(_idMeta, id.isAcceptableOrUnknown(data['id']!, _idMeta));
+    }
+    if (data.containsKey('set_id')) {
+      context.handle(
+        _setIdMeta,
+        setId.isAcceptableOrUnknown(data['set_id']!, _setIdMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_setIdMeta);
+    }
+    if (data.containsKey('label')) {
+      context.handle(
+        _labelMeta,
+        label.isAcceptableOrUnknown(data['label']!, _labelMeta),
+      );
+    } else if (isInserting) {
+      context.missing(_labelMeta);
+    }
+    if (data.containsKey('seed_key')) {
+      context.handle(
+        _seedKeyMeta,
+        seedKey.isAcceptableOrUnknown(data['seed_key']!, _seedKeyMeta),
+      );
+    }
+    if (data.containsKey('sort_order')) {
+      context.handle(
+        _sortOrderMeta,
+        sortOrder.isAcceptableOrUnknown(data['sort_order']!, _sortOrderMeta),
+      );
+    }
+    if (data.containsKey('archived_at')) {
+      context.handle(
+        _archivedAtMeta,
+        archivedAt.isAcceptableOrUnknown(data['archived_at']!, _archivedAtMeta),
+      );
+    }
+    return context;
+  }
+
+  @override
+  Set<GeneratedColumn> get $primaryKey => {id};
+  @override
+  OptionSetItemRow map(Map<String, dynamic> data, {String? tablePrefix}) {
+    final effectivePrefix = tablePrefix != null ? '$tablePrefix.' : '';
+    return OptionSetItemRow(
+      id: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}id'],
+      )!,
+      setId: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}set_id'],
+      )!,
+      label: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}label'],
+      )!,
+      seedKey: attachedDatabase.typeMapping.read(
+        DriftSqlType.string,
+        data['${effectivePrefix}seed_key'],
+      ),
+      sortOrder: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}sort_order'],
+      )!,
+      archivedAt: attachedDatabase.typeMapping.read(
+        DriftSqlType.dateTime,
+        data['${effectivePrefix}archived_at'],
+      ),
+    );
+  }
+
+  @override
+  $OptionSetItemsTable createAlias(String alias) {
+    return $OptionSetItemsTable(attachedDatabase, alias);
+  }
+}
+
+class OptionSetItemRow extends DataClass
+    implements Insertable<OptionSetItemRow> {
+  final int id;
+  final int setId;
+  final String label;
+  final String? seedKey;
+  final int sortOrder;
+  final DateTime? archivedAt;
+  const OptionSetItemRow({
+    required this.id,
+    required this.setId,
+    required this.label,
+    this.seedKey,
+    required this.sortOrder,
+    this.archivedAt,
+  });
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    map['id'] = Variable<int>(id);
+    map['set_id'] = Variable<int>(setId);
+    map['label'] = Variable<String>(label);
+    if (!nullToAbsent || seedKey != null) {
+      map['seed_key'] = Variable<String>(seedKey);
+    }
+    map['sort_order'] = Variable<int>(sortOrder);
+    if (!nullToAbsent || archivedAt != null) {
+      map['archived_at'] = Variable<DateTime>(archivedAt);
+    }
+    return map;
+  }
+
+  OptionSetItemsCompanion toCompanion(bool nullToAbsent) {
+    return OptionSetItemsCompanion(
+      id: Value(id),
+      setId: Value(setId),
+      label: Value(label),
+      seedKey: seedKey == null && nullToAbsent
+          ? const Value.absent()
+          : Value(seedKey),
+      sortOrder: Value(sortOrder),
+      archivedAt: archivedAt == null && nullToAbsent
+          ? const Value.absent()
+          : Value(archivedAt),
+    );
+  }
+
+  factory OptionSetItemRow.fromJson(
+    Map<String, dynamic> json, {
+    ValueSerializer? serializer,
+  }) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return OptionSetItemRow(
+      id: serializer.fromJson<int>(json['id']),
+      setId: serializer.fromJson<int>(json['setId']),
+      label: serializer.fromJson<String>(json['label']),
+      seedKey: serializer.fromJson<String?>(json['seedKey']),
+      sortOrder: serializer.fromJson<int>(json['sortOrder']),
+      archivedAt: serializer.fromJson<DateTime?>(json['archivedAt']),
+    );
+  }
+  @override
+  Map<String, dynamic> toJson({ValueSerializer? serializer}) {
+    serializer ??= driftRuntimeOptions.defaultSerializer;
+    return <String, dynamic>{
+      'id': serializer.toJson<int>(id),
+      'setId': serializer.toJson<int>(setId),
+      'label': serializer.toJson<String>(label),
+      'seedKey': serializer.toJson<String?>(seedKey),
+      'sortOrder': serializer.toJson<int>(sortOrder),
+      'archivedAt': serializer.toJson<DateTime?>(archivedAt),
+    };
+  }
+
+  OptionSetItemRow copyWith({
+    int? id,
+    int? setId,
+    String? label,
+    Value<String?> seedKey = const Value.absent(),
+    int? sortOrder,
+    Value<DateTime?> archivedAt = const Value.absent(),
+  }) => OptionSetItemRow(
+    id: id ?? this.id,
+    setId: setId ?? this.setId,
+    label: label ?? this.label,
+    seedKey: seedKey.present ? seedKey.value : this.seedKey,
+    sortOrder: sortOrder ?? this.sortOrder,
+    archivedAt: archivedAt.present ? archivedAt.value : this.archivedAt,
+  );
+  OptionSetItemRow copyWithCompanion(OptionSetItemsCompanion data) {
+    return OptionSetItemRow(
+      id: data.id.present ? data.id.value : this.id,
+      setId: data.setId.present ? data.setId.value : this.setId,
+      label: data.label.present ? data.label.value : this.label,
+      seedKey: data.seedKey.present ? data.seedKey.value : this.seedKey,
+      sortOrder: data.sortOrder.present ? data.sortOrder.value : this.sortOrder,
+      archivedAt: data.archivedAt.present
+          ? data.archivedAt.value
+          : this.archivedAt,
+    );
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('OptionSetItemRow(')
+          ..write('id: $id, ')
+          ..write('setId: $setId, ')
+          ..write('label: $label, ')
+          ..write('seedKey: $seedKey, ')
+          ..write('sortOrder: $sortOrder, ')
+          ..write('archivedAt: $archivedAt')
+          ..write(')'))
+        .toString();
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(id, setId, label, seedKey, sortOrder, archivedAt);
+  @override
+  bool operator ==(Object other) =>
+      identical(this, other) ||
+      (other is OptionSetItemRow &&
+          other.id == this.id &&
+          other.setId == this.setId &&
+          other.label == this.label &&
+          other.seedKey == this.seedKey &&
+          other.sortOrder == this.sortOrder &&
+          other.archivedAt == this.archivedAt);
+}
+
+class OptionSetItemsCompanion extends UpdateCompanion<OptionSetItemRow> {
+  final Value<int> id;
+  final Value<int> setId;
+  final Value<String> label;
+  final Value<String?> seedKey;
+  final Value<int> sortOrder;
+  final Value<DateTime?> archivedAt;
+  const OptionSetItemsCompanion({
+    this.id = const Value.absent(),
+    this.setId = const Value.absent(),
+    this.label = const Value.absent(),
+    this.seedKey = const Value.absent(),
+    this.sortOrder = const Value.absent(),
+    this.archivedAt = const Value.absent(),
+  });
+  OptionSetItemsCompanion.insert({
+    this.id = const Value.absent(),
+    required int setId,
+    required String label,
+    this.seedKey = const Value.absent(),
+    this.sortOrder = const Value.absent(),
+    this.archivedAt = const Value.absent(),
+  }) : setId = Value(setId),
+       label = Value(label);
+  static Insertable<OptionSetItemRow> custom({
+    Expression<int>? id,
+    Expression<int>? setId,
+    Expression<String>? label,
+    Expression<String>? seedKey,
+    Expression<int>? sortOrder,
+    Expression<DateTime>? archivedAt,
+  }) {
+    return RawValuesInsertable({
+      if (id != null) 'id': id,
+      if (setId != null) 'set_id': setId,
+      if (label != null) 'label': label,
+      if (seedKey != null) 'seed_key': seedKey,
+      if (sortOrder != null) 'sort_order': sortOrder,
+      if (archivedAt != null) 'archived_at': archivedAt,
+    });
+  }
+
+  OptionSetItemsCompanion copyWith({
+    Value<int>? id,
+    Value<int>? setId,
+    Value<String>? label,
+    Value<String?>? seedKey,
+    Value<int>? sortOrder,
+    Value<DateTime?>? archivedAt,
+  }) {
+    return OptionSetItemsCompanion(
+      id: id ?? this.id,
+      setId: setId ?? this.setId,
+      label: label ?? this.label,
+      seedKey: seedKey ?? this.seedKey,
+      sortOrder: sortOrder ?? this.sortOrder,
+      archivedAt: archivedAt ?? this.archivedAt,
+    );
+  }
+
+  @override
+  Map<String, Expression> toColumns(bool nullToAbsent) {
+    final map = <String, Expression>{};
+    if (id.present) {
+      map['id'] = Variable<int>(id.value);
+    }
+    if (setId.present) {
+      map['set_id'] = Variable<int>(setId.value);
+    }
+    if (label.present) {
+      map['label'] = Variable<String>(label.value);
+    }
+    if (seedKey.present) {
+      map['seed_key'] = Variable<String>(seedKey.value);
+    }
+    if (sortOrder.present) {
+      map['sort_order'] = Variable<int>(sortOrder.value);
+    }
+    if (archivedAt.present) {
+      map['archived_at'] = Variable<DateTime>(archivedAt.value);
+    }
+    return map;
+  }
+
+  @override
+  String toString() {
+    return (StringBuffer('OptionSetItemsCompanion(')
+          ..write('id: $id, ')
+          ..write('setId: $setId, ')
+          ..write('label: $label, ')
+          ..write('seedKey: $seedKey, ')
+          ..write('sortOrder: $sortOrder, ')
           ..write('archivedAt: $archivedAt')
           ..write(')'))
         .toString();
@@ -1030,6 +1954,20 @@ class $CompletionsTable extends Completions
     type: DriftSqlType.string,
     requiredDuringInsert: false,
   );
+  static const VerificationMeta _optionItemIdMeta = const VerificationMeta(
+    'optionItemId',
+  );
+  @override
+  late final GeneratedColumn<int> optionItemId = GeneratedColumn<int>(
+    'option_item_id',
+    aliasedName,
+    true,
+    type: DriftSqlType.int,
+    requiredDuringInsert: false,
+    defaultConstraints: GeneratedColumn.constraintIsAlways(
+      'REFERENCES option_set_items (id) ON DELETE SET NULL',
+    ),
+  );
   static const VerificationMeta _completedAtMeta = const VerificationMeta(
     'completedAt',
   );
@@ -1048,6 +1986,7 @@ class $CompletionsTable extends Completions
     muhasabaDate,
     progress,
     note,
+    optionItemId,
     completedAt,
   ];
   @override
@@ -1096,6 +2035,15 @@ class $CompletionsTable extends Completions
         note.isAcceptableOrUnknown(data['note']!, _noteMeta),
       );
     }
+    if (data.containsKey('option_item_id')) {
+      context.handle(
+        _optionItemIdMeta,
+        optionItemId.isAcceptableOrUnknown(
+          data['option_item_id']!,
+          _optionItemIdMeta,
+        ),
+      );
+    }
     if (data.containsKey('completed_at')) {
       context.handle(
         _completedAtMeta,
@@ -1138,6 +2086,10 @@ class $CompletionsTable extends Completions
         DriftSqlType.string,
         data['${effectivePrefix}note'],
       ),
+      optionItemId: attachedDatabase.typeMapping.read(
+        DriftSqlType.int,
+        data['${effectivePrefix}option_item_id'],
+      ),
       completedAt: attachedDatabase.typeMapping.read(
         DriftSqlType.dateTime,
         data['${effectivePrefix}completed_at'],
@@ -1157,6 +2109,7 @@ class CompletionRow extends DataClass implements Insertable<CompletionRow> {
   final DateTime muhasabaDate;
   final int progress;
   final String? note;
+  final int? optionItemId;
   final DateTime? completedAt;
   const CompletionRow({
     required this.id,
@@ -1164,6 +2117,7 @@ class CompletionRow extends DataClass implements Insertable<CompletionRow> {
     required this.muhasabaDate,
     required this.progress,
     this.note,
+    this.optionItemId,
     this.completedAt,
   });
   @override
@@ -1175,6 +2129,9 @@ class CompletionRow extends DataClass implements Insertable<CompletionRow> {
     map['progress'] = Variable<int>(progress);
     if (!nullToAbsent || note != null) {
       map['note'] = Variable<String>(note);
+    }
+    if (!nullToAbsent || optionItemId != null) {
+      map['option_item_id'] = Variable<int>(optionItemId);
     }
     if (!nullToAbsent || completedAt != null) {
       map['completed_at'] = Variable<DateTime>(completedAt);
@@ -1189,6 +2146,9 @@ class CompletionRow extends DataClass implements Insertable<CompletionRow> {
       muhasabaDate: Value(muhasabaDate),
       progress: Value(progress),
       note: note == null && nullToAbsent ? const Value.absent() : Value(note),
+      optionItemId: optionItemId == null && nullToAbsent
+          ? const Value.absent()
+          : Value(optionItemId),
       completedAt: completedAt == null && nullToAbsent
           ? const Value.absent()
           : Value(completedAt),
@@ -1206,6 +2166,7 @@ class CompletionRow extends DataClass implements Insertable<CompletionRow> {
       muhasabaDate: serializer.fromJson<DateTime>(json['muhasabaDate']),
       progress: serializer.fromJson<int>(json['progress']),
       note: serializer.fromJson<String?>(json['note']),
+      optionItemId: serializer.fromJson<int?>(json['optionItemId']),
       completedAt: serializer.fromJson<DateTime?>(json['completedAt']),
     );
   }
@@ -1218,6 +2179,7 @@ class CompletionRow extends DataClass implements Insertable<CompletionRow> {
       'muhasabaDate': serializer.toJson<DateTime>(muhasabaDate),
       'progress': serializer.toJson<int>(progress),
       'note': serializer.toJson<String?>(note),
+      'optionItemId': serializer.toJson<int?>(optionItemId),
       'completedAt': serializer.toJson<DateTime?>(completedAt),
     };
   }
@@ -1228,6 +2190,7 @@ class CompletionRow extends DataClass implements Insertable<CompletionRow> {
     DateTime? muhasabaDate,
     int? progress,
     Value<String?> note = const Value.absent(),
+    Value<int?> optionItemId = const Value.absent(),
     Value<DateTime?> completedAt = const Value.absent(),
   }) => CompletionRow(
     id: id ?? this.id,
@@ -1235,6 +2198,7 @@ class CompletionRow extends DataClass implements Insertable<CompletionRow> {
     muhasabaDate: muhasabaDate ?? this.muhasabaDate,
     progress: progress ?? this.progress,
     note: note.present ? note.value : this.note,
+    optionItemId: optionItemId.present ? optionItemId.value : this.optionItemId,
     completedAt: completedAt.present ? completedAt.value : this.completedAt,
   );
   CompletionRow copyWithCompanion(CompletionsCompanion data) {
@@ -1246,6 +2210,9 @@ class CompletionRow extends DataClass implements Insertable<CompletionRow> {
           : this.muhasabaDate,
       progress: data.progress.present ? data.progress.value : this.progress,
       note: data.note.present ? data.note.value : this.note,
+      optionItemId: data.optionItemId.present
+          ? data.optionItemId.value
+          : this.optionItemId,
       completedAt: data.completedAt.present
           ? data.completedAt.value
           : this.completedAt,
@@ -1260,14 +2227,22 @@ class CompletionRow extends DataClass implements Insertable<CompletionRow> {
           ..write('muhasabaDate: $muhasabaDate, ')
           ..write('progress: $progress, ')
           ..write('note: $note, ')
+          ..write('optionItemId: $optionItemId, ')
           ..write('completedAt: $completedAt')
           ..write(')'))
         .toString();
   }
 
   @override
-  int get hashCode =>
-      Object.hash(id, amalId, muhasabaDate, progress, note, completedAt);
+  int get hashCode => Object.hash(
+    id,
+    amalId,
+    muhasabaDate,
+    progress,
+    note,
+    optionItemId,
+    completedAt,
+  );
   @override
   bool operator ==(Object other) =>
       identical(this, other) ||
@@ -1277,6 +2252,7 @@ class CompletionRow extends DataClass implements Insertable<CompletionRow> {
           other.muhasabaDate == this.muhasabaDate &&
           other.progress == this.progress &&
           other.note == this.note &&
+          other.optionItemId == this.optionItemId &&
           other.completedAt == this.completedAt);
 }
 
@@ -1286,6 +2262,7 @@ class CompletionsCompanion extends UpdateCompanion<CompletionRow> {
   final Value<DateTime> muhasabaDate;
   final Value<int> progress;
   final Value<String?> note;
+  final Value<int?> optionItemId;
   final Value<DateTime?> completedAt;
   const CompletionsCompanion({
     this.id = const Value.absent(),
@@ -1293,6 +2270,7 @@ class CompletionsCompanion extends UpdateCompanion<CompletionRow> {
     this.muhasabaDate = const Value.absent(),
     this.progress = const Value.absent(),
     this.note = const Value.absent(),
+    this.optionItemId = const Value.absent(),
     this.completedAt = const Value.absent(),
   });
   CompletionsCompanion.insert({
@@ -1301,6 +2279,7 @@ class CompletionsCompanion extends UpdateCompanion<CompletionRow> {
     required DateTime muhasabaDate,
     this.progress = const Value.absent(),
     this.note = const Value.absent(),
+    this.optionItemId = const Value.absent(),
     this.completedAt = const Value.absent(),
   }) : amalId = Value(amalId),
        muhasabaDate = Value(muhasabaDate);
@@ -1310,6 +2289,7 @@ class CompletionsCompanion extends UpdateCompanion<CompletionRow> {
     Expression<DateTime>? muhasabaDate,
     Expression<int>? progress,
     Expression<String>? note,
+    Expression<int>? optionItemId,
     Expression<DateTime>? completedAt,
   }) {
     return RawValuesInsertable({
@@ -1318,6 +2298,7 @@ class CompletionsCompanion extends UpdateCompanion<CompletionRow> {
       if (muhasabaDate != null) 'muhasaba_date': muhasabaDate,
       if (progress != null) 'progress': progress,
       if (note != null) 'note': note,
+      if (optionItemId != null) 'option_item_id': optionItemId,
       if (completedAt != null) 'completed_at': completedAt,
     });
   }
@@ -1328,6 +2309,7 @@ class CompletionsCompanion extends UpdateCompanion<CompletionRow> {
     Value<DateTime>? muhasabaDate,
     Value<int>? progress,
     Value<String?>? note,
+    Value<int?>? optionItemId,
     Value<DateTime?>? completedAt,
   }) {
     return CompletionsCompanion(
@@ -1336,6 +2318,7 @@ class CompletionsCompanion extends UpdateCompanion<CompletionRow> {
       muhasabaDate: muhasabaDate ?? this.muhasabaDate,
       progress: progress ?? this.progress,
       note: note ?? this.note,
+      optionItemId: optionItemId ?? this.optionItemId,
       completedAt: completedAt ?? this.completedAt,
     );
   }
@@ -1358,6 +2341,9 @@ class CompletionsCompanion extends UpdateCompanion<CompletionRow> {
     if (note.present) {
       map['note'] = Variable<String>(note.value);
     }
+    if (optionItemId.present) {
+      map['option_item_id'] = Variable<int>(optionItemId.value);
+    }
     if (completedAt.present) {
       map['completed_at'] = Variable<DateTime>(completedAt.value);
     }
@@ -1372,6 +2358,7 @@ class CompletionsCompanion extends UpdateCompanion<CompletionRow> {
           ..write('muhasabaDate: $muhasabaDate, ')
           ..write('progress: $progress, ')
           ..write('note: $note, ')
+          ..write('optionItemId: $optionItemId, ')
           ..write('completedAt: $completedAt')
           ..write(')'))
         .toString();
@@ -3312,7 +4299,9 @@ class ChallengeEntriesCompanion extends UpdateCompanion<ChallengeEntryRow> {
 abstract class _$AppDatabase extends GeneratedDatabase {
   _$AppDatabase(QueryExecutor e) : super(e);
   $AppDatabaseManager get managers => $AppDatabaseManager(this);
+  late final $OptionSetsTable optionSets = $OptionSetsTable(this);
   late final $AmalsTable amals = $AmalsTable(this);
+  late final $OptionSetItemsTable optionSetItems = $OptionSetItemsTable(this);
   late final $CompletionsTable completions = $CompletionsTable(this);
   late final $HiddenDaysTable hiddenDays = $HiddenDaysTable(this);
   late final $SettingsKvTable settingsKv = $SettingsKvTable(this);
@@ -3332,7 +4321,9 @@ abstract class _$AppDatabase extends GeneratedDatabase {
       allSchemaEntities.whereType<TableInfo<Table, Object?>>();
   @override
   List<DatabaseSchemaEntity> get allSchemaEntities => [
+    optionSets,
     amals,
+    optionSetItems,
     completions,
     hiddenDays,
     settingsKv,
@@ -3344,10 +4335,31 @@ abstract class _$AppDatabase extends GeneratedDatabase {
   StreamQueryUpdateRules get streamUpdateRules => const StreamQueryUpdateRules([
     WritePropagation(
       on: TableUpdateQuery.onTableName(
+        'option_sets',
+        limitUpdateKind: UpdateKind.delete,
+      ),
+      result: [TableUpdate('amals', kind: UpdateKind.update)],
+    ),
+    WritePropagation(
+      on: TableUpdateQuery.onTableName(
+        'option_sets',
+        limitUpdateKind: UpdateKind.delete,
+      ),
+      result: [TableUpdate('option_set_items', kind: UpdateKind.delete)],
+    ),
+    WritePropagation(
+      on: TableUpdateQuery.onTableName(
         'amals',
         limitUpdateKind: UpdateKind.delete,
       ),
       result: [TableUpdate('completions', kind: UpdateKind.delete)],
+    ),
+    WritePropagation(
+      on: TableUpdateQuery.onTableName(
+        'option_set_items',
+        limitUpdateKind: UpdateKind.delete,
+      ),
+      result: [TableUpdate('completions', kind: UpdateKind.update)],
     ),
     WritePropagation(
       on: TableUpdateQuery.onTableName(
@@ -3369,6 +4381,418 @@ abstract class _$AppDatabase extends GeneratedDatabase {
       const DriftDatabaseOptions(storeDateTimeAsText: true);
 }
 
+typedef $$OptionSetsTableCreateCompanionBuilder =
+    OptionSetsCompanion Function({
+      Value<int> id,
+      required String name,
+      Value<String?> seedKey,
+      Value<int> sortOrder,
+      required DateTime createdAt,
+      Value<DateTime?> archivedAt,
+    });
+typedef $$OptionSetsTableUpdateCompanionBuilder =
+    OptionSetsCompanion Function({
+      Value<int> id,
+      Value<String> name,
+      Value<String?> seedKey,
+      Value<int> sortOrder,
+      Value<DateTime> createdAt,
+      Value<DateTime?> archivedAt,
+    });
+
+final class $$OptionSetsTableReferences
+    extends BaseReferences<_$AppDatabase, $OptionSetsTable, OptionSetRow> {
+  $$OptionSetsTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static MultiTypedResultKey<$AmalsTable, List<AmalRow>> _amalsRefsTable(
+    _$AppDatabase db,
+  ) => MultiTypedResultKey.fromTable(
+    db.amals,
+    aliasName: $_aliasNameGenerator(db.optionSets.id, db.amals.optionSetId),
+  );
+
+  $$AmalsTableProcessedTableManager get amalsRefs {
+    final manager = $$AmalsTableTableManager(
+      $_db,
+      $_db.amals,
+    ).filter((f) => f.optionSetId.id.sqlEquals($_itemColumn<int>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_amalsRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+
+  static MultiTypedResultKey<$OptionSetItemsTable, List<OptionSetItemRow>>
+  _optionSetItemsRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.optionSetItems,
+    aliasName: $_aliasNameGenerator(db.optionSets.id, db.optionSetItems.setId),
+  );
+
+  $$OptionSetItemsTableProcessedTableManager get optionSetItemsRefs {
+    final manager = $$OptionSetItemsTableTableManager(
+      $_db,
+      $_db.optionSetItems,
+    ).filter((f) => f.setId.id.sqlEquals($_itemColumn<int>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_optionSetItemsRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+}
+
+class $$OptionSetsTableFilterComposer
+    extends Composer<_$AppDatabase, $OptionSetsTable> {
+  $$OptionSetsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get seedKey => $composableBuilder(
+    column: $table.seedKey,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get sortOrder => $composableBuilder(
+    column: $table.sortOrder,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get archivedAt => $composableBuilder(
+    column: $table.archivedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  Expression<bool> amalsRefs(
+    Expression<bool> Function($$AmalsTableFilterComposer f) f,
+  ) {
+    final $$AmalsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.amals,
+      getReferencedColumn: (t) => t.optionSetId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$AmalsTableFilterComposer(
+            $db: $db,
+            $table: $db.amals,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<bool> optionSetItemsRefs(
+    Expression<bool> Function($$OptionSetItemsTableFilterComposer f) f,
+  ) {
+    final $$OptionSetItemsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.optionSetItems,
+      getReferencedColumn: (t) => t.setId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$OptionSetItemsTableFilterComposer(
+            $db: $db,
+            $table: $db.optionSetItems,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+}
+
+class $$OptionSetsTableOrderingComposer
+    extends Composer<_$AppDatabase, $OptionSetsTable> {
+  $$OptionSetsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get name => $composableBuilder(
+    column: $table.name,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get seedKey => $composableBuilder(
+    column: $table.seedKey,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get sortOrder => $composableBuilder(
+    column: $table.sortOrder,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get createdAt => $composableBuilder(
+    column: $table.createdAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get archivedAt => $composableBuilder(
+    column: $table.archivedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+}
+
+class $$OptionSetsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $OptionSetsTable> {
+  $$OptionSetsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get name =>
+      $composableBuilder(column: $table.name, builder: (column) => column);
+
+  GeneratedColumn<String> get seedKey =>
+      $composableBuilder(column: $table.seedKey, builder: (column) => column);
+
+  GeneratedColumn<int> get sortOrder =>
+      $composableBuilder(column: $table.sortOrder, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get createdAt =>
+      $composableBuilder(column: $table.createdAt, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get archivedAt => $composableBuilder(
+    column: $table.archivedAt,
+    builder: (column) => column,
+  );
+
+  Expression<T> amalsRefs<T extends Object>(
+    Expression<T> Function($$AmalsTableAnnotationComposer a) f,
+  ) {
+    final $$AmalsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.amals,
+      getReferencedColumn: (t) => t.optionSetId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$AmalsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.amals,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+
+  Expression<T> optionSetItemsRefs<T extends Object>(
+    Expression<T> Function($$OptionSetItemsTableAnnotationComposer a) f,
+  ) {
+    final $$OptionSetItemsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.optionSetItems,
+      getReferencedColumn: (t) => t.setId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$OptionSetItemsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.optionSetItems,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+}
+
+class $$OptionSetsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $OptionSetsTable,
+          OptionSetRow,
+          $$OptionSetsTableFilterComposer,
+          $$OptionSetsTableOrderingComposer,
+          $$OptionSetsTableAnnotationComposer,
+          $$OptionSetsTableCreateCompanionBuilder,
+          $$OptionSetsTableUpdateCompanionBuilder,
+          (OptionSetRow, $$OptionSetsTableReferences),
+          OptionSetRow,
+          PrefetchHooks Function({bool amalsRefs, bool optionSetItemsRefs})
+        > {
+  $$OptionSetsTableTableManager(_$AppDatabase db, $OptionSetsTable table)
+    : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$OptionSetsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$OptionSetsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$OptionSetsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                Value<String> name = const Value.absent(),
+                Value<String?> seedKey = const Value.absent(),
+                Value<int> sortOrder = const Value.absent(),
+                Value<DateTime> createdAt = const Value.absent(),
+                Value<DateTime?> archivedAt = const Value.absent(),
+              }) => OptionSetsCompanion(
+                id: id,
+                name: name,
+                seedKey: seedKey,
+                sortOrder: sortOrder,
+                createdAt: createdAt,
+                archivedAt: archivedAt,
+              ),
+          createCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                required String name,
+                Value<String?> seedKey = const Value.absent(),
+                Value<int> sortOrder = const Value.absent(),
+                required DateTime createdAt,
+                Value<DateTime?> archivedAt = const Value.absent(),
+              }) => OptionSetsCompanion.insert(
+                id: id,
+                name: name,
+                seedKey: seedKey,
+                sortOrder: sortOrder,
+                createdAt: createdAt,
+                archivedAt: archivedAt,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable(table),
+                  $$OptionSetsTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback:
+              ({amalsRefs = false, optionSetItemsRefs = false}) {
+                return PrefetchHooks(
+                  db: db,
+                  explicitlyWatchedTables: [
+                    if (amalsRefs) db.amals,
+                    if (optionSetItemsRefs) db.optionSetItems,
+                  ],
+                  addJoins: null,
+                  getPrefetchedDataCallback: (items) async {
+                    return [
+                      if (amalsRefs)
+                        await $_getPrefetchedData<
+                          OptionSetRow,
+                          $OptionSetsTable,
+                          AmalRow
+                        >(
+                          currentTable: table,
+                          referencedTable: $$OptionSetsTableReferences
+                              ._amalsRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$OptionSetsTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).amalsRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.optionSetId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
+                      if (optionSetItemsRefs)
+                        await $_getPrefetchedData<
+                          OptionSetRow,
+                          $OptionSetsTable,
+                          OptionSetItemRow
+                        >(
+                          currentTable: table,
+                          referencedTable: $$OptionSetsTableReferences
+                              ._optionSetItemsRefsTable(db),
+                          managerFromTypedResult: (p0) =>
+                              $$OptionSetsTableReferences(
+                                db,
+                                table,
+                                p0,
+                              ).optionSetItemsRefs,
+                          referencedItemsForCurrentItem:
+                              (item, referencedItems) => referencedItems.where(
+                                (e) => e.setId == item.id,
+                              ),
+                          typedResults: items,
+                        ),
+                    ];
+                  },
+                );
+              },
+        ),
+      );
+}
+
+typedef $$OptionSetsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $OptionSetsTable,
+      OptionSetRow,
+      $$OptionSetsTableFilterComposer,
+      $$OptionSetsTableOrderingComposer,
+      $$OptionSetsTableAnnotationComposer,
+      $$OptionSetsTableCreateCompanionBuilder,
+      $$OptionSetsTableUpdateCompanionBuilder,
+      (OptionSetRow, $$OptionSetsTableReferences),
+      OptionSetRow,
+      PrefetchHooks Function({bool amalsRefs, bool optionSetItemsRefs})
+    >;
 typedef $$AmalsTableCreateCompanionBuilder =
     AmalsCompanion Function({
       Value<int> id,
@@ -3386,6 +4810,8 @@ typedef $$AmalsTableCreateCompanionBuilder =
       Value<bool> isSeed,
       Value<String> icon,
       Value<String?> category,
+      Value<int?> optionSetId,
+      Value<bool> requireChoice,
       required DateTime createdAt,
       Value<DateTime?> archivedAt,
     });
@@ -3406,6 +4832,8 @@ typedef $$AmalsTableUpdateCompanionBuilder =
       Value<bool> isSeed,
       Value<String> icon,
       Value<String?> category,
+      Value<int?> optionSetId,
+      Value<bool> requireChoice,
       Value<DateTime> createdAt,
       Value<DateTime?> archivedAt,
     });
@@ -3413,6 +4841,25 @@ typedef $$AmalsTableUpdateCompanionBuilder =
 final class $$AmalsTableReferences
     extends BaseReferences<_$AppDatabase, $AmalsTable, AmalRow> {
   $$AmalsTableReferences(super.$_db, super.$_table, super.$_typedResult);
+
+  static $OptionSetsTable _optionSetIdTable(_$AppDatabase db) =>
+      db.optionSets.createAlias(
+        $_aliasNameGenerator(db.amals.optionSetId, db.optionSets.id),
+      );
+
+  $$OptionSetsTableProcessedTableManager? get optionSetId {
+    final $_column = $_itemColumn<int>('option_set_id');
+    if ($_column == null) return null;
+    final manager = $$OptionSetsTableTableManager(
+      $_db,
+      $_db.optionSets,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_optionSetIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
 
   static MultiTypedResultKey<$CompletionsTable, List<CompletionRow>>
   _completionsRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
@@ -3535,6 +4982,11 @@ class $$AmalsTableFilterComposer extends Composer<_$AppDatabase, $AmalsTable> {
     builder: (column) => ColumnFilters(column),
   );
 
+  ColumnFilters<bool> get requireChoice => $composableBuilder(
+    column: $table.requireChoice,
+    builder: (column) => ColumnFilters(column),
+  );
+
   ColumnFilters<DateTime> get createdAt => $composableBuilder(
     column: $table.createdAt,
     builder: (column) => ColumnFilters(column),
@@ -3544,6 +4996,29 @@ class $$AmalsTableFilterComposer extends Composer<_$AppDatabase, $AmalsTable> {
     column: $table.archivedAt,
     builder: (column) => ColumnFilters(column),
   );
+
+  $$OptionSetsTableFilterComposer get optionSetId {
+    final $$OptionSetsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.optionSetId,
+      referencedTable: $db.optionSets,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$OptionSetsTableFilterComposer(
+            $db: $db,
+            $table: $db.optionSets,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
 
   Expression<bool> completionsRefs(
     Expression<bool> Function($$CompletionsTableFilterComposer f) f,
@@ -3680,6 +5155,11 @@ class $$AmalsTableOrderingComposer
     builder: (column) => ColumnOrderings(column),
   );
 
+  ColumnOrderings<bool> get requireChoice => $composableBuilder(
+    column: $table.requireChoice,
+    builder: (column) => ColumnOrderings(column),
+  );
+
   ColumnOrderings<DateTime> get createdAt => $composableBuilder(
     column: $table.createdAt,
     builder: (column) => ColumnOrderings(column),
@@ -3689,6 +5169,29 @@ class $$AmalsTableOrderingComposer
     column: $table.archivedAt,
     builder: (column) => ColumnOrderings(column),
   );
+
+  $$OptionSetsTableOrderingComposer get optionSetId {
+    final $$OptionSetsTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.optionSetId,
+      referencedTable: $db.optionSets,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$OptionSetsTableOrderingComposer(
+            $db: $db,
+            $table: $db.optionSets,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
 }
 
 class $$AmalsTableAnnotationComposer
@@ -3757,6 +5260,11 @@ class $$AmalsTableAnnotationComposer
   GeneratedColumn<String> get category =>
       $composableBuilder(column: $table.category, builder: (column) => column);
 
+  GeneratedColumn<bool> get requireChoice => $composableBuilder(
+    column: $table.requireChoice,
+    builder: (column) => column,
+  );
+
   GeneratedColumn<DateTime> get createdAt =>
       $composableBuilder(column: $table.createdAt, builder: (column) => column);
 
@@ -3764,6 +5272,29 @@ class $$AmalsTableAnnotationComposer
     column: $table.archivedAt,
     builder: (column) => column,
   );
+
+  $$OptionSetsTableAnnotationComposer get optionSetId {
+    final $$OptionSetsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.optionSetId,
+      referencedTable: $db.optionSets,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$OptionSetsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.optionSets,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
 
   Expression<T> completionsRefs<T extends Object>(
     Expression<T> Function($$CompletionsTableAnnotationComposer a) f,
@@ -3829,7 +5360,11 @@ class $$AmalsTableTableManager
           $$AmalsTableUpdateCompanionBuilder,
           (AmalRow, $$AmalsTableReferences),
           AmalRow,
-          PrefetchHooks Function({bool completionsRefs, bool hiddenDaysRefs})
+          PrefetchHooks Function({
+            bool optionSetId,
+            bool completionsRefs,
+            bool hiddenDaysRefs,
+          })
         > {
   $$AmalsTableTableManager(_$AppDatabase db, $AmalsTable table)
     : super(
@@ -3859,6 +5394,8 @@ class $$AmalsTableTableManager
                 Value<bool> isSeed = const Value.absent(),
                 Value<String> icon = const Value.absent(),
                 Value<String?> category = const Value.absent(),
+                Value<int?> optionSetId = const Value.absent(),
+                Value<bool> requireChoice = const Value.absent(),
                 Value<DateTime> createdAt = const Value.absent(),
                 Value<DateTime?> archivedAt = const Value.absent(),
               }) => AmalsCompanion(
@@ -3877,6 +5414,8 @@ class $$AmalsTableTableManager
                 isSeed: isSeed,
                 icon: icon,
                 category: category,
+                optionSetId: optionSetId,
+                requireChoice: requireChoice,
                 createdAt: createdAt,
                 archivedAt: archivedAt,
               ),
@@ -3897,6 +5436,8 @@ class $$AmalsTableTableManager
                 Value<bool> isSeed = const Value.absent(),
                 Value<String> icon = const Value.absent(),
                 Value<String?> category = const Value.absent(),
+                Value<int?> optionSetId = const Value.absent(),
+                Value<bool> requireChoice = const Value.absent(),
                 required DateTime createdAt,
                 Value<DateTime?> archivedAt = const Value.absent(),
               }) => AmalsCompanion.insert(
@@ -3915,6 +5456,8 @@ class $$AmalsTableTableManager
                 isSeed: isSeed,
                 icon: icon,
                 category: category,
+                optionSetId: optionSetId,
+                requireChoice: requireChoice,
                 createdAt: createdAt,
                 archivedAt: archivedAt,
               ),
@@ -3925,14 +5468,49 @@ class $$AmalsTableTableManager
               )
               .toList(),
           prefetchHooksCallback:
-              ({completionsRefs = false, hiddenDaysRefs = false}) {
+              ({
+                optionSetId = false,
+                completionsRefs = false,
+                hiddenDaysRefs = false,
+              }) {
                 return PrefetchHooks(
                   db: db,
                   explicitlyWatchedTables: [
                     if (completionsRefs) db.completions,
                     if (hiddenDaysRefs) db.hiddenDays,
                   ],
-                  addJoins: null,
+                  addJoins:
+                      <
+                        T extends TableManagerState<
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic,
+                          dynamic
+                        >
+                      >(state) {
+                        if (optionSetId) {
+                          state =
+                              state.withJoin(
+                                    currentTable: table,
+                                    currentColumn: table.optionSetId,
+                                    referencedTable: $$AmalsTableReferences
+                                        ._optionSetIdTable(db),
+                                    referencedColumn: $$AmalsTableReferences
+                                        ._optionSetIdTable(db)
+                                        .id,
+                                  )
+                                  as T;
+                        }
+
+                        return state;
+                      },
                   getPrefetchedDataCallback: (items) async {
                     return [
                       if (completionsRefs)
@@ -3997,7 +5575,446 @@ typedef $$AmalsTableProcessedTableManager =
       $$AmalsTableUpdateCompanionBuilder,
       (AmalRow, $$AmalsTableReferences),
       AmalRow,
-      PrefetchHooks Function({bool completionsRefs, bool hiddenDaysRefs})
+      PrefetchHooks Function({
+        bool optionSetId,
+        bool completionsRefs,
+        bool hiddenDaysRefs,
+      })
+    >;
+typedef $$OptionSetItemsTableCreateCompanionBuilder =
+    OptionSetItemsCompanion Function({
+      Value<int> id,
+      required int setId,
+      required String label,
+      Value<String?> seedKey,
+      Value<int> sortOrder,
+      Value<DateTime?> archivedAt,
+    });
+typedef $$OptionSetItemsTableUpdateCompanionBuilder =
+    OptionSetItemsCompanion Function({
+      Value<int> id,
+      Value<int> setId,
+      Value<String> label,
+      Value<String?> seedKey,
+      Value<int> sortOrder,
+      Value<DateTime?> archivedAt,
+    });
+
+final class $$OptionSetItemsTableReferences
+    extends
+        BaseReferences<_$AppDatabase, $OptionSetItemsTable, OptionSetItemRow> {
+  $$OptionSetItemsTableReferences(
+    super.$_db,
+    super.$_table,
+    super.$_typedResult,
+  );
+
+  static $OptionSetsTable _setIdTable(_$AppDatabase db) =>
+      db.optionSets.createAlias(
+        $_aliasNameGenerator(db.optionSetItems.setId, db.optionSets.id),
+      );
+
+  $$OptionSetsTableProcessedTableManager get setId {
+    final $_column = $_itemColumn<int>('set_id')!;
+
+    final manager = $$OptionSetsTableTableManager(
+      $_db,
+      $_db.optionSets,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_setIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+
+  static MultiTypedResultKey<$CompletionsTable, List<CompletionRow>>
+  _completionsRefsTable(_$AppDatabase db) => MultiTypedResultKey.fromTable(
+    db.completions,
+    aliasName: $_aliasNameGenerator(
+      db.optionSetItems.id,
+      db.completions.optionItemId,
+    ),
+  );
+
+  $$CompletionsTableProcessedTableManager get completionsRefs {
+    final manager = $$CompletionsTableTableManager(
+      $_db,
+      $_db.completions,
+    ).filter((f) => f.optionItemId.id.sqlEquals($_itemColumn<int>('id')!));
+
+    final cache = $_typedResult.readTableOrNull(_completionsRefsTable($_db));
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: cache),
+    );
+  }
+}
+
+class $$OptionSetItemsTableFilterComposer
+    extends Composer<_$AppDatabase, $OptionSetItemsTable> {
+  $$OptionSetItemsTableFilterComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnFilters<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get label => $composableBuilder(
+    column: $table.label,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<String> get seedKey => $composableBuilder(
+    column: $table.seedKey,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<int> get sortOrder => $composableBuilder(
+    column: $table.sortOrder,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  ColumnFilters<DateTime> get archivedAt => $composableBuilder(
+    column: $table.archivedAt,
+    builder: (column) => ColumnFilters(column),
+  );
+
+  $$OptionSetsTableFilterComposer get setId {
+    final $$OptionSetsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.setId,
+      referencedTable: $db.optionSets,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$OptionSetsTableFilterComposer(
+            $db: $db,
+            $table: $db.optionSets,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  Expression<bool> completionsRefs(
+    Expression<bool> Function($$CompletionsTableFilterComposer f) f,
+  ) {
+    final $$CompletionsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.completions,
+      getReferencedColumn: (t) => t.optionItemId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$CompletionsTableFilterComposer(
+            $db: $db,
+            $table: $db.completions,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+}
+
+class $$OptionSetItemsTableOrderingComposer
+    extends Composer<_$AppDatabase, $OptionSetItemsTable> {
+  $$OptionSetItemsTableOrderingComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  ColumnOrderings<int> get id => $composableBuilder(
+    column: $table.id,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get label => $composableBuilder(
+    column: $table.label,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<String> get seedKey => $composableBuilder(
+    column: $table.seedKey,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<int> get sortOrder => $composableBuilder(
+    column: $table.sortOrder,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  ColumnOrderings<DateTime> get archivedAt => $composableBuilder(
+    column: $table.archivedAt,
+    builder: (column) => ColumnOrderings(column),
+  );
+
+  $$OptionSetsTableOrderingComposer get setId {
+    final $$OptionSetsTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.setId,
+      referencedTable: $db.optionSets,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$OptionSetsTableOrderingComposer(
+            $db: $db,
+            $table: $db.optionSets,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+}
+
+class $$OptionSetItemsTableAnnotationComposer
+    extends Composer<_$AppDatabase, $OptionSetItemsTable> {
+  $$OptionSetItemsTableAnnotationComposer({
+    required super.$db,
+    required super.$table,
+    super.joinBuilder,
+    super.$addJoinBuilderToRootComposer,
+    super.$removeJoinBuilderFromRootComposer,
+  });
+  GeneratedColumn<int> get id =>
+      $composableBuilder(column: $table.id, builder: (column) => column);
+
+  GeneratedColumn<String> get label =>
+      $composableBuilder(column: $table.label, builder: (column) => column);
+
+  GeneratedColumn<String> get seedKey =>
+      $composableBuilder(column: $table.seedKey, builder: (column) => column);
+
+  GeneratedColumn<int> get sortOrder =>
+      $composableBuilder(column: $table.sortOrder, builder: (column) => column);
+
+  GeneratedColumn<DateTime> get archivedAt => $composableBuilder(
+    column: $table.archivedAt,
+    builder: (column) => column,
+  );
+
+  $$OptionSetsTableAnnotationComposer get setId {
+    final $$OptionSetsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.setId,
+      referencedTable: $db.optionSets,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$OptionSetsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.optionSets,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  Expression<T> completionsRefs<T extends Object>(
+    Expression<T> Function($$CompletionsTableAnnotationComposer a) f,
+  ) {
+    final $$CompletionsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.id,
+      referencedTable: $db.completions,
+      getReferencedColumn: (t) => t.optionItemId,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$CompletionsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.completions,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return f(composer);
+  }
+}
+
+class $$OptionSetItemsTableTableManager
+    extends
+        RootTableManager<
+          _$AppDatabase,
+          $OptionSetItemsTable,
+          OptionSetItemRow,
+          $$OptionSetItemsTableFilterComposer,
+          $$OptionSetItemsTableOrderingComposer,
+          $$OptionSetItemsTableAnnotationComposer,
+          $$OptionSetItemsTableCreateCompanionBuilder,
+          $$OptionSetItemsTableUpdateCompanionBuilder,
+          (OptionSetItemRow, $$OptionSetItemsTableReferences),
+          OptionSetItemRow,
+          PrefetchHooks Function({bool setId, bool completionsRefs})
+        > {
+  $$OptionSetItemsTableTableManager(
+    _$AppDatabase db,
+    $OptionSetItemsTable table,
+  ) : super(
+        TableManagerState(
+          db: db,
+          table: table,
+          createFilteringComposer: () =>
+              $$OptionSetItemsTableFilterComposer($db: db, $table: table),
+          createOrderingComposer: () =>
+              $$OptionSetItemsTableOrderingComposer($db: db, $table: table),
+          createComputedFieldComposer: () =>
+              $$OptionSetItemsTableAnnotationComposer($db: db, $table: table),
+          updateCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                Value<int> setId = const Value.absent(),
+                Value<String> label = const Value.absent(),
+                Value<String?> seedKey = const Value.absent(),
+                Value<int> sortOrder = const Value.absent(),
+                Value<DateTime?> archivedAt = const Value.absent(),
+              }) => OptionSetItemsCompanion(
+                id: id,
+                setId: setId,
+                label: label,
+                seedKey: seedKey,
+                sortOrder: sortOrder,
+                archivedAt: archivedAt,
+              ),
+          createCompanionCallback:
+              ({
+                Value<int> id = const Value.absent(),
+                required int setId,
+                required String label,
+                Value<String?> seedKey = const Value.absent(),
+                Value<int> sortOrder = const Value.absent(),
+                Value<DateTime?> archivedAt = const Value.absent(),
+              }) => OptionSetItemsCompanion.insert(
+                id: id,
+                setId: setId,
+                label: label,
+                seedKey: seedKey,
+                sortOrder: sortOrder,
+                archivedAt: archivedAt,
+              ),
+          withReferenceMapper: (p0) => p0
+              .map(
+                (e) => (
+                  e.readTable(table),
+                  $$OptionSetItemsTableReferences(db, table, e),
+                ),
+              )
+              .toList(),
+          prefetchHooksCallback: ({setId = false, completionsRefs = false}) {
+            return PrefetchHooks(
+              db: db,
+              explicitlyWatchedTables: [if (completionsRefs) db.completions],
+              addJoins:
+                  <
+                    T extends TableManagerState<
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic,
+                      dynamic
+                    >
+                  >(state) {
+                    if (setId) {
+                      state =
+                          state.withJoin(
+                                currentTable: table,
+                                currentColumn: table.setId,
+                                referencedTable: $$OptionSetItemsTableReferences
+                                    ._setIdTable(db),
+                                referencedColumn:
+                                    $$OptionSetItemsTableReferences
+                                        ._setIdTable(db)
+                                        .id,
+                              )
+                              as T;
+                    }
+
+                    return state;
+                  },
+              getPrefetchedDataCallback: (items) async {
+                return [
+                  if (completionsRefs)
+                    await $_getPrefetchedData<
+                      OptionSetItemRow,
+                      $OptionSetItemsTable,
+                      CompletionRow
+                    >(
+                      currentTable: table,
+                      referencedTable: $$OptionSetItemsTableReferences
+                          ._completionsRefsTable(db),
+                      managerFromTypedResult: (p0) =>
+                          $$OptionSetItemsTableReferences(
+                            db,
+                            table,
+                            p0,
+                          ).completionsRefs,
+                      referencedItemsForCurrentItem: (item, referencedItems) =>
+                          referencedItems.where(
+                            (e) => e.optionItemId == item.id,
+                          ),
+                      typedResults: items,
+                    ),
+                ];
+              },
+            );
+          },
+        ),
+      );
+}
+
+typedef $$OptionSetItemsTableProcessedTableManager =
+    ProcessedTableManager<
+      _$AppDatabase,
+      $OptionSetItemsTable,
+      OptionSetItemRow,
+      $$OptionSetItemsTableFilterComposer,
+      $$OptionSetItemsTableOrderingComposer,
+      $$OptionSetItemsTableAnnotationComposer,
+      $$OptionSetItemsTableCreateCompanionBuilder,
+      $$OptionSetItemsTableUpdateCompanionBuilder,
+      (OptionSetItemRow, $$OptionSetItemsTableReferences),
+      OptionSetItemRow,
+      PrefetchHooks Function({bool setId, bool completionsRefs})
     >;
 typedef $$CompletionsTableCreateCompanionBuilder =
     CompletionsCompanion Function({
@@ -4006,6 +6023,7 @@ typedef $$CompletionsTableCreateCompanionBuilder =
       required DateTime muhasabaDate,
       Value<int> progress,
       Value<String?> note,
+      Value<int?> optionItemId,
       Value<DateTime?> completedAt,
     });
 typedef $$CompletionsTableUpdateCompanionBuilder =
@@ -4015,6 +6033,7 @@ typedef $$CompletionsTableUpdateCompanionBuilder =
       Value<DateTime> muhasabaDate,
       Value<int> progress,
       Value<String?> note,
+      Value<int?> optionItemId,
       Value<DateTime?> completedAt,
     });
 
@@ -4034,6 +6053,25 @@ final class $$CompletionsTableReferences
       $_db.amals,
     ).filter((f) => f.id.sqlEquals($_column));
     final item = $_typedResult.readTableOrNull(_amalIdTable($_db));
+    if (item == null) return manager;
+    return ProcessedTableManager(
+      manager.$state.copyWith(prefetchedData: [item]),
+    );
+  }
+
+  static $OptionSetItemsTable _optionItemIdTable(_$AppDatabase db) =>
+      db.optionSetItems.createAlias(
+        $_aliasNameGenerator(db.completions.optionItemId, db.optionSetItems.id),
+      );
+
+  $$OptionSetItemsTableProcessedTableManager? get optionItemId {
+    final $_column = $_itemColumn<int>('option_item_id');
+    if ($_column == null) return null;
+    final manager = $$OptionSetItemsTableTableManager(
+      $_db,
+      $_db.optionSetItems,
+    ).filter((f) => f.id.sqlEquals($_column));
+    final item = $_typedResult.readTableOrNull(_optionItemIdTable($_db));
     if (item == null) return manager;
     return ProcessedTableManager(
       manager.$state.copyWith(prefetchedData: [item]),
@@ -4089,6 +6127,29 @@ class $$CompletionsTableFilterComposer
           }) => $$AmalsTableFilterComposer(
             $db: $db,
             $table: $db.amals,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
+
+  $$OptionSetItemsTableFilterComposer get optionItemId {
+    final $$OptionSetItemsTableFilterComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.optionItemId,
+      referencedTable: $db.optionSetItems,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$OptionSetItemsTableFilterComposer(
+            $db: $db,
+            $table: $db.optionSetItems,
             $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
             joinBuilder: joinBuilder,
             $removeJoinBuilderFromRootComposer:
@@ -4155,6 +6216,29 @@ class $$CompletionsTableOrderingComposer
     );
     return composer;
   }
+
+  $$OptionSetItemsTableOrderingComposer get optionItemId {
+    final $$OptionSetItemsTableOrderingComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.optionItemId,
+      referencedTable: $db.optionSetItems,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$OptionSetItemsTableOrderingComposer(
+            $db: $db,
+            $table: $db.optionSetItems,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
 }
 
 class $$CompletionsTableAnnotationComposer
@@ -4207,6 +6291,29 @@ class $$CompletionsTableAnnotationComposer
     );
     return composer;
   }
+
+  $$OptionSetItemsTableAnnotationComposer get optionItemId {
+    final $$OptionSetItemsTableAnnotationComposer composer = $composerBuilder(
+      composer: this,
+      getCurrentColumn: (t) => t.optionItemId,
+      referencedTable: $db.optionSetItems,
+      getReferencedColumn: (t) => t.id,
+      builder:
+          (
+            joinBuilder, {
+            $addJoinBuilderToRootComposer,
+            $removeJoinBuilderFromRootComposer,
+          }) => $$OptionSetItemsTableAnnotationComposer(
+            $db: $db,
+            $table: $db.optionSetItems,
+            $addJoinBuilderToRootComposer: $addJoinBuilderToRootComposer,
+            joinBuilder: joinBuilder,
+            $removeJoinBuilderFromRootComposer:
+                $removeJoinBuilderFromRootComposer,
+          ),
+    );
+    return composer;
+  }
 }
 
 class $$CompletionsTableTableManager
@@ -4222,7 +6329,7 @@ class $$CompletionsTableTableManager
           $$CompletionsTableUpdateCompanionBuilder,
           (CompletionRow, $$CompletionsTableReferences),
           CompletionRow,
-          PrefetchHooks Function({bool amalId})
+          PrefetchHooks Function({bool amalId, bool optionItemId})
         > {
   $$CompletionsTableTableManager(_$AppDatabase db, $CompletionsTable table)
     : super(
@@ -4242,6 +6349,7 @@ class $$CompletionsTableTableManager
                 Value<DateTime> muhasabaDate = const Value.absent(),
                 Value<int> progress = const Value.absent(),
                 Value<String?> note = const Value.absent(),
+                Value<int?> optionItemId = const Value.absent(),
                 Value<DateTime?> completedAt = const Value.absent(),
               }) => CompletionsCompanion(
                 id: id,
@@ -4249,6 +6357,7 @@ class $$CompletionsTableTableManager
                 muhasabaDate: muhasabaDate,
                 progress: progress,
                 note: note,
+                optionItemId: optionItemId,
                 completedAt: completedAt,
               ),
           createCompanionCallback:
@@ -4258,6 +6367,7 @@ class $$CompletionsTableTableManager
                 required DateTime muhasabaDate,
                 Value<int> progress = const Value.absent(),
                 Value<String?> note = const Value.absent(),
+                Value<int?> optionItemId = const Value.absent(),
                 Value<DateTime?> completedAt = const Value.absent(),
               }) => CompletionsCompanion.insert(
                 id: id,
@@ -4265,6 +6375,7 @@ class $$CompletionsTableTableManager
                 muhasabaDate: muhasabaDate,
                 progress: progress,
                 note: note,
+                optionItemId: optionItemId,
                 completedAt: completedAt,
               ),
           withReferenceMapper: (p0) => p0
@@ -4275,7 +6386,7 @@ class $$CompletionsTableTableManager
                 ),
               )
               .toList(),
-          prefetchHooksCallback: ({amalId = false}) {
+          prefetchHooksCallback: ({amalId = false, optionItemId = false}) {
             return PrefetchHooks(
               db: db,
               explicitlyWatchedTables: [],
@@ -4308,6 +6419,19 @@ class $$CompletionsTableTableManager
                               )
                               as T;
                     }
+                    if (optionItemId) {
+                      state =
+                          state.withJoin(
+                                currentTable: table,
+                                currentColumn: table.optionItemId,
+                                referencedTable: $$CompletionsTableReferences
+                                    ._optionItemIdTable(db),
+                                referencedColumn: $$CompletionsTableReferences
+                                    ._optionItemIdTable(db)
+                                    .id,
+                              )
+                              as T;
+                    }
 
                     return state;
                   },
@@ -4332,7 +6456,7 @@ typedef $$CompletionsTableProcessedTableManager =
       $$CompletionsTableUpdateCompanionBuilder,
       (CompletionRow, $$CompletionsTableReferences),
       CompletionRow,
-      PrefetchHooks Function({bool amalId})
+      PrefetchHooks Function({bool amalId, bool optionItemId})
     >;
 typedef $$HiddenDaysTableCreateCompanionBuilder =
     HiddenDaysCompanion Function({
@@ -5739,8 +7863,12 @@ typedef $$ChallengeEntriesTableProcessedTableManager =
 class $AppDatabaseManager {
   final _$AppDatabase _db;
   $AppDatabaseManager(this._db);
+  $$OptionSetsTableTableManager get optionSets =>
+      $$OptionSetsTableTableManager(_db, _db.optionSets);
   $$AmalsTableTableManager get amals =>
       $$AmalsTableTableManager(_db, _db.amals);
+  $$OptionSetItemsTableTableManager get optionSetItems =>
+      $$OptionSetItemsTableTableManager(_db, _db.optionSetItems);
   $$CompletionsTableTableManager get completions =>
       $$CompletionsTableTableManager(_db, _db.completions);
   $$HiddenDaysTableTableManager get hiddenDays =>
