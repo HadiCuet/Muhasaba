@@ -1,6 +1,7 @@
 import 'package:drift/drift.dart';
 
 import '../../domain/models/frequency.dart';
+import '../../domain/models/seed_option_sets.dart';
 import 'database.dart';
 
 /// Inserts the first-run default amal list: the five fard prayers plus a
@@ -144,4 +145,42 @@ AmalsCompanion _seed(
     weeklyDays: Value(weeklyDays),
     monthlyDates: Value(monthlyDates),
   );
+}
+
+/// Inserts the shipped option sets. Idempotent: a set whose `seedKey` is
+/// already present is skipped entirely, so a user who edited or deleted one
+/// never gets it re-created underneath them. Attaches to no amal.
+Future<void> seedOptionSets(AppDatabase db) async {
+  final now = DateTime.now().toUtc();
+  for (var s = 0; s < kSeedOptionSets.length; s++) {
+    final seed = kSeedOptionSets[s];
+    final existing = await (db.select(
+      db.optionSets,
+    )..where((t) => t.seedKey.equals(seed.seedKey))).getSingleOrNull();
+    if (existing != null) continue;
+
+    final setId = await db
+        .into(db.optionSets)
+        .insert(
+          OptionSetsCompanion.insert(
+            name: seed.name,
+            seedKey: Value(seed.seedKey),
+            sortOrder: Value(s),
+            createdAt: now,
+          ),
+        );
+    await db.batch((b) {
+      for (var i = 0; i < seed.items.length; i++) {
+        b.insert(
+          db.optionSetItems,
+          OptionSetItemsCompanion.insert(
+            setId: setId,
+            label: seed.items[i].label,
+            seedKey: Value(seed.items[i].key),
+            sortOrder: Value(i),
+          ),
+        );
+      }
+    });
+  }
 }

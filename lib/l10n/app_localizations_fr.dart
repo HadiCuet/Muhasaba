@@ -1523,4 +1523,70 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String get tipUnavailable =>
       'Les achats ne sont pas disponibles sur cet appareil pour le moment.';
+
+  @override
+  String get optionSetJamaa => 'Jamaa';
+
+  @override
+  String get optionJamaaAlone => 'Alone';
+
+  @override
+  String get optionJamaaHome => 'Jamaa at home';
+
+  @override
+  String get optionJamaaMasjid => 'Jamaa at masjid';
+
+  @override
+  String get optionSetOnTime => 'On time';
+
+  @override
+  String get optionOnTimeOnTime => 'On time';
+
+  @override
+  String get optionOnTimeLate => 'Late';
+
+  @override
+  String get optionOnTimeQada => 'Qada';
+
+  @override
+  String get optionSetQuranSession => 'Quran session';
+
+  @override
+  String get optionQuranRecited => 'Recited';
+
+  @override
+  String get optionQuranMemorised => 'Memorised';
+
+  @override
+  String get optionQuranMeaning => 'With meaning';
+
+  @override
+  String get optionQuranListened => 'Listened';
+
+  @override
+  String get optionSetSadaqahType => 'Sadaqah type';
+
+  @override
+  String get optionSadaqahMoney => 'Money';
+
+  @override
+  String get optionSadaqahFood => 'Food';
+
+  @override
+  String get optionSadaqahTime => 'Time';
+
+  @override
+  String get optionSadaqahOther => 'Other';
+
+  @override
+  String get optionSetIntensity => 'Intensity';
+
+  @override
+  String get optionIntensityLight => 'Light';
+
+  @override
+  String get optionIntensityModerate => 'Moderate';
+
+  @override
+  String get optionIntensityIntense => 'Intense';
 }

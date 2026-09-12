@@ -1094,5 +1094,27 @@
   "tipUnavailable": "Purchases aren't available on this device right now.",
   "@tipUnavailable": {
     "description": "Replaces the amounts when the store cannot be reached or products fail to load"
-  }
+  },
+  "optionSetJamaa": "Jamaa",
+  "optionJamaaAlone": "Alone",
+  "optionJamaaHome": "Jamaa at home",
+  "optionJamaaMasjid": "Jamaa at masjid",
+  "optionSetOnTime": "On time",
+  "optionOnTimeOnTime": "On time",
+  "optionOnTimeLate": "Late",
+  "optionOnTimeQada": "Qada",
+  "optionSetQuranSession": "Quran session",
+  "optionQuranRecited": "Recited",
+  "optionQuranMemorised": "Memorised",
+  "optionQuranMeaning": "With meaning",
+  "optionQuranListened": "Listened",
+  "optionSetSadaqahType": "Sadaqah type",
+  "optionSadaqahMoney": "Money",
+  "optionSadaqahFood": "Food",
+  "optionSadaqahTime": "Time",
+  "optionSadaqahOther": "Other",
+  "optionSetIntensity": "Intensity",
+  "optionIntensityLight": "Light",
+  "optionIntensityModerate": "Moderate",
+  "optionIntensityIntense": "Intense"
 }

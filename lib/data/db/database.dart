@@ -50,7 +50,7 @@ class AppDatabase extends _$AppDatabase {
       await m.createAll();
       await seedInitialAmals(this);
       await seedCategories(this);
-      // await seedOptionSets(this);
+      await seedOptionSets(this);
     },
     onUpgrade: (m, from, to) async {
       // All DDL below is guarded with existence checks so the migration is
@@ -201,7 +201,7 @@ class AppDatabase extends _$AppDatabase {
         if (!await _hasColumn('completions', 'option_item_id')) {
           await m.addColumn(completions, completions.optionItemId);
         }
-        // await seedOptionSets(this);
+        await seedOptionSets(this);
       }
     },
     beforeOpen: (details) async {

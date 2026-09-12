@@ -2653,6 +2653,138 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Purchases aren\'t available on this device right now.'**
   String get tipUnavailable;
+
+  /// No description provided for @optionSetJamaa.
+  ///
+  /// In en, this message translates to:
+  /// **'Jamaa'**
+  String get optionSetJamaa;
+
+  /// No description provided for @optionJamaaAlone.
+  ///
+  /// In en, this message translates to:
+  /// **'Alone'**
+  String get optionJamaaAlone;
+
+  /// No description provided for @optionJamaaHome.
+  ///
+  /// In en, this message translates to:
+  /// **'Jamaa at home'**
+  String get optionJamaaHome;
+
+  /// No description provided for @optionJamaaMasjid.
+  ///
+  /// In en, this message translates to:
+  /// **'Jamaa at masjid'**
+  String get optionJamaaMasjid;
+
+  /// No description provided for @optionSetOnTime.
+  ///
+  /// In en, this message translates to:
+  /// **'On time'**
+  String get optionSetOnTime;
+
+  /// No description provided for @optionOnTimeOnTime.
+  ///
+  /// In en, this message translates to:
+  /// **'On time'**
+  String get optionOnTimeOnTime;
+
+  /// No description provided for @optionOnTimeLate.
+  ///
+  /// In en, this message translates to:
+  /// **'Late'**
+  String get optionOnTimeLate;
+
+  /// No description provided for @optionOnTimeQada.
+  ///
+  /// In en, this message translates to:
+  /// **'Qada'**
+  String get optionOnTimeQada;
+
+  /// No description provided for @optionSetQuranSession.
+  ///
+  /// In en, this message translates to:
+  /// **'Quran session'**
+  String get optionSetQuranSession;
+
+  /// No description provided for @optionQuranRecited.
+  ///
+  /// In en, this message translates to:
+  /// **'Recited'**
+  String get optionQuranRecited;
+
+  /// No description provided for @optionQuranMemorised.
+  ///
+  /// In en, this message translates to:
+  /// **'Memorised'**
+  String get optionQuranMemorised;
+
+  /// No description provided for @optionQuranMeaning.
+  ///
+  /// In en, this message translates to:
+  /// **'With meaning'**
+  String get optionQuranMeaning;
+
+  /// No description provided for @optionQuranListened.
+  ///
+  /// In en, this message translates to:
+  /// **'Listened'**
+  String get optionQuranListened;
+
+  /// No description provided for @optionSetSadaqahType.
+  ///
+  /// In en, this message translates to:
+  /// **'Sadaqah type'**
+  String get optionSetSadaqahType;
+
+  /// No description provided for @optionSadaqahMoney.
+  ///
+  /// In en, this message translates to:
+  /// **'Money'**
+  String get optionSadaqahMoney;
+
+  /// No description provided for @optionSadaqahFood.
+  ///
+  /// In en, this message translates to:
+  /// **'Food'**
+  String get optionSadaqahFood;
+
+  /// No description provided for @optionSadaqahTime.
+  ///
+  /// In en, this message translates to:
+  /// **'Time'**
+  String get optionSadaqahTime;
+
+  /// No description provided for @optionSadaqahOther.
+  ///
+  /// In en, this message translates to:
+  /// **'Other'**
+  String get optionSadaqahOther;
+
+  /// No description provided for @optionSetIntensity.
+  ///
+  /// In en, this message translates to:
+  /// **'Intensity'**
+  String get optionSetIntensity;
+
+  /// No description provided for @optionIntensityLight.
+  ///
+  /// In en, this message translates to:
+  /// **'Light'**
+  String get optionIntensityLight;
+
+  /// No description provided for @optionIntensityModerate.
+  ///
+  /// In en, this message translates to:
+  /// **'Moderate'**
+  String get optionIntensityModerate;
+
+  /// No description provided for @optionIntensityIntense.
+  ///
+  /// In en, this message translates to:
+  /// **'Intense'**
+  String get optionIntensityIntense;
 }
 
 class _AppLocalizationsDelegate
