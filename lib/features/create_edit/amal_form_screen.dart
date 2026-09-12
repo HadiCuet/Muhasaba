@@ -12,11 +12,14 @@ import '../../domain/models/frequency.dart';
 import '../../domain/services/reminder_scheduler.dart';
 import '../../domain/utils/localized_amal_title.dart';
 import '../../domain/utils/localized_number.dart';
+import '../../domain/utils/localized_option_label.dart';
 import '../../domain/utils/monthly_dates.dart';
 import '../../domain/utils/weekly_days.dart';
 import 'amal_templates.dart';
 import 'widgets/category_picker.dart';
 import 'widgets/emoji_picker.dart';
+import 'widgets/option_set_editor_sheet.dart';
+import 'widgets/option_set_picker.dart';
 
 /// Create or edit an amal. Pass `amalId = null` to create a new one, or an
 /// existing id to edit. When editing, the form hydrates from the row before
@@ -51,6 +54,8 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
   bool _monthlyPinned = true;
   bool _defaultChecked = true;
   TimeOfDay? _reminderTime;
+  int? _optionSetId;
+  bool _requireChoice = false;
 
   bool _loading = false;
   bool _titlePrefilled = false;
@@ -155,6 +160,8 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
             minute: int.parse(parts[1]),
           );
         }
+        _optionSetId = row.optionSetId;
+        _requireChoice = row.requireChoice;
       }
       _loading = false;
     });
@@ -261,6 +268,8 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
             reminderTime: reminder,
             icon: _icon,
             category: _category,
+            optionSetId: _optionSetId,
+            requireChoice: _requireChoice && _target == 1,
           );
       FirebaseAnalytics.instance.logEvent(
         name: 'amal_created',
@@ -293,6 +302,8 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
               reminderTime: Value(reminder),
               icon: _icon,
               category: Value(_category),
+              optionSetId: Value(_optionSetId),
+              requireChoice: _requireChoice && _target == 1,
             ),
             notificationTitle: localizedAmalTitle(title, l),
           );
@@ -473,6 +484,35 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                   }),
                 ),
                 const SizedBox(height: 16),
+
+                // ── Options ────────────────────────────────────────────────
+                Text(l.optionsLabel, style: theme.textTheme.labelLarge),
+                const SizedBox(height: 8),
+                OptionSetPicker(
+                  selectedId: _optionSetId,
+                  amalCategory: _category,
+                  onChanged: (id) => setState(() {
+                    _optionSetId = id;
+                    if (id == null) _requireChoice = false;
+                  }),
+                ),
+                SwitchListTile(
+                  contentPadding: EdgeInsets.zero,
+                  value: _requireChoice,
+                  onChanged: (_optionSetId == null || _target > 1)
+                      ? null
+                      : (v) => setState(() => _requireChoice = v),
+                  title: Text(l.requireChoiceLabel),
+                  subtitle: Text(
+                    _optionSetId == null
+                        ? l.requireChoicePickSetFirst
+                        : (_target > 1
+                              ? l.requireChoiceCountHelp
+                              : l.requireChoiceHelp),
+                  ),
+                ),
+                if (_optionSetId != null) _OptionPreview(setId: _optionSetId!),
+                const SizedBox(height: 20),
 
                 // ── Target ─────────────────────────────────────────────────
                 _TargetChips(
@@ -1072,6 +1112,49 @@ class _FrequencyPreview extends StatelessWidget {
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: theme.colorScheme.onPrimaryContainer,
               ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class _OptionPreview extends ConsumerWidget {
+  const _OptionPreview({required this.setId});
+
+  final int setId;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final l = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+    final items =
+        (ref.watch(optionSetItemsProvider).value ?? const <OptionSetItemRow>[])
+            .where((i) => i.setId == setId && i.archivedAt == null)
+            .toList();
+    return Padding(
+      padding: const EdgeInsetsDirectional.only(top: 8),
+      child: Column(
+        crossAxisAlignment: CrossAxisAlignment.start,
+        children: [
+          Wrap(
+            spacing: 6,
+            runSpacing: 6,
+            children: [
+              for (final i in items)
+                ChoiceChip(
+                  label: Text(localizedOptionLabel(i.seedKey, i.label, l)),
+                  selected: false,
+                  onSelected: (_) {},
+                ),
+            ],
+          ),
+          const SizedBox(height: 6),
+          Text(
+            l.optionsUsedOf(items.length, kMaxOptionsPerSet),
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.outline,
             ),
           ),
         ],

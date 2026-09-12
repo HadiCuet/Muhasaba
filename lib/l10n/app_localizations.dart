@@ -2869,6 +2869,48 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Add at least two options'**
   String get optionsMinRequired;
+
+  /// No description provided for @optionSetNone.
+  ///
+  /// In en, this message translates to:
+  /// **'None'**
+  String get optionSetNone;
+
+  /// No description provided for @optionSetNew.
+  ///
+  /// In en, this message translates to:
+  /// **'New set'**
+  String get optionSetNew;
+
+  /// No description provided for @requireChoiceLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Require a choice'**
+  String get requireChoiceLabel;
+
+  /// No description provided for @requireChoiceHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'The row won\'t tick until an option is picked'**
+  String get requireChoiceHelp;
+
+  /// No description provided for @requireChoicePickSetFirst.
+  ///
+  /// In en, this message translates to:
+  /// **'Pick a set first'**
+  String get requireChoicePickSetFirst;
+
+  /// No description provided for @requireChoiceCountHelp.
+  ///
+  /// In en, this message translates to:
+  /// **'Counted amals are completed by the stepper'**
+  String get requireChoiceCountHelp;
+
+  /// No description provided for @optionsUsedOf.
+  ///
+  /// In en, this message translates to:
+  /// **'{used} of {max} options used.'**
+  String optionsUsedOf(int used, int max);
 }
 
 class _AppLocalizationsDelegate

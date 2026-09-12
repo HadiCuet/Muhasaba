@@ -1139,5 +1139,18 @@
   "optionSetDelete": "Delete set",
   "optionSetDeleteConfirm": "Amals using this set stop showing options. Days you already recorded keep their choice.",
   "optionSetNameRequired": "Give the set a name",
-  "optionsMinRequired": "Add at least two options"
+  "optionsMinRequired": "Add at least two options",
+  "optionSetNone": "None",
+  "optionSetNew": "New set",
+  "requireChoiceLabel": "Require a choice",
+  "requireChoiceHelp": "The row won't tick until an option is picked",
+  "requireChoicePickSetFirst": "Pick a set first",
+  "requireChoiceCountHelp": "Counted amals are completed by the stepper",
+  "optionsUsedOf": "{used} of {max} options used.",
+  "@optionsUsedOf": {
+    "placeholders": {
+      "used": { "type": "int" },
+      "max": { "type": "int" }
+    }
+  }
 }

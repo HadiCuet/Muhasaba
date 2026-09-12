@@ -38,6 +38,8 @@ class AmalRepository {
     int sortOrder = 0,
     required String icon,
     String? category,
+    int? optionSetId,
+    bool requireChoice = false,
   }) async {
     final id = await _dao.insertAmal(
       AmalsCompanion.insert(
@@ -52,6 +54,8 @@ class AmalRepository {
         sortOrder: Value(sortOrder),
         icon: Value(icon),
         category: Value(category),
+        optionSetId: Value(optionSetId),
+        requireChoice: Value(requireChoice),
         createdAt: DateTime.now().toUtc(),
       ),
     );

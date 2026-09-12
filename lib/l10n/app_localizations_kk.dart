@@ -1620,4 +1620,29 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get optionsMinRequired => 'Add at least two options';
+
+  @override
+  String get optionSetNone => 'None';
+
+  @override
+  String get optionSetNew => 'New set';
+
+  @override
+  String get requireChoiceLabel => 'Require a choice';
+
+  @override
+  String get requireChoiceHelp =>
+      'The row won\'t tick until an option is picked';
+
+  @override
+  String get requireChoicePickSetFirst => 'Pick a set first';
+
+  @override
+  String get requireChoiceCountHelp =>
+      'Counted amals are completed by the stepper';
+
+  @override
+  String optionsUsedOf(int used, int max) {
+    return '$used of $max options used.';
+  }
 }
