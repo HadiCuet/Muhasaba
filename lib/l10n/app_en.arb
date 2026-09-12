@@ -1003,7 +1003,7 @@
   "@supportPromptTitle": {
     "description": "Title of the one-time support prompt shown on the 30th active day"
   },
-  "supportPromptBody": "Muhasaba is free, with no ads and no account. You can support its development with a tip — any amount, whenever you like. Nothing is locked behind it.",
+  "supportPromptBody": "Free, no ads, no account. You can tip any amount, any time — nothing is locked.",
   "@supportPromptBody": {
     "description": "Body of the support prompt. Three sentences, no guilt, no 'donate'"
   },

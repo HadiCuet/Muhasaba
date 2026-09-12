@@ -1454,7 +1454,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Muhasaba je besplatna, bez reklama i bez računa. Razvoj možete podržati malim doprinosom — bilo kojim iznosom, kad god želite. Nijedna funkcija nije zaključana.';
+      'Besplatno, bez reklama i računa. Bilo koji iznos, bilo kada — ništa nije zaključano.';
 
   @override
   String get supportPromptNow => 'Podržite sada';

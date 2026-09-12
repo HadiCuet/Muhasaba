@@ -1456,7 +1456,7 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Muhasaba waa bilaash, xayeysiis iyo akoon la\'aan. Horumarinteeda waxaad ku taageeri kartaa wax yar oo aad bixiso — lacag kasta, mar kasta oo aad doonto. Wax astaan ah oo xiran ma jiro.';
+      'Bilaash, xayaysiin la\'aan, akoon la\'aan. Wax kasta, waqti kasta — waxba ma xidhna.';
 
   @override
   String get supportPromptNow => 'Hadda taageer';

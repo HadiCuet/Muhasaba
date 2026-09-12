@@ -1443,7 +1443,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Muhasaba mugt, mahabatsyz we hasapsyz. Isleseňiz, kiçijik goşant bilen ösüşini goldap bilersiňiz — islendik möçberde, islendik wagt. Hiç bir aýratynlyk muňa bagly däl.';
+      'Mugt, mahabatsyz, hasapsyz. Islendik möçberde, islän wagtyňyz — hiç zat gulplanan däl.';
 
   @override
   String get supportPromptNow => 'Häzir goldaň';

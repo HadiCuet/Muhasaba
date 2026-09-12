@@ -1443,7 +1443,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Muhasaba رایگان است، بدون تبلیغ و بدون حساب کاربری. می‌توانید با مبلغی دلخواه از توسعه‌ی آن حمایت کنید — هر مقدار، هر وقت که خواستید. هیچ امکانی پشت آن قفل نیست.';
+      'رایگان، بدون تبلیغ و حساب. هر مبلغی، هر وقت — هیچ چیز قفل نیست.';
 
   @override
   String get supportPromptNow => 'همین حالا حمایت کنید';

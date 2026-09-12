@@ -1443,7 +1443,7 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Muhasaba тегін, жарнамасыз және тіркелгісіз. Қаласаңыз, шағын үлеспен дамуына қолдау көрсете аласыз — кез келген сомада, кез келген уақытта. Ешбір мүмкіндік бұған тәуелді емес.';
+      'Тегін, жарнамасыз, тіркелгісіз. Кез келген сома, кез келген уақытта — ештеңе жабық емес.';
 
   @override
   String get supportPromptNow => 'Қазір қолдау';

@@ -1442,7 +1442,7 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Muhasaba pulsuzdur; reklam yoxdur, hesab tələb olunmur. İstəsəniz, kiçik bir töhfə ilə inkişafına dəstək ola bilərsiniz — istədiyiniz məbləğdə, istədiyiniz vaxt. Heç bir funksiya buna bağlı deyil.';
+      'Pulsuz, reklamsız, hesabsız. İstədiyiniz məbləğdə, istədiyiniz vaxt — heç nə kilidli deyil.';
 
   @override
   String get supportPromptNow => 'İndi dəstək ol';

@@ -1450,7 +1450,7 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Muhasaba bepul, reklamasiz va hisobsiz. Xohlasangiz, rivojiga kichik hissa qo\'shib qo\'llab-quvvatlashingiz mumkin — istalgan miqdorda, istalgan vaqtda. Hech qanday funksiya bunga bog\'liq emas.';
+      'Bepul, reklamasiz, hisobsiz. Istalgan miqdorda, istalgan vaqtda — hech narsa qulflanmagan.';
 
   @override
   String get supportPromptNow => 'Hozir qo\'llab-quvvatlash';

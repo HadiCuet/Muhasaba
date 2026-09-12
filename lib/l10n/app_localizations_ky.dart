@@ -1445,7 +1445,7 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Muhasaba акысыз, жарнамасыз жана каттоосуз. Кааласаңыз, кичине салым менен өнүгүшүнө колдоо көрсөтө аласыз — каалаган суммада, каалаган убакта. Эч бир мүмкүнчүлүк буга байланыштуу эмес.';
+      'Акысыз, жарнамасыз, каттоосуз. Каалаган сумма, каалаган убакта — эч нерсе жабык эмес.';
 
   @override
   String get supportPromptNow => 'Азыр колдоо';

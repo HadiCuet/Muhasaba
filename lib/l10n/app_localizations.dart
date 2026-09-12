@@ -2549,7 +2549,7 @@ abstract class AppLocalizations {
   /// Body of the support prompt. Three sentences, no guilt, no 'donate'
   ///
   /// In en, this message translates to:
-  /// **'Muhasaba is free, with no ads and no account. You can support its development with a tip — any amount, whenever you like. Nothing is locked behind it.'**
+  /// **'Free, no ads, no account. You can tip any amount, any time — nothing is locked.'**
   String get supportPromptBody;
 
   /// Primary button of the support prompt

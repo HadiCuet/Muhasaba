@@ -1450,7 +1450,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Muhasaba gratis, tanpa iklan dan tanpa akun. Anda bisa mendukung pengembangannya dengan memberi tip — berapa pun, kapan pun Anda mau. Tidak ada fitur yang dikunci.';
+      'Gratis, tanpa iklan dan akun. Beri tip berapa pun, kapan pun — tidak ada yang dikunci.';
 
   @override
   String get supportPromptNow => 'Dukung sekarang';

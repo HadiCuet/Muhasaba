@@ -1459,7 +1459,7 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Muhasaba مجاني، بلا إعلانات ولا حساب. يمكنك دعم تطويره بمبلغ رمزي — أي مبلغ، ومتى شئت. لا شيء مقفل خلف ذلك.';
+      'مجاني، بلا إعلانات ولا حساب. ادعمه بأي مبلغ ومتى شئت — لا شيء مقفل.';
 
   @override
   String get supportPromptNow => 'ادعم الآن';
