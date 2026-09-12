@@ -8,6 +8,7 @@ import 'daos/category_dao.dart';
 import 'daos/challenge_dao.dart';
 import 'daos/completion_dao.dart';
 import 'daos/hidden_day_dao.dart';
+import 'daos/option_set_dao.dart';
 import 'daos/settings_dao.dart';
 import 'seed.dart';
 import 'tables.dart';
@@ -33,6 +34,7 @@ part 'database.g.dart';
     HiddenDayDao,
     SettingsDao,
     ChallengeDao,
+    OptionSetDao,
   ],
 )
 class AppDatabase extends _$AppDatabase {

@@ -8,6 +8,7 @@ import '../data/repositories/amal_repository.dart';
 import '../data/repositories/category_repository.dart';
 import '../data/repositories/challenge_repository.dart';
 import '../data/repositories/completion_repository.dart';
+import '../data/repositories/option_set_repository.dart';
 import '../data/repositories/settings_repository.dart';
 import '../domain/models/app_settings.dart';
 import '../domain/models/frequency.dart';
@@ -61,6 +62,18 @@ final categoryRepositoryProvider = Provider<CategoryRepository>((ref) {
 
 final categoriesProvider = StreamProvider<List<CategoryRow>>((ref) {
   return ref.watch(categoryRepositoryProvider).watchAll();
+});
+
+final optionSetRepositoryProvider = Provider<OptionSetRepository>((ref) {
+  return OptionSetRepository(ref.watch(appDatabaseProvider).optionSetDao);
+});
+
+final optionSetsProvider = StreamProvider<List<OptionSetRow>>((ref) {
+  return ref.watch(optionSetRepositoryProvider).watchSets();
+});
+
+final optionSetItemsProvider = StreamProvider<List<OptionSetItemRow>>((ref) {
+  return ref.watch(optionSetRepositoryProvider).watchItems();
 });
 
 final recentIconsProvider = FutureProvider<List<String>>((ref) {
