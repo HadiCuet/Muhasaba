@@ -41,6 +41,7 @@ class _StatsScreenState extends ConsumerState<StatsScreen>
             const SliverToBoxAdapter(child: StatsFilterRow()),
             // Stats content
             ...snapshotAsync.when(
+              skipLoadingOnReload: true,
               loading: () => [
                 const SliverFillRemaining(
                   child: Center(child: CircularProgressIndicator()),

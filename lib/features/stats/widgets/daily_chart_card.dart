@@ -1,27 +1,85 @@
 import 'dart:math' as math;
 
+import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter/services.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../domain/services/enhanced_stats_service.dart';
 import '../../../domain/utils/localized_number.dart';
 import '../../../l10n/app_localizations.dart';
+import '../stats_providers.dart';
 
-class DailyChartCard extends StatelessWidget {
+/// The Daily Breakdown chart.
+///
+/// Gestures: swipe the bars horizontally to step back a whole period at a
+/// time — a week when the filter says This Week, a month when it says This
+/// Month. The settled page is written to [statsPeriodOffsetProvider], which
+/// the rest of the Overview tab follows, so the whole page moves together.
+class DailyChartCard extends ConsumerStatefulWidget {
   const DailyChartCard({
     super.key,
     required this.dailyBreakdown,
     required this.locale,
   });
 
+  /// The period currently on screen. Other pages read their own data.
   final List<DailyBreakdown> dailyBreakdown;
   final String locale;
+
+  @override
+  ConsumerState<DailyChartCard> createState() => _DailyChartCardState();
+}
+
+class _DailyChartCardState extends ConsumerState<DailyChartCard> {
+  late final PageController _controller = PageController(
+    initialPage: ref.read(statsPeriodOffsetProvider),
+  );
+
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  /// Fires at the halfway crossover, with the finger still down. Cheap work
+  /// only — committing here would kick off a full recompute mid-drag, twice
+  /// over if the swipe is dragged back.
+  void _onPageChanged(int offset) => HapticFeedback.selectionClick();
+
+  /// Commits the settled page, which the rest of the Overview tab follows.
+  bool _onScrollEnd(ScrollEndNotification notification) {
+    if (notification.depth != 0) return false;
+    final offset = _controller.page?.round();
+    if (offset == null) return false;
+    if (offset == ref.read(statsPeriodOffsetProvider)) return false;
+    ref.read(statsPeriodOffsetProvider.notifier).select(offset);
+    FirebaseAnalytics.instance.logEvent(
+      name: 'stats_period_swiped',
+      parameters: {'periods_back': offset},
+    );
+    return false;
+  }
 
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
     final l = AppLocalizations.of(context);
-    final showLabels = dailyBreakdown.length <= 14;
-    final maxBarHeight = 120.0;
+    final showLabels = widget.dailyBreakdown.length <= 14;
+    const maxBarHeight = 120.0;
+    final maxOffset = ref.watch(statsMaxPeriodOffsetProvider);
+
+    // A range past 31 days already scrolls horizontally inside the card, and
+    // two nested horizontal drags would fight each other.
+    final pageable = maxOffset > 0 && widget.dailyBreakdown.length <= 31;
+
+    // The offset can also change from outside — picking a new filter resets
+    // it — so follow it rather than assuming the pager caused every change.
+    ref.listen<int>(statsPeriodOffsetProvider, (_, next) {
+      if (!_controller.hasClients) return;
+      if (_controller.page?.round() == next) return;
+      _controller.jumpToPage(next);
+    });
 
     return Card(
       child: Padding(
@@ -40,27 +98,82 @@ class DailyChartCard extends StatelessWidget {
             const SizedBox(height: 16),
             SizedBox(
               height: maxBarHeight + (showLabels ? 40 : 24),
-              child: dailyBreakdown.length > 31
+              child: pageable
+                  // `reverse` is derived from Directionality and then flipped,
+                  // so later pages sit toward the start edge in both text
+                  // directions: swipe right to go back in LTR, left in RTL.
+                  ? NotificationListener<ScrollEndNotification>(
+                      onNotification: _onScrollEnd,
+                      child: PageView.builder(
+                        controller: _controller,
+                        reverse: true,
+                        // Without this the viewport's cacheExtent is zero, so
+                        // the incoming page only starts loading once the drag
+                        // begins and slides in empty.
+                        allowImplicitScrolling: true,
+                        itemCount: maxOffset + 1,
+                        onPageChanged: _onPageChanged,
+                        itemBuilder: (_, offset) => _ChartPage(
+                          offset: offset,
+                          maxBarHeight: maxBarHeight,
+                          showLabels: showLabels,
+                          locale: widget.locale,
+                        ),
+                      ),
+                    )
+                  : widget.dailyBreakdown.length > 31
                   ? SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
                       child: _BarGroup(
-                        breakdown: dailyBreakdown,
+                        breakdown: widget.dailyBreakdown,
                         maxBarHeight: maxBarHeight,
                         showLabels: showLabels,
-                        locale: locale,
-                        width: dailyBreakdown.length * 28.0,
+                        locale: widget.locale,
+                        width: widget.dailyBreakdown.length * 28.0,
                       ),
                     )
                   : _BarGroup(
-                      breakdown: dailyBreakdown,
+                      breakdown: widget.dailyBreakdown,
                       maxBarHeight: maxBarHeight,
                       showLabels: showLabels,
-                      locale: locale,
+                      locale: widget.locale,
                     ),
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+/// One period's bars. Holds its own data so a neighbouring page is already
+/// drawn by the time the swipe lands on it.
+class _ChartPage extends ConsumerWidget {
+  const _ChartPage({
+    required this.offset,
+    required this.maxBarHeight,
+    required this.showLabels,
+    required this.locale,
+  });
+
+  final int offset;
+  final double maxBarHeight;
+  final bool showLabels;
+  final String locale;
+
+  @override
+  Widget build(BuildContext context, WidgetRef ref) {
+    final breakdown = ref.watch(dailyBreakdownProvider(offset)).value;
+    if (breakdown == null || breakdown.isEmpty) {
+      // Blank rather than a spinner: the card keeps its height and the bars
+      // simply appear, which reads better mid-swipe than a flashing loader.
+      return const SizedBox.shrink();
+    }
+    return _BarGroup(
+      breakdown: breakdown,
+      maxBarHeight: maxBarHeight,
+      showLabels: showLabels,
+      locale: locale,
     );
   }
 }

@@ -1,17 +1,30 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../domain/services/enhanced_stats_service.dart';
 import '../../../l10n/app_localizations.dart';
+import '../stats_providers.dart';
+import 'stats_filter_row.dart';
 
-class HeatmapCard extends StatelessWidget {
+class HeatmapCard extends ConsumerWidget {
   const HeatmapCard({super.key, required this.heatmapData});
 
   final List<HeatmapDay> heatmapData;
 
   @override
-  Widget build(BuildContext context) {
+  Widget build(BuildContext context, WidgetRef ref) {
     final theme = Theme.of(context);
     final l = AppLocalizations.of(context);
+    // The window follows the period on screen, so "Last 5 weeks" is only true
+    // while the chart is on the current one.
+    final offset = ref.watch(statsPeriodOffsetProvider);
+    final subtitle = offset == 0 || heatmapData.isEmpty
+        ? l.statsLast5Weeks
+        : formatCompactRange(
+            heatmapData.first.date,
+            heatmapData.last.date,
+            Localizations.localeOf(context).toString(),
+          );
 
     // Organize into 7 columns (Mon-Sun) x 5 rows.
     // heatmapData is the last 35 days, ordered chronologically.
@@ -49,7 +62,7 @@ class HeatmapCard extends StatelessWidget {
             Text(l.statsConsistency, style: theme.textTheme.titleMedium),
             const SizedBox(height: 2),
             Text(
-              l.statsLast5Weeks,
+              subtitle,
               style: theme.textTheme.bodySmall?.copyWith(
                 color: theme.colorScheme.onSurfaceVariant,
               ),

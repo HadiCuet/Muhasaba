@@ -17,6 +17,12 @@ class StatsFilterRow extends ConsumerWidget {
     final l = AppLocalizations.of(context);
     final filter = ref.watch(statsFilterProvider);
     final locale = Localizations.localeOf(context).toString();
+    final offset = ref.watch(statsPeriodOffsetProvider);
+    // Once the chart has been swiped off the current period, "This Week" would
+    // be a lie — show the dates actually plotted instead.
+    final steppedRange = offset == 0
+        ? null
+        : ref.watch(dailyBreakdownProvider(offset)).value;
 
     return Padding(
       padding: const EdgeInsetsDirectional.fromSTEB(16, 8, 16, 8),
@@ -25,7 +31,13 @@ class StatsFilterRow extends ConsumerWidget {
           Expanded(
             child: _FilterDropdown(
               label: l.statsFilterTime,
-              value: _periodLabel(l, filter, locale),
+              value: steppedRange != null && steppedRange.isNotEmpty
+                  ? formatCompactRange(
+                      steppedRange.first.date,
+                      steppedRange.last.date,
+                      locale,
+                    )
+                  : _periodLabel(l, filter, locale),
               onSelected: (context) => _showTimePicker(context, ref, filter, l),
             ),
           ),
@@ -53,11 +65,7 @@ class StatsFilterRow extends ConsumerWidget {
       StatsPeriod.allTime => l.statsAllTime,
       StatsPeriod.custom =>
         (filter.customStart != null && filter.customEnd != null)
-            ? _formatCompactRange(
-                filter.customStart!,
-                filter.customEnd!,
-                locale,
-              )
+            ? formatCompactRange(filter.customStart!, filter.customEnd!, locale)
             : l.statsCustomRange,
     };
   }
@@ -363,7 +371,7 @@ class _AmalDropdown extends ConsumerWidget {
 /// two-digit year is kept ASCII regardless of locale so the output never blows
 /// up into "Dec 15, 2024" which won't fit. `FittedBox(scaleDown)` in
 /// `_FilterDropdown` is the final backstop if even this format overflows.
-String _formatCompactRange(DateTime start, DateTime end, String locale) {
+String formatCompactRange(DateTime start, DateTime end, String locale) {
   final mmmD = safeDateFormat('MMMd', locale);
   final mmmDyy = safeDateFormat('MMM d, yy', locale);
 

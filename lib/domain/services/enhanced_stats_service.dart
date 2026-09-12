@@ -134,8 +134,15 @@ class EnhancedStatsService {
     required AppSettings settings,
     required List<AmalRow> amals,
     required PeriodCompletionsLookup periodCompletionsOf,
+    int periodOffset = 0,
   }) async {
-    final period = _resolvePeriod(filter, muhasabaDate, settings, amals);
+    final period = _resolvePeriod(
+      filter,
+      muhasabaDate,
+      settings,
+      amals,
+      periodOffset,
+    );
 
     // ── Per-amal stats for the selected period ──────────────────────────────
     final perAmalResults = <EnhancedAmalStats>[];
@@ -187,13 +194,7 @@ class EnhancedStatsService {
     // ── Previous-period comparison ──────────────────────────────────────────
     double? prevRate;
     if (filter.period != StatsPeriod.allTime) {
-      prevRate = await _previousPeriodRate(
-        filter,
-        muhasabaDate,
-        settings,
-        amals,
-        periodCompletionsOf,
-      );
+      prevRate = await _previousPeriodRate(period, amals, periodCompletionsOf);
     }
 
     // ── Daily breakdown ─────────────────────────────────────────────────────
@@ -207,9 +208,10 @@ class EnhancedStatsService {
     // ── Category breakdown ──────────────────────────────────────────────────
     final categories = _buildCategoryBreakdown(perAmalResults);
 
-    // ── Heatmap (last 5 weeks, always) ──────────────────────────────────────
+    // ── Heatmap (the 5 weeks ending with the period on screen) ──────────────
+    final periodLastDay = period.endExclusive.subtract(const Duration(days: 1));
     final heatmap = await _buildHeatmap(
-      muhasabaDate,
+      periodLastDay.isAfter(muhasabaDate) ? muhasabaDate : periodLastDay,
       amals,
       periodCompletionsOf,
     );
@@ -247,13 +249,48 @@ class EnhancedStatsService {
     );
   }
 
+  /// Just the bars for one period.
+  ///
+  /// [compute] is far too heavy to run per swipe — streak walks alone issue up
+  /// to 52 sequential queries for a floating-weekly amal — and the chart needs
+  /// none of it. This is one indexed range read per amal.
+  Future<List<DailyBreakdown>> dailyBreakdownOnly({
+    required StatsFilter filter,
+    required DateTime muhasabaDate,
+    required AppSettings settings,
+    required List<AmalRow> amals,
+    required PeriodCompletionsLookup periodCompletionsOf,
+    int periodOffset = 0,
+  }) async {
+    final period = _resolvePeriod(
+      filter,
+      muhasabaDate,
+      settings,
+      amals,
+      periodOffset,
+    );
+    final completionsByAmal = <int, List<CompletionRow>>{};
+    for (final amal in amals) {
+      completionsByAmal[amal.id] = await periodCompletionsOf(
+        amal.id,
+        period.start,
+        period.endExclusive,
+      );
+    }
+    return _buildDailyBreakdown(period, muhasabaDate, amals, completionsByAmal);
+  }
+
   // ── Period resolution ────────────────────────────────────────────────────
 
+  /// [periodOffset] steps the window back that many whole periods: 0 is the
+  /// current one, 1 the one before it. `today` and `allTime` ignore it —
+  /// neither is steppable on screen.
   Period _resolvePeriod(
     StatsFilter filter,
     DateTime muhasabaDate,
     AppSettings settings,
     List<AmalRow> amals,
+    int periodOffset,
   ) {
     switch (filter.period) {
       case StatsPeriod.today:
@@ -262,9 +299,23 @@ class EnhancedStatsService {
           endExclusive: muhasabaDate.add(const Duration(days: 1)),
         );
       case StatsPeriod.thisWeek:
-        return weekPeriodOf(muhasabaDate, settings.startOfWeek);
+        var week = weekPeriodOf(muhasabaDate, settings.startOfWeek);
+        for (var i = 0; i < periodOffset; i++) {
+          week = weekPeriodOf(
+            week.start.subtract(const Duration(days: 1)),
+            settings.startOfWeek,
+          );
+        }
+        return week;
       case StatsPeriod.thisMonth:
-        return monthPeriodOf(muhasabaDate, settings.startOfMonth);
+        var month = monthPeriodOf(muhasabaDate, settings.startOfMonth);
+        for (var i = 0; i < periodOffset; i++) {
+          month = monthPeriodOf(
+            month.start.subtract(const Duration(days: 1)),
+            settings.startOfMonth,
+          );
+        }
+        return month;
       case StatsPeriod.allTime:
         var earliest = muhasabaDate;
         for (final a in amals) {
@@ -276,11 +327,17 @@ class EnhancedStatsService {
           endExclusive: muhasabaDate.add(const Duration(days: 1)),
         );
       case StatsPeriod.custom:
+        final start = filter.customStart ?? muhasabaDate;
+        final endExclusive = (filter.customEnd ?? muhasabaDate).add(
+          const Duration(days: 1),
+        );
+        if (periodOffset == 0) {
+          return Period(start: start, endExclusive: endExclusive);
+        }
+        final shift = endExclusive.difference(start) * periodOffset;
         return Period(
-          start: filter.customStart ?? muhasabaDate,
-          endExclusive: (filter.customEnd ?? muhasabaDate).add(
-            const Duration(days: 1),
-          ),
+          start: start.subtract(shift),
+          endExclusive: endExclusive.subtract(shift),
         );
     }
   }
@@ -647,13 +704,10 @@ class EnhancedStatsService {
   // ── Previous-period rate ─────────────────────────────────────────────────
 
   Future<double?> _previousPeriodRate(
-    StatsFilter filter,
-    DateTime muhasabaDate,
-    AppSettings settings,
+    Period current,
     List<AmalRow> amals,
     PeriodCompletionsLookup lookup,
   ) async {
-    final current = _resolvePeriod(filter, muhasabaDate, settings, amals);
     final duration = current.endExclusive.difference(current.start);
     final prevEnd = current.start;
     final prevStart = prevEnd.subtract(duration);
