@@ -1483,10 +1483,14 @@ class AppLocalizationsHa extends AppLocalizations {
   }
 
   @override
-  String get tipSheetOtherWays => 'Kuna son tallafa wa Muhasaba ta wata hanya?';
+  String get tipSheetOtherWays => 'Ba ku ga zaɓin da ya dace da ku ba?';
 
   @override
   String get tipSheetWriteToUs => 'Rubuto mana';
+
+  @override
+  String get supportEmailBody =>
+      'Assalamu alaikum,\n\nIna son tallafa wa haɓaka Muhasaba kai tsaye.\n\nƘasa:\nYadda nake son aikawa:\nAdadi (na zaɓi):';
 
   @override
   String tipBusy(String store) {

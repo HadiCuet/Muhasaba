@@ -1475,11 +1475,14 @@ class AppLocalizationsKk extends AppLocalizations {
   }
 
   @override
-  String get tipSheetOtherWays =>
-      'Muhasaba-ны басқа жолмен қолдағыңыз келе ме?';
+  String get tipSheetOtherWays => 'Өзіңізге қолайлы нұсқаны таппадыңыз ба?';
 
   @override
   String get tipSheetWriteToUs => 'Бізге жазыңыз';
+
+  @override
+  String get supportEmailBody =>
+      'Ассаламу әлейкум,\n\nMuhasaba дамуын тікелей қолдағым келеді.\n\nЕл:\nҚалай жібергім келеді:\nСома (міндетті емес):';
 
   @override
   String tipBusy(String store) {

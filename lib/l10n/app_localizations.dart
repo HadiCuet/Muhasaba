@@ -2600,10 +2600,10 @@ abstract class AppLocalizations {
   /// **'Handled by {store} — we never see your payment details.'**
   String tipSheetStoreNote(String store);
 
-  /// Fine print line before the 'Write to us' link. Must not mention paying or amounts
+  /// Fine print line before the 'Write to us' link. Reaches someone the four amounts do not suit — a different sum, or a store payment that will not go through for them. Must not mention paying, amounts, or the store.
   ///
   /// In en, this message translates to:
-  /// **'Want to support Muhasaba another way?'**
+  /// **'Not seeing an option that works for you?'**
   String get tipSheetOtherWays;
 
   /// Link that opens an email to the developer
@@ -2611,6 +2611,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Write to us'**
   String get tipSheetWriteToUs;
+
+  /// Prefilled body of the 'Write to us' email, read by the user in their mail app before sending, so it is translated. The three labels are blanks they fill in. An untranslated version/locale footer is appended in Dart.
+  ///
+  /// In en, this message translates to:
+  /// **'Assalamu alaikum,\n\nI\'d like to support Muhasaba\'s development directly.\n\nCountry:\nHow I\'d like to send it:\nAmount (optional):'**
+  String get supportEmailBody;
 
   /// Shown with a spinner while the store's purchase UI is opening
   ///

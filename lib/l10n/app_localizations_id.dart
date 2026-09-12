@@ -1482,10 +1482,15 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get tipSheetOtherWays => 'Ingin mendukung Muhasaba dengan cara lain?';
+  String get tipSheetOtherWays =>
+      'Tidak menemukan pilihan yang cocok untuk Anda?';
 
   @override
   String get tipSheetWriteToUs => 'Tulis kepada kami';
+
+  @override
+  String get supportEmailBody =>
+      'Assalamu\'alaikum,\n\nSaya ingin mendukung pengembangan Muhasaba secara langsung.\n\nNegara:\nCara saya ingin mengirimnya:\nJumlah (opsional):';
 
   @override
   String tipBusy(String store) {

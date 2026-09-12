@@ -1482,10 +1482,14 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get tipSheetOtherWays =>
-      'Мехоҳед Muhasaba-ро бо роҳи дигар дастгирӣ кунед?';
+      'Вариантеро, ки ба шумо мувофиқ бошад, намебинед?';
 
   @override
   String get tipSheetWriteToUs => 'Ба мо нависед';
+
+  @override
+  String get supportEmailBody =>
+      'Ассалому алайкум,\n\nМехоҳам рушди Muhasaba-ро бевосита дастгирӣ кунам.\n\nКишвар:\nТарзи фиристодан:\nМаблағ (ихтиёрӣ):';
 
   @override
   String tipBusy(String store) {

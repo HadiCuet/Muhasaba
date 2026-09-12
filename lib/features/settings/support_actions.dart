@@ -76,9 +76,16 @@ Future<void> sendFeatureRequestEmail(BuildContext context) async {
   if (!ok && context.mounted) _showFallbackSnackBar(context);
 }
 
+/// Opens the mail compose sheet for someone the four tip amounts do not suit.
+/// Prefilled with the blanks needed to answer in one reply — an empty compose
+/// window mostly gets closed again.
 Future<void> sendSupportEmail(BuildContext context) async {
   FirebaseAnalytics.instance.logEvent(name: 'support_contact_tapped');
-  final ok = await _sendEmail(subject: _subjectSupport);
+  final prose = AppLocalizations.of(context).supportEmailBody;
+  final locale = Localizations.localeOf(context).toString();
+  final body = await _buildSupportBody(prose, locale);
+  if (!context.mounted) return;
+  final ok = await _sendEmail(subject: _subjectSupport, body: body);
   if (!ok && context.mounted) _showFallbackSnackBar(context);
 }
 
@@ -87,9 +94,9 @@ Future<void> sendSupportEmail(BuildContext context) async {
 /// no task switch. Load failures render an error message inside the screen
 /// via `settingsPrivacyOpenFailed`.
 Future<void> openPrivacyPolicy(BuildContext context) async {
-  await Navigator.of(context).push<void>(
-    MaterialPageRoute(builder: (_) => const PrivacyPolicyScreen()),
-  );
+  await Navigator.of(
+    context,
+  ).push<void>(MaterialPageRoute(builder: (_) => const PrivacyPolicyScreen()));
 }
 
 // ---------------------------------------------------------------------------
@@ -110,6 +117,17 @@ Future<bool> _sendEmail({required String subject, String body = ''}) async {
   }
 }
 
+/// The translated ask, then an untranslated footer so the version and the
+/// writer's locale stay readable whatever language the message is written in.
+Future<String> _buildSupportBody(String prose, String locale) async {
+  var appVersion = 'unknown';
+  try {
+    final info = await PackageInfo.fromPlatform();
+    appVersion = info.version;
+  } catch (_) {}
+  return '$prose\n\n---\nMuhasaba $appVersion \u00b7 $locale\n';
+}
+
 Future<String> _buildDeviceInfoBody() async {
   String appVersion = 'unknown';
   String platform = 'unknown';
@@ -128,7 +146,8 @@ Future<String> _buildDeviceInfoBody() async {
       device = ios.utsname.machine;
     } else if (Platform.isAndroid) {
       final android = await plugin.androidInfo;
-      platform = 'Android ${android.version.release} (SDK ${android.version.sdkInt})';
+      platform =
+          'Android ${android.version.release} (SDK ${android.version.sdkInt})';
       device = '${android.manufacturer} ${android.model}';
     }
   } catch (_) {}
@@ -155,4 +174,3 @@ void _showFallbackSnackBar(BuildContext context) {
     ),
   );
 }
-

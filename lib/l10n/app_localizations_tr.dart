@@ -1478,11 +1478,14 @@ class AppLocalizationsTr extends AppLocalizations {
   }
 
   @override
-  String get tipSheetOtherWays =>
-      'Muhasaba\'ya başka bir şekilde destek olmak ister misiniz?';
+  String get tipSheetOtherWays => 'Size uygun bir seçenek göremiyor musunuz?';
 
   @override
   String get tipSheetWriteToUs => 'Bize yazın';
+
+  @override
+  String get supportEmailBody =>
+      'Selamün aleyküm,\n\nMuhasaba\'nın gelişimini doğrudan desteklemek istiyorum.\n\nÜlke:\nNasıl göndermek istiyorum:\nTutar (isteğe bağlı):';
 
   @override
   String tipBusy(String store) {

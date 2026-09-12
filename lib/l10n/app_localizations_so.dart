@@ -1488,11 +1488,14 @@ class AppLocalizationsSo extends AppLocalizations {
   }
 
   @override
-  String get tipSheetOtherWays =>
-      'Ma doonaysaa inaad Muhasaba si kale u taageerto?';
+  String get tipSheetOtherWays => 'Ma arkaysid ikhtiyaar kugu habboon?';
 
   @override
   String get tipSheetWriteToUs => 'Noo qor';
+
+  @override
+  String get supportEmailBody =>
+      'Assalaamu calaykum,\n\nWaxaan jeclaan lahaa inaan si toos ah u taageero horumarinta Muhasaba.\n\nDalka:\nSida aan doonayo inaan u diro:\nQadarka (ikhtiyaari):';
 
   @override
   String tipBusy(String store) {

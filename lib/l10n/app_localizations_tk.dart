@@ -1475,11 +1475,14 @@ class AppLocalizationsTk extends AppLocalizations {
   }
 
   @override
-  String get tipSheetOtherWays =>
-      'Muhasabany başga usul bilen goldamak isleýärsiňizmi?';
+  String get tipSheetOtherWays => 'Size laýyk görnüş tapmadyňyzmy?';
 
   @override
   String get tipSheetWriteToUs => 'Bize ýazyň';
+
+  @override
+  String get supportEmailBody =>
+      'Essalamu aleýkum,\n\nMuhasabanyň ösüşini gönüden-göni goldamak isleýärin.\n\nÝurt:\nNädip ibermek isleýärin:\nMöçber (islege bagly):';
 
   @override
   String tipBusy(String store) {

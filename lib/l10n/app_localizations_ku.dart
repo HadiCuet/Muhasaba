@@ -1481,11 +1481,14 @@ class AppLocalizationsKu extends AppLocalizations {
   }
 
   @override
-  String get tipSheetOtherWays =>
-      'Dixwazin bi awayekî din piştgiriya Muhasaba bikin?';
+  String get tipSheetOtherWays => 'Vebijarkek ku ji we re guncav be nabînin?';
 
   @override
   String get tipSheetWriteToUs => 'Ji me re binivîsin';
+
+  @override
+  String get supportEmailBody =>
+      'Selamun eleykum,\n\nEz dixwazim rasterast piştgiriya pêşxistina Muhasaba bikim.\n\nWelat:\nEz çawa dixwazim bişînim:\nMîqdar (bijarte):';
 
   @override
   String tipBusy(String store) {
