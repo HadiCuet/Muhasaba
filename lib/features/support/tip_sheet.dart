@@ -168,6 +168,10 @@ class _TipSheetState extends ConsumerState<_TipSheet> {
               const SizedBox(height: 8),
               if (held != null) _SupporterStrip(tier: held),
               Text(l.tipSheetBody, style: body),
+              if (kShowSupportContactLine) ...[
+                const SizedBox(height: 8),
+                const _ContactLine(),
+              ],
               const SizedBox(height: 14),
               if (_pending) ...[
                 Text(l.tipPending(storeName()), style: body),
@@ -187,10 +191,6 @@ class _TipSheetState extends ConsumerState<_TipSheet> {
                 _TierList(products: _products, held: held, onTap: _buy),
               const SizedBox(height: 12),
               Text(l.tipSheetStoreNote(storeName()), style: muted),
-              if (kShowSupportContactLine) ...[
-                const SizedBox(height: 6),
-                const _ContactLine(),
-              ],
             ],
           ),
         },
