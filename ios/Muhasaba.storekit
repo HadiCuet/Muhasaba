@@ -1,0 +1,76 @@
+{
+  "identifier": "8C4E7A10-2B55-4D33-9F71-000000000001",
+  "nonRenewingSubscriptions": [],
+  "products": [
+    {
+      "displayPrice": "0.99",
+      "familyShareable": false,
+      "internalID": "8C4E7A10-2B55-4D33-9F71-000000000101",
+      "localizations": [
+        {
+          "description": "Optional tip. Unlocks nothing.",
+          "displayName": "Tip — Rafiq",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "dev.mukashi.muhasaba.tip.rafiq",
+      "referenceName": "Tip — Rafiq",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "4.99",
+      "familyShareable": false,
+      "internalID": "8C4E7A10-2B55-4D33-9F71-000000000102",
+      "localizations": [
+        {
+          "description": "Optional tip. Unlocks nothing.",
+          "displayName": "Tip — Nasir",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "dev.mukashi.muhasaba.tip.nasir",
+      "referenceName": "Tip — Nasir",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "9.99",
+      "familyShareable": false,
+      "internalID": "8C4E7A10-2B55-4D33-9F71-000000000103",
+      "localizations": [
+        {
+          "description": "Optional tip. Unlocks nothing.",
+          "displayName": "Tip — Muhsin",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "dev.mukashi.muhasaba.tip.muhsin",
+      "referenceName": "Tip — Muhsin",
+      "type": "Consumable"
+    },
+    {
+      "displayPrice": "19.99",
+      "familyShareable": false,
+      "internalID": "8C4E7A10-2B55-4D33-9F71-000000000104",
+      "localizations": [
+        {
+          "description": "Optional tip. Unlocks nothing.",
+          "displayName": "Tip — Ansar",
+          "locale": "en_US"
+        }
+      ],
+      "productID": "dev.mukashi.muhasaba.tip.ansar",
+      "referenceName": "Tip — Ansar",
+      "type": "Consumable"
+    }
+  ],
+  "settings": {
+    "_failTransactionsEnabled": false,
+    "_locale": "en_US",
+    "_storefront": "USA"
+  },
+  "subscriptionGroups": [],
+  "version": {
+    "major": 3,
+    "minor": 0
+  }
+}
