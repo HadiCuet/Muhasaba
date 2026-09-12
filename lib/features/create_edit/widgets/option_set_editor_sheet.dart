@@ -38,9 +38,12 @@ class _OptionSetEditorSheet extends ConsumerStatefulWidget {
 }
 
 class _DraftItem {
-  _DraftItem({this.id, this.seedKey, required String label})
-    : controller = TextEditingController(text: label),
-      originalLabel = label;
+  _DraftItem({
+    this.id,
+    this.seedKey,
+    required this.originalLabel,
+    required String display,
+  }) : controller = TextEditingController(text: display);
 
   final int? id;
   String? seedKey;
@@ -64,7 +67,10 @@ class _OptionSetEditorSheetState extends ConsumerState<_OptionSetEditorSheet> {
   void initState() {
     super.initState();
     if (widget.setId == null) {
-      _items.addAll([_DraftItem(label: ''), _DraftItem(label: '')]);
+      _items.addAll([
+        _DraftItem(originalLabel: '', display: ''),
+        _DraftItem(originalLabel: '', display: ''),
+      ]);
       _hydrated = true;
     }
   }
@@ -102,6 +108,7 @@ class _OptionSetEditorSheetState extends ConsumerState<_OptionSetEditorSheet> {
   }
 
   Future<void> _save() async {
+    _error = null;
     final l = AppLocalizations.of(context);
     final name = _canonicalName();
     final items = <({int? id, String label, String? seedKey})>[];
@@ -189,7 +196,8 @@ class _OptionSetEditorSheetState extends ConsumerState<_OptionSetEditorSheet> {
             _DraftItem(
               id: i.id,
               seedKey: i.seedKey,
-              label: localizedOptionLabel(i.seedKey, i.label, l),
+              originalLabel: i.label,
+              display: localizedOptionLabel(i.seedKey, i.label, l),
             ),
           );
         }
@@ -256,8 +264,9 @@ class _OptionSetEditorSheetState extends ConsumerState<_OptionSetEditorSheet> {
               ),
             if (_items.length < kMaxOptionsPerSet)
               TextButton.icon(
-                onPressed: () =>
-                    setState(() => _items.add(_DraftItem(label: ''))),
+                onPressed: () => setState(
+                  () => _items.add(_DraftItem(originalLabel: '', display: '')),
+                ),
                 icon: const Icon(Icons.add),
                 label: Text(l.optionAdd),
               )
