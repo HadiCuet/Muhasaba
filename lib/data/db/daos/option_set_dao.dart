@@ -82,7 +82,7 @@ class OptionSetDao extends DatabaseAccessor<AppDatabase>
         } else {
           await (update(
             optionSetItems,
-          )..where((r) => r.id.equals(item.id!))).write(
+          )..where((r) => r.id.equals(item.id!) & r.setId.equals(setId))).write(
             OptionSetItemsCompanion(
               label: Value(item.label),
               seedKey: Value(item.seedKey),

@@ -1116,5 +1116,28 @@
   "optionSetIntensity": "Intensity",
   "optionIntensityLight": "Light",
   "optionIntensityModerate": "Moderate",
-  "optionIntensityIntense": "Intense"
+  "optionIntensityIntense": "Intense",
+  "optionSetNewTitle": "New option set",
+  "optionSetEditTitle": "Edit option set",
+  "optionSetNameLabel": "Set name",
+  "optionSetNameHint": "e.g. Jamaa",
+  "optionsLabel": "Options",
+  "optionAdd": "Add option",
+  "optionHint": "Option {index}",
+  "@optionHint": {
+    "placeholders": { "index": { "type": "int" } }
+  },
+  "optionsMaxReached": "Maximum of {max} options.",
+  "@optionsMaxReached": {
+    "placeholders": { "max": { "type": "int" } }
+  },
+  "optionSetPreviewLabel": "Preview — the Today row",
+  "optionSetKeptForHistory": "Kept for history: {labels}",
+  "@optionSetKeptForHistory": {
+    "placeholders": { "labels": { "type": "String" } }
+  },
+  "optionSetDelete": "Delete set",
+  "optionSetDeleteConfirm": "Amals using this set stop showing options. Days you already recorded keep their choice.",
+  "optionSetNameRequired": "Give the set a name",
+  "optionsMinRequired": "Add at least two options"
 }

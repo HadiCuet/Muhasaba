@@ -1589,4 +1589,53 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get optionIntensityIntense => 'Intense';
+
+  @override
+  String get optionSetNewTitle => 'New option set';
+
+  @override
+  String get optionSetEditTitle => 'Edit option set';
+
+  @override
+  String get optionSetNameLabel => 'Set name';
+
+  @override
+  String get optionSetNameHint => 'e.g. Jamaa';
+
+  @override
+  String get optionsLabel => 'Options';
+
+  @override
+  String get optionAdd => 'Add option';
+
+  @override
+  String optionHint(int index) {
+    return 'Option $index';
+  }
+
+  @override
+  String optionsMaxReached(int max) {
+    return 'Maximum of $max options.';
+  }
+
+  @override
+  String get optionSetPreviewLabel => 'Preview — the Today row';
+
+  @override
+  String optionSetKeptForHistory(String labels) {
+    return 'Kept for history: $labels';
+  }
+
+  @override
+  String get optionSetDelete => 'Delete set';
+
+  @override
+  String get optionSetDeleteConfirm =>
+      'Amals using this set stop showing options. Days you already recorded keep their choice.';
+
+  @override
+  String get optionSetNameRequired => 'Give the set a name';
+
+  @override
+  String get optionsMinRequired => 'Add at least two options';
 }

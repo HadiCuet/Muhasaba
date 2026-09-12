@@ -2785,6 +2785,90 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Intense'**
   String get optionIntensityIntense;
+
+  /// No description provided for @optionSetNewTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'New option set'**
+  String get optionSetNewTitle;
+
+  /// No description provided for @optionSetEditTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Edit option set'**
+  String get optionSetEditTitle;
+
+  /// No description provided for @optionSetNameLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Set name'**
+  String get optionSetNameLabel;
+
+  /// No description provided for @optionSetNameHint.
+  ///
+  /// In en, this message translates to:
+  /// **'e.g. Jamaa'**
+  String get optionSetNameHint;
+
+  /// No description provided for @optionsLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Options'**
+  String get optionsLabel;
+
+  /// No description provided for @optionAdd.
+  ///
+  /// In en, this message translates to:
+  /// **'Add option'**
+  String get optionAdd;
+
+  /// No description provided for @optionHint.
+  ///
+  /// In en, this message translates to:
+  /// **'Option {index}'**
+  String optionHint(int index);
+
+  /// No description provided for @optionsMaxReached.
+  ///
+  /// In en, this message translates to:
+  /// **'Maximum of {max} options.'**
+  String optionsMaxReached(int max);
+
+  /// No description provided for @optionSetPreviewLabel.
+  ///
+  /// In en, this message translates to:
+  /// **'Preview — the Today row'**
+  String get optionSetPreviewLabel;
+
+  /// No description provided for @optionSetKeptForHistory.
+  ///
+  /// In en, this message translates to:
+  /// **'Kept for history: {labels}'**
+  String optionSetKeptForHistory(String labels);
+
+  /// No description provided for @optionSetDelete.
+  ///
+  /// In en, this message translates to:
+  /// **'Delete set'**
+  String get optionSetDelete;
+
+  /// No description provided for @optionSetDeleteConfirm.
+  ///
+  /// In en, this message translates to:
+  /// **'Amals using this set stop showing options. Days you already recorded keep their choice.'**
+  String get optionSetDeleteConfirm;
+
+  /// No description provided for @optionSetNameRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Give the set a name'**
+  String get optionSetNameRequired;
+
+  /// No description provided for @optionsMinRequired.
+  ///
+  /// In en, this message translates to:
+  /// **'Add at least two options'**
+  String get optionsMinRequired;
 }
 
 class _AppLocalizationsDelegate
