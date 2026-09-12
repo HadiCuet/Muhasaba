@@ -1439,7 +1439,7 @@ class AppLocalizationsKk extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'Muhasaba-мен отыз күн';
+  String get supportPromptTitle => 'Muhasaba-ны қолдаңыз';
 
   @override
   String get supportPromptBody =>

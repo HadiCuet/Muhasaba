@@ -28,6 +28,7 @@ class SettingKeys {
       'support_prompt_state'; // pending | snoozed | never | done
   static const supportSnoozedAtActiveDays = 'support_snoozed_at_active_days';
   static const supportAskCount = 'support_ask_count'; // 0..3
+  static const supportIntroSeen = 'support_intro_seen'; // "1" | "0"
 }
 
 @DriftAccessor(tables: [SettingsKv])

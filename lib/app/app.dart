@@ -10,6 +10,7 @@ import '../domain/services/daily_reminder.dart';
 import '../domain/utils/app_locale.dart';
 import '../features/challenge/challenge_providers.dart';
 import '../features/tutorial/tutorial_anchors.dart';
+import '../features/support/support_prompt.dart';
 import '../features/tutorial/tutorial_controller.dart';
 import 'providers.dart';
 import 'router.dart';
@@ -72,11 +73,37 @@ class _MuhasabaAppState extends ConsumerState<MuhasabaApp> {
   Future<void> _bootstrapFirstRun() async {
     await _bootstrapDailyReminderPermission();
     if (!mounted) return;
+    await _runTutorialIfUnseen();
+    if (!mounted) return;
+    final introContext = await _awaitPastSplash();
+    if (introContext == null || !introContext.mounted) return;
+    await maybeShowSupportIntro(introContext, ref);
+  }
+
+  Future<void> _runTutorialIfUnseen() async {
     if (await ref.read(settingsRepositoryProvider).getTutorialSeen()) return;
     final tourContext = await _awaitTodayAnchored();
     if (tourContext == null) return;
     if (!tourContext.mounted) return;
     await runTutorial(tourContext, ref, source: 'first_run');
+  }
+
+  /// The splash route replaces itself with `/` after up to two seconds, and
+  /// that navigation pops anything opened before it — a sheet shown too early
+  /// vanishes without the user seeing it.
+  Future<BuildContext?> _awaitPastSplash() async {
+    final router = ref.read(routerProvider);
+    for (var attempt = 0; attempt < 60; attempt++) {
+      if (!mounted) return null;
+      if (router.routerDelegate.currentConfiguration.uri.path != '/splash') {
+        await Future<void>.delayed(const Duration(milliseconds: 400));
+        return mounted
+            ? router.routerDelegate.navigatorKey.currentContext
+            : null;
+      }
+      await Future<void>.delayed(const Duration(milliseconds: 100));
+    }
+    return null;
   }
 
   /// The tour needs the router's navigator to hang its overlay on — this State

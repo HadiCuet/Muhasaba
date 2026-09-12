@@ -1441,7 +1441,7 @@ class AppLocalizationsKy extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'Muhasaba менен отуз күн';
+  String get supportPromptTitle => 'Muhasaba\'ны колдоңуз';
 
   @override
   String get supportPromptBody =>

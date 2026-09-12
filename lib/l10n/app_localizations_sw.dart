@@ -1443,7 +1443,7 @@ class AppLocalizationsSw extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'Siku thelathini na Muhasaba';
+  String get supportPromptTitle => 'Unga mkono Muhasaba';
 
   @override
   String get supportPromptBody =>

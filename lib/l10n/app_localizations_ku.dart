@@ -1445,7 +1445,7 @@ class AppLocalizationsKu extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'Sî roj bi Muhasaba re';
+  String get supportPromptTitle => 'Piştgiriya Muhasaba bikin';
 
   @override
   String get supportPromptBody =>

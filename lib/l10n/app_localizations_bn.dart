@@ -1442,7 +1442,7 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'Muhasaba-র সাথে ত্রিশ দিন';
+  String get supportPromptTitle => 'Muhasaba-কে সহযোগিতা করুন';
 
   @override
   String get supportPromptBody =>

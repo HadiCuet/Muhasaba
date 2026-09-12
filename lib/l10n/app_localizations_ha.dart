@@ -1446,7 +1446,7 @@ class AppLocalizationsHa extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'Kwana talatin da Muhasaba';
+  String get supportPromptTitle => 'Tallafa wa Muhasaba';
 
   @override
   String get supportPromptBody =>

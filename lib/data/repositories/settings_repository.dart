@@ -82,6 +82,9 @@ class SettingsRepository {
   Future<void> setSupportAskCount(int count) =>
       _dao.setInt(SettingKeys.supportAskCount, count);
 
+  Future<void> setSupportIntroSeen(bool seen) =>
+      _dao.set(SettingKeys.supportIntroSeen, seen ? '1' : '0');
+
   Future<void> snoozeSupportPrompt({required int activeDays}) => _dao.setAll({
     SettingKeys.supportPromptState: SupportPromptState.snoozed.name,
     SettingKeys.supportSnoozedAtActiveDays: activeDays.toString(),
@@ -128,6 +131,7 @@ class SettingsRepository {
       supportSnoozedAtActiveDays:
           int.tryParse(m[SettingKeys.supportSnoozedAtActiveDays] ?? '') ?? 0,
       supportAskCount: int.tryParse(m[SettingKeys.supportAskCount] ?? '') ?? 0,
+      supportIntroSeen: (m[SettingKeys.supportIntroSeen] ?? '0') == '1',
     );
   }
 

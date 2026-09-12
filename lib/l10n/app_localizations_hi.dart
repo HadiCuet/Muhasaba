@@ -1444,7 +1444,7 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'Muhasaba के साथ तीस दिन';
+  String get supportPromptTitle => 'Muhasaba को सहयोग दें';
 
   @override
   String get supportPromptBody =>

@@ -1438,7 +1438,7 @@ class AppLocalizationsAz extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'Muhasaba ilə otuz gün';
+  String get supportPromptTitle => 'Muhasaba\'ya dəstək olun';
 
   @override
   String get supportPromptBody =>

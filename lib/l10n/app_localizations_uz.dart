@@ -1446,7 +1446,7 @@ class AppLocalizationsUz extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'Muhasaba bilan o\'ttiz kun';
+  String get supportPromptTitle => 'Muhasaba\'ni qo\'llab-quvvatlang';
 
   @override
   String get supportPromptBody =>

@@ -1448,7 +1448,7 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'Tridhjetë ditë me Muhasaba';
+  String get supportPromptTitle => 'Mbështetni Muhasaba';
 
   @override
   String get supportPromptBody =>

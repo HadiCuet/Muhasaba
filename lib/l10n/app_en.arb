@@ -999,7 +999,7 @@
       }
     }
   },
-  "supportPromptTitle": "Thirty days with Muhasaba",
+  "supportPromptTitle": "Support Muhasaba",
   "@supportPromptTitle": {
     "description": "Title of the one-time support prompt shown on the 30th active day"
   },

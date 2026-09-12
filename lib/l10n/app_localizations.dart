@@ -2543,7 +2543,7 @@ abstract class AppLocalizations {
   /// Title of the one-time support prompt shown on the 30th active day
   ///
   /// In en, this message translates to:
-  /// **'Thirty days with Muhasaba'**
+  /// **'Support Muhasaba'**
   String get supportPromptTitle;
 
   /// Body of the support prompt. Three sentences, no guilt, no 'donate'

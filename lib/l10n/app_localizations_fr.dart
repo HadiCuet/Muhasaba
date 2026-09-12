@@ -1452,7 +1452,7 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'Trente jours avec Muhasaba';
+  String get supportPromptTitle => 'Soutenir Muhasaba';
 
   @override
   String get supportPromptBody =>

@@ -1451,8 +1451,7 @@ class AppLocalizationsSo extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle =>
-      'Soddon maalmood oo aad Muhasaba isticmaalaysay';
+  String get supportPromptTitle => 'Taageer Muhasaba';
 
   @override
   String get supportPromptBody =>

@@ -22,6 +22,7 @@ class AppSettings {
     this.supportPromptState = SupportPromptState.pending,
     this.supportSnoozedAtActiveDays = 0,
     this.supportAskCount = 0,
+    this.supportIntroSeen = false,
   });
 
   /// 1..7, `DateTime.monday == 1`, `DateTime.saturday == 6`. Default: Saturday.
@@ -61,6 +62,9 @@ class AppSettings {
 
   final int supportAskCount;
 
+  /// Whether the one-time "tips exist now" intro has been shown.
+  final bool supportIntroSeen;
+
   static const defaults = AppSettings(
     startOfWeek: DateTime.saturday,
     startOfMonth: 1,
@@ -83,6 +87,7 @@ class AppSettings {
     SupportPromptState? supportPromptState,
     int? supportSnoozedAtActiveDays,
     int? supportAskCount,
+    bool? supportIntroSeen,
   }) {
     return AppSettings(
       startOfWeek: startOfWeek ?? this.startOfWeek,
@@ -102,6 +107,7 @@ class AppSettings {
       supportSnoozedAtActiveDays:
           supportSnoozedAtActiveDays ?? this.supportSnoozedAtActiveDays,
       supportAskCount: supportAskCount ?? this.supportAskCount,
+      supportIntroSeen: supportIntroSeen ?? this.supportIntroSeen,
     );
   }
 
@@ -122,7 +128,8 @@ class AppSettings {
           other.supporterSince == supporterSince &&
           other.supportPromptState == supportPromptState &&
           other.supportSnoozedAtActiveDays == supportSnoozedAtActiveDays &&
-          other.supportAskCount == supportAskCount;
+          other.supportAskCount == supportAskCount &&
+          other.supportIntroSeen == supportIntroSeen;
 
   @override
   int get hashCode => Object.hash(
@@ -140,5 +147,6 @@ class AppSettings {
     supportPromptState,
     supportSnoozedAtActiveDays,
     supportAskCount,
+    supportIntroSeen,
   );
 }

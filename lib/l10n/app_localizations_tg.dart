@@ -1444,7 +1444,7 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'Сӣ рӯз бо Muhasaba';
+  String get supportPromptTitle => 'Muhasaba-ро дастгирӣ кунед';
 
   @override
   String get supportPromptBody =>

@@ -1442,7 +1442,7 @@ class AppLocalizationsUr extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'Muhasaba کے ساتھ تیس دن';
+  String get supportPromptTitle => 'Muhasaba کا ساتھ دیں';
 
   @override
   String get supportPromptBody =>

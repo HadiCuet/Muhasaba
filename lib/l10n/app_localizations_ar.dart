@@ -1455,7 +1455,7 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'ثلاثون يومًا مع Muhasaba';
+  String get supportPromptTitle => 'ادعم Muhasaba';
 
   @override
   String get supportPromptBody =>

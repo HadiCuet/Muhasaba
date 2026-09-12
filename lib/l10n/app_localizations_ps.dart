@@ -1438,7 +1438,7 @@ class AppLocalizationsPs extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'له Muhasaba سره دېرش ورځې';
+  String get supportPromptTitle => 'د Muhasaba ملاتړ وکړئ';
 
   @override
   String get supportPromptBody =>
