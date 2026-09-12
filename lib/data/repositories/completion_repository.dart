@@ -1,3 +1,5 @@
+import 'package:drift/drift.dart';
+
 import '../db/daos/completion_dao.dart';
 import '../db/daos/hidden_day_dao.dart';
 import '../db/database.dart';
@@ -25,20 +27,22 @@ class CompletionRepository {
 
   Future<int> countActiveDays() => _completions.countActiveDays();
 
+  Future<CompletionRow?> getForAmalDate(int amalId, DateTime date) =>
+      _completions.getForAmalDate(amalId, date);
+
   Future<void> setProgress({
     required int amalId,
     required DateTime muhasabaDate,
     required int progress,
     required int target,
-    String? note,
   }) {
     final now = DateTime.now().toUtc();
     return _completions.upsertProgress(
       amalId: amalId,
       muhasabaDate: muhasabaDate,
       progress: progress,
-      note: note,
-      completedAt: progress >= target ? now : null,
+      completedAt: Value(progress >= target ? now : null),
+      optionItemId: progress == 0 ? const Value(null) : const Value.absent(),
     );
   }
 
@@ -52,8 +56,7 @@ class CompletionRepository {
       amalId: amalId,
       muhasabaDate: muhasabaDate,
       progress: existing?.progress ?? 0,
-      note: note,
-      completedAt: existing?.completedAt,
+      note: Value(note),
     );
   }
 

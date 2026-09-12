@@ -42,13 +42,15 @@ class CompletionDao extends DatabaseAccessor<AppDatabase>
         .get();
   }
 
-  /// Upsert progress/note for (amal, date). Inserts a new row on first write.
+  /// Upsert for (amal, date). Fields left `Value.absent()` are not written, so
+  /// a progress change never clobbers a note and vice versa.
   Future<void> upsertProgress({
     required int amalId,
     required DateTime muhasabaDate,
     required int progress,
-    String? note,
-    DateTime? completedAt,
+    Value<String?> note = const Value.absent(),
+    Value<int?> optionItemId = const Value.absent(),
+    Value<DateTime?> completedAt = const Value.absent(),
   }) async {
     final existing = await getForAmalDate(amalId, muhasabaDate);
     if (existing == null) {
@@ -57,16 +59,18 @@ class CompletionDao extends DatabaseAccessor<AppDatabase>
           amalId: amalId,
           muhasabaDate: muhasabaDate,
           progress: Value(progress),
-          note: Value(note),
-          completedAt: Value(completedAt),
+          note: note,
+          optionItemId: optionItemId,
+          completedAt: completedAt,
         ),
       );
     } else {
       await (update(completions)..where((c) => c.id.equals(existing.id))).write(
         CompletionsCompanion(
           progress: Value(progress),
-          note: Value(note),
-          completedAt: Value(completedAt),
+          note: note,
+          optionItemId: optionItemId,
+          completedAt: completedAt,
         ),
       );
     }
