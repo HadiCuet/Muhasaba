@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/material.dart';
 
 import '../../domain/models/app_settings.dart';
@@ -92,11 +90,10 @@ class SettingsRepository {
 
   Future<void> recordTip(TipTier tier, {required DateTime now}) async {
     final current = await get();
+    final held = TipTier.fromProductId(current.supporterProductId);
+    final best = held == null || tier.rank > held.rank ? tier : held;
     await _dao.setAll({
-      SettingKeys.supporterTier: max(
-        current.supporterTier,
-        tier.rank,
-      ).toString(),
+      SettingKeys.supporterProduct: best.productId,
       SettingKeys.supportTipCount: (current.supportTipCount + 1).toString(),
       SettingKeys.supporterSince: (current.supporterSince ?? now)
           .toIso8601String(),
@@ -122,7 +119,7 @@ class SettingsRepository {
       dailyReminderTime:
           m[SettingKeys.dailyReminderTime] ??
           AppSettings.defaults.dailyReminderTime,
-      supporterTier: int.tryParse(m[SettingKeys.supporterTier] ?? '') ?? 0,
+      supporterProductId: m[SettingKeys.supporterProduct],
       supportTipCount: int.tryParse(m[SettingKeys.supportTipCount] ?? '') ?? 0,
       supporterSince: _parseDate(m[SettingKeys.supporterSince]),
       supportPromptState: SupportPromptState.parse(

@@ -16,7 +16,7 @@ class AppSettings {
     this.locale,
     this.dailyReminderEnabled = true,
     this.dailyReminderTime = '20:00',
-    this.supporterTier = 0,
+    this.supporterProductId,
     this.supportTipCount = 0,
     this.supporterSince,
     this.supportPromptState = SupportPromptState.pending,
@@ -48,8 +48,9 @@ class AppSettings {
   /// Local "HH:mm" time the daily reminder fires. Default: "20:00".
   final String dailyReminderTime;
 
-  /// Highest `TipTier.rank` ever tipped; 0 = not a supporter.
-  final int supporterTier;
+  /// Product id of the highest tier ever tipped; null = not a supporter.
+  /// Stored rather than the rank so reordering tiers cannot relabel anyone.
+  final String? supporterProductId;
 
   final int supportTipCount;
 
@@ -81,7 +82,7 @@ class AppSettings {
     String? Function()? locale,
     bool? dailyReminderEnabled,
     String? dailyReminderTime,
-    int? supporterTier,
+    String? Function()? supporterProductId,
     int? supportTipCount,
     DateTime? Function()? supporterSince,
     SupportPromptState? supportPromptState,
@@ -98,7 +99,9 @@ class AppSettings {
       locale: locale != null ? locale() : this.locale,
       dailyReminderEnabled: dailyReminderEnabled ?? this.dailyReminderEnabled,
       dailyReminderTime: dailyReminderTime ?? this.dailyReminderTime,
-      supporterTier: supporterTier ?? this.supporterTier,
+      supporterProductId: supporterProductId != null
+          ? supporterProductId()
+          : this.supporterProductId,
       supportTipCount: supportTipCount ?? this.supportTipCount,
       supporterSince: supporterSince != null
           ? supporterSince()
@@ -123,7 +126,7 @@ class AppSettings {
           other.locale == locale &&
           other.dailyReminderEnabled == dailyReminderEnabled &&
           other.dailyReminderTime == dailyReminderTime &&
-          other.supporterTier == supporterTier &&
+          other.supporterProductId == supporterProductId &&
           other.supportTipCount == supportTipCount &&
           other.supporterSince == supporterSince &&
           other.supportPromptState == supportPromptState &&
@@ -141,7 +144,7 @@ class AppSettings {
     locale,
     dailyReminderEnabled,
     dailyReminderTime,
-    supporterTier,
+    supporterProductId,
     supportTipCount,
     supporterSince,
     supportPromptState,

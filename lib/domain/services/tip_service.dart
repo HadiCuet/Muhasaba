@@ -68,8 +68,9 @@ class TipService {
     return ok;
   }
 
-  /// Store-localized product details keyed by tier. Cached once all four
-  /// resolve; a partial or failed answer is returned but not cached.
+  /// Store-localized product details keyed by tier. Cached once every tier
+  /// resolves; a partial or failed answer is returned but not cached, so a
+  /// product that is still propagating is picked up on the next query.
   Future<Map<TipTier, ProductDetails>> loadProducts() async {
     final cached = _products;
     if (cached != null) return cached;
@@ -139,7 +140,8 @@ class TipService {
 
   Future<void> _credit(TipTier tier) async {
     final before = await _settings.get();
-    final raised = tier.rank > before.supporterTier;
+    final held = TipTier.fromProductId(before.supporterProductId);
+    final raised = held == null || tier.rank > held.rank;
     await _settings.recordTip(tier, now: DateTime.now().toUtc());
     FirebaseAnalytics.instance.logEvent(
       name: 'tip_completed',

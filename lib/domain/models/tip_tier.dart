@@ -16,14 +16,8 @@ enum TipTier {
 
   static Set<String> get productIds => {for (final t in values) t.productId};
 
-  static TipTier? fromRank(int rank) {
-    for (final t in values) {
-      if (t.rank == rank) return t;
-    }
-    return null;
-  }
-
-  static TipTier? fromProductId(String id) {
+  static TipTier? fromProductId(String? id) {
+    if (id == null) return null;
     for (final t in values) {
       if (t.productId == id) return t;
     }

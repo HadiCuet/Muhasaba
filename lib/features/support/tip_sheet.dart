@@ -75,11 +75,20 @@ class _TipSheetState extends ConsumerState<_TipSheet> {
         ? await service.loadProducts()
         : const <TipTier, ProductDetails>{};
     if (!mounted) return;
-    final unavailable = products.length < TipTier.values.length;
+    final unavailable = products.isEmpty;
     if (unavailable) {
       FirebaseAnalytics.instance.logEvent(
         name: 'tip_failed',
         parameters: {'reason': 'unavailable'},
+      );
+    } else if (products.length < TipTier.values.length) {
+      // The sheet still works, so this would otherwise be invisible.
+      FirebaseAnalytics.instance.logEvent(
+        name: 'tip_products_partial',
+        parameters: {
+          'resolved': products.length,
+          'expected': TipTier.values.length,
+        },
       );
     }
     setState(() {
@@ -137,7 +146,7 @@ class _TipSheetState extends ConsumerState<_TipSheet> {
     final l = AppLocalizations.of(context);
     final theme = Theme.of(context);
     final settings = ref.watch(settingsProvider).value ?? AppSettings.defaults;
-    final held = TipTier.fromRank(settings.supporterTier);
+    final held = TipTier.fromProductId(settings.supporterProductId);
     final body = theme.textTheme.bodyMedium?.copyWith(
       color: theme.colorScheme.onSurfaceVariant,
       height: 1.4,
@@ -257,6 +266,12 @@ class _TierList extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
+    final resolved = products;
+    // Before the query lands there is nothing to filter on, so show the full
+    // ladder disabled; afterwards show only what the store actually returned.
+    final tiers = resolved == null
+        ? TipTier.values
+        : TipTier.values.where(resolved.containsKey).toList();
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(14),
@@ -266,7 +281,7 @@ class _TierList extends StatelessWidget {
       child: Column(
         mainAxisSize: MainAxisSize.min,
         children: [
-          for (final (i, tier) in TipTier.values.indexed) ...[
+          for (final (i, tier) in tiers.indexed) ...[
             if (i > 0)
               Divider(
                 height: 1,

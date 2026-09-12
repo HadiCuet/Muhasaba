@@ -38,7 +38,7 @@ class AppDatabase extends _$AppDatabase {
     : super(executor ?? driftDatabase(name: 'muhasaba'));
 
   @override
-  int get schemaVersion => 9;
+  int get schemaVersion => 10;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -156,6 +156,28 @@ class AppDatabase extends _$AppDatabase {
         await customStatement(
           'UPDATE challenges SET completion_seen = 1 WHERE status IN (?, ?)',
           [ChallengeStatus.completed.index, ChallengeStatus.ended.index],
+        );
+      }
+      if (from < 10) {
+        // The badge used to be stored as TipTier.rank, so inserting or
+        // reordering a tier would silently relabel every supporter. Store
+        // the store's immutable product id instead.
+        //
+        // The ids are spelled out rather than read from TipTier: a migration
+        // has to mean what it meant when it shipped, and the enum is free to
+        // change underneath it.
+        await customStatement(
+          "INSERT OR REPLACE INTO settings_kv (key, value) "
+          "SELECT 'supporter_product', CASE value "
+          "WHEN '1' THEN 'dev.mukashi.muhasaba.tip.rafiq' "
+          "WHEN '2' THEN 'dev.mukashi.muhasaba.tip.nasir' "
+          "WHEN '3' THEN 'dev.mukashi.muhasaba.tip.muhsin' "
+          "WHEN '4' THEN 'dev.mukashi.muhasaba.tip.ansar' END "
+          "FROM settings_kv "
+          "WHERE key = 'supporter_tier' AND value IN ('1','2','3','4')",
+        );
+        await customStatement(
+          "DELETE FROM settings_kv WHERE key = 'supporter_tier'",
         );
       }
     },

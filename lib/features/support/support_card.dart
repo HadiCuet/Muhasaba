@@ -20,7 +20,7 @@ class SupportCard extends ConsumerWidget {
     final theme = Theme.of(context);
     final seed = theme.colorScheme.primary;
     final settings = ref.watch(settingsProvider).value ?? AppSettings.defaults;
-    final tier = TipTier.fromRank(settings.supporterTier);
+    final tier = TipTier.fromProductId(settings.supporterProductId);
     final supported = ref.read(tipServiceProvider).isSupportedPlatform;
 
     return Container(

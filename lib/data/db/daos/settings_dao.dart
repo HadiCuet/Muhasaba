@@ -21,7 +21,8 @@ class SettingKeys {
       'daily_reminder_permission_asked'; // "1" | "0"
   static const tutorialSeen = 'tutorial_seen'; // "1" | "0"
   static const challengeTutorialSeen = 'challenge_tutorial_seen'; // "1" | "0"
-  static const supporterTier = 'supporter_tier'; // 0..4, TipTier.rank
+  static const supporterProduct =
+      'supporter_product'; // TipTier.productId, absent = none
   static const supportTipCount = 'support_tip_count';
   static const supporterSince = 'supporter_since'; // ISO-8601, empty = none
   static const supportPromptState =
