@@ -1447,7 +1447,7 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Bure, bila matangazo wala akaunti. Kiasi chochote, wakati wowote — hakuna kilichofungwa.';
+      'Muhasaba ni bila malipo, bila matangazo na bila akaunti. Unaweza kuunga mkono maendeleo yake kwa zawadi ndogo — kiasi chochote, wakati wowote. Hakuna kipengele kilichofungwa.';
 
   @override
   String get supportPromptNow => 'Unga mkono sasa';

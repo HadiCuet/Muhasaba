@@ -1446,7 +1446,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'বিনামূল্যে, বিজ্ঞাপন নেই, অ্যাকাউন্ট লাগে না। যেকোনো পরিমাণ, যখন খুশি — কিছুই আটকানো নেই।';
+      'Muhasaba বিনামূল্যে, কোনো বিজ্ঞাপন নেই, অ্যাকাউন্টও লাগে না। চাইলে সামান্য কিছু দিয়ে এর উন্নয়নে সহযোগিতা করতে পারেন — যেকোনো পরিমাণ, যখন খুশি। কোনো ফিচারই এর জন্য আটকে নেই।';
 
   @override
   String get supportPromptNow => 'এখনই সহযোগিতা করুন';

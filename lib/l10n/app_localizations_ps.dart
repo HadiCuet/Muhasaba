@@ -1442,7 +1442,7 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'وړیا، نه اعلان نه حساب. هر مبلغ، هر وخت — هیڅ شی نه دی تړل شوی.';
+      'Muhasaba وړیا دی، نه اعلانونه او نه حساب. که وغواړئ، په لږو پیسو د دې د پراختیا ملاتړ کولی شئ — هره اندازه، هر وخت چې وغواړئ. هیڅ ځانګړنه د دې تر شا بنده نه ده.';
 
   @override
   String get supportPromptNow => 'اوس ملاتړ وکړئ';

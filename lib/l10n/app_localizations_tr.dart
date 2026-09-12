@@ -1445,7 +1445,7 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Ücretsiz, reklamsız, hesapsız. Dilediğiniz tutarda, dilediğiniz zaman — hiçbir şey kilitli değil.';
+      'Muhasaba ücretsiz; reklam yok, hesap yok. Geliştirilmesine küçük bir katkıyla destek olabilirsiniz — dilediğiniz tutarda, dilediğiniz zaman. Hiçbir özellik buna bağlı değil.';
 
   @override
   String get supportPromptNow => 'Şimdi destek ol';

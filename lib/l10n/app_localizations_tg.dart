@@ -1448,7 +1448,7 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Ройгон, бе реклама ва ҳисоб. Ҳар маблағ, ҳар вақт — ҳеҷ чиз қулф нест.';
+      'Muhasaba ройгон аст, бе таблиғот ва бе ҳисоб. Метавонед бо маблағи дилхоҳ рушди онро дастгирӣ кунед — ҳар қадар ки хоҳед, ҳар вақт ки хоҳед. Ҳеҷ як хусусият ба ин вобаста нест.';
 
   @override
   String get supportPromptNow => 'Ҳозир дастгирӣ кунед';

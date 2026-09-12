@@ -1446,7 +1446,7 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'مفت، نہ اشتہار نہ اکاؤنٹ۔ جتنی چاہیں، جب چاہیں — کچھ بھی بند نہیں۔';
+      'Muhasaba مفت ہے، نہ اشتہار نہ اکاؤنٹ۔ آپ چاہیں تو تھوڑی سی رقم سے اس کی ترقی میں تعاون کر سکتے ہیں — جتنی چاہیں، جب چاہیں۔ کوئی فیچر اس کے پیچھے بند نہیں۔';
 
   @override
   String get supportPromptNow => 'ابھی تعاون کریں';

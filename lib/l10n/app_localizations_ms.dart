@@ -1449,7 +1449,7 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Percuma, tanpa iklan dan akaun. Apa-apa jumlah, bila-bila masa — tiada yang dikunci.';
+      'Muhasaba percuma, tanpa iklan dan tanpa akaun. Anda boleh menyokong pembangunannya dengan memberi tip — apa-apa jumlah, bila-bila masa. Tiada ciri yang dikunci.';
 
   @override
   String get supportPromptNow => 'Sokong sekarang';

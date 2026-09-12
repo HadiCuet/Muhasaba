@@ -1456,7 +1456,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Gratuite, sans publicité ni compte. Le montant que vous voulez, quand vous voulez — rien n\'est verrouillé.';
+      'Muhasaba est gratuite, sans publicité ni compte. Vous pouvez soutenir son développement avec un pourboire — le montant de votre choix, quand vous le souhaitez. Aucune fonctionnalité n\'est verrouillée.';
 
   @override
   String get supportPromptNow => 'Soutenir maintenant';

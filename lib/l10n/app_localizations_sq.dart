@@ -1452,7 +1452,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Falas, pa reklama, pa llogari. Çdo shumë, në çdo kohë — asgjë s\'është e kyçur.';
+      'Muhasaba është falas, pa reklama dhe pa llogari. Mund ta mbështetni zhvillimin e tij me një kontribut të vogël — çfarëdo shume, kur të doni. Asnjë veçori nuk është e kyçur.';
 
   @override
   String get supportPromptNow => 'Mbështet tani';

@@ -1450,7 +1450,7 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Kyauta, babu talla, babu asusu. Kowane adadi, kowane lokaci — babu abin da aka kulle.';
+      'Muhasaba kyauta ne, babu talla, babu buƙatar asusu. Kuna iya tallafa wa ci gabansa da ɗan abu — kowane adadi, a duk lokacin da kuke so. Babu wani fasali da aka kulle.';
 
   @override
   String get supportPromptNow => 'Tallafa yanzu';

@@ -1447,7 +1447,7 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Free, no ads, no account. You can tip any amount, any time — nothing is locked.';
+      'Muhasaba is free, with no ads and no account. You can support its development with a tip — any amount, whenever you like. Nothing is locked behind it.';
 
   @override
   String get supportPromptNow => 'Support now';

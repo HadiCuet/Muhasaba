@@ -1449,7 +1449,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Belaş, bê reklam û hesab. Çiqas dixwazin, kengî dixwazin — tiştek girtî nine.';
+      'Muhasaba belaş e, bê reklam û bê hesab. Hûn dikarin bi tiştekî biçûk piştgiriya pêşxistina wê bikin — çi qas bixwazin, kengî bixwazin. Qet taybetmendiyek li pişt wê ne girtî ye.';
 
   @override
   String get supportPromptNow => 'Niha piştgirî bikin';
