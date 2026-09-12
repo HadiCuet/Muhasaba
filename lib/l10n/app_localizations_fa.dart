@@ -1430,17 +1430,12 @@ class AppLocalizationsFa extends AppLocalizations {
   String get supportAgain => 'دوباره حمایت کنید';
 
   @override
-  String supporterTitle(String tier) {
-    return '$tier – حامی';
-  }
-
-  @override
   String get supporterThanks =>
       'سپاسگزاریم — به لطف شما Muhasaba رایگان و بدون تبلیغ می‌ماند.';
 
   @override
-  String supporterSince(String month) {
-    return 'حامی از $month';
+  String supporterSince(String tier, String month) {
+    return '$tier از $month';
   }
 
   @override

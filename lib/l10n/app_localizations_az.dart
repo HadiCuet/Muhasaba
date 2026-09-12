@@ -1429,17 +1429,12 @@ class AppLocalizationsAz extends AppLocalizations {
   String get supportAgain => 'Yenidən dəstək ol';
 
   @override
-  String supporterTitle(String tier) {
-    return '$tier · Dəstəkçi';
-  }
-
-  @override
   String get supporterThanks =>
       'Təşəkkürlər — sizin sayənizdə Muhasaba pulsuz və reklamsız qalır.';
 
   @override
-  String supporterSince(String month) {
-    return '$month tarixindən bəri dəstəkçi';
+  String supporterSince(String tier, String month) {
+    return '$month tarixindən bəri $tier';
   }
 
   @override

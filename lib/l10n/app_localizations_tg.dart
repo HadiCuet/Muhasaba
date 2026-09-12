@@ -1435,17 +1435,12 @@ class AppLocalizationsTg extends AppLocalizations {
   String get supportAgain => 'Боз дастгирӣ кунед';
 
   @override
-  String supporterTitle(String tier) {
-    return '$tier · Ҳомӣ';
-  }
-
-  @override
   String get supporterThanks =>
       'Ташаккур — ба шарофати шумо Muhasaba ройгон ва бе таблиғот мемонад.';
 
   @override
-  String supporterSince(String month) {
-    return 'Ҳомӣ аз $month';
+  String supporterSince(String tier, String month) {
+    return '$tier аз $month';
   }
 
   @override

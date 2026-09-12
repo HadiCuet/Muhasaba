@@ -1442,17 +1442,12 @@ class AppLocalizationsSo extends AppLocalizations {
   String get supportAgain => 'Mar kale taageer';
 
   @override
-  String supporterTitle(String tier) {
-    return '$tier · Taageere';
-  }
-
-  @override
   String get supporterThanks =>
       'Mahadsanid — adiga dartaa Muhasaba waxay sii ahaanaysaa mid bilaash ah oo xayeysiis la\'aan.';
 
   @override
-  String supporterSince(String month) {
-    return 'Taageere tan iyo $month';
+  String supporterSince(String tier, String month) {
+    return '$tier tan iyo $month';
   }
 
   @override

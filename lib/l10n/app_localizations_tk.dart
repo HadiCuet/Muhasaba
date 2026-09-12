@@ -1430,17 +1430,12 @@ class AppLocalizationsTk extends AppLocalizations {
   String get supportAgain => 'Ýene goldaň';
 
   @override
-  String supporterTitle(String tier) {
-    return '$tier · Goldawçy';
-  }
-
-  @override
   String get supporterThanks =>
       'Sag boluň — siziň saýaňyzda Muhasaba mugt we mahabatsyz galýar.';
 
   @override
-  String supporterSince(String month) {
-    return '$month aýyndan bäri goldawçy';
+  String supporterSince(String tier, String month) {
+    return '$month aýyndan bäri $tier';
   }
 
   @override

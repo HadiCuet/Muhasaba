@@ -1432,17 +1432,12 @@ class AppLocalizationsTr extends AppLocalizations {
   String get supportAgain => 'Yeniden destek ol';
 
   @override
-  String supporterTitle(String tier) {
-    return '$tier · Destekçi';
-  }
-
-  @override
   String get supporterThanks =>
       'Teşekkürler — Muhasaba sizin sayenizde ücretsiz ve reklamsız kalıyor.';
 
   @override
-  String supporterSince(String month) {
-    return '$month tarihinden beri destekçi';
+  String supporterSince(String tier, String month) {
+    return '$month tarihinden beri $tier';
   }
 
   @override

@@ -1436,17 +1436,12 @@ class AppLocalizationsKu extends AppLocalizations {
   String get supportAgain => 'Dîsa piştgirî bikin';
 
   @override
-  String supporterTitle(String tier) {
-    return '$tier · Piştgir';
-  }
-
-  @override
   String get supporterThanks =>
       'Spas — bi saya we Muhasaba belaş û bê reklam dimîne.';
 
   @override
-  String supporterSince(String month) {
-    return 'Piştgir ji $month ve';
+  String supporterSince(String tier, String month) {
+    return '$tier ji $month ve';
   }
 
   @override

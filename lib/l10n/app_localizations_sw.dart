@@ -1434,17 +1434,12 @@ class AppLocalizationsSw extends AppLocalizations {
   String get supportAgain => 'Unga mkono tena';
 
   @override
-  String supporterTitle(String tier) {
-    return '$tier · Mwunga mkono';
-  }
-
-  @override
   String get supporterThanks =>
       'Asante — kwa sababu yako, Muhasaba inabaki bila malipo na bila matangazo.';
 
   @override
-  String supporterSince(String month) {
-    return 'Mwunga mkono tangu $month';
+  String supporterSince(String tier, String month) {
+    return '$tier tangu $month';
   }
 
   @override

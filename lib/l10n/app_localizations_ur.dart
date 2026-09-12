@@ -1433,17 +1433,12 @@ class AppLocalizationsUr extends AppLocalizations {
   String get supportAgain => 'دوبارہ تعاون کریں';
 
   @override
-  String supporterTitle(String tier) {
-    return '$tier – حامی';
-  }
-
-  @override
   String get supporterThanks =>
       'شکریہ — آپ کی بدولت Muhasaba مفت اور اشتہارات سے پاک ہے۔';
 
   @override
-  String supporterSince(String month) {
-    return '$month سے حامی';
+  String supporterSince(String tier, String month) {
+    return '$month سے $tier';
   }
 
   @override

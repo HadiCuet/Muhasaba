@@ -47,7 +47,9 @@ class SupportCard extends ConsumerWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      l.aboutTitle,
+                      tier == null
+                          ? l.aboutTitle
+                          : '${l.aboutTitle}${l.listSeparator}${tier.title(l)}',
                       style: theme.textTheme.titleMedium?.copyWith(
                         fontWeight: FontWeight.w600,
                       ),
@@ -133,13 +135,6 @@ class _SupporterLines extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          '${tier.icon} ${l.supporterTitle(tier.title(l))}',
-          style: theme.textTheme.titleSmall?.copyWith(
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        const SizedBox(height: 2),
-        Text(
           l.supporterThanks,
           style: theme.textTheme.bodySmall?.copyWith(
             color: theme.colorScheme.onSurfaceVariant,
@@ -152,6 +147,7 @@ class _SupporterLines extends StatelessWidget {
             localizeDigits(
               context,
               l.supporterSince(
+                tier.title(l),
                 safeDateFormat('yMMMM', locale).format(since.toLocal()),
               ),
             ),

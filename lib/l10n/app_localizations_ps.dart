@@ -1429,17 +1429,12 @@ class AppLocalizationsPs extends AppLocalizations {
   String get supportAgain => 'بیا ملاتړ وکړئ';
 
   @override
-  String supporterTitle(String tier) {
-    return '$tier – ملاتړی';
-  }
-
-  @override
   String get supporterThanks =>
       'مننه — ستاسو له امله Muhasaba وړیا او له اعلانونو پاک پاتې کیږي.';
 
   @override
-  String supporterSince(String month) {
-    return 'له $month راهیسې ملاتړی';
+  String supporterSince(String tier, String month) {
+    return 'له $month راهیسې $tier';
   }
 
   @override

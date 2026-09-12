@@ -1437,17 +1437,12 @@ class AppLocalizationsUz extends AppLocalizations {
   String get supportAgain => 'Yana qo\'llab-quvvatlash';
 
   @override
-  String supporterTitle(String tier) {
-    return '$tier · Homiy';
-  }
-
-  @override
   String get supporterThanks =>
       'Rahmat — Muhasaba siz tufayli bepul va reklamasiz qolmoqda.';
 
   @override
-  String supporterSince(String month) {
-    return '$month oyidan beri homiy';
+  String supporterSince(String tier, String month) {
+    return '$month oyidan beri $tier';
   }
 
   @override

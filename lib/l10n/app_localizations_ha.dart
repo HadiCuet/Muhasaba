@@ -1437,17 +1437,12 @@ class AppLocalizationsHa extends AppLocalizations {
   String get supportAgain => 'Sake tallafawa';
 
   @override
-  String supporterTitle(String tier) {
-    return '$tier · Mai tallafi';
-  }
-
-  @override
   String get supporterThanks =>
       'Mun gode — saboda ku ne Muhasaba ke ci gaba da zama kyauta ba tare da talla ba.';
 
   @override
-  String supporterSince(String month) {
-    return 'Mai tallafi tun $month';
+  String supporterSince(String tier, String month) {
+    return '$tier tun $month';
   }
 
   @override

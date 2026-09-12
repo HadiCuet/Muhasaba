@@ -983,23 +983,17 @@
   "@supportAgain": {
     "description": "Button on the Settings card once the user is a supporter"
   },
-  "supporterTitle": "{tier} · Supporter",
-  "@supporterTitle": {
-    "description": "Badge line on the Settings card, e.g. 'Ansar · Supporter'. Arabic-script locales: use an en dash, the middot looks like a zero",
-    "placeholders": {
-      "tier": {
-        "type": "String"
-      }
-    }
-  },
   "supporterThanks": "Thank you — Muhasaba stays free and ad-free because of you.",
   "@supporterThanks": {
     "description": "One line of thanks under the badge on the Settings card"
   },
-  "supporterSince": "Supporter since {month}",
+  "supporterSince": "{tier} since {month}",
   "@supporterSince": {
-    "description": "Small line on the Settings card; month is a localized 'September 2026'",
+    "description": "Small line on the Settings card; tier is the badge title (Rafiq/Nasir/Muhsin/Ansar), month a localized 'September 2026'",
     "placeholders": {
+      "tier": {
+        "type": "String"
+      },
       "month": {
         "type": "String"
       }

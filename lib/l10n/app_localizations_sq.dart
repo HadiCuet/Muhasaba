@@ -1439,17 +1439,12 @@ class AppLocalizationsSq extends AppLocalizations {
   String get supportAgain => 'Mbështet sërish';
 
   @override
-  String supporterTitle(String tier) {
-    return '$tier · Mbështetës';
-  }
-
-  @override
   String get supporterThanks =>
       'Faleminderit — falë jush, Muhasaba mbetet falas dhe pa reklama.';
 
   @override
-  String supporterSince(String month) {
-    return 'Mbështetës që nga $month';
+  String supporterSince(String tier, String month) {
+    return '$tier që nga $month';
   }
 
   @override

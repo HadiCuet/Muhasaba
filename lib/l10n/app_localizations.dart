@@ -2528,23 +2528,17 @@ abstract class AppLocalizations {
   /// **'Support again'**
   String get supportAgain;
 
-  /// Badge line on the Settings card, e.g. 'Ansar · Supporter'. Arabic-script locales: use an en dash, the middot looks like a zero
-  ///
-  /// In en, this message translates to:
-  /// **'{tier} · Supporter'**
-  String supporterTitle(String tier);
-
   /// One line of thanks under the badge on the Settings card
   ///
   /// In en, this message translates to:
   /// **'Thank you — Muhasaba stays free and ad-free because of you.'**
   String get supporterThanks;
 
-  /// Small line on the Settings card; month is a localized 'September 2026'
+  /// Small line on the Settings card; tier is the badge title (Rafiq/Nasir/Muhsin/Ansar), month a localized 'September 2026'
   ///
   /// In en, this message translates to:
-  /// **'Supporter since {month}'**
-  String supporterSince(String month);
+  /// **'{tier} since {month}'**
+  String supporterSince(String tier, String month);
 
   /// Title of the one-time support prompt shown on the 30th active day
   ///

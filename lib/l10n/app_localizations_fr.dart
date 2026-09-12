@@ -1443,17 +1443,12 @@ class AppLocalizationsFr extends AppLocalizations {
   String get supportAgain => 'Soutenir à nouveau';
 
   @override
-  String supporterTitle(String tier) {
-    return '$tier · Soutien';
-  }
-
-  @override
   String get supporterThanks =>
       'Merci — grâce à vous, Muhasaba reste gratuite et sans publicité.';
 
   @override
-  String supporterSince(String month) {
-    return 'Soutien depuis $month';
+  String supporterSince(String tier, String month) {
+    return '$tier depuis $month';
   }
 
   @override

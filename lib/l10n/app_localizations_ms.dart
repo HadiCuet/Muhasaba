@@ -1436,17 +1436,12 @@ class AppLocalizationsMs extends AppLocalizations {
   String get supportAgain => 'Sokong lagi';
 
   @override
-  String supporterTitle(String tier) {
-    return '$tier · Penyokong';
-  }
-
-  @override
   String get supporterThanks =>
       'Terima kasih — berkat anda, Muhasaba kekal percuma dan bebas iklan.';
 
   @override
-  String supporterSince(String month) {
-    return 'Penyokong sejak $month';
+  String supporterSince(String tier, String month) {
+    return '$tier sejak $month';
   }
 
   @override

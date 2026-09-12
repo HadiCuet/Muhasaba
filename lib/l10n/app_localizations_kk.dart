@@ -1430,17 +1430,12 @@ class AppLocalizationsKk extends AppLocalizations {
   String get supportAgain => 'Қайта қолдау';
 
   @override
-  String supporterTitle(String tier) {
-    return '$tier · Қолдаушы';
-  }
-
-  @override
   String get supporterThanks =>
       'Рақмет — сіздің арқаңызда Muhasaba тегін әрі жарнамасыз күйінде қалады.';
 
   @override
-  String supporterSince(String month) {
-    return '$month айынан бері қолдаушы';
+  String supporterSince(String tier, String month) {
+    return '$month айынан бері $tier';
   }
 
   @override
