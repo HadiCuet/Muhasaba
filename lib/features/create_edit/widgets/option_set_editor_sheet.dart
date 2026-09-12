@@ -55,42 +55,17 @@ class _OptionSetEditorSheetState extends ConsumerState<_OptionSetEditorSheet> {
   OptionSetRow? _existing;
   String? _setSeedKey;
   String _originalName = '';
+  // Latches once hydration completes so a later provider emission never
+  // overwrites edits the user has already started typing.
   bool _hydrated = false;
   String? _error;
 
   @override
-  void didChangeDependencies() {
-    super.didChangeDependencies();
-    if (_hydrated) return;
-    _hydrated = true;
-    final l = AppLocalizations.of(context);
-
+  void initState() {
+    super.initState();
     if (widget.setId == null) {
       _items.addAll([_DraftItem(label: ''), _DraftItem(label: '')]);
-      return;
-    }
-    final sets = ref.read(optionSetsProvider).value ?? const <OptionSetRow>[];
-    final items =
-        ref.read(optionSetItemsProvider).value ?? const <OptionSetItemRow>[];
-    _existing = sets.where((s) => s.id == widget.setId).firstOrNull;
-    if (_existing == null) return;
-    _setSeedKey = _existing!.seedKey;
-    _originalName = _existing!.name;
-    _nameController.text = localizedOptionSetName(
-      _existing!.seedKey,
-      _existing!.name,
-      l,
-    );
-    for (final i in items.where(
-      (i) => i.setId == widget.setId && i.archivedAt == null,
-    )) {
-      _items.add(
-        _DraftItem(
-          id: i.id,
-          seedKey: i.seedKey,
-          label: localizedOptionLabel(i.seedKey, i.label, l),
-        ),
-      );
+      _hydrated = true;
     }
   }
 
@@ -185,11 +160,46 @@ class _OptionSetEditorSheetState extends ConsumerState<_OptionSetEditorSheet> {
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
     final theme = Theme.of(context);
-    final archived =
-        (ref.watch(optionSetItemsProvider).value ?? const <OptionSetItemRow>[])
-            .where((i) => i.setId == widget.setId && i.archivedAt != null)
-            .map((i) => localizedOptionLabel(i.seedKey, i.label, l))
-            .toList();
+    final sets = ref.watch(optionSetsProvider).value;
+    final items = ref.watch(optionSetItemsProvider).value;
+
+    if (widget.setId != null && !_hydrated) {
+      if (sets == null || items == null) {
+        return const SafeArea(
+          child: Padding(
+            padding: EdgeInsetsDirectional.all(32),
+            child: Center(child: CircularProgressIndicator()),
+          ),
+        );
+      }
+      _hydrated = true;
+      _existing = sets.where((s) => s.id == widget.setId).firstOrNull;
+      if (_existing != null) {
+        _setSeedKey = _existing!.seedKey;
+        _originalName = _existing!.name;
+        _nameController.text = localizedOptionSetName(
+          _existing!.seedKey,
+          _existing!.name,
+          l,
+        );
+        for (final i in items.where(
+          (i) => i.setId == widget.setId && i.archivedAt == null,
+        )) {
+          _items.add(
+            _DraftItem(
+              id: i.id,
+              seedKey: i.seedKey,
+              label: localizedOptionLabel(i.seedKey, i.label, l),
+            ),
+          );
+        }
+      }
+    }
+
+    final archived = (items ?? const <OptionSetItemRow>[])
+        .where((i) => i.setId == widget.setId && i.archivedAt != null)
+        .map((i) => localizedOptionLabel(i.seedKey, i.label, l))
+        .toList();
 
     return SafeArea(
       child: SingleChildScrollView(
