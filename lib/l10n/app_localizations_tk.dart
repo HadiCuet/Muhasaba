@@ -1431,7 +1431,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get supporterThanks =>
-      'Sag boluň — siziň saýaňyzda Muhasaba mugt we mahabatsyz galýar.';
+      'Alla razy bolsun — inşalla, Muhasaba mugt we mahabatsyz bolup galar.';
 
   @override
   String supporterSince(String tier, String month) {
@@ -1459,11 +1459,11 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get tipSheetBody =>
-      'Islendik möçberi saýlaň, näçe gezek isleseňiz. Bu serişdeler goşundyny işjeň, mugt we mahabatsyz saklamaga sarp edilýär. Minnetdarlyk hökmünde Sazlamalarda goldawçy hökmünde görkezilersiňiz.';
+      'Islendik möçberi saýlaň, näçe gezek isleseňiz. Bu serişdeler goşundynyň bejergisine sarp edilýär — inşalla, ol mugt we mahabatsyz bolup galar. Minnetdarlyk hökmünde Sazlamalarda goldawçy hökmünde görkezilersiňiz.';
 
   @override
   String tipSheetSupporterLine(String tier) {
-    return '$tier — goldawyňyz üçin sag boluň.';
+    return '$tier — Alla razy bolsun.';
   }
 
   @override
@@ -1487,18 +1487,7 @@ class AppLocalizationsTk extends AppLocalizations {
   }
 
   @override
-  String get tipThanks =>
-      'Sag boluň — siziň goldawyňyz Muhasabany öňe alyp barýar.';
-
-  @override
-  String tipBadgeRaised(String tier) {
-    return 'Nyşanyňyz indi $tier';
-  }
-
-  @override
-  String tipBadgeStays(String tier) {
-    return 'Nyşanyňyz $tier bolup galýar';
-  }
+  String get tipThanks => 'Alla razy bolsun — Alla sizden kabul etsin.';
 
   @override
   String get tipDone => 'Taýýar';

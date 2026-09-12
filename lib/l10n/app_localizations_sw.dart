@@ -1435,7 +1435,7 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get supporterThanks =>
-      'Asante — kwa sababu yako, Muhasaba inabaki bila malipo na bila matangazo.';
+      'Allah akulipe kheri — inshallah Muhasaba itabaki bila malipo na bila matangazo.';
 
   @override
   String supporterSince(String tier, String month) {
@@ -1463,11 +1463,11 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get tipSheetBody =>
-      'Chagua kiasi chochote, mara nyingi upendavyo. Zawadi hizi hutumika kuiweka programu ikitunzwa, bila malipo na bila matangazo. Kama shukrani, utaonyeshwa kama mwunga mkono katika Mipangilio.';
+      'Chagua kiasi chochote, mara nyingi upendavyo. Zawadi hizi hutumika kutunza programu — inshallah itabaki bila malipo na bila matangazo. Kama shukrani, utaonyeshwa kama mwunga mkono katika Mipangilio.';
 
   @override
   String tipSheetSupporterLine(String tier) {
-    return '$tier — asante kwa kuunga mkono.';
+    return '$tier — Allah akulipe kheri.';
   }
 
   @override
@@ -1492,18 +1492,7 @@ class AppLocalizationsSw extends AppLocalizations {
   }
 
   @override
-  String get tipThanks =>
-      'Asante — kuunga mkono kwako kunaifanya Muhasaba iendelee.';
-
-  @override
-  String tipBadgeRaised(String tier) {
-    return 'Beji yako sasa ni $tier';
-  }
-
-  @override
-  String tipBadgeStays(String tier) {
-    return 'Beji yako inabaki $tier';
-  }
+  String get tipThanks => 'Allah akulipe kheri — Allah aikubali kwako.';
 
   @override
   String get tipDone => 'Maliza';

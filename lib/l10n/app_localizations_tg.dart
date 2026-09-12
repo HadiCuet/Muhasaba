@@ -1436,7 +1436,7 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get supporterThanks =>
-      'Ташаккур — ба шарофати шумо Muhasaba ройгон ва бе таблиғот мемонад.';
+      'Ҷазокумуллоҳу хайран — иншоаллоҳ, Muhasaba ройгон ва бе таблиғот мемонад.';
 
   @override
   String supporterSince(String tier, String month) {
@@ -1464,11 +1464,11 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get tipSheetBody =>
-      'Ҳар маблағеро, ки мехоҳед, интихоб кунед, ҳар чанд бор ки хоҳед. Ин маблағ барои нигоҳдории барнома ва ройгону бе таблиғот мондани он сарф мешавад. Ба нишони сипос, дар Танзимот ҳамчун ҳомӣ нишон дода мешавед.';
+      'Ҳар маблағеро, ки мехоҳед, интихоб кунед, ҳар чанд бор ки хоҳед. Ин маблағ барои нигоҳдории барнома сарф мешавад — иншоаллоҳ, он ройгон ва бе таблиғот мемонад. Ба нишони сипос, дар Танзимот ҳамчун ҳомӣ нишон дода мешавед.';
 
   @override
   String tipSheetSupporterLine(String tier) {
-    return '$tier — барои дастгириатон ташаккур.';
+    return '$tier — Ҷазокумуллоҳу хайран.';
   }
 
   @override
@@ -1493,17 +1493,8 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get tipThanks => 'Ташаккур — дастгирии шумо Muhasaba-ро пеш мебарад.';
-
-  @override
-  String tipBadgeRaised(String tier) {
-    return 'Нишони шумо акнун $tier аст';
-  }
-
-  @override
-  String tipBadgeStays(String tier) {
-    return 'Нишони шумо $tier мемонад';
-  }
+  String get tipThanks =>
+      'Ҷазокумуллоҳу хайран — Худованд аз шумо қабул кунад.';
 
   @override
   String get tipDone => 'Тайёр';

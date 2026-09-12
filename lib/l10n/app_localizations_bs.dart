@@ -1442,7 +1442,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get supporterThanks =>
-      'Hvala vam — zahvaljujući vama Muhasaba ostaje besplatna i bez reklama.';
+      'Allah vas nagradio — inšallah, Muhasaba ostaje besplatna i bez reklama.';
 
   @override
   String supporterSince(String tier, String month) {
@@ -1470,11 +1470,11 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get tipSheetBody =>
-      'Odaberite bilo koji iznos, koliko god često želite. Doprinosi idu na održavanje aplikacije, da ostane besplatna i bez reklama. U znak zahvalnosti, u Postavkama ćete biti označeni kao pokrovitelj.';
+      'Odaberite bilo koji iznos, koliko god često želite. Doprinosi idu na održavanje aplikacije — inšallah, ostaje besplatna i bez reklama. U znak zahvalnosti, u Postavkama ćete biti označeni kao pokrovitelj.';
 
   @override
   String tipSheetSupporterLine(String tier) {
-    return '$tier — hvala vam na podršci.';
+    return '$tier — Allah vas nagradio.';
   }
 
   @override
@@ -1498,18 +1498,7 @@ class AppLocalizationsBs extends AppLocalizations {
   }
 
   @override
-  String get tipThanks =>
-      'Hvala vam — vaša podrška održava aplikaciju Muhasaba.';
-
-  @override
-  String tipBadgeRaised(String tier) {
-    return 'Vaša značka je sada $tier';
-  }
-
-  @override
-  String tipBadgeStays(String tier) {
-    return 'Vaša značka ostaje $tier';
-  }
+  String get tipThanks => 'Allah vas nagradio — Allah primio od vas.';
 
   @override
   String get tipDone => 'Gotovo';

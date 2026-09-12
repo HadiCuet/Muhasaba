@@ -1437,7 +1437,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get supporterThanks =>
-      'Spas — bi saya we Muhasaba belaş û bê reklam dimîne.';
+      'Xwedê ji we razî be — inşallah Muhasaba belaş û bê reklam dimîne.';
 
   @override
   String supporterSince(String tier, String month) {
@@ -1465,11 +1465,11 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get tipSheetBody =>
-      'Çi qas bixwazin hilbijêrin, çend caran bixwazin. Ev pere ji bo ku bername were parastin û belaş û bê reklam bimîne tê xerckirin. Wekî spasî, hûn di Mîhengan de wekî piştgir tên nîşandan.';
+      'Çi qas bixwazin hilbijêrin, çend caran bixwazin. Ev pere ji bo parastina bernameyê tê xerckirin — inşallah ew belaş û bê reklam dimîne. Wekî spasî, hûn di Mîhengan de wekî piştgir tên nîşandan.';
 
   @override
   String tipSheetSupporterLine(String tier) {
-    return '$tier — ji bo piştgiriya we spas.';
+    return '$tier — Xwedê ji we razî be.';
   }
 
   @override
@@ -1493,17 +1493,7 @@ class AppLocalizationsKu extends AppLocalizations {
   }
 
   @override
-  String get tipThanks => 'Spas — piştgiriya we Muhasaba li ser piyan digire.';
-
-  @override
-  String tipBadgeRaised(String tier) {
-    return 'Nîşana we niha $tier e';
-  }
-
-  @override
-  String tipBadgeStays(String tier) {
-    return 'Nîşana we $tier dimîne';
-  }
+  String get tipThanks => 'Xwedê ji we razî be — Xwedê ji we qebûl bike.';
 
   @override
   String get tipDone => 'Temam';

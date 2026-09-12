@@ -1431,7 +1431,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get supporterThanks =>
-      'سپاسگزاریم — به لطف شما Muhasaba رایگان و بدون تبلیغ می‌ماند.';
+      'جزاکم الله خیراً — ان‌شاءالله Muhasaba رایگان و بدون تبلیغ می‌ماند.';
 
   @override
   String supporterSince(String tier, String month) {
@@ -1459,11 +1459,11 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get tipSheetBody =>
-      'هر مبلغی را که می‌خواهید انتخاب کنید، هر چند بار که بخواهید. این مبالغ صرف نگهداری برنامه و رایگان و بدون تبلیغ ماندن آن می‌شود. به رسم قدردانی، در تنظیمات به‌عنوان حامی نشان داده می‌شوید.';
+      'هر مبلغی را که می‌خواهید انتخاب کنید، هر چند بار که بخواهید. این مبالغ صرف نگهداری برنامه می‌شود — ان‌شاءالله رایگان و بدون تبلیغ می‌ماند. به رسم قدردانی، در تنظیمات به‌عنوان حامی نشان داده می‌شوید.';
 
   @override
   String tipSheetSupporterLine(String tier) {
-    return '$tier — از حمایت شما سپاسگزاریم.';
+    return '$tier — جزاکم الله خیراً.';
   }
 
   @override
@@ -1488,18 +1488,7 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get tipThanks =>
-      'سپاسگزاریم — حمایت شما Muhasaba را سرپا نگه می‌دارد.';
-
-  @override
-  String tipBadgeRaised(String tier) {
-    return 'نشان شما اکنون $tier است';
-  }
-
-  @override
-  String tipBadgeStays(String tier) {
-    return 'نشان شما $tier می‌ماند';
-  }
+  String get tipThanks => 'جزاکم الله خیراً — خداوند از شما بپذیرد.';
 
   @override
   String get tipDone => 'تمام';

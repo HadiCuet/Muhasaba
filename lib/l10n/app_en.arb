@@ -983,9 +983,9 @@
   "@supportAgain": {
     "description": "Button on the Settings card once the user is a supporter"
   },
-  "supporterThanks": "Thank you — Muhasaba stays free and ad-free because of you.",
+  "supporterThanks": "JazakumAllahu khayran — Muhasaba stays free and ad-free, inshaAllah.",
   "@supporterThanks": {
-    "description": "One line of thanks under the badge on the Settings card"
+    "description": "One line under the badge on the Settings card. Render the du'a the way this language's own speakers say it, not as a transliteration of the English — and never credit the user with keeping the app running."
   },
   "supporterSince": "{tier} since {month}",
   "@supporterSince": {
@@ -1023,11 +1023,11 @@
   "@tipSheetTitle": {
     "description": "Title of the tip sheet"
   },
-  "tipSheetBody": "Choose any amount, as often as you like. Tips go toward keeping the app maintained, free, and ad-free. As a thank-you, you'll be marked as a supporter in Settings.",
+  "tipSheetBody": "Choose any amount, as often as you like. Tips go toward the app's upkeep — it stays free and ad-free, inshaAllah. As a thank-you, you'll be marked as a supporter in Settings.",
   "@tipSheetBody": {
     "description": "Body of the tip sheet above the four amounts"
   },
-  "tipSheetSupporterLine": "{tier} — thank you for your support.",
+  "tipSheetSupporterLine": "{tier} — JazakumAllahu khayran.",
   "@tipSheetSupporterLine": {
     "description": "First line of the strip shown at the top of the tip sheet to an existing supporter",
     "placeholders": {
@@ -1066,27 +1066,9 @@
       }
     }
   },
-  "tipThanks": "Thank you — your support keeps Muhasaba going.",
+  "tipThanks": "JazakumAllahu khayran — may Allah accept it from you.",
   "@tipThanks": {
-    "description": "Headline of the thank-you stage after a successful tip"
-  },
-  "tipBadgeRaised": "Your badge is now {tier}",
-  "@tipBadgeRaised": {
-    "description": "Thank-you stage, when this tip raised the badge",
-    "placeholders": {
-      "tier": {
-        "type": "String"
-      }
-    }
-  },
-  "tipBadgeStays": "Your badge stays {tier}",
-  "@tipBadgeStays": {
-    "description": "Thank-you stage, when the user already held this tier or a higher one",
-    "placeholders": {
-      "tier": {
-        "type": "String"
-      }
-    }
+    "description": "Headline of the thank-you stage after a successful tip. A du'a in this language's own idiom; thank the person, but attribute nothing to them."
   },
   "tipDone": "Done",
   "@tipDone": {

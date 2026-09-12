@@ -157,7 +157,6 @@ class _TipSheetState extends ConsumerState<_TipSheet> {
           ),
           _Stage.thanks => _Thanks(
             badge: _result!.raised ? _result!.tier : (held ?? _result!.tier),
-            raised: _result!.raised,
             onDone: () => Navigator.of(context).pop(),
           ),
           _Stage.tiers => Column(
@@ -389,14 +388,9 @@ class _Busy extends StatelessWidget {
 }
 
 class _Thanks extends StatelessWidget {
-  const _Thanks({
-    required this.badge,
-    required this.raised,
-    required this.onDone,
-  });
+  const _Thanks({required this.badge, required this.onDone});
 
   final TipTier badge;
-  final bool raised;
   final VoidCallback onDone;
 
   @override
@@ -429,7 +423,7 @@ class _Thanks extends StatelessWidget {
               borderRadius: BorderRadius.circular(999),
             ),
             child: Text(
-              '${badge.icon} ${raised ? l.tipBadgeRaised(name) : l.tipBadgeStays(name)}',
+              '${badge.icon} $name',
               style: theme.textTheme.labelLarge?.copyWith(
                 color: theme.colorScheme.onPrimaryContainer,
                 fontWeight: FontWeight.w600,

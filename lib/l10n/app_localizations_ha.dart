@@ -1438,7 +1438,7 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get supporterThanks =>
-      'Mun gode — saboda ku ne Muhasaba ke ci gaba da zama kyauta ba tare da talla ba.';
+      'Allah ya saka muku da alheri — in sha Allah Muhasaba za ta ci gaba da zama kyauta ba tare da talla ba.';
 
   @override
   String supporterSince(String tier, String month) {
@@ -1466,11 +1466,11 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get tipSheetBody =>
-      'Zaɓi kowane adadi, a duk lokacin da kuke so. Kuɗin na taimakawa wajen kula da app ɗin, ya ci gaba da zama kyauta ba tare da talla ba. A matsayin godiya, za a sanya muku alamar mai tallafi a Saituna.';
+      'Zaɓi kowane adadi, a duk lokacin da kuke so. Kuɗin na taimakawa wajen kula da app ɗin — in sha Allah zai ci gaba da zama kyauta ba tare da talla ba. A matsayin godiya, za a sanya muku alamar mai tallafi a Saituna.';
 
   @override
   String tipSheetSupporterLine(String tier) {
-    return '$tier — mun gode da tallafinku.';
+    return '$tier — Allah ya saka da alheri.';
   }
 
   @override
@@ -1495,17 +1495,7 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get tipThanks =>
-      'Mun gode — tallafinku ne ke ci gaba da rayar da Muhasaba.';
-
-  @override
-  String tipBadgeRaised(String tier) {
-    return 'Bajinku yanzu $tier ne';
-  }
-
-  @override
-  String tipBadgeStays(String tier) {
-    return 'Bajinku ya ci gaba da zama $tier';
-  }
+      'Allah ya saka muku da alheri — Allah ya karɓa daga gare ku.';
 
   @override
   String get tipDone => 'An gama';

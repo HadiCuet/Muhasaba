@@ -2528,10 +2528,10 @@ abstract class AppLocalizations {
   /// **'Support again'**
   String get supportAgain;
 
-  /// One line of thanks under the badge on the Settings card
+  /// One line under the badge on the Settings card. Render the du'a the way this language's own speakers say it, not as a transliteration of the English — and never credit the user with keeping the app running.
   ///
   /// In en, this message translates to:
-  /// **'Thank you — Muhasaba stays free and ad-free because of you.'**
+  /// **'JazakumAllahu khayran — Muhasaba stays free and ad-free, inshaAllah.'**
   String get supporterThanks;
 
   /// Small line on the Settings card; tier is the badge title (Rafiq/Nasir/Muhsin/Ansar), month a localized 'September 2026'
@@ -2579,13 +2579,13 @@ abstract class AppLocalizations {
   /// Body of the tip sheet above the four amounts
   ///
   /// In en, this message translates to:
-  /// **'Choose any amount, as often as you like. Tips go toward keeping the app maintained, free, and ad-free. As a thank-you, you\'ll be marked as a supporter in Settings.'**
+  /// **'Choose any amount, as often as you like. Tips go toward the app\'s upkeep — it stays free and ad-free, inshaAllah. As a thank-you, you\'ll be marked as a supporter in Settings.'**
   String get tipSheetBody;
 
   /// First line of the strip shown at the top of the tip sheet to an existing supporter
   ///
   /// In en, this message translates to:
-  /// **'{tier} — thank you for your support.'**
+  /// **'{tier} — JazakumAllahu khayran.'**
   String tipSheetSupporterLine(String tier);
 
   /// Second line of the supporter strip on the tip sheet
@@ -2618,23 +2618,11 @@ abstract class AppLocalizations {
   /// **'Opening {store}…'**
   String tipBusy(String store);
 
-  /// Headline of the thank-you stage after a successful tip
+  /// Headline of the thank-you stage after a successful tip. A du'a in this language's own idiom; thank the person, but attribute nothing to them.
   ///
   /// In en, this message translates to:
-  /// **'Thank you — your support keeps Muhasaba going.'**
+  /// **'JazakumAllahu khayran — may Allah accept it from you.'**
   String get tipThanks;
-
-  /// Thank-you stage, when this tip raised the badge
-  ///
-  /// In en, this message translates to:
-  /// **'Your badge is now {tier}'**
-  String tipBadgeRaised(String tier);
-
-  /// Thank-you stage, when the user already held this tier or a higher one
-  ///
-  /// In en, this message translates to:
-  /// **'Your badge stays {tier}'**
-  String tipBadgeStays(String tier);
 
   /// Closes the thank-you stage
   ///

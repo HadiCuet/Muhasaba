@@ -1443,7 +1443,7 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get supporterThanks =>
-      'Mahadsanid — adiga dartaa Muhasaba waxay sii ahaanaysaa mid bilaash ah oo xayeysiis la\'aan.';
+      'Alle ha kaa ajar siiyo — insha Allah, Muhasaba waxay sii ahaanaysaa mid bilaash ah oo xayeysiis la\'aan.';
 
   @override
   String supporterSince(String tier, String month) {
@@ -1471,11 +1471,11 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get tipSheetBody =>
-      'Dooro lacag kasta, inta jeer ee aad doonto. Lacagtu waxay u adeegtaa in abka la dayactiro, uu bilaash ahaado oo xayeysiis la\'aan sii ahaado. Mahadnaq ahaan, Dejinta waxaa lagugu calaamadin doonaa taageere ahaan.';
+      'Dooro lacag kasta, inta jeer ee aad doonto. Lacagtu waxay u adeegtaa dayactirka abka — insha Allah, wuxuu sii ahaanayaa mid bilaash ah oo xayeysiis la\'aan. Mahadnaq ahaan, Dejinta waxaa lagugu calaamadin doonaa taageere ahaan.';
 
   @override
   String tipSheetSupporterLine(String tier) {
-    return '$tier — mahadsanid taageeradaada.';
+    return '$tier — Alle ha kaa ajar siiyo.';
   }
 
   @override
@@ -1500,18 +1500,7 @@ class AppLocalizationsSo extends AppLocalizations {
   }
 
   @override
-  String get tipThanks =>
-      'Mahadsanid — taageeradaadu waxay Muhasaba sii wadaa.';
-
-  @override
-  String tipBadgeRaised(String tier) {
-    return 'Calaamaddaadu hadda waa $tier';
-  }
-
-  @override
-  String tipBadgeStays(String tier) {
-    return 'Calaamaddaadu waxay sii ahaanaysaa $tier';
-  }
+  String get tipThanks => 'Alle ha kaa ajar siiyo — Alle ha kaa aqbalo.';
 
   @override
   String get tipDone => 'Dhammaad';

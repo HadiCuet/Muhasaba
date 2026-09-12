@@ -1440,7 +1440,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get supporterThanks =>
-      'Faleminderit — falë jush, Muhasaba mbetet falas dhe pa reklama.';
+      'Allahu ju shpërbleftë — inshallah, Muhasaba mbetet falas dhe pa reklama.';
 
   @override
   String supporterSince(String tier, String month) {
@@ -1468,11 +1468,11 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get tipSheetBody =>
-      'Zgjidhni çfarëdo shume, sa herë të doni. Kontributet shkojnë për ta mbajtur aplikacionin të mirëmbajtur, falas dhe pa reklama. Si falënderim, do të shfaqeni si mbështetës te Cilësimet.';
+      'Zgjidhni çfarëdo shume, sa herë të doni. Kontributet shkojnë për mirëmbajtjen e aplikacionit — inshallah, ai mbetet falas dhe pa reklama. Si falënderim, do të shfaqeni si mbështetës te Cilësimet.';
 
   @override
   String tipSheetSupporterLine(String tier) {
-    return '$tier — faleminderit për mbështetjen tuaj.';
+    return '$tier — Allahu ju shpërbleftë.';
   }
 
   @override
@@ -1496,17 +1496,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get tipThanks =>
-      'Faleminderit — mbështetja juaj e mban Muhasaba-n në këmbë.';
-
-  @override
-  String tipBadgeRaised(String tier) {
-    return 'Stema juaj tani është $tier';
-  }
-
-  @override
-  String tipBadgeStays(String tier) {
-    return 'Stema juaj mbetet $tier';
-  }
+      'Allahu ju shpërbleftë — e pranoftë Allahu prej jush.';
 
   @override
   String get tipDone => 'U krye';
