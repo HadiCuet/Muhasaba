@@ -412,6 +412,7 @@ Future<void> _setProgress(
   ref.invalidate(statsSnapshotProvider);
   ref.invalidate(currentStreaksProvider);
   ref.invalidate(enhancedStatsProvider);
+  ref.invalidate(optionDetailProvider);
   if (!wasCompleted && nowCompleted && context.mounted) {
     await maybeShowSupportPrompt(context, ref, completedDate: date);
   }

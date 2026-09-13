@@ -38,4 +38,5 @@ Future<void> setChoice(
   // StatsScreen is keep-alive, so the Overview tab is not disposed on a tab
   // switch and would otherwise show a stale breakdown.
   ref.invalidate(enhancedStatsProvider);
+  ref.invalidate(optionDetailProvider);
 }

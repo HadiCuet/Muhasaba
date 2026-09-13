@@ -149,6 +149,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen>
     ref.invalidate(statsSnapshotProvider);
     ref.invalidate(currentStreaksProvider);
     ref.invalidate(enhancedStatsProvider);
+    ref.invalidate(optionDetailProvider);
   }
 
   Future<void> _openRemoveSheet(

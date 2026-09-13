@@ -101,6 +101,7 @@ class OptionAmalSplit {
     required this.icon,
     required this.counts,
     required this.withChoice,
+    required this.noChoice,
   });
 
   final int amalId;
@@ -112,6 +113,81 @@ class OptionAmalSplit {
   /// Recorded choices for this amal, keyed by option item id.
   final Map<int, int> counts;
   final int withChoice;
+  final int noChoice;
+}
+
+/// One week's recorded choices for an option set, for the details page's
+/// trend section.
+class OptionWeekSplit {
+  const OptionWeekSplit({
+    required this.weekStart,
+    required this.counts,
+    required this.withChoice,
+  });
+
+  final DateTime weekStart;
+
+  /// Option item id -> recorded choices that week.
+  final Map<int, int> counts;
+  final int withChoice;
+}
+
+/// One recorded choice, for the details page's "recent days" list.
+class OptionDayEntry {
+  const OptionDayEntry({
+    required this.date,
+    required this.amalId,
+    required this.amalTitle,
+    required this.amalIcon,
+    required this.itemId,
+  });
+
+  final DateTime date;
+  final int amalId;
+
+  /// Canonical DB title — localize at render with `localizedAmalTitle`.
+  final String amalTitle;
+  final String amalIcon;
+  final int itemId;
+}
+
+/// Run and best-week records for an option set's details page.
+class OptionRecords {
+  const OptionRecords({
+    required this.longestRun,
+    required this.longestRunItemId,
+    required this.currentRun,
+    required this.currentRunItemId,
+    required this.bestWeekShare,
+    required this.bestWeekStart,
+    required this.bestWeekItemId,
+  });
+
+  final int longestRun;
+  final int? longestRunItemId;
+  final int currentRun;
+  final int? currentRunItemId;
+
+  /// 0..1
+  final double bestWeekShare;
+  final DateTime? bestWeekStart;
+  final int? bestWeekItemId;
+}
+
+/// Details-page-only aggregates for one option set, from
+/// [EnhancedStatsService.optionDetail].
+class OptionDetail {
+  const OptionDetail({
+    required this.summary,
+    required this.weeks,
+    required this.records,
+    required this.recentDays,
+  });
+
+  final OptionBreakdown summary;
+  final List<OptionWeekSplit> weeks;
+  final OptionRecords records;
+  final List<OptionDayEntry> recentDays;
 }
 
 @immutable
@@ -360,6 +436,253 @@ class EnhancedStatsService {
     return _buildDailyBreakdown(period, muhasabaDate, amals, completionsByAmal);
   }
 
+  /// Trend, records and recent-days aggregates for one option set's details
+  /// page — kept out of [compute] since the weekly bucketing and day-by-day
+  /// run scan below are only worth running when that page is actually
+  /// opened. `null` when the set has no completions meeting target in range.
+  /// [amalId] scopes everything to one amal in the set; `null` is all of them.
+  Future<OptionDetail?> optionDetail({
+    required int setId,
+    required StatsFilter filter,
+    required DateTime muhasabaDate,
+    required AppSettings settings,
+    required List<AmalRow> amals,
+    required PeriodCompletionsLookup periodCompletionsOf,
+    required List<OptionSetRow> optionSets,
+    required List<OptionSetItemRow> optionSetItems,
+    int periodOffset = 0,
+    int? amalId,
+  }) async {
+    final period = _resolvePeriod(
+      filter,
+      muhasabaDate,
+      settings,
+      amals,
+      periodOffset,
+    );
+
+    final setAmals = amals
+        .where(
+          (a) => a.optionSetId == setId && (amalId == null || a.id == amalId),
+        )
+        .toList();
+    if (setAmals.isEmpty) return null;
+
+    // Records ignore the display period — like the Streaks card's own fixed
+    // lookback, a record must not move when the user changes the filter.
+    final recordsWindow = Period(
+      start: muhasabaDate.subtract(const Duration(days: _dailyStreakLookback)),
+      endExclusive: muhasabaDate.add(const Duration(days: 1)),
+    );
+    final fetchStart = period.start.isBefore(recordsWindow.start)
+        ? period.start
+        : recordsWindow.start;
+    final fetchEndExclusive =
+        period.endExclusive.isAfter(recordsWindow.endExclusive)
+        ? period.endExclusive
+        : recordsWindow.endExclusive;
+
+    final completionsByAmal = <int, List<CompletionRow>>{};
+    for (final amal in setAmals) {
+      completionsByAmal[amal.id] = await periodCompletionsOf(
+        amal.id,
+        fetchStart,
+        fetchEndExclusive,
+      );
+    }
+
+    final periodCompletionsByAmal = <int, List<CompletionRow>>{
+      for (final amal in setAmals)
+        amal.id: (completionsByAmal[amal.id] ?? const <CompletionRow>[])
+            .where((r) => period.contains(r.muhasabaDate))
+            .toList(),
+    };
+
+    final summary = _optionBreakdowns(
+      setAmals,
+      periodCompletionsByAmal,
+      optionSets,
+      optionSetItems,
+    ).firstOrNull;
+    if (summary == null) return null;
+
+    final recorded = _recordedEntries(
+      setAmals,
+      periodCompletionsByAmal,
+      setId,
+      optionSetItems,
+      period,
+    );
+
+    final weekBuckets = _bucketByWeek(recorded, settings.startOfWeek);
+    final weekStarts = weekBuckets.keys.toList()..sort();
+    final weeks = <OptionWeekSplit>[
+      for (final weekStart in weekStarts)
+        OptionWeekSplit(
+          weekStart: weekStart,
+          counts: weekBuckets[weekStart]!,
+          withChoice: weekBuckets[weekStart]!.values.fold(0, (a, b) => a + b),
+        ),
+    ];
+
+    final recordsRecorded = _recordedEntries(
+      setAmals,
+      completionsByAmal,
+      setId,
+      optionSetItems,
+      recordsWindow,
+    );
+    final records = _optionRecords(
+      recordsRecorded,
+      recordsWindow,
+      muhasabaDate,
+      settings.startOfWeek,
+    );
+
+    recorded.sort((a, b) {
+      final byDate = b.date.compareTo(a.date);
+      return byDate != 0 ? byDate : a.amalId.compareTo(b.amalId);
+    });
+
+    return OptionDetail(
+      summary: summary,
+      weeks: weeks,
+      records: records,
+      recentDays: recorded.take(10).toList(),
+    );
+  }
+
+  /// Recorded choices in [window]: completions meeting target whose item
+  /// belongs to [setId], across [setAmals].
+  List<OptionDayEntry> _recordedEntries(
+    List<AmalRow> setAmals,
+    Map<int, List<CompletionRow>> completionsByAmal,
+    int setId,
+    List<OptionSetItemRow> items,
+    Period window,
+  ) {
+    final result = <OptionDayEntry>[];
+    for (final amal in setAmals) {
+      for (final row in completionsByAmal[amal.id] ?? const <CompletionRow>[]) {
+        if (!window.contains(row.muhasabaDate)) continue;
+        if (row.progress < amal.target) continue;
+        final itemId = _setItemId(row, setId, items);
+        if (itemId == null) continue;
+        result.add(
+          OptionDayEntry(
+            date: row.muhasabaDate,
+            amalId: amal.id,
+            amalTitle: amal.title,
+            amalIcon: amal.icon,
+            itemId: itemId,
+          ),
+        );
+      }
+    }
+    return result;
+  }
+
+  Map<DateTime, Map<int, int>> _bucketByWeek(
+    List<OptionDayEntry> entries,
+    int startOfWeek,
+  ) {
+    final buckets = <DateTime, Map<int, int>>{};
+    for (final entry in entries) {
+      final weekStart = weekPeriodOf(entry.date, startOfWeek).start;
+      final bucket = buckets[weekStart] ??= <int, int>{};
+      bucket[entry.itemId] = (bucket[entry.itemId] ?? 0) + 1;
+    }
+    return buckets;
+  }
+
+  /// The item [row] recorded, or `null` if it doesn't belong to [setId] —
+  /// including recording no item at all — which counts as no choice.
+  int? _setItemId(CompletionRow row, int setId, List<OptionSetItemRow> items) {
+    final itemId = row.optionItemId;
+    if (itemId == null) return null;
+    return items.any((i) => i.id == itemId && i.setId == setId) ? itemId : null;
+  }
+
+  /// A run is consecutive calendar days on which the set recorded exactly
+  /// one distinct option; a day with none, or with more than one, breaks it.
+  OptionRecords _optionRecords(
+    List<OptionDayEntry> recorded,
+    Period window,
+    DateTime muhasabaDate,
+    int startOfWeek,
+  ) {
+    final dayItems = <int, Set<int>>{};
+    for (final entry in recorded) {
+      (dayItems[_dayKey(entry.date)] ??= <int>{}).add(entry.itemId);
+    }
+    int? singleItemOn(DateTime date) {
+      final items = dayItems[_dayKey(date)];
+      return items != null && items.length == 1 ? items.first : null;
+    }
+
+    var longestRun = 0;
+    int? longestRunItemId;
+    var runLen = 0;
+    int? runItem;
+    final totalDays = window.endExclusive.difference(window.start).inDays;
+    for (var i = 0; i < totalDays; i++) {
+      final single = singleItemOn(window.start.add(Duration(days: i)));
+      if (single != null && single == runItem) {
+        runLen++;
+      } else if (single != null) {
+        runItem = single;
+        runLen = 1;
+      } else {
+        runItem = null;
+        runLen = 0;
+      }
+      if (runLen > longestRun) {
+        longestRun = runLen;
+        longestRunItemId = runItem;
+      }
+    }
+
+    var currentRun = 0;
+    int? currentRunItemId;
+    var cursor = muhasabaDate;
+    while (true) {
+      final single = singleItemOn(cursor);
+      if (single == null ||
+          (currentRunItemId != null && single != currentRunItemId)) {
+        break;
+      }
+      currentRunItemId = single;
+      currentRun++;
+      cursor = cursor.subtract(const Duration(days: 1));
+    }
+
+    var bestWeekShare = 0.0;
+    DateTime? bestWeekStart;
+    int? bestWeekItemId;
+    for (final week in _bucketByWeek(recorded, startOfWeek).entries) {
+      final total = week.value.values.fold(0, (a, b) => a + b);
+      if (total == 0) continue;
+      for (final itemEntry in week.value.entries) {
+        final share = itemEntry.value / total;
+        if (share > bestWeekShare) {
+          bestWeekShare = share;
+          bestWeekStart = week.key;
+          bestWeekItemId = itemEntry.key;
+        }
+      }
+    }
+
+    return OptionRecords(
+      longestRun: longestRun,
+      longestRunItemId: longestRunItemId,
+      currentRun: currentRun,
+      currentRunItemId: currentRunItemId,
+      bestWeekShare: bestWeekShare,
+      bestWeekStart: bestWeekStart,
+      bestWeekItemId: bestWeekItemId,
+    );
+  }
+
   // ── Period resolution ────────────────────────────────────────────────────
 
   /// [periodOffset] steps the window back that many whole periods: 0 is the
@@ -585,15 +908,16 @@ class EnhancedStatsService {
       var noChoice = 0;
       final perAmalCounts = <int, Map<int, int>>{};
       final perAmalWithChoice = <int, int>{};
+      final perAmalNoChoice = <int, int>{};
 
       for (final amal in setAmals) {
         for (final row
             in completionsByAmal[amal.id] ?? const <CompletionRow>[]) {
           if (row.progress < amal.target) continue;
-          final itemId = row.optionItemId;
-          if (itemId == null ||
-              !items.any((i) => i.id == itemId && i.setId == setId)) {
+          final itemId = _setItemId(row, setId, items);
+          if (itemId == null) {
             noChoice++;
+            perAmalNoChoice[amal.id] = (perAmalNoChoice[amal.id] ?? 0) + 1;
             continue;
           }
           counts[itemId] = (counts[itemId] ?? 0) + 1;
@@ -630,6 +954,7 @@ class EnhancedStatsService {
               icon: amal.icon,
               counts: perAmalCounts[amal.id] ?? const <int, int>{},
               withChoice: perAmalWithChoice[amal.id] ?? 0,
+              noChoice: perAmalNoChoice[amal.id] ?? 0,
             ),
       ];
 

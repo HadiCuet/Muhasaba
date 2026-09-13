@@ -149,6 +149,38 @@ final enhancedStatsProvider = FutureProvider.autoDispose<EnhancedSnapshot>((
   );
 });
 
+/// Key for [optionDetailProvider]: one option set, optionally scoped to one
+/// amal within it (`null` = every amal in the set).
+typedef OptionDetailKey = ({int setId, int? amalId});
+
+/// Details-page-only aggregates for one option set — trend, records and
+/// recent days. Split from [enhancedStatsProvider] so the Overview tab never
+/// pays for a computation only the details page needs.
+final optionDetailProvider = FutureProvider.autoDispose
+    .family<OptionDetail?, OptionDetailKey>((ref, key) async {
+      final filter = ref.watch(statsFilterProvider);
+      final periodOffset = ref.watch(statsPeriodOffsetProvider);
+      final settings = await ref.watch(settingsProvider.future);
+      final date = ref.watch(currentMuhasabaDateProvider);
+      final db = ref.watch(appDatabaseProvider);
+      final amals = await _filteredAmals(ref, filter);
+      final optionSets = await ref.watch(optionSetsProvider.future);
+      final optionSetItems = await ref.watch(optionSetItemsProvider.future);
+
+      return const EnhancedStatsService().optionDetail(
+        setId: key.setId,
+        filter: filter,
+        muhasabaDate: date,
+        settings: settings,
+        amals: amals,
+        periodCompletionsOf: db.completionDao.getForAmalBetween,
+        optionSets: optionSets,
+        optionSetItems: optionSetItems,
+        periodOffset: periodOffset,
+        amalId: key.amalId,
+      );
+    });
+
 /// Bars for one page of the chart. One indexed range read per amal, so a
 /// neighbouring page is cheap enough to keep warm while the finger is down —
 /// unlike [enhancedStatsProvider], whose streak walks make it far too heavy
