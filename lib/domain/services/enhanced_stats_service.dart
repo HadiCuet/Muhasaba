@@ -156,8 +156,14 @@ class OptionRecords {
   const OptionRecords({
     required this.longestRun,
     required this.longestRunItemId,
+    required this.longestRunAmalId,
+    required this.longestRunAmalTitle,
+    required this.longestRunAmalIcon,
     required this.currentRun,
     required this.currentRunItemId,
+    required this.currentRunAmalId,
+    required this.currentRunAmalTitle,
+    required this.currentRunAmalIcon,
     required this.bestWeekShare,
     required this.bestWeekStart,
     required this.bestWeekItemId,
@@ -165,8 +171,19 @@ class OptionRecords {
 
   final int longestRun;
   final int? longestRunItemId;
+  final int? longestRunAmalId;
+
+  /// Canonical DB title — localize at render with `localizedAmalTitle`.
+  final String? longestRunAmalTitle;
+  final String? longestRunAmalIcon;
+
   final int currentRun;
   final int? currentRunItemId;
+  final int? currentRunAmalId;
+
+  /// Canonical DB title — localize at render with `localizedAmalTitle`.
+  final String? currentRunAmalTitle;
+  final String? currentRunAmalIcon;
 
   /// 0..1
   final double bestWeekShare;
@@ -533,6 +550,7 @@ class EnhancedStatsService {
       recordsWindow,
     );
     final records = _optionRecords(
+      setAmals,
       recordsRecorded,
       recordsWindow,
       muhasabaDate,
@@ -603,57 +621,78 @@ class EnhancedStatsService {
     return items.any((i) => i.id == itemId && i.setId == setId) ? itemId : null;
   }
 
-  /// A run is consecutive calendar days on which the set recorded exactly
-  /// one distinct option; a day with none, or with more than one, breaks it.
+  /// A run is consecutive calendar days on which ONE amal recorded the same
+  /// option — a multi-amal set is almost never unanimous, so runs are found
+  /// per amal and [longestRun]/[currentRun] report the best one found on any
+  /// amal in [setAmals], lower `sortOrder` winning ties for a stable result.
   OptionRecords _optionRecords(
+    List<AmalRow> setAmals,
     List<OptionDayEntry> recorded,
     Period window,
     DateTime muhasabaDate,
     int startOfWeek,
   ) {
-    final dayItems = <int, Set<int>>{};
+    final byAmalDayItem = <int, Map<int, int>>{};
     for (final entry in recorded) {
-      (dayItems[_dayKey(entry.date)] ??= <int>{}).add(entry.itemId);
+      final dayItem = byAmalDayItem[entry.amalId] ??= <int, int>{};
+      dayItem[_dayKey(entry.date)] = entry.itemId;
     }
-    int? singleItemOn(DateTime date) {
-      final items = dayItems[_dayKey(date)];
-      return items != null && items.length == 1 ? items.first : null;
-    }
+
+    final orderedAmals = [...setAmals]
+      ..sort((a, b) => a.sortOrder.compareTo(b.sortOrder));
+    final totalDays = window.endExclusive.difference(window.start).inDays;
+    final todayKey = _dayKey(muhasabaDate);
 
     var longestRun = 0;
     int? longestRunItemId;
-    var runLen = 0;
-    int? runItem;
-    final totalDays = window.endExclusive.difference(window.start).inDays;
-    for (var i = 0; i < totalDays; i++) {
-      final single = singleItemOn(window.start.add(Duration(days: i)));
-      if (single != null && single == runItem) {
-        runLen++;
-      } else if (single != null) {
-        runItem = single;
-        runLen = 1;
-      } else {
-        runItem = null;
-        runLen = 0;
-      }
-      if (runLen > longestRun) {
-        longestRun = runLen;
-        longestRunItemId = runItem;
-      }
-    }
-
+    AmalRow? longestRunAmal;
     var currentRun = 0;
     int? currentRunItemId;
-    var cursor = muhasabaDate;
-    while (true) {
-      final single = singleItemOn(cursor);
-      if (single == null ||
-          (currentRunItemId != null && single != currentRunItemId)) {
-        break;
+    AmalRow? currentRunAmal;
+
+    for (final amal in orderedAmals) {
+      final dayItem = byAmalDayItem[amal.id] ?? const <int, int>{};
+
+      var runLen = 0;
+      int? runItem;
+      var bestLen = 0;
+      int? bestItem;
+      for (var i = 0; i < totalDays; i++) {
+        final item = dayItem[_dayKey(window.start.add(Duration(days: i)))];
+        if (item != null && item == runItem) {
+          runLen++;
+        } else if (item != null) {
+          runItem = item;
+          runLen = 1;
+        } else {
+          runItem = null;
+          runLen = 0;
+        }
+        if (runLen > bestLen) {
+          bestLen = runLen;
+          bestItem = runItem;
+        }
       }
-      currentRunItemId = single;
-      currentRun++;
-      cursor = cursor.subtract(const Duration(days: 1));
+      if (bestLen > longestRun) {
+        longestRun = bestLen;
+        longestRunItemId = bestItem;
+        longestRunAmal = amal;
+      }
+
+      final itemToday = dayItem[todayKey];
+      if (itemToday != null) {
+        var len = 0;
+        var cursor = muhasabaDate;
+        while (dayItem[_dayKey(cursor)] == itemToday) {
+          len++;
+          cursor = cursor.subtract(const Duration(days: 1));
+        }
+        if (len > currentRun) {
+          currentRun = len;
+          currentRunItemId = itemToday;
+          currentRunAmal = amal;
+        }
+      }
     }
 
     var bestWeekShare = 0.0;
@@ -675,8 +714,14 @@ class EnhancedStatsService {
     return OptionRecords(
       longestRun: longestRun,
       longestRunItemId: longestRunItemId,
+      longestRunAmalId: longestRunAmal?.id,
+      longestRunAmalTitle: longestRunAmal?.title,
+      longestRunAmalIcon: longestRunAmal?.icon,
       currentRun: currentRun,
       currentRunItemId: currentRunItemId,
+      currentRunAmalId: currentRunAmal?.id,
+      currentRunAmalTitle: currentRunAmal?.title,
+      currentRunAmalIcon: currentRunAmal?.icon,
       bestWeekShare: bestWeekShare,
       bestWeekStart: bestWeekStart,
       bestWeekItemId: bestWeekItemId,

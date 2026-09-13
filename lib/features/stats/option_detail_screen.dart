@@ -237,7 +237,10 @@ class _DetailBody extends StatelessWidget {
         const SizedBox(height: 20),
         _SectionHeading(l.optionDetailRecordsHeading),
         const SizedBox(height: 10),
-        _RecordsSection(records: detail.records),
+        _RecordsSection(
+          records: detail.records,
+          singleAmalScope: singleAmalScope,
+        ),
         if (detail.recentDays.isNotEmpty) ...[
           const SizedBox(height: 20),
           _SectionHeading(l.optionDetailRecentDaysHeading),
@@ -504,14 +507,20 @@ class _ColorLegend extends StatelessWidget {
 }
 
 class _RecordsSection extends StatelessWidget {
-  const _RecordsSection({required this.records});
+  const _RecordsSection({required this.records, required this.singleAmalScope});
 
   final OptionRecords records;
+  final bool singleAmalScope;
 
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
     final theme = Theme.of(context);
+
+    String? amalTitleFor(String? dbTitle) => singleAmalScope || dbTitle == null
+        ? null
+        : localizedAmalTitle(dbTitle, l);
+
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -522,6 +531,7 @@ class _RecordsSection extends StatelessWidget {
                 icon: '\u{1F3C6}',
                 value: lnum(context, records.longestRun),
                 label: l.optionDetailLongestRun,
+                amalTitle: amalTitleFor(records.longestRunAmalTitle),
               ),
             ),
             const SizedBox(width: 8),
@@ -538,6 +548,7 @@ class _RecordsSection extends StatelessWidget {
                 icon: '\u{1F525}',
                 value: lnum(context, records.currentRun),
                 label: l.optionDetailCurrentRun,
+                amalTitle: amalTitleFor(records.currentRunAmalTitle),
               ),
             ),
           ],
@@ -559,11 +570,13 @@ class _RecordTile extends StatelessWidget {
     required this.icon,
     required this.value,
     required this.label,
+    this.amalTitle,
   });
 
   final String icon;
   final String value;
   final String label;
+  final String? amalTitle;
 
   @override
   Widget build(BuildContext context) {
@@ -595,6 +608,19 @@ class _RecordTile extends StatelessWidget {
             maxLines: 2,
             overflow: TextOverflow.ellipsis,
           ),
+          if (amalTitle != null) ...[
+            const SizedBox(height: 2),
+            Text(
+              amalTitle!,
+              style: theme.textTheme.labelSmall?.copyWith(
+                color: theme.colorScheme.primary,
+                fontWeight: FontWeight.w600,
+              ),
+              textAlign: TextAlign.center,
+              maxLines: 1,
+              overflow: TextOverflow.ellipsis,
+            ),
+          ],
         ],
       ),
     );
