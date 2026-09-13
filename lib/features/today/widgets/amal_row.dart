@@ -6,6 +6,7 @@ import '../../../domain/models/frequency.dart';
 import '../../../domain/services/today_builder.dart';
 import '../../../domain/utils/localized_amal_title.dart';
 import '../../../domain/utils/localized_number.dart';
+import '../../../app/widgets/option_chip_row.dart';
 import '../../../app/widgets/stepper_field.dart';
 
 /// Single amal row rendered as a tappable card.
@@ -29,6 +30,7 @@ class AmalRowTile extends StatefulWidget {
     required this.onRemove,
     required this.onEdit,
     required this.onNoteChanged,
+    required this.onChoiceChanged,
     this.streak,
     this.stepperKey,
   });
@@ -46,6 +48,9 @@ class AmalRowTile extends StatefulWidget {
 
   /// Called when the user saves or clears a note for this completion.
   final ValueChanged<String?> onNoteChanged;
+
+  /// Called with the chosen option item id, or `null` when it is cleared.
+  final ValueChanged<int?> onChoiceChanged;
 
   /// Current streak for this amal. Shown as a badge when >= 2.
   final int? streak;
@@ -87,6 +92,13 @@ class _AmalRowTileState extends State<AmalRowTile> {
   // ---------------------------------------------------------------------------
 
   void _toggleCompletion() {
+    final amal = widget.row.amal;
+    if (amal.optionSetId != null &&
+        amal.requireChoice &&
+        widget.row.optionItemId == null &&
+        !widget.row.isCompleted) {
+      return;
+    }
     final row = widget.row;
     final wasDone = row.isCompleted;
     final newProgress = wasDone ? 0 : row.amal.target;
@@ -298,6 +310,17 @@ class _AmalRowTileState extends State<AmalRowTile> {
                                   ),
                                 ),
                               ),
+                            if (amal.optionSetId != null &&
+                                amal.requireChoice &&
+                                row.optionItemId == null &&
+                                !isDone)
+                              Text(
+                                l.choiceNeeded,
+                                style: theme.textTheme.labelSmall?.copyWith(
+                                  color: theme.colorScheme.tertiary,
+                                  fontWeight: FontWeight.w700,
+                                ),
+                              ),
                             // Reminder (shown only when no note preview).
                             if (!_noteExpanded &&
                                 (row.note == null || row.note!.isEmpty) &&
@@ -358,6 +381,13 @@ class _AmalRowTileState extends State<AmalRowTile> {
                   ),
                 ),
               ),
+
+              if (amal.optionSetId != null)
+                OptionChipRow(
+                  setId: amal.optionSetId!,
+                  selectedItemId: row.optionItemId,
+                  onChanged: widget.onChoiceChanged,
+                ),
 
               // Inline note section (expandable).
               AnimatedSize(

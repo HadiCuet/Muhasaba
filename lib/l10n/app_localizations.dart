@@ -2911,6 +2911,24 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{used} of {max} options used.'**
   String optionsUsedOf(int used, int max);
+
+  /// No description provided for @choiceNeeded.
+  ///
+  /// In en, this message translates to:
+  /// **'Choice needed'**
+  String get choiceNeeded;
+
+  /// No description provided for @optionSelected.
+  ///
+  /// In en, this message translates to:
+  /// **'{label}, selected'**
+  String optionSelected(String label);
+
+  /// No description provided for @optionNotSelected.
+  ///
+  /// In en, this message translates to:
+  /// **'{label}, not selected'**
+  String optionNotSelected(String label);
 }
 
 class _AppLocalizationsDelegate

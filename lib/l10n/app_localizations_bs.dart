@@ -1657,4 +1657,17 @@ class AppLocalizationsBs extends AppLocalizations {
   String optionsUsedOf(int used, int max) {
     return '$used of $max options used.';
   }
+
+  @override
+  String get choiceNeeded => 'Choice needed';
+
+  @override
+  String optionSelected(String label) {
+    return '$label, selected';
+  }
+
+  @override
+  String optionNotSelected(String label) {
+    return '$label, not selected';
+  }
 }

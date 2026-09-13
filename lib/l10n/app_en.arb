@@ -1152,5 +1152,14 @@
       "used": { "type": "int" },
       "max": { "type": "int" }
     }
+  },
+  "choiceNeeded": "Choice needed",
+  "optionSelected": "{label}, selected",
+  "@optionSelected": {
+    "placeholders": { "label": { "type": "String" } }
+  },
+  "optionNotSelected": "{label}, not selected",
+  "@optionNotSelected": {
+    "placeholders": { "label": { "type": "String" } }
   }
 }
