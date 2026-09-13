@@ -1538,10 +1538,10 @@ class AppLocalizationsAr extends AppLocalizations {
   String get optionSetOnTime => 'الوقت';
 
   @override
-  String get optionOnTimeOnTime => 'في وقتها';
+  String get optionOnTimeOnTime => 'في الوقت';
 
   @override
-  String get optionOnTimeLate => 'متأخرة';
+  String get optionOnTimeLate => 'متأخر';
 
   @override
   String get optionOnTimeQada => 'قضاء';
@@ -1574,7 +1574,7 @@ class AppLocalizationsAr extends AppLocalizations {
   String get optionSadaqahTime => 'وقت';
 
   @override
-  String get optionSadaqahOther => 'أخرى';
+  String get optionSadaqahOther => 'غير ذلك';
 
   @override
   String get optionSetIntensity => 'المستوى';
