@@ -1695,14 +1695,11 @@ class AppLocalizationsKu extends AppLocalizations {
   String get optionRemovedSuffix => 'hatiye rakirin';
 
   @override
-  String get optionByAmal => 'By amal';
+  String get optionAllAmals => 'All';
 
   @override
-  String get optionByAmalToggle => 'Show the per-amal split';
-
-  @override
-  String optionByAmalShareOf(String option) {
-    return 'Figure shows share of $option';
+  String optionScopedCaption(String amal, int count) {
+    return '$amal · $count recorded';
   }
 
   @override

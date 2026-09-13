@@ -1178,11 +1178,13 @@
     }
   },
   "optionRemovedSuffix": "removed",
-  "optionByAmal": "By amal",
-  "optionByAmalToggle": "Show the per-amal split",
-  "optionByAmalShareOf": "Figure shows share of {option}",
-  "@optionByAmalShareOf": {
-    "placeholders": { "option": { "type": "String" } }
+  "optionAllAmals": "All",
+  "optionScopedCaption": "{amal} · {count} recorded",
+  "@optionScopedCaption": {
+    "placeholders": {
+      "amal": { "type": "String" },
+      "count": { "type": "int" }
+    }
   },
   "optionBreakdownSectionTitle": "Option breakdown",
   "optionBreakdownSwipeHint": "{count} sets · swipe",

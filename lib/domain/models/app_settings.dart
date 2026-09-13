@@ -23,7 +23,6 @@ class AppSettings {
     this.supportSnoozedAtActiveDays = 0,
     this.supportAskCount = 0,
     this.supportIntroSeen = false,
-    this.optionByAmalExpanded = false,
   });
 
   /// 1..7, `DateTime.monday == 1`, `DateTime.saturday == 6`. Default: Saturday.
@@ -67,9 +66,6 @@ class AppSettings {
   /// Whether the one-time "tips exist now" intro has been shown.
   final bool supportIntroSeen;
 
-  /// Whether the Insights "by amal" drill-down starts expanded. Default: off.
-  final bool optionByAmalExpanded;
-
   static const defaults = AppSettings(
     startOfWeek: DateTime.saturday,
     startOfMonth: 1,
@@ -93,7 +89,6 @@ class AppSettings {
     int? supportSnoozedAtActiveDays,
     int? supportAskCount,
     bool? supportIntroSeen,
-    bool? optionByAmalExpanded,
   }) {
     return AppSettings(
       startOfWeek: startOfWeek ?? this.startOfWeek,
@@ -116,7 +111,6 @@ class AppSettings {
           supportSnoozedAtActiveDays ?? this.supportSnoozedAtActiveDays,
       supportAskCount: supportAskCount ?? this.supportAskCount,
       supportIntroSeen: supportIntroSeen ?? this.supportIntroSeen,
-      optionByAmalExpanded: optionByAmalExpanded ?? this.optionByAmalExpanded,
     );
   }
 
@@ -138,8 +132,7 @@ class AppSettings {
           other.supportPromptState == supportPromptState &&
           other.supportSnoozedAtActiveDays == supportSnoozedAtActiveDays &&
           other.supportAskCount == supportAskCount &&
-          other.supportIntroSeen == supportIntroSeen &&
-          other.optionByAmalExpanded == optionByAmalExpanded;
+          other.supportIntroSeen == supportIntroSeen;
 
   @override
   int get hashCode => Object.hash(
@@ -158,6 +151,5 @@ class AppSettings {
     supportSnoozedAtActiveDays,
     supportAskCount,
     supportIntroSeen,
-    optionByAmalExpanded,
   );
 }

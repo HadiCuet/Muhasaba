@@ -10,20 +10,9 @@ import 'option_breakdown_card.dart';
 /// the current filter. Used only when there are 2 or more sets — a single
 /// set renders as one plain full-width card instead, with no header or dots.
 class OptionBreakdownCarousel extends StatefulWidget {
-  const OptionBreakdownCarousel({
-    super.key,
-    required this.breakdowns,
-    required this.expanded,
-    required this.onToggle,
-  });
+  const OptionBreakdownCarousel({super.key, required this.breakdowns});
 
   final List<OptionBreakdown> breakdowns;
-
-  // Shared across every page, not per-card: PageView gives all pages in the
-  // carousel the same height, so a per-card toggle would leave a collapsed
-  // page sized to whatever the expanded page needs.
-  final bool expanded;
-  final VoidCallback onToggle;
 
   @override
   State<OptionBreakdownCarousel> createState() =>
@@ -59,13 +48,7 @@ class _OptionBreakdownCarouselState extends State<OptionBreakdownCarousel> {
     final theme = Theme.of(context);
     final breakdowns = widget.breakdowns;
     final height = breakdowns
-        .map(
-          (b) => OptionBreakdownCard.estimateHeight(
-            context,
-            b,
-            expanded: widget.expanded,
-          ),
-        )
+        .map((b) => OptionBreakdownCard.estimateHeight(context, b))
         .reduce(math.max);
 
     return Column(
@@ -100,11 +83,7 @@ class _OptionBreakdownCarouselState extends State<OptionBreakdownCarousel> {
               padding: EdgeInsetsDirectional.only(
                 end: index == breakdowns.length - 1 ? 0 : _pageGap,
               ),
-              child: OptionBreakdownCard(
-                breakdown: breakdowns[index],
-                expanded: widget.expanded,
-                onToggle: widget.onToggle,
-              ),
+              child: OptionBreakdownCard(breakdown: breakdowns[index]),
             ),
           ),
         ),

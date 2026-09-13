@@ -2954,23 +2954,17 @@ abstract class AppLocalizations {
   /// **'removed'**
   String get optionRemovedSuffix;
 
-  /// No description provided for @optionByAmal.
+  /// No description provided for @optionAllAmals.
   ///
   /// In en, this message translates to:
-  /// **'By amal'**
-  String get optionByAmal;
+  /// **'All'**
+  String get optionAllAmals;
 
-  /// No description provided for @optionByAmalToggle.
+  /// No description provided for @optionScopedCaption.
   ///
   /// In en, this message translates to:
-  /// **'Show the per-amal split'**
-  String get optionByAmalToggle;
-
-  /// No description provided for @optionByAmalShareOf.
-  ///
-  /// In en, this message translates to:
-  /// **'Figure shows share of {option}'**
-  String optionByAmalShareOf(String option);
+  /// **'{amal} · {count} recorded'**
+  String optionScopedCaption(String amal, int count);
 
   /// No description provided for @optionBreakdownSectionTitle.
   ///

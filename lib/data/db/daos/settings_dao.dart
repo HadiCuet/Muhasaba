@@ -21,7 +21,6 @@ class SettingKeys {
       'daily_reminder_permission_asked'; // "1" | "0"
   static const tutorialSeen = 'tutorial_seen'; // "1" | "0"
   static const challengeTutorialSeen = 'challenge_tutorial_seen'; // "1" | "0"
-  static const optionByAmalExpanded = 'option_by_amal_expanded'; // "1" | "0"
   static const supporterProduct =
       'supporter_product'; // TipTier.productId, absent = none
   static const supportTipCount = 'support_tip_count';
