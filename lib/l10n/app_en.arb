@@ -1190,5 +1190,35 @@
   "optionBreakdownSwipeHint": "{count} sets · swipe",
   "@optionBreakdownSwipeHint": {
     "placeholders": { "count": { "type": "int" } }
+  },
+  "optionDetailEmpty": "No choices recorded for this set yet.",
+  "optionDetailTrendHeading": "How it changed",
+  "optionDetailTrendReadout": "{option} went from {from} to {to} between the first and last week.",
+  "@optionDetailTrendReadout": {
+    "placeholders": {
+      "option": { "type": "String" },
+      "from": { "type": "String" },
+      "to": { "type": "String" }
+    }
+  },
+  "optionDetailByAmalHeading": "By amal",
+  "optionDetailByAmalReadout": "{best} leads at {bestShare}; {worst} trails at {worstShare}.",
+  "@optionDetailByAmalReadout": {
+    "placeholders": {
+      "best": { "type": "String" },
+      "bestShare": { "type": "String" },
+      "worst": { "type": "String" },
+      "worstShare": { "type": "String" }
+    }
+  },
+  "optionDetailRecordsHeading": "Records",
+  "optionDetailLongestRun": "Longest Run",
+  "optionDetailBestWeek": "Best Week",
+  "optionDetailCurrentRun": "Current Run",
+  "optionDetailRecordsCaption": "Based on the past year, independent of the period filter above.",
+  "optionDetailRecentDaysHeading": "Recent days",
+  "optionDetailRecentDaysCount": "{count, plural, =1{Last 1 day} other{Last {count} days}}",
+  "@optionDetailRecentDaysCount": {
+    "placeholders": { "count": { "type": "int" } }
   }
 }

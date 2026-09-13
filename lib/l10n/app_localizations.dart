@@ -2977,6 +2977,83 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count} sets · swipe'**
   String optionBreakdownSwipeHint(int count);
+
+  /// No description provided for @optionDetailEmpty.
+  ///
+  /// In en, this message translates to:
+  /// **'No choices recorded for this set yet.'**
+  String get optionDetailEmpty;
+
+  /// No description provided for @optionDetailTrendHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'How it changed'**
+  String get optionDetailTrendHeading;
+
+  /// No description provided for @optionDetailTrendReadout.
+  ///
+  /// In en, this message translates to:
+  /// **'{option} went from {from} to {to} between the first and last week.'**
+  String optionDetailTrendReadout(String option, String from, String to);
+
+  /// No description provided for @optionDetailByAmalHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'By amal'**
+  String get optionDetailByAmalHeading;
+
+  /// No description provided for @optionDetailByAmalReadout.
+  ///
+  /// In en, this message translates to:
+  /// **'{best} leads at {bestShare}; {worst} trails at {worstShare}.'**
+  String optionDetailByAmalReadout(
+    String best,
+    String bestShare,
+    String worst,
+    String worstShare,
+  );
+
+  /// No description provided for @optionDetailRecordsHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'Records'**
+  String get optionDetailRecordsHeading;
+
+  /// No description provided for @optionDetailLongestRun.
+  ///
+  /// In en, this message translates to:
+  /// **'Longest Run'**
+  String get optionDetailLongestRun;
+
+  /// No description provided for @optionDetailBestWeek.
+  ///
+  /// In en, this message translates to:
+  /// **'Best Week'**
+  String get optionDetailBestWeek;
+
+  /// No description provided for @optionDetailCurrentRun.
+  ///
+  /// In en, this message translates to:
+  /// **'Current Run'**
+  String get optionDetailCurrentRun;
+
+  /// No description provided for @optionDetailRecordsCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Based on the past year, independent of the period filter above.'**
+  String get optionDetailRecordsCaption;
+
+  /// No description provided for @optionDetailRecentDaysHeading.
+  ///
+  /// In en, this message translates to:
+  /// **'Recent days'**
+  String get optionDetailRecentDaysHeading;
+
+  /// No description provided for @optionDetailRecentDaysCount.
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Last 1 day} other{Last {count} days}}'**
+  String optionDetailRecentDaysCount(int count);
 }
 
 class _AppLocalizationsDelegate

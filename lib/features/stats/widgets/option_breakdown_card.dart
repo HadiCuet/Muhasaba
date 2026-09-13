@@ -119,7 +119,7 @@ class _OptionBreakdownCardState extends State<OptionBreakdownCard> {
               ],
               if (breakdown.perAmal.length >= 2) ...[
                 const SizedBox(height: 10),
-                _AmalSelectorRow(
+                OptionAmalSelectorRow(
                   perAmal: breakdown.perAmal,
                   selectedAmalId: _selectedAmalId,
                   onChanged: (id) => setState(() => _selectedAmalId = id),
@@ -128,7 +128,7 @@ class _OptionBreakdownCardState extends State<OptionBreakdownCard> {
               const SizedBox(height: 12),
               if (total > 0)
                 for (final slice in breakdown.slices)
-                  _Bar(
+                  OptionBar(
                     slice: slice,
                     count: selected == null
                         ? slice.count
@@ -152,11 +152,12 @@ class _OptionBreakdownCardState extends State<OptionBreakdownCard> {
   }
 }
 
-/// Scopes the card's bars to one amal in the set, or all of them. Local to
-/// this card's state — not persisted, and reset whenever the card starts
-/// showing a different set.
-class _AmalSelectorRow extends StatelessWidget {
-  const _AmalSelectorRow({
+/// Scopes a set's bars to one amal, or all of them. Shared by the card
+/// (local, unpersisted state) and the option details screen (which re-keys
+/// its provider on selection instead).
+class OptionAmalSelectorRow extends StatelessWidget {
+  const OptionAmalSelectorRow({
+    super.key,
     required this.perAmal,
     required this.selectedAmalId,
     required this.onChanged,
@@ -197,8 +198,13 @@ class _AmalSelectorRow extends StatelessWidget {
   }
 }
 
-class _Bar extends StatelessWidget {
-  const _Bar({required this.slice, required this.count, required this.total});
+class OptionBar extends StatelessWidget {
+  const OptionBar({
+    super.key,
+    required this.slice,
+    required this.count,
+    required this.total,
+  });
 
   final OptionSlice slice;
   final int count;

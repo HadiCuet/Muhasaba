@@ -1718,4 +1718,58 @@ class AppLocalizationsBs extends AppLocalizations {
   String optionBreakdownSwipeHint(int count) {
     return '$count sets · swipe';
   }
+
+  @override
+  String get optionDetailEmpty => 'No choices recorded for this set yet.';
+
+  @override
+  String get optionDetailTrendHeading => 'How it changed';
+
+  @override
+  String optionDetailTrendReadout(String option, String from, String to) {
+    return '$option went from $from to $to between the first and last week.';
+  }
+
+  @override
+  String get optionDetailByAmalHeading => 'By amal';
+
+  @override
+  String optionDetailByAmalReadout(
+    String best,
+    String bestShare,
+    String worst,
+    String worstShare,
+  ) {
+    return '$best leads at $bestShare; $worst trails at $worstShare.';
+  }
+
+  @override
+  String get optionDetailRecordsHeading => 'Records';
+
+  @override
+  String get optionDetailLongestRun => 'Longest Run';
+
+  @override
+  String get optionDetailBestWeek => 'Best Week';
+
+  @override
+  String get optionDetailCurrentRun => 'Current Run';
+
+  @override
+  String get optionDetailRecordsCaption =>
+      'Based on the past year, independent of the period filter above.';
+
+  @override
+  String get optionDetailRecentDaysHeading => 'Recent days';
+
+  @override
+  String optionDetailRecentDaysCount(int count) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Last $count days',
+      one: 'Last 1 day',
+    );
+    return '$_temp0';
+  }
 }

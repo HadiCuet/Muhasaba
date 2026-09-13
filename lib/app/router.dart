@@ -12,6 +12,7 @@ import '../features/create_edit/amal_templates.dart';
 import '../features/insights/insights_screen.dart';
 import '../features/settings/settings_screen.dart';
 import '../features/splash/splash_screen.dart';
+import '../features/stats/option_detail_screen.dart';
 import '../features/today/today_screen.dart';
 import 'shell.dart';
 
@@ -138,6 +139,21 @@ final routerProvider = Provider<GoRouter>((ref) {
             );
           }
           return ChallengeDetailScreen(challengeId: id);
+        },
+      ),
+      GoRoute(
+        path: '/insights/option/:setId',
+        name: 'option-detail',
+        builder: (context, state) {
+          final setId = int.tryParse(state.pathParameters['setId'] ?? '');
+          if (setId == null) {
+            return Scaffold(
+              body: Center(
+                child: Text(AppLocalizations.of(context).invalidAmalId),
+              ),
+            );
+          }
+          return OptionDetailScreen(setId: setId);
         },
       ),
       GoRoute(path: '/stats', redirect: (_, _) => '/insights'),
