@@ -60,6 +60,29 @@ class CompletionRepository {
     );
   }
 
+  /// Writes the chosen option and the resulting progress in one upsert. The
+  /// caller owns the semantics — whether picking completes the row depends on
+  /// `target` and `requireChoice`, which only the UI knows.
+  Future<void> setChoice({
+    required int amalId,
+    required DateTime muhasabaDate,
+    required int? optionItemId,
+    required int progress,
+    required int target,
+  }) async {
+    final existing = await _completions.getForAmalDate(amalId, muhasabaDate);
+    final completed = progress >= target;
+    await _completions.upsertProgress(
+      amalId: amalId,
+      muhasabaDate: muhasabaDate,
+      progress: progress,
+      optionItemId: Value(optionItemId),
+      completedAt: Value(
+        completed ? (existing?.completedAt ?? DateTime.now().toUtc()) : null,
+      ),
+    );
+  }
+
   /// Hide an amal from a single muhasaba day only. It returns on the next
   /// muhasaba day.
   Future<void> removeFromDay(int amalId, DateTime muhasabaDate) =>

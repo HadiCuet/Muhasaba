@@ -228,6 +228,7 @@ final historyFallbackRowsProvider = FutureProvider.autoDispose
               amal: a,
               progress: byAmalId[a.id]?.progress ?? 0,
               note: byAmalId[a.id]?.note,
+              optionItemId: byAmalId[a.id]?.optionItemId,
             ),
       ];
     });

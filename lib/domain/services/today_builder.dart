@@ -14,11 +14,13 @@ class TodayRow {
     required this.amal,
     required this.progress,
     required this.note,
+    this.optionItemId,
   });
 
   final AmalRow amal;
   final int progress;
   final String? note;
+  final int? optionItemId;
 
   bool get isCompleted => progress >= amal.target;
 
@@ -121,7 +123,14 @@ class TodayBuilder {
           ? todayRow.progress
           : (amal.defaultChecked ? amal.target : 0);
 
-      rows.add(TodayRow(amal: amal, progress: progress, note: todayRow?.note));
+      rows.add(
+        TodayRow(
+          amal: amal,
+          progress: progress,
+          note: todayRow?.note,
+          optionItemId: todayRow?.optionItemId,
+        ),
+      );
     }
     return rows;
   }
