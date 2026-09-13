@@ -2953,6 +2953,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'removed'**
   String get optionRemovedSuffix;
+
+  /// No description provided for @optionByAmal.
+  ///
+  /// In en, this message translates to:
+  /// **'By amal'**
+  String get optionByAmal;
+
+  /// No description provided for @optionByAmalShareOf.
+  ///
+  /// In en, this message translates to:
+  /// **'Figure shows share of {option}'**
+  String optionByAmalShareOf(String option);
+
+  /// No description provided for @optionBreakdownSectionTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Option breakdown'**
+  String get optionBreakdownSectionTitle;
+
+  /// No description provided for @optionBreakdownSwipeHint.
+  ///
+  /// In en, this message translates to:
+  /// **'{count} sets · swipe'**
+  String optionBreakdownSwipeHint(int count);
 }
 
 class _AppLocalizationsDelegate

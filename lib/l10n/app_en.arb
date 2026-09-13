@@ -1177,5 +1177,15 @@
       "total": { "type": "int" }
     }
   },
-  "optionRemovedSuffix": "removed"
+  "optionRemovedSuffix": "removed",
+  "optionByAmal": "By amal",
+  "optionByAmalShareOf": "Figure shows share of {option}",
+  "@optionByAmalShareOf": {
+    "placeholders": { "option": { "type": "String" } }
+  },
+  "optionBreakdownSectionTitle": "Option breakdown",
+  "optionBreakdownSwipeHint": "{count} sets · swipe",
+  "@optionBreakdownSwipeHint": {
+    "placeholders": { "count": { "type": "int" } }
+  }
 }

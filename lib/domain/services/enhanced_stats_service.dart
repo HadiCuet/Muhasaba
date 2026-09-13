@@ -62,8 +62,10 @@ class OptionSlice {
   final int count;
 }
 
-/// Non-null only when every optioned amal in the filter shares one set —
-/// counting choices across different vocabularies would be meaningless.
+/// One breakdown per distinct option set that has data in scope — a user
+/// commonly tracks several sets at once (jamaa on prayers, Quran session on
+/// Quran), so these are rendered as a swipeable row rather than gated on
+/// there being exactly one.
 class OptionBreakdown {
   const OptionBreakdown({
     required this.setId,
@@ -72,6 +74,7 @@ class OptionBreakdown {
     required this.slices,
     required this.withChoice,
     required this.noChoice,
+    required this.perAmal,
   });
 
   final int setId;
@@ -83,7 +86,32 @@ class OptionBreakdown {
   final int withChoice;
   final int noChoice;
 
+  /// Per-amal split of [slices], for the card's drill-down section. Empty
+  /// unless at least 2 amals in this set recorded a choice — with only one,
+  /// it would just restate the card's own totals.
+  final List<OptionAmalSplit> perAmal;
+
   int get totalCompleted => withChoice + noChoice;
+}
+
+class OptionAmalSplit {
+  const OptionAmalSplit({
+    required this.amalId,
+    required this.title,
+    required this.icon,
+    required this.counts,
+    required this.withChoice,
+  });
+
+  final int amalId;
+
+  /// Canonical DB title — localize at render with `localizedAmalTitle`.
+  final String title;
+  final String icon;
+
+  /// Recorded choices for this amal, keyed by option item id.
+  final Map<int, int> counts;
+  final int withChoice;
 }
 
 @immutable
@@ -135,7 +163,7 @@ class EnhancedSnapshot {
     required this.totalCompletedDays,
     required this.heatmapData,
     required this.perAmal,
-    this.optionBreakdown,
+    this.optionBreakdowns = const [],
   });
 
   final double overallRate;
@@ -158,7 +186,7 @@ class EnhancedSnapshot {
 
   final List<HeatmapDay> heatmapData;
   final List<EnhancedAmalStats> perAmal;
-  final OptionBreakdown? optionBreakdown;
+  final List<OptionBreakdown> optionBreakdowns;
 }
 
 // ─── Service ─────────────────────────────────────────────────────────────────
@@ -231,7 +259,7 @@ class EnhancedStatsService {
       );
     }
 
-    final optionBreakdown = _optionBreakdown(
+    final optionBreakdowns = _optionBreakdowns(
       amals,
       completionsByAmal,
       optionSets,
@@ -297,7 +325,7 @@ class EnhancedStatsService {
       totalCompletedDays: allDates.length,
       heatmapData: heatmap,
       perAmal: perAmalResults,
-      optionBreakdown: optionBreakdown,
+      optionBreakdowns: optionBreakdowns,
     );
   }
 
@@ -521,7 +549,11 @@ class EnhancedStatsService {
     return result;
   }
 
-  OptionBreakdown? _optionBreakdown(
+  /// One [OptionBreakdown] per distinct option set among amals that carry a
+  /// set and completed at least once in the period — every set the user is
+  /// actually recording, not just the one that happens to cover the whole
+  /// filter. Ordered by total recorded choices descending.
+  List<OptionBreakdown> _optionBreakdowns(
     List<AmalRow> amals,
     Map<int, List<CompletionRow>> completionsByAmal,
     List<OptionSetRow> sets,
@@ -536,52 +568,92 @@ class EnhancedStatsService {
               ),
         )
         .toList();
-    final setIds = scoped.map((a) => a.optionSetId!).toSet();
-    if (setIds.length != 1) return null;
-
-    final setId = setIds.first;
-    final set = sets.where((s) => s.id == setId).firstOrNull;
-    if (set == null) return null;
-
-    final counts = <int, int>{};
-    var withChoice = 0;
-    var noChoice = 0;
+    final bySet = <int, List<AmalRow>>{};
     for (final amal in scoped) {
-      for (final row in completionsByAmal[amal.id] ?? const <CompletionRow>[]) {
-        if (row.progress < amal.target) continue;
-        final itemId = row.optionItemId;
-        if (itemId == null ||
-            !items.any((i) => i.id == itemId && i.setId == setId)) {
-          noChoice++;
-          continue;
-        }
-        counts[itemId] = (counts[itemId] ?? 0) + 1;
-        withChoice++;
-      }
+      (bySet[amal.optionSetId!] ??= []).add(amal);
     }
 
-    final mine = items.where((i) => i.setId == setId).toList()
-      ..sort((a, b) => a.sortOrder.compareTo(b.sortOrder));
-    final slices = <OptionSlice>[
-      for (final i in mine)
-        if (i.archivedAt == null || (counts[i.id] ?? 0) > 0)
-          OptionSlice(
-            itemId: i.id,
-            label: i.label,
-            seedKey: i.seedKey,
-            archived: i.archivedAt != null,
-            count: counts[i.id] ?? 0,
-          ),
-    ]..sort((a, b) => b.count.compareTo(a.count));
+    final result = <OptionBreakdown>[];
+    for (final entry in bySet.entries) {
+      final setId = entry.key;
+      final setAmals = entry.value;
+      final set = sets.where((s) => s.id == setId).firstOrNull;
+      if (set == null) continue;
 
-    return OptionBreakdown(
-      setId: setId,
-      setName: set.name,
-      setSeedKey: set.seedKey,
-      slices: slices,
-      withChoice: withChoice,
-      noChoice: noChoice,
-    );
+      final counts = <int, int>{};
+      var withChoice = 0;
+      var noChoice = 0;
+      final perAmalCounts = <int, Map<int, int>>{};
+      final perAmalWithChoice = <int, int>{};
+
+      for (final amal in setAmals) {
+        for (final row
+            in completionsByAmal[amal.id] ?? const <CompletionRow>[]) {
+          if (row.progress < amal.target) continue;
+          final itemId = row.optionItemId;
+          if (itemId == null ||
+              !items.any((i) => i.id == itemId && i.setId == setId)) {
+            noChoice++;
+            continue;
+          }
+          counts[itemId] = (counts[itemId] ?? 0) + 1;
+          withChoice++;
+          final amalCounts = perAmalCounts[amal.id] ??= <int, int>{};
+          amalCounts[itemId] = (amalCounts[itemId] ?? 0) + 1;
+          perAmalWithChoice[amal.id] = (perAmalWithChoice[amal.id] ?? 0) + 1;
+        }
+      }
+
+      final mine = items.where((i) => i.setId == setId).toList()
+        ..sort((a, b) => a.sortOrder.compareTo(b.sortOrder));
+      final slices = <OptionSlice>[
+        for (final i in mine)
+          if (i.archivedAt == null || (counts[i.id] ?? 0) > 0)
+            OptionSlice(
+              itemId: i.id,
+              label: i.label,
+              seedKey: i.seedKey,
+              archived: i.archivedAt != null,
+              count: counts[i.id] ?? 0,
+            ),
+      ]..sort((a, b) => b.count.compareTo(a.count));
+
+      final amalsWithChoice =
+          setAmals.where((a) => (perAmalWithChoice[a.id] ?? 0) > 0).toList()
+            ..sort((a, b) => a.sortOrder.compareTo(b.sortOrder));
+      final perAmal = <OptionAmalSplit>[
+        if (amalsWithChoice.length >= 2)
+          for (final amal in amalsWithChoice)
+            OptionAmalSplit(
+              amalId: amal.id,
+              title: amal.title,
+              icon: amal.icon,
+              counts: perAmalCounts[amal.id] ?? const <int, int>{},
+              withChoice: perAmalWithChoice[amal.id] ?? 0,
+            ),
+      ];
+
+      result.add(
+        OptionBreakdown(
+          setId: setId,
+          setName: set.name,
+          setSeedKey: set.seedKey,
+          slices: slices,
+          withChoice: withChoice,
+          noChoice: noChoice,
+          perAmal: perAmal,
+        ),
+      );
+    }
+
+    // setId as a tiebreaker: List.sort isn't stable, and withChoice ties are
+    // plausible, so without one two tied sets could swap places between
+    // recomputes for no visible reason.
+    result.sort((a, b) {
+      final byChoice = b.withChoice.compareTo(a.withChoice);
+      return byChoice != 0 ? byChoice : a.setId.compareTo(b.setId);
+    });
+    return result;
   }
 
   // ── Heatmap (last 5 weeks) ───────────────────────────────────────────────

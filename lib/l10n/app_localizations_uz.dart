@@ -1693,4 +1693,20 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get optionRemovedSuffix => 'olib tashlangan';
+
+  @override
+  String get optionByAmal => 'By amal';
+
+  @override
+  String optionByAmalShareOf(String option) {
+    return 'Figure shows share of $option';
+  }
+
+  @override
+  String get optionBreakdownSectionTitle => 'Option breakdown';
+
+  @override
+  String optionBreakdownSwipeHint(int count) {
+    return '$count sets · swipe';
+  }
 }

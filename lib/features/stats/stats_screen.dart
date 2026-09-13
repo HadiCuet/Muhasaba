@@ -9,6 +9,7 @@ import 'widgets/score_ring_card.dart';
 import 'widgets/daily_chart_card.dart';
 import 'widgets/category_breakdown_card.dart';
 import 'widgets/option_breakdown_card.dart';
+import 'widgets/option_breakdown_carousel.dart';
 import 'widgets/streaks_card.dart';
 import 'widgets/heatmap_card.dart';
 import 'widgets/per_amal_card.dart';
@@ -92,10 +93,18 @@ class _StatsScreenState extends ConsumerState<StatsScreen>
                   children.add(const SizedBox(height: 12));
                 }
 
-                // 3b. Option breakdown (only when one set covers the filter)
-                if (snap.optionBreakdown != null) {
+                // 3b. Option breakdown — one card per set with data; a
+                // single set renders full width, several become a carousel.
+                if (snap.optionBreakdowns.length == 1) {
                   children.add(
-                    OptionBreakdownCard(breakdown: snap.optionBreakdown!),
+                    OptionBreakdownCard(
+                      breakdown: snap.optionBreakdowns.single,
+                    ),
+                  );
+                  children.add(const SizedBox(height: 12));
+                } else if (snap.optionBreakdowns.length > 1) {
+                  children.add(
+                    OptionBreakdownCarousel(breakdowns: snap.optionBreakdowns),
                   );
                   children.add(const SizedBox(height: 12));
                 }
