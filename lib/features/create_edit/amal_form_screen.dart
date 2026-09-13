@@ -492,8 +492,13 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                   selectedId: _optionSetId,
                   amalCategory: _category,
                   onChanged: (id) => setState(() {
+                    final hadNoSet = _optionSetId == null;
                     _optionSetId = id;
-                    if (id == null) _requireChoice = false;
+                    if (id == null) {
+                      _requireChoice = false;
+                    } else if (hadNoSet) {
+                      _requireChoice = _target == 1;
+                    }
                   }),
                 ),
                 SwitchListTile(
@@ -517,7 +522,10 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                 // ── Target ─────────────────────────────────────────────────
                 _TargetChips(
                   value: _target,
-                  onChanged: (v) => setState(() => _target = v),
+                  onChanged: (v) => setState(() {
+                    _target = v;
+                    if (v > 1) _requireChoice = false;
+                  }),
                 ),
                 const SizedBox(height: 20),
 

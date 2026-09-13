@@ -15,6 +15,7 @@ import '../../domain/utils/localized_number.dart';
 import '../stats/stats_providers.dart';
 import '../support/support_prompt.dart';
 import '../tutorial/tutorial_anchors.dart';
+import 'completion_actions.dart';
 import 'widgets/amal_row.dart';
 import 'widgets/remove_sheet.dart';
 
@@ -163,7 +164,7 @@ class _FlatViewState extends ConsumerState<_FlatView> {
       onRemove: () => _openRemoveSheet(context, ref, row, widget.date),
       onEdit: () => context.push('/amal/${row.amal.id}'),
       onNoteChanged: (note) => _setNote(ref, row, widget.date, note),
-      onChoiceChanged: (itemId) => _setChoice(ref, row, widget.date, itemId),
+      onChoiceChanged: (itemId) => setChoice(ref, row, widget.date, itemId),
     );
   }
 
@@ -273,7 +274,7 @@ class _GroupedViewState extends ConsumerState<_GroupedView> {
                   onNoteChanged: (note) =>
                       _setNote(ref, row, widget.date, note),
                   onChoiceChanged: (itemId) =>
-                      _setChoice(ref, row, widget.date, itemId),
+                      setChoice(ref, row, widget.date, itemId),
                 ),
               ),
             );
@@ -410,44 +411,10 @@ Future<void> _setProgress(
   }
   ref.invalidate(statsSnapshotProvider);
   ref.invalidate(currentStreaksProvider);
+  ref.invalidate(enhancedStatsProvider);
   if (!wasCompleted && nowCompleted && context.mounted) {
     await maybeShowSupportPrompt(context, ref, completedDate: date);
   }
-}
-
-Future<void> _setChoice(
-  WidgetRef ref,
-  TodayRow row,
-  DateTime date,
-  int? itemId,
-) async {
-  final target = row.amal.target;
-  // Picking completes a simple amal; a counted one is still the stepper's job.
-  final progress = itemId == null
-      ? (row.amal.requireChoice ? 0 : row.progress)
-      : (target == 1 ? target : row.progress);
-
-  await ref
-      .read(completionRepositoryProvider)
-      .setChoice(
-        amalId: row.amal.id,
-        muhasabaDate: date,
-        optionItemId: itemId,
-        progress: progress,
-        target: target,
-      );
-
-  if (itemId != null) {
-    FirebaseAnalytics.instance.logEvent(
-      name: 'option_chosen',
-      parameters: {'set_id': row.amal.optionSetId ?? 0, 'item_id': itemId},
-    );
-  }
-  ref.invalidate(statsSnapshotProvider);
-  ref.invalidate(currentStreaksProvider);
-  // StatsScreen is keep-alive, so the Overview tab is not disposed on a tab
-  // switch and would otherwise show a stale breakdown.
-  ref.invalidate(enhancedStatsProvider);
 }
 
 Future<void> _openRemoveSheet(

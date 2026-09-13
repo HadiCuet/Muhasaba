@@ -31,13 +31,15 @@ class OptionBreakdownCard extends StatelessWidget {
               ),
               style: theme.textTheme.titleSmall,
             ),
-            const SizedBox(height: 2),
-            Text(
-              l.optionBreakdownCaption(total),
-              style: theme.textTheme.bodySmall?.copyWith(
-                color: theme.colorScheme.outline,
+            if (total > 0) ...[
+              const SizedBox(height: 2),
+              Text(
+                l.optionBreakdownCaption(total),
+                style: theme.textTheme.bodySmall?.copyWith(
+                  color: theme.colorScheme.outline,
+                ),
               ),
-            ),
+            ],
             const SizedBox(height: 12),
             if (total > 0)
               for (final slice in breakdown.slices)

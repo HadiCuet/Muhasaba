@@ -1,11 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import '../../../l10n/app_localizations.dart';
+import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../data/db/database.dart';
 import '../../../domain/models/frequency.dart';
 import '../../../domain/services/today_builder.dart';
 import '../../../domain/utils/localized_amal_title.dart';
 import '../../../domain/utils/localized_number.dart';
+import '../../../domain/utils/localized_option_label.dart';
+import '../../../app/providers.dart';
 import '../../../app/widgets/option_chip_row.dart';
 import '../../../app/widgets/stepper_field.dart';
 
@@ -22,7 +26,7 @@ import '../../../app/widgets/stepper_field.dart';
 ///     based on `progress / target`. For target=1 it's all-or-nothing; for
 ///     count-based amal the tint deepens with each increment.
 ///   - Notes expand inline (no popup dialog).
-class AmalRowTile extends StatefulWidget {
+class AmalRowTile extends ConsumerStatefulWidget {
   const AmalRowTile({
     super.key,
     required this.row,
@@ -59,10 +63,10 @@ class AmalRowTile extends StatefulWidget {
   final Key? stepperKey;
 
   @override
-  State<AmalRowTile> createState() => _AmalRowTileState();
+  ConsumerState<AmalRowTile> createState() => _AmalRowTileState();
 }
 
-class _AmalRowTileState extends State<AmalRowTile> {
+class _AmalRowTileState extends ConsumerState<AmalRowTile> {
   bool _noteExpanded = false;
   late TextEditingController _noteController;
 
@@ -193,9 +197,18 @@ class _AmalRowTileState extends State<AmalRowTile> {
 
     final l = AppLocalizations.of(context);
     final title = localizedAmalTitle(amal.title, l);
-    final semanticsLabel = amal.target == 1
+    var semanticsLabel = amal.target == 1
         ? '$title, ${isDone ? l.completed : l.notCompleted}'
         : '$title, ${l.progressOf(lnum(context, row.progress), lnum(context, amal.target))}';
+    if (row.optionItemId != null) {
+      final items =
+          ref.watch(optionSetItemsProvider).value ?? const <OptionSetItemRow>[];
+      final chosen = items.where((i) => i.id == row.optionItemId).firstOrNull;
+      if (chosen != null) {
+        semanticsLabel =
+            '$semanticsLabel, ${localizedOptionLabel(chosen.seedKey, chosen.label, l)}';
+      }
+    }
 
     return Dismissible(
       key: ValueKey('amal-${amal.id}'),

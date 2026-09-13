@@ -550,7 +550,8 @@ class EnhancedStatsService {
       for (final row in completionsByAmal[amal.id] ?? const <CompletionRow>[]) {
         if (row.progress < amal.target) continue;
         final itemId = row.optionItemId;
-        if (itemId == null) {
+        if (itemId == null ||
+            !items.any((i) => i.id == itemId && i.setId == setId)) {
           noChoice++;
           continue;
         }

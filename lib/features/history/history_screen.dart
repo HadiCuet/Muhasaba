@@ -12,6 +12,7 @@ import '../../domain/services/today_builder.dart';
 import '../../domain/utils/localized_amal_title.dart';
 import '../../domain/utils/localized_number.dart';
 import '../stats/stats_providers.dart';
+import '../today/completion_actions.dart';
 import '../today/widgets/amal_row.dart';
 import '../today/widgets/remove_sheet.dart';
 
@@ -123,7 +124,7 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen>
             onRemove: () => _openRemoveSheet(context, row, selected),
             onEdit: () => context.push('/amal/${row.amal.id}'),
             onNoteChanged: (note) => _setNote(row, selected, note),
-            onChoiceChanged: (itemId) => _setChoice(row, selected, itemId),
+            onChoiceChanged: (itemId) => setChoice(ref, row, selected, itemId),
           ),
         );
       },
@@ -144,24 +145,6 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen>
           muhasabaDate: date,
           progress: progress,
           target: row.amal.target,
-        );
-    ref.invalidate(statsSnapshotProvider);
-    ref.invalidate(currentStreaksProvider);
-  }
-
-  Future<void> _setChoice(TodayRow row, DateTime date, int? itemId) async {
-    final target = row.amal.target;
-    final progress = itemId == null
-        ? (row.amal.requireChoice ? 0 : row.progress)
-        : (target == 1 ? target : row.progress);
-    await ref
-        .read(completionRepositoryProvider)
-        .setChoice(
-          amalId: row.amal.id,
-          muhasabaDate: date,
-          optionItemId: itemId,
-          progress: progress,
-          target: target,
         );
     ref.invalidate(statsSnapshotProvider);
     ref.invalidate(currentStreaksProvider);

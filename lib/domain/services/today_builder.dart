@@ -119,9 +119,15 @@ class TodayBuilder {
       if (!visible) continue;
 
       final todayRow = todayByAmal[amal.id];
+      // A pre-checked amal must still wait for its required choice before it
+      // can count as done.
+      final requiresChoice =
+          amal.optionSetId != null &&
+          amal.requireChoice &&
+          todayRow?.optionItemId == null;
       final progress = todayRow != null
           ? todayRow.progress
-          : (amal.defaultChecked ? amal.target : 0);
+          : (amal.defaultChecked && !requiresChoice ? amal.target : 0);
 
       rows.add(
         TodayRow(
