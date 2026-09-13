@@ -1531,10 +1531,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get optionJamaaAlone => 'Seul';
 
   @override
-  String get optionJamaaHome => 'Congrégation chez soi';
+  String get optionJamaaHome => 'En groupe chez soi';
 
   @override
-  String get optionJamaaMasjid => 'Congrégation à la mosquée';
+  String get optionJamaaMasjid => 'À la mosquée';
 
   @override
   String get optionSetOnTime => 'Ponctualité';
