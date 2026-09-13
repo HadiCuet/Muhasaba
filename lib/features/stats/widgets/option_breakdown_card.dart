@@ -39,8 +39,6 @@ class OptionBreakdownCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 12),
-            // No bars when nothing was recorded — there is no denominator to
-            // divide by and a row of zeroes reads like a failure.
             if (total > 0)
               for (final slice in breakdown.slices)
                 _Bar(slice: slice, total: total),

@@ -1672,12 +1672,24 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String optionBreakdownCaption(int count) {
-    return 'Share of the $count completions that recorded a choice';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count completions',
+      one: '1 completion',
+    );
+    return 'Share of the $_temp0 that recorded a choice';
   }
 
   @override
   String optionNoChoiceRecorded(int none, int total) {
-    return 'No choice recorded — $none of $total completed days';
+    String _temp0 = intl.Intl.pluralLogic(
+      total,
+      locale: localeName,
+      other: '$total completed days',
+      one: '1 completed day',
+    );
+    return 'No choice recorded — $none of $_temp0';
   }
 
   @override
