@@ -1509,161 +1509,160 @@ class AppLocalizationsKy extends AppLocalizations {
   String get tipUnavailable => 'Азыр бул түзмөктө сатып алуу мүмкүн эмес.';
 
   @override
-  String get optionSetJamaa => 'Jamaa';
+  String get optionSetJamaa => 'Жамаат';
 
   @override
-  String get optionJamaaAlone => 'Alone';
+  String get optionJamaaAlone => 'Жалгыз';
 
   @override
-  String get optionJamaaHome => 'Jamaa at home';
+  String get optionJamaaHome => 'Үйдө жамаат';
 
   @override
-  String get optionJamaaMasjid => 'Jamaa at masjid';
+  String get optionJamaaMasjid => 'Мечитте жамаат';
 
   @override
-  String get optionSetOnTime => 'On time';
+  String get optionSetOnTime => 'Убакыт';
 
   @override
-  String get optionOnTimeOnTime => 'On time';
+  String get optionOnTimeOnTime => 'Өз убагында';
 
   @override
-  String get optionOnTimeLate => 'Late';
+  String get optionOnTimeLate => 'Кечиккен';
 
   @override
-  String get optionOnTimeQada => 'Qada';
+  String get optionOnTimeQada => 'Казаа';
 
   @override
-  String get optionSetQuranSession => 'Quran session';
+  String get optionSetQuranSession => 'Куран сабагы';
 
   @override
-  String get optionQuranRecited => 'Recited';
+  String get optionQuranRecited => 'Окулду';
 
   @override
-  String get optionQuranMemorised => 'Memorised';
+  String get optionQuranMemorised => 'Жатталды';
 
   @override
-  String get optionQuranMeaning => 'With meaning';
+  String get optionQuranMeaning => 'Мааниси менен';
 
   @override
-  String get optionQuranListened => 'Listened';
+  String get optionQuranListened => 'Угулду';
 
   @override
-  String get optionSetSadaqahType => 'Sadaqah type';
+  String get optionSetSadaqahType => 'Садаканын түрү';
 
   @override
-  String get optionSadaqahMoney => 'Money';
+  String get optionSadaqahMoney => 'Акча';
 
   @override
-  String get optionSadaqahFood => 'Food';
+  String get optionSadaqahFood => 'Тамак';
 
   @override
-  String get optionSadaqahTime => 'Time';
+  String get optionSadaqahTime => 'Убакыт';
 
   @override
-  String get optionSadaqahOther => 'Other';
+  String get optionSadaqahOther => 'Башка';
 
   @override
-  String get optionSetIntensity => 'Intensity';
+  String get optionSetIntensity => 'Деңгээл';
 
   @override
-  String get optionIntensityLight => 'Light';
+  String get optionIntensityLight => 'Женил';
 
   @override
-  String get optionIntensityModerate => 'Moderate';
+  String get optionIntensityModerate => 'Орто';
 
   @override
-  String get optionIntensityIntense => 'Intense';
+  String get optionIntensityIntense => 'Күчтүү';
 
   @override
-  String get optionSetNewTitle => 'New option set';
+  String get optionSetNewTitle => 'Жаңы варианттар топтому';
 
   @override
-  String get optionSetEditTitle => 'Edit option set';
+  String get optionSetEditTitle => 'Варианттар топтомун түзөтүү';
 
   @override
-  String get optionSetNameLabel => 'Set name';
+  String get optionSetNameLabel => 'Топтомдун аты';
 
   @override
-  String get optionSetNameHint => 'e.g. Jamaa';
+  String get optionSetNameHint => 'мис. Жамаат';
 
   @override
-  String get optionsLabel => 'Options';
+  String get optionsLabel => 'Варианттар';
 
   @override
-  String get optionAdd => 'Add option';
+  String get optionAdd => 'Вариант кошуу';
 
   @override
   String optionHint(int index) {
-    return 'Option $index';
+    return 'Вариант $index';
   }
 
   @override
   String optionsMaxReached(int max) {
-    return 'Maximum of $max options.';
+    return 'Эң көбү $max вариант.';
   }
 
   @override
-  String get optionSetPreviewLabel => 'Preview — the Today row';
+  String get optionSetPreviewLabel => 'Алдын ала көрүү — Бүгүн сабы';
 
   @override
   String optionSetKeptForHistory(String labels) {
-    return 'Kept for history: $labels';
+    return 'Тарых үчүн сакталды: $labels';
   }
 
   @override
-  String get optionSetDelete => 'Delete set';
+  String get optionSetDelete => 'Топтомду жок кылуу';
 
   @override
   String get optionSetDeleteConfirm =>
-      'Amals using this set stop showing options. Days you already recorded keep their choice.';
+      'Бул топтомду колдонгон амалдарда варианттар көрсөтүлбөйт. Мурда белгиленген күндөр тандоосун сактайт.';
 
   @override
-  String get optionSetNameRequired => 'Give the set a name';
+  String get optionSetNameRequired => 'Топтомго ат бериңиз';
 
   @override
-  String get optionsMinRequired => 'Add at least two options';
+  String get optionsMinRequired => 'Жок дегенде эки вариант кошуңуз';
 
   @override
-  String get optionSetNone => 'None';
+  String get optionSetNone => 'Жок';
 
   @override
-  String get optionSetNew => 'New set';
+  String get optionSetNew => 'Жаңы топтом';
 
   @override
-  String get requireChoiceLabel => 'Require a choice';
+  String get requireChoiceLabel => 'Тандоо талап кылынсын';
 
   @override
-  String get requireChoiceHelp =>
-      'The row won\'t tick until an option is picked';
+  String get requireChoiceHelp => 'Вариант тандалмайынча сап белгиленбейт';
 
   @override
-  String get requireChoicePickSetFirst => 'Pick a set first';
+  String get requireChoicePickSetFirst => 'Алгач топтомду тандаңыз';
 
   @override
   String get requireChoiceCountHelp =>
-      'Counted amals are completed by the stepper';
+      'Саналуучу амалдар − жана + аркылуу аткарылат';
 
   @override
   String optionsUsedOf(int used, int max) {
-    return '$used of $max options used.';
+    return '$max варианттан $used колдонулду.';
   }
 
   @override
-  String get choiceNeeded => 'Choice needed';
+  String get choiceNeeded => 'Тандоо керек';
 
   @override
   String optionSelected(String label) {
-    return '$label, selected';
+    return '$label, тандалды';
   }
 
   @override
   String optionNotSelected(String label) {
-    return '$label, not selected';
+    return '$label, тандалган эмес';
   }
 
   @override
   String optionBreakdownTitle(String set) {
-    return 'Option breakdown — $set';
+    return 'Вариант бөлүнүшү — $set';
   }
 
   @override
@@ -1671,10 +1670,9 @@ class AppLocalizationsKy extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count completions',
-      one: '1 completion',
+      other: '$count жолудан',
     );
-    return 'Share of the $_temp0 that recorded a choice';
+    return '$_temp0 тандоо белгиленгендердин үлүшү';
   }
 
   @override
@@ -1682,12 +1680,11 @@ class AppLocalizationsKy extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       total,
       locale: localeName,
-      other: '$total completed days',
-      one: '1 completed day',
+      other: '$total күндөн',
     );
-    return 'No choice recorded — $none of $_temp0';
+    return '$_temp0 $none күнүндө тандоо белгиленген эмес';
   }
 
   @override
-  String get optionRemovedSuffix => 'removed';
+  String get optionRemovedSuffix => 'алынып салынган';
 }

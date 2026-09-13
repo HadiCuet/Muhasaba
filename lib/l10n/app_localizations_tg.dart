@@ -1515,161 +1515,161 @@ class AppLocalizationsTg extends AppLocalizations {
   String get tipUnavailable => 'Ҳоло дар ин дастгоҳ харид дастрас нест.';
 
   @override
-  String get optionSetJamaa => 'Jamaa';
+  String get optionSetJamaa => 'Ҷамоат';
 
   @override
-  String get optionJamaaAlone => 'Alone';
+  String get optionJamaaAlone => 'Танҳо';
 
   @override
-  String get optionJamaaHome => 'Jamaa at home';
+  String get optionJamaaHome => 'Дар хона ҷамоат';
 
   @override
-  String get optionJamaaMasjid => 'Jamaa at masjid';
+  String get optionJamaaMasjid => 'Дар масҷид ҷамоат';
 
   @override
-  String get optionSetOnTime => 'On time';
+  String get optionSetOnTime => 'Вақт';
 
   @override
-  String get optionOnTimeOnTime => 'On time';
+  String get optionOnTimeOnTime => 'Саривақт';
 
   @override
-  String get optionOnTimeLate => 'Late';
+  String get optionOnTimeLate => 'Дер';
 
   @override
-  String get optionOnTimeQada => 'Qada';
+  String get optionOnTimeQada => 'Қазо';
 
   @override
-  String get optionSetQuranSession => 'Quran session';
+  String get optionSetQuranSession => 'Дарси Қуръон';
 
   @override
-  String get optionQuranRecited => 'Recited';
+  String get optionQuranRecited => 'Хонда шуд';
 
   @override
-  String get optionQuranMemorised => 'Memorised';
+  String get optionQuranMemorised => 'Ҳифз шуд';
 
   @override
-  String get optionQuranMeaning => 'With meaning';
+  String get optionQuranMeaning => 'Бо маънояш';
 
   @override
-  String get optionQuranListened => 'Listened';
+  String get optionQuranListened => 'Гӯш карда шуд';
 
   @override
-  String get optionSetSadaqahType => 'Sadaqah type';
+  String get optionSetSadaqahType => 'Навъи садака';
 
   @override
-  String get optionSadaqahMoney => 'Money';
+  String get optionSadaqahMoney => 'Пул';
 
   @override
-  String get optionSadaqahFood => 'Food';
+  String get optionSadaqahFood => 'Хӯрок';
 
   @override
-  String get optionSadaqahTime => 'Time';
+  String get optionSadaqahTime => 'Вақт';
 
   @override
-  String get optionSadaqahOther => 'Other';
+  String get optionSadaqahOther => 'Дигар';
 
   @override
-  String get optionSetIntensity => 'Intensity';
+  String get optionSetIntensity => 'Дараҷа';
 
   @override
-  String get optionIntensityLight => 'Light';
+  String get optionIntensityLight => 'Сабук';
 
   @override
-  String get optionIntensityModerate => 'Moderate';
+  String get optionIntensityModerate => 'Миёна';
 
   @override
-  String get optionIntensityIntense => 'Intense';
+  String get optionIntensityIntense => 'Шадид';
 
   @override
-  String get optionSetNewTitle => 'New option set';
+  String get optionSetNewTitle => 'Маҷмӯаи нави вариантҳо';
 
   @override
-  String get optionSetEditTitle => 'Edit option set';
+  String get optionSetEditTitle => 'Маҷмӯаи вариантҳоро таҳрир кардан';
 
   @override
-  String get optionSetNameLabel => 'Set name';
+  String get optionSetNameLabel => 'Номи маҷмӯа';
 
   @override
-  String get optionSetNameHint => 'e.g. Jamaa';
+  String get optionSetNameHint => 'мас. Ҷамоат';
 
   @override
-  String get optionsLabel => 'Options';
+  String get optionsLabel => 'Вариантҳо';
 
   @override
-  String get optionAdd => 'Add option';
+  String get optionAdd => 'Вариант илова кардан';
 
   @override
   String optionHint(int index) {
-    return 'Option $index';
+    return 'Варианти $index';
   }
 
   @override
   String optionsMaxReached(int max) {
-    return 'Maximum of $max options.';
+    return 'Ҳадди аксар $max вариант.';
   }
 
   @override
-  String get optionSetPreviewLabel => 'Preview — the Today row';
+  String get optionSetPreviewLabel => 'Пешнамоиш — сатри Имруз';
 
   @override
   String optionSetKeptForHistory(String labels) {
-    return 'Kept for history: $labels';
+    return 'Барои таърих нигоҳ дошта шуд: $labels';
   }
 
   @override
-  String get optionSetDelete => 'Delete set';
+  String get optionSetDelete => 'Маҷмӯаро ҳазф кардан';
 
   @override
   String get optionSetDeleteConfirm =>
-      'Amals using this set stop showing options. Days you already recorded keep their choice.';
+      'Амалҳое, ки ин маҷмӯаро истифода мебаранд, дигар вариантҳоро нишон намедиҳанд. Рӯзҳое, ки аллакай қайд шудаанд, интихоби худро нигоҳ медоранд.';
 
   @override
-  String get optionSetNameRequired => 'Give the set a name';
+  String get optionSetNameRequired => 'Ба маҷмӯа ном диҳед';
 
   @override
-  String get optionsMinRequired => 'Add at least two options';
+  String get optionsMinRequired => 'Ҳадди ақал ду вариант илова кунед';
 
   @override
-  String get optionSetNone => 'None';
+  String get optionSetNone => 'Нест';
 
   @override
-  String get optionSetNew => 'New set';
+  String get optionSetNew => 'Маҷмӯаи нав';
 
   @override
-  String get requireChoiceLabel => 'Require a choice';
+  String get requireChoiceLabel => 'Интихоб талаб карда шавад';
 
   @override
   String get requireChoiceHelp =>
-      'The row won\'t tick until an option is picked';
+      'То вақте ки вариант интихоб нашавад, сатр қайд намешавад';
 
   @override
-  String get requireChoicePickSetFirst => 'Pick a set first';
+  String get requireChoicePickSetFirst => 'Аввал маҷмӯаро интихоб кунед';
 
   @override
   String get requireChoiceCountHelp =>
-      'Counted amals are completed by the stepper';
+      'Амалҳои ҳисобшаванда бо − ва + иҷро мешаванд';
 
   @override
   String optionsUsedOf(int used, int max) {
-    return '$used of $max options used.';
+    return '$used аз $max вариант истифода шуд.';
   }
 
   @override
-  String get choiceNeeded => 'Choice needed';
+  String get choiceNeeded => 'Интихоб лозим';
 
   @override
   String optionSelected(String label) {
-    return '$label, selected';
+    return '$label, интихоб шудааст';
   }
 
   @override
   String optionNotSelected(String label) {
-    return '$label, not selected';
+    return '$label, интихоб нашудааст';
   }
 
   @override
   String optionBreakdownTitle(String set) {
-    return 'Option breakdown — $set';
+    return 'Тафсили вариантҳо — $set';
   }
 
   @override
@@ -1677,10 +1677,10 @@ class AppLocalizationsTg extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count completions',
-      one: '1 completion',
+      other: '$count маротиба',
+      one: '1 маротиба',
     );
-    return 'Share of the $_temp0 that recorded a choice';
+    return 'Ҳиссаи интихоби қайдшуда аз $_temp0';
   }
 
   @override
@@ -1688,12 +1688,12 @@ class AppLocalizationsTg extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       total,
       locale: localeName,
-      other: '$total completed days',
-      one: '1 completed day',
+      other: '$total рӯзи анҷомшуда',
+      one: '1 рӯзи анҷомшуда',
     );
-    return 'No choice recorded — $none of $_temp0';
+    return 'Интихоб қайд нашудааст — $none аз $_temp0';
   }
 
   @override
-  String get optionRemovedSuffix => 'removed';
+  String get optionRemovedSuffix => 'хориҷшуда';
 }
