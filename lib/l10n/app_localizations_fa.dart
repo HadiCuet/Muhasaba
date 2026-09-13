@@ -1508,161 +1508,159 @@ class AppLocalizationsFa extends AppLocalizations {
   String get tipUnavailable => 'خرید در حال حاضر روی این دستگاه در دسترس نیست.';
 
   @override
-  String get optionSetJamaa => 'Jamaa';
+  String get optionSetJamaa => 'جماعت';
 
   @override
-  String get optionJamaaAlone => 'Alone';
+  String get optionJamaaAlone => 'فرادا';
 
   @override
-  String get optionJamaaHome => 'Jamaa at home';
+  String get optionJamaaHome => 'جماعت در خانه';
 
   @override
-  String get optionJamaaMasjid => 'Jamaa at masjid';
+  String get optionJamaaMasjid => 'جماعت در مسجد';
 
   @override
-  String get optionSetOnTime => 'On time';
+  String get optionSetOnTime => 'وقت';
 
   @override
-  String get optionOnTimeOnTime => 'On time';
+  String get optionOnTimeOnTime => 'به‌موقع';
 
   @override
-  String get optionOnTimeLate => 'Late';
+  String get optionOnTimeLate => 'با تأخیر';
 
   @override
-  String get optionOnTimeQada => 'Qada';
+  String get optionOnTimeQada => 'قضا';
 
   @override
-  String get optionSetQuranSession => 'Quran session';
+  String get optionSetQuranSession => 'جلسهٔ قرآن';
 
   @override
-  String get optionQuranRecited => 'Recited';
+  String get optionQuranRecited => 'تلاوت';
 
   @override
-  String get optionQuranMemorised => 'Memorised';
+  String get optionQuranMemorised => 'حفظ';
 
   @override
-  String get optionQuranMeaning => 'With meaning';
+  String get optionQuranMeaning => 'با ترجمه';
 
   @override
-  String get optionQuranListened => 'Listened';
+  String get optionQuranListened => 'استماع';
 
   @override
-  String get optionSetSadaqahType => 'Sadaqah type';
+  String get optionSetSadaqahType => 'نوع صدقه';
 
   @override
-  String get optionSadaqahMoney => 'Money';
+  String get optionSadaqahMoney => 'پول';
 
   @override
-  String get optionSadaqahFood => 'Food';
+  String get optionSadaqahFood => 'غذا';
 
   @override
-  String get optionSadaqahTime => 'Time';
+  String get optionSadaqahTime => 'وقت';
 
   @override
-  String get optionSadaqahOther => 'Other';
+  String get optionSadaqahOther => 'سایر';
 
   @override
-  String get optionSetIntensity => 'Intensity';
+  String get optionSetIntensity => 'شدت';
 
   @override
-  String get optionIntensityLight => 'Light';
+  String get optionIntensityLight => 'سبک';
 
   @override
-  String get optionIntensityModerate => 'Moderate';
+  String get optionIntensityModerate => 'متوسط';
 
   @override
-  String get optionIntensityIntense => 'Intense';
+  String get optionIntensityIntense => 'سنگین';
 
   @override
-  String get optionSetNewTitle => 'New option set';
+  String get optionSetNewTitle => 'مجموعهٔ گزینه‌های جدید';
 
   @override
-  String get optionSetEditTitle => 'Edit option set';
+  String get optionSetEditTitle => 'ویرایش مجموعهٔ گزینه‌ها';
 
   @override
-  String get optionSetNameLabel => 'Set name';
+  String get optionSetNameLabel => 'نام مجموعه';
 
   @override
-  String get optionSetNameHint => 'e.g. Jamaa';
+  String get optionSetNameHint => 'مثلاً جماعت';
 
   @override
-  String get optionsLabel => 'Options';
+  String get optionsLabel => 'گزینه‌ها';
 
   @override
-  String get optionAdd => 'Add option';
+  String get optionAdd => 'افزودن گزینه';
 
   @override
   String optionHint(int index) {
-    return 'Option $index';
+    return 'گزینهٔ $index';
   }
 
   @override
   String optionsMaxReached(int max) {
-    return 'Maximum of $max options.';
+    return 'حداکثر $max گزینه.';
   }
 
   @override
-  String get optionSetPreviewLabel => 'Preview — the Today row';
+  String get optionSetPreviewLabel => 'پیش‌نمایش — ردیف امروز';
 
   @override
   String optionSetKeptForHistory(String labels) {
-    return 'Kept for history: $labels';
+    return 'برای تاریخچه نگه داشته شد: $labels';
   }
 
   @override
-  String get optionSetDelete => 'Delete set';
+  String get optionSetDelete => 'حذف مجموعه';
 
   @override
   String get optionSetDeleteConfirm =>
-      'Amals using this set stop showing options. Days you already recorded keep their choice.';
+      'عمل‌هایی که از این مجموعه استفاده می‌کنند دیگر گزینه‌ای نشان نمی‌دهند. روزهایی که پیش‌تر ثبت کرده‌اید انتخابشان حفظ می‌شود.';
 
   @override
-  String get optionSetNameRequired => 'Give the set a name';
+  String get optionSetNameRequired => 'برای مجموعه نامی وارد کنید';
 
   @override
-  String get optionsMinRequired => 'Add at least two options';
+  String get optionsMinRequired => 'دست‌کم دو گزینه اضافه کنید';
 
   @override
-  String get optionSetNone => 'None';
+  String get optionSetNone => 'هیچ‌کدام';
 
   @override
-  String get optionSetNew => 'New set';
+  String get optionSetNew => 'مجموعهٔ جدید';
 
   @override
-  String get requireChoiceLabel => 'Require a choice';
+  String get requireChoiceLabel => 'انتخاب الزامی';
 
   @override
-  String get requireChoiceHelp =>
-      'The row won\'t tick until an option is picked';
+  String get requireChoiceHelp => 'تا گزینه‌ای انتخاب نشود، ردیف کامل نمی‌شود';
 
   @override
-  String get requireChoicePickSetFirst => 'Pick a set first';
+  String get requireChoicePickSetFirst => 'اول یک مجموعه انتخاب کنید';
 
   @override
-  String get requireChoiceCountHelp =>
-      'Counted amals are completed by the stepper';
+  String get requireChoiceCountHelp => 'عمل‌های شمارشی با شمارنده کامل می‌شوند';
 
   @override
   String optionsUsedOf(int used, int max) {
-    return '$used of $max options used.';
+    return '$used از $max گزینه استفاده شده.';
   }
 
   @override
-  String get choiceNeeded => 'Choice needed';
+  String get choiceNeeded => 'نیاز به انتخاب';
 
   @override
   String optionSelected(String label) {
-    return '$label, selected';
+    return '$label، انتخاب‌شده';
   }
 
   @override
   String optionNotSelected(String label) {
-    return '$label, not selected';
+    return '$label، انتخاب‌نشده';
   }
 
   @override
   String optionBreakdownTitle(String set) {
-    return 'Option breakdown — $set';
+    return 'تفکیک گزینه‌ها — $set';
   }
 
   @override
@@ -1670,10 +1668,10 @@ class AppLocalizationsFa extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count completions',
-      one: '1 completion',
+      other: '$count بار',
+      one: 'یک بار',
     );
-    return 'Share of the $_temp0 that recorded a choice';
+    return 'سهم هر گزینه از $_temp0 که انتخاب ثبت شده';
   }
 
   @override
@@ -1681,12 +1679,12 @@ class AppLocalizationsFa extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       total,
       locale: localeName,
-      other: '$total completed days',
-      one: '1 completed day',
+      other: '$total روز کامل‌شده',
+      one: 'یک روز کامل‌شده',
     );
-    return 'No choice recorded — $none of $_temp0';
+    return 'بدون ثبت انتخاب — $none از $_temp0';
   }
 
   @override
-  String get optionRemovedSuffix => 'removed';
+  String get optionRemovedSuffix => 'حذف‌شده';
 }
