@@ -286,6 +286,7 @@ class _AmalSplitRow extends StatelessWidget {
             child: SizedBox(
               height: 6,
               child: Row(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
                   for (final segment in segments)
                     Expanded(
