@@ -7,9 +7,16 @@ import '../../../domain/utils/localized_option_label.dart';
 import '../../../l10n/app_localizations.dart';
 
 class OptionBreakdownCard extends StatelessWidget {
-  const OptionBreakdownCard({super.key, required this.breakdown});
+  const OptionBreakdownCard({
+    super.key,
+    required this.breakdown,
+    required this.expanded,
+    required this.onToggle,
+  });
 
   final OptionBreakdown breakdown;
+  final bool expanded;
+  final VoidCallback onToggle;
 
   // Mirror this widget's own layout below (card padding, SizedBox gaps, bar
   // and row heights) so `OptionBreakdownCarousel` can size a fixed-height
@@ -19,30 +26,33 @@ class OptionBreakdownCard extends StatelessWidget {
       28 + 22 + 12 + 20; // card padding + title + gap + "no choice" line
   static const double _captionHeight = 20;
   static const double _barRowHeight = 42; // label row + gap + bar + bottom pad
-  static const double _byAmalFixedHeight =
-      14 +
-      1 +
-      12 +
-      16 +
-      8 +
-      4 +
-      20 +
-      6 +
-      16; // divider, header, legend, caption
+  static const double _byAmalHeaderHeight =
+      14 + 1 + 12 + 32; // top padding, divider, gap, tappable header row
+  static const double _byAmalExpandedExtraHeight =
+      8 + 4 + 20 + 6 + 16; // gap, spacer, legend, gap, caption
   static const double _byAmalRowHeight = 26; // one drill-down row + its gap
   static const double _legendExtraLineHeight = 20; // legend wraps past 4 slices
   static const double _heightSafetyBuffer = 12;
 
-  /// Estimated rendered height for [breakdown] at the current text scale,
-  /// used by `OptionBreakdownCarousel` to size its `PageView`.
-  static double estimateHeight(BuildContext context, OptionBreakdown b) {
+  /// Estimated rendered height for [breakdown] at the current text scale and
+  /// [expanded] state, used by `OptionBreakdownCarousel` to size its
+  /// `PageView`.
+  static double estimateHeight(
+    BuildContext context,
+    OptionBreakdown b, {
+    required bool expanded,
+  }) {
     var height = _chromeHeight;
     if (b.withChoice > 0) {
       height += _captionHeight + b.slices.length * _barRowHeight;
     }
     if (b.perAmal.isNotEmpty) {
-      height += _byAmalFixedHeight + b.perAmal.length * _byAmalRowHeight;
-      if (b.slices.length > 4) height += _legendExtraLineHeight;
+      height += _byAmalHeaderHeight;
+      if (expanded) {
+        height +=
+            _byAmalExpandedExtraHeight + b.perAmal.length * _byAmalRowHeight;
+        if (b.slices.length > 4) height += _legendExtraLineHeight;
+      }
     }
     final textScale = (MediaQuery.textScalerOf(context).scale(14) / 14).clamp(
       1.0,
@@ -99,7 +109,11 @@ class OptionBreakdownCard extends StatelessWidget {
               ),
             ),
             if (breakdown.perAmal.isNotEmpty)
-              _ByAmalSection(breakdown: breakdown),
+              _ByAmalSection(
+                breakdown: breakdown,
+                expanded: expanded,
+                onToggle: onToggle,
+              ),
           ],
         ),
       ),
@@ -163,11 +177,18 @@ class _Bar extends StatelessWidget {
 
 /// Per-amal drill-down: how each amal in the set split across its options,
 /// all read against the same axis (share of the set's top option) so the
-/// rows are comparable.
+/// rows are comparable. Collapsed by default; the header stays visible so
+/// the user can opt back in.
 class _ByAmalSection extends StatelessWidget {
-  const _ByAmalSection({required this.breakdown});
+  const _ByAmalSection({
+    required this.breakdown,
+    required this.expanded,
+    required this.onToggle,
+  });
 
   final OptionBreakdown breakdown;
+  final bool expanded;
+  final VoidCallback onToggle;
 
   static const double _shadeStep = 0.13;
   static const double _minShade = 0.3;
@@ -183,7 +204,6 @@ class _ByAmalSection extends StatelessWidget {
     final l = AppLocalizations.of(context);
     final theme = Theme.of(context);
     final topSlice = breakdown.slices.first;
-    final topLabel = localizedOptionLabel(topSlice.seedKey, topSlice.label, l);
     final colors = [
       for (var i = 0; i < breakdown.slices.length; i++)
         _sliceColor(theme, breakdown.slices[i], i),
@@ -196,48 +216,134 @@ class _ByAmalSection extends StatelessWidget {
         children: [
           Divider(height: 1, color: theme.colorScheme.outlineVariant),
           const SizedBox(height: 12),
-          Text(
-            l.optionByAmal.toUpperCase(),
-            style: theme.textTheme.labelMedium?.copyWith(
-              color: theme.colorScheme.onSurfaceVariant,
-              letterSpacing: 1.1,
-            ),
+          _ByAmalHeader(
+            label: l.optionByAmal,
+            toggleLabel: l.optionByAmalToggle,
+            expanded: expanded,
+            onToggle: onToggle,
           ),
-          const SizedBox(height: 8),
-          for (final split in breakdown.perAmal) ...[
-            _AmalSplitRow(
-              slices: breakdown.slices,
-              split: split,
-              topSlice: topSlice,
-              colors: colors,
-            ),
-            const SizedBox(height: 8),
-          ],
-          const SizedBox(height: 4),
-          Wrap(
-            spacing: 12,
-            runSpacing: 4,
-            children: [
-              for (var i = 0; i < breakdown.slices.length; i++)
-                _LegendEntry(
-                  color: colors[i],
-                  label: localizedOptionLabel(
-                    breakdown.slices[i].seedKey,
-                    breakdown.slices[i].label,
-                    l,
-                  ),
-                ),
-            ],
-          ),
-          const SizedBox(height: 6),
-          Text(
-            l.optionByAmalShareOf(topLabel),
-            style: theme.textTheme.bodySmall?.copyWith(
-              color: theme.colorScheme.outline,
-            ),
+          AnimatedSize(
+            duration: const Duration(milliseconds: 200),
+            curve: Curves.easeInOut,
+            child: expanded
+                ? _ByAmalDetails(
+                    breakdown: breakdown,
+                    topSlice: topSlice,
+                    colors: colors,
+                  )
+                : const SizedBox.shrink(),
           ),
         ],
       ),
+    );
+  }
+}
+
+class _ByAmalHeader extends StatelessWidget {
+  const _ByAmalHeader({
+    required this.label,
+    required this.toggleLabel,
+    required this.expanded,
+    required this.onToggle,
+  });
+
+  final String label;
+  final String toggleLabel;
+  final bool expanded;
+  final VoidCallback onToggle;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    return Semantics(
+      label: toggleLabel,
+      button: true,
+      expanded: expanded,
+      onTap: onToggle,
+      child: ExcludeSemantics(
+        child: InkWell(
+          onTap: onToggle,
+          child: Padding(
+            padding: const EdgeInsetsDirectional.symmetric(vertical: 6),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Text(
+                    label.toUpperCase(),
+                    style: theme.textTheme.labelMedium?.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
+                      letterSpacing: 1.1,
+                    ),
+                  ),
+                ),
+                Icon(
+                  expanded ? Icons.expand_less : Icons.expand_more,
+                  size: 20,
+                  color: theme.colorScheme.onSurfaceVariant,
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class _ByAmalDetails extends StatelessWidget {
+  const _ByAmalDetails({
+    required this.breakdown,
+    required this.topSlice,
+    required this.colors,
+  });
+
+  final OptionBreakdown breakdown;
+  final OptionSlice topSlice;
+  final List<Color> colors;
+
+  @override
+  Widget build(BuildContext context) {
+    final l = AppLocalizations.of(context);
+    final theme = Theme.of(context);
+    final topLabel = localizedOptionLabel(topSlice.seedKey, topSlice.label, l);
+
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        const SizedBox(height: 8),
+        for (final split in breakdown.perAmal) ...[
+          _AmalSplitRow(
+            slices: breakdown.slices,
+            split: split,
+            topSlice: topSlice,
+            colors: colors,
+          ),
+          const SizedBox(height: 8),
+        ],
+        const SizedBox(height: 4),
+        Wrap(
+          spacing: 12,
+          runSpacing: 4,
+          children: [
+            for (var i = 0; i < breakdown.slices.length; i++)
+              _LegendEntry(
+                color: colors[i],
+                label: localizedOptionLabel(
+                  breakdown.slices[i].seedKey,
+                  breakdown.slices[i].label,
+                  l,
+                ),
+              ),
+          ],
+        ),
+        const SizedBox(height: 6),
+        Text(
+          l.optionByAmalShareOf(topLabel),
+          style: theme.textTheme.bodySmall?.copyWith(
+            color: theme.colorScheme.outline,
+          ),
+        ),
+      ],
     );
   }
 }

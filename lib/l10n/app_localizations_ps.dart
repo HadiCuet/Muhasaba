@@ -1691,6 +1691,9 @@ class AppLocalizationsPs extends AppLocalizations {
   String get optionByAmal => 'By amal';
 
   @override
+  String get optionByAmalToggle => 'Show the per-amal split';
+
+  @override
   String optionByAmalShareOf(String option) {
     return 'Figure shows share of $option';
   }

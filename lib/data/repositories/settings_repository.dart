@@ -74,6 +74,9 @@ class SettingsRepository {
     return v == '1';
   }
 
+  Future<void> setOptionByAmalExpanded(bool expanded) =>
+      _dao.set(SettingKeys.optionByAmalExpanded, expanded ? '1' : '0');
+
   Future<void> setSupportPromptState(SupportPromptState state) =>
       _dao.set(SettingKeys.supportPromptState, state.name);
 
@@ -129,6 +132,7 @@ class SettingsRepository {
           int.tryParse(m[SettingKeys.supportSnoozedAtActiveDays] ?? '') ?? 0,
       supportAskCount: int.tryParse(m[SettingKeys.supportAskCount] ?? '') ?? 0,
       supportIntroSeen: (m[SettingKeys.supportIntroSeen] ?? '0') == '1',
+      optionByAmalExpanded: (m[SettingKeys.optionByAmalExpanded] ?? '0') == '1',
     );
   }
 

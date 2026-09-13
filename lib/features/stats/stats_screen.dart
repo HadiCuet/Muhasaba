@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../l10n/app_localizations.dart';
+import '../../app/providers.dart';
 import '../../app/widgets/max_width_body.dart';
 import 'stats_providers.dart';
 import 'widgets/stats_filter_row.dart';
@@ -33,6 +34,11 @@ class _StatsScreenState extends ConsumerState<StatsScreen>
     final snapshotAsync = ref.watch(enhancedStatsProvider);
     final filter = ref.watch(statsFilterProvider);
     final locale = Localizations.localeOf(context).toString();
+    final byAmalExpanded =
+        ref.watch(settingsProvider).value?.optionByAmalExpanded ?? false;
+    void onByAmalToggle() => ref
+        .read(settingsRepositoryProvider)
+        .setOptionByAmalExpanded(!byAmalExpanded);
 
     return MaxWidthBody(
       child: RefreshIndicator(
@@ -99,12 +105,18 @@ class _StatsScreenState extends ConsumerState<StatsScreen>
                   children.add(
                     OptionBreakdownCard(
                       breakdown: snap.optionBreakdowns.single,
+                      expanded: byAmalExpanded,
+                      onToggle: onByAmalToggle,
                     ),
                   );
                   children.add(const SizedBox(height: 12));
                 } else if (snap.optionBreakdowns.length > 1) {
                   children.add(
-                    OptionBreakdownCarousel(breakdowns: snap.optionBreakdowns),
+                    OptionBreakdownCarousel(
+                      breakdowns: snap.optionBreakdowns,
+                      expanded: byAmalExpanded,
+                      onToggle: onByAmalToggle,
+                    ),
                   );
                   children.add(const SizedBox(height: 12));
                 }

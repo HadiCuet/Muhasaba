@@ -2960,6 +2960,12 @@ abstract class AppLocalizations {
   /// **'By amal'**
   String get optionByAmal;
 
+  /// No description provided for @optionByAmalToggle.
+  ///
+  /// In en, this message translates to:
+  /// **'Show the per-amal split'**
+  String get optionByAmalToggle;
+
   /// No description provided for @optionByAmalShareOf.
   ///
   /// In en, this message translates to:

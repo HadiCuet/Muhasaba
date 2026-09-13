@@ -1179,6 +1179,7 @@
   },
   "optionRemovedSuffix": "removed",
   "optionByAmal": "By amal",
+  "optionByAmalToggle": "Show the per-amal split",
   "optionByAmalShareOf": "Figure shows share of {option}",
   "@optionByAmalShareOf": {
     "placeholders": { "option": { "type": "String" } }
