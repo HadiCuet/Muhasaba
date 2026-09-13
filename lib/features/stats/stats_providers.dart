@@ -134,6 +134,8 @@ final enhancedStatsProvider = FutureProvider.autoDispose<EnhancedSnapshot>((
   final date = ref.watch(currentMuhasabaDateProvider);
   final db = ref.watch(appDatabaseProvider);
   final amals = await _filteredAmals(ref, filter);
+  final optionSets = await ref.watch(optionSetsProvider.future);
+  final optionSetItems = await ref.watch(optionSetItemsProvider.future);
 
   return const EnhancedStatsService().compute(
     filter: filter,
@@ -141,6 +143,8 @@ final enhancedStatsProvider = FutureProvider.autoDispose<EnhancedSnapshot>((
     settings: settings,
     amals: amals,
     periodCompletionsOf: db.completionDao.getForAmalBetween,
+    optionSets: optionSets,
+    optionSetItems: optionSetItems,
     periodOffset: periodOffset,
   );
 });

@@ -46,6 +46,46 @@ class CategoryBreakdown {
   double get rate => expected > 0 ? completed / expected : 0;
 }
 
+class OptionSlice {
+  const OptionSlice({
+    required this.itemId,
+    required this.label,
+    required this.seedKey,
+    required this.archived,
+    required this.count,
+  });
+
+  final int itemId;
+  final String label;
+  final String? seedKey;
+  final bool archived;
+  final int count;
+}
+
+/// Non-null only when every optioned amal in the filter shares one set —
+/// counting choices across different vocabularies would be meaningless.
+class OptionBreakdown {
+  const OptionBreakdown({
+    required this.setId,
+    required this.setName,
+    required this.setSeedKey,
+    required this.slices,
+    required this.withChoice,
+    required this.noChoice,
+  });
+
+  final int setId;
+  final String setName;
+  final String? setSeedKey;
+  final List<OptionSlice> slices;
+
+  /// Completions that recorded a choice — the denominator for every slice.
+  final int withChoice;
+  final int noChoice;
+
+  int get totalCompleted => withChoice + noChoice;
+}
+
 @immutable
 class HeatmapDay {
   const HeatmapDay({required this.date, required this.rate});
@@ -95,6 +135,7 @@ class EnhancedSnapshot {
     required this.totalCompletedDays,
     required this.heatmapData,
     required this.perAmal,
+    this.optionBreakdown,
   });
 
   final double overallRate;
@@ -117,6 +158,7 @@ class EnhancedSnapshot {
 
   final List<HeatmapDay> heatmapData;
   final List<EnhancedAmalStats> perAmal;
+  final OptionBreakdown? optionBreakdown;
 }
 
 // ─── Service ─────────────────────────────────────────────────────────────────
@@ -134,6 +176,8 @@ class EnhancedStatsService {
     required AppSettings settings,
     required List<AmalRow> amals,
     required PeriodCompletionsLookup periodCompletionsOf,
+    required List<OptionSetRow> optionSets,
+    required List<OptionSetItemRow> optionSetItems,
     int periodOffset = 0,
   }) async {
     final period = _resolvePeriod(
@@ -186,6 +230,13 @@ class EnhancedStatsService {
         ),
       );
     }
+
+    final optionBreakdown = _optionBreakdown(
+      amals,
+      completionsByAmal,
+      optionSets,
+      optionSetItems,
+    );
 
     final overallRate = totalExpected > 0
         ? totalCompleted / totalExpected
@@ -246,6 +297,7 @@ class EnhancedStatsService {
       totalCompletedDays: allDates.length,
       heatmapData: heatmap,
       perAmal: perAmalResults,
+      optionBreakdown: optionBreakdown,
     );
   }
 
@@ -467,6 +519,68 @@ class EnhancedStatsService {
     // Sort by rate descending.
     result.sort((a, b) => b.rate.compareTo(a.rate));
     return result;
+  }
+
+  OptionBreakdown? _optionBreakdown(
+    List<AmalRow> amals,
+    Map<int, List<CompletionRow>> completionsByAmal,
+    List<OptionSetRow> sets,
+    List<OptionSetItemRow> items,
+  ) {
+    final scoped = amals
+        .where(
+          (a) =>
+              a.optionSetId != null &&
+              (completionsByAmal[a.id] ?? const <CompletionRow>[]).any(
+                (r) => r.progress >= a.target,
+              ),
+        )
+        .toList();
+    final setIds = scoped.map((a) => a.optionSetId!).toSet();
+    if (setIds.length != 1) return null;
+
+    final setId = setIds.first;
+    final set = sets.where((s) => s.id == setId).firstOrNull;
+    if (set == null) return null;
+
+    final counts = <int, int>{};
+    var withChoice = 0;
+    var noChoice = 0;
+    for (final amal in scoped) {
+      for (final row in completionsByAmal[amal.id] ?? const <CompletionRow>[]) {
+        if (row.progress < amal.target) continue;
+        final itemId = row.optionItemId;
+        if (itemId == null) {
+          noChoice++;
+          continue;
+        }
+        counts[itemId] = (counts[itemId] ?? 0) + 1;
+        withChoice++;
+      }
+    }
+
+    final mine = items.where((i) => i.setId == setId).toList()
+      ..sort((a, b) => a.sortOrder.compareTo(b.sortOrder));
+    final slices = <OptionSlice>[
+      for (final i in mine)
+        if (i.archivedAt == null || (counts[i.id] ?? 0) > 0)
+          OptionSlice(
+            itemId: i.id,
+            label: i.label,
+            seedKey: i.seedKey,
+            archived: i.archivedAt != null,
+            count: counts[i.id] ?? 0,
+          ),
+    ]..sort((a, b) => b.count.compareTo(a.count));
+
+    return OptionBreakdown(
+      setId: setId,
+      setName: set.name,
+      setSeedKey: set.seedKey,
+      slices: slices,
+      withChoice: withChoice,
+      noChoice: noChoice,
+    );
   }
 
   // ── Heatmap (last 5 weeks) ───────────────────────────────────────────────

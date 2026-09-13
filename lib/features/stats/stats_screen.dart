@@ -8,6 +8,7 @@ import 'widgets/stats_filter_row.dart';
 import 'widgets/score_ring_card.dart';
 import 'widgets/daily_chart_card.dart';
 import 'widgets/category_breakdown_card.dart';
+import 'widgets/option_breakdown_card.dart';
 import 'widgets/streaks_card.dart';
 import 'widgets/heatmap_card.dart';
 import 'widgets/per_amal_card.dart';
@@ -87,6 +88,14 @@ class _StatsScreenState extends ConsumerState<StatsScreen>
                 if (snap.categoryBreakdown.isNotEmpty && !isSingleAmal) {
                   children.add(
                     CategoryBreakdownCard(categories: snap.categoryBreakdown),
+                  );
+                  children.add(const SizedBox(height: 12));
+                }
+
+                // 3b. Option breakdown (only when one set covers the filter)
+                if (snap.optionBreakdown != null) {
+                  children.add(
+                    OptionBreakdownCard(breakdown: snap.optionBreakdown!),
                   );
                   children.add(const SizedBox(height: 12));
                 }

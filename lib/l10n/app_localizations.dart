@@ -2929,6 +2929,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{label}, not selected'**
   String optionNotSelected(String label);
+
+  /// No description provided for @optionBreakdownTitle.
+  ///
+  /// In en, this message translates to:
+  /// **'Option breakdown — {set}'**
+  String optionBreakdownTitle(String set);
+
+  /// No description provided for @optionBreakdownCaption.
+  ///
+  /// In en, this message translates to:
+  /// **'Share of the {count} completions that recorded a choice'**
+  String optionBreakdownCaption(int count);
+
+  /// No description provided for @optionNoChoiceRecorded.
+  ///
+  /// In en, this message translates to:
+  /// **'No choice recorded — {none} of {total} completed days'**
+  String optionNoChoiceRecorded(int none, int total);
+
+  /// No description provided for @optionRemovedSuffix.
+  ///
+  /// In en, this message translates to:
+  /// **'removed'**
+  String get optionRemovedSuffix;
 }
 
 class _AppLocalizationsDelegate

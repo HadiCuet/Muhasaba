@@ -1161,5 +1161,21 @@
   "optionNotSelected": "{label}, not selected",
   "@optionNotSelected": {
     "placeholders": { "label": { "type": "String" } }
-  }
+  },
+  "optionBreakdownTitle": "Option breakdown — {set}",
+  "@optionBreakdownTitle": {
+    "placeholders": { "set": { "type": "String" } }
+  },
+  "optionBreakdownCaption": "Share of the {count} completions that recorded a choice",
+  "@optionBreakdownCaption": {
+    "placeholders": { "count": { "type": "int" } }
+  },
+  "optionNoChoiceRecorded": "No choice recorded — {none} of {total} completed days",
+  "@optionNoChoiceRecorded": {
+    "placeholders": {
+      "none": { "type": "int" },
+      "total": { "type": "int" }
+    }
+  },
+  "optionRemovedSuffix": "removed"
 }

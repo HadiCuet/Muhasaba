@@ -1669,4 +1669,22 @@ class AppLocalizationsSq extends AppLocalizations {
   String optionNotSelected(String label) {
     return '$label, not selected';
   }
+
+  @override
+  String optionBreakdownTitle(String set) {
+    return 'Option breakdown — $set';
+  }
+
+  @override
+  String optionBreakdownCaption(int count) {
+    return 'Share of the $count completions that recorded a choice';
+  }
+
+  @override
+  String optionNoChoiceRecorded(int none, int total) {
+    return 'No choice recorded — $none of $total completed days';
+  }
+
+  @override
+  String get optionRemovedSuffix => 'removed';
 }
