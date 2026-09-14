@@ -18,16 +18,16 @@ class AppLocalizationsAz extends AppLocalizations {
   String get appTitle => 'Mühasibat';
 
   @override
-  String get tabToday => 'Bu gun';
+  String get tabToday => 'Bu gün';
 
   @override
   String get tabStats => 'Statistika';
 
   @override
-  String get tabHistory => 'Tarixce';
+  String get tabHistory => 'Tarixçə';
 
   @override
-  String get tabSettings => 'Parametrler';
+  String get tabSettings => 'Parametrlər';
 
   @override
   String get tabChallenge => 'Hədəf';
@@ -68,52 +68,52 @@ class AppLocalizationsAz extends AppLocalizations {
   String get newChallenge => 'Yeni hədəf';
 
   @override
-  String get newAmal => 'Yeni emel';
+  String get newAmal => 'Yeni əməl';
 
   @override
-  String get editAmal => 'Emeli redakte et';
+  String get editAmal => 'Əməli redaktə et';
 
   @override
-  String get newAmalTitle => 'Yeni emel';
+  String get newAmalTitle => 'Yeni əməl';
 
   @override
   String get save => 'Saxla';
 
   @override
-  String get cancel => 'Legv et';
+  String get cancel => 'Ləğv et';
 
   @override
   String get ok => 'OK';
 
   @override
-  String get clear => 'Temizle';
+  String get clear => 'Təmizlə';
 
   @override
-  String get titleLabel => 'Basliq';
+  String get titleLabel => 'Başlıq';
 
   @override
-  String get titleRequired => 'Basliq teleb olunur';
+  String get titleRequired => 'Başlıq tələb olunur';
 
   @override
-  String get titleTooLong => 'Basliq cox uzundur';
+  String get titleTooLong => 'Başlıq çox uzundur';
 
   @override
   String get frequencyLabel => 'Tezlik';
 
   @override
-  String get frequencyDaily => 'Gundelik';
+  String get frequencyDaily => 'Gündəlik';
 
   @override
-  String get frequencyWeekly => 'Heftelik';
+  String get frequencyWeekly => 'Həftəlik';
 
   @override
-  String get frequencyMonthly => 'Ayliq';
+  String get frequencyMonthly => 'Aylıq';
 
   @override
   String get categoryLabel => 'Kateqoriya';
 
   @override
-  String get categoryOther => 'Diger';
+  String get categoryOther => 'Digər';
 
   @override
   String get categorySalah => 'Namaz';
@@ -125,19 +125,19 @@ class AppLocalizationsAz extends AppLocalizations {
   String get categoryQuran => 'Quran';
 
   @override
-  String get categoryCharity => 'Sedeqe';
+  String get categoryCharity => 'Sədəqə';
 
   @override
   String get categorySunnah => 'Sünnə';
 
   @override
-  String get timesPerPeriod => 'Dovre erzinde defe';
+  String get timesPerPeriod => 'Dövrə ərzində dəfə';
 
   @override
-  String get custom => 'Ferdi';
+  String get custom => 'Fərdi';
 
   @override
-  String get customTargetHint => 'mes. 50';
+  String get customTargetHint => 'məs. 50';
 
   @override
   String get targetAny => 'Sərbəst';
@@ -147,21 +147,21 @@ class AppLocalizationsAz extends AppLocalizations {
       'Hədəf yoxdur — istənilən miqdar tamamlanmış sayılır';
 
   @override
-  String get dayOfWeek => 'Heftenin gunu';
+  String get dayOfWeek => 'Həftənin günü';
 
   @override
-  String get anyDay => 'Istenielen';
+  String get anyDay => 'İstənilən';
 
   @override
-  String get anyDayHint => 'Istenielen gun (bu gun gosterilir, sabah gizlenir)';
+  String get anyDayHint => 'İstənilən gün (bu gün göstərilir, sabah gizlənir)';
 
   @override
   String onlyDayHint(String day) {
-    return 'Yalniz $day';
+    return 'Yalnız $day';
   }
 
   @override
-  String get dateOfMonth => 'Ayin tarixi';
+  String get dateOfMonth => 'Ayın tarixi';
 
   @override
   String get repeatMode => 'Təkrar';
@@ -230,85 +230,85 @@ class AppLocalizationsAz extends AppLocalizations {
   }
 
   @override
-  String get anyDate => 'Istenielen';
+  String get anyDate => 'İstənilən';
 
   @override
   String get anyDateHint =>
-      'Istenielen tarix (bu gun gosterilir, sabah gizlenir)';
+      'İstənilən tarix (bu gün göstərilir, sabah gizlənir)';
 
   @override
   String onlyDateHint(String date) {
-    return 'Yalniz $date-de';
+    return 'Yalnız $date-də';
   }
 
   @override
-  String get startPreChecked => 'Qeyd olunmus baslat';
+  String get startPreChecked => 'Qeyd olunmuş başlat';
 
   @override
   String get startPreCheckedSubtitle =>
-      'Yeni dovre basladiqda, bu emel siz legv edene qeder tamamlanmis sayilir.';
+      'Yeni dövrə başladıqda, bu əməl siz ləğv edənə qədər tamamlanmış sayılır.';
 
   @override
-  String get reminder => 'Xatirlatma';
+  String get reminder => 'Xatırlatma';
 
   @override
   String get reminderNone => 'Yoxdur';
 
   @override
   String reminderTime(String time) {
-    return 'Xatirlatma: $time';
+    return 'Xatırlatma: $time';
   }
 
   @override
   String get reminderPermissionWarning =>
-      'Xatirlatma saxlanildi, lakin bildirisler icaze verilmeyib. Xeberdar olmaq ucun sistem parametrlerinde aktiv edin.';
+      'Xatırlatma saxlanıldı, lakin bildirişlərə icazə verilməyib. Xəbərdar olmaq üçün sistem parametrlərində aktiv edin.';
 
   @override
-  String get settingsReminders => 'Xatirlatmalar';
+  String get settingsReminders => 'Xatırlatmalar';
 
   @override
-  String get dailyReminder => 'Gundelik xatirlatma';
+  String get dailyReminder => 'Gündəlik xatırlatma';
 
   @override
   String get dailyReminderSubtitle =>
-      'Emellerinizi izlemek ucun yumsaq bir xatirlatma';
+      'Əməllərinizi izləmək üçün yumşaq bir xatırlatma';
 
   @override
-  String get dailyReminderTimeLabel => 'Xatirlatma saati';
+  String get dailyReminderTimeLabel => 'Xatırlatma saatı';
 
   @override
   String get dailyReminderBody =>
-      'Bugunku emellerinizi izlemek ucun bir an ayirin.';
+      'Bugünkü əməllərinizi izləmək üçün bir an ayırın.';
 
   @override
-  String get groupByCategory => 'Kateqoriyaya gore qrupla';
+  String get groupByCategory => 'Kateqoriyaya görə qrupla';
 
   @override
-  String get flatList => 'Sade siyahi';
+  String get flatList => 'Sadə siyahı';
 
   @override
   String errorGeneric(String error) {
-    return 'Xeta: $error';
+    return 'Xəta: $error';
   }
 
   @override
-  String get todayEmptyHint => 'Ilk emelinizi elave etmek ucun + basin.';
+  String get todayEmptyHint => 'İlk əməlinizi əlavə etmək üçün + basın.';
 
   @override
   String get noteLabel => 'Qeyd';
 
   @override
-  String get noteHint => 'mes. Mescidde namaz qildim';
+  String get noteHint => 'məs. Məsciddə namaz qıldım';
 
   @override
-  String get completed => 'tamamlandi';
+  String get completed => 'tamamlandı';
 
   @override
-  String get notCompleted => 'tamamlanmadi';
+  String get notCompleted => 'tamamlanmadı';
 
   @override
   String progressOf(String progress, String target) {
-    return '$target-dan $progress tamamlandi';
+    return '$target-dan $progress tamamlandı';
   }
 
   @override
@@ -317,30 +317,30 @@ class AppLocalizationsAz extends AppLocalizations {
   }
 
   @override
-  String get removeFromToday => 'Bu gunden sil';
+  String get removeFromToday => 'Bu gündən sil';
 
   @override
   String get removeFromTodaySubtitle =>
-      'Yalniz bu gun ucun gizlenir. Sabah geri qayidir.';
+      'Yalnız bu gün üçün gizlənir. Sabah geri qayıdır.';
 
   @override
-  String get removeFromTracking => 'Izlemeden sil';
+  String get removeFromTracking => 'İzləmədən sil';
 
   @override
   String get removeFromTrackingSubtitle =>
-      'Siyahinizdan hemiselik silinir. Tarixce saxlanilir.';
+      'Siyahınızdan həmişəlik silinir. Tarixçə saxlanılır.';
 
   @override
-  String get chooseIcon => 'Simvol secin';
+  String get chooseIcon => 'Simvol seçin';
 
   @override
   String get iconNone => 'Yoxdur';
 
   @override
-  String get recentlyUsed => 'Son istifade olunan';
+  String get recentlyUsed => 'Son istifadə olunan';
 
   @override
-  String get emojiSectionGeneral => 'Umumi';
+  String get emojiSectionGeneral => 'Ümumi';
 
   @override
   String get categoryNameHint => 'Ad';
@@ -355,28 +355,28 @@ class AppLocalizationsAz extends AppLocalizations {
   String get categoryEditSheetTitle => 'Kateqoriyanı redaktə et';
 
   @override
-  String get addAmal => 'Emel elave et';
+  String get addAmal => 'Əməl əlavə et';
 
   @override
-  String get customAmal => 'Ferdi emel';
+  String get customAmal => 'Fərdi əməl';
 
   @override
-  String get amalTasbih => 'Tesbih 33x';
+  String get amalTasbih => 'Təsbih 33x';
 
   @override
-  String get amalIstighfar => 'Istigfar 100x';
+  String get amalIstighfar => 'İstiğfar 100x';
 
   @override
-  String get amalSurahKahf => 'Kehf suresi';
+  String get amalSurahKahf => 'Kəhf surəsi';
 
   @override
-  String get amalSadaqah => 'Sedeqe';
+  String get amalSadaqah => 'Sədəqə';
 
   @override
-  String get amalTahajjud => 'Tehecud';
+  String get amalTahajjud => 'Təhəccüd';
 
   @override
-  String get amalDuha => 'Zuha namazi';
+  String get amalDuha => 'Zuha namazı';
 
   @override
   String get amalFajr => 'Sübh';
@@ -403,57 +403,57 @@ class AppLocalizationsAz extends AppLocalizations {
   String get amalTilawah => 'Tilavət';
 
   @override
-  String get settingsTitle => 'Parametrler';
+  String get settingsTitle => 'Parametrlər';
 
   @override
   String settingsLoadError(String error) {
-    return 'Parametrleri yuklemek mumkun olmadi:\n$error';
+    return 'Parametrləri yükləmək mümkün olmadı:\n$error';
   }
 
   @override
-  String get sectionDayBoundary => 'Gun serhedi';
+  String get sectionDayBoundary => 'Gün sərhədi';
 
   @override
-  String get rolloverHour => 'Kecid saati';
+  String get rolloverHour => 'Keçid saatı';
 
   @override
-  String get rolloverAtMidnight => 'Bu gun geceyarisi basa catir.';
+  String get rolloverAtMidnight => 'Bu gün gecəyarısı başa çatır.';
 
   @override
   String rolloverSubtitle(String time) {
-    return 'Dunenki emeller $time-dek redakte oluna biler.';
+    return 'Dünənki əməllər $time-dək redaktə oluna bilər.';
   }
 
   @override
-  String get pickRolloverHour => 'Gunun kecid saatini secin';
+  String get pickRolloverHour => 'Günün keçid saatını seçin';
 
   @override
-  String get sectionWeekMonth => 'Hefte ve ay';
+  String get sectionWeekMonth => 'Həftə və ay';
 
   @override
-  String get startOfWeek => 'Heftenin baslangici';
+  String get startOfWeek => 'Həftənin başlanğıcı';
 
   @override
-  String get startOfMonth => 'Ayin baslangici';
+  String get startOfMonth => 'Ayın başlanğıcı';
 
   @override
   String get startOfMonthClamped =>
-      '28-den sonraki gunler qisa aylarda ayin son gunune uygunlasdirilir.';
+      '28-dən sonrakı günlər qısa aylarda ayın son gününə uyğunlaşdırılır.';
 
   @override
-  String get sectionAppearance => 'Gorunus';
+  String get sectionAppearance => 'Görünüş';
 
   @override
-  String get theme => 'Movzu';
+  String get theme => 'Mövzu';
 
   @override
   String get themeSystem => 'Sistem';
 
   @override
-  String get themeLight => 'Isiqli';
+  String get themeLight => 'İşıqlı';
 
   @override
-  String get themeDark => 'Qaranlig';
+  String get themeDark => 'Qaranlıq';
 
   @override
   String get sectionLanguage => 'Dil';
@@ -462,43 +462,43 @@ class AppLocalizationsAz extends AppLocalizations {
   String get language => 'Dil';
 
   @override
-  String get systemDefault => 'Sistem susmaya gore';
+  String get systemDefault => 'Sistem susmaya görə';
 
   @override
   String get aboutTitle => 'Muhasaba';
 
   @override
   String get aboutSubtitle =>
-      'Sexsi din mesuliyyet jurnali. Butun melumatlar bu cihazda qalir.';
+      'Şəxsi din məsuliyyət jurnalı. Bütün məlumatlar bu cihazda qalır.';
 
   @override
   String get statsTitle => 'Statistika';
 
   @override
   String statsLoadError(String error) {
-    return 'Statistikani yuklemek mumkun olmadi:\n$error';
+    return 'Statistikanı yükləmək mümkün olmadı:\n$error';
   }
 
   @override
-  String get perAmal => 'Her emel ucun';
+  String get perAmal => 'Hər əməl üçün';
 
   @override
-  String get thisWeek => 'Bu hefte';
+  String get thisWeek => 'Bu həftə';
 
   @override
   String get thisMonth => 'Bu ay';
 
   @override
-  String get totalCompletions => 'umumi tamamlanma';
+  String get totalCompletions => 'ümumi tamamlanma';
 
   @override
   String get streakCurrent => 'Cari';
 
   @override
-  String get streakLongest => 'En uzun';
+  String get streakLongest => 'Ən uzun';
 
   @override
-  String get ratioWeek => 'Hefte';
+  String get ratioWeek => 'Həftə';
 
   @override
   String get ratioMonth => 'Ay';
@@ -508,8 +508,8 @@ class AppLocalizationsAz extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'gun',
-      one: 'gun',
+      other: 'gün',
+      one: 'gün',
     );
     return '$_temp0';
   }
@@ -519,8 +519,8 @@ class AppLocalizationsAz extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'hefte',
-      one: 'hefte',
+      other: 'həftə',
+      one: 'həftə',
     );
     return '$_temp0';
   }
@@ -537,53 +537,53 @@ class AppLocalizationsAz extends AppLocalizations {
   }
 
   @override
-  String get frequencyBadgeDaily => 'gundelik';
+  String get frequencyBadgeDaily => 'gündəlik';
 
   @override
-  String get frequencyBadgeWeekly => 'heftelik';
+  String get frequencyBadgeWeekly => 'həftəlik';
 
   @override
-  String get frequencyBadgeMonthly => 'ayliq';
+  String get frequencyBadgeMonthly => 'aylıq';
 
   @override
   String get statsEmpty =>
-      'Hele emel yoxdur. Izlemeye baslamaq ucun Bu gun sehifesinde elave edin.';
+      'Hələ əməl yoxdur. İzləməyə başlamaq üçün Bu gün səhifəsində əlavə edin.';
 
   @override
-  String get statsToday => 'Bu gun';
+  String get statsToday => 'Bu gün';
 
   @override
-  String get statsThisWeek => 'Bu hefte';
+  String get statsThisWeek => 'Bu həftə';
 
   @override
   String get statsThisMonth => 'Bu ay';
 
   @override
-  String get statsAllTime => 'Butun zamanlar';
+  String get statsAllTime => 'Bütün zamanlar';
 
   @override
-  String get statsCustomRange => 'Ferdi araliq';
+  String get statsCustomRange => 'Fərdi aralıq';
 
   @override
-  String get statsAllCategories => 'Hamisi';
+  String get statsAllCategories => 'Hamısı';
 
   @override
-  String get statsAllAmals => 'Hamisi';
+  String get statsAllAmals => 'Hamısı';
 
   @override
-  String get statsCompleted => 'Tamamlandi';
+  String get statsCompleted => 'Tamamlandı';
 
   @override
-  String get statsExpected => 'Gozlenilen';
+  String get statsExpected => 'Gözlənilən';
 
   @override
-  String get statsVsPrevious => 'Evvelkine nisbeten';
+  String get statsVsPrevious => 'Əvvəlkinə nisbətən';
 
   @override
-  String get statsByCategory => 'Kateqoriyaya gore';
+  String get statsByCategory => 'Kateqoriyaya görə';
 
   @override
-  String get statsPerAmal => 'Her emel ucun';
+  String get statsPerAmal => 'Hər əməl üçün';
 
   @override
   String get statsTotalCaption => 'cəmi';
@@ -603,22 +603,22 @@ class AppLocalizationsAz extends AppLocalizations {
   String get statsCurrentStreak => 'Cari seriya';
 
   @override
-  String get statsBestStreak => 'En yaxsi seriya';
+  String get statsBestStreak => 'Ən yaxşı seriya';
 
   @override
-  String get statsTotalDays => 'Umumi gunler';
+  String get statsTotalDays => 'Ümumi günlər';
 
   @override
-  String get statsConsistency => 'Ardicilliq';
+  String get statsConsistency => 'Ardıcıllıq';
 
   @override
-  String get statsLast5Weeks => 'Son 5 hefte';
+  String get statsLast5Weeks => 'Son 5 həftə';
 
   @override
-  String get statsDailyBreakdown => 'Gunluk tefsir';
+  String get statsDailyBreakdown => 'Günlük bölgü';
 
   @override
-  String get statsCompletionRate => 'Tamamlanma derecesi';
+  String get statsCompletionRate => 'Tamamlanma dərəcəsi';
 
   @override
   String get statsAmountPerDay => 'Günlük miqdar';
@@ -645,23 +645,23 @@ class AppLocalizationsAz extends AppLocalizations {
   String get statsFilterCategory => 'Kateqoriya';
 
   @override
-  String get statsFilterAmal => 'Emel';
+  String get statsFilterAmal => 'Əməl';
 
   @override
   String get statsStreaks => 'Seriyalar';
 
   @override
-  String get statsSelectDateRange => 'Tarix araligini secin';
+  String get statsSelectDateRange => 'Tarix aralığını seçin';
 
   @override
-  String get historyTitle => 'Tarixce';
+  String get historyTitle => 'Tarixçə';
 
   @override
-  String get jumpToDate => 'Tarixe kec';
+  String get jumpToDate => 'Tarixə keç';
 
   @override
   String historyEmptyDay(String date) {
-    return '$date tarixinde emel izlenmeyib';
+    return '$date tarixində əməl izlənməyib';
   }
 
   @override
@@ -677,10 +677,10 @@ class AppLocalizationsAz extends AppLocalizations {
   String get mondayShort => 'B.e';
 
   @override
-  String get tuesdayShort => 'C.a';
+  String get tuesdayShort => 'Ç.a';
 
   @override
-  String get wednesdayShort => 'C';
+  String get wednesdayShort => 'Ç';
 
   @override
   String get thursdayShort => 'C.a';
@@ -689,7 +689,7 @@ class AppLocalizationsAz extends AppLocalizations {
   String get fridayShort => 'C';
 
   @override
-  String get saturdayShort => 'S';
+  String get saturdayShort => 'Ş';
 
   @override
   String get sundayShort => 'B';
@@ -698,19 +698,19 @@ class AppLocalizationsAz extends AppLocalizations {
   String get mondayFull => 'Bazar ertesi';
 
   @override
-  String get tuesdayFull => 'Cersenbe axsami';
+  String get tuesdayFull => 'Çərşənbə axşamı';
 
   @override
-  String get wednesdayFull => 'Cersenbe';
+  String get wednesdayFull => 'Çərşənbə';
 
   @override
-  String get thursdayFull => 'Cumme axsami';
+  String get thursdayFull => 'Cümə axşamı';
 
   @override
-  String get fridayFull => 'Cumme';
+  String get fridayFull => 'Cümə';
 
   @override
-  String get saturdayFull => 'Senbe';
+  String get saturdayFull => 'Şənbə';
 
   @override
   String get sundayFull => 'Bazar';
@@ -744,7 +744,7 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get hadith9 =>
-      '\"Güclü mömin zəif mömindan daha yaxşı və Allaha daha sevimlidir, hərçənd hər ikisində xeyir var.\"\n— Müslim';
+      '\"Güclü mömin zəif mömindən daha yaxşı və Allaha daha sevimlidir, hərçənd hər ikisində xeyir var.\"\n— Müslim';
 
   @override
   String get hadith10 =>
@@ -1409,7 +1409,7 @@ class AppLocalizationsAz extends AppLocalizations {
   String get challengeGroupPlan => 'Plan';
 
   @override
-  String get challengeGroupReminders => 'Xatirlatmalar';
+  String get challengeGroupReminders => 'Xatırlatmalar';
 
   @override
   String get challengeStartFromTemplate => 'Şablondan başla';
@@ -1421,7 +1421,7 @@ class AppLocalizationsAz extends AppLocalizations {
   String get challengePreview => 'Önizləmə';
 
   @override
-  String get challengeTmplTahajjud => '40 gecə Tehecud';
+  String get challengeTmplTahajjud => '40 gecə Təhəccüd';
 
   @override
   String get challengeTmplSalawat => '1000 salavat';
@@ -1433,7 +1433,7 @@ class AppLocalizationsAz extends AppLocalizations {
   String get challengeTmplFajrJamaah => '30 gün camaatla Sübh';
 
   @override
-  String get challengeTmplSadaqah => '30 gün Sedeqe';
+  String get challengeTmplSadaqah => '30 gün Sədəqə';
 
   @override
   String get listSeparator => ' · ';
@@ -1590,7 +1590,7 @@ class AppLocalizationsAz extends AppLocalizations {
   String get optionQuranListened => 'Dinlənildi';
 
   @override
-  String get optionSetSadaqahType => 'Sedeqe növü';
+  String get optionSetSadaqahType => 'Sədəqə növü';
 
   @override
   String get optionSadaqahMoney => 'Pul';
@@ -1626,7 +1626,7 @@ class AppLocalizationsAz extends AppLocalizations {
   String get optionSetNameLabel => 'Dəstin adı';
 
   @override
-  String get optionSetNameHint => 'mes. Camaat';
+  String get optionSetNameHint => 'məs. Camaat';
 
   @override
   String get optionsLabel => 'Variantlar';
@@ -1645,7 +1645,7 @@ class AppLocalizationsAz extends AppLocalizations {
   }
 
   @override
-  String get optionSetPreviewLabel => 'Önizləmə — Bu gun sətri';
+  String get optionSetPreviewLabel => 'Önizləmə — Bu gün sətri';
 
   @override
   String optionSetKeptForHistory(String labels) {

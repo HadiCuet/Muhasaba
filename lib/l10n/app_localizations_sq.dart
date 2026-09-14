@@ -27,7 +27,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get tabHistory => 'Historiku';
 
   @override
-  String get tabSettings => 'Cilesimet';
+  String get tabSettings => 'Cilësimet';
 
   @override
   String get tabChallenge => 'Sfida';
@@ -92,10 +92,10 @@ class AppLocalizationsSq extends AppLocalizations {
   String get titleLabel => 'Titulli';
 
   @override
-  String get titleRequired => 'Titulli eshte i detyrueshem';
+  String get titleRequired => 'Titulli është i detyrueshëm';
 
   @override
-  String get titleTooLong => 'Titulli eshte shume i gjate';
+  String get titleTooLong => 'Titulli është shumë i gjatë';
 
   @override
   String get frequencyLabel => 'Frekuenca';
@@ -113,7 +113,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get categoryLabel => 'Kategoria';
 
   @override
-  String get categoryOther => 'Tjeter';
+  String get categoryOther => 'Tjetër';
 
   @override
   String get categorySalah => 'Namazi';
@@ -131,7 +131,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get categorySunnah => 'Sunet';
 
   @override
-  String get timesPerPeriod => 'Here per periudhe';
+  String get timesPerPeriod => 'Herë për periudhë';
 
   @override
   String get custom => 'Personalizuar';
@@ -146,17 +146,17 @@ class AppLocalizationsSq extends AppLocalizations {
   String get targetAnyHelp => 'Pa synim — çdo sasi e shënon si të përfunduar';
 
   @override
-  String get dayOfWeek => 'Dita e javes';
+  String get dayOfWeek => 'Dita e javës';
 
   @override
   String get anyDay => 'Cilado';
 
   @override
-  String get anyDayHint => 'Cilado dite (mbetet e dukshme sot, fshihet neser)';
+  String get anyDayHint => 'Cilado ditë (mbetet e dukshme sot, fshihet nesër)';
 
   @override
   String onlyDayHint(String day) {
-    return 'Vetem $day';
+    return 'Vetëm $day';
   }
 
   @override
@@ -234,57 +234,57 @@ class AppLocalizationsSq extends AppLocalizations {
   String get anyDate => 'Cilado';
 
   @override
-  String get anyDateHint => 'Cilado date (mbetet e dukshme sot, fshihet neser)';
+  String get anyDateHint => 'Cilado datë (mbetet e dukshme sot, fshihet nesër)';
 
   @override
   String onlyDateHint(String date) {
-    return 'Vetem me $date';
+    return 'Vetëm më $date';
   }
 
   @override
-  String get startPreChecked => 'Fillo e shenuar';
+  String get startPreChecked => 'Fillo e shënuar';
 
   @override
   String get startPreCheckedSubtitle =>
-      'Kur nis nje periudhe e re, ky amal shenohet si i perfunduar automatikisht derisa ta hiqni.';
+      'Kur nis një periudhë e re, ky amal shënohet si i përfunduar automatikisht derisa ta hiqni.';
 
   @override
-  String get reminder => 'Kujtese';
+  String get reminder => 'Kujtesë';
 
   @override
-  String get reminderNone => 'Asgje';
+  String get reminderNone => 'Asgjë';
 
   @override
   String reminderTime(String time) {
-    return 'Kujtese: $time';
+    return 'Kujtesë: $time';
   }
 
   @override
   String get reminderPermissionWarning =>
-      'Kujtesa u ruajt, por njoftimet nuk jane te lejuara. Aktivizoni ato ne cilesimet e sistemit per te marre njoftime.';
+      'Kujtesa u ruajt, por njoftimet nuk janë të lejuara. Aktivizoni ato në cilësimet e sistemit për të marrë njoftime.';
 
   @override
   String get settingsReminders => 'Kujtesat';
 
   @override
-  String get dailyReminder => 'Kujtese ditore';
+  String get dailyReminder => 'Kujtesë ditore';
 
   @override
   String get dailyReminderSubtitle =>
-      'Nje kujtese e bute per te ndjekur amalet tuaja';
+      'Një kujtesë e butë për të ndjekur amalet tuaja';
 
   @override
-  String get dailyReminderTimeLabel => 'Ora e kujteses';
+  String get dailyReminderTimeLabel => 'Ora e kujtesës';
 
   @override
   String get dailyReminderBody =>
-      'Ndani nje moment per te ndjekur amalet e sotme.';
+      'Ndani një moment për të ndjekur amalet e sotme.';
 
   @override
-  String get groupByCategory => 'Grupo sipas kategorise';
+  String get groupByCategory => 'Grupo sipas kategorisë';
 
   @override
-  String get flatList => 'Liste e thjeshte';
+  String get flatList => 'Listë e thjeshtë';
 
   @override
   String errorGeneric(String error) {
@@ -292,23 +292,23 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get todayEmptyHint => 'Shtypni + per te shtuar amalin tuaj te pare.';
+  String get todayEmptyHint => 'Shtypni + për të shtuar amalin tuaj të parë.';
 
   @override
-  String get noteLabel => 'Shenimi';
+  String get noteLabel => 'Shënimi';
 
   @override
-  String get noteHint => 'p.sh. U fala ne xhami';
+  String get noteHint => 'p.sh. U fala në xhami';
 
   @override
-  String get completed => 'perfunduar';
+  String get completed => 'përfunduar';
 
   @override
-  String get notCompleted => 'e paperfunduar';
+  String get notCompleted => 'e papërfunduar';
 
   @override
   String progressOf(String progress, String target) {
-    return '$progress nga $target te perfunduara';
+    return '$progress nga $target të përfunduara';
   }
 
   @override
@@ -320,26 +320,26 @@ class AppLocalizationsSq extends AppLocalizations {
   String get removeFromToday => 'Hiq nga sot';
 
   @override
-  String get removeFromTodaySubtitle => 'Fshih vetem per sot. Kthehet neser.';
+  String get removeFromTodaySubtitle => 'Fshih vetëm për sot. Kthehet nesër.';
 
   @override
   String get removeFromTracking => 'Hiq nga ndjekja';
 
   @override
   String get removeFromTrackingSubtitle =>
-      'Hiq perfundimisht nga lista juaj. Historiku ruhet.';
+      'Hiq përfundimisht nga lista juaj. Historiku ruhet.';
 
   @override
-  String get chooseIcon => 'Zgjidh ikonen';
+  String get chooseIcon => 'Zgjidh ikonën';
 
   @override
-  String get iconNone => 'Asgje';
+  String get iconNone => 'Asgjë';
 
   @override
-  String get recentlyUsed => 'Perdorur se fundmi';
+  String get recentlyUsed => 'Përdorur së fundmi';
 
   @override
-  String get emojiSectionGeneral => 'Te pergjithshme';
+  String get emojiSectionGeneral => 'Të përgjithshme';
 
   @override
   String get categoryNameHint => 'Emri';
@@ -402,42 +402,42 @@ class AppLocalizationsSq extends AppLocalizations {
   String get amalTilawah => 'Tilavet';
 
   @override
-  String get settingsTitle => 'Cilesimet';
+  String get settingsTitle => 'Cilësimet';
 
   @override
   String settingsLoadError(String error) {
-    return 'Deshtoi ngarkimi i cilesimeve:\n$error';
+    return 'Dështoi ngarkimi i cilësimeve:\n$error';
   }
 
   @override
-  String get sectionDayBoundary => 'Kufiri i dites';
+  String get sectionDayBoundary => 'Kufiri i ditës';
 
   @override
   String get rolloverHour => 'Ora e kalimit';
 
   @override
-  String get rolloverAtMidnight => 'Dita mbaron ne mesnatë.';
+  String get rolloverAtMidnight => 'Dita mbaron në mesnatë.';
 
   @override
   String rolloverSubtitle(String time) {
-    return 'Amalet e djeshme mbeten te ndryshueshme deri ne $time.';
+    return 'Amalet e djeshme mbeten të ndryshueshme deri në $time.';
   }
 
   @override
-  String get pickRolloverHour => 'Zgjidhni oren kur dita kalon';
+  String get pickRolloverHour => 'Zgjidhni orën kur dita kalon';
 
   @override
   String get sectionWeekMonth => 'Java & muaji';
 
   @override
-  String get startOfWeek => 'Fillimi i javes';
+  String get startOfWeek => 'Fillimi i javës';
 
   @override
   String get startOfMonth => 'Fillimi i muajit';
 
   @override
   String get startOfMonthClamped =>
-      'Ditet pas te 28-es kufijzohen ne diten e fundit te muajve me te shkurter.';
+      'Ditët pas së 28-ës kufizohen në ditën e fundit të muajve më të shkurtër.';
 
   @override
   String get sectionAppearance => 'Pamja';
@@ -452,7 +452,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get themeLight => 'E ndritshme';
 
   @override
-  String get themeDark => 'E erret';
+  String get themeDark => 'E errët';
 
   @override
   String get sectionLanguage => 'Gjuha';
@@ -468,33 +468,33 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get aboutSubtitle =>
-      'Nje ditar personal per llogaridhenien e fese. Te gjitha te dhenat mbeten ne kete pajisje.';
+      'Një ditar personal për llogaridhënien e fesë. Të gjitha të dhënat mbeten në këtë pajisje.';
 
   @override
   String get statsTitle => 'Statistikat';
 
   @override
   String statsLoadError(String error) {
-    return 'Deshtoi ngarkimi i statistikave:\n$error';
+    return 'Dështoi ngarkimi i statistikave:\n$error';
   }
 
   @override
-  String get perAmal => 'Per amal';
+  String get perAmal => 'Për amal';
 
   @override
-  String get thisWeek => 'Kete jave';
+  String get thisWeek => 'Këtë javë';
 
   @override
-  String get thisMonth => 'Kete muaj';
+  String get thisMonth => 'Këtë muaj';
 
   @override
-  String get totalCompletions => 'perfundime gjithsej';
+  String get totalCompletions => 'përfundime gjithsej';
 
   @override
   String get streakCurrent => 'Aktuale';
 
   @override
-  String get streakLongest => 'Me e gjata';
+  String get streakLongest => 'Më e gjata';
 
   @override
   String get ratioWeek => 'Java';
@@ -507,8 +507,8 @@ class AppLocalizationsSq extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'dite',
-      one: 'dite',
+      other: 'ditë',
+      one: 'ditë',
     );
     return '$_temp0';
   }
@@ -518,8 +518,8 @@ class AppLocalizationsSq extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'jave',
-      one: 'jave',
+      other: 'javë',
+      one: 'javë',
     );
     return '$_temp0';
   }
@@ -546,43 +546,43 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get statsEmpty =>
-      'Asnje amal ende. Shtoni nje ne Sot per te filluar ndjekjen.';
+      'Asnjë amal ende. Shtoni një në Sot për të filluar ndjekjen.';
 
   @override
   String get statsToday => 'Sot';
 
   @override
-  String get statsThisWeek => 'Kete jave';
+  String get statsThisWeek => 'Këtë javë';
 
   @override
-  String get statsThisMonth => 'Kete muaj';
+  String get statsThisMonth => 'Këtë muaj';
 
   @override
-  String get statsAllTime => 'Gjithe kohet';
+  String get statsAllTime => 'Gjithë kohët';
 
   @override
   String get statsCustomRange => 'Gama e personalizuar';
 
   @override
-  String get statsAllCategories => 'Te gjitha';
+  String get statsAllCategories => 'Të gjitha';
 
   @override
-  String get statsAllAmals => 'Te gjitha';
+  String get statsAllAmals => 'Të gjitha';
 
   @override
-  String get statsCompleted => 'Te perfunduara';
+  String get statsCompleted => 'Të përfunduara';
 
   @override
-  String get statsExpected => 'Te pritura';
+  String get statsExpected => 'Të pritura';
 
   @override
-  String get statsVsPrevious => 'Kunder te meparshmit';
+  String get statsVsPrevious => 'Kundër të mëparshmit';
 
   @override
-  String get statsByCategory => 'Sipas kategorise';
+  String get statsByCategory => 'Sipas kategorisë';
 
   @override
-  String get statsPerAmal => 'Per amal';
+  String get statsPerAmal => 'Për amal';
 
   @override
   String get statsTotalCaption => 'gjithsej';
@@ -602,22 +602,22 @@ class AppLocalizationsSq extends AppLocalizations {
   String get statsCurrentStreak => 'Seria aktuale';
 
   @override
-  String get statsBestStreak => 'Seria me e mire';
+  String get statsBestStreak => 'Seria më e mirë';
 
   @override
-  String get statsTotalDays => 'Dite gjithsej';
+  String get statsTotalDays => 'Ditë gjithsej';
 
   @override
-  String get statsConsistency => 'Qendreshmeria';
+  String get statsConsistency => 'Qëndrueshmëria';
 
   @override
-  String get statsLast5Weeks => '5 javet e fundit';
+  String get statsLast5Weeks => '5 javët e fundit';
 
   @override
   String get statsDailyBreakdown => 'Ndarja ditore';
 
   @override
-  String get statsCompletionRate => 'Shkalla e perfundimit';
+  String get statsCompletionRate => 'Shkalla e përfundimit';
 
   @override
   String get statsAmountPerDay => 'Sasia në ditë';
@@ -647,10 +647,10 @@ class AppLocalizationsSq extends AppLocalizations {
   String get statsFilterAmal => 'Amali';
 
   @override
-  String get statsStreaks => 'Serite';
+  String get statsStreaks => 'Seritë';
 
   @override
-  String get statsSelectDateRange => 'Zgjidhni gamen e datave';
+  String get statsSelectDateRange => 'Zgjidhni gamën e datave';
 
   @override
   String get historyTitle => 'Historiku';
@@ -660,7 +660,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String historyEmptyDay(String date) {
-    return 'Asnje amal e ndjekur me $date';
+    return 'Asnjë amal e ndjekur më $date';
   }
 
   @override
@@ -673,13 +673,13 @@ class AppLocalizationsSq extends AppLocalizations {
   String get streakUnitM => 'm';
 
   @override
-  String get mondayShort => 'Hen';
+  String get mondayShort => 'Hën';
 
   @override
   String get tuesdayShort => 'Mar';
 
   @override
-  String get wednesdayShort => 'Mer';
+  String get wednesdayShort => 'Mër';
 
   @override
   String get thursdayShort => 'Enj';
@@ -694,13 +694,13 @@ class AppLocalizationsSq extends AppLocalizations {
   String get sundayShort => 'Dil';
 
   @override
-  String get mondayFull => 'E hene';
+  String get mondayFull => 'E hënë';
 
   @override
-  String get tuesdayFull => 'E marte';
+  String get tuesdayFull => 'E martë';
 
   @override
-  String get wednesdayFull => 'E merkure';
+  String get wednesdayFull => 'E mërkurë';
 
   @override
   String get thursdayFull => 'E enjte';
@@ -709,14 +709,14 @@ class AppLocalizationsSq extends AppLocalizations {
   String get fridayFull => 'E premte';
 
   @override
-  String get saturdayFull => 'E shtune';
+  String get saturdayFull => 'E shtunë';
 
   @override
   String get sundayFull => 'E diel';
 
   @override
   String get hadith0 =>
-      '\"Veprat me te dashura tek Allahu jane ato qe behen rregullisht, edhe nese jane te vogla.\"\n— Buhariu & Muslimi';
+      '\"Veprat më të dashura tek Allahu janë ato që bëhen rregullisht, edhe nëse janë të vogla.\"\n— Buhariu & Muslimi';
 
   @override
   String get hadith2 =>
@@ -724,26 +724,26 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get hadith3 =>
-      '\"Kush i fal dy namazet e ftohta (Sabahun dhe Ikindinë) do te hyje ne Xhenet.\"\n— Buhariu';
+      '\"Kush i fal dy namazet e ftohta (Sabahun dhe Ikindinë) do të hyjë në Xhenet.\"\n— Buhariu';
 
   @override
   String get hadith4 =>
-      '\"Allahu nuk shikon pamjen tuaj as pasurine tuaj, por shikon zemrat tuaja dhe veprat tuaja.\"\n— Muslimi';
+      '\"Allahu nuk shikon pamjen tuaj as pasurinë tuaj, por shikon zemrat tuaja dhe veprat tuaja.\"\n— Muslimi';
 
   @override
   String get hadith6 =>
-      '\"Lehtesoni dhe mos veshtiresoni; pergezoni dhe mos i trembni njerezit.\"\n— Buhariu';
+      '\"Lehtësoni dhe mos vështirësoni; përgëzoni dhe mos i trembni njerëzit.\"\n— Buhariu';
 
   @override
   String get hadith7 =>
       '\"Ai që ndjek një rrugë për kërkim të dijes, Allahu ia lehtëson rrugën për në Xhenet.\"\n— Muslimi';
 
   @override
-  String get hadith8 => '\"Sadakaja nuk e pakeson pasurine.\"\n— Muslimi';
+  String get hadith8 => '\"Sadakaja nuk e pakëson pasurinë.\"\n— Muslimi';
 
   @override
   String get hadith9 =>
-      '\"Besimtari i forte eshte me i mire dhe me i dashur tek Allahu sesa besimtari i dobet, ndersa te dy kane te mire.\"\n— Muslimi';
+      '\"Besimtari i fortë është më i mirë dhe më i dashur tek Allahu sesa besimtari i dobët, ndërsa të dy kanë të mirë.\"\n— Muslimi';
 
   @override
   String get hadith10 =>

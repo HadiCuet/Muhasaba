@@ -15,10 +15,10 @@ class AppLocalizationsTg extends AppLocalizations {
   String get newDayStarted => 'Рӯзи нав оғоз ёфт';
 
   @override
-  String get appTitle => 'муҳосиба';
+  String get appTitle => 'Муҳосиба';
 
   @override
-  String get tabToday => 'Имруз';
+  String get tabToday => 'Имрӯз';
 
   @override
   String get tabStats => 'Омор';
@@ -71,7 +71,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get newAmal => 'Амали нав';
 
   @override
-  String get editAmal => 'Тагйири амал';
+  String get editAmal => 'Тағйири амал';
 
   @override
   String get newAmalTitle => 'Амали нав';
@@ -89,28 +89,28 @@ class AppLocalizationsTg extends AppLocalizations {
   String get clear => 'Тоза кардан';
 
   @override
-  String get titleLabel => 'Сарлавха';
+  String get titleLabel => 'Сарлавҳа';
 
   @override
-  String get titleRequired => 'Сарлавха лозим аст';
+  String get titleRequired => 'Сарлавҳа лозим аст';
 
   @override
-  String get titleTooLong => 'Сарлавха хеле дароз аст';
+  String get titleTooLong => 'Сарлавҳа хеле дароз аст';
 
   @override
   String get frequencyLabel => 'Басомад';
 
   @override
-  String get frequencyDaily => 'Харруза';
+  String get frequencyDaily => 'Ҳаррӯза';
 
   @override
-  String get frequencyWeekly => 'Хафтаина';
+  String get frequencyWeekly => 'Ҳафтаина';
 
   @override
-  String get frequencyMonthly => 'Мохона';
+  String get frequencyMonthly => 'Моҳона';
 
   @override
-  String get categoryLabel => 'Гурух';
+  String get categoryLabel => 'Гурӯҳ';
 
   @override
   String get categoryOther => 'Дигар';
@@ -122,10 +122,10 @@ class AppLocalizationsTg extends AppLocalizations {
   String get categoryDhikr => 'Зикр';
 
   @override
-  String get categoryQuran => 'Куръон';
+  String get categoryQuran => 'Қуръон';
 
   @override
-  String get categoryCharity => 'Садака';
+  String get categoryCharity => 'Садақа';
 
   @override
   String get categorySunnah => 'Суннат';
@@ -134,7 +134,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get timesPerPeriod => 'Маротиба дар давра';
 
   @override
-  String get custom => 'Дилхох';
+  String get custom => 'Дилхоҳ';
 
   @override
   String get customTargetHint => 'мас. 50';
@@ -146,22 +146,22 @@ class AppLocalizationsTg extends AppLocalizations {
   String get targetAnyHelp => 'Ҳадаф нест — ҳар миқдор иҷрошуда ҳисоб мешавад';
 
   @override
-  String get dayOfWeek => 'Рузи хафта';
+  String get dayOfWeek => 'Рӯзи ҳафта';
 
   @override
-  String get anyDay => 'Хар руз';
+  String get anyDay => 'Ҳар рӯз';
 
   @override
   String get anyDayHint =>
-      'Хар руз (имруз намоиш дода мешавад, фардо пинхон мешавад)';
+      'Ҳар рӯз (имрӯз намоиш дода мешавад, фардо пинҳон мешавад)';
 
   @override
   String onlyDayHint(String day) {
-    return 'Танхо $day';
+    return 'Танҳо $day';
   }
 
   @override
-  String get dateOfMonth => 'Санаи мох';
+  String get dateOfMonth => 'Санаи моҳ';
 
   @override
   String get repeatMode => 'Такрор';
@@ -232,61 +232,61 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get anyDate => 'Хар сана';
+  String get anyDate => 'Ҳар сана';
 
   @override
   String get anyDateHint =>
-      'Хар сана (имруз намоиш дода мешавад, фардо пинхон мешавад)';
+      'Ҳар сана (имрӯз намоиш дода мешавад, фардо пинҳон мешавад)';
 
   @override
   String onlyDateHint(String date) {
-    return 'Танхо дар $date';
+    return 'Танҳо дар $date';
   }
 
   @override
-  String get startPreChecked => 'Аз аввал кушодашуда огоз шавад';
+  String get startPreChecked => 'Аз аввал кушодашуда оғоз шавад';
 
   @override
   String get startPreCheckedSubtitle =>
-      'Вакте давраи нав огоз мешавад, ин амал то даме ки шумо онро бардоред, ичрошуда хисоб мешавад.';
+      'Вақте давраи нав оғоз мешавад, ин амал то даме ки шумо онро бардоред, иҷрошуда ҳисоб мешавад.';
 
   @override
-  String get reminder => 'Ёдоварй';
+  String get reminder => 'Ёдоварӣ';
 
   @override
   String get reminderNone => 'Нест';
 
   @override
   String reminderTime(String time) {
-    return 'Ёдоварй: $time';
+    return 'Ёдоварӣ: $time';
   }
 
   @override
   String get reminderPermissionWarning =>
-      'Ёдоварй захира шуд, вале огохиномахо ичозат нест. Барои гирифтани огохинома онхоро дар танзимоти система фаъол кунед.';
+      'Ёдоварӣ захира шуд, вале ба огоҳиномаҳо иҷозат дода нашудааст. Барои гирифтани огоҳинома онҳоро дар танзимоти система фаъол кунед.';
 
   @override
-  String get settingsReminders => 'Ёдоварй';
+  String get settingsReminders => 'Ёдоварӣ';
 
   @override
-  String get dailyReminder => 'Ёдоварии харруза';
+  String get dailyReminder => 'Ёдоварии ҳаррӯза';
 
   @override
   String get dailyReminderSubtitle =>
-      'Ёдоварии мулоим барои пайгирии амалхои шумо';
+      'Ёдоварии мулоим барои пайгирии амалҳои шумо';
 
   @override
-  String get dailyReminderTimeLabel => 'Вакти ёдоварй';
+  String get dailyReminderTimeLabel => 'Вақти ёдоварӣ';
 
   @override
   String get dailyReminderBody =>
-      'Барои пайгирии амали имруза каме вакт чудо кунед.';
+      'Барои пайгирии амали имрӯза каме вақт ҷудо кунед.';
 
   @override
-  String get groupByCategory => 'Аз руи гурух';
+  String get groupByCategory => 'Аз рӯи гурӯҳ';
 
   @override
-  String get flatList => 'Руйхати содда';
+  String get flatList => 'Рӯйхати содда';
 
   @override
   String errorGeneric(String error) {
@@ -301,17 +301,17 @@ class AppLocalizationsTg extends AppLocalizations {
   String get noteLabel => 'Ёддошт';
 
   @override
-  String get noteHint => 'мас. Дар масчид намоз хондам';
+  String get noteHint => 'мас. Дар масҷид намоз хондам';
 
   @override
-  String get completed => 'ичро шуд';
+  String get completed => 'иҷро шуд';
 
   @override
-  String get notCompleted => 'ичро нашуд';
+  String get notCompleted => 'иҷро нашуд';
 
   @override
   String progressOf(String progress, String target) {
-    return '$progress аз $target ичро шуд';
+    return '$progress аз $target иҷро шуд';
   }
 
   @override
@@ -320,18 +320,18 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get removeFromToday => 'Аз имруз хорич кардан';
+  String get removeFromToday => 'Аз имрӯз хориҷ кардан';
 
   @override
   String get removeFromTodaySubtitle =>
-      'Танхо барои имруз пинхон мешавад. Фардо бармегардад.';
+      'Танҳо барои имрӯз пинҳон мешавад. Фардо бармегардад.';
 
   @override
-  String get removeFromTracking => 'Аз пайгирй хорич кардан';
+  String get removeFromTracking => 'Аз пайгирӣ хориҷ кардан';
 
   @override
   String get removeFromTrackingSubtitle =>
-      'Аз руйхати шумо хамешагй хорич мешавад. Таърих нигох дошта мешавад.';
+      'Аз рӯйхати шумо ҳамешагӣ хориҷ мешавад. Таърих нигоҳ дошта мешавад.';
 
   @override
   String get chooseIcon => 'Тасвирчаро интихоб кунед';
@@ -343,7 +343,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get recentlyUsed => 'Охирин истифодашуда';
 
   @override
-  String get emojiSectionGeneral => 'Умумй';
+  String get emojiSectionGeneral => 'Умумӣ';
 
   @override
   String get categoryNameHint => 'Ном';
@@ -361,25 +361,25 @@ class AppLocalizationsTg extends AppLocalizations {
   String get addAmal => 'Илова кардани амал';
 
   @override
-  String get customAmal => 'Амали дилхох';
+  String get customAmal => 'Амали дилхоҳ';
 
   @override
-  String get amalTasbih => 'Тасбех 33x';
+  String get amalTasbih => 'Тасбеҳ 33x';
 
   @override
-  String get amalIstighfar => 'Истигфор 100x';
+  String get amalIstighfar => 'Истиғфор 100x';
 
   @override
-  String get amalSurahKahf => 'Сураи Кахф';
+  String get amalSurahKahf => 'Сураи Каҳф';
 
   @override
-  String get amalSadaqah => 'Садака';
+  String get amalSadaqah => 'Садақа';
 
   @override
-  String get amalTahajjud => 'Тахачуд';
+  String get amalTahajjud => 'Таҳаҷҷуд';
 
   @override
-  String get amalDuha => 'Намози Зухо';
+  String get amalDuha => 'Намози Зуҳо';
 
   @override
   String get amalFajr => 'Бомдод';
@@ -414,43 +414,43 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get sectionDayBoundary => 'Хадди руз';
+  String get sectionDayBoundary => 'Ҳадди рӯз';
 
   @override
   String get rolloverHour => 'Соати гузариш';
 
   @override
-  String get rolloverAtMidnight => 'Имруз дар нисфишаб тамом мешавад.';
+  String get rolloverAtMidnight => 'Имрӯз дар нисфишаб тамом мешавад.';
 
   @override
   String rolloverSubtitle(String time) {
-    return 'Амалхои дирузй то $time тагйир дода мешаванд.';
+    return 'Амалҳои дирӯзӣ то $time тағйир дода мешаванд.';
   }
 
   @override
-  String get pickRolloverHour => 'Соати гузариши рузро интихоб кунед';
+  String get pickRolloverHour => 'Соати гузариши рӯзро интихоб кунед';
 
   @override
-  String get sectionWeekMonth => 'Хафта ва мох';
+  String get sectionWeekMonth => 'Ҳафта ва моҳ';
 
   @override
-  String get startOfWeek => 'Оғози хафта';
+  String get startOfWeek => 'Оғози ҳафта';
 
   @override
-  String get startOfMonth => 'Оғози мох';
+  String get startOfMonth => 'Оғози моҳ';
 
   @override
   String get startOfMonthClamped =>
-      'Рузхои баъд аз 28-ум дар моххои кутох ба охирин рузи мох мувофик карда мешаванд.';
+      'Рӯзҳои баъд аз 28-ум дар моҳҳои кӯтоҳ ба охирин рӯзи моҳ мувофиқ карда мешаванд.';
 
   @override
   String get sectionAppearance => 'Намуд';
 
   @override
-  String get theme => 'Мавзуъ';
+  String get theme => 'Мавзӯъ';
 
   @override
-  String get themeSystem => 'Системавй';
+  String get themeSystem => 'Системавӣ';
 
   @override
   String get themeLight => 'Равшан';
@@ -472,7 +472,7 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get aboutSubtitle =>
-      'Журнали шахсии масъулияти динй. Хамаи маълумот дар ин дастгох мемонад.';
+      'Журнали шахсии масъулияти динӣ. Ҳамаи маълумот дар ин дастгоҳ мемонад.';
 
   @override
   String get statsTitle => 'Омор';
@@ -483,36 +483,36 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get perAmal => 'Барои хар амал';
+  String get perAmal => 'Барои ҳар амал';
 
   @override
-  String get thisWeek => 'Ин хафта';
+  String get thisWeek => 'Ин ҳафта';
 
   @override
-  String get thisMonth => 'Ин мох';
+  String get thisMonth => 'Ин моҳ';
 
   @override
-  String get totalCompletions => 'хамагй ичро';
+  String get totalCompletions => 'ҳамагӣ иҷро';
 
   @override
-  String get streakCurrent => 'Хозира';
+  String get streakCurrent => 'Ҳозира';
 
   @override
   String get streakLongest => 'Дарозтарин';
 
   @override
-  String get ratioWeek => 'Хафта';
+  String get ratioWeek => 'Ҳафта';
 
   @override
-  String get ratioMonth => 'Мох';
+  String get ratioMonth => 'Моҳ';
 
   @override
   String streakDays(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'руз',
-      one: 'руз',
+      other: 'рӯз',
+      one: 'рӯз',
     );
     return '$_temp0';
   }
@@ -522,8 +522,8 @@ class AppLocalizationsTg extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'хафта',
-      one: 'хафта',
+      other: 'ҳафта',
+      one: 'ҳафта',
     );
     return '$_temp0';
   }
@@ -533,60 +533,60 @@ class AppLocalizationsTg extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'мох',
-      one: 'мох',
+      other: 'моҳ',
+      one: 'моҳ',
     );
     return '$_temp0';
   }
 
   @override
-  String get frequencyBadgeDaily => 'харруза';
+  String get frequencyBadgeDaily => 'ҳаррӯза';
 
   @override
-  String get frequencyBadgeWeekly => 'хафтаина';
+  String get frequencyBadgeWeekly => 'ҳафтаина';
 
   @override
-  String get frequencyBadgeMonthly => 'мохона';
+  String get frequencyBadgeMonthly => 'моҳона';
 
   @override
   String get statsEmpty =>
-      'Хануз амал нест. Барои огози пайгирй дар сахифаи Имруз илова кунед.';
+      'Ҳанӯз амал нест. Барои оғози пайгирӣ дар саҳифаи Имрӯз илова кунед.';
 
   @override
-  String get statsToday => 'Имруз';
+  String get statsToday => 'Имрӯз';
 
   @override
-  String get statsThisWeek => 'Ин хафта';
+  String get statsThisWeek => 'Ин ҳафта';
 
   @override
-  String get statsThisMonth => 'Ин мох';
+  String get statsThisMonth => 'Ин моҳ';
 
   @override
-  String get statsAllTime => 'Хамаи вакт';
+  String get statsAllTime => 'Ҳамаи вақт';
 
   @override
-  String get statsCustomRange => 'Давраи дилхох';
+  String get statsCustomRange => 'Давраи дилхоҳ';
 
   @override
-  String get statsAllCategories => 'Хама';
+  String get statsAllCategories => 'Ҳама';
 
   @override
-  String get statsAllAmals => 'Хама';
+  String get statsAllAmals => 'Ҳама';
 
   @override
-  String get statsCompleted => 'Ичро шуд';
+  String get statsCompleted => 'Иҷро шуд';
 
   @override
   String get statsExpected => 'Интизоршаванда';
 
   @override
-  String get statsVsPrevious => 'Дар муколиса бо пешина';
+  String get statsVsPrevious => 'Дар муқоиса бо пешина';
 
   @override
-  String get statsByCategory => 'Аз руи гурух';
+  String get statsByCategory => 'Аз рӯи гурӯҳ';
 
   @override
-  String get statsPerAmal => 'Барои хар амал';
+  String get statsPerAmal => 'Барои ҳар амал';
 
   @override
   String get statsTotalCaption => 'ҳамагӣ';
@@ -603,25 +603,25 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get statsCurrentStreak => 'Силсилаи хозира';
+  String get statsCurrentStreak => 'Силсилаи ҳозира';
 
   @override
-  String get statsBestStreak => 'Бехтарин силсила';
+  String get statsBestStreak => 'Беҳтарин силсила';
 
   @override
-  String get statsTotalDays => 'Хамагй рузхо';
+  String get statsTotalDays => 'Ҳамагӣ рӯзҳо';
 
   @override
-  String get statsConsistency => 'Устуворй';
+  String get statsConsistency => 'Устуворӣ';
 
   @override
-  String get statsLast5Weeks => '5 хафтаи охир';
+  String get statsLast5Weeks => '5 ҳафтаи охир';
 
   @override
-  String get statsDailyBreakdown => 'Тафсилоти рузона';
+  String get statsDailyBreakdown => 'Тафсилоти рӯзона';
 
   @override
-  String get statsCompletionRate => 'Дарачаи ичро';
+  String get statsCompletionRate => 'Дараҷаи иҷро';
 
   @override
   String get statsAmountPerDay => 'Миқдори ҳаррӯза';
@@ -642,16 +642,16 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get statsFilterTime => 'Вакт';
+  String get statsFilterTime => 'Вақт';
 
   @override
-  String get statsFilterCategory => 'Гурух';
+  String get statsFilterCategory => 'Гурӯҳ';
 
   @override
   String get statsFilterAmal => 'Амал';
 
   @override
-  String get statsStreaks => 'Силсилахо';
+  String get statsStreaks => 'Силсилаҳо';
 
   @override
   String get statsSelectDateRange => 'Давраи санаро интихоб кунед';
@@ -664,14 +664,14 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String historyEmptyDay(String date) {
-    return 'Дар $date амал пайгирй нашудааст';
+    return 'Дар $date амал пайгирӣ нашудааст';
   }
 
   @override
   String get streakUnitD => 'р';
 
   @override
-  String get streakUnitW => 'х';
+  String get streakUnitW => 'ҳ';
 
   @override
   String get streakUnitM => 'м';
@@ -689,7 +689,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get thursdayShort => 'Пш';
 
   @override
-  String get fridayShort => 'Чм';
+  String get fridayShort => 'Ҷм';
 
   @override
   String get saturdayShort => 'Шн';
@@ -707,10 +707,10 @@ class AppLocalizationsTg extends AppLocalizations {
   String get wednesdayFull => 'Чоршанбе';
 
   @override
-  String get thursdayFull => 'Панчшанбе';
+  String get thursdayFull => 'Панҷшанбе';
 
   @override
-  String get fridayFull => 'Чумъа';
+  String get fridayFull => 'Ҷумъа';
 
   @override
   String get saturdayFull => 'Шанбе';
@@ -801,7 +801,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get settingsRolloverSub => 'Рӯз кай аз нав оғоз мешавад';
 
   @override
-  String get settingsAbout => 'Дар бора';
+  String get settingsAbout => 'Дар бораи барнома';
 
   @override
   String get settingsVersion => 'Версия';
@@ -882,7 +882,7 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get hadith37 =>
-      '\"Гуруснагонро сер кунед, бемороно зиёрат кунед ва асироро озод кунед.\"\n— Бухорӣ';
+      '\"Гуруснагонро сер кунед, беморонро зиёрат кунед ва асиронро озод кунед.\"\n— Бухорӣ';
 
   @override
   String get hadith38 =>
@@ -925,7 +925,7 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get hadith53 =>
-      '\"Ҳеч кори нек ро хурд нашуморед, ҳатто агар бародаратонро бо рӯи кушода мулоқот кунед.\"\n— Муслим';
+      '\"Ҳеҷ кори некро хурд нашуморед, ҳатто агар бародаратонро бо рӯи кушода мулоқот кунед.\"\n— Муслим';
 
   @override
   String get hadith54 =>
@@ -960,7 +960,7 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get hadith68 =>
-      '\"Ба мусулмон ҳеч хастагӣ, касалӣ, ғам, андӯҳ, озор ё ташвише намерасад, ҳатто хоре ки ба ӯ фурӯ равад, магар Аллоҳ ба ивази он баъзе гуноҳонашро мебахшад.\"\n— Бухорӣ ва Муслим';
+      '\"Ба мусулмон ҳеҷ хастагӣ, касалӣ, ғам, андӯҳ, озор ё ташвише намерасад, ҳатто хоре ки ба ӯ фурӯ равад, магар Аллоҳ ба ивази он баъзе гуноҳонашро мебахшад.\"\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith69 =>
@@ -1221,7 +1221,7 @@ class AppLocalizationsTg extends AppLocalizations {
       '1000 салавот, 30 ҷузъ. Миқдорро сабт мекунед ва он ҷамъ мешавад.';
 
   @override
-  String get challengeShapeStreak => 'Идомаи ҳарруза';
+  String get challengeShapeStreak => 'Идомаи ҳаррӯза';
 
   @override
   String get challengeShapeStreakBody =>
@@ -1414,7 +1414,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get challengeGroupPlan => 'Нақша';
 
   @override
-  String get challengeGroupReminders => 'Ёдоварй';
+  String get challengeGroupReminders => 'Ёдоварӣ';
 
   @override
   String get challengeStartFromTemplate => 'Аз намуна оғоз кунед';
@@ -1426,7 +1426,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get challengePreview => 'Пешнамоиш';
 
   @override
-  String get challengeTmplTahajjud => '40 шаб Тахачуд';
+  String get challengeTmplTahajjud => '40 шаб Таҳаҷҷуд';
 
   @override
   String get challengeTmplSalawat => '1000 салавот';
@@ -1438,7 +1438,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get challengeTmplFajrJamaah => '30 рӯз Бомдод бо ҷамоат';
 
   @override
-  String get challengeTmplSadaqah => '30 рӯз Садака';
+  String get challengeTmplSadaqah => '30 рӯз Садақа';
 
   @override
   String get listSeparator => ' · ';
@@ -1597,7 +1597,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get optionQuranListened => 'Гӯш карда шуд';
 
   @override
-  String get optionSetSadaqahType => 'Навъи садака';
+  String get optionSetSadaqahType => 'Навъи садақа';
 
   @override
   String get optionSadaqahMoney => 'Пул';
@@ -1652,7 +1652,7 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get optionSetPreviewLabel => 'Пешнамоиш — сатри Имруз';
+  String get optionSetPreviewLabel => 'Пешнамоиш — сатри Имрӯз';
 
   @override
   String optionSetKeptForHistory(String labels) {

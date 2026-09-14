@@ -495,7 +495,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get streakCurrent => 'فعلی';
 
   @override
-  String get streakLongest => 'بیشترین';
+  String get streakLongest => 'طولانی‌ترین';
 
   @override
   String get ratioWeek => 'هفته';
@@ -600,10 +600,10 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get statsCurrentStreak => 'رکورد فعلی';
+  String get statsCurrentStreak => 'زنجیرهٔ فعلی';
 
   @override
-  String get statsBestStreak => 'بهترین رکورد';
+  String get statsBestStreak => 'بهترین زنجیره';
 
   @override
   String get statsTotalDays => 'کل روزها';
@@ -648,7 +648,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get statsFilterAmal => 'عمل';
 
   @override
-  String get statsStreaks => 'رکوردها';
+  String get statsStreaks => 'زنجیره‌ها';
 
   @override
   String get statsSelectDateRange => 'بازه تاریخ را انتخاب کنید';
@@ -1216,7 +1216,7 @@ class AppLocalizationsFa extends AppLocalizations {
       '۱۰۰۰ صلوات، ۳۰ جزء. مقدار را ثبت می‌کنید و جمع می‌شود.';
 
   @override
-  String get challengeShapeStreak => 'استمرار روزانه';
+  String get challengeShapeStreak => 'زنجیرهٔ روزانه';
 
   @override
   String get challengeShapeStreakBody =>
@@ -1294,7 +1294,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String challengeTooTight(String target, String window) {
-    return '$target روز در $window روز جا نمی‌شود — استمرار روزی یکی حساب می‌شود.';
+    return '$target روز در $window روز جا نمی‌شود — در زنجیره هر روز یکی حساب می‌شود.';
   }
 
   @override
@@ -1775,13 +1775,13 @@ class AppLocalizationsFa extends AppLocalizations {
   String get optionDetailRecordsHeading => 'رکوردها';
 
   @override
-  String get optionDetailLongestRun => 'طولانی‌ترین رکورد';
+  String get optionDetailLongestRun => 'طولانی‌ترین زنجیره';
 
   @override
   String get optionDetailBestWeek => 'بهترین هفته';
 
   @override
-  String get optionDetailCurrentRun => 'رکورد فعلی';
+  String get optionDetailCurrentRun => 'زنجیرهٔ فعلی';
 
   @override
   String get optionDetailRecordsCaption =>

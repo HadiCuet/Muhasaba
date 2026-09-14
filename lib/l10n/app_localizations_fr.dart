@@ -565,7 +565,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get statsAllTime => 'Depuis toujours';
 
   @override
-  String get statsCustomRange => 'Plage personnalisee';
+  String get statsCustomRange => 'Plage personnalisée';
 
   @override
   String get statsAllCategories => 'Toutes';
@@ -580,10 +580,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get statsExpected => 'Attendus';
 
   @override
-  String get statsVsPrevious => 'vs Precedent';
+  String get statsVsPrevious => 'vs précédent';
 
   @override
-  String get statsByCategory => 'Par categorie';
+  String get statsByCategory => 'Par catégorie';
 
   @override
   String get statsPerAmal => 'Par amal';
@@ -603,22 +603,22 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get statsCurrentStreak => 'Serie actuelle';
+  String get statsCurrentStreak => 'Série actuelle';
 
   @override
-  String get statsBestStreak => 'Meilleure serie';
+  String get statsBestStreak => 'Meilleure série';
 
   @override
   String get statsTotalDays => 'Total de jours';
 
   @override
-  String get statsConsistency => 'Regularite';
+  String get statsConsistency => 'Régularité';
 
   @override
-  String get statsLast5Weeks => '5 dernieres semaines';
+  String get statsLast5Weeks => '5 dernières semaines';
 
   @override
-  String get statsDailyBreakdown => 'Detail quotidien';
+  String get statsDailyBreakdown => 'Détail quotidien';
 
   @override
   String get statsCompletionRate => 'Taux d\'accomplissement';
@@ -645,16 +645,16 @@ class AppLocalizationsFr extends AppLocalizations {
   String get statsFilterTime => 'Temps';
 
   @override
-  String get statsFilterCategory => 'Categorie';
+  String get statsFilterCategory => 'Catégorie';
 
   @override
   String get statsFilterAmal => 'Amal';
 
   @override
-  String get statsStreaks => 'Series';
+  String get statsStreaks => 'Séries';
 
   @override
-  String get statsSelectDateRange => 'Selectionner une plage de dates';
+  String get statsSelectDateRange => 'Sélectionner une plage de dates';
 
   @override
   String get historyTitle => 'Historique';

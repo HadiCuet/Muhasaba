@@ -284,7 +284,7 @@ class AppLocalizationsSo extends AppLocalizations {
       'Wax yar wakhti u qaado si aad u raadraacdo camallada maanta.';
 
   @override
-  String get groupByCategory => 'U koobi qaybaha';
+  String get groupByCategory => 'U kooxee qaybaha';
 
   @override
   String get flatList => 'Liis fudud';
@@ -1144,11 +1144,11 @@ class AppLocalizationsSo extends AppLocalizations {
       'Camallada bartilmaameedkoodu ka badan yahay mid, isticmaal − iyo + celcelin kasta.';
 
   @override
-  String get tutorialViewTitle => 'Koobid ama liis fudud';
+  String get tutorialViewTitle => 'Kooxayn ama liis fudud';
 
   @override
   String get tutorialViewBody =>
-      'U beddel inta u dhaxaysa koobidda qaybaha iyo hal liis fudud.';
+      'U beddel inta u dhaxaysa kooxaynta qaybaha iyo hal liis fudud.';
 
   @override
   String get tutorialChallengeLogTitle => 'Taabo si aad maanta u diiwaangeliso';
@@ -1630,13 +1630,13 @@ class AppLocalizationsSo extends AppLocalizations {
   String get optionIntensityIntense => 'Adag';
 
   @override
-  String get optionSetNewTitle => 'Koob ikhtiyaar oo cusub';
+  String get optionSetNewTitle => 'Urur ikhtiyaar oo cusub';
 
   @override
-  String get optionSetEditTitle => 'Wax ka beddel koobka ikhtiyaarka';
+  String get optionSetEditTitle => 'Wax ka beddel ururka ikhtiyaarka';
 
   @override
-  String get optionSetNameLabel => 'Magaca koobka';
+  String get optionSetNameLabel => 'Magaca ururka';
 
   @override
   String get optionSetNameHint => 'tus. Jamaaco';
@@ -1666,14 +1666,14 @@ class AppLocalizationsSo extends AppLocalizations {
   }
 
   @override
-  String get optionSetDelete => 'Tirtir koobka';
+  String get optionSetDelete => 'Tirtir ururka';
 
   @override
   String get optionSetDeleteConfirm =>
-      'Camalada isticmaasha koobkan mar dambe ma muujinayaan ikhtiyaaro. Maalmaha aad horey u qeyd gashay way sii haynayaan doorashadoodii.';
+      'Camalada isticmaasha ururkan mar dambe ma muujinayaan ikhtiyaaro. Maalmaha aad horey u qeyd gashay way sii haynayaan doorashadoodii.';
 
   @override
-  String get optionSetNameRequired => 'Koobka magac u dhig';
+  String get optionSetNameRequired => 'Ururka magac u dhig';
 
   @override
   String get optionsMinRequired => 'Ku dar ugu yaraan laba ikhtiyaar';
@@ -1682,7 +1682,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get optionSetNone => 'Midna';
 
   @override
-  String get optionSetNew => 'Koob cusub';
+  String get optionSetNew => 'Urur cusub';
 
   @override
   String get requireChoiceLabel => 'Doorasho waajib ka dhig';
@@ -1692,7 +1692,7 @@ class AppLocalizationsSo extends AppLocalizations {
       'Safku ma calaamadaysna ilaa ikhtiyaar la doorto';
 
   @override
-  String get requireChoicePickSetFirst => 'Marka hore koob dooro';
+  String get requireChoicePickSetFirst => 'Marka hore urur dooro';
 
   @override
   String get requireChoiceCountHelp =>
@@ -1759,12 +1759,12 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String optionBreakdownSwipeHint(int count) {
-    return '$count koob · jiid';
+    return '$count urur · jiid';
   }
 
   @override
   String get optionDetailEmpty =>
-      'Weli wax doorasho ah looma qeyd gelin koobkan.';
+      'Weli wax doorasho ah looma qeyd gelin ururkan.';
 
   @override
   String get optionDetailTrendHeading => 'Sida uu isu beddelay';
