@@ -1731,34 +1731,34 @@ class AppLocalizationsAz extends AppLocalizations {
   String get optionRemovedSuffix => 'silinib';
 
   @override
-  String get optionAllAmals => 'All';
+  String get optionAllAmals => 'Hamısı';
 
   @override
   String optionScopedCaption(String amal, int count) {
-    return '$amal · $count recorded';
+    return '$amal · $count qeydə alınıb';
   }
 
   @override
-  String get optionBreakdownSectionTitle => 'Option breakdown';
+  String get optionBreakdownSectionTitle => 'Variant bölgüsü';
 
   @override
   String optionBreakdownSwipeHint(int count) {
-    return '$count sets · swipe';
+    return '$count dəst · sürüşdürün';
   }
 
   @override
-  String get optionDetailEmpty => 'No choices recorded for this set yet.';
+  String get optionDetailEmpty => 'Bu dəst üçün hələ seçim qeydə alınmayıb.';
 
   @override
-  String get optionDetailTrendHeading => 'How it changed';
+  String get optionDetailTrendHeading => 'Zamanla dəyişim';
 
   @override
   String optionDetailTrendReadout(String option, String from, String to) {
-    return '$option went from $from to $to between the first and last week.';
+    return '$option payı ilk həftədə $from, son həftədə $to olub.';
   }
 
   @override
-  String get optionDetailByAmalHeading => 'By amal';
+  String get optionDetailByAmalHeading => 'Əmələ görə';
 
   @override
   String optionDetailByAmalReadout(
@@ -1767,35 +1767,35 @@ class AppLocalizationsAz extends AppLocalizations {
     String worst,
     String worstShare,
   ) {
-    return '$best leads at $bestShare; $worst trails at $worstShare.';
+    return 'Ən yüksək: $best ($bestShare); ən aşağı: $worst ($worstShare).';
   }
 
   @override
-  String get optionDetailRecordsHeading => 'Records';
+  String get optionDetailRecordsHeading => 'Rekordlar';
 
   @override
-  String get optionDetailLongestRun => 'Longest Run';
+  String get optionDetailLongestRun => 'Ən uzun seriya';
 
   @override
-  String get optionDetailBestWeek => 'Best Week';
+  String get optionDetailBestWeek => 'Ən yaxşı həftə';
 
   @override
-  String get optionDetailCurrentRun => 'Current Run';
+  String get optionDetailCurrentRun => 'Cari seriya';
 
   @override
   String get optionDetailRecordsCaption =>
-      'Based on the past year, independent of the period filter above.';
+      'Son bir il əsasında hesablanır; yuxarıdakı dövr filtrindən asılı deyil.';
 
   @override
-  String get optionDetailRecentDaysHeading => 'Recent days';
+  String get optionDetailRecentDaysHeading => 'Son günlər';
 
   @override
   String optionDetailRecentDaysCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Last $count days',
-      one: 'Last 1 day',
+      other: 'Son $count gün',
+      one: 'Son 1 gün',
     );
     return '$_temp0';
   }

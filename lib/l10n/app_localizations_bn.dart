@@ -1738,34 +1738,34 @@ class AppLocalizationsBn extends AppLocalizations {
   String get optionRemovedSuffix => 'সরানো';
 
   @override
-  String get optionAllAmals => 'All';
+  String get optionAllAmals => 'সব';
 
   @override
   String optionScopedCaption(String amal, int count) {
-    return '$amal · $count recorded';
+    return '$amal · $countটি রেকর্ড';
   }
 
   @override
-  String get optionBreakdownSectionTitle => 'Option breakdown';
+  String get optionBreakdownSectionTitle => 'বিকল্পের বিভাজন';
 
   @override
   String optionBreakdownSwipeHint(int count) {
-    return '$count sets · swipe';
+    return '$countটি সেট · সোয়াইপ করুন';
   }
 
   @override
-  String get optionDetailEmpty => 'No choices recorded for this set yet.';
+  String get optionDetailEmpty => 'এই সেটে এখনো কোনো নির্বাচন রেকর্ড হয়নি।';
 
   @override
-  String get optionDetailTrendHeading => 'How it changed';
+  String get optionDetailTrendHeading => 'সময়ের সাথে পরিবর্তন';
 
   @override
   String optionDetailTrendReadout(String option, String from, String to) {
-    return '$option went from $from to $to between the first and last week.';
+    return 'প্রথম ও শেষ সপ্তাহের মধ্যে $option $from থেকে $to হয়েছে।';
   }
 
   @override
-  String get optionDetailByAmalHeading => 'By amal';
+  String get optionDetailByAmalHeading => 'আমল অনুযায়ী';
 
   @override
   String optionDetailByAmalReadout(
@@ -1774,35 +1774,35 @@ class AppLocalizationsBn extends AppLocalizations {
     String worst,
     String worstShare,
   ) {
-    return '$best leads at $bestShare; $worst trails at $worstShare.';
+    return 'সবচেয়ে বেশি: $best ($bestShare); সবচেয়ে কম: $worst ($worstShare)।';
   }
 
   @override
-  String get optionDetailRecordsHeading => 'Records';
+  String get optionDetailRecordsHeading => 'রেকর্ড';
 
   @override
-  String get optionDetailLongestRun => 'Longest Run';
+  String get optionDetailLongestRun => 'দীর্ঘতম ধারা';
 
   @override
-  String get optionDetailBestWeek => 'Best Week';
+  String get optionDetailBestWeek => 'সেরা সপ্তাহ';
 
   @override
-  String get optionDetailCurrentRun => 'Current Run';
+  String get optionDetailCurrentRun => 'বর্তমান ধারা';
 
   @override
   String get optionDetailRecordsCaption =>
-      'Based on the past year, independent of the period filter above.';
+      'গত এক বছরের ভিত্তিতে; উপরে বাছাই করা সময়সীমার ওপর নির্ভর করে না।';
 
   @override
-  String get optionDetailRecentDaysHeading => 'Recent days';
+  String get optionDetailRecentDaysHeading => 'সাম্প্রতিক দিনগুলো';
 
   @override
   String optionDetailRecentDaysCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Last $count days',
-      one: 'Last 1 day',
+      other: 'গত $count দিন',
+      one: 'গত এক দিন',
     );
     return '$_temp0';
   }

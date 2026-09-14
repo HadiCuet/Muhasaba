@@ -1731,34 +1731,35 @@ class AppLocalizationsPs extends AppLocalizations {
   String get optionRemovedSuffix => 'لرې شوی';
 
   @override
-  String get optionAllAmals => 'All';
+  String get optionAllAmals => 'ټول';
 
   @override
   String optionScopedCaption(String amal, int count) {
-    return '$amal · $count recorded';
+    return '$amal · ثبت شوي: $count';
   }
 
   @override
-  String get optionBreakdownSectionTitle => 'Option breakdown';
+  String get optionBreakdownSectionTitle => 'د انتخابونو ویش';
 
   @override
   String optionBreakdownSwipeHint(int count) {
-    return '$count sets · swipe';
+    return '$count ټولګې · وښویوئ';
   }
 
   @override
-  String get optionDetailEmpty => 'No choices recorded for this set yet.';
+  String get optionDetailEmpty =>
+      'د دې ټولګې لپاره تر اوسه هیڅ انتخاب نه دی ثبت شوی.';
 
   @override
-  String get optionDetailTrendHeading => 'How it changed';
+  String get optionDetailTrendHeading => 'د وخت په تېرېدو سره بدلون';
 
   @override
   String optionDetailTrendReadout(String option, String from, String to) {
-    return '$option went from $from to $to between the first and last week.';
+    return 'د $option ونډه د لومړۍ او وروستۍ اونۍ تر منځ له $from څخه $to ته ورسېده.';
   }
 
   @override
-  String get optionDetailByAmalHeading => 'By amal';
+  String get optionDetailByAmalHeading => 'د عمل له مخې';
 
   @override
   String optionDetailByAmalReadout(
@@ -1767,35 +1768,35 @@ class AppLocalizationsPs extends AppLocalizations {
     String worst,
     String worstShare,
   ) {
-    return '$best leads at $bestShare; $worst trails at $worstShare.';
+    return 'تر ټولو لوړه ونډه: $best ($bestShare)؛ تر ټولو ټیټه: $worst ($worstShare).';
   }
 
   @override
-  String get optionDetailRecordsHeading => 'Records';
+  String get optionDetailRecordsHeading => 'ریکارډونه';
 
   @override
-  String get optionDetailLongestRun => 'Longest Run';
+  String get optionDetailLongestRun => 'تر ټولو اوږده لړۍ';
 
   @override
-  String get optionDetailBestWeek => 'Best Week';
+  String get optionDetailBestWeek => 'غوره اونۍ';
 
   @override
-  String get optionDetailCurrentRun => 'Current Run';
+  String get optionDetailCurrentRun => 'اوسنۍ لړۍ';
 
   @override
   String get optionDetailRecordsCaption =>
-      'Based on the past year, independent of the period filter above.';
+      'د تېر یو کال پر بنسټ محاسبه شوي، پورته له ټاکل شوې مودې څخه خپلواک دي.';
 
   @override
-  String get optionDetailRecentDaysHeading => 'Recent days';
+  String get optionDetailRecentDaysHeading => 'وروستۍ ورځې';
 
   @override
   String optionDetailRecentDaysCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Last $count days',
-      one: 'Last 1 day',
+      other: 'وروستۍ $count ورځې',
+      one: 'وروستۍ یوه ورځ',
     );
     return '$_temp0';
   }

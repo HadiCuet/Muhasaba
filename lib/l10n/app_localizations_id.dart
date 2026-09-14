@@ -1743,34 +1743,35 @@ class AppLocalizationsId extends AppLocalizations {
   String get optionRemovedSuffix => 'dihapus';
 
   @override
-  String get optionAllAmals => 'All';
+  String get optionAllAmals => 'Semua';
 
   @override
   String optionScopedCaption(String amal, int count) {
-    return '$amal · $count recorded';
+    return '$amal · $count tercatat';
   }
 
   @override
-  String get optionBreakdownSectionTitle => 'Option breakdown';
+  String get optionBreakdownSectionTitle => 'Rincian opsi';
 
   @override
   String optionBreakdownSwipeHint(int count) {
-    return '$count sets · swipe';
+    return '$count set · geser';
   }
 
   @override
-  String get optionDetailEmpty => 'No choices recorded for this set yet.';
+  String get optionDetailEmpty =>
+      'Belum ada pilihan yang tercatat untuk set ini.';
 
   @override
-  String get optionDetailTrendHeading => 'How it changed';
+  String get optionDetailTrendHeading => 'Perubahan dari waktu ke waktu';
 
   @override
   String optionDetailTrendReadout(String option, String from, String to) {
-    return '$option went from $from to $to between the first and last week.';
+    return '$option berubah dari $from menjadi $to antara minggu pertama dan minggu terakhir.';
   }
 
   @override
-  String get optionDetailByAmalHeading => 'By amal';
+  String get optionDetailByAmalHeading => 'Per amal';
 
   @override
   String optionDetailByAmalReadout(
@@ -1779,35 +1780,35 @@ class AppLocalizationsId extends AppLocalizations {
     String worst,
     String worstShare,
   ) {
-    return '$best leads at $bestShare; $worst trails at $worstShare.';
+    return 'Tertinggi: $best ($bestShare); terendah: $worst ($worstShare).';
   }
 
   @override
-  String get optionDetailRecordsHeading => 'Records';
+  String get optionDetailRecordsHeading => 'Rekor';
 
   @override
-  String get optionDetailLongestRun => 'Longest Run';
+  String get optionDetailLongestRun => 'Streak Terpanjang';
 
   @override
-  String get optionDetailBestWeek => 'Best Week';
+  String get optionDetailBestWeek => 'Minggu Terbaik';
 
   @override
-  String get optionDetailCurrentRun => 'Current Run';
+  String get optionDetailCurrentRun => 'Streak Saat Ini';
 
   @override
   String get optionDetailRecordsCaption =>
-      'Based on the past year, independent of the period filter above.';
+      'Berdasarkan satu tahun terakhir, terlepas dari filter periode di atas.';
 
   @override
-  String get optionDetailRecentDaysHeading => 'Recent days';
+  String get optionDetailRecentDaysHeading => 'Hari-hari terakhir';
 
   @override
   String optionDetailRecentDaysCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Last $count days',
-      one: 'Last 1 day',
+      other: '$count hari terakhir',
+      one: '1 hari terakhir',
     );
     return '$_temp0';
   }

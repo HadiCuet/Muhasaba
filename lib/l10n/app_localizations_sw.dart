@@ -1740,34 +1740,35 @@ class AppLocalizationsSw extends AppLocalizations {
   String get optionRemovedSuffix => 'limeondolewa';
 
   @override
-  String get optionAllAmals => 'All';
+  String get optionAllAmals => 'Zote';
 
   @override
   String optionScopedCaption(String amal, int count) {
-    return '$amal · $count recorded';
+    return '$amal · rekodi $count';
   }
 
   @override
-  String get optionBreakdownSectionTitle => 'Option breakdown';
+  String get optionBreakdownSectionTitle => 'Uchanganuzi wa chaguo';
 
   @override
   String optionBreakdownSwipeHint(int count) {
-    return '$count sets · swipe';
+    return 'Seti $count · telezesha';
   }
 
   @override
-  String get optionDetailEmpty => 'No choices recorded for this set yet.';
+  String get optionDetailEmpty =>
+      'Bado hakuna chaguo lililorekodiwa kwa seti hii.';
 
   @override
-  String get optionDetailTrendHeading => 'How it changed';
+  String get optionDetailTrendHeading => 'Jinsi ilivyobadilika';
 
   @override
   String optionDetailTrendReadout(String option, String from, String to) {
-    return '$option went from $from to $to between the first and last week.';
+    return 'Sehemu ya $option ilibadilika kutoka $from hadi $to kati ya wiki ya kwanza na ya mwisho.';
   }
 
   @override
-  String get optionDetailByAmalHeading => 'By amal';
+  String get optionDetailByAmalHeading => 'Kwa kila amali';
 
   @override
   String optionDetailByAmalReadout(
@@ -1776,35 +1777,35 @@ class AppLocalizationsSw extends AppLocalizations {
     String worst,
     String worstShare,
   ) {
-    return '$best leads at $bestShare; $worst trails at $worstShare.';
+    return 'Juu zaidi ni $best kwa $bestShare; chini zaidi ni $worst kwa $worstShare.';
   }
 
   @override
-  String get optionDetailRecordsHeading => 'Records';
+  String get optionDetailRecordsHeading => 'Rekodi';
 
   @override
-  String get optionDetailLongestRun => 'Longest Run';
+  String get optionDetailLongestRun => 'Mfululizo mrefu zaidi';
 
   @override
-  String get optionDetailBestWeek => 'Best Week';
+  String get optionDetailBestWeek => 'Wiki bora';
 
   @override
-  String get optionDetailCurrentRun => 'Current Run';
+  String get optionDetailCurrentRun => 'Mfululizo wa sasa';
 
   @override
   String get optionDetailRecordsCaption =>
-      'Based on the past year, independent of the period filter above.';
+      'Kulingana na mwaka uliopita, bila kujali kichujio cha kipindi hapo juu.';
 
   @override
-  String get optionDetailRecentDaysHeading => 'Recent days';
+  String get optionDetailRecentDaysHeading => 'Siku za hivi karibuni';
 
   @override
   String optionDetailRecentDaysCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Last $count days',
-      one: 'Last 1 day',
+      other: 'Siku $count zilizopita',
+      one: 'Siku 1 iliyopita',
     );
     return '$_temp0';
   }

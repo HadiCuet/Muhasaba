@@ -1733,34 +1733,35 @@ class AppLocalizationsKy extends AppLocalizations {
   String get optionRemovedSuffix => 'алынып салынган';
 
   @override
-  String get optionAllAmals => 'All';
+  String get optionAllAmals => 'Баары';
 
   @override
   String optionScopedCaption(String amal, int count) {
-    return '$amal · $count recorded';
+    return '$amal · $count белгиленген';
   }
 
   @override
-  String get optionBreakdownSectionTitle => 'Option breakdown';
+  String get optionBreakdownSectionTitle => 'Вариант бөлүнүшү';
 
   @override
   String optionBreakdownSwipeHint(int count) {
-    return '$count sets · swipe';
+    return '$count топтом · жылдырыңыз';
   }
 
   @override
-  String get optionDetailEmpty => 'No choices recorded for this set yet.';
+  String get optionDetailEmpty =>
+      'Бул топтом үчүн азырынча тандоо белгиленген эмес.';
 
   @override
-  String get optionDetailTrendHeading => 'How it changed';
+  String get optionDetailTrendHeading => 'Кантип өзгөрдү';
 
   @override
   String optionDetailTrendReadout(String option, String from, String to) {
-    return '$option went from $from to $to between the first and last week.';
+    return '$option үлүшү биринчи жумада $from, акыркы жумада $to болду.';
   }
 
   @override
-  String get optionDetailByAmalHeading => 'By amal';
+  String get optionDetailByAmalHeading => 'Амал боюнча';
 
   @override
   String optionDetailByAmalReadout(
@@ -1769,35 +1770,35 @@ class AppLocalizationsKy extends AppLocalizations {
     String worst,
     String worstShare,
   ) {
-    return '$best leads at $bestShare; $worst trails at $worstShare.';
+    return 'Эң жогорку: $best ($bestShare); эң төмөнкү: $worst ($worstShare).';
   }
 
   @override
-  String get optionDetailRecordsHeading => 'Records';
+  String get optionDetailRecordsHeading => 'Рекорддор';
 
   @override
-  String get optionDetailLongestRun => 'Longest Run';
+  String get optionDetailLongestRun => 'Эң узун серия';
 
   @override
-  String get optionDetailBestWeek => 'Best Week';
+  String get optionDetailBestWeek => 'Эң жакшы жума';
 
   @override
-  String get optionDetailCurrentRun => 'Current Run';
+  String get optionDetailCurrentRun => 'Учурдагы серия';
 
   @override
   String get optionDetailRecordsCaption =>
-      'Based on the past year, independent of the period filter above.';
+      'Акыркы бир жылдын негизинде эсептелет; жогорудагы мезгил чыпкасына көз каранды эмес.';
 
   @override
-  String get optionDetailRecentDaysHeading => 'Recent days';
+  String get optionDetailRecentDaysHeading => 'Акыркы күндөр';
 
   @override
   String optionDetailRecentDaysCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Last $count days',
-      one: 'Last 1 day',
+      other: 'Акыркы $count күн',
+      one: 'Акыркы 1 күн',
     );
     return '$_temp0';
   }

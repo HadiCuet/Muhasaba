@@ -1752,34 +1752,35 @@ class AppLocalizationsFr extends AppLocalizations {
   String get optionRemovedSuffix => 'retirée';
 
   @override
-  String get optionAllAmals => 'All';
+  String get optionAllAmals => 'Tous';
 
   @override
   String optionScopedCaption(String amal, int count) {
-    return '$amal · $count recorded';
+    return '$amal · $count choix';
   }
 
   @override
-  String get optionBreakdownSectionTitle => 'Option breakdown';
+  String get optionBreakdownSectionTitle => 'Répartition des options';
 
   @override
   String optionBreakdownSwipeHint(int count) {
-    return '$count sets · swipe';
+    return '$count ensembles · balayez';
   }
 
   @override
-  String get optionDetailEmpty => 'No choices recorded for this set yet.';
+  String get optionDetailEmpty =>
+      'Aucun choix enregistré pour cet ensemble pour le moment.';
 
   @override
-  String get optionDetailTrendHeading => 'How it changed';
+  String get optionDetailTrendHeading => 'Évolution';
 
   @override
   String optionDetailTrendReadout(String option, String from, String to) {
-    return '$option went from $from to $to between the first and last week.';
+    return 'La part de $option est passée de $from à $to entre la première et la dernière semaine.';
   }
 
   @override
-  String get optionDetailByAmalHeading => 'By amal';
+  String get optionDetailByAmalHeading => 'Par amal';
 
   @override
   String optionDetailByAmalReadout(
@@ -1788,35 +1789,35 @@ class AppLocalizationsFr extends AppLocalizations {
     String worst,
     String worstShare,
   ) {
-    return '$best leads at $bestShare; $worst trails at $worstShare.';
+    return 'Part la plus élevée : $best ($bestShare) ; la plus basse : $worst ($worstShare).';
   }
 
   @override
   String get optionDetailRecordsHeading => 'Records';
 
   @override
-  String get optionDetailLongestRun => 'Longest Run';
+  String get optionDetailLongestRun => 'Plus longue série';
 
   @override
-  String get optionDetailBestWeek => 'Best Week';
+  String get optionDetailBestWeek => 'Meilleure semaine';
 
   @override
-  String get optionDetailCurrentRun => 'Current Run';
+  String get optionDetailCurrentRun => 'Série actuelle';
 
   @override
   String get optionDetailRecordsCaption =>
-      'Based on the past year, independent of the period filter above.';
+      'Calculé sur l\'année écoulée, indépendamment du filtre de période ci-dessus.';
 
   @override
-  String get optionDetailRecentDaysHeading => 'Recent days';
+  String get optionDetailRecentDaysHeading => 'Jours récents';
 
   @override
   String optionDetailRecentDaysCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Last $count days',
-      one: 'Last 1 day',
+      other: '$count derniers jours',
+      one: 'Dernier jour',
     );
     return '$_temp0';
   }

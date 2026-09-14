@@ -1749,34 +1749,35 @@ class AppLocalizationsBs extends AppLocalizations {
   String get optionRemovedSuffix => 'uklonjeno';
 
   @override
-  String get optionAllAmals => 'All';
+  String get optionAllAmals => 'Sve';
 
   @override
   String optionScopedCaption(String amal, int count) {
-    return '$amal · $count recorded';
+    return '$amal · $count zabilježeno';
   }
 
   @override
-  String get optionBreakdownSectionTitle => 'Option breakdown';
+  String get optionBreakdownSectionTitle => 'Raspodjela opcija';
 
   @override
   String optionBreakdownSwipeHint(int count) {
-    return '$count sets · swipe';
+    return 'Setova: $count · prevucite';
   }
 
   @override
-  String get optionDetailEmpty => 'No choices recorded for this set yet.';
+  String get optionDetailEmpty =>
+      'Za ovaj set još nije zabilježen nijedan izbor.';
 
   @override
-  String get optionDetailTrendHeading => 'How it changed';
+  String get optionDetailTrendHeading => 'Kako se mijenjalo';
 
   @override
   String optionDetailTrendReadout(String option, String from, String to) {
-    return '$option went from $from to $to between the first and last week.';
+    return 'Udio opcije $option promijenio se s $from na $to između prve i posljednje sedmice.';
   }
 
   @override
-  String get optionDetailByAmalHeading => 'By amal';
+  String get optionDetailByAmalHeading => 'Po amelu';
 
   @override
   String optionDetailByAmalReadout(
@@ -1785,35 +1786,36 @@ class AppLocalizationsBs extends AppLocalizations {
     String worst,
     String worstShare,
   ) {
-    return '$best leads at $bestShare; $worst trails at $worstShare.';
+    return 'Najviše: $best ($bestShare); najmanje: $worst ($worstShare).';
   }
 
   @override
-  String get optionDetailRecordsHeading => 'Records';
+  String get optionDetailRecordsHeading => 'Rekordi';
 
   @override
-  String get optionDetailLongestRun => 'Longest Run';
+  String get optionDetailLongestRun => 'Najduži niz';
 
   @override
-  String get optionDetailBestWeek => 'Best Week';
+  String get optionDetailBestWeek => 'Najbolja sedmica';
 
   @override
-  String get optionDetailCurrentRun => 'Current Run';
+  String get optionDetailCurrentRun => 'Trenutni niz';
 
   @override
   String get optionDetailRecordsCaption =>
-      'Based on the past year, independent of the period filter above.';
+      'Na osnovu protekle godine, neovisno o filteru perioda iznad.';
 
   @override
-  String get optionDetailRecentDaysHeading => 'Recent days';
+  String get optionDetailRecentDaysHeading => 'Nedavni dani';
 
   @override
   String optionDetailRecentDaysCount(int count) {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Last $count days',
-      one: 'Last 1 day',
+      other: 'Zadnjih $count dana',
+      few: 'Zadnja $count dana',
+      one: 'Zadnji $count dan',
     );
     return '$_temp0';
   }
