@@ -349,7 +349,10 @@ class _AmalDropdown extends ConsumerWidget {
               .update(filter.copyWith(amalId: () => newAmalId));
           FirebaseAnalytics.instance.logEvent(
             name: 'stats_amal_filter_changed',
-            parameters: {'active': newAmalId != null ? 1 : 0},
+            parameters: {
+              'active': newAmalId != null ? 1 : 0,
+              'source': 'dropdown',
+            },
           );
         });
       },

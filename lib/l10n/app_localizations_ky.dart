@@ -140,6 +140,13 @@ class AppLocalizationsKy extends AppLocalizations {
   String get customTargetHint => 'мис. 50';
 
   @override
+  String get targetAny => 'Каалаганча';
+
+  @override
+  String get targetAnyHelp =>
+      'Максат жок — каалаган өлчөм аткарылган деп эсептелет';
+
+  @override
   String get dayOfWeek => 'Жума күнү';
 
   @override
@@ -302,6 +309,11 @@ class AppLocalizationsKy extends AppLocalizations {
   @override
   String progressOf(String progress, String target) {
     return '$target ичинен $progress аткарылды';
+  }
+
+  @override
+  String progressOpen(String count) {
+    return '$count аткарылды';
   }
 
   @override
@@ -574,6 +586,20 @@ class AppLocalizationsKy extends AppLocalizations {
   String get statsPerAmal => 'Ар бир амал';
 
   @override
+  String get statsTotalCaption => 'бардыгы';
+
+  @override
+  String statsDaysFraction(String done, String expectedText, num expected) {
+    String _temp0 = intl.Intl.pluralLogic(
+      expected,
+      locale: localeName,
+      other: 'күн',
+      one: 'күн',
+    );
+    return '$done/$expectedText $_temp0';
+  }
+
+  @override
   String get statsCurrentStreak => 'Учурдагы серия';
 
   @override
@@ -593,6 +619,24 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get statsCompletionRate => 'Аткаруу деңгээли';
+
+  @override
+  String get statsAmountPerDay => 'Күнүмдүк өлчөм';
+
+  @override
+  String statsCountTotal(String count) {
+    return 'Бардыгы $count';
+  }
+
+  @override
+  String statsCountAvg(String amount) {
+    return 'Орточо $amount/күн';
+  }
+
+  @override
+  String statsCountBest(String count, String day) {
+    return 'Эң көп $count · $day';
+  }
 
   @override
   String get statsFilterTime => 'Убакыт';

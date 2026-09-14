@@ -34,14 +34,14 @@ class CompletionRepository {
     required int amalId,
     required DateTime muhasabaDate,
     required int progress,
-    required int target,
+    required bool completed,
   }) {
     final now = DateTime.now().toUtc();
     return _completions.upsertProgress(
       amalId: amalId,
       muhasabaDate: muhasabaDate,
       progress: progress,
-      completedAt: Value(progress >= target ? now : null),
+      completedAt: Value(completed ? now : null),
       optionItemId: progress == 0 ? const Value(null) : const Value.absent(),
     );
   }
@@ -62,16 +62,15 @@ class CompletionRepository {
 
   /// Writes the chosen option and the resulting progress in one upsert. The
   /// caller owns the semantics — whether picking completes the row depends on
-  /// `target` and `requireChoice`, which only the UI knows.
+  /// the amal's goal and `requireChoice`, which only the UI knows.
   Future<void> setChoice({
     required int amalId,
     required DateTime muhasabaDate,
     required int? optionItemId,
     required int progress,
-    required int target,
+    required bool completed,
   }) async {
     final existing = await _completions.getForAmalDate(amalId, muhasabaDate);
-    final completed = progress >= target;
     await _completions.upsertProgress(
       amalId: amalId,
       muhasabaDate: muhasabaDate,

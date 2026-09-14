@@ -9,6 +9,8 @@ class Amals extends Table {
   IntColumn get id => integer().autoIncrement()();
   TextColumn get title => text().withLength(min: 1, max: 120)();
   IntColumn get frequency => intEnum<Frequency>()();
+
+  /// 0 = no goal: any amount completes the day.
   IntColumn get target => integer().withDefault(const Constant(1))();
   IntColumn get weeklyDay => integer()
       .nullable()(); // 1..7; legacy single day, superseded by weeklyDays
@@ -51,8 +53,8 @@ class Categories extends Table {
   Set<Column> get primaryKey => {name};
 }
 
-/// One row per (amal, muhasabaDate). `progress >= amal.target` means the amal
-/// is considered complete for that muhasaba day.
+/// One row per (amal, muhasabaDate). `AmalGoal.meets(progress)` decides
+/// whether the amal counts for that muhasaba day.
 @DataClassName('CompletionRow')
 class Completions extends Table {
   IntColumn get id => integer().autoIncrement()();

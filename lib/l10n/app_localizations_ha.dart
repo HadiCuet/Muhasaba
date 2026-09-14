@@ -140,6 +140,12 @@ class AppLocalizationsHa extends AppLocalizations {
   String get customTargetHint => 'misali 50';
 
   @override
+  String get targetAny => 'Ko nawa';
+
+  @override
+  String get targetAnyHelp => 'Babu manufa — kowane adadi ana ɗauka an kammala';
+
+  @override
   String get dayOfWeek => 'Ranar mako';
 
   @override
@@ -303,6 +309,11 @@ class AppLocalizationsHa extends AppLocalizations {
   @override
   String progressOf(String progress, String target) {
     return '$progress daga cikin $target an kammala';
+  }
+
+  @override
+  String progressOpen(String count) {
+    return 'An kammala $count';
   }
 
   @override
@@ -575,6 +586,20 @@ class AppLocalizationsHa extends AppLocalizations {
   String get statsPerAmal => 'Kowane amali';
 
   @override
+  String get statsTotalCaption => 'jimla';
+
+  @override
+  String statsDaysFraction(String done, String expectedText, num expected) {
+    String _temp0 = intl.Intl.pluralLogic(
+      expected,
+      locale: localeName,
+      other: 'ranaku $done/$expectedText',
+      one: 'rana $done/$expectedText',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String get statsCurrentStreak => 'Jerin yanzu';
 
   @override
@@ -594,6 +619,24 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get statsCompletionRate => 'Adadin kammalawa';
+
+  @override
+  String get statsAmountPerDay => 'Adadi a kowace rana';
+
+  @override
+  String statsCountTotal(String count) {
+    return 'Jimla $count';
+  }
+
+  @override
+  String statsCountAvg(String amount) {
+    return 'Matsakaici $amount/rana';
+  }
+
+  @override
+  String statsCountBest(String count, String day) {
+    return 'Mafi yawa $count · $day';
+  }
 
   @override
   String get statsFilterTime => 'Lokaci';

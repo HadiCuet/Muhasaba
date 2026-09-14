@@ -3,6 +3,7 @@ import 'package:flutter/foundation.dart';
 import '../../core/time/period.dart';
 import '../../data/db/database.dart';
 import '../../features/stats/stats_filter.dart';
+import '../models/amal_goal.dart';
 import '../models/app_settings.dart';
 import '../models/frequency.dart';
 import '../utils/monthly_dates.dart';
@@ -17,12 +18,18 @@ class DailyBreakdown {
     required this.date,
     required this.completed,
     required this.expected,
+    required this.amount,
     required this.isToday,
   });
 
   final DateTime date;
   final int completed;
   final int expected;
+
+  /// Total progress recorded that day across the amals in scope. Only
+  /// meaningful when one amal is in scope — see `statsFocusedAmalProvider`.
+  final int amount;
+
   final bool isToday;
 
   double get rate => expected > 0 ? completed / expected : 0;
@@ -225,8 +232,10 @@ class EnhancedAmalStats {
     required this.icon,
     this.category,
     required this.frequency,
+    required this.target,
     required this.completed,
     required this.expected,
+    required this.amount,
     required this.currentStreak,
   });
 
@@ -235,9 +244,19 @@ class EnhancedAmalStats {
   final String icon;
   final String? category;
   final Frequency frequency;
+
+  /// The amal's goal: 0 is open-ended, 1 simple, above 1 counted.
+  final int target;
+
   final int completed;
   final int expected;
+
+  /// Total progress recorded in the period.
+  final int amount;
+
   final int currentStreak;
+
+  bool get isOpenEnded => target == kOpenEndedTarget;
 
   double get rate => expected > 0 ? completed / expected : 0;
 }
@@ -325,8 +344,9 @@ class EnhancedStatsService {
       );
       completionsByAmal[amal.id] = rows;
 
-      final completed = rows.where((r) => r.progress >= amal.target).length;
+      final completed = rows.where((r) => amal.meets(r.progress)).length;
       final expected = _expectedInPeriod(amal, period);
+      final amount = rows.fold<int>(0, (sum, r) => sum + r.progress);
 
       totalCompleted += completed;
       totalExpected += expected;
@@ -345,8 +365,10 @@ class EnhancedStatsService {
           icon: amal.icon,
           category: amal.category,
           frequency: amal.frequency,
+          target: amal.target,
           completed: completed,
           expected: expected,
+          amount: amount,
           currentStreak: streak,
         ),
       );
@@ -456,7 +478,7 @@ class EnhancedStatsService {
   /// Trend, records and recent-days aggregates for one option set's details
   /// page — kept out of [compute] since the weekly bucketing and day-by-day
   /// run scan below are only worth running when that page is actually
-  /// opened. `null` when the set has no completions meeting target in range.
+  /// opened. `null` when the set has no recorded completions in range.
   /// [amalId] scopes everything to one amal in the set; `null` is all of them.
   Future<OptionDetail?> optionDetail({
     required int setId,
@@ -570,7 +592,7 @@ class EnhancedStatsService {
     );
   }
 
-  /// Recorded choices in [window]: completions meeting target whose item
+  /// Recorded choices in [window]: completions that count whose item
   /// belongs to [setId], across [setAmals].
   List<OptionDayEntry> _recordedEntries(
     List<AmalRow> setAmals,
@@ -583,7 +605,7 @@ class EnhancedStatsService {
     for (final amal in setAmals) {
       for (final row in completionsByAmal[amal.id] ?? const <CompletionRow>[]) {
         if (!window.contains(row.muhasabaDate)) continue;
-        if (row.progress < amal.target) continue;
+        if (!amal.meets(row.progress)) continue;
         final itemId = _setItemId(row, setId, items);
         if (itemId == null) continue;
         result.add(
@@ -847,30 +869,30 @@ class EnhancedStatsService {
       final key = _dayKey(date);
       var completed = 0;
       var expected = 0;
+      var amount = 0;
 
       for (final amal in amals) {
+        final rows = completionsByAmal[amal.id] ?? const <CompletionRow>[];
+        final match = rows
+            .where((r) => _dayKey(r.muhasabaDate) == key)
+            .toList();
+        for (final r in match) {
+          amount += r.progress;
+        }
+
         if (amal.frequency == Frequency.daily) {
           expected++;
-          final rows = completionsByAmal[amal.id] ?? [];
-          final match = rows.where((r) => _dayKey(r.muhasabaDate) == key);
-          if (match.any((r) => r.progress >= amal.target)) completed++;
+          if (match.any((r) => amal.meets(r.progress))) completed++;
         } else {
-          final rows = completionsByAmal[amal.id] ?? [];
-          final match = rows.where((r) => _dayKey(r.muhasabaDate) == key);
           final isPinnedOccurrence = amal.frequency == Frequency.weekly
               ? parseWeeklyDays(amal.weeklyDays).contains(date.weekday)
               : isScheduledMonthDate(
                   parseMonthlyDates(amal.monthlyDates),
                   date,
                 );
-          if (isPinnedOccurrence) {
-            // Pinned multi-day weekly: this day is a scheduled occurrence.
+          if (isPinnedOccurrence || match.isNotEmpty) {
             expected++;
-            if (match.any((r) => r.progress >= amal.target)) completed++;
-          } else if (match.isNotEmpty) {
-            // Floating weekly / monthly: count only days with activity.
-            expected++;
-            if (match.any((r) => r.progress >= amal.target)) completed++;
+            if (match.any((r) => amal.meets(r.progress))) completed++;
           }
         }
       }
@@ -880,6 +902,7 @@ class EnhancedStatsService {
           date: date,
           completed: completed,
           expected: expected,
+          amount: amount,
           isToday: key == _dayKey(today),
         ),
       );
@@ -932,7 +955,7 @@ class EnhancedStatsService {
           (a) =>
               a.optionSetId != null &&
               (completionsByAmal[a.id] ?? const <CompletionRow>[]).any(
-                (r) => r.progress >= a.target,
+                (r) => a.meets(r.progress),
               ),
         )
         .toList();
@@ -958,7 +981,7 @@ class EnhancedStatsService {
       for (final amal in setAmals) {
         for (final row
             in completionsByAmal[amal.id] ?? const <CompletionRow>[]) {
-          if (row.progress < amal.target) continue;
+          if (!amal.meets(row.progress)) continue;
           final itemId = _setItemId(row, setId, items);
           if (itemId == null) {
             noChoice++;
@@ -1061,7 +1084,7 @@ class EnhancedStatsService {
 
       var completed = 0;
       for (final amal in dailyAmals) {
-        if (rows.any((r) => r.amalId == amal.id && r.progress >= amal.target)) {
+        if (rows.any((r) => r.amalId == amal.id && amal.meets(r.progress))) {
           completed++;
         }
       }
@@ -1093,7 +1116,7 @@ class EnhancedStatsService {
         final rows = await lookup(amal.id, start, end);
         final done = {
           for (final r in rows)
-            if (r.progress >= amal.target) _dayKey(r.muhasabaDate),
+            if (amal.meets(r.progress)) _dayKey(r.muhasabaDate),
         };
         var streak = 0;
         var cursor = today;
@@ -1116,7 +1139,7 @@ class EnhancedStatsService {
           final rows = await lookup(amal.id, start, end);
           final done = {
             for (final r in rows)
-              if (r.progress >= amal.target) _dayKey(r.muhasabaDate),
+              if (amal.meets(r.progress)) _dayKey(r.muhasabaDate),
           };
           return weeklyOccurrenceStreak(
             scheduledWeekdays: weekdays,
@@ -1130,7 +1153,7 @@ class EnhancedStatsService {
         for (var i = 0; i < 52; i++) {
           final rows = await lookup(amal.id, week.start, week.endExclusive);
           final done =
-              rows.where((r) => r.progress >= amal.target).length >=
+              rows.where((r) => amal.meets(r.progress)).length >=
               amal.periodTarget;
           if (i == 0 && !done) {
             // Current week still open.
@@ -1162,7 +1185,7 @@ class EnhancedStatsService {
           final rows = await lookup(amal.id, start, end);
           final done = {
             for (final r in rows)
-              if (r.progress >= amal.target) _dayKey(r.muhasabaDate),
+              if (amal.meets(r.progress)) _dayKey(r.muhasabaDate),
           };
           return occurrenceStreak(
             isScheduled: (d) => isScheduledMonthDate(dates, d),
@@ -1176,7 +1199,7 @@ class EnhancedStatsService {
         for (var i = 0; i < 24; i++) {
           final rows = await lookup(amal.id, month.start, month.endExclusive);
           final done =
-              rows.where((r) => r.progress >= amal.target).length >=
+              rows.where((r) => amal.meets(r.progress)).length >=
               amal.periodTarget;
           if (i == 0 && !done) {
             month = monthPeriodOf(
@@ -1219,7 +1242,7 @@ class EnhancedStatsService {
       final rows = await lookup(amal.id, start, end);
       perAmalDone[amal.id] = {
         for (final r in rows)
-          if (r.progress >= amal.target) _dayKey(r.muhasabaDate),
+          if (amal.meets(r.progress)) _dayKey(r.muhasabaDate),
       };
     }
 
@@ -1274,7 +1297,7 @@ class EnhancedStatsService {
     var expected = 0;
     for (final amal in amals) {
       final rows = await lookup(amal.id, prev.start, prev.endExclusive);
-      completed += rows.where((r) => r.progress >= amal.target).length;
+      completed += rows.where((r) => amal.meets(r.progress)).length;
       expected += _expectedInPeriod(amal, prev);
     }
     if (expected == 0) return null;

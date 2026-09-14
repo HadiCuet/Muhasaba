@@ -140,6 +140,12 @@ class AppLocalizationsFa extends AppLocalizations {
   String get customTargetHint => 'مثلاً ۵۰';
 
   @override
+  String get targetAny => 'هر تعداد';
+
+  @override
+  String get targetAnyHelp => 'بدون هدف — هر مقداری انجام‌شده حساب می‌شود';
+
+  @override
   String get dayOfWeek => 'روز هفته';
 
   @override
@@ -303,6 +309,11 @@ class AppLocalizationsFa extends AppLocalizations {
   @override
   String progressOf(String progress, String target) {
     return '$progress از $target انجام شده';
+  }
+
+  @override
+  String progressOpen(String count) {
+    return '$count انجام شده';
   }
 
   @override
@@ -575,6 +586,20 @@ class AppLocalizationsFa extends AppLocalizations {
   String get statsPerAmal => 'به تفکیک عمل';
 
   @override
+  String get statsTotalCaption => 'مجموع';
+
+  @override
+  String statsDaysFraction(String done, String expectedText, num expected) {
+    String _temp0 = intl.Intl.pluralLogic(
+      expected,
+      locale: localeName,
+      other: 'روز',
+      one: 'روز',
+    );
+    return '$done/$expectedText $_temp0';
+  }
+
+  @override
   String get statsCurrentStreak => 'رکورد فعلی';
 
   @override
@@ -594,6 +619,24 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get statsCompletionRate => 'نرخ انجام';
+
+  @override
+  String get statsAmountPerDay => 'مقدار روزانه';
+
+  @override
+  String statsCountTotal(String count) {
+    return 'مجموع $count';
+  }
+
+  @override
+  String statsCountAvg(String amount) {
+    return 'میانگین $amount/روز';
+  }
+
+  @override
+  String statsCountBest(String count, String day) {
+    return 'بیشترین $count · $day';
+  }
 
   @override
   String get statsFilterTime => 'زمان';

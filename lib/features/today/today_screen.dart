@@ -8,6 +8,7 @@ import '../../app/providers.dart';
 import '../../app/widgets/max_width_body.dart';
 import '../../app/widgets/reorder_proxy_decorator.dart';
 import '../../data/db/database.dart';
+import '../../domain/models/amal_goal.dart';
 import '../../domain/services/today_builder.dart';
 import '../../domain/utils/localized_amal_title.dart';
 import '../../domain/utils/localized_category.dart';
@@ -386,14 +387,14 @@ Future<void> _setProgress(
   int progress,
 ) async {
   final wasCompleted = row.isCompleted;
-  final nowCompleted = progress >= row.amal.target;
+  final nowCompleted = row.amal.meets(progress);
   await ref
       .read(completionRepositoryProvider)
       .setProgress(
         amalId: row.amal.id,
         muhasabaDate: date,
         progress: progress,
-        target: row.amal.target,
+        completed: nowCompleted,
       );
   if (!wasCompleted && nowCompleted) {
     FirebaseAnalytics.instance.logEvent(
@@ -412,6 +413,7 @@ Future<void> _setProgress(
   ref.invalidate(statsSnapshotProvider);
   ref.invalidate(currentStreaksProvider);
   ref.invalidate(enhancedStatsProvider);
+  ref.invalidate(dailyBreakdownProvider);
   ref.invalidate(optionDetailProvider);
   if (!wasCompleted && nowCompleted && context.mounted) {
     await maybeShowSupportPrompt(context, ref, completedDate: date);
@@ -592,13 +594,13 @@ class _EmptyState extends StatelessWidget {
 }
 
 /// Ids of the rows that carry tutorial anchors: the first row overall, and
-/// the first row whose target is above one (which may not exist).
+/// the first row that carries a stepper (which may not exist).
 ({int? firstId, int? stepperId}) _tutorialAnchorIds(List<TodayRow> rows) {
   int? first;
   int? stepper;
   for (final r in rows) {
     first ??= r.amal.id;
-    if (stepper == null && r.amal.target > 1) stepper = r.amal.id;
+    if (stepper == null && !r.amal.isSimple) stepper = r.amal.id;
     if (stepper != null) break;
   }
   return (firstId: first, stepperId: stepper);

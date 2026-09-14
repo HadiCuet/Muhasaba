@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 
 import '../../core/time/period.dart';
 import '../../data/db/database.dart';
+import '../models/amal_goal.dart';
 import '../models/app_settings.dart';
 import '../models/frequency.dart';
 import '../utils/monthly_dates.dart';
@@ -108,11 +109,9 @@ class StatsService {
         month.endExclusive,
       );
 
-      final weekComplete = weekRows
-          .where((r) => r.progress >= amal.target)
-          .length;
+      final weekComplete = weekRows.where((r) => amal.meets(r.progress)).length;
       final monthComplete = monthRows
-          .where((r) => r.progress >= amal.target)
+          .where((r) => amal.meets(r.progress))
           .length;
 
       weekTotal += weekComplete;
@@ -248,7 +247,7 @@ class StatsService {
     final rows = await lookup(amal.id, start, endExclusive);
     final completed = <int>{
       for (final r in rows)
-        if (r.progress >= amal.target) _dayKey(r.muhasabaDate),
+        if (amal.meets(r.progress)) _dayKey(r.muhasabaDate),
     };
 
     // Current streak: allow today to be "not yet done" without breaking —
@@ -288,7 +287,7 @@ class StatsService {
     PeriodCompletionsLookup lookup,
   ) async {
     // Walk back up to 52 weeks. For each week, "completed" means at least one
-    // completion row in [week.start, week.endExclusive) that meets target.
+    // completion row in [week.start, week.endExclusive) that counts.
     // For weekly amal with a specific day, completion must also fall on that
     // weekday — but the week-level lookup is enough because a specific-day
     // amal can only record one completion per week anyway.
@@ -297,8 +296,7 @@ class StatsService {
     for (var i = 0; i < _weeklyLookbackWeeks; i++) {
       final rows = await lookup(amal.id, week.start, week.endExclusive);
       weeks.add(
-        rows.where((r) => r.progress >= amal.target).length >=
-            amal.periodTarget,
+        rows.where((r) => amal.meets(r.progress)).length >= amal.periodTarget,
       );
       week = weekPeriodOf(
         week.start.subtract(const Duration(days: 1)),
@@ -346,7 +344,7 @@ class StatsService {
     final rows = await lookup(amal.id, start, endExclusive);
     final completed = <int>{
       for (final r in rows)
-        if (r.progress >= amal.target) _dayKey(r.muhasabaDate),
+        if (amal.meets(r.progress)) _dayKey(r.muhasabaDate),
     };
     final s = weeklyOccurrenceStreak(
       scheduledWeekdays: days,
@@ -371,7 +369,7 @@ class StatsService {
     final rows = await lookup(amal.id, start, endExclusive);
     final completed = <int>{
       for (final r in rows)
-        if (r.progress >= amal.target) _dayKey(r.muhasabaDate),
+        if (amal.meets(r.progress)) _dayKey(r.muhasabaDate),
     };
     final s = occurrenceStreak(
       isScheduled: (d) => isScheduledMonthDate(dates, d),
@@ -393,8 +391,7 @@ class StatsService {
     for (var i = 0; i < _monthlyLookbackMonths; i++) {
       final rows = await lookup(amal.id, month.start, month.endExclusive);
       months.add(
-        rows.where((r) => r.progress >= amal.target).length >=
-            amal.periodTarget,
+        rows.where((r) => amal.meets(r.progress)).length >= amal.periodTarget,
       );
       month = monthPeriodOf(
         month.start.subtract(const Duration(days: 1)),

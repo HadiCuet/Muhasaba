@@ -140,6 +140,13 @@ class AppLocalizationsUz extends AppLocalizations {
   String get customTargetHint => 'masalan, 50';
 
   @override
+  String get targetAny => 'Istalgancha';
+
+  @override
+  String get targetAnyHelp =>
+      'Maqsad yo\'q — istalgan miqdor bajarilgan hisoblanadi';
+
+  @override
   String get dayOfWeek => 'Hafta kuni';
 
   @override
@@ -304,6 +311,11 @@ class AppLocalizationsUz extends AppLocalizations {
   @override
   String progressOf(String progress, String target) {
     return '$target tadan $progress tasi bajarildi';
+  }
+
+  @override
+  String progressOpen(String count) {
+    return '$count ta bajarildi';
   }
 
   @override
@@ -576,6 +588,20 @@ class AppLocalizationsUz extends AppLocalizations {
   String get statsPerAmal => 'Har bir amal';
 
   @override
+  String get statsTotalCaption => 'jami';
+
+  @override
+  String statsDaysFraction(String done, String expectedText, num expected) {
+    String _temp0 = intl.Intl.pluralLogic(
+      expected,
+      locale: localeName,
+      other: 'kun',
+      one: 'kun',
+    );
+    return '$done/$expectedText $_temp0';
+  }
+
+  @override
   String get statsCurrentStreak => 'Joriy ketma-ketlik';
 
   @override
@@ -595,6 +621,24 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get statsCompletionRate => 'Bajarish darajasi';
+
+  @override
+  String get statsAmountPerDay => 'Kunlik miqdor';
+
+  @override
+  String statsCountTotal(String count) {
+    return 'Jami $count';
+  }
+
+  @override
+  String statsCountAvg(String amount) {
+    return 'O\'rtacha $amount/kun';
+  }
+
+  @override
+  String statsCountBest(String count, String day) {
+    return 'Eng ko\'p $count · $day';
+  }
 
   @override
   String get statsFilterTime => 'Vaqt';

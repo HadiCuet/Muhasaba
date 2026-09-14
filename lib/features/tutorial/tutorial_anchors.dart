@@ -7,8 +7,8 @@ import 'package:flutter/widgets.dart';
 /// The first amal row in render order, in whichever Today view is mounted.
 final tutorialFirstRowKey = GlobalKey();
 
-/// The count stepper on the first amal whose target is above one. Often
-/// absent: no seeded amal has a target above one.
+/// The count stepper on the first amal that carries one. Often
+/// absent: no seeded amal carries one.
 final tutorialStepperKey = GlobalKey();
 
 /// The grouped/flat toggle in the Today app bar.

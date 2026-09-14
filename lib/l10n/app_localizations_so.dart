@@ -140,6 +140,13 @@ class AppLocalizationsSo extends AppLocalizations {
   String get customTargetHint => 'tus. 50';
 
   @override
+  String get targetAny => 'Tiro kasta';
+
+  @override
+  String get targetAnyHelp =>
+      'Bartilmaameed ma jiro — tiro kasta ayaa dhammaystirta';
+
+  @override
   String get dayOfWeek => 'Maalinta toddobaadka';
 
   @override
@@ -306,6 +313,11 @@ class AppLocalizationsSo extends AppLocalizations {
   @override
   String progressOf(String progress, String target) {
     return '$progress ka mid ah $target oo la dhammeeyay';
+  }
+
+  @override
+  String progressOpen(String count) {
+    return '$count la dhammeeyay';
   }
 
   @override
@@ -578,6 +590,20 @@ class AppLocalizationsSo extends AppLocalizations {
   String get statsPerAmal => 'Camal walba';
 
   @override
+  String get statsTotalCaption => 'wadarta';
+
+  @override
+  String statsDaysFraction(String done, String expectedText, num expected) {
+    String _temp0 = intl.Intl.pluralLogic(
+      expected,
+      locale: localeName,
+      other: 'maalmood',
+      one: 'maalin',
+    );
+    return '$done/$expectedText $_temp0';
+  }
+
+  @override
   String get statsCurrentStreak => 'Taxanaha hadda';
 
   @override
@@ -597,6 +623,24 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get statsCompletionRate => 'Heerka dhammaystirka';
+
+  @override
+  String get statsAmountPerDay => 'Tirada maalintii';
+
+  @override
+  String statsCountTotal(String count) {
+    return 'Wadarta $count';
+  }
+
+  @override
+  String statsCountAvg(String amount) {
+    return 'Celcelis $amount/maalin';
+  }
+
+  @override
+  String statsCountBest(String count, String day) {
+    return 'Ugu badan $count · $day';
+  }
 
   @override
   String get statsFilterTime => 'Waqtiga';

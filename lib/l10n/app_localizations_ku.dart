@@ -140,6 +140,13 @@ class AppLocalizationsKu extends AppLocalizations {
   String get customTargetHint => 'wek mînak 50';
 
   @override
+  String get targetAny => 'Her hejmar';
+
+  @override
+  String get targetAnyHelp =>
+      'Bê armanc — bi her hejmarê wek qediyayî tê hesibandin';
+
+  @override
   String get dayOfWeek => 'Roja hefteyê';
 
   @override
@@ -304,6 +311,11 @@ class AppLocalizationsKu extends AppLocalizations {
   @override
   String progressOf(String progress, String target) {
     return '$progress ji $target qediya';
+  }
+
+  @override
+  String progressOpen(String count) {
+    return '$count qediya';
   }
 
   @override
@@ -576,6 +588,20 @@ class AppLocalizationsKu extends AppLocalizations {
   String get statsPerAmal => 'Ji bo her kirinê';
 
   @override
+  String get statsTotalCaption => 'tevahî';
+
+  @override
+  String statsDaysFraction(String done, String expectedText, num expected) {
+    String _temp0 = intl.Intl.pluralLogic(
+      expected,
+      locale: localeName,
+      other: 'roj',
+      one: 'roj',
+    );
+    return '$done/$expectedText $_temp0';
+  }
+
+  @override
   String get statsCurrentStreak => 'Rêza niha';
 
   @override
@@ -595,6 +621,24 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get statsCompletionRate => 'Rêjeya qedandinê';
+
+  @override
+  String get statsAmountPerDay => 'Hejmara rojane';
+
+  @override
+  String statsCountTotal(String count) {
+    return 'Tevahî $count';
+  }
+
+  @override
+  String statsCountAvg(String amount) {
+    return 'Navîn $amount/roj';
+  }
+
+  @override
+  String statsCountBest(String count, String day) {
+    return 'Herî zêde $count · $day';
+  }
 
   @override
   String get statsFilterTime => 'Dem';

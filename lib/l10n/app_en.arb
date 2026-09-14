@@ -94,6 +94,14 @@
   "timesPerPeriod": "Times per period",
   "custom": "Custom",
   "customTargetHint": "e.g. 50",
+  "targetAny": "Any",
+  "@targetAny": {
+    "description": "Times-per-period chip meaning the amal has no goal — any amount completes it"
+  },
+  "targetAnyHelp": "No goal — any amount marks it done",
+  "@targetAnyHelp": {
+    "description": "Helper line shown under the times-per-period chips when Any is selected"
+  },
   "dayOfWeek": "Day of week",
   "anyDay": "Any",
   "anyDayHint": "Any day (stays visible today, hides next day)",
@@ -204,6 +212,11 @@
         "type": "String"
       }
     }
+  },
+  "progressOpen": "{count} completed",
+  "@progressOpen": {
+    "description": "Accessibility label for an amal with no goal, e.g. '12 completed'",
+    "placeholders": { "count": { "type": "String" } }
   },
   "removeFromToday": "Remove from today",
   "removeFromTodaySubtitle": "Hide just for this day. It returns tomorrow.",
@@ -325,6 +338,19 @@
   "statsVsPrevious": "vs Previous",
   "statsByCategory": "By Category",
   "statsPerAmal": "Per Amal",
+  "statsTotalCaption": "total",
+  "@statsTotalCaption": {
+    "description": "Caption under the period total on an amal with no goal. Lowercase; rendered in small caps-height text."
+  },
+  "statsDaysFraction": "{done}/{expectedText} {expected, plural, =1{day} other{days}}",
+  "@statsDaysFraction": {
+    "description": "How many days of the period an amal with no goal was done, e.g. '6/7 days'. done and expectedText are pre-localized digits; expected only drives the plural.",
+    "placeholders": {
+      "done": { "type": "String" },
+      "expectedText": { "type": "String" },
+      "expected": { "type": "num" }
+    }
+  },
   "statsCurrentStreak": "Current Streak",
   "statsBestStreak": "Best Streak",
   "statsTotalDays": "Total Days",
@@ -332,6 +358,28 @@
   "statsLast5Weeks": "Last 5 weeks",
   "statsDailyBreakdown": "Daily Breakdown",
   "statsCompletionRate": "Completion rate",
+  "statsAmountPerDay": "Amount per day",
+  "@statsAmountPerDay": {
+    "description": "Subtitle of the Daily Breakdown card when the bars show amounts, not completion rate"
+  },
+  "statsCountTotal": "Total {count}",
+  "@statsCountTotal": {
+    "description": "Sum of the amounts on screen",
+    "placeholders": { "count": { "type": "String" } }
+  },
+  "statsCountAvg": "Avg {amount}/day",
+  "@statsCountAvg": {
+    "description": "Average amount per elapsed day, one decimal place",
+    "placeholders": { "amount": { "type": "String" } }
+  },
+  "statsCountBest": "Best {count} · {day}",
+  "@statsCountBest": {
+    "description": "Largest single day in the period; day is a short weekday in week view, else a short month and day",
+    "placeholders": {
+      "count": { "type": "String" },
+      "day": { "type": "String" }
+    }
+  },
   "statsFilterTime": "Time",
   "statsFilterCategory": "Category",
   "statsFilterAmal": "Amal",

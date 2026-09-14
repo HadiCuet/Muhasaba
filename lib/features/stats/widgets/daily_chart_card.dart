@@ -5,6 +5,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
+import '../../../data/db/database.dart';
+import '../../../domain/models/amal_goal.dart';
 import '../../../domain/services/enhanced_stats_service.dart';
 import '../../../domain/utils/localized_number.dart';
 import '../../../l10n/app_localizations.dart';
@@ -68,6 +70,8 @@ class _DailyChartCardState extends ConsumerState<DailyChartCard> {
     final showLabels = widget.dailyBreakdown.length <= 14;
     const maxBarHeight = 120.0;
     final maxOffset = ref.watch(statsMaxPeriodOffsetProvider);
+    final focusedAmal = ref.watch(statsFocusedAmalProvider);
+    final count = _countModeFor(focusedAmal, widget.dailyBreakdown);
 
     // A range past 31 days already scrolls horizontally inside the card, and
     // two nested horizontal drags would fight each other.
@@ -90,14 +94,17 @@ class _DailyChartCardState extends ConsumerState<DailyChartCard> {
             Text(l.statsDailyBreakdown, style: theme.textTheme.titleMedium),
             const SizedBox(height: 2),
             Text(
-              l.statsCompletionRate,
+              count == null ? l.statsCompletionRate : l.statsAmountPerDay,
               style: theme.textTheme.bodySmall?.copyWith(
                 color: theme.colorScheme.onSurfaceVariant,
               ),
             ),
             const SizedBox(height: 16),
             SizedBox(
-              height: maxBarHeight + (showLabels ? 40 : 24),
+              height:
+                  maxBarHeight +
+                  (showLabels ? 40 : 24) +
+                  (count == null ? 0 : _kReadoutHeight + 8),
               child: pageable
                   // `reverse` is derived from Directionality and then flipped,
                   // so later pages sit toward the start edge in both text
@@ -115,28 +122,22 @@ class _DailyChartCardState extends ConsumerState<DailyChartCard> {
                         onPageChanged: _onPageChanged,
                         itemBuilder: (_, offset) => _ChartPage(
                           offset: offset,
+                          focusedAmal: focusedAmal,
                           maxBarHeight: maxBarHeight,
                           showLabels: showLabels,
                           locale: widget.locale,
                         ),
                       ),
                     )
-                  : widget.dailyBreakdown.length > 31
-                  ? SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: _BarGroup(
-                        breakdown: widget.dailyBreakdown,
-                        maxBarHeight: maxBarHeight,
-                        showLabels: showLabels,
-                        locale: widget.locale,
-                        width: widget.dailyBreakdown.length * 28.0,
-                      ),
-                    )
-                  : _BarGroup(
+                  : _ChartBody(
                       breakdown: widget.dailyBreakdown,
+                      focusedAmal: focusedAmal,
                       maxBarHeight: maxBarHeight,
                       showLabels: showLabels,
                       locale: widget.locale,
+                      width: widget.dailyBreakdown.length > 31
+                          ? widget.dailyBreakdown.length * 28.0
+                          : null,
                     ),
             ),
           ],
@@ -151,12 +152,14 @@ class _DailyChartCardState extends ConsumerState<DailyChartCard> {
 class _ChartPage extends ConsumerWidget {
   const _ChartPage({
     required this.offset,
+    required this.focusedAmal,
     required this.maxBarHeight,
     required this.showLabels,
     required this.locale,
   });
 
   final int offset;
+  final AmalRow? focusedAmal;
   final double maxBarHeight;
   final bool showLabels;
   final String locale;
@@ -169,8 +172,9 @@ class _ChartPage extends ConsumerWidget {
       // simply appear, which reads better mid-swipe than a flashing loader.
       return const SizedBox.shrink();
     }
-    return _BarGroup(
+    return _ChartBody(
       breakdown: breakdown,
+      focusedAmal: focusedAmal,
       maxBarHeight: maxBarHeight,
       showLabels: showLabels,
       locale: locale,
@@ -198,15 +202,48 @@ const double _kGroundHeight = 1.5;
 /// text scale the chart uses.
 const double _kDayLabelHeight = 12.0;
 
+/// Height reserved for the amount label that sits above a bar in count mode.
+const double _kCountLabelHeight = 14.0;
+
+/// Height of the Total / Avg / Best readout under the bars in count mode.
+const double _kReadoutHeight = 34.0;
+
 /// Rounds a logical height to a whole device pixel. Neighbouring bars whose
 /// heights differ by a fraction of a pixel otherwise antialias differently and
 /// make a row of short bars look ragged.
 double _snapToDevicePixels(double logical, double devicePixelRatio) =>
     (logical * devicePixelRatio).roundToDouble() / devicePixelRatio;
 
-class _BarGroup extends StatelessWidget {
-  const _BarGroup({
+/// Drawing parameters for amount-per-day bars. `null` anywhere below means
+/// the chart is in its normal completion-rate mode.
+@immutable
+class _CountMode {
+  const _CountMode({required this.maxAmount, required this.goal});
+
+  /// What the bars scale against: the largest amount on screen, or the goal
+  /// when every day fell short of it. Never zero.
+  final int maxAmount;
+
+  /// The amal's target, drawn as a reference bar. `null` when open-ended.
+  final int? goal;
+}
+
+/// Count mode applies to exactly one amal that carries an amount. A simple
+/// amal's amount is its tick, so its bars stay in rate mode.
+_CountMode? _countModeFor(AmalRow? amal, List<DailyBreakdown> days) {
+  if (amal == null || amal.isSimple) return null;
+  final goal = amal.isCounted ? amal.target : null;
+  var maxAmount = goal ?? 0;
+  for (final day in days) {
+    if (day.amount > maxAmount) maxAmount = day.amount;
+  }
+  return _CountMode(maxAmount: maxAmount <= 0 ? 1 : maxAmount, goal: goal);
+}
+
+class _ChartBody extends StatelessWidget {
+  const _ChartBody({
     required this.breakdown,
+    required this.focusedAmal,
     required this.maxBarHeight,
     required this.showLabels,
     required this.locale,
@@ -214,6 +251,119 @@ class _BarGroup extends StatelessWidget {
   });
 
   final List<DailyBreakdown> breakdown;
+  final AmalRow? focusedAmal;
+  final double maxBarHeight;
+  final bool showLabels;
+  final String locale;
+  final double? width;
+
+  @override
+  Widget build(BuildContext context) {
+    final count = _countModeFor(focusedAmal, breakdown);
+    Widget bars = _BarGroup(
+      breakdown: breakdown,
+      count: count,
+      maxBarHeight: maxBarHeight,
+      showLabels: showLabels,
+      locale: locale,
+      width: width,
+    );
+    if (width != null) {
+      bars = SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+        child: bars,
+      );
+    }
+    if (count == null) return bars;
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.stretch,
+      children: [
+        Expanded(child: bars),
+        _CountReadout(breakdown: breakdown, locale: locale),
+      ],
+    );
+  }
+}
+
+/// Total / Avg / Best for the period on screen. The average divides by days
+/// elapsed, not by the length of the period — a Wednesday average over seven
+/// days would be wrong by construction and would sink further all week.
+class _CountReadout extends StatelessWidget {
+  const _CountReadout({required this.breakdown, required this.locale});
+
+  final List<DailyBreakdown> breakdown;
+  final String locale;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final l = AppLocalizations.of(context);
+
+    var total = 0;
+    var elapsed = breakdown.length;
+    DailyBreakdown? best;
+    for (var i = 0; i < breakdown.length; i++) {
+      final day = breakdown[i];
+      total += day.amount;
+      if (day.isToday) elapsed = i + 1;
+      if (best == null || day.amount > best.amount) best = day;
+    }
+    final avg = elapsed > 0 ? total / elapsed : 0.0;
+
+    final style = theme.textTheme.labelSmall?.copyWith(
+      color: theme.colorScheme.onSurfaceVariant,
+    );
+    return Container(
+      height: _kReadoutHeight,
+      alignment: AlignmentDirectional.center,
+      margin: const EdgeInsetsDirectional.only(top: 8),
+      padding: const EdgeInsetsDirectional.only(top: 8),
+      decoration: BoxDecoration(
+        border: BorderDirectional(
+          top: BorderSide(color: theme.colorScheme.outlineVariant),
+        ),
+      ),
+      child: Row(
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        children: [
+          Text(l.statsCountTotal(lnum(context, total)), style: style),
+          Text(l.statsCountAvg(ldec(context, avg)), style: style),
+          if (best != null && best.amount > 0)
+            Flexible(
+              child: Text(
+                l.statsCountBest(
+                  lnum(context, best.amount),
+                  localizeDigits(
+                    context,
+                    safeDateFormat(
+                      breakdown.length <= 7 ? 'E' : 'MMMd',
+                      locale,
+                    ).format(best.date),
+                  ),
+                ),
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: style,
+              ),
+            ),
+        ],
+      ),
+    );
+  }
+}
+
+class _BarGroup extends StatelessWidget {
+  const _BarGroup({
+    required this.breakdown,
+    required this.count,
+    required this.maxBarHeight,
+    required this.showLabels,
+    required this.locale,
+    this.width,
+  });
+
+  final List<DailyBreakdown> breakdown;
+  final _CountMode? count;
   final double maxBarHeight;
   final bool showLabels;
   final String locale;
@@ -242,6 +392,7 @@ class _BarGroup extends StatelessWidget {
                 Expanded(
                   child: _SingleBar(
                     day: breakdown[i],
+                    count: count,
                     maxBarHeight: maxBarHeight,
                     showLabel: showLabels,
                     showDayLabel: i % labelStride == 0,
@@ -261,6 +412,7 @@ class _BarGroup extends StatelessWidget {
 class _SingleBar extends StatelessWidget {
   const _SingleBar({
     required this.day,
+    required this.count,
     required this.maxBarHeight,
     required this.showLabel,
     required this.showDayLabel,
@@ -269,6 +421,7 @@ class _SingleBar extends StatelessWidget {
   });
 
   final DailyBreakdown day;
+  final _CountMode? count;
   final double maxBarHeight;
   final bool showLabel;
   final bool showDayLabel;
@@ -278,19 +431,7 @@ class _SingleBar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final theme = Theme.of(context);
-    final rate = day.rate.clamp(0.0, 1.0);
-    final pct = (rate * 100).round();
-
-    final double barHeight;
-    if (rate <= 0) {
-      barHeight = 0;
-    } else {
-      barHeight = _snapToDevicePixels(
-        (rate * maxBarHeight).clamp(_kMinBarHeight, maxBarHeight),
-        MediaQuery.devicePixelRatioOf(context),
-      );
-    }
-    final barRadius = math.min(_kBarRadius, barHeight / 3);
+    final count = this.count;
 
     final String dayLabel;
     if (isWeekView) {
@@ -306,30 +447,10 @@ class _SingleBar extends StatelessWidget {
     return Column(
       mainAxisAlignment: MainAxisAlignment.end,
       children: [
-        if (showLabel)
-          Padding(
-            padding: const EdgeInsets.only(bottom: 4),
-            child: Text(
-              lpct(context, pct),
-              style: theme.textTheme.labelSmall?.copyWith(
-                color: theme.colorScheme.onSurfaceVariant,
-                fontSize: 9,
-              ),
-            ),
-          ),
-        // Today is drawn like any other day; its bold primary day number is the
-        // only marker, matching how the challenge detail screen marks today.
-        if (barHeight > 0)
-          Container(
-            height: barHeight,
-            margin: const EdgeInsetsDirectional.symmetric(horizontal: 1.5),
-            decoration: BoxDecoration(
-              color: theme.colorScheme.primary,
-              borderRadius: BorderRadius.vertical(
-                top: Radius.circular(barRadius),
-              ),
-            ),
-          ),
+        if (count == null)
+          ..._rateBar(context, theme)
+        else
+          _countBar(context, theme, count),
         // Spans the full column width, unlike the bar, so neighbouring columns
         // join into one unbroken ground line. Today is not tinted here — it is
         // already marked by its outlined bar and its bold day number, and a
@@ -371,6 +492,100 @@ class _SingleBar extends StatelessWidget {
           ),
         ),
       ],
+    );
+  }
+
+  Widget _bar(ThemeData theme, double height) => Container(
+    height: height,
+    margin: const EdgeInsetsDirectional.symmetric(horizontal: 1.5),
+    decoration: BoxDecoration(
+      color: theme.colorScheme.primary,
+      borderRadius: BorderRadius.vertical(
+        top: Radius.circular(math.min(_kBarRadius, height / 3)),
+      ),
+    ),
+  );
+
+  List<Widget> _rateBar(BuildContext context, ThemeData theme) {
+    final rate = day.rate.clamp(0.0, 1.0);
+    final pct = (rate * 100).round();
+    final barHeight = rate <= 0
+        ? 0.0
+        : _snapToDevicePixels(
+            (rate * maxBarHeight).clamp(_kMinBarHeight, maxBarHeight),
+            MediaQuery.devicePixelRatioOf(context),
+          );
+    return [
+      if (showLabel)
+        Padding(
+          padding: const EdgeInsets.only(bottom: 4),
+          child: Text(
+            lpct(context, pct),
+            style: theme.textTheme.labelSmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+              fontSize: 9,
+            ),
+          ),
+        ),
+      // Today is drawn like any other day; its bold primary day number is the
+      // only marker, matching how the challenge detail screen marks today.
+      if (barHeight > 0) _bar(theme, barHeight),
+    ];
+  }
+
+  Widget _countBar(BuildContext context, ThemeData theme, _CountMode count) {
+    final dpr = MediaQuery.devicePixelRatioOf(context);
+    double heightOf(int value) => value <= 0
+        ? 0
+        : _snapToDevicePixels(
+            (value / count.maxAmount * maxBarHeight).clamp(
+              _kMinBarHeight,
+              maxBarHeight,
+            ),
+            dpr,
+          );
+
+    final barHeight = heightOf(day.amount);
+    final goalHeight = count.goal == null ? 0.0 : heightOf(count.goal!);
+
+    return SizedBox(
+      height: maxBarHeight + (showLabel ? _kCountLabelHeight : 0),
+      child: Stack(
+        alignment: AlignmentDirectional.bottomCenter,
+        children: [
+          if (goalHeight > 0)
+            Container(
+              height: goalHeight,
+              margin: const EdgeInsetsDirectional.symmetric(horizontal: 1.5),
+              decoration: BoxDecoration(
+                color: theme.colorScheme.surfaceContainerHighest,
+                borderRadius: const BorderRadius.vertical(
+                  top: Radius.circular(_kBarRadius),
+                ),
+              ),
+            ),
+          if (barHeight > 0) _bar(theme, barHeight),
+          if (showLabel && day.amount > 0)
+            PositionedDirectional(
+              start: 0,
+              end: 0,
+              bottom: barHeight,
+              height: _kCountLabelHeight,
+              child: FittedBox(
+                fit: BoxFit.scaleDown,
+                child: Text(
+                  lnum(context, day.amount),
+                  maxLines: 1,
+                  softWrap: false,
+                  style: theme.textTheme.labelSmall?.copyWith(
+                    color: theme.colorScheme.onSurfaceVariant,
+                    fontSize: 9,
+                  ),
+                ),
+              ),
+            ),
+        ],
+      ),
     );
   }
 }

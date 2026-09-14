@@ -140,6 +140,12 @@ class AppLocalizationsSq extends AppLocalizations {
   String get customTargetHint => 'p.sh. 50';
 
   @override
+  String get targetAny => 'Çdo sasi';
+
+  @override
+  String get targetAnyHelp => 'Pa synim — çdo sasi e shënon si të përfunduar';
+
+  @override
   String get dayOfWeek => 'Dita e javes';
 
   @override
@@ -303,6 +309,11 @@ class AppLocalizationsSq extends AppLocalizations {
   @override
   String progressOf(String progress, String target) {
     return '$progress nga $target te perfunduara';
+  }
+
+  @override
+  String progressOpen(String count) {
+    return 'Të përfunduara: $count';
   }
 
   @override
@@ -574,6 +585,20 @@ class AppLocalizationsSq extends AppLocalizations {
   String get statsPerAmal => 'Per amal';
 
   @override
+  String get statsTotalCaption => 'gjithsej';
+
+  @override
+  String statsDaysFraction(String done, String expectedText, num expected) {
+    String _temp0 = intl.Intl.pluralLogic(
+      expected,
+      locale: localeName,
+      other: 'ditë',
+      one: 'ditë',
+    );
+    return '$done/$expectedText $_temp0';
+  }
+
+  @override
   String get statsCurrentStreak => 'Seria aktuale';
 
   @override
@@ -593,6 +618,24 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get statsCompletionRate => 'Shkalla e perfundimit';
+
+  @override
+  String get statsAmountPerDay => 'Sasia në ditë';
+
+  @override
+  String statsCountTotal(String count) {
+    return 'Gjithsej $count';
+  }
+
+  @override
+  String statsCountAvg(String amount) {
+    return 'Mes. $amount/ditë';
+  }
+
+  @override
+  String statsCountBest(String count, String day) {
+    return 'Maks. $count · $day';
+  }
 
   @override
   String get statsFilterTime => 'Koha';

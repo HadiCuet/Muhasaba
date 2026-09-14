@@ -140,6 +140,13 @@ class AppLocalizationsBs extends AppLocalizations {
   String get customTargetHint => 'npr. 50';
 
   @override
+  String get targetAny => 'Bilo koliko';
+
+  @override
+  String get targetAnyHelp =>
+      'Bez cilja — bilo koja količina računa se kao završeno';
+
+  @override
   String get dayOfWeek => 'Dan u sedmici';
 
   @override
@@ -306,6 +313,11 @@ class AppLocalizationsBs extends AppLocalizations {
   @override
   String progressOf(String progress, String target) {
     return '$progress od $target zavrseno';
+  }
+
+  @override
+  String progressOpen(String count) {
+    return '$count završeno';
   }
 
   @override
@@ -577,6 +589,21 @@ class AppLocalizationsBs extends AppLocalizations {
   String get statsPerAmal => 'Po amelu';
 
   @override
+  String get statsTotalCaption => 'ukupno';
+
+  @override
+  String statsDaysFraction(String done, String expectedText, num expected) {
+    String _temp0 = intl.Intl.pluralLogic(
+      expected,
+      locale: localeName,
+      other: 'dana',
+      few: 'dana',
+      one: 'dan',
+    );
+    return '$done/$expectedText $_temp0';
+  }
+
+  @override
   String get statsCurrentStreak => 'Trenutni niz';
 
   @override
@@ -596,6 +623,24 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get statsCompletionRate => 'Stopa zavrsenosti';
+
+  @override
+  String get statsAmountPerDay => 'Količina po danu';
+
+  @override
+  String statsCountTotal(String count) {
+    return 'Ukupno $count';
+  }
+
+  @override
+  String statsCountAvg(String amount) {
+    return 'Prosj. $amount/dan';
+  }
+
+  @override
+  String statsCountBest(String count, String day) {
+    return 'Najviše $count · $day';
+  }
 
   @override
   String get statsFilterTime => 'Vrijeme';

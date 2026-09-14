@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../app/providers.dart';
 import '../../app/widgets/max_width_body.dart';
+import '../../domain/models/amal_goal.dart';
 import '../../domain/services/today_builder.dart';
 import '../../domain/utils/localized_amal_title.dart';
 import '../../domain/utils/localized_number.dart';
@@ -144,11 +145,12 @@ class _HistoryScreenState extends ConsumerState<HistoryScreen>
           amalId: row.amal.id,
           muhasabaDate: date,
           progress: progress,
-          target: row.amal.target,
+          completed: row.amal.meets(progress),
         );
     ref.invalidate(statsSnapshotProvider);
     ref.invalidate(currentStreaksProvider);
     ref.invalidate(enhancedStatsProvider);
+    ref.invalidate(dailyBreakdownProvider);
     ref.invalidate(optionDetailProvider);
   }
 

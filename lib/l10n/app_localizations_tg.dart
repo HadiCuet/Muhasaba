@@ -140,6 +140,12 @@ class AppLocalizationsTg extends AppLocalizations {
   String get customTargetHint => 'мас. 50';
 
   @override
+  String get targetAny => 'Ҳар қадар';
+
+  @override
+  String get targetAnyHelp => 'Ҳадаф нест — ҳар миқдор иҷрошуда ҳисоб мешавад';
+
+  @override
   String get dayOfWeek => 'Рузи хафта';
 
   @override
@@ -306,6 +312,11 @@ class AppLocalizationsTg extends AppLocalizations {
   @override
   String progressOf(String progress, String target) {
     return '$progress аз $target ичро шуд';
+  }
+
+  @override
+  String progressOpen(String count) {
+    return '$count иҷро шуд';
   }
 
   @override
@@ -578,6 +589,20 @@ class AppLocalizationsTg extends AppLocalizations {
   String get statsPerAmal => 'Барои хар амал';
 
   @override
+  String get statsTotalCaption => 'ҳамагӣ';
+
+  @override
+  String statsDaysFraction(String done, String expectedText, num expected) {
+    String _temp0 = intl.Intl.pluralLogic(
+      expected,
+      locale: localeName,
+      other: 'рӯз',
+      one: 'рӯз',
+    );
+    return '$done/$expectedText $_temp0';
+  }
+
+  @override
   String get statsCurrentStreak => 'Силсилаи хозира';
 
   @override
@@ -597,6 +622,24 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get statsCompletionRate => 'Дарачаи ичро';
+
+  @override
+  String get statsAmountPerDay => 'Миқдори ҳаррӯза';
+
+  @override
+  String statsCountTotal(String count) {
+    return 'Ҳамагӣ $count';
+  }
+
+  @override
+  String statsCountAvg(String amount) {
+    return 'Миёна $amount/рӯз';
+  }
+
+  @override
+  String statsCountBest(String count, String day) {
+    return 'Бештарин $count · $day';
+  }
 
   @override
   String get statsFilterTime => 'Вакт';

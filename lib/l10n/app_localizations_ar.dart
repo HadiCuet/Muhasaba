@@ -140,6 +140,12 @@ class AppLocalizationsAr extends AppLocalizations {
   String get customTargetHint => 'مثلاً 50';
 
   @override
+  String get targetAny => 'أي عدد';
+
+  @override
+  String get targetAnyHelp => 'بلا هدف محدد — يكتمل بأي مقدار';
+
+  @override
   String get dayOfWeek => 'يوم الأسبوع';
 
   @override
@@ -308,6 +314,11 @@ class AppLocalizationsAr extends AppLocalizations {
   @override
   String progressOf(String progress, String target) {
     return '$progress من $target مكتمل';
+  }
+
+  @override
+  String progressOpen(String count) {
+    return '$count مكتمل';
   }
 
   @override
@@ -591,6 +602,24 @@ class AppLocalizationsAr extends AppLocalizations {
   String get statsPerAmal => 'لكل عمل';
 
   @override
+  String get statsTotalCaption => 'الإجمالي';
+
+  @override
+  String statsDaysFraction(String done, String expectedText, num expected) {
+    String _temp0 = intl.Intl.pluralLogic(
+      expected,
+      locale: localeName,
+      other: 'يوم',
+      many: 'يوماً',
+      few: 'أيام',
+      two: 'يومان',
+      one: 'يوم',
+      zero: 'يوم',
+    );
+    return '$done/$expectedText $_temp0';
+  }
+
+  @override
   String get statsCurrentStreak => 'السلسلة الحالية';
 
   @override
@@ -610,6 +639,24 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get statsCompletionRate => 'نسبة الإنجاز';
+
+  @override
+  String get statsAmountPerDay => 'المقدار اليومي';
+
+  @override
+  String statsCountTotal(String count) {
+    return 'الإجمالي $count';
+  }
+
+  @override
+  String statsCountAvg(String amount) {
+    return 'المعدل $amount/يوم';
+  }
+
+  @override
+  String statsCountBest(String count, String day) {
+    return 'الأعلى $count · $day';
+  }
 
   @override
   String get statsFilterTime => 'الوقت';

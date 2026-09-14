@@ -140,6 +140,13 @@ class AppLocalizationsBn extends AppLocalizations {
   String get customTargetHint => 'যেমন ৫০';
 
   @override
+  String get targetAny => 'যেকোনো';
+
+  @override
+  String get targetAnyHelp =>
+      'কোনো লক্ষ্য নেই — যেকোনো পরিমাণেই সম্পন্ন ধরা হবে';
+
+  @override
   String get dayOfWeek => 'সপ্তাহের দিন';
 
   @override
@@ -301,6 +308,11 @@ class AppLocalizationsBn extends AppLocalizations {
   @override
   String progressOf(String progress, String target) {
     return '$target এর মধ্যে $progress সম্পন্ন';
+  }
+
+  @override
+  String progressOpen(String count) {
+    return '$count সম্পন্ন';
   }
 
   @override
@@ -573,6 +585,20 @@ class AppLocalizationsBn extends AppLocalizations {
   String get statsPerAmal => 'আমল প্রতি';
 
   @override
+  String get statsTotalCaption => 'মোট';
+
+  @override
+  String statsDaysFraction(String done, String expectedText, num expected) {
+    String _temp0 = intl.Intl.pluralLogic(
+      expected,
+      locale: localeName,
+      other: 'দিন',
+      one: 'দিন',
+    );
+    return '$done/$expectedText $_temp0';
+  }
+
+  @override
   String get statsCurrentStreak => 'বর্তমান ধারা';
 
   @override
@@ -592,6 +618,24 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get statsCompletionRate => 'সম্পন্নের হার';
+
+  @override
+  String get statsAmountPerDay => 'প্রতিদিনের পরিমাণ';
+
+  @override
+  String statsCountTotal(String count) {
+    return 'মোট $count';
+  }
+
+  @override
+  String statsCountAvg(String amount) {
+    return 'গড় $amount/দিন';
+  }
+
+  @override
+  String statsCountBest(String count, String day) {
+    return 'সেরা $count · $day';
+  }
 
   @override
   String get statsFilterTime => 'সময়';

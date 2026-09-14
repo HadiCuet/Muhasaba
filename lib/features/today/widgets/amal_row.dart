@@ -4,6 +4,7 @@ import '../../../l10n/app_localizations.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../data/db/database.dart';
+import '../../../domain/models/amal_goal.dart';
 import '../../../domain/models/frequency.dart';
 import '../../../domain/services/today_builder.dart';
 import '../../../domain/utils/localized_amal_title.dart';
@@ -16,15 +17,17 @@ import '../../../app/widgets/stepper_field.dart';
 /// Single amal row rendered as a tappable card.
 ///
 /// Gesture mapping:
-///   - **Tap** anywhere → toggle completion (target=1: 0↔1, target>1: 0↔target)
+///   - **Tap** anywhere → toggle completion (target=1: 0↔1, target>1: 0↔target,
+///     no goal: 0↔1)
 ///   - **Double-tap** → navigate to edit form
 ///   - **Long press** → reserved for drag-to-reorder in the Today lists
 ///   - **Swipe left** → handled by the parent via `Dismissible`
 ///
 /// Visual feedback:
 ///   - Card background tints progressively from surface → primaryContainer
-///     based on `progress / target`. For target=1 it's all-or-nothing; for
-///     count-based amal the tint deepens with each increment.
+///     based on `progress / target`. For target=1 and for an amal with no
+///     goal it's all-or-nothing; for count-based amal the tint deepens with
+///     each increment.
 ///   - Notes expand inline (no popup dialog).
 class AmalRowTile extends ConsumerStatefulWidget {
   const AmalRowTile({
@@ -41,7 +44,8 @@ class AmalRowTile extends ConsumerStatefulWidget {
 
   final TodayRow row;
 
-  /// Called with the new progress value (already clamped to [0, target]).
+  /// Called with the new progress value (already clamped to [0, target], or
+  /// ≥ 0 when there is no goal).
   final ValueChanged<int> onProgressChanged;
 
   /// Triggered by swipe-to-delete. Parent should show the remove sheet.
@@ -105,7 +109,9 @@ class _AmalRowTileState extends ConsumerState<AmalRowTile> {
     }
     final row = widget.row;
     final wasDone = row.isCompleted;
-    final newProgress = wasDone ? 0 : row.amal.target;
+    final newProgress = wasDone
+        ? 0
+        : (row.amal.isOpenEnded ? 1 : row.amal.target);
     if (!wasDone) {
       HapticFeedback.mediumImpact();
     } else {
@@ -117,7 +123,7 @@ class _AmalRowTileState extends ConsumerState<AmalRowTile> {
   void _handleStepperProgress(int newProgress) {
     final row = widget.row;
     final wasDone = row.isCompleted;
-    final willBeDone = newProgress >= row.amal.target;
+    final willBeDone = row.amal.meets(newProgress);
     if (!wasDone && willBeDone) {
       HapticFeedback.mediumImpact();
     } else {
@@ -181,9 +187,7 @@ class _AmalRowTileState extends ConsumerState<AmalRowTile> {
     final isDone = row.isCompleted;
 
     // Progressive tint: lerp surface → primaryContainer by progress ratio.
-    final progress01 = amal.target > 0
-        ? (row.progress / amal.target).clamp(0.0, 1.0)
-        : 0.0;
+    final progress01 = row.fraction;
     final cardColor = Color.lerp(
       theme.colorScheme.surface,
       theme.colorScheme.primaryContainer,
@@ -197,7 +201,9 @@ class _AmalRowTileState extends ConsumerState<AmalRowTile> {
 
     final l = AppLocalizations.of(context);
     final title = localizedAmalTitle(amal.title, l);
-    var semanticsLabel = amal.target == 1
+    var semanticsLabel = amal.isOpenEnded
+        ? '$title, ${l.progressOpen(lnum(context, row.progress))}'
+        : amal.isSimple
         ? '$title, ${isDone ? l.completed : l.notCompleted}'
         : '$title, ${l.progressOf(lnum(context, row.progress), lnum(context, amal.target))}';
     if (row.optionItemId != null) {
@@ -352,17 +358,18 @@ class _AmalRowTileState extends ConsumerState<AmalRowTile> {
                       ),
 
                       // Trailing controls.
-                      if (amal.target > 1) ...[
-                        // Note toggle for count-based amal.
+                      if (!amal.isSimple) ...[
+                        // Note toggle for amals whose amount is stepped.
                         ExcludeSemantics(child: _noteToggle(theme)),
                         ExcludeSemantics(
                           child: StepperField(
                             key: widget.stepperKey,
                             value: row.progress,
                             step: 1,
-                            max: amal.target,
-                            label:
-                                '${lnum(context, row.progress)}/${lnum(context, amal.target)}',
+                            max: amal.isOpenEnded ? null : amal.target,
+                            label: amal.isOpenEnded
+                                ? lnum(context, row.progress)
+                                : '${lnum(context, row.progress)}/${lnum(context, amal.target)}',
                             onChanged: _handleStepperProgress,
                           ),
                         ),

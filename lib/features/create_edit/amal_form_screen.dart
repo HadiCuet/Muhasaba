@@ -8,6 +8,7 @@ import 'package:go_router/go_router.dart';
 import '../../app/providers.dart';
 import '../../app/widgets/max_width_body.dart';
 import '../../data/db/database.dart';
+import '../../domain/models/amal_goal.dart';
 import '../../domain/models/frequency.dart';
 import '../../domain/services/reminder_scheduler.dart';
 import '../../domain/utils/localized_amal_title.dart';
@@ -275,6 +276,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
         name: 'amal_created',
         parameters: {
           'frequency': _frequency.name,
+          'target': _target,
           'has_reminder': reminder != null ? 1 : 0,
           'category': ?_category,
         },
@@ -504,14 +506,14 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                 SwitchListTile(
                   contentPadding: EdgeInsets.zero,
                   value: _requireChoice,
-                  onChanged: (_optionSetId == null || _target > 1)
+                  onChanged: (_optionSetId == null || _target != 1)
                       ? null
                       : (v) => setState(() => _requireChoice = v),
                   title: Text(l.requireChoiceLabel),
                   subtitle: Text(
                     _optionSetId == null
                         ? l.requireChoicePickSetFirst
-                        : (_target > 1
+                        : (_target != 1
                               ? l.requireChoiceCountHelp
                               : l.requireChoiceHelp),
                   ),
@@ -524,9 +526,20 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                   value: _target,
                   onChanged: (v) => setState(() {
                     _target = v;
-                    if (v > 1) _requireChoice = false;
+                    if (v != 1) _requireChoice = false;
+                    if (v == kOpenEndedTarget) _defaultChecked = false;
                   }),
                 ),
+                if (_target == kOpenEndedTarget)
+                  Padding(
+                    padding: const EdgeInsetsDirectional.only(top: 8),
+                    child: Text(
+                      l.targetAnyHelp,
+                      style: theme.textTheme.bodySmall?.copyWith(
+                        color: theme.colorScheme.onSurfaceVariant,
+                      ),
+                    ),
+                  ),
                 const SizedBox(height: 20),
 
                 // ── Frequency ──────────────────────────────────────────────
@@ -592,13 +605,14 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                   periodTarget: _periodTarget,
                 ),
                 const SizedBox(height: 16),
-                SwitchListTile(
-                  contentPadding: EdgeInsets.zero,
-                  title: Text(l.startPreChecked),
-                  subtitle: Text(l.startPreCheckedSubtitle),
-                  value: _defaultChecked,
-                  onChanged: (v) => setState(() => _defaultChecked = v),
-                ),
+                if (_target != kOpenEndedTarget)
+                  SwitchListTile(
+                    contentPadding: EdgeInsets.zero,
+                    title: Text(l.startPreChecked),
+                    subtitle: Text(l.startPreCheckedSubtitle),
+                    value: _defaultChecked,
+                    onChanged: (v) => setState(() => _defaultChecked = v),
+                  ),
                 const SizedBox(height: 8),
                 ListTile(
                   contentPadding: EdgeInsets.zero,
@@ -695,7 +709,8 @@ class _TargetChips extends StatefulWidget {
 class _TargetChipsState extends State<_TargetChips> {
   static const _presets = [1, 3, 5, 7, 11, 33, 100];
 
-  bool get _isCustom => !_presets.contains(widget.value);
+  bool get _isCustom =>
+      widget.value != kOpenEndedTarget && !_presets.contains(widget.value);
 
   Future<void> _editCustom() async {
     final result = await showDialog<int>(
@@ -721,6 +736,12 @@ class _TargetChipsState extends State<_TargetChips> {
           spacing: 8,
           runSpacing: 8,
           children: [
+            ChoiceChip(
+              label: Text(l.targetAny),
+              selected: widget.value == kOpenEndedTarget,
+              showCheckmark: false,
+              onSelected: (_) => widget.onChanged(kOpenEndedTarget),
+            ),
             for (final p in _presets)
               ChoiceChip(
                 label: Text(lnum(context, p)),

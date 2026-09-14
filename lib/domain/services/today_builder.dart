@@ -2,6 +2,7 @@ import 'package:flutter/foundation.dart';
 
 import '../../core/time/period.dart';
 import '../../data/db/database.dart';
+import '../models/amal_goal.dart';
 import '../models/app_settings.dart';
 import '../models/frequency.dart';
 import '../utils/monthly_dates.dart';
@@ -22,9 +23,10 @@ class TodayRow {
   final String? note;
   final int? optionItemId;
 
-  bool get isCompleted => progress >= amal.target;
+  bool get isCompleted => amal.meets(progress);
 
   double get fraction {
+    if (amal.isOpenEnded) return progress > 0 ? 1 : 0;
     if (amal.target <= 0) return 0;
     final f = progress / amal.target;
     return f < 0 ? 0 : (f > 1 ? 1 : f);
@@ -169,7 +171,7 @@ class TodayBuilder {
         // the rest of today, and it hides from tomorrow.
         final week = weekPeriodOf(date, settings.startOfWeek);
         final inWeek = await periodCompletionsOf(amal.id, week.start, date);
-        return _doneDays(inWeek, amal.target) < amal.periodTarget;
+        return _doneDays(inWeek, amal) < amal.periodTarget;
 
       case Frequency.monthly:
         final dates = parseMonthlyDates(amal.monthlyDates);
@@ -178,12 +180,12 @@ class TodayBuilder {
         }
         final month = monthPeriodOf(date, settings.startOfMonth);
         final inMonth = await periodCompletionsOf(amal.id, month.start, date);
-        return _doneDays(inMonth, amal.target) < amal.periodTarget;
+        return _doneDays(inMonth, amal) < amal.periodTarget;
     }
   }
 
-  /// Number of days in [rows] that met [target]. `Completions` is unique per
-  /// (amalId, muhasabaDate), so one row is one day.
-  int _doneDays(List<CompletionRow> rows, int target) =>
-      rows.where((r) => r.progress >= target).length;
+  /// Number of days in [rows] that count for [amal]. `Completions` is unique
+  /// per (amalId, muhasabaDate), so one row is one day.
+  int _doneDays(List<CompletionRow> rows, AmalRow amal) =>
+      rows.where((r) => amal.meets(r.progress)).length;
 }

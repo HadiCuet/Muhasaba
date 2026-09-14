@@ -140,6 +140,13 @@ class AppLocalizationsTk extends AppLocalizations {
   String get customTargetHint => 'mes. 50';
 
   @override
+  String get targetAny => 'Islendik';
+
+  @override
+  String get targetAnyHelp =>
+      'Maksat ýok — islendik mukdar ýerine ýetirilen hasaplanýar';
+
+  @override
   String get dayOfWeek => 'Hepdenin guny';
 
   @override
@@ -302,6 +309,11 @@ class AppLocalizationsTk extends AppLocalizations {
   @override
   String progressOf(String progress, String target) {
     return '$target-dan $progress yerine yetirildi';
+  }
+
+  @override
+  String progressOpen(String count) {
+    return '$count ýerine ýetirildi';
   }
 
   @override
@@ -574,6 +586,20 @@ class AppLocalizationsTk extends AppLocalizations {
   String get statsPerAmal => 'Her amal boyunca';
 
   @override
+  String get statsTotalCaption => 'jemi';
+
+  @override
+  String statsDaysFraction(String done, String expectedText, num expected) {
+    String _temp0 = intl.Intl.pluralLogic(
+      expected,
+      locale: localeName,
+      other: 'gün',
+      one: 'gün',
+    );
+    return '$done/$expectedText $_temp0';
+  }
+
+  @override
   String get statsCurrentStreak => 'Hazyrkyzaman tapgyry';
 
   @override
@@ -593,6 +619,24 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get statsCompletionRate => 'Yerine yetirme derejesi';
+
+  @override
+  String get statsAmountPerDay => 'Günlük mukdar';
+
+  @override
+  String statsCountTotal(String count) {
+    return 'Jemi $count';
+  }
+
+  @override
+  String statsCountAvg(String amount) {
+    return 'Ortaça $amount/gün';
+  }
+
+  @override
+  String statsCountBest(String count, String day) {
+    return 'Iň köp $count · $day';
+  }
 
   @override
   String get statsFilterTime => 'Wagt';

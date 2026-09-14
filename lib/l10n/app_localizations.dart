@@ -392,6 +392,18 @@ abstract class AppLocalizations {
   /// **'e.g. 50'**
   String get customTargetHint;
 
+  /// Times-per-period chip meaning the amal has no goal — any amount completes it
+  ///
+  /// In en, this message translates to:
+  /// **'Any'**
+  String get targetAny;
+
+  /// Helper line shown under the times-per-period chips when Any is selected
+  ///
+  /// In en, this message translates to:
+  /// **'No goal — any amount marks it done'**
+  String get targetAnyHelp;
+
   /// No description provided for @dayOfWeek.
   ///
   /// In en, this message translates to:
@@ -643,6 +655,12 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{progress} of {target} completed'**
   String progressOf(String progress, String target);
+
+  /// Accessibility label for an amal with no goal, e.g. '12 completed'
+  ///
+  /// In en, this message translates to:
+  /// **'{count} completed'**
+  String progressOpen(String count);
 
   /// No description provided for @removeFromToday.
   ///
@@ -1112,6 +1130,18 @@ abstract class AppLocalizations {
   /// **'Per Amal'**
   String get statsPerAmal;
 
+  /// Caption under the period total on an amal with no goal. Lowercase; rendered in small caps-height text.
+  ///
+  /// In en, this message translates to:
+  /// **'total'**
+  String get statsTotalCaption;
+
+  /// How many days of the period an amal with no goal was done, e.g. '6/7 days'. done and expectedText are pre-localized digits; expected only drives the plural.
+  ///
+  /// In en, this message translates to:
+  /// **'{done}/{expectedText} {expected, plural, =1{day} other{days}}'**
+  String statsDaysFraction(String done, String expectedText, num expected);
+
   /// No description provided for @statsCurrentStreak.
   ///
   /// In en, this message translates to:
@@ -1153,6 +1183,30 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Completion rate'**
   String get statsCompletionRate;
+
+  /// Subtitle of the Daily Breakdown card when the bars show amounts, not completion rate
+  ///
+  /// In en, this message translates to:
+  /// **'Amount per day'**
+  String get statsAmountPerDay;
+
+  /// Sum of the amounts on screen
+  ///
+  /// In en, this message translates to:
+  /// **'Total {count}'**
+  String statsCountTotal(String count);
+
+  /// Average amount per elapsed day, one decimal place
+  ///
+  /// In en, this message translates to:
+  /// **'Avg {amount}/day'**
+  String statsCountAvg(String amount);
+
+  /// Largest single day in the period; day is a short weekday in week view, else a short month and day
+  ///
+  /// In en, this message translates to:
+  /// **'Best {count} · {day}'**
+  String statsCountBest(String count, String day);
 
   /// No description provided for @statsFilterTime.
   ///

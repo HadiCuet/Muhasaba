@@ -140,6 +140,13 @@ class AppLocalizationsId extends AppLocalizations {
   String get customTargetHint => 'cth. 50';
 
   @override
+  String get targetAny => 'Berapa pun';
+
+  @override
+  String get targetAnyHelp =>
+      'Tanpa target — berapa pun jumlahnya dihitung selesai';
+
+  @override
   String get dayOfWeek => 'Hari dalam seminggu';
 
   @override
@@ -302,6 +309,11 @@ class AppLocalizationsId extends AppLocalizations {
   @override
   String progressOf(String progress, String target) {
     return '$progress dari $target selesai';
+  }
+
+  @override
+  String progressOpen(String count) {
+    return '$count selesai';
   }
 
   @override
@@ -574,6 +586,20 @@ class AppLocalizationsId extends AppLocalizations {
   String get statsPerAmal => 'Per Amal';
 
   @override
+  String get statsTotalCaption => 'total';
+
+  @override
+  String statsDaysFraction(String done, String expectedText, num expected) {
+    String _temp0 = intl.Intl.pluralLogic(
+      expected,
+      locale: localeName,
+      other: 'hari',
+      one: 'hari',
+    );
+    return '$done/$expectedText $_temp0';
+  }
+
+  @override
   String get statsCurrentStreak => 'Streak Saat Ini';
 
   @override
@@ -593,6 +619,24 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get statsCompletionRate => 'Tingkat penyelesaian';
+
+  @override
+  String get statsAmountPerDay => 'Jumlah per hari';
+
+  @override
+  String statsCountTotal(String count) {
+    return 'Total $count';
+  }
+
+  @override
+  String statsCountAvg(String amount) {
+    return 'Rata-rata $amount/hari';
+  }
+
+  @override
+  String statsCountBest(String count, String day) {
+    return 'Tertinggi $count · $day';
+  }
 
   @override
   String get statsFilterTime => 'Waktu';

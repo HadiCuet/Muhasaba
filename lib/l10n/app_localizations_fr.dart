@@ -140,6 +140,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get customTargetHint => 'ex. 50';
 
   @override
+  String get targetAny => 'Libre';
+
+  @override
+  String get targetAnyHelp =>
+      'Sans objectif — toute quantité compte comme accompli';
+
+  @override
   String get dayOfWeek => 'Jour de la semaine';
 
   @override
@@ -304,6 +311,11 @@ class AppLocalizationsFr extends AppLocalizations {
   @override
   String progressOf(String progress, String target) {
     return '$progress sur $target accomplis';
+  }
+
+  @override
+  String progressOpen(String count) {
+    return 'Accompli : $count';
   }
 
   @override
@@ -577,6 +589,20 @@ class AppLocalizationsFr extends AppLocalizations {
   String get statsPerAmal => 'Par amal';
 
   @override
+  String get statsTotalCaption => 'total';
+
+  @override
+  String statsDaysFraction(String done, String expectedText, num expected) {
+    String _temp0 = intl.Intl.pluralLogic(
+      expected,
+      locale: localeName,
+      other: 'jours',
+      one: 'jour',
+    );
+    return '$done/$expectedText $_temp0';
+  }
+
+  @override
   String get statsCurrentStreak => 'Serie actuelle';
 
   @override
@@ -596,6 +622,24 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get statsCompletionRate => 'Taux d\'accomplissement';
+
+  @override
+  String get statsAmountPerDay => 'Quantité par jour';
+
+  @override
+  String statsCountTotal(String count) {
+    return 'Total $count';
+  }
+
+  @override
+  String statsCountAvg(String amount) {
+    return 'Moy. $amount/jour';
+  }
+
+  @override
+  String statsCountBest(String count, String day) {
+    return 'Max. $count · $day';
+  }
 
   @override
   String get statsFilterTime => 'Temps';

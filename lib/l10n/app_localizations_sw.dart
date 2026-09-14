@@ -140,6 +140,13 @@ class AppLocalizationsSw extends AppLocalizations {
   String get customTargetHint => 'mf. 50';
 
   @override
+  String get targetAny => 'Kiasi chochote';
+
+  @override
+  String get targetAnyHelp =>
+      'Hakuna lengo — kiasi chochote kinahesabiwa kama imekamilika';
+
+  @override
   String get dayOfWeek => 'Siku ya wiki';
 
   @override
@@ -302,6 +309,11 @@ class AppLocalizationsSw extends AppLocalizations {
   @override
   String progressOf(String progress, String target) {
     return '$progress kati ya $target zimekamilika';
+  }
+
+  @override
+  String progressOpen(String count) {
+    return 'Imefikia $count';
   }
 
   @override
@@ -573,6 +585,20 @@ class AppLocalizationsSw extends AppLocalizations {
   String get statsPerAmal => 'Kwa kila Amali';
 
   @override
+  String get statsTotalCaption => 'jumla';
+
+  @override
+  String statsDaysFraction(String done, String expectedText, num expected) {
+    String _temp0 = intl.Intl.pluralLogic(
+      expected,
+      locale: localeName,
+      other: 'siku $done/$expectedText',
+      one: 'siku $done/$expectedText',
+    );
+    return '$_temp0';
+  }
+
+  @override
   String get statsCurrentStreak => 'Mfululizo wa sasa';
 
   @override
@@ -592,6 +618,24 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get statsCompletionRate => 'Kiwango cha kukamilika';
+
+  @override
+  String get statsAmountPerDay => 'Kiasi kwa siku';
+
+  @override
+  String statsCountTotal(String count) {
+    return 'Jumla $count';
+  }
+
+  @override
+  String statsCountAvg(String amount) {
+    return 'Wastani $amount/siku';
+  }
+
+  @override
+  String statsCountBest(String count, String day) {
+    return 'Juu zaidi $count · $day';
+  }
 
   @override
   String get statsFilterTime => 'Wakati';

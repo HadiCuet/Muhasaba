@@ -226,6 +226,20 @@ final allActiveAmalsProvider = StreamProvider.autoDispose((ref) {
   return ref.watch(appDatabaseProvider).amalDao.watchActive();
 });
 
+/// The single amal the Overview is scoped to, or `null` when it is showing
+/// several. The chart reads it to decide between completion-rate bars and
+/// amount-per-day bars.
+final statsFocusedAmalProvider = Provider.autoDispose<AmalRow?>((ref) {
+  final amalId = ref.watch(statsFilterProvider.select((f) => f.amalId));
+  if (amalId == null) return null;
+  final amals = ref.watch(allActiveAmalsProvider).value;
+  if (amals == null) return null;
+  for (final amal in amals) {
+    if (amal.id == amalId) return amal;
+  }
+  return null;
+});
+
 /// All category names for the filter dropdown.
 final allCategoriesProvider = FutureProvider.autoDispose<List<String>>((
   ref,

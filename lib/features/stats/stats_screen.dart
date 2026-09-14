@@ -36,7 +36,10 @@ class _StatsScreenState extends ConsumerState<StatsScreen>
 
     return MaxWidthBody(
       child: RefreshIndicator(
-        onRefresh: () async => ref.invalidate(enhancedStatsProvider),
+        onRefresh: () async {
+          ref.invalidate(enhancedStatsProvider);
+          ref.invalidate(dailyBreakdownProvider);
+        },
         child: CustomScrollView(
           slivers: [
             // Filter row — always visible at top

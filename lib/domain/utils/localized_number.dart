@@ -41,7 +41,9 @@ String localizeDigits(BuildContext context, String s) {
   if (native == null) return s;
   final buf = StringBuffer();
   for (final u in s.codeUnits) {
-    buf.write((u >= 0x30 && u <= 0x39) ? native[u - 0x30] : String.fromCharCode(u));
+    buf.write(
+      (u >= 0x30 && u <= 0x39) ? native[u - 0x30] : String.fromCharCode(u),
+    );
   }
   return buf.toString();
 }
@@ -54,9 +56,20 @@ String lnum(BuildContext context, int n) {
   return localizeDigits(context, _decimal(locale).format(n));
 }
 
+/// Formats [n] with exactly [decimals] fraction digits in the active locale's
+/// numeral system and decimal separator, e.g. 4.4 → "4.4" / "4,4" / "٤٫٤".
+String ldec(BuildContext context, double n, {int decimals = 1}) {
+  final locale = Localizations.localeOf(context).toString();
+  final format = _decimal(locale)
+    ..minimumFractionDigits = decimals
+    ..maximumFractionDigits = decimals;
+  return localizeDigits(context, format.format(n));
+}
+
 /// Localized integer percentage, e.g. 72 → "72%" / "٧٢٪" / "৭২%".
 String lpct(BuildContext context, int pct) {
-  final sign = _arabicPercent.contains(Localizations.localeOf(context).toString())
+  final sign =
+      _arabicPercent.contains(Localizations.localeOf(context).toString())
       ? '٪'
       : '%';
   return '${lnum(context, pct)}$sign';
