@@ -600,7 +600,7 @@ class AppLocalizationsPs extends AppLocalizations {
   }
 
   @override
-  String get statsCurrentStreak => 'اوسنی لړۍ';
+  String get statsCurrentStreak => 'اوسنۍ لړۍ';
 
   @override
   String get statsBestStreak => 'غوره لړۍ';
@@ -1785,7 +1785,7 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get optionDetailRecordsCaption =>
-      'د تېر یو کال پر بنسټ محاسبه شوي، پورته له ټاکل شوې مودې څخه خپلواک دي.';
+      'د تېر یو کال پر بنسټ محاسبه شوي او له پورته ټاکل شوې مودې څخه خپلواک دي.';
 
   @override
   String get optionDetailRecentDaysHeading => 'وروستۍ ورځې';

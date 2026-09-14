@@ -451,7 +451,7 @@
   "optionAllAmals": "الكل",
   "optionScopedCaption": "{amal} · تم تسجيل {count}",
   "optionBreakdownSectionTitle": "توزيع الخيارات",
-  "optionBreakdownSwipeHint": "{count} مجموعات · اسحب",
+  "optionBreakdownSwipeHint": "{count, plural, =2{مجموعتان · اسحب} few{{count} مجموعات · اسحب} many{{count} مجموعة · اسحب} other{{count} مجموعة · اسحب}}",
   "optionDetailEmpty": "لم يُسجَّل أي اختيار لهذه المجموعة بعد.",
   "optionDetailTrendHeading": "التغيّر مع الوقت",
   "optionDetailTrendReadout": "تغيّرت نسبة {option} من {from} إلى {to} بين الأسبوع الأول والأخير.",

@@ -1761,7 +1761,14 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String optionBreakdownSwipeHint(int count) {
-    return 'Setova: $count · prevucite';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count setova · prevucite',
+      few: '$count seta · prevucite',
+      one: '$count set · prevucite',
+    );
+    return '$_temp0';
   }
 
   @override

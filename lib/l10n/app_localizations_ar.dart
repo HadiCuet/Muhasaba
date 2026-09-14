@@ -1769,7 +1769,15 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String optionBreakdownSwipeHint(int count) {
-    return '$count مجموعات · اسحب';
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$count مجموعة · اسحب',
+      many: '$count مجموعة · اسحب',
+      few: '$count مجموعات · اسحب',
+      two: 'مجموعتان · اسحب',
+    );
+    return '$_temp0';
   }
 
   @override

@@ -455,7 +455,7 @@
   "optionDetailEmpty": "Ba a rubuta wani zaɓi ba tukuna a wannan saiti.",
   "optionDetailTrendHeading": "Yadda ya canja",
   "optionDetailTrendReadout": "Rabon {option} ya canja daga {from} zuwa {to} tsakanin mako na farko da na ƙarshe.",
-  "optionDetailByAmalHeading": "Ta amali",
+  "optionDetailByAmalHeading": "Bisa ga amali",
   "optionDetailByAmalReadout": "Mafi yawa: {best} ({bestShare}); mafi ƙaranci: {worst} ({worstShare}).",
   "optionDetailRecordsHeading": "Rikodi",
   "optionDetailLongestRun": "Jeri mafi tsawo",

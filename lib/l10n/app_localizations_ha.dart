@@ -1769,7 +1769,7 @@ class AppLocalizationsHa extends AppLocalizations {
   }
 
   @override
-  String get optionDetailByAmalHeading => 'Ta amali';
+  String get optionDetailByAmalHeading => 'Bisa ga amali';
 
   @override
   String optionDetailByAmalReadout(

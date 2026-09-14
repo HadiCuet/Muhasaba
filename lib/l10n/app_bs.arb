@@ -451,7 +451,7 @@
   "optionAllAmals": "Sve",
   "optionScopedCaption": "{amal} · {count} zabilježeno",
   "optionBreakdownSectionTitle": "Raspodjela opcija",
-  "optionBreakdownSwipeHint": "Setova: {count} · prevucite",
+  "optionBreakdownSwipeHint": "{count, plural, one{{count} set · prevucite} few{{count} seta · prevucite} other{{count} setova · prevucite}}",
   "optionDetailEmpty": "Za ovaj set još nije zabilježen nijedan izbor.",
   "optionDetailTrendHeading": "Kako se mijenjalo",
   "optionDetailTrendReadout": "Udio opcije {option} promijenio se s {from} na {to} između prve i posljednje sedmice.",
