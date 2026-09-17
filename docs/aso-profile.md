@@ -5,7 +5,7 @@ Loaded by the `app-store-aso` and `google-play-aso` skills before any metadata,
 keyword, or creative work. Nothing here may be carried over from another app,
 and nothing in those skills may override what is written here.
 
-Last reviewed: **2026-09-11**, against version **2.1.0 (build 9)**.
+Last reviewed: **2026-09-17**, against version **3.0.1 (build 11)**.
 
 ---
 
@@ -13,9 +13,9 @@ Last reviewed: **2026-09-11**, against version **2.1.0 (build 9)**.
 
 | | |
 |---|---|
-| Name | **Muhasaba** |
+| Name | **Muhasaba** — store title on both stores: **Muhasaba: Muslim Habit Tracker** (en, 30/30; other ASC locales keep their localized "My Ibadah" names) |
 | Bundle / application ID | `dev.mukashi.muhasaba` |
-| Version | 2.1.0 (9) |
+| Version | 3.0.1 (11) |
 | Price | **Free.** Optional in-app tips ($0.99–$19.99, consumable, unlock nothing); no subscriptions, no ads. |
 | Platforms | iOS/iPadOS **and** Android — both listings are maintained, neither is a port afterthought |
 | App Store Connect | mukashi.dev@gmail.com |
@@ -175,7 +175,7 @@ Current usage, measured 2026-08-25:
 
 | Locale | Name | Subtitle | Keywords |
 |---|---|---|---|
-| en | 19/30 | 30/30 | **100/100** ✅ |
+| en | **30/30** | 28/30 | 95/100 |
 | id | 19/30 | 29/30 | 98/100 |
 | fr | 21/30 | 27/30 | 96/100 |
 | ms | 19/30 | 28/30 | 93/100 |
@@ -185,9 +185,12 @@ Current usage, measured 2026-08-25:
 | ar | 15/30 | 20/30 | **79/100** ⚠ |
 | hi | 20/30 | 26/30 | **76/100** ⚠ |
 
-The English field is clean — 16 singular terms, no spaces after commas, nothing
-duplicated from Name or Subtitle. **ar and hi leave 20+ characters unused**, and
-every Name leaves 7–15 characters unused. Those are the cheapest wins available.
+English was reworked as a set on 2026-09-17 (version 3.0.1): Name **Muhasaba:
+Muslim Habit Tracker**, Subtitle **Salah, Dhikr, Quran & Sunnah**, Keywords
+`islamic,amal,prayer,namaz,azkar,dua,worship,deen,fasting,sadaqah,ibadah,checklist,streak,tasbih`.
+Nothing is duplicated across the three fields. **ar and hi leave 20+ characters
+unused**, and the non-English Names leave 7–15 characters unused. Those are the
+cheapest wins available.
 
 ### Android (Google Play)
 
@@ -235,7 +238,7 @@ should be worked into the Play copy instead of being dropped.
 
 - [ ] Revise the Play full description: "100% private and offline" overstates it (§7).
 - [ ] Complete/verify Play **Data Safety** for Firebase Analytics + Crashlytics.
-- [ ] Fill the unused keyword characters in `ar` and `hi`; tighten short App Names.
+- [ ] Fill the unused keyword characters in `ar` and `hi`; tighten the non-English App Names (en done 2026-09-17).
 - [ ] Localize the Play listing beyond `en-US` — the app supports 23 languages.
 - [ ] Rebuild the Play feature graphic for 2.0.0.
 - [ ] Write 2.0.0 release notes (Challenges, Insights) for both stores, 9+ locales.
