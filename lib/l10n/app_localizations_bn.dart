@@ -1670,6 +1670,14 @@ class AppLocalizationsBn extends AppLocalizations {
   String get optionsMinRequired => 'অন্তত দুটি বিকল্প যোগ করুন';
 
   @override
+  String get optionSetNameTooLong => 'সেটের নাম অনেক বড়';
+
+  @override
+  String optionTooLong(int index) {
+    return '$index নম্বর বিকল্পটি অনেক বড়';
+  }
+
+  @override
   String get optionSetNone => 'কোনোটি নয়';
 
   @override

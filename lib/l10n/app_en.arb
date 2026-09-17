@@ -1188,6 +1188,11 @@
   "optionSetDeleteConfirm": "Amals using this set stop showing options. Days you already recorded keep their choice.",
   "optionSetNameRequired": "Give the set a name",
   "optionsMinRequired": "Add at least two options",
+  "optionSetNameTooLong": "Set name is too long",
+  "optionTooLong": "Option {index} is too long",
+  "@optionTooLong": {
+    "placeholders": { "index": { "type": "int" } }
+  },
   "optionSetNone": "None",
   "optionSetNew": "New set",
   "requireChoiceLabel": "Require a choice",

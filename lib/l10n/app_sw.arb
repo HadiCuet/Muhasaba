@@ -488,6 +488,8 @@
   "optionsLabel": "Chaguo",
   "optionsMaxReached": "Upeo wa chaguo {max}.",
   "optionsMinRequired": "Ongeza angalau chaguo mbili",
+  "optionSetNameTooLong": "Jina la seti ni refu sana",
+  "optionTooLong": "Chaguo {index} ni refu sana",
   "optionsUsedOf": "Chaguo {used} kati ya {max} zimetumika.",
   "requireChoiceCountHelp": "Amali zenye kuhesabu hukamilishwa na − na +",
   "requireChoiceHelp": "Safu haitatiwa alama hadi chaguo lichaguliwe",

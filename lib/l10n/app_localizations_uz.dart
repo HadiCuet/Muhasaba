@@ -1674,6 +1674,14 @@ class AppLocalizationsUz extends AppLocalizations {
   String get optionsMinRequired => 'Kamida ikkita variant qo\'shing';
 
   @override
+  String get optionSetNameTooLong => 'To\'plam nomi juda uzun';
+
+  @override
+  String optionTooLong(int index) {
+    return '$index-variant juda uzun';
+  }
+
+  @override
   String get optionSetNone => 'Yo\'q';
 
   @override

@@ -1669,6 +1669,14 @@ class AppLocalizationsTr extends AppLocalizations {
   String get optionsMinRequired => 'En az iki seçenek ekleyin';
 
   @override
+  String get optionSetNameTooLong => 'Set adı çok uzun';
+
+  @override
+  String optionTooLong(int index) {
+    return '$index. seçenek çok uzun';
+  }
+
+  @override
   String get optionSetNone => 'Yok';
 
   @override

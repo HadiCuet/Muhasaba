@@ -488,6 +488,8 @@
   "optionsLabel": "विकल्प",
   "optionsMaxReached": "अधिकतम {max} विकल्प।",
   "optionsMinRequired": "कम से कम दो विकल्प जोड़ें",
+  "optionSetNameTooLong": "सेट का नाम बहुत लंबा है",
+  "optionTooLong": "विकल्प {index} बहुत लंबा है",
   "optionsUsedOf": "{max} में से {used} विकल्प उपयोग किए गए।",
   "requireChoiceCountHelp": "गिनती वाले अमल काउंटर से पूरे होते हैं",
   "requireChoiceHelp": "जब तक विकल्प न चुना जाए, पंक्ति पूरी नहीं होगी",

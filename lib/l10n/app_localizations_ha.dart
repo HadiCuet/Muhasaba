@@ -1674,6 +1674,14 @@ class AppLocalizationsHa extends AppLocalizations {
   String get optionsMinRequired => 'Ƙara aƙalla zaɓi biyu';
 
   @override
+  String get optionSetNameTooLong => 'Sunan saiti ya yi tsawo';
+
+  @override
+  String optionTooLong(int index) {
+    return 'Zaɓi $index ya yi tsawo';
+  }
+
+  @override
   String get optionSetNone => 'Babu';
 
   @override

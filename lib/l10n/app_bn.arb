@@ -488,6 +488,8 @@
   "optionsLabel": "বিকল্প",
   "optionsMaxReached": "সর্বোচ্চ {max}টি বিকল্প।",
   "optionsMinRequired": "অন্তত দুটি বিকল্প যোগ করুন",
+  "optionSetNameTooLong": "সেটের নাম অনেক বড়",
+  "optionTooLong": "{index} নম্বর বিকল্পটি অনেক বড়",
   "optionsUsedOf": "{max}টির মধ্যে {used}টি বিকল্প ব্যবহৃত।",
   "requireChoiceCountHelp": "সংখ্যাভিত্তিক আমল গণনা দিয়েই সম্পন্ন হয়",
   "requireChoiceHelp": "বিকল্প বেছে না নেওয়া পর্যন্ত সারিটি সম্পন্ন হবে না",

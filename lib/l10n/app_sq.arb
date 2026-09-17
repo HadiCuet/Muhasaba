@@ -488,6 +488,8 @@
   "optionsLabel": "Opsionet",
   "optionsMaxReached": "Maksimumi {max} opsione.",
   "optionsMinRequired": "Shtoni të paktën dy opsione",
+  "optionSetNameTooLong": "Emri i grupit është shumë i gjatë",
+  "optionTooLong": "Opsioni {index} është shumë i gjatë",
   "optionsUsedOf": "{used} nga {max} opsione të përdorura.",
   "requireChoiceCountHelp": "Amalet e numëruara plotësohen me numëruesin",
   "requireChoiceHelp": "Rreshti nuk shënohet i përfunduar derisa të zgjidhet një opsion",

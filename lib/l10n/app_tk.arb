@@ -488,6 +488,8 @@
   "optionsLabel": "Wariantlar",
   "optionsMaxReached": "Iň köp {max} wariant.",
   "optionsMinRequired": "Iň azyndan iki wariant goşuň",
+  "optionSetNameTooLong": "Toplumyň ady gaty uzyn",
+  "optionTooLong": "Wariant {index} gaty uzyn",
   "optionsUsedOf": "{max} wariantdan {used} ulanyldy.",
   "requireChoiceCountHelp": "Sanalýan amallar − we + arkaly ýerine ýetirilýär",
   "requireChoiceHelp": "Wariant saýlanmasa, setir bellenmez",

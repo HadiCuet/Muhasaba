@@ -488,6 +488,8 @@
   "optionsLabel": "Варианттар",
   "optionsMaxReached": "Эң көбү {max} вариант.",
   "optionsMinRequired": "Жок дегенде эки вариант кошуңуз",
+  "optionSetNameTooLong": "Топтомдун аты өтө узун",
+  "optionTooLong": "{index}-вариант өтө узун",
   "optionsUsedOf": "{max} варианттан {used} колдонулду.",
   "requireChoiceCountHelp": "Саналуучу амалдар − жана + аркылуу аткарылат",
   "requireChoiceHelp": "Вариант тандалмайынча сап белгиленбейт",

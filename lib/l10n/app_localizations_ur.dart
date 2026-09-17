@@ -1669,6 +1669,14 @@ class AppLocalizationsUr extends AppLocalizations {
   String get optionsMinRequired => 'کم از کم دو اختیارات شامل کریں';
 
   @override
+  String get optionSetNameTooLong => 'مجموعے کا نام بہت طویل ہے';
+
+  @override
+  String optionTooLong(int index) {
+    return 'اختیار $index بہت طویل ہے';
+  }
+
+  @override
   String get optionSetNone => 'کوئی نہیں';
 
   @override

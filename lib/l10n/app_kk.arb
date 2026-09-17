@@ -488,6 +488,8 @@
   "optionsLabel": "Нұсқалар",
   "optionsMaxReached": "Ең көбі {max} нұсқа.",
   "optionsMinRequired": "Кемінде екі нұсқа қосыңыз",
+  "optionSetNameTooLong": "Жиынтық атауы тым ұзын",
+  "optionTooLong": "{index}-нұсқа тым ұзын",
   "optionsUsedOf": "{max} нұсқадан {used} пайдаланылды.",
   "requireChoiceCountHelp": "Санақты амалдар − және + арқылы орындалады",
   "requireChoiceHelp": "Нұсқа таңдалмайынша жол белгіленбейді",

@@ -2924,6 +2924,18 @@ abstract class AppLocalizations {
   /// **'Add at least two options'**
   String get optionsMinRequired;
 
+  /// No description provided for @optionSetNameTooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'Set name is too long'**
+  String get optionSetNameTooLong;
+
+  /// No description provided for @optionTooLong.
+  ///
+  /// In en, this message translates to:
+  /// **'Option {index} is too long'**
+  String optionTooLong(int index);
+
   /// No description provided for @optionSetNone.
   ///
   /// In en, this message translates to:

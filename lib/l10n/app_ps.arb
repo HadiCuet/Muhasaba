@@ -488,6 +488,8 @@
   "optionsLabel": "انتخابونه",
   "optionsMaxReached": "تر ټولو ډېر {max} انتخابونه.",
   "optionsMinRequired": "لږ تر لږه دوه انتخابونه اضافه کړئ",
+  "optionSetNameTooLong": "د ټولګې نوم ډیر اوږد دی",
+  "optionTooLong": "انتخاب {index} ډیر اوږد دی",
   "optionsUsedOf": "له {max} څخه {used} انتخابونه کارول شوي.",
   "requireChoiceCountHelp": "شمېرل کېدونکي عملونه په شمېرونکي بشپړېږي",
   "requireChoiceHelp": "تر څو انتخاب ونه ټاکل شي، کرښه نه بشپړېږي",

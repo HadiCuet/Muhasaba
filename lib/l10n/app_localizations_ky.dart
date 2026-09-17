@@ -1668,6 +1668,14 @@ class AppLocalizationsKy extends AppLocalizations {
   String get optionsMinRequired => 'Жок дегенде эки вариант кошуңуз';
 
   @override
+  String get optionSetNameTooLong => 'Топтомдун аты өтө узун';
+
+  @override
+  String optionTooLong(int index) {
+    return '$index-вариант өтө узун';
+  }
+
+  @override
   String get optionSetNone => 'Жок';
 
   @override

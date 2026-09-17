@@ -488,6 +488,8 @@
   "optionsLabel": "Zaɓuɓɓuka",
   "optionsMaxReached": "Mafi yawa zaɓi {max}.",
   "optionsMinRequired": "Ƙara aƙalla zaɓi biyu",
+  "optionSetNameTooLong": "Sunan saiti ya yi tsawo",
+  "optionTooLong": "Zaɓi {index} ya yi tsawo",
   "optionsUsedOf": "Zaɓi {used} daga cikin {max} an yi amfani.",
   "requireChoiceCountHelp": "Ana kammala amalin ƙidaya da − da +",
   "requireChoiceHelp": "Layin ba zai sami alama ba sai an zaɓi wani abu",

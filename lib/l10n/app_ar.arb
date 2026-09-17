@@ -488,6 +488,8 @@
   "optionsLabel": "الخيارات",
   "optionsMaxReached": "بحد أقصى {max} خيارات.",
   "optionsMinRequired": "أضف خيارين على الأقل",
+  "optionSetNameTooLong": "اسم المجموعة طويل جداً",
+  "optionTooLong": "الخيار {index} طويل جداً",
   "optionsUsedOf": "تم استخدام {used} من {max} خيارات.",
   "requireChoiceCountHelp": "الأعمال المعدودة تكتمل بالعدّاد",
   "requireChoiceHelp": "لن يكتمل الصف حتى تختار أحد الخيارات",

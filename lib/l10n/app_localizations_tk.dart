@@ -1666,6 +1666,14 @@ class AppLocalizationsTk extends AppLocalizations {
   String get optionsMinRequired => 'Iň azyndan iki wariant goşuň';
 
   @override
+  String get optionSetNameTooLong => 'Toplumyň ady gaty uzyn';
+
+  @override
+  String optionTooLong(int index) {
+    return 'Wariant $index gaty uzyn';
+  }
+
+  @override
   String get optionSetNone => 'Ýok';
 
   @override

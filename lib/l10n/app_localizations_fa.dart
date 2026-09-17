@@ -1666,6 +1666,14 @@ class AppLocalizationsFa extends AppLocalizations {
   String get optionsMinRequired => 'دست‌کم دو گزینه اضافه کنید';
 
   @override
+  String get optionSetNameTooLong => 'نام مجموعه بیش از حد طولانی است';
+
+  @override
+  String optionTooLong(int index) {
+    return 'گزینهٔ $index بیش از حد طولانی است';
+  }
+
+  @override
   String get optionSetNone => 'هیچ‌کدام';
 
   @override

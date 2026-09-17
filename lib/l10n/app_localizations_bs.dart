@@ -1679,6 +1679,14 @@ class AppLocalizationsBs extends AppLocalizations {
   String get optionsMinRequired => 'Dodajte najmanje dvije opcije';
 
   @override
+  String get optionSetNameTooLong => 'Naziv seta je predugačak';
+
+  @override
+  String optionTooLong(int index) {
+    return 'Opcija $index je predugačka';
+  }
+
+  @override
   String get optionSetNone => 'Nema';
 
   @override

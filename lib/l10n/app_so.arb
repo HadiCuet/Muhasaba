@@ -488,6 +488,8 @@
   "optionsLabel": "Ikhtiyaarrada",
   "optionsMaxReached": "Ugu badnaan {max} ikhtiyaar.",
   "optionsMinRequired": "Ku dar ugu yaraan laba ikhtiyaar",
+  "optionSetNameTooLong": "Magaca ururka aad buu u dheer yahay",
+  "optionTooLong": "Ikhtiyaarka {index} aad buu u dheer yahay",
   "optionsUsedOf": "{used} ka mid ah {max} ikhtiyaar ayaa la isticmaalay.",
   "requireChoiceCountHelp": "Camalada la tirinayo waxaa dhammaystira tirinta − iyo +",
   "requireChoiceHelp": "Safku ma calaamadaysna ilaa ikhtiyaar la doorto",

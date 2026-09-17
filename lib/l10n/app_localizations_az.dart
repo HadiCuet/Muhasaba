@@ -1666,6 +1666,14 @@ class AppLocalizationsAz extends AppLocalizations {
   String get optionsMinRequired => 'Ən azı iki variant əlavə edin';
 
   @override
+  String get optionSetNameTooLong => 'Dəstin adı çox uzundur';
+
+  @override
+  String optionTooLong(int index) {
+    return 'Variant $index çox uzundur';
+  }
+
+  @override
   String get optionSetNone => 'Yoxdur';
 
   @override

@@ -488,6 +488,8 @@
   "optionsLabel": "Opsi",
   "optionsMaxReached": "Maksimum {max} opsi.",
   "optionsMinRequired": "Tambahkan minimal dua opsi",
+  "optionSetNameTooLong": "Nama set terlalu panjang",
+  "optionTooLong": "Opsi {index} terlalu panjang",
   "optionsUsedOf": "{used} dari {max} opsi digunakan.",
   "requireChoiceCountHelp": "Amal berhitung diselesaikan lewat penghitung",
   "requireChoiceHelp": "Baris tidak akan tercentang sebelum opsi dipilih",

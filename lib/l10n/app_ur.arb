@@ -488,6 +488,8 @@
   "optionsLabel": "اختیارات",
   "optionsMaxReached": "زیادہ سے زیادہ {max} اختیارات۔",
   "optionsMinRequired": "کم از کم دو اختیارات شامل کریں",
+  "optionSetNameTooLong": "مجموعے کا نام بہت طویل ہے",
+  "optionTooLong": "اختیار {index} بہت طویل ہے",
   "optionsUsedOf": "{max} میں سے {used} اختیارات استعمال ہوئے۔",
   "requireChoiceCountHelp": "شمار والے اعمال گنتی سے مکمل ہوتے ہیں",
   "requireChoiceHelp": "جب تک اختیار منتخب نہ ہو، قطار مکمل نہیں ہوگی",

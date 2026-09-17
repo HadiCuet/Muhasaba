@@ -1664,6 +1664,14 @@ class AppLocalizationsPs extends AppLocalizations {
   String get optionsMinRequired => 'لږ تر لږه دوه انتخابونه اضافه کړئ';
 
   @override
+  String get optionSetNameTooLong => 'د ټولګې نوم ډیر اوږد دی';
+
+  @override
+  String optionTooLong(int index) {
+    return 'انتخاب $index ډیر اوږد دی';
+  }
+
+  @override
   String get optionSetNone => 'هیڅ یو';
 
   @override

@@ -488,6 +488,8 @@
   "optionsLabel": "Seçenekler",
   "optionsMaxReached": "En fazla {max} seçenek.",
   "optionsMinRequired": "En az iki seçenek ekleyin",
+  "optionSetNameTooLong": "Set adı çok uzun",
+  "optionTooLong": "{index}. seçenek çok uzun",
   "optionsUsedOf": "{max} seçenekten {used} kullanıldı.",
   "requireChoiceCountHelp": "Sayılan ameller sayaçla tamamlanır",
   "requireChoiceHelp": "Bir seçenek seçilmeden satır tamamlanmaz",

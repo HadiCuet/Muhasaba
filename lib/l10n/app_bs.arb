@@ -488,6 +488,8 @@
   "optionsLabel": "Opcije",
   "optionsMaxReached": "Maksimalno {max} opcija.",
   "optionsMinRequired": "Dodajte najmanje dvije opcije",
+  "optionSetNameTooLong": "Naziv seta je predugačak",
+  "optionTooLong": "Opcija {index} je predugačka",
   "optionsUsedOf": "{used} od {max} opcija iskorišteno.",
   "requireChoiceCountHelp": "Ameli s brojanjem se završavaju brojačem",
   "requireChoiceHelp": "Red neće biti završen dok se ne izabere opcija",

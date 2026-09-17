@@ -1673,6 +1673,14 @@ class AppLocalizationsTg extends AppLocalizations {
   String get optionsMinRequired => 'Ҳадди ақал ду вариант илова кунед';
 
   @override
+  String get optionSetNameTooLong => 'Номи маҷмӯа хеле дароз аст';
+
+  @override
+  String optionTooLong(int index) {
+    return 'Варианти $index хеле дароз аст';
+  }
+
+  @override
   String get optionSetNone => 'Нест';
 
   @override

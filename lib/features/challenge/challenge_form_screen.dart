@@ -408,8 +408,12 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
             controller: _title,
             decoration: InputDecoration(labelText: l.titleLabel),
             onChanged: (_) => setState(() {}),
-            validator: (v) =>
-                (v == null || v.trim().isEmpty) ? l.titleRequired : null,
+            validator: (v) {
+              final s = v?.trim() ?? '';
+              if (s.isEmpty) return l.titleRequired;
+              if (s.length > 120) return l.titleTooLong;
+              return null;
+            },
           ),
         ),
       ],

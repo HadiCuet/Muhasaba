@@ -1672,6 +1672,14 @@ class AppLocalizationsSw extends AppLocalizations {
   String get optionsMinRequired => 'Ongeza angalau chaguo mbili';
 
   @override
+  String get optionSetNameTooLong => 'Jina la seti ni refu sana';
+
+  @override
+  String optionTooLong(int index) {
+    return 'Chaguo $index ni refu sana';
+  }
+
+  @override
   String get optionSetNone => 'Hakuna';
 
   @override

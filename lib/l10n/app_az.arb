@@ -488,6 +488,8 @@
   "optionsLabel": "Variantlar",
   "optionsMaxReached": "Maksimum {max} variant.",
   "optionsMinRequired": "Ən azı iki variant əlavə edin",
+  "optionSetNameTooLong": "Dəstin adı çox uzundur",
+  "optionTooLong": "Variant {index} çox uzundur",
   "optionsUsedOf": "{max} variantdan {used} istifadə olunub.",
   "requireChoiceCountHelp": "Sayılan əməllər − və + ilə tamamlanır",
   "requireChoiceHelp": "Variant seçilənə qədər sətir işarələnməyəcək",

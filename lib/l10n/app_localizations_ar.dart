@@ -1685,6 +1685,14 @@ class AppLocalizationsAr extends AppLocalizations {
   String get optionsMinRequired => 'أضف خيارين على الأقل';
 
   @override
+  String get optionSetNameTooLong => 'اسم المجموعة طويل جداً';
+
+  @override
+  String optionTooLong(int index) {
+    return 'الخيار $index طويل جداً';
+  }
+
+  @override
   String get optionSetNone => 'بدون';
 
   @override

@@ -1675,6 +1675,14 @@ class AppLocalizationsMs extends AppLocalizations {
   String get optionsMinRequired => 'Tambah sekurang-kurangnya dua pilihan';
 
   @override
+  String get optionSetNameTooLong => 'Nama set terlalu panjang';
+
+  @override
+  String optionTooLong(int index) {
+    return 'Pilihan $index terlalu panjang';
+  }
+
+  @override
   String get optionSetNone => 'Tiada';
 
   @override

@@ -1677,6 +1677,14 @@ class AppLocalizationsId extends AppLocalizations {
   String get optionsMinRequired => 'Tambahkan minimal dua opsi';
 
   @override
+  String get optionSetNameTooLong => 'Nama set terlalu panjang';
+
+  @override
+  String optionTooLong(int index) {
+    return 'Opsi $index terlalu panjang';
+  }
+
+  @override
   String get optionSetNone => 'Tidak ada';
 
   @override

@@ -1679,6 +1679,14 @@ class AppLocalizationsSo extends AppLocalizations {
   String get optionsMinRequired => 'Ku dar ugu yaraan laba ikhtiyaar';
 
   @override
+  String get optionSetNameTooLong => 'Magaca ururka aad buu u dheer yahay';
+
+  @override
+  String optionTooLong(int index) {
+    return 'Ikhtiyaarka $index aad buu u dheer yahay';
+  }
+
+  @override
   String get optionSetNone => 'Midna';
 
   @override

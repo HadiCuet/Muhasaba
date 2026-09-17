@@ -9,6 +9,11 @@ import '../../../l10n/app_localizations.dart';
 
 const int kMaxOptionsPerSet = 6;
 
+// The withLength caps on OptionSets.name / OptionSetItems.label. Drift counts
+// UTF-16 code units, which TextField.maxLength (grapheme clusters) does not.
+const int kMaxOptionSetNameLength = 60;
+const int kMaxOptionLabelLength = 40;
+
 /// Returns the saved set id, `-1` if the set was deleted, or `null` on cancel.
 Future<int?> showOptionSetEditorSheet(
   BuildContext context,
@@ -111,17 +116,26 @@ class _OptionSetEditorSheetState extends ConsumerState<_OptionSetEditorSheet> {
     _error = null;
     final l = AppLocalizations.of(context);
     final name = _canonicalName();
-    final items = <({int? id, String label, String? seedKey})>[];
-    for (final draft in _items) {
-      final c = _canonical(draft);
-      if (c.label.isEmpty) continue;
-      items.add((id: draft.id, label: c.label, seedKey: c.seedKey));
-    }
-
     if (name.name.isEmpty) {
       setState(() => _error = l.optionSetNameRequired);
       return;
     }
+    if (name.name.length > kMaxOptionSetNameLength) {
+      setState(() => _error = l.optionSetNameTooLong);
+      return;
+    }
+
+    final items = <({int? id, String label, String? seedKey})>[];
+    for (var i = 0; i < _items.length; i++) {
+      final c = _canonical(_items[i]);
+      if (c.label.isEmpty) continue;
+      if (c.label.length > kMaxOptionLabelLength) {
+        setState(() => _error = l.optionTooLong(i + 1));
+        return;
+      }
+      items.add((id: _items[i].id, label: c.label, seedKey: c.seedKey));
+    }
+
     if (items.length < 2) {
       setState(() => _error = l.optionsMinRequired);
       return;

@@ -488,6 +488,8 @@
   "optionsLabel": "Options",
   "optionsMaxReached": "Maximum de {max} options.",
   "optionsMinRequired": "Ajoutez au moins deux options",
+  "optionSetNameTooLong": "Le nom de l'ensemble est trop long",
+  "optionTooLong": "L'option {index} est trop longue",
   "optionsUsedOf": "{used} sur {max} options utilisées.",
   "requireChoiceCountHelp": "Les amal comptés sont complétés par le compteur",
   "requireChoiceHelp": "La ligne ne sera pas cochée tant qu'une option n'est pas choisie",

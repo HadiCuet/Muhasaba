@@ -1672,6 +1672,14 @@ class AppLocalizationsKu extends AppLocalizations {
   String get optionsMinRequired => 'Bi kêmî du vebijarkan lê zêde bike';
 
   @override
+  String get optionSetNameTooLong => 'Navê komê pir dirêj e';
+
+  @override
+  String optionTooLong(int index) {
+    return 'Vebijark $index pir dirêj e';
+  }
+
+  @override
   String get optionSetNone => 'Tune';
 
   @override

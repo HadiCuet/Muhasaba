@@ -1666,6 +1666,14 @@ class AppLocalizationsKk extends AppLocalizations {
   String get optionsMinRequired => 'Кемінде екі нұсқа қосыңыз';
 
   @override
+  String get optionSetNameTooLong => 'Жиынтық атауы тым ұзын';
+
+  @override
+  String optionTooLong(int index) {
+    return '$index-нұсқа тым ұзын';
+  }
+
+  @override
   String get optionSetNone => 'Жоқ';
 
   @override

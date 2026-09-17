@@ -488,6 +488,8 @@
   "optionsLabel": "Variantlar",
   "optionsMaxReached": "Maksimal {max} ta variant.",
   "optionsMinRequired": "Kamida ikkita variant qo'shing",
+  "optionSetNameTooLong": "To'plam nomi juda uzun",
+  "optionTooLong": "{index}-variant juda uzun",
   "optionsUsedOf": "{max} tadan {used} tasi ishlatildi.",
   "requireChoiceCountHelp": "Sanoqli amallar − va + orqali bajariladi",
   "requireChoiceHelp": "Variant tanlanmaguncha qator belgilanmaydi",

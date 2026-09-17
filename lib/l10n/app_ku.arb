@@ -488,6 +488,8 @@
   "optionsLabel": "Vebijark",
   "optionsMaxReached": "Herî zêde {max} vebijark.",
   "optionsMinRequired": "Bi kêmî du vebijarkan lê zêde bike",
+  "optionSetNameTooLong": "Navê komê pir dirêj e",
+  "optionTooLong": "Vebijark {index} pir dirêj e",
   "optionsUsedOf": "{used} ji {max} vebijarkan hatine bikaranîn.",
   "requireChoiceCountHelp": "Kirinên jimare bi − û + tên qedandin",
   "requireChoiceHelp": "Heta vebijarkek neyê hilbijartin, rêz nayê nîşankirin",

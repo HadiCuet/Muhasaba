@@ -488,6 +488,8 @@
   "optionsLabel": "Pilihan",
   "optionsMaxReached": "Maksimum {max} pilihan.",
   "optionsMinRequired": "Tambah sekurang-kurangnya dua pilihan",
+  "optionSetNameTooLong": "Nama set terlalu panjang",
+  "optionTooLong": "Pilihan {index} terlalu panjang",
   "optionsUsedOf": "{used} daripada {max} pilihan digunakan.",
   "requireChoiceCountHelp": "Amal yang dikira diselesaikan dengan pengira",
   "requireChoiceHelp": "Baris tidak akan selesai sehingga satu pilihan dipilih",

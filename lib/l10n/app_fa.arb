@@ -488,6 +488,8 @@
   "optionsLabel": "گزینه‌ها",
   "optionsMaxReached": "حداکثر {max} گزینه.",
   "optionsMinRequired": "دست‌کم دو گزینه اضافه کنید",
+  "optionSetNameTooLong": "نام مجموعه بیش از حد طولانی است",
+  "optionTooLong": "گزینهٔ {index} بیش از حد طولانی است",
   "optionsUsedOf": "{used} از {max} گزینه استفاده شده.",
   "requireChoiceCountHelp": "عمل‌های شمارشی با شمارنده کامل می‌شوند",
   "requireChoiceHelp": "تا گزینه‌ای انتخاب نشود، ردیف کامل نمی‌شود",

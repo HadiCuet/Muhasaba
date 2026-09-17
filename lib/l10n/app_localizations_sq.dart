@@ -1676,6 +1676,14 @@ class AppLocalizationsSq extends AppLocalizations {
   String get optionsMinRequired => 'Shtoni të paktën dy opsione';
 
   @override
+  String get optionSetNameTooLong => 'Emri i grupit është shumë i gjatë';
+
+  @override
+  String optionTooLong(int index) {
+    return 'Opsioni $index është shumë i gjatë';
+  }
+
+  @override
   String get optionSetNone => 'Asgjë';
 
   @override

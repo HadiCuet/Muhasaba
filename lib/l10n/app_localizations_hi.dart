@@ -1672,6 +1672,14 @@ class AppLocalizationsHi extends AppLocalizations {
   String get optionsMinRequired => 'कम से कम दो विकल्प जोड़ें';
 
   @override
+  String get optionSetNameTooLong => 'सेट का नाम बहुत लंबा है';
+
+  @override
+  String optionTooLong(int index) {
+    return 'विकल्प $index बहुत लंबा है';
+  }
+
+  @override
   String get optionSetNone => 'कोई नहीं';
 
   @override
