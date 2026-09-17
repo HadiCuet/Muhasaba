@@ -1,5 +1,9 @@
-Muhasaba'yı kullandığınız için Allah razı olsun.
+Muhasebe'yi kullandığınız için Allah razı olsun.
 
-• Artık uygulamaya küçük bir katkıyla destek olabilirsiniz — dilediğiniz tutarda, dilediğiniz zaman. Arkasında kilitli hiçbir şey yok: Muhasaba ücretsiz kalıyor, reklam ve hesap yok.
-• Destekçiler için Ayarlar'da bir teşekkür rozeti.
-• Ayarlar daha derli toplu — üstte tek bir kart, hadis ise en altta.
+• Uzun bir ad veya seçenek içeren seçenek seti kaydedilirken oluşan çökme düzeltildi — en çok Bengalce, Urduca, Arapça ve Hintçede görülüyordu. Sınır artık gördüğünüz karakterlerle sayılıyor; her dile eşit yer.
+
+3.0 ile gelen diğer yenilikler:
+• Amelin yalnızca yapılıp yapılmadığını değil, nasıl yapıldığını da kaydedin: sabah namazı tek başına mı, camide cemaatle mi; Kur'an okuma mı, ezber mi; sadaka para mı, zaman mı. Hazır setleri kullanın ya da kendi setinizi oluşturun.
+• Yeni "Serbest" hedef: hedef yok — herhangi bir miktar günü tamamlanmış sayar.
+• İstatistik, her amel için seçeneklerin dağılımını, zaman içindeki değişimi ve yıl boyunca rekorları gösterir.
+• Dilerseniz küçük bir katkıyla uygulamaya destek olun. Arkasında kilitli hiçbir şey yok: Muhasebe ücretsiz kalır; reklam yok, hesap yok.

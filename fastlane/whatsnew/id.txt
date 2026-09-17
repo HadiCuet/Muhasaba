@@ -1,5 +1,9 @@
-JazakAllah telah menggunakan Muhasaba.
+JazakAllah telah menggunakan Muhasabah.
 
-• Kini Anda bisa mendukung aplikasi ini dengan memberi tip — berapa pun, kapan pun Anda mau. Tidak ada fitur yang dikunci: Muhasaba tetap gratis, tanpa iklan dan tanpa akun.
-• Pendukung mendapat lencana terima kasih di Setelan.
-• Setelan jadi lebih rapi — kartu aplikasi dan kartu dukungan kini menyatu, dan hadis berada di bagian bawah.
+• Memperbaiki crash saat menyimpan set opsi dengan nama atau opsi yang panjang — paling sering dalam bahasa Bengali, Urdu, Arab, dan Hindi. Batas panjang kini dihitung dari karakter yang Anda lihat, sehingga setiap bahasa mendapat ruang yang sama.
+
+Juga baru di 3.0:
+• Catat bagaimana amal dilakukan, bukan hanya sudah atau belum: Subuh sendiri atau berjamaah di masjid, Al-Qur'an dibaca atau dihafal, sedekah berupa uang atau waktu. Pakai set yang sudah tersedia atau buat sendiri.
+• Target baru "Berapa pun": tanpa target — berapa pun jumlahnya, hari itu dihitung selesai.
+• Statistik menampilkan rincian pilihan untuk setiap amal, lengkap dengan perubahan dari waktu ke waktu dan rekor sepanjang tahun.
+• Dukung aplikasi dengan tip jika berkenan. Tidak ada yang dikunci di baliknya: Muhasabah tetap gratis, tanpa iklan, tanpa akun.

@@ -1,5 +1,9 @@
-JazakAllah d'utiliser Muhasaba.
+Qu'Allah vous récompense d'utiliser Muhasaba.
 
-• Vous pouvez désormais soutenir l'application avec un pourboire — le montant de votre choix, quand vous le souhaitez. Rien n'est verrouillé derrière : Muhasaba reste gratuite, sans publicité ni compte.
-• Les soutiens reçoivent un badge de remerciement dans les Réglages.
-• Les Réglages sont plus clairs — une seule carte en haut, et le hadith en bas de l'écran.
+• Correction d'un plantage à l'enregistrement d'un ensemble d'options au nom ou à l'option trop longs — surtout en bengali, ourdou, arabe et hindi. La limite compte désormais les caractères que vous voyez, pour la même place dans toutes les langues.
+
+Également nouveau dans la 3.0 :
+• Notez comment un amal a été accompli, pas seulement s'il l'a été : Fajr seul ou en congrégation à la mosquée, Coran récité ou mémorisé, sadaqa en argent ou en temps. Utilisez les ensembles prêts à l'emploi ou créez les vôtres.
+• Nouvel objectif « Libre » : sans cible — toute quantité marque la journée comme accomplie.
+• Les Statistiques montrent la répartition des options, amal par amal, avec l'évolution et les records sur l'année.
+• Soutenez l'application par un pourboire si vous le souhaitez. Rien n'est verrouillé derrière : Muhasaba reste gratuite, sans publicité ni compte.

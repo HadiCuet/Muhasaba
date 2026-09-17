@@ -1,5 +1,9 @@
 JazakAllah for using Muhasaba.
 
-• You can now support the app with a tip — any amount, whenever you like. Nothing is locked behind it: Muhasaba stays free, with no ads and no account.
-• Supporters get a thank-you badge in Settings.
-• Settings is tidier — the app card and the support card are now one, and the hadith sits quietly at the bottom.
+• Fixed a crash when saving an option set with a long name or option — most often in Bengali, Urdu, Arabic and Hindi. Length limits now count the characters you see, so every language gets the same room.
+
+Also new in 3.0:
+• Record how an amal was done, not only whether: Fajr alone or in jamaa at the masjid, Quran recited or memorised, sadaqah as money or time. Use the ready-made sets or create your own.
+• New "Any" goal: no target — any amount marks the day done.
+• Insights shows how the choices split, amal by amal, with trends and records across the year.
+• Support the app with a tip if you like. Nothing is locked behind it: Muhasaba stays free, with no ads and no account.

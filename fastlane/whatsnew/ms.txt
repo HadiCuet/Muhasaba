@@ -1,5 +1,9 @@
-JazakAllah kerana menggunakan Muhasaba.
+JazakAllah kerana menggunakan Muhasabah.
 
-• Kini anda boleh menyokong aplikasi ini dengan memberi tip — apa-apa jumlah, bila-bila masa. Tiada apa-apa yang dikunci: Muhasaba kekal percuma, tanpa iklan dan tanpa akaun.
-• Penyokong mendapat lencana terima kasih dalam Tetapan.
-• Tetapan lebih kemas — kad aplikasi dan kad sokongan kini bergabung, dan hadis berada di bahagian bawah.
+• Membetulkan ranap apabila menyimpan set pilihan dengan nama atau pilihan yang panjang — paling kerap dalam bahasa Bengali, Urdu, Arab dan Hindi. Had panjang kini dikira mengikut aksara yang anda lihat, jadi setiap bahasa mendapat ruang yang sama.
+
+Turut baharu dalam 3.0:
+• Catat bagaimana amal dilakukan, bukan sekadar sudah atau belum: Subuh sendiri atau berjemaah di masjid, Al-Quran dibaca atau dihafaz, sedekah berupa wang atau masa. Guna set sedia ada atau cipta set anda sendiri.
+• Sasaran baharu "Berapa pun": tiada sasaran — berapa pun jumlahnya, hari itu dikira selesai.
+• Statistik menunjukkan pecahan pilihan bagi setiap amal, berserta perubahan dari semasa ke semasa dan rekod sepanjang tahun.
+• Sokong aplikasi dengan tip jika sudi. Tiada apa-apa yang dikunci di sebaliknya: Muhasabah kekal percuma, tanpa iklan, tanpa akaun.
