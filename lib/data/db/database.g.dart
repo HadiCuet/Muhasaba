@@ -28,10 +28,7 @@ class $OptionSetsTable extends OptionSets
     'name',
     aliasedName,
     false,
-    additionalChecks: GeneratedColumn.checkTextLength(
-      minTextLength: 1,
-      maxTextLength: 60,
-    ),
+    additionalChecks: GeneratedColumn.checkTextLength(minTextLength: 1),
     type: DriftSqlType.string,
     requiredDuringInsert: true,
   );
@@ -434,10 +431,7 @@ class $AmalsTable extends Amals with TableInfo<$AmalsTable, AmalRow> {
     'title',
     aliasedName,
     false,
-    additionalChecks: GeneratedColumn.checkTextLength(
-      minTextLength: 1,
-      maxTextLength: 120,
-    ),
+    additionalChecks: GeneratedColumn.checkTextLength(minTextLength: 1),
     type: DriftSqlType.string,
     requiredDuringInsert: true,
   );
@@ -906,6 +900,8 @@ class AmalRow extends DataClass implements Insertable<AmalRow> {
   final int id;
   final String title;
   final Frequency frequency;
+
+  /// 0 = no goal: any amount completes the day.
   final int target;
   final int? weeklyDay;
   final String? weeklyDays;
@@ -1522,10 +1518,7 @@ class $OptionSetItemsTable extends OptionSetItems
     'label',
     aliasedName,
     false,
-    additionalChecks: GeneratedColumn.checkTextLength(
-      minTextLength: 1,
-      maxTextLength: 40,
-    ),
+    additionalChecks: GeneratedColumn.checkTextLength(minTextLength: 1),
     type: DriftSqlType.string,
     requiredDuringInsert: true,
   );
@@ -3079,10 +3072,7 @@ class $ChallengesTable extends Challenges
     'title',
     aliasedName,
     false,
-    additionalChecks: GeneratedColumn.checkTextLength(
-      minTextLength: 1,
-      maxTextLength: 120,
-    ),
+    additionalChecks: GeneratedColumn.checkTextLength(minTextLength: 1),
     type: DriftSqlType.string,
     requiredDuringInsert: true,
   );

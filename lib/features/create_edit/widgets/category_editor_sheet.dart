@@ -179,7 +179,9 @@ class _CategoryEditorSheetState extends ConsumerState<_CategoryEditorSheet> {
                           validator: (v) {
                             final s = v?.trim() ?? '';
                             if (s.isEmpty) return l.titleRequired;
-                            if (s.length > 120) return l.titleTooLong;
+                            if (s.characters.length > 120) {
+                              return l.titleTooLong;
+                            }
                             return null;
                           },
                           onFieldSubmitted: (_) => _save(),

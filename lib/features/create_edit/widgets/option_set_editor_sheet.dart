@@ -9,8 +9,7 @@ import '../../../l10n/app_localizations.dart';
 
 const int kMaxOptionsPerSet = 6;
 
-// The withLength caps on OptionSets.name / OptionSetItems.label. Drift counts
-// UTF-16 code units, which TextField.maxLength (grapheme clusters) does not.
+// Visible characters (grapheme clusters), so every script gets the same room.
 const int kMaxOptionSetNameLength = 60;
 const int kMaxOptionLabelLength = 40;
 
@@ -120,7 +119,7 @@ class _OptionSetEditorSheetState extends ConsumerState<_OptionSetEditorSheet> {
       setState(() => _error = l.optionSetNameRequired);
       return;
     }
-    if (name.name.length > kMaxOptionSetNameLength) {
+    if (name.name.characters.length > kMaxOptionSetNameLength) {
       setState(() => _error = l.optionSetNameTooLong);
       return;
     }
@@ -129,7 +128,7 @@ class _OptionSetEditorSheetState extends ConsumerState<_OptionSetEditorSheet> {
     for (var i = 0; i < _items.length; i++) {
       final c = _canonical(_items[i]);
       if (c.label.isEmpty) continue;
-      if (c.label.length > kMaxOptionLabelLength) {
+      if (c.label.characters.length > kMaxOptionLabelLength) {
         setState(() => _error = l.optionTooLong(i + 1));
         return;
       }

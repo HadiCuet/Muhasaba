@@ -7,7 +7,7 @@ import '../../domain/models/frequency.dart';
 @DataClassName('AmalRow')
 class Amals extends Table {
   IntColumn get id => integer().autoIncrement()();
-  TextColumn get title => text().withLength(min: 1, max: 120)();
+  TextColumn get title => text().withLength(min: 1)();
   IntColumn get frequency => intEnum<Frequency>()();
 
   /// 0 = no goal: any amount completes the day.
@@ -101,7 +101,7 @@ class SettingsKv extends Table {
 @DataClassName('ChallengeRow')
 class Challenges extends Table {
   IntColumn get id => integer().autoIncrement()();
-  TextColumn get title => text().withLength(min: 1, max: 120)();
+  TextColumn get title => text().withLength(min: 1)();
   TextColumn get icon => text().withDefault(const Constant('🚩'))();
   IntColumn get mode => intEnum<ChallengeMode>()();
   IntColumn get target => integer()();
@@ -142,7 +142,7 @@ class ChallengeEntries extends Table {
 @DataClassName('OptionSetRow')
 class OptionSets extends Table {
   IntColumn get id => integer().autoIncrement()();
-  TextColumn get name => text().withLength(min: 1, max: 60)();
+  TextColumn get name => text().withLength(min: 1)();
 
   /// Identifies a seeded set so its name can be localized. Cleared the moment
   /// the user renames it, which makes their wording win in every language.
@@ -158,7 +158,7 @@ class OptionSetItems extends Table {
   IntColumn get id => integer().autoIncrement()();
   IntColumn get setId =>
       integer().references(OptionSets, #id, onDelete: KeyAction.cascade)();
-  TextColumn get label => text().withLength(min: 1, max: 40)();
+  TextColumn get label => text().withLength(min: 1)();
   TextColumn get seedKey => text().nullable()();
   IntColumn get sortOrder => integer().withDefault(const Constant(0))();
   DateTimeColumn get archivedAt => dateTime().nullable()();
