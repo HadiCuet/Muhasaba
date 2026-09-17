@@ -159,8 +159,8 @@ platform :ios do
     end
   end
 
-  desc "Set ONLY the localized 'What's New' (release notes) on the editable App Store version. Touches no other metadata; never submits."
-  lane :release_notes do
+  desc "Set ONLY the localized 'What's New' (release notes) on the editable App Store version. Pass version:x.y.z to create that version first (copies the live listing). Touches no other metadata; never submits."
+  lane :release_notes do |options|
     ensure_api_key
     key = lane_context[SharedValues::APP_STORE_CONNECT_API_KEY]
     require "spaceship"
@@ -168,6 +168,10 @@ platform :ios do
       key_id: key[:key_id], issuer_id: key[:issuer_id], key: key[:key],
     )
     app = Spaceship::ConnectAPI::App.find(APP_IDENTIFIER)
+    if options[:version].to_s.strip != ""
+      created = app.ensure_version!(options[:version], platform: Spaceship::ConnectAPI::Platform::IOS)
+      UI.message(created ? "Created App Store version #{options[:version]}" : "Version #{options[:version]} already editable")
+    end
     version = app.get_edit_app_store_version
     UI.user_error!("No editable App Store version (Prepare for Submission) found for #{APP_IDENTIFIER}.") unless version
     UI.message("Editable version: #{version.version_string}")
@@ -285,7 +289,7 @@ end
 
 platform :android do
 
-  desc "Build the AAB and release to PRODUCTION with the localized listing, screenshots and changelogs. Staged rollout; validate:true for a dry run."
+  desc "Build the AAB and release to PRODUCTION with the localized listing, screenshots and changelogs. Staged rollout; validate:true for a dry run; skip_listing:true uploads only the AAB + changelogs."
   lane :production do |options|
     ensure_android_signing
 
@@ -316,6 +320,8 @@ platform :android do
       UI.important("Releasing to PRODUCTION at #{(rollout.to_f * 100).round}% staged rollout.")
     end
 
+    skip_listing = options[:skip_listing] ? true : false
+    UI.important("skip_listing: only the AAB and changelogs go up — no listing text, images or screenshots.") if skip_listing
     upload_to_play_store(
       json_key: lane_context[:PLAY_JSON_KEY_PATH],
       package_name: PLAY_PACKAGE_NAME,
@@ -324,9 +330,9 @@ platform :android do
       release_status: rollout.to_f >= 1.0 ? "completed" : "inProgress",
       rollout: rollout.to_f >= 1.0 ? nil : rollout,
       metadata_path: md,
-      skip_upload_metadata: locales.empty?,
-      skip_upload_images: locales.empty?,
-      skip_upload_screenshots: locales.empty?,
+      skip_upload_metadata: skip_listing || locales.empty?,
+      skip_upload_images: skip_listing || locales.empty?,
+      skip_upload_screenshots: skip_listing || locales.empty?,
       skip_upload_changelogs: false,
       validate_only: options[:validate] ? true : false,
       version_codes_to_retain: nil,
