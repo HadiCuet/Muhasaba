@@ -34,9 +34,17 @@ class DailyChartCard extends ConsumerStatefulWidget {
 }
 
 class _DailyChartCardState extends ConsumerState<DailyChartCard> {
-  late final PageController _controller = PageController(
-    initialPage: ref.read(statsPeriodOffsetProvider),
-  );
+  // Not a lazy initializer: a card that never pages would first touch it in
+  // dispose(), where ref throws.
+  late final PageController _controller;
+
+  @override
+  void initState() {
+    super.initState();
+    _controller = PageController(
+      initialPage: ref.read(statsPeriodOffsetProvider),
+    );
+  }
 
   @override
   void dispose() {
