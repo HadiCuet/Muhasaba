@@ -55,6 +55,7 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
   int _stepSize = 1;
   DateTime? _start;
   DateTime? _end; // inclusive last day, as shown to the user
+  bool _saving = false;
   String? _category;
   TimeOfDay? _reminderTime;
   bool _iconIsManual = false;
@@ -288,10 +289,15 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
       firstDate: isStart ? DateTime.utc(2020) : _startOrToday,
       lastDate: DateTime.utc(2100),
     );
-    if (picked == null) return;
+    if (picked == null || !mounted) return;
     final date = DateTime.utc(picked.year, picked.month, picked.day);
     setState(() {
       if (isStart) {
+        final end = _end;
+        if (end != null && end.isBefore(date)) {
+          final span = end.difference(_startOrToday).inDays;
+          _end = date.add(Duration(days: span < 0 ? 0 : span));
+        }
         _start = date;
       } else {
         _end = date;
@@ -300,7 +306,7 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
   }
 
   Future<void> _save() async {
-    if (!_formKey.currentState!.validate()) return;
+    if (_saving || !_formKey.currentState!.validate()) return;
     final l = AppLocalizations.of(context);
     if (_tooTight) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -315,10 +321,21 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
       );
       return;
     }
+    setState(() => _saving = true);
+    try {
+      await _write(l);
+    } catch (_) {
+      if (mounted) setState(() => _saving = false);
+      rethrow;
+    }
+  }
+
+  Future<void> _write(AppLocalizations l) async {
     final repo = ref.read(challengeRepositoryProvider);
     final title = _titleToStore;
     final target = _target;
     final unit = _unit.text.trim().isEmpty ? null : _unit.text.trim();
+    final startDate = _startOrToday;
     final endExclusive = _resolveEndExclusive();
     final reminder = _reminderString;
 
@@ -343,7 +360,7 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
           unit: Value(unit),
           category: Value(_category),
           reminderTime: Value(reminder),
-          startDate: _startOrToday,
+          startDate: startDate,
           endExclusive: Value(endExclusive),
         ),
         notificationTitle: localizedChallengeTitle(title, l),
@@ -359,7 +376,7 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
         unit: unit,
         category: _category,
         reminderTime: reminder,
-        startDate: _startOrToday,
+        startDate: startDate,
         endExclusive: endExclusive,
       );
       FirebaseAnalytics.instance.logEvent(
@@ -373,6 +390,7 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
         },
       );
     }
+    if (!mounted) return;
     await refreshChallengeNudges(ref);
     if (!mounted) return;
     if (permissionMessage != null) {
@@ -671,7 +689,7 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
         lnum(context, window - _dayTarget),
       );
     }
-    if (_target <= 0) return l.challengePlanRange(start, last);
+    if (_target <= 0 || window <= 0) return l.challengePlanRange(start, last);
     return l.challengePlanRate(
       start,
       last,
@@ -787,7 +805,9 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
     return Scaffold(
       appBar: AppBar(
         title: Text(_existing == null ? l.newChallenge : l.editChallenge),
-        actions: [TextButton(onPressed: _save, child: Text(l.save))],
+        actions: [
+          TextButton(onPressed: _saving ? null : _save, child: Text(l.save)),
+        ],
       ),
       body: MaxWidthBody(
         child: Form(

@@ -162,7 +162,7 @@ class _FlatViewState extends ConsumerState<_FlatView> {
       streak: widget.streaks[row.amal.id],
       onProgressChanged: (progress) =>
           _setProgress(context, ref, row, widget.date, progress),
-      onRemove: () => _openRemoveSheet(context, ref, row, widget.date),
+      onRemove: () => _openRemoveSheet(context, row, widget.date),
       onEdit: () => context.push('/amal/${row.amal.id}'),
       onNoteChanged: (note) => _setNote(ref, row, widget.date, note),
       onChoiceChanged: (itemId) => setChoice(ref, row, widget.date, itemId),
@@ -269,8 +269,7 @@ class _GroupedViewState extends ConsumerState<_GroupedView> {
                   streak: widget.streaks[row.amal.id],
                   onProgressChanged: (progress) =>
                       _setProgress(context, ref, row, widget.date, progress),
-                  onRemove: () =>
-                      _openRemoveSheet(context, ref, row, widget.date),
+                  onRemove: () => _openRemoveSheet(context, row, widget.date),
                   onEdit: () => context.push('/amal/${row.amal.id}'),
                   onNoteChanged: (note) =>
                       _setNote(ref, row, widget.date, note),
@@ -386,6 +385,7 @@ Future<void> _setProgress(
   DateTime date,
   int progress,
 ) async {
+  final container = ProviderScope.containerOf(context, listen: false);
   final wasCompleted = row.isCompleted;
   final nowCompleted = row.amal.meets(progress);
   await ref
@@ -410,11 +410,11 @@ Future<void> _setProgress(
       parameters: {'frequency': row.amal.frequency.name},
     );
   }
-  ref.invalidate(statsSnapshotProvider);
-  ref.invalidate(currentStreaksProvider);
-  ref.invalidate(enhancedStatsProvider);
-  ref.invalidate(dailyBreakdownProvider);
-  ref.invalidate(optionDetailProvider);
+  container.invalidate(statsSnapshotProvider);
+  container.invalidate(currentStreaksProvider);
+  container.invalidate(enhancedStatsProvider);
+  container.invalidate(dailyBreakdownProvider);
+  container.invalidate(optionDetailProvider);
   if (!wasCompleted && nowCompleted && context.mounted) {
     await maybeShowSupportPrompt(context, ref, completedDate: date);
   }
@@ -422,17 +422,18 @@ Future<void> _setProgress(
 
 Future<void> _openRemoveSheet(
   BuildContext context,
-  WidgetRef ref,
   TodayRow row,
   DateTime date,
 ) async {
+  // Not the caller's ref: removing the last row disposes the caller mid-await.
+  final container = ProviderScope.containerOf(context, listen: false);
   final choice = await showRemoveSheet(
     context,
     amalTitle: localizedAmalTitle(row.amal.title, AppLocalizations.of(context)),
   );
   switch (choice) {
     case RemoveChoice.today:
-      await ref
+      await container
           .read(completionRepositoryProvider)
           .removeFromDay(row.amal.id, date);
       FirebaseAnalytics.instance.logEvent(
@@ -440,7 +441,9 @@ Future<void> _openRemoveSheet(
         parameters: {'scope': 'today'},
       );
     case RemoveChoice.tracking:
-      await ref.read(amalRepositoryProvider).removeFromTracking(row.amal.id);
+      await container
+          .read(amalRepositoryProvider)
+          .removeFromTracking(row.amal.id);
       FirebaseAnalytics.instance.logEvent(
         name: 'amal_removed',
         parameters: {'scope': 'tracking'},
@@ -454,8 +457,8 @@ Future<void> _openRemoveSheet(
     case RemoveChoice.cancel:
       return;
   }
-  ref.invalidate(statsSnapshotProvider);
-  ref.invalidate(currentStreaksProvider);
+  container.invalidate(statsSnapshotProvider);
+  container.invalidate(currentStreaksProvider);
 }
 
 // ---------------------------------------------------------------------------

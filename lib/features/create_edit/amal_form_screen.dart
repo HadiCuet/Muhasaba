@@ -37,6 +37,7 @@ class AmalFormScreen extends ConsumerStatefulWidget {
 
 class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
   final _formKey = GlobalKey<FormState>();
+  bool _saving = false;
   final _titleController = TextEditingController();
 
   // Default ⭐ for new blank amals; overwritten by hydrate (edit) or prefill
@@ -237,10 +238,21 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
   }
 
   Future<void> _save() async {
-    if (!_formKey.currentState!.validate()) return;
+    if (_saving || !_formKey.currentState!.validate()) return;
+    setState(() => _saving = true);
+    try {
+      await _write();
+    } catch (_) {
+      if (mounted) setState(() => _saving = false);
+      rethrow;
+    }
+  }
+
+  Future<void> _write() async {
     // Resolved up front: `ref.read` throws once this form unmounts, and the
     // writes below suspend.
     final scheduler = ref.read(reminderSchedulerProvider);
+    final container = ProviderScope.containerOf(context, listen: false);
     final l = AppLocalizations.of(context);
     final title = _canonicalTitle(_titleController.text.trim(), l);
     final permWarning = l.reminderPermissionWarning;
@@ -321,7 +333,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
     }
 
     // Refresh recent icons after saving.
-    ref.invalidate(recentIconsProvider);
+    container.invalidate(recentIconsProvider);
 
     // Schedule or cancel the OS-level notification to match the saved
     // reminder.
@@ -398,7 +410,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
             child: Padding(
               padding: const EdgeInsets.fromLTRB(16, 8, 16, 8),
               child: FilledButton(
-                onPressed: _save,
+                onPressed: _saving ? null : _save,
                 style: FilledButton.styleFrom(
                   minimumSize: const Size.fromHeight(48),
                 ),

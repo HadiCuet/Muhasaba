@@ -51,29 +51,35 @@ class CompletionDao extends DatabaseAccessor<AppDatabase>
     Value<String?> note = const Value.absent(),
     Value<int?> optionItemId = const Value.absent(),
     Value<DateTime?> completedAt = const Value.absent(),
-  }) async {
-    final existing = await getForAmalDate(amalId, muhasabaDate);
-    if (existing == null) {
-      await into(completions).insert(
-        CompletionsCompanion.insert(
-          amalId: amalId,
-          muhasabaDate: muhasabaDate,
-          progress: Value(progress),
-          note: note,
-          optionItemId: optionItemId,
-          completedAt: completedAt,
-        ),
-      );
-    } else {
-      await (update(completions)..where((c) => c.id.equals(existing.id))).write(
-        CompletionsCompanion(
-          progress: Value(progress),
-          note: note,
-          optionItemId: optionItemId,
-          completedAt: completedAt,
-        ),
-      );
-    }
+  }) {
+    // A transaction, so two concurrent first writes of the day cannot both
+    // find no row and both insert.
+    return transaction(() async {
+      final existing = await getForAmalDate(amalId, muhasabaDate);
+      if (existing == null) {
+        await into(completions).insert(
+          CompletionsCompanion.insert(
+            amalId: amalId,
+            muhasabaDate: muhasabaDate,
+            progress: Value(progress),
+            note: note,
+            optionItemId: optionItemId,
+            completedAt: completedAt,
+          ),
+        );
+      } else {
+        await (update(
+          completions,
+        )..where((c) => c.id.equals(existing.id))).write(
+          CompletionsCompanion(
+            progress: Value(progress),
+            note: note,
+            optionItemId: optionItemId,
+            completedAt: completedAt,
+          ),
+        );
+      }
+    });
   }
 
   Future<int> clearFor(int amalId, DateTime date) {
