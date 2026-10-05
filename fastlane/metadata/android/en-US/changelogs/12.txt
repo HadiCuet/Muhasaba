@@ -1,0 +1,9 @@
+JazakAllah for using Muhasaba.
+
+• Fixed several crashes, and tapping Save twice quickly no longer creates a duplicate.
+
+Also new in 3.0:
+• Record how an amal was done: Fajr alone or in jamaa, Quran recited or memorised, sadaqah as money or time.
+• "Any" goal: any amount marks the day done.
+• Insights shows how the choices split, with trends and records.
+• Support the app with a tip if you like — it stays free, no ads.
