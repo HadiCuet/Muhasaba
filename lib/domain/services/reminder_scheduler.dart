@@ -1,5 +1,6 @@
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/foundation.dart';
+import 'package:flutter/services.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:flutter_timezone/flutter_timezone.dart';
 import 'package:timezone/data/latest_all.dart' as tz_data;
@@ -220,24 +221,30 @@ class _LocalReminderScheduler extends ReminderScheduler {
       first = first.add(const Duration(days: 1));
     }
 
-    await _plugin.zonedSchedule(
-      id: id,
-      title: title,
-      body: body,
-      scheduledDate: first,
-      notificationDetails: NotificationDetails(
-        android: AndroidNotificationDetails(
-          'muhasaba_reminders',
-          _channelName,
-          channelDescription: _channelDescription,
-          importance: Importance.defaultImportance,
-          priority: Priority.defaultPriority,
+    try {
+      await _plugin.zonedSchedule(
+        id: id,
+        title: title,
+        body: body,
+        scheduledDate: first,
+        notificationDetails: NotificationDetails(
+          android: AndroidNotificationDetails(
+            'muhasaba_reminders',
+            _channelName,
+            channelDescription: _channelDescription,
+            importance: Importance.defaultImportance,
+            priority: Priority.defaultPriority,
+          ),
+          iOS: const DarwinNotificationDetails(),
         ),
-        iOS: const DarwinNotificationDetails(),
-      ),
-      androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
-      matchDateTimeComponents: DateTimeComponents.time,
-    );
+        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+        matchDateTimeComponents: DateTimeComponents.time,
+      );
+    } on PlatformException catch (e) {
+      // iOS refuses until notifications are allowed — even before the first
+      // prompt. Launches and the prompt re-apply reminders, so it isn't fatal.
+      debugPrint('ReminderScheduler: could not schedule $id: $e');
+    }
   }
 
   @override
@@ -250,23 +257,27 @@ class _LocalReminderScheduler extends ReminderScheduler {
     final scheduled = tz.TZDateTime.from(when, tz.local);
     if (!scheduled.isAfter(tz.TZDateTime.now(tz.local))) return;
 
-    await _plugin.zonedSchedule(
-      id: id,
-      title: 'Muhasaba',
-      body: body,
-      scheduledDate: scheduled,
-      notificationDetails: NotificationDetails(
-        android: AndroidNotificationDetails(
-          'muhasaba_reminders',
-          _channelName,
-          channelDescription: _channelDescription,
-          importance: Importance.defaultImportance,
-          priority: Priority.defaultPriority,
+    try {
+      await _plugin.zonedSchedule(
+        id: id,
+        title: 'Muhasaba',
+        body: body,
+        scheduledDate: scheduled,
+        notificationDetails: NotificationDetails(
+          android: AndroidNotificationDetails(
+            'muhasaba_reminders',
+            _channelName,
+            channelDescription: _channelDescription,
+            importance: Importance.defaultImportance,
+            priority: Priority.defaultPriority,
+          ),
+          iOS: const DarwinNotificationDetails(),
         ),
-        iOS: const DarwinNotificationDetails(),
-      ),
-      androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
-    );
+        androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
+      );
+    } on PlatformException catch (e) {
+      debugPrint('ReminderScheduler: could not schedule $id: $e');
+    }
   }
 
   @override
