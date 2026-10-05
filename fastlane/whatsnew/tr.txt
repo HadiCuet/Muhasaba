@@ -1,6 +1,7 @@
 Muhasebe'yi kullandığınız için Allah razı olsun.
 
-• Uzun bir ad veya seçenek içeren seçenek seti kaydedilirken oluşan çökme düzeltildi — en çok Bengalce, Urduca, Arapça ve Hintçede görülüyordu. Sınır artık gördüğünüz karakterlerle sayılıyor; her dile eşit yer.
+• iOS 27'de uygulamanın açılışta boş ekranda takılı kalması düzeltildi.
+• Başlıksız bir amel ya da hedef kaydedilirken oluşan çökme düzeltildi.
 
 3.0 ile gelen diğer yenilikler:
 • Amelin yalnızca yapılıp yapılmadığını değil, nasıl yapıldığını da kaydedin: sabah namazı tek başına mı, camide cemaatle mi; Kur'an okuma mı, ezber mi; sadaka para mı, zaman mı. Hazır setleri kullanın ya da kendi setinizi oluşturun.

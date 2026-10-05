@@ -1,6 +1,7 @@
 Qu'Allah vous récompense d'utiliser Muhasaba.
 
-• Correction d'un plantage à l'enregistrement d'un ensemble d'options au nom ou à l'option trop longs — surtout en bengali, ourdou, arabe et hindi. La limite compte désormais les caractères que vous voyez, pour la même place dans toutes les langues.
+• L'application ne reste plus bloquée sur un écran blanc à l'ouverture sous iOS 27.
+• Correction d'un plantage à l'enregistrement d'un amal ou d'un défi sans titre.
 
 Également nouveau dans la 3.0 :
 • Notez comment un amal a été accompli, pas seulement s'il l'a été : Fajr seul ou en congrégation à la mosquée, Coran récité ou mémorisé, sadaqa en argent ou en temps. Utilisez les ensembles prêts à l'emploi ou créez les vôtres.

@@ -1,6 +1,7 @@
 JazakAllah kerana menggunakan Muhasabah.
 
-• Membetulkan ranap apabila menyimpan set pilihan dengan nama atau pilihan yang panjang — paling kerap dalam bahasa Bengali, Urdu, Arab dan Hindi. Had panjang kini dikira mengikut aksara yang anda lihat, jadi setiap bahasa mendapat ruang yang sama.
+• Membetulkan aplikasi yang tersekat pada skrin kosong semasa dibuka di iOS 27.
+• Membetulkan ranap apabila menyimpan amal atau cabaran tanpa tajuk.
 
 Turut baharu dalam 3.0:
 • Catat bagaimana amal dilakukan, bukan sekadar sudah atau belum: Subuh sendiri atau berjemaah di masjid, Al-Quran dibaca atau dihafaz, sedekah berupa wang atau masa. Guna set sedia ada atau cipta set anda sendiri.
