@@ -9,13 +9,14 @@
 #   verify     — read-only: confirm the Play service account key authenticates
 #   internal   — build the AAB; upload to the Play "internal" testing track
 #   production — build the AAB; upload to PRODUCTION with the localized listing,
-#                screenshots and changelogs. Staged rollout by default.
+#                screenshots and changelogs. Full rollout by default.
+#   rollout    — change the rollout of the release already in production
 #
 # Guardrails: nothing uploads without upload:true, and the iOS build is never
 # submitted for review or distributed to external testers. The Android
-# production lane DOES release to the public — it defaults to a 10% staged
-# rollout, and validate:true does a full dry run against Play without
-# committing anything.
+# production lane DOES release to the public — it defaults to 100%
+# (rollout:0.1 stages it), and validate:true does a full dry run against Play
+# without committing anything.
 
 opt_out_usage
 fastlane_version "2.222.0"
@@ -289,7 +290,7 @@ end
 
 platform :android do
 
-  desc "Build the AAB and release to PRODUCTION with the localized listing, screenshots and changelogs. Staged rollout; validate:true for a dry run; skip_listing:true uploads only the AAB + changelogs."
+  desc "Build the AAB and release to PRODUCTION with the localized listing, screenshots and changelogs. 100% unless rollout:0.x; validate:true for a dry run; skip_listing:true uploads only the AAB + changelogs."
   lane :production do |options|
     ensure_android_signing
 
@@ -303,7 +304,7 @@ platform :android do
     shots = Dir[File.join(md, "*", "images", "phoneScreenshots", "*.png")].count
     UI.message("Listing locales: #{locales.empty? ? '(none)' : locales.join(', ')} — #{shots} phone screenshots")
 
-    rollout = (options[:rollout] || "0.1").to_s
+    rollout = (options[:rollout] || "1.0").to_s
     UI.user_error!("rollout must be between 0 and 1 (e.g. 0.1 for 10%)") unless rollout.to_f > 0 && rollout.to_f <= 1
 
     unless options[:upload]
@@ -341,10 +342,30 @@ platform :android do
     if options[:validate]
       UI.success("Validation passed — Play accepted the upload and discarded it. Nothing released.")
     else
-      UI.success("Released to production at #{(rollout.to_f * 100).round}%. " \
-                 "Raise it with: fastlane android production upload:true rollout:1.0")
+      UI.success("Released to production at #{(rollout.to_f * 100).round}%.")
+      UI.message("Raise it with: fastlane android rollout") if rollout.to_f < 1.0
     end
   end
+  desc "Change the rollout of the release already in production — no build or upload. Defaults to 100%."
+  lane :rollout do |options|
+    rollout = (options[:rollout] || "1.0").to_s
+    UI.user_error!("rollout must be between 0 and 1 (e.g. 0.5 for 50%)") unless rollout.to_f > 0 && rollout.to_f <= 1
+    ensure_play_credentials
+    upload_to_play_store(
+      json_key: lane_context[:PLAY_JSON_KEY_PATH],
+      package_name: PLAY_PACKAGE_NAME,
+      track: "production",
+      rollout: rollout,
+      skip_upload_apk: true,
+      skip_upload_aab: true,
+      skip_upload_metadata: true,
+      skip_upload_changelogs: true,
+      skip_upload_images: true,
+      skip_upload_screenshots: true,
+    )
+    UI.success("Production rollout set to #{(rollout.to_f * 100).round}%.")
+  end
+
   desc "Read-only: confirm the Play service account key authenticates"
   lane :verify do
     ensure_play_credentials
