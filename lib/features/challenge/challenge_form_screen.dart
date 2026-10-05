@@ -8,6 +8,7 @@ import '../../app/providers.dart';
 import '../../app/theme.dart';
 import '../../app/widgets/keyboard_dismiss_bar.dart';
 import '../../app/widgets/max_width_body.dart';
+import '../../app/widgets/validate_and_reveal.dart';
 import '../../data/db/database.dart';
 import '../../domain/models/challenge.dart';
 import '../../domain/services/reminder_scheduler.dart';
@@ -306,7 +307,7 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
   }
 
   Future<void> _save() async {
-    if (_saving || !_formKey.currentState!.validate()) return;
+    if (_saving || !_formKey.currentState!.validateAndReveal()) return;
     final l = AppLocalizations.of(context);
     if (_tooTight) {
       ScaffoldMessenger.of(context).showSnackBar(
@@ -812,49 +813,56 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
       body: MaxWidthBody(
         child: Form(
           key: _formKey,
+          // A single child: ListView unmounts children scrolled off-screen,
+          // and an unmounted field drops out of Form.validate().
           child: ListView(
             padding: const EdgeInsetsDirectional.all(16),
             children: [
-              _TemplateRow(onPicked: _applyTemplate, onBlank: _clearForm),
-              ChallengeFormGroup(
-                title: l.challengeGroupGoal,
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  _titleRow(l),
-                  const SizedBox(height: 16),
-                  _categoryPicker(l),
+                  _TemplateRow(onPicked: _applyTemplate, onBlank: _clearForm),
+                  ChallengeFormGroup(
+                    title: l.challengeGroupGoal,
+                    children: [
+                      _titleRow(l),
+                      const SizedBox(height: 16),
+                      _categoryPicker(l),
+                    ],
+                  ),
+                  ChallengeFormGroup(
+                    title: l.challengeGroupShape,
+                    children: _shapeChildren(l),
+                  ),
+                  ChallengeFormGroup(
+                    title: l.challengeGroupPlan,
+                    children: _planChildren(l),
+                  ),
+                  ChallengeFormGroup(
+                    title: l.challengeGroupReminders,
+                    children: [_reminderRow(l)],
+                  ),
+                  Text(
+                    l.challengePreview.toUpperCase(),
+                    style: theme.textTheme.labelSmall?.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
+                      letterSpacing: 1.0,
+                    ),
+                  ),
+                  const SizedBox(height: 8),
+                  ChallengePreviewCard(
+                    icon: _icon,
+                    title: _title.text.trim(),
+                    mode: _mode,
+                    target: _target,
+                    unit: _unit.text.trim(),
+                    startDate: _startOrToday,
+                    endExclusive: _resolveEndExclusive(),
+                    today: ref.watch(currentMuhasabaDateProvider),
+                  ),
+                  const SizedBox(height: 40),
                 ],
               ),
-              ChallengeFormGroup(
-                title: l.challengeGroupShape,
-                children: _shapeChildren(l),
-              ),
-              ChallengeFormGroup(
-                title: l.challengeGroupPlan,
-                children: _planChildren(l),
-              ),
-              ChallengeFormGroup(
-                title: l.challengeGroupReminders,
-                children: [_reminderRow(l)],
-              ),
-              Text(
-                l.challengePreview.toUpperCase(),
-                style: theme.textTheme.labelSmall?.copyWith(
-                  color: theme.colorScheme.onSurfaceVariant,
-                  letterSpacing: 1.0,
-                ),
-              ),
-              const SizedBox(height: 8),
-              ChallengePreviewCard(
-                icon: _icon,
-                title: _title.text.trim(),
-                mode: _mode,
-                target: _target,
-                unit: _unit.text.trim(),
-                startDate: _startOrToday,
-                endExclusive: _resolveEndExclusive(),
-                today: ref.watch(currentMuhasabaDateProvider),
-              ),
-              const SizedBox(height: 40),
             ],
           ),
         ),

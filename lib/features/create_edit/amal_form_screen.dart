@@ -7,6 +7,7 @@ import 'package:go_router/go_router.dart';
 
 import '../../app/providers.dart';
 import '../../app/widgets/max_width_body.dart';
+import '../../app/widgets/validate_and_reveal.dart';
 import '../../data/db/database.dart';
 import '../../domain/models/amal_goal.dart';
 import '../../domain/models/frequency.dart';
@@ -238,7 +239,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
   }
 
   Future<void> _save() async {
-    if (_saving || !_formKey.currentState!.validate()) return;
+    if (_saving || !_formKey.currentState!.validateAndReveal()) return;
     setState(() => _saving = true);
     try {
       await _write();
@@ -426,233 +427,248 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
           onTap: () => FocusScope.of(context).unfocus(),
           child: Form(
             key: _formKey,
+            // A single child: ListView unmounts children scrolled off-screen,
+            // and an unmounted field drops out of Form.validate().
             child: ListView(
               padding: const EdgeInsets.fromLTRB(16, 16, 16, 32),
               children: [
-                // ── Icon + Title row ───────────────────────────────────────
-                Row(
-                  crossAxisAlignment: CrossAxisAlignment.start,
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
-                    GestureDetector(
-                      onTap: _pickIcon,
-                      child: Container(
-                        width: 56,
-                        height: 56,
-                        decoration: BoxDecoration(
-                          color: theme.colorScheme.surfaceContainerHighest,
-                          borderRadius: BorderRadius.circular(12),
+                    // ── Icon + Title row ───────────────────────────────────────
+                    Row(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        GestureDetector(
+                          onTap: _pickIcon,
+                          child: Container(
+                            width: 56,
+                            height: 56,
+                            decoration: BoxDecoration(
+                              color: theme.colorScheme.surfaceContainerHighest,
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            alignment: Alignment.center,
+                            child: Text(
+                              _icon,
+                              style: const TextStyle(fontSize: 28),
+                            ),
+                          ),
                         ),
-                        alignment: Alignment.center,
-                        child: Text(
-                          _icon,
-                          style: const TextStyle(fontSize: 28),
+                        const SizedBox(width: 12),
+                        Expanded(
+                          child: TextFormField(
+                            controller: _titleController,
+                            textInputAction: TextInputAction.done,
+                            onFieldSubmitted: (_) =>
+                                FocusScope.of(context).unfocus(),
+                            decoration: InputDecoration(
+                              labelText: l.titleLabel,
+                              border: const OutlineInputBorder(),
+                            ),
+                            validator: (v) {
+                              final s = v?.trim() ?? '';
+                              if (s.isEmpty) return l.titleRequired;
+                              if (s.characters.length > 120) {
+                                return l.titleTooLong;
+                              }
+                              return null;
+                            },
+                          ),
                         ),
+                      ],
+                    ),
+                    const SizedBox(height: 20),
+
+                    // ── Category ───────────────────────────────────────────────
+                    Text(l.categoryLabel, style: theme.textTheme.labelLarge),
+                    const SizedBox(height: 8),
+                    CategoryPicker(
+                      selected: _category,
+                      onChanged: (c) => setState(() {
+                        _category = c;
+                        if (!_iconIsManual) {
+                          if (c == null) {
+                            _icon = '⭐';
+                          } else {
+                            final cats =
+                                ref.read(categoriesProvider).value ?? const [];
+                            final categoryIcon = cats
+                                .cast<CategoryRow?>()
+                                .firstWhere(
+                                  (x) => x?.name == c,
+                                  orElse: () => null,
+                                )
+                                ?.icon;
+                            _icon =
+                                (categoryIcon != null &&
+                                    categoryIcon.isNotEmpty)
+                                ? categoryIcon
+                                : '⭐';
+                          }
+                        }
+                      }),
+                    ),
+                    const SizedBox(height: 16),
+
+                    // ── Options ────────────────────────────────────────────────
+                    Text(l.optionsLabel, style: theme.textTheme.labelLarge),
+                    const SizedBox(height: 8),
+                    OptionSetPicker(
+                      selectedId: _optionSetId,
+                      amalCategory: _category,
+                      onChanged: (id) => setState(() {
+                        final hadNoSet = _optionSetId == null;
+                        _optionSetId = id;
+                        if (id == null) {
+                          _requireChoice = false;
+                        } else if (hadNoSet) {
+                          _requireChoice = _target == 1;
+                        }
+                      }),
+                    ),
+                    SwitchListTile(
+                      contentPadding: EdgeInsets.zero,
+                      value: _requireChoice,
+                      onChanged: (_optionSetId == null || _target != 1)
+                          ? null
+                          : (v) => setState(() => _requireChoice = v),
+                      title: Text(l.requireChoiceLabel),
+                      subtitle: Text(
+                        _optionSetId == null
+                            ? l.requireChoicePickSetFirst
+                            : (_target != 1
+                                  ? l.requireChoiceCountHelp
+                                  : l.requireChoiceHelp),
                       ),
                     ),
-                    const SizedBox(width: 12),
-                    Expanded(
-                      child: TextFormField(
-                        controller: _titleController,
-                        textInputAction: TextInputAction.done,
-                        onFieldSubmitted: (_) =>
-                            FocusScope.of(context).unfocus(),
-                        decoration: InputDecoration(
-                          labelText: l.titleLabel,
-                          border: const OutlineInputBorder(),
+                    if (_optionSetId != null)
+                      _OptionPreview(setId: _optionSetId!),
+                    const SizedBox(height: 20),
+
+                    // ── Target ─────────────────────────────────────────────────
+                    _TargetChips(
+                      value: _target,
+                      onChanged: (v) => setState(() {
+                        _target = v;
+                        if (v != 1) _requireChoice = false;
+                        if (v == kOpenEndedTarget) _defaultChecked = false;
+                      }),
+                    ),
+                    if (_target == kOpenEndedTarget)
+                      Padding(
+                        padding: const EdgeInsetsDirectional.only(top: 8),
+                        child: Text(
+                          l.targetAnyHelp,
+                          style: theme.textTheme.bodySmall?.copyWith(
+                            color: theme.colorScheme.onSurfaceVariant,
+                          ),
                         ),
-                        validator: (v) {
-                          final s = v?.trim() ?? '';
-                          if (s.isEmpty) return l.titleRequired;
-                          if (s.characters.length > 120) return l.titleTooLong;
-                          return null;
-                        },
                       ),
+                    const SizedBox(height: 20),
+
+                    // ── Frequency ──────────────────────────────────────────────
+                    // Kept adjacent to the repeat mode, day/date picker and
+                    // preview below — they all reconfigure when this changes.
+                    _FrequencySelector(
+                      value: _frequency,
+                      onChanged: (f) => setState(() {
+                        _frequency = f;
+                        if (_periodTarget > _periodTargetMax) {
+                          _periodTarget = _periodTargetMax;
+                        }
+                      }),
+                    ),
+
+                    if (_frequency != Frequency.daily) ...[
+                      const SizedBox(height: 16),
+                      _RepeatModeToggle(
+                        pinned: _pinnedForCurrentFrequency,
+                        pinnedLabel: _frequency == Frequency.weekly
+                            ? l.onSetDays
+                            : l.onSetDates,
+                        onChanged: (v) => setState(() {
+                          if (_frequency == Frequency.weekly) {
+                            _weeklyPinned = v;
+                          } else {
+                            _monthlyPinned = v;
+                          }
+                        }),
+                      ),
+                    ],
+                    if (_frequency == Frequency.weekly && _weeklyPinned) ...[
+                      const SizedBox(height: 16),
+                      _WeeklyDayPicker(
+                        value: _weeklyDays,
+                        onChanged: (v) => setState(() => _weeklyDays = v),
+                      ),
+                    ],
+                    if (_frequency == Frequency.monthly && _monthlyPinned) ...[
+                      const SizedBox(height: 16),
+                      _MonthlyDatePicker(
+                        value: _monthlyDates,
+                        onChanged: (v) => setState(() => _monthlyDates = v),
+                      ),
+                    ],
+                    if (!_pinnedForCurrentFrequency) ...[
+                      const SizedBox(height: 16),
+                      _PeriodTargetStepper(
+                        value: _periodTarget,
+                        max: _periodTargetMax,
+                        label: _frequency == Frequency.weekly
+                            ? l.daysPerWeekQuestion
+                            : l.daysPerMonthQuestion,
+                        onChanged: (v) => setState(() => _periodTarget = v),
+                      ),
+                    ],
+                    const SizedBox(height: 16),
+                    _FrequencyPreview(
+                      frequency: _frequency,
+                      pinned: _pinnedForCurrentFrequency,
+                      weeklyDays: _weeklyDays,
+                      monthlyDates: _monthlyDates,
+                      periodTarget: _periodTarget,
+                    ),
+                    const SizedBox(height: 16),
+                    if (_target != kOpenEndedTarget)
+                      SwitchListTile(
+                        contentPadding: EdgeInsets.zero,
+                        title: Text(l.startPreChecked),
+                        subtitle: Text(l.startPreCheckedSubtitle),
+                        value: _defaultChecked,
+                        onChanged: (v) => setState(() => _defaultChecked = v),
+                      ),
+                    const SizedBox(height: 8),
+                    ListTile(
+                      contentPadding: EdgeInsets.zero,
+                      leading: const Icon(Icons.notifications_outlined),
+                      title: Text(l.reminder),
+                      subtitle: Text(
+                        _reminderTime == null
+                            ? l.reminderNone
+                            : localizeDigits(
+                                context,
+                                _reminderTime!.format(context),
+                              ),
+                      ),
+                      trailing: _reminderTime == null
+                          ? null
+                          : IconButton(
+                              icon: const Icon(Icons.close),
+                              onPressed: () =>
+                                  setState(() => _reminderTime = null),
+                            ),
+                      onTap: () async {
+                        final picked = await showTimePicker(
+                          context: context,
+                          initialTime: _reminderTime ?? TimeOfDay.now(),
+                        );
+                        if (picked != null) {
+                          setState(() => _reminderTime = picked);
+                        }
+                      },
                     ),
                   ],
-                ),
-                const SizedBox(height: 20),
-
-                // ── Category ───────────────────────────────────────────────
-                Text(l.categoryLabel, style: theme.textTheme.labelLarge),
-                const SizedBox(height: 8),
-                CategoryPicker(
-                  selected: _category,
-                  onChanged: (c) => setState(() {
-                    _category = c;
-                    if (!_iconIsManual) {
-                      if (c == null) {
-                        _icon = '⭐';
-                      } else {
-                        final cats =
-                            ref.read(categoriesProvider).value ?? const [];
-                        final categoryIcon = cats
-                            .cast<CategoryRow?>()
-                            .firstWhere((x) => x?.name == c, orElse: () => null)
-                            ?.icon;
-                        _icon =
-                            (categoryIcon != null && categoryIcon.isNotEmpty)
-                            ? categoryIcon
-                            : '⭐';
-                      }
-                    }
-                  }),
-                ),
-                const SizedBox(height: 16),
-
-                // ── Options ────────────────────────────────────────────────
-                Text(l.optionsLabel, style: theme.textTheme.labelLarge),
-                const SizedBox(height: 8),
-                OptionSetPicker(
-                  selectedId: _optionSetId,
-                  amalCategory: _category,
-                  onChanged: (id) => setState(() {
-                    final hadNoSet = _optionSetId == null;
-                    _optionSetId = id;
-                    if (id == null) {
-                      _requireChoice = false;
-                    } else if (hadNoSet) {
-                      _requireChoice = _target == 1;
-                    }
-                  }),
-                ),
-                SwitchListTile(
-                  contentPadding: EdgeInsets.zero,
-                  value: _requireChoice,
-                  onChanged: (_optionSetId == null || _target != 1)
-                      ? null
-                      : (v) => setState(() => _requireChoice = v),
-                  title: Text(l.requireChoiceLabel),
-                  subtitle: Text(
-                    _optionSetId == null
-                        ? l.requireChoicePickSetFirst
-                        : (_target != 1
-                              ? l.requireChoiceCountHelp
-                              : l.requireChoiceHelp),
-                  ),
-                ),
-                if (_optionSetId != null) _OptionPreview(setId: _optionSetId!),
-                const SizedBox(height: 20),
-
-                // ── Target ─────────────────────────────────────────────────
-                _TargetChips(
-                  value: _target,
-                  onChanged: (v) => setState(() {
-                    _target = v;
-                    if (v != 1) _requireChoice = false;
-                    if (v == kOpenEndedTarget) _defaultChecked = false;
-                  }),
-                ),
-                if (_target == kOpenEndedTarget)
-                  Padding(
-                    padding: const EdgeInsetsDirectional.only(top: 8),
-                    child: Text(
-                      l.targetAnyHelp,
-                      style: theme.textTheme.bodySmall?.copyWith(
-                        color: theme.colorScheme.onSurfaceVariant,
-                      ),
-                    ),
-                  ),
-                const SizedBox(height: 20),
-
-                // ── Frequency ──────────────────────────────────────────────
-                // Kept adjacent to the repeat mode, day/date picker and
-                // preview below — they all reconfigure when this changes.
-                _FrequencySelector(
-                  value: _frequency,
-                  onChanged: (f) => setState(() {
-                    _frequency = f;
-                    if (_periodTarget > _periodTargetMax) {
-                      _periodTarget = _periodTargetMax;
-                    }
-                  }),
-                ),
-
-                if (_frequency != Frequency.daily) ...[
-                  const SizedBox(height: 16),
-                  _RepeatModeToggle(
-                    pinned: _pinnedForCurrentFrequency,
-                    pinnedLabel: _frequency == Frequency.weekly
-                        ? l.onSetDays
-                        : l.onSetDates,
-                    onChanged: (v) => setState(() {
-                      if (_frequency == Frequency.weekly) {
-                        _weeklyPinned = v;
-                      } else {
-                        _monthlyPinned = v;
-                      }
-                    }),
-                  ),
-                ],
-                if (_frequency == Frequency.weekly && _weeklyPinned) ...[
-                  const SizedBox(height: 16),
-                  _WeeklyDayPicker(
-                    value: _weeklyDays,
-                    onChanged: (v) => setState(() => _weeklyDays = v),
-                  ),
-                ],
-                if (_frequency == Frequency.monthly && _monthlyPinned) ...[
-                  const SizedBox(height: 16),
-                  _MonthlyDatePicker(
-                    value: _monthlyDates,
-                    onChanged: (v) => setState(() => _monthlyDates = v),
-                  ),
-                ],
-                if (!_pinnedForCurrentFrequency) ...[
-                  const SizedBox(height: 16),
-                  _PeriodTargetStepper(
-                    value: _periodTarget,
-                    max: _periodTargetMax,
-                    label: _frequency == Frequency.weekly
-                        ? l.daysPerWeekQuestion
-                        : l.daysPerMonthQuestion,
-                    onChanged: (v) => setState(() => _periodTarget = v),
-                  ),
-                ],
-                const SizedBox(height: 16),
-                _FrequencyPreview(
-                  frequency: _frequency,
-                  pinned: _pinnedForCurrentFrequency,
-                  weeklyDays: _weeklyDays,
-                  monthlyDates: _monthlyDates,
-                  periodTarget: _periodTarget,
-                ),
-                const SizedBox(height: 16),
-                if (_target != kOpenEndedTarget)
-                  SwitchListTile(
-                    contentPadding: EdgeInsets.zero,
-                    title: Text(l.startPreChecked),
-                    subtitle: Text(l.startPreCheckedSubtitle),
-                    value: _defaultChecked,
-                    onChanged: (v) => setState(() => _defaultChecked = v),
-                  ),
-                const SizedBox(height: 8),
-                ListTile(
-                  contentPadding: EdgeInsets.zero,
-                  leading: const Icon(Icons.notifications_outlined),
-                  title: Text(l.reminder),
-                  subtitle: Text(
-                    _reminderTime == null
-                        ? l.reminderNone
-                        : localizeDigits(
-                            context,
-                            _reminderTime!.format(context),
-                          ),
-                  ),
-                  trailing: _reminderTime == null
-                      ? null
-                      : IconButton(
-                          icon: const Icon(Icons.close),
-                          onPressed: () => setState(() => _reminderTime = null),
-                        ),
-                  onTap: () async {
-                    final picked = await showTimePicker(
-                      context: context,
-                      initialTime: _reminderTime ?? TimeOfDay.now(),
-                    );
-                    if (picked != null) {
-                      setState(() => _reminderTime = picked);
-                    }
-                  },
                 ),
               ],
             ),
