@@ -313,13 +313,17 @@ should be worked into the Play copy instead of being dropped.
 
 ## 11. Open items
 
-- [ ] **iOS en-US** — put the approved Subtitle and Keywords (§8, 2026-10-09) into
-      `fastlane/metadata/ios/en-US/` and ship them with the next App Store version.
-- [ ] **Play en-US** — set the approved short description (§8); no release needed.
+- [x] **iOS en-US** — the approved Subtitle and Keywords (§8) went out with 3.1.0 (14),
+      submitted 2026-10-10, together with the October screenshot set.
+- [x] **Play en-US** — the approved short description, the October screenshots and a new
+      feature graphic went live with the 3.1.0 (14) production release, 2026-10-10.
+- [x] All 9 App Store descriptions end with a "SUBSCRIPTION, TERMS & PRIVACY" block
+      (Apple standard EULA + privacy page) since 3.1.0.
 - [ ] **Play en-US** — rewrite the full description to ~3,500 chars with the term
       coverage listed in §8.
-- [ ] Refresh the App Store promotional text — it still says "New in 2.0:
-      Challenges". Editable any time without review.
+- [ ] Write App Store promotional text: live has none as of 2026-10-10 (the stale
+      "New in 2.0" copy survived only in the deliver staging, now removed).
+      Editable any time without review.
 - [ ] Decide on the optional es-MX keyword field (§8).
 - [ ] Once the libraries ship: move them into the claimable list in §4 and mention
       them in both descriptions and the promotional text.
@@ -328,9 +332,9 @@ should be worked into the Play copy instead of being dropped.
 - [ ] Complete/verify Play **Data Safety** for Firebase Analytics + Crashlytics.
 - [ ] Fill the unused keyword characters in `ar` and `hi`; tighten the non-English App Names (en done 2026-09-17).
 - [ ] Localize the Play listing beyond `en-US` — the app supports 23 languages.
-- [ ] Rebuild the Play feature graphic for 2.0.0.
+- [x] Rebuild the Play feature graphic (new one live with 3.1.0).
 - [ ] Write 2.0.0 release notes (Challenges, Insights) for both stores, 9+ locales.
-- [ ] Reword screenshot file 10's "No internet." caption at the next asset pass.
+- [x] Screenshot file 10's "No internet." frame was dropped from the October set.
 - [ ] First release with tips: App Store listing will show "In-App Purchases";
       Play Data Safety and Apple's privacy label need no new declaration (no
       purchase history collected by us) — confirm at submission.
