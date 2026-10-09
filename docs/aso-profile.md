@@ -5,7 +5,8 @@ Loaded by the `app-store-aso` and `google-play-aso` skills before any metadata,
 keyword, or creative work. Nothing here may be carried over from another app,
 and nothing in those skills may override what is written here.
 
-Last reviewed: **2026-09-17**, against version **3.0.1 (build 11)**.
+Last reviewed: **2026-10-09**, against version **3.0.3 (build 13)** plus the
+unreleased Amal Library and Challenge Library (§4).
 
 ---
 
@@ -15,7 +16,7 @@ Last reviewed: **2026-09-17**, against version **3.0.1 (build 11)**.
 |---|---|
 | Name | **Muhasaba** — store title on both stores: **Muhasaba: Muslim Habit Tracker** (en, 30/30; other ASC locales keep their localized "My Ibadah" names) |
 | Bundle / application ID | `dev.mukashi.muhasaba` |
-| Version | 3.0.1 (11) |
+| Version | 3.0.3 (13) |
 | Price | **Free.** Optional in-app tips ($0.99–$19.99, consumable, unlock nothing); no subscriptions, no ads. |
 | Platforms | iOS/iPadOS **and** Android — both listings are maintained, neither is a port afterthought |
 | App Store Connect | mukashi.dev@gmail.com |
@@ -77,6 +78,14 @@ Everything below is real in 2.0.0 and may be stated plainly.
 - Light and dark themes; adjustable day-rollover hour and start-of-week
 - **23 in-app languages** with full right-to-left support and local numerals
 - All data stored on-device in SQLite. No account, no sign-up, no cloud sync.
+
+**In the next release — not claimable until that version is live:**
+
+- **Amal Library** — 102 ready-made amals in 10 categories, added to Today in one tap
+- **Challenge Library** — 27 ready-made challenges, e.g. 40 days of every prayer in
+  jamaah, six days of Shawwal, a khatm in 30 days; started in one tap
+- Default categories now also include Dua, Fasting and Ilm; Character and Family
+  appear once used
 
 ---
 
@@ -192,6 +201,52 @@ Nothing is duplicated across the three fields. **ar and hi leave 20+ characters
 unused**, and the non-English Names leave 7–15 characters unused. Those are the
 cheapest wins available.
 
+#### Approved 2026-10-09 (en-US) — ship with the next App Store version
+
+| Field | Was (rating /10) | Now (rating /10) |
+|---|---|---|
+| Name | Muhasaba: Muslim Habit Tracker (8.5) | *unchanged* (8.5) |
+| Subtitle | Salah, Dhikr, Quran & Sunnah — 28 (6) | **Islamic Prayer & Dhikr Tracker** — 30 (8.5) |
+| Keywords | the 2026-09-17 set above — 95 (6) | `salah,quran,sunnah,namaz,muhasabah,salat,ibadah,deen,sadaqah,fasting,tasbih,deed,routine,amal,qada` — 98 (8.5) |
+
+Why, so nobody undoes it by accident:
+
+- **Name stays**: #1 for "muhasaba", #4 "muslim habit tracker", #2 "ibadah tracker".
+- **Subtitle**: "prayer tracker" is Apple's top autocomplete for "prayer tr" and the app
+  did not rank for it, nor for "muslim/islamic prayer tracker"; "islamic habit
+  tracker" was #26 with "islamic" only in the keyword field. "Tracker" keeps the
+  line about logging, never prayer *times* (§5).
+- **Dropped from keywords** — `worship` (results are Christian worship-music apps;
+  ranked #145), `azkar` (searchers want azkar content from apps with 46k–122k
+  ratings; #118), `dua` (content-seekers; autocomplete is all "dual…"). `islamic`
+  and `prayer` moved up into the subtitle; `checklist` and `streak` moved to the
+  optional es-MX field below.
+- **Added** — `muhasabah` (the "-ah" spelling; competitors rank for it, we did not),
+  `salat`, `routine` ("muslim routine" is a real query), `deed` ("deeds tracker"),
+  `qada` (backed by the Qada prayers amal and the make-up fasts challenge).
+  `salah`, `quran`, `sunnah` came down from the old subtitle; their ranks came from
+  low-competition phrases (salah habit tracker #5, quran habit tracker #6, sunnah
+  tracker #4) and should hold.
+
+**Optional, +0.5** — add a **Spanish (Mexico)** localization; its keyword field
+indexes for the U.S. storefront, so fill it with *English* terms:
+`good,checklist,streak,zikr,tasbeeh,istighfar,salawat,khatm,witr,duha,daily,goal,log,juz,rakah`.
+Costs one more listing to maintain. Not decided.
+
+#### Baseline rankings, 2026-10-09 (U.S., before the change)
+
+Measured with Apple's public search API (`itunes.apple.com/search`, `entity=software`,
+`limit=200`, which approximates on-device ranking) and autocomplete hints
+(`search.itunes.apple.com/.../MZSearchHints.woa/wa/hints`). 0 ratings at the time.
+Re-measure the same queries ~4 weeks after the next version ships.
+
+| Rank | Queries |
+|---|---|
+| Top 10 | muhasaba 1 · ibadah tracker 2 · muslim habit tracker 4 · muslim habit 4 · sunnah tracker 4 · salah habit tracker 5 · quran habit tracker 6 · sunnah habits 9 |
+| 11–50 | deen habit 20 · muslim checklist 23 · islamic habit tracker 26 · sadaqah tracker 28 · muslim tracker 30 · habit tracker islam 31 · prayer habit tracker 42 · dhikr tracker 46 |
+| 51–200 | deen tracker 65 · salah tracker 86 · islamic tracker 90 · namaz tracker 97 · amal tracker 113 · sunnah 117 · azkar 118 · amal 142 · worship tracker 145 · ibadah 156 · muslim goals 175 |
+| Not in 200 | prayer tracker · muslim/islamic prayer tracker · salat tracker · muhasabah · deeds tracker · good deeds tracker · muslim routine · qada tracker · dhikr counter · quran tracker · ramadan tracker · islamic, muslim, salah, prayer, namaz, dhikr, deen (single words) |
+
 ### Android (Google Play)
 
 Play has **no keyword field**. It indexes the **title (30)**, **short description
@@ -202,6 +257,28 @@ description, never stuffed; Play's policy explicitly bans repetitive keyword lis
 Because Play indexes the description, terms that don't fit iOS's 100 characters
 (`self-accountability`, `daily deen`, `good deeds`, `worship tracker`) can and
 should be worked into the Play copy instead of being dropped.
+
+#### Approved 2026-10-09 (en-US) — Play text goes live without a release
+
+| Field | Was (rating /10) | Now (rating /10) |
+|---|---|---|
+| Title | Muhasaba: Muslim Habit Tracker (8) | *unchanged* (8) |
+| Short description | Track salah, dhikr, Qur'an and your daily amal — no account, works offline. — 75 (6.5) | **Prayer, dhikr & Quran tracker to build Islamic habits. No account, works offline** — 80 (8.5) |
+| Full description | 1,806 of 4,000 chars (4) | rewrite to ~3,500 chars — *not written yet* (target 8.5) |
+
+- Spell it **Quran** in indexed Play text: the apostrophe form "Qur'an" may not
+  match "quran", the form nearly everyone types.
+- The 2026-10-09 full description says "muslim" and "islamic" 0 times, "quran" 0
+  (only "Qur'an"), "namaz", "good deeds", "ibadah", "deen", "muhasabah" 0, and
+  "prayer"/"salah" once each, and does not mention either library. The rewrite
+  should carry each of these 2–3 times in natural prose: prayer/salah tracker,
+  namaz, dhikr, Quran (khatm, juz), sunnah, fasting, sadaqah, good deeds, ibadah,
+  deen, Islamic/Muslim habit tracker, muhasabah — plus the Amal Library and the
+  Challenge Library once they ship. No keyword lists (Play policy).
+- Baseline: Play search (en_US/US) ranked the app only for "muhasaba" (#1) and
+  "muhasabah" (#6); outside the top 30 for every generic query, including its own
+  title phrase. Installs and ratings drive most of that, so the indexed text has to
+  carry more of the weight.
 
 ---
 
@@ -236,6 +313,17 @@ should be worked into the Play copy instead of being dropped.
 
 ## 11. Open items
 
+- [ ] **iOS en-US** — put the approved Subtitle and Keywords (§8, 2026-10-09) into
+      `fastlane/metadata/ios/en-US/` and ship them with the next App Store version.
+- [ ] **Play en-US** — set the approved short description (§8); no release needed.
+- [ ] **Play en-US** — rewrite the full description to ~3,500 chars with the term
+      coverage listed in §8.
+- [ ] Refresh the App Store promotional text — it still says "New in 2.0:
+      Challenges". Editable any time without review.
+- [ ] Decide on the optional es-MX keyword field (§8).
+- [ ] Once the libraries ship: move them into the claimable list in §4 and mention
+      them in both descriptions and the promotional text.
+- [ ] Re-measure the §8 baseline queries ~4 weeks after the next version ships.
 - [ ] Revise the Play full description: "100% private and offline" overstates it (§7).
 - [ ] Complete/verify Play **Data Safety** for Firebase Analytics + Crashlytics.
 - [ ] Fill the unused keyword characters in `ar` and `hi`; tighten the non-English App Names (en done 2026-09-17).
