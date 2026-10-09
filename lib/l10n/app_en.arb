@@ -703,9 +703,9 @@
       }
     }
   },
-  "challengePlanSlack": "{start} to {end} · {target} of {window} days — {slack} you can miss",
+  "challengePlanSlack": "{start} to {end} · {target} of {window} {windowCount, plural, =1{day} other{days}} — {slack} you can miss",
   "@challengePlanSlack": {
-    "description": "Resolved plan for a streak with a window longer than its day target",
+    "description": "Resolved plan for a streak with a window longer than its day target. target, window and slack are already-localized numbers; targetCount and windowCount only select plural forms, so the noun can agree with whichever number it follows in your language.",
     "placeholders": {
       "start": {
         "type": "String"
@@ -721,6 +721,12 @@
       },
       "slack": {
         "type": "String"
+      },
+      "targetCount": {
+        "type": "num"
+      },
+      "windowCount": {
+        "type": "num"
       }
     }
   },
@@ -748,15 +754,21 @@
       }
     }
   },
-  "challengeTooTight": "{target} days can't fit in {window} days — a streak counts one a day.",
+  "challengeTooTight": "{target} {targetCount, plural, =1{day} other{days}} can't fit in {window} {windowCount, plural, =1{day} other{days}} — a streak counts one a day.",
   "@challengeTooTight": {
-    "description": "Warning when a streak's day target exceeds its window",
+    "description": "Warning when a streak's day target exceeds its window. target and window are already-localized numbers; targetCount and windowCount only select plural forms.",
     "placeholders": {
       "target": {
         "type": "String"
       },
       "window": {
         "type": "String"
+      },
+      "targetCount": {
+        "type": "num"
+      },
+      "windowCount": {
+        "type": "num"
       }
     }
   },

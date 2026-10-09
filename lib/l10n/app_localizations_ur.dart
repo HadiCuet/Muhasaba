@@ -1281,6 +1281,8 @@ class AppLocalizationsUr extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
     return '$start سے $end – $window میں سے $target دن — $slack ناغے کی گنجائش';
   }
@@ -1296,7 +1298,12 @@ class AppLocalizationsUr extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
     return '$target دن $window دن میں نہیں سما سکتے — سلسلے میں روزانہ ایک ہی دن گنا جاتا ہے۔';
   }
 

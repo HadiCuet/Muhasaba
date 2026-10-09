@@ -316,6 +316,8 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
             l.challengeTooTight(
               lnum(context, _dayTarget),
               lnum(context, _windowDays!),
+              _dayTarget,
+              _windowDays!,
             ),
           ),
         ),
@@ -688,6 +690,8 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
         lnum(context, _dayTarget),
         lnum(context, window),
         lnum(context, window - _dayTarget),
+        _dayTarget,
+        window,
       );
     }
     if (_target <= 0 || window <= 0) return l.challengePlanRange(start, last);
@@ -760,6 +764,8 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
           text: l.challengeTooTight(
             lnum(context, _dayTarget),
             lnum(context, _windowDays!),
+            _dayTarget,
+            _windowDays!,
           ),
           background: scheme.behindContainer,
           foreground: scheme.onBehindContainer,

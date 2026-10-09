@@ -1281,6 +1281,8 @@ class AppLocalizationsKk extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
     return '$start – $end · $window күннің $target күні — $slack күн өткізіп алуға болады';
   }
@@ -1296,7 +1298,12 @@ class AppLocalizationsKk extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
     return '$target күн $window күнге сыймайды — үзбей орындауда күніне бір күн ғана саналады.';
   }
 

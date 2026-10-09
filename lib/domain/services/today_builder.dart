@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 
+import '../../core/time/day_boundary.dart';
 import '../../core/time/period.dart';
 import '../../data/db/database.dart';
 import '../models/amal_goal.dart';
@@ -150,11 +151,7 @@ class TodayBuilder {
     required PeriodCompletionsLookup periodCompletionsOf,
   }) async {
     // Don't show amals on dates before they were created.
-    final created = DateTime.utc(
-      amal.createdAt.year,
-      amal.createdAt.month,
-      amal.createdAt.day,
-    );
+    final created = muhasabaDateOf(amal.createdAt, settings.rolloverHour);
     if (date.isBefore(created)) return false;
 
     switch (amal.frequency) {

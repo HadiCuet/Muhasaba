@@ -1291,6 +1291,8 @@ class AppLocalizationsSo extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
     return '$start ilaa $end · $target ka mid ah $window maalmood — $slack waad seegi kartaa';
   }
@@ -1306,7 +1308,12 @@ class AppLocalizationsSo extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
     return '$target maalmood kuma qasmaan $window maalmood — taxanuhu maalintii hal mar buu tiriyaa.';
   }
 

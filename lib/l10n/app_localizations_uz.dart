@@ -1287,6 +1287,8 @@ class AppLocalizationsUz extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
     return '$start – $end · $window kundan $target kun — $slack kunni o\'tkazib yuborishingiz mumkin';
   }
@@ -1302,7 +1304,12 @@ class AppLocalizationsUz extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
     return '$target kun $window kunga sig\'maydi — ketma-ketlikda kuniga bittadan hisoblanadi.';
   }
 

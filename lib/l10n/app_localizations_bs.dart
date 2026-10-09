@@ -1289,8 +1289,16 @@ class AppLocalizationsBs extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
-    return '$start do $end · $target od $window dana — možete propustiti $slack';
+    String _temp0 = intl.Intl.pluralLogic(
+      windowCount,
+      locale: localeName,
+      other: 'dana',
+      one: 'dan',
+    );
+    return '$start do $end · $target od $window $_temp0 — možete propustiti $slack';
   }
 
   @override
@@ -1304,8 +1312,25 @@ class AppLocalizationsBs extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
-    return '$target dana ne stane u $window dana — niz se računa po jedan dan dnevno.';
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
+    String _temp0 = intl.Intl.pluralLogic(
+      targetCount,
+      locale: localeName,
+      other: 'dana',
+      one: 'dan',
+    );
+    String _temp1 = intl.Intl.pluralLogic(
+      windowCount,
+      locale: localeName,
+      other: 'dana',
+      one: 'dan',
+    );
+    return '$target $_temp0 ne stane u $window $_temp1 — niz se računa po jedan dan dnevno.';
   }
 
   @override

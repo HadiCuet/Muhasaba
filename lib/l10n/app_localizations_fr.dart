@@ -1291,8 +1291,16 @@ class AppLocalizationsFr extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
-    return 'Du $start au $end · $target jours sur $window — vous pouvez en manquer $slack';
+    String _temp0 = intl.Intl.pluralLogic(
+      targetCount,
+      locale: localeName,
+      other: 'jours',
+      one: 'jour',
+    );
+    return 'Du $start au $end · $target $_temp0 sur $window — vous pouvez en manquer $slack';
   }
 
   @override
@@ -1306,8 +1314,25 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
-    return '$target jours ne tiennent pas en $window jours — une série compte un par jour.';
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
+    String _temp0 = intl.Intl.pluralLogic(
+      targetCount,
+      locale: localeName,
+      other: 'jours ne tiennent',
+      one: 'jour ne tient',
+    );
+    String _temp1 = intl.Intl.pluralLogic(
+      windowCount,
+      locale: localeName,
+      other: 'jours',
+      one: 'jour',
+    );
+    return '$target $_temp0 pas en $window $_temp1 — une série compte un par jour.';
   }
 
   @override

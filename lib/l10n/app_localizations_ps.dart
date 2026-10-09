@@ -1278,6 +1278,8 @@ class AppLocalizationsPs extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
     return 'له $start څخه تر $end – له $window ورځو $target – $slack یې پرېښودلای شئ';
   }
@@ -1293,7 +1295,12 @@ class AppLocalizationsPs extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
     return '$target ورځې په $window ورځو کې نه ځایېږي — لړۍ هره ورځ یوازې یوه شمېري.';
   }
 

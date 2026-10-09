@@ -1282,6 +1282,8 @@ class AppLocalizationsBn extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
     return '$start থেকে $end · $window দিনের মধ্যে $target দিন — $slack দিন বাদ গেলেও চলবে';
   }
@@ -1297,7 +1299,12 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
     return '$window দিনের মধ্যে $target দিন সম্ভব নয় — টানা ধারায় দিনে একটিই গোনা হয়।';
   }
 

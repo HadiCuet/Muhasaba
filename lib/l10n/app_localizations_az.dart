@@ -1282,6 +1282,8 @@ class AppLocalizationsAz extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
     return '$start – $end · $target/$window gün — $slack gün buraxa bilərsiniz';
   }
@@ -1297,7 +1299,12 @@ class AppLocalizationsAz extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
     return '$target gün $window günə sığmır — seriyada gündə yalnız bir dəfə sayılır.';
   }
 

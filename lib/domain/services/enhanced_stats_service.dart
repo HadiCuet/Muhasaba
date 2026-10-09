@@ -1,5 +1,6 @@
 import 'package:flutter/foundation.dart';
 
+import '../../core/time/day_boundary.dart';
 import '../../core/time/period.dart';
 import '../../data/db/database.dart';
 import '../../features/stats/stats_filter.dart';
@@ -787,11 +788,11 @@ class EnhancedStatsService {
         }
         return month;
       case StatsPeriod.allTime:
-        var earliest = muhasabaDate;
+        var start = muhasabaDate;
         for (final a in amals) {
-          if (a.createdAt.isBefore(earliest)) earliest = a.createdAt;
+          final created = muhasabaDateOf(a.createdAt, settings.rolloverHour);
+          if (created.isBefore(start)) start = created;
         }
-        final start = DateTime.utc(earliest.year, earliest.month, earliest.day);
         return Period(
           start: start,
           endExclusive: muhasabaDate.add(const Duration(days: 1)),

@@ -1285,6 +1285,8 @@ class AppLocalizationsTg extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
     return '$start то $end · $target аз $window рӯз — $slack рӯзро метавонед аз даст диҳед';
   }
@@ -1300,7 +1302,12 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
     return '$target рӯз ба $window рӯз намеғунҷад — дар силсила ҳар рӯз танҳо як бор ҳисоб мешавад.';
   }
 

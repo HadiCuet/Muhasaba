@@ -1282,6 +1282,8 @@ class AppLocalizationsHi extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
     return '$start से $end · $window दिनों में $target — $slack छोड़ सकते हैं';
   }
@@ -1297,7 +1299,12 @@ class AppLocalizationsHi extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
     return '$target दिन $window दिनों में नहीं समा सकते — स्ट्रीक में रोज़ एक ही दिन गिना जाता है।';
   }
 

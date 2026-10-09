@@ -1285,6 +1285,8 @@ class AppLocalizationsMs extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
     return '$start hingga $end · $target daripada $window hari — $slack boleh terlepas';
   }
@@ -1300,7 +1302,12 @@ class AppLocalizationsMs extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
     return '$target hari tidak muat dalam $window hari — rentetan dikira satu sehari.';
   }
 

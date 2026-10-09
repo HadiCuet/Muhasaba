@@ -1289,6 +1289,8 @@ class AppLocalizationsSq extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
     return '$start – $end · $target nga $window ditë — mund të humbni $slack';
   }
@@ -1304,7 +1306,12 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
     return '$target ditë nuk mund të hyjnë në $window ditë — seria numëron një në ditë.';
   }
 

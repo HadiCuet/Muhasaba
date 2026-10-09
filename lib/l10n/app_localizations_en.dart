@@ -1282,8 +1282,16 @@ class AppLocalizationsEn extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
-    return '$start to $end · $target of $window days — $slack you can miss';
+    String _temp0 = intl.Intl.pluralLogic(
+      windowCount,
+      locale: localeName,
+      other: 'days',
+      one: 'day',
+    );
+    return '$start to $end · $target of $window $_temp0 — $slack you can miss';
   }
 
   @override
@@ -1297,8 +1305,25 @@ class AppLocalizationsEn extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
-    return '$target days can\'t fit in $window days — a streak counts one a day.';
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
+    String _temp0 = intl.Intl.pluralLogic(
+      targetCount,
+      locale: localeName,
+      other: 'days',
+      one: 'day',
+    );
+    String _temp1 = intl.Intl.pluralLogic(
+      windowCount,
+      locale: localeName,
+      other: 'days',
+      one: 'day',
+    );
+    return '$target $_temp0 can\'t fit in $window $_temp1 — a streak counts one a day.';
   }
 
   @override

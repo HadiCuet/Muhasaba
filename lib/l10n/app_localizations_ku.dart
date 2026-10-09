@@ -1286,6 +1286,8 @@ class AppLocalizationsKu extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
     return '$start heta $end · $target ji $window rojan — $slack dikarî ji dest bidî';
   }
@@ -1301,7 +1303,12 @@ class AppLocalizationsKu extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
     return '$target roj di $window rojan de cih nagirin — rêze rojê yekê dihesibîne.';
   }
 

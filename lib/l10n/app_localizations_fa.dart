@@ -1279,6 +1279,8 @@ class AppLocalizationsFa extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
     return 'از $start تا $end – $target از $window روز؛ $slack روز را می‌توانید جا بیندازید';
   }
@@ -1294,7 +1296,12 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
     return '$target روز در $window روز نمی‌گنجد؛ در زنجیره هر روز فقط یک بار حساب می‌شود.';
   }
 

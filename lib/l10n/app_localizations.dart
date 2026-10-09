@@ -2276,16 +2276,18 @@ abstract class AppLocalizations {
   /// **'{start} to {end} · one a day, every day'**
   String challengePlanExact(String start, String end);
 
-  /// Resolved plan for a streak with a window longer than its day target
+  /// Resolved plan for a streak with a window longer than its day target. target, window and slack are already-localized numbers; targetCount and windowCount only select plural forms, so the noun can agree with whichever number it follows in your language.
   ///
   /// In en, this message translates to:
-  /// **'{start} to {end} · {target} of {window} days — {slack} you can miss'**
+  /// **'{start} to {end} · {target} of {window} {windowCount, plural, =1{day} other{days}} — {slack} you can miss'**
   String challengePlanSlack(
     String start,
     String end,
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   );
 
   /// Resolved plan for a total challenge with a deadline
@@ -2300,11 +2302,16 @@ abstract class AppLocalizations {
   /// **'Starts {start} · no deadline'**
   String challengePlanOpen(String start);
 
-  /// Warning when a streak's day target exceeds its window
+  /// Warning when a streak's day target exceeds its window. target and window are already-localized numbers; targetCount and windowCount only select plural forms.
   ///
   /// In en, this message translates to:
-  /// **'{target} days can\'t fit in {window} days — a streak counts one a day.'**
-  String challengeTooTight(String target, String window);
+  /// **'{target} {targetCount, plural, =1{day} other{days}} can\'t fit in {window} {windowCount, plural, =1{day} other{days}} — a streak counts one a day.'**
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  );
 
   /// Length of the challenge window
   ///

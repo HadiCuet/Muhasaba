@@ -1294,8 +1294,19 @@ class AppLocalizationsAr extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
-    return 'من $start إلى $end – $target من $window يومًا، ويمكنك تفويت $slack';
+    String _temp0 = intl.Intl.pluralLogic(
+      windowCount,
+      locale: localeName,
+      other: '$window يوم',
+      many: '$window يومًا',
+      few: '$window أيام',
+      two: 'يومين',
+      one: 'يوم واحد',
+    );
+    return 'من $start إلى $end – $target من $_temp0، ويمكنك تفويت $slack';
   }
 
   @override
@@ -1309,8 +1320,31 @@ class AppLocalizationsAr extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
-    return '$target يومًا أطول من $window يومًا — الالتزام اليومي يُحتسب مرة واحدة في اليوم.';
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
+    String _temp0 = intl.Intl.pluralLogic(
+      targetCount,
+      locale: localeName,
+      other: '$target يوم',
+      many: '$target يومًا',
+      few: '$target أيام',
+      two: 'يومين',
+      one: 'يوم واحد',
+    );
+    String _temp1 = intl.Intl.pluralLogic(
+      windowCount,
+      locale: localeName,
+      other: '$window يوم',
+      many: '$window يومًا',
+      few: '$window أيام',
+      two: 'يومين',
+      one: 'يوم واحد',
+    );
+    return 'لا يمكن احتساب $_temp0 خلال $_temp1 — الالتزام اليومي يُحتسب مرة واحدة في اليوم.';
   }
 
   @override

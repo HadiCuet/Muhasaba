@@ -1284,6 +1284,8 @@ class AppLocalizationsHa extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
     return '$start zuwa $end · $target cikin kwana $window — ana iya rasa $slack';
   }
@@ -1299,7 +1301,12 @@ class AppLocalizationsHa extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
     return 'Kwana $target ba za su dace cikin kwana $window ba — jeri yana ƙidaya ɗaya a rana.';
   }
 

@@ -1282,6 +1282,8 @@ class AppLocalizationsSw extends AppLocalizations {
     String target,
     String window,
     String slack,
+    num targetCount,
+    num windowCount,
   ) {
     return '$start hadi $end · $target kati ya siku $window — $slack unaweza kukosa';
   }
@@ -1297,7 +1299,12 @@ class AppLocalizationsSw extends AppLocalizations {
   }
 
   @override
-  String challengeTooTight(String target, String window) {
+  String challengeTooTight(
+    String target,
+    String window,
+    num targetCount,
+    num windowCount,
+  ) {
     return 'Siku $target haziingii katika siku $window — mfululizo huhesabu moja kwa siku.';
   }
 
