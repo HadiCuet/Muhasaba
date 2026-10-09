@@ -4,8 +4,10 @@
     python3 tool/screenshots/assemble.py --frames DIR --dest DIR [--locales en,ar,...]
 
 --frames is compose.py's output root (<frames>/<locale>/<device>/<name>.png).
-Kept frames come from the live set: fastlane/screenshots/<ASC locale>/ for the
-App Store and the tracked Play images for Google Play (English only).
+Kept frames come from the live set: {ios,ipad}-marketing-2026-08/<locale>/ in
+the store-assets folder (--live) for the App Store, and the tracked Play images
+for Google Play (English only). --kept points at re-rendered live frames
+(<kept>/<locale>/<device>_NN.png) that win over the live files.
 Writes <dest>/ios/<locale>/01..10.png, <dest>/ipad/<locale>/01..10.png and
 <dest>/play/en/1..8.png + featureGraphic.png.
 """
@@ -14,10 +16,10 @@ import pathlib
 import shutil
 
 ROOT = pathlib.Path(__file__).resolve().parents[2]
-LIVE_IOS = ROOT / "fastlane" / "screenshots"
+LIVE_SETS = ROOT.parent / "Screenshots" / "muhasaba-screenshots"
+LIVE_FOLDER = {"iphone": "ios-marketing-2026-08", "ipad": "ipad-marketing-2026-08"}
 LIVE_PLAY = ROOT / "fastlane" / "metadata" / "android" / "en-US" / "images" / "phoneScreenshots"
-ASC = {"en": "en-US", "ar": "ar-SA", "bn": "bn-BD", "fr": "fr-FR", "hi": "hi",
-       "id": "id", "ms": "ms", "tr": "tr", "ur": "ur-PK"}
+LOCALES = ["en", "ar", "bn", "fr", "hi", "id", "ms", "tr", "ur"]
 
 # ("new", frame number) is a composed frame, ("live", n) the live file n.
 IOS_ORDER = [("new", 1), ("live", 2), ("live", 3), ("new", 4), ("new", 5), ("new", 6),
@@ -30,15 +32,22 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--frames", required=True, type=pathlib.Path)
     ap.add_argument("--dest", required=True, type=pathlib.Path)
-    ap.add_argument("--locales", default=",".join(ASC))
+    ap.add_argument("--live", type=pathlib.Path, default=LIVE_SETS)
+    ap.add_argument("--kept", type=pathlib.Path)
+    ap.add_argument("--locales", default=",".join(LOCALES))
     a = ap.parse_args()
     for loc in a.locales.split(","):
         for device in ("iphone", "ipad"):
             out = a.dest / ("ios" if device == "iphone" else "ipad") / loc
             out.mkdir(parents=True, exist_ok=True)
             for i, (src, n) in enumerate(IOS_ORDER, 1):
-                f = (a.frames / loc / device / f"{device}_{n:02d}.png" if src == "new"
-                     else LIVE_IOS / ASC[loc] / f"{device}_{n:02d}.png")
+                name = f"{device}_{n:02d}.png"
+                if src == "new":
+                    f = a.frames / loc / device / name
+                elif a.kept and (a.kept / loc / name).exists():
+                    f = a.kept / loc / name
+                else:
+                    f = a.live / LIVE_FOLDER[device] / loc / f"{n:02d}.png"
                 shutil.copyfile(f, out / f"{i:02d}.png")
         if loc == "en":
             out = a.dest / "play" / "en"
