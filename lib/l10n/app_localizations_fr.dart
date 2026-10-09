@@ -42,14 +42,14 @@ class AppLocalizationsFr extends AppLocalizations {
   String get insightsOverview => 'Vue d\'ensemble';
 
   @override
-  String get insightsDaily => 'Quotidien';
+  String get insightsDaily => 'Par jour';
 
   @override
   String get insightsArchive => 'Archives';
 
   @override
   String get archivedEmpty =>
-      'Rien ici pour l\'instant. Les amal que vous retirez du suivi apparaissent ici, prêts à être restaurés.';
+      'Rien ici pour l\'instant. Les amals que vous retirez du suivi apparaissent ici, pour que vous puissiez les restaurer.';
 
   @override
   String archivedStoppedOn(String date) {
@@ -61,7 +61,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String archivedRestored(String title) {
-    return '« $title » est de retour dans votre liste.';
+    return '« $title » est de retour dans votre liste.';
   }
 
   @override
@@ -128,7 +128,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get categoryCharity => 'Charité';
 
   @override
-  String get categorySunnah => 'Sunnah';
+  String get categorySunnah => 'Sunna';
 
   @override
   String get timesPerPeriod => 'Fois par période';
@@ -137,20 +137,19 @@ class AppLocalizationsFr extends AppLocalizations {
   String get custom => 'Personnalisé';
 
   @override
-  String get customTargetHint => 'ex. 50';
+  String get customTargetHint => 'ex. : 50';
 
   @override
   String get targetAny => 'Libre';
 
   @override
-  String get targetAnyHelp =>
-      'Sans objectif — toute quantité compte comme accompli';
+  String get targetAnyHelp => 'Sans objectif — toute quantité le valide';
 
   @override
   String get dayOfWeek => 'Jour de la semaine';
 
   @override
-  String get anyDay => 'Tous';
+  String get anyDay => 'Au choix';
 
   @override
   String get anyDayHint =>
@@ -168,10 +167,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get repeatMode => 'Répétition';
 
   @override
-  String get onSetDays => 'Jours définis';
+  String get onSetDays => 'Jours fixes';
 
   @override
-  String get onSetDates => 'Dates définies';
+  String get onSetDates => 'Dates fixes';
 
   @override
   String get anyDayMode => 'N\'importe quel jour';
@@ -180,10 +179,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get datesOfMonth => 'Dates';
 
   @override
-  String get daysPerWeekQuestion => 'Combien de jours par semaine ?';
+  String get daysPerWeekQuestion => 'Combien de jours par semaine ?';
 
   @override
-  String get daysPerMonthQuestion => 'Combien de jours par mois ?';
+  String get daysPerMonthQuestion => 'Combien de jours par mois ?';
 
   @override
   String get pickAtLeastOneDay => 'Choisissez au moins un jour';
@@ -233,7 +232,7 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get anyDate => 'Toutes';
+  String get anyDate => 'Au choix';
 
   @override
   String get anyDateHint =>
@@ -259,7 +258,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String reminderTime(String time) {
-    return 'Rappel : $time';
+    return 'Rappel : $time';
   }
 
   @override
@@ -273,24 +272,24 @@ class AppLocalizationsFr extends AppLocalizations {
   String get dailyReminder => 'Rappel quotidien';
 
   @override
-  String get dailyReminderSubtitle => 'Un doux rappel pour suivre vos amal';
+  String get dailyReminderSubtitle => 'Un petit rappel pour suivre vos amals';
 
   @override
   String get dailyReminderTimeLabel => 'Heure du rappel';
 
   @override
   String get dailyReminderBody =>
-      'Prenez un instant pour suivre les amal d\'aujourd\'hui.';
+      'Prenez un instant pour noter vos amals du jour.';
 
   @override
-  String get groupByCategory => 'Grouper par catégorie';
+  String get groupByCategory => 'Regrouper par catégorie';
 
   @override
   String get flatList => 'Liste simple';
 
   @override
   String errorGeneric(String error) {
-    return 'Erreur : $error';
+    return 'Erreur : $error';
   }
 
   @override
@@ -300,7 +299,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get noteLabel => 'Note';
 
   @override
-  String get noteHint => 'ex. Prière à la mosquée';
+  String get noteHint => 'ex. : Prière à la mosquée';
 
   @override
   String get completed => 'accompli';
@@ -315,22 +314,22 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String progressOpen(String count) {
-    return 'Accompli : $count';
+    return 'Accompli : $count';
   }
 
   @override
-  String get removeFromToday => 'Retirer d\'aujourd\'hui';
+  String get removeFromToday => 'Retirer pour aujourd\'hui';
 
   @override
   String get removeFromTodaySubtitle =>
       'Masquer uniquement pour aujourd\'hui. Il réapparaît demain.';
 
   @override
-  String get removeFromTracking => 'Supprimer du suivi';
+  String get removeFromTracking => 'Retirer du suivi';
 
   @override
   String get removeFromTrackingSubtitle =>
-      'Supprimer définitivement de votre liste. L\'historique est conservé.';
+      'Retirer définitivement de votre liste. L\'historique est conservé.';
 
   @override
   String get chooseIcon => 'Choisir une icône';
@@ -402,33 +401,33 @@ class AppLocalizationsFr extends AppLocalizations {
   String get amalEveningAdhkar => 'Adhkar du soir';
 
   @override
-  String get amalTilawah => 'Tilawah';
+  String get amalTilawah => 'Tilawa';
 
   @override
   String get settingsTitle => 'Paramètres';
 
   @override
   String settingsLoadError(String error) {
-    return 'Impossible de charger les paramètres :\n$error';
+    return 'Impossible de charger les paramètres :\n$error';
   }
 
   @override
-  String get sectionDayBoundary => 'Limite de journée';
+  String get sectionDayBoundary => 'Changement de jour';
 
   @override
-  String get rolloverHour => 'Heure de basculement';
+  String get rolloverHour => 'Heure du changement de jour';
 
   @override
   String get rolloverAtMidnight => 'La journée se termine à minuit.';
 
   @override
   String rolloverSubtitle(String time) {
-    return 'Les amal d\'hier restent modifiables jusqu\'à $time.';
+    return 'Les amals d\'hier restent modifiables jusqu\'à $time.';
   }
 
   @override
   String get pickRolloverHour =>
-      'Choisir l\'heure de basculement de la journée';
+      'Choisissez l\'heure à laquelle la journée change';
 
   @override
   String get sectionWeekMonth => 'Semaine et mois';
@@ -472,14 +471,14 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get aboutSubtitle =>
-      'Un journal personnel de responsabilité spirituelle (deen). Toutes les données restent sur cet appareil.';
+      'Un journal personnel pour faire le bilan de votre dîn. Toutes les données restent sur cet appareil.';
 
   @override
   String get statsTitle => 'Statistiques';
 
   @override
   String statsLoadError(String error) {
-    return 'Impossible de charger les statistiques :\n$error';
+    return 'Impossible de charger les statistiques :\n$error';
   }
 
   @override
@@ -550,7 +549,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get statsEmpty =>
-      'Aucun amal pour le moment. Ajoutez-en un dans Aujourd\'hui pour commencer le suivi.';
+      'Aucun amal pour l\'instant. Ajoutez-en un dans Aujourd\'hui pour commencer le suivi.';
 
   @override
   String get statsToday => 'Aujourd\'hui';
@@ -562,10 +561,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get statsThisMonth => 'Ce mois-ci';
 
   @override
-  String get statsAllTime => 'Depuis toujours';
+  String get statsAllTime => 'Depuis le début';
 
   @override
-  String get statsCustomRange => 'Plage personnalisée';
+  String get statsCustomRange => 'Période personnalisée';
 
   @override
   String get statsAllCategories => 'Toutes';
@@ -577,7 +576,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get statsCompleted => 'Accomplis';
 
   @override
-  String get statsExpected => 'Attendus';
+  String get statsExpected => 'Prévus';
 
   @override
   String get statsVsPrevious => 'vs précédent';
@@ -609,7 +608,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get statsBestStreak => 'Meilleure série';
 
   @override
-  String get statsTotalDays => 'Total de jours';
+  String get statsTotalDays => 'Jours au total';
 
   @override
   String get statsConsistency => 'Régularité';
@@ -642,7 +641,7 @@ class AppLocalizationsFr extends AppLocalizations {
   }
 
   @override
-  String get statsFilterTime => 'Temps';
+  String get statsFilterTime => 'Période';
 
   @override
   String get statsFilterCategory => 'Catégorie';
@@ -654,7 +653,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get statsStreaks => 'Séries';
 
   @override
-  String get statsSelectDateRange => 'Sélectionner une plage de dates';
+  String get statsSelectDateRange => 'Choisir une période';
 
   @override
   String get historyTitle => 'Historique';
@@ -720,87 +719,87 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get hadith0 =>
-      '\"Les actes les plus aimés d\'Allah sont ceux accomplis avec constance, même s\'ils sont modestes.\"\n— Bukhari et Muslim';
+      '« Les actes les plus aimés d\'Allah sont ceux accomplis avec constance, même s\'ils sont modestes. »\n— Bukhari et Muslim';
 
   @override
   String get hadith2 =>
-      '\"Lorsque le fils d\'Adam meurt, ses actes cessent sauf trois : une aumône continue, un savoir bénéfique, ou un enfant pieux qui invoque pour lui.\"\n— Muslim';
+      '« Lorsque le fils d\'Adam meurt, ses actes cessent sauf trois : une aumône continue, un savoir bénéfique ou un enfant pieux qui invoque pour lui. »\n— Muslim';
 
   @override
   String get hadith3 =>
-      '\"Celui qui prie les deux prières fraîches (Fajr et Asr) entrera au Paradis.\"\n— Bukhari';
+      '« Celui qui accomplit les deux prières fraîches (Fajr et Asr) entrera au Paradis. »\n— Bukhari';
 
   @override
   String get hadith4 =>
-      '\"Allah ne regarde ni votre apparence ni vos richesses, mais Il regarde vos cœurs et vos actes.\"\n— Muslim';
+      '« Allah ne regarde ni votre apparence ni vos richesses, mais Il regarde vos cœurs et vos actes. »\n— Muslim';
 
   @override
   String get hadith6 =>
-      '\"Facilitez les choses et ne les rendez pas difficiles ; annoncez la bonne nouvelle et ne repoussez pas les gens.\"\n— Bukhari';
+      '« Facilitez les choses et ne les rendez pas difficiles ; annoncez la bonne nouvelle et ne faites pas fuir les gens. »\n— Bukhari';
 
   @override
   String get hadith7 =>
-      '\"Celui qui emprunte un chemin à la recherche du savoir, Allah lui facilite un chemin vers le Paradis.\"\n— Muslim';
+      '« Celui qui emprunte un chemin à la recherche du savoir, Allah lui facilitera un chemin vers le Paradis. »\n— Muslim';
 
   @override
-  String get hadith8 => '\"L\'aumône ne diminue pas la richesse.\"\n— Muslim';
+  String get hadith8 => '« L\'aumône ne diminue pas la richesse. »\n— Muslim';
 
   @override
   String get hadith9 =>
-      '\"Le croyant fort est meilleur et plus aimé d\'Allah que le croyant faible, bien qu\'il y ait du bien en chacun d\'eux.\"\n— Muslim';
+      '« Le croyant fort est meilleur et plus aimé d\'Allah que le croyant faible, bien qu\'il y ait du bien en chacun d\'eux. »\n— Muslim';
 
   @override
   String get hadith10 =>
-      '\"Celui qui dit \'SubhanAllah wa bihamdihi\' cent fois par jour verra ses péchés pardonnés, même s\'ils étaient comme l\'écume de la mer.\"\n— Bukhari & Muslim';
+      '« Celui qui dit “SubhanAllah wa bihamdihi” cent fois par jour verra ses péchés pardonnés, même s\'ils étaient comme l\'écume de la mer. »\n— Bukhari et Muslim';
 
   @override
   String get hadith12 =>
-      '\"Celui qui récite Ayat al-Kursi après chaque prière obligatoire, rien ne l\'empêche d\'entrer au Paradis sauf la mort.\"\n— Nasa\'i';
+      '« Celui qui récite Ayat al-Kursi après chaque prière obligatoire, rien ne l\'empêche d\'entrer au Paradis, si ce n\'est la mort. »\n— Nasa\'i';
 
   @override
   String get hadith13 =>
-      '\"Une bonne parole est une aumône.\"\n— Bukhari & Muslim';
+      '« Une bonne parole est une aumône. »\n— Bukhari et Muslim';
 
   @override
   String get hadith14 =>
-      '\"Que celui qui croit en Allah et au Jour Dernier dise du bien ou qu\'il se taise.\"\n— Bukhari & Muslim';
+      '« Que celui qui croit en Allah et au Jour Dernier dise du bien ou qu\'il se taise. »\n— Bukhari et Muslim';
 
   @override
   String get hadith15 =>
-      '\"Celui qui prend soin d\'une veuve ou d\'un pauvre est comme un combattant dans le sentier d\'Allah.\"\n— Bukhari & Muslim';
+      '« Celui qui prend soin d\'une veuve ou d\'un pauvre est comme un combattant dans le sentier d\'Allah. »\n— Bukhari et Muslim';
 
   @override
   String get hadith16 =>
-      '\"Ton sourire à ton frère est une aumône.\"\n— Tirmidhi';
+      '« Ton sourire à ton frère est une aumône. »\n— Tirmidhi';
 
   @override
   String get hadith17 =>
-      '\"Le meilleur d\'entre vous est celui qui apprend le Coran et l\'enseigne.\"\n— Bukhari';
+      '« Le meilleur d\'entre vous est celui qui apprend le Coran et l\'enseigne. »\n— Bukhari';
 
   @override
   String get hadith18 =>
-      '\"Personne n\'a mangé meilleure nourriture que celle gagnée par le travail de ses mains.\"\n— Bukhari';
+      '« Nul n\'a jamais mangé de meilleure nourriture que celle qu\'il a gagnée du travail de ses propres mains. »\n— Bukhari';
 
   @override
   String get hadith19 =>
-      '\"Allah est doux et Il aime la douceur en toute chose.\"\n— Bukhari & Muslim';
+      '« Allah est doux et Il aime la douceur en toute chose. »\n— Bukhari et Muslim';
 
   @override
   String historyDayCompleted(String completed, String total) {
-    return '$completed sur $total terminé(s)';
+    return '$completed sur $total accomplis';
   }
 
   @override
-  String get settingsSchedule => 'Horaire';
+  String get settingsSchedule => 'Calendrier';
 
   @override
   String get settingsAppearance => 'Apparence';
 
   @override
-  String get settingsAboutTagline => 'Votre compagnon quotidien de deen';
+  String get settingsAboutTagline => 'Votre compagnon de dîn au quotidien';
 
   @override
-  String get settingsRolloverSub => 'Quand la journée se réinitialise';
+  String get settingsRolloverSub => 'Quand commence une nouvelle journée';
 
   @override
   String get settingsAbout => 'À propos';
@@ -840,235 +839,235 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get hadith20 =>
-      '\"Celui qui jeûne le Ramadan avec foi et en espérant la récompense verra ses péchés passés pardonnés.\"\n— Bukhari & Muslim';
+      '« Celui qui jeûne le Ramadan avec foi et en espérant la récompense verra ses péchés passés pardonnés. »\n— Bukhari et Muslim';
 
   @override
   String get hadith22 =>
-      '\"L\'invocation entre l\'adhan et l\'iqama n\'est pas rejetée.\"\n— Abu Dawud';
+      '« L\'invocation entre l\'adhan et l\'iqama n\'est pas rejetée. »\n— Abu Dawud';
 
   @override
   String get hadith23 =>
-      '\"Celui qui construit une mosquée pour Allah, Allah lui construira une maison au Paradis.\"\n— Bukhari & Muslim';
+      '« Celui qui construit une mosquée pour Allah, Allah lui construira une maison au Paradis. »\n— Bukhari et Muslim';
 
   @override
   String get hadith24 =>
-      '\"Les meilleurs rangs pour les hommes sont les premiers, et les meilleurs rangs pour les femmes sont les derniers.\"\n— Muslim';
+      '« Les meilleurs rangs pour les hommes sont les premiers, et les meilleurs rangs pour les femmes sont les derniers. »\n— Muslim';
 
   @override
   String get hadith25 =>
-      '\"Le jeûne est un bouclier contre le feu de l\'Enfer.\"\n— Nasa\'i';
+      '« Le jeûne est un bouclier contre le feu de l\'Enfer. »\n— Nasa\'i';
 
   @override
   String get hadith26 =>
-      '\"Celui qui prie douze rak\'ahs de prière surérogatoire, une maison lui sera construite au Paradis.\"\n— Muslim';
+      '« Celui qui prie douze rakaat de sunna, une maison lui sera construite au Paradis. »\n— Muslim';
 
   @override
   String get hadith27 =>
-      '\"Celui qui maîtrise le Coran sera en compagnie des anges nobles et vertueux.\"\n— Bukhari & Muslim';
+      '« Celui qui maîtrise le Coran sera en compagnie des anges nobles et vertueux. »\n— Bukhari et Muslim';
 
   @override
   String get hadith29 =>
-      '\"La meilleure des aumônes est de donner de l\'eau à boire.\"\n— Ahmad';
+      '« La meilleure des aumônes est de donner de l\'eau à boire. »\n— Ahmad';
 
   @override
   String get hadith30 =>
-      '\"Celui qui soulage un croyant d\'une difficulté, Allah le soulagera d\'une difficulté au Jour du Jugement.\"\n— Muslim';
+      '« Celui qui soulage un croyant d\'une difficulté, Allah le soulagera d\'une difficulté au Jour du Jugement. »\n— Muslim';
 
   @override
   String get hadith32 =>
-      '\"La pudeur fait partie de la foi.\"\n— Bukhari & Muslim';
+      '« La pudeur fait partie de la foi. »\n— Bukhari et Muslim';
 
   @override
   String get hadith34 =>
-      '\"Celui qui fait preuve de patience, Allah lui accordera la patience.\"\n— Bukhari & Muslim';
+      '« Celui qui fait preuve de patience, Allah lui accordera la patience. »\n— Bukhari et Muslim';
 
   @override
   String get hadith36 =>
-      '\"Aucun de vous ne croit véritablement tant qu\'il n\'aime pas pour son frère ce qu\'il aime pour lui-même.\"\n— Bukhari & Muslim';
+      '« Aucun de vous ne croit véritablement tant qu\'il n\'aime pas pour son frère ce qu\'il aime pour lui-même. »\n— Bukhari et Muslim';
 
   @override
   String get hadith37 =>
-      '\"Nourrissez les affamés, visitez les malades et libérez les captifs.\"\n— Bukhari';
+      '« Nourrissez les affamés, visitez les malades et libérez les captifs. »\n— Bukhari';
 
   @override
   String get hadith38 =>
-      '\"L\'homme fort n\'est pas celui qui l\'emporte à la lutte, mais celui qui se maîtrise dans la colère.\"\n— Bukhari & Muslim';
+      '« L\'homme fort n\'est pas celui qui l\'emporte à la lutte, mais celui qui se maîtrise dans la colère. »\n— Bukhari et Muslim';
 
   @override
   String get hadith40 =>
-      '\"Dites \'SubhanAllah\', \'Alhamdulillah\' et \'Allahu Akbar\' trente-trois fois chacun après chaque prière.\"\n— Muslim';
+      '« Dites “SubhanAllah”, “Alhamdulillah” et “Allahu Akbar” trente-trois fois chacun après chaque prière. »\n— Muslim';
 
   @override
   String get hadith41 =>
-      '\"Le meilleur dhikr est La ilaha illallah.\"\n— Tirmidhi';
+      '« Le meilleur dhikr est “La ilaha illa Allah”. »\n— Tirmidhi';
 
   @override
   String get hadith42 =>
-      '\"Il y a deux bienfaits dont beaucoup de gens sont dupés : la santé et le temps libre.\"\n— Bukhari';
+      '« Il y a deux bienfaits que beaucoup de gens gaspillent : la santé et le temps libre. »\n— Bukhari';
 
   @override
   String get hadith43 =>
-      '\"Profite de cinq choses avant cinq autres : ta jeunesse avant ta vieillesse, ta santé avant ta maladie, ta richesse avant ta pauvreté, ton temps libre avant ton occupation, et ta vie avant ta mort.\"\n— Hakim';
+      '« Profite de cinq choses avant cinq autres : ta jeunesse avant ta vieillesse, ta santé avant ta maladie, ta richesse avant ta pauvreté, ton temps libre avant tes occupations et ta vie avant ta mort. »\n— Hakim';
 
   @override
   String get hadith44 =>
-      '\"Celui qui récite la sourate al-Ikhlas dix fois, Allah lui construira une maison au Paradis.\"\n— Ahmad';
+      '« Celui qui récite la sourate Al-Ikhlas dix fois, Allah lui construira une maison au Paradis. »\n— Ahmad';
 
   @override
   String get hadith45 =>
-      '\"La meilleure prière après les prières obligatoires est la prière de la nuit.\"\n— Muslim';
+      '« La meilleure prière après les prières obligatoires est la prière de la nuit. »\n— Muslim';
 
   @override
   String get hadith46 =>
-      '\"L\'aumône éteint les péchés comme l\'eau éteint le feu.\"\n— Tirmidhi';
+      '« L\'aumône éteint les péchés comme l\'eau éteint le feu. »\n— Tirmidhi';
 
   @override
   String get hadith47 =>
-      '\"Celui qui maintient les liens de parenté n\'est pas celui qui rend la pareille. C\'est celui qui les maintient même quand on les rompt avec lui.\"\n— Bukhari';
+      '« Celui qui maintient les liens de parenté n\'est pas celui qui rend la pareille. C\'est celui qui les maintient même quand on les rompt avec lui. »\n— Bukhari';
 
   @override
   String get hadith49 =>
-      '\"Celui qui mange et dit : \'Louange à Allah qui m\'a nourri de cela et me l\'a accordé sans aucune force ni puissance de ma part,\' ses péchés passés lui seront pardonnés.\"\n— Tirmidhi';
+      '« Celui qui mange et dit : “Louange à Allah qui m\'a nourri de cela et me l\'a accordé sans aucune force ni puissance de ma part”, ses péchés passés lui seront pardonnés. »\n— Tirmidhi';
 
   @override
   String get hadith53 =>
-      '\"Ne méprise aucun acte de bien, ne serait-ce que de rencontrer ton frère avec un visage souriant.\"\n— Muslim';
+      '« Ne méprise aucun acte de bien, ne serait-ce que de rencontrer ton frère avec un visage souriant. »\n— Muslim';
 
   @override
   String get hadith54 =>
-      '\"Les meilleurs d\'entre vous sont ceux qui sont les meilleurs envers leur famille.\"\n— Tirmidhi';
+      '« Les meilleurs d\'entre vous sont ceux qui sont les meilleurs envers leur famille. »\n— Tirmidhi';
 
   @override
   String get hadith55 =>
-      '\"Celui qui récite les deux derniers versets de la sourate al-Baqarah la nuit, ils lui suffiront.\"\n— Bukhari & Muslim';
+      '« Celui qui récite les deux derniers versets de la sourate Al-Baqara la nuit, ils lui suffiront. »\n— Bukhari et Muslim';
 
   @override
   String get hadith56 =>
-      '\"Le monde est un bien dont on profite, et le meilleur de ses biens est une épouse vertueuse.\"\n— Muslim';
+      '« Ce bas monde est jouissance, et sa meilleure jouissance est une épouse vertueuse. »\n— Muslim';
 
   @override
   String get hadith57 =>
-      '\"Trois invocations ne sont jamais rejetées : l\'invocation du jeûneur, celle du dirigeant juste et celle de l\'opprimé.\"\n— Tirmidhi';
+      '« Trois invocations ne sont jamais rejetées : l\'invocation du jeûneur, celle du dirigeant juste et celle de l\'opprimé. »\n— Tirmidhi';
 
   @override
   String get hadith58 =>
-      '\"Celui qui prie sur moi une fois, Allah priera sur lui dix fois.\"\n— Muslim';
+      '« Celui qui prie sur moi une fois, Allah priera sur lui dix fois. »\n— Muslim';
 
   @override
   String get hadith65 =>
-      '\"Le croyant est le miroir du croyant.\"\n— Abu Dawud';
+      '« Le croyant est le miroir du croyant. »\n— Abu Dawud';
 
   @override
   String get hadith66 =>
-      '\"La véracité mène à la vertu, et la vertu mène au Paradis.\"\n— Bukhari & Muslim';
+      '« La véracité mène à la vertu, et la vertu mène au Paradis. »\n— Bukhari et Muslim';
 
   @override
   String get hadith67 =>
-      '\"Restitue le dépôt à celui qui te l\'a confié, et ne trahis pas celui qui t\'a trahi.\"\n— Abu Dawud & Tirmidhi';
+      '« Restitue le dépôt à celui qui te l\'a confié, et ne trahis pas celui qui t\'a trahi. »\n— Abu Dawud et Tirmidhi';
 
   @override
   String get hadith68 =>
-      '\"Aucune fatigue, maladie, chagrin, tristesse, douleur ou détresse n\'atteint un musulman — même la piqûre d\'une épine — sans qu\'Allah n\'efface par cela une partie de ses péchés.\"\n— Bukhari & Muslim';
+      '« Aucune fatigue, maladie, chagrin, tristesse, douleur ou détresse n\'atteint un musulman — même la piqûre d\'une épine — sans qu\'Allah n\'efface par cela une partie de ses péchés. »\n— Bukhari et Muslim';
 
   @override
   String get hadith69 =>
-      '\"L\'invocation d\'un musulman pour son frère en son absence est toujours exaucée.\"\n— Muslim';
+      '« L\'invocation d\'un musulman pour son frère en son absence est toujours exaucée. »\n— Muslim';
 
   @override
   String get hadith70 =>
-      '\"Celui qui demande le Paradis à Allah trois fois, le Paradis dit : Ô Allah, fais-le entrer au Paradis.\"\n— Tirmidhi';
+      '« Celui qui demande le Paradis à Allah trois fois, le Paradis dit : “Ô Allah, fais-le entrer au Paradis.” »\n— Tirmidhi';
 
   @override
   String get hadith71 =>
-      '\"Le jeûne le plus méritoire après le Ramadan est celui du mois d\'Allah, Muharram.\"\n— Muslim';
+      '« Le jeûne le plus méritoire après le Ramadan est celui du mois d\'Allah, Muharram. »\n— Muslim';
 
   @override
   String get hadith72 =>
-      '\"Celui qui accomplit le Hajj sans commettre d\'obscénité ni de péché revient comme au jour où sa mère l\'a mis au monde.\"\n— Bukhari & Muslim';
+      '« Celui qui accomplit le Hajj sans commettre d\'obscénité ni de péché revient comme au jour où sa mère l\'a mis au monde. »\n— Bukhari et Muslim';
 
   @override
   String get hadith73 =>
-      '\"D\'une Omra à l\'autre, c\'est une expiation pour ce qui se trouve entre les deux.\"\n— Bukhari & Muslim';
+      '« D\'une Omra à l\'autre, c\'est une expiation pour ce qui se trouve entre les deux. »\n— Bukhari et Muslim';
 
   @override
   String get hadith74 =>
-      '\"Hâtez-vous de faire les bonnes actions avant que les épreuves ne surviennent comme des portions d\'une nuit sombre.\"\n— Muslim';
+      '« Hâtez-vous d\'accomplir de bonnes actions avant que les épreuves ne surviennent comme des pans d\'une nuit obscure. »\n— Muslim';
 
   @override
   String get hadith75 =>
-      '\"Les deux rak\'ahs du Fajr sont meilleures que le monde et tout ce qu\'il contient.\"\n— Muslim';
+      '« Les deux rakaat du Fajr sont meilleures que ce bas monde et tout ce qu\'il contient. »\n— Muslim';
 
   @override
   String get hadith77 =>
-      '\"Si vous placiez votre confiance en Allah comme il se doit, Il vous accorderait votre subsistance comme Il l\'accorde aux oiseaux.\"\n— Tirmidhi';
+      '« Si vous placiez votre confiance en Allah comme il se doit, Il vous accorderait votre subsistance comme Il l\'accorde aux oiseaux. »\n— Tirmidhi';
 
   @override
   String get hadith78 =>
-      '\"Celui qui rend visite à un malade se trouve dans un jardin du Paradis jusqu\'à ce qu\'il revienne.\"\n— Muslim';
+      '« Celui qui rend visite à un malade se trouve dans la cueillette du Paradis jusqu\'à son retour. »\n— Muslim';
 
   @override
   String get hadith79 =>
-      '\"Répandez la paix, nourrissez les affamés et priez la nuit pendant que les gens dorment — vous entrerez au Paradis en paix.\"\n— Tirmidhi';
+      '« Répandez la paix, nourrissez les affamés et priez la nuit pendant que les gens dorment — vous entrerez au Paradis en paix. »\n— Tirmidhi';
 
   @override
   String get hadith80 =>
-      '\"Celui qui n\'est pas reconnaissant envers les gens n\'est pas reconnaissant envers Allah.\"\n— Tirmidhi';
+      '« Celui qui n\'est pas reconnaissant envers les gens n\'est pas reconnaissant envers Allah. »\n— Tirmidhi';
 
   @override
   String get hadith81 =>
-      '\"L\'envie n\'est permise que dans deux cas : un homme à qui Allah a donné des richesses qu\'il dépense dans le bien, et un homme à qui Allah a donné la sagesse et qui juge et enseigne avec elle.\"\n— Bukhari & Muslim';
+      '« L\'envie n\'est permise que dans deux cas : un homme à qui Allah a donné des richesses qu\'il dépense dans le bien, et un homme à qui Allah a donné la sagesse et qui juge et enseigne avec elle. »\n— Bukhari et Muslim';
 
   @override
   String get hadith82 =>
-      '\"L\'homme adopte la religion de son ami intime ; que chacun de vous prenne garde à qui il prend pour ami.\"\n— Abu Dawud & Tirmidhi';
+      '« L\'homme suit la religion de son ami intime ; que chacun de vous regarde donc qui il prend pour ami. »\n— Abu Dawud et Tirmidhi';
 
   @override
   String get hadith85 =>
-      '\"Celui qui abandonne quelque chose pour l\'amour d\'Allah, Allah le remplacera par quelque chose de meilleur.\"\n— Ahmad';
+      '« Celui qui délaisse une chose pour Allah, Allah la lui remplacera par une chose meilleure. »\n— Ahmad';
 
   @override
   String get hadith86 =>
-      '\"Celui qui couvre les défauts d\'un musulman, Allah couvrira ses défauts au Jour du Jugement.\"\n— Bukhari & Muslim';
+      '« Celui qui couvre les défauts d\'un musulman, Allah couvrira ses défauts au Jour du Jugement. »\n— Bukhari et Muslim';
 
   @override
   String get hadith87 =>
-      '\"Sois en ce monde comme un étranger ou un voyageur.\"\n— Bukhari';
+      '« Sois en ce monde comme un étranger ou un voyageur. »\n— Bukhari';
 
   @override
   String get hadith88 =>
-      '\"Celui qui facilite les choses à une personne en difficulté, Allah lui facilitera les choses en ce monde et dans l\'au-delà.\"\n— Muslim';
+      '« Celui qui facilite les choses à une personne en difficulté, Allah lui facilitera les choses en ce monde et dans l\'au-delà. »\n— Muslim';
 
   @override
   String get hadith89 =>
-      '\"La récompense des actes dépend des intentions.\"\n— Bukhari & Muslim';
+      '« La récompense des actes dépend des intentions. »\n— Bukhari et Muslim';
 
   @override
   String get hadith90 =>
-      '\"Évitez la suspicion, car la suspicion est la plus mensongère des paroles.\"\n— Bukhari & Muslim';
+      '« Évitez la suspicion, car la suspicion est la plus mensongère des paroles. »\n— Bukhari et Muslim';
 
   @override
   String get hadith93 =>
-      '\"Mangez ensemble et mentionnez le nom d\'Allah, et cela sera béni pour vous.\"\n— Abu Dawud';
+      '« Mangez ensemble et mentionnez le nom d\'Allah, et vous y trouverez la bénédiction. »\n— Abu Dawud';
 
   @override
   String get hadith94 =>
-      '\"Aucun groupe ne s\'assoit pour évoquer Allah sans que les anges ne l\'entourent, que la miséricorde ne le recouvre et que la sérénité ne descende sur lui.\"\n— Muslim';
+      '« Aucun groupe ne s\'assoit pour évoquer Allah sans que les anges ne l\'entourent, que la miséricorde ne le recouvre et que la sérénité ne descende sur lui. »\n— Muslim';
 
   @override
   String get hadith95 =>
-      '\"Allah n\'augmente un serviteur qui pardonne qu\'en honneur.\"\n— Muslim';
+      '« Allah ne fait qu\'accroître en honneur le serviteur qui pardonne. »\n— Muslim';
 
   @override
   String get hadith96 =>
-      '\"Attache ton chameau, puis place ta confiance en Allah.\"\n— Tirmidhi';
+      '« Attache ta chamelle, puis place ta confiance en Allah. »\n— Tirmidhi';
 
   @override
   String get hadith97 =>
-      '\"Comme l\'affaire du croyant est merveilleuse — tout est un bien pour lui.\"\n— Muslim';
+      '« Comme l\'affaire du croyant est étonnante ! Tout est un bien pour lui. »\n— Muslim';
 
   @override
   String get hadith98 =>
-      '\"Un musulman est le frère d\'un musulman : il ne lui fait pas de tort, ne l\'abandonne pas et ne le méprise pas.\"\n— Muslim';
+      '« Le musulman est le frère du musulman : il ne lui fait pas de tort, ne l\'abandonne pas et ne le méprise pas. »\n— Muslim';
 
   @override
   String get delete => 'Supprimer';
@@ -1077,22 +1076,22 @@ class AppLocalizationsFr extends AppLocalizations {
   String get remove => 'Retirer';
 
   @override
-  String get deleteAmalConfirmTitle => 'Retirer du suivi ?';
+  String get deleteAmalConfirmTitle => 'Retirer du suivi ?';
 
   @override
   String deleteAmalConfirmBody(String title) {
-    return '« $title » sera masqué dans votre liste. Votre historique est conservé.';
+    return '« $title » n\'apparaîtra plus dans votre liste. Votre historique est conservé.';
   }
 
   @override
   String get genericError => 'Une erreur s\'est produite. Veuillez réessayer.';
 
   @override
-  String get notificationChannelName => 'Rappels d\'amal';
+  String get notificationChannelName => 'Rappels des amals';
 
   @override
   String get notificationChannelDescription =>
-      'Rappels quotidiens pour vos amal suivis.';
+      'Rappels quotidiens pour les amals que vous suivez.';
 
   @override
   String get invalidAmalId => 'Identifiant d\'amal invalide';
@@ -1110,60 +1109,60 @@ class AppLocalizationsFr extends AppLocalizations {
   String get tutorialDone => 'Terminé';
 
   @override
-  String get tutorialTapTitle => 'Appuyez pour accomplir';
+  String get tutorialTapTitle => 'Appuyez pour cocher';
 
   @override
   String get tutorialTapBody =>
-      'Une pression marque un amal comme accompli pour aujourd\'hui. Appuyez à nouveau pour annuler.';
+      'Un appui coche l\'amal pour aujourd\'hui. Appuyez de nouveau pour annuler.';
 
   @override
-  String get tutorialEditTitle => 'Double-appui pour modifier';
+  String get tutorialEditTitle => 'Appuyez deux fois pour modifier';
 
   @override
   String get tutorialEditBody =>
       'Ouvre le formulaire de modification — renommez-le ou changez sa fréquence.';
 
   @override
-  String get tutorialReorderTitle => 'Appui long pour réorganiser';
+  String get tutorialReorderTitle => 'Maintenez pour réorganiser';
 
   @override
   String get tutorialReorderBody =>
-      'Maintenez une ligne, puis faites-la glisser. Votre ordre est enregistré.';
+      'Maintenez le doigt sur une ligne, puis faites-la glisser. L\'ordre est enregistré.';
 
   @override
   String get tutorialRemoveTitle => 'Balayez pour retirer';
 
   @override
   String get tutorialRemoveBody =>
-      'Balayez la ligne sur le côté pour la masquer aujourd\'hui, ou arrêtez son suivi.';
+      'Balayez la ligne sur le côté pour la masquer aujourd\'hui ou arrêter son suivi.';
 
   @override
   String get tutorialCountTitle => 'Compter les répétitions';
 
   @override
   String get tutorialCountBody =>
-      'Pour un amal dont l\'objectif dépasse un, utilisez − et + à chaque répétition.';
+      'Pour un amal dont l\'objectif est supérieur à 1, utilisez − et + à chaque répétition.';
 
   @override
-  String get tutorialViewTitle => 'Grouper ou aplatir';
+  String get tutorialViewTitle => 'Par catégorie ou en liste';
 
   @override
   String get tutorialViewBody =>
       'Basculez entre le regroupement par catégorie et une liste simple.';
 
   @override
-  String get tutorialChallengeLogTitle => 'Appuyez pour enregistrer le jour';
+  String get tutorialChallengeLogTitle => 'Appuyez pour valider la journée';
 
   @override
   String get tutorialChallengeLogBody =>
-      'Une pression enregistre le jour. Dans un défi compté, chaque pression ajoute un pas.';
+      'Un appui valide la journée. Pour un défi chiffré, chaque appui fait avancer le compteur d\'un cran.';
 
   @override
-  String get tutorialChallengeOpenTitle => 'Double-appui pour ouvrir';
+  String get tutorialChallengeOpenTitle => 'Appuyez deux fois pour ouvrir';
 
   @override
   String get tutorialChallengeOpenBody =>
-      'Ouvre le défi — voyez chaque jour, corrigez un oubli ou supprimez-le.';
+      'Ouvre le défi — consultez chaque jour, corrigez un jour oublié ou supprimez-le.';
 
   @override
   String get tutorialChallengeDeleteBody =>
@@ -1190,8 +1189,8 @@ class AppLocalizationsFr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count défis terminés — $title en dernier',
-      one: 'Défi terminé : $title',
+      other: '$count défis terminés — le dernier : $title',
+      one: 'Défi terminé : $title',
     );
     return '$_temp0';
   }
@@ -1217,24 +1216,24 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get deleteChallengeConfirm =>
-      'Supprimer ce défi et toute la progression enregistrée ?';
+      'Supprimer ce défi et toute la progression enregistrée ?';
 
   @override
-  String get challengeShapeQuestion => 'Quel type de défi est-ce ?';
+  String get challengeShapeQuestion => 'Quel type de défi est-ce ?';
 
   @override
   String get challengeShapeTotal => 'Un total à atteindre';
 
   @override
   String get challengeShapeTotalBody =>
-      '1000 salawat, 30 juz. Vous notez des quantités et le total monte.';
+      '1000 salawat, 30 juz. Vous notez des quantités et le total augmente.';
 
   @override
   String get challengeShapeStreak => 'Une série quotidienne';
 
   @override
   String get challengeShapeStreakBody =>
-      'Tahajjud, Fajr en groupe. Une coche par jour, la quantité importe peu.';
+      'Tahajjud, Fajr en groupe. Une coche par jour, peu importe la quantité.';
 
   @override
   String get challengeTargetLabel => 'Objectif';
@@ -1252,10 +1251,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get challengeOneTapAdds => 'Un appui ajoute';
 
   @override
-  String get challengeHowManyDays => 'Combien de jours ?';
+  String get challengeHowManyDays => 'Combien de jours ?';
 
   @override
-  String get challengeReachHowMuch => 'Atteindre combien ?';
+  String get challengeReachHowMuch => 'Atteindre combien ?';
 
   @override
   String get challengeSpreadOver => 'Durée';
@@ -1267,13 +1266,13 @@ class AppLocalizationsFr extends AppLocalizations {
   String get challengeSpreadLonger => 'Une période plus longue';
 
   @override
-  String get challengeByWhen => 'Pour quand ?';
+  String get challengeByWhen => 'Pour quand ?';
 
   @override
   String get challengeWindowDuration => 'Terminer en';
 
   @override
-  String get challengeByDate => 'À une date';
+  String get challengeByDate => 'Avant une date';
 
   @override
   String challengePlanRange(String start, String end) {
@@ -1282,7 +1281,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String challengePlanExact(String start, String end) {
-    return 'Du $start au $end · un par jour, chaque jour';
+    return 'Du $start au $end · un par jour, tous les jours';
   }
 
   @override
@@ -1369,7 +1368,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String challengeLastDay(String remaining) {
-    return 'Dernier jour · $remaining restant';
+    return 'Dernier jour · encore $remaining';
   }
 
   @override
@@ -1388,7 +1387,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String challengeExpiredBody(String title, String done, String target) {
-    return '$title s\'est clôturé à $done sur $target.';
+    return '$title : terminé à $done sur $target.';
   }
 
   @override
@@ -1405,12 +1404,12 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String challengeNudgeBody(String title, String rate) {
-    return '$title : $rate par jour pour finir à temps.';
+    return '$title : $rate par jour pour finir à temps.';
   }
 
   @override
   String challengeLastDayBody(String title, String remaining) {
-    return '$title : dernier jour — $remaining restant.';
+    return '$title : dernier jour — encore $remaining.';
   }
 
   @override
@@ -1444,10 +1443,10 @@ class AppLocalizationsFr extends AppLocalizations {
   String get challengeTmplKhatm => 'Khatm en 30 jours';
 
   @override
-  String get challengeTmplFajrJamaah => '30 jours Fajr en groupe';
+  String get challengeTmplFajrJamaah => '30 jours de Fajr en groupe';
 
   @override
-  String get challengeTmplSadaqah => 'Sadaqa 30 jours';
+  String get challengeTmplSadaqah => '30 jours de sadaqa';
 
   @override
   String get listSeparator => ' · ';
@@ -1488,7 +1487,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get supporterThanks =>
-      'Qu\'Allah vous récompense — in shâ\' Allah, Muhasaba reste gratuite et sans publicité.';
+      'Qu\'Allah vous récompense — Muhasaba restera gratuite et sans publicité, inch\'Allah.';
 
   @override
   String supporterSince(String tier, String month) {
@@ -1516,7 +1515,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tipSheetBody =>
-      'Choisissez le montant que vous voulez, aussi souvent que vous le souhaitez. Les pourboires servent à l\'entretien de l\'application — in shâ\' Allah, elle reste gratuite et sans publicité. En remerciement, vous apparaîtrez comme soutien dans les Paramètres.';
+      'Choisissez le montant que vous voulez, aussi souvent que vous le souhaitez. Les pourboires servent à l\'entretien de l\'application, qui restera gratuite et sans publicité, inch\'Allah. En remerciement, vous serez indiqué comme soutien dans les Paramètres.';
 
   @override
   String tipSheetSupporterLine(String tier) {
@@ -1534,14 +1533,14 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get tipSheetOtherWays =>
-      'Vous ne trouvez pas d\'option qui vous convienne ?';
+      'Vous ne trouvez pas d\'option qui vous convienne ?';
 
   @override
   String get tipSheetWriteToUs => 'Écrivez-nous';
 
   @override
   String get supportEmailBody =>
-      'As-salamu alaykum,\n\nJe souhaite soutenir directement le développement de Muhasaba.\n\nPays :\nComment je souhaite l\'envoyer :\nMontant (facultatif) :';
+      'As-salamu alaykum,\n\nJe souhaite soutenir directement le développement de Muhasaba.\n\nPays :\nMoyen d\'envoi souhaité :\nMontant (facultatif) :';
 
   @override
   String tipBusy(String store) {
@@ -1569,7 +1568,7 @@ class AppLocalizationsFr extends AppLocalizations {
       'Les achats ne sont pas disponibles sur cet appareil pour le moment.';
 
   @override
-  String get optionSetJamaa => 'Congrégation';
+  String get optionSetJamaa => 'Jamaa';
 
   @override
   String get optionJamaaAlone => 'Seul';
@@ -1644,7 +1643,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get optionSetNameLabel => 'Nom de l\'ensemble';
 
   @override
-  String get optionSetNameHint => 'ex. Congrégation';
+  String get optionSetNameHint => 'ex. : Jamaa';
 
   @override
   String get optionsLabel => 'Options';
@@ -1659,7 +1658,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String optionsMaxReached(int max) {
-    return 'Maximum de $max options.';
+    return '$max options maximum.';
   }
 
   @override
@@ -1667,7 +1666,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String optionSetKeptForHistory(String labels) {
-    return 'Conservé pour l\'historique : $labels';
+    return 'Conservé pour l\'historique : $labels';
   }
 
   @override
@@ -1675,7 +1674,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get optionSetDeleteConfirm =>
-      'Les amal utilisant cet ensemble n\'affichent plus d\'options. Les jours que vous avez déjà enregistrés conservent leur choix.';
+      'Les amals qui utilisent cet ensemble n\'affichent plus d\'options. Les jours déjà enregistrés conservent leur choix.';
 
   @override
   String get optionSetNameRequired => 'Donnez un nom à l\'ensemble';
@@ -1702,14 +1701,14 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get requireChoiceHelp =>
-      'La ligne ne sera pas cochée tant qu\'une option n\'est pas choisie';
+      'La ligne ne se coche pas tant qu\'aucune option n\'est choisie';
 
   @override
   String get requireChoicePickSetFirst => 'Choisissez d\'abord un ensemble';
 
   @override
   String get requireChoiceCountHelp =>
-      'Les amal comptés sont complétés par le compteur';
+      'Les amals à compter se valident avec le compteur';
 
   @override
   String optionsUsedOf(int used, int max) {
@@ -1739,10 +1738,10 @@ class AppLocalizationsFr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count fois',
-      one: '1 fois',
+      other: '$count accomplissements',
+      one: '1 accomplissement',
     );
-    return 'Part des choix enregistrés sur $_temp0';
+    return 'Sur $_temp0 avec un choix enregistré';
   }
 
   @override
@@ -1750,8 +1749,8 @@ class AppLocalizationsFr extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       total,
       locale: localeName,
-      other: '$total jours terminés',
-      one: '1 jour terminé',
+      other: '$total jours accomplis',
+      one: '1 jour accompli',
     );
     return 'Aucun choix enregistré — $none sur $_temp0';
   }
@@ -1772,7 +1771,7 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String optionBreakdownSwipeHint(int count) {
-    return '$count ensembles · balayez';
+    return '$count ensembles · faites défiler';
   }
 
   @override
@@ -1797,7 +1796,7 @@ class AppLocalizationsFr extends AppLocalizations {
     String worst,
     String worstShare,
   ) {
-    return 'Part la plus élevée : $best ($bestShare) ; la plus basse : $worst ($worstShare).';
+    return 'Part la plus élevée : $best ($bestShare) ; la plus basse : $worst ($worstShare).';
   }
 
   @override
@@ -1843,19 +1842,19 @@ class AppLocalizationsFr extends AppLocalizations {
   String get amalQada => 'Prières à rattraper';
 
   @override
-  String get amalFajrSunnah => 'Sunna de Fajr';
+  String get amalFajrSunnah => 'Sunna du Fajr';
 
   @override
-  String get amalDhuhrSunnah => 'Sunna de Dhuhr';
+  String get amalDhuhrSunnah => 'Sunna du Dhuhr';
 
   @override
-  String get amalAsrSunnah => 'Sunna d\'Asr';
+  String get amalAsrSunnah => 'Sunna de l\'Asr';
 
   @override
-  String get amalMaghribSunnah => 'Sunna de Maghrib';
+  String get amalMaghribSunnah => 'Sunna du Maghrib';
 
   @override
-  String get amalIshaSunnah => 'Sunna d\'Isha';
+  String get amalIshaSunnah => 'Sunna de l\'Isha';
 
   @override
   String get amalRawatib => 'Sunnas rawatib';
@@ -1873,7 +1872,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get amalIshraq => 'Prière d\'Ishraq';
 
   @override
-  String get amalWuduPrayer => 'Deux rak\'as après les ablutions';
+  String get amalWuduPrayer => 'Deux rakaat après les ablutions';
 
   @override
   String get amalTahiyyah => 'Tahiyyat al-masjid';
@@ -1885,37 +1884,37 @@ class AppLocalizationsFr extends AppLocalizations {
   String get amalAfterSalah => 'Adhkar après la prière';
 
   @override
-  String get amalAfterFajr => 'Adhkar après Fajr';
+  String get amalAfterFajr => 'Adhkar après le Fajr';
 
   @override
-  String get amalAfterDhuhr => 'Adhkar après Dhuhr';
+  String get amalAfterDhuhr => 'Adhkar après le Dhuhr';
 
   @override
-  String get amalAfterAsr => 'Adhkar après Asr';
+  String get amalAfterAsr => 'Adhkar après l\'Asr';
 
   @override
-  String get amalAfterMaghrib => 'Adhkar après Maghrib';
+  String get amalAfterMaghrib => 'Adhkar après le Maghrib';
 
   @override
-  String get amalAfterIsha => 'Adhkar après Isha';
+  String get amalAfterIsha => 'Adhkar après l\'Isha';
 
   @override
   String get amalAyatKursi => 'Ayat al-Kursi';
 
   @override
-  String get amalKursiFajr => 'Ayat al-Kursi après Fajr';
+  String get amalKursiFajr => 'Ayat al-Kursi après le Fajr';
 
   @override
-  String get amalKursiDhuhr => 'Ayat al-Kursi après Dhuhr';
+  String get amalKursiDhuhr => 'Ayat al-Kursi après le Dhuhr';
 
   @override
-  String get amalKursiAsr => 'Ayat al-Kursi après Asr';
+  String get amalKursiAsr => 'Ayat al-Kursi après l\'Asr';
 
   @override
-  String get amalKursiMaghrib => 'Ayat al-Kursi après Maghrib';
+  String get amalKursiMaghrib => 'Ayat al-Kursi après le Maghrib';
 
   @override
-  String get amalKursiIsha => 'Ayat al-Kursi après Isha';
+  String get amalKursiIsha => 'Ayat al-Kursi après l\'Isha';
 
   @override
   String get amalSayyidIstighfar => 'Sayyid al-Istighfar';
@@ -1951,7 +1950,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get amalDuaIqamah => 'Doua entre l\'adhan et l\'iqama';
 
   @override
-  String get amalDuaSujood => 'Doua en prosternation';
+  String get amalDuaSujood => 'Doua pendant la prosternation';
 
   @override
   String get amalDuaParents => 'Doua pour les parents';
@@ -1987,7 +1986,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get amalHifz => 'Mémorisation du Coran';
 
   @override
-  String get amalMurajaah => 'Révision de la mémorisation';
+  String get amalMurajaah => 'Révision du Coran mémorisé';
 
   @override
   String get amalTafsir => 'Tafsir';
@@ -2044,7 +2043,7 @@ class AppLocalizationsFr extends AppLocalizations {
   String get amalFiqh => 'Étudier le fiqh';
 
   @override
-  String get amalMuhasaba => 'Mouhasaba du soir';
+  String get amalMuhasaba => 'Muhasaba du soir';
 
   @override
   String get amalSpeakGood => 'Dire du bien ou se taire';
@@ -2126,17 +2125,17 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String libraryAddedShowsOn(String days) {
-    return 'Ajouté · apparaît : $days';
+    return 'Ajouté · apparaît : $days';
   }
 
   @override
   String libraryNoMatch(String query) {
-    return 'Aucun amal ne correspond à « $query »';
+    return 'Aucun amal ne correspond à « $query »';
   }
 
   @override
   String libraryCreateNamed(String query) {
-    return 'Créer « $query »';
+    return 'Créer « $query »';
   }
 
   @override

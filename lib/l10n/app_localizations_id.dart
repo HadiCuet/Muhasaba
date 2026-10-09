@@ -49,7 +49,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get archivedEmpty =>
-      'Belum ada apa pun di sini. Amal yang Anda hapus dari pelacakan muncul di sini, siap dipulihkan.';
+      'Belum ada apa-apa di sini. Amal yang Anda hapus dari pelacakan akan muncul di sini agar bisa dipulihkan.';
 
   @override
   String archivedStoppedOn(String date) {
@@ -71,7 +71,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get newAmal => 'Amal baru';
 
   @override
-  String get editAmal => 'Edit amal';
+  String get editAmal => 'Ubah amal';
 
   @override
   String get newAmalTitle => 'Amal baru';
@@ -150,7 +150,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get dayOfWeek => 'Hari dalam seminggu';
 
   @override
-  String get anyDay => 'Semua';
+  String get anyDay => 'Bebas';
 
   @override
   String get anyDayHint =>
@@ -230,7 +230,7 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get anyDate => 'Semua';
+  String get anyDate => 'Bebas';
 
   @override
   String get anyDateHint =>
@@ -242,7 +242,7 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get startPreChecked => 'Mulai tercentang';
+  String get startPreChecked => 'Otomatis tercentang';
 
   @override
   String get startPreCheckedSubtitle =>
@@ -271,14 +271,14 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get dailyReminderSubtitle =>
-      'Pengingat lembut untuk melacak amal Anda';
+      'Pengingat ringan untuk mencatat amal Anda';
 
   @override
   String get dailyReminderTimeLabel => 'Waktu pengingat';
 
   @override
   String get dailyReminderBody =>
-      'Luangkan waktu sejenak untuk melacak amal hari ini.';
+      'Luangkan waktu sejenak untuk mencatat amal hari ini.';
 
   @override
   String get groupByCategory => 'Kelompokkan berdasarkan kategori';
@@ -421,7 +421,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String rolloverSubtitle(String time) {
-    return 'Amal kemarin tetap bisa diedit sampai $time.';
+    return 'Amal kemarin tetap bisa diubah hingga pukul $time.';
   }
 
   @override
@@ -438,7 +438,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get startOfMonthClamped =>
-      'Tanggal di atas 28 akan disesuaikan ke hari terakhir bulan yang lebih pendek.';
+      'Tanggal setelah 28 disesuaikan ke hari terakhir pada bulan yang lebih pendek.';
 
   @override
   String get sectionAppearance => 'Tampilan';
@@ -465,11 +465,11 @@ class AppLocalizationsId extends AppLocalizations {
   String get systemDefault => 'Bawaan sistem';
 
   @override
-  String get aboutTitle => 'Muhasaba';
+  String get aboutTitle => 'Muhasabah';
 
   @override
   String get aboutSubtitle =>
-      'Jurnal muhasabah pribadi untuk akuntabilitas deen. Semua data tersimpan di perangkat ini.';
+      'Jurnal pribadi untuk muhasabah amal ibadah. Semua data tersimpan di perangkat ini.';
 
   @override
   String get statsTitle => 'Statistik';
@@ -489,7 +489,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get thisMonth => 'Bulan ini';
 
   @override
-  String get totalCompletions => 'total penyelesaian';
+  String get totalCompletions => 'total selesai';
 
   @override
   String get streakCurrent => 'Saat ini';
@@ -559,7 +559,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get statsThisMonth => 'Bulan Ini';
 
   @override
-  String get statsAllTime => 'Semua Waktu';
+  String get statsAllTime => 'Sepanjang Waktu';
 
   @override
   String get statsCustomRange => 'Rentang Kustom';
@@ -574,7 +574,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get statsCompleted => 'Selesai';
 
   @override
-  String get statsExpected => 'Diharapkan';
+  String get statsExpected => 'Target';
 
   @override
   String get statsVsPrevious => 'vs Sebelumnya';
@@ -600,10 +600,10 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get statsCurrentStreak => 'Streak Saat Ini';
+  String get statsCurrentStreak => 'Runtunan Saat Ini';
 
   @override
-  String get statsBestStreak => 'Streak Terbaik';
+  String get statsBestStreak => 'Runtunan Terbaik';
 
   @override
   String get statsTotalDays => 'Total Hari';
@@ -648,7 +648,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get statsFilterAmal => 'Amal';
 
   @override
-  String get statsStreaks => 'Streak';
+  String get statsStreaks => 'Runtunan';
 
   @override
   String get statsSelectDateRange => 'Pilih rentang tanggal';
@@ -661,7 +661,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String historyEmptyDay(String date) {
-    return 'Tidak ada amal yang dilacak pada $date';
+    return 'Tidak ada amal yang tercatat pada $date';
   }
 
   @override
@@ -725,7 +725,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get hadith3 =>
-      '\"Barangsiapa yang menjaga dua shalat dingin (Subuh dan Ashar), maka ia akan masuk surga.\"\n— Bukhari';
+      '\"Barangsiapa mengerjakan dua shalat di waktu dingin (Subuh dan Ashar), ia akan masuk surga.\"\n— Bukhari';
 
   @override
   String get hadith4 =>
@@ -748,7 +748,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get hadith10 =>
-      '\"Barangsiapa membaca \'SubhanAllah wa bihamdihi\' seratus kali dalam sehari, dosanya akan diampuni meski seperti buih di lautan.\"\n— Bukhari & Muslim';
+      '\"Barangsiapa membaca \'SubhanAllah wa bihamdihi\' seratus kali dalam sehari, dosanya akan diampuni walaupun sebanyak buih di lautan.\"\n— Bukhari & Muslim';
 
   @override
   String get hadith12 =>
@@ -764,7 +764,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get hadith15 =>
-      '\"Orang yang menanggung janda dan orang miskin seperti pejuang di jalan Allah.\"\n— Bukhari & Muslim';
+      '\"Orang yang mengurus janda atau orang miskin seperti pejuang di jalan Allah.\"\n— Bukhari & Muslim';
 
   @override
   String get hadith16 =>
@@ -776,11 +776,11 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get hadith18 =>
-      '\"Tidak ada makanan yang lebih baik dari hasil kerja tangannya sendiri.\"\n— Bukhari';
+      '\"Tidaklah seseorang memakan makanan yang lebih baik daripada hasil kerja tangannya sendiri.\"\n— Bukhari';
 
   @override
   String get hadith19 =>
-      '\"Allah itu lembut dan mencintai kelembutan dalam segala hal.\"\n— Bukhari & Muslim';
+      '\"Sesungguhnya Allah Maha Lembut dan mencintai kelembutan dalam segala hal.\"\n— Bukhari & Muslim';
 
   @override
   String historyDayCompleted(String completed, String total) {
@@ -794,10 +794,10 @@ class AppLocalizationsId extends AppLocalizations {
   String get settingsAppearance => 'Tampilan';
 
   @override
-  String get settingsAboutTagline => 'Pendamping deen harian Anda';
+  String get settingsAboutTagline => 'Teman ibadah harian Anda';
 
   @override
-  String get settingsRolloverSub => 'Kapan hari direset';
+  String get settingsRolloverSub => 'Saat hari berganti';
 
   @override
   String get settingsAbout => 'Tentang';
@@ -821,11 +821,11 @@ class AppLocalizationsId extends AppLocalizations {
   String get settingsReportBug => 'Laporkan bug';
 
   @override
-  String get settingsRequestFeature => 'Minta fitur';
+  String get settingsRequestFeature => 'Usulkan fitur';
 
   @override
   String settingsSupportFallback(String email) {
-    return 'Tidak dapat membuka surat. Silakan kirim email ke $email.';
+    return 'Tidak dapat membuka aplikasi email. Silakan kirim email ke $email.';
   }
 
   @override
@@ -841,7 +841,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get hadith22 =>
-      '\"Doa antara adzan dan iqamah tidak ditolak.\"\n— Abu Dawud';
+      '\"Doa antara azan dan iqamah tidak ditolak.\"\n— Abu Dawud';
 
   @override
   String get hadith23 =>
@@ -860,11 +860,11 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get hadith27 =>
-      '\"Orang yang mahir membaca Al-Quran bersama para malaikat yang mulia.\"\n— Bukhari & Muslim';
+      '\"Orang yang mahir membaca Al-Quran akan bersama para malaikat yang mulia.\"\n— Bukhari & Muslim';
 
   @override
   String get hadith29 =>
-      '\"Sebaik-baik sedekah adalah memberi minum air.\"\n— Ahmad';
+      '\"Sebaik-baik sedekah adalah memberi air minum.\"\n— Ahmad';
 
   @override
   String get hadith30 =>
@@ -880,7 +880,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get hadith36 =>
-      '\"Tidak sempurna iman seseorang di antara kalian hingga ia mencintai saudaranya seperti mencintai dirinya sendiri.\"\n— Bukhari & Muslim';
+      '\"Tidaklah sempurna iman salah seorang di antara kalian hingga ia mencintai untuk saudaranya apa yang ia cintai untuk dirinya sendiri.\"\n— Bukhari & Muslim';
 
   @override
   String get hadith37 =>
@@ -896,7 +896,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get hadith41 =>
-      '\"Dzikir terbaik adalah La ilaha illallah.\"\n— Tirmidzi';
+      '\"Sebaik-baik dzikir adalah La ilaha illallah.\"\n— Tirmidzi';
 
   @override
   String get hadith42 =>
@@ -928,7 +928,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get hadith53 =>
-      '\"Jangan meremehkan kebaikan sekecil apapun, meskipun hanya bertemu saudaramu dengan wajah berseri.\"\n— Muslim';
+      '\"Janganlah meremehkan kebaikan sekecil apa pun, meskipun hanya bertemu saudaramu dengan wajah berseri.\"\n— Muslim';
 
   @override
   String get hadith54 =>
@@ -940,7 +940,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get hadith56 =>
-      '\"Dunia adalah perhiasan, dan sebaik-baik perhiasan adalah istri yang shalihah.\"\n— Muslim';
+      '\"Dunia adalah perhiasan, dan sebaik-baik perhiasan adalah istri yang salehah.\"\n— Muslim';
 
   @override
   String get hadith57 =>
@@ -964,11 +964,11 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get hadith68 =>
-      '\"Tidaklah seorang Muslim tertimpa kelelahan, penyakit, kesedihan, kesusahan, gangguan, atau kegelisahan, bahkan tertusuk duri sekalipun, melainkan Allah menghapus sebagian dosanya karenanya.\"\n— Bukhari & Muslim';
+      '\"Tidaklah seorang muslim tertimpa kelelahan, penyakit, kesedihan, kesusahan, gangguan, atau kegelisahan, bahkan tertusuk duri sekalipun, melainkan Allah menghapus sebagian dosanya karenanya.\"\n— Bukhari & Muslim';
 
   @override
   String get hadith69 =>
-      '\"Doa seorang Muslim untuk saudaranya yang tidak hadir selalu dikabulkan.\"\n— Muslim';
+      '\"Doa seorang muslim untuk saudaranya tanpa sepengetahuannya selalu dikabulkan.\"\n— Muslim';
 
   @override
   String get hadith70 =>
@@ -992,7 +992,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get hadith75 =>
-      '\"Dua rakaat Fajar lebih baik dari dunia dan segala isinya.\"\n— Muslim';
+      '\"Dua rakaat fajar lebih baik daripada dunia dan seisinya.\"\n— Muslim';
 
   @override
   String get hadith77 =>
@@ -1000,11 +1000,11 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get hadith78 =>
-      '\"Barang siapa yang menjenguk orang sakit, ia berada di taman surga hingga ia kembali.\"\n— Muslim';
+      '\"Barangsiapa menjenguk orang sakit, ia berada di taman surga hingga ia kembali.\"\n— Muslim';
 
   @override
   String get hadith79 =>
-      '\"Sebarkanlah salam, berilah makan, dan salatlah di malam hari saat orang-orang tidur — kalian akan masuk surga dengan damai.\"\n— Tirmidzi';
+      '\"Sebarkanlah salam, berilah makan, dan shalatlah di malam hari saat orang-orang tidur — kalian akan masuk surga dengan selamat.\"\n— Tirmidzi';
 
   @override
   String get hadith80 =>
@@ -1012,7 +1012,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get hadith81 =>
-      '\"Tidak boleh iri kecuali dalam dua hal: seseorang yang diberi harta oleh Allah lalu ia menghabiskannya di jalan kebenaran, dan seseorang yang diberi hikmah lalu ia memutuskan dan mengajarkannya.\"\n— Bukhari & Muslim';
+      '\"Tidak boleh iri kecuali dalam dua hal: seseorang yang diberi harta oleh Allah lalu ia membelanjakannya di jalan yang benar, dan seseorang yang diberi hikmah oleh Allah lalu ia memutuskan perkara dengannya dan mengajarkannya.\"\n— Bukhari & Muslim';
 
   @override
   String get hadith82 =>
@@ -1024,7 +1024,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get hadith86 =>
-      '\"Barang siapa yang menutupi aib seorang muslim, Allah akan menutupi aibnya pada Hari Kiamat.\"\n— Bukhari & Muslim';
+      '\"Barangsiapa menutupi aib seorang muslim, Allah akan menutupi aibnya pada Hari Kiamat.\"\n— Bukhari & Muslim';
 
   @override
   String get hadith87 =>
@@ -1032,7 +1032,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get hadith88 =>
-      '\"Barang siapa yang memudahkan orang yang dalam kesulitan, Allah akan memudahkannya di dunia dan akhirat.\"\n— Muslim';
+      '\"Barangsiapa memudahkan orang yang dalam kesulitan, Allah akan memudahkannya di dunia dan akhirat.\"\n— Muslim';
 
   @override
   String get hadith89 =>
@@ -1100,7 +1100,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get tutorialSkip => 'Lewati';
 
   @override
-  String get tutorialNext => 'Berikutnya';
+  String get tutorialNext => 'Lanjut';
 
   @override
   String get tutorialDone => 'Selesai';
@@ -1113,18 +1113,18 @@ class AppLocalizationsId extends AppLocalizations {
       'Satu ketukan menandai amal selesai untuk hari ini. Ketuk lagi untuk membatalkan.';
 
   @override
-  String get tutorialEditTitle => 'Ketuk dua kali untuk mengedit';
+  String get tutorialEditTitle => 'Ketuk dua kali untuk mengubah';
 
   @override
   String get tutorialEditBody =>
-      'Membuka formulir edit — ubah namanya, atau ubah seberapa sering diulang.';
+      'Membuka formulir untuk mengubahnya — ganti namanya, atau atur seberapa sering diulang.';
 
   @override
   String get tutorialReorderTitle => 'Tekan dan tahan untuk menyusun ulang';
 
   @override
   String get tutorialReorderBody =>
-      'Tahan sebuah baris, lalu seret. Urutan Anda tersimpan.';
+      'Tahan baris, lalu seret. Urutannya akan tersimpan.';
 
   @override
   String get tutorialRemoveTitle => 'Geser untuk menghapus';
@@ -1141,7 +1141,7 @@ class AppLocalizationsId extends AppLocalizations {
       'Untuk amal dengan target lebih dari satu, gunakan − dan + untuk setiap pengulangan.';
 
   @override
-  String get tutorialViewTitle => 'Kelompokkan atau ratakan';
+  String get tutorialViewTitle => 'Per kategori atau satu daftar';
 
   @override
   String get tutorialViewBody =>
@@ -1152,14 +1152,14 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get tutorialChallengeLogBody =>
-      'Satu ketukan mencatat hari ini. Pada tantangan berhitung, tiap ketukan menambah satu langkah.';
+      'Satu ketukan mencatat hari ini. Pada tantangan dengan hitungan, tiap ketukan menambah satu langkah.';
 
   @override
   String get tutorialChallengeOpenTitle => 'Ketuk dua kali untuk membuka';
 
   @override
   String get tutorialChallengeOpenBody =>
-      'Membuka tantangan — lihat tiap hari, perbaiki yang terlewat, atau hapus.';
+      'Membuka tantangan — lihat setiap hari, lengkapi hari yang terlewat, atau hapus tantangan.';
 
   @override
   String get tutorialChallengeDeleteBody =>
@@ -1196,7 +1196,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get challengeSectionEnded => 'Berakhir';
 
   @override
-  String get challengesPastEmpty => 'Belum ada yang berakhir.';
+  String get challengesPastEmpty => 'Belum ada yang selesai.';
 
   @override
   String get challengesEmptyTitle => 'Belum ada tantangan';
@@ -1206,7 +1206,7 @@ class AppLocalizationsId extends AppLocalizations {
       'Tetapkan target untuk diri Anda — misalnya 20 rakaat dalam 7 hari — dan lacak di sini.';
 
   @override
-  String get editChallenge => 'Edit tantangan';
+  String get editChallenge => 'Ubah tantangan';
 
   @override
   String get deleteChallenge => 'Hapus tantangan';
@@ -1223,10 +1223,10 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get challengeShapeTotalBody =>
-      '1000 salawat, 30 juz. Anda mencatat jumlah dan totalnya bertambah.';
+      '1000 shalawat, 30 juz. Anda mencatat jumlah dan totalnya bertambah.';
 
   @override
-  String get challengeShapeStreak => 'Rentetan harian';
+  String get challengeShapeStreak => 'Runtunan harian';
 
   @override
   String get challengeShapeStreakBody =>
@@ -1236,7 +1236,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get challengeTargetLabel => 'Target';
 
   @override
-  String get challengeTargetRequired => 'Masukkan target di atas nol';
+  String get challengeTargetRequired => 'Masukkan target lebih dari nol';
 
   @override
   String get challengeUnitLabel => 'Satuan (opsional)';
@@ -1251,7 +1251,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get challengeHowManyDays => 'Berapa hari?';
 
   @override
-  String get challengeReachHowMuch => 'Mencapai berapa?';
+  String get challengeReachHowMuch => 'Targetnya berapa?';
 
   @override
   String get challengeSpreadOver => 'Rentang waktu';
@@ -1260,7 +1260,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get challengeSpreadEveryDay => 'Setiap hari';
 
   @override
-  String get challengeSpreadLonger => 'Waktu lebih panjang';
+  String get challengeSpreadLonger => 'Rentang lebih panjang';
 
   @override
   String get challengeByWhen => 'Sampai kapan?';
@@ -1304,7 +1304,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String challengeTooTight(String target, String window) {
-    return '$target hari tidak cukup dalam $window hari — rentetan dihitung satu sehari.';
+    return '$target hari tidak muat dalam $window hari — runtunan dihitung satu per hari.';
   }
 
   @override
@@ -1382,7 +1382,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String challengeExpiredBody(String title, String done, String target) {
-    return '$title berakhir pada $done dari $target.';
+    return '$title berakhir di angka $done dari $target.';
   }
 
   @override
@@ -1465,7 +1465,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get tierNasirMeaning => 'pendukung';
 
   @override
-  String get tierMuhsinMeaning => 'pemurah';
+  String get tierMuhsinMeaning => 'dermawan';
 
   @override
   String get tierAnsarMeaning => 'penolong';
@@ -1475,14 +1475,14 @@ class AppLocalizationsId extends AppLocalizations {
       'Gratis, tanpa iklan dan tanpa akun. Anda bisa mendukung pengembangannya dengan memberi tip — berapa pun, kapan pun Anda mau.';
 
   @override
-  String get supportCta => 'Dukung Muhasaba';
+  String get supportCta => 'Dukung Muhasabah';
 
   @override
   String get supportAgain => 'Dukung lagi';
 
   @override
   String get supporterThanks =>
-      'Jazakumullahu khairan — insyaAllah Muhasaba tetap gratis dan bebas iklan.';
+      'JazakumAllahu khairan — insyaAllah Muhasabah tetap gratis dan bebas iklan.';
 
   @override
   String supporterSince(String tier, String month) {
@@ -1490,11 +1490,11 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'Dukung Muhasaba';
+  String get supportPromptTitle => 'Dukung Muhasabah';
 
   @override
   String get supportPromptBody =>
-      'Muhasaba gratis, tanpa iklan dan tanpa akun. Anda bisa mendukung pengembangannya dengan memberi tip — berapa pun, kapan pun Anda mau. Tidak ada fitur yang dikunci.';
+      'Muhasabah gratis, tanpa iklan dan tanpa akun. Anda bisa mendukung pengembangannya dengan memberi tip — berapa pun, kapan pun Anda mau. Tidak ada fitur yang dikunci.';
 
   @override
   String get supportPromptNow => 'Dukung sekarang';
@@ -1506,15 +1506,15 @@ class AppLocalizationsId extends AppLocalizations {
   String get supportPromptNever => 'Jangan tanya lagi';
 
   @override
-  String get tipSheetTitle => 'Dukung Muhasaba';
+  String get tipSheetTitle => 'Dukung Muhasabah';
 
   @override
   String get tipSheetBody =>
-      'Pilih jumlah berapa pun, sesering yang Anda mau. Tip digunakan untuk perawatan aplikasi — insyaAllah tetap gratis dan bebas iklan. Sebagai ucapan terima kasih, Anda akan ditandai sebagai pendukung di Pengaturan.';
+      'Pilih jumlah berapa pun, sesering yang Anda mau. Tip digunakan untuk pemeliharaan aplikasi — insyaAllah tetap gratis dan bebas iklan. Sebagai ucapan terima kasih, Anda akan ditandai sebagai pendukung di Pengaturan.';
 
   @override
   String tipSheetSupporterLine(String tier) {
-    return '$tier — Jazakumullahu khairan.';
+    return '$tier — JazakumAllahu khairan.';
   }
 
   @override
@@ -1530,11 +1530,11 @@ class AppLocalizationsId extends AppLocalizations {
       'Tidak menemukan pilihan yang cocok untuk Anda?';
 
   @override
-  String get tipSheetWriteToUs => 'Tulis kepada kami';
+  String get tipSheetWriteToUs => 'Kirim email ke kami';
 
   @override
   String get supportEmailBody =>
-      'Assalamu\'alaikum,\n\nSaya ingin mendukung pengembangan Muhasaba secara langsung.\n\nNegara:\nCara saya ingin mengirimnya:\nJumlah (opsional):';
+      'Assalamu\'alaikum,\n\nSaya ingin mendukung pengembangan Muhasabah secara langsung.\n\nNegara:\nCara pengiriman yang saya inginkan:\nJumlah (opsional):';
 
   @override
   String tipBusy(String store) {
@@ -1543,7 +1543,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get tipThanks =>
-      'Jazakumullahu khairan — semoga Allah menerimanya dari Anda.';
+      'JazakumAllahu khairan — semoga Allah menerimanya dari Anda.';
 
   @override
   String get tipDone => 'Selesai';
@@ -1559,10 +1559,10 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get tipUnavailable =>
-      'Pembelian tidak tersedia di perangkat ini saat ini.';
+      'Pembelian sedang tidak tersedia di perangkat ini.';
 
   @override
-  String get optionSetJamaa => 'Berjamaah';
+  String get optionSetJamaa => 'Jamaah';
 
   @override
   String get optionJamaaAlone => 'Sendiri';
@@ -1574,7 +1574,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get optionJamaaMasjid => 'Berjamaah di masjid';
 
   @override
-  String get optionSetOnTime => 'Waktu';
+  String get optionSetOnTime => 'Ketepatan waktu';
 
   @override
   String get optionOnTimeOnTime => 'Tepat waktu';
@@ -1595,7 +1595,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get optionQuranMemorised => 'Dihafal';
 
   @override
-  String get optionQuranMeaning => 'Dengan makna';
+  String get optionQuranMeaning => 'Dengan arti';
 
   @override
   String get optionQuranListened => 'Didengar';
@@ -1625,19 +1625,19 @@ class AppLocalizationsId extends AppLocalizations {
   String get optionIntensityModerate => 'Sedang';
 
   @override
-  String get optionIntensityIntense => 'Intens';
+  String get optionIntensityIntense => 'Berat';
 
   @override
   String get optionSetNewTitle => 'Set opsi baru';
 
   @override
-  String get optionSetEditTitle => 'Edit set opsi';
+  String get optionSetEditTitle => 'Ubah set opsi';
 
   @override
   String get optionSetNameLabel => 'Nama set';
 
   @override
-  String get optionSetNameHint => 'cth. Berjamaah';
+  String get optionSetNameHint => 'cth. Jamaah';
 
   @override
   String get optionsLabel => 'Opsi';
@@ -1652,7 +1652,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String optionsMaxReached(int max) {
-    return 'Maksimum $max opsi.';
+    return 'Maksimal $max opsi.';
   }
 
   @override
@@ -1691,7 +1691,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get optionSetNew => 'Set baru';
 
   @override
-  String get requireChoiceLabel => 'Wajibkan pilihan';
+  String get requireChoiceLabel => 'Wajib memilih';
 
   @override
   String get requireChoiceHelp =>
@@ -1702,7 +1702,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get requireChoiceCountHelp =>
-      'Amal berhitung diselesaikan lewat penghitung';
+      'Amal dengan hitungan diselesaikan lewat penghitung';
 
   @override
   String optionsUsedOf(int used, int max) {
@@ -1710,7 +1710,7 @@ class AppLocalizationsId extends AppLocalizations {
   }
 
   @override
-  String get choiceNeeded => 'Pilihan diperlukan';
+  String get choiceNeeded => 'Perlu dipilih';
 
   @override
   String optionSelected(String label) {
@@ -1732,9 +1732,9 @@ class AppLocalizationsId extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count kali',
+      other: '$count kali selesai',
     );
-    return 'Bagian dari $_temp0 yang mencatat pilihan';
+    return 'Persentase dari $_temp0 yang disertai pilihan';
   }
 
   @override
@@ -1771,7 +1771,7 @@ class AppLocalizationsId extends AppLocalizations {
       'Belum ada pilihan yang tercatat untuk set ini.';
 
   @override
-  String get optionDetailTrendHeading => 'Perubahan dari waktu ke waktu';
+  String get optionDetailTrendHeading => 'Perkembangan';
 
   @override
   String optionDetailTrendReadout(String option, String from, String to) {
@@ -1795,13 +1795,13 @@ class AppLocalizationsId extends AppLocalizations {
   String get optionDetailRecordsHeading => 'Rekor';
 
   @override
-  String get optionDetailLongestRun => 'Streak Terpanjang';
+  String get optionDetailLongestRun => 'Runtunan Terpanjang';
 
   @override
   String get optionDetailBestWeek => 'Minggu Terbaik';
 
   @override
-  String get optionDetailCurrentRun => 'Streak Saat Ini';
+  String get optionDetailCurrentRun => 'Runtunan Saat Ini';
 
   @override
   String get optionDetailRecordsCaption =>
@@ -1870,7 +1870,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get amalTahiyyah => 'Tahiyatul Masjid';
 
   @override
-  String get amalEarlyJumuah => 'Datang Awal Shalat Jumat';
+  String get amalEarlyJumuah => 'Bersegera ke Shalat Jumat';
 
   @override
   String get amalAfterSalah => 'Dzikir Setelah Shalat';
@@ -2117,7 +2117,7 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String libraryAddedShowsOn(String days) {
-    return 'Ditambahkan · tampil pada: $days';
+    return 'Ditambahkan · tampil pada hari $days';
   }
 
   @override
@@ -2150,7 +2150,7 @@ class AppLocalizationsId extends AppLocalizations {
   String get libraryChange => 'Ganti';
 
   @override
-  String get libraryEditAction => 'Edit';
+  String get libraryEditAction => 'Ubah';
 
   @override
   String libraryWeeklyAny(num count, String countText) {

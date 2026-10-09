@@ -61,7 +61,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String archivedRestored(String title) {
-    return '\"$title\" আবার আপনার তালিকায় ফিরেছে।';
+    return '\"$title\" আবার আপনার তালিকায় ফিরে এসেছে।';
   }
 
   @override
@@ -119,7 +119,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get categorySalah => 'নামাজ';
 
   @override
-  String get categoryDhikr => 'যিকর';
+  String get categoryDhikr => 'যিকির';
 
   @override
   String get categoryQuran => 'কুরআন';
@@ -128,10 +128,10 @@ class AppLocalizationsBn extends AppLocalizations {
   String get categoryCharity => 'দান';
 
   @override
-  String get categorySunnah => 'সুন্নাহ';
+  String get categorySunnah => 'সুন্নত';
 
   @override
-  String get timesPerPeriod => 'প্রতি পর্বে কতবার';
+  String get timesPerPeriod => 'প্রতি সময়কালে কতবার';
 
   @override
   String get custom => 'কাস্টম';
@@ -153,7 +153,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get anyDay => 'যেকোনো';
 
   @override
-  String get anyDayHint => 'যেকোনো দিন (আজ দেখাবে, পরদিন লুকাবে)';
+  String get anyDayHint => 'যেকোনো দিন (আজ দেখা যাবে, পরদিন লুকিয়ে যাবে)';
 
   @override
   String onlyDayHint(String day) {
@@ -234,7 +234,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get anyDate => 'যেকোনো';
 
   @override
-  String get anyDateHint => 'যেকোনো তারিখ (আজ দেখাবে, পরদিন লুকাবে)';
+  String get anyDateHint => 'যেকোনো তারিখ (আজ দেখা যাবে, পরদিন লুকিয়ে যাবে)';
 
   @override
   String onlyDateHint(String date) {
@@ -242,11 +242,11 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get startPreChecked => 'আগে থেকে চেক করা';
+  String get startPreChecked => 'আগে থেকেই টিক দেওয়া';
 
   @override
   String get startPreCheckedSubtitle =>
-      'নতুন পর্ব শুরু হলে এই আমল স্বয়ংক্রিয়ভাবে সম্পন্ন হিসেবে চিহ্নিত থাকবে, যতক্ষণ না আপনি আনচেক করেন।';
+      'নতুন সময়কাল শুরু হলে এই আমল আপনাআপনি সম্পন্ন হিসেবে টিক দেওয়া থাকবে, যতক্ষণ না আপনি টিক তুলে দেন।';
 
   @override
   String get reminder => 'রিমাইন্ডার';
@@ -261,7 +261,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get reminderPermissionWarning =>
-      'রিমাইন্ডার সংরক্ষিত হয়েছে, তবে নোটিফিকেশনের অনুমতি নেই। সতর্কতা পেতে সিস্টেম সেটিংস থেকে চালু করুন।';
+      'রিমাইন্ডার সংরক্ষণ হয়েছে, তবে নোটিফিকেশনের অনুমতি দেওয়া নেই। নোটিফিকেশন পেতে সিস্টেম সেটিংস থেকে তা চালু করুন।';
 
   @override
   String get settingsReminders => 'রিমাইন্ডার';
@@ -270,14 +270,13 @@ class AppLocalizationsBn extends AppLocalizations {
   String get dailyReminder => 'দৈনিক রিমাইন্ডার';
 
   @override
-  String get dailyReminderSubtitle =>
-      'আপনার আমল ট্র্যাক করার একটি কোমল অনুস্মারক';
+  String get dailyReminderSubtitle => 'আমলের হিসাব রাখতে মৃদু তাগিদ';
 
   @override
   String get dailyReminderTimeLabel => 'রিমাইন্ডারের সময়';
 
   @override
-  String get dailyReminderBody => 'আজকের আমল ট্র্যাক করতে কিছুটা সময় নিন।';
+  String get dailyReminderBody => 'একটু সময় নিয়ে আজকের আমলের হিসাব রাখুন।';
 
   @override
   String get groupByCategory => 'বিভাগ অনুযায়ী';
@@ -307,7 +306,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String progressOf(String progress, String target) {
-    return '$target এর মধ্যে $progress সম্পন্ন';
+    return '$target-এর মধ্যে $progress সম্পন্ন';
   }
 
   @override
@@ -327,7 +326,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get removeFromTrackingSubtitle =>
-      'আপনার তালিকা থেকে স্থায়ীভাবে সরান। ইতিহাস রক্ষিত থাকবে।';
+      'আপনার তালিকা থেকে স্থায়ীভাবে সরিয়ে দিন। ইতিহাস মুছবে না।';
 
   @override
   String get chooseIcon => 'আইকন বাছাই করুন';
@@ -369,7 +368,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get amalSurahKahf => 'সূরা কাহফ';
 
   @override
-  String get amalSadaqah => 'সাদাকাহ';
+  String get amalSadaqah => 'সদকা';
 
   @override
   String get amalTahajjud => 'তাহাজ্জুদ';
@@ -406,25 +405,25 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String settingsLoadError(String error) {
-    return 'সেটিংস লোড করতে ব্যর্থ:\n$error';
+    return 'সেটিংস লোড করা যায়নি:\n$error';
   }
 
   @override
-  String get sectionDayBoundary => 'দিনের সীমানা';
+  String get sectionDayBoundary => 'দিনের সীমা';
 
   @override
   String get rolloverHour => 'দিন পরিবর্তনের সময়';
 
   @override
-  String get rolloverAtMidnight => 'আজ মধ্যরাতে শেষ হবে।';
+  String get rolloverAtMidnight => 'আজকের দিন মধ্যরাতে শেষ হবে।';
 
   @override
   String rolloverSubtitle(String time) {
-    return 'গতকালের আমল $time পর্যন্ত সম্পাদনাযোগ্য থাকবে।';
+    return 'গতকালের আমল $time পর্যন্ত সম্পাদনা করা যাবে।';
   }
 
   @override
-  String get pickRolloverHour => 'দিন পরিবর্তনের সময় নির্বাচন করুন';
+  String get pickRolloverHour => 'কখন দিন বদলাবে, সেই সময় বেছে নিন';
 
   @override
   String get sectionWeekMonth => 'সপ্তাহ ও মাস';
@@ -437,10 +436,10 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get startOfMonthClamped =>
-      '২৮ তারিখের পরের দিনগুলো ছোট মাসের শেষ দিনে সমন্বিত হবে।';
+      '২৮ তারিখের পরের কোনো দিন বেছে নিলে, ছোট মাসগুলোতে মাসের শেষ দিনটিকেই ধরা হবে।';
 
   @override
-  String get sectionAppearance => 'চেহারা';
+  String get sectionAppearance => 'প্রদর্শন';
 
   @override
   String get theme => 'থিম';
@@ -464,22 +463,22 @@ class AppLocalizationsBn extends AppLocalizations {
   String get systemDefault => 'সিস্টেম ডিফল্ট';
 
   @override
-  String get aboutTitle => 'Muhasaba';
+  String get aboutTitle => 'মুহাসাবা';
 
   @override
   String get aboutSubtitle =>
-      'একটি ব্যক্তিগত দ্বীন মুহাসাবার জার্নাল। সমস্ত তথ্য এই ডিভাইসেই থাকে।';
+      'দ্বীনি আমলের হিসাব রাখার একটি ব্যক্তিগত ডায়েরি। সব তথ্য এই ডিভাইসেই থাকে।';
 
   @override
   String get statsTitle => 'পরিসংখ্যান';
 
   @override
   String statsLoadError(String error) {
-    return 'পরিসংখ্যান লোড করতে ব্যর্থ:\n$error';
+    return 'পরিসংখ্যান লোড করা যায়নি:\n$error';
   }
 
   @override
-  String get perAmal => 'আমল প্রতি';
+  String get perAmal => 'আমলভিত্তিক';
 
   @override
   String get thisWeek => 'এই সপ্তাহ';
@@ -494,7 +493,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get streakCurrent => 'বর্তমান';
 
   @override
-  String get streakLongest => 'সর্বোচ্চ';
+  String get streakLongest => 'দীর্ঘতম';
 
   @override
   String get ratioWeek => 'সপ্তাহ';
@@ -558,10 +557,10 @@ class AppLocalizationsBn extends AppLocalizations {
   String get statsThisMonth => 'এই মাস';
 
   @override
-  String get statsAllTime => 'সর্বকালীন';
+  String get statsAllTime => 'শুরু থেকে';
 
   @override
-  String get statsCustomRange => 'কাস্টম পরিসীমা';
+  String get statsCustomRange => 'কাস্টম সময়সীমা';
 
   @override
   String get statsAllCategories => 'সব';
@@ -576,13 +575,13 @@ class AppLocalizationsBn extends AppLocalizations {
   String get statsExpected => 'প্রত্যাশিত';
 
   @override
-  String get statsVsPrevious => 'পূর্ববর্তীর তুলনায়';
+  String get statsVsPrevious => 'আগের তুলনায়';
 
   @override
   String get statsByCategory => 'বিভাগ অনুযায়ী';
 
   @override
-  String get statsPerAmal => 'আমল প্রতি';
+  String get statsPerAmal => 'আমলভিত্তিক';
 
   @override
   String get statsTotalCaption => 'মোট';
@@ -617,7 +616,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get statsDailyBreakdown => 'দৈনিক বিশ্লেষণ';
 
   @override
-  String get statsCompletionRate => 'সম্পন্নের হার';
+  String get statsCompletionRate => 'সম্পন্ন করার হার';
 
   @override
   String get statsAmountPerDay => 'প্রতিদিনের পরিমাণ';
@@ -650,7 +649,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get statsStreaks => 'ধারা';
 
   @override
-  String get statsSelectDateRange => 'তারিখের পরিসীমা নির্বাচন করুন';
+  String get statsSelectDateRange => 'সময়সীমা নির্বাচন করুন';
 
   @override
   String get historyTitle => 'ইতিহাস';
@@ -682,7 +681,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get wednesdayShort => 'বুধ';
 
   @override
-  String get thursdayShort => 'বৃহ';
+  String get thursdayShort => 'বৃহঃ';
 
   @override
   String get fridayShort => 'শুক্র';
@@ -716,15 +715,15 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get hadith0 =>
-      '\"আল্লাহর কাছে সবচেয়ে প্রিয় আমল হলো যা নিয়মিত করা হয়, যদিও তা অল্প হোক।\"\n— বুখারি ও মুসলিম';
+      '\"আল্লাহর কাছে সবচেয়ে প্রিয় আমল হলো যা নিয়মিত করা হয়, যদিও তা অল্প হোক।\"\n— বুখারী ও মুসলিম';
 
   @override
   String get hadith2 =>
-      '\"আদম সন্তান মৃত্যুবরণ করলে তার আমল বন্ধ হয়ে যায়, তিনটি ব্যতীত: সাদাকায়ে জারিয়া, উপকারী ইলম, অথবা এমন নেক সন্তান যে তার জন্য দোয়া করে।\"\n— মুসলিম';
+      '\"আদম সন্তান মারা গেলে তার আমল বন্ধ হয়ে যায়, তিনটি ছাড়া: সদকায়ে জারিয়া, উপকারী ইলম, অথবা এমন নেক সন্তান যে তার জন্য দোয়া করে।\"\n— মুসলিম';
 
   @override
   String get hadith3 =>
-      '\"যে ব্যক্তি দুই ঠান্ডা নামাজ (ফজর ও আসর) আদায় করবে, সে জান্নাতে প্রবেশ করবে।\"\n— বুখারি';
+      '\"যে ব্যক্তি দুই শীতল সময়ের নামাজ (ফজর ও আসর) আদায় করবে, সে জান্নাতে প্রবেশ করবে।\"\n— বুখারী';
 
   @override
   String get hadith4 =>
@@ -732,14 +731,14 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get hadith6 =>
-      '\"সহজ করো, কঠিন করো না; সুসংবাদ দাও, ভয় দেখিয়ে মানুষকে দূরে সরিয়ে দিও না।\"\n— বুখারি';
+      '\"সহজ করো, কঠিন করো না; সুসংবাদ দাও, ভয় দেখিয়ে মানুষকে দূরে সরিয়ে দিও না।\"\n— বুখারী';
 
   @override
   String get hadith7 =>
       '\"যে ব্যক্তি ইলম অর্জনের পথে চলে, আল্লাহ তার জন্য জান্নাতের পথ সহজ করে দেন।\"\n— মুসলিম';
 
   @override
-  String get hadith8 => '\"দান-সাদাকায় সম্পদ কমে না।\"\n— মুসলিম';
+  String get hadith8 => '\"সদকা সম্পদ কমায় না।\"\n— মুসলিম';
 
   @override
   String get hadith9 =>
@@ -747,25 +746,26 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get hadith10 =>
-      '\"যে ব্যক্তি দিনে একশত বার \'সুবহানাল্লাহি ওয়া বিহামদিহি\' বলবে, তার পাপ ক্ষমা করা হবে, যদিও তা সমুদ্রের ফেনার মতো হয়।\"\n— বুখারী ও মুসলিম';
+      '\"যে ব্যক্তি দিনে একশত বার \'সুবহানাল্লাহি ওয়া বিহামদিহি\' বলবে, তার গুনাহ মাফ করে দেওয়া হবে, যদিও তা সমুদ্রের ফেনার সমান হয়।\"\n— বুখারী ও মুসলিম';
 
   @override
   String get hadith12 =>
-      '\"যে ব্যক্তি প্রতি ফরজ নামাজের পর আয়াতুল কুরসি পড়বে, জান্নাতে প্রবেশে মৃত্যু ছাড়া কিছু বাধা হবে না।\"\n— নাসায়ী';
+      '\"যে ব্যক্তি প্রতি ফরজ নামাজের পর আয়াতুল কুরসি পড়বে, মৃত্যু ছাড়া আর কিছুই তাকে জান্নাতে প্রবেশে বাধা দেবে না।\"\n— নাসায়ী';
 
   @override
-  String get hadith13 => '\"ভালো কথা সদকা।\"\n— বুখারী ও মুসলিম';
+  String get hadith13 => '\"ভালো কথাও সদকা।\"\n— বুখারী ও মুসলিম';
 
   @override
   String get hadith14 =>
-      '\"যে ব্যক্তি আল্লাহ ও শেষ দিবসে বিশ্বাস করে, সে যেন ভালো কথা বলে অথবা চুপ থাকে।\"\n— বুখারী ও মুসলিম';
+      '\"যে ব্যক্তি আল্লাহ ও শেষ দিবসের প্রতি ঈমান রাখে, সে যেন ভালো কথা বলে অথবা চুপ থাকে।\"\n— বুখারী ও মুসলিম';
 
   @override
   String get hadith15 =>
-      '\"বিধবা ও অভাবীর সেবাকারী আল্লাহর পথে মুজাহিদের মতো।\"\n— বুখারী ও মুসলিম';
+      '\"যে ব্যক্তি বিধবা ও মিসকিনের দেখাশোনা করে, সে আল্লাহর পথে জিহাদকারীর মতো।\"\n— বুখারী ও মুসলিম';
 
   @override
-  String get hadith16 => '\"তোমার ভাইয়ের সামনে হাসি দেওয়া সদকা।\"\n— তিরমিযী';
+  String get hadith16 =>
+      '\"তোমার ভাইয়ের দিকে চেয়ে মুচকি হাসাও সদকা।\"\n— তিরমিযী';
 
   @override
   String get hadith17 =>
@@ -781,20 +781,20 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String historyDayCompleted(String completed, String total) {
-    return '$total এর মধ্যে $completed সম্পন্ন';
+    return '$total-এর মধ্যে $completed সম্পন্ন';
   }
 
   @override
   String get settingsSchedule => 'সময়সূচি';
 
   @override
-  String get settingsAppearance => 'চেহারা';
+  String get settingsAppearance => 'প্রদর্শন';
 
   @override
-  String get settingsAboutTagline => 'আপনার দৈনিক দ্বীন সঙ্গী';
+  String get settingsAboutTagline => 'আপনার প্রতিদিনের দ্বীনি সঙ্গী';
 
   @override
-  String get settingsRolloverSub => 'দিন কখন রিসেট হয়';
+  String get settingsRolloverSub => 'কখন নতুন দিন শুরু হবে';
 
   @override
   String get settingsAbout => 'সম্পর্কে';
@@ -809,7 +809,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get settingsSupport => 'সহায়তা';
 
   @override
-  String get settingsRate => 'অ্যাপটিকে রেট করুন';
+  String get settingsRate => 'অ্যাপটিকে রেটিং দিন';
 
   @override
   String get settingsContact => 'যোগাযোগ করুন';
@@ -818,11 +818,11 @@ class AppLocalizationsBn extends AppLocalizations {
   String get settingsReportBug => 'বাগ রিপোর্ট করুন';
 
   @override
-  String get settingsRequestFeature => 'ফিচার অনুরোধ করুন';
+  String get settingsRequestFeature => 'নতুন ফিচারের অনুরোধ জানান';
 
   @override
   String settingsSupportFallback(String email) {
-    return 'মেল খুলতে পারেনি। অনুগ্রহ করে $email এ ইমেল করুন।';
+    return 'মেইল অ্যাপ খোলা যায়নি। অনুগ্রহ করে $email-এ ইমেইল করুন।';
   }
 
   @override
@@ -833,15 +833,15 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get hadith20 =>
-      '\"যে ব্যক্তি ঈমান ও সওয়াবের আশায় রমজানে রোজা রাখবে, তার পূর্ববর্তী গুনাহ মাফ করা হবে।\"\n— বুখারি ও মুসলিম';
+      '\"যে ব্যক্তি ঈমান ও সওয়াবের আশায় রমজানের রোজা রাখবে, তার আগের গুনাহ মাফ করে দেওয়া হবে।\"\n— বুখারী ও মুসলিম';
 
   @override
   String get hadith22 =>
-      '\"আজান ও ইকামতের মধ্যবর্তী দোয়া ফেরত দেওয়া হয় না।\"\n— আবু দাউদ';
+      '\"আজান ও ইকামতের মাঝের দোয়া ফিরিয়ে দেওয়া হয় না।\"\n— আবু দাউদ';
 
   @override
   String get hadith23 =>
-      '\"যে ব্যক্তি আল্লাহর জন্য একটি মসজিদ নির্মাণ করবে, আল্লাহ তার জন্য জান্নাতে একটি ঘর নির্মাণ করবেন।\"\n— বুখারি ও মুসলিম';
+      '\"যে ব্যক্তি আল্লাহর জন্য একটি মসজিদ নির্মাণ করবে, আল্লাহ তার জন্য জান্নাতে একটি ঘর নির্মাণ করবেন।\"\n— বুখারী ও মুসলিম';
 
   @override
   String get hadith24 =>
@@ -856,10 +856,10 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get hadith27 =>
-      '\"কুরআনে দক্ষ ব্যক্তি সম্মানিত ফেরেশতাদের সাথে থাকবে।\"\n— বুখারি ও মুসলিম';
+      '\"কুরআনে দক্ষ ব্যক্তি সম্মানিত ফেরেশতাদের সাথে থাকবে।\"\n— বুখারী ও মুসলিম';
 
   @override
-  String get hadith29 => '\"সর্বোত্তম সদকা হলো পানি পান করানো।\"\n— আহমদ';
+  String get hadith29 => '\"সর্বোত্তম সদকা হলো পানি পান করানো।\"\n— আহমাদ';
 
   @override
   String get hadith30 =>
@@ -894,7 +894,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get hadith42 =>
-      '\"দুটি নিয়ামত আছে যেগুলোতে অনেক মানুষ ক্ষতিগ্রস্ত: স্বাস্থ্য ও অবসর।\"\n— বুখারী';
+      '\"দুটি নিয়ামত এমন, যে ব্যাপারে অনেক মানুষ ক্ষতিগ্রস্ত: সুস্থতা ও অবসর।\"\n— বুখারী';
 
   @override
   String get hadith43 =>
@@ -910,15 +910,15 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get hadith46 =>
-      '\"সাদাকাহ গুনাহকে এমনভাবে নিভিয়ে দেয় যেমন পানি আগুনকে নেভায়।\"\n— তিরমিযী';
+      '\"সদকা গুনাহকে এমনভাবে নিভিয়ে দেয়, যেমন পানি আগুনকে নিভিয়ে দেয়।\"\n— তিরমিযী';
 
   @override
   String get hadith47 =>
-      '\"আত্মীয়তার বন্ধন রক্ষাকারী সে নয় যে প্রতিদান দেয়। বরং সে যে ছিন্ন হওয়ার পরও তা বজায় রাখে।\"\n— বুখারী';
+      '\"আত্মীয়তার সম্পর্ক রক্ষাকারী সে নয়, যে প্রতিদান দেয়; বরং সে-ই, যে সম্পর্ক ছিন্ন করা হলেও তা বজায় রাখে।\"\n— বুখারী';
 
   @override
   String get hadith49 =>
-      '\"যে ব্যক্তি খাবার খেয়ে বলে: \'সমস্ত প্রশংসা আল্লাহর যিনি আমাকে এটি খাইয়েছেন এবং আমার কোনো শক্তি বা সামর্থ্য ছাড়াই দান করেছেন\', তার পূর্ববর্তী গুনাহ ক্ষমা করা হবে।\"\n— তিরমিযী';
+      '\"যে ব্যক্তি খাবার খেয়ে বলে: \'সমস্ত প্রশংসা আল্লাহর, যিনি আমাকে এটি খাইয়েছেন এবং আমার কোনো শক্তি ও সামর্থ্য ছাড়াই আমাকে তা দান করেছেন\', তার আগের গুনাহ মাফ করে দেওয়া হবে।\"\n— তিরমিযী';
 
   @override
   String get hadith53 =>
@@ -926,7 +926,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get hadith54 =>
-      '\"তোমাদের মধ্যে সর্বোত্তম সেই ব্যক্তি যে তার পরিবারের কাছে সর্বোত্তম।\"\n— তিরমিযী';
+      '\"তোমাদের মধ্যে সর্বোত্তম সেই ব্যক্তি, যে তার পরিবারের প্রতি সর্বোত্তম।\"\n— তিরমিযী';
 
   @override
   String get hadith55 =>
@@ -934,7 +934,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get hadith56 =>
-      '\"দুনিয়া হলো সম্পদ, আর সর্বোত্তম সম্পদ হলো নেককার স্ত্রী।\"\n— মুসলিম';
+      '\"দুনিয়া হলো ভোগের সামগ্রী, আর দুনিয়ার সর্বোত্তম সামগ্রী হলো নেককার স্ত্রী।\"\n— মুসলিম';
 
   @override
   String get hadith57 =>
@@ -942,7 +942,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get hadith58 =>
-      '\"যে ব্যক্তি আমার উপর একবার দরূদ পাঠায়, আল্লাহ তার উপর দশবার রহমত বর্ষণ করেন।\"\n— মুসলিম';
+      '\"যে ব্যক্তি আমার উপর একবার দরুদ পাঠায়, আল্লাহ তার উপর দশবার রহমত বর্ষণ করেন।\"\n— মুসলিম';
 
   @override
   String get hadith65 => '\"মুমিন মুমিনের আয়না।\"\n— আবু দাউদ';
@@ -957,11 +957,11 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get hadith68 =>
-      '\"কোনো মুসলিমের যে কষ্ট, রোগ, দুঃখ, বেদনা, কষ্ট বা মনোব্যথা হয়, এমনকি একটি কাঁটা বিদ্ধ হলেও, আল্লাহ তার বিনিময়ে তার কিছু পাপ ক্ষমা করেন।\"\n— বুখারী ও মুসলিম';
+      '\"কোনো মুসলিমের উপর যে ক্লান্তি, রোগ, দুশ্চিন্তা, দুঃখ, কষ্ট বা মনোবেদনা আসে, এমনকি একটি কাঁটাও যদি বিঁধে, আল্লাহ এর দ্বারা তার কিছু গুনাহ মাফ করে দেন।\"\n— বুখারী ও মুসলিম';
 
   @override
   String get hadith69 =>
-      '\"একজন মুসলিমের তার ভাইয়ের অনুপস্থিতিতে দোয়া সর্বদা কবুল হয়।\"\n— মুসলিম';
+      '\"একজন মুসলিম তার ভাইয়ের অনুপস্থিতিতে তার জন্য যে দোয়া করে, তা সর্বদা কবুল হয়।\"\n— মুসলিম';
 
   @override
   String get hadith70 =>
@@ -973,15 +973,15 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get hadith72 =>
-      '\"যে ব্যক্তি হজ করে এবং কোনো অশ্লীলতা বা পাপ করে না, সে সেই দিনের মতো ফিরে আসে যেদিন তার মা তাকে জন্ম দিয়েছিলেন।\"\n— বুখারী ও মুসলিম';
+      '\"যে ব্যক্তি হজ করে এবং কোনো অশ্লীলতা বা গুনাহ করে না, সে সেই দিনের মতো ফিরে আসে যেদিন তার মা তাকে জন্ম দিয়েছিলেন।\"\n— বুখারী ও মুসলিম';
 
   @override
   String get hadith73 =>
-      '\"এক উমরা থেকে আরেক উমরা এর মধ্যবর্তী পাপের কাফফারা।\"\n— বুখারী ও মুসলিম';
+      '\"এক উমরা থেকে আরেক উমরা — এ দুয়ের মাঝের গুনাহের কাফফারা।\"\n— বুখারী ও মুসলিম';
 
   @override
   String get hadith74 =>
-      '\"অন্ধকার রাতের টুকরোর মতো ফিতনা আসার আগেই নেক আমলে তাড়াতাড়ি করো।\"\n— মুসলিম';
+      '\"অন্ধকার রাতের খণ্ডের মতো ফিতনা আসার আগেই দ্রুত নেক আমল করে নাও।\"\n— মুসলিম';
 
   @override
   String get hadith75 =>
@@ -989,7 +989,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get hadith77 =>
-      '\"তোমরা যদি আল্লাহর উপর যথাযথ তাওয়াক্কুল করতে, তাহলে তিনি তোমাদের রিযিক দিতেন যেমন পাখিদের দেন।\"\n— তিরমিযী';
+      '\"তোমরা যদি আল্লাহর উপর যথাযথ তাওয়াক্কুল করতে, তাহলে তিনি তোমাদের সেভাবে রিযিক দিতেন, যেভাবে পাখিদের রিযিক দেন।\"\n— তিরমিযী';
 
   @override
   String get hadith78 =>
@@ -997,7 +997,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get hadith79 =>
-      '\"সালামের প্রসার করো, অন্নদান করো এবং রাতে যখন মানুষ ঘুমায় তখন নামায পড়ো — শান্তিতে জান্নাতে প্রবেশ করবে।\"\n— তিরমিযী';
+      '\"সালামের প্রসার করো, খাবার খাওয়াও এবং মানুষ যখন ঘুমিয়ে থাকে তখন রাতে নামাজ পড়ো — নিরাপদে জান্নাতে প্রবেশ করবে।\"\n— তিরমিযী';
 
   @override
   String get hadith80 =>
@@ -1005,11 +1005,11 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get hadith81 =>
-      '\"হিংসা কেবল দুটি বিষয়ে বৈধ: এমন ব্যক্তি যাকে আল্লাহ সম্পদ দিয়েছেন এবং সে তা সৎপথে ব্যয় করে, এবং এমন ব্যক্তি যাকে আল্লাহ প্রজ্ঞা দিয়েছেন এবং সে তা দিয়ে বিচার ও শিক্ষা দেয়।\"\n— বুখারী ও মুসলিম';
+      '\"দুই ব্যক্তি ছাড়া আর কারো প্রতি ঈর্ষা করা বৈধ নয়: এক ব্যক্তি, যাকে আল্লাহ সম্পদ দিয়েছেন এবং সে তা সঠিক পথে ব্যয় করে; আরেক ব্যক্তি, যাকে আল্লাহ প্রজ্ঞা দিয়েছেন এবং সে তা দিয়ে ফয়সালা করে ও তা শিক্ষা দেয়।\"\n— বুখারী ও মুসলিম';
 
   @override
   String get hadith82 =>
-      '\"মানুষ তার বন্ধুর দ্বীনের উপর থাকে, তাই তোমাদের প্রত্যেকে দেখে নাও কাকে বন্ধু বানাচ্ছে।\"\n— আবু দাউদ ও তিরমিযী';
+      '\"মানুষ তার বন্ধুর দ্বীনের উপর থাকে, তাই তোমাদের প্রত্যেকের খেয়াল রাখা উচিত, সে কার সাথে বন্ধুত্ব করছে।\"\n— আবু দাউদ ও তিরমিযী';
 
   @override
   String get hadith85 =>
@@ -1021,7 +1021,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get hadith87 =>
-      '\"দুনিয়ায় এমনভাবে থাকো যেন তুমি একজন অপরিচিত বা পথিক।\"\n— বুখারী';
+      '\"দুনিয়াতে এমনভাবে থাকো, যেন তুমি একজন অপরিচিত অথবা মুসাফির।\"\n— বুখারী';
 
   @override
   String get hadith88 =>
@@ -1033,15 +1033,15 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get hadith90 =>
-      '\"ধারণা থেকে বেঁচে থাকো, কারণ ধারণা হলো সবচেয়ে মিথ্যা কথা।\"\n— বুখারী ও মুসলিম';
+      '\"তোমরা কুধারণা থেকে বেঁচে থাকো, কারণ কুধারণা সবচেয়ে বড় মিথ্যা কথা।\"\n— বুখারী ও মুসলিম';
 
   @override
   String get hadith93 =>
-      '\"একসাথে খাও এবং আল্লাহর নাম নাও, তোমাদের জন্য বরকত দেওয়া হবে।\"\n— আবু দাউদ';
+      '\"একসাথে খাও এবং আল্লাহর নাম নাও, এতে তোমাদের জন্য বরকত হবে।\"\n— আবু দাউদ';
 
   @override
   String get hadith94 =>
-      '\"কোনো কওম আল্লাহর যিকির করে বসলে ফেরেশতারা তাদের ঘিরে ফেলেন, রহমত তাদের আচ্ছাদিত করে, এবং প্রশান্তি তাদের উপর অবতীর্ণ হয়।\"\n— মুসলিম';
+      '\"যখনই কোনো দল বসে আল্লাহর যিকির করে, ফেরেশতারা তাদের ঘিরে রাখেন, রহমত তাদের ঢেকে নেয় এবং তাদের উপর প্রশান্তি নাজিল হয়।\"\n— মুসলিম';
 
   @override
   String get hadith95 =>
@@ -1053,7 +1053,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get hadith97 =>
-      '\"মুমিনের বিষয়টি আশ্চর্যজনক — তার সব কিছুই তার জন্য কল্যাণকর।\"\n— মুসলিম';
+      '\"মুমিনের ব্যাপারটি কতই না চমৎকার — তার সবকিছুই তার জন্য কল্যাণকর।\"\n— মুসলিম';
 
   @override
   String get hadith98 =>
@@ -1070,12 +1070,12 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String deleteAmalConfirmBody(String title) {
-    return '\"$title\" আপনার তালিকা থেকে লুকানো হবে। আপনার ইতিহাস রাখা হবে।';
+    return '\"$title\" আপনার তালিকায় আর দেখা যাবে না। আপনার ইতিহাস থেকে যাবে।';
   }
 
   @override
   String get genericError =>
-      'কিছু একটা ভুল হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।';
+      'কোনো সমস্যা হয়েছে। অনুগ্রহ করে আবার চেষ্টা করুন।';
 
   @override
   String get notificationChannelName => 'আমলের রিমাইন্ডার';
@@ -1085,7 +1085,7 @@ class AppLocalizationsBn extends AppLocalizations {
       'আপনার ট্র্যাক করা আমলের দৈনিক রিমাইন্ডার।';
 
   @override
-  String get invalidAmalId => 'অবৈধ আমল আইডি';
+  String get invalidAmalId => 'আমল আইডি সঠিক নয়';
 
   @override
   String get tutorialSettingsRow => 'মুহাসাবা কীভাবে ব্যবহার করবেন';
@@ -1107,18 +1107,18 @@ class AppLocalizationsBn extends AppLocalizations {
       'একবার ট্যাপ করলে আজকের জন্য আমল সম্পন্ন হিসেবে চিহ্নিত হয়। আবার ট্যাপ করলে বাতিল হয়।';
 
   @override
-  String get tutorialEditTitle => 'সম্পাদনা করতে ডাবল-ট্যাপ';
+  String get tutorialEditTitle => 'সম্পাদনা করতে ডাবল-ট্যাপ করুন';
 
   @override
   String get tutorialEditBody =>
-      'সম্পাদনা ফর্ম খোলে — নাম বদলান, বা কত ঘন ঘন পুনরাবৃত্তি হবে তা বদলান।';
+      'সম্পাদনার ফর্ম খুলবে — নাম বদলাতে পারেন, বা কত ঘন ঘন পুনরাবৃত্তি হবে তা বদলাতে পারেন।';
 
   @override
   String get tutorialReorderTitle => 'ক্রম বদলাতে চেপে ধরুন';
 
   @override
   String get tutorialReorderBody =>
-      'একটি সারি চেপে ধরে টেনে নিন। আপনার ক্রম সংরক্ষিত হয়।';
+      'একটি সারি চেপে ধরে টেনে সরান। আপনার সাজানো ক্রম সংরক্ষিত থাকবে।';
 
   @override
   String get tutorialRemoveTitle => 'সরাতে সোয়াইপ করুন';
@@ -1135,25 +1135,25 @@ class AppLocalizationsBn extends AppLocalizations {
       'যেসব আমলের লক্ষ্য একের বেশি, প্রতিটি পুনরাবৃত্তির জন্য − ও + ব্যবহার করুন।';
 
   @override
-  String get tutorialViewTitle => 'গ্রুপ বা সমতল তালিকা';
+  String get tutorialViewTitle => 'গ্রুপ বা সাধারণ তালিকা';
 
   @override
   String get tutorialViewBody =>
-      'বিভাগ অনুযায়ী গ্রুপ করা ও একটি সমতল তালিকার মধ্যে বদল করুন।';
+      'বিভাগ অনুযায়ী গ্রুপ করা আর একটি সাধারণ তালিকার মধ্যে বদল করুন।';
 
   @override
   String get tutorialChallengeLogTitle => 'আজকের হিসাব রাখতে ট্যাপ করুন';
 
   @override
   String get tutorialChallengeLogBody =>
-      'একবার ট্যাপ করলে আজকের দিন লেখা হয়। গণনার সংকল্পে প্রতি ট্যাপে এক ধাপ যোগ হয়।';
+      'একবার ট্যাপ করলে আজকের হিসাব উঠে যায়। গণনাভিত্তিক সংকল্পে প্রতি ট্যাপে এক ধাপ যোগ হয়।';
 
   @override
-  String get tutorialChallengeOpenTitle => 'খুলতে ডাবল-ট্যাপ';
+  String get tutorialChallengeOpenTitle => 'খুলতে ডাবল-ট্যাপ করুন';
 
   @override
   String get tutorialChallengeOpenBody =>
-      'সংকল্পটি খোলে — প্রতিটি দিন দেখুন, বাদ পড়া দিন ঠিক করুন, বা মুছে ফেলুন।';
+      'সংকল্পটি খুলবে — প্রতিটি দিন দেখুন, বাদ পড়া দিন ঠিক করুন, বা এটি মুছে ফেলুন।';
 
   @override
   String get tutorialChallengeDeleteBody =>
@@ -1173,7 +1173,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get challengesActive => 'চলমান';
 
   @override
-  String get challengesPast => 'পূর্ববর্তী';
+  String get challengesPast => 'আগের';
 
   @override
   String challengeJustFinished(int count, String title) {
@@ -1187,7 +1187,7 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get challengeSectionEnded => 'শেষ';
+  String get challengeSectionEnded => 'সময় শেষ';
 
   @override
   String get challengesPastEmpty => 'এখনো কিছু শেষ হয়নি।';
@@ -1207,13 +1207,13 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get deleteChallengeConfirm =>
-      'এই সংকল্প ও এর সব রেকর্ড করা অগ্রগতি মুছে ফেলবেন?';
+      'এই সংকল্প ও এর সব অগ্রগতির হিসাব মুছে ফেলবেন?';
 
   @override
   String get challengeShapeQuestion => 'এটি কোন ধরনের সংকল্প?';
 
   @override
-  String get challengeShapeTotal => 'একটি মোট লক্ষ্য';
+  String get challengeShapeTotal => 'মোট সংখ্যায় পৌঁছানো';
 
   @override
   String get challengeShapeTotalBody =>
@@ -1224,7 +1224,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get challengeShapeStreakBody =>
-      'তাহাজ্জুদ, জামাতে ফজর। দিনে একবার টিক, পরিমাণ জরুরি নয়।';
+      'তাহাজ্জুদ, জামাতে ফজর। দিনে একটি টিক, পরিমাণ যা-ই হোক।';
 
   @override
   String get challengeTargetLabel => 'লক্ষ্য';
@@ -1239,7 +1239,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get challengeUnitHint => 'রাকাত, পৃষ্ঠা, বার';
 
   @override
-  String get challengeOneTapAdds => 'এক চাপে যোগ হয়';
+  String get challengeOneTapAdds => 'প্রতি ট্যাপে যোগ হবে';
 
   @override
   String get challengeHowManyDays => 'কত দিন?';
@@ -1260,10 +1260,10 @@ class AppLocalizationsBn extends AppLocalizations {
   String get challengeByWhen => 'কবের মধ্যে?';
 
   @override
-  String get challengeWindowDuration => 'নির্দিষ্ট মেয়াদ';
+  String get challengeWindowDuration => 'নির্দিষ্ট দিনের মধ্যে';
 
   @override
-  String get challengeByDate => 'নির্দিষ্ট তারিখে';
+  String get challengeByDate => 'নির্দিষ্ট তারিখের মধ্যে';
 
   @override
   String challengePlanRange(String start, String end) {
@@ -1272,7 +1272,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String challengePlanExact(String start, String end) {
-    return '$start থেকে $end · প্রতিদিন একটি, প্রতিদিনই';
+    return '$start থেকে $end · দিনে একটি, একদিনও বাদ নয়';
   }
 
   @override
@@ -1283,7 +1283,7 @@ class AppLocalizationsBn extends AppLocalizations {
     String window,
     String slack,
   ) {
-    return '$start থেকে $end · $window দিনে $target — $slack দিন বাদ দিতে পারেন';
+    return '$start থেকে $end · $window দিনের মধ্যে $target দিন — $slack দিন বাদ গেলেও চলবে';
   }
 
   @override
@@ -1298,7 +1298,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String challengeTooTight(String target, String window) {
-    return '$window দিনে $target দিন হয় না — ধারাবাহিকতায় দিনে একটিই গোনা হয়।';
+    return '$window দিনের মধ্যে $target দিন সম্ভব নয় — টানা ধারায় দিনে একটিই গোনা হয়।';
   }
 
   @override
@@ -1320,12 +1320,12 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String challengeProgressCount(String done, String target, String unit) {
-    return '$target $unit এর মধ্যে $done';
+    return '$target $unit-এর মধ্যে $done';
   }
 
   @override
   String challengeProgressPlain(String done, String target) {
-    return '$target এর মধ্যে $done';
+    return '$target-এর মধ্যে $done';
   }
 
   @override
@@ -1349,7 +1349,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String challengeOnTrack(String rate) {
-    return 'ঠিক পথে · $rate/দিন';
+    return 'ঠিকঠাক চলছে · $rate/দিন';
   }
 
   @override
@@ -1363,22 +1363,22 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get challengeReached => 'লক্ষ্য পূর্ণ';
+  String get challengeReached => 'লক্ষ্য পূরণ হয়েছে';
 
   @override
   String get challengeCompleted => 'সম্পন্ন';
 
   @override
   String challengeEnded(String done, String target) {
-    return 'শেষ · $done/$target';
+    return 'সময় শেষ · $done/$target';
   }
 
   @override
-  String get challengeExpiredTitle => 'সংকল্প শেষ';
+  String get challengeExpiredTitle => 'সংকল্পের সময় শেষ';
 
   @override
   String challengeExpiredBody(String title, String done, String target) {
-    return '$title শেষ হয়েছে, $target-এর মধ্যে $done।';
+    return '$title-এর সময় শেষ: $target-এর মধ্যে $done হয়েছে।';
   }
 
   @override
@@ -1391,11 +1391,11 @@ class AppLocalizationsBn extends AppLocalizations {
   String get challengeArchive => 'আর্কাইভ করুন';
 
   @override
-  String get challengeDailyBreakdown => 'দৈনিক তালিকা';
+  String get challengeDailyBreakdown => 'দৈনিক হিসাব';
 
   @override
   String challengeNudgeBody(String title, String rate) {
-    return '$title: সময়মতো শেষ করতে দিনে $rate।';
+    return '$title: সময়মতো শেষ করতে দিনে $rate করে লাগবে।';
   }
 
   @override
@@ -1404,7 +1404,7 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get challengeGroupGoal => 'আপনার লক্ষ্য';
+  String get challengeGroupGoal => 'লক্ষ্য';
 
   @override
   String get challengeGroupShape => 'ধরন';
@@ -1428,7 +1428,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get challengeTmplTahajjud => '৪০ রাত তাহাজ্জুদ';
 
   @override
-  String get challengeTmplSalawat => '১০০০ দরূদ';
+  String get challengeTmplSalawat => '১০০০ দরুদ';
 
   @override
   String get challengeTmplKhatm => '৩০ দিনে কুরআন খতম';
@@ -1437,7 +1437,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get challengeTmplFajrJamaah => '৩০ দিন জামাতে ফজর';
 
   @override
-  String get challengeTmplSadaqah => '৩০ দিন সাদাকাহ';
+  String get challengeTmplSadaqah => '৩০ দিন সদকা';
 
   @override
   String get listSeparator => ' · ';
@@ -1461,7 +1461,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get tierNasirMeaning => 'সহযোগী';
 
   @override
-  String get tierMuhsinMeaning => 'উপকারী';
+  String get tierMuhsinMeaning => 'হিতৈষী';
 
   @override
   String get tierAnsarMeaning => 'সাহায্যকারী';
@@ -1471,14 +1471,14 @@ class AppLocalizationsBn extends AppLocalizations {
       'বিনামূল্যে, কোনো বিজ্ঞাপন নেই, অ্যাকাউন্টও লাগে না। চাইলে সামান্য কিছু দিয়ে এর উন্নয়নে সহযোগিতা করতে পারেন — যেকোনো পরিমাণ, যখন খুশি।';
 
   @override
-  String get supportCta => 'Muhasaba-কে সহযোগিতা করুন';
+  String get supportCta => 'মুহাসাবাকে সহযোগিতা করুন';
 
   @override
   String get supportAgain => 'আবার সহযোগিতা করুন';
 
   @override
   String get supporterThanks =>
-      'জাযাকুমুল্লাহু খাইরান — ইনশাআল্লাহ Muhasaba বিনামূল্যে ও বিজ্ঞাপনমুক্ত থাকবে।';
+      'জাযাকুমুল্লাহু খাইরান — ইনশাআল্লাহ মুহাসাবা বিনামূল্যে ও বিজ্ঞাপনমুক্ত থাকবে।';
 
   @override
   String supporterSince(String tier, String month) {
@@ -1486,11 +1486,11 @@ class AppLocalizationsBn extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'Muhasaba-কে সহযোগিতা করুন';
+  String get supportPromptTitle => 'মুহাসাবাকে সহযোগিতা করুন';
 
   @override
   String get supportPromptBody =>
-      'Muhasaba বিনামূল্যে, কোনো বিজ্ঞাপন নেই, অ্যাকাউন্টও লাগে না। চাইলে সামান্য কিছু দিয়ে এর উন্নয়নে সহযোগিতা করতে পারেন — যেকোনো পরিমাণ, যখন খুশি। কোনো ফিচারই এর জন্য আটকে নেই।';
+      'মুহাসাবা বিনামূল্যে, কোনো বিজ্ঞাপন নেই, অ্যাকাউন্টও লাগে না। চাইলে সামান্য কিছু দিয়ে এর উন্নয়নে সহযোগিতা করতে পারেন — যেকোনো পরিমাণ, যখন খুশি। এর জন্য কোনো ফিচার আটকে রাখা হয়নি।';
 
   @override
   String get supportPromptNow => 'এখনই সহযোগিতা করুন';
@@ -1502,7 +1502,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get supportPromptNever => 'আর জিজ্ঞেস করবেন না';
 
   @override
-  String get tipSheetTitle => 'Muhasaba-কে সহযোগিতা করুন';
+  String get tipSheetTitle => 'মুহাসাবাকে সহযোগিতা করুন';
 
   @override
   String get tipSheetBody =>
@@ -1529,7 +1529,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get supportEmailBody =>
-      'আসসালামু আলাইকুম,\n\nআমি সরাসরি Muhasaba-র উন্নয়নে সহযোগিতা করতে চাই।\n\nদেশ:\nযেভাবে পাঠাতে চাই:\nপরিমাণ (ঐচ্ছিক):';
+      'আসসালামু আলাইকুম,\n\nআমি সরাসরি মুহাসাবার উন্নয়নে সহযোগিতা করতে চাই।\n\nদেশ:\nযেভাবে পাঠাতে চাই:\nপরিমাণ (ঐচ্ছিক):';
 
   @override
   String tipBusy(String store) {
@@ -1538,7 +1538,7 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get tipThanks =>
-      'জাযাকুমুল্লাহু খাইরান — আল্লাহ আপনার পক্ষ থেকে কবুল করুন।';
+      'জাযাকুমুল্লাহু খাইরান — আল্লাহ আপনার কাছ থেকে তা কবুল করুন।';
 
   @override
   String get tipDone => 'সম্পন্ন';
@@ -1558,7 +1558,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get optionSetJamaa => 'জামাত';
 
   @override
-  String get optionJamaaAlone => 'একাকী';
+  String get optionJamaaAlone => 'একা';
 
   @override
   String get optionJamaaHome => 'ঘরে জামাতে';
@@ -1567,7 +1567,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get optionJamaaMasjid => 'মসজিদে জামাতে';
 
   @override
-  String get optionSetOnTime => 'সময়';
+  String get optionSetOnTime => 'সময়মতো';
 
   @override
   String get optionOnTimeOnTime => 'সময়মতো';
@@ -1594,7 +1594,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get optionQuranListened => 'শ্রবণ';
 
   @override
-  String get optionSetSadaqahType => 'সাদাকাহর ধরন';
+  String get optionSetSadaqahType => 'সদকার ধরন';
 
   @override
   String get optionSadaqahMoney => 'টাকা';
@@ -1618,7 +1618,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get optionIntensityModerate => 'মাঝারি';
 
   @override
-  String get optionIntensityIntense => 'নিবিড়';
+  String get optionIntensityIntense => 'তীব্র';
 
   @override
   String get optionSetNewTitle => 'নতুন বিকল্প সেট';
@@ -1728,7 +1728,7 @@ class AppLocalizationsBn extends AppLocalizations {
       other: '$count বার',
       one: 'একবার',
     );
-    return 'যে $_temp0 নির্বাচন রেকর্ড হয়েছে, তার অনুপাত';
+    return 'যে $_temp0 সম্পন্ন করার সময় বিকল্প বেছে নেওয়া হয়েছে, তার মধ্যে অনুপাত';
   }
 
   @override
@@ -1825,7 +1825,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get amalWitr => 'বিতর নামাজ';
 
   @override
-  String get amalQada => 'কাযা নামাজ';
+  String get amalQada => 'কাজা নামাজ';
 
   @override
   String get amalFajrSunnah => 'ফজরের সুন্নত';
@@ -1930,10 +1930,10 @@ class AppLocalizationsBn extends AppLocalizations {
   String get amalWakingAdhkar => 'ঘুম থেকে ওঠার যিকির';
 
   @override
-  String get amalDuaAdhan => 'আযানের পরের দোয়া';
+  String get amalDuaAdhan => 'আজানের পরের দোয়া';
 
   @override
-  String get amalDuaIqamah => 'আযান ও ইকামতের মাঝে দোয়া';
+  String get amalDuaIqamah => 'আজান ও ইকামতের মাঝে দোয়া';
 
   @override
   String get amalDuaSujood => 'সিজদায় দোয়া';
@@ -1990,7 +1990,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get amalThreeDays => 'মাসে তিনটি রোজা';
 
   @override
-  String get amalDailySadaqah => 'প্রতিদিন সাদাকাহ';
+  String get amalDailySadaqah => 'প্রতিদিন সদকা';
 
   @override
   String get amalFeed => 'কাউকে খাবার খাওয়ানো';
@@ -2023,7 +2023,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get amalLearnDua => 'নতুন দোয়া শেখা';
 
   @override
-  String get amalShare => 'শেখা কথা অন্যকে জানানো';
+  String get amalShare => 'যা শিখলেন তা অন্যকে জানানো';
 
   @override
   String get amalFiqh => 'ফিকহ শেখা';
@@ -2032,7 +2032,7 @@ class AppLocalizationsBn extends AppLocalizations {
   String get amalMuhasaba => 'রাতের মুহাসাবা';
 
   @override
-  String get amalSpeakGood => 'ভালো কথা বলো, নয়তো চুপ থাকো';
+  String get amalSpeakGood => 'ভালো কথা বলা, নয়তো চুপ থাকা';
 
   @override
   String get amalNoBackbiting => 'গিবত থেকে বেঁচে থাকা';
@@ -2132,8 +2132,8 @@ class AppLocalizationsBn extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$countTextটি তৈরি আমল',
-      one: '$countTextটি তৈরি আমল',
+      other: '$countTextটি প্রস্তুত আমল',
+      one: '$countTextটি প্রস্তুত আমল',
     );
     return '$_temp0';
   }

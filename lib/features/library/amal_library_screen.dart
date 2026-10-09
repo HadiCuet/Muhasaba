@@ -352,7 +352,7 @@ String _schedule(BuildContext context, LibraryAmal a, AppLocalizations l) {
       Frequency.daily => l.frequencyDaily,
       Frequency.weekly =>
         a.weeklyDays.isNotEmpty
-            ? '${l.frequencyWeekly} · '
+            ? '${l.frequencyWeekly}${l.listSeparator}'
                   '${_weekdays(a.weeklyDays, l, Directionality.of(context))}'
             : l.libraryWeeklyAny(a.periodTarget, lnum(context, a.periodTarget)),
       Frequency.monthly => l.libraryMonthlyAny(
@@ -363,7 +363,7 @@ String _schedule(BuildContext context, LibraryAmal a, AppLocalizations l) {
     if (a.target == kOpenEndedTarget) l.libraryAnyAmount,
     if (a.target > 1) l.libraryTimes(a.target, lnum(context, a.target)),
   ];
-  return parts.join(' · ');
+  return parts.join(l.listSeparator);
 }
 
 String _weekdays(Set<int> days, AppLocalizations l, TextDirection direction) =>
