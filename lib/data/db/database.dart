@@ -42,7 +42,7 @@ class AppDatabase extends _$AppDatabase {
     : super(executor ?? driftDatabase(name: 'muhasaba'));
 
   @override
-  int get schemaVersion => 11;
+  int get schemaVersion => 12;
 
   @override
   MigrationStrategy get migration => MigrationStrategy(
@@ -202,6 +202,21 @@ class AppDatabase extends _$AppDatabase {
           await m.addColumn(completions, completions.optionItemId);
         }
         await seedOptionSets(this);
+      }
+      if (from < 12) {
+        // Appended rather than slotted in where `seedCategories` puts them
+        // for fresh installs, so existing users keep the order they know.
+        for (final (name, icon) in const [
+          ('Dua', '🤲'),
+          ('Fasting', '🍽️'),
+          ('Knowledge', '📚'),
+        ]) {
+          await customStatement(
+            'INSERT OR IGNORE INTO categories (name, sort_order, icon) '
+            'SELECT ?, COALESCE(MAX(sort_order), -1) + 1, ? FROM categories',
+            [name, icon],
+          );
+        }
       }
     },
     beforeOpen: (details) async {

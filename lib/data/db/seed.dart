@@ -70,14 +70,29 @@ Future<void> seedCategories(AppDatabase db) async {
         icon: const Value('📿'),
       ),
       CategoriesCompanion.insert(
-        name: 'Quran',
+        name: 'Dua',
         sortOrder: const Value(3),
+        icon: const Value('🤲'),
+      ),
+      CategoriesCompanion.insert(
+        name: 'Quran',
+        sortOrder: const Value(4),
         icon: const Value('📖'),
       ),
       CategoriesCompanion.insert(
+        name: 'Fasting',
+        sortOrder: const Value(5),
+        icon: const Value('🍽️'),
+      ),
+      CategoriesCompanion.insert(
         name: 'Charity',
-        sortOrder: const Value(4),
+        sortOrder: const Value(6),
         icon: const Value('💰'),
+      ),
+      CategoriesCompanion.insert(
+        name: 'Knowledge',
+        sortOrder: const Value(7),
+        icon: const Value('📚'),
       ),
     ], mode: InsertMode.insertOrIgnore);
   });
