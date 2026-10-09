@@ -1432,12 +1432,6 @@ class AppLocalizationsHa extends AppLocalizations {
   String get challengeGroupReminders => 'Tunatarwa';
 
   @override
-  String get challengeStartFromTemplate => 'Fara daga samfuri';
-
-  @override
-  String get challengeTemplateBlank => 'Fanko';
-
-  @override
   String get challengePreview => 'Duba tukuna';
 
   @override
@@ -1454,6 +1448,173 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get challengeTmplSadaqah => 'Sadaka kwanaki 30';
+
+  @override
+  String get challengeTmplJamaah40 => 'Salloli biyar a jam\'i kwanaki 40';
+
+  @override
+  String get challengeTmplOnTime => 'Salloli biyar a kan lokaci kwanaki 30';
+
+  @override
+  String get challengeTmplRawatib => 'Raka\'a 12 na sunna kwanaki 30';
+
+  @override
+  String get challengeTmplTaraweeh => 'Tarawihi kowane daren Ramadan';
+
+  @override
+  String get challengeTmplLastTenQiyam => 'Ƙiyamul Laili a goman ƙarshe';
+
+  @override
+  String get challengeTmplIstighfar => 'Istigfari kwanaki 30';
+
+  @override
+  String get challengeTmplAdhkar => 'Azkar na safe da yamma kwanaki 40';
+
+  @override
+  String get challengeTmplLearnDuas => 'Koyi addu\'o\'i 30';
+
+  @override
+  String get challengeTmplKhatmYear => 'Sauke Alƙur\'ani cikin shekara ɗaya';
+
+  @override
+  String get challengeTmplMulk => 'Haddace Suratul Mulk';
+
+  @override
+  String get challengeTmplJuzAmma => 'Haddace Juzu\'in Amma';
+
+  @override
+  String get challengeTmplQuran40 => 'Karatun Alƙur\'ani kwanaki 40';
+
+  @override
+  String get challengeTmplRamadan => 'Azumin Ramadan gaba ɗaya';
+
+  @override
+  String get challengeTmplShawwal => 'Kwana shida na Shawwal';
+
+  @override
+  String get challengeTmplDhulHijjah => 'Kwana tara na farkon Zul Hijja';
+
+  @override
+  String get challengeTmplMakeUpFasts => 'Ramuwar azumi';
+
+  @override
+  String get challengeTmplLastTenSadaqah => 'Sadaka a goman ƙarshe';
+
+  @override
+  String get challengeTmplNawawi => 'Haddace Hadisai 40 na Nawawi';
+
+  @override
+  String get challengeTmplNames99 => 'Koyi sunayen Allah 99';
+
+  @override
+  String get challengeTmplBackbiting => 'Gujewa gulma kwanaki 30';
+
+  @override
+  String get challengeTmplMuhasaba => 'Muhasaba dare 30';
+
+  @override
+  String get challengeTmplCallParents => 'Kiran iyaye kwanaki 30';
+
+  @override
+  String get challengeUnitJuz => 'juzu\'i';
+
+  @override
+  String get challengeUnitSalawat => 'salati';
+
+  @override
+  String get challengeUnitPages => 'shafuka';
+
+  @override
+  String get challengeUnitAyat => 'ayoyi';
+
+  @override
+  String get challengeUnitSurahs => 'surori';
+
+  @override
+  String get challengeUnitDuas => 'addu\'o\'i';
+
+  @override
+  String get challengeUnitHadith => 'hadisai';
+
+  @override
+  String get challengeUnitNames => 'sunaye';
+
+  @override
+  String get challengeLibraryTitle => 'Taskar Buri';
+
+  @override
+  String get challengeLibrarySearchHint => 'Nemi buri';
+
+  @override
+  String challengeLibraryNoMatch(String query) {
+    return 'Babu burin da ya dace da “$query”';
+  }
+
+  @override
+  String challengeLibraryStarted(String date) {
+    return 'An fara · zai ƙare ranar $date';
+  }
+
+  @override
+  String get challengeLibraryStartedNoDeadline => 'An fara · babu wa\'adi';
+
+  @override
+  String get challengeLibraryRunning => 'Yana gudana';
+
+  @override
+  String challengeLibraryStartTooltip(String title) {
+    return 'Fara $title';
+  }
+
+  @override
+  String get challengeLibraryPickBanner => 'Zaɓa daga Taskar Buri';
+
+  @override
+  String challengeLibraryPickBannerSubtitle(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Buri $countText a shirye',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeLibraryFilledIn => 'An cike daga Taskar Buri';
+
+  @override
+  String get challengesEmptyBrowse => 'Duba Taskar Buri';
+
+  @override
+  String challengeLibraryDays(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'kwanaki $countText',
+      one: 'kwana $countText',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String challengeLibraryAmount(String countText, String unit) {
+    return '$unit $countText';
+  }
+
+  @override
+  String challengeLibraryEveryDay(String days) {
+    return 'Kowace rana tsawon $days';
+  }
+
+  @override
+  String challengeLibraryWithin(String goal, String days) {
+    return '$goal cikin $days';
+  }
+
+  @override
+  String challengeLibraryNoDeadlineGoal(String goal) {
+    return '$goal, babu wa\'adi';
+  }
 
   @override
   String get listSeparator => ' · ';

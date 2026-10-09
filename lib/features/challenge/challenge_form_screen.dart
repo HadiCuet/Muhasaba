@@ -17,8 +17,10 @@ import '../../domain/utils/localized_number.dart';
 import '../../l10n/app_localizations.dart';
 import '../create_edit/widgets/category_picker.dart';
 import '../create_edit/widgets/emoji_picker.dart';
+import '../library/amal_library.dart';
+import '../library/library_widgets.dart';
+import 'challenge_library.dart';
 import 'challenge_providers.dart';
-import 'challenge_templates.dart';
 import 'widgets/challenge_form_group.dart';
 import 'widgets/challenge_preview_card.dart';
 import 'widgets/custom_number_dialog.dart';
@@ -29,9 +31,20 @@ import 'widgets/custom_number_dialog.dart';
 enum _Deadline { exact, within, byDate, none }
 
 class ChallengeFormScreen extends ConsumerStatefulWidget {
-  const ChallengeFormScreen({super.key, this.challengeId});
+  const ChallengeFormScreen({
+    super.key,
+    this.challengeId,
+    this.prefill,
+    this.initialTitle,
+  });
 
   final int? challengeId;
+
+  /// Fills a new challenge from a Challenge Library entry.
+  final LibraryChallenge? prefill;
+
+  /// Only sets the title, e.g. from a library search that found nothing.
+  final String? initialTitle;
 
   @override
   ConsumerState<ChallengeFormScreen> createState() =>
@@ -61,6 +74,9 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
   TimeOfDay? _reminderTime;
   bool _iconIsManual = false;
   String? _templateTitle;
+  String? _templateUnit;
+  LibraryChallenge? _picked;
+  bool _prefilled = false;
   ChallengeRow? _existing;
   bool _loaded = false;
 
@@ -74,6 +90,21 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
       _load(widget.challengeId!);
     } else {
       _loaded = true;
+    }
+  }
+
+  @override
+  void didChangeDependencies() {
+    super.didChangeDependencies();
+    // Localizations aren't available in initState, and a later run must not
+    // overwrite what the user has typed since.
+    if (_prefilled || widget.challengeId != null) return;
+    _prefilled = true;
+    final prefill = widget.prefill;
+    if (prefill != null) {
+      _applyLibraryChallenge(prefill);
+    } else if (widget.initialTitle != null) {
+      _title.text = widget.initialTitle!;
     }
   }
 
@@ -94,7 +125,8 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
       _existing = row;
       _templateTitle = row.title;
       _title.text = localizedChallengeTitle(row.title, l);
-      _unit.text = row.unit ?? '';
+      _templateUnit = row.unit;
+      _unit.text = row.unit == null ? '' : localizedChallengeUnit(row.unit!, l);
       _icon = row.icon;
       _mode = row.mode;
       _stepSize = row.stepSize;
@@ -167,6 +199,19 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
     return typed == localized ? _templateTitle! : typed;
   }
 
+  /// The same for a library unit: canonical English while left alone.
+  String? get _unitToStore {
+    final typed = _unit.text.trim();
+    if (typed.isEmpty) return null;
+    final original = _templateUnit;
+    if (original != null &&
+        typed ==
+            localizedChallengeUnit(original, AppLocalizations.of(context))) {
+      return original;
+    }
+    return typed;
+  }
+
   /// The shortest offered window that is genuinely longer than the streak
   /// target, so "a longer window" never lands on one that cannot hold it.
   int get _seededLongerWindow {
@@ -213,58 +258,49 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
     });
   }
 
-  void _applyTemplate(ChallengeTemplate t) {
-    FirebaseAnalytics.instance.logEvent(
-      name: 'challenge_template_used',
-      parameters: {'template': t.title},
-    );
-    setState(() {
-      _icon = t.icon;
-      _iconIsManual = true;
-      _title.text = localizedChallengeTitle(
-        t.title,
-        AppLocalizations.of(context),
-      );
-      _templateTitle = t.title;
-      _mode = t.mode;
-      _unit.text = t.unit ?? '';
-      _stepSize = t.stepSize;
-      _category = t.category;
-      if (t.mode == ChallengeMode.days) {
-        _dayTarget = t.target;
-        _amount.clear();
-      } else {
-        _amount.text = t.target.toString();
-      }
-      final days = t.durationDays;
-      if (days == null) {
-        _deadline = _Deadline.none;
-      } else if (t.mode == ChallengeMode.days && days == t.target) {
-        _deadline = _Deadline.exact;
-      } else {
-        _durationDays = days;
-        _deadline = _Deadline.within;
-      }
-    });
+  void _applyLibraryChallenge(LibraryChallenge t) {
+    final l = AppLocalizations.of(context);
+    _picked = t;
+    _icon = t.icon;
+    _iconIsManual = true;
+    _title.text = localizedChallengeTitle(t.title, l);
+    _templateTitle = t.title;
+    _templateUnit = t.unit;
+    _unit.text = t.unit == null ? '' : localizedChallengeUnit(t.unit!, l);
+    _mode = t.mode;
+    _stepSize = t.stepSize;
+    _category = t.category;
+    if (t.mode == ChallengeMode.days) {
+      _dayTarget = t.target;
+      _amount.clear();
+    } else {
+      _amount.text = t.target.toString();
+    }
+    final days = t.durationDays;
+    if (days == null) {
+      _deadline = _Deadline.none;
+    } else if (t.mode == ChallengeMode.days && days == t.target) {
+      _deadline = _Deadline.exact;
+    } else {
+      _durationDays = days;
+      _deadline = _Deadline.within;
+    }
+    // The category chip only shows once its row exists.
+    ref
+        .read(categoryRepositoryProvider)
+        .create(t.category, icon: libraryCategoryIcon(t.category));
   }
 
-  void _clearForm() {
-    setState(() {
-      _icon = '🚩';
-      _iconIsManual = false;
-      _templateTitle = null;
-      _title.clear();
-      _amount.clear();
-      _unit.clear();
-      _mode = ChallengeMode.count;
-      _stepSize = 1;
-      _category = null;
-      _reminderTime = null;
-      _deadline = _Deadline.within;
-      _dayTarget = 30;
-      _durationDays = 7;
-      _end = null;
-    });
+  Future<void> _pickFromLibrary() async {
+    FirebaseAnalytics.instance.logEvent(
+      name: 'challenge_library_opened',
+      parameters: {'source': 'form'},
+    );
+    final picked = await context.push<LibraryChallenge>(
+      '/challenge-library?pick=1',
+    );
+    if (picked == null || !mounted) return;
+    setState(() => _applyLibraryChallenge(picked));
   }
 
   Future<void> _pickIcon() async {
@@ -337,7 +373,7 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
     final repo = ref.read(challengeRepositoryProvider);
     final title = _titleToStore;
     final target = _target;
-    final unit = _unit.text.trim().isEmpty ? null : _unit.text.trim();
+    final unit = _unitToStore;
     final startDate = _startOrToday;
     final endExclusive = _resolveEndExclusive();
     final reminder = _reminderString;
@@ -827,7 +863,19 @@ class _ChallengeFormScreenState extends ConsumerState<ChallengeFormScreen> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  _TemplateRow(onPicked: _applyTemplate, onBlank: _clearForm),
+                  if (widget.challengeId == null) ...[
+                    LibraryPickBanner(
+                      picked: _picked != null,
+                      onTap: _pickFromLibrary,
+                      title: l.challengeLibraryPickBanner,
+                      subtitle: l.challengeLibraryPickBannerSubtitle(
+                        kChallengeLibrary.length,
+                        lnum(context, kChallengeLibrary.length),
+                      ),
+                      filledIn: l.challengeLibraryFilledIn,
+                    ),
+                    const SizedBox(height: 16),
+                  ],
                   ChallengeFormGroup(
                     title: l.challengeGroupGoal,
                     children: [
@@ -940,49 +988,6 @@ class _ShapeCard extends StatelessWidget {
           ],
         ),
       ),
-    );
-  }
-}
-
-class _TemplateRow extends StatelessWidget {
-  const _TemplateRow({required this.onPicked, required this.onBlank});
-
-  final ValueChanged<ChallengeTemplate> onPicked;
-  final VoidCallback onBlank;
-
-  @override
-  Widget build(BuildContext context) {
-    final l = AppLocalizations.of(context);
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          l.challengeStartFromTemplate,
-          style: Theme.of(context).textTheme.labelLarge,
-        ),
-        const SizedBox(height: 8),
-        SingleChildScrollView(
-          scrollDirection: Axis.horizontal,
-          child: Row(
-            children: [
-              ActionChip(
-                avatar: const Icon(Icons.refresh, size: 18),
-                label: Text(l.challengeTemplateBlank),
-                onPressed: onBlank,
-              ),
-              for (final t in kChallengeTemplates) ...[
-                const SizedBox(width: 8),
-                ActionChip(
-                  avatar: Text(t.icon, style: const TextStyle(fontSize: 15)),
-                  label: Text(localizedChallengeTitle(t.title, l)),
-                  onPressed: () => onPicked(t),
-                ),
-              ],
-            ],
-          ),
-        ),
-        const SizedBox(height: 16),
-      ],
     );
   }
 }

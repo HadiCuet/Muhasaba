@@ -1433,12 +1433,6 @@ class AppLocalizationsTg extends AppLocalizations {
   String get challengeGroupReminders => 'Ёдоварӣ';
 
   @override
-  String get challengeStartFromTemplate => 'Аз намуна оғоз кунед';
-
-  @override
-  String get challengeTemplateBlank => 'Холӣ';
-
-  @override
   String get challengePreview => 'Пешнамоиш';
 
   @override
@@ -1455,6 +1449,174 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get challengeTmplSadaqah => '30 рӯз садақа';
+
+  @override
+  String get challengeTmplJamaah40 => '40 рӯз ҳамаи намозҳо бо ҷамоат';
+
+  @override
+  String get challengeTmplOnTime => '30 рӯз ҳамаи намозҳо сари вақт';
+
+  @override
+  String get challengeTmplRawatib => '30 рӯз 12 ракъат суннат';
+
+  @override
+  String get challengeTmplTaraweeh => 'Таровеҳ ҳар шаби Рамазон';
+
+  @override
+  String get challengeTmplLastTenQiyam => 'Намози шаб дар даҳаи охир';
+
+  @override
+  String get challengeTmplIstighfar => '30 рӯз истиғфор';
+
+  @override
+  String get challengeTmplAdhkar => '40 рӯз зикрҳои субҳу шом';
+
+  @override
+  String get challengeTmplLearnDuas => 'Омӯхтани 30 дуо';
+
+  @override
+  String get challengeTmplKhatmYear => 'Хатми Қуръон дар як сол';
+
+  @override
+  String get challengeTmplMulk => 'Ҳифзи сураи Мулк';
+
+  @override
+  String get challengeTmplJuzAmma => 'Ҳифзи ҷузъи Амма';
+
+  @override
+  String get challengeTmplQuran40 => '40 рӯз бо Қуръон';
+
+  @override
+  String get challengeTmplRamadan => 'Рӯзаи тамоми моҳи Рамазон';
+
+  @override
+  String get challengeTmplShawwal => 'Шаш рӯзаи Шаввол';
+
+  @override
+  String get challengeTmplDhulHijjah => 'Нӯҳ рӯзи аввали Зулҳиҷҷа';
+
+  @override
+  String get challengeTmplMakeUpFasts => 'Гирифтани рӯзаҳои қазо';
+
+  @override
+  String get challengeTmplLastTenSadaqah => 'Садақа дар даҳ шаби охир';
+
+  @override
+  String get challengeTmplNawawi => 'Ҳифзи 40 ҳадиси Нававӣ';
+
+  @override
+  String get challengeTmplNames99 => 'Омӯхтани 99 номи Аллоҳ';
+
+  @override
+  String get challengeTmplBackbiting => '30 рӯз бе ғайбат';
+
+  @override
+  String get challengeTmplMuhasaba => '30 шаб муҳосиба';
+
+  @override
+  String get challengeTmplCallParents => '30 рӯз ба падару модар занг задан';
+
+  @override
+  String get challengeUnitJuz => 'ҷузъ';
+
+  @override
+  String get challengeUnitSalawat => 'салавот';
+
+  @override
+  String get challengeUnitPages => 'саҳифа';
+
+  @override
+  String get challengeUnitAyat => 'оят';
+
+  @override
+  String get challengeUnitSurahs => 'сура';
+
+  @override
+  String get challengeUnitDuas => 'дуо';
+
+  @override
+  String get challengeUnitHadith => 'ҳадис';
+
+  @override
+  String get challengeUnitNames => 'ном';
+
+  @override
+  String get challengeLibraryTitle => 'Китобхонаи мақсадҳо';
+
+  @override
+  String get challengeLibrarySearchHint => 'Ҷустуҷӯи мақсад';
+
+  @override
+  String challengeLibraryNoMatch(String query) {
+    return 'Барои «$query» мақсад ёфт нашуд';
+  }
+
+  @override
+  String challengeLibraryStarted(String date) {
+    return 'Оғоз шуд · анҷом: $date';
+  }
+
+  @override
+  String get challengeLibraryStartedNoDeadline => 'Оғоз шуд · бемуҳлат';
+
+  @override
+  String get challengeLibraryRunning => 'Идома дорад';
+
+  @override
+  String challengeLibraryStartTooltip(String title) {
+    return 'Оғоз кардан: $title';
+  }
+
+  @override
+  String get challengeLibraryPickBanner =>
+      'Аз Китобхонаи мақсадҳо интихоб кунед';
+
+  @override
+  String challengeLibraryPickBannerSubtitle(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText мақсади тайёр',
+      one: '$countText мақсади тайёр',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeLibraryFilledIn => 'Аз Китобхонаи мақсадҳо пур карда шуд';
+
+  @override
+  String get challengesEmptyBrowse => 'Китобхонаи мақсадҳоро кушодан';
+
+  @override
+  String challengeLibraryDays(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText рӯз',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String challengeLibraryAmount(String countText, String unit) {
+    return '$countText $unit';
+  }
+
+  @override
+  String challengeLibraryEveryDay(String days) {
+    return '$days пайдарпай';
+  }
+
+  @override
+  String challengeLibraryWithin(String goal, String days) {
+    return '$goal дар зарфи $days';
+  }
+
+  @override
+  String challengeLibraryNoDeadlineGoal(String goal) {
+    return '$goal, бемуҳлат';
+  }
 
   @override
   String get listSeparator => ' · ';

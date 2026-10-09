@@ -13,6 +13,7 @@ import '../../domain/utils/localized_challenge_title.dart';
 import '../../l10n/app_localizations.dart';
 import '../tutorial/tutorial_anchors.dart';
 import '../tutorial/tutorial_controller.dart';
+import 'challenge_library_screen.dart';
 import 'challenge_providers.dart';
 import 'widgets/challenge_card.dart';
 import 'widgets/challenge_delete.dart';
@@ -73,6 +74,13 @@ class _ChallengeScreenState extends ConsumerState<ChallengeScreen>
     return Scaffold(
       appBar: AppBar(
         title: Text(l.tabChallenge),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.menu_book_outlined),
+            tooltip: l.challengeLibraryTitle,
+            onPressed: () => openChallengeLibrary(context, source: 'app_bar'),
+          ),
+        ],
         bottom: TabBar(
           controller: _tabs,
           tabs: [
@@ -369,6 +377,10 @@ class _ChallengeScreenState extends ConsumerState<ChallengeScreen>
           challenge: view.row,
           muhasabaDate: today,
           amount: amount < 0 ? 0 : amount,
+          notificationTitle: localizedChallengeTitle(
+            view.row.title,
+            AppLocalizations.of(context),
+          ),
         );
     FirebaseAnalytics.instance.logEvent(
       name: 'challenge_logged',
@@ -431,6 +443,13 @@ class _EmptyState extends StatelessWidget {
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: theme.colorScheme.onSurfaceVariant,
               ),
+            ),
+            const SizedBox(height: 16),
+            FilledButton.tonalIcon(
+              onPressed: () =>
+                  openChallengeLibrary(context, source: 'empty_state'),
+              icon: const Icon(Icons.menu_book_outlined),
+              label: Text(l.challengesEmptyBrowse),
             ),
           ],
         ),

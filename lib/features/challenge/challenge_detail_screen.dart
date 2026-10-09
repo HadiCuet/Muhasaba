@@ -7,6 +7,7 @@ import '../../app/providers.dart';
 import '../../app/widgets/max_width_body.dart';
 import '../../app/widgets/stepper_field.dart';
 import '../../domain/models/challenge.dart';
+import '../../domain/utils/localized_challenge_title.dart';
 import '../../domain/utils/localized_number.dart';
 import '../../l10n/app_localizations.dart';
 import 'challenge_providers.dart';
@@ -65,7 +66,7 @@ class _ChallengeDetailScreenState extends ConsumerState<ChallengeDetailScreen> {
 
     return Scaffold(
       appBar: AppBar(
-        title: Text(view.row.title),
+        title: Text(localizedChallengeTitle(view.row.title, l)),
         actions: [
           IconButton(
             icon: const Icon(Icons.edit_outlined),
@@ -209,6 +210,10 @@ class _ChallengeDetailScreenState extends ConsumerState<ChallengeDetailScreen> {
           challenge: view.row,
           muhasabaDate: day,
           amount: amount < 0 ? 0 : amount,
+          notificationTitle: localizedChallengeTitle(
+            view.row.title,
+            AppLocalizations.of(context),
+          ),
         );
     await refreshChallengeNudges(ref);
   }
@@ -224,7 +229,11 @@ class _ChallengeDetailScreenState extends ConsumerState<ChallengeDetailScreen> {
       ChallengeMode.days => l.challengeProgressDays(done, target),
       ChallengeMode.count =>
         (view.row.unit?.isNotEmpty ?? false)
-            ? l.challengeProgressCount(done, target, view.row.unit!)
+            ? l.challengeProgressCount(
+                done,
+                target,
+                localizedChallengeUnit(view.row.unit!, l),
+              )
             : l.challengeProgressPlain(done, target),
     };
   }

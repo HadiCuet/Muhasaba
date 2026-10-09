@@ -18,6 +18,7 @@ import '../../domain/utils/localized_option_label.dart';
 import '../../domain/utils/monthly_dates.dart';
 import '../../domain/utils/weekly_days.dart';
 import '../library/amal_library.dart';
+import '../library/library_widgets.dart';
 import 'widgets/category_picker.dart';
 import 'widgets/emoji_picker.dart';
 import 'widgets/option_set_editor_sheet.dart';
@@ -485,9 +486,15 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
                     if (!isEdit) ...[
-                      _LibraryBanner(
+                      LibraryPickBanner(
                         picked: _template != null,
                         onTap: _pickFromLibrary,
+                        title: l.libraryPickBanner,
+                        subtitle: l.libraryPickBannerSubtitle(
+                          kAmalLibrary.length,
+                          lnum(context, kAmalLibrary.length),
+                        ),
+                        filledIn: l.libraryFilledIn,
                       ),
                       const SizedBox(height: 16),
                     ],
@@ -1287,57 +1294,6 @@ class _OptionPreview extends ConsumerWidget {
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class _LibraryBanner extends StatelessWidget {
-  const _LibraryBanner({required this.picked, required this.onTap});
-
-  final bool picked;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final scheme = theme.colorScheme;
-    final l = AppLocalizations.of(context);
-    if (picked) {
-      return Row(
-        children: [
-          Icon(Icons.menu_book_outlined, size: 18, color: scheme.primary),
-          const SizedBox(width: 8),
-          Expanded(
-            child: Text(
-              l.libraryFilledIn,
-              style: theme.textTheme.bodyMedium?.copyWith(
-                color: scheme.onSurfaceVariant,
-              ),
-            ),
-          ),
-          TextButton(onPressed: onTap, child: Text(l.libraryChange)),
-        ],
-      );
-    }
-    final count = kAmalLibrary.length;
-    return Material(
-      color: scheme.secondaryContainer,
-      borderRadius: BorderRadius.circular(12),
-      clipBehavior: Clip.antiAlias,
-      child: ListTile(
-        onTap: onTap,
-        iconColor: scheme.onSecondaryContainer,
-        textColor: scheme.onSecondaryContainer,
-        leading: const Icon(Icons.menu_book_outlined),
-        title: Text(
-          l.libraryPickBanner,
-          style: const TextStyle(fontWeight: FontWeight.w600),
-        ),
-        subtitle: Text(
-          l.libraryPickBannerSubtitle(count, lnum(context, count)),
-        ),
-        trailing: const Icon(Icons.chevron_right),
       ),
     );
   }

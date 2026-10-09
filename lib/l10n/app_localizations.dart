@@ -2481,18 +2481,6 @@ abstract class AppLocalizations {
   /// **'Reminders'**
   String get challengeGroupReminders;
 
-  /// Label above the horizontal row of challenge templates
-  ///
-  /// In en, this message translates to:
-  /// **'Start from a template'**
-  String get challengeStartFromTemplate;
-
-  /// Template row entry that clears the form back to defaults
-  ///
-  /// In en, this message translates to:
-  /// **'Blank'**
-  String get challengeTemplateBlank;
-
   /// Label above the live preview of the challenge being created
   ///
   /// In en, this message translates to:
@@ -2528,6 +2516,282 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Sadaqah 30 days'**
   String get challengeTmplSadaqah;
+
+  /// Challenge Library: pray all five daily prayers in congregation for 40 days in a row
+  ///
+  /// In en, this message translates to:
+  /// **'40 days, all prayers in jamaah'**
+  String get challengeTmplJamaah40;
+
+  /// Challenge Library: pray all five daily prayers on time for 30 days in a row
+  ///
+  /// In en, this message translates to:
+  /// **'30 days, all five on time'**
+  String get challengeTmplOnTime;
+
+  /// Challenge Library: pray the twelve daily Sunnah (rawatib) rak'ahs for 30 days in a row
+  ///
+  /// In en, this message translates to:
+  /// **'30 days of the 12 Sunnah rak\'ahs'**
+  String get challengeTmplRawatib;
+
+  /// Challenge Library: pray Taraweeh on every night of Ramadan
+  ///
+  /// In en, this message translates to:
+  /// **'Taraweeh every night of Ramadan'**
+  String get challengeTmplTaraweeh;
+
+  /// Challenge Library: night prayer on each of the last ten nights of Ramadan
+  ///
+  /// In en, this message translates to:
+  /// **'Qiyam in the last ten nights'**
+  String get challengeTmplLastTenQiyam;
+
+  /// Challenge Library: seek Allah's forgiveness (e.g. a hundred times) every day for 30 days
+  ///
+  /// In en, this message translates to:
+  /// **'30 days of istighfar'**
+  String get challengeTmplIstighfar;
+
+  /// Challenge Library: say the morning and evening adhkar every day for 40 days
+  ///
+  /// In en, this message translates to:
+  /// **'40 days of morning & evening adhkar'**
+  String get challengeTmplAdhkar;
+
+  /// Challenge Library: learn 30 everyday duas (e.g. from Hisn al-Muslim), about one a day
+  ///
+  /// In en, this message translates to:
+  /// **'Learn 30 duas'**
+  String get challengeTmplLearnDuas;
+
+  /// Challenge Library: complete a full reading of the Quran (604 pages) within a year
+  ///
+  /// In en, this message translates to:
+  /// **'Khatm in a year'**
+  String get challengeTmplKhatmYear;
+
+  /// Challenge Library: memorise Surah al-Mulk (30 ayat), about an ayah a day
+  ///
+  /// In en, this message translates to:
+  /// **'Memorise Surah al-Mulk'**
+  String get challengeTmplMulk;
+
+  /// Challenge Library: memorise the 30th juz of the Quran (its 37 short surahs)
+  ///
+  /// In en, this message translates to:
+  /// **'Memorise Juz \'Amma'**
+  String get challengeTmplJuzAmma;
+
+  /// Challenge Library: read some Quran every day for 40 days in a row
+  ///
+  /// In en, this message translates to:
+  /// **'40 days with the Quran'**
+  String get challengeTmplQuran40;
+
+  /// Challenge Library: fast every day of Ramadan
+  ///
+  /// In en, this message translates to:
+  /// **'Fast all of Ramadan'**
+  String get challengeTmplRamadan;
+
+  /// Challenge Library: fast six days in the month of Shawwal
+  ///
+  /// In en, this message translates to:
+  /// **'Six days of Shawwal'**
+  String get challengeTmplShawwal;
+
+  /// Challenge Library: fast the first nine days of Dhul Hijjah
+  ///
+  /// In en, this message translates to:
+  /// **'First nine days of Dhul Hijjah'**
+  String get challengeTmplDhulHijjah;
+
+  /// Challenge Library: make up (qada) the Ramadan fasts that were missed
+  ///
+  /// In en, this message translates to:
+  /// **'Make up missed fasts'**
+  String get challengeTmplMakeUpFasts;
+
+  /// Challenge Library: give charity on each of the last ten nights of Ramadan
+  ///
+  /// In en, this message translates to:
+  /// **'Sadaqah on the last ten nights'**
+  String get challengeTmplLastTenSadaqah;
+
+  /// Challenge Library: memorise Imam an-Nawawi's collection of forty hadith
+  ///
+  /// In en, this message translates to:
+  /// **'Memorise an-Nawawi\'s 40 Hadith'**
+  String get challengeTmplNawawi;
+
+  /// Challenge Library: learn the 99 Names of Allah, about one a day
+  ///
+  /// In en, this message translates to:
+  /// **'Learn the 99 Names of Allah'**
+  String get challengeTmplNames99;
+
+  /// Challenge Library: avoid backbiting (gheebah) for 30 days in a row
+  ///
+  /// In en, this message translates to:
+  /// **'30 days without backbiting'**
+  String get challengeTmplBackbiting;
+
+  /// Challenge Library: take account of yourself (muhasaba) every night for 30 nights
+  ///
+  /// In en, this message translates to:
+  /// **'30 nights of Muhasaba'**
+  String get challengeTmplMuhasaba;
+
+  /// Challenge Library: call or check on your parents every day for 30 days
+  ///
+  /// In en, this message translates to:
+  /// **'Call your parents for 30 days'**
+  String get challengeTmplCallParents;
+
+  /// Unit after a number in challenge progress, as in '12 of 30 juz'. Use the form that reads naturally right after a number; capitalise only if your language capitalises nouns.
+  ///
+  /// In en, this message translates to:
+  /// **'juz'**
+  String get challengeUnitJuz;
+
+  /// Unit after a number in challenge progress, as in '400 of 1,000 salawat' (blessings on the Prophet ﷺ)
+  ///
+  /// In en, this message translates to:
+  /// **'salawat'**
+  String get challengeUnitSalawat;
+
+  /// Unit after a number in challenge progress: pages of the Quran, as in '120 of 604 pages'
+  ///
+  /// In en, this message translates to:
+  /// **'pages'**
+  String get challengeUnitPages;
+
+  /// Unit after a number in challenge progress: verses of the Quran, as in '12 of 30 ayat'
+  ///
+  /// In en, this message translates to:
+  /// **'ayat'**
+  String get challengeUnitAyat;
+
+  /// Unit after a number in challenge progress, as in '10 of 37 surahs'
+  ///
+  /// In en, this message translates to:
+  /// **'surahs'**
+  String get challengeUnitSurahs;
+
+  /// Unit after a number in challenge progress, as in '5 of 30 duas'
+  ///
+  /// In en, this message translates to:
+  /// **'duas'**
+  String get challengeUnitDuas;
+
+  /// Unit after a number in challenge progress, as in '8 of 42 hadith'
+  ///
+  /// In en, this message translates to:
+  /// **'hadith'**
+  String get challengeUnitHadith;
+
+  /// Unit after a number in challenge progress: Names of Allah, as in '20 of 99 names'
+  ///
+  /// In en, this message translates to:
+  /// **'names'**
+  String get challengeUnitNames;
+
+  /// Name of the screen listing ready-made challenges; also the tooltip of the Challenge tab's app-bar button that opens it
+  ///
+  /// In en, this message translates to:
+  /// **'Challenge Library'**
+  String get challengeLibraryTitle;
+
+  /// Placeholder of the search field on the Challenge Library screen
+  ///
+  /// In en, this message translates to:
+  /// **'Search challenges'**
+  String get challengeLibrarySearchHint;
+
+  /// Shown when a search in the Challenge Library finds nothing
+  ///
+  /// In en, this message translates to:
+  /// **'No challenge matches “{query}”'**
+  String challengeLibraryNoMatch(String query);
+
+  /// Snackbar after a challenge is started from the library; date is its last day, e.g. 'Sun, Nov 8'
+  ///
+  /// In en, this message translates to:
+  /// **'Started · ends {date}'**
+  String challengeLibraryStarted(String date);
+
+  /// Snackbar after a challenge with no time limit is started from the library
+  ///
+  /// In en, this message translates to:
+  /// **'Started · no deadline'**
+  String get challengeLibraryStartedNoDeadline;
+
+  /// Tooltip of the check mark on a library challenge that is already running
+  ///
+  /// In en, this message translates to:
+  /// **'Running'**
+  String get challengeLibraryRunning;
+
+  /// Accessibility label of the + button on a Challenge Library row
+  ///
+  /// In en, this message translates to:
+  /// **'Start {title}'**
+  String challengeLibraryStartTooltip(String title);
+
+  /// Banner at the top of the New challenge form that opens the Challenge Library
+  ///
+  /// In en, this message translates to:
+  /// **'Pick from the Challenge Library'**
+  String get challengeLibraryPickBanner;
+
+  /// Under the banner; countText is the already-localized number, count only selects the plural form
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{{countText} ready-made challenge} other{{countText} ready-made challenges}}'**
+  String challengeLibraryPickBannerSubtitle(num count, String countText);
+
+  /// Shown at the top of the New challenge form after a challenge was picked from the library
+  ///
+  /// In en, this message translates to:
+  /// **'Filled in from the Challenge Library'**
+  String get challengeLibraryFilledIn;
+
+  /// Button on the empty Challenge tab that opens the Challenge Library
+  ///
+  /// In en, this message translates to:
+  /// **'Browse the Challenge Library'**
+  String get challengesEmptyBrowse;
+
+  /// A number of days on a Challenge Library row; countText is the already-localized number, count only selects the plural form
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{{countText} day} other{{countText} days}}'**
+  String challengeLibraryDays(num count, String countText);
+
+  /// What a total challenge asks, e.g. '30 juz'; countText is the already-localized number, unit an already-translated unit
+  ///
+  /// In en, this message translates to:
+  /// **'{countText} {unit}'**
+  String challengeLibraryAmount(String countText, String unit);
+
+  /// Challenge Library row: a challenge kept every day in a row; days is e.g. '40 days'
+  ///
+  /// In en, this message translates to:
+  /// **'Every day for {days}'**
+  String challengeLibraryEveryDay(String days);
+
+  /// Challenge Library row: goal is what it asks, e.g. '6 days' or '30 juz'; days is the time limit, e.g. '29 days'
+  ///
+  /// In en, this message translates to:
+  /// **'{goal} within {days}'**
+  String challengeLibraryWithin(String goal, String days);
+
+  /// Challenge Library row with no time limit; goal is e.g. '1,000 salawat'
+  ///
+  /// In en, this message translates to:
+  /// **'{goal}, no deadline'**
+  String challengeLibraryNoDeadlineGoal(String goal);
 
   /// Separator between clauses on a challenge card. Arabic-script locales use an en dash because the middot is indistinguishable from their digit zero.
   ///

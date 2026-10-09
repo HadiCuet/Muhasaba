@@ -166,7 +166,11 @@ class ChallengeCard extends StatelessWidget {
       ChallengeMode.days => l.challengeProgressDays(done, target),
       ChallengeMode.count =>
         (view.row.unit?.isNotEmpty ?? false)
-            ? l.challengeProgressCount(done, target, view.row.unit!)
+            ? l.challengeProgressCount(
+                done,
+                target,
+                localizedChallengeUnit(view.row.unit!, l),
+              )
             : l.challengeProgressPlain(done, target),
     };
     // Past cards only render under a section header that already names the

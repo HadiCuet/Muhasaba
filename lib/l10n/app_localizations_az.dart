@@ -1428,12 +1428,6 @@ class AppLocalizationsAz extends AppLocalizations {
   String get challengeGroupReminders => 'Xatırlatmalar';
 
   @override
-  String get challengeStartFromTemplate => 'Şablondan başla';
-
-  @override
-  String get challengeTemplateBlank => 'Boş';
-
-  @override
   String get challengePreview => 'Önizləmə';
 
   @override
@@ -1450,6 +1444,173 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get challengeTmplSadaqah => '30 gün sədəqə';
+
+  @override
+  String get challengeTmplJamaah40 => '40 gün camaatla beş vaxt namaz';
+
+  @override
+  String get challengeTmplOnTime => '30 gün hər namaz vaxtında';
+
+  @override
+  String get challengeTmplRawatib => '30 gün 12 rükət sünnət';
+
+  @override
+  String get challengeTmplTaraweeh => 'Ramazanda hər gecə təravih';
+
+  @override
+  String get challengeTmplLastTenQiyam => 'Son on gecənin ehyası';
+
+  @override
+  String get challengeTmplIstighfar => '30 gün istiğfar';
+
+  @override
+  String get challengeTmplAdhkar => '40 gün səhər və axşam zikrləri';
+
+  @override
+  String get challengeTmplLearnDuas => '30 dua öyrənmək';
+
+  @override
+  String get challengeTmplKhatmYear => 'Bir ildə Quran xətmi';
+
+  @override
+  String get challengeTmplMulk => 'Mülk surəsini əzbərləmək';
+
+  @override
+  String get challengeTmplJuzAmma => 'Əmmə cüzünü əzbərləmək';
+
+  @override
+  String get challengeTmplQuran40 => 'Quranla 40 gün';
+
+  @override
+  String get challengeTmplRamadan => 'Ramazan boyu oruc';
+
+  @override
+  String get challengeTmplShawwal => 'Altı gün Şəvval orucu';
+
+  @override
+  String get challengeTmplDhulHijjah => 'Zilhiccənin ilk doqquz günü';
+
+  @override
+  String get challengeTmplMakeUpFasts => 'Qəza oruclarını tutmaq';
+
+  @override
+  String get challengeTmplLastTenSadaqah => 'Son on gecə sədəqə';
+
+  @override
+  String get challengeTmplNawawi => 'Nəvəvinin 40 hədisini əzbərləmək';
+
+  @override
+  String get challengeTmplNames99 => 'Allahın 99 adını öyrənmək';
+
+  @override
+  String get challengeTmplBackbiting => 'Qeybətsiz 30 gün';
+
+  @override
+  String get challengeTmplMuhasaba => '30 gecə mühasibə';
+
+  @override
+  String get challengeTmplCallParents => '30 gün valideynlərə zəng etmək';
+
+  @override
+  String get challengeUnitJuz => 'cüz';
+
+  @override
+  String get challengeUnitSalawat => 'salavat';
+
+  @override
+  String get challengeUnitPages => 'səhifə';
+
+  @override
+  String get challengeUnitAyat => 'ayə';
+
+  @override
+  String get challengeUnitSurahs => 'surə';
+
+  @override
+  String get challengeUnitDuas => 'dua';
+
+  @override
+  String get challengeUnitHadith => 'hədis';
+
+  @override
+  String get challengeUnitNames => 'ad';
+
+  @override
+  String get challengeLibraryTitle => 'Hədəf kitabxanası';
+
+  @override
+  String get challengeLibrarySearchHint => 'Hədəf axtarın';
+
+  @override
+  String challengeLibraryNoMatch(String query) {
+    return '“$query” ilə uyğun hədəf yoxdur';
+  }
+
+  @override
+  String challengeLibraryStarted(String date) {
+    return 'Başlandı · son gün: $date';
+  }
+
+  @override
+  String get challengeLibraryStartedNoDeadline => 'Başlandı · müddətsiz';
+
+  @override
+  String get challengeLibraryRunning => 'Davam edir';
+
+  @override
+  String challengeLibraryStartTooltip(String title) {
+    return 'Başla: $title';
+  }
+
+  @override
+  String get challengeLibraryPickBanner => 'Hədəf kitabxanasından seçin';
+
+  @override
+  String challengeLibraryPickBannerSubtitle(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText hazır hədəf',
+      one: '$countText hazır hədəf',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeLibraryFilledIn => 'Hədəf kitabxanasından dolduruldu';
+
+  @override
+  String get challengesEmptyBrowse => 'Hədəf kitabxanasına baxın';
+
+  @override
+  String challengeLibraryDays(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText gün',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String challengeLibraryAmount(String countText, String unit) {
+    return '$countText $unit';
+  }
+
+  @override
+  String challengeLibraryEveryDay(String days) {
+    return '$days ərzində hər gün';
+  }
+
+  @override
+  String challengeLibraryWithin(String goal, String days) {
+    return '$days ərzində $goal';
+  }
+
+  @override
+  String challengeLibraryNoDeadlineGoal(String goal) {
+    return '$goal, müddətsiz';
+  }
 
   @override
   String get listSeparator => ' · ';

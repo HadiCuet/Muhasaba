@@ -1439,12 +1439,6 @@ class AppLocalizationsSo extends AppLocalizations {
   String get challengeGroupReminders => 'Xusuusinta';
 
   @override
-  String get challengeStartFromTemplate => 'Ka bilow qaab diyaarsan';
-
-  @override
-  String get challengeTemplateBlank => 'Madhan';
-
-  @override
   String get challengePreview => 'Horu-eegid';
 
   @override
@@ -1461,6 +1455,178 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get challengeTmplSadaqah => 'Sadaqo 30 maalmood';
+
+  @override
+  String get challengeTmplJamaah40 => '40 maalmood, salaad kasta oo jamaaco ah';
+
+  @override
+  String get challengeTmplOnTime => '30 maalmood, salaad kasta wakhtigeeda';
+
+  @override
+  String get challengeTmplRawatib => '30 maalmood, 12 rakcadood oo sunno ah';
+
+  @override
+  String get challengeTmplTaraweeh => 'Taraawiix habeen kasta oo Ramadaan ah';
+
+  @override
+  String get challengeTmplLastTenQiyam =>
+      'Qiyaamka tobanka habeen ee u dambeeya';
+
+  @override
+  String get challengeTmplIstighfar => 'Istigfaar 30 maalmood';
+
+  @override
+  String get challengeTmplAdhkar => 'Adkaarta subaxa iyo fiidka 40 maalmood';
+
+  @override
+  String get challengeTmplLearnDuas => 'Baro 30 duco';
+
+  @override
+  String get challengeTmplKhatmYear => 'Khatmi sannad gudihiis';
+
+  @override
+  String get challengeTmplMulk => 'Xifdi Suuradda Al-Mulk';
+
+  @override
+  String get challengeTmplJuzAmma => 'Xifdi Juz Camma';
+
+  @override
+  String get challengeTmplQuran40 => '40 maalmood oo Quraan akhris ah';
+
+  @override
+  String get challengeTmplRamadan => 'Soom Ramadaanka oo dhan';
+
+  @override
+  String get challengeTmplShawwal => 'Lixda maalmood ee Shawwaal';
+
+  @override
+  String get challengeTmplDhulHijjah => 'Sagaalka hore ee Dul Xijja';
+
+  @override
+  String get challengeTmplMakeUpFasts => 'Qadaynta soonka';
+
+  @override
+  String get challengeTmplLastTenSadaqah =>
+      'Sadaqo tobanka habeen ee u dambeeya';
+
+  @override
+  String get challengeTmplNawawi => 'Xifdi 40-ka Xadiis ee Nawawi';
+
+  @override
+  String get challengeTmplNames99 => 'Baro 99-ka magac ee Alle';
+
+  @override
+  String get challengeTmplBackbiting => '30 maalmood xan la\'aan';
+
+  @override
+  String get challengeTmplMuhasaba => '30 habeen Muxaasabo';
+
+  @override
+  String get challengeTmplCallParents => 'Wac waalidiintaada 30 maalmood';
+
+  @override
+  String get challengeUnitJuz => 'juz';
+
+  @override
+  String get challengeUnitSalawat => 'salawaad';
+
+  @override
+  String get challengeUnitPages => 'bog';
+
+  @override
+  String get challengeUnitAyat => 'aayadood';
+
+  @override
+  String get challengeUnitSurahs => 'suuradood';
+
+  @override
+  String get challengeUnitDuas => 'duco';
+
+  @override
+  String get challengeUnitHadith => 'xadiis';
+
+  @override
+  String get challengeUnitNames => 'magac';
+
+  @override
+  String get challengeLibraryTitle => 'Maktabadda Yoolalka';
+
+  @override
+  String get challengeLibrarySearchHint => 'Raadi yool';
+
+  @override
+  String challengeLibraryNoMatch(String query) {
+    return 'Yool “$query” ah lama helin';
+  }
+
+  @override
+  String challengeLibraryStarted(String date) {
+    return 'Waa la bilaabay · wuxuu dhammaanayaa $date';
+  }
+
+  @override
+  String get challengeLibraryStartedNoDeadline =>
+      'Waa la bilaabay · muddo ma leh';
+
+  @override
+  String get challengeLibraryRunning => 'Wuu socdaa';
+
+  @override
+  String challengeLibraryStartTooltip(String title) {
+    return 'Bilow $title';
+  }
+
+  @override
+  String get challengeLibraryPickBanner => 'Ka dooro Maktabadda Yoolalka';
+
+  @override
+  String challengeLibraryPickBannerSubtitle(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText yool oo diyaar ah',
+      one: '$countText yool oo diyaar ah',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeLibraryFilledIn =>
+      'Waxaa laga soo qaatay Maktabadda Yoolalka';
+
+  @override
+  String get challengesEmptyBrowse => 'Eeg Maktabadda Yoolalka';
+
+  @override
+  String challengeLibraryDays(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText maalmood',
+      one: '$countText maalin',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String challengeLibraryAmount(String countText, String unit) {
+    return '$countText $unit';
+  }
+
+  @override
+  String challengeLibraryEveryDay(String days) {
+    return 'Maalin kasta muddo $days ah';
+  }
+
+  @override
+  String challengeLibraryWithin(String goal, String days) {
+    return '$goal $days gudahood';
+  }
+
+  @override
+  String challengeLibraryNoDeadlineGoal(String goal) {
+    return '$goal, muddo ma leh';
+  }
 
   @override
   String get listSeparator => ' · ';

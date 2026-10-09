@@ -971,14 +971,6 @@
   "@challengeGroupReminders": {
     "description": "Form group header: the per-challenge daily reminder"
   },
-  "challengeStartFromTemplate": "Start from a template",
-  "@challengeStartFromTemplate": {
-    "description": "Label above the horizontal row of challenge templates"
-  },
-  "challengeTemplateBlank": "Blank",
-  "@challengeTemplateBlank": {
-    "description": "Template row entry that clears the form back to defaults"
-  },
   "challengePreview": "Preview",
   "@challengePreview": {
     "description": "Label above the live preview of the challenge being created"
@@ -1002,6 +994,247 @@
   "challengeTmplSadaqah": "Sadaqah 30 days",
   "@challengeTmplSadaqah": {
     "description": "Challenge template: give charity on 30 days"
+  },
+  "challengeTmplJamaah40": "40 days, all prayers in jamaah",
+  "@challengeTmplJamaah40": {
+    "description": "Challenge Library: pray all five daily prayers in congregation for 40 days in a row"
+  },
+  "challengeTmplOnTime": "30 days, all five on time",
+  "@challengeTmplOnTime": {
+    "description": "Challenge Library: pray all five daily prayers on time for 30 days in a row"
+  },
+  "challengeTmplRawatib": "30 days of the 12 Sunnah rak'ahs",
+  "@challengeTmplRawatib": {
+    "description": "Challenge Library: pray the twelve daily Sunnah (rawatib) rak'ahs for 30 days in a row"
+  },
+  "challengeTmplTaraweeh": "Taraweeh every night of Ramadan",
+  "@challengeTmplTaraweeh": {
+    "description": "Challenge Library: pray Taraweeh on every night of Ramadan"
+  },
+  "challengeTmplLastTenQiyam": "Qiyam in the last ten nights",
+  "@challengeTmplLastTenQiyam": {
+    "description": "Challenge Library: night prayer on each of the last ten nights of Ramadan"
+  },
+  "challengeTmplIstighfar": "30 days of istighfar",
+  "@challengeTmplIstighfar": {
+    "description": "Challenge Library: seek Allah's forgiveness (e.g. a hundred times) every day for 30 days"
+  },
+  "challengeTmplAdhkar": "40 days of morning & evening adhkar",
+  "@challengeTmplAdhkar": {
+    "description": "Challenge Library: say the morning and evening adhkar every day for 40 days"
+  },
+  "challengeTmplLearnDuas": "Learn 30 duas",
+  "@challengeTmplLearnDuas": {
+    "description": "Challenge Library: learn 30 everyday duas (e.g. from Hisn al-Muslim), about one a day"
+  },
+  "challengeTmplKhatmYear": "Khatm in a year",
+  "@challengeTmplKhatmYear": {
+    "description": "Challenge Library: complete a full reading of the Quran (604 pages) within a year"
+  },
+  "challengeTmplMulk": "Memorise Surah al-Mulk",
+  "@challengeTmplMulk": {
+    "description": "Challenge Library: memorise Surah al-Mulk (30 ayat), about an ayah a day"
+  },
+  "challengeTmplJuzAmma": "Memorise Juz 'Amma",
+  "@challengeTmplJuzAmma": {
+    "description": "Challenge Library: memorise the 30th juz of the Quran (its 37 short surahs)"
+  },
+  "challengeTmplQuran40": "40 days with the Quran",
+  "@challengeTmplQuran40": {
+    "description": "Challenge Library: read some Quran every day for 40 days in a row"
+  },
+  "challengeTmplRamadan": "Fast all of Ramadan",
+  "@challengeTmplRamadan": {
+    "description": "Challenge Library: fast every day of Ramadan"
+  },
+  "challengeTmplShawwal": "Six days of Shawwal",
+  "@challengeTmplShawwal": {
+    "description": "Challenge Library: fast six days in the month of Shawwal"
+  },
+  "challengeTmplDhulHijjah": "First nine days of Dhul Hijjah",
+  "@challengeTmplDhulHijjah": {
+    "description": "Challenge Library: fast the first nine days of Dhul Hijjah"
+  },
+  "challengeTmplMakeUpFasts": "Make up missed fasts",
+  "@challengeTmplMakeUpFasts": {
+    "description": "Challenge Library: make up (qada) the Ramadan fasts that were missed"
+  },
+  "challengeTmplLastTenSadaqah": "Sadaqah on the last ten nights",
+  "@challengeTmplLastTenSadaqah": {
+    "description": "Challenge Library: give charity on each of the last ten nights of Ramadan"
+  },
+  "challengeTmplNawawi": "Memorise an-Nawawi's 40 Hadith",
+  "@challengeTmplNawawi": {
+    "description": "Challenge Library: memorise Imam an-Nawawi's collection of forty hadith"
+  },
+  "challengeTmplNames99": "Learn the 99 Names of Allah",
+  "@challengeTmplNames99": {
+    "description": "Challenge Library: learn the 99 Names of Allah, about one a day"
+  },
+  "challengeTmplBackbiting": "30 days without backbiting",
+  "@challengeTmplBackbiting": {
+    "description": "Challenge Library: avoid backbiting (gheebah) for 30 days in a row"
+  },
+  "challengeTmplMuhasaba": "30 nights of Muhasaba",
+  "@challengeTmplMuhasaba": {
+    "description": "Challenge Library: take account of yourself (muhasaba) every night for 30 nights"
+  },
+  "challengeTmplCallParents": "Call your parents for 30 days",
+  "@challengeTmplCallParents": {
+    "description": "Challenge Library: call or check on your parents every day for 30 days"
+  },
+  "challengeUnitJuz": "juz",
+  "@challengeUnitJuz": {
+    "description": "Unit after a number in challenge progress, as in '12 of 30 juz'. Use the form that reads naturally right after a number; capitalise only if your language capitalises nouns."
+  },
+  "challengeUnitSalawat": "salawat",
+  "@challengeUnitSalawat": {
+    "description": "Unit after a number in challenge progress, as in '400 of 1,000 salawat' (blessings on the Prophet ﷺ)"
+  },
+  "challengeUnitPages": "pages",
+  "@challengeUnitPages": {
+    "description": "Unit after a number in challenge progress: pages of the Quran, as in '120 of 604 pages'"
+  },
+  "challengeUnitAyat": "ayat",
+  "@challengeUnitAyat": {
+    "description": "Unit after a number in challenge progress: verses of the Quran, as in '12 of 30 ayat'"
+  },
+  "challengeUnitSurahs": "surahs",
+  "@challengeUnitSurahs": {
+    "description": "Unit after a number in challenge progress, as in '10 of 37 surahs'"
+  },
+  "challengeUnitDuas": "duas",
+  "@challengeUnitDuas": {
+    "description": "Unit after a number in challenge progress, as in '5 of 30 duas'"
+  },
+  "challengeUnitHadith": "hadith",
+  "@challengeUnitHadith": {
+    "description": "Unit after a number in challenge progress, as in '8 of 42 hadith'"
+  },
+  "challengeUnitNames": "names",
+  "@challengeUnitNames": {
+    "description": "Unit after a number in challenge progress: Names of Allah, as in '20 of 99 names'"
+  },
+  "challengeLibraryTitle": "Challenge Library",
+  "@challengeLibraryTitle": {
+    "description": "Name of the screen listing ready-made challenges; also the tooltip of the Challenge tab's app-bar button that opens it"
+  },
+  "challengeLibrarySearchHint": "Search challenges",
+  "@challengeLibrarySearchHint": {
+    "description": "Placeholder of the search field on the Challenge Library screen"
+  },
+  "challengeLibraryNoMatch": "No challenge matches “{query}”",
+  "@challengeLibraryNoMatch": {
+    "description": "Shown when a search in the Challenge Library finds nothing",
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeLibraryStarted": "Started · ends {date}",
+  "@challengeLibraryStarted": {
+    "description": "Snackbar after a challenge is started from the library; date is its last day, e.g. 'Sun, Nov 8'",
+    "placeholders": {
+      "date": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeLibraryStartedNoDeadline": "Started · no deadline",
+  "@challengeLibraryStartedNoDeadline": {
+    "description": "Snackbar after a challenge with no time limit is started from the library"
+  },
+  "challengeLibraryRunning": "Running",
+  "@challengeLibraryRunning": {
+    "description": "Tooltip of the check mark on a library challenge that is already running"
+  },
+  "challengeLibraryStartTooltip": "Start {title}",
+  "@challengeLibraryStartTooltip": {
+    "description": "Accessibility label of the + button on a Challenge Library row",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeLibraryPickBanner": "Pick from the Challenge Library",
+  "@challengeLibraryPickBanner": {
+    "description": "Banner at the top of the New challenge form that opens the Challenge Library"
+  },
+  "challengeLibraryPickBannerSubtitle": "{count, plural, =1{{countText} ready-made challenge} other{{countText} ready-made challenges}}",
+  "@challengeLibraryPickBannerSubtitle": {
+    "description": "Under the banner; countText is the already-localized number, count only selects the plural form",
+    "placeholders": {
+      "count": {
+        "type": "num"
+      },
+      "countText": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeLibraryFilledIn": "Filled in from the Challenge Library",
+  "@challengeLibraryFilledIn": {
+    "description": "Shown at the top of the New challenge form after a challenge was picked from the library"
+  },
+  "challengesEmptyBrowse": "Browse the Challenge Library",
+  "@challengesEmptyBrowse": {
+    "description": "Button on the empty Challenge tab that opens the Challenge Library"
+  },
+  "challengeLibraryDays": "{count, plural, =1{{countText} day} other{{countText} days}}",
+  "@challengeLibraryDays": {
+    "description": "A number of days on a Challenge Library row; countText is the already-localized number, count only selects the plural form",
+    "placeholders": {
+      "count": {
+        "type": "num"
+      },
+      "countText": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeLibraryAmount": "{countText} {unit}",
+  "@challengeLibraryAmount": {
+    "description": "What a total challenge asks, e.g. '30 juz'; countText is the already-localized number, unit an already-translated unit",
+    "placeholders": {
+      "countText": {
+        "type": "String"
+      },
+      "unit": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeLibraryEveryDay": "Every day for {days}",
+  "@challengeLibraryEveryDay": {
+    "description": "Challenge Library row: a challenge kept every day in a row; days is e.g. '40 days'",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeLibraryWithin": "{goal} within {days}",
+  "@challengeLibraryWithin": {
+    "description": "Challenge Library row: goal is what it asks, e.g. '6 days' or '30 juz'; days is the time limit, e.g. '29 days'",
+    "placeholders": {
+      "goal": {
+        "type": "String"
+      },
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "challengeLibraryNoDeadlineGoal": "{goal}, no deadline",
+  "@challengeLibraryNoDeadlineGoal": {
+    "description": "Challenge Library row with no time limit; goal is e.g. '1,000 salawat'",
+    "placeholders": {
+      "goal": {
+        "type": "String"
+      }
+    }
   },
   "listSeparator": " · ",
   "@listSeparator": {

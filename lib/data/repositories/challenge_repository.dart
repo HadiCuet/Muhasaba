@@ -98,22 +98,27 @@ class ChallengeRepository {
     return deleted;
   }
 
+  /// See [create] for why [notificationTitle] is passed separately.
   Future<void> setDayAmount({
     required ChallengeRow challenge,
     required DateTime muhasabaDate,
     required int amount,
+    required String notificationTitle,
   }) async {
     await _dao.setEntry(
       challengeId: challenge.id,
       muhasabaDate: muhasabaDate,
       amount: amount,
     );
-    await _reconcileStatus(challenge);
+    await _reconcileStatus(challenge, notificationTitle);
   }
 
   /// Status is derived from the entries, never latched: completing and then
   /// undoing a mis-tap must return the challenge to the active list.
-  Future<void> _reconcileStatus(ChallengeRow challenge) async {
+  Future<void> _reconcileStatus(
+    ChallengeRow challenge,
+    String notificationTitle,
+  ) async {
     final progress = (await _dao.getProgress())[challenge.id] ?? 0;
     final done = progress >= challenge.target;
     if (done && challenge.status != ChallengeStatus.completed) {
@@ -134,7 +139,7 @@ class ChallengeRepository {
       await _dao.moveToEnd(challenge.id);
       await _applyReminder(
         challenge.id,
-        challenge.title,
+        notificationTitle,
         challenge.reminderTime,
       );
     }

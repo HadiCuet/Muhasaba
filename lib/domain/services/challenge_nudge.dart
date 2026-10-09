@@ -1,5 +1,6 @@
 import '../../data/db/database.dart';
 import '../../l10n/app_localizations.dart';
+import '../utils/localized_challenge_title.dart';
 import '../models/challenge.dart';
 import 'challenge_pace.dart';
 import 'reminder_scheduler.dart';
@@ -71,11 +72,11 @@ Future<void> syncChallengeNudges({
 
       final body = switch (pace.state) {
         PaceState.behind => l.challengeNudgeBody(
-          row.title,
+          localizedChallengeTitle(row.title, l),
           pace.requiredPerDay.toString(),
         ),
         PaceState.lastDay => l.challengeLastDayBody(
-          row.title,
+          localizedChallengeTitle(row.title, l),
           pace.remaining.toString(),
         ),
         _ => null,

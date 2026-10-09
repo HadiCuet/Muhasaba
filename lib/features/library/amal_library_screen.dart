@@ -9,11 +9,11 @@ import '../../data/db/database.dart';
 import '../../domain/models/amal_goal.dart';
 import '../../domain/models/frequency.dart';
 import '../../domain/utils/localized_amal_title.dart';
-import '../../domain/utils/localized_category.dart';
 import '../../domain/utils/localized_number.dart';
 import '../../domain/utils/weekly_days.dart';
 import '../../l10n/app_localizations.dart';
 import 'amal_library.dart';
+import 'library_widgets.dart';
 
 void openAmalLibrary(BuildContext context, {required String source}) {
   FirebaseAnalytics.instance.logEvent(
@@ -194,17 +194,18 @@ class _AmalLibraryScreenState extends ConsumerState<AmalLibraryScreen> {
       }
     }
 
-    final query = _searchKey(_query);
+    final query = librarySearchKey(_query);
     final shown = kAmalLibrary.where((a) {
       if (_category != null && a.category != _category) return false;
       if (query.isEmpty) return true;
-      return _searchKey(localizedAmalTitle(a.title, l)).contains(query) ||
-          _searchKey(a.title).contains(query);
+      return librarySearchKey(localizedAmalTitle(a.title, l)).contains(query) ||
+          librarySearchKey(a.title).contains(query);
     }).toList();
 
-    Widget row(LibraryAmal a) => _LibraryRow(
-      amal: a,
-      schedule: _schedule(context, a, l),
+    Widget row(LibraryAmal a) => LibraryRow(
+      icon: a.icon,
+      title: localizedAmalTitle(a.title, l),
+      subtitle: _schedule(context, a, l),
       onTap: () => _open(a, tracked[a.title]),
       trailing: amals.hasValue
           ? _trailing(a, l, tracked, archived)
@@ -217,7 +218,7 @@ class _AmalLibraryScreenState extends ConsumerState<AmalLibraryScreen> {
         final group = shown.where((a) => a.category == c.name).toList();
         if (group.isEmpty) continue;
         children
-          ..add(_SectionHeader(icon: c.icon, name: c.name))
+          ..add(LibrarySectionHeader(icon: c.icon, name: c.name))
           ..addAll(group.map(row));
       }
     } else {
@@ -239,7 +240,7 @@ class _AmalLibraryScreenState extends ConsumerState<AmalLibraryScreen> {
       }
       if (!widget.pick) {
         children.add(
-          _CreateRow(
+          LibraryCreateRow(
             label: l.libraryCreateNamed(_query),
             onTap: () => context.push('/amal/new', extra: _query),
           ),
@@ -279,7 +280,7 @@ class _AmalLibraryScreenState extends ConsumerState<AmalLibraryScreen> {
         ],
         bottom: PreferredSize(
           preferredSize: const Size.fromHeight(52),
-          child: _CategoryChips(
+          child: LibraryCategoryChips(
             selected: _category,
             onSelected: (c) => setState(() => _category = c),
           ),
@@ -380,257 +381,4 @@ String _weekdayName(int d, AppLocalizations l) => switch (d) {
   DateTime.saturday => l.saturdayFull,
   DateTime.sunday => l.sundayFull,
   _ => '',
-};
-
-class _CategoryChips extends StatelessWidget {
-  const _CategoryChips({required this.selected, required this.onSelected});
-
-  final String? selected;
-  final ValueChanged<String?> onSelected;
-
-  @override
-  Widget build(BuildContext context) {
-    final l = AppLocalizations.of(context);
-    return SizedBox(
-      height: 52,
-      child: ListView(
-        scrollDirection: Axis.horizontal,
-        padding: const EdgeInsetsDirectional.fromSTEB(12, 4, 12, 8),
-        children: [
-          ChoiceChip(
-            label: Text(l.libraryAll),
-            selected: selected == null,
-            onSelected: (_) => onSelected(null),
-          ),
-          for (final c in kLibraryCategories) ...[
-            const SizedBox(width: 8),
-            ChoiceChip(
-              avatar: Text(c.icon),
-              label: Text(localizedCategoryName(c.name, l)),
-              selected: selected == c.name,
-              onSelected: (_) => onSelected(c.name),
-            ),
-          ],
-        ],
-      ),
-    );
-  }
-}
-
-class _SectionHeader extends StatelessWidget {
-  const _SectionHeader({required this.icon, required this.name});
-
-  final String icon;
-  final String name;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return Padding(
-      padding: const EdgeInsetsDirectional.fromSTEB(8, 16, 8, 4),
-      child: Text(
-        '$icon  ${localizedCategoryName(name, AppLocalizations.of(context))}',
-        style: theme.textTheme.titleSmall?.copyWith(
-          color: theme.colorScheme.primary,
-          fontWeight: FontWeight.w600,
-        ),
-      ),
-    );
-  }
-}
-
-class _LibraryRow extends StatelessWidget {
-  const _LibraryRow({
-    required this.amal,
-    required this.schedule,
-    required this.onTap,
-    required this.trailing,
-  });
-
-  final LibraryAmal amal;
-  final String schedule;
-  final VoidCallback onTap;
-  final Widget trailing;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    final l = AppLocalizations.of(context);
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(12),
-      child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(8, 6, 4, 6),
-        child: Row(
-          children: [
-            Container(
-              width: 44,
-              height: 44,
-              alignment: Alignment.center,
-              decoration: BoxDecoration(
-                color: theme.colorScheme.surfaceContainerHighest,
-                borderRadius: BorderRadius.circular(12),
-              ),
-              child: Text(amal.icon, style: const TextStyle(fontSize: 22)),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    localizedAmalTitle(amal.title, l),
-                    style: theme.textTheme.bodyLarge?.copyWith(
-                      fontWeight: FontWeight.w500,
-                    ),
-                  ),
-                  const SizedBox(height: 2),
-                  Text(
-                    schedule,
-                    style: theme.textTheme.bodySmall?.copyWith(
-                      color: theme.colorScheme.onSurfaceVariant,
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            const SizedBox(width: 8),
-            SizedBox(
-              height: 48,
-              child: Center(widthFactor: 1, child: trailing),
-            ),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-class _CreateRow extends StatelessWidget {
-  const _CreateRow({required this.label, required this.onTap});
-
-  final String label;
-  final VoidCallback onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    final theme = Theme.of(context);
-    return InkWell(
-      onTap: onTap,
-      borderRadius: BorderRadius.circular(12),
-      child: Padding(
-        padding: const EdgeInsetsDirectional.fromSTEB(8, 10, 8, 10),
-        child: Row(
-          children: [
-            SizedBox(
-              width: 44,
-              height: 44,
-              child: Icon(
-                Icons.edit_outlined,
-                color: theme.colorScheme.primary,
-              ),
-            ),
-            const SizedBox(width: 12),
-            Expanded(
-              child: Text(
-                label,
-                style: theme.textTheme.bodyLarge?.copyWith(
-                  color: theme.colorScheme.primary,
-                  fontWeight: FontWeight.w600,
-                ),
-              ),
-            ),
-            const Icon(Icons.chevron_right),
-          ],
-        ),
-      ),
-    );
-  }
-}
-
-/// Lowercases and folds letter variants so a query typed without diacritics,
-/// hamza or tashkeel still matches: "yasin" finds "Yâsîn", "اذكار" finds "أذكار".
-String _searchKey(String s) {
-  final out = StringBuffer();
-  for (final r in s.toLowerCase().runes) {
-    final isMark =
-        (r >= 0x0300 && r <= 0x036F) ||
-        (r >= 0x064B && r <= 0x065F) ||
-        r == 0x0670 ||
-        r == 0x0640;
-    if (isMark) continue;
-    out.write(_foldedLetters[r] ?? String.fromCharCode(r));
-  }
-  return out.toString();
-}
-
-const _foldedLetters = <int, String>{
-  0x0622: 'ا',
-  0x0623: 'ا',
-  0x0625: 'ا',
-  0x0671: 'ا',
-  0x0624: 'و',
-  0x0626: 'ي',
-  0x0649: 'ي',
-  0x06CC: 'ي',
-  0x0629: 'ه',
-  0x06A9: 'ك',
-  0x00E0: 'a',
-  0x00E1: 'a',
-  0x00E2: 'a',
-  0x00E3: 'a',
-  0x00E4: 'a',
-  0x00E5: 'a',
-  0x0101: 'a',
-  0x0103: 'a',
-  0x0105: 'a',
-  0x00E7: 'c',
-  0x0107: 'c',
-  0x010D: 'c',
-  0x0111: 'd',
-  0x0257: 'd',
-  0x00E8: 'e',
-  0x00E9: 'e',
-  0x00EA: 'e',
-  0x00EB: 'e',
-  0x0113: 'e',
-  0x0119: 'e',
-  0x011B: 'e',
-  0x0259: 'e',
-  0x011F: 'g',
-  0x00EC: 'i',
-  0x00ED: 'i',
-  0x00EE: 'i',
-  0x00EF: 'i',
-  0x012B: 'i',
-  0x0131: 'i',
-  0x00F1: 'n',
-  0x0148: 'n',
-  0x00F2: 'o',
-  0x00F3: 'o',
-  0x00F4: 'o',
-  0x00F5: 'o',
-  0x00F6: 'o',
-  0x00F8: 'o',
-  0x014D: 'o',
-  0x015B: 's',
-  0x015F: 's',
-  0x0161: 's',
-  0x00F9: 'u',
-  0x00FA: 'u',
-  0x00FB: 'u',
-  0x00FC: 'u',
-  0x016B: 'u',
-  0x00FD: 'y',
-  0x00FF: 'y',
-  0x01B4: 'y',
-  0x017A: 'z',
-  0x017C: 'z',
-  0x017E: 'z',
-  0x0253: 'b',
-  0x0199: 'k',
-  0x2018: "'",
-  0x2019: "'",
-  0x02BB: "'",
-  0x02BC: "'",
 };

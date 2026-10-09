@@ -6,6 +6,8 @@ import 'package:go_router/go_router.dart';
 import '../l10n/app_localizations.dart';
 import '../features/challenge/challenge_detail_screen.dart';
 import '../features/challenge/challenge_form_screen.dart';
+import '../features/challenge/challenge_library.dart';
+import '../features/challenge/challenge_library_screen.dart';
 import '../features/challenge/challenge_screen.dart';
 import '../features/create_edit/amal_form_screen.dart';
 import '../features/insights/insights_screen.dart';
@@ -117,7 +119,20 @@ final routerProvider = Provider<GoRouter>((ref) {
       GoRoute(
         path: '/challenge/new',
         name: 'challenge-new',
-        builder: (context, state) => const ChallengeFormScreen(),
+        builder: (context, state) {
+          final extra = state.extra;
+          return ChallengeFormScreen(
+            prefill: extra is LibraryChallenge ? extra : null,
+            initialTitle: extra is String ? extra : null,
+          );
+        },
+      ),
+      GoRoute(
+        path: '/challenge-library',
+        name: 'challenge-library',
+        builder: (context, state) => ChallengeLibraryScreen(
+          pick: state.uri.queryParameters['pick'] == '1',
+        ),
       ),
       GoRoute(
         path: '/challenge/:id/edit',

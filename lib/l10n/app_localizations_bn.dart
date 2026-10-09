@@ -1430,12 +1430,6 @@ class AppLocalizationsBn extends AppLocalizations {
   String get challengeGroupReminders => 'রিমাইন্ডার';
 
   @override
-  String get challengeStartFromTemplate => 'টেমপ্লেট থেকে শুরু করুন';
-
-  @override
-  String get challengeTemplateBlank => 'খালি';
-
-  @override
   String get challengePreview => 'প্রিভিউ';
 
   @override
@@ -1452,6 +1446,175 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get challengeTmplSadaqah => '৩০ দিন সদকা';
+
+  @override
+  String get challengeTmplJamaah40 => '৪০ দিন সব নামাজ জামাতে';
+
+  @override
+  String get challengeTmplOnTime => '৩০ দিন পাঁচ ওয়াক্তই সময়মতো';
+
+  @override
+  String get challengeTmplRawatib => '৩০ দিন ১২ রাকাত সুন্নত';
+
+  @override
+  String get challengeTmplTaraweeh => 'রমজানের প্রতি রাতে তারাবিহ';
+
+  @override
+  String get challengeTmplLastTenQiyam => 'শেষ দশ রাতে কিয়ামুল লাইল';
+
+  @override
+  String get challengeTmplIstighfar => '৩০ দিন ইস্তিগফার';
+
+  @override
+  String get challengeTmplAdhkar => '৪০ দিন সকাল-সন্ধ্যার যিকির';
+
+  @override
+  String get challengeTmplLearnDuas => '৩০টি দোয়া শেখা';
+
+  @override
+  String get challengeTmplKhatmYear => 'এক বছরে কুরআন খতম';
+
+  @override
+  String get challengeTmplMulk => 'সূরা মুলক মুখস্থ করা';
+
+  @override
+  String get challengeTmplJuzAmma => 'আমপারা মুখস্থ করা';
+
+  @override
+  String get challengeTmplQuran40 => 'কুরআনের সাথে ৪০ দিন';
+
+  @override
+  String get challengeTmplRamadan => 'পুরো রমজানের রোজা';
+
+  @override
+  String get challengeTmplShawwal => 'শাওয়ালের ছয় রোজা';
+
+  @override
+  String get challengeTmplDhulHijjah => 'জিলহজের প্রথম নয় দিনের রোজা';
+
+  @override
+  String get challengeTmplMakeUpFasts => 'কাজা রোজা আদায় করা';
+
+  @override
+  String get challengeTmplLastTenSadaqah => 'শেষ দশ রাতে সদকা';
+
+  @override
+  String get challengeTmplNawawi => 'ইমাম নববীর ৪০ হাদিস মুখস্থ করা';
+
+  @override
+  String get challengeTmplNames99 => 'আল্লাহর ৯৯ নাম শেখা';
+
+  @override
+  String get challengeTmplBackbiting => 'গিবতমুক্ত ৩০ দিন';
+
+  @override
+  String get challengeTmplMuhasaba => '৩০ রাত মুহাসাবা';
+
+  @override
+  String get challengeTmplCallParents => '৩০ দিন বাবা-মাকে ফোন করা';
+
+  @override
+  String get challengeUnitJuz => 'পারা';
+
+  @override
+  String get challengeUnitSalawat => 'দরুদ';
+
+  @override
+  String get challengeUnitPages => 'পৃষ্ঠা';
+
+  @override
+  String get challengeUnitAyat => 'আয়াত';
+
+  @override
+  String get challengeUnitSurahs => 'সূরা';
+
+  @override
+  String get challengeUnitDuas => 'দোয়া';
+
+  @override
+  String get challengeUnitHadith => 'হাদিস';
+
+  @override
+  String get challengeUnitNames => 'নাম';
+
+  @override
+  String get challengeLibraryTitle => 'সংকল্প লাইব্রেরি';
+
+  @override
+  String get challengeLibrarySearchHint => 'সংকল্প খুঁজুন';
+
+  @override
+  String challengeLibraryNoMatch(String query) {
+    return '“$query”-এর সাথে মেলে এমন কোনো সংকল্প নেই';
+  }
+
+  @override
+  String challengeLibraryStarted(String date) {
+    return 'শুরু হয়েছে · শেষ হবে: $date';
+  }
+
+  @override
+  String get challengeLibraryStartedNoDeadline => 'শুরু হয়েছে · সময়সীমা নেই';
+
+  @override
+  String get challengeLibraryRunning => 'চলমান';
+
+  @override
+  String challengeLibraryStartTooltip(String title) {
+    return '$title শুরু করুন';
+  }
+
+  @override
+  String get challengeLibraryPickBanner => 'সংকল্প লাইব্রেরি থেকে বেছে নিন';
+
+  @override
+  String challengeLibraryPickBannerSubtitle(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countTextটি প্রস্তুত সংকল্প',
+      one: '$countTextটি প্রস্তুত সংকল্প',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get challengeLibraryFilledIn =>
+      'সংকল্প লাইব্রেরি থেকে পূরণ করা হয়েছে';
+
+  @override
+  String get challengesEmptyBrowse => 'সংকল্প লাইব্রেরি দেখুন';
+
+  @override
+  String challengeLibraryDays(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText দিন',
+      one: 'এক দিন',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String challengeLibraryAmount(String countText, String unit) {
+    return '$countText $unit';
+  }
+
+  @override
+  String challengeLibraryEveryDay(String days) {
+    return 'টানা $days';
+  }
+
+  @override
+  String challengeLibraryWithin(String goal, String days) {
+    return '$days সময়ের মধ্যে $goal';
+  }
+
+  @override
+  String challengeLibraryNoDeadlineGoal(String goal) {
+    return '$goal, সময়সীমা নেই';
+  }
 
   @override
   String get listSeparator => ' · ';

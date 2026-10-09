@@ -27,7 +27,7 @@ Future<void> showExpiryPrompt(
       title: Text(l.challengeExpiredTitle),
       content: Text(
         l.challengeExpiredBody(
-          row.title,
+          localizedChallengeTitle(row.title, l),
           lnum(ctx, progress),
           lnum(ctx, row.target),
         ),
