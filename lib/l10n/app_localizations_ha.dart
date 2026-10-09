@@ -1145,6 +1145,13 @@ class AppLocalizationsHa extends AppLocalizations {
       'Sauya tsakanin rarraba ta rukuni da jeri ɗaya.';
 
   @override
+  String get tutorialLibraryTitle => 'Ƙara amali da ke a shirye';
+
+  @override
+  String get tutorialLibraryBody =>
+      'Duba Taskar Amali rukuni-rukuni, sannan danna + don ƙara amali a Yau.';
+
+  @override
   String get tutorialChallengeLogTitle => 'Danna don rubuta na yau';
 
   @override

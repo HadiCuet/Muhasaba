@@ -1140,6 +1140,13 @@ class AppLocalizationsTk extends AppLocalizations {
       'Kategoriýalar boýunça toparlanan görnüş bilen düz sanawyň arasynda geçiň.';
 
   @override
+  String get tutorialLibraryTitle => 'Taýýar amallary goşuň';
+
+  @override
+  String get tutorialLibraryBody =>
+      'Amallar kitaphanasyna kategoriýalar boýunça göz aýlaň, soňra «Bu gün» sanawyna goşmak üçin + basyň.';
+
+  @override
   String get tutorialChallengeLogTitle => 'Şu güni bellemek üçin basyň';
 
   @override

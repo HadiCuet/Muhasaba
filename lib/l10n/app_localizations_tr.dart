@@ -1144,6 +1144,13 @@ class AppLocalizationsTr extends AppLocalizations {
       'Kategoriye göre gruplama ile tek düz liste arasında geçiş yapın.';
 
   @override
+  String get tutorialLibraryTitle => 'Hazır amel ekleyin';
+
+  @override
+  String get tutorialLibraryBody =>
+      'Amel Kütüphanesi\'ne kategori kategori göz atın, ardından Bugüne eklemek için + düğmesine dokunun.';
+
+  @override
   String get tutorialChallengeLogTitle => 'Bugünü kaydetmek için dokunun';
 
   @override

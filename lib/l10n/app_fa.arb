@@ -318,6 +318,8 @@
   "tutorialCountBody": "برای اعمالی که هدفشان بیش از یک است، برای هر تکرار از − و + استفاده کنید.",
   "tutorialViewTitle": "گروه‌بندی یا فهرست ساده",
   "tutorialViewBody": "بین گروه‌بندی بر اساس دسته و یک فهرست ساده جابه‌جا شوید.",
+  "tutorialLibraryTitle": "افزودن اعمال آماده",
+  "tutorialLibraryBody": "کتابخانه اعمال را دسته به دسته مرور کنید و روی + بزنید تا عملی به امروز اضافه شود.",
   "tutorialChallengeLogTitle": "برای ثبت امروز ضربه بزنید",
   "tutorialChallengeLogBody": "یک ضربه امروز را ثبت می‌کند. در چالش شمارشی، هر ضربه یک گام اضافه می‌کند.",
   "tutorialChallengeOpenTitle": "برای باز کردن دو بار ضربه بزنید",

@@ -1141,6 +1141,13 @@ class AppLocalizationsUr extends AppLocalizations {
       'زمرے کے مطابق گروپ بندی اور ایک سادہ فہرست کے درمیان بدلیں۔';
 
   @override
+  String get tutorialLibraryTitle => 'تیار اعمال شامل کریں';
+
+  @override
+  String get tutorialLibraryBody =>
+      'اعمال کی لائبریری میں زمرہ وار اعمال دیکھیں، پھر آج کی فہرست میں شامل کرنے کے لیے + دبائیں۔';
+
+  @override
   String get tutorialChallengeLogTitle => 'آج کا اندراج کرنے کے لیے دبائیں';
 
   @override

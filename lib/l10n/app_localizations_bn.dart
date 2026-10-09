@@ -1142,6 +1142,13 @@ class AppLocalizationsBn extends AppLocalizations {
       'বিভাগ অনুযায়ী গ্রুপ করা আর একটি সাধারণ তালিকার মধ্যে বদল করুন।';
 
   @override
+  String get tutorialLibraryTitle => 'প্রস্তুত আমল যোগ করুন';
+
+  @override
+  String get tutorialLibraryBody =>
+      'আমল লাইব্রেরিতে বিভাগ অনুযায়ী আমল দেখুন, তারপর আজকের তালিকায় যোগ করতে + চাপুন।';
+
+  @override
   String get tutorialChallengeLogTitle => 'আজকের হিসাব রাখতে ট্যাপ করুন';
 
   @override

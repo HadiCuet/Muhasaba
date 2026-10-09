@@ -1148,6 +1148,13 @@ class AppLocalizationsId extends AppLocalizations {
       'Beralih antara pengelompokan berdasarkan kategori dan satu daftar biasa.';
 
   @override
+  String get tutorialLibraryTitle => 'Tambahkan amal siap pakai';
+
+  @override
+  String get tutorialLibraryBody =>
+      'Jelajahi Pustaka Amal per kategori, lalu ketuk + untuk menambahkan amal ke Hari Ini.';
+
+  @override
   String get tutorialChallengeLogTitle => 'Ketuk untuk mencatat hari ini';
 
   @override

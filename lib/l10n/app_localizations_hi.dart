@@ -1142,6 +1142,13 @@ class AppLocalizationsHi extends AppLocalizations {
       'श्रेणी के अनुसार समूह और एक सीधी सूची के बीच बदलें।';
 
   @override
+  String get tutorialLibraryTitle => 'तैयार अमल जोड़ें';
+
+  @override
+  String get tutorialLibraryBody =>
+      'अमल लाइब्रेरी में श्रेणी के अनुसार अमल देखें, फिर आज की सूची में जोड़ने के लिए + दबाएँ।';
+
+  @override
   String get tutorialChallengeLogTitle => 'आज दर्ज करने के लिए टैप करें';
 
   @override

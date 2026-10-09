@@ -1148,6 +1148,13 @@ class AppLocalizationsBs extends AppLocalizations {
       'Prebacujte između grupisanja po kategorijama i jedne obične liste.';
 
   @override
+  String get tutorialLibraryTitle => 'Dodajte gotove amele';
+
+  @override
+  String get tutorialLibraryBody =>
+      'Pregledajte biblioteku amela po kategorijama, pa dodirnite + da dodate amel u Danas.';
+
+  @override
   String get tutorialChallengeLogTitle => 'Dodirnite da zabilježite danas';
 
   @override

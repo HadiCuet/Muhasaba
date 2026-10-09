@@ -1142,6 +1142,13 @@ class AppLocalizationsSw extends AppLocalizations {
       'Badilisha kati ya kupanga kwa aina na orodha moja.';
 
   @override
+  String get tutorialLibraryTitle => 'Ongeza amali zilizo tayari';
+
+  @override
+  String get tutorialLibraryBody =>
+      'Vinjari Maktaba ya Amali kwa aina, kisha bonyeza + kuongeza amali kwenye Leo.';
+
+  @override
   String get tutorialChallengeLogTitle => 'Gusa ili kurekodi leo';
 
   @override

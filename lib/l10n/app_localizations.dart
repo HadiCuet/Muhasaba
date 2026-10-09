@@ -2048,6 +2048,18 @@ abstract class AppLocalizations {
   /// **'Switch between grouping by category and one flat list.'**
   String get tutorialViewBody;
 
+  /// Tutorial step title over the Today app-bar button that opens the Amal Library
+  ///
+  /// In en, this message translates to:
+  /// **'Add ready-made amals'**
+  String get tutorialLibraryTitle;
+
+  /// Tutorial step body for that button; + is the add button on each row of the Amal Library
+  ///
+  /// In en, this message translates to:
+  /// **'Browse the Amal Library by category, then tap + to add one to Today.'**
+  String get tutorialLibraryBody;
+
   /// No description provided for @tutorialChallengeLogTitle.
   ///
   /// In en, this message translates to:

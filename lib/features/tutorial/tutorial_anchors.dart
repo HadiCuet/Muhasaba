@@ -14,6 +14,9 @@ final tutorialStepperKey = GlobalKey();
 /// The grouped/flat toggle in the Today app bar.
 final tutorialViewToggleKey = GlobalKey();
 
+/// The Amal Library button in the Today app bar.
+final tutorialLibraryKey = GlobalKey();
+
 /// The first challenge card in render order — the active section when it has
 /// any, otherwise the first past card.
 final tutorialChallengeCardKey = GlobalKey();

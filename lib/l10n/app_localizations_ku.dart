@@ -1146,6 +1146,13 @@ class AppLocalizationsKu extends AppLocalizations {
       'Di navbera komkirina li gorî kategoriyê û lîsteyeke sade de biguherîne.';
 
   @override
+  String get tutorialLibraryTitle => 'Kirinên amade lê zêde bike';
+
+  @override
+  String get tutorialLibraryBody =>
+      'Li Pirtûkxaneya Kirinan li gorî kategoriyan bigere, paşê li + bitikîne da ku kirinekê li Îro zêde bikî.';
+
+  @override
   String get tutorialChallengeLogTitle => 'Ji bo tomarkirina îro bitikîne';
 
   @override

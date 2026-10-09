@@ -46,6 +46,7 @@ class TodayScreen extends ConsumerWidget {
         ),
         actions: [
           IconButton(
+            key: tutorialLibraryKey,
             icon: const Icon(Icons.menu_book_outlined),
             tooltip: l.libraryTitle,
             onPressed: () => openAmalLibrary(context, source: 'app_bar'),

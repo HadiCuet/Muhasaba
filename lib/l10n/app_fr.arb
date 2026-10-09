@@ -318,6 +318,8 @@
   "tutorialCountBody": "Pour un amal dont l'objectif est supérieur à 1, utilisez − et + à chaque répétition.",
   "tutorialViewTitle": "Par catégorie ou en liste",
   "tutorialViewBody": "Basculez entre le regroupement par catégorie et une liste simple.",
+  "tutorialLibraryTitle": "Ajoutez des amals tout prêts",
+  "tutorialLibraryBody": "Parcourez la bibliothèque d'amals par catégorie, puis appuyez sur + pour en ajouter un à Aujourd'hui.",
   "tutorialChallengeLogTitle": "Appuyez pour valider la journée",
   "tutorialChallengeLogBody": "Un appui valide la journée. Pour un défi chiffré, chaque appui fait avancer le compteur d'un cran.",
   "tutorialChallengeOpenTitle": "Appuyez deux fois pour ouvrir",

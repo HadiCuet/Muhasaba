@@ -318,6 +318,8 @@
   "tutorialCountBody": "د هغو عملونو لپاره چې موخه یې له یو څخه ډېره ده، د هر تکرار لپاره − او + وکاروئ.",
   "tutorialViewTitle": "ګروپ یا ساده لیست",
   "tutorialViewBody": "د کټګورۍ له مخې ګروپ کولو او یوه ساده لیست ترمنځ بدلون وکړئ.",
+  "tutorialLibraryTitle": "چمتو عملونه اضافه کړئ",
+  "tutorialLibraryBody": "د عملونو کتابتون د کټګوریو له مخې وګورئ، بیا یې نن ته د اضافه کولو لپاره + ټک وکړئ.",
   "tutorialChallengeLogTitle": "د نن ورځې د ثبتولو لپاره ټک وکړئ",
   "tutorialChallengeLogBody": "یو ټک نن ورځ ثبتوي. په شمېرنیز هدف کې هر ټک یو ګام زیاتوي.",
   "tutorialChallengeOpenTitle": "د پرانیستلو لپاره دوه ځله ټک وکړئ",

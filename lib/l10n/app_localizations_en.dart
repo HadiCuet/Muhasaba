@@ -1142,6 +1142,13 @@ class AppLocalizationsEn extends AppLocalizations {
       'Switch between grouping by category and one flat list.';
 
   @override
+  String get tutorialLibraryTitle => 'Add ready-made amals';
+
+  @override
+  String get tutorialLibraryBody =>
+      'Browse the Amal Library by category, then tap + to add one to Today.';
+
+  @override
   String get tutorialChallengeLogTitle => 'Tap to log today';
 
   @override

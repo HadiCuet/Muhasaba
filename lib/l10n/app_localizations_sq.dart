@@ -1149,6 +1149,13 @@ class AppLocalizationsSq extends AppLocalizations {
       'Kaloni midis grupimit sipas kategorisë dhe një liste të thjeshtë.';
 
   @override
+  String get tutorialLibraryTitle => 'Shtoni amale të gatshme';
+
+  @override
+  String get tutorialLibraryBody =>
+      'Shfletoni bibliotekën e amaleve sipas kategorive, pastaj prekni + për të shtuar një amal te Sot.';
+
+  @override
   String get tutorialChallengeLogTitle => 'Prekni për të shënuar sot';
 
   @override

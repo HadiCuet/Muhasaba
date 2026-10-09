@@ -1141,6 +1141,13 @@ class AppLocalizationsKy extends AppLocalizations {
       'Категория боюнча топтолгон тизме менен жөнөкөй тизменин ортосунда которулуңуз.';
 
   @override
+  String get tutorialLibraryTitle => 'Даяр амалдарды кошуңуз';
+
+  @override
+  String get tutorialLibraryBody =>
+      'Амалдар китепканасын категориялар боюнча карап чыгып, «Бүгүн» тизмесине кошуу үчүн + баскычын басыңыз.';
+
+  @override
   String get tutorialChallengeLogTitle => 'Бүгүнкүнү белгилөө үчүн басыңыз';
 
   @override

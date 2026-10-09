@@ -1152,6 +1152,13 @@ class AppLocalizationsAr extends AppLocalizations {
       'بدّل بين التجميع حسب الفئة والعرض في قائمة واحدة.';
 
   @override
+  String get tutorialLibraryTitle => 'أضف أعمالًا جاهزة';
+
+  @override
+  String get tutorialLibraryBody =>
+      'تصفّح مكتبة الأعمال حسب الفئة، ثم اضغط + لإضافة أي عمل إلى قائمة اليوم.';
+
+  @override
   String get tutorialChallengeLogTitle => 'اضغط لتسجيل اليوم';
 
   @override

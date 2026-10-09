@@ -1138,6 +1138,13 @@ class AppLocalizationsPs extends AppLocalizations {
       'د کټګورۍ له مخې ګروپ کولو او یوه ساده لیست ترمنځ بدلون وکړئ.';
 
   @override
+  String get tutorialLibraryTitle => 'چمتو عملونه اضافه کړئ';
+
+  @override
+  String get tutorialLibraryBody =>
+      'د عملونو کتابتون د کټګوریو له مخې وګورئ، بیا یې نن ته د اضافه کولو لپاره + ټک وکړئ.';
+
+  @override
   String get tutorialChallengeLogTitle => 'د نن ورځې د ثبتولو لپاره ټک وکړئ';
 
   @override

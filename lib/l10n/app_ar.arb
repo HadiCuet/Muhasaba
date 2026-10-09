@@ -318,6 +318,8 @@
   "tutorialCountBody": "للأعمال التي يزيد هدفها على مرة واحدة، استخدم − و+ مع كل تكرار.",
   "tutorialViewTitle": "مجمّعة أو في قائمة واحدة",
   "tutorialViewBody": "بدّل بين التجميع حسب الفئة والعرض في قائمة واحدة.",
+  "tutorialLibraryTitle": "أضف أعمالًا جاهزة",
+  "tutorialLibraryBody": "تصفّح مكتبة الأعمال حسب الفئة، ثم اضغط + لإضافة أي عمل إلى قائمة اليوم.",
   "tutorialChallengeLogTitle": "اضغط لتسجيل اليوم",
   "tutorialChallengeLogBody": "ضغطة واحدة تسجّل اليوم. وفي تحدي المجموع، تضيف كل ضغطة خطوة واحدة.",
   "tutorialChallengeOpenTitle": "اضغط مرتين للفتح",

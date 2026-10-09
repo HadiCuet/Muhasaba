@@ -1145,6 +1145,13 @@ class AppLocalizationsMs extends AppLocalizations {
       'Tukar antara paparan mengikut kategori dan satu senarai rata.';
 
   @override
+  String get tutorialLibraryTitle => 'Tambah amal sedia guna';
+
+  @override
+  String get tutorialLibraryBody =>
+      'Teroka Pustaka Amal mengikut kategori, kemudian ketik + untuk menambah amal ke Hari Ini.';
+
+  @override
   String get tutorialChallengeLogTitle => 'Ketik untuk merekod hari ini';
 
   @override

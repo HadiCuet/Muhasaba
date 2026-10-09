@@ -1151,6 +1151,13 @@ class AppLocalizationsFr extends AppLocalizations {
       'Basculez entre le regroupement par catégorie et une liste simple.';
 
   @override
+  String get tutorialLibraryTitle => 'Ajoutez des amals tout prêts';
+
+  @override
+  String get tutorialLibraryBody =>
+      'Parcourez la bibliothèque d\'amals par catégorie, puis appuyez sur + pour en ajouter un à Aujourd\'hui.';
+
+  @override
   String get tutorialChallengeLogTitle => 'Appuyez pour valider la journée';
 
   @override

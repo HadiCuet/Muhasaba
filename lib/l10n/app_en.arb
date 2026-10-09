@@ -551,6 +551,14 @@
   "tutorialCountBody": "For amal with a target above one, use − and + for each repetition.",
   "tutorialViewTitle": "Group or flatten",
   "tutorialViewBody": "Switch between grouping by category and one flat list.",
+  "tutorialLibraryTitle": "Add ready-made amals",
+  "@tutorialLibraryTitle": {
+    "description": "Tutorial step title over the Today app-bar button that opens the Amal Library"
+  },
+  "tutorialLibraryBody": "Browse the Amal Library by category, then tap + to add one to Today.",
+  "@tutorialLibraryBody": {
+    "description": "Tutorial step body for that button; + is the add button on each row of the Amal Library"
+  },
   "tutorialChallengeLogTitle": "Tap to log today",
   "tutorialChallengeLogBody": "One tap records today. For a counted challenge, each tap adds one step.",
   "tutorialChallengeOpenTitle": "Double-tap to open",

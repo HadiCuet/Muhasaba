@@ -1139,6 +1139,13 @@ class AppLocalizationsFa extends AppLocalizations {
       'بین گروه‌بندی بر اساس دسته و یک فهرست ساده جابه‌جا شوید.';
 
   @override
+  String get tutorialLibraryTitle => 'افزودن اعمال آماده';
+
+  @override
+  String get tutorialLibraryBody =>
+      'کتابخانه اعمال را دسته به دسته مرور کنید و روی + بزنید تا عملی به امروز اضافه شود.';
+
+  @override
   String get tutorialChallengeLogTitle => 'برای ثبت امروز ضربه بزنید';
 
   @override

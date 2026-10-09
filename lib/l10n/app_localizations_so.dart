@@ -1151,6 +1151,13 @@ class AppLocalizationsSo extends AppLocalizations {
       'Kala dooro in qaybo loo kala saaro iyo hal liis fudud.';
 
   @override
+  String get tutorialLibraryTitle => 'Ku dar camallo diyaar ah';
+
+  @override
+  String get tutorialLibraryBody =>
+      'Ka eeg Maktabadda Camallada qayb-qayb, kadibna riix + si aad camal ugu darto Maanta.';
+
+  @override
   String get tutorialChallengeLogTitle => 'Taabo si aad maanta u diiwaangeliso';
 
   @override

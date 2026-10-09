@@ -57,6 +57,12 @@ List<TutorialStep> _allSteps() => [
     title: (l) => l.tutorialViewTitle,
     body: (l) => l.tutorialViewBody,
   ),
+  TutorialStep(
+    anchor: tutorialLibraryKey,
+    gesture: GestureKind.tap,
+    title: (l) => l.tutorialLibraryTitle,
+    body: (l) => l.tutorialLibraryBody,
+  ),
 ];
 
 List<TutorialStep> _challengeSteps() => [

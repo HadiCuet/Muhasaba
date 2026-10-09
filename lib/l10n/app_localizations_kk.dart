@@ -1141,6 +1141,13 @@ class AppLocalizationsKk extends AppLocalizations {
       'Санат бойынша топтау мен жай тізім арасында ауысыңыз.';
 
   @override
+  String get tutorialLibraryTitle => 'Дайын амалдарды қосыңыз';
+
+  @override
+  String get tutorialLibraryBody =>
+      'Амалдар кітапханасын санаттар бойынша қарап шығып, Бүгінге қосу үшін + түймесін басыңыз.';
+
+  @override
   String get tutorialChallengeLogTitle => 'Бүгінді белгілеу үшін түртіңіз';
 
   @override

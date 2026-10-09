@@ -1145,6 +1145,13 @@ class AppLocalizationsTg extends AppLocalizations {
       'Байни гурӯҳбандӣ аз рӯи гурӯҳ ва як рӯйхати содда гузаред.';
 
   @override
+  String get tutorialLibraryTitle => 'Амалҳои тайёрро илова кунед';
+
+  @override
+  String get tutorialLibraryBody =>
+      'Китобхонаи амалҳоро аз рӯи гурӯҳ аз назар гузаронед, сипас барои илова ба рӯйхати имрӯз тугмаи «+»-ро пахш кунед.';
+
+  @override
   String get tutorialChallengeLogTitle => 'Барои сабти имрӯз пахш кунед';
 
   @override

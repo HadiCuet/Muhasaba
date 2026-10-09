@@ -1147,6 +1147,13 @@ class AppLocalizationsUz extends AppLocalizations {
       'Turkum bo\'yicha guruhlash va bitta oddiy ro\'yxat o\'rtasida almashing.';
 
   @override
+  String get tutorialLibraryTitle => 'Tayyor amallarni qo\'shing';
+
+  @override
+  String get tutorialLibraryBody =>
+      'Amallar kutubxonasini turkumlar bo\'yicha ko\'rib chiqing, so\'ng Bugunga qo\'shish uchun + tugmasini bosing.';
+
+  @override
   String get tutorialChallengeLogTitle => 'Bugunni qayd etish uchun bosing';
 
   @override

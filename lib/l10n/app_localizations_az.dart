@@ -1142,6 +1142,13 @@ class AppLocalizationsAz extends AppLocalizations {
       'Kateqoriyalara görə qruplaşdırma ilə vahid sadə siyahı arasında keçid edin.';
 
   @override
+  String get tutorialLibraryTitle => 'Hazır əməllər əlavə edin';
+
+  @override
+  String get tutorialLibraryBody =>
+      'Əməl kitabxanasını kateqoriyalar üzrə nəzərdən keçirin, sonra «Bu gün» siyahısına əlavə etmək üçün + düyməsinə toxunun.';
+
+  @override
   String get tutorialChallengeLogTitle => 'Bu günü qeyd etmək üçün toxunun';
 
   @override
