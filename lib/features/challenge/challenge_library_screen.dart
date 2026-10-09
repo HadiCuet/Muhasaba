@@ -78,7 +78,7 @@ class _ChallengeLibraryScreenState
             localizeDigits(
               context,
               safeDateFormat(
-                'EEE, MMM d',
+                'MMMEd',
                 Localizations.localeOf(context).toString(),
               ).format(endExclusive.subtract(const Duration(days: 1))),
             ),
