@@ -1,10 +1,7 @@
 JazakAllah for using Muhasaba.
 
-• Fixed the app getting stuck on a blank screen at launch on iOS 27.
-• Fixed a crash when saving an amal or challenge without a title.
-
-Also new in 3.0:
-• Record how an amal was done, not only whether: Fajr alone or in jamaa at the masjid, Quran recited or memorised, sadaqah as money or time. Use the ready-made sets or create your own.
-• New "Any" goal: no target — any amount marks the day done.
-• Insights shows how the choices split, amal by amal, with trends and records across the year.
-• Support the app with a tip if you like. Nothing is locked behind it: Muhasaba stays free, with no ads and no account.
+• Amal Library: 102 ready-made amals in 10 categories. Add one to Today with a tap, or pick one when you create an amal.
+• Challenge Library: 27 ready-made challenges, from 40 days in jamaah to a khatm in 30 days. Start one with a tap.
+• New categories: Dua, Fasting and Ilm.
+• Every translation reworked to read naturally.
+• Logging a challenge is faster when you have many of them.

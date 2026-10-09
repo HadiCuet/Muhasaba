@@ -1,10 +1,7 @@
 Qu'Allah vous récompense d'utiliser Muhasaba.
 
-• L'application ne reste plus bloquée sur un écran blanc à l'ouverture sous iOS 27.
-• Correction d'un plantage à l'enregistrement d'un amal ou d'un défi sans titre.
-
-Également nouveau dans la 3.0 :
-• Notez comment un amal a été accompli, pas seulement s'il l'a été : Fajr seul ou en congrégation à la mosquée, Coran récité ou mémorisé, sadaqa en argent ou en temps. Utilisez les ensembles prêts à l'emploi ou créez les vôtres.
-• Nouvel objectif « Libre » : sans cible — toute quantité marque la journée comme accomplie.
-• Les Statistiques montrent la répartition des options, amal par amal, avec l'évolution et les records sur l'année.
-• Soutenez l'application par un pourboire si vous le souhaitez. Rien n'est verrouillé derrière : Muhasaba reste gratuite, sans publicité ni compte.
+• Bibliothèque d'amals : 102 amals prêts à l'emploi, en 10 catégories. Ajoutez-en un à Aujourd'hui d'une touche, ou choisissez-en un en créant un amal.
+• Bibliothèque de défis : 27 défis prêts à l'emploi, de 40 jours de prière en groupe à un khatm en 30 jours. Lancez-en un d'une touche.
+• Nouvelles catégories : Doua, Jeûne et Savoir.
+• Toutes les traductions ont été retravaillées pour sonner juste.
+• Noter votre progression est plus rapide quand vous avez de nombreux défis.

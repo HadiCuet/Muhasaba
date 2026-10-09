@@ -1,10 +1,7 @@
 Muhasebe'yi kullandığınız için Allah razı olsun.
 
-• iOS 27'de uygulamanın açılışta boş ekranda takılı kalması düzeltildi.
-• Başlıksız bir amel ya da hedef kaydedilirken oluşan çökme düzeltildi.
-
-3.0 ile gelen diğer yenilikler:
-• Amelin yalnızca yapılıp yapılmadığını değil, nasıl yapıldığını da kaydedin: sabah namazı tek başına mı, camide cemaatle mi; Kur'an okuma mı, ezber mi; sadaka para mı, zaman mı. Hazır setleri kullanın ya da kendi setinizi oluşturun.
-• Yeni "Serbest" hedef: hedef yok — herhangi bir miktar günü tamamlanmış sayar.
-• İstatistik, her amel için seçeneklerin dağılımını, zaman içindeki değişimi ve yıl boyunca rekorları gösterir.
-• Dilerseniz küçük bir katkıyla uygulamaya destek olun. Arkasında kilitli hiçbir şey yok: Muhasebe ücretsiz kalır; reklam yok, hesap yok.
+• Amel Kütüphanesi: 10 kategoride 102 hazır amel. Tek dokunuşla Bugün'e ekleyin ya da yeni amel oluştururken içinden seçin.
+• Hedef Kütüphanesi: 40 gün cemaatle namazdan 30 günde hatme kadar 27 hazır hedef. Tek dokunuşla başlayın.
+• Yeni kategoriler: Dua, Oruç ve İlim.
+• Tüm çeviriler doğal okunsun diye yeniden yazıldı.
+• Çok sayıda hedefiniz olduğunda ilerleme kaydetmek artık daha hızlı.

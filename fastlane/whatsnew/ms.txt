@@ -1,10 +1,7 @@
 JazakAllah kerana menggunakan Muhasabah.
 
-• Membetulkan aplikasi yang tersekat pada skrin kosong semasa dibuka di iOS 27.
-• Membetulkan ranap apabila menyimpan amal atau cabaran tanpa tajuk.
-
-Turut baharu dalam 3.0:
-• Catat bagaimana amal dilakukan, bukan sekadar sudah atau belum: Subuh sendiri atau berjemaah di masjid, Al-Quran dibaca atau dihafaz, sedekah berupa wang atau masa. Guna set sedia ada atau cipta set anda sendiri.
-• Sasaran baharu "Berapa pun": tiada sasaran — berapa pun jumlahnya, hari itu dikira selesai.
-• Statistik menunjukkan pecahan pilihan bagi setiap amal, berserta perubahan dari semasa ke semasa dan rekod sepanjang tahun.
-• Sokong aplikasi dengan tip jika sudi. Tiada apa-apa yang dikunci di sebaliknya: Muhasabah kekal percuma, tanpa iklan, tanpa akaun.
+• Pustaka Amal: 102 amal sedia guna dalam 10 kategori. Tambah ke Hari Ini dengan satu ketik, atau pilih semasa mencipta amal baharu.
+• Pustaka Cabaran: 27 cabaran sedia guna, daripada 40 hari solat berjemaah hingga khatam Al-Quran dalam 30 hari. Mulakan dengan satu ketik.
+• Kategori baharu: Doa, Puasa dan Ilmu.
+• Semua terjemahan ditulis semula supaya lebih semula jadi.
+• Merekod kemajuan cabaran kini lebih pantas apabila cabaran anda banyak.
