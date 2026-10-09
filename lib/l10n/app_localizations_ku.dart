@@ -49,7 +49,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get archivedEmpty =>
-      'Li vir hîn tiştek tune. Kirinên ku tu ji şopandinê radikî li vir dimînin, da ku tu wan vegerînî.';
+      'Li vir hîn tiştek tune. Kirinên ku tu ji şopandinê radikî li vir xuya dibin, da ku tu karibî wan vegerînî.';
 
   @override
   String archivedStoppedOn(String date) {
@@ -61,7 +61,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String archivedRestored(String title) {
-    return '\"$title\" vegeriya navnîşana te.';
+    return '\"$title\" dîsa di lîsteya te de ye.';
   }
 
   @override
@@ -80,7 +80,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get save => 'Tomar bike';
 
   @override
-  String get cancel => 'Dev jê berde';
+  String get cancel => 'Betal bike';
 
   @override
   String get ok => 'OK';
@@ -110,7 +110,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get frequencyMonthly => 'Mehane';
 
   @override
-  String get categoryLabel => 'Beş';
+  String get categoryLabel => 'Kategorî';
 
   @override
   String get categoryOther => 'Yên din';
@@ -131,7 +131,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get categorySunnah => 'Sunnet';
 
   @override
-  String get timesPerPeriod => 'Car di her heyamê de';
+  String get timesPerPeriod => 'Çend car di heyamê de';
 
   @override
   String get custom => 'Taybet';
@@ -144,16 +144,17 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get targetAnyHelp =>
-      'Bê armanc — bi her hejmarê wek qediyayî tê hesibandin';
+      'Bê hedef — bi her hejmarê wek qediyayî tê hesibandin';
 
   @override
   String get dayOfWeek => 'Roja hefteyê';
 
   @override
-  String get anyDay => 'Her roj';
+  String get anyDay => 'Her kîjan';
 
   @override
-  String get anyDayHint => 'Her roj (îro xuya dibe, sibê vedişêre)';
+  String get anyDayHint =>
+      'Kîjan roj be (îro xuya dimîne, roja din tê veşartin)';
 
   @override
   String onlyDayHint(String day) {
@@ -173,7 +174,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get onSetDates => 'Di dîrokên diyarkirî de';
 
   @override
-  String get anyDayMode => 'Her roj';
+  String get anyDayMode => 'Kîjan roj be';
 
   @override
   String get datesOfMonth => 'Dîrok';
@@ -185,10 +186,10 @@ class AppLocalizationsKu extends AppLocalizations {
   String get daysPerMonthQuestion => 'Di mehê de çend roj?';
 
   @override
-  String get pickAtLeastOneDay => 'Bi kêmî yek rojê hilbijêre';
+  String get pickAtLeastOneDay => 'Herî kêm rojekê hilbijêre';
 
   @override
-  String get pickAtLeastOneDate => 'Bi kêmî yek dîrokê hilbijêre';
+  String get pickAtLeastOneDate => 'Herî kêm dîrokekê hilbijêre';
 
   @override
   String get previewDaily => 'Her roj dubare dibe';
@@ -203,10 +204,10 @@ class AppLocalizationsKu extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count roj',
-      one: 'rojek',
+      other: '$count rojan',
+      one: '1 rojê',
     );
-    return 'Di hefteyê de her $_temp0 dubare dibe';
+    return 'Hefteyê $_temp0 dubare dibe, kîjan roj be';
   }
 
   @override
@@ -214,8 +215,8 @@ class AppLocalizationsKu extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Di rojên $dates yên her mehê de dubare dibe',
-      one: 'Di roja $dates ya her mehê de dubare dibe',
+      other: 'Her mehê rojên $dates dubare dibe',
+      one: 'Her mehê roja $dates dubare dibe',
     );
     return '$_temp0';
   }
@@ -225,17 +226,18 @@ class AppLocalizationsKu extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count roj',
-      one: 'rojek',
+      other: '$count rojan',
+      one: '1 rojê',
     );
-    return 'Di mehê de her $_temp0 dubare dibe';
+    return 'Mehê $_temp0 dubare dibe, kîjan roj be';
   }
 
   @override
-  String get anyDate => 'Her roj';
+  String get anyDate => 'Her kîjan';
 
   @override
-  String get anyDateHint => 'Her roj (îro xuya dibe, sibê vedişêre)';
+  String get anyDateHint =>
+      'Kîjan dîrok be (îro xuya dimîne, roja din tê veşartin)';
 
   @override
   String onlyDateHint(String date) {
@@ -247,7 +249,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get startPreCheckedSubtitle =>
-      'Gava heyamek nû dest pê dike, ev kirin bi xweber wek qediyayî tê nîşankirin heta ku tu nîşanê rakî.';
+      'Gava heyameke nû dest pê dike, ev kirin bi xweber wek qediyayî tê nîşankirin, heta ku tu nîşanê rakî.';
 
   @override
   String get reminder => 'Bîranîn';
@@ -262,7 +264,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get reminderPermissionWarning =>
-      'Bîranîn hat tomarkirin, lê agahdarî destûr nehatiye dayîn. Di mîhengên pergalê de wan çalak bike.';
+      'Bîranîn hat tomarkirin, lê destûra agahdariyan nehatiye dayîn. Ji bo ku hişyarî bigihêjin te, wan di mîhengên pergalê de çalak bike.';
 
   @override
   String get settingsReminders => 'Bîranîn';
@@ -282,7 +284,7 @@ class AppLocalizationsKu extends AppLocalizations {
       'Kêliyekê veqetîne da ku kirinên îro bişopînî.';
 
   @override
-  String get groupByCategory => 'Li gorî beşê kom bike';
+  String get groupByCategory => 'Li gorî kategoriyê kom bike';
 
   @override
   String get flatList => 'Lîsteya sade';
@@ -300,7 +302,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get noteLabel => 'Not';
 
   @override
-  String get noteHint => 'wek mînak Li mizgeftê nimêj kir';
+  String get noteHint => 'wek mînak: min li mizgeftê nimêj kir';
 
   @override
   String get completed => 'qediya';
@@ -323,7 +325,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get removeFromTodaySubtitle =>
-      'Tenê ji bo vê rojê vedişêre. Sibê vedigere.';
+      'Tenê ji bo îro tê veşartin. Sibê vedigere.';
 
   @override
   String get removeFromTracking => 'Ji şopandinê rake';
@@ -339,7 +341,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get iconNone => 'Tune';
 
   @override
-  String get recentlyUsed => 'Yên dawî bikaranîn';
+  String get recentlyUsed => 'Bikaranînên dawî';
 
   @override
   String get emojiSectionGeneral => 'Giştî';
@@ -354,7 +356,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get categoryNewSheetTitle => 'Kategoriya nû';
 
   @override
-  String get categoryEditSheetTitle => 'Kategoriyê biguhêre';
+  String get categoryEditSheetTitle => 'Kategoriyê biguherîne';
 
   @override
   String get addAmal => 'Kirin lê zêde bike';
@@ -372,7 +374,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get amalSurahKahf => 'Sûreya Kehf';
 
   @override
-  String get amalSadaqah => 'Sedaqe';
+  String get amalSadaqah => 'Sedeqe';
 
   @override
   String get amalTahajjud => 'Teheccud';
@@ -402,7 +404,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get amalEveningAdhkar => 'Zikrên êvarê';
 
   @override
-  String get amalTilawah => 'Tîlawet';
+  String get amalTilawah => 'Tilawet';
 
   @override
   String get settingsTitle => 'Mîheng';
@@ -423,7 +425,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String rolloverSubtitle(String time) {
-    return 'Kirînên duh heta $time têne guherandin.';
+    return 'Heta $time tu dikarî kirinên duh biguherînî.';
   }
 
   @override
@@ -440,7 +442,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get startOfMonthClamped =>
-      'Rojên piştî 28ê ji bo mehên kurt li roja dawî tê guhertin.';
+      'Di mehên kurttir de, rojên piştî 28an dikevin roja dawî ya mehê.';
 
   @override
   String get sectionAppearance => 'Xuyang';
@@ -452,7 +454,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get themeSystem => 'Pergal';
 
   @override
-  String get themeLight => 'Ronahî';
+  String get themeLight => 'Ronak';
 
   @override
   String get themeDark => 'Tarî';
@@ -464,14 +466,14 @@ class AppLocalizationsKu extends AppLocalizations {
   String get language => 'Ziman';
 
   @override
-  String get systemDefault => 'Bingehîn a pergalê';
+  String get systemDefault => 'Li gorî pergalê';
 
   @override
   String get aboutTitle => 'Muhasaba';
 
   @override
   String get aboutSubtitle =>
-      'Rojnameya berpirsiyariya dînî ya kesane. Hemû dane li ser vê amûrê dimînin.';
+      'Rojnivîskeke kesane ji bo muhasebeya dînê te. Hemû dane li ser vê amûrê dimînin.';
 
   @override
   String get statsTitle => 'Amar';
@@ -491,7 +493,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get thisMonth => 'Vê mehê';
 
   @override
-  String get totalCompletions => 'tevahiya qediyandinan';
+  String get totalCompletions => 'qedandin bi giştî';
 
   @override
   String get streakCurrent => 'Niha';
@@ -549,22 +551,22 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get statsEmpty =>
-      'Hîn kirin tune. Ji Îro yekê lê zêde bike da ku şopandin dest pê bike.';
+      'Hîn ti kirin tune. Ji Îro yekê lê zêde bike û dest bi şopandinê bike.';
 
   @override
   String get statsToday => 'Îro';
 
   @override
-  String get statsThisWeek => 'Vê Hefteyê';
+  String get statsThisWeek => 'Vê hefteyê';
 
   @override
-  String get statsThisMonth => 'Vê Mehê';
+  String get statsThisMonth => 'Vê mehê';
 
   @override
-  String get statsAllTime => 'Hemû Dem';
+  String get statsAllTime => 'Hemû dem';
 
   @override
-  String get statsCustomRange => 'Heyama Taybet';
+  String get statsCustomRange => 'Heyama taybet';
 
   @override
   String get statsAllCategories => 'Hemû';
@@ -573,16 +575,16 @@ class AppLocalizationsKu extends AppLocalizations {
   String get statsAllAmals => 'Hemû';
 
   @override
-  String get statsCompleted => 'Qediyaye';
+  String get statsCompleted => 'Qediyayî';
 
   @override
-  String get statsExpected => 'Bendewarkirî';
+  String get statsExpected => 'Tê payîn';
 
   @override
-  String get statsVsPrevious => 'li hember ya berê';
+  String get statsVsPrevious => 'li gorî berê';
 
   @override
-  String get statsByCategory => 'Li gorî beşê';
+  String get statsByCategory => 'Li gorî kategoriyê';
 
   @override
   String get statsPerAmal => 'Ji bo her kirinê';
@@ -602,13 +604,13 @@ class AppLocalizationsKu extends AppLocalizations {
   }
 
   @override
-  String get statsCurrentStreak => 'Rêza niha';
+  String get statsCurrentStreak => 'Rêzeya niha';
 
   @override
-  String get statsBestStreak => 'Rêza herî baş';
+  String get statsBestStreak => 'Rêzeya herî baş';
 
   @override
-  String get statsTotalDays => 'Tevahiya rojan';
+  String get statsTotalDays => 'Hejmara rojan';
 
   @override
   String get statsConsistency => 'Berdewamî';
@@ -627,12 +629,12 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String statsCountTotal(String count) {
-    return 'Tevahî $count';
+    return 'Bi giştî $count';
   }
 
   @override
   String statsCountAvg(String amount) {
-    return 'Navîn $amount/roj';
+    return 'Navînî $amount/roj';
   }
 
   @override
@@ -644,22 +646,22 @@ class AppLocalizationsKu extends AppLocalizations {
   String get statsFilterTime => 'Dem';
 
   @override
-  String get statsFilterCategory => 'Beş';
+  String get statsFilterCategory => 'Kategorî';
 
   @override
   String get statsFilterAmal => 'Kirin';
 
   @override
-  String get statsStreaks => 'Rêz';
+  String get statsStreaks => 'Rêze';
 
   @override
-  String get statsSelectDateRange => 'Heyama rojê hilbijêre';
+  String get statsSelectDateRange => 'Navbera dîrokan hilbijêre';
 
   @override
   String get historyTitle => 'Dîrok';
 
   @override
-  String get jumpToDate => 'Biçe rojekê';
+  String get jumpToDate => 'Here dîrokekê';
 
   @override
   String historyEmptyDay(String date) {
@@ -719,19 +721,19 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get hadith0 =>
-      '\"Kirinên herî delal li ber Xwedê ew in ku domdar in, heke piçûk bin jî.\"\n— Buxarî û Muslim';
+      '\"Kirinên herî delal li ba Xwedê ew in ku bi domdarî tên kirin, her çend kêm bin jî.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith2 =>
-      '\"Gava kurê Adem dimire, kirinên wî disekinin ji bilî sisiyan: xêra domdar, zanista bi kêr, an zarokek salih ku ji bo wî dua dike.\"\n— Muslim';
+      '\"Gava kurê Adem dimire, kirinên wî qut dibin, ji bilî sisêyan: sedeqeya domdar, zanîna bi kêr, an zarokekî salih ku jê re dua dike.\"\n— Muslim';
 
   @override
   String get hadith3 =>
-      '\"Kî du nimêjên hênik (Fecir û Esr) bike, dê bikeve Bihuştê.\"\n— Buxarî';
+      '\"Kî du nimêjên hênik (Fecr û Esr) bike, dê bikeve Bihuştê.\"\n— Buxarî';
 
   @override
   String get hadith4 =>
-      '\"Xwedê li rûyê we û malê we nanêre, lê li dilê we û kirinên we dinêre.\"\n— Muslim';
+      '\"Xwedê li sûret û malê we nanêre, lê li dil û kirinên we dinêre.\"\n— Muslim';
 
   @override
   String get hadith6 =>
@@ -739,48 +741,49 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get hadith7 =>
-      '\"Kî rêyek bigire ji bo lêgerîna zanistê, Xwedê rêya Bihuştê jê re hêsan dike.\"\n— Muslim';
+      '\"Kî ji bo lêgerîna zanînê rêyekê bigire, Xwedê rêya Bihuştê jê re hêsan dike.\"\n— Muslim';
 
   @override
-  String get hadith8 => '\"Xêr malê kêm nake.\"\n— Muslim';
+  String get hadith8 => '\"Sedeqe malê kêm nake.\"\n— Muslim';
 
   @override
   String get hadith9 =>
-      '\"Bawermendê bihêz çêtir û ji Xwedê re delaltir e ji bawermendê qels, lê di herduyan de jî qencî heye.\"\n— Muslim';
+      '\"Bawermendê bihêz ji bawermendê qels çêtir e û li ba Xwedê delaltir e; lê di herduyan de jî xêr heye.\"\n— Muslim';
 
   @override
   String get hadith10 =>
-      '\"Ew kesê ku di rojê de sed caran \'SubhanAllahi we bihamdihi\' bêje, gunahên wî têne baxişandin heke wek kefa behrê bin jî.\"\n— Buxarî û Muslim';
+      '\"Kesê ku rojê sed caran \'Subhanellahî we bihemdihî\' bêje, gunehên wî tên bexşandin, heke wek kefa behrê bin jî.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith12 =>
-      '\"Ew kes ku piştî her nimêja ferzê Ayetul-Kursiyê bixwîne, tiştek wî ji ketina bihuştê nahêle ji bilî mirinê.\"\n— Nesaî';
+      '\"Kesê ku piştî her nimêja ferz Ayeta Kursî bixwîne, ji bilî mirinê tiştek wî ji ketina Bihuştê nahêle.\"\n— Nesaî';
 
   @override
-  String get hadith13 => '\"Gotina baş xêr e.\"\n— Buxarî & Muslim';
+  String get hadith13 => '\"Gotina baş sedeqe ye.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith14 =>
-      '\"Ew kesê ku bi Xwedê û roja dawîn bawer dike, bila qala qenciyê bike an bêdeng be.\"\n— Buxarî & Muslim';
+      '\"Kesê ku bi Xwedê û Roja Dawî bawer dike, bila ya baş bêje, yan jî bêdeng bimîne.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith15 =>
-      '\"Ew kesê ku li jinebîyê û feqîr miqate dibe, mîna mûcahidê di rêya Xwedê de ye.\"\n— Buxarî û Muslim';
+      '\"Kesê ku li jinebiyekê an feqîrekî miqate dibe, wek mucahidê di rêya Xwedê de ye.\"\n— Buxarî û Muslim';
 
   @override
-  String get hadith16 => '\"Bişirîna te li rûyê birayê te xêr e.\"\n— Tirmizî';
+  String get hadith16 =>
+      '\"Bişirîna te li rûyê birayê te sedeqe ye.\"\n— Tirmizî';
 
   @override
   String get hadith17 =>
-      '\"Yê herî qenc di nav we de ew e ku Quranê hîn dibe û hîn dike.\"\n— Buxarî';
+      '\"Yên herî baş ji we ew in ku Quranê hîn dibin û hîn dikin.\"\n— Buxarî';
 
   @override
   String get hadith18 =>
-      '\"Kes xwarina ji ya ku bi destê xwe qezenc kiriye çêtir nexwariye.\"\n— Buxarî';
+      '\"Ti kesî xwarineke ji ya ku bi keda destê xwe qezenc kiriye çêtir nexwariye.\"\n— Buxarî';
 
   @override
   String get hadith19 =>
-      '\"Xwedê nerm e û nermiyê di her tiştî de hez dike.\"\n— Buxarî & Muslim';
+      '\"Xwedê nerm e û di her tiştî de ji nermiyê hez dike.\"\n— Buxarî û Muslim';
 
   @override
   String historyDayCompleted(String completed, String total) {
@@ -788,13 +791,13 @@ class AppLocalizationsKu extends AppLocalizations {
   }
 
   @override
-  String get settingsSchedule => 'Bernameya dem';
+  String get settingsSchedule => 'Dem';
 
   @override
   String get settingsAppearance => 'Xuyang';
 
   @override
-  String get settingsAboutTagline => 'Hevkarê dînê te yê rojane';
+  String get settingsAboutTagline => 'Hevrêyê te yê rojane di dîn de';
 
   @override
   String get settingsRolloverSub => 'Roj kengî nû dibe';
@@ -812,40 +815,39 @@ class AppLocalizationsKu extends AppLocalizations {
   String get settingsSupport => 'Piştgirî';
 
   @override
-  String get settingsRate => 'Bernameyê binirxînin';
+  String get settingsRate => 'Bernameyê binirxîne';
 
   @override
-  String get settingsContact => 'Têkilî pê re bikin';
+  String get settingsContact => 'Bi me re têkilî dayne';
 
   @override
-  String get settingsReportBug => 'Çewtiyekê ragihînin';
+  String get settingsReportBug => 'Çewtiyekê ragihîne';
 
   @override
-  String get settingsRequestFeature => 'Taybetmendiyek bixwazin';
+  String get settingsRequestFeature => 'Taybetmendiyekê bixwaze';
 
   @override
   String settingsSupportFallback(String email) {
-    return 'Posteyê venakir. Ji kerema xwe ji $email re e-name bişînin.';
+    return 'E-name venebû. Ji kerema xwe ji $email re e-nameyekê bişîne.';
   }
 
   @override
-  String get settingsPrivacyPolicy => 'سیاسەتی تایبەتمەندی';
+  String get settingsPrivacyPolicy => 'Polîtîkaya nepeniyê';
 
   @override
-  String get settingsPrivacyOpenFailed =>
-      'نەتوانرا سیاسەتی تایبەتمەندی بکرێتەوە.';
+  String get settingsPrivacyOpenFailed => 'Polîtîkaya nepeniyê venebû.';
 
   @override
   String get hadith20 =>
-      '\"Kî bi bawerî û bi hêviya xelatê Remezanê rojî bigire, gunehên wî yên berê têne baxişandin.\"\n— Buxarî û Muslim';
+      '\"Kî bi bawerî û bi hêviya xelatê rojiya Remezanê bigire, gunehên wî yên berê tên bexşandin.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith22 =>
-      '\"Duaya di navbera ezan û îqameyê de nayê redkirin.\"\n— Ebû Dawûd';
+      '\"Duaya di navbera bang û îqametê de nayê redkirin.\"\n— Ebû Dawûd';
 
   @override
   String get hadith23 =>
-      '\"Kî ji bo Xwedê mizgeftek ava bike, Xwedê jî ji bo wî xaniyek li bihuştê ava dike.\"\n— Buxarî û Muslim';
+      '\"Kî ji bo Xwedê mizgeftekê ava bike, Xwedê jî li Bihuştê xaniyekî ji bo wî ava dike.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith24 =>
@@ -856,19 +858,18 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get hadith26 =>
-      '\"Kî diwanzdeh rikatên sunnetê bixwîne, li bihuştê xaniyek ji bo wî tê avakirin.\"\n— Muslim';
+      '\"Kî diwanzdeh rekatên sunnetê bixwîne, li Bihuştê xaniyek ji bo wî tê avakirin.\"\n— Muslim';
 
   @override
   String get hadith27 =>
       '\"Yê ku di xwendina Quranê de jêhatî be, dê bi milyaketên hêja re be.\"\n— Buxarî û Muslim';
 
   @override
-  String get hadith29 =>
-      '\"Xêra herî baş dayîna avê ye ku were vexwarin.\"\n— Ehmed';
+  String get hadith29 => '\"Sedeqeya herî baş avdayîn e.\"\n— Ehmed';
 
   @override
   String get hadith30 =>
-      '\"Kî tengahiyek ji bawermendekî rake, Xwedê dê Roja Qiyametê tengahiyek ji wî rake.\"\n— Muslim';
+      '\"Kî tengasiyekê ji ser bawermendekî rake, Xwedê dê Roja Qiyametê tengasiyekê ji ser wî rake.\"\n— Muslim';
 
   @override
   String get hadith32 => '\"Şerm beşek ji baweriyê ye.\"\n— Buxarî û Muslim';
@@ -883,18 +884,18 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get hadith37 =>
-      '\"Birçiyan têr bikin, nexweşan serdana bikin û girtîyan azad bikin.\"\n— Buxarî';
+      '\"Birçiyan têr bikin, serdana nexweşan bikin û dîlan azad bikin.\"\n— Buxarî';
 
   @override
   String get hadith38 =>
-      '\"Yê bi hêz ne ew e ku di zordariyê de bi ser dikeve, lê ew e ku di dema hêrsê de xwe kontrol dike.\"\n— Buxarî û Muslim';
+      '\"Bihêz ne ew e ku di gulaşê de mirovan dixe erdê; bihêz ew e ku di dema hêrsê de xwe digire.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith40 =>
-      '\"Piştî her nimêjê sî û sê caran \'SubhanAllah\', \'Elhemdulillah\' û \'Allahu Ekber\' bêjin.\"\n— Muslim';
+      '\"Piştî her nimêjê, ji her yekê sî û sê caran \'Subhanellah\', \'Elhemdulillah\' û \'Allahu ekber\' bêjin.\"\n— Muslim';
 
   @override
-  String get hadith41 => '\"Zikra herî baş La ilahe illallah e.\"\n— Tirmizî';
+  String get hadith41 => '\"Zikrê herî baş La îlahe îllellah e.\"\n— Tirmizî';
 
   @override
   String get hadith42 =>
@@ -906,50 +907,50 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get hadith44 =>
-      '\"Kî Sûreya Îxlasê deh caran bixwîne, Xwedê li bihuştê xaniyek ji bo wî ava dike.\"\n— Ehmed';
+      '\"Kî deh caran Sûreya Îxlasê bixwîne, Xwedê li Bihuştê xaniyekî ji bo wî ava dike.\"\n— Ehmed';
 
   @override
   String get hadith45 =>
-      '\"Nimêja herî baş piştî farzê nimêja şevê ye.\"\n— Muslim';
+      '\"Piştî nimêjên ferz, nimêja herî baş nimêja şevê ye.\"\n— Muslim';
 
   @override
   String get hadith46 =>
-      '\"Xêr gunahan vedimirandine wek ku av agir vedimirandine.\"\n— Tirmizî';
+      '\"Sedeqe gunehan vedimirîne, wek ku av agir vedimirîne.\"\n— Tirmizî';
 
   @override
   String get hadith47 =>
-      '\"Yê ku xizmên xwe didomîne ne ew e ku bersivê dide, lê ew e ku dema têkilî têne qut kirin jî berdewam dike.\"\n— Buxarî';
+      '\"Yê ku têkiliyên xizmaniyê diparêze ne ew e ku tenê bersiva qenciyê dide; ew e ku dema têkilî bi wî re tê birîn jî, wê didomîne.\"\n— Buxarî';
 
   @override
   String get hadith49 =>
-      '\"Kî xwarinê bixwe û bibêje: \'Spas ji Xwedê re ye ku ev xwarin da min û bêyî hêz û hîla min dabîn kir,\' gunehên wî yên berê têne baxişandin.\"\n— Tirmizî';
+      '\"Kî xwarinê bixwe û bibêje: \'Hemd ji Xwedê re be, yê ku ev xwarin da min û bêyî hêz û qeweta min ew ji min re peyda kir,\' gunehên wî yên berê tên bexşandin.\"\n— Tirmizî';
 
   @override
   String get hadith53 =>
-      '\"Tu qenciyê piçûk nebîne, heta ku bi rûyekî geş birayê xwe bibîne jî.\"\n— Muslim';
+      '\"Ti qenciyê piçûk nebîne, heta ku bi rûyekî geş rastî birayê xwe bêyî jî.\"\n— Muslim';
 
   @override
   String get hadith54 =>
-      '\"Yê we yê herî baş, yê ku ji bo malbata xwe herî baş be.\"\n— Tirmizî';
+      '\"Yên herî baş ji we ew in ku ji malbata xwe re herî baş in.\"\n— Tirmizî';
 
   @override
   String get hadith55 =>
-      '\"Kî şevê du ayetên dawî yên Sûreya Baqarayê bixwîne, ew jê re bes in.\"\n— Buxarî û Muslim';
+      '\"Kî şevê du ayetên dawî yên Sûreya Beqereyê bixwîne, ew jê re bes in.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith56 =>
-      '\"Dinya kedek e û kedê herî baş jina salih e.\"\n— Muslim';
+      '\"Dinya metah e, û metahê wê yê herî baş jina salih e.\"\n— Muslim';
 
   @override
   String get hadith57 =>
-      '\"Sê dua nayên red kirin: duaya yê ku rojî digire, serokê dadperwer û yê ku zulm lê hatiye kirin.\"\n— Tirmizî';
+      '\"Sê dua nayên redkirin: duaya yê ku rojî digire, ya serokê dadperwer û ya yê ku zulm lê hatiye kirin.\"\n— Tirmizî';
 
   @override
   String get hadith58 =>
-      '\"Kî carekê li ser min selawat bîne, Xwedê deh caran rehmeta xwe li wî dike.\"\n— Muslim';
+      '\"Kî carekê selawatê li min bide, Xwedê deh caran rehmetê li wî dibarîne.\"\n— Muslim';
 
   @override
-  String get hadith65 => '\"Bawermend neynika bawermend e.\"\n— Ebû Dawûd';
+  String get hadith65 => '\"Bawermend neynika bawermendî ye.\"\n— Ebû Dawûd';
 
   @override
   String get hadith66 =>
@@ -961,15 +962,15 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get hadith68 =>
-      '\"Tu westî, nexweşî, xem, kovan, êş an tengasiyê nagihîje Misilmanekî, tewra stêriyekê jî, bê ku Xwedê hin ji gunehên wî jê bibe.\"\n— Buxarî û Muslim';
+      '\"Westandin, nexweşî, xem, kovan, êş û tengasî nagihêje Misilmanekî — heta stiriyeke ku pê ve biçe jî — ku Xwedê bi wê hin ji gunehên wî jê nebe.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith69 =>
-      '\"Duaya Misilmanekî ji bo birayê xwe yê ku ne li ber wî ye her tim tê qebûl kirin.\"\n— Muslim';
+      '\"Duaya Misilmanekî ji bo birayê xwe, dema ew ne li wir be, her tim tê qebûlkirin.\"\n— Muslim';
 
   @override
   String get hadith70 =>
-      '\"Kî sê caran ji Xwedê Bihuştê bixwaze, Bihişt dibêje: Xwedayê min, wî bike nav Bihuştê.\"\n— Tirmizî';
+      '\"Kî sê caran ji Xwedê Bihuştê bixwaze, Bihuşt dibêje: Ya Xwedê, wî bixe Bihuştê.\"\n— Tirmizî';
 
   @override
   String get hadith71 =>
@@ -977,31 +978,31 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get hadith72 =>
-      '\"Kî heccê bike û gotinên xirab nebêje û guneh nekeve, wek roja ku diya wî ew anîye dinyayê vedigere.\"\n— Buxarî û Muslim';
+      '\"Kî hecê bike, gotinên pîs nebêje û guneh neke, wek roja ku diya wî ew anî dinyayê vedigere.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith73 =>
-      '\"Umre heya umreya din keffareta gunehên di navbera wan de ye.\"\n— Buxarî û Muslim';
+      '\"Umre heta umreya din kefareta gunehên di navbera wan de ye.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith74 =>
-      '\"Berî ku ceribandin wek perçeyên şeveke tarî werin, di kirinên qenc de lez bikin.\"\n— Muslim';
+      '\"Berî ku fitne wek perçeyên şeveke tarî werin, bi lez kirinên qenc bikin.\"\n— Muslim';
 
   @override
   String get hadith75 =>
-      '\"Du rikatên nimêja Fecirê ji dinyayê û her tiştê ku tê de ye çêtir in.\"\n— Muslim';
+      '\"Du rekatên Fecrê ji dinyayê û her tiştê ku tê de ye çêtir in.\"\n— Muslim';
 
   @override
   String get hadith77 =>
-      '\"Heke hûn bi rastî pişta xwe bi Xwedê ve girêdana, ew ê wek çûkan rizqê we bida we.\"\n— Tirmizî';
+      '\"Heke we wek ku heq e tewekula xwe li Xwedê kiribûya, Wî yê wek çûkan rizqê we bida.\"\n— Tirmizî';
 
   @override
   String get hadith78 =>
-      '\"Kî serdana nexweşekî bike, heta ku vegere di baxçeyê Bihuştê de ye.\"\n— Muslim';
+      '\"Kî serdana nexweşekî bike, heta ku vegere di nav fêkiyên Bihuştê de ye.\"\n— Muslim';
 
   @override
   String get hadith79 =>
-      '\"Selamê belav bikin, birçiyan têr bikin û bi şev nimêj bikin gava ku mirov radizan — hûn ê bi aştiyê bikevin Bihuştê.\"\n— Tirmizî';
+      '\"Selamê belav bikin, xwarinê bidin birçiyan û bi şev, dema mirov di xew de ne, nimêj bikin — hûn ê bi selametî bikevin Bihuştê.\"\n— Tirmizî';
 
   @override
   String get hadith80 =>
@@ -1009,7 +1010,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get hadith81 =>
-      '\"Çavnebarî tenê di du baran de rewa ye: mirovê ku Xwedê mal daye û ew di rêya rast de xerc dike, û mirovê ku Xwedê şehrezayî daye û pê dadbarî dike û hîn dike.\"\n— Buxarî û Muslim';
+      '\"Hesûdî tenê di du rewşan de rewa ye: mirovê ku Xwedê mal dayê û ew wî di rêya heq de xerc dike, û mirovê ku Xwedê hikmet dayê û ew pê dadweriyê dike û wê hîn dike.\"\n— Buxarî û Muslim';
 
   @override
   String get hadith82 =>
@@ -1017,7 +1018,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get hadith85 =>
-      '\"Kî tiştekî ji bo Xwedê berde, Xwedê dê tiştekî çêtir bide wî.\"\n— Ehmed';
+      '\"Kî ji bo Xwedê dev ji tiştekî berde, Xwedê dê tiştekî çêtir bide wî.\"\n— Ehmed';
 
   @override
   String get hadith86 =>
@@ -1025,11 +1026,11 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get hadith87 =>
-      '\"Di vê dinyayê de wek xerîbek an rêwiyek bijî.\"\n— Buxarî';
+      '\"Di vê dinyayê de wek xerîbekî an rêwiyekî bijî.\"\n— Buxarî';
 
   @override
   String get hadith88 =>
-      '\"Kî ji bo kesê di tengasiyê de hêsaniyê peyda bike, Xwedê dê li dinyayê û axretê jê re hêsaniyê peyda bike.\"\n— Muslim';
+      '\"Kî karê kesê di tengasiyê de hêsan bike, Xwedê dê li dinyayê û axiretê karê wî hêsan bike.\"\n— Muslim';
 
   @override
   String get hadith89 =>
@@ -1041,54 +1042,54 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get hadith93 =>
-      '\"Bi hev re xwarinê bixwin û navê Xwedê bibêjin, dê ji we re bibe bereketê.\"\n— Ebû Dawûd';
+      '\"Bi hev re xwarinê bixwin û navê Xwedê bînin, wê ji we re bi bereket be.\"\n— Ebû Dawûd';
 
   @override
   String get hadith94 =>
-      '\"Tu qewm li cihekî runanin ku Xwedê bi bîr bînin, ji bilî ku milyaket wan dorpêç bikin, rehmet wan bigire û aramî bi ser wan de were.\"\n— Muslim';
+      '\"Kîjan kom rûnin û Xwedê bi bîr bînin, milyaket wan dorpêç dikin, rehmet wan dipêçe û aramî li ser wan dadikeve.\"\n— Muslim';
 
   @override
   String get hadith95 =>
-      '\"Xwedê bendeyê ku diborîne tenê bi rûmet zêde dike.\"\n— Muslim';
+      '\"Bi lêborînê, Xwedê bendeyekî ji bilî rûmetê bi tiştekî zêde nake.\"\n— Muslim';
 
   @override
   String get hadith96 =>
-      '\"Devê xwe girê bide û paşê pişta xwe bi Xwedê ve girê bide.\"\n— Tirmizî';
+      '\"Deveya xwe girê bide, paşê tewekula xwe li Xwedê bike.\"\n— Tirmizî';
 
   @override
   String get hadith97 =>
-      '\"Kara bawermend ecêb e — her tişt ji bo wî baş e.\"\n— Muslim';
+      '\"Karê bawermendî ecêb e — hemû karê wî jê re xêr e.\"\n— Muslim';
 
   @override
   String get hadith98 =>
-      '\"Misilman birayê Misilman e: ne zilm lê dike, ne dev jê berdide û ne jî wî piçûk dibîne.\"\n— Muslim';
+      '\"Misilman birayê Misilman e: ne zulmê lê dike, ne wî bêxwedî dihêle û ne jî wî biçûk dibîne.\"\n— Muslim';
 
   @override
-  String get delete => 'Jêbirin';
+  String get delete => 'Jê bibe';
 
   @override
-  String get remove => 'Rakin';
+  String get remove => 'Rake';
 
   @override
-  String get deleteAmalConfirmTitle => 'Ji şopandina derxin?';
+  String get deleteAmalConfirmTitle => 'Ji şopandinê rake?';
 
   @override
   String deleteAmalConfirmBody(String title) {
-    return '\"$title\" dê ji navnîşana we were veşartin. Dîroka we tê parastin.';
+    return '\"$title\" dê ji lîsteya te were veşartin. Dîroka te tê parastin.';
   }
 
   @override
-  String get genericError => 'Xeletiyek çêbû. Ji kerema xwe dîsa biceribîne.';
+  String get genericError => 'Çewtiyek çêbû. Ji kerema xwe dîsa biceribîne.';
 
   @override
-  String get notificationChannelName => 'Bîrxistinên amelan';
+  String get notificationChannelName => 'Bîranînên kirinan';
 
   @override
   String get notificationChannelDescription =>
-      'Ji bo amelên ku tu dişopînî bîrxistinên rojane.';
+      'Bîranînên rojane ji bo kirinên ku tu dişopînî.';
 
   @override
-  String get invalidAmalId => 'Nasnameya amelê ya nederbasdar';
+  String get invalidAmalId => 'Nasnameya kirinê nederbasdar e';
 
   @override
   String get tutorialSettingsRow => 'Muhasaba çawa tê bikaranîn';
@@ -1097,13 +1098,13 @@ class AppLocalizationsKu extends AppLocalizations {
   String get tutorialSkip => 'Derbas bike';
 
   @override
-  String get tutorialNext => 'Pêş';
+  String get tutorialNext => 'Pêşve';
 
   @override
   String get tutorialDone => 'Temam';
 
   @override
-  String get tutorialTapTitle => 'Ji bo temamkirinê bitikîne';
+  String get tutorialTapTitle => 'Ji bo qedandinê bitikîne';
 
   @override
   String get tutorialTapBody =>
@@ -1114,10 +1115,10 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get tutorialEditBody =>
-      'Forma guhertinê vedike — navê wê biguhere, an jî dubarebûna wê biguhere.';
+      'Forma guhertinê vedike — navê wê biguherîne, an jî dubarebûna wê sererast bike.';
 
   @override
-  String get tutorialReorderTitle => 'Ji bo rêzkirinê bitepisîne û bigire';
+  String get tutorialReorderTitle => 'Ji bo rêzkirinê dirêj pê bigire';
 
   @override
   String get tutorialReorderBody =>
@@ -1128,21 +1129,21 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get tutorialRemoveBody =>
-      'Rêzê ber bi kêlekê ve bişemitîne da ku ji bo îro veşêre, an jî şopandina wê rawestîne.';
+      'Rêzê ber bi kêlekê ve bişemitîne da ku wê ji bo îro veşêrî, an jî şopandina wê rawestînî.';
 
   @override
   String get tutorialCountTitle => 'Jimartina dubarebûnan';
 
   @override
   String get tutorialCountBody =>
-      'Ji bo kirinên ku armanca wan ji yekê zêdetir e, ji bo her dubarebûnê − û + bi kar bîne.';
+      'Ji bo kirinên ku hedefa wan ji yekê zêdetir e, ji bo her dubarebûnê − û + bi kar bîne.';
 
   @override
   String get tutorialViewTitle => 'Kom bike an lîsteya sade';
 
   @override
   String get tutorialViewBody =>
-      'Di navbera komkirina li gorî beşê û lîsteyek sade de biguhere.';
+      'Di navbera komkirina li gorî kategoriyê û lîsteyeke sade de biguherîne.';
 
   @override
   String get tutorialChallengeLogTitle => 'Ji bo tomarkirina îro bitikîne';
@@ -1156,7 +1157,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get tutorialChallengeOpenBody =>
-      'Armancê vedike — her rojê bibîne, roja ku te ji bîr kiriye rast bike, an jê bibe.';
+      'Armancê vedike — her rojê bibîne, rojeke ku ji dest çûye rast bike, an jî jê bibe.';
 
   @override
   String get tutorialChallengeDeleteBody =>
@@ -1170,7 +1171,7 @@ class AppLocalizationsKu extends AppLocalizations {
       'Ji bo guhertinê − û + bi kar bîne, an jî li hejmarê bitikîne û hejmara rast binivîse.';
 
   @override
-  String get challengeOpenDetailsAction => 'Hûrgiliyên armancê veke';
+  String get challengeOpenDetailsAction => 'Hûrguliyên armancê veke';
 
   @override
   String get challengesActive => 'Çalak';
@@ -1190,7 +1191,7 @@ class AppLocalizationsKu extends AppLocalizations {
   }
 
   @override
-  String get challengeSectionEnded => 'Dawî';
+  String get challengeSectionEnded => 'Bi dawî bûn';
 
   @override
   String get challengesPastEmpty => 'Hîn tiştek bi dawî nebûye.';
@@ -1216,18 +1217,18 @@ class AppLocalizationsKu extends AppLocalizations {
   String get challengeShapeQuestion => 'Ev çi cure armanc e?';
 
   @override
-  String get challengeShapeTotal => 'Hejmareke ku bigihîjî';
+  String get challengeShapeTotal => 'Gihîştina hejmarekê';
 
   @override
   String get challengeShapeTotalBody =>
-      '1000 salawat, 30 cuz. Tu hejmaran tomar dikî û ew kom dibin.';
+      '1000 selawat, 30 cuz. Tu hejmaran tomar dikî û ew kom dibin.';
 
   @override
-  String get challengeShapeStreak => 'Domandina rojane';
+  String get challengeShapeStreak => 'Rêzeya roj bi roj';
 
   @override
   String get challengeShapeStreakBody =>
-      'Teheccud, sibê bi cemaet. Rojê nîşanek, hejmar ne girîng e.';
+      'Teheccud, Fecr bi cemaet. Rojê nîşanek, hejmar ne girîng e.';
 
   @override
   String get challengeTargetLabel => 'Hedef';
@@ -1242,13 +1243,13 @@ class AppLocalizationsKu extends AppLocalizations {
   String get challengeUnitHint => 'rekat, rûpel, car';
 
   @override
-  String get challengeOneTapAdds => 'Yek tikandin zêde dike';
+  String get challengeOneTapAdds => 'Her tikandin zêde dike';
 
   @override
   String get challengeHowManyDays => 'Çend roj?';
 
   @override
-  String get challengeReachHowMuch => 'Armanc çiqas e?';
+  String get challengeReachHowMuch => 'Hedef çiqas e?';
 
   @override
   String get challengeSpreadOver => 'Mawe';
@@ -1263,10 +1264,10 @@ class AppLocalizationsKu extends AppLocalizations {
   String get challengeByWhen => 'Heta kengî?';
 
   @override
-  String get challengeWindowDuration => 'Mawe';
+  String get challengeWindowDuration => 'Di nav maweyekê de';
 
   @override
-  String get challengeByDate => 'Heta dîrokek';
+  String get challengeByDate => 'Heta dîrokekê';
 
   @override
   String challengePlanRange(String start, String end) {
@@ -1286,7 +1287,7 @@ class AppLocalizationsKu extends AppLocalizations {
     String window,
     String slack,
   ) {
-    return '$start heta $end · $target ji $window rojan — $slack dikarî bihêlî';
+    return '$start heta $end · $target ji $window rojan — $slack dikarî ji dest bidî';
   }
 
   @override
@@ -1296,12 +1297,12 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String challengePlanOpen(String start) {
-    return '$start dest pê dike · bê sînor';
+    return '$start dest pê dike · bê dema dawî';
   }
 
   @override
   String challengeTooTight(String target, String window) {
-    return '$target roj di $window rojan de cih nagire — domandin rojê yek dijmêre.';
+    return '$target roj di $window rojan de cih nagirin — rêze rojê yekê dihesibîne.';
   }
 
   @override
@@ -1348,7 +1349,7 @@ class AppLocalizationsKu extends AppLocalizations {
   }
 
   @override
-  String get challengeNoDeadline => 'Bê sînor';
+  String get challengeNoDeadline => 'Bê dema dawî';
 
   @override
   String challengeOnTrack(String rate) {
@@ -1357,7 +1358,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String challengeBehind(String rate) {
-    return 'Paşve · $rate/roj';
+    return 'Li paş · ji bo qedandinê $rate/roj';
   }
 
   @override
@@ -1369,19 +1370,19 @@ class AppLocalizationsKu extends AppLocalizations {
   String get challengeReached => 'Hedef pêk hat';
 
   @override
-  String get challengeCompleted => 'Qediya';
+  String get challengeCompleted => 'Pêk hat';
 
   @override
   String challengeEnded(String done, String target) {
-    return 'Dawî · $done ji $target';
+    return 'Bi dawî bû · $done ji $target';
   }
 
   @override
-  String get challengeExpiredTitle => 'Armanc qediya';
+  String get challengeExpiredTitle => 'Armanc bi dawî bû';
 
   @override
   String challengeExpiredBody(String title, String done, String target) {
-    return '$title bi $done ji $target qediya.';
+    return '$title bi $done ji $target bi dawî bû.';
   }
 
   @override
@@ -1398,7 +1399,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String challengeNudgeBody(String title, String rate) {
-    return '$title: rojê $rate ji bo temamkirina di wextê xwe de.';
+    return '$title: ji bo ku di wextê xwe de biqede, rojê $rate.';
   }
 
   @override
@@ -1437,10 +1438,10 @@ class AppLocalizationsKu extends AppLocalizations {
   String get challengeTmplKhatm => 'Xetma Quranê di 30 rojan de';
 
   @override
-  String get challengeTmplFajrJamaah => '30 roj Fecr bi cemaetê';
+  String get challengeTmplFajrJamaah => '30 roj Fecr bi cemaet';
 
   @override
-  String get challengeTmplSadaqah => 'Sedaqe 30 roj';
+  String get challengeTmplSadaqah => '30 roj sedeqe';
 
   @override
   String get listSeparator => ' · ';
@@ -1471,17 +1472,17 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get supportCardBody =>
-      'Belaş e, bê reklam û bê hesab. Hûn dikarin bi tiştekî biçûk piştgiriya pêşxistina wê bikin — çi qas bixwazin, kengî bixwazin.';
+      'Belaş e, bê reklam û bê hesab. Tu dikarî bi bexşîşekê piştgiriya pêşxistina wê bikî — çiqas bixwazî, kengî bixwazî.';
 
   @override
-  String get supportCta => 'Piştgiriya Muhasaba bikin';
+  String get supportCta => 'Piştgiriya Muhasaba bike';
 
   @override
-  String get supportAgain => 'Dîsa piştgirî bikin';
+  String get supportAgain => 'Dîsa piştgirî bike';
 
   @override
   String get supporterThanks =>
-      'Xwedê ji we razî be — inşallah Muhasaba belaş û bê reklam dimîne.';
+      'Xwedê ji we razî be — înşallah Muhasaba belaş û bê reklam dimîne.';
 
   @override
   String supporterSince(String tier, String month) {
@@ -1489,27 +1490,27 @@ class AppLocalizationsKu extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'Piştgiriya Muhasaba bikin';
+  String get supportPromptTitle => 'Piştgiriya Muhasaba bike';
 
   @override
   String get supportPromptBody =>
-      'Muhasaba belaş e, bê reklam û bê hesab. Hûn dikarin bi tiştekî biçûk piştgiriya pêşxistina wê bikin — çi qas bixwazin, kengî bixwazin. Qet taybetmendiyek li pişt wê ne girtî ye.';
+      'Muhasaba belaş e, bê reklam û bê hesab. Tu dikarî bi bexşîşekê piştgiriya pêşxistina wê bikî — çiqas bixwazî, kengî bixwazî. Bê wê jî her tişt vekirî ye.';
 
   @override
-  String get supportPromptNow => 'Niha piştgirî bikin';
+  String get supportPromptNow => 'Niha piştgirî bike';
 
   @override
-  String get supportPromptLater => 'Paşê bi bîra min bînin';
+  String get supportPromptLater => 'Paşê bîne bîra min';
 
   @override
-  String get supportPromptNever => 'Careke din nepirsin';
+  String get supportPromptNever => 'Careke din nepirse';
 
   @override
-  String get tipSheetTitle => 'Piştgiriya Muhasaba bikin';
+  String get tipSheetTitle => 'Piştgiriya Muhasaba bike';
 
   @override
   String get tipSheetBody =>
-      'Çi qas bixwazin hilbijêrin, çend caran bixwazin. Ev pere ji bo parastina bernameyê tê xerckirin — inşallah ew belaş û bê reklam dimîne. Wekî spasî, hûn di Mîhengan de wekî piştgir tên nîşandan.';
+      'Çiqas bixwazî hilbijêre, çend caran bixwazî. Bexşîş ji bo lênêrîna bernameyê diçin — înşallah ew belaş û bê reklam dimîne. Wek spasî, tu di Mîhengan de wek piştgir tê nîşandan.';
 
   @override
   String tipSheetSupporterLine(String tier) {
@@ -1517,22 +1518,22 @@ class AppLocalizationsKu extends AppLocalizations {
   }
 
   @override
-  String get tipSheetSupporterAgain => 'Kengî bixwazin dîsa piştgirî bikin.';
+  String get tipSheetSupporterAgain => 'Kengî bixwazî dîsa piştgirî bike.';
 
   @override
   String tipSheetStoreNote(String store) {
-    return 'Bi rêya $store tê kirin — em tu carî agahiyên dayîna we nabînin.';
+    return 'Bi rêya $store tê kirin — em tu carî agahiyên te yên pêdanê nabînin.';
   }
 
   @override
-  String get tipSheetOtherWays => 'Vebijarkek ku ji we re guncav be nabînin?';
+  String get tipSheetOtherWays => 'Vebijarkeke ku ji te re guncav be nabînî?';
 
   @override
-  String get tipSheetWriteToUs => 'Ji me re binivîsin';
+  String get tipSheetWriteToUs => 'Ji me re binivîse';
 
   @override
   String get supportEmailBody =>
-      'Selamun eleykum,\n\nEz dixwazim rasterast piştgiriya pêşxistina Muhasaba bikim.\n\nWelat:\nEz çawa dixwazim bişînim:\nMîqdar (bijarte):';
+      'Es-selamû eleykum,\n\nEz dixwazim rasterast piştgiriya pêşxistina Muhasaba bikim.\n\nWelat:\nEz çawa dixwazim bişînim:\nMîqdar (bijarte):';
 
   @override
   String tipBusy(String store) {
@@ -1546,11 +1547,11 @@ class AppLocalizationsKu extends AppLocalizations {
   String get tipDone => 'Temam';
 
   @override
-  String get tipFailed => 'Kirîn pêk nehat. Qet pere nehat standin.';
+  String get tipFailed => 'Kirîn pêk nehat. Ti pere nehat kişandin.';
 
   @override
   String tipPending(String store) {
-    return 'Piştgiriya we li $store li benda pejirandinê ye — gava were pejirandin, nîşana we dê were zêdekirin.';
+    return 'Bexşîşa te li $store li benda pejirandinê ye — gava were pejirandin, nîşana te dê were zêdekirin.';
   }
 
   @override
@@ -1566,10 +1567,10 @@ class AppLocalizationsKu extends AppLocalizations {
   String get optionJamaaHome => 'Li malê bi cemaet';
 
   @override
-  String get optionJamaaMasjid => 'Li mizgeftê cemaet';
+  String get optionJamaaMasjid => 'Li mizgeftê bi cemaet';
 
   @override
-  String get optionSetOnTime => 'Dem';
+  String get optionSetOnTime => 'Di wextê xwe de';
 
   @override
   String get optionOnTimeOnTime => 'Di wextê xwe de';
@@ -1590,13 +1591,13 @@ class AppLocalizationsKu extends AppLocalizations {
   String get optionQuranMemorised => 'Hat jiberkirin';
 
   @override
-  String get optionQuranMeaning => 'Bi wateya wê';
+  String get optionQuranMeaning => 'Bi wateyê';
 
   @override
   String get optionQuranListened => 'Hat guhdarîkirin';
 
   @override
-  String get optionSetSadaqahType => 'Cureya Sedaqe';
+  String get optionSetSadaqahType => 'Cureyê sedeqeyê';
 
   @override
   String get optionSadaqahMoney => 'Pere';
@@ -1663,13 +1664,13 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get optionSetDeleteConfirm =>
-      'Kirinên vê komê bikar tînin dê êdî vebijarkan nîşan nedin. Rojên ku te berê tomar kiriye hilbijartina xwe diparêze.';
+      'Kirinên ku vê komê bi kar tînin êdî vebijarkan nîşan nadin. Rojên ku te berê tomar kirine hilbijartina xwe diparêzin.';
 
   @override
   String get optionSetNameRequired => 'Navekî bide komê';
 
   @override
-  String get optionsMinRequired => 'Bi kêmî du vebijarkan lê zêde bike';
+  String get optionsMinRequired => 'Herî kêm du vebijarkan lê zêde bike';
 
   @override
   String get optionSetNameTooLong => 'Navê komê pir dirêj e';
@@ -1696,7 +1697,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get requireChoicePickSetFirst => 'Pêşî komê hilbijêre';
 
   @override
-  String get requireChoiceCountHelp => 'Kirinên jimare bi − û + tên qedandin';
+  String get requireChoiceCountHelp => 'Kirinên hejmarî bi − û + tên qedandin';
 
   @override
   String optionsUsedOf(int used, int max) {
@@ -1726,10 +1727,10 @@ class AppLocalizationsKu extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count car',
-      one: '1 car',
+      other: '$count qedandinan',
+      one: '1 qedandinê',
     );
-    return 'Ji nav $_temp0, beşa ku hilbijartin lê hatiye tomarkirin';
+    return 'Para ji $_temp0 ku hilbijartin tê de hatiye tomarkirin';
   }
 
   @override
@@ -1737,8 +1738,8 @@ class AppLocalizationsKu extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       total,
       locale: localeName,
-      other: '$total rojên qedandî',
-      one: '1 roja qedandî',
+      other: '$total rojên qediyayî',
+      one: '1 roja qediyayî',
     );
     return 'Hilbijartin nehatiye tomarkirin — $none ji $_temp0';
   }
@@ -1791,13 +1792,13 @@ class AppLocalizationsKu extends AppLocalizations {
   String get optionDetailRecordsHeading => 'Rekor';
 
   @override
-  String get optionDetailLongestRun => 'Rêza herî dirêj';
+  String get optionDetailLongestRun => 'Rêzeya herî dirêj';
 
   @override
   String get optionDetailBestWeek => 'Hefteya herî baş';
 
   @override
-  String get optionDetailCurrentRun => 'Rêza niha';
+  String get optionDetailCurrentRun => 'Rêzeya niha';
 
   @override
   String get optionDetailRecordsCaption =>
@@ -1833,7 +1834,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get amalFajrSunnah => 'Sunneta Fecrê';
 
   @override
-  String get amalDhuhrSunnah => 'Sunneta Nîvro';
+  String get amalDhuhrSunnah => 'Sunneta Nîvroyê';
 
   @override
   String get amalAsrSunnah => 'Sunneta Esrê';
@@ -1860,7 +1861,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get amalIshraq => 'Nimêja Îşraqê';
 
   @override
-  String get amalWuduPrayer => 'Du rikat piştî destnimêjê';
+  String get amalWuduPrayer => 'Du rekat piştî destnimêjê';
 
   @override
   String get amalTahiyyah => 'Tehiyyetul-mescid';
@@ -1875,7 +1876,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get amalAfterFajr => 'Zikrên piştî Fecrê';
 
   @override
-  String get amalAfterDhuhr => 'Zikrên piştî Nîvro';
+  String get amalAfterDhuhr => 'Zikrên piştî Nîvroyê';
 
   @override
   String get amalAfterAsr => 'Zikrên piştî Esrê';
@@ -1893,7 +1894,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get amalKursiFajr => 'Ayeta Kursî piştî Fecrê';
 
   @override
-  String get amalKursiDhuhr => 'Ayeta Kursî piştî Nîvro';
+  String get amalKursiDhuhr => 'Ayeta Kursî piştî Nîvroyê';
 
   @override
   String get amalKursiAsr => 'Ayeta Kursî piştî Esrê';
@@ -1908,7 +1909,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get amalSayyidIstighfar => 'Seyîdul-Îstîxfar';
 
   @override
-  String get amalSalawat => 'Selewat';
+  String get amalSalawat => 'Selawat';
 
   @override
   String get amalSubhanallah => 'Subhanellahî we bihemdihî';
@@ -1920,7 +1921,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get amalBedtimeAdhkar => 'Zikrên berî xewê';
 
   @override
-  String get amalFridaySalawat => 'Selewata înê';
+  String get amalFridaySalawat => 'Selawata înê';
 
   @override
   String get amalHawqala => 'La hewle we la quwwete';
@@ -1980,7 +1981,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get amalTafsir => 'Tefsîr';
 
   @override
-  String get amalListenQuran => 'Guhdana Quranê';
+  String get amalListenQuran => 'Guhdariya Quranê';
 
   @override
   String get amalTeachQuran => 'Hînkirina Quranê';
@@ -1989,7 +1990,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get amalMonThu => 'Rojiya duşem û pêncşemê';
 
   @override
-  String get amalThreeDays => 'Sê roj rojî di mehê de';
+  String get amalThreeDays => 'Mehê sê roj rojî';
 
   @override
   String get amalDailySadaqah => 'Sedeqeya rojane';
@@ -2019,7 +2020,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get amalClass => 'Beşdarbûna dersê';
 
   @override
-  String get amalArabic => 'Hînbûna erebî';
+  String get amalArabic => 'Hînbûna erebiyê';
 
   @override
   String get amalLearnDua => 'Hînbûna duayeke nû';
@@ -2034,13 +2035,13 @@ class AppLocalizationsKu extends AppLocalizations {
   String get amalMuhasaba => 'Muhasebeya şevê';
 
   @override
-  String get amalSpeakGood => 'Ya baş bêje ya bêdeng bimîne';
+  String get amalSpeakGood => 'Ya baş bêje, yan jî bêdeng bimîne';
 
   @override
   String get amalNoBackbiting => 'Dûrketina ji xeybetê';
 
   @override
-  String get amalAnger => 'Kontrolkirina hêrsê';
+  String get amalAnger => 'Daqurtandina hêrsê';
 
   @override
   String get amalGaze => 'Parastina çavan';
@@ -2067,19 +2068,19 @@ class AppLocalizationsKu extends AppLocalizations {
   String get amalNeighbours => 'Qencî ji cîranan re';
 
   @override
-  String get amalRemoveHarm => 'Rakirina tiştên êşdar ji rê';
+  String get amalRemoveHarm => 'Rakirina tiştên zirardar ji rê';
 
   @override
   String get amalParents => 'Qencî ji dê û bav re';
 
   @override
-  String get amalFamilyTies => 'Parastina têkiliyên xizmtiyê';
+  String get amalFamilyTies => 'Parastina têkiliyên bi xizman re';
 
   @override
   String get amalHelpHome => 'Alîkariya karên malê';
 
   @override
-  String get amalTeachChildren => 'Hînkirina dînê ji zarokan re';
+  String get amalTeachChildren => 'Hînkirina zarokên xwe';
 
   @override
   String get amalSpouse => 'Qencî ji hevjînê re';
@@ -2091,7 +2092,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get categoryFasting => 'Rojî';
 
   @override
-  String get categoryKnowledge => 'Zanist';
+  String get categoryKnowledge => 'Zanîn';
 
   @override
   String get categoryCharacter => 'Exlaq';
@@ -2154,8 +2155,8 @@ class AppLocalizationsKu extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Di heftê de $countText roj',
-      one: 'Heftê carekê',
+      other: 'Hefteyê $countText roj',
+      one: 'Hefteyê carekê',
     );
     return '$_temp0';
   }
@@ -2165,7 +2166,7 @@ class AppLocalizationsKu extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Di mehê de $countText roj',
+      other: 'Mehê $countText roj',
       one: 'Mehê carekê',
     );
     return '$_temp0';
@@ -2186,7 +2187,7 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String libraryAddTooltip(String title) {
-    return '$title zêde bike';
+    return '$title lê zêde bike';
   }
 
   @override

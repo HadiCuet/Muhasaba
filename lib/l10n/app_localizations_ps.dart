@@ -9,7 +9,7 @@ class AppLocalizationsPs extends AppLocalizations {
   AppLocalizationsPs([String locale = 'ps']) : super(locale);
 
   @override
-  String get repeatsOnDaysHint => 'په ټاکل شویو ورځو کې تکرار کیږي';
+  String get repeatsOnDaysHint => 'په ټاکل شویو ورځو کې تکرار کېږي';
 
   @override
   String get newDayStarted => 'نوې ورځ پیل شوه';
@@ -49,19 +49,19 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get archivedEmpty =>
-      'دلته تر اوسه څه نشته. هغه عملونه چې د تعقیب څخه یې لرې کوئ دلته پاتې کیږي، ترڅو یې بېرته راوړئ.';
+      'دلته لا څه نشته. هغه عملونه چې له تعقیب څخه یې لرې کوئ، دلته ښکاره کېږي څو یې بېرته راوګرځوئ.';
 
   @override
   String archivedStoppedOn(String date) {
-    return 'په $date کې لرې شو';
+    return 'په $date لرې شو';
   }
 
   @override
-  String get archivedRestore => 'بېرته راوړل';
+  String get archivedRestore => 'بېرته راګرځول';
 
   @override
   String archivedRestored(String title) {
-    return '\"$title\" بېرته ستاسو لیست ته راغی.';
+    return '«$title» بېرته ستاسو لیست ته راوګرځېد.';
   }
 
   @override
@@ -77,13 +77,13 @@ class AppLocalizationsPs extends AppLocalizations {
   String get newAmalTitle => 'نوی عمل';
 
   @override
-  String get save => 'خوندی کول';
+  String get save => 'خوندي کول';
 
   @override
   String get cancel => 'لغوه';
 
   @override
-  String get ok => 'ښه';
+  String get ok => 'سمه ده';
 
   @override
   String get clear => 'پاکول';
@@ -95,7 +95,7 @@ class AppLocalizationsPs extends AppLocalizations {
   String get titleRequired => 'سرلیک اړین دی';
 
   @override
-  String get titleTooLong => 'سرلیک ډیر اوږد دی';
+  String get titleTooLong => 'سرلیک ډېر اوږد دی';
 
   @override
   String get frequencyLabel => 'تکرار';
@@ -104,7 +104,7 @@ class AppLocalizationsPs extends AppLocalizations {
   String get frequencyDaily => 'ورځنی';
 
   @override
-  String get frequencyWeekly => 'اونیزه';
+  String get frequencyWeekly => 'اونیز';
 
   @override
   String get frequencyMonthly => 'میاشتنی';
@@ -131,10 +131,10 @@ class AppLocalizationsPs extends AppLocalizations {
   String get categorySunnah => 'سنت';
 
   @override
-  String get timesPerPeriod => 'د دورې په هر ځل';
+  String get timesPerPeriod => 'په هره دوره کې څو ځله';
 
   @override
-  String get custom => 'دلخواه';
+  String get custom => 'خپله خوښه';
 
   @override
   String get customTargetHint => 'لکه ۵۰';
@@ -149,10 +149,10 @@ class AppLocalizationsPs extends AppLocalizations {
   String get dayOfWeek => 'د اونۍ ورځ';
 
   @override
-  String get anyDay => 'هره';
+  String get anyDay => 'هره ورځ';
 
   @override
-  String get anyDayHint => 'هره ورځ (نن ښکاره کیږي، سبا پټیږي)';
+  String get anyDayHint => 'هره ورځ (نن ښکاره کېږي، سبا پټېږي)';
 
   @override
   String onlyDayHint(String day) {
@@ -190,11 +190,11 @@ class AppLocalizationsPs extends AppLocalizations {
   String get pickAtLeastOneDate => 'لږ تر لږه یوه نیټه وټاکئ';
 
   @override
-  String get previewDaily => 'هره ورځ تکرار کیږي';
+  String get previewDaily => 'هره ورځ تکرار کېږي';
 
   @override
   String previewWeeklyDays(String days) {
-    return 'هره $days تکرار کیږي';
+    return 'هره $days تکرار کېږي';
   }
 
   @override
@@ -205,7 +205,7 @@ class AppLocalizationsPs extends AppLocalizations {
       other: '$count ورځې',
       one: 'یوه ورځ',
     );
-    return 'په اونۍ کې هره $_temp0 تکرار کیږي';
+    return 'په اونۍ کې په خوښه $_temp0 تکرارېږي';
   }
 
   @override
@@ -213,8 +213,8 @@ class AppLocalizationsPs extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'د هرې میاشتې په $dates نیټو کې تکرار کیږي',
-      one: 'د هرې میاشتې په $dates نیټه کې تکرار کیږي',
+      other: 'د هرې میاشتې په $dates نیټو تکرارېږي',
+      one: 'د هرې میاشتې په $dates نیټه تکرارېږي',
     );
     return '$_temp0';
   }
@@ -227,32 +227,32 @@ class AppLocalizationsPs extends AppLocalizations {
       other: '$count ورځې',
       one: 'یوه ورځ',
     );
-    return 'په میاشت کې هره $_temp0 تکرار کیږي';
+    return 'په میاشت کې په خوښه $_temp0 تکرارېږي';
   }
 
   @override
-  String get anyDate => 'هره';
+  String get anyDate => 'هره نیټه';
 
   @override
-  String get anyDateHint => 'هره نیټه (نن ښکاره کیږي، سبا پټیږي)';
+  String get anyDateHint => 'هره نیټه (نن ښکاره کېږي، سبا پټېږي)';
 
   @override
   String onlyDateHint(String date) {
-    return 'یوازې د $date نیټې';
+    return 'یوازې په $date نیټه';
   }
 
   @override
-  String get startPreChecked => 'دمخه نښه شوی پیل';
+  String get startPreChecked => 'په نښه شوي حالت پیل';
 
   @override
   String get startPreCheckedSubtitle =>
-      'کله چې نوې دوره پیل شي، دا عمل د تلواله بشپړ نښه شوی وي تر هغه چې تاسو یې لرې نه کړئ.';
+      'کله چې نوې دوره پیل شي، دا عمل په خپل سر بشپړ نښه کېږي، تر هغه چې تاسو یې نښه لرې کړئ.';
 
   @override
   String get reminder => 'یادونه';
 
   @override
-  String get reminderNone => 'هیڅ';
+  String get reminderNone => 'هېڅ';
 
   @override
   String reminderTime(String time) {
@@ -261,7 +261,7 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get reminderPermissionWarning =>
-      'یادونه خوندی شوه، خو خبرتیاوې اجازه نه لري. د هوښیارتیاوو لپاره یې د سیسټم تنظیماتو کې فعاله کړئ.';
+      'یادونه خوندي شوه، خو خبرتیاوو ته اجازه نشته. د خبرتیاوو د ترلاسه کولو لپاره یې د سیسټم په تنظیماتو کې فعالې کړئ.';
 
   @override
   String get settingsReminders => 'یادونې';
@@ -271,14 +271,14 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get dailyReminderSubtitle =>
-      'ستاسو د عملونو تعقیب لپاره یوه نرمه یادونه';
+      'ستاسو د عملونو د تعقیب لپاره یوه نرمه یادونه';
 
   @override
   String get dailyReminderTimeLabel => 'د یادونې وخت';
 
   @override
   String get dailyReminderBody =>
-      'د نن ورځې عملونه تعقیبولو لپاره لږ وخت ورکړئ.';
+      'د نن ورځې د عملونو د تعقیب لپاره یوه شېبه وباسئ.';
 
   @override
   String get groupByCategory => 'د کټګورۍ له مخې ګروپ کول';
@@ -292,7 +292,7 @@ class AppLocalizationsPs extends AppLocalizations {
   }
 
   @override
-  String get todayEmptyHint => 'د خپل لومړي عمل اضافه کولو لپاره + ټک وکړئ.';
+  String get todayEmptyHint => 'د خپل لومړي عمل د اضافه کولو لپاره + ټک وکړئ.';
 
   @override
   String get noteLabel => 'یادښت';
@@ -304,7 +304,7 @@ class AppLocalizationsPs extends AppLocalizations {
   String get completed => 'بشپړ شو';
 
   @override
-  String get notCompleted => 'بشپړ نه دی شوی';
+  String get notCompleted => 'نه دی بشپړ شوی';
 
   @override
   String progressOf(String progress, String target) {
@@ -321,23 +321,23 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get removeFromTodaySubtitle =>
-      'یوازې د نن لپاره پټول. سبا بیرته راځي.';
+      'یوازې د نن لپاره پټول. سبا بېرته راځي.';
 
   @override
   String get removeFromTracking => 'د تعقیب څخه لرې کول';
 
   @override
   String get removeFromTrackingSubtitle =>
-      'د خپل لیست څخه تل لپاره لرې کول. تاریخچه ساتل کیږي.';
+      'له خپل لیست څخه د تل لپاره لرې کول. تاریخچه خوندي پاتې کېږي.';
 
   @override
-  String get chooseIcon => 'عکس غوره کړئ';
+  String get chooseIcon => 'آیکن وټاکئ';
 
   @override
-  String get iconNone => 'هیڅ';
+  String get iconNone => 'هېڅ';
 
   @override
-  String get recentlyUsed => 'وروستی کارول شوی';
+  String get recentlyUsed => 'وروستي کارول شوي';
 
   @override
   String get emojiSectionGeneral => 'عمومي';
@@ -349,16 +349,16 @@ class AppLocalizationsPs extends AppLocalizations {
   String get categoryNew => '+ نوی';
 
   @override
-  String get categoryNewSheetTitle => 'نوې کټګورۍ';
+  String get categoryNewSheetTitle => 'نوې کټګوري';
 
   @override
-  String get categoryEditSheetTitle => 'کټګورۍ سمول';
+  String get categoryEditSheetTitle => 'کټګوري سمول';
 
   @override
   String get addAmal => 'عمل اضافه کول';
 
   @override
-  String get customAmal => 'دلخواه عمل';
+  String get customAmal => 'خپل عمل';
 
   @override
   String get amalTasbih => 'تسبیح ۳۳ ځله';
@@ -407,7 +407,7 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String settingsLoadError(String error) {
-    return 'تنظیمات پورته کول وناکامه شول:\n$error';
+    return 'د تنظیماتو په راوړلو کې ستونزه رامنځته شوه:\n$error';
   }
 
   @override
@@ -417,7 +417,7 @@ class AppLocalizationsPs extends AppLocalizations {
   String get rolloverHour => 'د ورځې بدلون ساعت';
 
   @override
-  String get rolloverAtMidnight => 'نن شپه نیمه پای ته رسیږي.';
+  String get rolloverAtMidnight => 'ورځ په نیمه شپه پای ته رسېږي.';
 
   @override
   String rolloverSubtitle(String time) {
@@ -425,7 +425,7 @@ class AppLocalizationsPs extends AppLocalizations {
   }
 
   @override
-  String get pickRolloverHour => 'هغه ساعت غوره کړئ چې ورځ پرې بدلیږي';
+  String get pickRolloverHour => 'هغه ساعت غوره کړئ چې ورځ پرې بدلېږي';
 
   @override
   String get sectionWeekMonth => 'اونۍ او میاشت';
@@ -438,19 +438,19 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get startOfMonthClamped =>
-      'د ۲۸مې نه وروسته ورځې د لنډو میاشتو وروستۍ ورځې ته محدودیږي.';
+      'له ۲۸مې وروسته ورځې په لنډو میاشتو کې د میاشتې وروستۍ ورځې ته اوړي.';
 
   @override
   String get sectionAppearance => 'بڼه';
 
   @override
-  String get theme => 'تیمه';
+  String get theme => 'تیم';
 
   @override
   String get themeSystem => 'سیسټم';
 
   @override
-  String get themeLight => 'رڼا';
+  String get themeLight => 'روښانه';
 
   @override
   String get themeDark => 'تیاره';
@@ -462,21 +462,21 @@ class AppLocalizationsPs extends AppLocalizations {
   String get language => 'ژبه';
 
   @override
-  String get systemDefault => 'د سیسټم تلواله';
+  String get systemDefault => 'د سیسټم له مخې';
 
   @override
-  String get aboutTitle => 'Muhasaba';
+  String get aboutTitle => 'محاسبه';
 
   @override
   String get aboutSubtitle =>
-      'د شخصي دیني حساب ورکولو ډایري. ټول معلومات پدې وسیله کې پاتې کیږي.';
+      'په دیني چارو کې د ځان د محاسبې شخصي ډایري. ټول معلومات په همدې وسیله کې پاتې کېږي.';
 
   @override
   String get statsTitle => 'احصایې';
 
   @override
   String statsLoadError(String error) {
-    return 'احصایې پورته کول وناکامه شول:\n$error';
+    return 'د احصایو په راوړلو کې ستونزه رامنځته شوه:\n$error';
   }
 
   @override
@@ -489,7 +489,7 @@ class AppLocalizationsPs extends AppLocalizations {
   String get thisMonth => 'دا میاشت';
 
   @override
-  String get totalCompletions => 'ټول بشپړتیاوې';
+  String get totalCompletions => 'ټولټال بشپړ شوي';
 
   @override
   String get streakCurrent => 'اوسنی';
@@ -540,14 +540,14 @@ class AppLocalizationsPs extends AppLocalizations {
   String get frequencyBadgeDaily => 'ورځنی';
 
   @override
-  String get frequencyBadgeWeekly => 'اونیزه';
+  String get frequencyBadgeWeekly => 'اونیز';
 
   @override
   String get frequencyBadgeMonthly => 'میاشتنی';
 
   @override
   String get statsEmpty =>
-      'تر اوسه هیڅ عمل نشته. د تعقیب پیل لپاره د نن په برخه کې یو اضافه کړئ.';
+      'تر اوسه هېڅ عمل نشته. د تعقیب د پیل لپاره د «نن» په برخه کې یو عمل اضافه کړئ.';
 
   @override
   String get statsToday => 'نن';
@@ -559,10 +559,10 @@ class AppLocalizationsPs extends AppLocalizations {
   String get statsThisMonth => 'دا میاشت';
 
   @override
-  String get statsAllTime => 'ټول وختونه';
+  String get statsAllTime => 'ټوله موده';
 
   @override
-  String get statsCustomRange => 'دلخواه موده';
+  String get statsCustomRange => 'ټاکلې موده';
 
   @override
   String get statsAllCategories => 'ټول';
@@ -577,7 +577,7 @@ class AppLocalizationsPs extends AppLocalizations {
   String get statsExpected => 'تمه شوي';
 
   @override
-  String get statsVsPrevious => 'د تیر په پرتله';
+  String get statsVsPrevious => 'د تېرې مودې په پرتله';
 
   @override
   String get statsByCategory => 'د کټګورۍ له مخې';
@@ -606,7 +606,7 @@ class AppLocalizationsPs extends AppLocalizations {
   String get statsBestStreak => 'غوره لړۍ';
 
   @override
-  String get statsTotalDays => 'ټول ورځې';
+  String get statsTotalDays => 'ټولې ورځې';
 
   @override
   String get statsConsistency => 'دوام';
@@ -635,7 +635,7 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String statsCountBest(String count, String day) {
-    return 'غوره $count · $day';
+    return 'غوره $count – $day';
   }
 
   @override
@@ -651,7 +651,7 @@ class AppLocalizationsPs extends AppLocalizations {
   String get statsStreaks => 'لړۍ';
 
   @override
-  String get statsSelectDateRange => 'د نیټې موده وټاکئ';
+  String get statsSelectDateRange => 'د نیټو موده وټاکئ';
 
   @override
   String get historyTitle => 'تاریخچه';
@@ -661,7 +661,7 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String historyEmptyDay(String date) {
-    return 'په $date هیڅ عمل تعقیب شوی نه دی';
+    return 'په $date هېڅ عمل نه دی ثبت شوی';
   }
 
   @override
@@ -717,72 +717,73 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get hadith0 =>
-      '\"د الله تعالی ته ترټولو خوښې عملونه هغه دي چې پرې دوام وشي، که لږ هم وي.\"\n— بخاري او مسلم';
+      '«الله تعالی ته تر ټولو خوښ عملونه هغه دي چې په دوام سره وشي، که څه هم لږ وي.»\n— بخاري او مسلم';
 
   @override
   String get hadith2 =>
-      '\"کله چې د آدم زوی مړ شي، عملونه یې ودریږي پرته له دریو: صدقه جاریه، ګټور علم، یا نیک اولاد چې د هغه لپاره دعا کوي.\"\n— مسلم';
+      '«کله چې د آدم زوی مړ شي، عمل یې پرې کېږي پرته له دریو شیانو: صدقه جاریه، ګټور علم، یا نېک اولاد چې ورته دعا کوي.»\n— مسلم';
 
   @override
   String get hadith3 =>
-      '\"هر څوک چې دوه یخې لمونځونه (سهار او مازدیګر) وکړي، جنت ته به داخل شي.\"\n— بخاري';
+      '«څوک چې دوه سړه لمونځونه (فجر او عصر) وکړي، جنت ته به ننوځي.»\n— بخاري';
 
   @override
   String get hadith4 =>
-      '\"الله ستاسو بڼه او شتمنۍ ته نه ګوري، بلکې ستاسو زړونو او عملونو ته ګوري.\"\n— مسلم';
+      '«الله ستاسو بڼه او شتمنۍ ته نه ګوري، بلکې ستاسو زړونو او عملونو ته ګوري.»\n— مسلم';
 
   @override
   String get hadith6 =>
-      '\"کارونه اسانه کړئ او سخت یې مه کوئ، زېری ورکړئ او خلک مه ډارئ.\"\n— بخاري';
+      '«اسانی کوئ او سختي مه کوئ، زېری ورکوئ او خلک مه تښتوئ.»\n— بخاري';
 
   @override
   String get hadith7 =>
-      '\"هر څوک چې د علم په لټه کې لاره ووهي، الله به ورته جنت ته لاره اسانه کړي.\"\n— مسلم';
+      '«څوک چې د علم په لټه کې په یوه لاره روان شي، الله به ورته د جنت لاره اسانه کړي.»\n— مسلم';
 
   @override
-  String get hadith8 => '\"صدقه مال نه کموي.\"\n— مسلم';
+  String get hadith8 => '«صدقه مال نه کموي.»\n— مسلم';
 
   @override
   String get hadith9 =>
-      '\"قوي مؤمن د الله سره غوره او ډیر خوښ دی د ضعیف مؤمن په پرتله، خو په دواړو کې خیر شته.\"\n— مسلم';
+      '«قوي مؤمن له کمزوري مؤمن څخه غوره او الله ته ډېر خوښ دی، او په دواړو کې خیر شته.»\n— مسلم';
 
   @override
   String get hadith10 =>
-      '\"هر څوک چې په ورځ کې سل ځله \'سبحان الله وبحمده\' ووایی، د هغه ګناهونه بخښل کیږی که چیرې د سمندر د ګاز په شان وی.\"\n— بخاري او مسلم';
+      '«څوک چې په ورځ کې سل ځله «سبحان الله وبحمده» ووايي، ګناهونه یې بخښل کېږي که څه هم د سمندر د ځګ په اندازه وي.»\n— بخاري او مسلم';
 
   @override
   String get hadith12 =>
-      '\"هر څوک چې د هر فرض لمانځه وروسته آیت الکرسی ووایی، جنت ته د ننوتلو مخه یې یوازې مرګ نیسی.\"\n— نسائي';
+      '«څوک چې د هر فرض لمانځه وروسته آیت الکرسي ولولي، جنت ته د ننوتو مخه یې له مرګ پرته بل څه نه نیسي.»\n— نسائي';
 
   @override
-  String get hadith13 => '\"ښه خبره صدقه ده.\"\n— بخاري او مسلم';
+  String get hadith13 => '«ښه خبره صدقه ده.»\n— بخاري او مسلم';
 
   @override
   String get hadith14 =>
-      '\"هر څوک چې پر الله او وروستي ورځ ایمان لری، دی باید ښه خبره وکړی یا چوپ وی.\"\n— بخاري او مسلم';
+      '«څوک چې پر الله او د آخرت پر ورځ ایمان لري، باید ښه خبره وکړي یا چوپ پاتې شي.»\n— بخاري او مسلم';
 
   @override
   String get hadith15 =>
-      '\"هغه څوک چې د کونډې او مسکین خیال ساتي د الله په لاره کې د مجاهد په شان دی.\"\n— بخاري او مسلم';
+      '«هغه څوک چې د کونډې او مسکین خیال ساتي، د الله په لاره کې د مجاهد په څېر دی.»\n— بخاري او مسلم';
 
   @override
-  String get hadith16 => '\"د خپل ورور مخ ته خندل صدقه ده.\"\n— ترمذي';
+  String get hadith16 =>
+      '«د خپل ورور په مخ کې ستا موسکا تا ته صدقه ده.»\n— ترمذي';
 
   @override
   String get hadith17 =>
-      '\"ستاسو تر ټولو غوره هغه دی چې قرآن زده کوی او ورته ښوونه ورکوی.\"\n— بخاري';
+      '«په تاسو کې غوره هغه څوک دی چې قرآن زده کړي او نورو ته یې وښيي.»\n— بخاري';
 
   @override
   String get hadith18 =>
-      '\"هیچا چا د خپل لاس له کار نه ښه خواړه نه دي خوړلي.\"\n— بخاري';
+      '«هېچا تر هغه خوراک غوره خوراک نه دی خوړلی چې د خپل لاس په کار یې ګټلی وي.»\n— بخاري';
 
   @override
   String get hadith19 =>
-      '\"الله نرم دی او په هر کار کې نرمي خوښوي.\"\n— بخاري او مسلم';
+      '«الله نرم دی او په هر کار کې نرمي خوښوي.»\n— بخاري او مسلم';
 
   @override
   String historyDayCompleted(String completed, String total) {
-    return '$total څخه $completed بشپړ شوي';
+    return 'د $total څخه $completed بشپړ شوي';
   }
 
   @override
@@ -795,10 +796,10 @@ class AppLocalizationsPs extends AppLocalizations {
   String get settingsAboutTagline => 'ستاسو ورځنی دیني ملګری';
 
   @override
-  String get settingsRolloverSub => 'ورځ کله بیا پیلیږي';
+  String get settingsRolloverSub => 'ورځ کله له سره پیلېږي';
 
   @override
-  String get settingsAbout => 'په اړه';
+  String get settingsAbout => 'د اپلیکیشن په اړه';
 
   @override
   String get settingsVersion => 'نسخه';
@@ -810,20 +811,20 @@ class AppLocalizationsPs extends AppLocalizations {
   String get settingsSupport => 'ملاتړ';
 
   @override
-  String get settingsRate => 'اپلیکیشن ته درجه ورکړئ';
+  String get settingsRate => 'اپلیکیشن ته نمره ورکړئ';
 
   @override
-  String get settingsContact => 'موږ سره اړیکه ونیسئ';
+  String get settingsContact => 'له موږ سره اړیکه ونیسئ';
 
   @override
   String get settingsReportBug => 'د ستونزې راپور ورکړئ';
 
   @override
-  String get settingsRequestFeature => 'د ځانګړنې غوښتنه وکړئ';
+  String get settingsRequestFeature => 'د نوې ځانګړنې غوښتنه وکړئ';
 
   @override
   String settingsSupportFallback(String email) {
-    return 'بریښنالیک نه خلاصیږي. مهرباني وکړئ $email ته بریښنالیک ولیږئ.';
+    return 'بریښنالیک پرانیستل نه شو. مهرباني وکړئ $email ته بریښنالیک ولېږئ.';
   }
 
   @override
@@ -834,238 +835,238 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get hadith20 =>
-      '\"هر څوک چې د ایمان او ثواب په نیت رمضان روژه ونیسي، د هغه تیرې ګناهونه بخښل کیږي.\"\n— بخاري او مسلم';
+      '«څوک چې د ایمان او د ثواب په هیله د رمضان روژه ونیسي، مخکیني ګناهونه یې بخښل کېږي.»\n— بخاري او مسلم';
 
   @override
-  String get hadith22 =>
-      '\"د اذان او اقامت ترمنځ دعا رد نه کیږي.\"\n— ابو داود';
+  String get hadith22 => '«د اذان او اقامت ترمنځ دعا رد نه کېږي.»\n— ابو داود';
 
   @override
   String get hadith23 =>
-      '\"هر څوک چې د الله لپاره جومات جوړ کړي، الله به ورته په جنت کې کور جوړ کړي.\"\n— بخاري او مسلم';
+      '«هر څوک چې د الله لپاره جومات جوړ کړي، الله به ورته په جنت کې کور جوړ کړي.»\n— بخاري او مسلم';
 
   @override
   String get hadith24 =>
-      '\"د نارینه وو لپاره غوره صفونه لومړي صفونه دي، او د ښځو لپاره غوره صفونه وروستي صفونه دي.\"\n— مسلم';
+      '«د نارینه وو لپاره غوره صفونه لومړي صفونه دي، او د ښځو لپاره غوره صفونه وروستي صفونه دي.»\n— مسلم';
 
   @override
-  String get hadith25 => '\"روژه د دوزخ نه ساتنه ده.\"\n— نسائي';
+  String get hadith25 => '«روژه د دوزخ له اور څخه ډال دی.»\n— نسائي';
 
   @override
   String get hadith26 =>
-      '\"هر څوک چې دولس رکعته سنت لمونځ وکړي، ورته به په جنت کې کور جوړ شي.\"\n— مسلم';
+      '«هر څوک چې دولس رکعته سنت لمونځ وکړي، ورته به په جنت کې کور جوړ شي.»\n— مسلم';
 
   @override
   String get hadith27 =>
-      '\"هغه څوک چې په قرآن کې ماهر وي، د عزتمنو پرښتو سره وي.\"\n— بخاري او مسلم';
+      '«هغه څوک چې په قرآن کې ماهر وي، له عزتمنو او نېکو پرښتو سره به وي.»\n— بخاري او مسلم';
 
   @override
-  String get hadith29 => '\"غوره صدقه د اوبو ورکول دي.\"\n— احمد';
+  String get hadith29 => '«تر ټولو غوره صدقه اوبه څښول دي.»\n— احمد';
 
   @override
   String get hadith30 =>
-      '\"هر څوک چې له مؤمن څخه سختي لرې کړي، الله به ورته د قیامت په ورځ سختي لرې کړي.\"\n— مسلم';
+      '«څوک چې له مؤمن څخه یوه سختي لرې کړي، الله به د قیامت په ورځ له هغه څخه یوه سختي لرې کړي.»\n— مسلم';
 
   @override
-  String get hadith32 => '\"حیا د ایمان برخه ده.\"\n— بخاري او مسلم';
+  String get hadith32 => '«حیا د ایمان برخه ده.»\n— بخاري او مسلم';
 
   @override
   String get hadith34 =>
-      '\"هر څوک چې صبر وکړي، الله به ورته صبر ورکړي.\"\n— بخاري او مسلم';
+      '«هر څوک چې صبر وکړي، الله به ورته صبر ورکړي.»\n— بخاري او مسلم';
 
   @override
   String get hadith36 =>
-      '\"ستاسو هیڅ یو ریښتینی مؤمن نه دی تر هغه چې خپل ورور ته هغه خوښ نه کړي چې ځان ته یې خوښوي.\"\n— بخاري او مسلم';
+      '«له تاسو څخه هېڅوک تر هغه پوره مؤمن نه شي، تر څو چې خپل ورور ته هغه څه خوښ نه کړي چې ځان ته یې خوښوي.»\n— بخاري او مسلم';
 
   @override
   String get hadith37 =>
-      '\"وږي خوراک ورکړئ، ناروغ یې ولیدئ، او بندیان آزاد کړئ.\"\n— بخاري';
+      '«وږي ته خوراک ورکړئ، د ناروغ پوښتنه وکړئ، او بندیان آزاد کړئ.»\n— بخاري';
 
   @override
   String get hadith38 =>
-      '\"قوي سړی هغه نه دی چې لوبې کوي، بلکې هغه دی چې په غصه کې ځان کنترولوي.\"\n— بخاري او مسلم';
+      '«پیاوړی هغه نه دی چې په غېږ نیولو کې بل وغورځوي، بلکې پیاوړی هغه دی چې د غوسې پر مهال ځان کنټرول کړي.»\n— بخاري او مسلم';
 
   @override
   String get hadith40 =>
-      '\"د هر لمونځ وروسته درې دېرش ځله \'سبحان الله\'، \'الحمد لله\' او \'الله اکبر\' ووایئ.\"\n— مسلم';
+      '«د هر لمانځه وروسته درې دېرش ځله «سبحان الله»، «الحمد لله» او «الله اکبر» ووایئ.»\n— مسلم';
 
   @override
-  String get hadith41 => '\"غوره ذکر \'لا اله الا الله\' دی.\"\n— ترمذي';
+  String get hadith41 => '«غوره ذکر «لا اله الا الله» دی.»\n— ترمذي';
 
   @override
   String get hadith42 =>
-      '\"دوه نعمتونه شته چې ډیری خلک یې ضایع کوي: روغتیا او خالي وخت.\"\n— بخاري';
+      '«دوه نعمتونه شته چې ډېری خلک یې ضایع کوي: روغتیا او خالي وخت.»\n— بخاري';
 
   @override
   String get hadith43 =>
-      '\"پنځه شیان دمخه غنیمت وګڼئ: ځوانتوب دمخه له زوړتیا، روغتیا دمخه له ناروغۍ، شتمني دمخه له غربت، خالي وخت دمخه له بوختیا، او ژوند دمخه له مرګ.\"\n— حاکم';
+      '«پنځه شیان له پنځو مخکې غنیمت وګڼئ: ځواني له زوړتیا مخکې، روغتیا له ناروغۍ مخکې، شتمني له بې‌وزلۍ مخکې، وزګار وخت له بوختیا مخکې، او ژوند له مرګ مخکې.»\n— حاکم';
 
   @override
   String get hadith44 =>
-      '\"هر څوک چې سوره اخلاص لس ځله ووایی، الله به ورته په جنت کې کور جوړ کړي.\"\n— احمد';
+      '«څوک چې سوره اخلاص لس ځله ولولي، الله به ورته په جنت کې کور جوړ کړي.»\n— احمد';
 
   @override
   String get hadith45 =>
-      '\"د فرض لمونځونو وروسته غوره لمونځ د شپې لمونځ دی.\"\n— مسلم';
+      '«له فرض لمونځونو وروسته تر ټولو غوره لمونځ د شپې لمونځ دی.»\n— مسلم';
 
   @override
-  String get hadith46 => '\"صدقه ګناهونه هغسې ګل کوي لکه اوبه اور.\"\n— ترمذي';
+  String get hadith46 =>
+      '«صدقه ګناهونه داسې مړ کوي لکه اوبه چې اور مړ کوي.»\n— ترمذي';
 
   @override
   String get hadith47 =>
-      '\"صله رحمي کوونکی هغه نه دی چې بدله کوي، بلکې هغه دی چې کله رابطه پرې کړل شي بیا هم یې ساتي.\"\n— بخاري';
+      '«صله رحمي کوونکی هغه نه دی چې بدله ورکوي، بلکې هغه دی چې کله ترې خپلوي پرې شي، بیا یې هم پالي.»\n— بخاري';
 
   @override
   String get hadith49 =>
-      '\"هر څوک چې خوراک وخوري او ووایي: \'الحمدلله چې ما ته یې دا خوراک ورکړ او بې له کومې ځواکې یا طاقتې زما ما ته رسولی دی،\' د هغه تېرې ګناهونه بخښل کیږي.\"\n— ترمذي';
+      '«څوک چې خوراک وخوري او ووايي: «ټوله ستاینه هغه الله ته ده چې دا خوراک یې راکړ او زما له ځواک او قوت پرته یې روزي کړ»، مخکیني ګناهونه یې بخښل کېږي.»\n— ترمذي';
 
   @override
   String get hadith53 =>
-      '\"هېڅ نېکي مه حقیره ګڼئ، که څه هم دا وي چې خپل ورور ته په خندا مخ ووینئ.\"\n— مسلم';
+      '«هېڅ نېکي مه سپکه ګڼئ، که څه هم دا وي چې له خپل ورور سره په ورین تندي مخ شئ.»\n— مسلم';
 
   @override
   String get hadith54 =>
-      '\"ستاسو تر ټولو غوره هغه دی چې د خپلې کورنۍ لپاره غوره وي.\"\n— ترمذي';
+      '«ستاسو تر ټولو غوره هغه څوک دی چې له خپلې کورنۍ سره تر ټولو ښه وي.»\n— ترمذي';
 
   @override
   String get hadith55 =>
-      '\"هر څوک چې شپه د سورة البقرة وروستۍ دوه آیتونه ولولي، دا به ورته بسنه وي.\"\n— بخاري او مسلم';
+      '«څوک چې د شپې د سورة البقرة وروستي دوه آیتونه ولولي، هغه ورته بس دي.»\n— بخاري او مسلم';
 
   @override
   String get hadith56 =>
-      '\"دنیا یو متاع دی، او د دې ترټولو غوره متاع نېکه ښځه ده.\"\n— مسلم';
+      '«دنیا متاع ده، او د دنیا تر ټولو غوره متاع نېکه ښځه ده.»\n— مسلم';
 
   @override
   String get hadith57 =>
-      '\"درې دعاوې رد نه کیږي: د روژه نیونکي دعا، د عادل حاکم دعا، او د مظلوم دعا.\"\n— ترمذي';
+      '«درې دعاګانې نه ردېږي: د روژه دار دعا، د عادل واکمن دعا، او د مظلوم دعا.»\n— ترمذي';
 
   @override
   String get hadith58 =>
-      '\"هر څوک چې پر ما یو ځل درود واستوي، الله به پرې لس ځله رحمت واستوي.\"\n— مسلم';
+      '«څوک چې پر ما یو ځل درود ووايي، الله به پرې لس ځله رحمت ولېږي.»\n— مسلم';
 
   @override
-  String get hadith65 => '\"مؤمن د مؤمن آینه دی.\"\n— ابو داود';
+  String get hadith65 => '«مؤمن د مؤمن آینه دی.»\n— ابو داود';
 
   @override
   String get hadith66 =>
-      '\"ریښتینتوب نېکۍ ته رسوي، او نېکي جنت ته رسوي.\"\n— بخاري او مسلم';
+      '«رښتیا نېکۍ ته لار ښيي، او نېکي جنت ته لار ښيي.»\n— بخاري او مسلم';
 
   @override
   String get hadith67 =>
-      '\"امانت هغه چا ته ورکړه چې تاته یې سپارلې ده، او هغه چا ته خیانت مه کوه چې تاته یې خیانت کړی وي.\"\n— ابو داود او ترمذي';
+      '«امانت هغه چا ته وسپاره چې تا ته یې سپارلی دی، او له هغه چا سره خیانت مه کوه چې له تا سره یې خیانت کړی وي.»\n— ابو داود او ترمذي';
 
   @override
   String get hadith68 =>
-      '\"هیڅ ستړتیا، ناروغي، غم، خپګان، تکلیف، یا پریشاني مسلمان ته نه رسیږي، حتی یوه اغزه هم، مګر الله د هغې په بدل کې د هغه ګناهونه معاف کوي.\"\n— بخاري او مسلم';
+      '«مسلمان ته هېڅ ستړیا، ناروغي، غم، خپګان، ازار او پرېشاني نه رسېږي، حتی د اغزي چوخېدل هم، مګر دا چې الله په هغې سره د هغه ځینې ګناهونه معاف کړي.»\n— بخاري او مسلم';
 
   @override
   String get hadith69 =>
-      '\"د مسلمان دعا د خپل ورور لپاره چې حاضر نه وي تل قبلیږي.\"\n— مسلم';
+      '«د خپل ورور په غیاب کې د مسلمان دعا د هغه لپاره قبلېږي.»\n— مسلم';
 
   @override
   String get hadith70 =>
-      '\"هر څوک چې له الله نه درې ځله جنت وغواړي، جنت وایي: الهي دا جنت ته داخل کړه.\"\n— ترمذي';
+      '«څوک چې له الله څخه درې ځله جنت وغواړي، جنت وايي: ای الله، دی جنت ته داخل کړه.»\n— ترمذي';
 
   @override
   String get hadith71 =>
-      '\"د رمضان وروسته ترټولو غوره روژه د الله میاشت محرم ده.\"\n— مسلم';
+      '«له رمضان وروسته تر ټولو غوره روژه د الله د میاشتې، محرم، روژه ده.»\n— مسلم';
 
   @override
   String get hadith72 =>
-      '\"هر څوک چې حج وکړي او بده خبره او ګناه ونه کړي، هغه داسې راګرځي لکه هغه ورځ چې مور یې زیږولی وو.\"\n— بخاري او مسلم';
+      '«څوک چې حج وکړي او بې‌حیايي او ګناه ونه کړي، هغه داسې بېرته راګرځي لکه هغه ورځ چې مور زېږولی و.»\n— بخاري او مسلم';
 
   @override
   String get hadith73 =>
-      '\"عمره تر بلې عمرې د دواړو ترمنځ ګناهونو کفاره ده.\"\n— بخاري او مسلم';
+      '«یوه عمره تر بلې عمرې پورې د دواړو ترمنځ ګناهونو کفاره ده.»\n— بخاري او مسلم';
 
   @override
   String get hadith74 =>
-      '\"مخکې له دې چې فتنې د توره شپې د ټوټو په شان راشي، نېکو عملونو ته ولاړ شئ.\"\n— مسلم';
+      '«مخکې له دې چې فتنې د تورې شپې د ټوټو په څېر راشي، په نېکو عملونو کې بیړه وکړئ.»\n— مسلم';
 
   @override
   String get hadith75 =>
-      '\"د سهار دوه رکعتونه د دنیا او هرڅه چې پکې دي نه ښې دي.\"\n— مسلم';
+      '«د فجر دوه رکعته له دنیا او هر هغه څه چې پکې دي غوره دي.»\n— مسلم';
 
   @override
   String get hadith77 =>
-      '\"که تاسو په الله باندې داسې توکل کوئ لکه چې حق یې دی، نو هغه به تاسو ته داسې روزي درکوي لکه چې مرغیو ته ورکوي.\"\n— ترمذي';
+      '«که تاسو پر الله داسې توکل وکړئ لکه چې د توکل حق یې دی، نو تاسو ته به داسې روزي درکړي لکه مرغانو ته یې چې ورکوي.»\n— ترمذي';
 
   @override
   String get hadith78 =>
-      '\"هرڅوک چې ناروغ ته ځي، تر بیرته راتلو پورې د جنت په باغ کې وي.\"\n— مسلم';
+      '«څوک چې د ناروغ پوښتنې ته ورشي، تر بېرته راګرځېدو پورې د جنت د مېوو په ټولولو کې وي.»\n— مسلم';
 
   @override
   String get hadith79 =>
-      '\"سلام خپور کړئ، ډوډۍ ورکړئ، او شپه لمونځ وکړئ کله چې خلک ویده وي — تاسو به په سلامت سره جنت ته ننوځئ.\"\n— ترمذي';
+      '«سلام خپور کړئ، وږو ته خوراک ورکړئ، او د شپې لمونځ وکړئ کله چې خلک ویده وي — په سلامتۍ سره به جنت ته ننوځئ.»\n— ترمذي';
 
   @override
   String get hadith80 =>
-      '\"هر څوک چې د خلکو شکرګزار نه وي، د الله شکرګزار نه دی.\"\n— ترمذي';
+      '«څوک چې د خلکو شکر نه باسي، د الله شکر هم نه باسي.»\n— ترمذي';
 
   @override
   String get hadith81 =>
-      '\"حسد یوازې په دوه حالتونو کې روا دی: هغه سړی چې الله ورته مال ورکړی او هغه یې په حق لاره خرڅ کوي، او هغه سړی چې الله ورته حکمت ورکړی او هغه ورسره فیصله کوي او ښوونه کوي.\"\n— بخاري او مسلم';
+      '«حسد یوازې په دوو حالتونو کې روا دی: هغه سړی چې الله ورته مال ورکړی وي او هغه یې په حقه لاره کې لګوي، او هغه سړی چې الله ورته حکمت ورکړی وي او هغه پرې فیصله کوي او نورو ته یې ښيي.»\n— بخاري او مسلم';
 
   @override
   String get hadith82 =>
-      '\"انسان د خپل ملګري په دین باندې دی، نو هر یو ستاسو دې وګوري چې د چا سره ملګرتیا کوي.\"\n— ابوداود او ترمذي';
+      '«انسان د خپل نږدې ملګري پر دین وي، نو هر یو مو دې وګوري چې له چا سره ملګرتیا کوي.»\n— ابو داود او ترمذي';
 
   @override
   String get hadith85 =>
-      '\"هر څوک چې د الله لپاره یو شی پریږدي، الله به ورته غوره شی ورکړي.\"\n— احمد';
+      '«څوک چې د الله لپاره یو شی پرېږدي، الله به یې ورته په غوره شي بدل کړي.»\n— احمد';
 
   @override
   String get hadith86 =>
-      '\"هرڅوک چې د مسلمان عیبونه پټ کړي، الله به د قیامت په ورځ د هغه عیبونه پټ کړي.\"\n— بخاري او مسلم';
+      '«هر څوک چې د مسلمان عیبونه پټ کړي، الله به د قیامت په ورځ د هغه عیبونه پټ کړي.»\n— بخاري او مسلم';
 
   @override
-  String get hadith87 =>
-      '\"په دنیا کې داسې اوسه لکه چې مسافر یې یا لاریون.\"\n— بخاري';
+  String get hadith87 => '«په دنیا کې داسې اوسه لکه پردی یا لاروی.»\n— بخاري';
 
   @override
   String get hadith88 =>
-      '\"هرڅوک چې د ستونزمن لپاره اسانتیا وکړي، الله به په دنیا او آخرت کې ورته اسانتیا وکړي.\"\n— مسلم';
+      '«څوک چې پر یوه کړېدلي اسانتیا وکړي، الله به پر هغه په دنیا او آخرت کې اسانتیا وکړي.»\n— مسلم';
 
   @override
-  String get hadith89 => '\"عملونه د نیتونو پورې تړلي دي.\"\n— بخاري او مسلم';
+  String get hadith89 => '«عملونه د نیتونو پورې تړلي دي.»\n— بخاري او مسلم';
 
   @override
   String get hadith90 =>
-      '\"له بدګمانۍ څخه ځان ساتئ، ځکه چې بدګماني تر ټولو دروغجنه خبره ده.\"\n— بخاري او مسلم';
+      '«له بدګمانۍ څخه ځان ساتئ، ځکه چې بدګماني تر ټولو دروغجنه خبره ده.»\n— بخاري او مسلم';
 
   @override
   String get hadith93 =>
-      '\"یوځای خوراک وکړئ او د الله نوم واخلئ، نو ستاسو لپاره به برکت وي.\"\n— ابوداود';
+      '«یوځای خوراک وکړئ او د الله نوم واخلئ، نو ستاسو لپاره به برکت وي.»\n— ابو داود';
 
   @override
   String get hadith94 =>
-      '\"هېڅ قوم د الله د ذکر لپاره نه کیني مګر چې ملایکې یې راچاپیر کړي، رحمت یې پرې پوښي، او سکینه ورباندې نازلیږي.\"\n— مسلم';
+      '«هېڅ قوم د الله د ذکر لپاره نه کېني، مګر دا چې پرښتې یې راګیر کړي، رحمت یې ونغاړي، او سکینه پرې نازله شي.»\n— مسلم';
 
   @override
-  String get hadith95 => '\"الله د بخښونکي بنده عزت یوازې زیاتوي.\"\n— مسلم';
+  String get hadith95 =>
+      '«الله بنده ته د بخښنې له امله یوازې عزت ور زیاتوي.»\n— مسلم';
 
   @override
-  String get hadith96 => '\"خپل اوښ وتړه بیا په الله توکل وکړه.\"\n— ترمذي';
+  String get hadith96 => '«خپل اوښ وتړه بیا په الله توکل وکړه.»\n— ترمذي';
 
   @override
-  String get hadith97 => '\"د مؤمن کار عجیب دی — هر څه ورته ښه دي.\"\n— مسلم';
+  String get hadith97 => '«د مؤمن کار عجیب دی — هر څه ورته ښه دي.»\n— مسلم';
 
   @override
   String get hadith98 =>
-      '\"مسلمان د مسلمان ورور دی: نه پرې ظلم کوي، نه یې پریږدي، نه یې سپکوي.\"\n— مسلم';
+      '«مسلمان د مسلمان ورور دی: نه پرې ظلم کوي، نه یې بې‌مرستې پرېږدي، او نه یې سپکوي.»\n— مسلم';
 
   @override
-  String get delete => 'ړنگول';
+  String get delete => 'ړنګول';
 
   @override
   String get remove => 'لرې کول';
 
   @override
-  String get deleteAmalConfirmTitle => 'د تعقیب نه لرې کول؟';
+  String get deleteAmalConfirmTitle => 'له تعقیب څخه یې لرې کوئ؟';
 
   @override
   String deleteAmalConfirmBody(String title) {
-    return '\"$title\" به ستاسو د لیست نه پټ به شي. ستاسو تاریخ به ساتل کیږي.';
+    return '«$title» به ستاسو له لیست څخه پټ شي. ستاسو تاریخچه خوندي پاتې کېږي.';
   }
 
   @override
@@ -1073,14 +1074,14 @@ class AppLocalizationsPs extends AppLocalizations {
       'یوه ستونزه رامنځ ته شوه. مهرباني وکړئ بیا هڅه وکړئ.';
 
   @override
-  String get notificationChannelName => 'د اعمالو یادونې';
+  String get notificationChannelName => 'د عملونو یادونې';
 
   @override
   String get notificationChannelDescription =>
-      'ستاسو د تعقیب شویو اعمالو لپاره ورځنۍ یادونې.';
+      'ستاسو د تعقیب شویو عملونو لپاره ورځنۍ یادونې.';
 
   @override
-  String get invalidAmalId => 'ناسم د عمل پېژندنه';
+  String get invalidAmalId => 'د عمل پېژند ناسم دی';
 
   @override
   String get tutorialSettingsRow => 'محاسبه څنګه وکاروئ';
@@ -1092,28 +1093,28 @@ class AppLocalizationsPs extends AppLocalizations {
   String get tutorialNext => 'بل';
 
   @override
-  String get tutorialDone => 'پای';
+  String get tutorialDone => 'بشپړ';
 
   @override
   String get tutorialTapTitle => 'د بشپړولو لپاره ټک وکړئ';
 
   @override
   String get tutorialTapBody =>
-      'یو ټک عمل د نن ورځې لپاره بشپړ نښه کوي. د بېرته کولو لپاره بیا ټک وکړئ.';
+      'یو ټک عمل د نن لپاره بشپړ نښه کوي. د بېرته اخیستلو لپاره بیا ټک وکړئ.';
 
   @override
   String get tutorialEditTitle => 'د سمولو لپاره دوه ځله ټک وکړئ';
 
   @override
   String get tutorialEditBody =>
-      'د سمون فورمه پرانیزي — نوم یې بدل کړئ، یا د تکرار موده بدله کړئ.';
+      'د سمون فورمه پرانیزي — نوم یې بدل کړئ، یا دا بدل کړئ چې څو ځله تکرارېږي.';
 
   @override
-  String get tutorialReorderTitle => 'د بیا ترتیب لپاره ټینګ ونیسئ';
+  String get tutorialReorderTitle => 'د ترتیب بدلولو لپاره ګوته پرې ونیسئ';
 
   @override
   String get tutorialReorderBody =>
-      'یوه کرښه ونیسئ، بیا یې راکاږئ. ستاسو ترتیب خوندي کیږي.';
+      'یوه کرښه ونیسئ، بیا یې راکاږئ. ستاسو ترتیب خوندي کېږي.';
 
   @override
   String get tutorialRemoveTitle => 'د لرې کولو لپاره یې وښویوئ';
@@ -1137,7 +1138,7 @@ class AppLocalizationsPs extends AppLocalizations {
       'د کټګورۍ له مخې ګروپ کولو او یوه ساده لیست ترمنځ بدلون وکړئ.';
 
   @override
-  String get tutorialChallengeLogTitle => 'د نن ثبتولو لپاره ټک وکړئ';
+  String get tutorialChallengeLogTitle => 'د نن ورځې د ثبتولو لپاره ټک وکړئ';
 
   @override
   String get tutorialChallengeLogBody =>
@@ -1182,13 +1183,13 @@ class AppLocalizationsPs extends AppLocalizations {
   }
 
   @override
-  String get challengeSectionEnded => 'پای';
+  String get challengeSectionEnded => 'پای ته رسېدلي';
 
   @override
   String get challengesPastEmpty => 'تر اوسه څه نه دي پای ته رسېدلي.';
 
   @override
-  String get challengesEmptyTitle => 'تر اوسه هیڅ هدف نشته';
+  String get challengesEmptyTitle => 'تر اوسه هېڅ هدف نشته';
 
   @override
   String get challengesEmptyBody =>
@@ -1202,24 +1203,24 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get deleteChallengeConfirm =>
-      'دا هدف او ټول ثبت شوی پرمختګ یې ړنګ شي؟';
+      'دا هدف او د هغه ټول ثبت شوی پرمختګ ړنګ کړئ؟';
 
   @override
-  String get challengeShapeQuestion => 'دا څه ډول موخه ده؟';
+  String get challengeShapeQuestion => 'دا څه ډول هدف دی؟';
 
   @override
-  String get challengeShapeTotal => 'یوه ټوله اندازه چې ورسېږئ';
+  String get challengeShapeTotal => 'یوې ټولې اندازې ته رسېدل';
 
   @override
   String get challengeShapeTotalBody =>
-      '۱۰۰۰ درود، ۳۰ جزء. اندازه ثبتوئ او ټوله زیاتېږي.';
+      '۱۰۰۰ درود، ۳۰ جزء. اندازې ثبتوئ او مجموعه زیاتېږي.';
 
   @override
-  String get challengeShapeStreak => 'ورځنی دوام';
+  String get challengeShapeStreak => 'ورځ په ورځ لړۍ';
 
   @override
   String get challengeShapeStreakBody =>
-      'تهجد، په جماعت سهار لمونځ. ورځې یوه نښه، اندازه مهمه نه ده.';
+      'تهجد، د فجر لمونځ په جماعت. په ورځ کې یوه نښه، اندازه مهمه نه ده.';
 
   @override
   String get challengeTargetLabel => 'موخه';
@@ -1267,7 +1268,7 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String challengePlanExact(String start, String end) {
-    return 'له $start څخه تر $end · ورځې یو، هره ورځ';
+    return 'له $start څخه تر $end – په ورځ کې یو، هره ورځ';
   }
 
   @override
@@ -1278,22 +1279,22 @@ class AppLocalizationsPs extends AppLocalizations {
     String window,
     String slack,
   ) {
-    return 'له $start څخه تر $end · د $window ورځو $target — $slack پرېښودلی شئ';
+    return 'له $start څخه تر $end – له $window ورځو $target – $slack یې پرېښودلای شئ';
   }
 
   @override
   String challengePlanRate(String start, String end, String rate) {
-    return 'له $start څخه تر $end · ورځې نږدې $rate';
+    return 'له $start څخه تر $end – په ورځ کې نږدې $rate';
   }
 
   @override
   String challengePlanOpen(String start) {
-    return 'پیل $start · د وخت حد نشته';
+    return 'پیل: $start – د وخت حد نشته';
   }
 
   @override
   String challengeTooTight(String target, String window) {
-    return '$target ورځې په $window ورځو کې نه ځای کېږي — دوام ورځې یو شمېري.';
+    return '$target ورځې په $window ورځو کې نه ځایېږي — لړۍ هره ورځ یوازې یوه شمېري.';
   }
 
   @override
@@ -1344,12 +1345,12 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String challengeOnTrack(String rate) {
-    return 'په لار – $rate/ورځ';
+    return 'سم روان – $rate/ورځ';
   }
 
   @override
   String challengeBehind(String rate) {
-    return 'شاته – $rate/ورځ اړین';
+    return 'وروسته پاتې – د بشپړولو لپاره $rate/ورځ';
   }
 
   @override
@@ -1361,7 +1362,7 @@ class AppLocalizationsPs extends AppLocalizations {
   String get challengeReached => 'موخه ترلاسه شوه';
 
   @override
-  String get challengeCompleted => 'بشپړ شو';
+  String get challengeCompleted => 'بشپړ';
 
   @override
   String challengeEnded(String done, String target) {
@@ -1369,18 +1370,18 @@ class AppLocalizationsPs extends AppLocalizations {
   }
 
   @override
-  String get challengeExpiredTitle => 'هدف پای ته ورسید';
+  String get challengeExpiredTitle => 'هدف پای ته ورسېد';
 
   @override
   String challengeExpiredBody(String title, String done, String target) {
-    return '$title پای ته ورسید، له $target څخه $done.';
+    return '$title پای ته ورسېد: له $target څخه $done.';
   }
 
   @override
   String get challengeExtend => 'وخت اوږدول';
 
   @override
-  String get challengeRestart => 'بیا پیل';
+  String get challengeRestart => 'بیا پیل کړئ';
 
   @override
   String get challengeArchive => 'آرشیف کول';
@@ -1390,7 +1391,7 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String challengeNudgeBody(String title, String rate) {
-    return '$title: په ورځ کې $rate چې په وخت بشپړ شي.';
+    return '$title: د وخت په سر د بشپړولو لپاره په ورځ کې $rate.';
   }
 
   @override
@@ -1399,7 +1400,7 @@ class AppLocalizationsPs extends AppLocalizations {
   }
 
   @override
-  String get challengeGroupGoal => 'ستاسو موخه';
+  String get challengeGroupGoal => 'هدف';
 
   @override
   String get challengeGroupShape => 'ډول';
@@ -1411,7 +1412,7 @@ class AppLocalizationsPs extends AppLocalizations {
   String get challengeGroupReminders => 'یادونې';
 
   @override
-  String get challengeStartFromTemplate => 'له بېلګې پیل وکړئ';
+  String get challengeStartFromTemplate => 'له یوې بېلګې پیل وکړئ';
 
   @override
   String get challengeTemplateBlank => 'خالي';
@@ -1432,7 +1433,7 @@ class AppLocalizationsPs extends AppLocalizations {
   String get challengeTmplFajrJamaah => '۳۰ ورځې فجر په جماعت کې';
 
   @override
-  String get challengeTmplSadaqah => 'صدقه ۳۰ ورځې';
+  String get challengeTmplSadaqah => '۳۰ ورځې صدقه';
 
   @override
   String get listSeparator => ' – ';
@@ -1463,17 +1464,17 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get supportCardBody =>
-      'وړیا، نه اعلانونه او نه حساب. که وغواړئ، په لږو پیسو د دې د پراختیا ملاتړ کولی شئ — هره اندازه، هر وخت چې وغواړئ.';
+      'وړیا دی، نه اعلانونه لري او نه حساب ته اړتیا. که وغواړئ، د یوې ډالۍ په ورکولو سره یې د پراختیا ملاتړ کولی شئ — هره اندازه، هر وخت چې مو زړه وي.';
 
   @override
-  String get supportCta => 'د Muhasaba ملاتړ وکړئ';
+  String get supportCta => 'د محاسبه اپلیکیشن ملاتړ وکړئ';
 
   @override
   String get supportAgain => 'بیا ملاتړ وکړئ';
 
   @override
   String get supporterThanks =>
-      'جزاکم الله خیراً — ان شاء الله Muhasaba به وړیا او له اعلانونو پاک پاتې شي.';
+      'جزاکم الله خیراً — ان شاء الله محاسبه به وړیا او بې اعلانه پاتې شي.';
 
   @override
   String supporterSince(String tier, String month) {
@@ -1481,11 +1482,11 @@ class AppLocalizationsPs extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'د Muhasaba ملاتړ وکړئ';
+  String get supportPromptTitle => 'د محاسبه اپلیکیشن ملاتړ وکړئ';
 
   @override
   String get supportPromptBody =>
-      'Muhasaba وړیا دی، نه اعلانونه او نه حساب. که وغواړئ، په لږو پیسو د دې د پراختیا ملاتړ کولی شئ — هره اندازه، هر وخت چې وغواړئ. هیڅ ځانګړنه د دې تر شا بنده نه ده.';
+      'محاسبه وړیا اپلیکیشن دی، نه اعلانونه لري او نه حساب ته اړتیا. که وغواړئ، د یوې ډالۍ په ورکولو سره یې د پراختیا ملاتړ کولی شئ — هره اندازه، هر وخت چې مو زړه وي. هېڅ شی د دې ملاتړ پورې تړلی نه دی.';
 
   @override
   String get supportPromptNow => 'اوس ملاتړ وکړئ';
@@ -1497,11 +1498,11 @@ class AppLocalizationsPs extends AppLocalizations {
   String get supportPromptNever => 'بیا مه پوښتئ';
 
   @override
-  String get tipSheetTitle => 'د Muhasaba ملاتړ وکړئ';
+  String get tipSheetTitle => 'د محاسبه اپلیکیشن ملاتړ وکړئ';
 
   @override
   String get tipSheetBody =>
-      'هره اندازه چې غواړئ وټاکئ، هر څو ځله چې غواړئ. دا پیسې د اپلیکیشن ساتنې ته لګیږي — ان شاء الله وړیا او له اعلانونو پاک پاتې کیږي. د مننې په توګه، په تنظیماتو کې به د ملاتړي په توګه ښودل کیږئ.';
+      'هره اندازه چې غواړئ وټاکئ، هر څو ځله چې غواړئ. دا پیسې د اپلیکیشن په ساتنه لګېږي — ان شاء الله وړیا او بې اعلانه پاتې کېږي. د مننې په توګه، په تنظیماتو کې به د ملاتړي په توګه وښودل شئ.';
 
   @override
   String tipSheetSupporterLine(String tier) {
@@ -1513,32 +1514,32 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String tipSheetStoreNote(String store) {
-    return 'تادیه د $store له لارې کیږي — موږ ستاسو د تادیې معلومات هیڅکله نه وینو.';
+    return 'تادیه د $store له لارې کېږي — موږ ستاسو د تادیې معلومات هېڅکله نه وینو.';
   }
 
   @override
-  String get tipSheetOtherWays => 'داسې انتخاب نه وینئ چې ستاسو سره برابر وي؟';
+  String get tipSheetOtherWays => 'داسې انتخاب نه وینئ چې تاسو ته مناسب وي؟';
 
   @override
   String get tipSheetWriteToUs => 'موږ ته ولیکئ';
 
   @override
   String get supportEmailBody =>
-      'السلام علیکم،\n\nغواړم د Muhasaba پراختیا ته مستقیم ملاتړ وکړم.\n\nهیواد:\nد لېږلو طریقه:\nاندازه (اختیاري):';
+      'السلام علیکم،\n\nغواړم د محاسبه اپلیکیشن له پراختیا سره مستقیمه مرسته وکړم.\n\nهیواد:\nد لېږلو لاره:\nاندازه (اختیاري):';
 
   @override
   String tipBusy(String store) {
-    return '$store پرانیستل کیږي…';
+    return '$store پرانیستل کېږي…';
   }
 
   @override
-  String get tipThanks => 'جزاکم الله خیراً — الله دې له تاسو قبول کړي.';
+  String get tipThanks => 'جزاکم الله خیراً — الله دې درنه قبوله کړي.';
 
   @override
-  String get tipDone => 'پای';
+  String get tipDone => 'بشپړ';
 
   @override
-  String get tipFailed => 'پیرود بشپړ نه شو. هیڅ پیسې نه دي اخیستل شوې.';
+  String get tipFailed => 'پیرود بشپړ نه شو. هېڅ پیسې نه دي اخیستل شوې.';
 
   @override
   String tipPending(String store) {
@@ -1546,7 +1547,7 @@ class AppLocalizationsPs extends AppLocalizations {
   }
 
   @override
-  String get tipUnavailable => 'پیرود اوس مهال پدې وسیله کې شتون نلري.';
+  String get tipUnavailable => 'پیرود اوس مهال په دې وسیله کې شتون نه لري.';
 
   @override
   String get optionSetJamaa => 'جماعت';
@@ -1561,7 +1562,7 @@ class AppLocalizationsPs extends AppLocalizations {
   String get optionJamaaMasjid => 'په جومات کې جماعت';
 
   @override
-  String get optionSetOnTime => 'وخت';
+  String get optionSetOnTime => 'په وخت';
 
   @override
   String get optionOnTimeOnTime => 'په خپل وخت';
@@ -1639,7 +1640,7 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String optionsMaxReached(int max) {
-    return 'تر ټولو ډېر $max انتخابونه.';
+    return 'تر ټولو ډېر $max انتخابونه کېدای شي.';
   }
 
   @override
@@ -1655,7 +1656,7 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get optionSetDeleteConfirm =>
-      'هغه عملونه چې دا ټولګه کاروي، نور انتخابونه نه ښيي. هغه ورځې چې مخکې مو ثبت کړې، انتخاب یې ساتل کیږي.';
+      'هغه عملونه چې دا ټولګه کاروي، نور انتخابونه نه ښيي. هغه ورځې چې مخکې مو ثبت کړې، انتخاب یې ساتل کېږي.';
 
   @override
   String get optionSetNameRequired => 'ټولګې ته نوم ورکړئ';
@@ -1664,15 +1665,15 @@ class AppLocalizationsPs extends AppLocalizations {
   String get optionsMinRequired => 'لږ تر لږه دوه انتخابونه اضافه کړئ';
 
   @override
-  String get optionSetNameTooLong => 'د ټولګې نوم ډیر اوږد دی';
+  String get optionSetNameTooLong => 'د ټولګې نوم ډېر اوږد دی';
 
   @override
   String optionTooLong(int index) {
-    return 'انتخاب $index ډیر اوږد دی';
+    return 'انتخاب $index ډېر اوږد دی';
   }
 
   @override
-  String get optionSetNone => 'هیڅ یو';
+  String get optionSetNone => 'هېڅ';
 
   @override
   String get optionSetNew => 'نوې ټولګه';
@@ -1696,7 +1697,7 @@ class AppLocalizationsPs extends AppLocalizations {
   }
 
   @override
-  String get choiceNeeded => 'انتخاب اړین';
+  String get choiceNeeded => 'انتخاب اړین دی';
 
   @override
   String optionSelected(String label) {
@@ -1743,7 +1744,7 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String optionScopedCaption(String amal, int count) {
-    return '$amal · ثبت شوي: $count';
+    return '$amal – $count ثبت شوي';
   }
 
   @override
@@ -1751,12 +1752,12 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String optionBreakdownSwipeHint(int count) {
-    return '$count ټولګې · وښویوئ';
+    return '$count ټولګې – وښویوئ';
   }
 
   @override
   String get optionDetailEmpty =>
-      'د دې ټولګې لپاره تر اوسه هیڅ انتخاب نه دی ثبت شوی.';
+      'د دې ټولګې لپاره تر اوسه هېڅ انتخاب نه دی ثبت شوی.';
 
   @override
   String get optionDetailTrendHeading => 'د وخت په تېرېدو سره بدلون';
@@ -2026,7 +2027,7 @@ class AppLocalizationsPs extends AppLocalizations {
   String get amalMuhasaba => 'د شپې محاسبه';
 
   @override
-  String get amalSpeakGood => 'ښه خبره وکړه یا چپ اوسه';
+  String get amalSpeakGood => 'ښه ویل یا چوپ پاتې کېدل';
 
   @override
   String get amalNoBackbiting => 'له غیبت ډډه';
@@ -2047,7 +2048,7 @@ class AppLocalizationsPs extends AppLocalizations {
   String get amalSalam => 'سلام عامول';
 
   @override
-  String get amalForgive => 'نورو ته بخښنه';
+  String get amalForgive => 'د نورو بخښل';
 
   @override
   String get amalGratitude => 'شکر';
@@ -2062,7 +2063,7 @@ class AppLocalizationsPs extends AppLocalizations {
   String get amalRemoveHarm => 'له لارې ځورونکی شی لرې کول';
 
   @override
-  String get amalParents => 'له مور او پلار سره نیکي';
+  String get amalParents => 'له مور او پلار سره نېکي';
 
   @override
   String get amalFamilyTies => 'صله رحمي';
@@ -2105,7 +2106,7 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String libraryAddedShowsOn(String days) {
-    return 'اضافه شو · ښکاري په: $days';
+    return 'اضافه شو – په $days ښکاري';
   }
 
   @override

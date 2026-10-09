@@ -49,7 +49,7 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get archivedEmpty =>
-      'Дар ин ҷо ҳанӯз чизе нест. Амалҳое, ки аз пайгирӣ хориҷ мекунед, дар ин ҷо мемонанд, то шумо онҳоро баргардонед.';
+      'Ҳоло дар ин ҷо чизе нест. Амалҳое, ки аз пайгирӣ хориҷ мекунед, ба ин ҷо меоянд ва онҳоро метавонед баргардонед.';
 
   @override
   String archivedStoppedOn(String date) {
@@ -61,7 +61,7 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String archivedRestored(String title) {
-    return '\"$title\" ба рӯйхати шумо баргардонида шуд.';
+    return '«$title» ба рӯйхати шумо баргашт.';
   }
 
   @override
@@ -71,7 +71,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get newAmal => 'Амали нав';
 
   @override
-  String get editAmal => 'Тағйири амал';
+  String get editAmal => 'Таҳрири амал';
 
   @override
   String get newAmalTitle => 'Амали нав';
@@ -89,16 +89,16 @@ class AppLocalizationsTg extends AppLocalizations {
   String get clear => 'Тоза кардан';
 
   @override
-  String get titleLabel => 'Сарлавҳа';
+  String get titleLabel => 'Ном';
 
   @override
-  String get titleRequired => 'Сарлавҳа лозим аст';
+  String get titleRequired => 'Номро ворид кунед';
 
   @override
-  String get titleTooLong => 'Сарлавҳа хеле дароз аст';
+  String get titleTooLong => 'Ном хеле дароз аст';
 
   @override
-  String get frequencyLabel => 'Басомад';
+  String get frequencyLabel => 'Даврият';
 
   @override
   String get frequencyDaily => 'Ҳаррӯза';
@@ -131,29 +131,29 @@ class AppLocalizationsTg extends AppLocalizations {
   String get categorySunnah => 'Суннат';
 
   @override
-  String get timesPerPeriod => 'Маротиба дар давра';
+  String get timesPerPeriod => 'Чанд бор дар давра';
 
   @override
   String get custom => 'Дилхоҳ';
 
   @override
-  String get customTargetHint => 'мас. 50';
+  String get customTargetHint => 'масалан, 50';
 
   @override
   String get targetAny => 'Ҳар қадар';
 
   @override
-  String get targetAnyHelp => 'Ҳадаф нест — ҳар миқдор иҷрошуда ҳисоб мешавад';
+  String get targetAnyHelp => 'Бе ҳадаф — бо ҳар миқдор иҷро ҳисоб мешавад';
 
   @override
   String get dayOfWeek => 'Рӯзи ҳафта';
 
   @override
-  String get anyDay => 'Ҳар рӯз';
+  String get anyDay => 'Дилхоҳ';
 
   @override
   String get anyDayHint =>
-      'Ҳар рӯз (имрӯз намоиш дода мешавад, фардо пинҳон мешавад)';
+      'Дилхоҳ рӯз (имрӯз намоён аст, фардо пинҳон мешавад)';
 
   @override
   String onlyDayHint(String day) {
@@ -173,7 +173,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get onSetDates => 'Дар санаҳои муайян';
 
   @override
-  String get anyDayMode => 'Ҳар рӯз';
+  String get anyDayMode => 'Дилхоҳ рӯз';
 
   @override
   String get datesOfMonth => 'Санаҳо';
@@ -203,10 +203,10 @@ class AppLocalizationsTg extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count рӯз',
-      one: 'як рӯз',
+      other: '$count рӯзи дилхоҳ',
+      one: 'як рӯзи дилхоҳ',
     );
-    return 'Дар як ҳафта дар ҳар $_temp0 такрор мешавад';
+    return 'Ҳафтае $_temp0 такрор мешавад';
   }
 
   @override
@@ -214,8 +214,8 @@ class AppLocalizationsTg extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Дар рӯзҳои $dates-и ҳар моҳ такрор мешавад',
-      one: 'Дар рӯзи $dates-и ҳар моҳ такрор мешавад',
+      other: 'Ҳар моҳ дар санаҳои $dates такрор мешавад',
+      one: 'Ҳар моҳ дар санаи $dates такрор мешавад',
     );
     return '$_temp0';
   }
@@ -225,18 +225,18 @@ class AppLocalizationsTg extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count рӯз',
-      one: 'як рӯз',
+      other: '$count рӯзи дилхоҳ',
+      one: 'як рӯзи дилхоҳ',
     );
-    return 'Дар як моҳ дар ҳар $_temp0 такрор мешавад';
+    return 'Моҳе $_temp0 такрор мешавад';
   }
 
   @override
-  String get anyDate => 'Ҳар сана';
+  String get anyDate => 'Дилхоҳ';
 
   @override
   String get anyDateHint =>
-      'Ҳар сана (имрӯз намоиш дода мешавад, фардо пинҳон мешавад)';
+      'Дилхоҳ сана (имрӯз намоён аст, фардо пинҳон мешавад)';
 
   @override
   String onlyDateHint(String date) {
@@ -244,11 +244,11 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get startPreChecked => 'Аз аввал кушодашуда оғоз шавад';
+  String get startPreChecked => 'Пешакӣ қайдшуда';
 
   @override
   String get startPreCheckedSubtitle =>
-      'Вақте давраи нав оғоз мешавад, ин амал то даме ки шумо онро бардоред, иҷрошуда ҳисоб мешавад.';
+      'Дар оғози ҳар давраи нав ин амал худ аз худ иҷрошуда қайд мешавад, то даме ки шумо қайдро бардоред.';
 
   @override
   String get reminder => 'Ёдоварӣ';
@@ -272,15 +272,14 @@ class AppLocalizationsTg extends AppLocalizations {
   String get dailyReminder => 'Ёдоварии ҳаррӯза';
 
   @override
-  String get dailyReminderSubtitle =>
-      'Ёдоварии мулоим барои пайгирии амалҳои шумо';
+  String get dailyReminderSubtitle => 'Ёдоварии нарм барои пайгирии амалҳоятон';
 
   @override
   String get dailyReminderTimeLabel => 'Вақти ёдоварӣ';
 
   @override
   String get dailyReminderBody =>
-      'Барои пайгирии амали имрӯза каме вақт ҷудо кунед.';
+      'Каме вақт ҷудо карда, амалҳои имрӯзро қайд кунед.';
 
   @override
   String get groupByCategory => 'Аз рӯи гурӯҳ';
@@ -295,13 +294,13 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get todayEmptyHint =>
-      'Барои илова кардани аввалин амалатон + -ро пахш кунед.';
+      'Барои илова кардани амали аввалин тугмаи «+»-ро пахш кунед.';
 
   @override
   String get noteLabel => 'Ёддошт';
 
   @override
-  String get noteHint => 'мас. Дар масҷид намоз хондам';
+  String get noteHint => 'масалан, дар масҷид намоз хондам';
 
   @override
   String get completed => 'иҷро шуд';
@@ -331,16 +330,16 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get removeFromTrackingSubtitle =>
-      'Аз рӯйхати шумо ҳамешагӣ хориҷ мешавад. Таърих нигоҳ дошта мешавад.';
+      'Аз рӯйхат комилан хориҷ мешавад. Таърих боқӣ мемонад.';
 
   @override
-  String get chooseIcon => 'Тасвирчаро интихоб кунед';
+  String get chooseIcon => 'Интихоби тасвирча';
 
   @override
   String get iconNone => 'Нест';
 
   @override
-  String get recentlyUsed => 'Охирин истифодашуда';
+  String get recentlyUsed => 'Ба наздикӣ истифодашуда';
 
   @override
   String get emojiSectionGeneral => 'Умумӣ';
@@ -352,10 +351,10 @@ class AppLocalizationsTg extends AppLocalizations {
   String get categoryNew => '+ Нав';
 
   @override
-  String get categoryNewSheetTitle => 'Категорияи нав';
+  String get categoryNewSheetTitle => 'Гурӯҳи нав';
 
   @override
-  String get categoryEditSheetTitle => 'Таҳрири категория';
+  String get categoryEditSheetTitle => 'Таҳрири гурӯҳ';
 
   @override
   String get addAmal => 'Илова кардани амал';
@@ -379,7 +378,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get amalTahajjud => 'Таҳаҷҷуд';
 
   @override
-  String get amalDuha => 'Намози Зуҳо';
+  String get amalDuha => 'Намози чошт';
 
   @override
   String get amalFajr => 'Бомдод';
@@ -414,21 +413,21 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get sectionDayBoundary => 'Ҳадди рӯз';
+  String get sectionDayBoundary => 'Анҷоми рӯз';
 
   @override
-  String get rolloverHour => 'Соати гузариш';
+  String get rolloverHour => 'Соати ивази рӯз';
 
   @override
   String get rolloverAtMidnight => 'Имрӯз дар нисфишаб тамом мешавад.';
 
   @override
   String rolloverSubtitle(String time) {
-    return 'Амалҳои дирӯзӣ то $time тағйир дода мешаванд.';
+    return 'Амалҳои дирӯзро то $time тағйир додан мумкин аст.';
   }
 
   @override
-  String get pickRolloverHour => 'Соати гузариши рӯзро интихоб кунед';
+  String get pickRolloverHour => 'Интихоб кунед, ки рӯз соати чанд иваз шавад';
 
   @override
   String get sectionWeekMonth => 'Ҳафта ва моҳ';
@@ -441,10 +440,10 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get startOfMonthClamped =>
-      'Рӯзҳои баъд аз 28-ум дар моҳҳои кӯтоҳ ба охирин рӯзи моҳ мувофиқ карда мешаванд.';
+      'Дар моҳҳои кӯтоҳ санаҳои баъд аз 28-ум ба рӯзи охири моҳ гузаронида мешаванд.';
 
   @override
-  String get sectionAppearance => 'Намуд';
+  String get sectionAppearance => 'Намуди зоҳирӣ';
 
   @override
   String get theme => 'Мавзӯъ';
@@ -465,14 +464,14 @@ class AppLocalizationsTg extends AppLocalizations {
   String get language => 'Забон';
 
   @override
-  String get systemDefault => 'Пешфарзи система';
+  String get systemDefault => 'Мувофиқи система';
 
   @override
-  String get aboutTitle => 'Muhasaba';
+  String get aboutTitle => 'Муҳосиба';
 
   @override
   String get aboutSubtitle =>
-      'Журнали шахсии масъулияти динӣ. Ҳамаи маълумот дар ин дастгоҳ мемонад.';
+      'Дафтари шахсии ҳисоби амалҳои динӣ. Ҳамаи маълумот дар ҳамин дастгоҳ мемонад.';
 
   @override
   String get statsTitle => 'Омор';
@@ -492,10 +491,10 @@ class AppLocalizationsTg extends AppLocalizations {
   String get thisMonth => 'Ин моҳ';
 
   @override
-  String get totalCompletions => 'ҳамагӣ иҷро';
+  String get totalCompletions => 'иҷро дар маҷмӯъ';
 
   @override
-  String get streakCurrent => 'Ҳозира';
+  String get streakCurrent => 'Ҷорӣ';
 
   @override
   String get streakLongest => 'Дарозтарин';
@@ -562,7 +561,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get statsThisMonth => 'Ин моҳ';
 
   @override
-  String get statsAllTime => 'Ҳамаи вақт';
+  String get statsAllTime => 'Тамоми вақт';
 
   @override
   String get statsCustomRange => 'Давраи дилхоҳ';
@@ -574,13 +573,13 @@ class AppLocalizationsTg extends AppLocalizations {
   String get statsAllAmals => 'Ҳама';
 
   @override
-  String get statsCompleted => 'Иҷро шуд';
+  String get statsCompleted => 'Иҷрошуда';
 
   @override
-  String get statsExpected => 'Интизоршаванда';
+  String get statsExpected => 'Пешбинишуда';
 
   @override
-  String get statsVsPrevious => 'Дар муқоиса бо пешина';
+  String get statsVsPrevious => 'Нисбат ба давраи қаблӣ';
 
   @override
   String get statsByCategory => 'Аз рӯи гурӯҳ';
@@ -603,13 +602,13 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get statsCurrentStreak => 'Силсилаи ҳозира';
+  String get statsCurrentStreak => 'Силсилаи ҷорӣ';
 
   @override
   String get statsBestStreak => 'Беҳтарин силсила';
 
   @override
-  String get statsTotalDays => 'Ҳамагӣ рӯзҳо';
+  String get statsTotalDays => 'Ҳамагӣ рӯз';
 
   @override
   String get statsConsistency => 'Устуворӣ';
@@ -624,7 +623,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get statsCompletionRate => 'Дараҷаи иҷро';
 
   @override
-  String get statsAmountPerDay => 'Миқдори ҳаррӯза';
+  String get statsAmountPerDay => 'Миқдор дар як рӯз';
 
   @override
   String statsCountTotal(String count) {
@@ -654,7 +653,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get statsStreaks => 'Силсилаҳо';
 
   @override
-  String get statsSelectDateRange => 'Давраи санаро интихоб кунед';
+  String get statsSelectDateRange => 'Давраро интихоб кунед';
 
   @override
   String get historyTitle => 'Таърих';
@@ -720,68 +719,69 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get hadith0 =>
-      '\"Дӯсттарин амалҳо назди Аллоҳ онҳоеанд, ки доимӣ бошанд, ҳатто агар кам бошанд.\"\n— Бухорӣ ва Муслим';
+      '«Маҳбубтарини амалҳо назди Аллоҳ он аст, ки бардавом бошад, агарчи андак бошад.»\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith2 =>
-      '\"Вақте фарзанди Одам мемирад, амалҳояш қатъ мешаванд, магар се чиз: садақаи ҷория, илми судманд ё фарзанди солеҳ, ки барояш дуо мекунад.\"\n— Муслим';
+      '«Чун одамизод бимирад, амалаш қатъ мегардад, магар аз се чиз: садақаи ҷория, илме, ки аз он нафъ бардоранд, ё фарзанди солеҳе, ки барояш дуо кунад.»\n— Муслим';
 
   @override
   String get hadith3 =>
-      '\"Ҳар кӣ ду намози хунук (Субҳ ва Аср)-ро бихонад, ба Ҷаннат дохил мешавад.\"\n— Бухорӣ';
+      '«Ҳар кӣ ду намози салқинро (бомдод ва аср) бихонад, ба ҷаннат медарояд.»\n— Бухорӣ';
 
   @override
   String get hadith4 =>
-      '\"Аллоҳ ба намуди зоҳирӣ ва молу мулки шумо нигоҳ намекунад, балки ба дилҳо ва амалҳои шумо нигоҳ мекунад.\"\n— Муслим';
+      '«Аллоҳ ба сурат ва моли шумо наменигарад, балки ба дилҳо ва амалҳои шумо менигарад.»\n— Муслим';
 
   @override
   String get hadith6 =>
-      '\"Осон кунед ва душвор накунед; хушхабар диҳед ва мардумро наронед.\"\n— Бухорӣ';
+      '«Осон гиред ва сахт нагиред; мужда диҳед ва мардумро аз худ дур накунед.»\n— Бухорӣ';
 
   @override
   String get hadith7 =>
-      '\"Ҳар кӣ роҳи илмро пеш гирад, Аллоҳ барояш роҳи Ҷаннатро осон мекунад.\"\n— Муслим';
+      '«Ҳар кӣ дар талаби илм роҳе пеш гирад, Аллоҳ барояш роҳи ҷаннатро осон мегардонад.»\n— Муслим';
 
   @override
-  String get hadith8 => '\"Садақа молро кам намекунад.\"\n— Муслим';
+  String get hadith8 => '«Садақа молро кам намекунад.»\n— Муслим';
 
   @override
   String get hadith9 =>
-      '\"Мӯъмини қавӣ беҳтар ва дӯсттар назди Аллоҳ аст аз мӯъмини заиф, ҳол он ки дар ҳар ду хайр ҳаст.\"\n— Муслим';
+      '«Мӯъмини қавӣ назди Аллоҳ аз мӯъмини заиф беҳтар ва маҳбубтар аст, ва дар ҳар яке хайр ҳаст.»\n— Муслим';
 
   @override
   String get hadith10 =>
-      '\"Ҳар касе ки дар як рӯз сад бор \'Субҳоналлоҳи ва биҳамдиҳи\' бигӯяд, гуноҳонаш бахшида мешавад, ҳарчанд мисли кафи баҳр бошад.\"\n— Бухорӣ ва Муслим';
+      '«Ҳар кӣ дар як рӯз сад бор „Субҳоналлоҳи ва биҳамдиҳӣ“ гӯяд, гуноҳонаш бахшида мешавад, агарчи мисли кафи баҳр бошад.»\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith12 =>
-      '\"Ҳар касе ки пас аз ҳар намози фарз Оятулкурсӣ бихонад, ба ҷаннат даромаданашро танҳо марг монеъ мешавад.\"\n— Насоӣ';
+      '«Ҳар кӣ пас аз ҳар намози фарз Оятулкурсӣ бихонад, ӯро аз даромадан ба ҷаннат ҷуз марг чизе монеъ намешавад.»\n— Насоӣ';
 
   @override
-  String get hadith13 => '\"Сухани нек садақа аст.\"\n— Бухорӣ ва Муслим';
+  String get hadith13 => '«Сухани нек садақа аст.»\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith14 =>
-      '\"Ҳар касе ки ба Аллоҳ ва рӯзи охират имон дорад, сухани нек бигӯяд ё хомӯш бошад.\"\n— Бухорӣ ва Муслим';
+      '«Ҳар кӣ ба Аллоҳ ва рӯзи охират имон дорад, бояд сухани нек гӯяд ё хомӯш бошад.»\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith15 =>
-      '\"Касе ки ба бевазан ва мискин ғамхорӣ кунад, монанди муҷоҳид дар роҳи Аллоҳ аст.\"\n— Бухорӣ ва Муслим';
+      '«Касе ки дар ғами бевазан ё мискин аст, монанди муҷоҳид дар роҳи Аллоҳ аст.»\n— Бухорӣ ва Муслим';
 
   @override
-  String get hadith16 => '\"Табассуми ту ба бародарат садақа аст.\"\n— Тирмизӣ';
+  String get hadith16 =>
+      '«Табассуми ту ба рӯи бародарат садақа аст.»\n— Тирмизӣ';
 
   @override
   String get hadith17 =>
-      '\"Беҳтарини шумо касест, ки Қуръонро меомӯзад ва меомӯзонад.\"\n— Бухорӣ';
+      '«Беҳтарини шумо касест, ки Қуръонро биомӯзад ва ба дигарон омӯзонад.»\n— Бухорӣ';
 
   @override
   String get hadith18 =>
-      '\"Ҳеҷ кас хӯроке беҳтар аз меҳнати дасти худ нахӯрдааст.\"\n— Бухорӣ';
+      '«Ҳеҷ кас ҳаргиз таоме беҳтар аз он чи бо меҳнати дасти худ ба даст овардааст, нахӯрдааст.»\n— Бухорӣ';
 
   @override
   String get hadith19 =>
-      '\"Аллоҳ мулоим аст ва дар ҳама корҳо мулоиматро дӯст медорад.\"\n— Бухорӣ ва Муслим';
+      '«Аллоҳ меҳрубон аст ва дар ҳама кор нармиро дӯст медорад.»\n— Бухорӣ ва Муслим';
 
   @override
   String historyDayCompleted(String completed, String total) {
@@ -795,16 +795,16 @@ class AppLocalizationsTg extends AppLocalizations {
   String get settingsAppearance => 'Намуди зоҳирӣ';
 
   @override
-  String get settingsAboutTagline => 'Ҳамроҳи рӯзонаи динии шумо';
+  String get settingsAboutTagline => 'Ҳамроҳи ҳаррӯзаи шумо дар дин';
 
   @override
-  String get settingsRolloverSub => 'Рӯз кай аз нав оғоз мешавад';
+  String get settingsRolloverSub => 'Рӯзи нав кай оғоз мешавад';
 
   @override
   String get settingsAbout => 'Дар бораи барнома';
 
   @override
-  String get settingsVersion => 'Версия';
+  String get settingsVersion => 'Нусха';
 
   @override
   String get settingsDeveloper => 'Барномасоз';
@@ -822,11 +822,11 @@ class AppLocalizationsTg extends AppLocalizations {
   String get settingsReportBug => 'Дар бораи хато хабар диҳед';
 
   @override
-  String get settingsRequestFeature => 'Хусусият дархост кунед';
+  String get settingsRequestFeature => 'Пешниҳоди имконияти нав';
 
   @override
   String settingsSupportFallback(String email) {
-    return 'Почтаро кушода натавонист. Илтимос, ба $email нома фиристед.';
+    return 'Почта кушода нашуд. Лутфан ба $email нома нависед.';
   }
 
   @override
@@ -837,241 +837,243 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get hadith20 =>
-      '\"Ҳар касе ки Рамазонро бо имон ва умеди савоб рӯза дорад, гуноҳони гузаштааш бахшида мешавад.\"\n— Бухорӣ ва Муслим';
+      '«Ҳар кӣ рӯзаи Рамазонро аз рӯи имон ва ба умеди савоб бигирад, гуноҳони гузаштааш бахшида мешавад.»\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith22 =>
-      '\"Дуои байни азон ва иқомат рад намешавад.\"\n— Абу Довуд';
+      '«Дуои байни азон ва иқомат рад намешавад.»\n— Абу Довуд';
 
   @override
   String get hadith23 =>
-      '\"Ҳар касе ки барои Аллоҳ масҷид созад, Аллоҳ барояш дар ҷаннат хона месозад.\"\n— Бухорӣ ва Муслим';
+      '«Ҳар кӣ барои Аллоҳ масҷиде бино кунад, Аллоҳ барояш дар ҷаннат хонае бино мекунад.»\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith24 =>
-      '\"Беҳтарин сафҳо барои мардон — сафҳои аввал ва беҳтарин сафҳо барои занон — сафҳои охиранд.\"\n— Муслим';
+      '«Беҳтарин сафҳои мардон сафҳои аввал ва беҳтарин сафҳои занон сафҳои охир аст.»\n— Муслим';
 
   @override
-  String get hadith25 => '\"Рӯза сипари дӯзах аст.\"\n— Насоӣ';
+  String get hadith25 => '«Рӯза сипаре аз оташи дӯзах аст.»\n— Насоӣ';
 
   @override
   String get hadith26 =>
-      '\"Ҳар касе ки дувоздаҳ ракъат намози суннат бихонад, барояш дар ҷаннат хона сохта мешавад.\"\n— Муслим';
+      '«Ҳар кӣ дувоздаҳ ракъат намози суннат бихонад, барояш дар ҷаннат хонае бино карда мешавад.»\n— Муслим';
 
   @override
   String get hadith27 =>
-      '\"Касе ки дар Қуръон моҳир аст, бо фариштагони бузургвор ҳамроҳ аст.\"\n— Бухорӣ ва Муслим';
+      '«Касе ки дар Қуръон моҳир аст, бо фариштагони гиромӣ хоҳад буд.»\n— Бухорӣ ва Муслим';
 
   @override
-  String get hadith29 => '\"Беҳтарин садақа — об додан аст.\"\n— Аҳмад';
+  String get hadith29 => '«Беҳтарин садақа об нӯшонидан аст.»\n— Аҳмад';
 
   @override
   String get hadith30 =>
-      '\"Ҳар касе ки аз мӯъмин як мушкилиро бардорад, Аллоҳ дар рӯзи Қиёмат аз ӯ як мушкилиро бардорад.\"\n— Муслим';
+      '«Ҳар кӣ аз мӯъмине мушкилеро бардорад, Аллоҳ дар рӯзи қиёмат аз ӯ мушкилеро бардорад.»\n— Муслим';
 
   @override
-  String get hadith32 => '\"Ҳаё қисме аз имон аст.\"\n— Бухорӣ ва Муслим';
+  String get hadith32 => '«Ҳаё ҷузъе аз имон аст.»\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith34 =>
-      '\"Ҳар касе ки сабр кунад, Аллоҳ ба ӯ сабр медиҳад.\"\n— Бухорӣ ва Муслим';
+      '«Ҳар кӣ худро ба сабр водорад, Аллоҳ ба ӯ сабр ато мекунад.»\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith36 =>
-      '\"Ҳеҷ яке аз шумо то вақте ки барои бародараш чизеро, ки барои худ мехоҳад, нахоҳад — мӯъмини ҳақиқӣ нест.\"\n— Бухорӣ ва Муслим';
+      '«Ҳеҷ яке аз шумо мӯъмини комил намешавад, то он чиро, ки барои худ дӯст медорад, барои бародараш низ дӯст надорад.»\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith37 =>
-      '\"Гуруснагонро сер кунед, беморонро зиёрат кунед ва асиронро озод кунед.\"\n— Бухорӣ';
+      '«Гуруснаро сер кунед, беморро аёдат кунед ва асирро озод кунед.»\n— Бухорӣ';
 
   @override
   String get hadith38 =>
-      '\"Қавитарин одам на он аст, ки дар кураш ғолиб меояд, балки он аст, ки дар ғазаб худро идора мекунад.\"\n— Бухорӣ ва Муслим';
+      '«Паҳлавон он нест, ки дар кушти ғолиб ояд; паҳлавон он аст, ки ҳангоми хашм худро нигоҳ дорад.»\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith40 =>
-      '\"Пас аз ҳар намоз сию се бор \'Субҳоналлоҳ\', \'Алҳамдулиллоҳ\' ва \'Аллоҳу Акбар\' бигӯед.\"\n— Муслим';
+      '«Пас аз ҳар намоз „Субҳоналлоҳ“, „Алҳамдулиллоҳ“ ва „Аллоҳу акбар“ гӯед, ҳар якеро сию се бор.»\n— Муслим';
 
   @override
-  String get hadith41 => '\"Беҳтарин зикр — Ло илоҳа иллаллоҳ.\"\n— Тирмизӣ';
+  String get hadith41 => '«Беҳтарин зикр „Ло илоҳа иллаллоҳ“ аст.»\n— Тирмизӣ';
 
   @override
   String get hadith42 =>
-      '\"Ду неъмат ҳаст, ки бисёр одамон онҳоро зоеъ мекунанд: тандурустӣ ва вақти холӣ.\"\n— Бухорӣ';
+      '«Ду неъмат ҳаст, ки бисёр одамон онҳоро зоеъ мекунанд: тандурустӣ ва вақти холӣ.»\n— Бухорӣ';
 
   @override
   String get hadith43 =>
-      '\"Панҷро пеш аз панҷ ғанимат донед: ҷавониро пеш аз пирӣ, тандурустиро пеш аз беморӣ, сарватро пеш аз камбағалӣ, вақти холиро пеш аз машғулӣ ва ҳаётро пеш аз марг.\"\n— Ҳоким';
+      '«Панҷро пеш аз панҷ ғанимат донед: ҷавониро пеш аз пирӣ, тандурустиро пеш аз беморӣ, сарватро пеш аз камбағалӣ, вақти холиро пеш аз машғулӣ ва ҳаётро пеш аз марг.»\n— Ҳоким';
 
   @override
   String get hadith44 =>
-      '\"Ҳар касе ки Сураи Ихлосро даҳ бор бихонад, Аллоҳ барояш дар ҷаннат хона месозад.\"\n— Аҳмад';
+      '«Ҳар кӣ сураи Ихлосро даҳ бор бихонад, Аллоҳ барояш дар ҷаннат хонае бино мекунад.»\n— Аҳмад';
 
   @override
   String get hadith45 =>
-      '\"Пас аз намозҳои фарз, беҳтарин намоз — намози шаб аст.\"\n— Муслим';
+      '«Беҳтарин намоз пас аз намозҳои фарз намози шаб аст.»\n— Муслим';
 
   @override
   String get hadith46 =>
-      '\"Садақа гуноҳонро ҳамчунон хомӯш мекунад, ки об оташро.\"\n— Тирмизӣ';
+      '«Садақа гуноҳро хомӯш мекунад, чунон ки об оташро хомӯш мекунад.»\n— Тирмизӣ';
 
   @override
   String get hadith47 =>
-      '\"Силаи раҳмкунанда на он аст, ки ҷавоб медиҳад, балки он аст, ки агар робита бурида шавад ҳам онро давом медиҳад.\"\n— Бухорӣ';
+      '«Пайвандкунандаи хешовандӣ он нест, ки некиро бо некӣ ҷавоб медиҳад; балки он аст, ки чун хешовандӣ бурида шавад, онро боз пайванд диҳад.»\n— Бухорӣ';
 
   @override
   String get hadith49 =>
-      '\"Ҳар касе ки хӯрок хӯрда бигӯяд: \'Ҳамд ба Аллоҳ ки маро ин хӯрок дод ва бидуни ягон қувва ва тавони ман онро насибам кард,\' гуноҳони гузаштааш бахшида мешавад.\"\n— Тирмизӣ';
+      '«Ҳар кӣ таом хӯрад ва гӯяд: „Ҳамд Аллоҳро, ки ин таомро ба ман хӯронд ва бе ҳеҷ қувва ва тавоне аз ҷониби ман рӯзиам кард“, гуноҳони гузаштааш бахшида мешавад.»\n— Тирмизӣ';
 
   @override
   String get hadith53 =>
-      '\"Ҳеҷ кори некро хурд нашуморед, ҳатто агар бародаратонро бо рӯи кушода мулоқот кунед.\"\n— Муслим';
+      '«Ҳеҷ кори некро ночиз машумор, ҳарчанд бародаратро бо чеҳраи кушод пешвоз гирӣ.»\n— Муслим';
 
   @override
   String get hadith54 =>
-      '\"Беҳтарини шумо касе аст, ки бо оилааш беҳтар рафтор кунад.\"\n— Тирмизӣ';
+      '«Беҳтарини шумо касест, ки бо аҳли хонадонаш аз ҳама беҳтар аст.»\n— Тирмизӣ';
 
   @override
   String get hadith55 =>
-      '\"Ҳар кас шабона ду ояти охири сураи Бақара бихонад, ин барояш кофист.\"\n— Бухорӣ ва Муслим';
+      '«Ҳар кӣ ду ояти охири сураи Бақараро дар шаб бихонад, барояш кифоя мекунад.»\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith56 =>
-      '\"Дунё як баҳра аст ва беҳтарин баҳрааш зани солиҳа аст.\"\n— Муслим';
+      '«Дунё баҳраест ва беҳтарин баҳраи он зани солеҳа аст.»\n— Муслим';
 
   @override
   String get hadith57 =>
-      '\"Се дуо рад намешавад: дуои рӯзадор, дуои ҳокими одил ва дуои мазлум.\"\n— Тирмизӣ';
+      '«Се дуо рад намешавад: дуои рӯзадор, дуои ҳокими одил ва дуои мазлум.»\n— Тирмизӣ';
 
   @override
   String get hadith58 =>
-      '\"Ҳар кас як бор бар ман салавот бифиристад, Аллоҳ даҳ бор бар ӯ раҳмат мефиристад.\"\n— Муслим';
+      '«Ҳар кӣ як бор бар ман салавот фиристад, Аллоҳ бар ӯ даҳ бор раҳмат мефиристад.»\n— Муслим';
 
   @override
-  String get hadith65 => '\"Мӯъмин оинаи мӯъмин аст.\"\n— Абу Довуд';
+  String get hadith65 => '«Мӯъмин оинаи мӯъмин аст.»\n— Абу Довуд';
 
   @override
   String get hadith66 =>
-      '\"Ростгӯӣ ба некӣ мебарад ва некӣ ба Ҷаннат мебарад.\"\n— Бухорӣ ва Муслим';
+      '«Ростӣ ба некӯкорӣ мебарад ва некӯкорӣ ба ҷаннат мебарад.»\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith67 =>
-      '\"Омонатро ба соҳибаш баргардон ва ба касе ки ба ту хиёнат кардааст, хиёнат накун.\"\n— Абу Довуд ва Тирмизӣ';
+      '«Омонатро ба касе, ки онро ба ту супурдааст, баргардон ва ба касе, ки ба ту хиёнат кардааст, хиёнат накун.»\n— Абу Довуд ва Тирмизӣ';
 
   @override
   String get hadith68 =>
-      '\"Ба мусулмон ҳеҷ хастагӣ, касалӣ, ғам, андӯҳ, озор ё ташвише намерасад, ҳатто хоре ки ба ӯ фурӯ равад, магар Аллоҳ ба ивази он баъзе гуноҳонашро мебахшад.\"\n— Бухорӣ ва Муслим';
+      '«Ба мусулмон ҳеҷ хастагӣ, беморӣ, ғам, андӯҳ, озор ва ташвише намерасад, ҳатто хоре, ки ба пояш халад, магар он ки Аллоҳ ба сабаби он баъзе гуноҳонашро мебахшад.»\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith69 =>
-      '\"Дуои мусулмон барои бародараш дар ғоибона ҳамеша мустаҷоб аст.\"\n— Муслим';
+      '«Дуои мусулмон барои бародараш дар ғоибаш ҳамеша мустаҷоб мешавад.»\n— Муслим';
 
   @override
   String get hadith70 =>
-      '\"Ҳар кас аз Аллоҳ се бор Ҷаннат бихоҳад, Ҷаннат мегӯяд: Илоҳӣ, ӯро ба Ҷаннат дохил кун.\"\n— Тирмизӣ';
+      '«Ҳар кӣ се бор аз Аллоҳ ҷаннат бихоҳад, ҷаннат мегӯяд: Илоҳо, ӯро ба ҷаннат дарор.»\n— Тирмизӣ';
 
   @override
   String get hadith71 =>
-      '\"Фозилтарин рӯза баъд аз Рамазон рӯзаи моҳи Аллоҳ Муҳаррам аст.\"\n— Муслим';
+      '«Афзалтарин рӯза пас аз Рамазон рӯзаи моҳи Аллоҳ — Муҳаррам аст.»\n— Муслим';
 
   @override
   String get hadith72 =>
-      '\"Ҳар кас ҳаҷ кунад ва сухани зишт нагӯяд ва гуноҳ накунад, мисли рӯзе бармегардад, ки модараш ӯро таваллуд кардааст.\"\n— Бухорӣ ва Муслим';
+      '«Ҳар кӣ ҳаҷ кунад ва сухани зишт нагӯяд ва гуноҳ накунад, чунон пок бармегардад, ки рӯзе модараш ӯро зода буд.»\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith73 =>
-      '\"Як умра то умраи дигар каффораи гуноҳони байни онҳост.\"\n— Бухорӣ ва Муслим';
+      '«Умра то умраи дигар каффораи гуноҳони миёни онҳост.»\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith74 =>
-      '\"Пеш аз он ки фитнаҳо монанди тикаҳои шаби торик биёянд, ба корҳои нек шитоб кунед.\"\n— Муслим';
+      '«Пеш аз он ки фитнаҳо мисли пораҳои шаби тира фаро расанд, ба корҳои нек шитоб кунед.»\n— Муслим';
 
   @override
   String get hadith75 =>
-      '\"Ду ракъати намози бомдод аз дунё ва ҳар он чӣ дар он аст беҳтар аст.\"\n— Муслим';
+      '«Ду ракъати намози бомдод аз дунё ва ҳар он чӣ дар он аст беҳтар аст.»\n— Муслим';
 
   @override
   String get hadith77 =>
-      '\"Агар шумо ба Худо чунон ки шоиста аст таваккул мекардед, Ӯ шуморо ҳамчун паррандагон ризқ медод.\"\n— Тирмизӣ';
+      '«Агар шумо ба Аллоҳ чунон ки сазовори Ӯст таваккул мекардед, Ӯ шуморо ҳамон гуна ризқ медод, ки паррандагонро ризқ медиҳад.»\n— Тирмизӣ';
 
   @override
   String get hadith78 =>
-      '\"Касе ки беморро аёдат кунад, то баргардад дар боғи ҷаннат аст.\"\n— Муслим';
+      '«Касе ки беморро аёдат кунад, то бозгаштанаш дар мевачинии ҷаннат аст.»\n— Муслим';
 
   @override
   String get hadith79 =>
-      '\"Саломро паҳн кунед, таом диҳед ва шабона намоз хонед вақте ки мардум хобанд — бо оромӣ ба ҷаннат ворид мешавед.\"\n— Тирмизӣ';
+      '«Саломро паҳн кунед, таом диҳед ва шаб, вақте ки мардум дар хобанд, намоз хонед — ба саломатӣ ба ҷаннат медароед.»\n— Тирмизӣ';
 
   @override
   String get hadith80 =>
-      '\"Ҳар кас ки ба мардум шукргузор нест, ба Аллоҳ низ шукргузор нест.\"\n— Тирмизӣ';
+      '«Касе ки шукри мардумро ба ҷо наоварад, шукри Аллоҳро ба ҷо наовардааст.»\n— Тирмизӣ';
 
   @override
   String get hadith81 =>
-      '\"Ҳасад танҳо дар ду ҳолат раво аст: марде ки Худо ба ӯ мол дода ва ӯ онро дар роҳи ҳақ сарф мекунад, ва марде ки Худо ба ӯ ҳикмат дода ва ӯ бо он ҳукм ва таълим медиҳад.\"\n— Бухорӣ ва Муслим';
+      '«Ҳасад ҷуз дар ду ҳолат раво нест: марде, ки Аллоҳ ба ӯ мол додааст ва ӯ онро дар роҳи ҳақ сарф мекунад, ва марде, ки Аллоҳ ба ӯ ҳикмат додааст ва ӯ бо он ҳукм мекунад ва онро таълим медиҳад.»\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith82 =>
-      '\"Инсон бар дини дӯсташ аст, пас ҳар яке аз шумо бубинад ки бо кӣ дӯстӣ мекунад.\"\n— Абу Довуд ва Тирмизӣ';
+      '«Одам бар дини дӯсти худ аст, пас ҳар яке аз шумо бингарад, ки бо кӣ дӯстӣ мекунад.»\n— Абу Довуд ва Тирмизӣ';
 
   @override
   String get hadith85 =>
-      '\"Ҳар касе ки барои Аллоҳ чизеро тарк кунад, Аллоҳ ба ивази он чизи беҳтаре медиҳад.\"\n— Аҳмад';
+      '«Ҳар кӣ чизеро барои Аллоҳ тарк кунад, Аллоҳ ба ивази он ба ӯ чизи беҳтаре медиҳад.»\n— Аҳмад';
 
   @override
   String get hadith86 =>
-      '\"Касе ки айби мусулмонро пӯшонад, Худо дар Рӯзи Қиёмат айбашро мепӯшонад.\"\n— Бухорӣ ва Муслим';
+      '«Касе ки айби мусулмонро бипӯшонад, Аллоҳ дар рӯзи қиёмат айби ӯро мепӯшонад.»\n— Бухорӣ ва Муслим';
 
   @override
-  String get hadith87 => '\"Дар дунё ҳамчун бегона ё мусофир бош.\"\n— Бухорӣ';
+  String get hadith87 =>
+      '«Дар дунё чунон бош, ки гӯё ғарибӣ ё мусофир.»\n— Бухорӣ';
 
   @override
   String get hadith88 =>
-      '\"Касе ки барои шахси дар мушкилӣ осонӣ кунад, Худо дар дунё ва охират барояш осонӣ мекунад.\"\n— Муслим';
+      '«Касе ки ба шахси тангдаст осонӣ кунад, Аллоҳ дар дунё ва охират ба ӯ осонӣ мекунад.»\n— Муслим';
 
   @override
-  String get hadith89 => '\"Амалҳо ба ниятҳо вобастаанд.\"\n— Бухорӣ ва Муслим';
+  String get hadith89 =>
+      '«Подоши амалҳо ба ниятҳо вобаста аст.»\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith90 =>
-      '\"Аз бадгумонӣ дурӣ ҷӯед, зеро бадгумонӣ дурӯғтарин сухан аст.\"\n— Бухорӣ ва Муслим';
+      '«Аз гумон бипарҳезед, зеро гумон дурӯғтарини суханҳост.»\n— Бухорӣ ва Муслим';
 
   @override
   String get hadith93 =>
-      '\"Якҷоя хӯрок хӯред ва номи Худоро гӯед, барои шумо баракат хоҳад шуд.\"\n— Абу Довуд';
+      '«Якҷоя таом хӯред ва номи Аллоҳро ёд кунед, то дар он барои шумо баракат бошад.»\n— Абу Довуд';
 
   @override
   String get hadith94 =>
-      '\"Ҳеҷ қавме нест, ки барои зикри Аллоҳ нишинанд, магар он ки фариштагон онҳоро иҳота мекунанд, раҳмат онҳоро мепӯшонад ва оромиш бар онҳо нозил мешавад.\"\n— Муслим';
+      '«Ҳеҷ қавме барои зикри Аллоҳ наменишинад, магар он ки фариштагон онҳоро фаро мегиранд, раҳмат онҳоро мепӯшонад ва оромиш бар онҳо нозил мешавад.»\n— Муслим';
 
   @override
   String get hadith95 =>
-      '\"Аллоҳ бо бахшоиш бандаашро ҷуз ба иззат зиёд намекунад.\"\n— Муслим';
+      '«Аллоҳ бандаро ба сабаби афв карданаш ҷуз дар иззат намеафзояд.»\n— Муслим';
 
   @override
   String get hadith96 =>
-      '\"Шутуратро бибанд, сипас ба Худо таваккул кун.\"\n— Тирмизӣ';
+      '«Шутуратро бибанд, баъд ба Аллоҳ таваккул кун.»\n— Тирмизӣ';
 
   @override
   String get hadith97 =>
-      '\"Кори мӯъмин аҷиб аст — ҳама чиз барояш нек аст.\"\n— Муслим';
+      '«Кори мӯъмин аҷиб аст — ҳама кораш барояш хайр аст.»\n— Муслим';
 
   @override
   String get hadith98 =>
-      '\"Мусулмон бародари мусулмон аст: ба ӯ ситам намекунад, тарк намекунад ва таҳқир намекунад.\"\n— Муслим';
+      '«Мусулмон бародари мусулмон аст: ба ӯ ситам намекунад, ӯро бе мадад намегузорад ва ӯро хор намедорад.»\n— Муслим';
 
   @override
-  String get delete => 'Ҳазф';
+  String get delete => 'Нест кардан';
 
   @override
   String get remove => 'Хориҷ кардан';
 
   @override
-  String get deleteAmalConfirmTitle => 'Аз назорат хориҷ карда шавад?';
+  String get deleteAmalConfirmTitle => 'Аз пайгирӣ хориҷ карда шавад?';
 
   @override
   String deleteAmalConfirmBody(String title) {
-    return '\"$title\" аз рӯйхати шумо пинҳон мешавад. Таърихи шумо нигоҳ дошта мешавад.';
+    return '«$title» аз рӯйхати шумо пинҳон мешавад. Таърихи шумо нигоҳ дошта мешавад.';
   }
 
   @override
@@ -1082,13 +1084,13 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get notificationChannelDescription =>
-      'Барои амалҳои пайгиришавандаи шумо ёдоварии ҳаррӯза.';
+      'Ёдовариҳои ҳаррӯза барои амалҳое, ки пайгирӣ мекунед.';
 
   @override
-  String get invalidAmalId => 'Идентификатори амали нодуруст';
+  String get invalidAmalId => 'Идентификатори амал нодуруст аст';
 
   @override
-  String get tutorialSettingsRow => 'Тарзи истифодаи муҳосиба';
+  String get tutorialSettingsRow => 'Тарзи истифодаи Муҳосиба';
 
   @override
   String get tutorialSkip => 'Гузаштан';
@@ -1100,72 +1102,72 @@ class AppLocalizationsTg extends AppLocalizations {
   String get tutorialDone => 'Тайёр';
 
   @override
-  String get tutorialTapTitle => 'Барои иҷро зер кунед';
+  String get tutorialTapTitle => 'Барои иҷро пахш кунед';
 
   @override
   String get tutorialTapBody =>
-      'Як зеркунӣ амалро барои имрӯз иҷрошуда қайд мекунад. Барои бекор кардан дубора зер кунед.';
+      'Бо як пахш амал барои имрӯз иҷрошуда қайд мешавад. Барои бекор кардан боз пахш кунед.';
 
   @override
-  String get tutorialEditTitle => 'Барои таҳрир ду бор зер кунед';
+  String get tutorialEditTitle => 'Барои таҳрир ду бор пахш кунед';
 
   @override
   String get tutorialEditBody =>
-      'Шакли таҳрирро мекушояд — номашро иваз кунед ё басомади такрорро тағйир диҳед.';
+      'Варақаи таҳрир кушода мешавад — номро иваз кунед ё даврияти такрорро тағйир диҳед.';
 
   @override
   String get tutorialReorderTitle =>
-      'Барои тағйири тартиб пахш карда нигоҳ доред';
+      'Барои иваз кардани тартиб пахш карда нигоҳ доред';
 
   @override
   String get tutorialReorderBody =>
-      'Сатрро нигоҳ доред, сипас кашед. Тартиби шумо нигоҳ дошта мешавад.';
+      'Сатрро пахш карда нигоҳ доред ва кашед. Тартиб захира мешавад.';
 
   @override
-  String get tutorialRemoveTitle => 'Барои хориҷ кардан кашед';
+  String get tutorialRemoveTitle => 'Барои хориҷ кардан ба канор кашед';
 
   @override
   String get tutorialRemoveBody =>
-      'Сатрро ба канор кашед, то барои имрӯз пинҳон шавад ё пайгирии он қатъ гардад.';
+      'Сатрро ба канор кашед, то онро барои имрӯз пинҳон кунед ё пайгириашро қатъ кунед.';
 
   @override
   String get tutorialCountTitle => 'Ҳисоби такрорҳо';
 
   @override
   String get tutorialCountBody =>
-      'Барои амалҳое, ки ҳадафашон аз як зиёд аст, дар ҳар такрор − ва + -ро истифода баред.';
+      'Барои амалҳое, ки ҳадафашон аз як зиёд аст, ҳар такрорро бо − ва + қайд кунед.';
 
   @override
   String get tutorialViewTitle => 'Гурӯҳбандӣ ё рӯйхати содда';
 
   @override
   String get tutorialViewBody =>
-      'Байни аз рӯи гурӯҳ ҷудо кардан ва як рӯйхати содда иваз кунед.';
+      'Байни гурӯҳбандӣ аз рӯи гурӯҳ ва як рӯйхати содда гузаред.';
 
   @override
-  String get tutorialChallengeLogTitle => 'Барои сабти имрӯз зер кунед';
+  String get tutorialChallengeLogTitle => 'Барои сабти имрӯз пахш кунед';
 
   @override
   String get tutorialChallengeLogBody =>
-      'Як зеркунӣ имрӯзро сабт мекунад. Дар мақсади ҳисобӣ ҳар зеркунӣ як қадам илова мекунад.';
+      'Бо як пахш имрӯз сабт мешавад. Дар мақсади ҳисобӣ ҳар пахш як қадам илова мекунад.';
 
   @override
-  String get tutorialChallengeOpenTitle => 'Барои кушодан ду бор зер кунед';
+  String get tutorialChallengeOpenTitle => 'Барои кушодан ду бор пахш кунед';
 
   @override
   String get tutorialChallengeOpenBody =>
-      'Мақсадро мекушояд — ҳар рӯзро бинед, рӯзи аз даст рафтаро ислоҳ кунед ё онро ҳазф кунед.';
+      'Мақсад кушода мешавад — ҳар рӯзро бинед, рӯзи аз дастрафтаро ислоҳ кунед ё мақсадро нест кунед.';
 
   @override
   String get tutorialChallengeDeleteBody =>
-      'Барои ҳазфи мақсад кортро ба канор кашед.';
+      'Барои нест кардани мақсад кортро ба канор кашед.';
 
   @override
   String get tutorialChallengeAmountTitle => 'Сабти миқдори дақиқ';
 
   @override
   String get tutorialChallengeAmountBody =>
-      'Барои тағйир − ва + -ро истифода баред ё рақамро зер карда миқдори дақиқро нависед.';
+      'Бо − ва + қадам ба қадам тағйир диҳед ё ба рақам пахш карда, миқдори дақиқро ворид кунед.';
 
   @override
   String get challengeOpenDetailsAction => 'Кушодани тафсилоти мақсад';
@@ -1181,7 +1183,7 @@ class AppLocalizationsTg extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count мақсад тамом шуд — охиринашон $title',
+      other: '$count мақсад тамом шуд — охиринаш $title',
       one: '$title тамом шуд',
     );
     return '$_temp0';
@@ -1201,14 +1203,14 @@ class AppLocalizationsTg extends AppLocalizations {
       'Барои худ мақсад гузоред — масалан, 20 ракъат дар 7 рӯз — ва онро дар ин ҷо пайгирӣ кунед.';
 
   @override
-  String get editChallenge => 'Тағйири мақсад';
+  String get editChallenge => 'Таҳрири мақсад';
 
   @override
-  String get deleteChallenge => 'Ҳазфи мақсад';
+  String get deleteChallenge => 'Нест кардани мақсад';
 
   @override
   String get deleteChallengeConfirm =>
-      'Ин мақсад ва тамоми пешрафти сабтшудаи он ҳазф шавад?';
+      'Ин мақсад ва тамоми пешрафти сабтшудаи он нест карда шавад?';
 
   @override
   String get challengeShapeQuestion => 'Ин чӣ навъ мақсад аст?';
@@ -1221,17 +1223,17 @@ class AppLocalizationsTg extends AppLocalizations {
       '1000 салавот, 30 ҷузъ. Миқдорро сабт мекунед ва он ҷамъ мешавад.';
 
   @override
-  String get challengeShapeStreak => 'Идомаи ҳаррӯза';
+  String get challengeShapeStreak => 'Силсилаи ҳаррӯза';
 
   @override
   String get challengeShapeStreakBody =>
-      'Таҳаҷҷуд, бомдод бо ҷамоат. Рӯзе як нишона, миқдор муҳим нест.';
+      'Таҳаҷҷуд, бомдод бо ҷамоат. Рӯзе як қайд, миқдор аҳамият надорад.';
 
   @override
   String get challengeTargetLabel => 'Ҳадаф';
 
   @override
-  String get challengeTargetRequired => 'Ҳадафи аз сифр калон ворид кунед';
+  String get challengeTargetRequired => 'Ҳадафи аз сифр бештарро ворид кунед';
 
   @override
   String get challengeUnitLabel => 'Воҳид (ихтиёрӣ)';
@@ -1240,7 +1242,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get challengeUnitHint => 'ракъат, саҳифа, маротиба';
 
   @override
-  String get challengeOneTapAdds => 'Як пахш илова мекунад';
+  String get challengeOneTapAdds => 'Ҳар пахш илова мекунад';
 
   @override
   String get challengeHowManyDays => 'Чанд рӯз?';
@@ -1284,7 +1286,7 @@ class AppLocalizationsTg extends AppLocalizations {
     String window,
     String slack,
   ) {
-    return '$start то $end · $target аз $window рӯз — $slack рӯзро гузаронда метавонед';
+    return '$start то $end · $target аз $window рӯз — $slack рӯзро метавонед аз даст диҳед';
   }
 
   @override
@@ -1294,12 +1296,12 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String challengePlanOpen(String start) {
-    return '$start оғоз мешавад · бемуҳлат';
+    return 'Оғоз: $start · бемуҳлат';
   }
 
   @override
   String challengeTooTight(String target, String window) {
-    return '$target рӯз дар $window рӯз ҷойгир намешавад — идома рӯзе якро мешуморад.';
+    return '$target рӯз ба $window рӯз намеғунҷад — дар силсила ҳар рӯз танҳо як бор ҳисоб мешавад.';
   }
 
   @override
@@ -1350,7 +1352,7 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String challengeOnTrack(String rate) {
-    return 'Дар нақша · $rate/рӯз';
+    return 'Мувофиқи нақша · $rate/рӯз';
   }
 
   @override
@@ -1364,7 +1366,7 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get challengeReached => 'Ҳадаф иҷро шуд';
+  String get challengeReached => 'Ҳадаф ба даст омад';
 
   @override
   String get challengeCompleted => 'Иҷро шуд';
@@ -1375,33 +1377,33 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get challengeExpiredTitle => 'Мақсад ба анҷом расид';
+  String get challengeExpiredTitle => 'Мӯҳлати мақсад гузашт';
 
   @override
   String challengeExpiredBody(String title, String done, String target) {
-    return '$title бо $done аз $target ба анҷом расид.';
+    return '$title: мӯҳлат гузашт, натиҷа $done аз $target.';
   }
 
   @override
-  String get challengeExtend => 'Дароз кардан';
+  String get challengeExtend => 'Тамдид кардан';
 
   @override
   String get challengeRestart => 'Аз нав оғоз кардан';
 
   @override
-  String get challengeArchive => 'Бойгонӣ кардан';
+  String get challengeArchive => 'Ба бойгонӣ';
 
   @override
   String get challengeDailyBreakdown => 'Сабти рӯзона';
 
   @override
   String challengeNudgeBody(String title, String rate) {
-    return '$title: барои саривақт анҷом додан рӯзе $rate.';
+    return '$title: барои саривақт расидан рӯзе $rate лозим аст.';
   }
 
   @override
   String challengeLastDayBody(String title, String remaining) {
-    return '$title: рӯзи охир — $remaining монд.';
+    return '$title: рӯзи охир — боз $remaining мондааст.';
   }
 
   @override
@@ -1426,7 +1428,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get challengePreview => 'Пешнамоиш';
 
   @override
-  String get challengeTmplTahajjud => '40 шаб Таҳаҷҷуд';
+  String get challengeTmplTahajjud => '40 шаб таҳаҷҷуд';
 
   @override
   String get challengeTmplSalawat => '1000 салавот';
@@ -1435,10 +1437,10 @@ class AppLocalizationsTg extends AppLocalizations {
   String get challengeTmplKhatm => 'Хатми Қуръон дар 30 рӯз';
 
   @override
-  String get challengeTmplFajrJamaah => '30 рӯз Бомдод бо ҷамоат';
+  String get challengeTmplFajrJamaah => '30 рӯз бомдод бо ҷамоат';
 
   @override
-  String get challengeTmplSadaqah => '30 рӯз Садақа';
+  String get challengeTmplSadaqah => '30 рӯз садақа';
 
   @override
   String get listSeparator => ' · ';
@@ -1469,17 +1471,17 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get supportCardBody =>
-      'Ройгон, бе таблиғот ва бе ҳисоб. Метавонед бо маблағи дилхоҳ рушди онро дастгирӣ кунед — ҳар қадар ки хоҳед, ҳар вақт ки хоҳед.';
+      'Ройгон, бе реклама ва бе сабти ном. Метавонед рушди онро бо ҳадя дастгирӣ кунед — ба ҳар миқдор, ҳар вақт ки хоҳед.';
 
   @override
-  String get supportCta => 'Muhasaba-ро дастгирӣ кунед';
+  String get supportCta => 'Муҳосибаро дастгирӣ кунед';
 
   @override
   String get supportAgain => 'Боз дастгирӣ кунед';
 
   @override
   String get supporterThanks =>
-      'Ҷазокумуллоҳу хайран — иншоаллоҳ, Muhasaba ройгон ва бе таблиғот мемонад.';
+      'Худованд ба шумо подоши нек диҳад — иншоаллоҳ, Муҳосиба ройгон ва бе реклама мемонад.';
 
   @override
   String supporterSince(String tier, String month) {
@@ -1487,31 +1489,31 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'Muhasaba-ро дастгирӣ кунед';
+  String get supportPromptTitle => 'Муҳосибаро дастгирӣ кунед';
 
   @override
   String get supportPromptBody =>
-      'Muhasaba ройгон аст, бе таблиғот ва бе ҳисоб. Метавонед бо маблағи дилхоҳ рушди онро дастгирӣ кунед — ҳар қадар ки хоҳед, ҳар вақт ки хоҳед. Ҳеҷ як хусусият ба ин вобаста нест.';
+      'Муҳосиба ройгон аст, бе реклама ва бе сабти ном. Метавонед рушди онро бо ҳадя дастгирӣ кунед — ба ҳар миқдор, ҳар вақт ки хоҳед. Ҳамаи имкониятҳо бе ин ҳам дастрасанд.';
 
   @override
   String get supportPromptNow => 'Ҳозир дастгирӣ кунед';
 
   @override
-  String get supportPromptLater => 'Баъдтар ёдовар шавед';
+  String get supportPromptLater => 'Баъдтар ба ёдам оред';
 
   @override
   String get supportPromptNever => 'Дигар напурсед';
 
   @override
-  String get tipSheetTitle => 'Muhasaba-ро дастгирӣ кунед';
+  String get tipSheetTitle => 'Муҳосибаро дастгирӣ кунед';
 
   @override
   String get tipSheetBody =>
-      'Ҳар маблағеро, ки мехоҳед, интихоб кунед, ҳар чанд бор ки хоҳед. Ин маблағ барои нигоҳдории барнома сарф мешавад — иншоаллоҳ, он ройгон ва бе таблиғот мемонад. Ба нишони сипос, дар Танзимот ҳамчун ҳомӣ нишон дода мешавед.';
+      'Ҳар маблағеро, ки мехоҳед, ҳар чанд бор ки хоҳед, интихоб кунед. Ҳадяҳо барои нигоҳдории барнома сарф мешаванд — иншоаллоҳ, он ройгон ва бе реклама мемонад. Ба нишони сипос, дар Танзимот ҳамчун ҳомӣ қайд мешавед.';
 
   @override
   String tipSheetSupporterLine(String tier) {
-    return '$tier — Ҷазокумуллоҳу хайран.';
+    return '$tier — Худованд ба шумо подоши нек диҳад.';
   }
 
   @override
@@ -1524,15 +1526,14 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get tipSheetOtherWays =>
-      'Вариантеро, ки ба шумо мувофиқ бошад, намебинед?';
+  String get tipSheetOtherWays => 'Варианти мувофиқ наёфтед?';
 
   @override
   String get tipSheetWriteToUs => 'Ба мо нависед';
 
   @override
   String get supportEmailBody =>
-      'Ассалому алайкум,\n\nМехоҳам рушди Muhasaba-ро бевосита дастгирӣ кунам.\n\nКишвар:\nТарзи фиристодан:\nМаблағ (ихтиёрӣ):';
+      'Ассалому алайкум,\n\nМехоҳам рушди Муҳосибаро бевосита дастгирӣ кунам.\n\nКишвар:\nТарзи фиристодан:\nМаблағ (ихтиёрӣ):';
 
   @override
   String tipBusy(String store) {
@@ -1541,7 +1542,7 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get tipThanks =>
-      'Ҷазокумуллоҳу хайран — Худованд аз шумо қабул кунад.';
+      'Худованд ба шумо подоши нек диҳад ва аз шумо қабул фармояд.';
 
   @override
   String get tipDone => 'Тайёр';
@@ -1551,7 +1552,7 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String tipPending(String store) {
-    return 'Пардохти шумо дар $store дар интизори тасдиқ аст — ҳамин ки тасдиқ шуд, нишони шумо илова мешавад.';
+    return 'Ҳадяи шумо дар $store дар интизори тасдиқ аст — пас аз тасдиқ нишони шумо илова мешавад.';
   }
 
   @override
@@ -1561,16 +1562,16 @@ class AppLocalizationsTg extends AppLocalizations {
   String get optionSetJamaa => 'Ҷамоат';
 
   @override
-  String get optionJamaaAlone => 'Танҳо';
+  String get optionJamaaAlone => 'Ба танҳоӣ';
 
   @override
-  String get optionJamaaHome => 'Дар хона ҷамоат';
+  String get optionJamaaHome => 'Бо ҷамоат дар хона';
 
   @override
-  String get optionJamaaMasjid => 'Дар масҷид ҷамоат';
+  String get optionJamaaMasjid => 'Бо ҷамоат дар масҷид';
 
   @override
-  String get optionSetOnTime => 'Вақт';
+  String get optionSetOnTime => 'Саривақтӣ';
 
   @override
   String get optionOnTimeOnTime => 'Саривақт';
@@ -1582,19 +1583,19 @@ class AppLocalizationsTg extends AppLocalizations {
   String get optionOnTimeQada => 'Қазо';
 
   @override
-  String get optionSetQuranSession => 'Дарси Қуръон';
+  String get optionSetQuranSession => 'Машғулият бо Қуръон';
 
   @override
-  String get optionQuranRecited => 'Хонда шуд';
+  String get optionQuranRecited => 'Тиловат';
 
   @override
-  String get optionQuranMemorised => 'Ҳифз шуд';
+  String get optionQuranMemorised => 'Ҳифз';
 
   @override
-  String get optionQuranMeaning => 'Бо маънояш';
+  String get optionQuranMeaning => 'Бо маъно';
 
   @override
-  String get optionQuranListened => 'Гӯш карда шуд';
+  String get optionQuranListened => 'Шунидан';
 
   @override
   String get optionSetSadaqahType => 'Навъи садақа';
@@ -1612,7 +1613,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get optionSadaqahOther => 'Дигар';
 
   @override
-  String get optionSetIntensity => 'Дараҷа';
+  String get optionSetIntensity => 'Шиддат';
 
   @override
   String get optionIntensityLight => 'Сабук';
@@ -1627,13 +1628,13 @@ class AppLocalizationsTg extends AppLocalizations {
   String get optionSetNewTitle => 'Маҷмӯаи нави вариантҳо';
 
   @override
-  String get optionSetEditTitle => 'Маҷмӯаи вариантҳоро таҳрир кардан';
+  String get optionSetEditTitle => 'Таҳрири маҷмӯаи вариантҳо';
 
   @override
   String get optionSetNameLabel => 'Номи маҷмӯа';
 
   @override
-  String get optionSetNameHint => 'мас. Ҷамоат';
+  String get optionSetNameHint => 'масалан, Ҷамоат';
 
   @override
   String get optionsLabel => 'Вариантҳо';
@@ -1660,7 +1661,7 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get optionSetDelete => 'Маҷмӯаро ҳазф кардан';
+  String get optionSetDelete => 'Маҷмӯаро нест кардан';
 
   @override
   String get optionSetDeleteConfirm =>
@@ -1687,7 +1688,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get optionSetNew => 'Маҷмӯаи нав';
 
   @override
-  String get requireChoiceLabel => 'Интихоб талаб карда шавад';
+  String get requireChoiceLabel => 'Интихоби ҳатмӣ';
 
   @override
   String get requireChoiceHelp =>
@@ -1720,7 +1721,7 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String optionBreakdownTitle(String set) {
-    return 'Тафсили вариантҳо — $set';
+    return 'Тақсимоти вариантҳо — $set';
   }
 
   @override
@@ -1728,10 +1729,10 @@ class AppLocalizationsTg extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count маротиба',
-      one: '1 маротиба',
+      other: 'Ҳисса аз $count иҷро, ки интихобашон қайд шудааст',
+      one: 'Ҳисса аз 1 иҷро, ки интихобаш қайд шудааст',
     );
-    return 'Ҳиссаи интихоби қайдшуда аз $_temp0';
+    return '$_temp0';
   }
 
   @override
@@ -1739,8 +1740,8 @@ class AppLocalizationsTg extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       total,
       locale: localeName,
-      other: '$total рӯзи анҷомшуда',
-      one: '1 рӯзи анҷомшуда',
+      other: '$total рӯзи иҷрошуда',
+      one: '1 рӯзи иҷрошуда',
     );
     return 'Интихоб қайд нашудааст — $none аз $_temp0';
   }
@@ -1753,11 +1754,11 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String optionScopedCaption(String amal, int count) {
-    return '$amal · $count қайдшуда';
+    return '$amal · $count қайд';
   }
 
   @override
-  String get optionBreakdownSectionTitle => 'Тафсили вариантҳо';
+  String get optionBreakdownSectionTitle => 'Тақсимоти вариантҳо';
 
   @override
   String optionBreakdownSwipeHint(int count) {
@@ -1799,7 +1800,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get optionDetailBestWeek => 'Беҳтарин ҳафта';
 
   @override
-  String get optionDetailCurrentRun => 'Силсилаи ҳозира';
+  String get optionDetailCurrentRun => 'Силсилаи ҷорӣ';
 
   @override
   String get optionDetailRecordsCaption =>
@@ -1868,7 +1869,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get amalTahiyyah => 'Таҳиятул-масҷид';
 
   @override
-  String get amalEarlyJumuah => 'Барвақт рафтан ба ҷумъа';
+  String get amalEarlyJumuah => 'Барвақт ба намози ҷумъа';
 
   @override
   String get amalAfterSalah => 'Зикрҳои баъди намоз';
@@ -1931,7 +1932,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get amalTasbihFatimah => 'Тасбеҳи Фотима';
 
   @override
-  String get amalWakingAdhkar => 'Зикрҳои бедоршавӣ';
+  String get amalWakingAdhkar => 'Зикрҳои баъди бедоршавӣ';
 
   @override
   String get amalDuaAdhan => 'Дуои баъди азон';
@@ -2111,7 +2112,7 @@ class AppLocalizationsTg extends AppLocalizations {
   String get libraryAll => 'Ҳама';
 
   @override
-  String get libraryAdded => 'Ба имрӯз илова шуд';
+  String get libraryAdded => 'Ба рӯйхати имрӯз илова шуд';
 
   @override
   String libraryAddedShowsOn(String days) {
@@ -2129,7 +2130,7 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get libraryPickBanner => 'Аз китобхонаи амалҳо интихоб кунед';
+  String get libraryPickBanner => 'Аз Китобхонаи амалҳо интихоб кунед';
 
   @override
   String libraryPickBannerSubtitle(num count, String countText) {
@@ -2143,7 +2144,7 @@ class AppLocalizationsTg extends AppLocalizations {
   }
 
   @override
-  String get libraryFilledIn => 'Аз китобхонаи амалҳо пур карда шуд';
+  String get libraryFilledIn => 'Аз Китобхонаи амалҳо пур карда шуд';
 
   @override
   String get libraryChange => 'Иваз кардан';
@@ -2195,5 +2196,5 @@ class AppLocalizationsTg extends AppLocalizations {
   String get libraryOnList => 'Дар рӯйхати шумо ҳаст';
 
   @override
-  String get todayEmptyBrowse => 'Дидани китобхонаи амалҳо';
+  String get todayEmptyBrowse => 'Китобхонаи амалҳоро кушодан';
 }

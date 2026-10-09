@@ -61,7 +61,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String archivedRestored(String title) {
-    return '\"$title\" به فهرست شما بازگشت.';
+    return '«$title» به فهرست شما بازگشت.';
   }
 
   @override
@@ -110,7 +110,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get frequencyMonthly => 'ماهانه';
 
   @override
-  String get categoryLabel => 'دسته‌بندی';
+  String get categoryLabel => 'دسته';
 
   @override
   String get categoryOther => 'سایر';
@@ -149,10 +149,11 @@ class AppLocalizationsFa extends AppLocalizations {
   String get dayOfWeek => 'روز هفته';
 
   @override
-  String get anyDay => 'هر روز';
+  String get anyDay => 'دلخواه';
 
   @override
-  String get anyDayHint => 'هر روز (امروز نمایش داده می‌شود، فردا مخفی می‌شود)';
+  String get anyDayHint =>
+      'روز دلخواه (امروز نمایش داده می‌شود و روز بعد پنهان می‌شود)';
 
   @override
   String onlyDayHint(String day) {
@@ -172,7 +173,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get onSetDates => 'در تاریخ‌های مشخص';
 
   @override
-  String get anyDayMode => 'هر روز';
+  String get anyDayMode => 'روز دلخواه';
 
   @override
   String get datesOfMonth => 'تاریخ‌ها';
@@ -231,11 +232,11 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get anyDate => 'هر تاریخ';
+  String get anyDate => 'دلخواه';
 
   @override
   String get anyDateHint =>
-      'هر تاریخ (امروز نمایش داده می‌شود، فردا مخفی می‌شود)';
+      'تاریخ دلخواه (امروز نمایش داده می‌شود و روز بعد پنهان می‌شود)';
 
   @override
   String onlyDateHint(String date) {
@@ -243,11 +244,11 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get startPreChecked => 'از پیش علامت‌گذاری شده';
+  String get startPreChecked => 'به‌طور پیش‌فرض انجام‌شده';
 
   @override
   String get startPreCheckedSubtitle =>
-      'هنگام شروع دوره جدید، این عمل به‌طور پیش‌فرض انجام‌شده علامت می‌خورد تا زمانی که آن را بردارید.';
+      'با شروع هر دورهٔ جدید، این عمل به‌طور پیش‌فرض انجام‌شده علامت می‌خورد، مگر اینکه علامتش را بردارید.';
 
   @override
   String get reminder => 'یادآوری';
@@ -271,7 +272,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get dailyReminder => 'یادآوری روزانه';
 
   @override
-  String get dailyReminderSubtitle => 'یادآوری ملایمی برای پیگیری اعمال شما';
+  String get dailyReminderSubtitle => 'یادآوری ملایمی برای پیگیری اعمالتان';
 
   @override
   String get dailyReminderTimeLabel => 'زمان یادآوری';
@@ -284,7 +285,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get groupByCategory => 'گروه‌بندی بر اساس دسته';
 
   @override
-  String get flatList => 'لیست ساده';
+  String get flatList => 'فهرست ساده';
 
   @override
   String errorGeneric(String error) {
@@ -301,19 +302,19 @@ class AppLocalizationsFa extends AppLocalizations {
   String get noteHint => 'مثلاً در مسجد نماز خواندم';
 
   @override
-  String get completed => 'انجام شده';
+  String get completed => 'انجام‌شده';
 
   @override
-  String get notCompleted => 'انجام نشده';
+  String get notCompleted => 'انجام‌نشده';
 
   @override
   String progressOf(String progress, String target) {
-    return '$progress از $target انجام شده';
+    return '$progress از $target انجام‌شده';
   }
 
   @override
   String progressOpen(String count) {
-    return '$count انجام شده';
+    return '$count انجام‌شده';
   }
 
   @override
@@ -328,7 +329,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get removeFromTrackingSubtitle =>
-      'برای همیشه از لیست حذف می‌شود. تاریخچه حفظ می‌شود.';
+      'برای همیشه از فهرست شما حذف می‌شود. تاریخچه حفظ می‌شود.';
 
   @override
   String get chooseIcon => 'انتخاب آیکون';
@@ -337,7 +338,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get iconNone => 'بدون آیکون';
 
   @override
-  String get recentlyUsed => 'اخیراً استفاده شده';
+  String get recentlyUsed => 'اخیراً استفاده‌شده';
 
   @override
   String get emojiSectionGeneral => 'عمومی';
@@ -349,7 +350,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get categoryNew => '+ جدید';
 
   @override
-  String get categoryNewSheetTitle => 'دسته جدید';
+  String get categoryNewSheetTitle => 'دستهٔ جدید';
 
   @override
   String get categoryEditSheetTitle => 'ویرایش دسته';
@@ -379,19 +380,19 @@ class AppLocalizationsFa extends AppLocalizations {
   String get amalDuha => 'نماز چاشت';
 
   @override
-  String get amalFajr => 'فجر';
+  String get amalFajr => 'نماز فجر';
 
   @override
-  String get amalDhuhr => 'ظهر';
+  String get amalDhuhr => 'نماز ظهر';
 
   @override
-  String get amalAsr => 'عصر';
+  String get amalAsr => 'نماز عصر';
 
   @override
-  String get amalMaghrib => 'مغرب';
+  String get amalMaghrib => 'نماز مغرب';
 
   @override
-  String get amalIsha => 'عشاء';
+  String get amalIsha => 'نماز عشاء';
 
   @override
   String get amalMorningAdhkar => 'اذکار صبح';
@@ -411,7 +412,7 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get sectionDayBoundary => 'مرز روز';
+  String get sectionDayBoundary => 'تغییر روز';
 
   @override
   String get rolloverHour => 'ساعت تغییر روز';
@@ -438,7 +439,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get startOfMonthClamped =>
-      'روزهای بعد از ۲۸ام به آخرین روز ماه‌های کوتاه‌تر محدود می‌شوند.';
+      'در ماه‌های کوتاه‌تر، روزهای بعد از ۲۸ به آخرین روز ماه منتقل می‌شوند.';
 
   @override
   String get sectionAppearance => 'ظاهر';
@@ -465,11 +466,11 @@ class AppLocalizationsFa extends AppLocalizations {
   String get systemDefault => 'پیش‌فرض سیستم';
 
   @override
-  String get aboutTitle => 'Muhasaba';
+  String get aboutTitle => 'محاسبه';
 
   @override
   String get aboutSubtitle =>
-      'دفتر محاسبه شخصی دین. تمام داده‌ها روی این دستگاه باقی می‌مانند.';
+      'دفترچهٔ شخصی محاسبهٔ نفس در امور دینی. همهٔ داده‌ها فقط روی همین دستگاه می‌ماند.';
 
   @override
   String get statsTitle => 'آمار';
@@ -489,7 +490,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get thisMonth => 'این ماه';
 
   @override
-  String get totalCompletions => 'مجموع انجام‌ها';
+  String get totalCompletions => 'مجموع دفعات انجام';
 
   @override
   String get streakCurrent => 'فعلی';
@@ -559,7 +560,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get statsThisMonth => 'این ماه';
 
   @override
-  String get statsAllTime => 'همه زمان‌ها';
+  String get statsAllTime => 'از ابتدا';
 
   @override
   String get statsCustomRange => 'بازه سفارشی';
@@ -571,13 +572,13 @@ class AppLocalizationsFa extends AppLocalizations {
   String get statsAllAmals => 'همه';
 
   @override
-  String get statsCompleted => 'انجام شده';
+  String get statsCompleted => 'انجام‌شده';
 
   @override
   String get statsExpected => 'مورد انتظار';
 
   @override
-  String get statsVsPrevious => 'در مقایسه با قبلی';
+  String get statsVsPrevious => 'نسبت به دورهٔ قبل';
 
   @override
   String get statsByCategory => 'بر اساس دسته';
@@ -609,7 +610,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get statsTotalDays => 'کل روزها';
 
   @override
-  String get statsConsistency => 'پایداری';
+  String get statsConsistency => 'استمرار';
 
   @override
   String get statsLast5Weeks => '۵ هفته اخیر';
@@ -618,7 +619,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get statsDailyBreakdown => 'جزئیات روزانه';
 
   @override
-  String get statsCompletionRate => 'نرخ انجام';
+  String get statsCompletionRate => 'درصد انجام';
 
   @override
   String get statsAmountPerDay => 'مقدار روزانه';
@@ -630,19 +631,19 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String statsCountAvg(String amount) {
-    return 'میانگین $amount/روز';
+    return 'میانگین $amount در روز';
   }
 
   @override
   String statsCountBest(String count, String day) {
-    return 'بیشترین $count · $day';
+    return 'بیشترین $count – $day';
   }
 
   @override
   String get statsFilterTime => 'زمان';
 
   @override
-  String get statsFilterCategory => 'دسته‌بندی';
+  String get statsFilterCategory => 'دسته';
 
   @override
   String get statsFilterAmal => 'عمل';
@@ -651,7 +652,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get statsStreaks => 'زنجیره‌ها';
 
   @override
-  String get statsSelectDateRange => 'بازه تاریخ را انتخاب کنید';
+  String get statsSelectDateRange => 'بازهٔ تاریخ را انتخاب کنید';
 
   @override
   String get historyTitle => 'تاریخچه';
@@ -665,34 +666,34 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get streakUnitD => 'ر';
+  String get streakUnitD => ' روز';
 
   @override
-  String get streakUnitW => 'ه';
+  String get streakUnitW => ' هفته';
 
   @override
-  String get streakUnitM => 'م';
+  String get streakUnitM => ' ماه';
 
   @override
-  String get mondayShort => 'دو';
+  String get mondayShort => 'د';
 
   @override
-  String get tuesdayShort => 'سه';
+  String get tuesdayShort => 'س';
 
   @override
-  String get wednesdayShort => 'چهار';
+  String get wednesdayShort => 'چ';
 
   @override
-  String get thursdayShort => 'پنج';
+  String get thursdayShort => 'پ';
 
   @override
-  String get fridayShort => 'جمعه';
+  String get fridayShort => 'ج';
 
   @override
-  String get saturdayShort => 'شنبه';
+  String get saturdayShort => 'ش';
 
   @override
-  String get sundayShort => 'یک';
+  String get sundayShort => 'ی';
 
   @override
   String get mondayFull => 'دوشنبه';
@@ -704,7 +705,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get wednesdayFull => 'چهارشنبه';
 
   @override
-  String get thursdayFull => 'پنجشنبه';
+  String get thursdayFull => 'پنج‌شنبه';
 
   @override
   String get fridayFull => 'جمعه';
@@ -717,7 +718,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get hadith0 =>
-      '«محبوب‌ترین اعمال نزد خداوند آن‌هایی هستند که مداومت داشته باشند، هرچند اندک باشند.»\n— بخاری و مسلم';
+      '«محبوب‌ترین اعمال نزد خداوند، پیوسته‌ترین آن‌هاست، هرچند اندک باشد.»\n— بخاری و مسلم';
 
   @override
   String get hadith2 =>
@@ -733,56 +734,56 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get hadith6 =>
-      '«آسان بگیرید و سخت نگیرید؛ مژده دهید و مردم را نرمانید.»\n— بخاری';
+      '«آسان بگیرید و سخت نگیرید؛ مژده دهید و مردم را متنفر نسازید.»\n— بخاری';
 
   @override
   String get hadith7 =>
-      '«هرکس راهی را برای جستجوی علم بپیماید، خداوند راه بهشت را برایش آسان می‌سازد.»\n— مسلم';
+      '«هر کس راهی را در طلب علم بپیماید، خداوند راه بهشت را برایش آسان می‌سازد.»\n— مسلم';
 
   @override
   String get hadith8 => '«صدقه مال را کم نمی‌کند.»\n— مسلم';
 
   @override
   String get hadith9 =>
-      '«مؤمن قوی بهتر و محبوب‌تر نزد خداوند است از مؤمن ضعیف، و در هر دو خیر هست.»\n— مسلم';
+      '«مؤمن قوی از مؤمن ضعیف بهتر و نزد خداوند محبوب‌تر است، و در هر دو خیر هست.»\n— مسلم';
 
   @override
   String get hadith10 =>
-      '«هر کس روزی صد بار \'سبحان‌الله و بحمده\' بگوید، گناهانش آمرزیده می‌شود حتی اگر مانند کف دریا باشد.»\n— بخاری و مسلم';
+      '«هر کس روزی صد بار «سبحان‌الله و بحمده» بگوید، گناهانش آمرزیده می‌شود، هرچند مانند کف دریا باشد.»\n— بخاری و مسلم';
 
   @override
   String get hadith12 =>
-      '«هر کس پس از هر نماز واجب آیة‌الکرسی بخواند، چیزی مانع ورود او به بهشت نمی‌شود مگر مرگ.»\n— نسائی';
+      '«هر کس پس از هر نماز واجب آیت‌الکرسی بخواند، چیزی جز مرگ مانع ورود او به بهشت نیست.»\n— نسائی';
 
   @override
   String get hadith13 => '«سخن نیک صدقه است.»\n— بخاری و مسلم';
 
   @override
   String get hadith14 =>
-      '«هر کس به خدا و روز قیامت ایمان دارد، سخن نیک بگوید یا سکوت کند.»\n— بخاری و مسلم';
+      '«هر کس به خدا و روز آخرت ایمان دارد، سخن نیک بگوید یا خاموش بماند.»\n— بخاری و مسلم';
 
   @override
   String get hadith15 =>
       '«کسی که از بیوه‌زن و مسکین مراقبت کند، مانند مجاهد در راه خداست.»\n— بخاری و مسلم';
 
   @override
-  String get hadith16 => '«لبخند زدن به برادرت صدقه است.»\n— ترمذی';
+  String get hadith16 => '«لبخند تو به روی برادرت صدقه است.»\n— ترمذی';
 
   @override
   String get hadith17 =>
-      '«بهترین شما کسی است که قرآن بیاموزد و آن را بیاموزاند.»\n— بخاری';
+      '«بهترین شما کسی است که قرآن را بیاموزد و به دیگران بیاموزد.»\n— بخاری';
 
   @override
   String get hadith18 =>
-      '«هیچ‌کس غذایی بهتر از دسترنج خود نخورده است.»\n— بخاری';
+      '«هیچ‌کس غذایی بهتر از آنچه با دسترنج خود به دست آورده، نخورده است.»\n— بخاری';
 
   @override
   String get hadith19 =>
-      '«خداوند مهربان است و در همه امور مهربانی را دوست دارد.»\n— بخاری و مسلم';
+      '«خداوند نرم‌خوست و نرمی را در همهٔ کارها دوست دارد.»\n— بخاری و مسلم';
 
   @override
   String historyDayCompleted(String completed, String total) {
-    return '$completed از $total انجام شده';
+    return '$completed از $total انجام‌شده';
   }
 
   @override
@@ -792,10 +793,10 @@ class AppLocalizationsFa extends AppLocalizations {
   String get settingsAppearance => 'ظاهر';
 
   @override
-  String get settingsAboutTagline => 'همراه روزانه دین شما';
+  String get settingsAboutTagline => 'همراه روزانهٔ دین‌داری شما';
 
   @override
-  String get settingsRolloverSub => 'روز چه زمانی بازنشانی می‌شود';
+  String get settingsRolloverSub => 'زمان شروع روز جدید';
 
   @override
   String get settingsAbout => 'درباره';
@@ -810,7 +811,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get settingsSupport => 'پشتیبانی';
 
   @override
-  String get settingsRate => 'به برنامه امتیاز دهید';
+  String get settingsRate => 'امتیاز دادن به برنامه';
 
   @override
   String get settingsContact => 'تماس با ما';
@@ -819,19 +820,18 @@ class AppLocalizationsFa extends AppLocalizations {
   String get settingsReportBug => 'گزارش اشکال';
 
   @override
-  String get settingsRequestFeature => 'درخواست ویژگی';
+  String get settingsRequestFeature => 'پیشنهاد قابلیت';
 
   @override
   String settingsSupportFallback(String email) {
-    return 'نمی‌توان ایمیل را باز کرد. لطفاً به $email ایمیل بزنید.';
+    return 'برنامهٔ ایمیل باز نشد. لطفاً به $email ایمیل بزنید.';
   }
 
   @override
-  String get settingsPrivacyPolicy => 'سیاست حفظ حریم خصوصی';
+  String get settingsPrivacyPolicy => 'سیاست حریم خصوصی';
 
   @override
-  String get settingsPrivacyOpenFailed =>
-      'باز کردن سیاست حفظ حریم خصوصی ممکن نشد.';
+  String get settingsPrivacyOpenFailed => 'باز کردن سیاست حریم خصوصی ممکن نشد.';
 
   @override
   String get hadith20 =>
@@ -883,14 +883,14 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get hadith38 =>
-      '«قوی آن نیست که در کشتی غالب شود، بلکه قوی کسی است که هنگام خشم خود را کنترل کند.»\n— بخاری و مسلم';
+      '«قوی کسی نیست که در کشتی دیگران را زمین بزند، بلکه قوی کسی است که هنگام خشم بر خود مسلط باشد.»\n— بخاری و مسلم';
 
   @override
   String get hadith40 =>
-      '«پس از هر نماز سی و سه بار \'سبحان‌الله\'، \'الحمدلله\' و \'الله اکبر\' بگویید.»\n— مسلم';
+      '«پس از هر نماز، هر یک از «سبحان‌الله»، «الحمدلله» و «الله‌اکبر» را سی‌وسه بار بگویید.»\n— مسلم';
 
   @override
-  String get hadith41 => '«بهترین ذکر لا اله الا الله است.»\n— ترمذی';
+  String get hadith41 => '«بهترین ذکر «لا إله إلا الله» است.»\n— ترمذی';
 
   @override
   String get hadith42 =>
@@ -914,15 +914,15 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get hadith47 =>
-      '«صله رحم‌کننده واقعی کسی نیست که مقابله‌به‌مثل کند، بلکه کسی است که حتی وقتی قطع رحم می‌شود، پیوند را حفظ کند.»\n— بخاری';
+      '«صله‌رحم‌کننده کسی نیست که تنها نیکی را جبران کند، بلکه کسی است که هرگاه با او قطع رابطه کنند، پیوند را برقرار نگه دارد.»\n— بخاری';
 
   @override
   String get hadith49 =>
-      '«هر کس غذا بخورد و بگوید: \'سپاس خدایی را که این غذا را به من خوراند و بدون هیچ نیرو و توانی از جانب من آن را روزی‌ام کرد،\' گناهان گذشته‌اش آمرزیده می‌شود.»\n— ترمذی';
+      '«هر کس غذایی بخورد و بگوید: «سپاس خدایی را که این را به من خوراند و بی‌آنکه نیرو و توانی از من باشد، روزی‌ام کرد»، گناهان گذشته‌اش آمرزیده می‌شود.»\n— ترمذی';
 
   @override
   String get hadith53 =>
-      '«هیچ کار نیکی را کوچک نشمارید، حتی اگر ملاقات برادرتان با چهره‌ای خندان باشد.»\n— مسلم';
+      '«هیچ کار نیکی را کوچک مشمارید، حتی دیدار برادرتان با چهره‌ای گشاده را.»\n— مسلم';
 
   @override
   String get hadith54 =>
@@ -930,7 +930,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get hadith55 =>
-      '«هر کس شب دو آیه آخر سوره بقره را بخواند، برایش کافی است.»\n— بخاری و مسلم';
+      '«هر کس شب دو آیهٔ آخر سورهٔ بقره را بخواند، او را کفایت می‌کند.»\n— بخاری و مسلم';
 
   @override
   String get hadith56 =>
@@ -957,7 +957,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get hadith68 =>
-      '«هیچ خستگی، بیماری، اندوه، غم، آزار یا ناراحتی به مسلمان نمی‌رسد — حتی خار خلیدن — مگر آنکه خداوند به واسطه آن گناهانش را می‌بخشد.»\n— بخاری و مسلم';
+      '«هیچ خستگی، بیماری، اندوه، غم، آزار یا ناراحتی به مسلمان نمی‌رسد، حتی خاری که در بدنش فرو رود، مگر آنکه خداوند به سبب آن بخشی از گناهانش را می‌زداید.»\n— بخاری و مسلم';
 
   @override
   String get hadith69 =>
@@ -969,11 +969,11 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get hadith71 =>
-      '«فاضل‌ترین روزه پس از رمضان، روزه ماه خدا یعنی محرم است.»\n— مسلم';
+      '«برترین روزه پس از رمضان، روزهٔ ماه خدا، محرم است.»\n— مسلم';
 
   @override
   String get hadith72 =>
-      '«هر کس حج کند و مرتکب فحش و گناه نشود، مانند روزی که مادرش او را زاییده بازمی‌گردد.»\n— بخاری و مسلم';
+      '«هر کس حج بگزارد و در آن سخن زشت نگوید و گناه نکند، مانند روزی که از مادر زاده شده بازمی‌گردد.»\n— بخاری و مسلم';
 
   @override
   String get hadith73 =>
@@ -981,7 +981,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get hadith74 =>
-      '«پیش از آنکه فتنه‌ها مانند تکه‌های شب تاریک فرا رسند، به سوی کارهای نیک بشتابید.»\n— مسلم';
+      '«پیش از فتنه‌هایی که چون پاره‌های شب تاریک‌اند، به سوی کارهای نیک بشتابید.»\n— مسلم';
 
   @override
   String get hadith75 =>
@@ -993,11 +993,11 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get hadith78 =>
-      '«هر کس بیماری را عیادت کند، تا بازگردد در باغ بهشت است.»\n— مسلم';
+      '«هر کس بیماری را عیادت کند، تا بازگردد در میوه‌چینی بهشت است.»\n— مسلم';
 
   @override
   String get hadith79 =>
-      '«سلام را بگسترانید، گرسنگان را غذا دهید و شب هنگامی که مردم خوابند نماز بخوانید تا با سلامت وارد بهشت شوید.»\n— ترمذی';
+      '«سلام را بگسترانید، گرسنگان را غذا دهید و شب هنگامی که مردم خوابند نماز بخوانید تا به سلامت وارد بهشت شوید.»\n— ترمذی';
 
   @override
   String get hadith80 =>
@@ -1013,7 +1013,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get hadith85 =>
-      '«هر کس چیزی را به خاطر خداوند ترک کند، خداوند بهتر از آن را جایگزین می‌کند.»\n— احمد';
+      '«هر کس چیزی را به خاطر خداوند ترک کند، خداوند بهتر از آن را به او عوض می‌دهد.»\n— احمد';
 
   @override
   String get hadith86 =>
@@ -1025,10 +1025,10 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get hadith88 =>
-      '«هر کس بر شخصی در سختی آسان بگیرد، خداوند در دنیا و آخرت بر او آسان می‌گیرد.»\n— مسلم';
+      '«هر کس بر تنگدستی آسان بگیرد، خداوند در دنیا و آخرت بر او آسان می‌گیرد.»\n— مسلم';
 
   @override
-  String get hadith89 => '«اعمال بسته به نیت‌هاست.»\n— بخاری و مسلم';
+  String get hadith89 => '«پاداش اعمال بسته به نیت‌هاست.»\n— بخاری و مسلم';
 
   @override
   String get hadith90 =>
@@ -1043,14 +1043,15 @@ class AppLocalizationsFa extends AppLocalizations {
       '«هیچ قومی به یاد خدا نمی‌نشینند مگر آنکه فرشتگان آنان را در بر می‌گیرند، رحمت آنان را فرا می‌گیرد و آرامش بر آنان نازل می‌شود.»\n— مسلم';
 
   @override
-  String get hadith95 => '«خداوند با گذشت، جز بر عزت بنده نمی‌افزاید.»\n— مسلم';
+  String get hadith95 =>
+      '«خداوند به سبب گذشت، جز بر عزت بنده نمی‌افزاید.»\n— مسلم';
 
   @override
   String get hadith96 => '«شترت را ببند و سپس بر خدا توکل کن.»\n— ترمذی';
 
   @override
   String get hadith97 =>
-      '«شگفتا از کار مؤمن که همه چیز برایش خیر است.»\n— مسلم';
+      '«شگفتا از کار مؤمن؛ همهٔ کارش برایش خیر است.»\n— مسلم';
 
   @override
   String get hadith98 =>
@@ -1060,14 +1061,14 @@ class AppLocalizationsFa extends AppLocalizations {
   String get delete => 'حذف';
 
   @override
-  String get remove => 'حذف کن';
+  String get remove => 'حذف';
 
   @override
-  String get deleteAmalConfirmTitle => 'از ردیابی حذف شود؟';
+  String get deleteAmalConfirmTitle => 'از پیگیری حذف شود؟';
 
   @override
   String deleteAmalConfirmBody(String title) {
-    return '\"$title\" از فهرست شما پنهان می‌شود. تاریخچه‌ی شما حفظ می‌شود.';
+    return '«$title» از فهرست شما پنهان می‌شود. تاریخچهٔ آن حفظ می‌شود.';
   }
 
   @override
@@ -1078,13 +1079,13 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get notificationChannelDescription =>
-      'یادآوری‌های روزانه برای اعمالی که دنبال می‌کنید.';
+      'یادآوری‌های روزانه برای اعمالی که پیگیری می‌کنید.';
 
   @override
-  String get invalidAmalId => 'شناسه عمل نامعتبر';
+  String get invalidAmalId => 'شناسهٔ عمل نامعتبر است';
 
   @override
-  String get tutorialSettingsRow => 'روش استفاده از محاسبه';
+  String get tutorialSettingsRow => 'راهنمای استفاده از محاسبه';
 
   @override
   String get tutorialSkip => 'رد کردن';
@@ -1100,7 +1101,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get tutorialTapBody =>
-      'یک ضربه، عمل را برای امروز انجام‌شده علامت می‌زند. برای برگرداندن دوباره ضربه بزنید.';
+      'یک ضربه عمل را برای امروز انجام‌شده علامت می‌زند. برای برگرداندن، دوباره ضربه بزنید.';
 
   @override
   String get tutorialEditTitle => 'برای ویرایش دو بار ضربه بزنید';
@@ -1131,11 +1132,11 @@ class AppLocalizationsFa extends AppLocalizations {
       'برای اعمالی که هدفشان بیش از یک است، برای هر تکرار از − و + استفاده کنید.';
 
   @override
-  String get tutorialViewTitle => 'گروه‌بندی یا لیست ساده';
+  String get tutorialViewTitle => 'گروه‌بندی یا فهرست ساده';
 
   @override
   String get tutorialViewBody =>
-      'بین گروه‌بندی بر اساس دسته و یک لیست ساده جابه‌جا شوید.';
+      'بین گروه‌بندی بر اساس دسته و یک فهرست ساده جابه‌جا شوید.';
 
   @override
   String get tutorialChallengeLogTitle => 'برای ثبت امروز ضربه بزنید';
@@ -1183,7 +1184,7 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get challengeSectionEnded => 'پایان یافت';
+  String get challengeSectionEnded => 'پایان‌یافته';
 
   @override
   String get challengesPastEmpty => 'هنوز چیزی به پایان نرسیده است.';
@@ -1220,7 +1221,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get challengeShapeStreakBody =>
-      'تهجد، نماز صبح به جماعت. روزی یک علامت، مقدار مهم نیست.';
+      'تهجد، نماز فجر به جماعت. روزی یک علامت؛ مقدار مهم نیست.';
 
   @override
   String get challengeTargetLabel => 'هدف';
@@ -1241,22 +1242,22 @@ class AppLocalizationsFa extends AppLocalizations {
   String get challengeHowManyDays => 'چند روز؟';
 
   @override
-  String get challengeReachHowMuch => 'به چه مقدار؟';
+  String get challengeReachHowMuch => 'تا چه مقدار؟';
 
   @override
-  String get challengeSpreadOver => 'بازه زمانی';
+  String get challengeSpreadOver => 'بازهٔ زمانی';
 
   @override
   String get challengeSpreadEveryDay => 'هر روز';
 
   @override
-  String get challengeSpreadLonger => 'مدت بیشتر';
+  String get challengeSpreadLonger => 'بازهٔ طولانی‌تر';
 
   @override
   String get challengeByWhen => 'تا چه زمانی؟';
 
   @override
-  String get challengeWindowDuration => 'در مدت';
+  String get challengeWindowDuration => 'ظرف مدت';
 
   @override
   String get challengeByDate => 'تا تاریخ معین';
@@ -1268,7 +1269,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String challengePlanExact(String start, String end) {
-    return 'از $start تا $end · روزی یکی، هر روز';
+    return 'از $start تا $end – روزی یک بار، هر روز';
   }
 
   @override
@@ -1279,22 +1280,22 @@ class AppLocalizationsFa extends AppLocalizations {
     String window,
     String slack,
   ) {
-    return 'از $start تا $end · $target از $window روز — $slack روز را می‌توانید از دست بدهید';
+    return 'از $start تا $end – $target از $window روز؛ $slack روز را می‌توانید جا بیندازید';
   }
 
   @override
   String challengePlanRate(String start, String end, String rate) {
-    return 'از $start تا $end · روزی حدود $rate';
+    return 'از $start تا $end – روزی حدود $rate';
   }
 
   @override
   String challengePlanOpen(String start) {
-    return 'شروع $start · بدون مهلت';
+    return 'شروع $start – بدون مهلت';
   }
 
   @override
   String challengeTooTight(String target, String window) {
-    return '$target روز در $window روز جا نمی‌شود — در زنجیره هر روز یکی حساب می‌شود.';
+    return '$target روز در $window روز نمی‌گنجد؛ در زنجیره هر روز فقط یک بار حساب می‌شود.';
   }
 
   @override
@@ -1345,12 +1346,12 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String challengeOnTrack(String rate) {
-    return 'طبق برنامه – $rate/روز';
+    return 'طبق برنامه – روزی $rate';
   }
 
   @override
   String challengeBehind(String rate) {
-    return 'عقب – $rate/روز لازم';
+    return 'عقب از برنامه – روزی $rate لازم است';
   }
 
   @override
@@ -1359,10 +1360,10 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get challengeReached => 'هدف محقق شد';
+  String get challengeReached => 'به هدف رسیدید';
 
   @override
-  String get challengeCompleted => 'کامل شد';
+  String get challengeCompleted => 'تکمیل‌شده';
 
   @override
   String challengeEnded(String done, String target) {
@@ -1391,7 +1392,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String challengeNudgeBody(String title, String rate) {
-    return '$title: روزی $rate برای اتمام به‌موقع.';
+    return '$title: برای پایان به‌موقع، روزی $rate لازم است.';
   }
 
   @override
@@ -1430,10 +1431,10 @@ class AppLocalizationsFa extends AppLocalizations {
   String get challengeTmplKhatm => 'ختم قرآن در ۳۰ روز';
 
   @override
-  String get challengeTmplFajrJamaah => '۳۰ روز فجر به جماعت';
+  String get challengeTmplFajrJamaah => '۳۰ روز نماز فجر به جماعت';
 
   @override
-  String get challengeTmplSadaqah => 'صدقه ۳۰ روز';
+  String get challengeTmplSadaqah => '۳۰ روز صدقه';
 
   @override
   String get listSeparator => ' – ';
@@ -1464,17 +1465,17 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get supportCardBody =>
-      'رایگان، بدون تبلیغ و بدون حساب کاربری. می‌توانید با مبلغی دلخواه از توسعه‌ی آن حمایت کنید — هر مقدار، هر وقت که خواستید.';
+      'رایگان، بدون تبلیغ و بدون نیاز به حساب کاربری. می‌توانید با هدیه‌ای به هر مبلغ و هر زمان که خواستید، از توسعهٔ آن حمایت کنید.';
 
   @override
-  String get supportCta => 'از Muhasaba حمایت کنید';
+  String get supportCta => 'از محاسبه حمایت کنید';
 
   @override
   String get supportAgain => 'دوباره حمایت کنید';
 
   @override
   String get supporterThanks =>
-      'جزاکم الله خیراً — ان‌شاءالله Muhasaba رایگان و بدون تبلیغ می‌ماند.';
+      'خداوند به شما جزای خیر دهد — ان‌شاءالله محاسبه رایگان و بدون تبلیغ می‌ماند.';
 
   @override
   String supporterSince(String tier, String month) {
@@ -1482,11 +1483,11 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'از Muhasaba حمایت کنید';
+  String get supportPromptTitle => 'از محاسبه حمایت کنید';
 
   @override
   String get supportPromptBody =>
-      'Muhasaba رایگان است، بدون تبلیغ و بدون حساب کاربری. می‌توانید با مبلغی دلخواه از توسعه‌ی آن حمایت کنید — هر مقدار، هر وقت که خواستید. هیچ امکانی پشت آن قفل نیست.';
+      'محاسبه رایگان است، بدون تبلیغ و بدون نیاز به حساب کاربری. می‌توانید با هدیه‌ای به هر مبلغ و هر زمان که خواستید، از توسعهٔ آن حمایت کنید. همهٔ امکانات بدون آن هم در دسترس است.';
 
   @override
   String get supportPromptNow => 'همین حالا حمایت کنید';
@@ -1498,15 +1499,15 @@ class AppLocalizationsFa extends AppLocalizations {
   String get supportPromptNever => 'دیگر نپرس';
 
   @override
-  String get tipSheetTitle => 'از Muhasaba حمایت کنید';
+  String get tipSheetTitle => 'از محاسبه حمایت کنید';
 
   @override
   String get tipSheetBody =>
-      'هر مبلغی را که می‌خواهید انتخاب کنید، هر چند بار که بخواهید. این مبالغ صرف نگهداری برنامه می‌شود — ان‌شاءالله رایگان و بدون تبلیغ می‌ماند. به رسم قدردانی، در تنظیمات به‌عنوان حامی نشان داده می‌شوید.';
+      'هر مبلغی را که می‌خواهید، هر چند بار که بخواهید، انتخاب کنید. این مبالغ صرف نگهداری برنامه می‌شود و ان‌شاءالله برنامه رایگان و بدون تبلیغ می‌ماند. به رسم قدردانی، در تنظیمات به‌عنوان حامی نشان داده می‌شوید.';
 
   @override
   String tipSheetSupporterLine(String tier) {
-    return '$tier — جزاکم الله خیراً.';
+    return '$tier — خداوند به شما جزای خیر دهد.';
   }
 
   @override
@@ -1526,7 +1527,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get supportEmailBody =>
-      'سلام علیکم،\n\nمی‌خواهم مستقیماً از توسعهٔ Muhasaba حمایت کنم.\n\nکشور:\nروشی که می‌خواهم بفرستم:\nمبلغ (اختیاری):';
+      'السلام علیکم،\n\nمی‌خواهم مستقیماً از توسعهٔ محاسبه حمایت کنم.\n\nکشور:\nروش ارسال مورد نظرم:\nمبلغ (اختیاری):';
 
   @override
   String tipBusy(String store) {
@@ -1534,7 +1535,7 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get tipThanks => 'جزاکم الله خیراً — خداوند از شما بپذیرد.';
+  String get tipThanks => 'خداوند به شما جزای خیر دهد و از شما بپذیرد.';
 
   @override
   String get tipDone => 'تمام';
@@ -1563,7 +1564,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get optionJamaaMasjid => 'جماعت در مسجد';
 
   @override
-  String get optionSetOnTime => 'وقت';
+  String get optionSetOnTime => 'زمان ادا';
 
   @override
   String get optionOnTimeOnTime => 'به‌موقع';
@@ -1649,7 +1650,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String optionSetKeptForHistory(String labels) {
-    return 'برای تاریخچه نگه داشته شد: $labels';
+    return 'برای تاریخچه حفظ می‌شود: $labels';
   }
 
   @override
@@ -1657,7 +1658,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get optionSetDeleteConfirm =>
-      'عمل‌هایی که از این مجموعه استفاده می‌کنند دیگر گزینه‌ای نشان نمی‌دهند. روزهایی که پیش‌تر ثبت کرده‌اید انتخابشان حفظ می‌شود.';
+      'اعمالی که از این مجموعه استفاده می‌کنند دیگر گزینه‌ای نشان نمی‌دهند. انتخاب روزهایی که قبلاً ثبت کرده‌اید حفظ می‌شود.';
 
   @override
   String get optionSetNameRequired => 'برای مجموعه نامی وارد کنید';
@@ -1680,16 +1681,17 @@ class AppLocalizationsFa extends AppLocalizations {
   String get optionSetNew => 'مجموعهٔ جدید';
 
   @override
-  String get requireChoiceLabel => 'انتخاب الزامی';
+  String get requireChoiceLabel => 'الزام به انتخاب';
 
   @override
-  String get requireChoiceHelp => 'تا گزینه‌ای انتخاب نشود، ردیف کامل نمی‌شود';
+  String get requireChoiceHelp =>
+      'تا گزینه‌ای انتخاب نشود، ردیف علامت نمی‌خورد';
 
   @override
   String get requireChoicePickSetFirst => 'اول یک مجموعه انتخاب کنید';
 
   @override
-  String get requireChoiceCountHelp => 'عمل‌های شمارشی با شمارنده کامل می‌شوند';
+  String get requireChoiceCountHelp => 'اعمال شمارشی با شمارنده تکمیل می‌شوند';
 
   @override
   String optionsUsedOf(int used, int max) {
@@ -1697,7 +1699,7 @@ class AppLocalizationsFa extends AppLocalizations {
   }
 
   @override
-  String get choiceNeeded => 'نیاز به انتخاب';
+  String get choiceNeeded => 'انتخاب لازم است';
 
   @override
   String optionSelected(String label) {
@@ -1719,10 +1721,10 @@ class AppLocalizationsFa extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count بار',
-      one: 'یک بار',
+      other: '$count بار انجام',
+      one: 'یک بار انجام',
     );
-    return 'سهم هر گزینه از $_temp0 که انتخاب ثبت شده';
+    return 'سهم هر گزینه از $_temp0 که انتخابی برایش ثبت شده است';
   }
 
   @override
@@ -1730,10 +1732,10 @@ class AppLocalizationsFa extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       total,
       locale: localeName,
-      other: '$total روز کامل‌شده',
-      one: 'یک روز کامل‌شده',
+      other: '$total روز انجام‌شده',
+      one: 'یک روز انجام‌شده',
     );
-    return 'بدون ثبت انتخاب — $none از $_temp0';
+    return 'انتخابی ثبت نشده — $none از $_temp0';
   }
 
   @override
@@ -1744,7 +1746,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String optionScopedCaption(String amal, int count) {
-    return '$amal · $count مورد ثبت‌شده';
+    return '$amal – $count مورد ثبت‌شده';
   }
 
   @override
@@ -1752,7 +1754,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String optionBreakdownSwipeHint(int count) {
-    return '$count مجموعه · بکشید';
+    return '$count مجموعه – بکشید';
   }
 
   @override
@@ -1879,22 +1881,22 @@ class AppLocalizationsFa extends AppLocalizations {
   String get amalAfterIsha => 'اذکار پس از نماز عشاء';
 
   @override
-  String get amalAyatKursi => 'آیة الکرسی';
+  String get amalAyatKursi => 'آیت‌الکرسی';
 
   @override
-  String get amalKursiFajr => 'آیة الکرسی پس از فجر';
+  String get amalKursiFajr => 'آیت‌الکرسی پس از فجر';
 
   @override
-  String get amalKursiDhuhr => 'آیة الکرسی پس از ظهر';
+  String get amalKursiDhuhr => 'آیت‌الکرسی پس از ظهر';
 
   @override
-  String get amalKursiAsr => 'آیة الکرسی پس از عصر';
+  String get amalKursiAsr => 'آیت‌الکرسی پس از عصر';
 
   @override
-  String get amalKursiMaghrib => 'آیة الکرسی پس از مغرب';
+  String get amalKursiMaghrib => 'آیت‌الکرسی پس از مغرب';
 
   @override
-  String get amalKursiIsha => 'آیة الکرسی پس از عشاء';
+  String get amalKursiIsha => 'آیت‌الکرسی پس از عشاء';
 
   @override
   String get amalSayyidIstighfar => 'سید الاستغفار';
@@ -1903,7 +1905,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get amalSalawat => 'صلوات بر پیامبر ﷺ';
 
   @override
-  String get amalSubhanallah => 'سبحان الله و بحمده';
+  String get amalSubhanallah => 'سبحان‌الله و بحمده';
 
   @override
   String get amalTahlil => 'لا إله إلا الله';
@@ -1921,7 +1923,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get amalTasbihFatimah => 'تسبیح فاطمه';
 
   @override
-  String get amalWakingAdhkar => 'اذکار بیدار شدن';
+  String get amalWakingAdhkar => 'اذکار هنگام بیداری';
 
   @override
   String get amalDuaAdhan => 'دعای پس از اذان';
@@ -1978,7 +1980,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get amalTeachQuran => 'آموزش قرآن';
 
   @override
-  String get amalMonThu => 'روزه دوشنبه و پنجشنبه';
+  String get amalMonThu => 'روزهٔ دوشنبه و پنج‌شنبه';
 
   @override
   String get amalThreeDays => 'سه روز روزه در ماه';
@@ -2023,7 +2025,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get amalFiqh => 'مطالعه فقه';
 
   @override
-  String get amalMuhasaba => 'محاسبه نفس شبانه';
+  String get amalMuhasaba => 'محاسبهٔ نفس شبانه';
 
   @override
   String get amalSpeakGood => 'سخن نیک یا سکوت';
@@ -2059,7 +2061,7 @@ class AppLocalizationsFa extends AppLocalizations {
   String get amalNeighbours => 'نیکی به همسایه';
 
   @override
-  String get amalRemoveHarm => 'برداشتن آزار از راه';
+  String get amalRemoveHarm => 'برداشتن مانع از سر راه';
 
   @override
   String get amalParents => 'نیکی به پدر و مادر';
@@ -2105,7 +2107,7 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String libraryAddedShowsOn(String days) {
-    return 'افزوده شد · نمایش در: $days';
+    return 'افزوده شد – نمایش در $days';
   }
 
   @override

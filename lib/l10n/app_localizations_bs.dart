@@ -49,11 +49,11 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get archivedEmpty =>
-      'Ovdje još nema ničega. Ameli koje uklonite iz praćenja ostaju ovdje, spremni da ih vratite.';
+      'Ovdje još nema ničega. Ameli koje uklonite iz praćenja pojavit će se ovdje, pa ih možete vratiti.';
 
   @override
   String archivedStoppedOn(String date) {
-    return 'Uklonjeno $date';
+    return 'Uklonjen $date';
   }
 
   @override
@@ -61,7 +61,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String archivedRestored(String title) {
-    return '\"$title\" je vraćeno na vašu listu.';
+    return '„$title“ je ponovo na vašoj listi.';
   }
 
   @override
@@ -77,16 +77,16 @@ class AppLocalizationsBs extends AppLocalizations {
   String get newAmalTitle => 'Novi amel';
 
   @override
-  String get save => 'Spremi';
+  String get save => 'Sačuvaj';
 
   @override
-  String get cancel => 'Otkazi';
+  String get cancel => 'Otkaži';
 
   @override
   String get ok => 'OK';
 
   @override
-  String get clear => 'Ocisti';
+  String get clear => 'Očisti';
 
   @override
   String get titleLabel => 'Naslov';
@@ -95,19 +95,19 @@ class AppLocalizationsBs extends AppLocalizations {
   String get titleRequired => 'Naslov je obavezan';
 
   @override
-  String get titleTooLong => 'Naslov je predugacak';
+  String get titleTooLong => 'Naslov je predugačak';
 
   @override
-  String get frequencyLabel => 'Ucestalost';
+  String get frequencyLabel => 'Učestalost';
 
   @override
   String get frequencyDaily => 'Dnevno';
 
   @override
-  String get frequencyWeekly => 'Sedmicno';
+  String get frequencyWeekly => 'Sedmično';
 
   @override
-  String get frequencyMonthly => 'Mjesecno';
+  String get frequencyMonthly => 'Mjesečno';
 
   @override
   String get categoryLabel => 'Kategorija';
@@ -131,10 +131,10 @@ class AppLocalizationsBs extends AppLocalizations {
   String get categorySunnah => 'Sunnet';
 
   @override
-  String get timesPerPeriod => 'Puta po periodu';
+  String get timesPerPeriod => 'Broj puta u periodu';
 
   @override
-  String get custom => 'Prilagodeno';
+  String get custom => 'Prilagođeno';
 
   @override
   String get customTargetHint => 'npr. 50';
@@ -196,7 +196,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String previewWeeklyDays(String days) {
-    return 'Ponavlja se danima: $days';
+    return 'Ponavlja se svake sedmice: $days';
   }
 
   @override
@@ -204,9 +204,9 @@ class AppLocalizationsBs extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Ponavlja se bilo kojih $count dana sedmično',
-      few: 'Ponavlja se bilo koja $count dana sedmično',
-      one: 'Ponavlja se bilo koji $count dan sedmično',
+      other: 'Ponavlja se $count dana sedmično, bilo kojih',
+      few: 'Ponavlja se $count dana sedmično, bilo koja',
+      one: 'Ponavlja se $count dan sedmično, bilo koji',
     );
     return '$_temp0';
   }
@@ -227,9 +227,9 @@ class AppLocalizationsBs extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Ponavlja se bilo kojih $count dana mjesečno',
-      few: 'Ponavlja se bilo koja $count dana mjesečno',
-      one: 'Ponavlja se bilo koji $count dan mjesečno',
+      other: 'Ponavlja se $count dana mjesečno, bilo kojih',
+      few: 'Ponavlja se $count dana mjesečno, bilo koja',
+      one: 'Ponavlja se $count dan mjesečno, bilo koji',
     );
     return '$_temp0';
   }
@@ -247,11 +247,11 @@ class AppLocalizationsBs extends AppLocalizations {
   }
 
   @override
-  String get startPreChecked => 'Pocni oznaceno';
+  String get startPreChecked => 'Unaprijed označeno';
 
   @override
   String get startPreCheckedSubtitle =>
-      'Kada pocne novi period, ovaj amel je automatski oznacen kao zavrsen dok ga ne odznacite.';
+      'Kada počne novi period, ovaj amel je automatski označen kao završen dok ga ne odznačite.';
 
   @override
   String get reminder => 'Podsjetnik';
@@ -266,7 +266,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get reminderPermissionWarning =>
-      'Podsjetnik je sacuvan, ali obavijesti nisu dozvoljene. Omogucite ih u postavkama sistema za primanje upozorenja.';
+      'Podsjetnik je sačuvan, ali obavještenja nisu dozvoljena. Omogućite ih u postavkama sistema da biste dobijali podsjetnike.';
 
   @override
   String get settingsReminders => 'Podsjetnici';
@@ -282,37 +282,37 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get dailyReminderBody =>
-      'Odvojite trenutak da pratite danasnje amele.';
+      'Odvojite trenutak da zabilježite današnje amele.';
 
   @override
-  String get groupByCategory => 'Grupiraj po kategoriji';
+  String get groupByCategory => 'Grupiši po kategorijama';
 
   @override
-  String get flatList => 'Obicna lista';
+  String get flatList => 'Obična lista';
 
   @override
   String errorGeneric(String error) {
-    return 'Greska: $error';
+    return 'Greška: $error';
   }
 
   @override
   String get todayEmptyHint => 'Pritisnite + da dodate svoj prvi amel.';
 
   @override
-  String get noteLabel => 'Biljeska';
+  String get noteLabel => 'Bilješka';
 
   @override
-  String get noteHint => 'npr. Klanjao u dzamiji';
+  String get noteHint => 'npr. Klanjano u džamiji';
 
   @override
-  String get completed => 'zavrseno';
+  String get completed => 'završeno';
 
   @override
-  String get notCompleted => 'nezavrseno';
+  String get notCompleted => 'nije završeno';
 
   @override
   String progressOf(String progress, String target) {
-    return '$progress od $target zavrseno';
+    return '$progress od $target završeno';
   }
 
   @override
@@ -321,17 +321,17 @@ class AppLocalizationsBs extends AppLocalizations {
   }
 
   @override
-  String get removeFromToday => 'Ukloni iz danas';
+  String get removeFromToday => 'Ukloni za danas';
 
   @override
-  String get removeFromTodaySubtitle => 'Sakrij samo za danas. Vraca se sutra.';
+  String get removeFromTodaySubtitle => 'Sakrij samo za danas. Vraća se sutra.';
 
   @override
-  String get removeFromTracking => 'Ukloni iz pracenja';
+  String get removeFromTracking => 'Ukloni iz praćenja';
 
   @override
   String get removeFromTrackingSubtitle =>
-      'Trajno ukloni sa liste. Historija se cuva.';
+      'Trajno ukloni s liste. Historija se čuva.';
 
   @override
   String get chooseIcon => 'Odaberi ikonu';
@@ -340,16 +340,16 @@ class AppLocalizationsBs extends AppLocalizations {
   String get iconNone => 'Nema';
 
   @override
-  String get recentlyUsed => 'Nedavno koristeno';
+  String get recentlyUsed => 'Nedavno korišteno';
 
   @override
-  String get emojiSectionGeneral => 'Opce';
+  String get emojiSectionGeneral => 'Opće';
 
   @override
   String get categoryNameHint => 'Naziv';
 
   @override
-  String get categoryNew => '+ Novo';
+  String get categoryNew => '+ Nova';
 
   @override
   String get categoryNewSheetTitle => 'Nova kategorija';
@@ -361,10 +361,10 @@ class AppLocalizationsBs extends AppLocalizations {
   String get addAmal => 'Dodaj amel';
 
   @override
-  String get customAmal => 'Prilagodeni amel';
+  String get customAmal => 'Vlastiti amel';
 
   @override
-  String get amalTasbih => 'Tespih 33x';
+  String get amalTasbih => 'Tesbih 33x';
 
   @override
   String get amalIstighfar => 'Istigfar';
@@ -376,7 +376,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get amalSadaqah => 'Sadaka';
 
   @override
-  String get amalTahajjud => 'Tehedzud';
+  String get amalTahajjud => 'Tehedžud';
 
   @override
   String get amalDuha => 'Duha namaz';
@@ -410,38 +410,38 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String settingsLoadError(String error) {
-    return 'Greska pri ucitavanju postavki:\n$error';
+    return 'Greška pri učitavanju postavki:\n$error';
   }
 
   @override
   String get sectionDayBoundary => 'Granica dana';
 
   @override
-  String get rolloverHour => 'Sat prijelaza';
+  String get rolloverHour => 'Sat promjene dana';
 
   @override
-  String get rolloverAtMidnight => 'Dan zavrsava u ponoc.';
+  String get rolloverAtMidnight => 'Dan se završava u ponoć.';
 
   @override
   String rolloverSubtitle(String time) {
-    return 'Jucerasnji ameli ostaju uredivi do $time.';
+    return 'Jučerašnje amele možete uređivati do $time.';
   }
 
   @override
-  String get pickRolloverHour => 'Odaberite sat u kojem dan prelazi';
+  String get pickRolloverHour => 'Odaberite sat kada počinje novi dan';
 
   @override
   String get sectionWeekMonth => 'Sedmica i mjesec';
 
   @override
-  String get startOfWeek => 'Pocetak sedmice';
+  String get startOfWeek => 'Početak sedmice';
 
   @override
-  String get startOfMonth => 'Pocetak mjeseca';
+  String get startOfMonth => 'Početak mjeseca';
 
   @override
   String get startOfMonthClamped =>
-      'Dani nakon 28. se ogranicavaju na zadnji dan kracih mjeseci.';
+      'Dani nakon 28. u kraćim mjesecima pomjeraju se na posljednji dan mjeseca.';
 
   @override
   String get sectionAppearance => 'Izgled';
@@ -465,21 +465,21 @@ class AppLocalizationsBs extends AppLocalizations {
   String get language => 'Jezik';
 
   @override
-  String get systemDefault => 'Sistemski zadano';
+  String get systemDefault => 'Prema sistemu';
 
   @override
   String get aboutTitle => 'Muhasaba';
 
   @override
   String get aboutSubtitle =>
-      'Licni dnevnik odgovornosti u vjeri. Svi podaci ostaju na ovom uredaju.';
+      'Lični dnevnik samoobračuna u vjeri. Svi podaci ostaju na ovom uređaju.';
 
   @override
   String get statsTitle => 'Statistika';
 
   @override
   String statsLoadError(String error) {
-    return 'Greska pri ucitavanju statistike:\n$error';
+    return 'Greška pri učitavanju statistike:\n$error';
   }
 
   @override
@@ -492,13 +492,13 @@ class AppLocalizationsBs extends AppLocalizations {
   String get thisMonth => 'Ovog mjeseca';
 
   @override
-  String get totalCompletions => 'ukupno zavrseno';
+  String get totalCompletions => 'ukupno završeno';
 
   @override
   String get streakCurrent => 'Trenutni';
 
   @override
-  String get streakLongest => 'Najduzi';
+  String get streakLongest => 'Najduži';
 
   @override
   String get ratioWeek => 'Sedmica';
@@ -523,6 +523,7 @@ class AppLocalizationsBs extends AppLocalizations {
       count,
       locale: localeName,
       other: 'sedmica',
+      few: 'sedmice',
       one: 'sedmica',
     );
     return '$_temp0';
@@ -534,6 +535,7 @@ class AppLocalizationsBs extends AppLocalizations {
       count,
       locale: localeName,
       other: 'mjeseci',
+      few: 'mjeseca',
       one: 'mjesec',
     );
     return '$_temp0';
@@ -543,14 +545,14 @@ class AppLocalizationsBs extends AppLocalizations {
   String get frequencyBadgeDaily => 'dnevno';
 
   @override
-  String get frequencyBadgeWeekly => 'sedmicno';
+  String get frequencyBadgeWeekly => 'sedmično';
 
   @override
-  String get frequencyBadgeMonthly => 'mjesecno';
+  String get frequencyBadgeMonthly => 'mjesečno';
 
   @override
   String get statsEmpty =>
-      'Jos nema amela. Dodajte jedan na Danas da pocnete pracenje.';
+      'Još nema amela. Dodajte jedan na kartici Danas da počnete praćenje.';
 
   @override
   String get statsToday => 'Danas';
@@ -562,10 +564,10 @@ class AppLocalizationsBs extends AppLocalizations {
   String get statsThisMonth => 'Ovog mjeseca';
 
   @override
-  String get statsAllTime => 'Svo vrijeme';
+  String get statsAllTime => 'Od početka';
 
   @override
-  String get statsCustomRange => 'Prilagodeni raspon';
+  String get statsCustomRange => 'Prilagođeni raspon';
 
   @override
   String get statsAllCategories => 'Sve';
@@ -574,13 +576,13 @@ class AppLocalizationsBs extends AppLocalizations {
   String get statsAllAmals => 'Sve';
 
   @override
-  String get statsCompleted => 'Zavrseno';
+  String get statsCompleted => 'Završeno';
 
   @override
-  String get statsExpected => 'Ocekivano';
+  String get statsExpected => 'Očekivano';
 
   @override
-  String get statsVsPrevious => 'U odnosu na prethodno';
+  String get statsVsPrevious => 'Prema prethodnom';
 
   @override
   String get statsByCategory => 'Po kategoriji';
@@ -622,7 +624,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get statsDailyBreakdown => 'Dnevni pregled';
 
   @override
-  String get statsCompletionRate => 'Stopa zavrsenosti';
+  String get statsCompletionRate => 'Postotak završenosti';
 
   @override
   String get statsAmountPerDay => 'Količina po danu';
@@ -634,7 +636,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String statsCountAvg(String amount) {
-    return 'Prosj. $amount/dan';
+    return 'Prosjek $amount/dan';
   }
 
   @override
@@ -661,11 +663,11 @@ class AppLocalizationsBs extends AppLocalizations {
   String get historyTitle => 'Historija';
 
   @override
-  String get jumpToDate => 'Skoci na datum';
+  String get jumpToDate => 'Idi na datum';
 
   @override
   String historyEmptyDay(String date) {
-    return 'Nema pracenih amela za $date';
+    return 'Nema praćenih amela za $date';
   }
 
   @override
@@ -687,7 +689,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get wednesdayShort => 'Sri';
 
   @override
-  String get thursdayShort => 'Cet';
+  String get thursdayShort => 'Čet';
 
   @override
   String get fridayShort => 'Pet';
@@ -708,7 +710,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get wednesdayFull => 'Srijeda';
 
   @override
-  String get thursdayFull => 'Cetvrtak';
+  String get thursdayFull => 'Četvrtak';
 
   @override
   String get fridayFull => 'Petak';
@@ -721,68 +723,68 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get hadith0 =>
-      '\"Allahu najdraza djela su ona koja se cine redovno, makar bila i mala.\"\n— Buhari i Muslim';
+      '„Allahu je najdraže ono djelo koje se stalno čini, makar bilo i malo.“\n— Buhari i Muslim';
 
   @override
   String get hadith2 =>
-      '\"Kada umre sin Ademov, prestaju njegova djela osim tri: trajna sadaka, korisno znanje ili dobro dijete koje moli za njega.\"\n— Muslim';
+      '„Kada umre sin Ademov, prestaju mu djela osim triju: trajne sadake, korisnog znanja ili dobrog djeteta koje za njega dovu čini.“\n— Muslim';
 
   @override
   String get hadith3 =>
-      '\"Ko klanja dva hladna namaza (sabah i ikindiju) uci ce u Dzennet.\"\n— Buhari';
+      '„Ko klanja dva hladna namaza (sabah i ikindiju), ući će u Džennet.“\n— Buhari';
 
   @override
   String get hadith4 =>
-      '\"Allah ne gleda u vas izgled niti u vase bogatstvo, vec gleda u vasa srca i vasa djela.\"\n— Muslim';
+      '„Allah ne gleda u vaš izgled niti u vaše imetke, nego gleda u vaša srca i vaša djela.“\n— Muslim';
 
   @override
   String get hadith6 =>
-      '\"Olaksavajte i ne otezavajte; radujte ljude i ne rastijerujte ih.\"\n— Buhari';
+      '„Olakšavajte, a ne otežavajte; obradujte ljude, a ne odbijajte ih.“\n— Buhari';
 
   @override
   String get hadith7 =>
-      '\"Ko krene putem u potrazi za znanjem, Allah ce mu olaksati put do Dzenneta.\"\n— Muslim';
+      '„Ko krene putem tražeći znanje, Allah će mu olakšati put do Dženneta.“\n— Muslim';
 
   @override
-  String get hadith8 => '\"Sadaka ne umanjuje imetak.\"\n— Muslim';
+  String get hadith8 => '„Sadaka ne umanjuje imetak.“\n— Muslim';
 
   @override
   String get hadith9 =>
-      '\"Jaki vjernik je bolji i drazi Allahu od slabog vjernika, a u obojici je dobro.\"\n— Muslim';
+      '„Jak vjernik bolji je i Allahu draži od slabog vjernika, a u svakom od njih ima dobra.“\n— Muslim';
 
   @override
   String get hadith10 =>
-      '\"Ko kaže \'SubhanAllah ve bihamdihi\' stotinu puta dnevno, bit će mu oprošteni grijesi makar bili poput morske pjene.\"\n— Buhari i Muslim';
+      '„Ko stotinu puta dnevno kaže ‚Subhanallahi ve bihamdihi‘, bit će mu oprošteni grijesi, makar ih bilo koliko morske pjene.“\n— Buhari i Muslim';
 
   @override
   String get hadith12 =>
-      '\"Ko prouči Ajetul-Kursijj nakon svakog farz-namaza, ništa ga ne sprečava da uđe u Džennet osim smrti.\"\n— Nesai';
+      '„Ko prouči Ajetul-kursiju nakon svakog farz-namaza, od ulaska u Džennet ne dijeli ga ništa osim smrti.“\n— Nesai';
 
   @override
-  String get hadith13 => '\"Lijepa riječ je sadaka.\"\n— Buhari i Muslim';
+  String get hadith13 => '„Lijepa riječ je sadaka.“\n— Buhari i Muslim';
 
   @override
   String get hadith14 =>
-      '\"Ko vjeruje u Allaha i Sudnji dan, neka govori dobro ili neka šuti.\"\n— Buhari i Muslim';
+      '„Ko vjeruje u Allaha i Sudnji dan, neka govori dobro ili neka šuti.“\n— Buhari i Muslim';
 
   @override
   String get hadith15 =>
-      '\"Onaj ko se brine o udovici i siromahu je poput mudžahida na Allahovom putu.\"\n— Buhari i Muslim';
+      '„Onaj ko se brine o udovici ili siromahu je kao borac na Allahovom putu.“\n— Buhari i Muslim';
 
   @override
-  String get hadith16 => '\"Osmijeh tvom bratu je sadaka.\"\n— Tirmizi';
+  String get hadith16 => '„Tvoj osmijeh tvome bratu je sadaka.“\n— Tirmizi';
 
   @override
   String get hadith17 =>
-      '\"Najbolji među vama je onaj ko nauči Kur\'an i podučava ga.\"\n— Buhari';
+      '„Najbolji od vas je onaj ko nauči Kur\'an i druge ga podučava.“\n— Buhari';
 
   @override
   String get hadith18 =>
-      '\"Niko nije jeo bolju hranu od one koju je zaradio radom svojih ruku.\"\n— Buhari';
+      '„Niko nije jeo bolju hranu od one koju je zaradio radom svojih ruku.“\n— Buhari';
 
   @override
   String get hadith19 =>
-      '\"Allah je blag i voli blagost u svemu.\"\n— Buhari i Muslim';
+      '„Allah je blag i voli blagost u svemu.“\n— Buhari i Muslim';
 
   @override
   String historyDayCompleted(String completed, String total) {
@@ -796,10 +798,10 @@ class AppLocalizationsBs extends AppLocalizations {
   String get settingsAppearance => 'Izgled';
 
   @override
-  String get settingsAboutTagline => 'Vaš dnevni din pratilac';
+  String get settingsAboutTagline => 'Vaš svakodnevni pratilac u vjeri';
 
   @override
-  String get settingsRolloverSub => 'Kada se dan resetuje';
+  String get settingsRolloverSub => 'Kada počinje novi dan';
 
   @override
   String get settingsAbout => 'O aplikaciji';
@@ -823,11 +825,11 @@ class AppLocalizationsBs extends AppLocalizations {
   String get settingsReportBug => 'Prijavite grešku';
 
   @override
-  String get settingsRequestFeature => 'Zatražite funkciju';
+  String get settingsRequestFeature => 'Predložite novu funkciju';
 
   @override
   String settingsSupportFallback(String email) {
-    return 'Nije moguće otvoriti poštu. Molimo pišite na $email.';
+    return 'Nije moguće otvoriti e-poštu. Pišite nam na $email.';
   }
 
   @override
@@ -835,235 +837,233 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get settingsPrivacyOpenFailed =>
-      'Politika privatnosti nije mogla biti otvorena.';
+      'Nije moguće otvoriti politiku privatnosti.';
 
   @override
   String get hadith20 =>
-      '\"Ko posti Ramazan iz imana i nadajući se nagradi, bit će mu oprošteni prošli grijesi.\"\n— Buhari i Muslim';
+      '„Ko posti Ramazan iz imana i nadajući se nagradi, bit će mu oprošteni prošli grijesi.“\n— Buhari i Muslim';
 
   @override
   String get hadith22 =>
-      '\"Dova između ezana i ikameta se ne odbija.\"\n— Ebu Davud';
+      '„Dova između ezana i ikameta se ne odbija.“\n— Ebu Davud';
 
   @override
   String get hadith23 =>
-      '\"Ko sagradi džamiju Allaha radi, Allah će mu sagraditi kuću u Džennetu.\"\n— Buhari i Muslim';
+      '„Ko sagradi džamiju Allaha radi, Allah će mu sagraditi kuću u Džennetu.“\n— Buhari i Muslim';
 
   @override
   String get hadith24 =>
-      '\"Najbolji safovi za muškarce su prvi, a najbolji safovi za žene su posljednji.\"\n— Muslim';
+      '„Najbolji safovi za muškarce su prvi, a najbolji safovi za žene su posljednji.“\n— Muslim';
 
   @override
-  String get hadith25 => '\"Post je štit od vatre džehenemske.\"\n— Nesai';
+  String get hadith25 => '„Post je štit od džehennemske vatre.“\n— Nesai';
 
   @override
   String get hadith26 =>
-      '\"Ko klanja dvanaest rekata sunneta, bit će mu sagrađena kuća u Džennetu.\"\n— Muslim';
+      '„Ko klanja dvanaest rekata sunneta, bit će mu sagrađena kuća u Džennetu.“\n— Muslim';
 
   @override
   String get hadith27 =>
-      '\"Onaj ko vješto uči Kur\'an bit će sa plemenitim melekima.\"\n— Buhari i Muslim';
+      '„Onaj ko vješto uči Kur\'an bit će sa plemenitim melekima.“\n— Buhari i Muslim';
 
   @override
-  String get hadith29 =>
-      '\"Najbolja sadaka je napojiti nekoga vodom.\"\n— Ahmed';
+  String get hadith29 => '„Najbolja sadaka je napojiti nekoga vodom.“\n— Ahmed';
 
   @override
   String get hadith30 =>
-      '\"Ko otkloni teškoću od vjernika, Allah će otkloniti teškoću od njega na Sudnjem danu.\"\n— Muslim';
+      '„Ko otkloni teškoću od vjernika, Allah će otkloniti teškoću od njega na Sudnjem danu.“\n— Muslim';
 
   @override
-  String get hadith32 => '\"Stid je dio imana.\"\n— Buhari i Muslim';
+  String get hadith32 => '„Stid je dio imana.“\n— Buhari i Muslim';
 
   @override
   String get hadith34 =>
-      '\"Ko se strpi, Allah će mu dati strpljenje.\"\n— Buhari i Muslim';
+      '„Ko se strpi, Allah će mu dati strpljenje.“\n— Buhari i Muslim';
 
   @override
   String get hadith36 =>
-      '\"Niko od vas neće istinski vjerovati dok ne bude želio svome bratu ono što želi sebi.\"\n— Buhari i Muslim';
+      '„Niko od vas neće istinski vjerovati dok ne bude želio svome bratu ono što želi sebi.“\n— Buhari i Muslim';
 
   @override
   String get hadith37 =>
-      '\"Nahranite gladne, posjetite bolesne i oslobodite zarobljenike.\"\n— Buhari';
+      '„Nahranite gladne, posjetite bolesne i oslobodite zarobljenike.“\n— Buhari';
 
   @override
   String get hadith38 =>
-      '\"Jak čovjek nije onaj ko pobjeđuje u hrvanju, već onaj ko se kontroliše u srdžbi.\"\n— Buhari i Muslim';
+      '„Jak nije onaj ko obara u hrvanju, nego onaj ko savlada sebe u srdžbi.“\n— Buhari i Muslim';
 
   @override
   String get hadith40 =>
-      '\"Recite \'SubhanAllah\', \'Elhamdulillah\' i \'Allahu Ekber\' po trideset tri puta nakon svakog namaza.\"\n— Muslim';
+      '„Recite ‚Subhanallah‘, ‚Elhamdulillah‘ i ‚Allahu ekber‘ po trideset i tri puta nakon svakog namaza.“\n— Muslim';
 
   @override
-  String get hadith41 => '\"Najbolji zikr je La ilahe illallah.\"\n— Tirmizi';
+  String get hadith41 => '„Najbolji zikr je La ilahe illallah.“\n— Tirmizi';
 
   @override
   String get hadith42 =>
-      '\"Dva su blagoslova koja mnogi ljudi troše uzalud: zdravlje i slobodno vrijeme.\"\n— Buhari';
+      '„Dvije su blagodati koje mnogi ljudi ne iskoriste: zdravlje i slobodno vrijeme.“\n— Buhari';
 
   @override
   String get hadith43 =>
-      '\"Iskoristite petero prije petero: mladost prije starosti, zdravlje prije bolesti, bogatstvo prije siromaštva, slobodno vrijeme prije zauzetosti i život prije smrti.\"\n— Hakim';
+      '„Iskoristi pet stvari prije pet drugih: mladost prije starosti, zdravlje prije bolesti, bogatstvo prije siromaštva, slobodno vrijeme prije zauzetosti i život prije smrti.“\n— Hakim';
 
   @override
   String get hadith44 =>
-      '\"Ko prouči Suru Ihlas deset puta, Allah će mu sagraditi kuću u Džennetu.\"\n— Ahmed';
+      '„Ko deset puta prouči suru El-Ihlas, Allah će mu sagraditi kuću u Džennetu.“\n— Ahmed';
 
   @override
   String get hadith45 =>
-      '\"Najbolji namaz nakon farzova je noćni namaz.\"\n— Muslim';
+      '„Najbolji namaz nakon farz-namaza je noćni namaz.“\n— Muslim';
 
   @override
   String get hadith46 =>
-      '\"Sadaka gasi grijehe kao što voda gasi vatru.\"\n— Tirmizi';
+      '„Sadaka gasi grijehe kao što voda gasi vatru.“\n— Tirmizi';
 
   @override
   String get hadith47 =>
-      '\"Onaj ko održava rodbinske veze nije onaj ko uzvraća, već onaj ko ih održava i kad su prekinute.\"\n— Buhari';
+      '„Onaj ko održava rodbinske veze nije onaj ko uzvraća, već onaj ko ih održava i kad su prekinute.“\n— Buhari';
 
   @override
   String get hadith49 =>
-      '\"Ko pojede i kaže: \'Hvala Allahu koji me nahranio ovim i opskrbio me bez ikakve moje moći i snage,\' bit će mu oprošteni prošli grijesi.\"\n— Tirmizi';
+      '„Ko pojede jelo i kaže: ‚Hvala Allahu koji me ovim nahranio i opskrbio bez moje moći i snage‘, bit će mu oprošteni prošli grijesi.“\n— Tirmizi';
 
   @override
   String get hadith53 =>
-      '\"Ne potcjenjuj nijedno dobro djelo, pa makar to bilo da sretneš brata sa vedrim licem.\"\n— Muslim';
+      '„Nemoj omalovažavati nijedno dobro djelo, makar to bilo da brata susretneš vedra lica.“\n— Muslim';
 
   @override
   String get hadith54 =>
-      '\"Najbolji među vama su oni koji su najbolji prema svojoj porodici.\"\n— Tirmizi';
+      '„Najbolji među vama su oni koji su najbolji prema svojoj porodici.“\n— Tirmizi';
 
   @override
   String get hadith55 =>
-      '\"Ko prouči posljednja dva ajeta sure El-Bekare noću, bit će mu dovoljno.\"\n— Buhari i Muslim';
+      '„Ko noću prouči posljednja dva ajeta sure El-Bekare, ona će mu biti dovoljna.“\n— Buhari i Muslim';
 
   @override
   String get hadith56 =>
-      '\"Dunjaluk je uživanje, a najbolje uživanje je dobra supruga.\"\n— Muslim';
+      '„Dunjaluk je uživanje, a najbolje uživanje je dobra supruga.“\n— Muslim';
 
   @override
   String get hadith57 =>
-      '\"Tri dove se ne odbijaju: dova postača, pravednog vladara i onoga kome je učinjena nepravda.\"\n— Tirmizi';
+      '„Tri dove se ne odbijaju: dova postača, pravednog vladara i onoga kome je učinjena nepravda.“\n— Tirmizi';
 
   @override
   String get hadith58 =>
-      '\"Ko donese na mene jedan salavat, Allah će mu uzvratiti deset puta.\"\n— Muslim';
+      '„Ko na mene donese jedan salavat, Allah će njemu donijeti deset salavata.“\n— Muslim';
 
   @override
-  String get hadith65 => '\"Vjernik je ogledalo vjerniku.\"\n— Ebu Davud';
+  String get hadith65 => '„Vjernik je ogledalo vjerniku.“\n— Ebu Davud';
 
   @override
   String get hadith66 =>
-      '\"Iskrenost vodi ka dobru, a dobro vodi ka Džennetu.\"\n— Buhari i Muslim';
+      '„Istinoljubivost vodi dobročinstvu, a dobročinstvo vodi u Džennet.“\n— Buhari i Muslim';
 
   @override
   String get hadith67 =>
-      '\"Vrati emanet onome ko ti ga je povjerio, i ne iznevjeri onoga ko te iznevjerio.\"\n— Ebu Davud i Tirmizi';
+      '„Vrati emanet onome ko ti ga je povjerio i ne iznevjeri ni onoga ko je tebe iznevjerio.“\n— Ebu Davud i Tirmizi';
 
   @override
   String get hadith68 =>
-      '\"Nijedan umor, bolest, tuga, žalost, povreda ili briga ne pogodi muslimana, pa čak ni ubod trna, a da mu Allah ne oprosti neke od grijeha.\"\n— Buhari i Muslim';
+      '„Muslimana ne pogodi nikakav umor, bolest, briga, tuga, neugodnost ni potištenost, pa čak ni trn koji ga ubode, a da mu Allah time ne izbriše neke grijehe.“\n— Buhari i Muslim';
 
   @override
   String get hadith69 =>
-      '\"Dova muslimana za brata u njegovom odsustvu uvijek biva uslišana.\"\n— Muslim';
+      '„Dova muslimana za brata u njegovom odsustvu uvijek biva uslišana.“\n— Muslim';
 
   @override
   String get hadith70 =>
-      '\"Ko zamoli Allaha za Džennet tri puta, Džennet kaže: Allahu moj, uvedi ga u Džennet.\"\n— Tirmizi';
+      '„Ko tri puta zamoli Allaha za Džennet, Džennet kaže: Allahu, uvedi ga u Džennet.“\n— Tirmizi';
 
   @override
   String get hadith71 =>
-      '\"Najvrjedniji post nakon Ramazana je post u Allahovom mjesecu Muharremu.\"\n— Muslim';
+      '„Najvrjedniji post nakon Ramazana je post u Allahovom mjesecu Muharremu.“\n— Muslim';
 
   @override
   String get hadith72 =>
-      '\"Ko obavi hadž i ne govori ružne riječi niti čini grijehe, vratiće se čist kao na dan kada ga je majka rodila.\"\n— Buhari i Muslim';
+      '„Ko obavi hadž, a ne bude bestidan niti griješi, vratit će se kao na dan kada ga je majka rodila.“\n— Buhari i Muslim';
 
   @override
   String get hadith73 =>
-      '\"Umra do umre je iskupljenje za grijehe između njih.\"\n— Buhari i Muslim';
+      '„Umra do umre iskup je za grijehe počinjene između njih.“\n— Buhari i Muslim';
 
   @override
   String get hadith74 =>
-      '\"Požurite sa dobrim djelima prije nego što dođu iskušenja poput komada mračne noći.\"\n— Muslim';
+      '„Požurite s dobrim djelima prije nego što dođu smutnje poput komada mrkle noći.“\n— Muslim';
 
   @override
   String get hadith75 =>
-      '\"Dva rekata sabah-namaza su bolji od dunjaluka i svega što je na njemu.\"\n— Muslim';
+      '„Dva rekata sabaha bolja su od dunjaluka i svega što je na njemu.“\n— Muslim';
 
   @override
   String get hadith77 =>
-      '\"Kada biste se oslonili na Allaha onako kako treba, On bi vas opskrbio kao što opskrbljuje ptice.\"\n— Tirmizi';
+      '„Kada biste se oslanjali na Allaha onako kako se treba oslanjati, On bi vas opskrbio kao što opskrbljuje ptice.“\n— Tirmizi';
 
   @override
   String get hadith78 =>
-      '\"Ko posjeti bolesnika, u džennetskom je vrtu sve dok se ne vrati.\"\n— Muslim';
+      '„Ko posjeti bolesnika, u džennetskoj je berbi sve dok se ne vrati.“\n— Muslim';
 
   @override
   String get hadith79 =>
-      '\"Širite selam, hranite gladne i klanjajte noću dok ljudi spavaju — ući ćete u džennet u miru.\"\n— Tirmizi';
+      '„Širite selam, hranite gladne i klanjajte noću dok ljudi spavaju — ući ćete u Džennet u miru.“\n— Tirmizi';
 
   @override
   String get hadith80 =>
-      '\"Ko nije zahvalan ljudima, nije zahvalan ni Allahu.\"\n— Tirmizi';
+      '„Ko nije zahvalan ljudima, nije zahvalan ni Allahu.“\n— Tirmizi';
 
   @override
   String get hadith81 =>
-      '\"Zavist je dozvoljena samo u dva slučaja: čovjeku kome je Allah dao imetak pa ga troši na putu istine, i čovjeku kome je Allah dao mudrost pa po njoj sudi i podučava.\"\n— Buhari i Muslim';
+      '„Zavist je dozvoljena samo u dva slučaja: čovjeku kome je Allah dao imetak pa ga troši na putu istine, i čovjeku kome je Allah dao mudrost pa po njoj sudi i podučava.“\n— Buhari i Muslim';
 
   @override
   String get hadith82 =>
-      '\"Čovjek slijedi vjeru svoga prijatelja, pa neka svako od vas pazi s kim se druži.\"\n— Ebu Davud i Tirmizi';
+      '„Čovjek slijedi vjeru svoga prijatelja, pa neka svako od vas pazi s kim se druži.“\n— Ebu Davud i Tirmizi';
 
   @override
   String get hadith85 =>
-      '\"Ko ostavi nešto radi Allaha, Allah će mu to zamijeniti nečim boljim.\"\n— Ahmed';
+      '„Ko ostavi nešto radi Allaha, Allah će mu to zamijeniti nečim boljim.“\n— Ahmed';
 
   @override
   String get hadith86 =>
-      '\"Ko prikrije mahane jednog muslimana, Allah će prikriti njegove mahane na Sudnjem danu.\"\n— Buhari i Muslim';
+      '„Ko prikrije mahane muslimana, Allah će njemu prikriti mahane na Sudnjem danu.“\n— Buhari i Muslim';
 
   @override
   String get hadith87 =>
-      '\"Budi na ovom svijetu kao da si stranac ili putnik.\"\n— Buhari';
+      '„Budi na dunjaluku kao da si stranac ili putnik.“\n— Buhari';
 
   @override
   String get hadith88 =>
-      '\"Ko olakša nekome ko je u teškoći, Allah će njemu olakšati na dunjaluku i ahiretu.\"\n— Muslim';
+      '„Ko olakša onome ko je u teškoći, Allah će njemu olakšati na dunjaluku i na ahiretu.“\n— Muslim';
 
   @override
   String get hadith89 =>
-      '\"Djela se vrednuju prema namjerama.\"\n— Buhari i Muslim';
+      '„Djela se vrednuju prema namjerama.“\n— Buhari i Muslim';
 
   @override
   String get hadith90 =>
-      '\"Čuvajte se sumnje jer je sumnja najlažniji govor.\"\n— Buhari i Muslim';
+      '„Čuvajte se sumnjičenja, jer je sumnjičenje najlažniji govor.“\n— Buhari i Muslim';
 
   @override
   String get hadith93 =>
-      '\"Jedite zajedno i spominjite Allahovo ime, bit će vam blagoslovljeno.\"\n— Ebu Davud';
+      '„Jedite zajedno i spominjite Allahovo ime, pa će vam u hrani biti bereketa.“\n— Ebu Davud';
 
   @override
   String get hadith94 =>
-      '\"Nijedan narod ne sjedne spominjući Allaha, a da ih meleki ne okruže, milost ih ne obuhvati i smiraj ne siđe na njih.\"\n— Muslim';
+      '„Kad god se neki ljudi okupe spominjući Allaha, meleki ih okruže, milost ih prekrije i na njih se spusti smiraj.“\n— Muslim';
 
   @override
-  String get hadith95 =>
-      '\"Allah robu koji prašta samo uveća čast.\"\n— Muslim';
+  String get hadith95 => '„Allah robu koji prašta samo uveća čast.“\n— Muslim';
 
   @override
   String get hadith96 =>
-      '\"Veži svoju devu, a onda se osloni na Allaha.\"\n— Tirmizi';
+      '„Veži svoju devu, a onda se osloni na Allaha.“\n— Tirmizi';
 
   @override
   String get hadith97 =>
-      '\"Divan li je posao vjernika — sve mu je dobro.\"\n— Muslim';
+      '„Zadivljujuće je stanje vjernika — sve mu je na dobro.“\n— Muslim';
 
   @override
   String get hadith98 =>
-      '\"Musliman je brat muslimanu: ne čini mu nepravdu, ne napušta ga i ne prezire ga.\"\n— Muslim';
+      '„Musliman je brat muslimanu: ne čini mu nepravdu, ne napušta ga i ne prezire ga.“\n— Muslim';
 
   @override
   String get delete => 'Izbriši';
@@ -1076,14 +1076,14 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String deleteAmalConfirmBody(String title) {
-    return '\"$title\" će biti sakriveno s vašeg popisa. Vaša historija je sačuvana.';
+    return '„$title“ više neće biti na vašoj listi. Historija ostaje sačuvana.';
   }
 
   @override
-  String get genericError => 'Nešto je pošlo po krivu. Pokušajte ponovo.';
+  String get genericError => 'Došlo je do greške. Pokušajte ponovo.';
 
   @override
-  String get notificationChannelName => 'Podsjetnici za amel';
+  String get notificationChannelName => 'Podsjetnici za amele';
 
   @override
   String get notificationChannelDescription =>
@@ -1109,10 +1109,10 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get tutorialTapBody =>
-      'Jedan dodir označava amel završenim za danas. Dodirnite ponovo da poništite.';
+      'Jednim dodirom amel se označava kao završen za danas. Dodirnite ponovo da poništite.';
 
   @override
-  String get tutorialEditTitle => 'Dvaput dodirnite za uređivanje';
+  String get tutorialEditTitle => 'Dvaput dodirnite da uredite';
 
   @override
   String get tutorialEditBody =>
@@ -1124,14 +1124,14 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get tutorialReorderBody =>
-      'Držite red, zatim ga povucite. Vaš redoslijed se čuva.';
+      'Držite red pa ga povucite. Redoslijed se pamti.';
 
   @override
   String get tutorialRemoveTitle => 'Prevucite da uklonite';
 
   @override
   String get tutorialRemoveBody =>
-      'Prevucite red u stranu da ga sakrijete za danas ili da prestanete pratiti.';
+      'Prevucite red u stranu da ga sakrijete za danas ili ga prestanete pratiti.';
 
   @override
   String get tutorialCountTitle => 'Brojanje ponavljanja';
@@ -1141,11 +1141,11 @@ class AppLocalizationsBs extends AppLocalizations {
       'Za amele s ciljem većim od jedan, koristite − i + za svako ponavljanje.';
 
   @override
-  String get tutorialViewTitle => 'Grupiranje ili obična lista';
+  String get tutorialViewTitle => 'Grupisano ili obična lista';
 
   @override
   String get tutorialViewBody =>
-      'Prebacujte između grupiranja po kategoriji i jedne obične liste.';
+      'Prebacujte između grupisanja po kategorijama i jedne obične liste.';
 
   @override
   String get tutorialChallengeLogTitle => 'Dodirnite da zabilježite danas';
@@ -1159,7 +1159,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get tutorialChallengeOpenBody =>
-      'Otvara izazov — vidite svaki dan, ispravite propušteni ili ga izbrišite.';
+      'Otvara izazov — pogledajte svaki dan, ispravite propušteni ili izbrišite izazov.';
 
   @override
   String get tutorialChallengeDeleteBody =>
@@ -1188,13 +1188,13 @@ class AppLocalizationsBs extends AppLocalizations {
       locale: localeName,
       other: 'Završeno je $count izazova — posljednji $title',
       few: 'Završena su $count izazova — posljednji $title',
-      one: 'Završen je $count izazov — $title',
+      one: 'Završen izazov: $title',
     );
     return '$_temp0';
   }
 
   @override
-  String get challengeSectionEnded => 'Isteklo';
+  String get challengeSectionEnded => 'Istekli';
 
   @override
   String get challengesPastEmpty => 'Još ništa nije završeno.';
@@ -1217,7 +1217,7 @@ class AppLocalizationsBs extends AppLocalizations {
       'Izbrisati ovaj izazov i sav zabilježeni napredak?';
 
   @override
-  String get challengeShapeQuestion => 'Kakva je vrsta ovog izazova?';
+  String get challengeShapeQuestion => 'Kakav je ovo izazov?';
 
   @override
   String get challengeShapeTotal => 'Ukupan cilj';
@@ -1227,7 +1227,7 @@ class AppLocalizationsBs extends AppLocalizations {
       '1000 salavata, 30 džuzova. Bilježite količine i one se sabiraju.';
 
   @override
-  String get challengeShapeStreak => 'Niz dan za danom';
+  String get challengeShapeStreak => 'Niz iz dana u dan';
 
   @override
   String get challengeShapeStreakBody =>
@@ -1243,7 +1243,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get challengeUnitLabel => 'Jedinica (opcionalno)';
 
   @override
-  String get challengeUnitHint => 'rekat, stranica, puta';
+  String get challengeUnitHint => 'rekata, stranica, puta';
 
   @override
   String get challengeOneTapAdds => 'Jedan dodir dodaje';
@@ -1261,7 +1261,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get challengeSpreadEveryDay => 'Svaki dan';
 
   @override
-  String get challengeSpreadLonger => 'Duži rok';
+  String get challengeSpreadLonger => 'Duži period';
 
   @override
   String get challengeByWhen => 'Do kada?';
@@ -1279,7 +1279,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String challengePlanExact(String start, String end) {
-    return '$start do $end · jedan dnevno, svaki dan';
+    return '$start do $end · po jedan svaki dan';
   }
 
   @override
@@ -1290,7 +1290,7 @@ class AppLocalizationsBs extends AppLocalizations {
     String window,
     String slack,
   ) {
-    return '$start do $end · $target od $window dana — $slack možete propustiti';
+    return '$start do $end · $target od $window dana — možete propustiti $slack';
   }
 
   @override
@@ -1305,7 +1305,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String challengeTooTight(String target, String window) {
-    return '$target dana ne može stati u $window dana — niz računa jedan dnevno.';
+    return '$target dana ne stane u $window dana — niz se računa po jedan dan dnevno.';
   }
 
   @override
@@ -1358,12 +1358,12 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String challengeOnTrack(String rate) {
-    return 'U planu · $rate/dan';
+    return 'Po planu · $rate/dan';
   }
 
   @override
   String challengeBehind(String rate) {
-    return 'Zaostatak · $rate/dan';
+    return 'Kasnite · $rate/dan do kraja';
   }
 
   @override
@@ -1379,15 +1379,15 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String challengeEnded(String done, String target) {
-    return 'Isteklo · $done od $target';
+    return 'Istekao · $done od $target';
   }
 
   @override
-  String get challengeExpiredTitle => 'Izazov je završen';
+  String get challengeExpiredTitle => 'Izazov je istekao';
 
   @override
   String challengeExpiredBody(String title, String done, String target) {
-    return '$title je završen sa $done od $target.';
+    return 'Izazov „$title“ istekao je s rezultatom $done od $target.';
   }
 
   @override
@@ -1404,7 +1404,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String challengeNudgeBody(String title, String rate) {
-    return '$title: $rate dnevno da završiš na vrijeme.';
+    return '$title: $rate dnevno da završite na vrijeme.';
   }
 
   @override
@@ -1425,7 +1425,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get challengeGroupReminders => 'Podsjetnici';
 
   @override
-  String get challengeStartFromTemplate => 'Počni od šablona';
+  String get challengeStartFromTemplate => 'Počnite od šablona';
 
   @override
   String get challengeTemplateBlank => 'Prazno';
@@ -1434,16 +1434,16 @@ class AppLocalizationsBs extends AppLocalizations {
   String get challengePreview => 'Pregled';
 
   @override
-  String get challengeTmplTahajjud => '40 noći Tehedzud';
+  String get challengeTmplTahajjud => 'Tehedžud 40 noći';
 
   @override
   String get challengeTmplSalawat => '1000 salavata';
 
   @override
-  String get challengeTmplKhatm => 'Hatma Kur\'ana za 30 dana';
+  String get challengeTmplKhatm => 'Hatma za 30 dana';
 
   @override
-  String get challengeTmplFajrJamaah => '30 dana sabah u džematu';
+  String get challengeTmplFajrJamaah => 'Sabah u džematu 30 dana';
 
   @override
   String get challengeTmplSadaqah => 'Sadaka 30 dana';
@@ -1464,7 +1464,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get tierAnsar => 'Ensar';
 
   @override
-  String get tierRafiqMeaning => 'prijatelj';
+  String get tierRafiqMeaning => 'saputnik';
 
   @override
   String get tierNasirMeaning => 'zaštitnik';
@@ -1477,7 +1477,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get supportCardBody =>
-      'Besplatna, bez reklama i bez računa. Razvoj možete podržati malim doprinosom — bilo kojim iznosom, kad god želite.';
+      'Besplatna je, bez reklama i bez korisničkog računa. Razvoj možete podržati malim doprinosom — bilo kojim iznosom, kad god želite.';
 
   @override
   String get supportCta => 'Podržite aplikaciju Muhasaba';
@@ -1499,7 +1499,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Muhasaba je besplatna, bez reklama i bez računa. Razvoj možete podržati malim doprinosom — bilo kojim iznosom, kad god želite. Nijedna funkcija nije zaključana.';
+      'Muhasaba je besplatna, bez reklama i bez korisničkog računa. Razvoj možete podržati malim doprinosom — bilo kojim iznosom, kad god želite. Ništa nije zaključano.';
 
   @override
   String get supportPromptNow => 'Podržite sada';
@@ -1515,7 +1515,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get tipSheetBody =>
-      'Odaberite bilo koji iznos, koliko god često želite. Doprinosi idu na održavanje aplikacije — inšallah, ostaje besplatna i bez reklama. U znak zahvalnosti, u Postavkama ćete biti označeni kao pokrovitelj.';
+      'Odaberite bilo koji iznos, koliko god često želite. Doprinosi idu na održavanje aplikacije — inšallah, ostaje besplatna i bez reklama. U znak zahvalnosti, u Postavkama ćete biti označeni kao podržavalac.';
 
   @override
   String tipSheetSupporterLine(String tier) {
@@ -1538,15 +1538,15 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get supportEmailBody =>
-      'Esselamu alejkum,\n\nŽelim direktno podržati razvoj aplikacije Muhasaba.\n\nDržava:\nNačin na koji bih poslao:\nIznos (nije obavezno):';
+      'Esselamu alejkum,\n\nŽelim direktno podržati razvoj aplikacije Muhasaba.\n\nDržava:\nKako želim poslati:\nIznos (nije obavezno):';
 
   @override
   String tipBusy(String store) {
-    return 'Otvaranje $store…';
+    return 'Otvara se $store…';
   }
 
   @override
-  String get tipThanks => 'Allah vas nagradio — Allah primio od vas.';
+  String get tipThanks => 'Allah vas nagradio i primio od vas.';
 
   @override
   String get tipDone => 'Gotovo';
@@ -1567,7 +1567,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get optionSetJamaa => 'Džemat';
 
   @override
-  String get optionJamaaAlone => 'Samostalno';
+  String get optionJamaaAlone => 'Pojedinačno';
 
   @override
   String get optionJamaaHome => 'Džemat kod kuće';
@@ -1576,7 +1576,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get optionJamaaMasjid => 'Džemat u džamiji';
 
   @override
-  String get optionSetOnTime => 'Vrijeme';
+  String get optionSetOnTime => 'Na vrijeme';
 
   @override
   String get optionOnTimeOnTime => 'Na vrijeme';
@@ -1588,7 +1588,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get optionOnTimeQada => 'Kaza';
 
   @override
-  String get optionSetQuranSession => 'Sesija Kur\'ana';
+  String get optionSetQuranSession => 'Učenje Kur\'ana';
 
   @override
   String get optionQuranRecited => 'Učenje';
@@ -1621,13 +1621,13 @@ class AppLocalizationsBs extends AppLocalizations {
   String get optionSetIntensity => 'Intenzitet';
 
   @override
-  String get optionIntensityLight => 'Lagan';
+  String get optionIntensityLight => 'Lagano';
 
   @override
-  String get optionIntensityModerate => 'Umjeren';
+  String get optionIntensityModerate => 'Umjereno';
 
   @override
-  String get optionIntensityIntense => 'Intenzivan';
+  String get optionIntensityIntense => 'Intenzivno';
 
   @override
   String get optionSetNewTitle => 'Novi set opcija';
@@ -1658,7 +1658,7 @@ class AppLocalizationsBs extends AppLocalizations {
   }
 
   @override
-  String get optionSetPreviewLabel => 'Pregled — red za Danas';
+  String get optionSetPreviewLabel => 'Pregled — red na ekranu Danas';
 
   @override
   String optionSetKeptForHistory(String labels) {
@@ -1693,14 +1693,14 @@ class AppLocalizationsBs extends AppLocalizations {
   String get optionSetNew => 'Novi set';
 
   @override
-  String get requireChoiceLabel => 'Zahtijevaj izbor';
+  String get requireChoiceLabel => 'Obavezan izbor';
 
   @override
   String get requireChoiceHelp =>
-      'Red neće biti završen dok se ne izabere opcija';
+      'Red se neće označiti dok ne odaberete opciju';
 
   @override
-  String get requireChoicePickSetFirst => 'Prvo izaberite set';
+  String get requireChoicePickSetFirst => 'Prvo odaberite set';
 
   @override
   String get requireChoiceCountHelp =>
@@ -1734,11 +1734,11 @@ class AppLocalizationsBs extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count puta',
-      few: '$count puta',
-      one: '$count put',
+      other: '$count završenih unosa',
+      few: '$count završena unosa',
+      one: '$count završenom unosu',
     );
-    return 'Udio od $_temp0 kada je zabilježen izbor';
+    return 'Udio opcija u $_temp0 sa zabilježenim izborom';
   }
 
   @override
@@ -1746,15 +1746,15 @@ class AppLocalizationsBs extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       total,
       locale: localeName,
-      other: '$total dana',
-      few: '$total dana',
-      one: '$total dan',
+      other: '$total završenih dana',
+      few: '$total završena dana',
+      one: '$total završenog dana',
     );
-    return 'Izbor nije zabilježen — $none od $_temp0 završeno';
+    return 'Bez zabilježenog izbora — $none od $_temp0';
   }
 
   @override
-  String get optionRemovedSuffix => 'uklonjeno';
+  String get optionRemovedSuffix => 'uklonjena';
 
   @override
   String get optionAllAmals => 'Sve';
@@ -1818,7 +1818,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get optionDetailRecordsCaption =>
-      'Na osnovu protekle godine, neovisno o filteru perioda iznad.';
+      'Na osnovu protekle godine, nezavisno od filtera perioda iznad.';
 
   @override
   String get optionDetailRecentDaysHeading => 'Nedavni dani';
@@ -2016,7 +2016,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get amalFeed => 'Hranjenje gladnih';
 
   @override
-  String get amalHelpNeed => 'Pomoć potrebnom';
+  String get amalHelpNeed => 'Pomoć potrebitom';
 
   @override
   String get amalOrphan => 'Briga o siročetu';
@@ -2034,7 +2034,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get amalSeerah => 'Izučavanje sire';
 
   @override
-  String get amalClass => 'Prisustvo predavanju';
+  String get amalClass => 'Odlazak na predavanje';
 
   @override
   String get amalArabic => 'Učenje arapskog';
@@ -2052,7 +2052,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get amalMuhasaba => 'Noćna muhasaba';
 
   @override
-  String get amalSpeakGood => 'Govori dobro ili šuti';
+  String get amalSpeakGood => 'Lijep govor ili šutnja';
 
   @override
   String get amalNoBackbiting => 'Bez ogovaranja';
@@ -2121,7 +2121,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get libraryTitle => 'Biblioteka amela';
 
   @override
-  String get librarySearchHint => 'Pretražite amele';
+  String get librarySearchHint => 'Pretraži amele';
 
   @override
   String get libraryAll => 'Sve';
@@ -2141,7 +2141,7 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String libraryCreateNamed(String query) {
-    return 'Kreirajte „$query“';
+    return 'Napravi „$query“';
   }
 
   @override
@@ -2163,10 +2163,10 @@ class AppLocalizationsBs extends AppLocalizations {
   String get libraryFilledIn => 'Popunjeno iz biblioteke amela';
 
   @override
-  String get libraryChange => 'Promijenite';
+  String get libraryChange => 'Promijeni';
 
   @override
-  String get libraryEditAction => 'Uredite';
+  String get libraryEditAction => 'Uredi';
 
   @override
   String libraryWeeklyAny(num count, String countText) {
@@ -2206,11 +2206,11 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String libraryAddTooltip(String title) {
-    return 'Dodajte $title';
+    return 'Dodaj $title';
   }
 
   @override
-  String get libraryOnList => 'Na vašoj je listi';
+  String get libraryOnList => 'Na vašoj listi';
 
   @override
   String get todayEmptyBrowse => 'Pregledajte biblioteku amela';

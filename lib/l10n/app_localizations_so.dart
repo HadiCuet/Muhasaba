@@ -9,7 +9,7 @@ class AppLocalizationsSo extends AppLocalizations {
   AppLocalizationsSo([String locale = 'so']) : super(locale);
 
   @override
-  String get repeatsOnDaysHint => 'Wuxuu ku celcelinayaa maalmaha la xushay';
+  String get repeatsOnDaysHint => 'Wuxuu soo noqnoqdaa maalmaha la doortay';
 
   @override
   String get newDayStarted => 'Maalin cusub ayaa bilaabatay';
@@ -49,11 +49,11 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get archivedEmpty =>
-      'Weli waxba halkan ma jiraan. Camalada aad ka saarto raadraaca halkan ayay ku sii jiraan, si aad dib ugu soo celiso.';
+      'Weli waxba halkan ma yaallaan. Camallada aad ka saarto raadraaca halkan ayay ka muuqdaan, si aad dib ugu soo celiso.';
 
   @override
   String archivedStoppedOn(String date) {
-    return 'Waa laga saaray $date';
+    return 'Waa la joojiyay $date';
   }
 
   @override
@@ -71,7 +71,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get newAmal => 'Camal cusub';
 
   @override
-  String get editAmal => 'Wax ka beddel camasha';
+  String get editAmal => 'Wax ka beddel camalka';
 
   @override
   String get newAmalTitle => 'Camal cusub';
@@ -92,10 +92,10 @@ class AppLocalizationsSo extends AppLocalizations {
   String get titleLabel => 'Cinwaan';
 
   @override
-  String get titleRequired => 'Cinwaanka waa lagama maari karo';
+  String get titleRequired => 'Cinwaanka waa in la qoraa';
 
   @override
-  String get titleTooLong => 'Cinwaanka aad buu u dheer yahay';
+  String get titleTooLong => 'Cinwaanku aad buu u dheer yahay';
 
   @override
   String get frequencyLabel => 'Inta jeer';
@@ -113,13 +113,13 @@ class AppLocalizationsSo extends AppLocalizations {
   String get categoryLabel => 'Qaybta';
 
   @override
-  String get categoryOther => 'Kuwo kale';
+  String get categoryOther => 'Kale';
 
   @override
   String get categorySalah => 'Salaadda';
 
   @override
-  String get categoryDhikr => 'Xasuus';
+  String get categoryDhikr => 'Dikri';
 
   @override
   String get categoryQuran => 'Quraanka';
@@ -128,7 +128,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get categoryCharity => 'Sadaqo';
 
   @override
-  String get categorySunnah => 'Sunnah';
+  String get categorySunnah => 'Sunno';
 
   @override
   String get timesPerPeriod => 'Tirada muddo walba';
@@ -154,7 +154,7 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get anyDayHint =>
-      'Maalin kasta (waa la arkaa maanta, berri way qarinaysaa)';
+      'Maalin kasta (maanta wuu muuqanayaa, berri wuu qarsoomayaa)';
 
   @override
   String onlyDayHint(String day) {
@@ -165,7 +165,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get dateOfMonth => 'Taariikhda bisha';
 
   @override
-  String get repeatMode => 'Ku celcelin';
+  String get repeatMode => 'Soo noqnoqosho';
 
   @override
   String get onSetDays => 'Maalmo la go\'aamiyay';
@@ -192,11 +192,11 @@ class AppLocalizationsSo extends AppLocalizations {
   String get pickAtLeastOneDate => 'Dooro ugu yaraan hal taariikh';
 
   @override
-  String get previewDaily => 'Wuxuu ku celcelinayaa maalin kasta';
+  String get previewDaily => 'Wuxuu soo noqnoqdaa maalin kasta';
 
   @override
   String previewWeeklyDays(String days) {
-    return 'Wuxuu ku celcelinayaa $days';
+    return 'Wuxuu soo noqnoqdaa $days';
   }
 
   @override
@@ -207,7 +207,7 @@ class AppLocalizationsSo extends AppLocalizations {
       other: '$count maalmood',
       one: 'hal maalin',
     );
-    return 'Wuxuu ku celcelinayaa $_temp0 toddobaadkii';
+    return 'Wuxuu soo noqnoqdaa $_temp0 toddobaadkii';
   }
 
   @override
@@ -215,8 +215,8 @@ class AppLocalizationsSo extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Wuxuu ku celcelinayaa maalmaha $dates ee bil kasta',
-      one: 'Wuxuu ku celcelinayaa maalinta $dates ee bil kasta',
+      other: 'Wuxuu soo noqnoqdaa maalmaha $dates ee bil kasta',
+      one: 'Wuxuu soo noqnoqdaa maalinta $dates ee bil kasta',
     );
     return '$_temp0';
   }
@@ -229,7 +229,7 @@ class AppLocalizationsSo extends AppLocalizations {
       other: '$count maalmood',
       one: 'hal maalin',
     );
-    return 'Wuxuu ku celcelinayaa $_temp0 bishii';
+    return 'Wuxuu soo noqnoqdaa $_temp0 bishii';
   }
 
   @override
@@ -237,19 +237,19 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get anyDateHint =>
-      'Taariikh kasta (waa la arkaa maanta, berri way qarinaysaa)';
+      'Taariikh kasta (maanta wuu muuqanayaa, berri wuu qarsoomayaa)';
 
   @override
   String onlyDateHint(String date) {
-    return 'Kaliya $date';
+    return 'Kaliya maalinta $date';
   }
 
   @override
-  String get startPreChecked => 'Ku bilow iyada oo calaamaysan';
+  String get startPreChecked => 'Ku bilow isagoo calaamadsan';
 
   @override
   String get startPreCheckedSubtitle =>
-      'Marka muddo cusub bilaabato, camalkan wuxuu noqdaa mid dhammaystiran ilaa aad ka saarto calaamadda.';
+      'Marka muddo cusub bilaabato, camalkan si caadi ah ayaa loogu calaamadeeyaa dhammaystiran ilaa aad calaamadda ka saarto.';
 
   @override
   String get reminder => 'Xusuusin';
@@ -264,13 +264,13 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get reminderPermissionWarning =>
-      'Xusuusinta waa la kaydiyay, laakiin ogeysiisyada lama ogola. Ka fur dejinta nidaamka si aad u hesho digniinadda.';
+      'Xusuusinta waa la kaydiyay, laakiin ogeysiisyada lama oggola. Ka oggolow dejinta qalabka si ay xusuusinuhu kuu soo gaadhaan.';
 
   @override
   String get settingsReminders => 'Xusuusinta';
 
   @override
-  String get dailyReminder => 'Xusuusin maalinlaha ah';
+  String get dailyReminder => 'Xusuusin maalinle ah';
 
   @override
   String get dailyReminderSubtitle =>
@@ -281,10 +281,10 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get dailyReminderBody =>
-      'Wax yar wakhti u qaado si aad u raadraacdo camallada maanta.';
+      'Daqiiqad yar u qaado raadraaca camallada maanta.';
 
   @override
-  String get groupByCategory => 'U kooxee qaybaha';
+  String get groupByCategory => 'U kala saar qaybo';
 
   @override
   String get flatList => 'Liis fudud';
@@ -296,7 +296,7 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get todayEmptyHint =>
-      'Riix + si aad u ku darto camalkaaga ugu horreeya.';
+      'Riix + si aad ugu darto camalkaaga ugu horreeya.';
 
   @override
   String get noteLabel => 'Qoraal';
@@ -308,11 +308,11 @@ class AppLocalizationsSo extends AppLocalizations {
   String get completed => 'la dhammeeyay';
 
   @override
-  String get notCompleted => 'lama dhammeeyo';
+  String get notCompleted => 'lama dhammayn';
 
   @override
   String progressOf(String progress, String target) {
-    return '$progress ka mid ah $target oo la dhammeeyay';
+    return '$progress ka mid ah $target ayaa la dhammeeyay';
   }
 
   @override
@@ -325,14 +325,14 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get removeFromTodaySubtitle =>
-      'Qari maanta kaliya. Berri way soo noqonaysaa.';
+      'Maanta oo keliya qari. Berri wuu soo noqonayaa.';
 
   @override
   String get removeFromTracking => 'Ka saar raadraaca';
 
   @override
   String get removeFromTrackingSubtitle =>
-      'Si joogto ah uga saar liiskaaga. Taariikhda waa la haynayaa.';
+      'Si joogto ah uga saar liiskaaga. Taariikhdu way kaydsanaanaysaa.';
 
   @override
   String get chooseIcon => 'Dooro astaanta';
@@ -356,13 +356,13 @@ class AppLocalizationsSo extends AppLocalizations {
   String get categoryNewSheetTitle => 'Qayb cusub';
 
   @override
-  String get categoryEditSheetTitle => 'Tafatir qaybta';
+  String get categoryEditSheetTitle => 'Wax ka beddel qaybta';
 
   @override
   String get addAmal => 'Ku dar camal';
 
   @override
-  String get customAmal => 'Camal gaarka ah';
+  String get customAmal => 'Camal gaar ah';
 
   @override
   String get amalTasbih => 'Tasbiix 33x';
@@ -389,16 +389,16 @@ class AppLocalizationsSo extends AppLocalizations {
   String get amalDhuhr => 'Duhur';
 
   @override
-  String get amalAsr => 'Casir';
+  String get amalAsr => 'Casar';
 
   @override
-  String get amalMaghrib => 'Maghrib';
+  String get amalMaghrib => 'Maqrib';
 
   @override
   String get amalIsha => 'Cishe';
 
   @override
-  String get amalMorningAdhkar => 'Adkaarta subaxda';
+  String get amalMorningAdhkar => 'Adkaarta subaxa';
 
   @override
   String get amalEveningAdhkar => 'Adkaarta fiidka';
@@ -411,25 +411,25 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String settingsLoadError(String error) {
-    return 'Waa la guul darreystay soo dejinta dejinta:\n$error';
+    return 'Dejinta lama soo rari karin:\n$error';
   }
 
   @override
   String get sectionDayBoundary => 'Xadka maalinta';
 
   @override
-  String get rolloverHour => 'Saacadda wareegga';
+  String get rolloverHour => 'Saacadda maalintu bilaabato';
 
   @override
-  String get rolloverAtMidnight => 'Maanta waxay dhammaataa habeenbadhka.';
+  String get rolloverAtMidnight => 'Maantu waxay ku dhammaanaysaa saqda dhexe.';
 
   @override
   String rolloverSubtitle(String time) {
-    return 'Camalka shalay wuxuu wax laga beddeli karaa ilaa $time.';
+    return 'Camallada shalay wax baad ka beddeli kartaa ilaa $time.';
   }
 
   @override
-  String get pickRolloverHour => 'Dooro saacadda maalinta wareegto';
+  String get pickRolloverHour => 'Dooro saacadda ay maalin cusubi bilaabato';
 
   @override
   String get sectionWeekMonth => 'Toddobaadka & bisha';
@@ -442,7 +442,7 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get startOfMonthClamped =>
-      'Maalaha ka dambeeya 28-ka waxaa lagu xaddidaa maalinta ugu dambeysa ee bilaha gaagaaban.';
+      'Maalmaha ka dambeeya 28-ka waxay u wareegaan maalinta ugu dambaysa ee bilaha ka gaaban.';
 
   @override
   String get sectionAppearance => 'Muuqaalka';
@@ -454,10 +454,10 @@ class AppLocalizationsSo extends AppLocalizations {
   String get themeSystem => 'Nidaamka';
 
   @override
-  String get themeLight => 'Iftiinka';
+  String get themeLight => 'Iftiin';
 
   @override
-  String get themeDark => 'Mugdiga';
+  String get themeDark => 'Mugdi';
 
   @override
   String get sectionLanguage => 'Luuqadda';
@@ -466,21 +466,21 @@ class AppLocalizationsSo extends AppLocalizations {
   String get language => 'Luuqadda';
 
   @override
-  String get systemDefault => 'Caadiga nidaamka';
+  String get systemDefault => 'Sida qalabka';
 
   @override
   String get aboutTitle => 'Muhasaba';
 
   @override
   String get aboutSubtitle =>
-      'Buug-gacmeedka xisaabtanka diinta ee gaarka ah. Dhammaan xogta waxay ku hadhaysaa qalabkan.';
+      'Diiwaan gaar ah oo aad diintaada isugu xisaabiso. Xogtaada oo dhan waxay ku jirtaa qalabkan oo keliya.';
 
   @override
   String get statsTitle => 'Tirakoob';
 
   @override
   String statsLoadError(String error) {
-    return 'Waa la guul darreystay soo dejinta tirakoobka:\n$error';
+    return 'Tirakoobka lama soo rari karin:\n$error';
   }
 
   @override
@@ -541,17 +541,17 @@ class AppLocalizationsSo extends AppLocalizations {
   }
 
   @override
-  String get frequencyBadgeDaily => 'maalinlaha';
+  String get frequencyBadgeDaily => 'maalinle';
 
   @override
-  String get frequencyBadgeWeekly => 'toddobaadlaha';
+  String get frequencyBadgeWeekly => 'toddobaadle';
 
   @override
-  String get frequencyBadgeMonthly => 'bishiiba';
+  String get frequencyBadgeMonthly => 'bille';
 
   @override
   String get statsEmpty =>
-      'Wali camal ma jiro. Ku dar mid Maanta si aad u bilowdo raadraaca.';
+      'Weli camal ma jiro. Mid ku dar bogga Maanta si aad u bilowdo raadraaca.';
 
   @override
   String get statsToday => 'Maanta';
@@ -563,7 +563,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get statsThisMonth => 'Bishan';
 
   @override
-  String get statsAllTime => 'Wakhti oo dhan';
+  String get statsAllTime => 'Wakhtiga oo dhan';
 
   @override
   String get statsCustomRange => 'Muddo gaarka ah';
@@ -581,10 +581,10 @@ class AppLocalizationsSo extends AppLocalizations {
   String get statsExpected => 'La filayay';
 
   @override
-  String get statsVsPrevious => 'Marka loo barbardhigo kii hore';
+  String get statsVsPrevious => 'Marka la eego kii hore';
 
   @override
-  String get statsByCategory => 'Qaybaha';
+  String get statsByCategory => 'Qaybo ahaan';
 
   @override
   String get statsPerAmal => 'Camal walba';
@@ -613,7 +613,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get statsTotalDays => 'Wadarta maalmaha';
 
   @override
-  String get statsConsistency => 'Joogteynta';
+  String get statsConsistency => 'Joogtaynta';
 
   @override
   String get statsLast5Weeks => '5-dii toddobaad ee ugu dambeeyay';
@@ -643,29 +643,29 @@ class AppLocalizationsSo extends AppLocalizations {
   }
 
   @override
-  String get statsFilterTime => 'Waqtiga';
+  String get statsFilterTime => 'Wakhtiga';
 
   @override
   String get statsFilterCategory => 'Qaybta';
 
   @override
-  String get statsFilterAmal => 'Camasha';
+  String get statsFilterAmal => 'Camal';
 
   @override
-  String get statsStreaks => 'Taxanayaal';
+  String get statsStreaks => 'Taxanayaasha';
 
   @override
-  String get statsSelectDateRange => 'Dooro muddada taariikhda';
+  String get statsSelectDateRange => 'Dooro muddo';
 
   @override
   String get historyTitle => 'Taariikhda';
 
   @override
-  String get jumpToDate => 'U bood taariikhda';
+  String get jumpToDate => 'U gudub taariikh';
 
   @override
   String historyEmptyDay(String date) {
-    return 'Camal lama raadraacin $date';
+    return '$date wax camal ah lama raadraacin';
   }
 
   @override
@@ -721,73 +721,73 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get hadith0 =>
-      '\"Camalada Alle ugu jecel waa kuwa si joogto ah loo sameeyo, xitaa hadday yar yihiin.\"\n— Bukhaari & Muslim';
+      '\"Camallada Alle ugu jecel yahay waa kuwa si joogto ah loo sameeyo, xitaa hadday yar yihiin.\"\n— Bukhaari & Muslim';
 
   @override
   String get hadith2 =>
-      '\"Marka uu dhinto wiilka Aadam, camalladiisu way joogsataa marka laga reebo saddex: sadaqo socota, cilmi anfaca, ama ilmo fiican oo u duceeya.\"\n— Muslim';
+      '\"Marka uu ina-Aadam dhinto, camalkiisu wuu go\'aa saddex mooyee: sadaqo socota, cilmi laga faa\'iidaysto, ama ilmo suubban oo u duceeya.\"\n— Muslim';
 
   @override
   String get hadith3 =>
-      '\"Qofkii tukada labada salaadood ee qabow (Fajriga iyo Casriga) wuxuu gali doonaa Jannada.\"\n— Bukhaari';
+      '\"Qofkii tukada labada salaadood ee qabow (Subax iyo Casar) wuxuu geli doonaa Jannada.\"\n— Bukhaari';
 
   @override
   String get hadith4 =>
-      '\"Allaahu ma eego muuqaalkaaga ama hantidaada, laakiin wuxuu eegaa qalbiyadaada iyo camalladaada.\"\n— Muslim';
+      '\"Alle ma eego muuqaalkiinna iyo hantidiinna, laakiin wuxuu eegaa qalbiyadiinna iyo camalladiinna.\"\n— Muslim';
 
   @override
   String get hadith6 =>
-      '\"Fududeeya hana adkeeynina; u bishaareya hana ka cabsiiynina dadka.\"\n— Bukhaari';
+      '\"Fududeeya ee ha adkaynina, bishaareeya ee ha nacsiinina.\"\n— Bukhaari';
 
   @override
   String get hadith7 =>
-      '\"Qofkii jid u mara raadinta cilmiga, Allaahu wuxuu uga fududeeyaa jidka Jannada.\"\n— Muslim';
+      '\"Qofkii mara jid uu cilmi ku raadinayo, Alle wuxuu u fududeeyaa jid Jannada loo maro.\"\n— Muslim';
 
   @override
   String get hadith8 => '\"Sadaqadu hantida ma yareeyo.\"\n— Muslim';
 
   @override
   String get hadith9 =>
-      '\"Mu\'minka xoogga badan waa ka fiican yahay oo Alle ka jecel yahay mu\'minka daciifka ah, laakiin labadaba wanaag way ku jirtaa.\"\n— Muslim';
+      '\"Mu\'minka xoogga leh ayaa ka khayr badan, Allena uga jecel mu\'minka daciifka ah, labadaba khayr baa ku jira.\"\n— Muslim';
 
   @override
   String get hadith10 =>
-      '\"Qofka maalin kasta boqol jeer yidhaahda \'SubhanAllahi wa bihamdihi\', dambiyadiisa waa la cafiyaa xitaa hadday la mid yihiin xumbada badda.\"\n— Bukhaari & Muslim';
+      '\"Qofkii maalintii boqol jeer yidhaahda \'Subxaanallaahi wa bixamdihi\', dambiyadiisa waa loo dhaafaa xitaa hadday la mid yihiin xumbada badda.\"\n— Bukhaari & Muslim';
 
   @override
   String get hadith12 =>
-      '\"Qofka akhriyo Aayatul-Kursiga salaad kasta oo fard ah kadib, waxba kama hor joogsado inuu Jannada galo marka laga reebo geeridu.\"\n— Nasaai';
+      '\"Qofkii akhriya Aayatul Kursiga salaad kasta oo fard ah kadib, waxba kama celinayaan inuu Jannada galo geeri mooyee.\"\n— Nasaai';
 
   @override
   String get hadith13 => '\"Hadal wanaagsan waa sadaqo.\"\n— Bukhaari & Muslim';
 
   @override
   String get hadith14 =>
-      '\"Qofka rumaysan Ilaahay iyo Maalinta Aakhiro, ha ku hadlo khayr ama ha aamuuso.\"\n— Bukhaari & Muslim';
+      '\"Qofkii rumaysan Alle iyo Maalinta Aakhiro, ha ku hadlo khayr ama ha aamuso.\"\n— Bukhaari & Muslim';
 
   @override
   String get hadith15 =>
-      '\"Kan u daryeela carmallada iyo miskiinka waa sida mujaahid Ilaahay dartiis ah.\"\n— Bukhaari & Muslim';
+      '\"Qofka u adeega carmalka iyo miskiinka waa sida mujaahid Alle dartiis u dagaallamaya.\"\n— Bukhaari & Muslim';
 
   @override
   String get hadith16 =>
-      '\"Dhoollacaddaadaada walaalkaa waa sadaqo.\"\n— Tirmidhi';
+      '\"Inaad walaalkaa u dhoolla caddayso waa sadaqo.\"\n— Tirmidhi';
 
   @override
   String get hadith17 =>
-      '\"Kan ugu wanaagsan ee idinka mid ah waa kan Quraanka barta oo bara.\"\n— Bukhaari';
+      '\"Kiinna ugu khayr badan waa kan Quraanka barta oo bara.\"\n— Bukhaari';
 
   @override
   String get hadith18 =>
-      '\"Qofna ma cunin cunto ka wanaagsan wixii uu gacmihiisa ku shaqeeyey.\"\n— Bukhaari';
+      '\"Qofna ma cunin cunto ka khayr badan tan uu gacantiisa ku shaqaystay.\"\n— Bukhaari';
 
   @override
   String get hadith19 =>
-      '\"Ilaahay waa naxariis leh yahay wuxuuna jecel yahay naxariista wax kasta.\"\n— Bukhaari & Muslim';
+      '\"Alle waa Rafiiq, wuxuuna jecel yahay debecsanaanta arrin kasta.\"\n— Bukhaari & Muslim';
 
   @override
   String historyDayCompleted(String completed, String total) {
-    return '$completed ka mid ah $total la dhammeeyey';
+    return '$completed ka mid ah $total ayaa la dhammeeyay';
   }
 
   @override
@@ -797,16 +797,16 @@ class AppLocalizationsSo extends AppLocalizations {
   String get settingsAppearance => 'Muuqaalka';
 
   @override
-  String get settingsAboutTagline => 'Saaxiibkaaga diinta ee maalinlaha ah';
+  String get settingsAboutTagline => 'Saaxiibkaaga diinta ee maalin kasta';
 
   @override
-  String get settingsRolloverSub => 'Goorma maalinta dib u bilaabato';
+  String get settingsRolloverSub => 'Goorta maalintu dib u bilaabato';
 
   @override
   String get settingsAbout => 'Ku saabsan';
 
   @override
-  String get settingsVersion => 'Nooca';
+  String get settingsVersion => 'Nuqulka';
 
   @override
   String get settingsDeveloper => 'Sameeyaha';
@@ -824,11 +824,11 @@ class AppLocalizationsSo extends AppLocalizations {
   String get settingsReportBug => 'Sheeg cillad';
 
   @override
-  String get settingsRequestFeature => 'Codso astaan';
+  String get settingsRequestFeature => 'Soo jeedi adeeg cusub';
 
   @override
   String settingsSupportFallback(String email) {
-    return 'Ma furmin boostada. Fadlan iimeel u dir $email.';
+    return 'Iimaylka lama furi karin. Fadlan iimayl u dir $email.';
   }
 
   @override
@@ -836,19 +836,19 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get settingsPrivacyOpenFailed =>
-      'Lama furi karo siyaasadda asturnaanta.';
+      'Siyaasadda asturnaanta lama furi karin.';
 
   @override
   String get hadith20 =>
-      '\"Qofkii sooma Ramadaan iimaankiisa iyo rajaynta ajar, dambiyadiisii hore waa loo cafiyaa.\"\n— Bukhaari & Muslim';
+      '\"Qofkii Ramadaan u sooma iimaan iyo ajar-doon, waxaa loo dhaafaa dambiyadiisii hore.\"\n— Bukhaari & Muslim';
 
   @override
   String get hadith22 =>
-      '\"Ducada u dhexaysa adhaamka iyo iqaamaddu lama diido.\"\n— Abu Dawud';
+      '\"Ducada u dhexaysa aadaanka iyo iqaamadda lama celiyo.\"\n— Abu Dawud';
 
   @override
   String get hadith23 =>
-      '\"Qofkii Ilaahay u dhisa masjid, Ilaahay wuxuu ugu dhisaa guri Jannada.\"\n— Bukhaari & Muslim';
+      '\"Qofkii Alle u dhisa masjid, Alle wuxuu u dhisaa guri Jannada.\"\n— Bukhaari & Muslim';
 
   @override
   String get hadith24 =>
@@ -859,7 +859,7 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get hadith26 =>
-      '\"Qofkii tukada laba iyo toban rakco oo sunno ah, guri ayaa loogu dhisaa Jannada.\"\n— Muslim';
+      '\"Qofkii tukada laba iyo toban rakcadood oo sunno ah, guri ayaa looga dhisaa Jannada.\"\n— Muslim';
 
   @override
   String get hadith27 =>
@@ -867,27 +867,27 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get hadith29 =>
-      '\"Sadaqada ugu wanaagsan waa biyaha cabbitaanka.\"\n— Ahmad';
+      '\"Sadaqada ugu fadliga badan waa biyo waraabin.\"\n— Ahmad';
 
   @override
   String get hadith30 =>
-      '\"Qofkii ka saara dhibaato mu\'min, Ilaahay wuxuu ka saari dhibaato Maalinta Qiyaamada.\"\n— Muslim';
+      '\"Qofkii mu\'min dhib ka dul qaada, Alle wuxuu dhib ka dul qaadi doonaa Maalinta Qiyaamaha.\"\n— Muslim';
 
   @override
   String get hadith32 =>
-      '\"Xishmaddu waa qayb ka mid ah iimaanka.\"\n— Bukhaari & Muslim';
+      '\"Xishoodku waa qayb ka mid ah iimaanka.\"\n— Bukhaari & Muslim';
 
   @override
   String get hadith34 =>
-      '\"Qofkii samiray, Ilaahay wuxuu siinayaa samir.\"\n— Bukhaari & Muslim';
+      '\"Qofkii is-samirsiiya, Alle samir buu siiyaa.\"\n— Bukhaari & Muslim';
 
   @override
   String get hadith36 =>
-      '\"Midkiinna ma rumeynayo ilaa uu u jeclaado walaalihiis wuxuu naftiisa u jecel yahay.\"\n— Bukhaari & Muslim';
+      '\"Midkiin ma rumaysna ilaa uu walaalkiis u jeclaado wuxuu naftiisa u jecel yahay.\"\n— Bukhaari & Muslim';
 
   @override
   String get hadith37 =>
-      '\"Quudi kuwa gaajaysan, soo booqda kuwa buka, xoreena maxaabiista.\"\n— Bukhaari';
+      '\"Quudiya gaajaysanka, booqda bukaanka, xoreeyana maxaabiista.\"\n— Bukhaari';
 
   @override
   String get hadith38 =>
@@ -895,27 +895,27 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get hadith40 =>
-      '\"Dhaha \'SubhanAllah\', \'Alhamdulillaah\' iyo \'Allaahu Akbar\' saddex iyo soddon jeer kasta oo salaad ka dib.\"\n— Muslim';
+      '\"Dhaha \'Subxaanallaah\', \'Alxamdulillaah\' iyo \'Allaahu Akbar\' mid kasta saddex iyo soddon jeer salaad kasta kadib.\"\n— Muslim';
 
   @override
   String get hadith41 =>
-      '\"Dhikriga ugu wanaagsan waa La ilaaha illallaah.\"\n— Tirmidhi';
+      '\"Dikriga ugu fadliga badan waa Laa ilaaha illallaah.\"\n— Tirmidhi';
 
   @override
   String get hadith42 =>
-      '\"Waxaa jira labo nicmo oo ay dad badan khasaaraan: caafimaadka iyo waqtiga faariga ah.\"\n— Bukhaari';
+      '\"Laba nicmo ayaa dad badani ku khasaaraan: caafimaadka iyo firaaqada.\"\n— Bukhaari';
 
   @override
   String get hadith43 =>
-      '\"Ka faa\'iidaysta shan ka hor shan: yaranimo ka hor gaboob, caafimaad ka hor jirro, hodan ka hor faqri, waqti ka hor mashquul, iyo nolol ka hor dhimasho.\"\n— Hakim';
+      '\"Ka faa\'iidaysta shan ka hor shan: dhallinyaranimo ka hor gabow, caafimaad ka hor jirro, hodantinimo ka hor faqri, firaaqo ka hor mashquul, iyo nolol ka hor dhimasho.\"\n— Hakim';
 
   @override
   String get hadith44 =>
-      '\"Qofkii akhriyo Suuradda Al-Ikhlaas toban jeer, Ilaahay wuxuu ugu dhisaa guri Jannada.\"\n— Ahmad';
+      '\"Qofkii akhriya Suuradda Al-Ikhlaas toban jeer, Alle wuxuu u dhisaa guri Jannada.\"\n— Ahmad';
 
   @override
   String get hadith45 =>
-      '\"Salaadda ugu wanaagsan ka dib fariidada waa salaadda habeenka.\"\n— Muslim';
+      '\"Salaadda ugu fadliga badan salaadaha fardka ah kadib waa salaadda habeenka.\"\n— Muslim';
 
   @override
   String get hadith46 =>
@@ -923,11 +923,11 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get hadith47 =>
-      '\"Kan xiriirka qaraabada xajiya maaha kan ku abtirsa, waa kan xajiya xitaa markay go\'do.\"\n— Bukhaari';
+      '\"Qaraabo-xiriiriyuhu maaha kan wax ku celiya; waa kan xiriiriya xitaa marka laga gooyo.\"\n— Bukhaari';
 
   @override
   String get hadith49 =>
-      '\"Qofkii cuna oo yidhaahda: \'Mahad Allaah oo i siiyay cuntadan oo aan wax awood iyo xoog ah iigu samaynin ii soo fidiyey,\' dambiyadiisii hore waa la cafiyaa.\"\n— Tirmidhi';
+      '\"Qofkii cunto cuna oo yidhaahda: \'Mahad waxaa leh Alle i quudiyay tan oo ii arzaaqay iyadoo aanay jirin awood iyo xoog aniga iga yimid,\' waxaa loo dhaafaa dambiyadiisii hore.\"\n— Tirmidhi';
 
   @override
   String get hadith53 =>
@@ -935,23 +935,23 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get hadith54 =>
-      '\"Kuwiinna ugu wanaagsan waa ka ugu wanaagsan qoyskiisa.\"\n— Tirmidhi';
+      '\"Kiinna ugu khayr badan waa kan ugu khayr badan qoyskiisa.\"\n— Tirmidhi';
 
   @override
   String get hadith55 =>
-      '\"Qofkii habeenkii akhriya labada aayad ee ugu dambeeya Suurada Al-Baqarah, waa ku filan yihiin.\"\n— Bukhaari & Muslim';
+      '\"Qofkii habeenkii akhriya labada aayadood ee u dambeeya Suuradda Al-Baqara, way ku filnaanayaan.\"\n— Bukhaari & Muslim';
 
   @override
   String get hadith56 =>
-      '\"Adduunyadani waa raashin, raashintii ugu fiicnaydna waa naag wanaagsan.\"\n— Muslim';
+      '\"Adduunku waa raaxo, raaxadiisa ugu khayr badanna waa haweeney suubban.\"\n— Muslim';
 
   @override
   String get hadith57 =>
-      '\"Saddex ducooyin ah oo aan la celin: ducada qofka sooman, hogaamiyaha cadliska ah, iyo qofka la dulmi jiray.\"\n— Tirmidhi';
+      '\"Saddex duco lama celiyo: ducada qofka sooman, ducada hoggaamiyaha cadliga ah, iyo ducada qofka la dulmiyay.\"\n— Tirmidhi';
 
   @override
   String get hadith58 =>
-      '\"Qofkii hal mar salaad iigu diro, Ilaahay toban jeer buu naxariis ugu diraa.\"\n— Muslim';
+      '\"Qofkii hal mar igu salliya, Alle toban jeer ayuu ku sallaa.\"\n— Muslim';
 
   @override
   String get hadith65 =>
@@ -963,27 +963,27 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get hadith67 =>
-      '\"U celi amaanada qofka kugu aaminay, hana khiyaanayn qofka ku khiyaanay.\"\n— Abu Dawud & Tirmidhi';
+      '\"U celi amaanada qofkii kugu aaminay, hana khiyaamin qofkii ku khiyaamay.\"\n— Abu Dawud & Tirmidhi';
 
   @override
   String get hadith68 =>
-      '\"Daal, cudur, murug, tiiraanyo, waxyeello ama walaac oo Muslim-ka gaaraya, xitaa qodax oo ku mudhda, Ilaahay wuxuu ku cafiyaa qaar ka mid ah dambiyaashiisa.\"\n— Bukhaari & Muslim';
+      '\"Muslimka ma gaadho daal, cudur, walbahaar, murug, dhib iyo walaac, xitaa qodax ku mudata, in Alle dambiyadiisa qaar ku dhaafo mooyee.\"\n— Bukhaari & Muslim';
 
   @override
   String get hadith69 =>
-      '\"Ducada Muslimka uu u sameeyo walaalki isagoo maqan had iyo jeer waa la aqbalaa.\"\n— Muslim';
+      '\"Ducada Muslimku walaalkiis ugu duceeyo isagoo maqan waa la aqbalaa.\"\n— Muslim';
 
   @override
   String get hadith70 =>
-      '\"Qofkii saddex jeer Ilaahay ka waydiista Jannada, Jannadu waxay tidhaahdaa: Ilaahayow, Jannada geli.\"\n— Tirmidhi';
+      '\"Qofkii saddex jeer Alle Jannada weydiista, Jannadu waxay tidhaahdaa: Ilaahayow, Jannada geli.\"\n— Tirmidhi';
 
   @override
   String get hadith71 =>
-      '\"Soonka ugu fiican ee ka dambeeya Ramadaan waa soonka bisha Ilaahay ee Muharram.\"\n— Muslim';
+      '\"Soonka ugu fadliga badan Ramadaan kadib waa soonka bisha Alle ee Muxarram.\"\n— Muslim';
 
   @override
   String get hadith72 =>
-      '\"Qofkii xajka sameeya oo aan hadal xun ku hadlin dambina samayn, wuxuu u soo noqdaa sida maalin hooyadii dhashay.\"\n— Bukhaari & Muslim';
+      '\"Qofkii xajka guta oo aan faxshi ku hadlin dambina samayn, wuxuu u soo noqdaa sidii maalintii hooyadii dhashay.\"\n— Bukhaari & Muslim';
 
   @override
   String get hadith73 =>
@@ -991,79 +991,79 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get hadith74 =>
-      '\"Ku dhaqso camalka wanaagsan ka hor fitnooyin u imanaya sida qayb ka mid ah habeen madow.\"\n— Muslim';
+      '\"Ku degdega camallada wanaagsan ka hor fidmooyin u imanaya sida googo\'ooyin habeen mugdi ah.\"\n— Muslim';
 
   @override
   String get hadith75 =>
-      '\"Laba rakcadood ee salaadda Fajr way ka wanaagsan yihiin adduunka iyo waxa ku jira oo dhan.\"\n— Muslim';
+      '\"Labada rakcadood ee Subax way ka khayr badan yihiin adduunka iyo waxa ku jira oo dhan.\"\n— Muslim';
 
   @override
   String get hadith77 =>
-      '\"Haddii aad Allaah ku tawakushaan sida loo tawakuli lahaa, wuxuu idinku rizqin lahaa sida uu u rizqeeyo shimbiraha.\"\n— Tirmidhi';
+      '\"Haddii aad Alle ugu tawakkali lahaydeen sida xaqa ah, wuxuu idiin arsaaqi lahaa sida uu shimbiraha u arsaaqo.\"\n— Tirmidhi';
 
   @override
   String get hadith78 =>
-      '\"Qofka booqda qof buka, wuxuu ku suganyahay beeraha Jannada ilaa uu soo noqdo.\"\n— Muslim';
+      '\"Qofkii booqda qof buka, wuxuu ku jiraa midhaha Jannada ilaa uu ka soo noqdo.\"\n— Muslim';
 
   @override
   String get hadith79 =>
-      '\"Faafia salaamta, quudi dadka gaajaysan, salaadna tuka habeenkii markii dadku hurdo — Jannada nabad ku galaysaan.\"\n— Tirmidhi';
+      '\"Faafiya salaanta, quudiya gaajaysanka, tukadana habeenkii marka dadku hurdaan — Jannada nabad baad ku geli doontaan.\"\n— Tirmidhi';
 
   @override
   String get hadith80 =>
-      '\"Qofkii aan dadka u mahad naqi karin, Allaah na mahad naqayo.\"\n— Tirmidhi';
+      '\"Qofkii aan dadka u mahadnaqin, Alle uma mahadnaqo.\"\n— Tirmidhi';
 
   @override
   String get hadith81 =>
-      '\"Xasaddu waa la oggolaan karaa laba kiis oo keliya: nin Allaah maal siiyay oo jidka xaqa ku bixiya, iyo nin Allaah xigmad siiyay oo ku xukuma kuna baraa.\"\n— Bukhari & Muslim';
+      '\"Xasad ma bannaana laba mooyee: nin Alle maal siiyay oo xaqa ku bixiya, iyo nin Alle xikmad siiyay oo ku xukuma kuna bara.\"\n— Bukhaari & Muslim';
 
   @override
   String get hadith82 =>
-      '\"Qofku wuxuu ku socda diinta saaxiibkiis, sidaas darteed mid kastaaba ha eego qofka uu saaxiib la yahay.\"\n— Abu Dawud & Tirmidhi';
+      '\"Qofku wuxuu ku jiraa diinta saaxiibkiis, ee midkiin ha eego cidda uu saaxiib la yahay.\"\n— Abu Dawud & Tirmidhi';
 
   @override
   String get hadith85 =>
-      '\"Qofkii u dhaafa wax Allaah daraaddiis, Allaah wuxuu ugu beddeli doonaa wax ka wanaagsan.\"\n— Ahmad';
+      '\"Qofkii wax uga taga Alle dartiis, Alle wuxuu ugu beddelaa wax ka khayr badan.\"\n— Ahmad';
 
   @override
   String get hadith86 =>
-      '\"Qofka qariiya ceebta Muslim, Allaah wuxuu qariinayaa ceebtiisa Maalinta Qiyaamaha.\"\n— Bukhari & Muslim';
+      '\"Qofkii qariya ceebta Muslim, Alle wuxuu qarin doonaa ceebtiisa Maalinta Qiyaamaha.\"\n— Bukhaari & Muslim';
 
   @override
   String get hadith87 =>
-      '\"Adduunkan ku jir sidii aad qariib tahay ama musaafir.\"\n— Bukhari';
+      '\"Adduunka ku noolow sidii qariib ama socoto.\"\n— Bukhaari';
 
   @override
   String get hadith88 =>
-      '\"Qofka u fududeeya qof dhibaato ku jira, Allaah wuxuu ugu fududeeyaa adduunka iyo aakhirada.\"\n— Muslim';
+      '\"Qofkii u fududeeya qof dhib ku jira, Alle wuxuu u fududeeyaa adduunka iyo aakhirada.\"\n— Muslim';
 
   @override
   String get hadith89 =>
-      '\"Abaalgudka camalku wuxuu ku xiran yahay niyada.\"\n— Bukhari & Muslim';
+      '\"Ajarka camalladu wuxuu ku xiran yahay niyada.\"\n— Bukhaari & Muslim';
 
   @override
   String get hadith90 =>
-      '\"Ka fogaada tuhmada, waayo, tuhmadu waa hadalka ugu beenta badan.\"\n— Bukhari & Muslim';
+      '\"Ka digtoonaada malaha, waayo malahu waa hadalka ugu beenta badan.\"\n— Bukhaari & Muslim';
 
   @override
   String get hadith93 =>
-      '\"Wada cuna oo magaca Allaah sheega, waxaa laydiin barakadeeyaa.\"\n— Abu Dawud';
+      '\"Wada cuna oo magaca Alle xusa, waa laydiinku barakayn doonaa.\"\n— Abu Dawud';
 
   @override
   String get hadith94 =>
-      '\"Ma jiro koox fadhiista iyagoo xusaya Allaah ilaa ay malaa\'igtu hareereeyaan, naxariistu qariso, xasilloonidu ku soo degto, oo Allaah ku xuso kuwa Agtiisa ah.\"\n— Muslim';
+      '\"Ma jiraan dad fadhiista iyagoo Alle xusaya, in malaa\'igtu hareereeyaan, naxariistu daboosho, xasilloonina ku soo degto mooyee.\"\n— Muslim';
 
   @override
   String get hadith95 =>
-      '\"Allaah ma siiyo addoon cafinta sabab ahaan wax aan sharaf ahayn.\"\n— Muslim';
+      '\"Addoonka cafiskiisa Alle wuxuu ugu kordhiyaa sharaf oo keliya.\"\n— Muslim';
 
   @override
   String get hadith96 =>
-      '\"Geelahaaga xidh, kaddibna Allaah ku tawakul.\"\n— Tirmidhi';
+      '\"Awrkaaga xidh, kaddibna Alle ku tawakal.\"\n— Tirmidhi';
 
   @override
   String get hadith97 =>
-      '\"Waa lala yaabaa arrimaha mu\'minka — wax walba waa u wanaagsan yihiin.\"\n— Muslim';
+      '\"Arrinka mu\'minku waa la yaab — arrinkiisa oo dhan waa khayr.\"\n— Muslim';
 
   @override
   String get hadith98 =>
@@ -1080,18 +1080,18 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String deleteAmalConfirmBody(String title) {
-    return '\"$title\" waxaa laga qariyaa liiskaaga. Taariikhda ku hadhsan.';
+    return '\"$title\" waa laga qarinayaa liiskaaga. Taariikhdaadu way kaydsanaanaysaa.';
   }
 
   @override
-  String get genericError => 'Wax xun baa dhacay. Fadlan isku day mar kale.';
+  String get genericError => 'Khalad ayaa dhacay. Fadlan isku day mar kale.';
 
   @override
-  String get notificationChannelName => 'Xasuusinta camalka';
+  String get notificationChannelName => 'Xusuusinta camallada';
 
   @override
   String get notificationChannelDescription =>
-      'Xasuusin maalmeed oo loogu talagalay camalladaada aad raacdo.';
+      'Xusuusin maalinle ah oo ku saabsan camallada aad raadraacdo.';
 
   @override
   String get invalidAmalId => 'Aqoonsi camal oo aan sax ahayn';
@@ -1106,21 +1106,21 @@ class AppLocalizationsSo extends AppLocalizations {
   String get tutorialNext => 'Xiga';
 
   @override
-  String get tutorialDone => 'Dhammaad';
+  String get tutorialDone => 'Waa hagaag';
 
   @override
   String get tutorialTapTitle => 'Taabo si aad u dhammaystirto';
 
   @override
   String get tutorialTapBody =>
-      'Hal taabasho ayaa camalka u calaamadaysa mid maanta la dhammaystiray. Mar kale taabo si aad u celiso.';
+      'Hal taabasho ayaa camalka u calaamadaysa in maanta la dhammeeyay. Mar kale taabo si aad uga noqoto.';
 
   @override
   String get tutorialEditTitle => 'Laba jeer taabo si aad wax uga beddesho';
 
   @override
   String get tutorialEditBody =>
-      'Waxay furaysaa foomka wax ka beddelka — magaca beddel, ama beddel inta jeer ee la celceliyo.';
+      'Waxay furaysaa foomka wax-ka-beddelka — magaca beddel, ama beddel inta jeer ee uu soo noqnoqdo.';
 
   @override
   String get tutorialReorderTitle => 'Riix oo hay si aad u kala habayso';
@@ -1130,7 +1130,7 @@ class AppLocalizationsSo extends AppLocalizations {
       'Hay safka, kadibna jiid. Habayntaada waa la kaydiyaa.';
 
   @override
-  String get tutorialRemoveTitle => 'Iska jiid si aad u saarto';
+  String get tutorialRemoveTitle => 'Dhinac u jiid si aad u saarto';
 
   @override
   String get tutorialRemoveBody =>
@@ -1148,21 +1148,21 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get tutorialViewBody =>
-      'U beddel inta u dhaxaysa kooxaynta qaybaha iyo hal liis fudud.';
+      'Kala dooro in qaybo loo kala saaro iyo hal liis fudud.';
 
   @override
   String get tutorialChallengeLogTitle => 'Taabo si aad maanta u diiwaangeliso';
 
   @override
   String get tutorialChallengeLogBody =>
-      'Hal taabasho ayaa maanta diiwaan gelisa. Yool la tiriyo, taabasho kastaa waxay ku dartaa hal tallaabo.';
+      'Hal taabasho ayaa maanta diiwaangelisa. Yoolka la tirinayo, taabasho kastaa hal tallaabo ayay ku dartaa.';
 
   @override
   String get tutorialChallengeOpenTitle => 'Laba jeer taabo si aad u furto';
 
   @override
   String get tutorialChallengeOpenBody =>
-      'Waxay furaysaa yoolka — maalin walba arag, mid aad seegtay saxo, ama tirtir.';
+      'Waxay furaysaa yoolka — maalin kasta arag, mid aad seegtay sax, ama tirtir.';
 
   @override
   String get tutorialChallengeDeleteBody =>
@@ -1182,7 +1182,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get challengesActive => 'Socda';
 
   @override
-  String get challengesPast => 'Hore';
+  String get challengesPast => 'Kuwii hore';
 
   @override
   String challengeJustFinished(int count, String title) {
@@ -1190,7 +1190,7 @@ class AppLocalizationsSo extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count yool ayaa dhammaaday — kii ugu dambeeyay $title',
-      one: 'Yool ayaa dhammaaday — $title',
+      one: 'Waa dhammaaday: $title',
     );
     return '$_temp0';
   }
@@ -1202,7 +1202,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get challengesPastEmpty => 'Weli waxba ma dhammaanin.';
 
   @override
-  String get challengesEmptyTitle => 'Wali yool ma jiro';
+  String get challengesEmptyTitle => 'Weli yool ma jiro';
 
   @override
   String get challengesEmptyBody =>
@@ -1219,21 +1219,21 @@ class AppLocalizationsSo extends AppLocalizations {
       'Ma tirtiraysaa yoolkan iyo dhammaan horumarkii la diiwaangeliyay?';
 
   @override
-  String get challengeShapeQuestion => 'Waa yool noocee?';
+  String get challengeShapeQuestion => 'Yoolkani waa nooc kee?';
 
   @override
   String get challengeShapeTotal => 'Wadar la gaarayo';
 
   @override
   String get challengeShapeTotalBody =>
-      '1000 salawaat, 30 juz. Waxaad qoraysaa tirooyin oo way isku darsamaan.';
+      '1000 salawaad, 30 juz. Tirooyin baad diiwaangelinaysaa, wadartuna way kordhaysaa.';
 
   @override
-  String get challengeShapeStreak => 'Joogtayn maalin kasta';
+  String get challengeShapeStreak => 'Taxane maalin-maalin ah';
 
   @override
   String get challengeShapeStreakBody =>
-      'Tahajjud, Subax jamaacada. Hal calaamad maalintii, tirada muhiim ma aha.';
+      'Tahajjud, Subax jamaaco ah. Hal calaamad maalintii, tiradu muhiim ma aha.';
 
   @override
   String get challengeTargetLabel => 'Bartilmaameed';
@@ -1242,19 +1242,19 @@ class AppLocalizationsSo extends AppLocalizations {
   String get challengeTargetRequired => 'Geli tiro ka weyn eber';
 
   @override
-  String get challengeUnitLabel => 'Halbeeg (ikhtiyaari)';
+  String get challengeUnitLabel => 'Halbeeg (ikhtiyaar)';
 
   @override
   String get challengeUnitHint => 'rakcad, bog, jeer';
 
   @override
-  String get challengeOneTapAdds => 'Hal taabasho way ku dartaa';
+  String get challengeOneTapAdds => 'Hal taabasho waxay ku daraysaa';
 
   @override
   String get challengeHowManyDays => 'Immisa maalin?';
 
   @override
-  String get challengeReachHowMuch => 'Immisa la gaarayo?';
+  String get challengeReachHowMuch => 'Ilaa immisa?';
 
   @override
   String get challengeSpreadOver => 'Muddada';
@@ -1263,13 +1263,13 @@ class AppLocalizationsSo extends AppLocalizations {
   String get challengeSpreadEveryDay => 'Maalin kasta';
 
   @override
-  String get challengeSpreadLonger => 'Muddo dheer';
+  String get challengeSpreadLonger => 'Muddo ka dheer';
 
   @override
   String get challengeByWhen => 'Ilaa goorma?';
 
   @override
-  String get challengeWindowDuration => 'Muddo go\'an';
+  String get challengeWindowDuration => 'Muddo gudaheed';
 
   @override
   String get challengeByDate => 'Ilaa taariikh';
@@ -1292,7 +1292,7 @@ class AppLocalizationsSo extends AppLocalizations {
     String window,
     String slack,
   ) {
-    return '$start ilaa $end · $target ka $window maalmood — $slack waad ka tegi kartaa';
+    return '$start ilaa $end · $target ka mid ah $window maalmood — $slack waad seegi kartaa';
   }
 
   @override
@@ -1307,7 +1307,7 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String challengeTooTight(String target, String window) {
-    return '$target maalmood kuma qasno $window maalmood — joogtayntu waxay tirinaysaa hal maalintii.';
+    return '$target maalmood kuma qasmaan $window maalmood — taxanuhu maalintii hal mar buu tiriyaa.';
   }
 
   @override
@@ -1322,10 +1322,10 @@ class AppLocalizationsSo extends AppLocalizations {
   }
 
   @override
-  String get challengeStartDate => 'Bilaabmaya';
+  String get challengeStartDate => 'Bilowga';
 
   @override
-  String get challengeEndDate => 'Dhammaanaya';
+  String get challengeEndDate => 'Dhammaadka';
 
   @override
   String challengeProgressCount(String done, String target, String unit) {
@@ -1348,7 +1348,7 @@ class AppLocalizationsSo extends AppLocalizations {
       count,
       locale: localeName,
       other: '$count maalmood ayaa hadhay',
-      one: '$count maalin ayaa hadhay',
+      one: 'Hal maalin ayaa hadhay',
     );
     return '$_temp0';
   }
@@ -1358,21 +1358,21 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String challengeOnTrack(String rate) {
-    return 'Jidka saaran · $rate/maalin';
+    return 'Jadwalka ku socda · $rate/maalin';
   }
 
   @override
   String challengeBehind(String rate) {
-    return 'Dib u dhac · $rate/maalin';
+    return 'Dib u dhac · $rate/maalin si aad u dhammayso';
   }
 
   @override
   String challengeLastDay(String remaining) {
-    return 'Maalinta dambe · $remaining hadhay';
+    return 'Maalinta u dambaysa · $remaining ayaa hadhay';
   }
 
   @override
-  String get challengeReached => 'Waa la gaadhay';
+  String get challengeReached => 'Bartilmaameedka waa la gaadhay';
 
   @override
   String get challengeCompleted => 'Dhammaystiran';
@@ -1383,7 +1383,7 @@ class AppLocalizationsSo extends AppLocalizations {
   }
 
   @override
-  String get challengeExpiredTitle => 'Yoolku waa dhammaaday';
+  String get challengeExpiredTitle => 'Yoolku wuu dhammaaday';
 
   @override
   String challengeExpiredBody(String title, String done, String target) {
@@ -1400,16 +1400,16 @@ class AppLocalizationsSo extends AppLocalizations {
   String get challengeArchive => 'Arkiifi';
 
   @override
-  String get challengeDailyBreakdown => 'Diiwaanka maalinlaha ah';
+  String get challengeDailyBreakdown => 'Diiwaan maalinle';
 
   @override
   String challengeNudgeBody(String title, String rate) {
-    return '$title: $rate maalintii si aad waqtiga u dhammaysid.';
+    return '$title: $rate maalintii si aad wakhtigiisa ugu dhammayso.';
   }
 
   @override
   String challengeLastDayBody(String title, String remaining) {
-    return '$title: maalinta dambe — $remaining hadhay.';
+    return '$title: maalinta u dambaysa — $remaining ayaa hadhay.';
   }
 
   @override
@@ -1431,19 +1431,19 @@ class AppLocalizationsSo extends AppLocalizations {
   String get challengeTemplateBlank => 'Madhan';
 
   @override
-  String get challengePreview => 'Hordhac';
+  String get challengePreview => 'Horu-eegid';
 
   @override
   String get challengeTmplTahajjud => '40 habeen Tahajjud';
 
   @override
-  String get challengeTmplSalawat => '1000 salawaat';
+  String get challengeTmplSalawat => '1000 salawaad';
 
   @override
-  String get challengeTmplKhatm => 'Khatmi Quraanka 30 maalmood';
+  String get challengeTmplKhatm => 'Khatmi 30 maalmood gudahood';
 
   @override
-  String get challengeTmplFajrJamaah => '30 maalmood Subax jamaaco';
+  String get challengeTmplFajrJamaah => '30 maalmood Subax jamaaco ah';
 
   @override
   String get challengeTmplSadaqah => 'Sadaqo 30 maalmood';
@@ -1477,7 +1477,7 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get supportCardBody =>
-      'Waa bilaash, xayeysiis iyo akoon la\'aan. Horumarinteeda waxaad ku taageeri kartaa wax yar oo aad bixiso — lacag kasta, mar kasta oo aad doonto.';
+      'Waa bilaash, xayeysiis iyo akoon midna ma leh. Horumarintiisa waxaad ku taageeri kartaa hadiyad — lacag kasta, mar kasta oo aad doonto.';
 
   @override
   String get supportCta => 'Taageer Muhasaba';
@@ -1487,7 +1487,7 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get supporterThanks =>
-      'Alle ha kaa ajar siiyo — insha Allah, Muhasaba waxay sii ahaanaysaa mid bilaash ah oo xayeysiis la\'aan.';
+      'Alle khayr ha idinka siiyo — insha Allaah, Muhasaba wuxuu sii ahaan doonaa bilaash, xayeysiis la\'aan.';
 
   @override
   String supporterSince(String tier, String month) {
@@ -1499,13 +1499,13 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Muhasaba waa bilaash, xayeysiis iyo akoon la\'aan. Horumarinteeda waxaad ku taageeri kartaa wax yar oo aad bixiso — lacag kasta, mar kasta oo aad doonto. Wax astaan ah oo xiran ma jiro.';
+      'Muhasaba waa bilaash, xayeysiis iyo akoon midna ma leh. Horumarintiisa waxaad ku taageeri kartaa hadiyad — lacag kasta, mar kasta oo aad doonto. Wax xiran oo taageerada ku xiran ma jiro.';
 
   @override
   String get supportPromptNow => 'Hadda taageer';
 
   @override
-  String get supportPromptLater => 'Mar dambe i xasuusi';
+  String get supportPromptLater => 'Mar dambe i xusuusi';
 
   @override
   String get supportPromptNever => 'Mar dambe ha i weydiin';
@@ -1515,11 +1515,11 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get tipSheetBody =>
-      'Dooro lacag kasta, inta jeer ee aad doonto. Lacagtu waxay u adeegtaa dayactirka abka — insha Allah, wuxuu sii ahaanayaa mid bilaash ah oo xayeysiis la\'aan. Mahadnaq ahaan, Dejinta waxaa lagugu calaamadin doonaa taageere ahaan.';
+      'Dooro lacag kasta, inta jeer ee aad doonto. Hadiyaduhu waxay galaan dayactirka abka — insha Allaah, wuxuu sii ahaan doonaa bilaash, xayeysiis la\'aan. Mahadnaq ahaan, Dejinta waxaa lagugu muujin doonaa taageere.';
 
   @override
   String tipSheetSupporterLine(String tier) {
-    return '$tier — Alle ha kaa ajar siiyo.';
+    return '$tier — Alle khayr ha idinka siiyo.';
   }
 
   @override
@@ -1528,18 +1528,18 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String tipSheetStoreNote(String store) {
-    return 'Waxaa maareeya $store — annagu weligayo ma aragno faahfaahinta lacag-bixintaada.';
+    return 'Waxaa maamula $store — weligeen ma aragno xogta lacag-bixintaada.';
   }
 
   @override
-  String get tipSheetOtherWays => 'Ma arkaysid ikhtiyaar kugu habboon?';
+  String get tipSheetOtherWays => 'Ma waydaa ikhtiyaar kugu habboon?';
 
   @override
   String get tipSheetWriteToUs => 'Noo qor';
 
   @override
   String get supportEmailBody =>
-      'Assalaamu calaykum,\n\nWaxaan jeclaan lahaa inaan si toos ah u taageero horumarinta Muhasaba.\n\nDalka:\nSida aan doonayo inaan u diro:\nQadarka (ikhtiyaari):';
+      'Assalaamu calaykum,\n\nWaxaan jeclaan lahaa inaan si toos ah u taageero horumarinta Muhasaba.\n\nDalka:\nHabka aan u dirayo:\nLacagta (ikhtiyaar):';
 
   @override
   String tipBusy(String store) {
@@ -1547,17 +1547,17 @@ class AppLocalizationsSo extends AppLocalizations {
   }
 
   @override
-  String get tipThanks => 'Alle ha kaa ajar siiyo — Alle ha kaa aqbalo.';
+  String get tipThanks => 'Alle khayr ha idinka siiyo — Alle ha idinka aqbalo.';
 
   @override
-  String get tipDone => 'Dhammaad';
+  String get tipDone => 'Waa hagaag';
 
   @override
-  String get tipFailed => 'Iibsashadu ma dhammaystirmin. Waxba lagaama jarin.';
+  String get tipFailed => 'Iibsigu ma dhicin. Wax lacag ah lagaama jarin.';
 
   @override
   String tipPending(String store) {
-    return 'Lacagtaadu wali $store ayay ku sugan tahay — calaamaddaada waxaa lagu dari doonaa marka la xaqiijiyo.';
+    return 'Hadiyaddaadu weli waxay sugaysaa $store — sumaddaada waxaa la dari doonaa marka la xaqiijiyo.';
   }
 
   @override
@@ -1576,10 +1576,10 @@ class AppLocalizationsSo extends AppLocalizations {
   String get optionJamaaMasjid => 'Jamaaco masjidka';
 
   @override
-  String get optionSetOnTime => 'Wakhtiga';
+  String get optionSetOnTime => 'Wakhtigii';
 
   @override
-  String get optionOnTimeOnTime => 'Wakhti sax ah';
+  String get optionOnTimeOnTime => 'Wakhtigii';
 
   @override
   String get optionOnTimeLate => 'Daahid';
@@ -1597,13 +1597,13 @@ class AppLocalizationsSo extends AppLocalizations {
   String get optionQuranMemorised => 'La xifdiyay';
 
   @override
-  String get optionQuranMeaning => 'Micnaha leh';
+  String get optionQuranMeaning => 'Macnaha la socda';
 
   @override
   String get optionQuranListened => 'La dhegaystay';
 
   @override
-  String get optionSetSadaqahType => 'Nooca Sadaqada';
+  String get optionSetSadaqahType => 'Nooca sadaqada';
 
   @override
   String get optionSadaqahMoney => 'Lacag';
@@ -1630,10 +1630,10 @@ class AppLocalizationsSo extends AppLocalizations {
   String get optionIntensityIntense => 'Adag';
 
   @override
-  String get optionSetNewTitle => 'Urur ikhtiyaar oo cusub';
+  String get optionSetNewTitle => 'Urur cusub oo ikhtiyaarro ah';
 
   @override
-  String get optionSetEditTitle => 'Wax ka beddel ururka ikhtiyaarka';
+  String get optionSetEditTitle => 'Wax ka beddel ururka ikhtiyaarrada';
 
   @override
   String get optionSetNameLabel => 'Magaca ururka';
@@ -1658,11 +1658,11 @@ class AppLocalizationsSo extends AppLocalizations {
   }
 
   @override
-  String get optionSetPreviewLabel => 'Hordhac — safka Maanta';
+  String get optionSetPreviewLabel => 'Horu-eegid — safka Maanta';
 
   @override
   String optionSetKeptForHistory(String labels) {
-    return 'Loogu haystay taariikhda: $labels';
+    return 'Taariikhda loo hayo: $labels';
   }
 
   @override
@@ -1670,7 +1670,7 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get optionSetDeleteConfirm =>
-      'Camalada isticmaasha ururkan mar dambe ma muujinayaan ikhtiyaaro. Maalmaha aad horey u qeyd gashay way sii haynayaan doorashadoodii.';
+      'Camallada adeegsada ururkan ikhtiyaarro mar dambe ma muujin doonaan. Maalmihii aad horay u diiwaangelisay doorashadoodii way sii haysanayaan.';
 
   @override
   String get optionSetNameRequired => 'Ururka magac u dhig';
@@ -1693,18 +1693,18 @@ class AppLocalizationsSo extends AppLocalizations {
   String get optionSetNew => 'Urur cusub';
 
   @override
-  String get requireChoiceLabel => 'Doorasho waajib ka dhig';
+  String get requireChoiceLabel => 'Ka dhig doorasho qasab ah';
 
   @override
   String get requireChoiceHelp =>
-      'Safku ma calaamadaysna ilaa ikhtiyaar la doorto';
+      'Safka lama calaamadeyn karo ilaa ikhtiyaar la doorto';
 
   @override
   String get requireChoicePickSetFirst => 'Marka hore urur dooro';
 
   @override
   String get requireChoiceCountHelp =>
-      'Camalada la tirinayo waxaa dhammaystira tirinta − iyo +';
+      'Camallada la tiriyo waxaa lagu dhammaystiraa − iyo +';
 
   @override
   String optionsUsedOf(int used, int max) {
@@ -1726,7 +1726,7 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String optionBreakdownTitle(String set) {
-    return 'Kala qeybta ikhtiyaarka — $set';
+    return 'Kala-qaybinta ikhtiyaarrada — $set';
   }
 
   @override
@@ -1734,10 +1734,10 @@ class AppLocalizationsSo extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count dhammaystirka',
-      one: '1 dhammaystirka',
+      other: '$count dhammaystir',
+      one: '1 dhammaystir',
     );
-    return 'Saamiga $_temp0 ee doorasho la qeyd galiyay';
+    return 'Saamiga $_temp0 ee doorasho lagu diiwaangeliyay';
   }
 
   @override
@@ -1748,7 +1748,7 @@ class AppLocalizationsSo extends AppLocalizations {
       other: '$total maalmood oo la dhammeeyay',
       one: '1 maalin oo la dhammeeyay',
     );
-    return 'Wax doorasho ah lama qeyd gelin — $none ka mid ah $_temp0';
+    return 'Doorasho lama diiwaangelin — $none ka mid ah $_temp0';
   }
 
   @override
@@ -1759,11 +1759,11 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String optionScopedCaption(String amal, int count) {
-    return '$amal · $count la qeyd galiyay';
+    return '$amal · $count la diiwaangeliyay';
   }
 
   @override
-  String get optionBreakdownSectionTitle => 'Kala qeybta ikhtiyaarka';
+  String get optionBreakdownSectionTitle => 'Kala-qaybinta ikhtiyaarrada';
 
   @override
   String optionBreakdownSwipeHint(int count) {
@@ -1771,8 +1771,7 @@ class AppLocalizationsSo extends AppLocalizations {
   }
 
   @override
-  String get optionDetailEmpty =>
-      'Weli wax doorasho ah looma qeyd gelin ururkan.';
+  String get optionDetailEmpty => 'Weli doorasho looma diiwaangelin ururkan.';
 
   @override
   String get optionDetailTrendHeading => 'Sida uu isu beddelay';
@@ -1835,7 +1834,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get amalWitr => 'Salaadda Witirka';
 
   @override
-  String get amalQada => 'Salaadaha la qadeeyo';
+  String get amalQada => 'Qadaynta salaadaha';
 
   @override
   String get amalFajrSunnah => 'Sunnada Subax';
@@ -1844,10 +1843,10 @@ class AppLocalizationsSo extends AppLocalizations {
   String get amalDhuhrSunnah => 'Sunnada Duhur';
 
   @override
-  String get amalAsrSunnah => 'Sunnada Casir';
+  String get amalAsrSunnah => 'Sunnada Casar';
 
   @override
-  String get amalMaghribSunnah => 'Sunnada Maghrib';
+  String get amalMaghribSunnah => 'Sunnada Maqrib';
 
   @override
   String get amalIshaSunnah => 'Sunnada Cishe';
@@ -1871,10 +1870,10 @@ class AppLocalizationsSo extends AppLocalizations {
   String get amalWuduPrayer => 'Laba rakcadood weysada kadib';
 
   @override
-  String get amalTahiyyah => 'Tixiyatul masjid';
+  String get amalTahiyyah => 'Taxiyyatul Masjid';
 
   @override
-  String get amalEarlyJumuah => 'Jimcaha oo hore loo tago';
+  String get amalEarlyJumuah => 'Hore u tegidda Jimcaha';
 
   @override
   String get amalAfterSalah => 'Adkaarta salaadda kadib';
@@ -1886,10 +1885,10 @@ class AppLocalizationsSo extends AppLocalizations {
   String get amalAfterDhuhr => 'Adkaarta Duhur kadib';
 
   @override
-  String get amalAfterAsr => 'Adkaarta Casir kadib';
+  String get amalAfterAsr => 'Adkaarta Casar kadib';
 
   @override
-  String get amalAfterMaghrib => 'Adkaarta Maghrib kadib';
+  String get amalAfterMaghrib => 'Adkaarta Maqrib kadib';
 
   @override
   String get amalAfterIsha => 'Adkaarta Cishe kadib';
@@ -1904,10 +1903,10 @@ class AppLocalizationsSo extends AppLocalizations {
   String get amalKursiDhuhr => 'Aayatul Kursi Duhur kadib';
 
   @override
-  String get amalKursiAsr => 'Aayatul Kursi Casir kadib';
+  String get amalKursiAsr => 'Aayatul Kursi Casar kadib';
 
   @override
-  String get amalKursiMaghrib => 'Aayatul Kursi Maghrib kadib';
+  String get amalKursiMaghrib => 'Aayatul Kursi Maqrib kadib';
 
   @override
   String get amalKursiIsha => 'Aayatul Kursi Cishe kadib';
@@ -1940,10 +1939,10 @@ class AppLocalizationsSo extends AppLocalizations {
   String get amalWakingAdhkar => 'Adkaarta toosidda';
 
   @override
-  String get amalDuaAdhan => 'Ducada adaanka kadib';
+  String get amalDuaAdhan => 'Ducada aadaanka kadib';
 
   @override
-  String get amalDuaIqamah => 'Ducada u dhexeysa adaanka iyo iqaamada';
+  String get amalDuaIqamah => 'Ducada u dhexaysa aadaanka iyo iqaamadda';
 
   @override
   String get amalDuaSujood => 'Ducada sujuudda';
@@ -1988,7 +1987,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get amalTafsir => 'Tafsiirka';
 
   @override
-  String get amalListenQuran => 'Dhageysiga Quraanka';
+  String get amalListenQuran => 'Dhegaysiga Quraanka';
 
   @override
   String get amalTeachQuran => 'Barista Quraanka';
@@ -1997,7 +1996,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get amalMonThu => 'Soonka Isniinta iyo Khamiista';
 
   @override
-  String get amalThreeDays => 'Saddex maalmood oo soon bishii';
+  String get amalThreeDays => 'Saddex soon bishii';
 
   @override
   String get amalDailySadaqah => 'Sadaqo maalinle ah';
@@ -2012,7 +2011,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get amalOrphan => 'Kafaalada agoonta';
 
   @override
-  String get amalGiveWater => 'Waraabinta';
+  String get amalGiveWater => 'Biyo waraabin';
 
   @override
   String get amalLearnHadith => 'Barashada xadiis';
@@ -2042,7 +2041,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get amalMuhasaba => 'Muxaasabada habeenka';
 
   @override
-  String get amalSpeakGood => 'Ama wanaag sheeg ama aamus';
+  String get amalSpeakGood => 'Khayr sheeg ama aamus';
 
   @override
   String get amalNoBackbiting => 'Ka fogaanshaha xanta';
@@ -2057,7 +2056,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get amalTruthful => 'Run sheegidda';
 
   @override
-  String get amalSmile => 'Dhoola caddayn';
+  String get amalSmile => 'Dhoolla-caddayn';
 
   @override
   String get amalSalam => 'Faafinta salaanta';
@@ -2087,7 +2086,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get amalHelpHome => 'Ka caawinta guriga';
 
   @override
-  String get amalTeachChildren => 'Barista carruurta diinta';
+  String get amalTeachChildren => 'Barista carruurta';
 
   @override
   String get amalSpouse => 'U wanaagsanaanta lammaanaha';
@@ -2108,7 +2107,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get categoryFamily => 'Qoys';
 
   @override
-  String get libraryTitle => 'Maktabadda Camalada';
+  String get libraryTitle => 'Maktabadda Camallada';
 
   @override
   String get librarySearchHint => 'Raadi camal';
@@ -2117,7 +2116,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get libraryAll => 'Dhammaan';
 
   @override
-  String get libraryAdded => 'Waa lagu daray Maanta';
+  String get libraryAdded => 'Waxaa lagu daray Maanta';
 
   @override
   String libraryAddedShowsOn(String days) {
@@ -2126,7 +2125,7 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String libraryNoMatch(String query) {
-    return 'Ma jiro camal la mid ah “$query”';
+    return 'Camal “$query” ah lama helin';
   }
 
   @override
@@ -2135,7 +2134,7 @@ class AppLocalizationsSo extends AppLocalizations {
   }
 
   @override
-  String get libraryPickBanner => 'Ka dooro Maktabadda Camalada';
+  String get libraryPickBanner => 'Ka dooro Maktabadda Camallada';
 
   @override
   String libraryPickBannerSubtitle(num count, String countText) {
@@ -2149,7 +2148,7 @@ class AppLocalizationsSo extends AppLocalizations {
   }
 
   @override
-  String get libraryFilledIn => 'Waxaa laga buuxiyey Maktabadda Camalada';
+  String get libraryFilledIn => 'Waxaa laga soo qaatay Maktabadda Camallada';
 
   @override
   String get libraryChange => 'Beddel';
@@ -2201,5 +2200,5 @@ class AppLocalizationsSo extends AppLocalizations {
   String get libraryOnList => 'Liiskaaga ayuu ku jiraa';
 
   @override
-  String get todayEmptyBrowse => 'Eeg Maktabadda Camalada';
+  String get todayEmptyBrowse => 'Eeg Maktabadda Camallada';
 }

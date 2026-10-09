@@ -57,11 +57,11 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get archivedRestore => 'Riktheje';
+  String get archivedRestore => 'Rikthe';
 
   @override
   String archivedRestored(String title) {
-    return '\"$title\" u kthye në listën tuaj.';
+    return '“$title” u rikthye në listën tuaj.';
   }
 
   @override
@@ -128,13 +128,13 @@ class AppLocalizationsSq extends AppLocalizations {
   String get categoryCharity => 'Sadakaja';
 
   @override
-  String get categorySunnah => 'Sunet';
+  String get categorySunnah => 'Suneti';
 
   @override
   String get timesPerPeriod => 'Herë për periudhë';
 
   @override
-  String get custom => 'Personalizuar';
+  String get custom => 'Sasi tjetër';
 
   @override
   String get customTargetHint => 'p.sh. 50';
@@ -152,7 +152,8 @@ class AppLocalizationsSq extends AppLocalizations {
   String get anyDay => 'Cilado';
 
   @override
-  String get anyDayHint => 'Cilado ditë (mbetet e dukshme sot, fshihet nesër)';
+  String get anyDayHint =>
+      'Cilado ditë (mbetet e dukshme sot, nesër nuk shfaqet)';
 
   @override
   String onlyDayHint(String day) {
@@ -234,7 +235,8 @@ class AppLocalizationsSq extends AppLocalizations {
   String get anyDate => 'Cilado';
 
   @override
-  String get anyDateHint => 'Cilado datë (mbetet e dukshme sot, fshihet nesër)';
+  String get anyDateHint =>
+      'Cilado datë (mbetet e dukshme sot, nesër nuk shfaqet)';
 
   @override
   String onlyDateHint(String date) {
@@ -242,17 +244,17 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get startPreChecked => 'Fillo e shënuar';
+  String get startPreChecked => 'Shënuar paraprakisht';
 
   @override
   String get startPreCheckedSubtitle =>
-      'Kur nis një periudhë e re, ky amal shënohet si i përfunduar automatikisht derisa ta hiqni.';
+      'Kur nis një periudhë e re, ky amal shënohet automatikisht si i përfunduar, derisa t\'ia hiqni shenjën.';
 
   @override
   String get reminder => 'Kujtesë';
 
   @override
-  String get reminderNone => 'Asgjë';
+  String get reminderNone => 'Asnjë';
 
   @override
   String reminderTime(String time) {
@@ -261,7 +263,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get reminderPermissionWarning =>
-      'Kujtesa u ruajt, por njoftimet nuk janë të lejuara. Aktivizoni ato në cilësimet e sistemit për të marrë njoftime.';
+      'Kujtesa u ruajt, por njoftimet nuk janë të lejuara. Aktivizojini te cilësimet e sistemit që të merrni njoftime.';
 
   @override
   String get settingsReminders => 'Kujtesat';
@@ -277,8 +279,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get dailyReminderTimeLabel => 'Ora e kujtesës';
 
   @override
-  String get dailyReminderBody =>
-      'Ndani një moment për të ndjekur amalet e sotme.';
+  String get dailyReminderBody => 'Ndalni një çast dhe shënoni amalet e sotme.';
 
   @override
   String get groupByCategory => 'Grupo sipas kategorisë';
@@ -295,16 +296,16 @@ class AppLocalizationsSq extends AppLocalizations {
   String get todayEmptyHint => 'Shtypni + për të shtuar amalin tuaj të parë.';
 
   @override
-  String get noteLabel => 'Shënimi';
+  String get noteLabel => 'Shënim';
 
   @override
   String get noteHint => 'p.sh. U fala në xhami';
 
   @override
-  String get completed => 'përfunduar';
+  String get completed => 'i përfunduar';
 
   @override
-  String get notCompleted => 'e papërfunduar';
+  String get notCompleted => 'i papërfunduar';
 
   @override
   String progressOf(String progress, String target) {
@@ -320,7 +321,8 @@ class AppLocalizationsSq extends AppLocalizations {
   String get removeFromToday => 'Hiq nga sot';
 
   @override
-  String get removeFromTodaySubtitle => 'Fshih vetëm për sot. Kthehet nesër.';
+  String get removeFromTodaySubtitle =>
+      'Hiqet vetëm për sot dhe rikthehet nesër.';
 
   @override
   String get removeFromTracking => 'Hiq nga ndjekja';
@@ -333,10 +335,10 @@ class AppLocalizationsSq extends AppLocalizations {
   String get chooseIcon => 'Zgjidh ikonën';
 
   @override
-  String get iconNone => 'Asgjë';
+  String get iconNone => 'Asnjë';
 
   @override
-  String get recentlyUsed => 'Përdorur së fundmi';
+  String get recentlyUsed => 'Të përdorura së fundi';
 
   @override
   String get emojiSectionGeneral => 'Të përgjithshme';
@@ -354,19 +356,19 @@ class AppLocalizationsSq extends AppLocalizations {
   String get categoryEditSheetTitle => 'Ndrysho kategorinë';
 
   @override
-  String get addAmal => 'Shto Amal';
+  String get addAmal => 'Shto amal';
 
   @override
   String get customAmal => 'Amal i personalizuar';
 
   @override
-  String get amalTasbih => 'Tesbihe 33x';
+  String get amalTasbih => 'Tesbih 33x';
 
   @override
   String get amalIstighfar => 'Istigfar';
 
   @override
-  String get amalSurahKahf => 'Surja Kehf';
+  String get amalSurahKahf => 'Sureja El-Kehf';
 
   @override
   String get amalSadaqah => 'Sadakaja';
@@ -413,21 +415,21 @@ class AppLocalizationsSq extends AppLocalizations {
   String get sectionDayBoundary => 'Kufiri i ditës';
 
   @override
-  String get rolloverHour => 'Ora e kalimit';
+  String get rolloverHour => 'Ora e ndërrimit të ditës';
 
   @override
   String get rolloverAtMidnight => 'Dita mbaron në mesnatë.';
 
   @override
   String rolloverSubtitle(String time) {
-    return 'Amalet e djeshme mbeten të ndryshueshme deri në $time.';
+    return 'Amalet e djeshme mund të ndryshohen deri në $time.';
   }
 
   @override
-  String get pickRolloverHour => 'Zgjidhni orën kur dita kalon';
+  String get pickRolloverHour => 'Zgjidhni orën kur ndërrohet dita';
 
   @override
-  String get sectionWeekMonth => 'Java & muaji';
+  String get sectionWeekMonth => 'Java dhe muaji';
 
   @override
   String get startOfWeek => 'Fillimi i javës';
@@ -437,7 +439,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get startOfMonthClamped =>
-      'Ditët pas së 28-ës kufizohen në ditën e fundit të muajve më të shkurtër.';
+      'Në muajt më të shkurtër, ditët pas datës 28 kalojnë në ditën e fundit të muajit.';
 
   @override
   String get sectionAppearance => 'Pamja';
@@ -468,7 +470,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get aboutSubtitle =>
-      'Një ditar personal për llogaridhënien e fesë. Të gjitha të dhënat mbeten në këtë pajisje.';
+      'Një ditar personal për ta marrë veten në llogari në fe. Të gjitha të dhënat mbeten në këtë pajisje.';
 
   @override
   String get statsTitle => 'Statistikat';
@@ -558,10 +560,10 @@ class AppLocalizationsSq extends AppLocalizations {
   String get statsThisMonth => 'Këtë muaj';
 
   @override
-  String get statsAllTime => 'Gjithë kohët';
+  String get statsAllTime => 'Gjithë koha';
 
   @override
-  String get statsCustomRange => 'Gama e personalizuar';
+  String get statsCustomRange => 'Periudhë e zgjedhur';
 
   @override
   String get statsAllCategories => 'Të gjitha';
@@ -576,7 +578,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get statsExpected => 'Të pritura';
 
   @override
-  String get statsVsPrevious => 'Kundër të mëparshmit';
+  String get statsVsPrevious => 'Ndaj periudhës së kaluar';
 
   @override
   String get statsByCategory => 'Sipas kategorisë';
@@ -602,7 +604,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get statsCurrentStreak => 'Seria aktuale';
 
   @override
-  String get statsBestStreak => 'Seria më e mirë';
+  String get statsBestStreak => 'Seria më e gjatë';
 
   @override
   String get statsTotalDays => 'Ditë gjithsej';
@@ -650,7 +652,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get statsStreaks => 'Seritë';
 
   @override
-  String get statsSelectDateRange => 'Zgjidhni gamën e datave';
+  String get statsSelectDateRange => 'Zgjidhni periudhën';
 
   @override
   String get historyTitle => 'Historiku';
@@ -660,7 +662,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String historyEmptyDay(String date) {
-    return 'Asnjë amal e ndjekur më $date';
+    return 'Më $date nuk u shënua asnjë amal';
   }
 
   @override
@@ -716,69 +718,69 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get hadith0 =>
-      '\"Veprat më të dashura tek Allahu janë ato që bëhen rregullisht, edhe nëse janë të vogla.\"\n— Buhariu & Muslimi';
+      '“Veprat më të dashura tek Allahu janë ato që bëhen rregullisht, edhe nëse janë të vogla.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith2 =>
-      '\"Kur vdes biri i Ademit, veprat e tij ndërpriten përveç tre: sadakaja e vazhdueshme, dituria e dobishme, ose fëmija i mirë që lutet për të.\"\n— Muslimi';
+      '“Kur vdes biri i Ademit, i ndërpriten veprat përveç tri gjërave: sadakasë së vazhdueshme, dijes së dobishme ose fëmijës së mirë që lutet për të.”\n— Muslimi';
 
   @override
   String get hadith3 =>
-      '\"Kush i fal dy namazet e ftohta (Sabahun dhe Ikindinë) do të hyjë në Xhenet.\"\n— Buhariu';
+      '“Kush i fal dy namazet e ftohta (Sabahun dhe Ikindinë) do të hyjë në Xhenet.”\n— Buhariu';
 
   @override
   String get hadith4 =>
-      '\"Allahu nuk shikon pamjen tuaj as pasurinë tuaj, por shikon zemrat tuaja dhe veprat tuaja.\"\n— Muslimi';
+      '“Allahu nuk shikon në pamjen dhe pasurinë tuaj, por shikon në zemrat dhe veprat tuaja.”\n— Muslimi';
 
   @override
   String get hadith6 =>
-      '\"Lehtësoni dhe mos vështirësoni; përgëzoni dhe mos i trembni njerëzit.\"\n— Buhariu';
+      '“Lehtësoni dhe mos vështirësoni; përgëzoni dhe mos i trembni njerëzit.”\n— Buhariu';
 
   @override
   String get hadith7 =>
-      '\"Ai që ndjek një rrugë për kërkim të dijes, Allahu ia lehtëson rrugën për në Xhenet.\"\n— Muslimi';
+      '“Kush merr një rrugë për të kërkuar dije, Allahu ia lehtëson atij rrugën për në Xhenet.”\n— Muslimi';
 
   @override
-  String get hadith8 => '\"Sadakaja nuk e pakëson pasurinë.\"\n— Muslimi';
+  String get hadith8 => '“Sadakaja nuk e pakëson pasurinë.”\n— Muslimi';
 
   @override
   String get hadith9 =>
-      '\"Besimtari i fortë është më i mirë dhe më i dashur tek Allahu sesa besimtari i dobët, ndërsa të dy kanë të mirë.\"\n— Muslimi';
+      '“Besimtari i fortë është më i mirë dhe më i dashur tek Allahu se besimtari i dobët, e në secilin prej tyre ka mirësi.”\n— Muslimi';
 
   @override
   String get hadith10 =>
-      '\"Kush thotë \'SubhanAllah ue bihamdihi\' njëqind herë në ditë, mëkatet e tij do të falen edhe sikur të ishin si shkuma e detit.\"\n— Buhariu & Muslimi';
+      '“Kush thotë ‘Subhanallahi ue bihamdihi’ njëqind herë në ditë, i falen mëkatet, edhe sikur të jenë sa shkuma e detit.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith12 =>
-      '\"Kush lexon Ajetul-Kursinë pas çdo namazi farz, asgjë nuk e pengon nga hyrja në Xhenet përveç vdekjes.\"\n— Nesaiu';
+      '“Kush lexon Ajetul-Kursijj pas çdo namazi farz, asgjë nuk e pengon të hyjë në Xhenet përveç vdekjes.”\n— Nesaiu';
 
   @override
-  String get hadith13 => '\"Fjala e mirë është sadaka.\"\n— Buhariu & Muslimi';
+  String get hadith13 => '“Fjala e mirë është sadaka.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith14 =>
-      '\"Kush beson në Allahun dhe Ditën e Fundit, le të thotë fjalë të mirë ose le të heshtë.\"\n— Buhariu & Muslimi';
+      '“Kush beson në Allahun dhe Ditën e Fundit, le të thotë fjalë të mirë ose le të heshtë.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith15 =>
-      '\"Ai që kujdeset për të vejën dhe të varfrin, është si luftëtar në rrugën e Allahut.\"\n— Buhariu & Muslimi';
+      '“Ai që kujdeset për të vejën ose për të varfrin është si ai që lufton në rrugën e Allahut.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith16 =>
-      '\"Buzëqeshja ndaj vëllait tënd është sadaka.\"\n— Tirmidhiu';
+      '“Buzëqeshja ndaj vëllait tënd është sadaka.”\n— Tirmidhiu';
 
   @override
   String get hadith17 =>
-      '\"Më i miri prej jush është ai që e mëson Kuranin dhe ua mëson të tjerëve.\"\n— Buhariu';
+      '“Më i miri prej jush është ai që e mëson Kuranin dhe ua mëson të tjerëve.”\n— Buhariu';
 
   @override
   String get hadith18 =>
-      '\"Askush nuk ka ngrënë ushqim më të mirë sesa atë që e fiton me punën e duarve të veta.\"\n— Buhariu';
+      '“Askush nuk ka ngrënë ushqim më të mirë sesa atë që e fiton me punën e duarve të veta.”\n— Buhariu';
 
   @override
   String get hadith19 =>
-      '\"Allahu është i butë dhe e do butësinë në çdo gjë.\"\n— Buhariu & Muslimi';
+      '“Allahu është i butë dhe e do butësinë në çdo gjë.”\n— Buhariu dhe Muslimi';
 
   @override
   String historyDayCompleted(String completed, String total) {
@@ -792,13 +794,13 @@ class AppLocalizationsSq extends AppLocalizations {
   String get settingsAppearance => 'Pamja';
 
   @override
-  String get settingsAboutTagline => 'Shoqëruesi juaj i përditshëm i dinit';
+  String get settingsAboutTagline => 'Shoqëruesi juaj i përditshëm në fe';
 
   @override
-  String get settingsRolloverSub => 'Kur rifreskohet dita';
+  String get settingsRolloverSub => 'Kur nis dita e re';
 
   @override
-  String get settingsAbout => 'Rreth';
+  String get settingsAbout => 'Rreth aplikacionit';
 
   @override
   String get settingsVersion => 'Versioni';
@@ -816,257 +818,256 @@ class AppLocalizationsSq extends AppLocalizations {
   String get settingsContact => 'Na kontaktoni';
 
   @override
-  String get settingsReportBug => 'Raporto një gabim';
+  String get settingsReportBug => 'Raportoni një gabim';
 
   @override
-  String get settingsRequestFeature => 'Kërko një veçori';
+  String get settingsRequestFeature => 'Propozoni një veçori';
 
   @override
   String settingsSupportFallback(String email) {
-    return 'Posta nuk u hap. Ju lutemi shkruani në $email.';
+    return 'Aplikacioni i postës nuk u hap. Ju lutemi na shkruani në $email.';
   }
 
   @override
   String get settingsPrivacyPolicy => 'Politika e privatësisë';
 
   @override
-  String get settingsPrivacyOpenFailed =>
-      'Politika e privatësisë nuk mund të hapet.';
+  String get settingsPrivacyOpenFailed => 'Politika e privatësisë nuk u hap.';
 
   @override
   String get hadith20 =>
-      '\"Kush agjëron Ramazanin me besim dhe duke shpresuar shpërblimin, i falen mëkatet e kaluara.\"\n— Buhariu & Muslimi';
+      '“Kush agjëron Ramazanin me besim dhe duke shpresuar shpërblimin, i falen mëkatet e kaluara.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith22 =>
-      '\"Lutja midis ezanit dhe ikametit nuk refuzohet.\"\n— Ebu Davudi';
+      '“Lutja midis ezanit dhe ikametit nuk refuzohet.”\n— Ebu Davudi';
 
   @override
   String get hadith23 =>
-      '\"Kush ndërton një xhami për Allahun, Allahu i ndërton atij një shtëpi në Xhenet.\"\n— Buhariu & Muslimi';
+      '“Kush ndërton një xhami për Allahun, Allahu i ndërton atij një shtëpi në Xhenet.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith24 =>
-      '\"Safat më të mira për burrat janë të parat, ndërsa safat më të mira për gratë janë të fundit.\"\n— Muslimi';
+      '“Safet më të mira për burrat janë të parat, kurse për gratë janë të fundit.”\n— Muslimi';
 
   @override
   String get hadith25 =>
-      '\"Agjërimi është mburojë nga zjarri i Xhehenemit.\"\n— Nesaiu';
+      '“Agjërimi është mburojë nga zjarri i Xhehenemit.”\n— Nesaiu';
 
   @override
   String get hadith26 =>
-      '\"Kush fal dymbëdhjetë rekate sunet, i ndërtohet një shtëpi në Xhenet.\"\n— Muslimi';
+      '“Kush fal dymbëdhjetë rekate sunet, i ndërtohet një shtëpi në Xhenet.”\n— Muslimi';
 
   @override
   String get hadith27 =>
-      '\"Ai që e lexon bukur Kuranin do të jetë me engjëjt fisnikë.\"\n— Buhariu & Muslimi';
+      '“Ai që e lexon Kuranin me mjeshtëri do të jetë me melekët fisnikë.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith29 =>
-      '\"Sadakaja më e mirë është dhënia e ujit.\"\n— Ahmedi';
+      '“Sadakaja më e mirë është t\'u japësh ujë të pinë.”\n— Ahmedi';
 
   @override
   String get hadith30 =>
-      '\"Kush ia largon një vështirësi besimtarit, Allahu do t\'ia largojë një vështirësi atij në Ditën e Gjykimit.\"\n— Muslimi';
+      '“Kush ia largon besimtarit një vështirësi, Allahu do t\'ia largojë atij një vështirësi në Ditën e Kiametit.”\n— Muslimi';
 
   @override
   String get hadith32 =>
-      '\"Turpi është pjesë e besimit.\"\n— Buhariu & Muslimi';
+      '“Turpi është pjesë e besimit.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith34 =>
-      '\"Kush duron, Allahu i jep durim.\"\n— Buhariu & Muslimi';
+      '“Kush duron, Allahu i jep durim.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith36 =>
-      '\"Askush prej jush nuk beson vërtet derisa t\'i dojë vëllait të vet atë që i do vetes.\"\n— Buhariu & Muslimi';
+      '“Askush prej jush nuk beson vërtet derisa t\'i dojë vëllait të vet atë që i do vetes.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith37 =>
-      '\"Ushqeni të uriturit, vizitoni të sëmurët dhe lironi të robëruarit.\"\n— Buhariu';
+      '“Ushqeni të uriturit, vizitoni të sëmurët dhe lironi të robëruarit.”\n— Buhariu';
 
   @override
   String get hadith38 =>
-      '\"I forti nuk është ai që mund në mundje, por ai që e kontrollon veten në zemërim.\"\n— Buhariu & Muslimi';
+      '“I forti nuk është ai që mund në mundje, por ai që e kontrollon veten në zemërim.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith40 =>
-      '\"Thoni \'SubhanAllah\', \'Elhamdulilah\' dhe \'Allahu Ekber\' tridhjetë e tri herë pas çdo namazi.\"\n— Muslimi';
+      '“Thoni ‘Subhanallah’, ‘Elhamdulilah’ dhe ‘Allahu Ekber’ nga tridhjetë e tri herë pas çdo namazi.”\n— Muslimi';
 
   @override
   String get hadith41 =>
-      '\"Dhikri më i mirë është La ilahe il-lAllah.\"\n— Tirmidhiu';
+      '“Dhikri më i mirë është La ilahe il-lallah.”\n— Tirmidhiu';
 
   @override
   String get hadith42 =>
-      '\"Ka dy begatira që shumë njerëz i humbasin: shëndetin dhe kohën e lirë.\"\n— Buhariu';
+      '“Ka dy nimete që shumë njerëz i humbasin: shëndetin dhe kohën e lirë.”\n— Buhariu';
 
   @override
   String get hadith43 =>
-      '\"Përfitoni pesë gjëra para pesë të tjerave: rininë para pleqërisë, shëndetin para sëmundjes, pasurinë para varfërisë, kohën e lirë para zënies dhe jetën para vdekjes.\"\n— Hakimi';
+      '“Përfitoni pesë gjëra para pesë të tjerave: rininë para pleqërisë, shëndetin para sëmundjes, pasurinë para varfërisë, kohën e lirë para zënies me punë dhe jetën para vdekjes.”\n— Hakimi';
 
   @override
   String get hadith44 =>
-      '\"Kush lexon Suren Ihlas dhjetë herë, Allahu i ndërton atij një shtëpi në Xhenet.\"\n— Ahmedi';
+      '“Kush e lexon suren El-Ihlas dhjetë herë, Allahu i ndërton një shtëpi në Xhenet.”\n— Ahmedi';
 
   @override
   String get hadith45 =>
-      '\"Namazi më i mirë pas farzit është namazi i natës.\"\n— Muslimi';
+      '“Namazi më i mirë pas namazeve farz është namazi i natës.”\n— Muslimi';
 
   @override
   String get hadith46 =>
-      '\"Sadakaja i shuan mëkatet siç e shuan uji zjarrin.\"\n— Tirmidhiu';
+      '“Sadakaja i shuan mëkatet siç e shuan uji zjarrin.”\n— Tirmidhiu';
 
   @override
   String get hadith47 =>
-      '\"Ai që i mban lidhjet farefisnore nuk është ai që i kthen vizitat, por ai që i mban edhe kur i shkëputen.\"\n— Buhariu';
+      '“Ai që i mban lidhjet farefisnore nuk është ai që i kthen vizitat, por ai që i mban edhe kur i shkëputen.”\n— Buhariu';
 
   @override
   String get hadith49 =>
-      '\"Kush ha ushqim dhe thotë: \'Falënderimi i takon Allahut që më ushqeu me këtë dhe ma mundësoi pa asnjë fuqi e forcë timen,\' i falen mëkatet e kaluara.\"\n— Tirmidhi';
+      '“Kush ha ushqim dhe thotë: ‘Falënderimi i takon Allahut, që më ushqeu me këtë dhe ma dha pa asnjë fuqi e forcë nga ana ime’, i falen mëkatet e kaluara.”\n— Tirmidhiu';
 
   @override
   String get hadith53 =>
-      '\"Mos e nënvlerëso asnjë vepër të mirë, qoftë edhe takimi me vëllanë tënd me fytyrë të buzëqeshur.\"\n— Muslim';
+      '“Mos e nënvlerëso asnjë vepër të mirë, qoftë edhe ta takosh vëllanë tënd me fytyrë të qeshur.”\n— Muslimi';
 
   @override
   String get hadith54 =>
-      '\"Më i miri prej jush është ai që është më i mirë me familjen e tij.\"\n— Tirmidhi';
+      '“Më i miri prej jush është ai që është më i mirë me familjen e tij.”\n— Tirmidhiu';
 
   @override
   String get hadith55 =>
-      '\"Kush i lexon dy ajetet e fundit të sures El-Bekare natën, ato i mjaftojnë atij.\"\n— Bukhari & Muslim';
+      '“Kush i lexon natën dy ajetet e fundit të sures El-Bekare, ato i mjaftojnë.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith56 =>
-      '\"Kjo botë është furnizim, dhe furnizimi më i mirë është gruaja e devotshme.\"\n— Muslim';
+      '“Dunjaja është kënaqësi, dhe kënaqësia më e mirë e saj është gruaja e devotshme.”\n— Muslimi';
 
   @override
   String get hadith57 =>
-      '\"Tri lutje nuk refuzohen: lutja e agjëruesit, lutja e udhëheqësit të drejtë dhe lutja e të shtypurit.\"\n— Tirmidhi';
+      '“Tri lutje nuk refuzohen kurrë: lutja e agjëruesit, e udhëheqësit të drejtë dhe e të shtypurit.”\n— Tirmidhiu';
 
   @override
   String get hadith58 =>
-      '\"Kush dërgon salavat mbi mua një herë, Allahu dërgon dhjetë herë mëshirë mbi të.\"\n— Muslim';
+      '“Kush dërgon salavat mbi mua një herë, Allahu dërgon dhjetë herë mëshirë mbi të.”\n— Muslimi';
 
   @override
   String get hadith65 =>
-      '\"Besimtari është pasqyra e besimtarit.\"\n— Abu Dawud';
+      '“Besimtari është pasqyra e besimtarit.”\n— Ebu Davudi';
 
   @override
   String get hadith66 =>
-      '\"Sinqeriteti çon tek mirësia, dhe mirësia çon tek Xheneti.\"\n— Bukhari & Muslim';
+      '“Sinqeriteti të çon në mirësi, e mirësia të çon në Xhenet.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith67 =>
-      '\"Ktheja amanetin atij që ta besoi, dhe mos e tradhëto atë që të tradhtoi.\"\n— Abu Dawud & Tirmidhi';
+      '“Ktheja amanetin atij që ta la në amanet dhe mos e tradhto atë që të tradhtoi.”\n— Ebu Davudi dhe Tirmidhiu';
 
   @override
   String get hadith68 =>
-      '\"Asnjë lodhje, sëmundje, pikëllim, trishtim, dëm apo shqetësim nuk e godet muslimanin, madje as shpimi i një gjembi, veçse Allahu ia fshin disa nga mëkatet e tij.\"\n— Bukhari & Muslim';
+      '“Muslimanin nuk e godet asnjë lodhje, sëmundje, brengë, trishtim, lëndim apo shqetësim, madje as gjembi që e shpon, e që Allahu të mos ia shlyejë me të disa nga mëkatet.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith69 =>
-      '\"Duaja e muslimanit për vëllanë e tij në mungesë të tij pranohet gjithmonë.\"\n— Muslim';
+      '“Lutja e muslimanit për vëllanë e tij në mungesë të tij pranohet gjithmonë.”\n— Muslimi';
 
   @override
   String get hadith70 =>
-      '\"Kush i kërkon Allahut Xhenetin tri herë, Xheneti thotë: O Allah, fute atë në Xhenet.\"\n— Tirmidhi';
+      '“Kush i kërkon Allahut Xhenetin tri herë, Xheneti thotë: O Allah, fute atë në Xhenet.”\n— Tirmidhiu';
 
   @override
   String get hadith71 =>
-      '\"Agjërimi më i vlefshëm pas Ramazanit është agjërimi i muajit të Allahut, Muharremit.\"\n— Muslim';
+      '“Agjërimi më i vlefshëm pas Ramazanit është agjërimi i muajit të Allahut, Muharremit.”\n— Muslimi';
 
   @override
   String get hadith72 =>
-      '\"Kush kryen haxhin dhe nuk flet fjalë të ndyta e nuk bën mëkat, kthehet si ditën kur e lindi nëna e tij.\"\n— Bukhari & Muslim';
+      '“Kush kryen haxhin dhe nuk flet fjalë të ndyta e nuk bën mëkat, kthehet si ditën kur e lindi nëna e tij.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith73 =>
-      '\"Umra pas umres është shlyerje për mëkatet mes tyre.\"\n— Bukhari & Muslim';
+      '“Umra deri në umrën tjetër është shlyerje për mëkatet mes tyre.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith74 =>
-      '\"Nxitoni në vepra të mira para se të vijnë sprovat si copa të një nate të errët.\"\n— Muslimi';
+      '“Nxitoni drejt veprave të mira para se të vijnë sprova si copat e natës së errët.”\n— Muslimi';
 
   @override
   String get hadith75 =>
-      '\"Dy rekatet e sabahut janë më të mira se bota dhe gjithçka që gjendet në të.\"\n— Muslimi';
+      '“Dy rekatet e sabahut janë më të mira se bota dhe gjithçka që gjendet në të.”\n— Muslimi';
 
   @override
   String get hadith77 =>
-      '\"Nëse do të mbështeteshit tek Allahu siç duhet, Ai do t\'ju furnizonte ashtu siç i furnizon shpendët.\"\n— Tirmidhiu';
+      '“Nëse do të mbështeteshit tek Allahu siç duhet, Ai do t\'ju furnizonte ashtu siç i furnizon shpendët.”\n— Tirmidhiu';
 
   @override
   String get hadith78 =>
-      '\"Kush viziton një të sëmurë, gjendet në kopshtin e xhenetit derisa të kthehet.\"\n— Muslimi';
+      '“Kush viziton një të sëmurë, është në vjeljen e frutave të Xhenetit derisa të kthehet.”\n— Muslimi';
 
   @override
   String get hadith79 =>
-      '\"Përhapni selamin, ushqeni të uriturit dhe faluni natën kur njerëzit flenë — do të hyni në xhenet me paqe.\"\n— Tirmidhiu';
+      '“Përhapni selamin, ushqeni të uriturit dhe faluni natën kur njerëzit flenë — do të hyni në Xhenet në paqe.”\n— Tirmidhiu';
 
   @override
   String get hadith80 =>
-      '\"Kush nuk është mirënjohës ndaj njerëzve, nuk është mirënjohës ndaj Allahut.\"\n— Tirmidhiu';
+      '“Kush nuk është mirënjohës ndaj njerëzve, nuk është mirënjohës ndaj Allahut.”\n— Tirmidhiu';
 
   @override
   String get hadith81 =>
-      '\"Smira nuk lejohet përveçse në dy raste: një njeri të cilit Allahu i ka dhënë pasuri dhe ai e shpenzon në rrugën e drejtë, dhe një njeri të cilit Allahu i ka dhënë urtësi dhe ai gjykon dhe mëson me të.\"\n— Buhariu dhe Muslimi';
+      '“Smira nuk lejohet përveçse në dy raste: te njeriu të cilit Allahu i ka dhënë pasuri dhe ai e shpenzon në rrugë të drejtë, dhe te njeriu të cilit Allahu i ka dhënë urtësi dhe ai gjykon me të dhe ua mëson të tjerëve.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith82 =>
-      '\"Njeriu ndjek fenë e shokut të tij, prandaj le të shikojë secili prej jush me kë miqësohet.\"\n— Ebu Davudi dhe Tirmidhiu';
+      '“Njeriu është në fenë e mikut të tij, prandaj le të shikojë secili prej jush me kë miqësohet.”\n— Ebu Davudi dhe Tirmidhiu';
 
   @override
   String get hadith85 =>
-      '\"Kush lë diçka për hir të Allahut, Allahu e zëvendëson me diçka më të mirë.\"\n— Ahmedi';
+      '“Kush lë diçka për hir të Allahut, Allahu e zëvendëson me diçka më të mirë.”\n— Ahmedi';
 
   @override
   String get hadith86 =>
-      '\"Kush ia mbulon të metat një muslimani, Allahu do t\'ia mbulojë të metat në Ditën e Gjykimit.\"\n— Buhariu dhe Muslimi';
+      '“Kush ia mbulon të metat një muslimani, Allahu do t\'ia mbulojë të metat në Ditën e Kiametit.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith87 =>
-      '\"Ji në këtë botë sikur të ishe i huaj ose udhëtar.\"\n— Buhariu';
+      '“Ji në këtë botë sikur të ishe i huaj ose udhëtar.”\n— Buhariu';
 
   @override
   String get hadith88 =>
-      '\"Kush ia lehtëson dikujt në vështirësi, Allahu do t\'ia lehtësojë atij në dynja dhe ahiret.\"\n— Muslimi';
+      '“Kush ia lehtëson dikujt që është në vështirësi, Allahu do t\'ia lehtësojë atij në dynja dhe në ahiret.”\n— Muslimi';
 
   @override
   String get hadith89 =>
-      '\"Shpërblimi i veprave varet nga qëllimet.\"\n— Buhariu dhe Muslimi';
+      '“Shpërblimi i veprave varet nga nijetet.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith90 =>
-      '\"Largohuni nga dyshimi, sepse dyshimi është fjala më e rreme.\"\n— Buhariu dhe Muslimi';
+      '“Ruhuni nga dyshimi, sepse dyshimi është fjala më gënjeshtare.”\n— Buhariu dhe Muslimi';
 
   @override
   String get hadith93 =>
-      '\"Hani së bashku dhe përmendni emrin e Allahut, do të bekohet për ju.\"\n— Ebu Davudi';
+      '“Hani së bashku dhe përmendni emrin e Allahut, që t\'ju jepet bereqet në të.”\n— Ebu Davudi';
 
   @override
   String get hadith94 =>
-      '\"Nuk ulen njerëzit duke përmendur Allahun, pa i rrethuar engjëjt, pa i mbuluar mëshira dhe pa zbritur qetësia mbi ta.\"\n— Muslimi';
+      '“Sa herë që njerëz ulen duke përmendur Allahun, melekët i rrethojnë, mëshira i mbulon dhe qetësia zbret mbi ta.”\n— Muslimi';
 
   @override
   String get hadith95 =>
-      '\"Allahu nuk i shton robit që fal tjetër pos nderit.\"\n— Muslimi';
+      '“Robit që fal, Allahu nuk i shton gjë tjetër përveç nderit.”\n— Muslimi';
 
   @override
   String get hadith96 =>
-      '\"Lidhe devenë tënde e pastaj mbështetu tek Allahu.\"\n— Tirmidhiu';
+      '“Lidhe devenë tënde e pastaj mbështetu tek Allahu.”\n— Tirmidhiu';
 
   @override
   String get hadith97 =>
-      '\"Sa e mrekullueshme është çështja e besimtarit — gjithçka është mirë për të.\"\n— Muslimi';
+      '“Sa e mahnitshme është puna e besimtarit — gjithçka është në të mirë të tij.”\n— Muslimi';
 
   @override
   String get hadith98 =>
-      '\"Muslimani është vëlla i muslimanit: nuk i bën padrejtësi, nuk e braktis dhe nuk e përbuz.\"\n— Muslimi';
+      '“Muslimani është vëlla i muslimanit: nuk i bën padrejtësi, nuk e braktis dhe nuk e përbuz.”\n— Muslimi';
 
   @override
-  String get delete => 'Fshij';
+  String get delete => 'Fshi';
 
   @override
   String get remove => 'Hiq';
@@ -1076,7 +1077,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String deleteAmalConfirmBody(String title) {
-    return '\"$title\" do të fshihet nga lista juaj. Historia juaj ruhet.';
+    return '“$title” nuk do të shfaqet më në listën tuaj. Historiku ruhet.';
   }
 
   @override
@@ -1093,7 +1094,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get invalidAmalId => 'ID e pavlefshme e amalit';
 
   @override
-  String get tutorialSettingsRow => 'Si të përdorni Muhasaba';
+  String get tutorialSettingsRow => 'Si përdoret Muhasaba';
 
   @override
   String get tutorialSkip => 'Kapërce';
@@ -1109,7 +1110,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get tutorialTapBody =>
-      'Një prekje e shënon amalin si të përfunduar për sot. Prekni sërish për ta zhbërë.';
+      'Një prekje e shënon amalin si të përfunduar për sot. Prekni sërish për ta anuluar.';
 
   @override
   String get tutorialEditTitle => 'Prekni dy herë për ta ndryshuar';
@@ -1119,11 +1120,12 @@ class AppLocalizationsSq extends AppLocalizations {
       'Hap formularin e ndryshimit — riemërtojeni ose ndryshoni sa shpesh përsëritet.';
 
   @override
-  String get tutorialReorderTitle => 'Shtypni dhe mbani për ta risistemuar';
+  String get tutorialReorderTitle =>
+      'Mbani të shtypur për të ndryshuar renditjen';
 
   @override
   String get tutorialReorderBody =>
-      'Mbani një rresht, pastaj zvarriteni. Renditja juaj ruhet.';
+      'Mbani të shtypur një rresht, pastaj zhvendoseni. Renditja juaj ruhet.';
 
   @override
   String get tutorialRemoveTitle => 'Rrëshqitni për ta hequr';
@@ -1137,10 +1139,10 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get tutorialCountBody =>
-      'Për amalet me objektiv më shumë se një, përdorni − dhe + për çdo përsëritje.';
+      'Për amalet me synim mbi një, përdorni − dhe + për çdo përsëritje.';
 
   @override
-  String get tutorialViewTitle => 'Grupo ose thjeshto';
+  String get tutorialViewTitle => 'Grupim ose listë e thjeshtë';
 
   @override
   String get tutorialViewBody =>
@@ -1158,7 +1160,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get tutorialChallengeOpenBody =>
-      'Hap sfidën — shihni çdo ditë, ndreqni një ditë të humbur ose fshijeni.';
+      'Hap sfidën — shihni çdo ditë, plotësoni një ditë të harruar ose fshijeni.';
 
   @override
   String get tutorialChallengeDeleteBody =>
@@ -1192,13 +1194,13 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get challengeSectionEnded => 'Mbaroi';
+  String get challengeSectionEnded => 'Të mbaruara';
 
   @override
   String get challengesPastEmpty => 'Ende nuk ka mbaruar asgjë.';
 
   @override
-  String get challengesEmptyTitle => 'Ende asnjë sfidë';
+  String get challengesEmptyTitle => 'Ende nuk keni sfida';
 
   @override
   String get challengesEmptyBody =>
@@ -1225,11 +1227,11 @@ class AppLocalizationsSq extends AppLocalizations {
       '1000 salavate, 30 xhuze. Shënoni sasi dhe totali rritet.';
 
   @override
-  String get challengeShapeStreak => 'Vazhdimësi ditë pas dite';
+  String get challengeShapeStreak => 'Seri ditë pas dite';
 
   @override
   String get challengeShapeStreakBody =>
-      'Tehexhud, sabahu me xhemat. Një shenjë në ditë, sasia nuk ka rëndësi.';
+      'Tehexhudi, sabahu me xhemat. Një shenjë në ditë, sasia nuk ka rëndësi.';
 
   @override
   String get challengeTargetLabel => 'Synimi';
@@ -1265,19 +1267,19 @@ class AppLocalizationsSq extends AppLocalizations {
   String get challengeByWhen => 'Deri kur?';
 
   @override
-  String get challengeWindowDuration => 'Përfundim brenda';
+  String get challengeWindowDuration => 'Brenda disa ditësh';
 
   @override
   String get challengeByDate => 'Deri në një datë';
 
   @override
   String challengePlanRange(String start, String end) {
-    return '$start deri $end';
+    return '$start – $end';
   }
 
   @override
   String challengePlanExact(String start, String end) {
-    return '$start deri $end · një në ditë, çdo ditë';
+    return '$start – $end · një në ditë, çdo ditë';
   }
 
   @override
@@ -1288,12 +1290,12 @@ class AppLocalizationsSq extends AppLocalizations {
     String window,
     String slack,
   ) {
-    return '$start deri $end · $target nga $window ditë — $slack mund t\'i humbni';
+    return '$start – $end · $target nga $window ditë — mund të humbni $slack';
   }
 
   @override
   String challengePlanRate(String start, String end, String rate) {
-    return '$start deri $end · rreth $rate në ditë';
+    return '$start – $end · rreth $rate në ditë';
   }
 
   @override
@@ -1303,7 +1305,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String challengeTooTight(String target, String window) {
-    return '$target ditë nuk hyjnë në $window ditë — vazhdimësia numëron një në ditë.';
+    return '$target ditë nuk mund të hyjnë në $window ditë — seria numëron një në ditë.';
   }
 
   @override
@@ -1354,7 +1356,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String challengeOnTrack(String rate) {
-    return 'Në rrugë · $rate/ditë';
+    return 'Në ritëm · $rate/ditë';
   }
 
   @override
@@ -1364,7 +1366,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String challengeLastDay(String remaining) {
-    return 'Dita e fundit · $remaining mbetur';
+    return 'Dita e fundit · edhe $remaining';
   }
 
   @override
@@ -1379,15 +1381,15 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get challengeExpiredTitle => 'Sfida përfundoi';
+  String get challengeExpiredTitle => 'Sfida mbaroi';
 
   @override
   String challengeExpiredBody(String title, String done, String target) {
-    return '$title përfundoi me $done nga $target.';
+    return '$title mbaroi me $done nga $target.';
   }
 
   @override
-  String get challengeExtend => 'Zgjate';
+  String get challengeExtend => 'Zgjat';
 
   @override
   String get challengeRestart => 'Fillo sërish';
@@ -1405,7 +1407,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String challengeLastDayBody(String title, String remaining) {
-    return '$title: dita e fundit — $remaining mbetur.';
+    return '$title: dita e fundit — edhe $remaining.';
   }
 
   @override
@@ -1436,13 +1438,13 @@ class AppLocalizationsSq extends AppLocalizations {
   String get challengeTmplSalawat => '1000 salavate';
 
   @override
-  String get challengeTmplKhatm => 'Hatme e Kuranit për 30 ditë';
+  String get challengeTmplKhatm => 'Hatme në 30 ditë';
 
   @override
   String get challengeTmplFajrJamaah => '30 ditë sabahu me xhemat';
 
   @override
-  String get challengeTmplSadaqah => 'Sadaka 30 ditë';
+  String get challengeTmplSadaqah => '30 ditë sadaka';
 
   @override
   String get listSeparator => ' · ';
@@ -1473,17 +1475,17 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get supportCardBody =>
-      'Falas, pa reklama dhe pa llogari. Mund ta mbështetni zhvillimin e tij me një kontribut të vogël — çfarëdo shume, kur të doni.';
+      'Falas, pa reklama dhe pa llogari. Mund ta mbështetni zhvillimin e aplikacionit me një kontribut — sa të doni, kur të doni.';
 
   @override
-  String get supportCta => 'Mbështet Muhasaba-n';
+  String get supportCta => 'Mbështetni Muhasaba';
 
   @override
-  String get supportAgain => 'Mbështet sërish';
+  String get supportAgain => 'Mbështetni sërish';
 
   @override
   String get supporterThanks =>
-      'Allahu ju shpërbleftë — inshallah, Muhasaba mbetet falas dhe pa reklama.';
+      'Allahu ju shpërbleftë — Muhasaba do të mbetet falas dhe pa reklama, inshallah.';
 
   @override
   String supporterSince(String tier, String month) {
@@ -1495,23 +1497,23 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get supportPromptBody =>
-      'Muhasaba është falas, pa reklama dhe pa llogari. Mund ta mbështetni zhvillimin e tij me një kontribut të vogël — çfarëdo shume, kur të doni. Asnjë veçori nuk është e kyçur.';
+      'Muhasaba është falas, pa reklama dhe pa llogari. Mund ta mbështetni zhvillimin e saj me një kontribut — sa të doni, kur të doni. Asnjë veçori nuk është e kyçur.';
 
   @override
-  String get supportPromptNow => 'Mbështet tani';
+  String get supportPromptNow => 'Mbështetni tani';
 
   @override
-  String get supportPromptLater => 'Më kujto më vonë';
+  String get supportPromptLater => 'Më kujtoni më vonë';
 
   @override
-  String get supportPromptNever => 'Mos pyet më';
+  String get supportPromptNever => 'Mos më pyetni më';
 
   @override
-  String get tipSheetTitle => 'Mbështet Muhasaba-n';
+  String get tipSheetTitle => 'Mbështetni Muhasaba';
 
   @override
   String get tipSheetBody =>
-      'Zgjidhni çfarëdo shume, sa herë të doni. Kontributet shkojnë për mirëmbajtjen e aplikacionit — inshallah, ai mbetet falas dhe pa reklama. Si falënderim, do të shfaqeni si mbështetës te Cilësimet.';
+      'Zgjidhni çfarëdo shume, sa herë të doni. Kontributet shkojnë për mirëmbajtjen e aplikacionit — ai do të mbetet falas dhe pa reklama, inshallah. Si falënderim, do të shfaqeni si mbështetës te Cilësimet.';
 
   @override
   String tipSheetSupporterLine(String tier) {
@@ -1519,11 +1521,11 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get tipSheetSupporterAgain => 'Mbështeteni sërish kur të doni.';
+  String get tipSheetSupporterAgain => 'Mund ta mbështetni sërish kur të doni.';
 
   @override
   String tipSheetStoreNote(String store) {
-    return 'Pagesa kryhet nga $store — ne nuk i shohim kurrë të dhënat e pagesës suaj.';
+    return 'Pagesa kryhet përmes $store — ne nuk i shohim kurrë të dhënat tuaja të pagesës.';
   }
 
   @override
@@ -1534,7 +1536,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get supportEmailBody =>
-      'Es-selamu alejkum,\n\nDëshiroj ta mbështes drejtpërdrejt zhvillimin e Muhasaba.\n\nShteti:\nSi dëshiroj ta dërgoj:\nShuma (opsionale):';
+      'Es-selamu alejkum,\n\nDëshiroj ta mbështes drejtpërdrejt zhvillimin e aplikacionit Muhasaba.\n\nShteti:\nSi dëshiroj ta dërgoj:\nShuma (opsionale):';
 
   @override
   String tipBusy(String store) {
@@ -1549,11 +1551,11 @@ class AppLocalizationsSq extends AppLocalizations {
   String get tipDone => 'U krye';
 
   @override
-  String get tipFailed => 'Blerja nuk u krye. Nuk u tarifua asgjë.';
+  String get tipFailed => 'Blerja nuk u krye. Nuk ju është tarifuar asgjë.';
 
   @override
   String tipPending(String store) {
-    return 'Kontributi juaj është në pritje te $store — stema juaj do të shtohet sapo të konfirmohet.';
+    return 'Kontributi juaj është në pritje te $store — do të shënoheni si mbështetës sapo të konfirmohet.';
   }
 
   @override
@@ -1573,13 +1575,13 @@ class AppLocalizationsSq extends AppLocalizations {
   String get optionJamaaMasjid => 'Xhemat në xhami';
 
   @override
-  String get optionSetOnTime => 'Koha';
+  String get optionSetOnTime => 'Në kohë';
 
   @override
   String get optionOnTimeOnTime => 'Në kohë';
 
   @override
-  String get optionOnTimeLate => 'Vonë';
+  String get optionOnTimeLate => 'Me vonesë';
 
   @override
   String get optionOnTimeQada => 'Kaza';
@@ -1591,7 +1593,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get optionQuranRecited => 'Lexuar';
 
   @override
-  String get optionQuranMemorised => 'Memorizuar';
+  String get optionQuranMemorised => 'Përmendësh';
 
   @override
   String get optionQuranMeaning => 'Me kuptim';
@@ -1684,20 +1686,20 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get optionSetNone => 'Asgjë';
+  String get optionSetNone => 'Asnjë';
 
   @override
   String get optionSetNew => 'Grup i ri';
 
   @override
-  String get requireChoiceLabel => 'Kërko një zgjedhje';
+  String get requireChoiceLabel => 'Zgjedhje e detyrueshme';
 
   @override
   String get requireChoiceHelp =>
       'Rreshti nuk shënohet i përfunduar derisa të zgjidhet një opsion';
 
   @override
-  String get requireChoicePickSetFirst => 'Zgjidhni një grup së pari';
+  String get requireChoicePickSetFirst => 'Zgjidhni fillimisht një grup';
 
   @override
   String get requireChoiceCountHelp =>
@@ -1709,7 +1711,7 @@ class AppLocalizationsSq extends AppLocalizations {
   }
 
   @override
-  String get choiceNeeded => 'Zgjedhje e nevojshme';
+  String get choiceNeeded => 'Kërkohet zgjedhje';
 
   @override
   String optionSelected(String label) {
@@ -1734,7 +1736,7 @@ class AppLocalizationsSq extends AppLocalizations {
       other: '$count herë',
       one: '1 herë',
     );
-    return 'Pjesa e zgjedhjeve të regjistruara nga $_temp0';
+    return 'Përqindjet nga $_temp0 me zgjedhje të regjistruar';
   }
 
   @override
@@ -1745,7 +1747,7 @@ class AppLocalizationsSq extends AppLocalizations {
       other: '$total ditë të përfunduara',
       one: '1 ditë e përfunduar',
     );
-    return 'Asnjë zgjedhje e regjistruar — $none nga $_temp0';
+    return 'Pa zgjedhje të regjistruar — $none nga $_temp0';
   }
 
   @override
@@ -1789,11 +1791,11 @@ class AppLocalizationsSq extends AppLocalizations {
     String worst,
     String worstShare,
   ) {
-    return 'Më e larta: $best ($bestShare); më e ulëta: $worst ($worstShare).';
+    return 'Prin $best me $bestShare; në fund është $worst me $worstShare.';
   }
 
   @override
-  String get optionDetailRecordsHeading => 'Rekorde';
+  String get optionDetailRecordsHeading => 'Rekordet';
 
   @override
   String get optionDetailLongestRun => 'Seria më e gjatë';
@@ -1806,7 +1808,7 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get optionDetailRecordsCaption =>
-      'Bazuar në vitin e fundit, pavarësisht nga filtri i periudhës më sipër.';
+      'Sipas vitit të fundit, pa marrë parasysh filtrin e periudhës më sipër.';
 
   @override
   String get optionDetailRecentDaysHeading => 'Ditët e fundit';
@@ -1958,22 +1960,22 @@ class AppLocalizationsSq extends AppLocalizations {
   String get amalLastThird => 'Lutje në të tretën e fundit të natës';
 
   @override
-  String get amalMulk => 'Surja Mulk';
+  String get amalMulk => 'Sureja El-Mulk';
 
   @override
-  String get amalBaqarahEnd => 'Dy ajetet e fundit të Bekares';
+  String get amalBaqarahEnd => 'Dy ajetet e fundit të El-Bekares';
 
   @override
-  String get amalSajdah => 'Surja Sexhde';
+  String get amalSajdah => 'Sureja Es-Sexhde';
 
   @override
   String get amalQuls => 'Ihlasi, Felaku dhe Nasi';
 
   @override
-  String get amalYasin => 'Surja Jasin';
+  String get amalYasin => 'Sureja Jasin';
 
   @override
-  String get amalWaqiah => 'Surja Uakia';
+  String get amalWaqiah => 'Sureja El-Vakia';
 
   @override
   String get amalHifz => 'Hifzi i Kuranit';
@@ -1991,7 +1993,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get amalTeachQuran => 'Mësimdhënia e Kuranit';
 
   @override
-  String get amalMonThu => 'Agjërimi i së hënës dhe së enjtes';
+  String get amalMonThu => 'Agjërimi të hënën dhe të enjten';
 
   @override
   String get amalThreeDays => 'Tri ditë agjërim në muaj';
@@ -2000,7 +2002,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get amalDailySadaqah => 'Sadakaja e përditshme';
 
   @override
-  String get amalFeed => 'Ushqimi i të uriturve';
+  String get amalFeed => 'Dhënia e ushqimit';
 
   @override
   String get amalHelpNeed => 'Ndihma për nevojtarët';
@@ -2036,13 +2038,13 @@ class AppLocalizationsSq extends AppLocalizations {
   String get amalFiqh => 'Studimi i fikhut';
 
   @override
-  String get amalMuhasaba => 'Muhasebja e natës';
+  String get amalMuhasaba => 'Muhasaba e natës';
 
   @override
-  String get amalSpeakGood => 'Fol mirë ose hesht';
+  String get amalSpeakGood => 'Fjalë e mirë ose heshtje';
 
   @override
-  String get amalNoBackbiting => 'Largimi nga përgojimi';
+  String get amalNoBackbiting => 'Pa përgojim';
 
   @override
   String get amalAnger => 'Përmbajtja e zemërimit';
@@ -2090,19 +2092,19 @@ class AppLocalizationsSq extends AppLocalizations {
   String get amalSpouse => 'Mirësia ndaj bashkëshortit';
 
   @override
-  String get categoryDua => 'Lutje';
+  String get categoryDua => 'Lutja';
 
   @override
-  String get categoryFasting => 'Agjërim';
+  String get categoryFasting => 'Agjërimi';
 
   @override
-  String get categoryKnowledge => 'Dije';
+  String get categoryKnowledge => 'Dija';
 
   @override
-  String get categoryCharacter => 'Moral';
+  String get categoryCharacter => 'Morali';
 
   @override
-  String get categoryFamily => 'Familje';
+  String get categoryFamily => 'Familja';
 
   @override
   String get libraryTitle => 'Biblioteka e amaleve';
@@ -2152,7 +2154,7 @@ class AppLocalizationsSq extends AppLocalizations {
   String get libraryChange => 'Ndryshoni';
 
   @override
-  String get libraryEditAction => 'Redaktoni';
+  String get libraryEditAction => 'Ndrysho';
 
   @override
   String libraryWeeklyAny(num count, String countText) {

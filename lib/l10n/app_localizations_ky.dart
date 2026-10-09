@@ -42,7 +42,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get insightsOverview => 'Жалпы';
 
   @override
-  String get insightsDaily => 'Күндөлүк';
+  String get insightsDaily => 'Күн боюнча';
 
   @override
   String get insightsArchive => 'Архив';
@@ -61,7 +61,7 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String archivedRestored(String title) {
-    return '\"$title\" тизмеңизге кайра кошулду.';
+    return '«$title» тизмеңизге кайра кошулду.';
   }
 
   @override
@@ -104,7 +104,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get frequencyDaily => 'Күн сайын';
 
   @override
-  String get frequencyWeekly => 'Жума сайын';
+  String get frequencyWeekly => 'Апта сайын';
 
   @override
   String get frequencyMonthly => 'Ай сайын';
@@ -144,20 +144,21 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get targetAnyHelp =>
-      'Максат жок — каалаган өлчөм аткарылган деп эсептелет';
+      'Белгилүү сан жок — канча болсо да аткарылды деп эсептелет';
 
   @override
-  String get dayOfWeek => 'Жума күнү';
+  String get dayOfWeek => 'Аптанын күнү';
 
   @override
   String get anyDay => 'Каалаган';
 
   @override
-  String get anyDayHint => 'Каалаган күн (бүгүн көрүнөт, эртең жашырылат)';
+  String get anyDayHint =>
+      'Каалаган күн (бүгүн көрүнүп турат, кийинки күнү жашырылат)';
 
   @override
   String onlyDayHint(String day) {
-    return 'Жалгыз $day';
+    return '$day гана';
   }
 
   @override
@@ -167,10 +168,10 @@ class AppLocalizationsKy extends AppLocalizations {
   String get repeatMode => 'Кайталануу';
 
   @override
-  String get onSetDays => 'Белгилүү жума күндөрү';
+  String get onSetDays => 'Белгиленген күндөрү';
 
   @override
-  String get onSetDates => 'Белгилүү ай күндөрү';
+  String get onSetDates => 'Белгиленген даталарда';
 
   @override
   String get anyDayMode => 'Каалаган күн';
@@ -179,7 +180,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get datesOfMonth => 'Айдын күндөрү';
 
   @override
-  String get daysPerWeekQuestion => 'Жумасына канча күн?';
+  String get daysPerWeekQuestion => 'Аптасына канча күн?';
 
   @override
   String get daysPerMonthQuestion => 'Айына канча күн?';
@@ -203,9 +204,9 @@ class AppLocalizationsKy extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count күн',
+      other: '$count күнү',
     );
-    return 'Жумасына каалаган $_temp0 кайталанат';
+    return 'Аптасына каалаган $_temp0 кайталанат';
   }
 
   @override
@@ -224,7 +225,7 @@ class AppLocalizationsKy extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count күн',
+      other: '$count күнү',
     );
     return 'Айына каалаган $_temp0 кайталанат';
   }
@@ -233,19 +234,20 @@ class AppLocalizationsKy extends AppLocalizations {
   String get anyDate => 'Каалаган';
 
   @override
-  String get anyDateHint => 'Каалаган күн (бүгүн көрүнөт, эртең жашырылат)';
+  String get anyDateHint =>
+      'Каалаган күн (бүгүн көрүнүп турат, кийинки күнү жашырылат)';
 
   @override
   String onlyDateHint(String date) {
-    return 'Жалгыз $date-күнү';
+    return 'Айдын $date күнү гана';
   }
 
   @override
-  String get startPreChecked => 'Алдын ала белгиленген абалда баштоо';
+  String get startPreChecked => 'Белгиленген бойдон баштоо';
 
   @override
   String get startPreCheckedSubtitle =>
-      'Жаңы мезгил башталганда бул амал демейки боюнча аткарылган деп белгиленет, белгини алып салсаңыз болот.';
+      'Жаңы мезгил башталганда бул амал, белгисин алып салмайынча, аткарылды деп белгиленип турат.';
 
   @override
   String get reminder => 'Эскертме';
@@ -270,14 +272,14 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get dailyReminderSubtitle =>
-      'Амалдарыңызды көзөмөлдөө үчүн жумшак эскертме';
+      'Амалдарыңызды белгилөөнү эсиңизге салып турат';
 
   @override
   String get dailyReminderTimeLabel => 'Эскертме убактысы';
 
   @override
   String get dailyReminderBody =>
-      'Бүгүнкү амалдарыңызды көзөмөлдөө үчүн бир азга убакыт бөлүңүз.';
+      'Бүгүнкү амалдарыңызды белгилөөгө бир аз убакыт бөлүңүз.';
 
   @override
   String get groupByCategory => 'Категория боюнча топтоо';
@@ -321,14 +323,14 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get removeFromTodaySubtitle =>
-      'Жалгыз бүгүн үчүн жашыруу. Эртең кайтып келет.';
+      'Бүгүнкү күнгө гана жашырылат. Эртең кайра чыгат.';
 
   @override
   String get removeFromTracking => 'Көзөмөлдөн алып салуу';
 
   @override
   String get removeFromTrackingSubtitle =>
-      'Тизмеден биротоло алып салуу. Тарых сакталат.';
+      'Тизмеңизден биротоло алып салуу. Тарыхы сакталат.';
 
   @override
   String get chooseIcon => 'Белги тандоо';
@@ -358,10 +360,10 @@ class AppLocalizationsKy extends AppLocalizations {
   String get addAmal => 'Амал кошуу';
 
   @override
-  String get customAmal => 'Өзгөчө амал';
+  String get customAmal => 'Өз амалыңыз';
 
   @override
-  String get amalTasbih => 'Тасбих 33x';
+  String get amalTasbih => 'Тасбих 33 жолу';
 
   @override
   String get amalIstighfar => 'Истигфар';
@@ -414,31 +416,31 @@ class AppLocalizationsKy extends AppLocalizations {
   String get sectionDayBoundary => 'Күн чеги';
 
   @override
-  String get rolloverHour => 'Которулуу сааты';
+  String get rolloverHour => 'Күн алмашуучу саат';
 
   @override
   String get rolloverAtMidnight => 'Бүгүн түн ортосунда аяктайт.';
 
   @override
   String rolloverSubtitle(String time) {
-    return 'Кечээки амалдар $time чейин өзгөртүлө алат.';
+    return 'Кечээки амалдарды $time болгонго чейин өзгөртсөңүз болот.';
   }
 
   @override
-  String get pickRolloverHour => 'Күн которулуучу саатты тандаңыз';
+  String get pickRolloverHour => 'Күн алмаша турган саатты тандаңыз';
 
   @override
-  String get sectionWeekMonth => 'Жума жана ай';
+  String get sectionWeekMonth => 'Апта жана ай';
 
   @override
-  String get startOfWeek => 'Жума башы';
+  String get startOfWeek => 'Аптанын башы';
 
   @override
-  String get startOfMonth => 'Ай башы';
+  String get startOfMonth => 'Айдын башы';
 
   @override
   String get startOfMonthClamped =>
-      '28-күндөн кийинки күндөр кыска айларда акыркы күнгө ылайыкталат.';
+      '28-күндөн кийинки күндөр кыска айларда айдын акыркы күнүнө жылдырылат.';
 
   @override
   String get sectionAppearance => 'Сырткы көрүнүш';
@@ -469,7 +471,7 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get aboutSubtitle =>
-      'Жеке диний эсеп журналы. Бардык маалыматтар бул түзмөктө сакталат.';
+      'Диний амалдарыңыздын жеке эсеп күндөлүгү. Бардык маалымат ушул түзмөктө гана сакталат.';
 
   @override
   String get statsTitle => 'Статистика';
@@ -483,13 +485,13 @@ class AppLocalizationsKy extends AppLocalizations {
   String get perAmal => 'Ар бир амал';
 
   @override
-  String get thisWeek => 'Бул жума';
+  String get thisWeek => 'Бул апта';
 
   @override
   String get thisMonth => 'Бул ай';
 
   @override
-  String get totalCompletions => 'жалпы аткарылгандар';
+  String get totalCompletions => 'жолу аткарылды';
 
   @override
   String get streakCurrent => 'Учурдагы';
@@ -498,7 +500,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get streakLongest => 'Эң узун';
 
   @override
-  String get ratioWeek => 'Жума';
+  String get ratioWeek => 'Апта';
 
   @override
   String get ratioMonth => 'Ай';
@@ -519,8 +521,8 @@ class AppLocalizationsKy extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'жума',
-      one: 'жума',
+      other: 'апта',
+      one: 'апта',
     );
     return '$_temp0';
   }
@@ -540,7 +542,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get frequencyBadgeDaily => 'күн сайын';
 
   @override
-  String get frequencyBadgeWeekly => 'жума сайын';
+  String get frequencyBadgeWeekly => 'апта сайын';
 
   @override
   String get frequencyBadgeMonthly => 'ай сайын';
@@ -553,7 +555,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get statsToday => 'Бүгүн';
 
   @override
-  String get statsThisWeek => 'Бул жума';
+  String get statsThisWeek => 'Бул апта';
 
   @override
   String get statsThisMonth => 'Бул ай';
@@ -586,7 +588,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get statsPerAmal => 'Ар бир амал';
 
   @override
-  String get statsTotalCaption => 'бардыгы';
+  String get statsTotalCaption => 'жалпы';
 
   @override
   String statsDaysFraction(String done, String expectedText, num expected) {
@@ -612,25 +614,25 @@ class AppLocalizationsKy extends AppLocalizations {
   String get statsConsistency => 'Туруктуулук';
 
   @override
-  String get statsLast5Weeks => 'Акыркы 5 жума';
+  String get statsLast5Weeks => 'Акыркы 5 апта';
 
   @override
-  String get statsDailyBreakdown => 'Күндөлүк талдоо';
+  String get statsDailyBreakdown => 'Күндөр боюнча';
 
   @override
-  String get statsCompletionRate => 'Аткаруу деңгээли';
+  String get statsCompletionRate => 'Аткаруу көрсөткүчү';
 
   @override
   String get statsAmountPerDay => 'Күнүмдүк өлчөм';
 
   @override
   String statsCountTotal(String count) {
-    return 'Бардыгы $count';
+    return 'Жалпы: $count';
   }
 
   @override
   String statsCountAvg(String amount) {
-    return 'Орточо $amount/күн';
+    return 'Орточо: күнүнө $amount';
   }
 
   @override
@@ -661,7 +663,7 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String historyEmptyDay(String date) {
-    return '$date күнү эч кандай амал көзөмөлдөнгөн эмес';
+    return '$date күнү эч бир амал белгиленген эмес';
   }
 
   @override
@@ -717,68 +719,68 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get hadith0 =>
-      '\"Аллах үчүн эң сүйүктүү амалдар дайыма жасалуучу амалдар, аз болсо да.\"\n— Бухари жана Муслим';
+      '«Аллага эң сүйүктүү амалдар — аз болсо да, туруктуу жасалганы.»\n— Бухари жана Муслим';
 
   @override
   String get hadith2 =>
-      '\"Адам баласы каза болгондо, амалдары токтойт, үчөөнү кошпогондо: үзгүлтүксүз садака, пайдалуу илим же ага дуба кылуучу ак ниет перзент.\"\n— Муслим';
+      '«Адам баласы дүйнөдөн өткөндө, анын амалдары үзүлөт, үчөөнөн башкасы: садака-жария, пайдалуу илим же ага дуба кылган салих перзент.»\n— Муслим';
 
   @override
   String get hadith3 =>
-      '\"Ким эки салкын намазды (Багымдат жана Аср) окуса, бейишке кирет.\"\n— Бухари';
+      '«Ким эки салкын намазды (багымдат менен асырды) окуса, бейишке кирет.»\n— Бухари';
 
   @override
   String get hadith4 =>
-      '\"Аллах силердин сырткы көрүнүшүңөргө жана байлыгыңарга карабайт, бирок жүрөктөрүңөргө жана амалдарыңарга карайт.\"\n— Муслим';
+      '«Алла силердин түр-түсүңөргө да, мал-мүлкүңөргө да карабайт, бирок жүрөктөрүңөргө жана амалдарыңарга карайт.»\n— Муслим';
 
   @override
   String get hadith6 =>
-      '\"Иштерди жеңилдетиңиз, кыйындатпаңыз; кубанычтуу кабар бериңиз, адамдарды коркутпаңыз.\"\n— Бухари';
+      '«Жеңилдеткиле, кыйындатпагыла; сүйүнчү кабар бергиле, адамдарды үркүтпөгүлө.»\n— Бухари';
 
   @override
   String get hadith7 =>
-      '\"Ким илим издеп жолго чыкса, Аллах ага бейишке жолду жеңилдетет.\"\n— Муслим';
+      '«Ким илим издеп жолго чыкса, Алла ага бейишке баруучу жолду жеңилдетет.»\n— Муслим';
 
   @override
-  String get hadith8 => '\"Садака малды азайтпайт.\"\n— Муслим';
+  String get hadith8 => '«Садака малды азайтпайт.»\n— Муслим';
 
   @override
   String get hadith9 =>
-      '\"Күчтүү момун Аллах үчүн алсыз момундан жакшыраак жана сүйүктүүрөөк, бирок экөөндө тең жакшылык бар.\"\n— Муслим';
+      '«Күчтүү момун Аллага алсыз момундан жакшыраак жана сүйүктүүрөөк, бирок экөөндө тең жакшылык бар.»\n— Муслим';
 
   @override
   String get hadith10 =>
-      '\"Ким күнүнө жүз жолу \'СубханАллахи ва бихамдихи\' десе, анын күнөөлөрү кечирилет, деңиздин көбүгүндөй болсо да.\"\n— Бухари жана Муслим';
+      '«Ким күнүнө жүз жолу „Субханаллахи ва бихамдихи“ десе, анын күнөөлөрү деңиздин көбүгүндөй болсо да кечирилет.»\n— Бухари жана Муслим';
 
   @override
   String get hadith12 =>
-      '\"Ким ар парз намаздан кийин Аятул-Курси окуса, аны бейишке кирүүдөн өлүм гана тосот.\"\n— Насаи';
+      '«Ким ар бир парз намаздан кийин Аятул-Курсини окуса, аны бейишке кирүүдөн өлүмдөн башка эч нерсе тоспойт.»\n— Насаи';
 
   @override
-  String get hadith13 => '\"Жакшы сөз — садака.\"\n— Бухари жана Муслим';
+  String get hadith13 => '«Жакшы сөз — садака.»\n— Бухари жана Муслим';
 
   @override
   String get hadith14 =>
-      '\"Аллахка жана акырет күнүнө ишенген адам жакшы сөз айтсын же унчуксун.\"\n— Бухари жана Муслим';
+      '«Аллага жана акырет күнүнө ишенген адам жакшы сөз айтсын же унчукпасын.»\n— Бухари жана Муслим';
 
   @override
   String get hadith15 =>
-      '\"Жесир жана мискинге камкордук кылган адам Аллах жолундагы мужахид сыяктуу.\"\n— Бухари жана Муслим';
+      '«Жесирге же мискинге камкордук кылган адам Алланын жолундагы мужахид сыяктуу.»\n— Бухари жана Муслим';
 
   @override
-  String get hadith16 => '\"Бир тууганыңа жылмаюуң — садака.\"\n— Термизи';
+  String get hadith16 => '«Бир тууганыңа жылмайып коюшуң — садака.»\n— Тирмизи';
 
   @override
   String get hadith17 =>
-      '\"Силердин эң жакшыңар Куранды үйрөнгөн жана үйрөткөн адам.\"\n— Бухари';
+      '«Силердин эң жакшыңар — Куранды үйрөнүп, аны башкаларга үйрөткөнүңөр.»\n— Бухари';
 
   @override
   String get hadith18 =>
-      '\"Эч ким өз колунун эмгегинен жакшыраак тамак жеген эмес.\"\n— Бухари';
+      '«Эч ким өз колунун эмгеги менен тапканынан жакшыраак тамак жеген эмес.»\n— Бухари';
 
   @override
   String get hadith19 =>
-      '\"Аллах жумшак жана бардык иштерде жумшактыкты жакшы көрөт.\"\n— Бухари жана Муслим';
+      '«Алла жумшак жана бардык иште жумшактыкты жакшы көрөт.»\n— Бухари жана Муслим';
 
   @override
   String historyDayCompleted(String completed, String total) {
@@ -792,7 +794,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get settingsAppearance => 'Көрүнүш';
 
   @override
-  String get settingsAboutTagline => 'Күнүмдүк дин жолдошуңуз';
+  String get settingsAboutTagline => 'Күнүмдүк диний жолдошуңуз';
 
   @override
   String get settingsRolloverSub => 'Күн качан жаңыланат';
@@ -819,7 +821,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get settingsReportBug => 'Ката жөнүндө билдирүү';
 
   @override
-  String get settingsRequestFeature => 'Функция суроо';
+  String get settingsRequestFeature => 'Жаңы мүмкүнчүлүк сунуштоо';
 
   @override
   String settingsSupportFallback(String email) {
@@ -835,255 +837,251 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get hadith20 =>
-      '\"Ким Рамазанда ыйман жана сооп үмүтү менен орозо тутса, анын өткөн күнөөлөрү кечирилет.\"\n— Бухари жана Муслим';
+      '«Ким Рамазанда ыйман жана сооп үмүтү менен орозо кармаса, анын өткөн күнөөлөрү кечирилет.»\n— Бухари жана Муслим';
 
   @override
   String get hadith22 =>
-      '\"Азан менен икамат ортосундагы дуба четке кагылбайт.\"\n— Абу Давуд';
+      '«Азан менен икамат ортосундагы дуба четке кагылбайт.»\n— Абу Дауд';
 
   @override
   String get hadith23 =>
-      '\"Ким Аллах үчүн мечит курса, Аллах ага бейишде үй курат.\"\n— Бухари жана Муслим';
+      '«Ким Алла үчүн мечит курса, Алла ага бейиште үй курат.»\n— Бухари жана Муслим';
 
   @override
   String get hadith24 =>
-      '\"Эркектер үчүн эң жакшы саптар — алдыңкы саптар, аялдар үчүн эң жакшы саптар — арткы саптар.\"\n— Муслим';
+      '«Эркектер үчүн эң жакшы саптар — алдыңкы саптар, аялдар үчүн эң жакшы саптар — арткы саптар.»\n— Муслим';
 
   @override
-  String get hadith25 => '\"Орозо — тозоктон калкан.\"\n— Насаи';
+  String get hadith25 => '«Орозо — тозоктон калкан.»\n— Насаи';
 
   @override
   String get hadith26 =>
-      '\"Ким он эки ракаат сүннөт намаз окуса, ага бейишде үй курулат.\"\n— Муслим';
+      '«Ким он эки рекет сүннөт намаз окуса, ага бейиште үй курулат.»\n— Муслим';
 
   @override
   String get hadith27 =>
-      '\"Куранды жакшы билген адам асыл периштелер менен бирге болот.\"\n— Бухари жана Муслим';
+      '«Куранды жакшы билген адам асыл периштелер менен бирге болот.»\n— Бухари жана Муслим';
 
   @override
-  String get hadith29 => '\"Садаканын эң жакшысы — суу берүү.\"\n— Ахмад';
+  String get hadith29 => '«Садаканын эң жакшысы — суу берүү.»\n— Ахмад';
 
   @override
   String get hadith30 =>
-      '\"Ким момундан бир кыйынчылыкты жойсо, Аллах Кыямат күнү андан бир кыйынчылыкты жоёт.\"\n— Муслим';
+      '«Ким момундун бир кыйынчылыгын кетирсе, Алла Кыямат күнү анын бир кыйынчылыгын кетирет.»\n— Муслим';
 
   @override
-  String get hadith32 => '\"Уят — ыймандын бир бөлүгү.\"\n— Бухари жана Муслим';
+  String get hadith32 => '«Уят — ыймандын бир бөлүгү.»\n— Бухари жана Муслим';
 
   @override
   String get hadith34 =>
-      '\"Ким сабыр кылса, Аллах ага сабыр берет.\"\n— Бухари жана Муслим';
+      '«Ким сабыр кылса, Алла ага сабыр берет.»\n— Бухари жана Муслим';
 
   @override
   String get hadith36 =>
-      '\"Силердин бириңер өзүнө каалаган нерсени бир тууганына да каалабаганча, чыныгы момун болбойт.\"\n— Бухари жана Муслим';
+      '«Силердин бириңер өзүнө каалаган нерсени бир тууганына да каалабаганча, чыныгы момун болбойт.»\n— Бухари жана Муслим';
 
   @override
   String get hadith37 =>
-      '\"Ачтарды тойгузгула, ооруларды жоктогула жана туткундарды бошоткула.\"\n— Бухари';
+      '«Ачтарды тойгузгула, оорулуулардын көңүлүн сурагыла жана туткундарды бошоткула.»\n— Бухари';
 
   @override
   String get hadith38 =>
-      '\"Күчтүү адам — күрөштө жеңген эмес, ачуусун басып, өзүн кармай алган адам.\"\n— Бухари жана Муслим';
+      '«Күчтүү адам — күрөштө жеңген эмес, ачуусун басып, өзүн кармай алган адам.»\n— Бухари жана Муслим';
 
   @override
   String get hadith40 =>
-      '\"Ар намаздан кийин отуз үч жолу \'СубханАллах\', \'Алхамдулиллах\' жана \'Аллаху Акбар\' деңиз.\"\n— Муслим';
+      '«Ар бир намаздан кийин „Субханаллах“, „Алхамдулиллах“ жана „Аллаху акбар“ деп отуз үчтөн жолу айткыла.»\n— Муслим';
 
   @override
-  String get hadith41 => '\"Эң жакшы зикир — Ла илаха иллаллах.\"\n— Термизи';
+  String get hadith41 => '«Эң жакшы зикир — Ла илаха иллаллах.»\n— Тирмизи';
 
   @override
   String get hadith42 =>
-      '\"Эки ниемет бар, көп адамдар аларды текке кетирет: ден-соолук жана бош убакыт.\"\n— Бухари';
+      '«Эки нээмат бар, адамдардын көбү аларды текке кетирет: ден соолук жана бош убакыт.»\n— Бухари';
 
   @override
   String get hadith43 =>
-      '\"Бешти бештин алдында баалагыла: жаштыкты карылыктын, ден-соолукту оорунун, байлыкты жакырчылыктын, бош убакытты бош эместиктин жана өмүрдү өлүмдүн алдында.\"\n— Хаким';
+      '«Бешти беш нерседен мурун баалагыла: жаштыкты карылыктан мурун, ден соолукту оорудан мурун, байлыкты жакырчылыктан мурун, бош убакытты алектиктен мурун жана өмүрдү өлүмдөн мурун.»\n— Хаким';
 
   @override
   String get hadith44 =>
-      '\"Ким Ихлас сүрөсүн он жолу окуса, Аллах ага бейишде үй курат.\"\n— Ахмад';
+      '«Ким Ихлас сүрөсүн он жолу окуса, Алла ага бейиште үй курат.»\n— Ахмад';
 
   @override
   String get hadith45 =>
-      '\"Парз намаздардан кийинки эң жакшы намаз — түнкү намаз.\"\n— Муслим';
+      '«Парз намаздардан кийинки эң жакшы намаз — түнкү намаз.»\n— Муслим';
 
   @override
   String get hadith46 =>
-      '\"Садака күнөөлөрдү суу отту өчүргөндөй өчүрөт.\"\n— Термизи';
+      '«Садака күнөөлөрдү суу отту өчүргөндөй өчүрөт.»\n— Тирмизи';
 
   @override
   String get hadith47 =>
-      '\"Туугандык байланышты сактоочу — жооп кайтаруучу эмес, байланыш үзүлсө да аны сактоочу.\"\n— Бухари';
+      '«Туугандык байланышты сактоочу — жооп кайтаруучу эмес, байланыш үзүлсө да аны сактоочу.»\n— Бухари';
 
   @override
   String get hadith49 =>
-      '\"Ким тамак жеп: \'Мага муну жедирген жана менин эч кандай күчүм жана кубатымсыз мага мүмкүнчүлүк берген Аллахка алкыш\' десе, анын өткөн күнөөлөрү кечирилет.\"\n— Термизи';
+      '«Ким тамак жегенден кийин: „Мага муну жедирген жана менин эч бир күч-кубатымсыз ырыскы кылып берген Аллага мактоо болсун“, — десе, анын өткөн күнөөлөрү кечирилет.»\n— Тирмизи';
 
   @override
   String get hadith53 =>
-      '\"Эч бир жакшылыкты жеп-жеңил көрбө, бир тууганыңды жылмая карап тосуу болсо да.\"\n— Муслим';
+      '«Эч бир жакшылыкты кичине көрбө, бир тууганыңды жайдары жүз менен тосуу болсо да.»\n— Муслим';
 
   @override
   String get hadith54 =>
-      '\"Силердин эң жакшыңар — үй-бүлөсүнө эң жакшы мамиле кылганыңар.\"\n— Тирмизи';
+      '«Силердин эң жакшыңар — үй-бүлөсүнө эң жакшы мамиле кылганыңар.»\n— Тирмизи';
 
   @override
   String get hadith55 =>
-      '\"Ким түнкүсүн Бакара сүрөсүнүн акыркы эки аятын окуса, ал ага жетиштүү.\"\n— Бухари жана Муслим';
+      '«Ким түндө Бакара сүрөсүнүн акыркы эки аятын окуса, ошол экөө ага жетиштүү болот.»\n— Бухари жана Муслим';
 
   @override
   String get hadith56 =>
-      '\"Дүнүйө — пайда, ал эң жакшы пайда — салиха жубай.\"\n— Муслим';
+      '«Дүйнө — пайдалана турган нерсе, ал эми анын эң жакшысы — салиха аял.»\n— Муслим';
 
   @override
   String get hadith57 =>
-      '\"Үч дуба кабыл болот: орозо тутуучунун дубасы, адил башчынын дубасы жана мазалымдын дубасы.\"\n— Тирмизи';
+      '«Үч дуба четке кагылбайт: орозо кармаган адамдын дубасы, адилеттүү башкаруучунун дубасы жана мазлумдун дубасы.»\n— Тирмизи';
 
   @override
   String get hadith58 =>
-      '\"Ким мага бир жолу салават айтса, Аллах ага он жолу рахмат жиберет.\"\n— Муслим';
+      '«Ким мага бир жолу салават айтса, Алла ага он эсе ырайым кылат.»\n— Муслим';
 
   @override
-  String get hadith65 => '\"Момүн момүндүн күзгүсү.\"\n— Абу Дауд';
+  String get hadith65 => '«Момун — момундун күзгүсү.»\n— Абу Дауд';
 
   @override
   String get hadith66 =>
-      '\"Чынчылдык жакшылыкка алып барат, ал жакшылык бейишке алып барат.\"\n— Бухари жана Муслим';
+      '«Чынчылдык жакшылыкка алып барат, ал эми жакшылык бейишке алып барат.»\n— Бухари жана Муслим';
 
   @override
   String get hadith67 =>
-      '\"Аманатты сага ишенген адамга кайтар, сага чыккынчылык кылганга чыккынчылык кылба.\"\n— Абу Дауд жана Тирмизи';
+      '«Аманатты сага ишенген адамга кайтар, сага чыккынчылык кылганга чыккынчылык кылба.»\n— Абу Дауд жана Тирмизи';
 
   @override
   String get hadith68 =>
-      '\"Мусулманга тийген чарчоо, оору, кайгы, муң, зыян же тынчсыздык, тикен кирип кетсе да, Аллах анын айрым күнөөлөрүн кечирет.\"\n— Бухари жана Муслим';
+      '«Мусулманга жеткен ар бир чарчоо, оору, кайгы, муң, азап же түйшүк үчүн, атүгүл тикен сайылса да, Алла анын айрым күнөөлөрүн кечирет.»\n— Бухари жана Муслим';
 
   @override
   String get hadith69 =>
-      '\"Мусулмандын бир тууганына анын жок кезинде кылган дубасы дайыма кабыл болот.\"\n— Муслим';
+      '«Мусулмандын бир тууганына анын жок кезинде кылган дубасы дайыма кабыл болот.»\n— Муслим';
 
   @override
   String get hadith70 =>
-      '\"Ким Аллахтан үч жолу бейиш сураса, бейиш айтат: Аллахым, аны бейишке киргиз.\"\n— Тирмизи';
+      '«Ким Алладан үч жолу бейиш сураса, бейиш: „Оо, Алла, аны бейишке киргиз“, — дейт.»\n— Тирмизи';
 
   @override
   String get hadith71 =>
-      '\"Рамазандан кийинки эң баалуу орозо — Аллахтын айы Мухаррамдагы орозо.\"\n— Муслим';
+      '«Рамазандан кийинки эң артыкча орозо — Алланын айы Мухаррамдагы орозо.»\n— Муслим';
 
   @override
   String get hadith72 =>
-      '\"Ким ажылык кылып, жаман сөз айтпаса жана күнөө кылбаса, энеси төрөгөн күнүндөгүдөй кайтып келет.\"\n— Бухари жана Муслим';
+      '«Ким ажылык кылып, бузуку сөз сүйлөбөсө жана күнөө кылбаса, энесинен төрөлгөн күнүндөй болуп кайтат.»\n— Бухари жана Муслим';
 
   @override
   String get hadith73 =>
-      '\"Бир умра экинчи умрага чейин арасындагы күнөөлөрдүн каффараты.\"\n— Бухари жана Муслим';
+      '«Бир умра кийинки умрага чейинки күнөөлөргө каффарат болот.»\n— Бухари жана Муслим';
 
   @override
   String get hadith74 =>
-      '\"Караңгы түндүн кесимдеріндей сыноолор келе электе, жакшы иштерге ашыгыңар.\"\n— Муслим';
+      '«Караңгы түндүн бөлүктөрүндөй сыноолор келгенге чейин жакшы амалдарга шашылгыла.»\n— Муслим';
 
   @override
   String get hadith75 =>
-      '\"Таң намаздын эки ракааты дүйнө жана андагынын баарынан жакшы.\"\n— Муслим';
+      '«Багымдаттын эки рекети дүйнөдөн жана андагы бардык нерседен жакшы.»\n— Муслим';
 
   @override
   String get hadith77 =>
-      '\"Эгер силер Аллага чыныгы таваккул кылсаңар, Ал силерди куштарды ризыктандыргандай ризыктандырмак.\"\n— Термизи';
+      '«Эгер Аллага чындап тобокел кылсаңар, Ал куштарды ырыскылантканындай силерди да ырыскылантмак.»\n— Тирмизи';
 
   @override
   String get hadith78 =>
-      '\"Ким ооруканды барып көрсө, кайтмайынча бейиш бактарында болот.\"\n— Муслим';
+      '«Ким оорулуунун көңүлүн сураса, кайтып келгенге чейин бейиштин бактарында болот.»\n— Муслим';
 
   @override
   String get hadith79 =>
-      '\"Саламды жайыңар, тамак бергиле, адамдар уктаганда түнкү намаз окугула — бейишке тынчтык менен кирерсиңер.\"\n— Термизи';
+      '«Саламды жайылткыла, ачтарды тамактандыргыла, адамдар уктап жатканда түнкү намаз окугула — бейишке тынчтык менен киресиңер.»\n— Тирмизи';
 
   @override
   String get hadith80 =>
-      '\"Адамдарга ыраазычылык билдирбеген Аллахка да ыраазычылык билдирбейт.\"\n— Термизи';
+      '«Адамдарга ыраазычылык билдирбеген Аллага да ыраазычылык билдирбейт.»\n— Тирмизи';
 
   @override
   String get hadith81 =>
-      '\"Кызгануу эки гана учурда уруксат: Алла мал берген адам аны ак жолго жумшаса, жана Алла акылмандык берген адам аны менен чечим чыгарып, үйрөтсө.\"\n— Бухари жана Муслим';
+      '«Эки гана учурда көз артууга болот: Алла мал берип, аны акыйкат жолго жумшаган адамга жана Алла даанышмандык берип, ал аны менен өкүм чыгарып, башкаларга үйрөткөн адамга.»\n— Бухари жана Муслим';
 
   @override
   String get hadith82 =>
-      '\"Адам досунун дининде болот, ошондуктан ар бириңер ким менен достошкондугуна караңыз.\"\n— Абу Дауд жана Термизи';
+      '«Адам досунун дининде болот, ошондуктан ар бириңер ким менен дос болуп жатканын карасын.»\n— Абу Дауд жана Тирмизи';
 
   @override
   String get hadith85 =>
-      '\"Ким Аллах үчүн бир нерседен баш тартса, Аллах ага андан жакшысын берет.\"\n— Ахмад';
+      '«Ким Алла үчүн бир нерседен баш тартса, Алла ага андан жакшысын берет.»\n— Ахмад';
 
   @override
   String get hadith86 =>
-      '\"Ким мусулмандын кемчилигин жашырса, Алла Кыямат күнү анын кемчилигин жашырат.\"\n— Бухари жана Муслим';
+      '«Ким мусулмандын кемчилигин жашырса, Алла Кыямат күнү анын кемчилигин жашырат.»\n— Бухари жана Муслим';
 
   @override
-  String get hadith87 =>
-      '\"Дүйнөдө бөтөн адамдай же жолоочудай бол.\"\n— Бухари';
+  String get hadith87 => '«Дүйнөдө бөтөн адамдай же жолоочудай бол.»\n— Бухари';
 
   @override
   String get hadith88 =>
-      '\"Ким кыйынчылыктагыга жеңилдик кылса, Алла ага дүйнөдө жана акыретте жеңилдик кылат.\"\n— Муслим';
+      '«Ким кыйынчылыктагыга жеңилдик кылса, Алла ага дүйнөдө жана акыретте жеңилдик кылат.»\n— Муслим';
 
   @override
-  String get hadith89 =>
-      '\"Амалдар ниеттерге байланыштуу.\"\n— Бухари жана Муслим';
+  String get hadith89 => '«Амалдар ниетке жараша.»\n— Бухари жана Муслим';
 
   @override
   String get hadith90 =>
-      '\"Шектенүүдөн сактаныңар, анткени шектенүү эң жалган сөз.\"\n— Бухари жана Муслим';
+      '«Шектенүүдөн сактангыла, анткени шектенүү — сөздүн эң жалганы.»\n— Бухари жана Муслим';
 
   @override
   String get hadith93 =>
-      '\"Чогуу тамактангыла жана Алланын атын атагыла, силерге берекелүү болот.\"\n— Абу Дауд';
+      '«Чогуу тамактангыла жана Алланын атын атагыла, силерге берекелүү болот.»\n— Абу Дауд';
 
   @override
   String get hadith94 =>
-      '\"Эч бир коом Аллахты зикир кылып отурбайт, периштелер аларды курчап албай, ырайым аларды каптабай жана тынчтык аларга түшпөй.\"\n— Муслим';
+      '«Кайсы бир жамаат Алланы зикир кылып отурса, сөзсүз периштелер аларды курчап алат, ырайым аларды каптайт жана аларга бейпилдик түшөт.»\n— Муслим';
 
   @override
   String get hadith95 =>
-      '\"Аллах кечирген кулунун урматын гана арттырат.\"\n— Муслим';
+      '«Пенде кечиримдүү болгону үчүн Алла анын кадырын гана арттырат.»\n— Муслим';
 
   @override
-  String get hadith96 =>
-      '\"Төөңдү байла, анан Аллага таваккул кыл.\"\n— Термизи';
+  String get hadith96 => '«Төөңдү байла, анан Аллага тобокел кыл.»\n— Тирмизи';
 
   @override
   String get hadith97 =>
-      '\"Момундун иши укмуштуу — бардыгы ага жакшылык.\"\n— Муслим';
+      '«Момундун иши кандай гана ажайып — анын бардык иши ал үчүн жакшылык.»\n— Муслим';
 
   @override
   String get hadith98 =>
-      '\"Мусулман мусулмандын бир тууганы: ага зулум кылбайт, таштабайт, кемсинтпейт.\"\n— Муслим';
+      '«Мусулман мусулмандын бир тууганы: ага зулум кылбайт, таштабайт, кемсинтпейт.»\n— Муслим';
 
   @override
-  String get delete => 'Жок кылуу';
+  String get delete => 'Өчүрүү';
 
   @override
   String get remove => 'Алып салуу';
 
   @override
-  String get deleteAmalConfirmTitle => 'Байкоодон алып салыныбы?';
+  String get deleteAmalConfirmTitle => 'Көзөмөлдөн алып саласызбы?';
 
   @override
   String deleteAmalConfirmBody(String title) {
-    return '\"$title\" тизмеңизден жашырылат. Тарыхыңыз сакталат.';
+    return '«$title» тизмеңизден жашырылат. Тарыхыңыз сакталат.';
   }
 
   @override
-  String get genericError =>
-      'Бир нерсе туура эмес болду. Кайра аракет кылыңыз.';
+  String get genericError => 'Бир ката кетти. Кайра аракет кылыңыз.';
 
   @override
-  String get notificationChannelName => 'Амал эскертүүлөрү';
+  String get notificationChannelName => 'Амал эскертмелери';
 
   @override
   String get notificationChannelDescription =>
-      'Сиз көзөмөлдөгөн амалдар үчүн күнүмдүк эскертүүлөр.';
+      'Көзөмөлдөгөн амалдарыңыз боюнча күнүмдүк эскертмелер.';
 
   @override
   String get invalidAmalId => 'Жараксыз амал идентификатору';
@@ -1105,14 +1103,14 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get tutorialTapBody =>
-      'Бир жолу басуу амалды бүгүнкүгө аткарылды деп белгилейт. Жокко чыгаруу үчүн кайра басыңыз.';
+      'Бир басканда амал бүгүн аткарылды деп белгиленет. Жокко чыгаруу үчүн кайра басыңыз.';
 
   @override
   String get tutorialEditTitle => 'Өзгөртүү үчүн эки жолу басыңыз';
 
   @override
   String get tutorialEditBody =>
-      'Түзөтүү формасын ачат — атын өзгөртүңүз же кайталануу жыштыгын өзгөртүңүз.';
+      'Түзөтүү формасы ачылат — атын же кайталануу жыштыгын өзгөртө аласыз.';
 
   @override
   String get tutorialReorderTitle => 'Иретин өзгөртүү үчүн басып туруңуз';
@@ -1126,35 +1124,35 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get tutorialRemoveBody =>
-      'Сапты четке жылдырып, аны бүгүнкүгө жашырыңыз же көзөмөлдөн чыгарыңыз.';
+      'Сапты четке жылдырып, бүгүнгө жашырыңыз же көзөмөлдөн алып салыңыз.';
 
   @override
   String get tutorialCountTitle => 'Кайталоолорду эсептөө';
 
   @override
   String get tutorialCountBody =>
-      'Максаты бирден көп амалдар үчүн ар бир кайталоодо − жана + колдонуңуз.';
+      'Бир нече жолу аткарылуучу амалдарда ар бир кайталоо үчүн − жана + баскычтарын колдонуңуз.';
 
   @override
   String get tutorialViewTitle => 'Топтоо же жөнөкөй тизме';
 
   @override
   String get tutorialViewBody =>
-      'Категория боюнча топтоо менен бир жөнөкөй тизменин ортосунда алмашыңыз.';
+      'Категория боюнча топтолгон тизме менен жөнөкөй тизменин ортосунда которулуңуз.';
 
   @override
-  String get tutorialChallengeLogTitle => 'Бүгүнкүнү жазуу үчүн басыңыз';
+  String get tutorialChallengeLogTitle => 'Бүгүнкүнү белгилөө үчүн басыңыз';
 
   @override
   String get tutorialChallengeLogBody =>
-      'Бир жолу басуу бүгүнкүнү жазат. Сандык максатта ар бир басуу бир кадам кошот.';
+      'Бир басканда бүгүнкү күн белгиленет. Сан менен эсептелген максатта ар бир басуу бирди кошот.';
 
   @override
   String get tutorialChallengeOpenTitle => 'Ачуу үчүн эки жолу басыңыз';
 
   @override
   String get tutorialChallengeOpenBody =>
-      'Максатты ачат — ар бир күндү көрүңүз, өткөрүп жиберген күндү оңдоңуз же аны өчүрүңүз.';
+      'Максат ачылат — ар бир күндү көрүп, өткөрүп жиберген күндү оңдой же максатты өчүрө аласыз.';
 
   @override
   String get tutorialChallengeDeleteBody =>
@@ -1165,10 +1163,10 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get tutorialChallengeAmountBody =>
-      'Өзгөртүү үчүн − жана + колдонуңуз же санды басып так өлчөмдү жазыңыз.';
+      'Бирден өзгөртүү үчүн − жана + колдонуңуз же так санды жазуу үчүн санды басыңыз.';
 
   @override
-  String get challengeOpenDetailsAction => 'Максат маалыматын ачуу';
+  String get challengeOpenDetailsAction => 'Максаттын чоо-жайын ачуу';
 
   @override
   String get challengesActive => 'Учурдагы';
@@ -1181,14 +1179,14 @@ class AppLocalizationsKy extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count максат бүттү — акыркысы $title',
-      one: '$title бүттү',
+      other: '$count максат аяктады — акыркысы: $title',
+      one: '$title аяктады',
     );
     return '$_temp0';
   }
 
   @override
-  String get challengeSectionEnded => 'Мөөнөтү өттү';
+  String get challengeSectionEnded => 'Мөөнөтү бүттү';
 
   @override
   String get challengesPastEmpty => 'Азырынча аяктаган эч нерсе жок.';
@@ -1204,21 +1202,21 @@ class AppLocalizationsKy extends AppLocalizations {
   String get editChallenge => 'Максатты өзгөртүү';
 
   @override
-  String get deleteChallenge => 'Максатты жок кылуу';
+  String get deleteChallenge => 'Максатты өчүрүү';
 
   @override
   String get deleteChallengeConfirm =>
-      'Бул максат жана анын жазылган бардык жыйынтыгы өчүрүлсүнбү?';
+      'Бул максатты жана анын бардык жазууларын өчүрөсүзбү?';
 
   @override
   String get challengeShapeQuestion => 'Бул кандай максат?';
 
   @override
-  String get challengeShapeTotal => 'Жетүүчү жалпы сан';
+  String get challengeShapeTotal => 'Жалпы санга жетүү';
 
   @override
   String get challengeShapeTotalBody =>
-      '1000 салават, 30 жүз. Санын жазасыз, ал топтолот.';
+      '1000 салават, 30 пара. Санын жазып турасыз, ал кошулуп барат.';
 
   @override
   String get challengeShapeStreak => 'Күн сайын улантуу';
@@ -1240,7 +1238,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get challengeUnitHint => 'рекет, бет, жолу';
 
   @override
-  String get challengeOneTapAdds => 'Бир басуу кошот';
+  String get challengeOneTapAdds => 'Бир басканда кошулат';
 
   @override
   String get challengeHowManyDays => 'Канча күн?';
@@ -1261,10 +1259,10 @@ class AppLocalizationsKy extends AppLocalizations {
   String get challengeByWhen => 'Качанга чейин?';
 
   @override
-  String get challengeWindowDuration => 'Мөөнөт';
+  String get challengeWindowDuration => 'Канча күндө';
 
   @override
-  String get challengeByDate => 'Белгилүү күнгө';
+  String get challengeByDate => 'Белгилүү күнгө чейин';
 
   @override
   String challengePlanRange(String start, String end) {
@@ -1284,7 +1282,7 @@ class AppLocalizationsKy extends AppLocalizations {
     String window,
     String slack,
   ) {
-    return '$start – $end · $window күндүн $target — $slack өткөрүп жиберсе болот';
+    return '$start – $end · $window күндүн $target күнү — $slack күн өткөрүп жиберсеңиз болот';
   }
 
   @override
@@ -1294,12 +1292,12 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String challengePlanOpen(String start) {
-    return '$start башталат · мөөнөтсүз';
+    return 'Башталышы: $start · мөөнөтсүз';
   }
 
   @override
   String challengeTooTight(String target, String window) {
-    return '$target күн $window күнгө батпайт — улантуу күнүнө бирди санайт.';
+    return '$target күн $window күнгө батпайт — бул түрдө күнүнө бир гана белги саналат.';
   }
 
   @override
@@ -1348,12 +1346,12 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String challengeOnTrack(String rate) {
-    return 'Планда · $rate/күн';
+    return 'Пландагыдай · $rate/күн';
   }
 
   @override
   String challengeBehind(String rate) {
-    return 'Артта · $rate/күн керек';
+    return 'Артта калды · бүтүрүү үчүн $rate/күн';
   }
 
   @override
@@ -1365,19 +1363,19 @@ class AppLocalizationsKy extends AppLocalizations {
   String get challengeReached => 'Максатка жетти';
 
   @override
-  String get challengeCompleted => 'Аяктады';
+  String get challengeCompleted => 'Аткарылды';
 
   @override
   String challengeEnded(String done, String target) {
-    return 'Бүттү · $done/$target';
+    return 'Мөөнөтү бүттү · $done/$target';
   }
 
   @override
-  String get challengeExpiredTitle => 'Максат аяктады';
+  String get challengeExpiredTitle => 'Максаттын мөөнөтү бүттү';
 
   @override
   String challengeExpiredBody(String title, String done, String target) {
-    return '$title $done/$target менен аяктады.';
+    return '$title: мөөнөтү бүттү, жыйынтык $done/$target.';
   }
 
   @override
@@ -1390,11 +1388,11 @@ class AppLocalizationsKy extends AppLocalizations {
   String get challengeArchive => 'Архивдөө';
 
   @override
-  String get challengeDailyBreakdown => 'Күндөлүк жазуу';
+  String get challengeDailyBreakdown => 'Күн боюнча жазуулар';
 
   @override
   String challengeNudgeBody(String title, String rate) {
-    return '$title: убагында аяктоо үчүн күнүнө $rate.';
+    return '$title: убагында бүтүрүү үчүн күнүнө $rate керек.';
   }
 
   @override
@@ -1424,7 +1422,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get challengePreview => 'Алдын ала көрүү';
 
   @override
-  String get challengeTmplTahajjud => '40 түн Тахажжуд';
+  String get challengeTmplTahajjud => '40 түн тахажжуд';
 
   @override
   String get challengeTmplSalawat => '1000 салават';
@@ -1433,10 +1431,10 @@ class AppLocalizationsKy extends AppLocalizations {
   String get challengeTmplKhatm => '30 күндө Куран хатымы';
 
   @override
-  String get challengeTmplFajrJamaah => '30 күн Багымдат жамаат менен';
+  String get challengeTmplFajrJamaah => '30 күн жамаат менен багымдат';
 
   @override
-  String get challengeTmplSadaqah => '30 күн Садака';
+  String get challengeTmplSadaqah => '30 күн садака';
 
   @override
   String get listSeparator => ' · ';
@@ -1467,29 +1465,29 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get supportCardBody =>
-      'Акысыз, жарнамасыз жана каттоосуз. Кааласаңыз, кичине салым менен өнүгүшүнө колдоо көрсөтө аласыз — каалаган суммада, каалаган убакта.';
+      'Акысыз, жарнамасыз жана каттоосуз. Кааласаңыз, кичине салым менен анын өнүгүшүнө колдоо көрсөтө аласыз — каалаган суммада, каалаган убакта.';
 
   @override
-  String get supportCta => 'Muhasaba-ны колдоо';
+  String get supportCta => 'Muhasaba колдонмосун колдоо';
 
   @override
   String get supportAgain => 'Кайра колдоо';
 
   @override
   String get supporterThanks =>
-      'Аллах ыраазы болсун — ин ша Аллах, Muhasaba акысыз жана жарнамасыз бойдон калат.';
+      'Алла ыраазы болсун — иншаалла, Muhasaba акысыз жана жарнамасыз бойдон калат.';
 
   @override
   String supporterSince(String tier, String month) {
-    return '$month айынан бери $tier';
+    return '$tier · $month айынан бери';
   }
 
   @override
-  String get supportPromptTitle => 'Muhasaba\'ны колдоңуз';
+  String get supportPromptTitle => 'Muhasaba колдонмосун колдоңуз';
 
   @override
   String get supportPromptBody =>
-      'Muhasaba акысыз, жарнамасыз жана каттоосуз. Кааласаңыз, кичине салым менен өнүгүшүнө колдоо көрсөтө аласыз — каалаган суммада, каалаган убакта. Эч бир мүмкүнчүлүк буга байланыштуу эмес.';
+      'Muhasaba акысыз, жарнамасыз жана каттоосуз. Кааласаңыз, кичине салым менен анын өнүгүшүнө колдоо көрсөтө аласыз — каалаган суммада, каалаган убакта. Колдонмонун бардык мүмкүнчүлүктөрү баары бир ачык.';
 
   @override
   String get supportPromptNow => 'Азыр колдоо';
@@ -1501,15 +1499,15 @@ class AppLocalizationsKy extends AppLocalizations {
   String get supportPromptNever => 'Кайра сурабоо';
 
   @override
-  String get tipSheetTitle => 'Muhasaba-ны колдоо';
+  String get tipSheetTitle => 'Muhasaba колдонмосун колдоо';
 
   @override
   String get tipSheetBody =>
-      'Каалаган сумманы тандаңыз, каалаганча жолу. Бул каражат колдонмону тейлөөгө жумшалат — ин ша Аллах, ал акысыз жана жарнамасыз бойдон калат. Ыраазычылык катары Жөндөөлөрдө колдоочу деп көрсөтүлөсүз.';
+      'Каалаган сумманы, каалаганча тандаңыз. Салымдар колдонмону тейлөөгө жумшалат — иншаалла, ал акысыз жана жарнамасыз бойдон калат. Ыраазычылык катары Жөндөөлөрдө колдоочу деп белгиленесиз.';
 
   @override
   String tipSheetSupporterLine(String tier) {
-    return '$tier — Аллах ыраазы болсун.';
+    return '$tier — Алла ыраазы болсун.';
   }
 
   @override
@@ -1521,14 +1519,14 @@ class AppLocalizationsKy extends AppLocalizations {
   }
 
   @override
-  String get tipSheetOtherWays => 'Сизге ылайыктуу вариантты таппай жатасызбы?';
+  String get tipSheetOtherWays => 'Сизге ылайыктуу вариант табылган жокпу?';
 
   @override
   String get tipSheetWriteToUs => 'Бизге жазыңыз';
 
   @override
   String get supportEmailBody =>
-      'Ассалому алайкум,\n\nMuhasaba өнүктүрүүсүн түздөн-түз колдогум келет.\n\nӨлкө:\nКантип жөнөткүм келет:\nСумма (милдеттүү эмес):';
+      'Ассаламу алейкум,\n\nMuhasaba колдонмосунун өнүгүшүнө түздөн-түз салым кошкум келет.\n\nӨлкө:\nКантип жөнөткүм келет:\nСумма (милдеттүү эмес):';
 
   @override
   String tipBusy(String store) {
@@ -1536,17 +1534,17 @@ class AppLocalizationsKy extends AppLocalizations {
   }
 
   @override
-  String get tipThanks => 'Аллах ыраазы болсун — Аллах сизден кабыл кылсын.';
+  String get tipThanks => 'Алла ыраазы болсун — Алла сизден кабыл кылсын.';
 
   @override
   String get tipDone => 'Даяр';
 
   @override
-  String get tipFailed => 'Сатып алуу аяктаган жок. Акча алынган жок.';
+  String get tipFailed => 'Төлөм өткөн жок. Акча кармалган жок.';
 
   @override
   String tipPending(String store) {
-    return 'Салымыңыз $store тарабында күтүүдө турат — ырасталар замат белгиңиз кошулат.';
+    return 'Салымыңыз $store тарабынан ырасталышын күтүүдө — ырасталгандан кийин белгиңиз кошулат.';
   }
 
   @override
@@ -1565,7 +1563,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get optionJamaaMasjid => 'Мечитте жамаат';
 
   @override
-  String get optionSetOnTime => 'Убакыт';
+  String get optionSetOnTime => 'Өз убагында';
 
   @override
   String get optionOnTimeOnTime => 'Өз убагында';
@@ -1574,10 +1572,10 @@ class AppLocalizationsKy extends AppLocalizations {
   String get optionOnTimeLate => 'Кечиккен';
 
   @override
-  String get optionOnTimeQada => 'Казаа';
+  String get optionOnTimeQada => 'Каза';
 
   @override
-  String get optionSetQuranSession => 'Куран сабагы';
+  String get optionSetQuranSession => 'Куран окуу';
 
   @override
   String get optionQuranRecited => 'Окулду';
@@ -1610,7 +1608,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get optionSetIntensity => 'Деңгээл';
 
   @override
-  String get optionIntensityLight => 'Женил';
+  String get optionIntensityLight => 'Жеңил';
 
   @override
   String get optionIntensityModerate => 'Орто';
@@ -1647,7 +1645,8 @@ class AppLocalizationsKy extends AppLocalizations {
   }
 
   @override
-  String get optionSetPreviewLabel => 'Алдын ала көрүү — Бүгүн сабы';
+  String get optionSetPreviewLabel =>
+      'Алдын ала көрүү — «Бүгүн» тизмесиндеги сап';
 
   @override
   String optionSetKeptForHistory(String labels) {
@@ -1655,7 +1654,7 @@ class AppLocalizationsKy extends AppLocalizations {
   }
 
   @override
-  String get optionSetDelete => 'Топтомду жок кылуу';
+  String get optionSetDelete => 'Топтомду өчүрүү';
 
   @override
   String get optionSetDeleteConfirm =>
@@ -1682,7 +1681,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get optionSetNew => 'Жаңы топтом';
 
   @override
-  String get requireChoiceLabel => 'Тандоо талап кылынсын';
+  String get requireChoiceLabel => 'Тандоону талап кылуу';
 
   @override
   String get requireChoiceHelp => 'Вариант тандалмайынча сап белгиленбейт';
@@ -1714,7 +1713,7 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String optionBreakdownTitle(String set) {
-    return 'Вариант бөлүнүшү — $set';
+    return 'Варианттардын бөлүнүшү — $set';
   }
 
   @override
@@ -1722,9 +1721,9 @@ class AppLocalizationsKy extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count жолудан',
+      other: '$count аткаруунун',
     );
-    return '$_temp0 тандоо белгиленгендердин үлүшү';
+    return '$_temp0 ичинен тандоо белгиленгендердин үлүшү';
   }
 
   @override
@@ -1732,9 +1731,9 @@ class AppLocalizationsKy extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       total,
       locale: localeName,
-      other: '$total күндөн',
+      other: 'аткарылган $total күндүн',
     );
-    return '$_temp0 $none күнүндө тандоо белгиленген эмес';
+    return 'Тандоо белгиленген эмес — $_temp0 $none күнүндө';
   }
 
   @override
@@ -1749,7 +1748,7 @@ class AppLocalizationsKy extends AppLocalizations {
   }
 
   @override
-  String get optionBreakdownSectionTitle => 'Вариант бөлүнүшү';
+  String get optionBreakdownSectionTitle => 'Варианттардын бөлүнүшү';
 
   @override
   String optionBreakdownSwipeHint(int count) {
@@ -1765,7 +1764,7 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String optionDetailTrendReadout(String option, String from, String to) {
-    return '$option үлүшү биринчи жумада $from, акыркы жумада $to болду.';
+    return '$option: биринчи аптада $from, акыркы аптада $to болду.';
   }
 
   @override
@@ -1788,7 +1787,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get optionDetailLongestRun => 'Эң узун серия';
 
   @override
-  String get optionDetailBestWeek => 'Эң жакшы жума';
+  String get optionDetailBestWeek => 'Эң жакшы апта';
 
   @override
   String get optionDetailCurrentRun => 'Учурдагы серия';
@@ -1818,25 +1817,25 @@ class AppLocalizationsKy extends AppLocalizations {
   String get amalJumuah => 'Жума намазы';
 
   @override
-  String get amalWitr => 'Витир намазы';
+  String get amalWitr => 'Витр намазы';
 
   @override
   String get amalQada => 'Каза намаздар';
 
   @override
-  String get amalFajrSunnah => 'Багымдат намазынын сүннөтү';
+  String get amalFajrSunnah => 'Багымдаттын сүннөтү';
 
   @override
-  String get amalDhuhrSunnah => 'Бешим намазынын сүннөтү';
+  String get amalDhuhrSunnah => 'Бешимдин сүннөтү';
 
   @override
-  String get amalAsrSunnah => 'Асыр намазынын сүннөтү';
+  String get amalAsrSunnah => 'Асырдын сүннөтү';
 
   @override
-  String get amalMaghribSunnah => 'Шам намазынын сүннөтү';
+  String get amalMaghribSunnah => 'Шамдын сүннөтү';
 
   @override
-  String get amalIshaSunnah => 'Куптан намазынын сүннөтү';
+  String get amalIshaSunnah => 'Куптандын сүннөтү';
 
   @override
   String get amalRawatib => 'Муаккада сүннөттөр';
@@ -1848,7 +1847,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get amalWuduSleep => 'Уктаар алдында даарат';
 
   @override
-  String get amalFridayGhusl => 'Жума гусулу';
+  String get amalFridayGhusl => 'Жума күнкү гусул';
 
   @override
   String get amalIshraq => 'Ишрак намазы';
@@ -1857,7 +1856,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get amalWuduPrayer => 'Даараттан кийинки эки рекет';
 
   @override
-  String get amalTahiyyah => 'Тахиятул-мечит';
+  String get amalTahiyyah => 'Тахиятул-масжид';
 
   @override
   String get amalEarlyJumuah => 'Жумага эрте баруу';
@@ -1929,7 +1928,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get amalDuaAdhan => 'Азандан кийинки дуба';
 
   @override
-  String get amalDuaIqamah => 'Азан менен каматтын ортосундагы дуба';
+  String get amalDuaIqamah => 'Азан менен икамат арасындагы дуба';
 
   @override
   String get amalDuaSujood => 'Сеждедеги дуба';
@@ -1941,10 +1940,10 @@ class AppLocalizationsKy extends AppLocalizations {
   String get amalDuaOthers => 'Башкалар үчүн дуба';
 
   @override
-  String get amalFridayHour => 'Жуманын акыркы саатындагы дуба';
+  String get amalFridayHour => 'Жума күнүнүн акыркы саатындагы дуба';
 
   @override
-  String get amalLastThird => 'Түндүн акыркы үчтөн бириндеги дуба';
+  String get amalLastThird => 'Түнкү дуба (акыркы үчтөн бири)';
 
   @override
   String get amalMulk => 'Мулк сүрөсү';
@@ -2004,7 +2003,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get amalLearnHadith => 'Бир хадис үйрөнүү';
 
   @override
-  String get amalReadBook => 'Исламий китеп окуу';
+  String get amalReadBook => 'Диний китеп окуу';
 
   @override
   String get amalSeerah => 'Сийраны окуу';
@@ -2019,10 +2018,10 @@ class AppLocalizationsKy extends AppLocalizations {
   String get amalLearnDua => 'Жаңы дуба үйрөнүү';
 
   @override
-  String get amalShare => 'Үйрөнгөнүн бөлүшүү';
+  String get amalShare => 'Үйрөнгөндү бөлүшүү';
 
   @override
-  String get amalFiqh => 'Фыкх окуу';
+  String get amalFiqh => 'Фикх окуу';
 
   @override
   String get amalMuhasaba => 'Түнкү мухасаба';
@@ -2034,10 +2033,10 @@ class AppLocalizationsKy extends AppLocalizations {
   String get amalNoBackbiting => 'Гыйбаттан сактануу';
 
   @override
-  String get amalAnger => 'Ачууну тыюу';
+  String get amalAnger => 'Ачууну басуу';
 
   @override
-  String get amalGaze => 'Көздү харамдан сактоо';
+  String get amalGaze => 'Көздү харамдан тыюу';
 
   @override
   String get amalTruthful => 'Чынчылдык';
@@ -2103,7 +2102,7 @@ class AppLocalizationsKy extends AppLocalizations {
   String get libraryAll => 'Баары';
 
   @override
-  String get libraryAdded => 'Бүгүнкүгө кошулду';
+  String get libraryAdded => '«Бүгүн» тизмесине кошулду';
 
   @override
   String libraryAddedShowsOn(String days) {
@@ -2148,8 +2147,8 @@ class AppLocalizationsKy extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: 'Жумасына $countText күн',
-      one: 'Жумасына бир жолу',
+      other: 'Аптасына $countText күн',
+      one: 'Аптасына бир жолу',
     );
     return '$_temp0';
   }

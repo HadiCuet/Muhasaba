@@ -42,7 +42,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get insightsOverview => 'Umumy';
 
   @override
-  String get insightsDaily => 'Günlük';
+  String get insightsDaily => 'Gündelik';
 
   @override
   String get insightsArchive => 'Arhiw';
@@ -57,7 +57,7 @@ class AppLocalizationsTk extends AppLocalizations {
   }
 
   @override
-  String get archivedRestore => 'Yzyna gaýtar';
+  String get archivedRestore => 'Dikeltmek';
 
   @override
   String archivedRestored(String title) {
@@ -92,7 +92,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get titleLabel => 'At';
 
   @override
-  String get titleRequired => 'At gerek';
+  String get titleRequired => 'Ady ýazyň';
 
   @override
   String get titleTooLong => 'At gaty uzyn';
@@ -131,10 +131,10 @@ class AppLocalizationsTk extends AppLocalizations {
   String get categorySunnah => 'Sünnet';
 
   @override
-  String get timesPerPeriod => 'Döwür boýunça gezek';
+  String get timesPerPeriod => 'Döwürde näçe gezek';
 
   @override
-  String get custom => 'Özbaşdak';
+  String get custom => 'Başga';
 
   @override
   String get customTargetHint => 'mes. 50';
@@ -144,7 +144,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get targetAnyHelp =>
-      'Maksat ýok — islendik mukdar ýerine ýetirilen hasaplanýar';
+      'San bellenmedik — islendik mukdar ýerine ýetirilen hasaplanýar';
 
   @override
   String get dayOfWeek => 'Hepdäniň güni';
@@ -195,7 +195,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String previewWeeklyDays(String days) {
-    return 'Her $days gaýtalanýar';
+    return 'Gaýtalanýan günleri: $days';
   }
 
   @override
@@ -238,15 +238,15 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String onlyDateHint(String date) {
-    return 'Diňe $date-de';
+    return 'Diňe şu sene: $date';
   }
 
   @override
-  String get startPreChecked => 'Belgilenen bolup başla';
+  String get startPreChecked => 'Başdan belgili bolsun';
 
   @override
   String get startPreCheckedSubtitle =>
-      'Täze döwür başlanda, bu amal siz pozýançaňyz ýerine ýetirilen hasaplanýar.';
+      'Täze döwür başlanda, bu amal siz belgini aýyrýançaňyz ýerine ýetirilen hasaplanýar.';
 
   @override
   String get reminder => 'Ýatlatma';
@@ -271,14 +271,14 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get dailyReminderSubtitle =>
-      'Amallaryňyzy yzarlamak üçin ýumşak ýatlatma';
+      'Amallaryňyzy yzarlamak üçin mylaýym ýatlatma';
 
   @override
   String get dailyReminderTimeLabel => 'Ýatlatma wagty';
 
   @override
   String get dailyReminderBody =>
-      'Bu günki amallaryňyzy yzarlamak üçin biraz wagt aýryň.';
+      'Bu günki amallaryňyzy bellemäge birsalym wagt bölüň.';
 
   @override
   String get groupByCategory => 'Kategoriýa boýunça toparlamak';
@@ -308,7 +308,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String progressOf(String progress, String target) {
-    return '$target-dan $progress ýerine ýetirildi';
+    return '$progress/$target ýerine ýetirildi';
   }
 
   @override
@@ -352,13 +352,13 @@ class AppLocalizationsTk extends AppLocalizations {
   String get categoryNewSheetTitle => 'Täze kategoriýa';
 
   @override
-  String get categoryEditSheetTitle => 'Kategoriýany redaktirlemek';
+  String get categoryEditSheetTitle => 'Kategoriýany üýtgetmek';
 
   @override
   String get addAmal => 'Amal goşmak';
 
   @override
-  String get customAmal => 'Özbaşdak amal';
+  String get customAmal => 'Öz amalyňyz';
 
   @override
   String get amalTasbih => 'Tesbih 33x';
@@ -373,7 +373,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get amalSadaqah => 'Sadaka';
 
   @override
-  String get amalTahajjud => 'Tähejjüd';
+  String get amalTahajjud => 'Tähejjüd namazy';
 
   @override
   String get amalDuha => 'Duha namazy';
@@ -411,21 +411,21 @@ class AppLocalizationsTk extends AppLocalizations {
   }
 
   @override
-  String get sectionDayBoundary => 'Gün arasy';
+  String get sectionDayBoundary => 'Günüň çägi';
 
   @override
-  String get rolloverHour => 'Geçiş sagady';
+  String get rolloverHour => 'Günüň çalyşýan sagady';
 
   @override
-  String get rolloverAtMidnight => 'Bu gün ýary gijede gutarýar.';
+  String get rolloverAtMidnight => 'Gün ýary gijede gutarýar.';
 
   @override
   String rolloverSubtitle(String time) {
-    return 'Düýnki amallar $time-a çenli üýtgedilip bilinýär.';
+    return 'Düýnki amallary sagat $time bolýança üýtgedip bolýar.';
   }
 
   @override
-  String get pickRolloverHour => 'Günüň geçýän sagadyny saýlaň';
+  String get pickRolloverHour => 'Täze günüň başlaýan sagadyny saýlaň';
 
   @override
   String get sectionWeekMonth => 'Hepde we aý';
@@ -438,10 +438,10 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get startOfMonthClamped =>
-      '28-den soňky günler gysga aýlarda aýyň soňky gününe laýyklaşdyrylýar.';
+      'Gysga aýlarda 28-den soňky günler aýyň soňky gününe süýşürilýär.';
 
   @override
-  String get sectionAppearance => 'Görkez';
+  String get sectionAppearance => 'Daşky görnüş';
 
   @override
   String get theme => 'Tema';
@@ -469,7 +469,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get aboutSubtitle =>
-      'Şahsy dini jogapkärçilik žurnalyňyz. Ähli maglumatlar bu enjamdadyr.';
+      'Din boýunça özüňizi hasaba çekmek üçin şahsy depder. Ähli maglumatlar diňe şu enjamda saklanýar.';
 
   @override
   String get statsTitle => 'Statistika';
@@ -547,7 +547,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get statsEmpty =>
-      'Entek amal ýok. Yzarlamaga başlamak üçin Bu gün sahypasynda goşuň.';
+      'Entek amal ýok. Yzarlamaga başlamak üçin «Bu gün» sahypasynda goşuň.';
 
   @override
   String get statsToday => 'Bu gün';
@@ -559,10 +559,10 @@ class AppLocalizationsTk extends AppLocalizations {
   String get statsThisMonth => 'Bu aý';
 
   @override
-  String get statsAllTime => 'Ähli wagt';
+  String get statsAllTime => 'Ähli döwür';
 
   @override
-  String get statsCustomRange => 'Özbaşdak aralyk';
+  String get statsCustomRange => 'Saýlanan aralyk';
 
   @override
   String get statsAllCategories => 'Hemmesi';
@@ -577,7 +577,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get statsExpected => 'Garaşylýan';
 
   @override
-  String get statsVsPrevious => 'Öňküsi bilen';
+  String get statsVsPrevious => 'Öňküsine görä';
 
   @override
   String get statsByCategory => 'Kategoriýa boýunça';
@@ -621,7 +621,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get statsCompletionRate => 'Ýerine ýetirme derejesi';
 
   @override
-  String get statsAmountPerDay => 'Günlük mukdar';
+  String get statsAmountPerDay => 'Gündelik mukdar';
 
   @override
   String statsCountTotal(String count) {
@@ -717,15 +717,15 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith0 =>
-      '\"Allanyň iň söýýän amallary, az hem bolsa, yzygiderli edilýän amallardyr.\"\n— Buhari we Muslim';
+      '\"Allanyň iň söýýän amallary, az hem bolsa, yzygiderli edilýän amallardyr.\"\n— Buhary we Muslim';
 
   @override
   String get hadith2 =>
-      '\"Adam ogly ölende, amallary üç zatdan başga kesilýär: dowamly sadaka, peýdaly ylym ýa-da onuň üçin doga edýän salyh perzent.\"\n— Muslim';
+      '\"Adam ogly ölende, onuň amaly kesilýär, diňe üç zat muňa girmeýär: dowamly sadaka, peýdaly ylym ýa-da onuň üçin doga edýän salyh perzent.\"\n— Muslim';
 
   @override
   String get hadith3 =>
-      '\"Kim iki salkyn namazy (Ertir we Ikindi) okasa, jennete girer.\"\n— Buhari';
+      '\"Kim iki salkyn namazy (bamdat we ikindi) okasa, jennete girer.\"\n— Buhary';
 
   @override
   String get hadith4 =>
@@ -733,7 +733,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith6 =>
-      '\"Aňsatlaşdyryň, kynlaşdyrmaň; buşluk habar beriň, adamlary gaýtarmaň.\"\n— Buhari';
+      '\"Aňsatlaşdyryň, kynlaşdyrmaň; buşlaň, adamlary ürküzmäň.\"\n— Buhary';
 
   @override
   String get hadith7 =>
@@ -744,49 +744,49 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith9 =>
-      '\"Güýçli mömin ejiz möminden gowusy hem Alla has söýgülisidir, her ikisinde hem haýyr bardyr.\"\n— Muslim';
+      '\"Güýçli mömin ejiz möminden has haýyrly we Alla has söýgülidir, emma her ikisinde-de haýyr bar.\"\n— Muslim';
 
   @override
   String get hadith10 =>
-      '\"Kim günde ýüz gezek \'SubhanAllahi we bihamdihi\' diýse, günäleri bagyşlanar, deňziň köpügi ýaly bolsa-da.\"\n— Buhari we Muslim';
+      '\"Kim günde ýüz gezek \'Subhanallahi we bihamdihi\' diýse, günäleri deňziň köpügi ýaly köp bolsa-da bagyşlanar.\"\n— Buhary we Muslim';
 
   @override
   String get hadith12 =>
-      '\"Kim her parz namazdan soň Aýat al-Kursi okasa, ony jennete girmekden diňe ölüm saklar.\"\n— Nesaýy';
+      '\"Kim her parz namazdan soň Aýatul-Kürsi okasa, ony jennete girmekden diňe ölüm saklar.\"\n— Nesaýy';
 
   @override
-  String get hadith13 => '\"Ýagşy söz sadakadyr.\"\n— Buhari we Muslim';
+  String get hadith13 => '\"Ýagşy söz sadakadyr.\"\n— Buhary we Muslim';
 
   @override
   String get hadith14 =>
-      '\"Allaha we ahyret gününe iman eden, ýagşylyk aýtsyn ýa-da dymyp otursyn.\"\n— Buhari we Muslim';
+      '\"Alla we ahyret gününe iman eden ýagşy söz aýtsyn ýa-da dymsyn.\"\n— Buhary we Muslim';
 
   @override
   String get hadith15 =>
-      '\"Dul aýala we garyba seretýän, Allah ýolunda söweşiji ýalydyr.\"\n— Buhari we Muslim';
+      '\"Dul aýala ýa-da garyba hossarlyk edýän Alla ýolunda göreşýän ýalydyr.\"\n— Buhary we Muslim';
 
   @override
   String get hadith16 => '\"Doganyňa ýylgyrmagyň sadakadyr.\"\n— Tirmizi';
 
   @override
   String get hadith17 =>
-      '\"Siziň iň gowuňyz Kurany öwrenýän we öwredýändir.\"\n— Buhari';
+      '\"Siziň iň gowuňyz Kurany öwrenýän we öwredýändir.\"\n— Buhary';
 
   @override
   String get hadith18 =>
-      '\"Hiç kim öz eliniň zähmetinden gowy nahar iýmändir.\"\n— Buhari';
+      '\"Hiç kim öz eli bilen gazananyndan has gowy nahar iýen däldir.\"\n— Buhary';
 
   @override
   String get hadith19 =>
-      '\"Allah ýumşakdyr we ähli işde ýumşaklygy söýýär.\"\n— Buhari we Muslim';
+      '\"Alla ýumşakdyr we ähli işde ýumşaklygy söýýär.\"\n— Buhary we Muslim';
 
   @override
   String historyDayCompleted(String completed, String total) {
-    return '$total-dan $completed ýerine ýetirildi';
+    return '$completed/$total ýerine ýetirildi';
   }
 
   @override
-  String get settingsSchedule => 'Tertip';
+  String get settingsSchedule => 'Wagt tertibi';
 
   @override
   String get settingsAppearance => 'Daşky görnüş';
@@ -795,16 +795,16 @@ class AppLocalizationsTk extends AppLocalizations {
   String get settingsAboutTagline => 'Gündelik din ýoldaşyňyz';
 
   @override
-  String get settingsRolloverSub => 'Gün haçan täzelenýär';
+  String get settingsRolloverSub => 'Günüň täzelenýän wagty';
 
   @override
-  String get settingsAbout => 'Hakynda';
+  String get settingsAbout => 'Goşundy barada';
 
   @override
   String get settingsVersion => 'Wersiýa';
 
   @override
-  String get settingsDeveloper => 'Dörediji';
+  String get settingsDeveloper => 'Işläp düzüji';
 
   @override
   String get settingsSupport => 'Goldaw';
@@ -816,10 +816,10 @@ class AppLocalizationsTk extends AppLocalizations {
   String get settingsContact => 'Biz bilen habarlaşyň';
 
   @override
-  String get settingsReportBug => 'Säwligi habar beriň';
+  String get settingsReportBug => 'Ýalňyşlyk barada habar beriň';
 
   @override
-  String get settingsRequestFeature => 'Aýratynlyk talap ediň';
+  String get settingsRequestFeature => 'Täze mümkinçilik teklip ediň';
 
   @override
   String settingsSupportFallback(String email) {
@@ -834,15 +834,15 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith20 =>
-      '\"Kim Ramazanda iman we sogap umydy bilen oraza tutsa, onuň geçen günäleri bagyşlanýar.\"\n— Buhari we Muslim';
+      '\"Kim Ramazan orazasyny iman bilen we sogabyny umyt edip tutsa, onuň geçen günäleri bagyşlanar.\"\n— Buhary we Muslim';
 
   @override
   String get hadith22 =>
-      '\"Azan bilen ykamat arasyndaky doga ret edilmeýär.\"\n— Abu Dawud';
+      '\"Azan bilen kamatyň arasyndaky doga ret edilmeýär.\"\n— Abu Dawud';
 
   @override
   String get hadith23 =>
-      '\"Kim Alla üçin metjit gursa, Alla oňa jennetde öý gurar.\"\n— Buhari we Muslim';
+      '\"Kim Alla üçin metjit gursa, Alla oňa jennetde öý gurar.\"\n— Buhary we Muslim';
 
   @override
   String get hadith24 =>
@@ -857,7 +857,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith27 =>
-      '\"Kurany gowy bilýän şahs belent perişdeler bilen bile bolar.\"\n— Buhari we Muslim';
+      '\"Kurany gowy okaýan belent perişdeler bilen bile bolar.\"\n— Buhary we Muslim';
 
   @override
   String get hadith29 => '\"Iň gowy sadaka — suw bermekdir.\"\n— Ahmad';
@@ -867,39 +867,38 @@ class AppLocalizationsTk extends AppLocalizations {
       '\"Kim möminden bir kynçylygy aýyrsa, Alla Kyýamat gününde ondan bir kynçylygy aýyrar.\"\n— Muslim';
 
   @override
-  String get hadith32 =>
-      '\"Utanç — imandan bir bölegidir.\"\n— Buhari we Muslim';
+  String get hadith32 => '\"Haýa imanyň bir bölegidir.\"\n— Buhary we Muslim';
 
   @override
   String get hadith34 =>
-      '\"Kim sabyr etse, Alla oňa sabyr berer.\"\n— Buhari we Muslim';
+      '\"Kim sabyr etse, Alla oňa sabyr berer.\"\n— Buhary we Muslim';
 
   @override
   String get hadith36 =>
-      '\"Siziň hiç biriňiz özi üçin halaýanyny doganyna-da halamaguňça, hakyky mömin bolmaz.\"\n— Buhari we Muslim';
+      '\"Siziň hiç biriňiz özi üçin halaýan zadyny doganyna-da halamaýança, hakyky mömin bolmaz.\"\n— Buhary we Muslim';
 
   @override
   String get hadith37 =>
-      '\"Açlary doýuryň, syrkawlary göruň we tussaglary azat ediň.\"\n— Buhari';
+      '\"Açlary doýuryň, syrkawlaryň halyny soraň we ýesirleri azat ediň.\"\n— Buhary';
 
   @override
   String get hadith38 =>
-      '\"Güýçli adam — göreşde ýeňýän däl, gaharlananda özüne erk edýän adamdyr.\"\n— Buhari we Muslim';
+      '\"Güýçli adam göreşde ýeňýän däl, eýsem gaharlananda özüne erk edýändir.\"\n— Buhary we Muslim';
 
   @override
   String get hadith40 =>
-      '\"Her namazdan soň otuz üç gezek \'SubhanAllah\', \'Alhamdulillah\' we \'Allahu Akbar\' diýiň.\"\n— Muslim';
+      '\"Her namazdan soň otuz üç gezekden \'SubhanAllah\', \'Alhamdulillah\' we \'Allahu Akbar\' diýiň.\"\n— Muslim';
 
   @override
   String get hadith41 => '\"Iň gowy zikir — La ilähe illallah.\"\n— Tirmizi';
 
   @override
   String get hadith42 =>
-      '\"Iki nygmat bar, köp adam olary elden gidirýär: saglyk we boş wagt.\"\n— Buhari';
+      '\"Iki nygmat bar, köp adam olary biderek geçirýär: saglyk we boş wagt.\"\n— Buhary';
 
   @override
   String get hadith43 =>
-      '\"Bäşden öň bäşe baha beriň: ýaşlygyňyzy garrylygyňyza, saglygyňyzy keselligiňize, baýlygyňyzy garyplygyňyza, boş wagtyňyzy meşgulligiňize we ýaşaýşyňyzy ölümiňize seredip.\"\n— Hakim';
+      '\"Bäş zat gelmänkä bäş zadyň gadyryny biliň: garrylykdan öň ýaşlygyňyzyň, keselden öň saglygyňyzyň, garyplykdan öň baýlygyňyzyň, meşgullykdan öň boş wagtyňyzyň we ölümden öň ömrüňiziň.\"\n— Hakim';
 
   @override
   String get hadith44 =>
@@ -915,15 +914,15 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith47 =>
-      '\"Garyndaşlyk gatnaşygyny saklaýjy — jogap beriji däl, aragatnaşyk üzülende-de ony dowam etdirýändir.\"\n— Buhari';
+      '\"Garyndaşlyk gatnaşygyny saklaýan ýagşylyga ýagşylyk bilen jogap berýän däl, eýsem garyndaşlary ondan aragatnaşygy üzende-de ony saklaýandyr.\"\n— Buhary';
 
   @override
   String get hadith49 =>
-      '\"Kim nahar iýip: \'Maňa muny iýdiren we meniň hiç hili güýç-kuwwatym bolmazdan muny nesip eden Allaha hamd bolsun\' diýse, onuň geçen günäleri bagyşlanýar.\"\n— Tirmizi';
+      '\"Kim nahar iýip: \'Maňa muny iýdiren we meniň hiç hili güýç-kuwwatym bolmazdan muny nesip eden Alla hamd bolsun\' diýse, onuň geçen günäleri bagyşlanar.\"\n— Tirmizi';
 
   @override
   String get hadith53 =>
-      '\"Hiç bir ýagşylygy kiçeltme, hatda doganyň bilen ýylgyryp görüşmek bolsa-da.\"\n— Muslim';
+      '\"Hiç bir ýagşylygy kiçi görme, hatda doganyň bilen güler ýüz bilen duşuşmak bolsa-da.\"\n— Muslim';
 
   @override
   String get hadith54 =>
@@ -931,11 +930,11 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith55 =>
-      '\"Kim gije Bakara süresiniň soňky iki aýatyny okasa, bu oňa ýeterlikdir.\"\n— Buhary we Muslim';
+      '\"Kim gije Bakara süresiniň soňky iki aýatyny okasa, olar oňa ýeterlik bolar.\"\n— Buhary we Muslim';
 
   @override
   String get hadith56 =>
-      '\"Dünýä bir haryt, iň gowy haryt bolsa — salyha aýaldyr.\"\n— Muslim';
+      '\"Dünýä peýdalanylýan nygmatdyr, onuň iň haýyrlysy salyha aýaldyr.\"\n— Muslim';
 
   @override
   String get hadith57 =>
@@ -958,7 +957,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith68 =>
-      '\"Musulmana ýetýän ýadawlyk, kesel, gaýgy, hasrat, zyýan ýa-da alada, hatda tiken batsa-da, Alla onuň günäleriniň bir bölegini bagyşlar.\"\n— Buhary we Muslim';
+      '\"Musulmana ýetýän ýadawlyk, kesel, gaýgy, hasrat, azar ýa-da alada, hatda oňa batan tiken üçin hem Alla onuň käbir günälerini öçürer.\"\n— Buhary we Muslim';
 
   @override
   String get hadith69 =>
@@ -966,31 +965,31 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith70 =>
-      '\"Kim Alladan üç gezek jennet sorasa, jennet diýýär: Allahym, ony jennete giriziň.\"\n— Tirmizi';
+      '\"Kim Alladan üç gezek jennet sorasa, jennet: «Allahym, ony jennete girizgin» diýer.\"\n— Tirmizi';
 
   @override
   String get hadith71 =>
-      '\"Ramazandan soňky iň fazylatly oraza — Allanyň aýy Muharremdir.\"\n— Muslim';
+      '\"Ramazandan soňky iň fazylatly oraza Allanyň aýy Muharremde tutulýan orazadyr.\"\n— Muslim';
 
   @override
   String get hadith72 =>
-      '\"Kim haj edip, erbet söz aýtmasa we günä etmese, ejesiniň dogran güni ýaly gaýdyp geler.\"\n— Buhary we Muslim';
+      '\"Kim haj edip, edepsiz söz aýtmasa we günä etmese, ejesinden doglan günündäki ýaly bolup gaýdyp geler.\"\n— Buhary we Muslim';
 
   @override
   String get hadith73 =>
-      '\"Bir umra beýleki umra çenli arasyndaky günäleriň keffaratydyr.\"\n— Buhary we Muslim';
+      '\"Umra indiki umra çenli arasyndaky günäleriň keffaratydyr.\"\n— Buhary we Muslim';
 
   @override
   String get hadith74 =>
-      '\"Garaňky gijäniň bölegi ýaly pitneler gelmänkä ýagşylyk işlerine howlugyň.\"\n— Muslim';
+      '\"Garaňky gijäniň bölekleri ýaly pitneler gelmänkä ýagşy amallara howlugyň.\"\n— Muslim';
 
   @override
   String get hadith75 =>
-      '\"Ertir namazynyň iki rekagaty dünýäden we ondaky ähli zatdan gowudyr.\"\n— Muslim';
+      '\"Bamdat namazynyň iki rekagaty dünýäden we ondaky ähli zatdan gowudyr.\"\n— Muslim';
 
   @override
   String get hadith77 =>
-      '\"Eger siz Alla mynasyp tewekkül etseňiz, Ol sizi guşlary rysgallandyryşy ýaly rysgallandyrardy.\"\n— Tirmizi';
+      '\"Eger siz Alla hakyky tewekkül etmeli derejede tewekkül etseňiz, Ol guşlary rysgallandyryşy ýaly sizi hem rysgallandyrardy.\"\n— Tirmizi';
 
   @override
   String get hadith78 =>
@@ -998,7 +997,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith79 =>
-      '\"Salamy ýaýyň, nahar beriň we adamlar ýatyrka gije namaz okaň — jennete parahatçylyk bilen girersiňiz.\"\n— Tirmizi';
+      '\"Salamy ýaýradyň, nahar beriň we adamlar ýatyrka gije namaz okaň — jennete salamatlyk bilen girersiňiz.\"\n— Tirmizi';
 
   @override
   String get hadith80 =>
@@ -1006,23 +1005,23 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith81 =>
-      '\"Göriplik diňe iki ýagdaýda jaýyzdyr: Alla baýlyk beren adam ony hak ýolda sarp etse, we Alla hikmet beren adam onuň bilen höküm çykaryp öwretse.\"\n— Buhari we Muslim';
+      '\"Göriplik diňe iki ýagdaýda jaýyzdyr: Alla baýlyk beren we ony hak ýolda sarp edýän adama, Alla hikmet beren we onuň bilen höküm edip, ony öwredýän adama.\"\n— Buhary we Muslim';
 
   @override
   String get hadith82 =>
-      '\"Adam dostunyň dinine eýerýär, şonuň üçin her biriňiz kim bilen dost bolýandygyňyza serediň.\"\n— Abu Dawud we Tirmizi';
+      '\"Adam dostunyň dinindedir, şonuň üçin her biriňiz kimi dost tutýandygyna seretsin.\"\n— Abu Dawud we Tirmizi';
 
   @override
   String get hadith85 =>
-      '\"Kim Allah üçin bir zady taşlasa, Allah oňa ondan gowusyny berer.\"\n— Ahmad';
+      '\"Kim Alla üçin bir zady taşlasa, Alla oňa ondan gowusyny berer.\"\n— Ahmad';
 
   @override
   String get hadith86 =>
-      '\"Kim musulmanyň aýbyny gizlese, Alla Kyýamat gününde onuň aýbyny gizlär.\"\n— Buhari we Muslim';
+      '\"Kim musulmanyň aýbyny gizlese, Alla Kyýamat gününde onuň aýbyny gizlär.\"\n— Buhary we Muslim';
 
   @override
   String get hadith87 =>
-      '\"Dünýäde ýat adam ýa-da ýolagçy ýaly bol.\"\n— Buhari';
+      '\"Dünýäde ýat adam ýa-da ýolagçy ýaly bol.\"\n— Buhary';
 
   @override
   String get hadith88 =>
@@ -1030,51 +1029,51 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get hadith89 =>
-      '\"Amallaryň sylagy niýetlere baglydyr.\"\n— Buhari we Muslim';
+      '\"Amallaryň sylagy niýetlere baglydyr.\"\n— Buhary we Muslim';
 
   @override
   String get hadith90 =>
-      '\"Güman etmekden gaça duruň, sebäbi güman iň ýalan sözdür.\"\n— Buhari we Muslim';
+      '\"Gümandan gaça duruň, sebäbi güman iň ýalan sözdür.\"\n— Buhary we Muslim';
 
   @override
   String get hadith93 =>
-      '\"Bile naharlaňyň we Allanyň adyny tutuň, size bereketli bolar.\"\n— Abu Dawud';
+      '\"Bile nahar iýiň we Allanyň adyny tutuň, şonda ol size bereketli bolar.\"\n— Abu Dawud';
 
   @override
   String get hadith94 =>
-      '\"Allahy ýatlap oturan adamlary perişdeler gurşap alýar, rahmet olary örtýär, olaryň üstüne sükunat düşýär we Allah olary Öz ýanyndakylaryň arasynda ýatlaýar.\"\n— Muslim';
+      '\"Allany ýatlap oturan adamlary perişdeler gurşap alýar, rahmet olary örtýär we olaryň üstüne rahatlyk iner.\"\n— Muslim';
 
   @override
   String get hadith95 =>
-      '\"Allah bagyşlamak sebäpli gula diňe şan-şöhrat artdyrýar.\"\n— Muslim';
+      '\"Alla bagyşlaýan gulunyň diňe hormatyny artdyrar.\"\n— Muslim';
 
   @override
   String get hadith96 => '\"Düýäňi daň, soňra Alla tewekkül et.\"\n— Tirmizi';
 
   @override
   String get hadith97 =>
-      '\"Möminiň işi geň galdyryjy — hemme zat oňa gowy.\"\n— Muslim';
+      '\"Möminiň işi nähili täsin — onuň her bir işi özi üçin haýyrdyr.\"\n— Muslim';
 
   @override
   String get hadith98 =>
       '\"Musulman musulmanyň doganydyr: oňa zulum etmez, taşlamaz, äsgermezlik etmez.\"\n— Muslim';
 
   @override
-  String get delete => 'Poz';
+  String get delete => 'Pozmak';
 
   @override
-  String get remove => 'Aýyr';
+  String get remove => 'Aýyrmak';
 
   @override
   String get deleteAmalConfirmTitle => 'Yzarlamadan aýrylsynmy?';
 
   @override
   String deleteAmalConfirmBody(String title) {
-    return '\"$title\" sanawyňyzdan gizleniler. Taryhyňyz saklanar.';
+    return '\"$title\" sanawyňyzdan gizlener. Taryhyňyz saklanar.';
   }
 
   @override
-  String get genericError => 'Bir zat ters gitdi. Ýene bir gezek synap görüň.';
+  String get genericError => 'Näsazlyk ýüze çykdy. Gaýtadan synanyşyň.';
 
   @override
   String get notificationChannelName => 'Amal ýatlatmalary';
@@ -1087,10 +1086,10 @@ class AppLocalizationsTk extends AppLocalizations {
   String get invalidAmalId => 'Nädogry amal ID-si';
 
   @override
-  String get tutorialSettingsRow => 'Muhasaba nädip ulanmaly';
+  String get tutorialSettingsRow => 'Muhasabany nädip ulanmaly';
 
   @override
-  String get tutorialSkip => 'Geç';
+  String get tutorialSkip => 'Geçmek';
 
   @override
   String get tutorialNext => 'Indiki';
@@ -1103,14 +1102,14 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get tutorialTapBody =>
-      'Bir gezek basmak amaly şu güne ýerine ýetirildi diýip bellär. Yzyna almak üçin gaýtadan basyň.';
+      'Bir gezek bassaňyz, amal şu gün üçin ýerine ýetirildi diýip bellenýär. Yzyna almak üçin ýene basyň.';
 
   @override
   String get tutorialEditTitle => 'Üýtgetmek üçin iki gezek basyň';
 
   @override
   String get tutorialEditBody =>
-      'Üýtgetme formasyny açýar — adyny üýtgediň ýa-da näçe gezek gaýtalanýandygyny üýtgediň.';
+      'Üýtgetmek formasyny açýar — adyny ýa-da näçe wagtdan bir gaýtalanýandygyny üýtgedip bilersiňiz.';
 
   @override
   String get tutorialReorderTitle => 'Tertibi üýtgetmek üçin basyp saklaň';
@@ -1124,21 +1123,21 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get tutorialRemoveBody =>
-      'Setiri gyra süýşürip, ony şu güne gizläň ýa-da yzarlamany bes ediň.';
+      'Setiri gyra süýşürip, ony şu gün üçin gizläň ýa-da yzarlamagy bes ediň.';
 
   @override
   String get tutorialCountTitle => 'Gaýtalanmalary sanamak';
 
   @override
   String get tutorialCountBody =>
-      'Maksady birden köp amallar üçin her gaýtalanmada − we + ulanyň.';
+      'Birden köp gezek ýerine ýetirilýän amallarda her gezek üçin − we + ulanyň.';
 
   @override
   String get tutorialViewTitle => 'Toparlamak ýa-da düz sanaw';
 
   @override
   String get tutorialViewBody =>
-      'Kategoriýa boýunça toparlamak bilen bir düz sanawyň arasynda çalşyň.';
+      'Kategoriýalar boýunça toparlanan görnüş bilen düz sanawyň arasynda geçiň.';
 
   @override
   String get tutorialChallengeLogTitle => 'Şu güni bellemek üçin basyň';
@@ -1163,10 +1162,10 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get tutorialChallengeAmountBody =>
-      'Üýtgetmek üçin − we + ulanyň ýa-da sana basyp takyk mukdary ýazyň.';
+      'Bir-birden üýtgetmek üçin − we + ulanyň ýa-da takyk mukdary ýazmak üçin sana basyň.';
 
   @override
-  String get challengeOpenDetailsAction => 'Maksadyň jikme-jigini açmak';
+  String get challengeOpenDetailsAction => 'Maksadyň jikme-jikliklerini açmak';
 
   @override
   String get challengesActive => 'Dowam edýän';
@@ -1179,17 +1178,17 @@ class AppLocalizationsTk extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count maksat gutardy — iň soňkusy $title',
-      one: '$title gutardy',
+      other: '$count maksat gutardy — iň soňkusy: $title',
+      one: 'Gutardy: $title',
     );
     return '$_temp0';
   }
 
   @override
-  String get challengeSectionEnded => 'Gutardy';
+  String get challengeSectionEnded => 'Möhleti geçen';
 
   @override
-  String get challengesPastEmpty => 'Entek tamamlanan zat ýok.';
+  String get challengesPastEmpty => 'Entek gutaran maksat ýok.';
 
   @override
   String get challengesEmptyTitle => 'Entek maksat ýok';
@@ -1219,14 +1218,14 @@ class AppLocalizationsTk extends AppLocalizations {
       '1000 salawat, 30 jüz. Mukdary ýazýarsyňyz, ol jemlenýär.';
 
   @override
-  String get challengeShapeStreak => 'Her günki dowamlylyk';
+  String get challengeShapeStreak => 'Gündelik tapgyr';
 
   @override
   String get challengeShapeStreakBody =>
-      'Tähejjüd, jemagat bilen ertir namazy. Günde bir bellik, mukdar wajyp däl.';
+      'Tähejjüd, jemagat bilen bamdat namazy. Günde bir bellik, mukdary möhüm däl.';
 
   @override
-  String get challengeTargetLabel => 'Maksat sany';
+  String get challengeTargetLabel => 'Ýetilmeli san';
 
   @override
   String get challengeTargetRequired => 'Noldan uly san giriziň';
@@ -1247,19 +1246,19 @@ class AppLocalizationsTk extends AppLocalizations {
   String get challengeReachHowMuch => 'Näçä ýetmeli?';
 
   @override
-  String get challengeSpreadOver => 'Ýaýradylan möhlet';
+  String get challengeSpreadOver => 'Möhlet';
 
   @override
   String get challengeSpreadEveryDay => 'Her gün';
 
   @override
-  String get challengeSpreadLonger => 'Uzyn möhlet';
+  String get challengeSpreadLonger => 'Has uzyn möhlet';
 
   @override
   String get challengeByWhen => 'Haçana çenli?';
 
   @override
-  String get challengeWindowDuration => 'Bellenen möhlet';
+  String get challengeWindowDuration => 'Möhlet içinde';
 
   @override
   String get challengeByDate => 'Belli senä çenli';
@@ -1282,7 +1281,7 @@ class AppLocalizationsTk extends AppLocalizations {
     String window,
     String slack,
   ) {
-    return '$start – $end · $window günüň $target — $slack sypdyryp bilersiňiz';
+    return '$start – $end · $window günüň $target güni — $slack güni sypdyryp bilersiňiz';
   }
 
   @override
@@ -1297,7 +1296,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String challengeTooTight(String target, String window) {
-    return '$target gün $window güne sygmaýar — dowamlylyk günde biri hasaplaýar.';
+    return '$target gün $window güne sygmaýar — tapgyrda günde diňe bir gün hasaplanýar.';
   }
 
   @override
@@ -1311,24 +1310,24 @@ class AppLocalizationsTk extends AppLocalizations {
   }
 
   @override
-  String get challengeStartDate => 'Başlanýar';
+  String get challengeStartDate => 'Başlaýar';
 
   @override
-  String get challengeEndDate => 'Tamamlanýar';
+  String get challengeEndDate => 'Gutarýar';
 
   @override
   String challengeProgressCount(String done, String target, String unit) {
-    return '$target $unit içinden $done';
+    return '$done/$target $unit';
   }
 
   @override
   String challengeProgressPlain(String done, String target) {
-    return '$target-dan $done';
+    return '$done/$target';
   }
 
   @override
   String challengeProgressDays(String done, String target) {
-    return '$target günden $done';
+    return '$done/$target gün';
   }
 
   @override
@@ -1346,7 +1345,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String challengeOnTrack(String rate) {
-    return 'Meýilnamada · $rate/gün';
+    return 'Meýilnama boýunça · $rate/gün';
   }
 
   @override
@@ -1367,15 +1366,15 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String challengeEnded(String done, String target) {
-    return 'Gutardy · $done/$target';
+    return 'Möhleti geçdi · $done/$target';
   }
 
   @override
-  String get challengeExpiredTitle => 'Maksat tamamlandy';
+  String get challengeExpiredTitle => 'Maksadyň möhleti gutardy';
 
   @override
   String challengeExpiredBody(String title, String done, String target) {
-    return '$title $done/$target bilen tamamlandy.';
+    return '$title: möhlet gutardy, netije $done/$target.';
   }
 
   @override
@@ -1388,7 +1387,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get challengeArchive => 'Arhiwe geçirmek';
 
   @override
-  String get challengeDailyBreakdown => 'Günlük ýazgy';
+  String get challengeDailyBreakdown => 'Gündelik ýazgylar';
 
   @override
   String challengeNudgeBody(String title, String rate) {
@@ -1413,7 +1412,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get challengeGroupReminders => 'Ýatlatmalar';
 
   @override
-  String get challengeStartFromTemplate => 'Şablondan başla';
+  String get challengeStartFromTemplate => 'Şablondan başlaň';
 
   @override
   String get challengeTemplateBlank => 'Boş';
@@ -1422,7 +1421,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get challengePreview => 'Deslapky görnüş';
 
   @override
-  String get challengeTmplTahajjud => '40 gije Tähejjüd';
+  String get challengeTmplTahajjud => '40 gije tähejjüd';
 
   @override
   String get challengeTmplSalawat => '1000 salawat';
@@ -1431,10 +1430,10 @@ class AppLocalizationsTk extends AppLocalizations {
   String get challengeTmplKhatm => '30 günde Kuran hatymy';
 
   @override
-  String get challengeTmplFajrJamaah => '30 gün Bamdat jemagat bilen';
+  String get challengeTmplFajrJamaah => '30 gün bamdady jemagat bilen';
 
   @override
-  String get challengeTmplSadaqah => '30 gün Sadaka';
+  String get challengeTmplSadaqah => '30 gün sadaka';
 
   @override
   String get listSeparator => ' · ';
@@ -1458,14 +1457,14 @@ class AppLocalizationsTk extends AppLocalizations {
   String get tierNasirMeaning => 'goldawçy';
 
   @override
-  String get tierMuhsinMeaning => 'ýagşylyk edýän';
+  String get tierMuhsinMeaning => 'haýyr-sahawatly';
 
   @override
   String get tierAnsarMeaning => 'kömekçi';
 
   @override
   String get supportCardBody =>
-      'Mugt, mahabatsyz we hasapsyz. Isleseňiz, kiçijik goşant bilen ösüşini goldap bilersiňiz — islendik möçberde, islendik wagt.';
+      'Mugt, mahabatsyz, hasap açmak hem gerek däl. Isleseňiz, goşant bilen onuň ösüşini goldap bilersiňiz — islendik möçberde, islän wagtyňyz.';
 
   @override
   String get supportCta => 'Muhasabany goldaň';
@@ -1483,11 +1482,11 @@ class AppLocalizationsTk extends AppLocalizations {
   }
 
   @override
-  String get supportPromptTitle => 'Muhasaba-a goldaw beriň';
+  String get supportPromptTitle => 'Muhasabany goldaň';
 
   @override
   String get supportPromptBody =>
-      'Muhasaba mugt, mahabatsyz we hasapsyz. Isleseňiz, kiçijik goşant bilen ösüşini goldap bilersiňiz — islendik möçberde, islendik wagt. Hiç bir aýratynlyk muňa bagly däl.';
+      'Muhasaba mugt, mahabatsyz, hasap açmak hem gerek däl. Isleseňiz, goşant bilen onuň ösüşini goldap bilersiňiz — islendik möçberde, islän wagtyňyz. Hiç bir mümkinçilik muňa bagly däl.';
 
   @override
   String get supportPromptNow => 'Häzir goldaň';
@@ -1503,7 +1502,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get tipSheetBody =>
-      'Islendik möçberi saýlaň, näçe gezek isleseňiz. Bu serişdeler goşundynyň bejergisine sarp edilýär — inşalla, ol mugt we mahabatsyz bolup galar. Minnetdarlyk hökmünde Sazlamalarda goldawçy hökmünde görkezilersiňiz.';
+      'Islendik möçberi, isleseňiz näçe gezek bolsa-da saýlaň. Goşantlar goşundynyň işlemegine sarp edilýär — inşalla, ol mugt we mahabatsyz bolup galar. Minnetdarlyk hökmünde Sazlamalarda goldawçy diýip bellenersiňiz.';
 
   @override
   String tipSheetSupporterLine(String tier) {
@@ -1519,7 +1518,7 @@ class AppLocalizationsTk extends AppLocalizations {
   }
 
   @override
-  String get tipSheetOtherWays => 'Size laýyk görnüş tapmadyňyzmy?';
+  String get tipSheetOtherWays => 'Size laýyk wariant tapmadyňyzmy?';
 
   @override
   String get tipSheetWriteToUs => 'Bize ýazyň';
@@ -1544,7 +1543,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String tipPending(String store) {
-    return 'Goşandyňyz $store tarapynda garaşmakda — tassyklanan badyna nyşanyňyz goşular.';
+    return 'Goşandyňyz $store tarapyndan tassyklanmagyna garaşýar — tassyklanandan soň nyşanyňyz goşular.';
   }
 
   @override
@@ -1563,7 +1562,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get optionJamaaMasjid => 'Metjitde jemagat';
 
   @override
-  String get optionSetOnTime => 'Wagt';
+  String get optionSetOnTime => 'Okalan wagty';
 
   @override
   String get optionOnTimeOnTime => 'Wagtynda';
@@ -1605,7 +1604,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get optionSadaqahOther => 'Beýleki';
 
   @override
-  String get optionSetIntensity => 'Derejesi';
+  String get optionSetIntensity => 'Dereje';
 
   @override
   String get optionIntensityLight => 'Ýeňil';
@@ -1620,7 +1619,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get optionSetNewTitle => 'Täze wariantlar toplumy';
 
   @override
-  String get optionSetEditTitle => 'Wariantlar toplumyny üýtget';
+  String get optionSetEditTitle => 'Wariantlar toplumyny üýtgetmek';
 
   @override
   String get optionSetNameLabel => 'Toplumyň ady';
@@ -1632,7 +1631,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get optionsLabel => 'Wariantlar';
 
   @override
-  String get optionAdd => 'Wariant goş';
+  String get optionAdd => 'Wariant goşmak';
 
   @override
   String optionHint(int index) {
@@ -1653,11 +1652,11 @@ class AppLocalizationsTk extends AppLocalizations {
   }
 
   @override
-  String get optionSetDelete => 'Toplumy poz';
+  String get optionSetDelete => 'Toplumy pozmak';
 
   @override
   String get optionSetDeleteConfirm =>
-      'Bu toplumy ulanýan amallar indi wariantlary görkezmez. Eýýäm bellenen günler öz saýlawyny saklaýar.';
+      'Bu toplumy ulanýan amallarda indi wariantlar görkezilmez. Eýýäm bellenen günlerde saýlanan wariant saklanýar.';
 
   @override
   String get optionSetNameRequired => 'Topluma at beriň';
@@ -1680,7 +1679,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get optionSetNew => 'Täze toplum';
 
   @override
-  String get requireChoiceLabel => 'Saýlaw talap edilsin';
+  String get requireChoiceLabel => 'Wariant saýlamak hökmany';
 
   @override
   String get requireChoiceHelp => 'Wariant saýlanmasa, setir bellenmez';
@@ -1698,7 +1697,7 @@ class AppLocalizationsTk extends AppLocalizations {
   }
 
   @override
-  String get choiceNeeded => 'Saýlaw gerek';
+  String get choiceNeeded => 'Saýlamaly';
 
   @override
   String optionSelected(String label) {
@@ -1712,7 +1711,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String optionBreakdownTitle(String set) {
-    return 'Wariant bölünişi — $set';
+    return 'Wariantlar boýunça — $set';
   }
 
   @override
@@ -1720,9 +1719,9 @@ class AppLocalizationsTk extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       count,
       locale: localeName,
-      other: '$count gezekden',
+      other: 'Wariant saýlanan $count gezek boýunça paýlar',
     );
-    return '$_temp0 saýlaw bellenenleriň paýy';
+    return '$_temp0';
   }
 
   @override
@@ -1730,9 +1729,9 @@ class AppLocalizationsTk extends AppLocalizations {
     String _temp0 = intl.Intl.pluralLogic(
       total,
       locale: localeName,
-      other: '$total günden',
+      other: '$total günüň',
     );
-    return '$_temp0 $none gününde saýlaw bellenmedi';
+    return 'Wariant bellenmedi — ýerine ýetirilen $_temp0 $none güni';
   }
 
   @override
@@ -1747,7 +1746,7 @@ class AppLocalizationsTk extends AppLocalizations {
   }
 
   @override
-  String get optionBreakdownSectionTitle => 'Wariant bölünişi';
+  String get optionBreakdownSectionTitle => 'Wariantlar boýunça';
 
   @override
   String optionBreakdownSwipeHint(int count) {
@@ -1755,7 +1754,7 @@ class AppLocalizationsTk extends AppLocalizations {
   }
 
   @override
-  String get optionDetailEmpty => 'Bu toplum üçin entek saýlaw bellenmedi.';
+  String get optionDetailEmpty => 'Bu toplum üçin entek wariant bellenmedi.';
 
   @override
   String get optionDetailTrendHeading => 'Nähili üýtgedi';
@@ -1854,7 +1853,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get amalWuduPrayer => 'Täretden soň iki rekagat';
 
   @override
-  String get amalTahiyyah => 'Tahiýýatul-metjit';
+  String get amalTahiyyah => 'Tahiýýetul-mesjid';
 
   @override
   String get amalEarlyJumuah => 'Juma namazyna ir gitmek';
@@ -1941,7 +1940,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get amalFridayHour => 'Jumanyň soňky sagadyndaky doga';
 
   @override
-  String get amalLastThird => 'Gijäniň soňky üçden birindäki doga';
+  String get amalLastThird => 'Gijäniň soňky üçden birinde doga';
 
   @override
   String get amalMulk => 'Mülk süresi';
@@ -1965,7 +1964,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get amalHifz => 'Kuran ýatlamak';
 
   @override
-  String get amalMurajaah => 'Ýatlananyny gaýtalamak';
+  String get amalMurajaah => 'Ýatlananlary gaýtalamak';
 
   @override
   String get amalTafsir => 'Tefsir';
@@ -1986,7 +1985,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get amalDailySadaqah => 'Gündelik sadaka';
 
   @override
-  String get amalFeed => 'Birini naharlamak';
+  String get amalFeed => 'Birine nahar bermek';
 
   @override
   String get amalHelpNeed => 'Mätäje kömek';
@@ -2001,7 +2000,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get amalLearnHadith => 'Bir hadys öwrenmek';
 
   @override
-  String get amalReadBook => 'Yslam kitabyny okamak';
+  String get amalReadBook => 'Dini kitap okamak';
 
   @override
   String get amalSeerah => 'Siýeri öwrenmek';
@@ -2016,7 +2015,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get amalLearnDua => 'Täze doga öwrenmek';
 
   @override
-  String get amalShare => 'Öwreneniňi paýlaşmak';
+  String get amalShare => 'Öwrenenleriňizi paýlaşmak';
 
   @override
   String get amalFiqh => 'Fykh öwrenmek';
@@ -2025,7 +2024,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get amalMuhasaba => 'Gijeki muhasaba';
 
   @override
-  String get amalSpeakGood => 'Ýa ýagşy gürle, ýa dym';
+  String get amalSpeakGood => 'Ýagşy söz aýtmak ýa-da dymmak';
 
   @override
   String get amalNoBackbiting => 'Gybatdan saklanmak';
@@ -2100,7 +2099,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get libraryAll => 'Hemmesi';
 
   @override
-  String get libraryAdded => 'Şu güne goşuldy';
+  String get libraryAdded => '«Bu gün» sanawyna goşuldy';
 
   @override
   String libraryAddedShowsOn(String days) {
@@ -2114,7 +2113,7 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String libraryCreateNamed(String query) {
-    return '“$query” dörediň';
+    return 'Döretmek: “$query”';
   }
 
   @override
@@ -2138,7 +2137,7 @@ class AppLocalizationsTk extends AppLocalizations {
   String get libraryChange => 'Üýtgetmek';
 
   @override
-  String get libraryEditAction => 'Redaktirlemek';
+  String get libraryEditAction => 'Üýtgetmek';
 
   @override
   String libraryWeeklyAny(num count, String countText) {
