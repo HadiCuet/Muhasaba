@@ -66,12 +66,15 @@ abstract class ReminderScheduler {
       challengeIdBase + challengeId * 8 + dayOffset;
 
   /// Per-challenge daily reminders. Deliberately outside the
-  /// `challengeIdBase` block: `syncChallengeNudges` cancels all eight slots
+  /// `challengeIdBase` block: `syncChallengeNudges` cancels every pending id
   /// there on every recompute, which would silently drop the reminder.
   static const int challengeReminderIdBase = 2000000;
 
   static int challengeReminderId(int challengeId) =>
       challengeReminderIdBase + challengeId;
+
+  static bool isChallengeNotificationId(int id) =>
+      id >= challengeIdBase && id < challengeReminderIdBase;
 
   Future<bool> requestPermissions();
 
@@ -118,6 +121,9 @@ abstract class ReminderScheduler {
   Future<void> cancel(int id);
 
   Future<void> cancelAll();
+
+  /// Ids of the notifications still waiting to fire.
+  Future<Set<int>> pendingIds();
 }
 
 class _LocalReminderScheduler extends ReminderScheduler {
@@ -285,6 +291,17 @@ class _LocalReminderScheduler extends ReminderScheduler {
 
   @override
   Future<void> cancelAll() => _plugin.cancelAll();
+
+  @override
+  Future<Set<int>> pendingIds() async {
+    try {
+      final pending = await _plugin.pendingNotificationRequests();
+      return {for (final p in pending) p.id};
+    } on PlatformException catch (e) {
+      debugPrint('ReminderScheduler: could not read pending notifications: $e');
+      return const {};
+    }
+  }
 }
 
 class _NoopReminderScheduler extends ReminderScheduler {
@@ -323,6 +340,9 @@ class _NoopReminderScheduler extends ReminderScheduler {
 
   @override
   Future<void> cancelAll() async {}
+
+  @override
+  Future<Set<int>> pendingIds() async => const {};
 }
 
 /// Parses a stored reminder string in `HH:mm` format. Returns `null` if the

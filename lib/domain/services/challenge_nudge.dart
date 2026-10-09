@@ -31,11 +31,9 @@ Future<void> syncChallengeNudges({
   final rows = await db.challengeDao.getAll();
   final progressById = await db.challengeDao.getProgress();
 
-  for (final row in rows) {
-    for (var d = 0; d < 8; d++) {
-      await scheduler.cancel(
-        ReminderScheduler.challengeNotificationId(row.id, d),
-      );
+  for (final id in await scheduler.pendingIds()) {
+    if (ReminderScheduler.isChallengeNotificationId(id)) {
+      await scheduler.cancel(id);
     }
   }
 
