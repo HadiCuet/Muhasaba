@@ -2123,7 +2123,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get categoryFasting => 'Fasting';
 
   @override
-  String get categoryKnowledge => 'Knowledge';
+  String get categoryKnowledge => 'Ilm';
 
   @override
   String get categoryCharacter => 'Character';

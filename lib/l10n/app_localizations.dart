@@ -3689,7 +3689,7 @@ abstract class AppLocalizations {
   /// Library category for learning the deen
   ///
   /// In en, this message translates to:
-  /// **'Knowledge'**
+  /// **'Ilm'**
   String get categoryKnowledge;
 
   /// Library category for good character (akhlaq)

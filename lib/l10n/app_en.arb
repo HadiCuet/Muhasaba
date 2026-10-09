@@ -1451,7 +1451,7 @@
   "@categoryFasting": {
     "description": "Library category for voluntary fasts"
   },
-  "categoryKnowledge": "Knowledge",
+  "categoryKnowledge": "Ilm",
   "@categoryKnowledge": {
     "description": "Library category for learning the deen"
   },
