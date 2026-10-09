@@ -319,6 +319,11 @@ should be worked into the Play copy instead of being dropped.
       feature graphic went live with the 3.1.0 (14) production release, 2026-10-10.
 - [x] All 9 App Store descriptions end with a "SUBSCRIPTION, TERMS & PRIVACY" block
       (Apple standard EULA + privacy page) since 3.1.0.
+- [ ] **iOS 27 product page header** — the statement ("Salah, dhikr & Quran. Build the
+      habit.") in all 9 languages, uploaded to Asset Library 2026-10-10 as
+      "Header <locale> (Oct 2026)" (`tool/screenshots/asset_library.py`). Submit them
+      there (standalone review), then publish them onto the live 3.1.0 page per
+      language. Search results keep the screenshots: no search asset, decided 2026-10-10.
 - [ ] **Play en-US** — rewrite the full description to ~3,500 chars with the term
       coverage listed in §8.
 - [ ] Write App Store promotional text: live has none as of 2026-10-10 (the stale
