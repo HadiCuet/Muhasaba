@@ -123,6 +123,8 @@ class AmalRepository {
     }
   }
 
+  Future<int> nextSortOrder() => _dao.nextSortOrder();
+
   /// Returns distinct emoji icons used by active amal.
   Future<List<String>> getRecentIcons() => _dao.getRecentIcons();
 

@@ -13,6 +13,7 @@ import '../../domain/services/today_builder.dart';
 import '../../domain/utils/localized_amal_title.dart';
 import '../../domain/utils/localized_category.dart';
 import '../../domain/utils/localized_number.dart';
+import '../library/amal_library_screen.dart';
 import '../stats/stats_providers.dart';
 import '../support/support_prompt.dart';
 import '../tutorial/tutorial_anchors.dart';
@@ -44,6 +45,11 @@ class TodayScreen extends ConsumerWidget {
           ),
         ),
         actions: [
+          IconButton(
+            icon: const Icon(Icons.menu_book_outlined),
+            tooltip: l.libraryTitle,
+            onPressed: () => openAmalLibrary(context, source: 'app_bar'),
+          ),
           IconButton(
             key: tutorialViewToggleKey,
             icon: Icon(
@@ -588,6 +594,12 @@ class _EmptyState extends StatelessWidget {
               style: theme.textTheme.bodyMedium?.copyWith(
                 color: theme.colorScheme.outline,
               ),
+            ),
+            const SizedBox(height: 16),
+            FilledButton.tonalIcon(
+              onPressed: () => openAmalLibrary(context, source: 'empty_state'),
+              icon: const Icon(Icons.menu_book_outlined),
+              label: Text(l.todayEmptyBrowse),
             ),
           ],
         ),

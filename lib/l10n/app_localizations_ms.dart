@@ -362,7 +362,7 @@ class AppLocalizationsMs extends AppLocalizations {
   String get amalTasbih => 'Tasbih 33x';
 
   @override
-  String get amalIstighfar => 'Istighfar 100x';
+  String get amalIstighfar => 'Istighfar';
 
   @override
   String get amalSurahKahf => 'Surah Al-Kahfi';
@@ -1817,4 +1817,381 @@ class AppLocalizationsMs extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get amalFivePrayers => 'Solat Lima Waktu';
+
+  @override
+  String get amalJumuah => 'Solat Jumaat';
+
+  @override
+  String get amalWitr => 'Solat Witir';
+
+  @override
+  String get amalQada => 'Solat Qada';
+
+  @override
+  String get amalFajrSunnah => 'Qabliyah Subuh';
+
+  @override
+  String get amalDhuhrSunnah => 'Rawatib Zohor';
+
+  @override
+  String get amalAsrSunnah => 'Qabliyah Asar';
+
+  @override
+  String get amalMaghribSunnah => 'Ba\'diyah Maghrib';
+
+  @override
+  String get amalIshaSunnah => 'Ba\'diyah Isyak';
+
+  @override
+  String get amalRawatib => 'Solat Sunat Rawatib';
+
+  @override
+  String get amalSiwak => 'Bersiwak';
+
+  @override
+  String get amalWuduSleep => 'Berwuduk Sebelum Tidur';
+
+  @override
+  String get amalFridayGhusl => 'Mandi Sunat Jumaat';
+
+  @override
+  String get amalIshraq => 'Solat Isyraq';
+
+  @override
+  String get amalWuduPrayer => 'Solat Sunat Wuduk';
+
+  @override
+  String get amalTahiyyah => 'Tahiyatul Masjid';
+
+  @override
+  String get amalEarlyJumuah => 'Awal ke Masjid pada Hari Jumaat';
+
+  @override
+  String get amalAfterSalah => 'Zikir Selepas Solat';
+
+  @override
+  String get amalAfterFajr => 'Zikir Selepas Subuh';
+
+  @override
+  String get amalAfterDhuhr => 'Zikir Selepas Zohor';
+
+  @override
+  String get amalAfterAsr => 'Zikir Selepas Asar';
+
+  @override
+  String get amalAfterMaghrib => 'Zikir Selepas Maghrib';
+
+  @override
+  String get amalAfterIsha => 'Zikir Selepas Isyak';
+
+  @override
+  String get amalAyatKursi => 'Ayatul Kursi';
+
+  @override
+  String get amalKursiFajr => 'Ayatul Kursi Selepas Subuh';
+
+  @override
+  String get amalKursiDhuhr => 'Ayatul Kursi Selepas Zohor';
+
+  @override
+  String get amalKursiAsr => 'Ayatul Kursi Selepas Asar';
+
+  @override
+  String get amalKursiMaghrib => 'Ayatul Kursi Selepas Maghrib';
+
+  @override
+  String get amalKursiIsha => 'Ayatul Kursi Selepas Isyak';
+
+  @override
+  String get amalSayyidIstighfar => 'Sayyidul Istighfar';
+
+  @override
+  String get amalSalawat => 'Selawat';
+
+  @override
+  String get amalSubhanallah => 'Subhanallahi wa Bihamdihi';
+
+  @override
+  String get amalTahlil => 'La Ilaha Illallah';
+
+  @override
+  String get amalBedtimeAdhkar => 'Zikir Sebelum Tidur';
+
+  @override
+  String get amalFridaySalawat => 'Selawat Hari Jumaat';
+
+  @override
+  String get amalHawqala => 'La Haula wa La Quwwata';
+
+  @override
+  String get amalTasbihFatimah => 'Tasbih Fatimah';
+
+  @override
+  String get amalWakingAdhkar => 'Zikir Bangun Tidur';
+
+  @override
+  String get amalDuaAdhan => 'Doa Selepas Azan';
+
+  @override
+  String get amalDuaIqamah => 'Doa antara Azan dan Iqamah';
+
+  @override
+  String get amalDuaSujood => 'Doa dalam Sujud';
+
+  @override
+  String get amalDuaParents => 'Doa untuk Ibu Bapa';
+
+  @override
+  String get amalDuaOthers => 'Doa untuk Orang Lain';
+
+  @override
+  String get amalFridayHour => 'Doa pada Saat Akhir Hari Jumaat';
+
+  @override
+  String get amalLastThird => 'Doa Sepertiga Malam Terakhir';
+
+  @override
+  String get amalMulk => 'Surah Al-Mulk';
+
+  @override
+  String get amalBaqarahEnd => 'Dua Ayat Terakhir Al-Baqarah';
+
+  @override
+  String get amalSajdah => 'Surah As-Sajdah';
+
+  @override
+  String get amalQuls => 'Tiga Qul';
+
+  @override
+  String get amalYasin => 'Surah Yasin';
+
+  @override
+  String get amalWaqiah => 'Surah Al-Waqi\'ah';
+
+  @override
+  String get amalHifz => 'Hafazan Al-Quran';
+
+  @override
+  String get amalMurajaah => 'Murajaah Hafazan';
+
+  @override
+  String get amalTafsir => 'Tafsir';
+
+  @override
+  String get amalListenQuran => 'Mendengar Al-Quran';
+
+  @override
+  String get amalTeachQuran => 'Mengajar Al-Quran';
+
+  @override
+  String get amalMonThu => 'Puasa Isnin dan Khamis';
+
+  @override
+  String get amalThreeDays => 'Puasa Tiga Hari Sebulan';
+
+  @override
+  String get amalDailySadaqah => 'Sedekah Harian';
+
+  @override
+  String get amalFeed => 'Memberi Makan Orang';
+
+  @override
+  String get amalHelpNeed => 'Membantu Orang yang Memerlukan';
+
+  @override
+  String get amalOrphan => 'Menaja Anak Yatim';
+
+  @override
+  String get amalGiveWater => 'Memberi Minum';
+
+  @override
+  String get amalLearnHadith => 'Belajar Satu Hadis';
+
+  @override
+  String get amalReadBook => 'Membaca Buku Islam';
+
+  @override
+  String get amalSeerah => 'Mempelajari Sirah';
+
+  @override
+  String get amalClass => 'Menghadiri Kuliah Agama';
+
+  @override
+  String get amalArabic => 'Belajar Bahasa Arab';
+
+  @override
+  String get amalLearnDua => 'Belajar Doa Baharu';
+
+  @override
+  String get amalShare => 'Berkongsi Ilmu';
+
+  @override
+  String get amalFiqh => 'Belajar Fiqh';
+
+  @override
+  String get amalMuhasaba => 'Muhasabah Malam';
+
+  @override
+  String get amalSpeakGood => 'Berkata Baik atau Diam';
+
+  @override
+  String get amalNoBackbiting => 'Menjauhi Mengumpat';
+
+  @override
+  String get amalAnger => 'Menahan Marah';
+
+  @override
+  String get amalGaze => 'Menundukkan Pandangan';
+
+  @override
+  String get amalTruthful => 'Bercakap Benar';
+
+  @override
+  String get amalSmile => 'Senyum';
+
+  @override
+  String get amalSalam => 'Menyebarkan Salam';
+
+  @override
+  String get amalForgive => 'Memaafkan Orang Lain';
+
+  @override
+  String get amalGratitude => 'Bersyukur';
+
+  @override
+  String get amalVisitSick => 'Menziarahi Orang Sakit';
+
+  @override
+  String get amalNeighbours => 'Berbuat Baik kepada Jiran';
+
+  @override
+  String get amalRemoveHarm => 'Membuang Halangan di Jalan';
+
+  @override
+  String get amalParents => 'Berbakti kepada Ibu Bapa';
+
+  @override
+  String get amalFamilyTies => 'Menyambung Silaturahim';
+
+  @override
+  String get amalHelpHome => 'Membantu Kerja Rumah';
+
+  @override
+  String get amalTeachChildren => 'Mengajar Agama kepada Anak-anak';
+
+  @override
+  String get amalSpouse => 'Berbuat Baik kepada Pasangan';
+
+  @override
+  String get categoryDua => 'Doa';
+
+  @override
+  String get categoryFasting => 'Puasa';
+
+  @override
+  String get categoryKnowledge => 'Ilmu';
+
+  @override
+  String get categoryCharacter => 'Akhlak';
+
+  @override
+  String get categoryFamily => 'Keluarga';
+
+  @override
+  String get libraryTitle => 'Pustaka Amal';
+
+  @override
+  String get librarySearchHint => 'Cari amal';
+
+  @override
+  String get libraryAll => 'Semua';
+
+  @override
+  String get libraryAdded => 'Ditambah ke Hari Ini';
+
+  @override
+  String libraryAddedShowsOn(String days) {
+    return 'Ditambah · dipaparkan pada: $days';
+  }
+
+  @override
+  String libraryNoMatch(String query) {
+    return 'Tiada amal yang sepadan dengan “$query”';
+  }
+
+  @override
+  String libraryCreateNamed(String query) {
+    return 'Cipta “$query”';
+  }
+
+  @override
+  String get libraryPickBanner => 'Pilih dari Pustaka Amal';
+
+  @override
+  String libraryPickBannerSubtitle(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText amal sedia guna',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get libraryFilledIn => 'Diisi dari Pustaka Amal';
+
+  @override
+  String get libraryChange => 'Tukar';
+
+  @override
+  String get libraryEditAction => 'Sunting';
+
+  @override
+  String libraryWeeklyAny(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText hari seminggu',
+      one: 'Sekali seminggu',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String libraryMonthlyAny(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText hari sebulan',
+      one: 'Sekali sebulan',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String libraryTimes(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '${countText}x',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get libraryAnyAmount => 'Berapa pun';
+
+  @override
+  String libraryAddTooltip(String title) {
+    return 'Tambah $title';
+  }
+
+  @override
+  String get libraryOnList => 'Sudah ada dalam senarai anda';
+
+  @override
+  String get todayEmptyBrowse => 'Teroka Pustaka Amal';
 }

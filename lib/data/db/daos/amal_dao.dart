@@ -80,6 +80,15 @@ class AmalDao extends DatabaseAccessor<AppDatabase> with _$AmalDaoMixin {
     );
   }
 
+  /// The sort order that places a new amal after every tracked one.
+  Future<int> nextSortOrder() async {
+    final maxOrder = await customSelect(
+      'SELECT COALESCE(MAX(sort_order), -1) AS m FROM amals '
+      'WHERE archived_at IS NULL',
+    ).getSingle();
+    return maxOrder.read<int>('m') + 1;
+  }
+
   /// Hard-delete an amal and cascade its completions/hidden days. Use
   /// sparingly — `archive` is usually what we want.
   Future<int> deleteAmal(int id) {

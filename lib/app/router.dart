@@ -8,8 +8,9 @@ import '../features/challenge/challenge_detail_screen.dart';
 import '../features/challenge/challenge_form_screen.dart';
 import '../features/challenge/challenge_screen.dart';
 import '../features/create_edit/amal_form_screen.dart';
-import '../features/create_edit/amal_templates.dart';
 import '../features/insights/insights_screen.dart';
+import '../features/library/amal_library.dart';
+import '../features/library/amal_library_screen.dart';
 import '../features/settings/settings_screen.dart';
 import '../features/splash/splash_screen.dart';
 import '../features/stats/option_detail_screen.dart';
@@ -85,11 +86,18 @@ final routerProvider = Provider<GoRouter>((ref) {
         path: '/amal/new',
         name: 'amal-new',
         builder: (context, state) {
-          final template = state.extra;
+          final extra = state.extra;
           return AmalFormScreen(
-            prefill: template is AmalTemplate ? template : null,
+            prefill: extra is LibraryAmal ? extra : null,
+            initialTitle: extra is String ? extra : null,
           );
         },
+      ),
+      GoRoute(
+        path: '/library',
+        name: 'library',
+        builder: (context, state) =>
+            AmalLibraryScreen(pick: state.uri.queryParameters['pick'] == '1'),
       ),
       GoRoute(
         path: '/amal/:id',

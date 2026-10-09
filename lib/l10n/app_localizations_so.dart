@@ -368,7 +368,7 @@ class AppLocalizationsSo extends AppLocalizations {
   String get amalTasbih => 'Tasbiix 33x';
 
   @override
-  String get amalIstighfar => 'Istigfaar 100x';
+  String get amalIstighfar => 'Istigfaar';
 
   @override
   String get amalSurahKahf => 'Suuradda Al-Kahf';
@@ -1824,4 +1824,382 @@ class AppLocalizationsSo extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get amalFivePrayers => 'Shanta salaadood';
+
+  @override
+  String get amalJumuah => 'Salaadda Jimcaha';
+
+  @override
+  String get amalWitr => 'Salaadda Witirka';
+
+  @override
+  String get amalQada => 'Salaadaha la qadeeyo';
+
+  @override
+  String get amalFajrSunnah => 'Sunnada Subax';
+
+  @override
+  String get amalDhuhrSunnah => 'Sunnada Duhur';
+
+  @override
+  String get amalAsrSunnah => 'Sunnada Casir';
+
+  @override
+  String get amalMaghribSunnah => 'Sunnada Maghrib';
+
+  @override
+  String get amalIshaSunnah => 'Sunnada Cishe';
+
+  @override
+  String get amalRawatib => 'Sunnooyinka rawaatibka';
+
+  @override
+  String get amalSiwak => 'Caday';
+
+  @override
+  String get amalWuduSleep => 'Weysada ka hor hurdada';
+
+  @override
+  String get amalFridayGhusl => 'Qubeyska Jimcaha';
+
+  @override
+  String get amalIshraq => 'Salaadda Ishraaqa';
+
+  @override
+  String get amalWuduPrayer => 'Laba rakcadood weysada kadib';
+
+  @override
+  String get amalTahiyyah => 'Tixiyatul masjid';
+
+  @override
+  String get amalEarlyJumuah => 'Jimcaha oo hore loo tago';
+
+  @override
+  String get amalAfterSalah => 'Adkaarta salaadda kadib';
+
+  @override
+  String get amalAfterFajr => 'Adkaarta Subax kadib';
+
+  @override
+  String get amalAfterDhuhr => 'Adkaarta Duhur kadib';
+
+  @override
+  String get amalAfterAsr => 'Adkaarta Casir kadib';
+
+  @override
+  String get amalAfterMaghrib => 'Adkaarta Maghrib kadib';
+
+  @override
+  String get amalAfterIsha => 'Adkaarta Cishe kadib';
+
+  @override
+  String get amalAyatKursi => 'Aayatul Kursi';
+
+  @override
+  String get amalKursiFajr => 'Aayatul Kursi Subax kadib';
+
+  @override
+  String get amalKursiDhuhr => 'Aayatul Kursi Duhur kadib';
+
+  @override
+  String get amalKursiAsr => 'Aayatul Kursi Casir kadib';
+
+  @override
+  String get amalKursiMaghrib => 'Aayatul Kursi Maghrib kadib';
+
+  @override
+  String get amalKursiIsha => 'Aayatul Kursi Cishe kadib';
+
+  @override
+  String get amalSayyidIstighfar => 'Sayidul Istigfaar';
+
+  @override
+  String get amalSalawat => 'Salawaadka Nabiga ﷺ';
+
+  @override
+  String get amalSubhanallah => 'Subxaanallaahi wa bixamdihi';
+
+  @override
+  String get amalTahlil => 'Laa ilaaha illallaah';
+
+  @override
+  String get amalBedtimeAdhkar => 'Adkaarta hurdada';
+
+  @override
+  String get amalFridaySalawat => 'Salawaadka Jimcaha';
+
+  @override
+  String get amalHawqala => 'Laa xawla walaa quwwata';
+
+  @override
+  String get amalTasbihFatimah => 'Tasbiixa Faadumo';
+
+  @override
+  String get amalWakingAdhkar => 'Adkaarta toosidda';
+
+  @override
+  String get amalDuaAdhan => 'Ducada adaanka kadib';
+
+  @override
+  String get amalDuaIqamah => 'Ducada u dhexeysa adaanka iyo iqaamada';
+
+  @override
+  String get amalDuaSujood => 'Ducada sujuudda';
+
+  @override
+  String get amalDuaParents => 'Ducada waalidiinta';
+
+  @override
+  String get amalDuaOthers => 'Ducada dadka kale';
+
+  @override
+  String get amalFridayHour => 'Ducada saacadda u dambeysa Jimcaha';
+
+  @override
+  String get amalLastThird => 'Ducada qaybta dambe ee habeenka';
+
+  @override
+  String get amalMulk => 'Suuradda Al-Mulk';
+
+  @override
+  String get amalBaqarahEnd => 'Labada aayadood ee u dambeeya Al-Baqara';
+
+  @override
+  String get amalSajdah => 'Suuradda As-Sajda';
+
+  @override
+  String get amalQuls => 'Saddexda Qul';
+
+  @override
+  String get amalYasin => 'Suuradda Yaasiin';
+
+  @override
+  String get amalWaqiah => 'Suuradda Al-Waaqica';
+
+  @override
+  String get amalHifz => 'Xifdinta Quraanka';
+
+  @override
+  String get amalMurajaah => 'Muraajacada xifdiga';
+
+  @override
+  String get amalTafsir => 'Tafsiirka';
+
+  @override
+  String get amalListenQuran => 'Dhageysiga Quraanka';
+
+  @override
+  String get amalTeachQuran => 'Barista Quraanka';
+
+  @override
+  String get amalMonThu => 'Soonka Isniinta iyo Khamiista';
+
+  @override
+  String get amalThreeDays => 'Saddex maalmood oo soon bishii';
+
+  @override
+  String get amalDailySadaqah => 'Sadaqo maalinle ah';
+
+  @override
+  String get amalFeed => 'Quudinta qof';
+
+  @override
+  String get amalHelpNeed => 'Caawinta qof baahan';
+
+  @override
+  String get amalOrphan => 'Kafaalada agoonta';
+
+  @override
+  String get amalGiveWater => 'Waraabinta';
+
+  @override
+  String get amalLearnHadith => 'Barashada xadiis';
+
+  @override
+  String get amalReadBook => 'Akhrinta buug Islaami ah';
+
+  @override
+  String get amalSeerah => 'Barashada siirada';
+
+  @override
+  String get amalClass => 'Ka qaybgalka cashar';
+
+  @override
+  String get amalArabic => 'Barashada Carabiga';
+
+  @override
+  String get amalLearnDua => 'Barashada duco cusub';
+
+  @override
+  String get amalShare => 'La wadaagidda cilmiga';
+
+  @override
+  String get amalFiqh => 'Barashada fiqhiga';
+
+  @override
+  String get amalMuhasaba => 'Muxaasabada habeenka';
+
+  @override
+  String get amalSpeakGood => 'Ama wanaag sheeg ama aamus';
+
+  @override
+  String get amalNoBackbiting => 'Ka fogaanshaha xanta';
+
+  @override
+  String get amalAnger => 'Xakamaynta cadhada';
+
+  @override
+  String get amalGaze => 'Ilaalinta indhaha';
+
+  @override
+  String get amalTruthful => 'Run sheegidda';
+
+  @override
+  String get amalSmile => 'Dhoola caddayn';
+
+  @override
+  String get amalSalam => 'Faafinta salaanta';
+
+  @override
+  String get amalForgive => 'Cafinta dadka kale';
+
+  @override
+  String get amalGratitude => 'Mahadnaq';
+
+  @override
+  String get amalVisitSick => 'Booqashada qofka buka';
+
+  @override
+  String get amalNeighbours => 'U wanaagsanaanta deriska';
+
+  @override
+  String get amalRemoveHarm => 'Ka qaadista wax dhib leh jidka';
+
+  @override
+  String get amalParents => 'U wanaagsanaanta waalidiinta';
+
+  @override
+  String get amalFamilyTies => 'Xiriirinta qaraabada';
+
+  @override
+  String get amalHelpHome => 'Ka caawinta guriga';
+
+  @override
+  String get amalTeachChildren => 'Barista carruurta diinta';
+
+  @override
+  String get amalSpouse => 'U wanaagsanaanta lammaanaha';
+
+  @override
+  String get categoryDua => 'Duco';
+
+  @override
+  String get categoryFasting => 'Soon';
+
+  @override
+  String get categoryKnowledge => 'Cilmi';
+
+  @override
+  String get categoryCharacter => 'Akhlaaq';
+
+  @override
+  String get categoryFamily => 'Qoys';
+
+  @override
+  String get libraryTitle => 'Maktabadda Camalada';
+
+  @override
+  String get librarySearchHint => 'Raadi camal';
+
+  @override
+  String get libraryAll => 'Dhammaan';
+
+  @override
+  String get libraryAdded => 'Waa lagu daray Maanta';
+
+  @override
+  String libraryAddedShowsOn(String days) {
+    return 'Waa lagu daray · wuxuu soo baxayaa: $days';
+  }
+
+  @override
+  String libraryNoMatch(String query) {
+    return 'Ma jiro camal la mid ah “$query”';
+  }
+
+  @override
+  String libraryCreateNamed(String query) {
+    return 'Samee “$query”';
+  }
+
+  @override
+  String get libraryPickBanner => 'Ka dooro Maktabadda Camalada';
+
+  @override
+  String libraryPickBannerSubtitle(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText camal oo diyaar ah',
+      one: '$countText camal oo diyaar ah',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get libraryFilledIn => 'Waxaa laga buuxiyey Maktabadda Camalada';
+
+  @override
+  String get libraryChange => 'Beddel';
+
+  @override
+  String get libraryEditAction => 'Wax ka beddel';
+
+  @override
+  String libraryWeeklyAny(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText maalmood toddobaadkii',
+      one: 'Hal mar toddobaadkii',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String libraryMonthlyAny(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText maalmood bishii',
+      one: 'Hal mar bishii',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String libraryTimes(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText jeer',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get libraryAnyAmount => 'Tiro kasta';
+
+  @override
+  String libraryAddTooltip(String title) {
+    return 'Ku dar $title';
+  }
+
+  @override
+  String get libraryOnList => 'Liiskaaga ayuu ku jiraa';
+
+  @override
+  String get todayEmptyBrowse => 'Eeg Maktabadda Camalada';
 }

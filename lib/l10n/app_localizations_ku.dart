@@ -366,7 +366,7 @@ class AppLocalizationsKu extends AppLocalizations {
   String get amalTasbih => 'Tesbîh 33 car';
 
   @override
-  String get amalIstighfar => 'Îstîxfar 100 car';
+  String get amalIstighfar => 'Îstîxfar';
 
   @override
   String get amalSurahKahf => 'Sûreya Kehf';
@@ -1816,4 +1816,382 @@ class AppLocalizationsKu extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get amalFivePrayers => 'Pênc nimêjên rojane';
+
+  @override
+  String get amalJumuah => 'Nimêja înê';
+
+  @override
+  String get amalWitr => 'Nimêja witrê';
+
+  @override
+  String get amalQada => 'Nimêjên qeza';
+
+  @override
+  String get amalFajrSunnah => 'Sunneta Fecrê';
+
+  @override
+  String get amalDhuhrSunnah => 'Sunneta Nîvro';
+
+  @override
+  String get amalAsrSunnah => 'Sunneta Esrê';
+
+  @override
+  String get amalMaghribSunnah => 'Sunneta Mexribê';
+
+  @override
+  String get amalIshaSunnah => 'Sunneta Îşayê';
+
+  @override
+  String get amalRawatib => 'Sunnetên rewatib';
+
+  @override
+  String get amalSiwak => 'Misewak';
+
+  @override
+  String get amalWuduSleep => 'Destnimêj berî xewê';
+
+  @override
+  String get amalFridayGhusl => 'Serşûştina înê';
+
+  @override
+  String get amalIshraq => 'Nimêja Îşraqê';
+
+  @override
+  String get amalWuduPrayer => 'Du rikat piştî destnimêjê';
+
+  @override
+  String get amalTahiyyah => 'Tehiyyetul-mescid';
+
+  @override
+  String get amalEarlyJumuah => 'Zû çûna nimêja înê';
+
+  @override
+  String get amalAfterSalah => 'Zikrên piştî nimêjê';
+
+  @override
+  String get amalAfterFajr => 'Zikrên piştî Fecrê';
+
+  @override
+  String get amalAfterDhuhr => 'Zikrên piştî Nîvro';
+
+  @override
+  String get amalAfterAsr => 'Zikrên piştî Esrê';
+
+  @override
+  String get amalAfterMaghrib => 'Zikrên piştî Mexribê';
+
+  @override
+  String get amalAfterIsha => 'Zikrên piştî Îşayê';
+
+  @override
+  String get amalAyatKursi => 'Ayeta Kursî';
+
+  @override
+  String get amalKursiFajr => 'Ayeta Kursî piştî Fecrê';
+
+  @override
+  String get amalKursiDhuhr => 'Ayeta Kursî piştî Nîvro';
+
+  @override
+  String get amalKursiAsr => 'Ayeta Kursî piştî Esrê';
+
+  @override
+  String get amalKursiMaghrib => 'Ayeta Kursî piştî Mexribê';
+
+  @override
+  String get amalKursiIsha => 'Ayeta Kursî piştî Îşayê';
+
+  @override
+  String get amalSayyidIstighfar => 'Seyîdul-Îstîxfar';
+
+  @override
+  String get amalSalawat => 'Selewat';
+
+  @override
+  String get amalSubhanallah => 'Subhanellahî we bihemdihî';
+
+  @override
+  String get amalTahlil => 'La îlahe îllellah';
+
+  @override
+  String get amalBedtimeAdhkar => 'Zikrên berî xewê';
+
+  @override
+  String get amalFridaySalawat => 'Selewata înê';
+
+  @override
+  String get amalHawqala => 'La hewle we la quwwete';
+
+  @override
+  String get amalTasbihFatimah => 'Tesbîha Fatimayê';
+
+  @override
+  String get amalWakingAdhkar => 'Zikrên şiyarbûnê';
+
+  @override
+  String get amalDuaAdhan => 'Dua piştî bangê';
+
+  @override
+  String get amalDuaIqamah => 'Dua di navbera bang û îqametê de';
+
+  @override
+  String get amalDuaSujood => 'Dua di secdeyê de';
+
+  @override
+  String get amalDuaParents => 'Dua ji bo dê û bav';
+
+  @override
+  String get amalDuaOthers => 'Dua ji bo kesên din';
+
+  @override
+  String get amalFridayHour => 'Dua di saeta dawî ya înê de';
+
+  @override
+  String get amalLastThird => 'Dua di sêyeka dawî ya şevê de';
+
+  @override
+  String get amalMulk => 'Sûreya Mulk';
+
+  @override
+  String get amalBaqarahEnd => 'Du ayetên dawî yên Beqereyê';
+
+  @override
+  String get amalSajdah => 'Sûreya Secde';
+
+  @override
+  String get amalQuls => 'Sê Qul';
+
+  @override
+  String get amalYasin => 'Sûreya Yasîn';
+
+  @override
+  String get amalWaqiah => 'Sûreya Waqia';
+
+  @override
+  String get amalHifz => 'Ezberkirina Quranê';
+
+  @override
+  String get amalMurajaah => 'Dubarekirina ezberê';
+
+  @override
+  String get amalTafsir => 'Tefsîr';
+
+  @override
+  String get amalListenQuran => 'Guhdana Quranê';
+
+  @override
+  String get amalTeachQuran => 'Hînkirina Quranê';
+
+  @override
+  String get amalMonThu => 'Rojiya duşem û pêncşemê';
+
+  @override
+  String get amalThreeDays => 'Sê roj rojî di mehê de';
+
+  @override
+  String get amalDailySadaqah => 'Sedeqeya rojane';
+
+  @override
+  String get amalFeed => 'Têrkirina birçiyan';
+
+  @override
+  String get amalHelpNeed => 'Alîkariya hewcedaran';
+
+  @override
+  String get amalOrphan => 'Xwedîkirina sêwiyan';
+
+  @override
+  String get amalGiveWater => 'Avdayîn';
+
+  @override
+  String get amalLearnHadith => 'Hînbûna hedîsekê';
+
+  @override
+  String get amalReadBook => 'Xwendina pirtûkeke îslamî';
+
+  @override
+  String get amalSeerah => 'Hînbûna sîreyê';
+
+  @override
+  String get amalClass => 'Beşdarbûna dersê';
+
+  @override
+  String get amalArabic => 'Hînbûna erebî';
+
+  @override
+  String get amalLearnDua => 'Hînbûna duayeke nû';
+
+  @override
+  String get amalShare => 'Parvekirina zanînê';
+
+  @override
+  String get amalFiqh => 'Hînbûna fiqhê';
+
+  @override
+  String get amalMuhasaba => 'Muhasebeya şevê';
+
+  @override
+  String get amalSpeakGood => 'Ya baş bêje ya bêdeng bimîne';
+
+  @override
+  String get amalNoBackbiting => 'Dûrketina ji xeybetê';
+
+  @override
+  String get amalAnger => 'Kontrolkirina hêrsê';
+
+  @override
+  String get amalGaze => 'Parastina çavan';
+
+  @override
+  String get amalTruthful => 'Rastgotin';
+
+  @override
+  String get amalSmile => 'Bişirîn';
+
+  @override
+  String get amalSalam => 'Belavkirina silavê';
+
+  @override
+  String get amalForgive => 'Lêborîna kesên din';
+
+  @override
+  String get amalGratitude => 'Şikirdarî';
+
+  @override
+  String get amalVisitSick => 'Serdana nexweşan';
+
+  @override
+  String get amalNeighbours => 'Qencî ji cîranan re';
+
+  @override
+  String get amalRemoveHarm => 'Rakirina tiştên êşdar ji rê';
+
+  @override
+  String get amalParents => 'Qencî ji dê û bav re';
+
+  @override
+  String get amalFamilyTies => 'Parastina têkiliyên xizmtiyê';
+
+  @override
+  String get amalHelpHome => 'Alîkariya karên malê';
+
+  @override
+  String get amalTeachChildren => 'Hînkirina dînê ji zarokan re';
+
+  @override
+  String get amalSpouse => 'Qencî ji hevjînê re';
+
+  @override
+  String get categoryDua => 'Dua';
+
+  @override
+  String get categoryFasting => 'Rojî';
+
+  @override
+  String get categoryKnowledge => 'Zanist';
+
+  @override
+  String get categoryCharacter => 'Exlaq';
+
+  @override
+  String get categoryFamily => 'Malbat';
+
+  @override
+  String get libraryTitle => 'Pirtûkxaneya Kirinan';
+
+  @override
+  String get librarySearchHint => 'Li kirinan bigere';
+
+  @override
+  String get libraryAll => 'Hemû';
+
+  @override
+  String get libraryAdded => 'Li Îro hat zêdekirin';
+
+  @override
+  String libraryAddedShowsOn(String days) {
+    return 'Hat zêdekirin · xuya dibe: $days';
+  }
+
+  @override
+  String libraryNoMatch(String query) {
+    return 'Tu kirin bi “$query” re li hev nayê';
+  }
+
+  @override
+  String libraryCreateNamed(String query) {
+    return '“$query” biafirîne';
+  }
+
+  @override
+  String get libraryPickBanner => 'Ji Pirtûkxaneya Kirinan hilbijêre';
+
+  @override
+  String libraryPickBannerSubtitle(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText kirinên amade',
+      one: '$countText kirina amade',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get libraryFilledIn => 'Ji Pirtûkxaneya Kirinan hat dagirtin';
+
+  @override
+  String get libraryChange => 'Biguherîne';
+
+  @override
+  String get libraryEditAction => 'Sererast bike';
+
+  @override
+  String libraryWeeklyAny(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Di heftê de $countText roj',
+      one: 'Heftê carekê',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String libraryMonthlyAny(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: 'Di mehê de $countText roj',
+      one: 'Mehê carekê',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String libraryTimes(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText car',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get libraryAnyAmount => 'Her hejmar';
+
+  @override
+  String libraryAddTooltip(String title) {
+    return '$title zêde bike';
+  }
+
+  @override
+  String get libraryOnList => 'Di lîsteya te de ye';
+
+  @override
+  String get todayEmptyBrowse => 'Li Pirtûkxaneya Kirinan binêre';
 }

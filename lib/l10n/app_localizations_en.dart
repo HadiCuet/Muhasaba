@@ -362,7 +362,7 @@ class AppLocalizationsEn extends AppLocalizations {
   String get amalTasbih => 'Tasbih 33x';
 
   @override
-  String get amalIstighfar => 'Istighfar 100x';
+  String get amalIstighfar => 'Istighfar';
 
   @override
   String get amalSurahKahf => 'Surah Kahf';
@@ -1816,4 +1816,382 @@ class AppLocalizationsEn extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get amalFivePrayers => 'Five daily prayers';
+
+  @override
+  String get amalJumuah => 'Jumu\'ah';
+
+  @override
+  String get amalWitr => 'Witr';
+
+  @override
+  String get amalQada => 'Qada prayers';
+
+  @override
+  String get amalFajrSunnah => 'Fajr Sunnah';
+
+  @override
+  String get amalDhuhrSunnah => 'Dhuhr Sunnah';
+
+  @override
+  String get amalAsrSunnah => 'Asr Sunnah';
+
+  @override
+  String get amalMaghribSunnah => 'Maghrib Sunnah';
+
+  @override
+  String get amalIshaSunnah => 'Isha Sunnah';
+
+  @override
+  String get amalRawatib => 'Sunnah Rawatib';
+
+  @override
+  String get amalSiwak => 'Siwak';
+
+  @override
+  String get amalWuduSleep => 'Wudu before sleep';
+
+  @override
+  String get amalFridayGhusl => 'Friday ghusl';
+
+  @override
+  String get amalIshraq => 'Ishraq';
+
+  @override
+  String get amalWuduPrayer => 'Two rak\'ahs after wudu';
+
+  @override
+  String get amalTahiyyah => 'Tahiyyat al-Masjid';
+
+  @override
+  String get amalEarlyJumuah => 'Early to Jumu\'ah';
+
+  @override
+  String get amalAfterSalah => 'After-Salah Adhkar';
+
+  @override
+  String get amalAfterFajr => 'After-Fajr Adhkar';
+
+  @override
+  String get amalAfterDhuhr => 'After-Dhuhr Adhkar';
+
+  @override
+  String get amalAfterAsr => 'After-Asr Adhkar';
+
+  @override
+  String get amalAfterMaghrib => 'After-Maghrib Adhkar';
+
+  @override
+  String get amalAfterIsha => 'After-Isha Adhkar';
+
+  @override
+  String get amalAyatKursi => 'Ayat al-Kursi';
+
+  @override
+  String get amalKursiFajr => 'Ayat al-Kursi after Fajr';
+
+  @override
+  String get amalKursiDhuhr => 'Ayat al-Kursi after Dhuhr';
+
+  @override
+  String get amalKursiAsr => 'Ayat al-Kursi after Asr';
+
+  @override
+  String get amalKursiMaghrib => 'Ayat al-Kursi after Maghrib';
+
+  @override
+  String get amalKursiIsha => 'Ayat al-Kursi after Isha';
+
+  @override
+  String get amalSayyidIstighfar => 'Sayyid al-Istighfar';
+
+  @override
+  String get amalSalawat => 'Salawat';
+
+  @override
+  String get amalSubhanallah => 'SubhanAllahi wa bihamdihi';
+
+  @override
+  String get amalTahlil => 'La ilaha illallah';
+
+  @override
+  String get amalBedtimeAdhkar => 'Bedtime Adhkar';
+
+  @override
+  String get amalFridaySalawat => 'Friday Salawat';
+
+  @override
+  String get amalHawqala => 'La hawla wa la quwwata';
+
+  @override
+  String get amalTasbihFatimah => 'Tasbih Fatimah';
+
+  @override
+  String get amalWakingAdhkar => 'Waking Adhkar';
+
+  @override
+  String get amalDuaAdhan => 'Dua after Adhan';
+
+  @override
+  String get amalDuaIqamah => 'Dua between Adhan & Iqamah';
+
+  @override
+  String get amalDuaSujood => 'Dua in Sujood';
+
+  @override
+  String get amalDuaParents => 'Dua for parents';
+
+  @override
+  String get amalDuaOthers => 'Dua for others';
+
+  @override
+  String get amalFridayHour => 'Dua in Friday\'s last hour';
+
+  @override
+  String get amalLastThird => 'Night dua (last third)';
+
+  @override
+  String get amalMulk => 'Surah al-Mulk';
+
+  @override
+  String get amalBaqarahEnd => 'Last 2 ayat of al-Baqarah';
+
+  @override
+  String get amalSajdah => 'Surah as-Sajdah';
+
+  @override
+  String get amalQuls => 'Three Quls';
+
+  @override
+  String get amalYasin => 'Surah Yasin';
+
+  @override
+  String get amalWaqiah => 'Surah al-Waqi\'ah';
+
+  @override
+  String get amalHifz => 'Hifz';
+
+  @override
+  String get amalMurajaah => 'Hifz revision';
+
+  @override
+  String get amalTafsir => 'Tafsir';
+
+  @override
+  String get amalListenQuran => 'Listen to Quran';
+
+  @override
+  String get amalTeachQuran => 'Teach Quran';
+
+  @override
+  String get amalMonThu => 'Monday & Thursday fast';
+
+  @override
+  String get amalThreeDays => '3 fasts a month';
+
+  @override
+  String get amalDailySadaqah => 'Daily Sadaqah';
+
+  @override
+  String get amalFeed => 'Feed someone';
+
+  @override
+  String get amalHelpNeed => 'Help someone in need';
+
+  @override
+  String get amalOrphan => 'Support an orphan';
+
+  @override
+  String get amalGiveWater => 'Give water';
+
+  @override
+  String get amalLearnHadith => 'Learn a hadith';
+
+  @override
+  String get amalReadBook => 'Read an Islamic book';
+
+  @override
+  String get amalSeerah => 'Study the Seerah';
+
+  @override
+  String get amalClass => 'Attend a class';
+
+  @override
+  String get amalArabic => 'Learn Arabic';
+
+  @override
+  String get amalLearnDua => 'Learn a new dua';
+
+  @override
+  String get amalShare => 'Share what you learn';
+
+  @override
+  String get amalFiqh => 'Study fiqh';
+
+  @override
+  String get amalMuhasaba => 'Nightly Muhasaba';
+
+  @override
+  String get amalSpeakGood => 'Speak good or stay silent';
+
+  @override
+  String get amalNoBackbiting => 'No backbiting';
+
+  @override
+  String get amalAnger => 'Control anger';
+
+  @override
+  String get amalGaze => 'Lower the gaze';
+
+  @override
+  String get amalTruthful => 'Be truthful';
+
+  @override
+  String get amalSmile => 'Smile';
+
+  @override
+  String get amalSalam => 'Spread salam';
+
+  @override
+  String get amalForgive => 'Forgive others';
+
+  @override
+  String get amalGratitude => 'Gratitude';
+
+  @override
+  String get amalVisitSick => 'Visit the sick';
+
+  @override
+  String get amalNeighbours => 'Kindness to neighbours';
+
+  @override
+  String get amalRemoveHarm => 'Remove harm from the path';
+
+  @override
+  String get amalParents => 'Kindness to parents';
+
+  @override
+  String get amalFamilyTies => 'Keep family ties';
+
+  @override
+  String get amalHelpHome => 'Help at home';
+
+  @override
+  String get amalTeachChildren => 'Teach your children';
+
+  @override
+  String get amalSpouse => 'Kindness to spouse';
+
+  @override
+  String get categoryDua => 'Dua';
+
+  @override
+  String get categoryFasting => 'Fasting';
+
+  @override
+  String get categoryKnowledge => 'Knowledge';
+
+  @override
+  String get categoryCharacter => 'Character';
+
+  @override
+  String get categoryFamily => 'Family';
+
+  @override
+  String get libraryTitle => 'Amal Library';
+
+  @override
+  String get librarySearchHint => 'Search amals';
+
+  @override
+  String get libraryAll => 'All';
+
+  @override
+  String get libraryAdded => 'Added to Today';
+
+  @override
+  String libraryAddedShowsOn(String days) {
+    return 'Added · shows on $days';
+  }
+
+  @override
+  String libraryNoMatch(String query) {
+    return 'No amal matches “$query”';
+  }
+
+  @override
+  String libraryCreateNamed(String query) {
+    return 'Create “$query”';
+  }
+
+  @override
+  String get libraryPickBanner => 'Pick from the Amal Library';
+
+  @override
+  String libraryPickBannerSubtitle(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText ready-made amals',
+      one: '$countText ready-made amal',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get libraryFilledIn => 'Filled in from the Amal Library';
+
+  @override
+  String get libraryChange => 'Change';
+
+  @override
+  String get libraryEditAction => 'Edit';
+
+  @override
+  String libraryWeeklyAny(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText days a week',
+      one: 'Once a week',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String libraryMonthlyAny(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText days a month',
+      one: 'Once a month',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String libraryTimes(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText×',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get libraryAnyAmount => 'Any amount';
+
+  @override
+  String libraryAddTooltip(String title) {
+    return 'Add $title';
+  }
+
+  @override
+  String get libraryOnList => 'On your list';
+
+  @override
+  String get todayEmptyBrowse => 'Browse the Amal Library';
 }

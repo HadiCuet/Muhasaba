@@ -17,7 +17,7 @@ import '../../domain/utils/localized_number.dart';
 import '../../domain/utils/localized_option_label.dart';
 import '../../domain/utils/monthly_dates.dart';
 import '../../domain/utils/weekly_days.dart';
-import 'amal_templates.dart';
+import '../library/amal_library.dart';
 import 'widgets/category_picker.dart';
 import 'widgets/emoji_picker.dart';
 import 'widgets/option_set_editor_sheet.dart';
@@ -25,12 +25,19 @@ import 'widgets/option_set_picker.dart';
 
 /// Create or edit an amal. Pass `amalId = null` to create a new one, or an
 /// existing id to edit. When editing, the form hydrates from the row before
-/// the first paint. [prefill] pre-populates the form from a template.
+/// the first paint. [prefill] fills the form from an Amal Library entry;
+/// [initialTitle] only sets the title.
 class AmalFormScreen extends ConsumerStatefulWidget {
-  const AmalFormScreen({super.key, this.amalId, this.prefill});
+  const AmalFormScreen({
+    super.key,
+    this.amalId,
+    this.prefill,
+    this.initialTitle,
+  });
 
   final int? amalId;
-  final AmalTemplate? prefill;
+  final LibraryAmal? prefill;
+  final String? initialTitle;
 
   @override
   ConsumerState<AmalFormScreen> createState() => _AmalFormScreenState();
@@ -63,6 +70,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
   bool _loading = false;
   bool _titlePrefilled = false;
   AmalRow? _existing;
+  LibraryAmal? _template;
 
   @override
   void initState() {
@@ -71,28 +79,66 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
       _loading = true;
       _hydrate();
     } else if (widget.prefill != null) {
-      final t = widget.prefill!;
-      _icon = t.icon;
-      _iconIsManual = true;
-      _category = t.category;
-      _frequency = t.frequency;
-      _target = t.target;
+      _applyLibraryAmal(widget.prefill!);
+      _ensureCategory(widget.prefill!);
     }
   }
 
   @override
   void didChangeDependencies() {
     super.didChangeDependencies();
-    // Localizations aren't available in initState, so the template title is
+    // Localizations aren't available in initState, so the library title is
     // prefilled here instead. Once only: a re-run must not overwrite what the
     // user has since typed. Edit mode is _hydrate's job, not this.
-    if (!_titlePrefilled && widget.amalId == null && widget.prefill != null) {
+    if (!_titlePrefilled && widget.amalId == null) {
       _titlePrefilled = true;
-      _titleController.text = localizedAmalTitle(
-        widget.prefill!.title,
-        AppLocalizations.of(context),
-      );
+      final t = _template;
+      if (t != null) {
+        _titleController.text = localizedAmalTitle(
+          t.title,
+          AppLocalizations.of(context),
+        );
+      } else if (widget.initialTitle != null) {
+        _titleController.text = widget.initialTitle!;
+      }
     }
+  }
+
+  void _applyLibraryAmal(LibraryAmal t) {
+    _template = t;
+    _icon = t.icon;
+    _iconIsManual = true;
+    _category = t.category;
+    _frequency = t.frequency;
+    _target = t.target;
+    _weeklyPinned = t.frequency != Frequency.weekly || t.weeklyDays.isNotEmpty;
+    if (t.weeklyDays.isNotEmpty) _weeklyDays = {...t.weeklyDays};
+    _monthlyPinned = t.frequency != Frequency.monthly;
+    _periodTarget = t.periodTarget.clamp(1, _periodTargetMaxFor(t.frequency));
+    _defaultChecked = false;
+    if (t.target != 1) _requireChoice = false;
+  }
+
+  // The category chip only shows once its row exists, as with "+ New".
+  void _ensureCategory(LibraryAmal t) {
+    ref
+        .read(categoryRepositoryProvider)
+        .create(t.category, icon: libraryCategoryIcon(t.category));
+  }
+
+  Future<void> _pickFromLibrary() async {
+    FirebaseAnalytics.instance.logEvent(
+      name: 'library_opened',
+      parameters: {'source': 'form'},
+    );
+    final picked = await context.push<LibraryAmal>('/library?pick=1');
+    if (picked == null || !mounted) return;
+    _ensureCategory(picked);
+    final l = AppLocalizations.of(context);
+    setState(() {
+      _applyLibraryAmal(picked);
+      _titleController.text = localizedAmalTitle(picked.title, l);
+    });
   }
 
   /// Reverses the localized display title back to the canonical English key
@@ -102,8 +148,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
   /// hardcoded translation.
   String _canonicalTitle(String typed, AppLocalizations l) {
     final original =
-        _existing?.title ??
-        (widget.amalId == null ? widget.prefill?.title : null);
+        _existing?.title ?? (widget.amalId == null ? _template?.title : null);
     if (original != null && typed == localizedAmalTitle(original, l)) {
       return original;
     }
@@ -253,6 +298,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
     // Resolved up front: `ref.read` throws once this form unmounts, and the
     // writes below suspend.
     final scheduler = ref.read(reminderSchedulerProvider);
+    final amalRepository = ref.read(amalRepositoryProvider);
     final container = ProviderScope.containerOf(context, listen: false);
     final l = AppLocalizations.of(context);
     final title = _canonicalTitle(_titleController.text.trim(), l);
@@ -264,27 +310,29 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
 
     final int amalId;
     if (_existing == null) {
-      amalId = await ref
-          .read(amalRepositoryProvider)
-          .create(
-            title: title,
-            notificationTitle: localizedAmalTitle(title, l),
-            frequency: _frequency,
-            target: _target,
-            weeklyDays: _frequency == Frequency.weekly && _weeklyPinned
-                ? formatWeeklyDays(_weeklyDays)
-                : null,
-            monthlyDates: _frequency == Frequency.monthly && _monthlyPinned
-                ? formatMonthlyDates(_monthlyDates)
-                : null,
-            periodTarget: _periodTargetForSave,
-            defaultChecked: _defaultChecked,
-            reminderTime: reminder,
-            icon: _icon,
-            category: _category,
-            optionSetId: _optionSetId,
-            requireChoice: _requireChoice && _target == 1,
-          );
+      final sortOrder = _template == null
+          ? 0
+          : await amalRepository.nextSortOrder();
+      amalId = await amalRepository.create(
+        title: title,
+        notificationTitle: localizedAmalTitle(title, l),
+        frequency: _frequency,
+        target: _target,
+        weeklyDays: _frequency == Frequency.weekly && _weeklyPinned
+            ? formatWeeklyDays(_weeklyDays)
+            : null,
+        monthlyDates: _frequency == Frequency.monthly && _monthlyPinned
+            ? formatMonthlyDates(_monthlyDates)
+            : null,
+        periodTarget: _periodTargetForSave,
+        defaultChecked: _defaultChecked,
+        reminderTime: reminder,
+        icon: _icon,
+        category: _category,
+        optionSetId: _optionSetId,
+        requireChoice: _requireChoice && _target == 1,
+        sortOrder: sortOrder,
+      );
       FirebaseAnalytics.instance.logEvent(
         name: 'amal_created',
         parameters: {
@@ -292,6 +340,7 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
           'target': _target,
           'has_reminder': reminder != null ? 1 : 0,
           'category': ?_category,
+          'library_key': ?_template?.key,
         },
       );
     } else {
@@ -435,6 +484,13 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                 Column(
                   crossAxisAlignment: CrossAxisAlignment.stretch,
                   children: [
+                    if (!isEdit) ...[
+                      _LibraryBanner(
+                        picked: _template != null,
+                        onTap: _pickFromLibrary,
+                      ),
+                      const SizedBox(height: 16),
+                    ],
                     // ── Icon + Title row ───────────────────────────────────────
                     Row(
                       crossAxisAlignment: CrossAxisAlignment.start,
@@ -1215,6 +1271,57 @@ class _OptionPreview extends ConsumerWidget {
             ),
           ),
         ],
+      ),
+    );
+  }
+}
+
+class _LibraryBanner extends StatelessWidget {
+  const _LibraryBanner({required this.picked, required this.onTap});
+
+  final bool picked;
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    final theme = Theme.of(context);
+    final scheme = theme.colorScheme;
+    final l = AppLocalizations.of(context);
+    if (picked) {
+      return Row(
+        children: [
+          Icon(Icons.menu_book_outlined, size: 18, color: scheme.primary),
+          const SizedBox(width: 8),
+          Expanded(
+            child: Text(
+              l.libraryFilledIn,
+              style: theme.textTheme.bodyMedium?.copyWith(
+                color: scheme.onSurfaceVariant,
+              ),
+            ),
+          ),
+          TextButton(onPressed: onTap, child: Text(l.libraryChange)),
+        ],
+      );
+    }
+    final count = kAmalLibrary.length;
+    return Material(
+      color: scheme.secondaryContainer,
+      borderRadius: BorderRadius.circular(12),
+      clipBehavior: Clip.antiAlias,
+      child: ListTile(
+        onTap: onTap,
+        iconColor: scheme.onSecondaryContainer,
+        textColor: scheme.onSecondaryContainer,
+        leading: const Icon(Icons.menu_book_outlined),
+        title: Text(
+          l.libraryPickBanner,
+          style: const TextStyle(fontWeight: FontWeight.w600),
+        ),
+        subtitle: Text(
+          l.libraryPickBannerSubtitle(count, lnum(context, count)),
+        ),
+        trailing: const Icon(Icons.chevron_right),
       ),
     );
   }

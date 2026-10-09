@@ -367,7 +367,7 @@ class AppLocalizationsBs extends AppLocalizations {
   String get amalTasbih => 'Tespih 33x';
 
   @override
-  String get amalIstighfar => 'Istigfar 100x';
+  String get amalIstighfar => 'Istigfar';
 
   @override
   String get amalSurahKahf => 'Sura El-Kehf';
@@ -1834,4 +1834,384 @@ class AppLocalizationsBs extends AppLocalizations {
     );
     return '$_temp0';
   }
+
+  @override
+  String get amalFivePrayers => 'Pet dnevnih namaza';
+
+  @override
+  String get amalJumuah => 'Džuma-namaz';
+
+  @override
+  String get amalWitr => 'Vitr-namaz';
+
+  @override
+  String get amalQada => 'Kaza-namazi';
+
+  @override
+  String get amalFajrSunnah => 'Sabahski sunnet';
+
+  @override
+  String get amalDhuhrSunnah => 'Podnevski sunnet';
+
+  @override
+  String get amalAsrSunnah => 'Ikindijski sunnet';
+
+  @override
+  String get amalMaghribSunnah => 'Akšamski sunnet';
+
+  @override
+  String get amalIshaSunnah => 'Jacijski sunnet';
+
+  @override
+  String get amalRawatib => 'Muekked sunneti';
+
+  @override
+  String get amalSiwak => 'Misvak';
+
+  @override
+  String get amalWuduSleep => 'Abdest prije spavanja';
+
+  @override
+  String get amalFridayGhusl => 'Gusul za džumu';
+
+  @override
+  String get amalIshraq => 'Išrak-namaz';
+
+  @override
+  String get amalWuduPrayer => 'Dva rekata nakon abdesta';
+
+  @override
+  String get amalTahiyyah => 'Tehijjetul-mesdžid';
+
+  @override
+  String get amalEarlyJumuah => 'Rani odlazak na džumu';
+
+  @override
+  String get amalAfterSalah => 'Tesbih nakon namaza';
+
+  @override
+  String get amalAfterFajr => 'Tesbih nakon sabaha';
+
+  @override
+  String get amalAfterDhuhr => 'Tesbih nakon podne';
+
+  @override
+  String get amalAfterAsr => 'Tesbih nakon ikindije';
+
+  @override
+  String get amalAfterMaghrib => 'Tesbih nakon akšama';
+
+  @override
+  String get amalAfterIsha => 'Tesbih nakon jacije';
+
+  @override
+  String get amalAyatKursi => 'Ajetul-kursija';
+
+  @override
+  String get amalKursiFajr => 'Ajetul-kursija nakon sabaha';
+
+  @override
+  String get amalKursiDhuhr => 'Ajetul-kursija nakon podne';
+
+  @override
+  String get amalKursiAsr => 'Ajetul-kursija nakon ikindije';
+
+  @override
+  String get amalKursiMaghrib => 'Ajetul-kursija nakon akšama';
+
+  @override
+  String get amalKursiIsha => 'Ajetul-kursija nakon jacije';
+
+  @override
+  String get amalSayyidIstighfar => 'Sejjidul-istigfar';
+
+  @override
+  String get amalSalawat => 'Salavat';
+
+  @override
+  String get amalSubhanallah => 'Subhanallahi ve bihamdihi';
+
+  @override
+  String get amalTahlil => 'La ilahe illallah';
+
+  @override
+  String get amalBedtimeAdhkar => 'Zikr prije spavanja';
+
+  @override
+  String get amalFridaySalawat => 'Salavat petkom';
+
+  @override
+  String get amalHawqala => 'La havle ve la kuvvete';
+
+  @override
+  String get amalTasbihFatimah => 'Fatimin tesbih';
+
+  @override
+  String get amalWakingAdhkar => 'Zikr po buđenju';
+
+  @override
+  String get amalDuaAdhan => 'Dova nakon ezana';
+
+  @override
+  String get amalDuaIqamah => 'Dova između ezana i ikameta';
+
+  @override
+  String get amalDuaSujood => 'Dova na sedždi';
+
+  @override
+  String get amalDuaParents => 'Dova za roditelje';
+
+  @override
+  String get amalDuaOthers => 'Dova za druge';
+
+  @override
+  String get amalFridayHour => 'Dova u posljednjem satu petka';
+
+  @override
+  String get amalLastThird => 'Dova u posljednjoj trećini noći';
+
+  @override
+  String get amalMulk => 'Sura El-Mulk';
+
+  @override
+  String get amalBaqarahEnd => 'Posljednja dva ajeta El-Bekare';
+
+  @override
+  String get amalSajdah => 'Sura Es-Sedžda';
+
+  @override
+  String get amalQuls => 'Ihlas, Felek i Nas';
+
+  @override
+  String get amalYasin => 'Sura Jasin';
+
+  @override
+  String get amalWaqiah => 'Sura El-Vakia';
+
+  @override
+  String get amalHifz => 'Hifz Kur\'ana';
+
+  @override
+  String get amalMurajaah => 'Ponavljanje hifza';
+
+  @override
+  String get amalTafsir => 'Tefsir';
+
+  @override
+  String get amalListenQuran => 'Slušanje Kur\'ana';
+
+  @override
+  String get amalTeachQuran => 'Podučavanje Kur\'ana';
+
+  @override
+  String get amalMonThu => 'Post ponedjeljkom i četvrtkom';
+
+  @override
+  String get amalThreeDays => 'Tri dana posta mjesečno';
+
+  @override
+  String get amalDailySadaqah => 'Svakodnevna sadaka';
+
+  @override
+  String get amalFeed => 'Hranjenje gladnih';
+
+  @override
+  String get amalHelpNeed => 'Pomoć potrebnom';
+
+  @override
+  String get amalOrphan => 'Briga o siročetu';
+
+  @override
+  String get amalGiveWater => 'Davanje vode';
+
+  @override
+  String get amalLearnHadith => 'Učenje jednog hadisa';
+
+  @override
+  String get amalReadBook => 'Čitanje islamske knjige';
+
+  @override
+  String get amalSeerah => 'Izučavanje sire';
+
+  @override
+  String get amalClass => 'Prisustvo predavanju';
+
+  @override
+  String get amalArabic => 'Učenje arapskog';
+
+  @override
+  String get amalLearnDua => 'Učenje nove dove';
+
+  @override
+  String get amalShare => 'Prenošenje naučenog';
+
+  @override
+  String get amalFiqh => 'Izučavanje fikha';
+
+  @override
+  String get amalMuhasaba => 'Noćna muhasaba';
+
+  @override
+  String get amalSpeakGood => 'Govori dobro ili šuti';
+
+  @override
+  String get amalNoBackbiting => 'Bez ogovaranja';
+
+  @override
+  String get amalAnger => 'Obuzdavanje srdžbe';
+
+  @override
+  String get amalGaze => 'Obaranje pogleda';
+
+  @override
+  String get amalTruthful => 'Istinoljubivost';
+
+  @override
+  String get amalSmile => 'Osmijeh';
+
+  @override
+  String get amalSalam => 'Širenje selama';
+
+  @override
+  String get amalForgive => 'Opraštanje drugima';
+
+  @override
+  String get amalGratitude => 'Zahvalnost';
+
+  @override
+  String get amalVisitSick => 'Obilazak bolesnika';
+
+  @override
+  String get amalNeighbours => 'Dobrota prema komšijama';
+
+  @override
+  String get amalRemoveHarm => 'Uklanjanje smetnje s puta';
+
+  @override
+  String get amalParents => 'Dobročinstvo prema roditeljima';
+
+  @override
+  String get amalFamilyTies => 'Održavanje rodbinskih veza';
+
+  @override
+  String get amalHelpHome => 'Pomoć u kući';
+
+  @override
+  String get amalTeachChildren => 'Podučavanje djece vjeri';
+
+  @override
+  String get amalSpouse => 'Dobrota prema supružniku';
+
+  @override
+  String get categoryDua => 'Dova';
+
+  @override
+  String get categoryFasting => 'Post';
+
+  @override
+  String get categoryKnowledge => 'Znanje';
+
+  @override
+  String get categoryCharacter => 'Ahlak';
+
+  @override
+  String get categoryFamily => 'Porodica';
+
+  @override
+  String get libraryTitle => 'Biblioteka amela';
+
+  @override
+  String get librarySearchHint => 'Pretražite amele';
+
+  @override
+  String get libraryAll => 'Sve';
+
+  @override
+  String get libraryAdded => 'Dodano u Danas';
+
+  @override
+  String libraryAddedShowsOn(String days) {
+    return 'Dodano · prikazuje se: $days';
+  }
+
+  @override
+  String libraryNoMatch(String query) {
+    return 'Nijedan amel ne odgovara „$query“';
+  }
+
+  @override
+  String libraryCreateNamed(String query) {
+    return 'Kreirajte „$query“';
+  }
+
+  @override
+  String get libraryPickBanner => 'Odaberite iz biblioteke amela';
+
+  @override
+  String libraryPickBannerSubtitle(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText gotovih amela',
+      few: '$countText gotova amela',
+      one: '$countText gotov amel',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get libraryFilledIn => 'Popunjeno iz biblioteke amela';
+
+  @override
+  String get libraryChange => 'Promijenite';
+
+  @override
+  String get libraryEditAction => 'Uredite';
+
+  @override
+  String libraryWeeklyAny(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText dana sedmično',
+      one: 'Jednom sedmično',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String libraryMonthlyAny(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText dana mjesečno',
+      one: 'Jednom mjesečno',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String libraryTimes(num count, String countText) {
+    String _temp0 = intl.Intl.pluralLogic(
+      count,
+      locale: localeName,
+      other: '$countText puta',
+      one: '$countText put',
+    );
+    return '$_temp0';
+  }
+
+  @override
+  String get libraryAnyAmount => 'Bilo koliko';
+
+  @override
+  String libraryAddTooltip(String title) {
+    return 'Dodajte $title';
+  }
+
+  @override
+  String get libraryOnList => 'Na vašoj je listi';
+
+  @override
+  String get todayEmptyBrowse => 'Pregledajte biblioteku amela';
 }

@@ -233,7 +233,7 @@
   "addAmal": "Add Amal",
   "customAmal": "Custom Amal",
   "amalTasbih": "Tasbih 33x",
-  "amalIstighfar": "Istighfar 100x",
+  "amalIstighfar": "Istighfar",
   "amalSurahKahf": "Surah Kahf",
   "amalSadaqah": "Sadaqah",
   "amalTahajjud": "Tahajjud",
@@ -1273,5 +1273,302 @@
   "optionDetailRecentDaysCount": "{count, plural, =1{Last 1 day} other{Last {count} days}}",
   "@optionDetailRecentDaysCount": {
     "placeholders": { "count": { "type": "int" } }
+  },
+  "amalFivePrayers": "Five daily prayers",
+  "@amalFivePrayers": {
+    "description": "Library amal: one row that counts all five fard prayers (5 a day). Titles in this library are short labels on a list row; keep them short and use the name this language's Muslims actually use."
+  },
+  "amalJumuah": "Jumu'ah",
+  "amalWitr": "Witr",
+  "amalQada": "Qada prayers",
+  "@amalQada": {
+    "description": "Making up missed fard prayers"
+  },
+  "amalFajrSunnah": "Fajr Sunnah",
+  "amalDhuhrSunnah": "Dhuhr Sunnah",
+  "amalAsrSunnah": "Asr Sunnah",
+  "amalMaghribSunnah": "Maghrib Sunnah",
+  "amalIshaSunnah": "Isha Sunnah",
+  "amalRawatib": "Sunnah Rawatib",
+  "@amalRawatib": {
+    "description": "The emphasised sunnah prayers attached to the fard prayers, tracked as one row"
+  },
+  "amalSiwak": "Siwak",
+  "amalWuduSleep": "Wudu before sleep",
+  "amalFridayGhusl": "Friday ghusl",
+  "amalIshraq": "Ishraq",
+  "amalWuduPrayer": "Two rak'ahs after wudu",
+  "@amalWuduPrayer": {
+    "description": "Two voluntary rak'ahs prayed after making wudu (sunnat al-wudu)"
+  },
+  "amalTahiyyah": "Tahiyyat al-Masjid",
+  "@amalTahiyyah": {
+    "description": "Two rak'ahs on entering the masjid"
+  },
+  "amalEarlyJumuah": "Early to Jumu'ah",
+  "@amalEarlyJumuah": {
+    "description": "Going early to the Friday prayer"
+  },
+  "amalAfterSalah": "After-Salah Adhkar",
+  "@amalAfterSalah": {
+    "description": "The adhkar said after every fard prayer, tracked as one row (5 a day)"
+  },
+  "amalAfterFajr": "After-Fajr Adhkar",
+  "@amalAfterFajr": {
+    "description": "The adhkar said after the Fajr prayer"
+  },
+  "amalAfterDhuhr": "After-Dhuhr Adhkar",
+  "amalAfterAsr": "After-Asr Adhkar",
+  "amalAfterMaghrib": "After-Maghrib Adhkar",
+  "amalAfterIsha": "After-Isha Adhkar",
+  "amalAyatKursi": "Ayat al-Kursi",
+  "amalKursiFajr": "Ayat al-Kursi after Fajr",
+  "@amalKursiFajr": {
+    "description": "Reciting Ayat al-Kursi after the Fajr prayer"
+  },
+  "amalKursiDhuhr": "Ayat al-Kursi after Dhuhr",
+  "amalKursiAsr": "Ayat al-Kursi after Asr",
+  "amalKursiMaghrib": "Ayat al-Kursi after Maghrib",
+  "amalKursiIsha": "Ayat al-Kursi after Isha",
+  "amalSayyidIstighfar": "Sayyid al-Istighfar",
+  "amalSalawat": "Salawat",
+  "amalSubhanallah": "SubhanAllahi wa bihamdihi",
+  "@amalSubhanallah": {
+    "description": "The dhikr 'SubhanAllahi wa bihamdihi'; keep it as the Arabic phrase in the script and spelling this language uses for it"
+  },
+  "amalTahlil": "La ilaha illallah",
+  "@amalTahlil": {
+    "description": "The dhikr 'La ilaha illallah'; keep it as the Arabic phrase in the script and spelling this language uses for it"
+  },
+  "amalBedtimeAdhkar": "Bedtime Adhkar",
+  "amalFridaySalawat": "Friday Salawat",
+  "amalHawqala": "La hawla wa la quwwata",
+  "@amalHawqala": {
+    "description": "The dhikr 'La hawla wa la quwwata illa billah'; keep it as the Arabic phrase in the script and spelling this language uses for it"
+  },
+  "amalTasbihFatimah": "Tasbih Fatimah",
+  "amalWakingAdhkar": "Waking Adhkar",
+  "amalDuaAdhan": "Dua after Adhan",
+  "amalDuaIqamah": "Dua between Adhan & Iqamah",
+  "amalDuaSujood": "Dua in Sujood",
+  "amalDuaParents": "Dua for parents",
+  "amalDuaOthers": "Dua for others",
+  "amalFridayHour": "Dua in Friday's last hour",
+  "@amalFridayHour": {
+    "description": "Making dua in the last hour of Friday, after Asr"
+  },
+  "amalLastThird": "Night dua (last third)",
+  "@amalLastThird": {
+    "description": "Making dua in the last third of the night"
+  },
+  "amalMulk": "Surah al-Mulk",
+  "amalBaqarahEnd": "Last 2 ayat of al-Baqarah",
+  "@amalBaqarahEnd": {
+    "description": "Reciting the last two verses of Surah al-Baqarah at night"
+  },
+  "amalSajdah": "Surah as-Sajdah",
+  "amalQuls": "Three Quls",
+  "@amalQuls": {
+    "description": "Reciting al-Ikhlas, al-Falaq and an-Nas"
+  },
+  "amalYasin": "Surah Yasin",
+  "amalWaqiah": "Surah al-Waqi'ah",
+  "amalHifz": "Hifz",
+  "amalMurajaah": "Hifz revision",
+  "@amalMurajaah": {
+    "description": "Revising Quran already memorised"
+  },
+  "amalTafsir": "Tafsir",
+  "amalListenQuran": "Listen to Quran",
+  "amalTeachQuran": "Teach Quran",
+  "amalMonThu": "Monday & Thursday fast",
+  "amalThreeDays": "3 fasts a month",
+  "@amalThreeDays": {
+    "description": "Fasting any three days each month"
+  },
+  "amalDailySadaqah": "Daily Sadaqah",
+  "amalFeed": "Feed someone",
+  "amalHelpNeed": "Help someone in need",
+  "amalOrphan": "Support an orphan",
+  "amalGiveWater": "Give water",
+  "amalLearnHadith": "Learn a hadith",
+  "amalReadBook": "Read an Islamic book",
+  "amalSeerah": "Study the Seerah",
+  "amalClass": "Attend a class",
+  "amalArabic": "Learn Arabic",
+  "amalLearnDua": "Learn a new dua",
+  "amalShare": "Share what you learn",
+  "amalFiqh": "Study fiqh",
+  "amalMuhasaba": "Nightly Muhasaba",
+  "@amalMuhasaba": {
+    "description": "Reviewing one's own day before sleep (self-accountability); the app shares this word"
+  },
+  "amalSpeakGood": "Speak good or stay silent",
+  "amalNoBackbiting": "No backbiting",
+  "amalAnger": "Control anger",
+  "amalGaze": "Lower the gaze",
+  "amalTruthful": "Be truthful",
+  "amalSmile": "Smile",
+  "amalSalam": "Spread salam",
+  "amalForgive": "Forgive others",
+  "amalGratitude": "Gratitude",
+  "amalVisitSick": "Visit the sick",
+  "amalNeighbours": "Kindness to neighbours",
+  "amalRemoveHarm": "Remove harm from the path",
+  "amalParents": "Kindness to parents",
+  "amalFamilyTies": "Keep family ties",
+  "@amalFamilyTies": {
+    "description": "Keeping ties with relatives (silat ar-rahim)"
+  },
+  "amalHelpHome": "Help at home",
+  "amalTeachChildren": "Teach your children",
+  "amalSpouse": "Kindness to spouse",
+  "categoryDua": "Dua",
+  "@categoryDua": {
+    "description": "Library category for supplications"
+  },
+  "categoryFasting": "Fasting",
+  "@categoryFasting": {
+    "description": "Library category for voluntary fasts"
+  },
+  "categoryKnowledge": "Knowledge",
+  "@categoryKnowledge": {
+    "description": "Library category for learning the deen"
+  },
+  "categoryCharacter": "Character",
+  "@categoryCharacter": {
+    "description": "Library category for good character (akhlaq)"
+  },
+  "categoryFamily": "Family",
+  "@categoryFamily": {
+    "description": "Library category for parents, relatives, spouse and children"
+  },
+  "libraryTitle": "Amal Library",
+  "@libraryTitle": {
+    "description": "Name of the screen listing ready-made amals; also the tooltip of the Today app-bar button that opens it"
+  },
+  "librarySearchHint": "Search amals",
+  "@librarySearchHint": {
+    "description": "Placeholder of the search field on the Amal Library screen"
+  },
+  "libraryAll": "All",
+  "@libraryAll": {
+    "description": "Filter chip that shows every category in the Amal Library"
+  },
+  "libraryAdded": "Added to Today",
+  "@libraryAdded": {
+    "description": "Snackbar after an amal is added from the Amal Library"
+  },
+  "libraryAddedShowsOn": "Added · shows on {days}",
+  "@libraryAddedShowsOn": {
+    "description": "Snackbar after adding an amal that isn't due today; days is a list of weekday names, e.g. 'Monday, Thursday'",
+    "placeholders": {
+      "days": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryNoMatch": "No amal matches “{query}”",
+  "@libraryNoMatch": {
+    "description": "Shown when a search in the Amal Library finds nothing",
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryCreateNamed": "Create “{query}”",
+  "@libraryCreateNamed": {
+    "description": "Row that creates a custom amal with the searched text as its title",
+    "placeholders": {
+      "query": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryPickBanner": "Pick from the Amal Library",
+  "@libraryPickBanner": {
+    "description": "Banner at the top of the New amal form that opens the Amal Library to pick an amal"
+  },
+  "libraryPickBannerSubtitle": "{count, plural, =1{{countText} ready-made amal} other{{countText} ready-made amals}}",
+  "@libraryPickBannerSubtitle": {
+    "description": "Under the banner; countText is the already-localized number, count only selects the plural form",
+    "placeholders": {
+      "count": {
+        "type": "num"
+      },
+      "countText": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryFilledIn": "Filled in from the Amal Library",
+  "@libraryFilledIn": {
+    "description": "Shown at the top of the New amal form after an amal was picked from the library"
+  },
+  "libraryChange": "Change",
+  "@libraryChange": {
+    "description": "Button next to libraryFilledIn that opens the library again"
+  },
+  "libraryEditAction": "Edit",
+  "@libraryEditAction": {
+    "description": "Snackbar action that opens the amal just added for editing"
+  },
+  "libraryWeeklyAny": "{count, plural, =1{Once a week} other{{countText} days a week}}",
+  "@libraryWeeklyAny": {
+    "description": "Schedule under a library amal done on any days of the week; countText is the localized number, count selects the plural form",
+    "placeholders": {
+      "count": {
+        "type": "num"
+      },
+      "countText": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryMonthlyAny": "{count, plural, =1{Once a month} other{{countText} days a month}}",
+  "@libraryMonthlyAny": {
+    "description": "Schedule under a library amal done on any days of the month; countText is the localized number, count selects the plural form",
+    "placeholders": {
+      "count": {
+        "type": "num"
+      },
+      "countText": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryTimes": "{count, plural, other{{countText}×}}",
+  "@libraryTimes": {
+    "description": "Count per day under a library amal, e.g. '100×'; countText is the localized number, count selects the plural form",
+    "placeholders": {
+      "count": {
+        "type": "num"
+      },
+      "countText": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryAnyAmount": "Any amount",
+  "@libraryAnyAmount": {
+    "description": "Under a library amal with no daily goal: any amount counts"
+  },
+  "libraryAddTooltip": "Add {title}",
+  "@libraryAddTooltip": {
+    "description": "Accessibility label of the add button on a library row",
+    "placeholders": {
+      "title": {
+        "type": "String"
+      }
+    }
+  },
+  "libraryOnList": "On your list",
+  "@libraryOnList": {
+    "description": "Accessibility label of the check mark on a library amal that is already tracked"
+  },
+  "todayEmptyBrowse": "Browse the Amal Library",
+  "@todayEmptyBrowse": {
+    "description": "Button on the empty Today screen that opens the Amal Library"
   }
 }

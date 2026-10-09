@@ -755,7 +755,7 @@ abstract class AppLocalizations {
   /// No description provided for @amalIstighfar.
   ///
   /// In en, this message translates to:
-  /// **'Istighfar 100x'**
+  /// **'Istighfar'**
   String get amalIstighfar;
 
   /// No description provided for @amalSurahKahf.
@@ -3120,6 +3120,684 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'{count, plural, =1{Last 1 day} other{Last {count} days}}'**
   String optionDetailRecentDaysCount(int count);
+
+  /// Library amal: one row that counts all five fard prayers (5 a day). Titles in this library are short labels on a list row; keep them short and use the name this language's Muslims actually use.
+  ///
+  /// In en, this message translates to:
+  /// **'Five daily prayers'**
+  String get amalFivePrayers;
+
+  /// No description provided for @amalJumuah.
+  ///
+  /// In en, this message translates to:
+  /// **'Jumu\'ah'**
+  String get amalJumuah;
+
+  /// No description provided for @amalWitr.
+  ///
+  /// In en, this message translates to:
+  /// **'Witr'**
+  String get amalWitr;
+
+  /// Making up missed fard prayers
+  ///
+  /// In en, this message translates to:
+  /// **'Qada prayers'**
+  String get amalQada;
+
+  /// No description provided for @amalFajrSunnah.
+  ///
+  /// In en, this message translates to:
+  /// **'Fajr Sunnah'**
+  String get amalFajrSunnah;
+
+  /// No description provided for @amalDhuhrSunnah.
+  ///
+  /// In en, this message translates to:
+  /// **'Dhuhr Sunnah'**
+  String get amalDhuhrSunnah;
+
+  /// No description provided for @amalAsrSunnah.
+  ///
+  /// In en, this message translates to:
+  /// **'Asr Sunnah'**
+  String get amalAsrSunnah;
+
+  /// No description provided for @amalMaghribSunnah.
+  ///
+  /// In en, this message translates to:
+  /// **'Maghrib Sunnah'**
+  String get amalMaghribSunnah;
+
+  /// No description provided for @amalIshaSunnah.
+  ///
+  /// In en, this message translates to:
+  /// **'Isha Sunnah'**
+  String get amalIshaSunnah;
+
+  /// The emphasised sunnah prayers attached to the fard prayers, tracked as one row
+  ///
+  /// In en, this message translates to:
+  /// **'Sunnah Rawatib'**
+  String get amalRawatib;
+
+  /// No description provided for @amalSiwak.
+  ///
+  /// In en, this message translates to:
+  /// **'Siwak'**
+  String get amalSiwak;
+
+  /// No description provided for @amalWuduSleep.
+  ///
+  /// In en, this message translates to:
+  /// **'Wudu before sleep'**
+  String get amalWuduSleep;
+
+  /// No description provided for @amalFridayGhusl.
+  ///
+  /// In en, this message translates to:
+  /// **'Friday ghusl'**
+  String get amalFridayGhusl;
+
+  /// No description provided for @amalIshraq.
+  ///
+  /// In en, this message translates to:
+  /// **'Ishraq'**
+  String get amalIshraq;
+
+  /// Two voluntary rak'ahs prayed after making wudu (sunnat al-wudu)
+  ///
+  /// In en, this message translates to:
+  /// **'Two rak\'ahs after wudu'**
+  String get amalWuduPrayer;
+
+  /// Two rak'ahs on entering the masjid
+  ///
+  /// In en, this message translates to:
+  /// **'Tahiyyat al-Masjid'**
+  String get amalTahiyyah;
+
+  /// Going early to the Friday prayer
+  ///
+  /// In en, this message translates to:
+  /// **'Early to Jumu\'ah'**
+  String get amalEarlyJumuah;
+
+  /// The adhkar said after every fard prayer, tracked as one row (5 a day)
+  ///
+  /// In en, this message translates to:
+  /// **'After-Salah Adhkar'**
+  String get amalAfterSalah;
+
+  /// The adhkar said after the Fajr prayer
+  ///
+  /// In en, this message translates to:
+  /// **'After-Fajr Adhkar'**
+  String get amalAfterFajr;
+
+  /// No description provided for @amalAfterDhuhr.
+  ///
+  /// In en, this message translates to:
+  /// **'After-Dhuhr Adhkar'**
+  String get amalAfterDhuhr;
+
+  /// No description provided for @amalAfterAsr.
+  ///
+  /// In en, this message translates to:
+  /// **'After-Asr Adhkar'**
+  String get amalAfterAsr;
+
+  /// No description provided for @amalAfterMaghrib.
+  ///
+  /// In en, this message translates to:
+  /// **'After-Maghrib Adhkar'**
+  String get amalAfterMaghrib;
+
+  /// No description provided for @amalAfterIsha.
+  ///
+  /// In en, this message translates to:
+  /// **'After-Isha Adhkar'**
+  String get amalAfterIsha;
+
+  /// No description provided for @amalAyatKursi.
+  ///
+  /// In en, this message translates to:
+  /// **'Ayat al-Kursi'**
+  String get amalAyatKursi;
+
+  /// Reciting Ayat al-Kursi after the Fajr prayer
+  ///
+  /// In en, this message translates to:
+  /// **'Ayat al-Kursi after Fajr'**
+  String get amalKursiFajr;
+
+  /// No description provided for @amalKursiDhuhr.
+  ///
+  /// In en, this message translates to:
+  /// **'Ayat al-Kursi after Dhuhr'**
+  String get amalKursiDhuhr;
+
+  /// No description provided for @amalKursiAsr.
+  ///
+  /// In en, this message translates to:
+  /// **'Ayat al-Kursi after Asr'**
+  String get amalKursiAsr;
+
+  /// No description provided for @amalKursiMaghrib.
+  ///
+  /// In en, this message translates to:
+  /// **'Ayat al-Kursi after Maghrib'**
+  String get amalKursiMaghrib;
+
+  /// No description provided for @amalKursiIsha.
+  ///
+  /// In en, this message translates to:
+  /// **'Ayat al-Kursi after Isha'**
+  String get amalKursiIsha;
+
+  /// No description provided for @amalSayyidIstighfar.
+  ///
+  /// In en, this message translates to:
+  /// **'Sayyid al-Istighfar'**
+  String get amalSayyidIstighfar;
+
+  /// No description provided for @amalSalawat.
+  ///
+  /// In en, this message translates to:
+  /// **'Salawat'**
+  String get amalSalawat;
+
+  /// The dhikr 'SubhanAllahi wa bihamdihi'; keep it as the Arabic phrase in the script and spelling this language uses for it
+  ///
+  /// In en, this message translates to:
+  /// **'SubhanAllahi wa bihamdihi'**
+  String get amalSubhanallah;
+
+  /// The dhikr 'La ilaha illallah'; keep it as the Arabic phrase in the script and spelling this language uses for it
+  ///
+  /// In en, this message translates to:
+  /// **'La ilaha illallah'**
+  String get amalTahlil;
+
+  /// No description provided for @amalBedtimeAdhkar.
+  ///
+  /// In en, this message translates to:
+  /// **'Bedtime Adhkar'**
+  String get amalBedtimeAdhkar;
+
+  /// No description provided for @amalFridaySalawat.
+  ///
+  /// In en, this message translates to:
+  /// **'Friday Salawat'**
+  String get amalFridaySalawat;
+
+  /// The dhikr 'La hawla wa la quwwata illa billah'; keep it as the Arabic phrase in the script and spelling this language uses for it
+  ///
+  /// In en, this message translates to:
+  /// **'La hawla wa la quwwata'**
+  String get amalHawqala;
+
+  /// No description provided for @amalTasbihFatimah.
+  ///
+  /// In en, this message translates to:
+  /// **'Tasbih Fatimah'**
+  String get amalTasbihFatimah;
+
+  /// No description provided for @amalWakingAdhkar.
+  ///
+  /// In en, this message translates to:
+  /// **'Waking Adhkar'**
+  String get amalWakingAdhkar;
+
+  /// No description provided for @amalDuaAdhan.
+  ///
+  /// In en, this message translates to:
+  /// **'Dua after Adhan'**
+  String get amalDuaAdhan;
+
+  /// No description provided for @amalDuaIqamah.
+  ///
+  /// In en, this message translates to:
+  /// **'Dua between Adhan & Iqamah'**
+  String get amalDuaIqamah;
+
+  /// No description provided for @amalDuaSujood.
+  ///
+  /// In en, this message translates to:
+  /// **'Dua in Sujood'**
+  String get amalDuaSujood;
+
+  /// No description provided for @amalDuaParents.
+  ///
+  /// In en, this message translates to:
+  /// **'Dua for parents'**
+  String get amalDuaParents;
+
+  /// No description provided for @amalDuaOthers.
+  ///
+  /// In en, this message translates to:
+  /// **'Dua for others'**
+  String get amalDuaOthers;
+
+  /// Making dua in the last hour of Friday, after Asr
+  ///
+  /// In en, this message translates to:
+  /// **'Dua in Friday\'s last hour'**
+  String get amalFridayHour;
+
+  /// Making dua in the last third of the night
+  ///
+  /// In en, this message translates to:
+  /// **'Night dua (last third)'**
+  String get amalLastThird;
+
+  /// No description provided for @amalMulk.
+  ///
+  /// In en, this message translates to:
+  /// **'Surah al-Mulk'**
+  String get amalMulk;
+
+  /// Reciting the last two verses of Surah al-Baqarah at night
+  ///
+  /// In en, this message translates to:
+  /// **'Last 2 ayat of al-Baqarah'**
+  String get amalBaqarahEnd;
+
+  /// No description provided for @amalSajdah.
+  ///
+  /// In en, this message translates to:
+  /// **'Surah as-Sajdah'**
+  String get amalSajdah;
+
+  /// Reciting al-Ikhlas, al-Falaq and an-Nas
+  ///
+  /// In en, this message translates to:
+  /// **'Three Quls'**
+  String get amalQuls;
+
+  /// No description provided for @amalYasin.
+  ///
+  /// In en, this message translates to:
+  /// **'Surah Yasin'**
+  String get amalYasin;
+
+  /// No description provided for @amalWaqiah.
+  ///
+  /// In en, this message translates to:
+  /// **'Surah al-Waqi\'ah'**
+  String get amalWaqiah;
+
+  /// No description provided for @amalHifz.
+  ///
+  /// In en, this message translates to:
+  /// **'Hifz'**
+  String get amalHifz;
+
+  /// Revising Quran already memorised
+  ///
+  /// In en, this message translates to:
+  /// **'Hifz revision'**
+  String get amalMurajaah;
+
+  /// No description provided for @amalTafsir.
+  ///
+  /// In en, this message translates to:
+  /// **'Tafsir'**
+  String get amalTafsir;
+
+  /// No description provided for @amalListenQuran.
+  ///
+  /// In en, this message translates to:
+  /// **'Listen to Quran'**
+  String get amalListenQuran;
+
+  /// No description provided for @amalTeachQuran.
+  ///
+  /// In en, this message translates to:
+  /// **'Teach Quran'**
+  String get amalTeachQuran;
+
+  /// No description provided for @amalMonThu.
+  ///
+  /// In en, this message translates to:
+  /// **'Monday & Thursday fast'**
+  String get amalMonThu;
+
+  /// Fasting any three days each month
+  ///
+  /// In en, this message translates to:
+  /// **'3 fasts a month'**
+  String get amalThreeDays;
+
+  /// No description provided for @amalDailySadaqah.
+  ///
+  /// In en, this message translates to:
+  /// **'Daily Sadaqah'**
+  String get amalDailySadaqah;
+
+  /// No description provided for @amalFeed.
+  ///
+  /// In en, this message translates to:
+  /// **'Feed someone'**
+  String get amalFeed;
+
+  /// No description provided for @amalHelpNeed.
+  ///
+  /// In en, this message translates to:
+  /// **'Help someone in need'**
+  String get amalHelpNeed;
+
+  /// No description provided for @amalOrphan.
+  ///
+  /// In en, this message translates to:
+  /// **'Support an orphan'**
+  String get amalOrphan;
+
+  /// No description provided for @amalGiveWater.
+  ///
+  /// In en, this message translates to:
+  /// **'Give water'**
+  String get amalGiveWater;
+
+  /// No description provided for @amalLearnHadith.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn a hadith'**
+  String get amalLearnHadith;
+
+  /// No description provided for @amalReadBook.
+  ///
+  /// In en, this message translates to:
+  /// **'Read an Islamic book'**
+  String get amalReadBook;
+
+  /// No description provided for @amalSeerah.
+  ///
+  /// In en, this message translates to:
+  /// **'Study the Seerah'**
+  String get amalSeerah;
+
+  /// No description provided for @amalClass.
+  ///
+  /// In en, this message translates to:
+  /// **'Attend a class'**
+  String get amalClass;
+
+  /// No description provided for @amalArabic.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn Arabic'**
+  String get amalArabic;
+
+  /// No description provided for @amalLearnDua.
+  ///
+  /// In en, this message translates to:
+  /// **'Learn a new dua'**
+  String get amalLearnDua;
+
+  /// No description provided for @amalShare.
+  ///
+  /// In en, this message translates to:
+  /// **'Share what you learn'**
+  String get amalShare;
+
+  /// No description provided for @amalFiqh.
+  ///
+  /// In en, this message translates to:
+  /// **'Study fiqh'**
+  String get amalFiqh;
+
+  /// Reviewing one's own day before sleep (self-accountability); the app shares this word
+  ///
+  /// In en, this message translates to:
+  /// **'Nightly Muhasaba'**
+  String get amalMuhasaba;
+
+  /// No description provided for @amalSpeakGood.
+  ///
+  /// In en, this message translates to:
+  /// **'Speak good or stay silent'**
+  String get amalSpeakGood;
+
+  /// No description provided for @amalNoBackbiting.
+  ///
+  /// In en, this message translates to:
+  /// **'No backbiting'**
+  String get amalNoBackbiting;
+
+  /// No description provided for @amalAnger.
+  ///
+  /// In en, this message translates to:
+  /// **'Control anger'**
+  String get amalAnger;
+
+  /// No description provided for @amalGaze.
+  ///
+  /// In en, this message translates to:
+  /// **'Lower the gaze'**
+  String get amalGaze;
+
+  /// No description provided for @amalTruthful.
+  ///
+  /// In en, this message translates to:
+  /// **'Be truthful'**
+  String get amalTruthful;
+
+  /// No description provided for @amalSmile.
+  ///
+  /// In en, this message translates to:
+  /// **'Smile'**
+  String get amalSmile;
+
+  /// No description provided for @amalSalam.
+  ///
+  /// In en, this message translates to:
+  /// **'Spread salam'**
+  String get amalSalam;
+
+  /// No description provided for @amalForgive.
+  ///
+  /// In en, this message translates to:
+  /// **'Forgive others'**
+  String get amalForgive;
+
+  /// No description provided for @amalGratitude.
+  ///
+  /// In en, this message translates to:
+  /// **'Gratitude'**
+  String get amalGratitude;
+
+  /// No description provided for @amalVisitSick.
+  ///
+  /// In en, this message translates to:
+  /// **'Visit the sick'**
+  String get amalVisitSick;
+
+  /// No description provided for @amalNeighbours.
+  ///
+  /// In en, this message translates to:
+  /// **'Kindness to neighbours'**
+  String get amalNeighbours;
+
+  /// No description provided for @amalRemoveHarm.
+  ///
+  /// In en, this message translates to:
+  /// **'Remove harm from the path'**
+  String get amalRemoveHarm;
+
+  /// No description provided for @amalParents.
+  ///
+  /// In en, this message translates to:
+  /// **'Kindness to parents'**
+  String get amalParents;
+
+  /// Keeping ties with relatives (silat ar-rahim)
+  ///
+  /// In en, this message translates to:
+  /// **'Keep family ties'**
+  String get amalFamilyTies;
+
+  /// No description provided for @amalHelpHome.
+  ///
+  /// In en, this message translates to:
+  /// **'Help at home'**
+  String get amalHelpHome;
+
+  /// No description provided for @amalTeachChildren.
+  ///
+  /// In en, this message translates to:
+  /// **'Teach your children'**
+  String get amalTeachChildren;
+
+  /// No description provided for @amalSpouse.
+  ///
+  /// In en, this message translates to:
+  /// **'Kindness to spouse'**
+  String get amalSpouse;
+
+  /// Library category for supplications
+  ///
+  /// In en, this message translates to:
+  /// **'Dua'**
+  String get categoryDua;
+
+  /// Library category for voluntary fasts
+  ///
+  /// In en, this message translates to:
+  /// **'Fasting'**
+  String get categoryFasting;
+
+  /// Library category for learning the deen
+  ///
+  /// In en, this message translates to:
+  /// **'Knowledge'**
+  String get categoryKnowledge;
+
+  /// Library category for good character (akhlaq)
+  ///
+  /// In en, this message translates to:
+  /// **'Character'**
+  String get categoryCharacter;
+
+  /// Library category for parents, relatives, spouse and children
+  ///
+  /// In en, this message translates to:
+  /// **'Family'**
+  String get categoryFamily;
+
+  /// Name of the screen listing ready-made amals; also the tooltip of the Today app-bar button that opens it
+  ///
+  /// In en, this message translates to:
+  /// **'Amal Library'**
+  String get libraryTitle;
+
+  /// Placeholder of the search field on the Amal Library screen
+  ///
+  /// In en, this message translates to:
+  /// **'Search amals'**
+  String get librarySearchHint;
+
+  /// Filter chip that shows every category in the Amal Library
+  ///
+  /// In en, this message translates to:
+  /// **'All'**
+  String get libraryAll;
+
+  /// Snackbar after an amal is added from the Amal Library
+  ///
+  /// In en, this message translates to:
+  /// **'Added to Today'**
+  String get libraryAdded;
+
+  /// Snackbar after adding an amal that isn't due today; days is a list of weekday names, e.g. 'Monday, Thursday'
+  ///
+  /// In en, this message translates to:
+  /// **'Added · shows on {days}'**
+  String libraryAddedShowsOn(String days);
+
+  /// Shown when a search in the Amal Library finds nothing
+  ///
+  /// In en, this message translates to:
+  /// **'No amal matches “{query}”'**
+  String libraryNoMatch(String query);
+
+  /// Row that creates a custom amal with the searched text as its title
+  ///
+  /// In en, this message translates to:
+  /// **'Create “{query}”'**
+  String libraryCreateNamed(String query);
+
+  /// Banner at the top of the New amal form that opens the Amal Library to pick an amal
+  ///
+  /// In en, this message translates to:
+  /// **'Pick from the Amal Library'**
+  String get libraryPickBanner;
+
+  /// Under the banner; countText is the already-localized number, count only selects the plural form
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{{countText} ready-made amal} other{{countText} ready-made amals}}'**
+  String libraryPickBannerSubtitle(num count, String countText);
+
+  /// Shown at the top of the New amal form after an amal was picked from the library
+  ///
+  /// In en, this message translates to:
+  /// **'Filled in from the Amal Library'**
+  String get libraryFilledIn;
+
+  /// Button next to libraryFilledIn that opens the library again
+  ///
+  /// In en, this message translates to:
+  /// **'Change'**
+  String get libraryChange;
+
+  /// Snackbar action that opens the amal just added for editing
+  ///
+  /// In en, this message translates to:
+  /// **'Edit'**
+  String get libraryEditAction;
+
+  /// Schedule under a library amal done on any days of the week; countText is the localized number, count selects the plural form
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Once a week} other{{countText} days a week}}'**
+  String libraryWeeklyAny(num count, String countText);
+
+  /// Schedule under a library amal done on any days of the month; countText is the localized number, count selects the plural form
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, =1{Once a month} other{{countText} days a month}}'**
+  String libraryMonthlyAny(num count, String countText);
+
+  /// Count per day under a library amal, e.g. '100×'; countText is the localized number, count selects the plural form
+  ///
+  /// In en, this message translates to:
+  /// **'{count, plural, other{{countText}×}}'**
+  String libraryTimes(num count, String countText);
+
+  /// Under a library amal with no daily goal: any amount counts
+  ///
+  /// In en, this message translates to:
+  /// **'Any amount'**
+  String get libraryAnyAmount;
+
+  /// Accessibility label of the add button on a library row
+  ///
+  /// In en, this message translates to:
+  /// **'Add {title}'**
+  String libraryAddTooltip(String title);
+
+  /// Accessibility label of the check mark on a library amal that is already tracked
+  ///
+  /// In en, this message translates to:
+  /// **'On your list'**
+  String get libraryOnList;
+
+  /// Button on the empty Today screen that opens the Amal Library
+  ///
+  /// In en, this message translates to:
+  /// **'Browse the Amal Library'**
+  String get todayEmptyBrowse;
 }
 
 class _AppLocalizationsDelegate
