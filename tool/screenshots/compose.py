@@ -52,7 +52,11 @@ FRAMES = {
     "play": [("1", 0, "statement"), ("2", 1, "tick"), ("3", 2, "amal_library"),
              ("4", 3, "challenge_library"), ("5", 4, "pace"), ("8", 7, "track")],
     "fg": [("featureGraphic", 0, "fg")],
+    "header": [("header", 0, "header")],
 }
+
+# App Store product page header (iOS 27): 21:9, with Apple's template safe area.
+HEADER = dict(W=3840, H=1646, safe=(1097, 493, 2743, 1154), hs=132)
 SCREEN = {"tick": "today", "amal_library": "amal_library", "challenge_library": "challenge_library",
           "pace": "challenges", "track": "new_amal", "fg": "today"}
 
@@ -103,6 +107,11 @@ CSS = """
 .chips{position:absolute;display:flex;gap:20px;flex-wrap:wrap;align-items:flex-start}
 .chips b{font-size:var(--chip);font-weight:600;letter-spacing:var(--chls);white-space:nowrap;text-transform:uppercase;color:#C6F2DA;
   border:4px solid rgba(143,217,176,.8);border-radius:99px;padding:14px 30px}
+.hdrbg{background:radial-gradient(120% 140% at 50% 0%,#2f8a60 0%,#1c6844 45%,#124a30 100%)}
+.pat{background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='100' height='100' viewBox='0 0 100 100'><g fill='none' stroke='%23ffffff' stroke-opacity='0.08' stroke-width='1.1'><path d='M50 8 L61 39 L92 50 L61 61 L50 92 L39 61 L8 50 L39 39 Z'/><rect x='26' y='26' width='48' height='48' transform='rotate(45 50 50)'/><rect x='26' y='26' width='48' height='48'/></g></svg>");background-size:240px 240px}
+.cap.hdr{display:flex;align-items:center;justify-content:center;text-align:center}
+.cap.hdr h5{margin:0;color:#FFF}
+.cap.hdr h5 em{background:#C6F2DA;color:#134A32;padding:.04em .14em .12em}
 .fg{background:linear-gradient(var(--fgAngle),#f4fbf7 0%,#e2f2e8 46%,#7cc29c 78%,#3f9a6e 100%)}
 .fg .in{position:absolute;top:0;bottom:0;inset-inline-start:62px;width:560px;display:flex;flex-direction:column;justify-content:center}
 .fg .lock{position:static}
@@ -262,6 +271,16 @@ def feature_graphic(copy, shot, rtl):
             dict(capW=560, subMin=12, chipMin=11))
 
 
+def header_frame(copy):
+    W, H = HEADER["W"], HEADER["H"]
+    x0, y0, x1, y1 = HEADER["safe"]
+    lines = "<br>".join(hl(l) for l in copy["header"])
+    return (f'<div class="frame hdrbg" style="width:{W}px;height:{H}px"><div class="pat" style="position:absolute;inset:0"></div>'
+            f'<div class="cap hdr" style="left:{x0}px;top:{y0}px;width:{x1 - x0}px;height:{y1 - y0}px">'
+            f'<h5 style="font-size:{round(HEADER["hs"] * copy["hs"])}px">{lines}</h5></div></div>',
+            dict(capW=x1 - x0 - 80, subMin=0, chipMin=0))
+
+
 def page(frame, params, copy, locale):
     rtl = copy.get("dir") == "rtl"
     latin = copy["font"] == "latin"
@@ -292,6 +311,9 @@ def main():
                 if kind == "fg":
                     frame, params = feature_graphic(copy, shot, rtl)
                     w, h = 1024, 500
+                elif kind == "header":
+                    frame, params = header_frame(copy)
+                    w, h = HEADER["W"], HEADER["H"]
                 else:
                     D = DEVICES[device]
                     if kind == "statement":
