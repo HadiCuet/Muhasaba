@@ -1,0 +1,49 @@
+{
+  "font": "latin",
+  "hs": 1,
+  "lh": 1.24,
+  "dir": "ltr",
+  "brand": "Muhasebe",
+  "brandSub": "İbadet Takibi",
+  "chips": [
+    "Hesap yok",
+    "Reklam yok",
+    "Çevrimdışı çalışır"
+  ],
+  "statement": [
+    [
+      "Namaz, zikir ve",
+      "Kur’an’ı takip et.",
+      "*Alışkanlık edin.*"
+    ],
+    "Günde tek dokunuş. Her şey telefonunda kalır."
+  ],
+  "amal_library": [
+    "Amel Kütüphanesi",
+    [
+      "Tek dokunuşla",
+      "*başla*"
+    ],
+    "102 hazır amel ya da kendin oluştur."
+  ],
+  "challenge_library": [
+    "Hedef Kütüphanesi",
+    [
+      "Hazır",
+      "*hedefler*"
+    ],
+    [
+      "40 gün cemaatle namaz.",
+      "Şevval’de altı gün oruç.",
+      "30 günde hatim."
+    ]
+  ],
+  "pace": [
+    "Temponu koru",
+    [
+      "Geride mi?",
+      "*Haberin olur.*"
+    ],
+    "Aksadığında nazikçe hatırlatır."
+  ]
+}

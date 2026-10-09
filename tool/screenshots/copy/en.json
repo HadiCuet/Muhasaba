@@ -1,0 +1,12 @@
+{
+  "font": "latin", "hs": 1, "lh": 1.24, "dir": "ltr",
+  "brand": "Muhasaba",
+  "brandSub": "Muslim Habit Tracker",
+  "chips": ["No account", "No ads", "Works offline"],
+  "statement": [["Track salah,", "dhikr & Quran.", "*Build the habit.*"], "One tap a day. It all stays on your phone."],
+  "amal_library": ["Amal Library", ["Start in", "*one tap*"], "102 ready-made amals, or make your own."],
+  "challenge_library": ["Challenge Library", ["Ready-made", "*challenges*"], ["40 days in jamaah.", "Six of Shawwal.", "A khatm in 30 days."]],
+  "pace": ["Stay on pace", ["Behind pace?", "*You’ll know.*"], "A gentle nudge when you slip."],
+  "tick": ["One tap", ["Tick it.", "*Move on.*"], "Every amal on one screen."],
+  "track": ["Make it yours", ["Track", "*anything*"], "Your acts, your categories, your way."]
+}

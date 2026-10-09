@@ -1,0 +1,49 @@
+{
+  "font": "latin",
+  "hs": 1,
+  "lh": 1.24,
+  "dir": "ltr",
+  "brand": "Muhasabah",
+  "brandSub": "Ibadahku",
+  "chips": [
+    "Tiada akaun",
+    "Tiada iklan",
+    "Berfungsi luar talian"
+  ],
+  "statement": [
+    [
+      "Jejak solat,",
+      "zikir & Al-Quran.",
+      "*Jadikan kebiasaan.*"
+    ],
+    "Satu ketik sehari. Semuanya kekal dalam telefon anda."
+  ],
+  "amal_library": [
+    "Pustaka Amal",
+    [
+      "Mula dengan",
+      "*satu ketik*"
+    ],
+    "102 amal sedia guna, atau cipta sendiri."
+  ],
+  "challenge_library": [
+    "Pustaka Cabaran",
+    [
+      "Cabaran",
+      "*sedia guna*"
+    ],
+    [
+      "40 hari solat berjemaah.",
+      "Puasa enam Syawal.",
+      "Khatam dalam 30 hari."
+    ]
+  ],
+  "pace": [
+    "Kekal rentak",
+    [
+      "Ketinggalan?",
+      "*Anda akan tahu.*"
+    ],
+    "Peringatan lembut bila terlepas."
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "font": "latin",
+  "hs": 1,
+  "lh": 1.24,
+  "dir": "ltr",
+  "brand": "Muhasabah",
+  "brandSub": "Ibadahku",
+  "chips": [
+    "Tanpa akun",
+    "Tanpa iklan",
+    "Bisa offline"
+  ],
+  "statement": [
+    [
+      "Catat shalat,",
+      "dzikir & Al-Quran.",
+      "*Jadikan kebiasaan.*"
+    ],
+    "Sekali ketuk sehari. Semuanya tetap di ponselmu."
+  ],
+  "amal_library": [
+    "Pustaka Amal",
+    [
+      "Mulai dengan",
+      "*sekali ketuk*"
+    ],
+    "102 amal siap pakai, atau buat sendiri."
+  ],
+  "challenge_library": [
+    "Pustaka Tantangan",
+    [
+      "Tantangan",
+      "*siap pakai*"
+    ],
+    [
+      "40 hari shalat berjamaah.",
+      "Puasa enam hari Syawal.",
+      "Khatam Al-Quran 30 hari."
+    ]
+  ],
+  "pace": [
+    "Jaga ritme",
+    [
+      "Tertinggal?",
+      "*Kamu akan tahu.*"
+    ],
+    "Diingatkan dengan lembut saat lengah."
+  ]
+}

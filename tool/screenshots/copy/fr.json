@@ -1,0 +1,50 @@
+{
+  "font": "latin",
+  "hs": 0.98,
+  "lh": 1.24,
+  "dir": "ltr",
+  "brand": "Muhasaba",
+  "brandSub": "Mon Ibadah",
+  "chips": [
+    "Sans compte",
+    "Sans pub",
+    "Fonctionne hors ligne"
+  ],
+  "statement": [
+    [
+      "Suis ta salat,",
+      "ton dhikr",
+      "et ton Coran.",
+      "*Prends l’habitude.*"
+    ],
+    "Une touche par jour. Tout reste sur ton téléphone."
+  ],
+  "amal_library": [
+    "Bibliothèque d’amals",
+    [
+      "Commence en",
+      "*une touche*"
+    ],
+    "102 amals prêts à l’emploi, ou crée les tiens."
+  ],
+  "challenge_library": [
+    "Bibliothèque de défis",
+    [
+      "Des défis",
+      "*tout prêts*"
+    ],
+    [
+      "40 jours de prière en groupe.",
+      "Six jours de Chawwal.",
+      "Un khatm en 30 jours."
+    ]
+  ],
+  "pace": [
+    "Garde le rythme",
+    [
+      "En retard ?",
+      "*Tu le sauras.*"
+    ],
+    "Un rappel en douceur si tu prends du retard."
+  ]
+}
