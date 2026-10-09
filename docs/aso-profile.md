@@ -319,19 +319,18 @@ should be worked into the Play copy instead of being dropped.
       feature graphic went live with the 3.1.0 (14) production release, 2026-10-10.
 - [x] All 9 App Store descriptions end with a "SUBSCRIPTION, TERMS & PRIVACY" block
       (Apple standard EULA + privacy page) since 3.1.0.
-- [ ] **iOS 27 product page header** — the statement ("Salah, dhikr & Quran. Build the
-      habit.") in all 9 languages, uploaded to Asset Library 2026-10-10 as
-      "Header <locale> (Oct 2026)" (`tool/screenshots/asset_library.py`). Submit them
-      there (standalone review), then publish them onto the live 3.1.0 page per
-      language. Search results keep the screenshots: no search asset, decided 2026-10-10.
+- [x] **iOS 27 product page header** — the statement ("Salah, dhikr & Quran. Build the
+      habit.") in all 9 languages, uploaded to Asset Library as "Header <locale> (Oct 2026)"
+      (`tool/screenshots/asset_library.py`) and attached to 3.1.0's languages; in review
+      with it since 2026-10-10. Search results keep the screenshots: no search asset.
 - [ ] **Play en-US** — rewrite the full description to ~3,500 chars with the term
       coverage listed in §8.
-- [ ] Write App Store promotional text: live has none as of 2026-10-10 (the stale
-      "New in 2.0" copy survived only in the deliver staging, now removed).
-      Editable any time without review.
+- [x] App Store promotional text for all 9 languages (the two libraries, then no
+      account, no ads, works offline), set on 3.1.0 on 2026-10-10. Editable any time
+      without review.
 - [ ] Decide on the optional es-MX keyword field (§8).
 - [ ] Once the libraries ship: move them into the claimable list in §4 and mention
-      them in both descriptions and the promotional text.
+      them in both descriptions (the promotional text already does).
 - [ ] Re-measure the §8 baseline queries ~4 weeks after the next version ships.
 - [ ] Revise the Play full description: "100% private and offline" overstates it (§7).
 - [ ] Complete/verify Play **Data Safety** for Firebase Analytics + Crashlytics.
