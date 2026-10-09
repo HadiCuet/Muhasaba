@@ -1713,6 +1713,10 @@ class AppLocalizationsHa extends AppLocalizations {
   String get requireChoiceCountHelp => 'Ana kammala amalin ƙidaya da − da +';
 
   @override
+  String get optionPreviewCaption =>
+      'Kowace rana za ka zaɓi ɗaya daga cikin waɗannan a Yau:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return 'An yi amfani da zaɓi $used daga cikin $max.';
   }

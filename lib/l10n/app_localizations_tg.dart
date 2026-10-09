@@ -1716,6 +1716,10 @@ class AppLocalizationsTg extends AppLocalizations {
       'Амалҳои ҳисобшаванда бо − ва + иҷро мешаванд';
 
   @override
+  String get optionPreviewCaption =>
+      'Ҳар рӯз дар рӯйхати имрӯз яке аз инҳоро интихоб мекунед:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$used аз $max вариант истифода шуд.';
   }

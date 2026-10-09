@@ -492,6 +492,7 @@
   "optionsMinRequired": "Dodajte najmanje dvije opcije",
   "optionSetNameTooLong": "Naziv seta je predugačak",
   "optionTooLong": "Opcija {index} je predugačka",
+  "optionPreviewCaption": "Svaki dan ćete u Danas odabrati jednu od ovih opcija:",
   "optionsUsedOf": "{used} od {max} opcija iskorišteno.",
   "requireChoiceCountHelp": "Ameli s brojanjem se završavaju brojačem",
   "requireChoiceHelp": "Red se neće označiti dok ne odaberete opciju",

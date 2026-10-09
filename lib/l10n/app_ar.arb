@@ -492,6 +492,7 @@
   "optionsMinRequired": "أضف خيارين على الأقل",
   "optionSetNameTooLong": "اسم المجموعة طويل جدًا",
   "optionTooLong": "الخيار {index} طويل جدًا",
+  "optionPreviewCaption": "تختار أحدها كل يوم في قائمة اليوم:",
   "optionsUsedOf": "الخيارات المستخدمة: {used} من {max}.",
   "requireChoiceCountHelp": "الأعمال المعدودة تكتمل بالعدّاد",
   "requireChoiceHelp": "لن يُعلَّم العمل مكتملًا حتى تختار أحد الخيارات",

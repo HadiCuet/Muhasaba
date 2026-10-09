@@ -1720,6 +1720,10 @@ class AppLocalizationsSq extends AppLocalizations {
       'Amalet e numëruara plotësohen me numëruesin';
 
   @override
+  String get optionPreviewCaption =>
+      'Çdo ditë do të zgjidhni një prej tyre te Sot:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$used nga $max opsione të përdorura.';
   }

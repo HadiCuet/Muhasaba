@@ -492,6 +492,7 @@
   "optionsMinRequired": "Ən azı iki variant əlavə edin",
   "optionSetNameTooLong": "Dəstin adı çox uzundur",
   "optionTooLong": "Variant {index} çox uzundur",
+  "optionPreviewCaption": "Hər gün «Bu gün» siyahısında bunlardan birini seçəcəksiniz:",
   "optionsUsedOf": "{max} variantdan {used} istifadə olunub.",
   "requireChoiceCountHelp": "Sayılan əməllər − və + ilə tamamlanır",
   "requireChoiceHelp": "Variant seçilənə qədər sətir işarələnməyəcək",

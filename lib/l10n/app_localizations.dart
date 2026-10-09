@@ -2991,6 +2991,12 @@ abstract class AppLocalizations {
   /// **'Counted amals are completed by the stepper'**
   String get requireChoiceCountHelp;
 
+  /// Caption above the choices of the option set picked in the amal form. The choices there are only a preview; the user picks one on the Today screen each day.
+  ///
+  /// In en, this message translates to:
+  /// **'You\'ll pick one of these on Today each day:'**
+  String get optionPreviewCaption;
+
   /// No description provided for @optionsUsedOf.
   ///
   /// In en, this message translates to:

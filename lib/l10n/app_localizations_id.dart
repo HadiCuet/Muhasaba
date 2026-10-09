@@ -1719,6 +1719,10 @@ class AppLocalizationsId extends AppLocalizations {
       'Amal dengan hitungan diselesaikan lewat penghitung';
 
   @override
+  String get optionPreviewCaption =>
+      'Setiap hari Anda akan memilih salah satunya di Hari Ini:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$used dari $max opsi digunakan.';
   }

@@ -1732,6 +1732,10 @@ class AppLocalizationsEn extends AppLocalizations {
       'Counted amals are completed by the stepper';
 
   @override
+  String get optionPreviewCaption =>
+      'You\'ll pick one of these on Today each day:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$used of $max options used.';
   }

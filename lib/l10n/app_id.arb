@@ -492,6 +492,7 @@
   "optionsMinRequired": "Tambahkan minimal dua opsi",
   "optionSetNameTooLong": "Nama set terlalu panjang",
   "optionTooLong": "Opsi {index} terlalu panjang",
+  "optionPreviewCaption": "Setiap hari Anda akan memilih salah satunya di Hari Ini:",
   "optionsUsedOf": "{used} dari {max} opsi digunakan.",
   "requireChoiceCountHelp": "Amal dengan hitungan diselesaikan lewat penghitung",
   "requireChoiceHelp": "Baris tidak akan tercentang sebelum opsi dipilih",

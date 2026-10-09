@@ -1721,6 +1721,10 @@ class AppLocalizationsSo extends AppLocalizations {
       'Camallada la tiriyo waxaa lagu dhammaystiraa − iyo +';
 
   @override
+  String get optionPreviewCaption =>
+      'Maalin kasta waxaad Maanta ka dooran doontaa mid ka mid ah kuwan:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$used ka mid ah $max ikhtiyaar ayaa la isticmaalay.';
   }

@@ -492,6 +492,7 @@
   "optionsMinRequired": "Ƙara aƙalla zaɓi biyu",
   "optionSetNameTooLong": "Sunan saiti ya yi tsawo",
   "optionTooLong": "Zaɓi {index} ya yi tsawo",
+  "optionPreviewCaption": "Kowace rana za ka zaɓi ɗaya daga cikin waɗannan a Yau:",
   "optionsUsedOf": "An yi amfani da zaɓi {used} daga cikin {max}.",
   "requireChoiceCountHelp": "Ana kammala amalin ƙidaya da − da +",
   "requireChoiceHelp": "Layin ba zai sami alama ba sai an zaɓi wani abu",

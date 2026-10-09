@@ -492,6 +492,7 @@
   "optionsMinRequired": "لږ تر لږه دوه انتخابونه اضافه کړئ",
   "optionSetNameTooLong": "د ټولګې نوم ډېر اوږد دی",
   "optionTooLong": "انتخاب {index} ډېر اوږد دی",
+  "optionPreviewCaption": "هره ورځ به په «نن» کې له دې څخه یو وټاکئ:",
   "optionsUsedOf": "له {max} څخه {used} انتخابونه کارول شوي.",
   "requireChoiceCountHelp": "شمېرل کېدونکي عملونه په شمېرونکي بشپړېږي",
   "requireChoiceHelp": "تر څو انتخاب ونه ټاکل شي، کرښه نه بشپړېږي",

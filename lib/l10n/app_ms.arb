@@ -492,6 +492,7 @@
   "optionsMinRequired": "Tambah sekurang-kurangnya dua pilihan",
   "optionSetNameTooLong": "Nama set terlalu panjang",
   "optionTooLong": "Pilihan {index} terlalu panjang",
+  "optionPreviewCaption": "Setiap hari anda akan memilih salah satu daripadanya di Hari Ini:",
   "optionsUsedOf": "{used} daripada {max} pilihan digunakan.",
   "requireChoiceCountHelp": "Amal yang dikira diselesaikan dengan pengira",
   "requireChoiceHelp": "Baris tidak akan ditanda selesai selagi tiada pilihan dipilih",

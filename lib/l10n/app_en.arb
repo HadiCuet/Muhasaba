@@ -1219,6 +1219,10 @@
   "requireChoiceHelp": "The row won't tick until an option is picked",
   "requireChoicePickSetFirst": "Pick a set first",
   "requireChoiceCountHelp": "Counted amals are completed by the stepper",
+  "optionPreviewCaption": "You'll pick one of these on Today each day:",
+  "@optionPreviewCaption": {
+    "description": "Caption above the choices of the option set picked in the amal form. The choices there are only a preview; the user picks one on the Today screen each day."
+  },
   "optionsUsedOf": "{used} of {max} options used.",
   "@optionsUsedOf": {
     "placeholders": {

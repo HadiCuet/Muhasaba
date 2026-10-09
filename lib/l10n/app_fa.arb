@@ -492,6 +492,7 @@
   "optionsMinRequired": "دست‌کم دو گزینه اضافه کنید",
   "optionSetNameTooLong": "نام مجموعه بیش از حد طولانی است",
   "optionTooLong": "گزینهٔ {index} بیش از حد طولانی است",
+  "optionPreviewCaption": "هر روز در «امروز» یکی از این گزینه‌ها را انتخاب می‌کنید:",
   "optionsUsedOf": "{used} از {max} گزینه استفاده شده.",
   "requireChoiceCountHelp": "اعمال شمارشی با شمارنده تکمیل می‌شوند",
   "requireChoiceHelp": "تا گزینه‌ای انتخاب نشود، ردیف علامت نمی‌خورد",

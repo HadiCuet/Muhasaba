@@ -1743,6 +1743,10 @@ class AppLocalizationsFr extends AppLocalizations {
       'Les amals à compter se valident avec le compteur';
 
   @override
+  String get optionPreviewCaption =>
+      'Chaque jour, dans Aujourd\'hui, vous choisirez l\'une de ces options :';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$used sur $max options utilisées.';
   }

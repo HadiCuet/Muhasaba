@@ -1755,6 +1755,9 @@ class AppLocalizationsAr extends AppLocalizations {
   String get requireChoiceCountHelp => 'الأعمال المعدودة تكتمل بالعدّاد';
 
   @override
+  String get optionPreviewCaption => 'تختار أحدها كل يوم في قائمة اليوم:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return 'الخيارات المستخدمة: $used من $max.';
   }

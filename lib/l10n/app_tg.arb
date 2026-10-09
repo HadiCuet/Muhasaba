@@ -492,6 +492,7 @@
   "optionsMinRequired": "Ҳадди ақал ду вариант илова кунед",
   "optionSetNameTooLong": "Номи маҷмӯа хеле дароз аст",
   "optionTooLong": "Варианти {index} хеле дароз аст",
+  "optionPreviewCaption": "Ҳар рӯз дар рӯйхати имрӯз яке аз инҳоро интихоб мекунед:",
   "optionsUsedOf": "{used} аз {max} вариант истифода шуд.",
   "requireChoiceCountHelp": "Амалҳои ҳисобшаванда бо − ва + иҷро мешаванд",
   "requireChoiceHelp": "То вақте ки вариант интихоб нашавад, сатр қайд намешавад",

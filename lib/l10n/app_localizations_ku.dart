@@ -1714,6 +1714,10 @@ class AppLocalizationsKu extends AppLocalizations {
   String get requireChoiceCountHelp => 'Kirinên hejmarî bi − û + tên qedandin';
 
   @override
+  String get optionPreviewCaption =>
+      'Her roj li Îro tu yekê ji van hildibijêrî:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$used ji $max vebijarkan hatine bikaranîn.';
   }

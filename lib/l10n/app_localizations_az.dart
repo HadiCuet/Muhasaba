@@ -1709,6 +1709,10 @@ class AppLocalizationsAz extends AppLocalizations {
   String get requireChoiceCountHelp => 'Sayılan əməllər − və + ilə tamamlanır';
 
   @override
+  String get optionPreviewCaption =>
+      'Hər gün «Bu gün» siyahısında bunlardan birini seçəcəksiniz:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$max variantdan $used istifadə olunub.';
   }

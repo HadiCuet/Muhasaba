@@ -492,6 +492,7 @@
   "optionsMinRequired": "Ajoutez au moins deux options",
   "optionSetNameTooLong": "Le nom de l'ensemble est trop long",
   "optionTooLong": "L'option {index} est trop longue",
+  "optionPreviewCaption": "Chaque jour, dans Aujourd'hui, vous choisirez l'une de ces options :",
   "optionsUsedOf": "{used} sur {max} options utilisées.",
   "requireChoiceCountHelp": "Les amals à compter se valident avec le compteur",
   "requireChoiceHelp": "La ligne ne se coche pas tant qu'aucune option n'est choisie",

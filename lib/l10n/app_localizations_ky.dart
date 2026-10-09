@@ -1708,6 +1708,10 @@ class AppLocalizationsKy extends AppLocalizations {
       'Саналуучу амалдар − жана + аркылуу аткарылат';
 
   @override
+  String get optionPreviewCaption =>
+      'Күн сайын «Бүгүн» тизмесинде булардын бирин тандайсыз:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$max варианттан $used колдонулду.';
   }

@@ -492,6 +492,7 @@
   "optionsMinRequired": "En az iki seçenek ekleyin",
   "optionSetNameTooLong": "Set adı çok uzun",
   "optionTooLong": "{index}. seçenek çok uzun",
+  "optionPreviewCaption": "Her gün Bugün ekranında bunlardan birini seçeceksiniz:",
   "optionsUsedOf": "{max} seçenekten {used} kullanıldı.",
   "requireChoiceCountHelp": "Sayılan ameller sayaçla tamamlanır",
   "requireChoiceHelp": "Seçenek seçilmeden satır işaretlenmez",

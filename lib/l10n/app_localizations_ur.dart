@@ -1712,6 +1712,10 @@ class AppLocalizationsUr extends AppLocalizations {
       'گنتی والے اعمال − اور + سے مکمل ہوتے ہیں';
 
   @override
+  String get optionPreviewCaption =>
+      'آپ ہر دن آج کی فہرست میں ان میں سے ایک چنیں گے:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$max میں سے $used اختیارات استعمال ہوئے۔';
   }

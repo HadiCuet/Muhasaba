@@ -1710,6 +1710,10 @@ class AppLocalizationsTr extends AppLocalizations {
   String get requireChoiceCountHelp => 'Sayılan ameller sayaçla tamamlanır';
 
   @override
+  String get optionPreviewCaption =>
+      'Her gün Bugün ekranında bunlardan birini seçeceksiniz:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$max seçenekten $used kullanıldı.';
   }

@@ -1712,6 +1712,10 @@ class AppLocalizationsBn extends AppLocalizations {
       'সংখ্যাভিত্তিক আমল গণনা দিয়েই সম্পন্ন হয়';
 
   @override
+  String get optionPreviewCaption =>
+      'প্রতিদিন আজকের তালিকায় এগুলোর একটি বেছে নেবেন:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$maxটির মধ্যে $usedটি বিকল্প ব্যবহৃত।';
   }

@@ -492,6 +492,7 @@
   "optionsMinRequired": "Ku dar ugu yaraan laba ikhtiyaar",
   "optionSetNameTooLong": "Magaca ururka aad buu u dheer yahay",
   "optionTooLong": "Ikhtiyaarka {index} aad buu u dheer yahay",
+  "optionPreviewCaption": "Maalin kasta waxaad Maanta ka dooran doontaa mid ka mid ah kuwan:",
   "optionsUsedOf": "{used} ka mid ah {max} ikhtiyaar ayaa la isticmaalay.",
   "requireChoiceCountHelp": "Camallada la tiriyo waxaa lagu dhammaystiraa − iyo +",
   "requireChoiceHelp": "Safka lama calaamadeyn karo ilaa ikhtiyaar la doorto",

@@ -492,6 +492,7 @@
   "optionsMinRequired": "Herî kêm du vebijarkan lê zêde bike",
   "optionSetNameTooLong": "Navê komê pir dirêj e",
   "optionTooLong": "Vebijark {index} pir dirêj e",
+  "optionPreviewCaption": "Her roj li Îro tu yekê ji van hildibijêrî:",
   "optionsUsedOf": "{used} ji {max} vebijarkan hatine bikaranîn.",
   "requireChoiceCountHelp": "Kirinên hejmarî bi − û + tên qedandin",
   "requireChoiceHelp": "Heta vebijarkek neyê hilbijartin, rêz nayê nîşankirin",

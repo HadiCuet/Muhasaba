@@ -492,6 +492,7 @@
   "optionsMinRequired": "کم از کم دو اختیارات شامل کریں",
   "optionSetNameTooLong": "مجموعے کا نام بہت طویل ہے",
   "optionTooLong": "اختیار {index} بہت طویل ہے",
+  "optionPreviewCaption": "آپ ہر دن آج کی فہرست میں ان میں سے ایک چنیں گے:",
   "optionsUsedOf": "{max} میں سے {used} اختیارات استعمال ہوئے۔",
   "requireChoiceCountHelp": "گنتی والے اعمال − اور + سے مکمل ہوتے ہیں",
   "requireChoiceHelp": "جب تک اختیار منتخب نہ ہو، قطار مکمل نہیں ہوگی",

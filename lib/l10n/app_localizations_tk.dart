@@ -1706,6 +1706,10 @@ class AppLocalizationsTk extends AppLocalizations {
       'Sanalýan amallar − we + arkaly ýerine ýetirilýär';
 
   @override
+  String get optionPreviewCaption =>
+      'Her gün «Bu gün» sanawynda bulardan birini saýlarsyňyz:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$max wariantdan $used ulanyldy.';
   }

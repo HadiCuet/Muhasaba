@@ -1711,6 +1711,10 @@ class AppLocalizationsHi extends AppLocalizations {
   String get requireChoiceCountHelp => 'गिनती वाले अमल काउंटर से पूरे होते हैं';
 
   @override
+  String get optionPreviewCaption =>
+      'आप हर दिन आज की सूची में इनमें से एक चुनेंगे:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$max में से $used विकल्प उपयोग किए गए।';
   }

@@ -1707,6 +1707,10 @@ class AppLocalizationsKk extends AppLocalizations {
       'Саналатын амалдар − және + арқылы белгіленеді';
 
   @override
+  String get optionPreviewCaption =>
+      'Күн сайын «Бүгін» бетінде осылардың бірін таңдайсыз:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$max нұсқадан $used пайдаланылды.';
   }

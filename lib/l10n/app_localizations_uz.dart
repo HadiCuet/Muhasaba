@@ -1714,6 +1714,10 @@ class AppLocalizationsUz extends AppLocalizations {
       'Sanaladigan amallar − va + orqali bajariladi';
 
   @override
+  String get optionPreviewCaption =>
+      'Har kuni «Bugun» bo\'limida ulardan birini tanlaysiz:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$max ta variantdan $used tasi ishlatilgan.';
   }

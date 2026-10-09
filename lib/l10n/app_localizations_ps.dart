@@ -1706,6 +1706,10 @@ class AppLocalizationsPs extends AppLocalizations {
       'شمېرل کېدونکي عملونه په شمېرونکي بشپړېږي';
 
   @override
+  String get optionPreviewCaption =>
+      'هره ورځ به په «نن» کې له دې څخه یو وټاکئ:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return 'له $max څخه $used انتخابونه کارول شوي.';
   }

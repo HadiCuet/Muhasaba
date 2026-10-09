@@ -1714,6 +1714,10 @@ class AppLocalizationsSw extends AppLocalizations {
       'Amali zenye kuhesabu hukamilishwa na − na +';
 
   @override
+  String get optionPreviewCaption =>
+      'Kila siku kwenye Leo utachagua mojawapo ya haya:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return 'Chaguo $used kati ya $max zimetumika.';
   }

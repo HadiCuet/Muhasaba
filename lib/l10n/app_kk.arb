@@ -492,6 +492,7 @@
   "optionsMinRequired": "Кемінде екі нұсқа қосыңыз",
   "optionSetNameTooLong": "Жиынтық атауы тым ұзын",
   "optionTooLong": "Нұсқа {index} тым ұзын",
+  "optionPreviewCaption": "Күн сайын «Бүгін» бетінде осылардың бірін таңдайсыз:",
   "optionsUsedOf": "{max} нұсқадан {used} пайдаланылды.",
   "requireChoiceCountHelp": "Саналатын амалдар − және + арқылы белгіленеді",
   "requireChoiceHelp": "Нұсқа таңдалмайынша жол белгіленбейді",

@@ -492,6 +492,7 @@
   "optionsMinRequired": "Жок дегенде эки вариант кошуңуз",
   "optionSetNameTooLong": "Топтомдун аты өтө узун",
   "optionTooLong": "{index}-вариант өтө узун",
+  "optionPreviewCaption": "Күн сайын «Бүгүн» тизмесинде булардын бирин тандайсыз:",
   "optionsUsedOf": "{max} варианттан {used} колдонулду.",
   "requireChoiceCountHelp": "Саналуучу амалдар − жана + аркылуу аткарылат",
   "requireChoiceHelp": "Вариант тандалмайынча сап белгиленбейт",

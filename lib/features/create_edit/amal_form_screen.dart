@@ -583,6 +583,8 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                         }
                       }),
                     ),
+                    if (_optionSetId != null)
+                      _OptionPreview(setId: _optionSetId!),
                     SwitchListTile(
                       contentPadding: EdgeInsets.zero,
                       value: _requireChoice,
@@ -598,8 +600,6 @@ class _AmalFormScreenState extends ConsumerState<AmalFormScreen> {
                                   : l.requireChoiceHelp),
                       ),
                     ),
-                    if (_optionSetId != null)
-                      _OptionPreview(setId: _optionSetId!),
                     const SizedBox(height: 20),
 
                     // ── Target ─────────────────────────────────────────────────
@@ -1245,19 +1245,37 @@ class _OptionPreview extends ConsumerWidget {
             .where((i) => i.setId == setId && i.archivedAt == null)
             .toList();
     return Padding(
-      padding: const EdgeInsetsDirectional.only(top: 8),
+      padding: const EdgeInsetsDirectional.only(top: 12),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
+          Text(
+            l.optionPreviewCaption,
+            style: theme.textTheme.bodySmall?.copyWith(
+              color: theme.colorScheme.onSurfaceVariant,
+            ),
+          ),
+          const SizedBox(height: 8),
           Wrap(
             spacing: 6,
             runSpacing: 6,
             children: [
               for (final i in items)
-                ChoiceChip(
-                  label: Text(localizedOptionLabel(i.seedKey, i.label, l)),
-                  selected: false,
-                  onSelected: (_) {},
+                Container(
+                  padding: const EdgeInsets.symmetric(
+                    horizontal: 10,
+                    vertical: 4,
+                  ),
+                  decoration: BoxDecoration(
+                    color: theme.colorScheme.surfaceContainerHighest,
+                    borderRadius: BorderRadius.circular(6),
+                  ),
+                  child: Text(
+                    localizedOptionLabel(i.seedKey, i.label, l),
+                    style: theme.textTheme.labelMedium?.copyWith(
+                      color: theme.colorScheme.onSurfaceVariant,
+                    ),
+                  ),
                 ),
             ],
           ),

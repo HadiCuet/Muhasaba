@@ -1739,6 +1739,10 @@ class AppLocalizationsBs extends AppLocalizations {
       'Ameli s brojanjem se završavaju brojačem';
 
   @override
+  String get optionPreviewCaption =>
+      'Svaki dan ćete u Danas odabrati jednu od ovih opcija:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$used od $max opcija iskorišteno.';
   }

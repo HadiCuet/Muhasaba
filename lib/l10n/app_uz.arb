@@ -492,6 +492,7 @@
   "optionsMinRequired": "Kamida ikkita variant qo'shing",
   "optionSetNameTooLong": "To'plam nomi juda uzun",
   "optionTooLong": "{index}-variant juda uzun",
+  "optionPreviewCaption": "Har kuni «Bugun» bo'limida ulardan birini tanlaysiz:",
   "optionsUsedOf": "{max} ta variantdan {used} tasi ishlatilgan.",
   "requireChoiceCountHelp": "Sanaladigan amallar − va + orqali bajariladi",
   "requireChoiceHelp": "Variant tanlanmaguncha qator belgilanmaydi",

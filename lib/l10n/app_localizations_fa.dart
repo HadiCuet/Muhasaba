@@ -1708,6 +1708,10 @@ class AppLocalizationsFa extends AppLocalizations {
   String get requireChoiceCountHelp => 'اعمال شمارشی با شمارنده تکمیل می‌شوند';
 
   @override
+  String get optionPreviewCaption =>
+      'هر روز در «امروز» یکی از این گزینه‌ها را انتخاب می‌کنید:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$used از $max گزینه استفاده شده.';
   }

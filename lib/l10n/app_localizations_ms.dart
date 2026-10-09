@@ -1714,6 +1714,10 @@ class AppLocalizationsMs extends AppLocalizations {
       'Amal yang dikira diselesaikan dengan pengira';
 
   @override
+  String get optionPreviewCaption =>
+      'Setiap hari anda akan memilih salah satu daripadanya di Hari Ini:';
+
+  @override
   String optionsUsedOf(int used, int max) {
     return '$used daripada $max pilihan digunakan.';
   }
