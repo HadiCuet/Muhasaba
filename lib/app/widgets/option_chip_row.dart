@@ -54,7 +54,6 @@ class OptionChipRow extends ConsumerWidget {
               child: ChoiceChip(
                 label: Text(localizedOptionLabel(item.seedKey, item.label, l)),
                 selected: item.id == selectedItemId,
-                showCheckmark: false,
                 visualDensity: VisualDensity.compact,
                 onSelected: (_) =>
                     onChanged(item.id == selectedItemId ? null : item.id),

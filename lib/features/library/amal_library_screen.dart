@@ -400,7 +400,6 @@ class _CategoryChips extends StatelessWidget {
           ChoiceChip(
             label: Text(l.libraryAll),
             selected: selected == null,
-            showCheckmark: false,
             onSelected: (_) => onSelected(null),
           ),
           for (final c in kLibraryCategories) ...[
@@ -409,7 +408,6 @@ class _CategoryChips extends StatelessWidget {
               avatar: Text(c.icon),
               label: Text(localizedCategoryName(c.name, l)),
               selected: selected == c.name,
-              showCheckmark: false,
               onSelected: (_) => onSelected(c.name),
             ),
           ],

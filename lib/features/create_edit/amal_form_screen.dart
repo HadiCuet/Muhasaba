@@ -769,6 +769,7 @@ class _FrequencySelector extends StatelessWidget {
             ),
           ],
           selected: {value},
+          showSelectedIcon: false,
           onSelectionChanged: (s) => onChanged(s.first),
         ),
       ],
@@ -823,14 +824,12 @@ class _TargetChipsState extends State<_TargetChips> {
             ChoiceChip(
               label: Text(l.targetAny),
               selected: widget.value == kOpenEndedTarget,
-              showCheckmark: false,
               onSelected: (_) => widget.onChanged(kOpenEndedTarget),
             ),
             for (final p in _presets)
               ChoiceChip(
                 label: Text(lnum(context, p)),
                 selected: widget.value == p,
-                showCheckmark: false,
                 onSelected: (_) => widget.onChanged(p),
               ),
             // Trailing custom chip — shows the custom value when one is set
@@ -840,7 +839,6 @@ class _TargetChipsState extends State<_TargetChips> {
               ChoiceChip(
                 label: Text(lnum(context, widget.value)),
                 selected: true,
-                showCheckmark: false,
                 onSelected: (_) => _editCustom(),
               )
             else

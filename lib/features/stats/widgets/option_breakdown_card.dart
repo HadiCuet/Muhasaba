@@ -177,7 +177,6 @@ class OptionAmalSelectorRow extends StatelessWidget {
           ChoiceChip(
             label: Text(l.optionAllAmals),
             selected: selectedAmalId == null,
-            showCheckmark: false,
             visualDensity: VisualDensity.compact,
             onSelected: (_) => onChanged(null),
           ),
@@ -187,7 +186,6 @@ class OptionAmalSelectorRow extends StatelessWidget {
               avatar: Text(split.icon, style: const TextStyle(fontSize: 15)),
               label: Text(localizedAmalTitle(split.title, l)),
               selected: selectedAmalId == split.amalId,
-              showCheckmark: false,
               visualDensity: VisualDensity.compact,
               onSelected: (_) => onChanged(split.amalId),
             ),

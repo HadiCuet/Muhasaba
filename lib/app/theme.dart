@@ -18,6 +18,7 @@ ThemeData _base(Brightness b) {
     ),
     listTileTheme: ListTileThemeData(iconColor: scheme.onSurfaceVariant),
     appBarTheme: const AppBarTheme(centerTitle: false),
+    chipTheme: const ChipThemeData(showCheckmark: false),
   );
 }
 
