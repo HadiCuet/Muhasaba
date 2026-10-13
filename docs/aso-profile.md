@@ -5,8 +5,7 @@ Loaded by the `app-store-aso` and `google-play-aso` skills before any metadata,
 keyword, or creative work. Nothing here may be carried over from another app,
 and nothing in those skills may override what is written here.
 
-Last reviewed: **2026-10-09**, against version **3.0.3 (build 13)** plus the
-unreleased Amal Library and Challenge Library (§4).
+Last reviewed: **2026-10-13**, against version **3.2.0 (build 15)** (§4).
 
 ---
 
@@ -60,7 +59,7 @@ the reader to already know the word.
 
 ## 4. What the app actually does (claimable)
 
-Everything below is real in 2.0.0 and may be stated plainly.
+Everything below is real in 3.2.0 and may be stated plainly.
 
 - Daily / weekly / monthly acts, with categories: Salah, Sunnah, Dhikr, Quran,
   Charity, and user-created categories
@@ -78,11 +77,12 @@ Everything below is real in 2.0.0 and may be stated plainly.
 - Light and dark themes; adjustable day-rollover hour and start-of-week
 - **23 in-app languages** with full right-to-left support and local numerals
 - All data stored on-device in SQLite. No account, no sign-up, no cloud sync.
-
-**In the next release — not claimable until that version is live:**
-
-- **Amal Library** — 102 ready-made amals in 10 categories, added to Today in one tap
-- **Challenge Library** — 27 ready-made challenges, e.g. 40 days of every prayer in
+- **Backup & restore** *(3.2.0)* — Settings › Backup exports all data to one file
+  through the share sheet; restoring it replaces the data on the device. Works
+  between Android and iPhone in both directions (verified 2026-10-13). It is a
+  file the user moves themselves — never call it sync or cloud backup.
+- **Amal Library** *(3.1.0)* — 102 ready-made amals in 10 categories, added to Today in one tap
+- **Challenge Library** *(3.1.0)* — 27 ready-made challenges, e.g. 40 days of every prayer in
   jamaah, six days of Shawwal, a khatm in 30 days; started in one tap
 - Default categories now also include Dua, Fasting and Ilm; Character and Family
   appear once used
@@ -105,7 +105,7 @@ reviews. **Do not target, imply, or claim any of the following:**
 | Zakat / finance | `zakat calculator`, `nisab`, `zakat` |
 | Automatic tracking | `auto-track`, `detects`, `knows when you pray` — every entry is manual |
 | Social / community | `friends`, `leaderboard`, `share progress`, `community`, `family` |
-| Cloud | `sync`, `backup`, `cloud`, `across devices`, `restore` |
+| Cloud | `sync`, `cloud`, `cloud backup`, `across devices`, `automatic backup` — the 3.2.0 backup is a file you export and restore yourself (§4) |
 | Health claims | anything framing worship as wellness, mental-health, or medical benefit |
 
 `quran`, `salah`, `dhikr` etc. remain valid **as category names for things you
@@ -329,8 +329,9 @@ should be worked into the Play copy instead of being dropped.
       account, no ads, works offline), set on 3.1.0 on 2026-10-10. Editable any time
       without review.
 - [ ] Decide on the optional es-MX keyword field (§8).
-- [ ] Once the libraries ship: move them into the claimable list in §4 and mention
-      them in both descriptions (the promotional text already does).
+- [x] Libraries moved into §4 and mentioned in all 9 App Store descriptions and the
+      Play description with 3.2.0, along with a backup line; promo text in all 9
+      languages now leads with backup & restore (2026-10-13).
 - [ ] Re-measure the §8 baseline queries ~4 weeks after the next version ships.
 - [ ] Revise the Play full description: "100% private and offline" overstates it (§7).
 - [ ] Complete/verify Play **Data Safety** for Firebase Analytics + Crashlytics.

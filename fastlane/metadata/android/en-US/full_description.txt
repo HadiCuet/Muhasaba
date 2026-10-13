@@ -6,9 +6,10 @@ WHAT YOU TRACK
 • Daily, weekly and monthly acts — from the five daily prayers to a weekly fast or monthly charity
 • Count-based goals like 33x tasbih or a page of Qur'an, with a quick tap counter
 • Your own custom acts and categories, each with an emoji that suits it
+• Start fast with the Amal Library: 102 ready-made amals in 10 categories, each added to Today in one tap
 
 CHALLENGES
-Set yourself a goal and see it through — 40 nights of Tahajjud, 1000 salawat, a khatm in 30 days. Muhasaba works out the pace you need, shows whether you're on track, and nudges you the day you fall behind.
+Set yourself a goal and see it through — 40 nights of Tahajjud, 1000 salawat, a khatm in 30 days. Muhasaba works out the pace you need, shows whether you're on track, and nudges you the day you fall behind. Or pick one of 27 ready-made challenges from the Challenge Library and start it in one tap.
 
 INSIGHTS
 • Streaks for every amal, and for your whole day
@@ -25,6 +26,7 @@ MADE TO FEEL EFFORTLESS
 
 PRIVATE BY DESIGN
 Your tracked deeds are stored only on your device. There is no account, no cloud sync, and no ads, and the app works fully offline. Anonymous crash and usage statistics help us fix problems; they contain nothing about your worship.
+Changing phones? Export a backup from Settings and restore it on the new one, even from iPhone to Android.
 
 "…and let every soul consider what it has sent forth for tomorrow." (Qur'an 59:18)
 

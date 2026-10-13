@@ -1,7 +1,6 @@
 JazakAllah telah menggunakan Muhasabah.
 
-• Pustaka Amal: 102 amal siap pakai dalam 10 kategori. Tambahkan ke Hari Ini dengan sekali ketuk, atau pilih saat membuat amal baru.
-• Pustaka Tantangan: 27 tantangan siap pakai, dari 40 hari shalat berjamaah hingga khatam Al-Quran dalam 30 hari. Mulai dengan sekali ketuk.
-• Kategori baru: Doa, Puasa, dan Ilmu.
-• Semua terjemahan ditulis ulang agar terasa alami.
-• Mencatat kemajuan tantangan kini lebih cepat saat tantangan sudah banyak.
+• Cadangan & pemulihan: di Pengaturan › Cadangan, simpan semua data Anda dalam satu file, lalu pulihkan di ponsel baru — bahkan dari Android ke iPhone.
+• Tantangan yang dicentang sekali sehari kini menampilkan "Sisa hari tidak cukup" bila sudah tidak bisa selesai tepat waktu, dan saat diperpanjang, hari yang dibutuhkan langsung ditambahkan.
+• Pengingat kini tetap muncul meski Muhasabah sedang dibuka.
+• Tombol Amal baru tidak lagi menutupi Simpan saat Anda menulis catatan, serta beberapa perbaikan kecil lainnya.

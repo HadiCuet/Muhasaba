@@ -1,7 +1,6 @@
 Qu'Allah vous récompense d'utiliser Muhasaba.
 
-• Bibliothèque d'amals : 102 amals prêts à l'emploi, en 10 catégories. Ajoutez-en un à Aujourd'hui d'une touche, ou choisissez-en un en créant un amal.
-• Bibliothèque de défis : 27 défis prêts à l'emploi, de 40 jours de prière en groupe à un khatm en 30 jours. Lancez-en un d'une touche.
-• Nouvelles catégories : Doua, Jeûne et Savoir.
-• Toutes les traductions ont été retravaillées pour sonner juste.
-• Noter votre progression est plus rapide quand vous avez de nombreux défis.
+• Sauvegarde et restauration : dans Paramètres › Sauvegarde, enregistrez toutes vos données dans un seul fichier, puis restaurez-les sur votre nouveau téléphone, même en passant d'Android à iPhone.
+• Un défi à cocher une fois par jour affiche désormais « Plus assez de jours » lorsqu'il ne peut plus être terminé à temps, et le prolonger lui ajoute les jours qu'il lui faut.
+• Les rappels s'affichent désormais même quand l'app est ouverte.
+• Le bouton « Nouvel amal » ne masque plus « Enregistrer » pendant que vous écrivez une note, ainsi que d'autres petites corrections.

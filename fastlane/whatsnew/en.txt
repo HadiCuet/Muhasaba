@@ -1,7 +1,6 @@
 JazakAllah for using Muhasaba.
 
-• Amal Library: 102 ready-made amals in 10 categories. Add one to Today with a tap, or pick one when you create an amal.
-• Challenge Library: 27 ready-made challenges, from 40 days in jamaah to a khatm in 30 days. Start one with a tap.
-• New categories: Dua, Fasting and Ilm.
-• Every translation reworked to read naturally.
-• Logging a challenge is faster when you have many of them.
+• Backup & restore: in Settings › Backup, save all your data to one file, then restore it on your new phone — even from Android to iPhone.
+• A challenge you tick once a day now says "Not enough days left" when it can no longer finish in time, and extending it adds the days it needs.
+• Reminders now show even while Muhasaba is open.
+• The New amal button no longer covers Save while you write a note, plus other small fixes.
