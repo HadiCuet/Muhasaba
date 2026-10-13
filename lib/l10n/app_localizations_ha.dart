@@ -2372,4 +2372,48 @@ class AppLocalizationsHa extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'Duba Taskar Amali';
+
+  @override
+  String get settingsBackup => 'Kwafin ajiya';
+
+  @override
+  String get backupExport => 'Yi kwafin ajiya';
+
+  @override
+  String get backupExportSubtitle => 'Ajiye kwafin duk bayananka';
+
+  @override
+  String get backupRestore => 'Maido daga kwafin ajiya';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'Musanya bayanan wannan na\'ura da kwafin ajiya';
+
+  @override
+  String get backupRestoreConfirmTitle => 'A maido da wannan kwafin ajiya?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'Za a maye gurbin duk bayanan Muhasaba da ke wannan na\'ura da kwafin ajiyar. Ba za a iya janye wannan ba.';
+
+  @override
+  String get backupRestoreConfirmAction => 'Maido';
+
+  @override
+  String get backupRestored => 'An maido da kwafin ajiya';
+
+  @override
+  String get backupNotABackup =>
+      'Wannan fayil ba kwafin ajiyar Muhasaba ba ne.';
+
+  @override
+  String get backupNewerVersion =>
+      'An yi wannan kwafin ajiya da sabuwar sigar Muhasaba. Sabunta manhajar, sannan a sake gwadawa.';
+
+  @override
+  String get backupRestoreFailed =>
+      'Ba a iya maido da kwafin ajiyar ba. Bayananka ba su canza ba.';
+
+  @override
+  String get challengeOutOfDays => 'Kwanakin da suka rage ba su isa ba';
 }

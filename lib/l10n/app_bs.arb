@@ -654,5 +654,18 @@
   "libraryAnyAmount": "Bilo koliko",
   "libraryAddTooltip": "Dodaj {title}",
   "libraryOnList": "Na vašoj listi",
-  "todayEmptyBrowse": "Pregledajte biblioteku amela"
+  "todayEmptyBrowse": "Pregledajte biblioteku amela",
+  "settingsBackup": "Sigurnosna kopija",
+  "backupExport": "Napravite sigurnosnu kopiju",
+  "backupExportSubtitle": "Sačuvajte kopiju svih svojih podataka",
+  "backupRestore": "Vratite iz sigurnosne kopije",
+  "backupRestoreSubtitle": "Zamijenite podatke na ovom uređaju sigurnosnom kopijom",
+  "backupRestoreConfirmTitle": "Vratiti ovu sigurnosnu kopiju?",
+  "backupRestoreConfirmBody": "Svi podaci aplikacije Muhasaba na ovom uređaju bit će zamijenjeni sigurnosnom kopijom. Ovo se ne može poništiti.",
+  "backupRestoreConfirmAction": "Vrati",
+  "backupRestored": "Sigurnosna kopija je vraćena",
+  "backupNotABackup": "Ova datoteka nije sigurnosna kopija aplikacije Muhasaba.",
+  "backupNewerVersion": "Ova sigurnosna kopija napravljena je novijom verzijom aplikacije Muhasaba. Ažurirajte aplikaciju, pa pokušajte ponovo.",
+  "backupRestoreFailed": "Sigurnosnu kopiju nije moguće vratiti. Vaši podaci nisu promijenjeni.",
+  "challengeOutOfDays": "Nema dovoljno dana"
 }

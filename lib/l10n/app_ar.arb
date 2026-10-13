@@ -654,5 +654,18 @@
   "libraryAnyAmount": "أي عدد",
   "libraryAddTooltip": "إضافة {title}",
   "libraryOnList": "في قائمتك",
-  "todayEmptyBrowse": "تصفح مكتبة الأعمال"
+  "todayEmptyBrowse": "تصفح مكتبة الأعمال",
+  "settingsBackup": "النسخ الاحتياطي",
+  "backupExport": "إنشاء نسخة احتياطية",
+  "backupExportSubtitle": "حفظ نسخة من جميع بياناتك",
+  "backupRestore": "الاستعادة من نسخة احتياطية",
+  "backupRestoreSubtitle": "استبدال بيانات هذا الجهاز بنسخة احتياطية",
+  "backupRestoreConfirmTitle": "استعادة هذه النسخة الاحتياطية؟",
+  "backupRestoreConfirmBody": "ستحلّ النسخة الاحتياطية محلّ جميع بيانات تطبيق محاسبة على هذا الجهاز، ولا يمكن التراجع عن ذلك.",
+  "backupRestoreConfirmAction": "استعادة",
+  "backupRestored": "تمت استعادة النسخة الاحتياطية",
+  "backupNotABackup": "هذا الملف ليس نسخة احتياطية من تطبيق محاسبة.",
+  "backupNewerVersion": "أُنشئت هذه النسخة الاحتياطية بإصدار أحدث من تطبيق محاسبة. حدِّث التطبيق ثم حاول مرة أخرى.",
+  "backupRestoreFailed": "تعذّرت استعادة النسخة الاحتياطية، ولم تتغيّر بياناتك.",
+  "challengeOutOfDays": "الأيام المتبقية لا تكفي"
 }

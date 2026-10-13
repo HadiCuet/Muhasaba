@@ -1,9 +1,12 @@
+import 'dart:math' as math;
+
 import 'package:firebase_analytics/firebase_analytics.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import '../../../app/providers.dart';
 import '../../../data/db/database.dart';
+import '../../../domain/models/challenge.dart';
 import '../../../domain/utils/localized_challenge_title.dart';
 import '../../../domain/utils/localized_number.dart';
 import '../../../l10n/app_localizations.dart';
@@ -52,7 +55,11 @@ Future<void> showExpiryPrompt(
 
   switch (action) {
     case 'extend':
-      await repo.extend(row, today.add(const Duration(days: 7)));
+      // A days challenge takes one tick a day, so it needs a day per tick left.
+      final days = row.mode == ChallengeMode.days
+          ? math.max(7, row.target - progress)
+          : 7;
+      await repo.extend(row, today.add(Duration(days: days)));
     case 'restart':
       await repo.markEnded(row.id);
       await repo.create(

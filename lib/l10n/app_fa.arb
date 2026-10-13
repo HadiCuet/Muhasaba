@@ -654,5 +654,18 @@
   "libraryAnyAmount": "هر تعداد",
   "libraryAddTooltip": "افزودن {title}",
   "libraryOnList": "در فهرست شماست",
-  "todayEmptyBrowse": "مرور کتابخانه اعمال"
+  "todayEmptyBrowse": "مرور کتابخانه اعمال",
+  "settingsBackup": "پشتیبان‌گیری",
+  "backupExport": "تهیهٔ نسخهٔ پشتیبان",
+  "backupExportSubtitle": "ذخیرهٔ یک نسخه از همهٔ داده‌هایتان",
+  "backupRestore": "بازیابی از نسخهٔ پشتیبان",
+  "backupRestoreSubtitle": "جایگزینی داده‌های این دستگاه با یک نسخهٔ پشتیبان",
+  "backupRestoreConfirmTitle": "این نسخهٔ پشتیبان بازیابی شود؟",
+  "backupRestoreConfirmBody": "همهٔ داده‌های محاسبه در این دستگاه با نسخهٔ پشتیبان جایگزین می‌شود. این کار برگشت‌پذیر نیست.",
+  "backupRestoreConfirmAction": "بازیابی",
+  "backupRestored": "نسخهٔ پشتیبان بازیابی شد",
+  "backupNotABackup": "این فایل، نسخهٔ پشتیبان محاسبه نیست.",
+  "backupNewerVersion": "این فایل پشتیبان با نسخهٔ جدیدتری از محاسبه ساخته شده است. برنامه را به‌روز کنید و دوباره امتحان کنید.",
+  "backupRestoreFailed": "بازیابی نسخهٔ پشتیبان ممکن نشد. داده‌هایتان تغییری نکرده است.",
+  "challengeOutOfDays": "روزهای باقی‌مانده کافی نیست"
 }

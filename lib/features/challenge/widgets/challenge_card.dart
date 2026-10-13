@@ -122,11 +122,12 @@ class ChallengeCard extends StatelessWidget {
                       child: LinearProgressIndicator(
                         value: fraction,
                         minHeight: 7,
-                        color:
-                            view.pace.state == PaceState.behind ||
-                                view.pace.state == PaceState.lastDay
-                            ? theme.colorScheme.behind
-                            : theme.colorScheme.primary,
+                        color: switch (view.pace.state) {
+                          PaceState.behind ||
+                          PaceState.lastDay ||
+                          PaceState.outOfDays => theme.colorScheme.behind,
+                          _ => theme.colorScheme.primary,
+                        },
                       ),
                     ),
                     const SizedBox(height: 8),
@@ -180,7 +181,10 @@ class ChallengeCard extends StatelessWidget {
     final sep = l.listSeparator;
     if (view.row.endExclusive == null) return base;
     return switch (view.pace.state) {
-      PaceState.onTrack || PaceState.behind || PaceState.lastDay =>
+      PaceState.onTrack ||
+      PaceState.behind ||
+      PaceState.lastDay ||
+      PaceState.outOfDays =>
         '$base$sep'
             '${localizeDigits(context, l.challengeDaysLeft(view.pace.daysLeft))}',
       _ => base,
@@ -217,6 +221,11 @@ class _PaceChip extends StatelessWidget {
       ),
       PaceState.lastDay => (
         l.challengeLastDay(lnum(context, pace.remaining)),
+        scheme.behindContainer,
+        scheme.onBehindContainer,
+      ),
+      PaceState.outOfDays => (
+        l.challengeOutOfDays,
         scheme.behindContainer,
         scheme.onBehindContainer,
       ),

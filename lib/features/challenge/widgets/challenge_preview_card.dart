@@ -35,6 +35,7 @@ class ChallengePreviewCard extends StatelessWidget {
     final l = AppLocalizations.of(context);
     final theme = Theme.of(context);
     final pace = computePace(
+      mode: mode,
       target: target,
       progress: 0,
       startDate: startDate,
@@ -92,11 +93,12 @@ class ChallengePreviewCard extends StatelessWidget {
             child: LinearProgressIndicator(
               value: 0,
               minHeight: 7,
-              color:
-                  pace.state == PaceState.behind ||
-                      pace.state == PaceState.lastDay
-                  ? scheme.behind
-                  : scheme.primary,
+              color: switch (pace.state) {
+                PaceState.behind ||
+                PaceState.lastDay ||
+                PaceState.outOfDays => scheme.behind,
+                _ => scheme.primary,
+              },
             ),
           ),
           // `computePace` reports a zero target as `reached`, so a form the
@@ -149,6 +151,11 @@ class ChallengePreviewCard extends StatelessWidget {
       ),
       PaceState.lastDay => (
         l.challengeLastDay(lnum(context, pace.remaining)),
+        scheme.behindContainer,
+        scheme.onBehindContainer,
+      ),
+      PaceState.outOfDays => (
+        l.challengeOutOfDays,
         scheme.behindContainer,
         scheme.onBehindContainer,
       ),

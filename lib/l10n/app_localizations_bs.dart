@@ -2414,4 +2414,48 @@ class AppLocalizationsBs extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'Pregledajte biblioteku amela';
+
+  @override
+  String get settingsBackup => 'Sigurnosna kopija';
+
+  @override
+  String get backupExport => 'Napravite sigurnosnu kopiju';
+
+  @override
+  String get backupExportSubtitle => 'Sačuvajte kopiju svih svojih podataka';
+
+  @override
+  String get backupRestore => 'Vratite iz sigurnosne kopije';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'Zamijenite podatke na ovom uređaju sigurnosnom kopijom';
+
+  @override
+  String get backupRestoreConfirmTitle => 'Vratiti ovu sigurnosnu kopiju?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'Svi podaci aplikacije Muhasaba na ovom uređaju bit će zamijenjeni sigurnosnom kopijom. Ovo se ne može poništiti.';
+
+  @override
+  String get backupRestoreConfirmAction => 'Vrati';
+
+  @override
+  String get backupRestored => 'Sigurnosna kopija je vraćena';
+
+  @override
+  String get backupNotABackup =>
+      'Ova datoteka nije sigurnosna kopija aplikacije Muhasaba.';
+
+  @override
+  String get backupNewerVersion =>
+      'Ova sigurnosna kopija napravljena je novijom verzijom aplikacije Muhasaba. Ažurirajte aplikaciju, pa pokušajte ponovo.';
+
+  @override
+  String get backupRestoreFailed =>
+      'Sigurnosnu kopiju nije moguće vratiti. Vaši podaci nisu promijenjeni.';
+
+  @override
+  String get challengeOutOfDays => 'Nema dovoljno dana';
 }

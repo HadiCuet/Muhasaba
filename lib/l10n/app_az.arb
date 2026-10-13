@@ -654,5 +654,18 @@
   "libraryAnyAmount": "İstənilən miqdar",
   "libraryAddTooltip": "{title} əlavə edin",
   "libraryOnList": "Siyahınızdadır",
-  "todayEmptyBrowse": "Əməl kitabxanasına baxın"
+  "todayEmptyBrowse": "Əməl kitabxanasına baxın",
+  "settingsBackup": "Ehtiyat nüsxə",
+  "backupExport": "Ehtiyat nüsxə yarat",
+  "backupExportSubtitle": "Bütün məlumatlarınızın surətini saxlayır",
+  "backupRestore": "Ehtiyat nüsxədən bərpa et",
+  "backupRestoreSubtitle": "Bu cihazdakı məlumatları ehtiyat nüsxə ilə əvəz edir",
+  "backupRestoreConfirmTitle": "Bu ehtiyat nüsxə bərpa edilsin?",
+  "backupRestoreConfirmBody": "Bu cihazda Mühasibədəki bütün məlumatlar ehtiyat nüsxə ilə əvəz olunacaq. Bunu geri qaytarmaq mümkün olmayacaq.",
+  "backupRestoreConfirmAction": "Bərpa et",
+  "backupRestored": "Ehtiyat nüsxə bərpa olundu",
+  "backupNotABackup": "Bu fayl Mühasibənin ehtiyat nüsxəsi deyil.",
+  "backupNewerVersion": "Bu ehtiyat nüsxə Mühasibənin daha yeni versiyası ilə yaradılıb. Tətbiqi yeniləyin, sonra yenidən cəhd edin.",
+  "backupRestoreFailed": "Ehtiyat nüsxəni bərpa etmək mümkün olmadı. Məlumatlarınız dəyişməyib.",
+  "challengeOutOfDays": "Qalan günlər çatmır"
 }

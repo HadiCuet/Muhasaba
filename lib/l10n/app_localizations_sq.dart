@@ -2382,4 +2382,49 @@ class AppLocalizationsSq extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'Shfletoni bibliotekën e amaleve';
+
+  @override
+  String get settingsBackup => 'Kopje rezervë';
+
+  @override
+  String get backupExport => 'Krijoni një kopje rezervë';
+
+  @override
+  String get backupExportSubtitle =>
+      'Ruani një kopje të të gjitha të dhënave tuaja';
+
+  @override
+  String get backupRestore => 'Rivendosni nga kopja rezervë';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'Zëvendësoni të dhënat e kësaj pajisjeje me një kopje rezervë';
+
+  @override
+  String get backupRestoreConfirmTitle => 'Të rivendoset kjo kopje rezervë?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'Të gjitha të dhënat e Muhasaba në këtë pajisje do të zëvendësohen me kopjen rezervë. Ky veprim nuk mund të zhbëhet.';
+
+  @override
+  String get backupRestoreConfirmAction => 'Rivendos';
+
+  @override
+  String get backupRestored => 'Kopja rezervë u rivendos';
+
+  @override
+  String get backupNotABackup =>
+      'Ky skedar nuk është kopje rezervë e Muhasaba.';
+
+  @override
+  String get backupNewerVersion =>
+      'Kjo kopje rezervë është krijuar me një version më të ri të Muhasaba. Përditësoni aplikacionin dhe provoni përsëri.';
+
+  @override
+  String get backupRestoreFailed =>
+      'Kopja rezervë nuk u rivendos dot. Të dhënat tuaja nuk kanë ndryshuar.';
+
+  @override
+  String get challengeOutOfDays => 'Nuk mjaftojnë ditët e mbetura';
 }

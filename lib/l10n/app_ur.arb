@@ -654,5 +654,18 @@
   "libraryAnyAmount": "کوئی بھی تعداد",
   "libraryAddTooltip": "{title} شامل کریں",
   "libraryOnList": "آپ کی فہرست میں ہے",
-  "todayEmptyBrowse": "اعمال کی لائبریری دیکھیں"
+  "todayEmptyBrowse": "اعمال کی لائبریری دیکھیں",
+  "settingsBackup": "بیک اپ",
+  "backupExport": "بیک اپ لیں",
+  "backupExportSubtitle": "اپنے سارے ڈیٹا کی ایک کاپی محفوظ کریں",
+  "backupRestore": "بیک اپ سے بحال کریں",
+  "backupRestoreSubtitle": "اس ڈیوائس کا ڈیٹا کسی بیک اپ سے بدل دیں",
+  "backupRestoreConfirmTitle": "یہ بیک اپ بحال کریں؟",
+  "backupRestoreConfirmBody": "اس ڈیوائس پر محاسبہ کا سارا ڈیٹا بیک اپ سے بدل جائے گا۔ اسے واپس نہیں کیا جا سکے گا۔",
+  "backupRestoreConfirmAction": "بحال کریں",
+  "backupRestored": "بیک اپ بحال ہو گیا",
+  "backupNotABackup": "یہ فائل محاسبہ کا بیک اپ نہیں ہے۔",
+  "backupNewerVersion": "یہ بیک اپ محاسبہ کے نئے ورژن سے بنایا گیا ہے۔ ایپ اپ ڈیٹ کریں، پھر دوبارہ کوشش کریں۔",
+  "backupRestoreFailed": "بیک اپ بحال نہیں ہو سکا۔ آپ کا ڈیٹا جوں کا توں ہے۔",
+  "challengeOutOfDays": "باقی دن کافی نہیں"
 }

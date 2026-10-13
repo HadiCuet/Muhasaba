@@ -2377,4 +2377,48 @@ class AppLocalizationsSw extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'Vinjari Maktaba ya Amali';
+
+  @override
+  String get settingsBackup => 'Nakala rudufu';
+
+  @override
+  String get backupExport => 'Unda nakala rudufu';
+
+  @override
+  String get backupExportSubtitle => 'Hifadhi nakala ya data yako yote';
+
+  @override
+  String get backupRestore => 'Rejesha kutoka nakala rudufu';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'Badilisha data ya kifaa hiki kwa nakala rudufu';
+
+  @override
+  String get backupRestoreConfirmTitle =>
+      'Je, ungependa kurejesha nakala rudufu hii?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'Data yote ya Muhasaba kwenye kifaa hiki itabadilishwa na nakala rudufu. Hatua hii haiwezi kutenduliwa.';
+
+  @override
+  String get backupRestoreConfirmAction => 'Rejesha';
+
+  @override
+  String get backupRestored => 'Nakala rudufu imerejeshwa';
+
+  @override
+  String get backupNotABackup => 'Faili hili si nakala rudufu ya Muhasaba.';
+
+  @override
+  String get backupNewerVersion =>
+      'Nakala rudufu hii iliundwa kwa toleo jipya zaidi la Muhasaba. Sasisha programu, kisha ujaribu tena.';
+
+  @override
+  String get backupRestoreFailed =>
+      'Imeshindwa kurejesha nakala rudufu. Data yako haijabadilika.';
+
+  @override
+  String get challengeOutOfDays => 'Siku zilizobaki hazitoshi';
 }

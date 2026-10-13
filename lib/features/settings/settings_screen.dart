@@ -21,6 +21,7 @@ import '../../domain/utils/supported_languages.dart';
 import '../support/support_card.dart';
 import '../support/support_prompt.dart';
 import '../tutorial/tutorial_controller.dart';
+import 'backup_actions.dart';
 import 'support_actions.dart';
 
 class SettingsScreen extends ConsumerWidget {
@@ -240,6 +241,32 @@ class _SettingsList extends ConsumerWidget {
                   );
                 }
               },
+            ),
+          ],
+        ),
+        const SizedBox(height: 8),
+
+        // Backup group.
+        _SectionHeader(title: l.settingsBackup),
+        _CardGroup(
+          children: [
+            Builder(
+              builder: (rowContext) => _SettingsItem(
+                icon: '📤',
+                iconColor: Colors.indigo,
+                title: l.backupExport,
+                subtitle: l.backupExportSubtitle,
+                trailing: '',
+                onTap: () => exportBackup(rowContext, ref),
+              ),
+            ),
+            _SettingsItem(
+              icon: '📥',
+              iconColor: Colors.indigo,
+              title: l.backupRestore,
+              subtitle: l.backupRestoreSubtitle,
+              trailing: '',
+              onTap: () => restoreFromBackup(context, ref),
             ),
           ],
         ),

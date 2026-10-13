@@ -12,6 +12,7 @@ Future<RemoveChoice> showRemoveSheet(
   final l = AppLocalizations.of(context);
   final result = await showModalBottomSheet<RemoveChoice>(
     context: context,
+    useRootNavigator: true,
     showDragHandle: true,
     builder: (ctx) {
       return SafeArea(

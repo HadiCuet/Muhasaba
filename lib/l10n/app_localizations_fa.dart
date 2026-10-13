@@ -2368,4 +2368,47 @@ class AppLocalizationsFa extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'مرور کتابخانه اعمال';
+
+  @override
+  String get settingsBackup => 'پشتیبان‌گیری';
+
+  @override
+  String get backupExport => 'تهیهٔ نسخهٔ پشتیبان';
+
+  @override
+  String get backupExportSubtitle => 'ذخیرهٔ یک نسخه از همهٔ داده‌هایتان';
+
+  @override
+  String get backupRestore => 'بازیابی از نسخهٔ پشتیبان';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'جایگزینی داده‌های این دستگاه با یک نسخهٔ پشتیبان';
+
+  @override
+  String get backupRestoreConfirmTitle => 'این نسخهٔ پشتیبان بازیابی شود؟';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'همهٔ داده‌های محاسبه در این دستگاه با نسخهٔ پشتیبان جایگزین می‌شود. این کار برگشت‌پذیر نیست.';
+
+  @override
+  String get backupRestoreConfirmAction => 'بازیابی';
+
+  @override
+  String get backupRestored => 'نسخهٔ پشتیبان بازیابی شد';
+
+  @override
+  String get backupNotABackup => 'این فایل، نسخهٔ پشتیبان محاسبه نیست.';
+
+  @override
+  String get backupNewerVersion =>
+      'این فایل پشتیبان با نسخهٔ جدیدتری از محاسبه ساخته شده است. برنامه را به‌روز کنید و دوباره امتحان کنید.';
+
+  @override
+  String get backupRestoreFailed =>
+      'بازیابی نسخهٔ پشتیبان ممکن نشد. داده‌هایتان تغییری نکرده است.';
+
+  @override
+  String get challengeOutOfDays => 'روزهای باقی‌مانده کافی نیست';
 }

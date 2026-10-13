@@ -2369,4 +2369,47 @@ class AppLocalizationsMs extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'Teroka Pustaka Amal';
+
+  @override
+  String get settingsBackup => 'Sandaran';
+
+  @override
+  String get backupExport => 'Buat sandaran';
+
+  @override
+  String get backupExportSubtitle => 'Simpan salinan semua data anda';
+
+  @override
+  String get backupRestore => 'Pulihkan daripada sandaran';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'Gantikan data pada peranti ini dengan sandaran';
+
+  @override
+  String get backupRestoreConfirmTitle => 'Pulihkan sandaran ini?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'Semua data Muhasabah pada peranti ini akan digantikan dengan sandaran. Tindakan ini tidak boleh dibuat asal.';
+
+  @override
+  String get backupRestoreConfirmAction => 'Pulihkan';
+
+  @override
+  String get backupRestored => 'Sandaran telah dipulihkan';
+
+  @override
+  String get backupNotABackup => 'Fail ini bukan sandaran Muhasabah.';
+
+  @override
+  String get backupNewerVersion =>
+      'Sandaran ini dibuat dengan versi Muhasabah yang lebih baharu. Kemas kini aplikasi, kemudian cuba lagi.';
+
+  @override
+  String get backupRestoreFailed =>
+      'Sandaran tidak dapat dipulihkan. Data anda tidak berubah.';
+
+  @override
+  String get challengeOutOfDays => 'Baki hari tidak cukup';
 }

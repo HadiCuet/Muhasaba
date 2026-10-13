@@ -2376,4 +2376,47 @@ class AppLocalizationsKu extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'Li Pirtûkxaneya Kirinan binêre';
+
+  @override
+  String get settingsBackup => 'Paşkopî';
+
+  @override
+  String get backupExport => 'Paşkopiyekê çêke';
+
+  @override
+  String get backupExportSubtitle => 'Kopiyeke hemû daneyên xwe tomar bike';
+
+  @override
+  String get backupRestore => 'Ji paşkopiyê vegerîne';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'Daneyên vê amûrê bi paşkopiyekê biguherîne';
+
+  @override
+  String get backupRestoreConfirmTitle => 'Ev paşkopî were vegerandin?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'Hemû daneyên Muhasaba yên li ser vê amûrê dê bi paşkopiyê werin guhertin. Ev kar nayê paşvekirin.';
+
+  @override
+  String get backupRestoreConfirmAction => 'Vegerîne';
+
+  @override
+  String get backupRestored => 'Paşkopî hate vegerandin';
+
+  @override
+  String get backupNotABackup => 'Ev pel ne paşkopiyeke Muhasaba ye.';
+
+  @override
+  String get backupNewerVersion =>
+      'Ev paşkopî bi guhertoyeke nûtir a Muhasaba hatiye çêkirin. Bernameyê nû bike, paşê dîsa biceribîne.';
+
+  @override
+  String get backupRestoreFailed =>
+      'Paşkopî nehate vegerandin. Daneyên te nehatine guhertin.';
+
+  @override
+  String get challengeOutOfDays => 'Rojên mayî têr nakin';
 }

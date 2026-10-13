@@ -654,5 +654,18 @@
   "libraryAnyAmount": "Ko nawa",
   "libraryAddTooltip": "Ƙara {title}",
   "libraryOnList": "Yana cikin jerinka",
-  "todayEmptyBrowse": "Duba Taskar Amali"
+  "todayEmptyBrowse": "Duba Taskar Amali",
+  "settingsBackup": "Kwafin ajiya",
+  "backupExport": "Yi kwafin ajiya",
+  "backupExportSubtitle": "Ajiye kwafin duk bayananka",
+  "backupRestore": "Maido daga kwafin ajiya",
+  "backupRestoreSubtitle": "Musanya bayanan wannan na'ura da kwafin ajiya",
+  "backupRestoreConfirmTitle": "A maido da wannan kwafin ajiya?",
+  "backupRestoreConfirmBody": "Za a maye gurbin duk bayanan Muhasaba da ke wannan na'ura da kwafin ajiyar. Ba za a iya janye wannan ba.",
+  "backupRestoreConfirmAction": "Maido",
+  "backupRestored": "An maido da kwafin ajiya",
+  "backupNotABackup": "Wannan fayil ba kwafin ajiyar Muhasaba ba ne.",
+  "backupNewerVersion": "An yi wannan kwafin ajiya da sabuwar sigar Muhasaba. Sabunta manhajar, sannan a sake gwadawa.",
+  "backupRestoreFailed": "Ba a iya maido da kwafin ajiyar ba. Bayananka ba su canza ba.",
+  "challengeOutOfDays": "Kwanakin da suka rage ba su isa ba"
 }

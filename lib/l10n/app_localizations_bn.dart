@@ -2373,4 +2373,47 @@ class AppLocalizationsBn extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'আমল লাইব্রেরি দেখুন';
+
+  @override
+  String get settingsBackup => 'ব্যাকআপ';
+
+  @override
+  String get backupExport => 'ব্যাকআপ নিন';
+
+  @override
+  String get backupExportSubtitle => 'আপনার সব তথ্যের একটি কপি সংরক্ষণ করুন';
+
+  @override
+  String get backupRestore => 'ব্যাকআপ থেকে পুনরুদ্ধার করুন';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'এই ডিভাইসের তথ্য একটি ব্যাকআপ দিয়ে বদলে দিন';
+
+  @override
+  String get backupRestoreConfirmTitle => 'এই ব্যাকআপটি পুনরুদ্ধার করবেন?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'এই ডিভাইসে মুহাসাবার সব তথ্য ব্যাকআপের তথ্য দিয়ে বদলে যাবে। এটি আর আগের অবস্থায় ফেরানো যাবে না।';
+
+  @override
+  String get backupRestoreConfirmAction => 'পুনরুদ্ধার করুন';
+
+  @override
+  String get backupRestored => 'ব্যাকআপ পুনরুদ্ধার করা হয়েছে';
+
+  @override
+  String get backupNotABackup => 'এই ফাইলটি মুহাসাবার ব্যাকআপ নয়।';
+
+  @override
+  String get backupNewerVersion =>
+      'এই ব্যাকআপটি মুহাসাবার নতুন কোনো সংস্করণে তৈরি। অ্যাপটি আপডেট করে আবার চেষ্টা করুন।';
+
+  @override
+  String get backupRestoreFailed =>
+      'ব্যাকআপ পুনরুদ্ধার করা যায়নি। আপনার তথ্য আগের মতোই আছে।';
+
+  @override
+  String get challengeOutOfDays => 'বাকি দিন যথেষ্ট নয়';
 }

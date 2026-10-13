@@ -654,5 +654,18 @@
   "libraryAnyAmount": "Istalgan miqdor",
   "libraryAddTooltip": "Qo'shish: {title}",
   "libraryOnList": "Ro'yxatingizda bor",
-  "todayEmptyBrowse": "Amallar kutubxonasini ko'rish"
+  "todayEmptyBrowse": "Amallar kutubxonasini ko'rish",
+  "settingsBackup": "Zaxira nusxa",
+  "backupExport": "Zaxira nusxa yaratish",
+  "backupExportSubtitle": "Barcha ma'lumotlaringiz nusxasini saqlaydi",
+  "backupRestore": "Zaxira nusxadan tiklash",
+  "backupRestoreSubtitle": "Bu qurilmadagi ma'lumotlarni zaxira nusxa bilan almashtiradi",
+  "backupRestoreConfirmTitle": "Bu zaxira nusxa tiklansinmi?",
+  "backupRestoreConfirmBody": "Bu qurilmadagi Muhosabaning barcha ma'lumotlari zaxira nusxa bilan almashtiriladi. Buni ortga qaytarib bo'lmaydi.",
+  "backupRestoreConfirmAction": "Tiklash",
+  "backupRestored": "Zaxira nusxa tiklandi",
+  "backupNotABackup": "Bu fayl Muhosabaning zaxira nusxasi emas.",
+  "backupNewerVersion": "Bu zaxira nusxa Muhosabaning yangiroq versiyasida yaratilgan. Ilovani yangilang, so'ng qayta urinib ko'ring.",
+  "backupRestoreFailed": "Zaxira nusxani tiklab bo'lmadi. Ma'lumotlaringiz o'zgarmadi.",
+  "challengeOutOfDays": "Qolgan kunlar yetmaydi"
 }

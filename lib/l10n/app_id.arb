@@ -654,5 +654,18 @@
   "libraryAnyAmount": "Berapa pun",
   "libraryAddTooltip": "Tambah {title}",
   "libraryOnList": "Sudah ada di daftar Anda",
-  "todayEmptyBrowse": "Jelajahi Pustaka Amal"
+  "todayEmptyBrowse": "Jelajahi Pustaka Amal",
+  "settingsBackup": "Cadangan",
+  "backupExport": "Buat cadangan",
+  "backupExportSubtitle": "Simpan salinan semua data Anda",
+  "backupRestore": "Pulihkan dari cadangan",
+  "backupRestoreSubtitle": "Ganti data di perangkat ini dengan cadangan",
+  "backupRestoreConfirmTitle": "Pulihkan cadangan ini?",
+  "backupRestoreConfirmBody": "Semua data Muhasabah di perangkat ini akan diganti dengan isi cadangan. Tindakan ini tidak dapat dibatalkan.",
+  "backupRestoreConfirmAction": "Pulihkan",
+  "backupRestored": "Cadangan berhasil dipulihkan",
+  "backupNotABackup": "File ini bukan cadangan Muhasabah.",
+  "backupNewerVersion": "Cadangan ini dibuat dengan versi Muhasabah yang lebih baru. Perbarui aplikasi, lalu coba lagi.",
+  "backupRestoreFailed": "Cadangan tidak dapat dipulihkan. Data Anda tidak berubah.",
+  "challengeOutOfDays": "Sisa hari tidak cukup"
 }

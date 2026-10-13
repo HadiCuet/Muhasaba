@@ -1,5 +1,9 @@
+import 'dart:ui';
+
 import '../../data/db/database.dart';
 import '../../l10n/app_localizations.dart';
+import '../models/app_settings.dart';
+import '../utils/app_locale.dart';
 import '../utils/localized_challenge_title.dart';
 import '../models/challenge.dart';
 import 'challenge_pace.dart';
@@ -11,6 +15,30 @@ const _maxChallengeNotifications = 20;
 
 /// Days ahead to pre-schedule for a single challenge.
 const _horizonDays = 5;
+
+/// [syncChallengeNudges] in the user's language, at their daily-reminder time
+/// or 20:00 when that reminder is off.
+Future<void> syncChallengeNudgesFor({
+  required AppDatabase db,
+  required ReminderScheduler scheduler,
+  required AppSettings settings,
+  required DateTime today,
+}) async {
+  final l = await AppLocalizations.delegate.load(
+    resolveAppLocale(settings.locale, PlatformDispatcher.instance.locales),
+  );
+  final t = settings.dailyReminderEnabled
+      ? parseReminderTime(settings.dailyReminderTime)
+      : null;
+  await syncChallengeNudges(
+    db: db,
+    scheduler: scheduler,
+    l: l,
+    today: today,
+    hour: t?.hour ?? 20,
+    minute: t?.minute ?? 0,
+  );
+}
 
 /// Recomputes every challenge nudge from scratch.
 ///
@@ -61,6 +89,7 @@ Future<void> syncChallengeNudges({
       if (scheduled >= _maxChallengeNotifications) break;
       final day = today.add(Duration(days: offset));
       final pace = computePace(
+        mode: row.mode,
         target: row.target,
         progress: progress,
         startDate: row.startDate,

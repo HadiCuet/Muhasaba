@@ -2392,4 +2392,47 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'Browse the Amal Library';
+
+  @override
+  String get settingsBackup => 'Backup';
+
+  @override
+  String get backupExport => 'Export backup';
+
+  @override
+  String get backupExportSubtitle => 'Save a copy of all your data';
+
+  @override
+  String get backupRestore => 'Restore from backup';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'Replace the data on this device with a backup';
+
+  @override
+  String get backupRestoreConfirmTitle => 'Restore this backup?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'All data in Muhasaba on this device will be replaced with the backup. This can\'t be undone.';
+
+  @override
+  String get backupRestoreConfirmAction => 'Restore';
+
+  @override
+  String get backupRestored => 'Backup restored';
+
+  @override
+  String get backupNotABackup => 'This file isn\'t a Muhasaba backup.';
+
+  @override
+  String get backupNewerVersion =>
+      'This backup was made with a newer version of Muhasaba. Update the app, then try again.';
+
+  @override
+  String get backupRestoreFailed =>
+      'Couldn\'t restore the backup. Your data hasn\'t changed.';
+
+  @override
+  String get challengeOutOfDays => 'Not enough days left';
 }

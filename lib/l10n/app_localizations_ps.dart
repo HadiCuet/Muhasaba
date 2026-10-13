@@ -2367,4 +2367,47 @@ class AppLocalizationsPs extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'د عملونو کتابتون وګورئ';
+
+  @override
+  String get settingsBackup => 'بیک اپ';
+
+  @override
+  String get backupExport => 'بیک اپ واخلئ';
+
+  @override
+  String get backupExportSubtitle => 'د خپلو ټولو معلوماتو یوه کاپي خوندي کړئ';
+
+  @override
+  String get backupRestore => 'له بیک اپ څخه بېرته راوړئ';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'د دې وسیلې معلومات په یوه بیک اپ بدل کړئ';
+
+  @override
+  String get backupRestoreConfirmTitle => 'دا بیک اپ بېرته راوړئ؟';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'په دې وسیله کې د محاسبه ټول معلومات به د بیک اپ په معلوماتو بدل شي. دا کار بېرته نه شي اړول کېدای.';
+
+  @override
+  String get backupRestoreConfirmAction => 'بېرته راوړل';
+
+  @override
+  String get backupRestored => 'بیک اپ بېرته راوړل شو';
+
+  @override
+  String get backupNotABackup => 'دا فایل د محاسبه بیک اپ نه دی.';
+
+  @override
+  String get backupNewerVersion =>
+      'دا بیک اپ د محاسبه په نوې نسخې جوړ شوی دی. اپلیکیشن تازه کړئ، بیا هڅه وکړئ.';
+
+  @override
+  String get backupRestoreFailed =>
+      'بیک اپ بېرته رانه وړل شو. ستاسو معلومات نه دي بدل شوي.';
+
+  @override
+  String get challengeOutOfDays => 'پاتې ورځې بسنه نه کوي';
 }

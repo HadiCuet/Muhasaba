@@ -1,5 +1,7 @@
 import 'dart:math' as math;
 
+import '../models/challenge.dart';
+
 /// How a challenge is tracking against its deadline.
 enum PaceState {
   /// Target already met.
@@ -13,6 +15,10 @@ enum PaceState {
 
   /// More than one day's fair share behind schedule.
   behind,
+
+  /// A days challenge with more ticks left than days, so it can't finish in
+  /// its window.
+  outOfDays,
 
   onTrack,
 
@@ -35,7 +41,7 @@ class ChallengePace {
   final int daysLeft;
 
   /// What must be logged each remaining day to finish. Zero when there is no
-  /// deadline or nothing is left.
+  /// deadline, nothing is left, or there is no way to finish.
   final int requiredPerDay;
 }
 
@@ -45,6 +51,7 @@ class ChallengePace {
 /// [today], [startDate] and [endExclusive] are date-only UTC-midnight values,
 /// the convention used everywhere in this app (see `core/time/day_boundary.dart`).
 ChallengePace computePace({
+  required ChallengeMode mode,
   required int target,
   required int progress,
   required DateTime startDate,
@@ -76,6 +83,16 @@ ChallengePace computePace({
       state: PaceState.expired,
       remaining: remaining,
       daysLeft: 0,
+      requiredPerDay: 0,
+    );
+  }
+
+  // A days challenge takes one tick a day.
+  if (mode == ChallengeMode.days && remaining > daysLeft) {
+    return ChallengePace(
+      state: PaceState.outOfDays,
+      remaining: remaining,
+      daysLeft: daysLeft,
       requiredPerDay: 0,
     );
   }

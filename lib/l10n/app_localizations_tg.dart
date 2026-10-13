@@ -2377,4 +2377,48 @@ class AppLocalizationsTg extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'Китобхонаи амалҳоро кушодан';
+
+  @override
+  String get settingsBackup => 'Нусхаи эҳтиётӣ';
+
+  @override
+  String get backupExport => 'Сохтани нусхаи эҳтиётӣ';
+
+  @override
+  String get backupExportSubtitle => 'Аз ҳамаи маълумоти худ нусха нигоҳ доред';
+
+  @override
+  String get backupRestore => 'Барқарорсозӣ аз нусхаи эҳтиётӣ';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'Маълумоти ин дастгоҳро бо нусхаи эҳтиётӣ иваз кунед';
+
+  @override
+  String get backupRestoreConfirmTitle =>
+      'Ин нусхаи эҳтиётӣ барқарор карда шавад?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'Ҳамаи маълумоти Муҳосиба дар ин дастгоҳ бо нусхаи эҳтиётӣ иваз карда мешавад. Инро баргардондан ғайриимкон аст.';
+
+  @override
+  String get backupRestoreConfirmAction => 'Барқарор кардан';
+
+  @override
+  String get backupRestored => 'Нусхаи эҳтиётӣ барқарор карда шуд';
+
+  @override
+  String get backupNotABackup => 'Ин файл нусхаи эҳтиётии Муҳосиба нест.';
+
+  @override
+  String get backupNewerVersion =>
+      'Ин нусхаи эҳтиётӣ бо версияи навтари Муҳосиба сохта шудааст. Барномаро навсозӣ кунед ва дубора кӯшиш кунед.';
+
+  @override
+  String get backupRestoreFailed =>
+      'Нусхаи эҳтиётиро барқарор кардан муяссар нашуд. Маълумоти шумо тағйир наёфтааст.';
+
+  @override
+  String get challengeOutOfDays => 'Рӯзҳои боқимонда намерасад';
 }

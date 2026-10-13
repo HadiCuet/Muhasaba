@@ -2363,4 +2363,47 @@ class AppLocalizationsTk extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'Amallar kitaphanasyny açmak';
+
+  @override
+  String get settingsBackup => 'Ätiýaçlyk nusga';
+
+  @override
+  String get backupExport => 'Ätiýaçlyk nusga dörediň';
+
+  @override
+  String get backupExportSubtitle => 'Ähli maglumatlaryňyzyň nusgasyny saklaň';
+
+  @override
+  String get backupRestore => 'Ätiýaçlyk nusgadan dikeldiň';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'Bu enjamdaky maglumatlary ätiýaçlyk nusga bilen çalşyň';
+
+  @override
+  String get backupRestoreConfirmTitle => 'Bu ätiýaçlyk nusga dikeldilsinmi?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'Bu enjamdaky Muhasabanyň ähli maglumatlary ätiýaçlyk nusga bilen çalşylar. Muny yzyna gaýtaryp bolmaz.';
+
+  @override
+  String get backupRestoreConfirmAction => 'Dikeltmek';
+
+  @override
+  String get backupRestored => 'Ätiýaçlyk nusga dikeldildi';
+
+  @override
+  String get backupNotABackup => 'Bu faýl Muhasabanyň ätiýaçlyk nusgasy däl.';
+
+  @override
+  String get backupNewerVersion =>
+      'Bu ätiýaçlyk nusga Muhasabanyň has täze wersiýasynda döredilipdir. Goşundyny täzeläň, soňra gaýtadan synanyşyň.';
+
+  @override
+  String get backupRestoreFailed =>
+      'Ätiýaçlyk nusgany dikeldip bolmady. Maglumatlaryňyz üýtgemedi.';
+
+  @override
+  String get challengeOutOfDays => 'Galan günler ýetenok';
 }

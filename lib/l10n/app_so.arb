@@ -654,5 +654,18 @@
   "libraryAnyAmount": "Tiro kasta",
   "libraryAddTooltip": "Ku dar {title}",
   "libraryOnList": "Liiskaaga ayuu ku jiraa",
-  "todayEmptyBrowse": "Eeg Maktabadda Camallada"
+  "todayEmptyBrowse": "Eeg Maktabadda Camallada",
+  "settingsBackup": "Kaydinta xogta",
+  "backupExport": "Samee nuqul kayd ah",
+  "backupExportSubtitle": "Kaydi nuqul ka kooban xogtaada oo dhan",
+  "backupRestore": "Ka soo celi nuqul kayd ah",
+  "backupRestoreSubtitle": "Xogta qalabkan ku beddel nuqul kayd ah",
+  "backupRestoreConfirmTitle": "Ma soo celinaysaa nuqulkan kaydka ah?",
+  "backupRestoreConfirmBody": "Dhammaan xogta Muhasaba ee qalabkan waxaa lagu beddeli doonaa nuqulka kaydka ah. Tan dib looma celin karo.",
+  "backupRestoreConfirmAction": "Soo celi",
+  "backupRestored": "Nuqulka kaydka ah waa la soo celiyey",
+  "backupNotABackup": "Faylkani ma aha nuqul kayd ah oo Muhasaba.",
+  "backupNewerVersion": "Nuqulkan kaydka ah waxaa lagu sameeyey nooc ka cusub oo Muhasaba. Cusboonaysii abka, kadibna isku day mar kale.",
+  "backupRestoreFailed": "Nuqulka kaydka ah lama soo celin karin. Xogtaadu isma beddelin.",
+  "challengeOutOfDays": "Maalmaha haray kuma filna"
 }

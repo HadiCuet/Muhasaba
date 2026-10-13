@@ -21,7 +21,9 @@ import 'theme.dart';
 final _scaffoldMessengerKey = GlobalKey<ScaffoldMessengerState>();
 
 class MuhasabaApp extends ConsumerStatefulWidget {
-  const MuhasabaApp({super.key});
+  const MuhasabaApp({super.key, this.restoredFromBackup = false});
+
+  final bool restoredFromBackup;
 
   @override
   ConsumerState<MuhasabaApp> createState() => _MuhasabaAppState();
@@ -44,6 +46,9 @@ class _MuhasabaAppState extends ConsumerState<MuhasabaApp> {
       },
     );
     WidgetsBinding.instance.addPostFrameCallback((_) => _bootstrapFirstRun());
+    if (widget.restoredFromBackup) {
+      WidgetsBinding.instance.addPostFrameCallback((_) => _announceRestore());
+    }
   }
 
   @override
@@ -78,6 +83,17 @@ class _MuhasabaAppState extends ConsumerState<MuhasabaApp> {
     final introContext = await _awaitPastSplash();
     if (introContext == null || !introContext.mounted) return;
     await maybeShowSupportIntro(introContext, ref);
+  }
+
+  Future<void> _announceRestore() async {
+    final context = await _awaitPastSplash();
+    if (context == null || !context.mounted) return;
+    _scaffoldMessengerKey.currentState?.showSnackBar(
+      SnackBar(
+        content: Text(AppLocalizations.of(context).backupRestored),
+        behavior: SnackBarBehavior.floating,
+      ),
+    );
   }
 
   Future<void> _runTutorialIfUnseen() async {

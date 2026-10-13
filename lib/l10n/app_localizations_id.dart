@@ -2375,4 +2375,47 @@ class AppLocalizationsId extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'Jelajahi Pustaka Amal';
+
+  @override
+  String get settingsBackup => 'Cadangan';
+
+  @override
+  String get backupExport => 'Buat cadangan';
+
+  @override
+  String get backupExportSubtitle => 'Simpan salinan semua data Anda';
+
+  @override
+  String get backupRestore => 'Pulihkan dari cadangan';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'Ganti data di perangkat ini dengan cadangan';
+
+  @override
+  String get backupRestoreConfirmTitle => 'Pulihkan cadangan ini?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'Semua data Muhasabah di perangkat ini akan diganti dengan isi cadangan. Tindakan ini tidak dapat dibatalkan.';
+
+  @override
+  String get backupRestoreConfirmAction => 'Pulihkan';
+
+  @override
+  String get backupRestored => 'Cadangan berhasil dipulihkan';
+
+  @override
+  String get backupNotABackup => 'File ini bukan cadangan Muhasabah.';
+
+  @override
+  String get backupNewerVersion =>
+      'Cadangan ini dibuat dengan versi Muhasabah yang lebih baru. Perbarui aplikasi, lalu coba lagi.';
+
+  @override
+  String get backupRestoreFailed =>
+      'Cadangan tidak dapat dipulihkan. Data Anda tidak berubah.';
+
+  @override
+  String get challengeOutOfDays => 'Sisa hari tidak cukup';
 }

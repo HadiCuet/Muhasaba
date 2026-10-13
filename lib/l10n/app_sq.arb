@@ -654,5 +654,18 @@
   "libraryAnyAmount": "Çdo sasi",
   "libraryAddTooltip": "Shtoni {title}",
   "libraryOnList": "Është në listën tuaj",
-  "todayEmptyBrowse": "Shfletoni bibliotekën e amaleve"
+  "todayEmptyBrowse": "Shfletoni bibliotekën e amaleve",
+  "settingsBackup": "Kopje rezervë",
+  "backupExport": "Krijoni një kopje rezervë",
+  "backupExportSubtitle": "Ruani një kopje të të gjitha të dhënave tuaja",
+  "backupRestore": "Rivendosni nga kopja rezervë",
+  "backupRestoreSubtitle": "Zëvendësoni të dhënat e kësaj pajisjeje me një kopje rezervë",
+  "backupRestoreConfirmTitle": "Të rivendoset kjo kopje rezervë?",
+  "backupRestoreConfirmBody": "Të gjitha të dhënat e Muhasaba në këtë pajisje do të zëvendësohen me kopjen rezervë. Ky veprim nuk mund të zhbëhet.",
+  "backupRestoreConfirmAction": "Rivendos",
+  "backupRestored": "Kopja rezervë u rivendos",
+  "backupNotABackup": "Ky skedar nuk është kopje rezervë e Muhasaba.",
+  "backupNewerVersion": "Kjo kopje rezervë është krijuar me një version më të ri të Muhasaba. Përditësoni aplikacionin dhe provoni përsëri.",
+  "backupRestoreFailed": "Kopja rezervë nuk u rivendos dot. Të dhënat tuaja nuk kanë ndryshuar.",
+  "challengeOutOfDays": "Nuk mjaftojnë ditët e mbetura"
 }

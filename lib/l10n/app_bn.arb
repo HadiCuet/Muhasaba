@@ -654,5 +654,18 @@
   "libraryAnyAmount": "যেকোনো পরিমাণ",
   "libraryAddTooltip": "{title} যোগ করুন",
   "libraryOnList": "আপনার তালিকায় আছে",
-  "todayEmptyBrowse": "আমল লাইব্রেরি দেখুন"
+  "todayEmptyBrowse": "আমল লাইব্রেরি দেখুন",
+  "settingsBackup": "ব্যাকআপ",
+  "backupExport": "ব্যাকআপ নিন",
+  "backupExportSubtitle": "আপনার সব তথ্যের একটি কপি সংরক্ষণ করুন",
+  "backupRestore": "ব্যাকআপ থেকে পুনরুদ্ধার করুন",
+  "backupRestoreSubtitle": "এই ডিভাইসের তথ্য একটি ব্যাকআপ দিয়ে বদলে দিন",
+  "backupRestoreConfirmTitle": "এই ব্যাকআপটি পুনরুদ্ধার করবেন?",
+  "backupRestoreConfirmBody": "এই ডিভাইসে মুহাসাবার সব তথ্য ব্যাকআপের তথ্য দিয়ে বদলে যাবে। এটি আর আগের অবস্থায় ফেরানো যাবে না।",
+  "backupRestoreConfirmAction": "পুনরুদ্ধার করুন",
+  "backupRestored": "ব্যাকআপ পুনরুদ্ধার করা হয়েছে",
+  "backupNotABackup": "এই ফাইলটি মুহাসাবার ব্যাকআপ নয়।",
+  "backupNewerVersion": "এই ব্যাকআপটি মুহাসাবার নতুন কোনো সংস্করণে তৈরি। অ্যাপটি আপডেট করে আবার চেষ্টা করুন।",
+  "backupRestoreFailed": "ব্যাকআপ পুনরুদ্ধার করা যায়নি। আপনার তথ্য আগের মতোই আছে।",
+  "challengeOutOfDays": "বাকি দিন যথেষ্ট নয়"
 }

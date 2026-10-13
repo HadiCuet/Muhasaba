@@ -5,7 +5,8 @@ import 'package:go_router/go_router.dart';
 
 /// Persistent shell with bottom [NavigationBar] wrapping the four top-level
 /// tabs. The FAB is only visible on the Today and Challenge tabs, where it
-/// creates an amal and a challenge respectively.
+/// creates an amal and a challenge respectively. It hides while the keyboard
+/// is up, where it would ride up over the buttons of whatever is being edited.
 class AppShell extends StatelessWidget {
   const AppShell({super.key, required this.navigationShell});
 
@@ -14,27 +15,32 @@ class AppShell extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final l = AppLocalizations.of(context);
+    final keyboardOpen = MediaQuery.viewInsetsOf(context).bottom > 0;
     return Scaffold(
       body: navigationShell,
-      floatingActionButton: switch (navigationShell.currentIndex) {
-        0 => FloatingActionButton.extended(
-          onPressed: () {
-            FirebaseAnalytics.instance.logEvent(name: 'new_amal_started');
-            context.push('/amal/new');
-          },
-          icon: const Icon(Icons.add),
-          label: Text(l.newAmal),
-        ),
-        1 => FloatingActionButton.extended(
-          onPressed: () {
-            FirebaseAnalytics.instance.logEvent(name: 'new_challenge_started');
-            context.push('/challenge/new');
-          },
-          icon: const Icon(Icons.add),
-          label: Text(l.newChallenge),
-        ),
-        _ => null,
-      },
+      floatingActionButton: keyboardOpen
+          ? null
+          : switch (navigationShell.currentIndex) {
+              0 => FloatingActionButton.extended(
+                onPressed: () {
+                  FirebaseAnalytics.instance.logEvent(name: 'new_amal_started');
+                  context.push('/amal/new');
+                },
+                icon: const Icon(Icons.add),
+                label: Text(l.newAmal),
+              ),
+              1 => FloatingActionButton.extended(
+                onPressed: () {
+                  FirebaseAnalytics.instance.logEvent(
+                    name: 'new_challenge_started',
+                  );
+                  context.push('/challenge/new');
+                },
+                icon: const Icon(Icons.add),
+                label: Text(l.newChallenge),
+              ),
+              _ => null,
+            },
       bottomNavigationBar: NavigationBar(
         selectedIndex: navigationShell.currentIndex,
         onDestinationSelected: (i) => navigationShell.goBranch(

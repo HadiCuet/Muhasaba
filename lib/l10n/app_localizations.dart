@@ -4087,6 +4087,84 @@ abstract class AppLocalizations {
   /// In en, this message translates to:
   /// **'Browse the Amal Library'**
   String get todayEmptyBrowse;
+
+  /// Settings section header for exporting and restoring backups (shown uppercased)
+  ///
+  /// In en, this message translates to:
+  /// **'Backup'**
+  String get settingsBackup;
+
+  /// Settings row that saves a backup file of all app data and opens the share sheet to keep it somewhere safe
+  ///
+  /// In en, this message translates to:
+  /// **'Export backup'**
+  String get backupExport;
+
+  /// Subtitle under the backup row
+  ///
+  /// In en, this message translates to:
+  /// **'Save a copy of all your data'**
+  String get backupExportSubtitle;
+
+  /// Settings row that picks a backup file and replaces all app data on this device with it
+  ///
+  /// In en, this message translates to:
+  /// **'Restore from backup'**
+  String get backupRestore;
+
+  /// Subtitle under the restore row; warns that the current data gets replaced
+  ///
+  /// In en, this message translates to:
+  /// **'Replace the data on this device with a backup'**
+  String get backupRestoreSubtitle;
+
+  /// Title of the dialog confirming a restore
+  ///
+  /// In en, this message translates to:
+  /// **'Restore this backup?'**
+  String get backupRestoreConfirmTitle;
+
+  /// Body of the restore confirmation dialog
+  ///
+  /// In en, this message translates to:
+  /// **'All data in Muhasaba on this device will be replaced with the backup. This can\'t be undone.'**
+  String get backupRestoreConfirmBody;
+
+  /// Confirm button in the restore dialog
+  ///
+  /// In en, this message translates to:
+  /// **'Restore'**
+  String get backupRestoreConfirmAction;
+
+  /// Snackbar shown once the app has reloaded with the restored data
+  ///
+  /// In en, this message translates to:
+  /// **'Backup restored'**
+  String get backupRestored;
+
+  /// Error when the picked file is not a Muhasaba backup
+  ///
+  /// In en, this message translates to:
+  /// **'This file isn\'t a Muhasaba backup.'**
+  String get backupNotABackup;
+
+  /// Error when the backup was made by a newer app version than the installed one
+  ///
+  /// In en, this message translates to:
+  /// **'This backup was made with a newer version of Muhasaba. Update the app, then try again.'**
+  String get backupNewerVersion;
+
+  /// Error when a restore fails part-way; the data on the device was not changed
+  ///
+  /// In en, this message translates to:
+  /// **'Couldn\'t restore the backup. Your data hasn\'t changed.'**
+  String get backupRestoreFailed;
+
+  /// Pace chip when a one-tick-a-day challenge has more ticks left than days in its window, so it can no longer finish in time. Neutral, not a defeat.
+  ///
+  /// In en, this message translates to:
+  /// **'Not enough days left'**
+  String get challengeOutOfDays;
 }
 
 class _AppLocalizationsDelegate

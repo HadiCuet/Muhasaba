@@ -654,5 +654,18 @@
   "libraryAnyAmount": "هره اندازه",
   "libraryAddTooltip": "{title} اضافه کړئ",
   "libraryOnList": "ستاسو په لیست کې دی",
-  "todayEmptyBrowse": "د عملونو کتابتون وګورئ"
+  "todayEmptyBrowse": "د عملونو کتابتون وګورئ",
+  "settingsBackup": "بیک اپ",
+  "backupExport": "بیک اپ واخلئ",
+  "backupExportSubtitle": "د خپلو ټولو معلوماتو یوه کاپي خوندي کړئ",
+  "backupRestore": "له بیک اپ څخه بېرته راوړئ",
+  "backupRestoreSubtitle": "د دې وسیلې معلومات په یوه بیک اپ بدل کړئ",
+  "backupRestoreConfirmTitle": "دا بیک اپ بېرته راوړئ؟",
+  "backupRestoreConfirmBody": "په دې وسیله کې د محاسبه ټول معلومات به د بیک اپ په معلوماتو بدل شي. دا کار بېرته نه شي اړول کېدای.",
+  "backupRestoreConfirmAction": "بېرته راوړل",
+  "backupRestored": "بیک اپ بېرته راوړل شو",
+  "backupNotABackup": "دا فایل د محاسبه بیک اپ نه دی.",
+  "backupNewerVersion": "دا بیک اپ د محاسبه په نوې نسخې جوړ شوی دی. اپلیکیشن تازه کړئ، بیا هڅه وکړئ.",
+  "backupRestoreFailed": "بیک اپ بېرته رانه وړل شو. ستاسو معلومات نه دي بدل شوي.",
+  "challengeOutOfDays": "پاتې ورځې بسنه نه کوي"
 }

@@ -2367,4 +2367,49 @@ class AppLocalizationsKk extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'Амалдар кітапханасын ашу';
+
+  @override
+  String get settingsBackup => 'Сақтық көшірме';
+
+  @override
+  String get backupExport => 'Сақтық көшірме жасау';
+
+  @override
+  String get backupExportSubtitle =>
+      'Барлық деректеріңіздің көшірмесін сақтайды';
+
+  @override
+  String get backupRestore => 'Сақтық көшірмеден қалпына келтіру';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'Осы құрылғыдағы деректерді сақтық көшірмемен ауыстырады';
+
+  @override
+  String get backupRestoreConfirmTitle =>
+      'Осы сақтық көшірмені қалпына келтіресіз бе?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'Осы құрылғыдағы Muhasaba-ның барлық деректері сақтық көшірмемен ауыстырылады. Бұл әрекетті кері қайтару мүмкін емес.';
+
+  @override
+  String get backupRestoreConfirmAction => 'Қалпына келтіру';
+
+  @override
+  String get backupRestored => 'Сақтық көшірме қалпына келтірілді';
+
+  @override
+  String get backupNotABackup => 'Бұл файл Muhasaba-ның сақтық көшірмесі емес.';
+
+  @override
+  String get backupNewerVersion =>
+      'Бұл сақтық көшірме Muhasaba-ның жаңарақ нұсқасында жасалған. Қолданбаны жаңартып, қайталап көріңіз.';
+
+  @override
+  String get backupRestoreFailed =>
+      'Сақтық көшірмені қалпына келтіру мүмкін болмады. Деректеріңіз өзгерген жоқ.';
+
+  @override
+  String get challengeOutOfDays => 'Қалған күн жетпейді';
 }

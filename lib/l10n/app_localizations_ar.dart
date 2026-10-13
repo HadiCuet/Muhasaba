@@ -2451,4 +2451,47 @@ class AppLocalizationsAr extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'تصفح مكتبة الأعمال';
+
+  @override
+  String get settingsBackup => 'النسخ الاحتياطي';
+
+  @override
+  String get backupExport => 'إنشاء نسخة احتياطية';
+
+  @override
+  String get backupExportSubtitle => 'حفظ نسخة من جميع بياناتك';
+
+  @override
+  String get backupRestore => 'الاستعادة من نسخة احتياطية';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'استبدال بيانات هذا الجهاز بنسخة احتياطية';
+
+  @override
+  String get backupRestoreConfirmTitle => 'استعادة هذه النسخة الاحتياطية؟';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'ستحلّ النسخة الاحتياطية محلّ جميع بيانات تطبيق محاسبة على هذا الجهاز، ولا يمكن التراجع عن ذلك.';
+
+  @override
+  String get backupRestoreConfirmAction => 'استعادة';
+
+  @override
+  String get backupRestored => 'تمت استعادة النسخة الاحتياطية';
+
+  @override
+  String get backupNotABackup => 'هذا الملف ليس نسخة احتياطية من تطبيق محاسبة.';
+
+  @override
+  String get backupNewerVersion =>
+      'أُنشئت هذه النسخة الاحتياطية بإصدار أحدث من تطبيق محاسبة. حدِّث التطبيق ثم حاول مرة أخرى.';
+
+  @override
+  String get backupRestoreFailed =>
+      'تعذّرت استعادة النسخة الاحتياطية، ولم تتغيّر بياناتك.';
+
+  @override
+  String get challengeOutOfDays => 'الأيام المتبقية لا تكفي';
 }

@@ -654,5 +654,18 @@
   "libraryAnyAmount": "Quantité libre",
   "libraryAddTooltip": "Ajouter {title}",
   "libraryOnList": "Déjà dans votre liste",
-  "todayEmptyBrowse": "Parcourir la bibliothèque d'amals"
+  "todayEmptyBrowse": "Parcourir la bibliothèque d'amals",
+  "settingsBackup": "Sauvegarde",
+  "backupExport": "Créer une sauvegarde",
+  "backupExportSubtitle": "Enregistrer une copie de toutes vos données",
+  "backupRestore": "Restaurer une sauvegarde",
+  "backupRestoreSubtitle": "Remplacer les données de cet appareil par une sauvegarde",
+  "backupRestoreConfirmTitle": "Restaurer cette sauvegarde ?",
+  "backupRestoreConfirmBody": "Toutes les données de Muhasaba sur cet appareil seront remplacées par la sauvegarde. Cette action est irréversible.",
+  "backupRestoreConfirmAction": "Restaurer",
+  "backupRestored": "Sauvegarde restaurée",
+  "backupNotABackup": "Ce fichier n'est pas une sauvegarde Muhasaba.",
+  "backupNewerVersion": "Cette sauvegarde a été créée avec une version plus récente de Muhasaba. Mettez l'application à jour, puis réessayez.",
+  "backupRestoreFailed": "Impossible de restaurer la sauvegarde. Vos données n'ont pas été modifiées.",
+  "challengeOutOfDays": "Plus assez de jours"
 }

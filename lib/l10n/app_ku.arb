@@ -654,5 +654,18 @@
   "libraryAnyAmount": "Her hejmar",
   "libraryAddTooltip": "{title} lê zêde bike",
   "libraryOnList": "Di lîsteya te de ye",
-  "todayEmptyBrowse": "Li Pirtûkxaneya Kirinan binêre"
+  "todayEmptyBrowse": "Li Pirtûkxaneya Kirinan binêre",
+  "settingsBackup": "Paşkopî",
+  "backupExport": "Paşkopiyekê çêke",
+  "backupExportSubtitle": "Kopiyeke hemû daneyên xwe tomar bike",
+  "backupRestore": "Ji paşkopiyê vegerîne",
+  "backupRestoreSubtitle": "Daneyên vê amûrê bi paşkopiyekê biguherîne",
+  "backupRestoreConfirmTitle": "Ev paşkopî were vegerandin?",
+  "backupRestoreConfirmBody": "Hemû daneyên Muhasaba yên li ser vê amûrê dê bi paşkopiyê werin guhertin. Ev kar nayê paşvekirin.",
+  "backupRestoreConfirmAction": "Vegerîne",
+  "backupRestored": "Paşkopî hate vegerandin",
+  "backupNotABackup": "Ev pel ne paşkopiyeke Muhasaba ye.",
+  "backupNewerVersion": "Ev paşkopî bi guhertoyeke nûtir a Muhasaba hatiye çêkirin. Bernameyê nû bike, paşê dîsa biceribîne.",
+  "backupRestoreFailed": "Paşkopî nehate vegerandin. Daneyên te nehatine guhertin.",
+  "challengeOutOfDays": "Rojên mayî têr nakin"
 }

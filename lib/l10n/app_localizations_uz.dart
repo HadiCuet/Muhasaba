@@ -2373,4 +2373,48 @@ class AppLocalizationsUz extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'Amallar kutubxonasini ko\'rish';
+
+  @override
+  String get settingsBackup => 'Zaxira nusxa';
+
+  @override
+  String get backupExport => 'Zaxira nusxa yaratish';
+
+  @override
+  String get backupExportSubtitle =>
+      'Barcha ma\'lumotlaringiz nusxasini saqlaydi';
+
+  @override
+  String get backupRestore => 'Zaxira nusxadan tiklash';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'Bu qurilmadagi ma\'lumotlarni zaxira nusxa bilan almashtiradi';
+
+  @override
+  String get backupRestoreConfirmTitle => 'Bu zaxira nusxa tiklansinmi?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'Bu qurilmadagi Muhosabaning barcha ma\'lumotlari zaxira nusxa bilan almashtiriladi. Buni ortga qaytarib bo\'lmaydi.';
+
+  @override
+  String get backupRestoreConfirmAction => 'Tiklash';
+
+  @override
+  String get backupRestored => 'Zaxira nusxa tiklandi';
+
+  @override
+  String get backupNotABackup => 'Bu fayl Muhosabaning zaxira nusxasi emas.';
+
+  @override
+  String get backupNewerVersion =>
+      'Bu zaxira nusxa Muhosabaning yangiroq versiyasida yaratilgan. Ilovani yangilang, so\'ng qayta urinib ko\'ring.';
+
+  @override
+  String get backupRestoreFailed =>
+      'Zaxira nusxani tiklab bo\'lmadi. Ma\'lumotlaringiz o\'zgarmadi.';
+
+  @override
+  String get challengeOutOfDays => 'Qolgan kunlar yetmaydi';
 }

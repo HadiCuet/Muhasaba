@@ -2385,4 +2385,47 @@ class AppLocalizationsSo extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'Eeg Maktabadda Camallada';
+
+  @override
+  String get settingsBackup => 'Kaydinta xogta';
+
+  @override
+  String get backupExport => 'Samee nuqul kayd ah';
+
+  @override
+  String get backupExportSubtitle => 'Kaydi nuqul ka kooban xogtaada oo dhan';
+
+  @override
+  String get backupRestore => 'Ka soo celi nuqul kayd ah';
+
+  @override
+  String get backupRestoreSubtitle => 'Xogta qalabkan ku beddel nuqul kayd ah';
+
+  @override
+  String get backupRestoreConfirmTitle =>
+      'Ma soo celinaysaa nuqulkan kaydka ah?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'Dhammaan xogta Muhasaba ee qalabkan waxaa lagu beddeli doonaa nuqulka kaydka ah. Tan dib looma celin karo.';
+
+  @override
+  String get backupRestoreConfirmAction => 'Soo celi';
+
+  @override
+  String get backupRestored => 'Nuqulka kaydka ah waa la soo celiyey';
+
+  @override
+  String get backupNotABackup => 'Faylkani ma aha nuqul kayd ah oo Muhasaba.';
+
+  @override
+  String get backupNewerVersion =>
+      'Nuqulkan kaydka ah waxaa lagu sameeyey nooc ka cusub oo Muhasaba. Cusboonaysii abka, kadibna isku day mar kale.';
+
+  @override
+  String get backupRestoreFailed =>
+      'Nuqulka kaydka ah lama soo celin karin. Xogtaadu isma beddelin.';
+
+  @override
+  String get challengeOutOfDays => 'Maalmaha haray kuma filna';
 }

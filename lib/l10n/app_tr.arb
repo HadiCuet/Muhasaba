@@ -654,5 +654,18 @@
   "libraryAnyAmount": "Serbest miktar",
   "libraryAddTooltip": "{title} ekle",
   "libraryOnList": "Listenizde var",
-  "todayEmptyBrowse": "Amel Kütüphanesi'ne göz atın"
+  "todayEmptyBrowse": "Amel Kütüphanesi'ne göz atın",
+  "settingsBackup": "Yedekleme",
+  "backupExport": "Yedek oluştur",
+  "backupExportSubtitle": "Tüm verilerinizin bir kopyasını kaydedin",
+  "backupRestore": "Yedekten geri yükle",
+  "backupRestoreSubtitle": "Bu cihazdaki verileri bir yedekle değiştirin",
+  "backupRestoreConfirmTitle": "Bu yedek geri yüklensin mi?",
+  "backupRestoreConfirmBody": "Bu cihazdaki tüm uygulama verileri yedektekilerle değiştirilecek. Bu işlem geri alınamaz.",
+  "backupRestoreConfirmAction": "Geri yükle",
+  "backupRestored": "Yedek geri yüklendi",
+  "backupNotABackup": "Bu dosya bir Muhasebe yedeği değil.",
+  "backupNewerVersion": "Bu yedek, uygulamanın daha yeni bir sürümüyle oluşturulmuş. Uygulamayı güncelleyip tekrar deneyin.",
+  "backupRestoreFailed": "Yedek geri yüklenemedi. Verileriniz değişmedi.",
+  "challengeOutOfDays": "Kalan gün yetmiyor"
 }

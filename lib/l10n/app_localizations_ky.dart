@@ -2366,4 +2366,50 @@ class AppLocalizationsKy extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'Амалдар китепканасын ачуу';
+
+  @override
+  String get settingsBackup => 'Камдык көчүрмө';
+
+  @override
+  String get backupExport => 'Камдык көчүрмө түзүү';
+
+  @override
+  String get backupExportSubtitle =>
+      'Бардык маалыматыңыздын көчүрмөсүн сактайт';
+
+  @override
+  String get backupRestore => 'Камдык көчүрмөдөн калыбына келтирүү';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'Бул түзмөктөгү маалыматты камдык көчүрмө менен алмаштырат';
+
+  @override
+  String get backupRestoreConfirmTitle =>
+      'Бул камдык көчүрмөнү калыбына келтиресизби?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'Бул түзмөктөгү Muhasaba колдонмосунун бардык маалыматы камдык көчүрмө менен алмаштырылат. Муну кайра кайтаруу мүмкүн эмес.';
+
+  @override
+  String get backupRestoreConfirmAction => 'Калыбына келтирүү';
+
+  @override
+  String get backupRestored => 'Камдык көчүрмө калыбына келтирилди';
+
+  @override
+  String get backupNotABackup =>
+      'Бул файл Muhasaba колдонмосунун камдык көчүрмөсү эмес.';
+
+  @override
+  String get backupNewerVersion =>
+      'Бул камдык көчүрмө Muhasaba колдонмосунун жаңыраак версиясында түзүлгөн. Колдонмону жаңыртып, кайра аракет кылыңыз.';
+
+  @override
+  String get backupRestoreFailed =>
+      'Камдык көчүрмөнү калыбына келтирүү мүмкүн болгон жок. Маалыматыңыз өзгөргөн жок.';
+
+  @override
+  String get challengeOutOfDays => 'Калган күн жетпейт';
 }

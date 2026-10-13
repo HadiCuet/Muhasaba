@@ -8,6 +8,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'app/app.dart';
+import 'app/app_restarter.dart';
 import 'app/providers.dart';
 import 'data/db/daos/settings_dao.dart';
 import 'data/db/database.dart';
@@ -66,12 +67,14 @@ Future<void> main() async {
       await applyDailyReminder(scheduler, settings);
 
       runApp(
-        ProviderScope(
-          overrides: [
-            appDatabaseProvider.overrideWithValue(db),
-            reminderSchedulerProvider.overrideWithValue(scheduler),
-          ],
-          child: const MuhasabaApp(),
+        AppRestarter(
+          builder: (restarted) => ProviderScope(
+            overrides: [
+              appDatabaseProvider.overrideWithValue(db),
+              reminderSchedulerProvider.overrideWithValue(scheduler),
+            ],
+            child: MuhasabaApp(restoredFromBackup: restarted),
+          ),
         ),
       );
     },

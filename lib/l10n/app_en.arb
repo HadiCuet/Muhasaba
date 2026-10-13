@@ -1827,5 +1827,57 @@
   "todayEmptyBrowse": "Browse the Amal Library",
   "@todayEmptyBrowse": {
     "description": "Button on the empty Today screen that opens the Amal Library"
+  },
+  "settingsBackup": "Backup",
+  "@settingsBackup": {
+    "description": "Settings section header for exporting and restoring backups (shown uppercased)"
+  },
+  "backupExport": "Export backup",
+  "@backupExport": {
+    "description": "Settings row that saves a backup file of all app data and opens the share sheet to keep it somewhere safe"
+  },
+  "backupExportSubtitle": "Save a copy of all your data",
+  "@backupExportSubtitle": {
+    "description": "Subtitle under the backup row"
+  },
+  "backupRestore": "Restore from backup",
+  "@backupRestore": {
+    "description": "Settings row that picks a backup file and replaces all app data on this device with it"
+  },
+  "backupRestoreSubtitle": "Replace the data on this device with a backup",
+  "@backupRestoreSubtitle": {
+    "description": "Subtitle under the restore row; warns that the current data gets replaced"
+  },
+  "backupRestoreConfirmTitle": "Restore this backup?",
+  "@backupRestoreConfirmTitle": {
+    "description": "Title of the dialog confirming a restore"
+  },
+  "backupRestoreConfirmBody": "All data in Muhasaba on this device will be replaced with the backup. This can't be undone.",
+  "@backupRestoreConfirmBody": {
+    "description": "Body of the restore confirmation dialog"
+  },
+  "backupRestoreConfirmAction": "Restore",
+  "@backupRestoreConfirmAction": {
+    "description": "Confirm button in the restore dialog"
+  },
+  "backupRestored": "Backup restored",
+  "@backupRestored": {
+    "description": "Snackbar shown once the app has reloaded with the restored data"
+  },
+  "backupNotABackup": "This file isn't a Muhasaba backup.",
+  "@backupNotABackup": {
+    "description": "Error when the picked file is not a Muhasaba backup"
+  },
+  "backupNewerVersion": "This backup was made with a newer version of Muhasaba. Update the app, then try again.",
+  "@backupNewerVersion": {
+    "description": "Error when the backup was made by a newer app version than the installed one"
+  },
+  "backupRestoreFailed": "Couldn't restore the backup. Your data hasn't changed.",
+  "@backupRestoreFailed": {
+    "description": "Error when a restore fails part-way; the data on the device was not changed"
+  },
+  "challengeOutOfDays": "Not enough days left",
+  "@challengeOutOfDays": {
+    "description": "Pace chip when a one-tick-a-day challenge has more ticks left than days in its window, so it can no longer finish in time. Neutral, not a defeat."
   }
 }

@@ -654,5 +654,18 @@
   "libraryAnyAmount": "Кез келген мөлшер",
   "libraryAddTooltip": "Қосу: {title}",
   "libraryOnList": "Тізіміңізде бар",
-  "todayEmptyBrowse": "Амалдар кітапханасын ашу"
+  "todayEmptyBrowse": "Амалдар кітапханасын ашу",
+  "settingsBackup": "Сақтық көшірме",
+  "backupExport": "Сақтық көшірме жасау",
+  "backupExportSubtitle": "Барлық деректеріңіздің көшірмесін сақтайды",
+  "backupRestore": "Сақтық көшірмеден қалпына келтіру",
+  "backupRestoreSubtitle": "Осы құрылғыдағы деректерді сақтық көшірмемен ауыстырады",
+  "backupRestoreConfirmTitle": "Осы сақтық көшірмені қалпына келтіресіз бе?",
+  "backupRestoreConfirmBody": "Осы құрылғыдағы Muhasaba-ның барлық деректері сақтық көшірмемен ауыстырылады. Бұл әрекетті кері қайтару мүмкін емес.",
+  "backupRestoreConfirmAction": "Қалпына келтіру",
+  "backupRestored": "Сақтық көшірме қалпына келтірілді",
+  "backupNotABackup": "Бұл файл Muhasaba-ның сақтық көшірмесі емес.",
+  "backupNewerVersion": "Бұл сақтық көшірме Muhasaba-ның жаңарақ нұсқасында жасалған. Қолданбаны жаңартып, қайталап көріңіз.",
+  "backupRestoreFailed": "Сақтық көшірмені қалпына келтіру мүмкін болмады. Деректеріңіз өзгерген жоқ.",
+  "challengeOutOfDays": "Қалған күн жетпейді"
 }

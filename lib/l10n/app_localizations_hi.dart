@@ -2372,4 +2372,46 @@ class AppLocalizationsHi extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'अमल लाइब्रेरी देखें';
+
+  @override
+  String get settingsBackup => 'बैकअप';
+
+  @override
+  String get backupExport => 'बैकअप लें';
+
+  @override
+  String get backupExportSubtitle => 'अपने सारे डेटा की एक कॉपी सहेजें';
+
+  @override
+  String get backupRestore => 'बैकअप से रीस्टोर करें';
+
+  @override
+  String get backupRestoreSubtitle => 'इस डिवाइस का डेटा किसी बैकअप से बदलें';
+
+  @override
+  String get backupRestoreConfirmTitle => 'यह बैकअप रीस्टोर करें?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'इस डिवाइस पर Muhasaba का सारा डेटा बैकअप से बदल जाएगा। इसे पहले जैसा नहीं किया जा सकेगा।';
+
+  @override
+  String get backupRestoreConfirmAction => 'रीस्टोर करें';
+
+  @override
+  String get backupRestored => 'बैकअप रीस्टोर हो गया';
+
+  @override
+  String get backupNotABackup => 'यह फ़ाइल Muhasaba का बैकअप नहीं है।';
+
+  @override
+  String get backupNewerVersion =>
+      'यह बैकअप Muhasaba के नए वर्शन से बना है। ऐप अपडेट करें, फिर दोबारा कोशिश करें।';
+
+  @override
+  String get backupRestoreFailed =>
+      'बैकअप रीस्टोर नहीं हो सका। आपका डेटा जैसा था, वैसा ही है।';
+
+  @override
+  String get challengeOutOfDays => 'बचे दिन काफ़ी नहीं';
 }

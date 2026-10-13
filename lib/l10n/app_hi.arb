@@ -654,5 +654,18 @@
   "libraryAnyAmount": "कितना भी",
   "libraryAddTooltip": "{title} जोड़ें",
   "libraryOnList": "आपकी सूची में है",
-  "todayEmptyBrowse": "अमल लाइब्रेरी देखें"
+  "todayEmptyBrowse": "अमल लाइब्रेरी देखें",
+  "settingsBackup": "बैकअप",
+  "backupExport": "बैकअप लें",
+  "backupExportSubtitle": "अपने सारे डेटा की एक कॉपी सहेजें",
+  "backupRestore": "बैकअप से रीस्टोर करें",
+  "backupRestoreSubtitle": "इस डिवाइस का डेटा किसी बैकअप से बदलें",
+  "backupRestoreConfirmTitle": "यह बैकअप रीस्टोर करें?",
+  "backupRestoreConfirmBody": "इस डिवाइस पर Muhasaba का सारा डेटा बैकअप से बदल जाएगा। इसे पहले जैसा नहीं किया जा सकेगा।",
+  "backupRestoreConfirmAction": "रीस्टोर करें",
+  "backupRestored": "बैकअप रीस्टोर हो गया",
+  "backupNotABackup": "यह फ़ाइल Muhasaba का बैकअप नहीं है।",
+  "backupNewerVersion": "यह बैकअप Muhasaba के नए वर्शन से बना है। ऐप अपडेट करें, फिर दोबारा कोशिश करें।",
+  "backupRestoreFailed": "बैकअप रीस्टोर नहीं हो सका। आपका डेटा जैसा था, वैसा ही है।",
+  "challengeOutOfDays": "बचे दिन काफ़ी नहीं"
 }

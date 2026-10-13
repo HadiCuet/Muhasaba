@@ -654,5 +654,18 @@
   "libraryAnyAmount": "Islendik mukdar",
   "libraryAddTooltip": "Goşmak: {title}",
   "libraryOnList": "Sanawyňyzda bar",
-  "todayEmptyBrowse": "Amallar kitaphanasyny açmak"
+  "todayEmptyBrowse": "Amallar kitaphanasyny açmak",
+  "settingsBackup": "Ätiýaçlyk nusga",
+  "backupExport": "Ätiýaçlyk nusga dörediň",
+  "backupExportSubtitle": "Ähli maglumatlaryňyzyň nusgasyny saklaň",
+  "backupRestore": "Ätiýaçlyk nusgadan dikeldiň",
+  "backupRestoreSubtitle": "Bu enjamdaky maglumatlary ätiýaçlyk nusga bilen çalşyň",
+  "backupRestoreConfirmTitle": "Bu ätiýaçlyk nusga dikeldilsinmi?",
+  "backupRestoreConfirmBody": "Bu enjamdaky Muhasabanyň ähli maglumatlary ätiýaçlyk nusga bilen çalşylar. Muny yzyna gaýtaryp bolmaz.",
+  "backupRestoreConfirmAction": "Dikeltmek",
+  "backupRestored": "Ätiýaçlyk nusga dikeldildi",
+  "backupNotABackup": "Bu faýl Muhasabanyň ätiýaçlyk nusgasy däl.",
+  "backupNewerVersion": "Bu ätiýaçlyk nusga Muhasabanyň has täze wersiýasynda döredilipdir. Goşundyny täzeläň, soňra gaýtadan synanyşyň.",
+  "backupRestoreFailed": "Ätiýaçlyk nusgany dikeldip bolmady. Maglumatlaryňyz üýtgemedi.",
+  "challengeOutOfDays": "Galan günler ýetenok"
 }

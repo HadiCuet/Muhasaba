@@ -654,5 +654,18 @@
   "libraryAnyAmount": "Каалаган сан",
   "libraryAddTooltip": "Кошуу: {title}",
   "libraryOnList": "Тизмеңизде бар",
-  "todayEmptyBrowse": "Амалдар китепканасын ачуу"
+  "todayEmptyBrowse": "Амалдар китепканасын ачуу",
+  "settingsBackup": "Камдык көчүрмө",
+  "backupExport": "Камдык көчүрмө түзүү",
+  "backupExportSubtitle": "Бардык маалыматыңыздын көчүрмөсүн сактайт",
+  "backupRestore": "Камдык көчүрмөдөн калыбына келтирүү",
+  "backupRestoreSubtitle": "Бул түзмөктөгү маалыматты камдык көчүрмө менен алмаштырат",
+  "backupRestoreConfirmTitle": "Бул камдык көчүрмөнү калыбына келтиресизби?",
+  "backupRestoreConfirmBody": "Бул түзмөктөгү Muhasaba колдонмосунун бардык маалыматы камдык көчүрмө менен алмаштырылат. Муну кайра кайтаруу мүмкүн эмес.",
+  "backupRestoreConfirmAction": "Калыбына келтирүү",
+  "backupRestored": "Камдык көчүрмө калыбына келтирилди",
+  "backupNotABackup": "Бул файл Muhasaba колдонмосунун камдык көчүрмөсү эмес.",
+  "backupNewerVersion": "Бул камдык көчүрмө Muhasaba колдонмосунун жаңыраак версиясында түзүлгөн. Колдонмону жаңыртып, кайра аракет кылыңыз.",
+  "backupRestoreFailed": "Камдык көчүрмөнү калыбына келтирүү мүмкүн болгон жок. Маалыматыңыз өзгөргөн жок.",
+  "challengeOutOfDays": "Калган күн жетпейт"
 }

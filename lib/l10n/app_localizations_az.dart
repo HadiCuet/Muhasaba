@@ -2366,4 +2366,47 @@ class AppLocalizationsAz extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'Əməl kitabxanasına baxın';
+
+  @override
+  String get settingsBackup => 'Ehtiyat nüsxə';
+
+  @override
+  String get backupExport => 'Ehtiyat nüsxə yarat';
+
+  @override
+  String get backupExportSubtitle => 'Bütün məlumatlarınızın surətini saxlayır';
+
+  @override
+  String get backupRestore => 'Ehtiyat nüsxədən bərpa et';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'Bu cihazdakı məlumatları ehtiyat nüsxə ilə əvəz edir';
+
+  @override
+  String get backupRestoreConfirmTitle => 'Bu ehtiyat nüsxə bərpa edilsin?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'Bu cihazda Mühasibədəki bütün məlumatlar ehtiyat nüsxə ilə əvəz olunacaq. Bunu geri qaytarmaq mümkün olmayacaq.';
+
+  @override
+  String get backupRestoreConfirmAction => 'Bərpa et';
+
+  @override
+  String get backupRestored => 'Ehtiyat nüsxə bərpa olundu';
+
+  @override
+  String get backupNotABackup => 'Bu fayl Mühasibənin ehtiyat nüsxəsi deyil.';
+
+  @override
+  String get backupNewerVersion =>
+      'Bu ehtiyat nüsxə Mühasibənin daha yeni versiyası ilə yaradılıb. Tətbiqi yeniləyin, sonra yenidən cəhd edin.';
+
+  @override
+  String get backupRestoreFailed =>
+      'Ehtiyat nüsxəni bərpa etmək mümkün olmadı. Məlumatlarınız dəyişməyib.';
+
+  @override
+  String get challengeOutOfDays => 'Qalan günlər çatmır';
 }

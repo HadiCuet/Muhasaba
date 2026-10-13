@@ -2374,4 +2374,46 @@ class AppLocalizationsUr extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'اعمال کی لائبریری دیکھیں';
+
+  @override
+  String get settingsBackup => 'بیک اپ';
+
+  @override
+  String get backupExport => 'بیک اپ لیں';
+
+  @override
+  String get backupExportSubtitle => 'اپنے سارے ڈیٹا کی ایک کاپی محفوظ کریں';
+
+  @override
+  String get backupRestore => 'بیک اپ سے بحال کریں';
+
+  @override
+  String get backupRestoreSubtitle => 'اس ڈیوائس کا ڈیٹا کسی بیک اپ سے بدل دیں';
+
+  @override
+  String get backupRestoreConfirmTitle => 'یہ بیک اپ بحال کریں؟';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'اس ڈیوائس پر محاسبہ کا سارا ڈیٹا بیک اپ سے بدل جائے گا۔ اسے واپس نہیں کیا جا سکے گا۔';
+
+  @override
+  String get backupRestoreConfirmAction => 'بحال کریں';
+
+  @override
+  String get backupRestored => 'بیک اپ بحال ہو گیا';
+
+  @override
+  String get backupNotABackup => 'یہ فائل محاسبہ کا بیک اپ نہیں ہے۔';
+
+  @override
+  String get backupNewerVersion =>
+      'یہ بیک اپ محاسبہ کے نئے ورژن سے بنایا گیا ہے۔ ایپ اپ ڈیٹ کریں، پھر دوبارہ کوشش کریں۔';
+
+  @override
+  String get backupRestoreFailed =>
+      'بیک اپ بحال نہیں ہو سکا۔ آپ کا ڈیٹا جوں کا توں ہے۔';
+
+  @override
+  String get challengeOutOfDays => 'باقی دن کافی نہیں';
 }

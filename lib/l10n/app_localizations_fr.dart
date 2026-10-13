@@ -2408,4 +2408,49 @@ class AppLocalizationsFr extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'Parcourir la bibliothèque d\'amals';
+
+  @override
+  String get settingsBackup => 'Sauvegarde';
+
+  @override
+  String get backupExport => 'Créer une sauvegarde';
+
+  @override
+  String get backupExportSubtitle =>
+      'Enregistrer une copie de toutes vos données';
+
+  @override
+  String get backupRestore => 'Restaurer une sauvegarde';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'Remplacer les données de cet appareil par une sauvegarde';
+
+  @override
+  String get backupRestoreConfirmTitle => 'Restaurer cette sauvegarde ?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'Toutes les données de Muhasaba sur cet appareil seront remplacées par la sauvegarde. Cette action est irréversible.';
+
+  @override
+  String get backupRestoreConfirmAction => 'Restaurer';
+
+  @override
+  String get backupRestored => 'Sauvegarde restaurée';
+
+  @override
+  String get backupNotABackup =>
+      'Ce fichier n\'est pas une sauvegarde Muhasaba.';
+
+  @override
+  String get backupNewerVersion =>
+      'Cette sauvegarde a été créée avec une version plus récente de Muhasaba. Mettez l\'application à jour, puis réessayez.';
+
+  @override
+  String get backupRestoreFailed =>
+      'Impossible de restaurer la sauvegarde. Vos données n\'ont pas été modifiées.';
+
+  @override
+  String get challengeOutOfDays => 'Plus assez de jours';
 }

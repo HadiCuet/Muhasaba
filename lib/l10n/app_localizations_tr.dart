@@ -2368,4 +2368,47 @@ class AppLocalizationsTr extends AppLocalizations {
 
   @override
   String get todayEmptyBrowse => 'Amel Kütüphanesi\'ne göz atın';
+
+  @override
+  String get settingsBackup => 'Yedekleme';
+
+  @override
+  String get backupExport => 'Yedek oluştur';
+
+  @override
+  String get backupExportSubtitle => 'Tüm verilerinizin bir kopyasını kaydedin';
+
+  @override
+  String get backupRestore => 'Yedekten geri yükle';
+
+  @override
+  String get backupRestoreSubtitle =>
+      'Bu cihazdaki verileri bir yedekle değiştirin';
+
+  @override
+  String get backupRestoreConfirmTitle => 'Bu yedek geri yüklensin mi?';
+
+  @override
+  String get backupRestoreConfirmBody =>
+      'Bu cihazdaki tüm uygulama verileri yedektekilerle değiştirilecek. Bu işlem geri alınamaz.';
+
+  @override
+  String get backupRestoreConfirmAction => 'Geri yükle';
+
+  @override
+  String get backupRestored => 'Yedek geri yüklendi';
+
+  @override
+  String get backupNotABackup => 'Bu dosya bir Muhasebe yedeği değil.';
+
+  @override
+  String get backupNewerVersion =>
+      'Bu yedek, uygulamanın daha yeni bir sürümüyle oluşturulmuş. Uygulamayı güncelleyip tekrar deneyin.';
+
+  @override
+  String get backupRestoreFailed =>
+      'Yedek geri yüklenemedi. Verileriniz değişmedi.';
+
+  @override
+  String get challengeOutOfDays => 'Kalan gün yetmiyor';
 }

@@ -654,5 +654,18 @@
   "libraryAnyAmount": "Sebarang jumlah",
   "libraryAddTooltip": "Tambah {title}",
   "libraryOnList": "Sudah ada dalam senarai anda",
-  "todayEmptyBrowse": "Teroka Pustaka Amal"
+  "todayEmptyBrowse": "Teroka Pustaka Amal",
+  "settingsBackup": "Sandaran",
+  "backupExport": "Buat sandaran",
+  "backupExportSubtitle": "Simpan salinan semua data anda",
+  "backupRestore": "Pulihkan daripada sandaran",
+  "backupRestoreSubtitle": "Gantikan data pada peranti ini dengan sandaran",
+  "backupRestoreConfirmTitle": "Pulihkan sandaran ini?",
+  "backupRestoreConfirmBody": "Semua data Muhasabah pada peranti ini akan digantikan dengan sandaran. Tindakan ini tidak boleh dibuat asal.",
+  "backupRestoreConfirmAction": "Pulihkan",
+  "backupRestored": "Sandaran telah dipulihkan",
+  "backupNotABackup": "Fail ini bukan sandaran Muhasabah.",
+  "backupNewerVersion": "Sandaran ini dibuat dengan versi Muhasabah yang lebih baharu. Kemas kini aplikasi, kemudian cuba lagi.",
+  "backupRestoreFailed": "Sandaran tidak dapat dipulihkan. Data anda tidak berubah.",
+  "challengeOutOfDays": "Baki hari tidak cukup"
 }
