@@ -1,6 +1,6 @@
 JazakAllah for using Muhasaba.
 
-• Backup & restore: in Settings › Backup, save all your data to one file, then restore it on your new phone — even from Android to iPhone.
+• Backup & restore: in Settings › Backup, save all your data to one file, then restore it on your new phone.
 • A challenge you tick once a day now says "Not enough days left" when it can no longer finish in time, and extending it adds the days it needs.
 • Reminders now show even while Muhasaba is open.
 • The New amal button no longer covers Save while you write a note, plus other small fixes.

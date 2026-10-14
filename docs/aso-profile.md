@@ -80,7 +80,8 @@ Everything below is real in 3.2.0 and may be stated plainly.
 - **Backup & restore** *(3.2.0)* — Settings › Backup exports all data to one file
   through the share sheet; restoring it replaces the data on the device. Works
   between Android and iPhone in both directions (verified 2026-10-13). It is a
-  file the user moves themselves — never call it sync or cloud backup.
+  file the user moves themselves — never call it sync or cloud backup. The
+  cross-platform part may be claimed on Google Play only, never on the App Store (§6.9).
 - **Amal Library** *(3.1.0)* — 102 ready-made amals in 10 categories, added to Today in one tap
 - **Challenge Library** *(3.1.0)* — 27 ready-made challenges, e.g. 40 days of every prayer in
   jamaah, six days of Shawwal, a khatm in 30 days; started in one tap
@@ -132,6 +133,11 @@ track** — the ban is on implying the app *supplies* that content or those time
    description.
 8. **Careful with absolute privacy claims** — see §7. "No internet" as a bare
    statement is not defensible; "no internet needed" is.
+9. **No other platforms in App Store metadata.** Never name Android, Google Play or
+   any non-Apple platform in the iOS description, promo text, What's New or
+   screenshots (Guideline 2.3.10). 3.2.0 was rejected on 2026-10-14 for "even from
+   Android to iPhone". `fastlane/whatsnew/` feeds iOS, so it follows this rule too;
+   the Play changelog and Play description may mention iPhone.
 
 ---
 

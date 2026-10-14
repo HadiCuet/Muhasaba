@@ -1,6 +1,6 @@
 Qu'Allah vous récompense d'utiliser Muhasaba.
 
-• Sauvegarde et restauration : dans Paramètres › Sauvegarde, enregistrez toutes vos données dans un seul fichier, puis restaurez-les sur votre nouveau téléphone, même en passant d'Android à iPhone.
+• Sauvegarde et restauration : dans Paramètres › Sauvegarde, enregistrez toutes vos données dans un seul fichier, puis restaurez-les sur votre nouveau téléphone.
 • Un défi à cocher une fois par jour affiche désormais « Plus assez de jours » lorsqu'il ne peut plus être terminé à temps, et le prolonger lui ajoute les jours qu'il lui faut.
 • Les rappels s'affichent désormais même quand l'app est ouverte.
 • Le bouton « Nouvel amal » ne masque plus « Enregistrer » pendant que vous écrivez une note, ainsi que d'autres petites corrections.

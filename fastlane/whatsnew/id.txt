@@ -1,6 +1,6 @@
 JazakAllah telah menggunakan Muhasabah.
 
-• Cadangan & pemulihan: di Pengaturan › Cadangan, simpan semua data Anda dalam satu file, lalu pulihkan di ponsel baru — bahkan dari Android ke iPhone.
+• Cadangan & pemulihan: di Pengaturan › Cadangan, simpan semua data Anda dalam satu file, lalu pulihkan di ponsel baru.
 • Tantangan yang dicentang sekali sehari kini menampilkan "Sisa hari tidak cukup" bila sudah tidak bisa selesai tepat waktu, dan saat diperpanjang, hari yang dibutuhkan langsung ditambahkan.
 • Pengingat kini tetap muncul meski Muhasabah sedang dibuka.
 • Tombol Amal baru tidak lagi menutupi Simpan saat Anda menulis catatan, serta beberapa perbaikan kecil lainnya.
