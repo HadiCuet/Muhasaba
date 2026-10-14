@@ -171,9 +171,9 @@ ul.tight li{margin:6px 0}
   <div class="sechead"><span class="secno">03</span><h2>Notes</h2></div>
   <div class="callout">
     <h3>Where the files are</h3>
-    <p><code>muhasaba-screenshots/ios-marketing-2026-08/&lt;lang&gt;/</code> — iPhone 6.9″, 1320×2868<br>
-       <code>muhasaba-screenshots/ipad-marketing-2026-08/&lt;lang&gt;/</code> — iPad 13″, 2064×2752<br>
-       180 files: 9 languages × 10 files × 2 devices</p>
+    <p><code>Screenshots/muhasaba-screenshots/ios-marketing-2026-08/&lt;lang&gt;/</code> — iPhone 6.9″, 1320×2868<br>
+       <code>Screenshots/muhasaba-screenshots/ipad-marketing-2026-08/&lt;lang&gt;/</code> — iPad 13″, 2064×2752<br>
+       180 files: 9 languages × 10 files × 2 devices, archived as release <code>v2.0.0</code> of the private <code>muhasaba-screenshots</code> repo (<code>archive.sh restore v2.0.0</code>)</p>
     <p>Re-cut any single file: <code>?export=0..9&amp;lang=xx&amp;device=iphone|ipad&amp;pal=dawn|night</code></p>
   </div>
   <ul class="tight">
@@ -399,7 +399,7 @@ const FONTS = {
 };
 
 const hl = s => s.replace(/\*(.+?)\*/g,'<em>$1</em>');
-const SHOTS = '../../muhasaba-screenshots/shots/';
+const SHOTS = '../../Screenshots/muhasaba-screenshots/shots/';
 
 function dev(D,lang,key,dz){
   const b=devBox(D,dz);

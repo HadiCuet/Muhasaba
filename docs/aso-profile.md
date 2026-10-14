@@ -300,11 +300,13 @@ should be worked into the Play copy instead of being dropped.
 
 ## 10. Creative
 
-- Screenshots: **2026-08 set**, 9 languages × 10 files × 2 devices, in
-  `muhasaba-screenshots/{ios,ipad}-marketing-2026-08/`. Built as one continuous
-  canvas per language; ar/ur mirror entirely. See `SCREENSHOTS.md` there.
+- Screenshots: **2026-08 set**, 9 languages × 10 files × 2 devices, archived as release
+  `v2.0.0` (sets `{ios,ipad}-marketing-2026-08`) of the private `muhasaba-screenshots`
+  repo. Built as one continuous canvas per language; ar/ur mirror entirely. The
+  release notes describe how it was made.
 - Play needs its own sizes plus a **1024×500 feature graphic**
-  (`store-assets/play-feature-graphic-1024x500.png` — predates 2.0.0, needs redoing).
+  (`play-feature-graphic-1024x500.png` in the `store-assets` set of `v2.0.0` — predates
+  2.0.0, needs redoing).
 - App icon is a **seedling inside an eight-point star (rub el hizb)** — growth and
   Islamic geometry. It is *not* a minaret or a mosque; don't describe it as one.
 - No app preview video exists on either store. Biggest untapped conversion asset.
@@ -360,9 +362,9 @@ should be worked into the Play copy instead of being dropped.
 
 | Topic | Where |
 |---|---|
-| Shipped listing copy (iOS, 9 locales) | `../muhasaba-screenshots/appstore-metadata/` |
-| Play listing + console walkthrough | `../muhasaba-screenshots/PLAY-CONSOLE-GUIDE.md` |
-| Screenshots and their build | `../muhasaba-screenshots/SCREENSHOTS.md` |
+| Shipped listing copy (iOS, 9 locales) | `../muhasaba-store-assets/appstore-metadata/` |
+| Play listing + console walkthrough | `../muhasaba-store-assets/PLAY-CONSOLE-GUIDE.md` |
+| Screenshots and their build | https://github.com/HadiCuet/muhasaba-screenshots *(private)*, one release per version, checked out at `../Screenshots/muhasaba-screenshots/` |
 | Release & signing runbook | https://github.com/HadiCuet/muhasaba-store-assets *(private)* |
 | In-app wording per language | `lib/l10n/app_*.arb` |
 | Feature truth | this repo at the tagged release — not memory, not an old listing |

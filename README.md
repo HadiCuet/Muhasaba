@@ -36,3 +36,17 @@ signing setup needed for Android.
 
 See `CLAUDE.md` for architecture, localization rules (23 languages, RTL handling),
 state-management approach, and what's out of scope (no backend, no tests).
+
+## Screenshots
+
+Store screenshots are **not in this repo**. They live in the private repo
+[HadiCuet/muhasaba-screenshots](https://github.com/HadiCuet/muhasaba-screenshots), one GitHub
+Release per store version, checked out at `../Screenshots/muhasaba-screenshots/`, which is
+also where the screenshot pipeline reads and writes. That folder is kept empty between
+releases: `./archive.sh restore <tag>` there brings a version back, and
+`./archive.sh push <tag> <sets>` archives a new set (do it as soon as a set is made).
+`fastlane ios metadata` archives what it uploads on its own.
+Never commit screenshots here.
+
+Exception: the Play listing images in `fastlane/metadata/android/*/images/` stay in
+this repo, because `fastlane android production` uploads them from here.

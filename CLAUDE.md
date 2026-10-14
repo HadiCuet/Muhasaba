@@ -12,7 +12,13 @@ It contains: the Android upload keystore (`muhasaba-upload.jks`) and password, A
 
 If the user asks anything about release credentials, store metadata, build signing, the upload keystore, App Store / Play Console accounts, or "how do I publish/update this app" — point them at that repo first; don't reinvent the answer here. The repo's `README.md` is a complete copy-paste runbook.
 
-The app's release-asset folder (screenshots, etc.) lives at the sibling path `../muhasaba-screenshots/` (outside this repo) and is the working tree of the backup repo above.
+Its working tree is the sibling folder `../muhasaba-store-assets/`.
+
+## Screenshots
+
+Store screenshots are **not in this repo**. They live in the private repo [HadiCuet/muhasaba-screenshots](https://github.com/HadiCuet/muhasaba-screenshots), one GitHub Release per store version, checked out at `../Screenshots/muhasaba-screenshots/`, which is also where the screenshot pipeline (`tool/screenshots/`) reads and writes. That folder is kept empty between releases: `./archive.sh restore <tag>` there brings a version back, `./archive.sh push <tag> <sets>` archives a new set (do it as soon as a set is made), and `fastlane ios metadata` archives what it uploads on its own. Never commit screenshots here. The `app-screenshots` skill has the full rules.
+
+Exception: the Play listing images in `fastlane/metadata/android/*/images/` stay in this repo, because `fastlane android production` uploads them from here.
 
 ## Commands
 

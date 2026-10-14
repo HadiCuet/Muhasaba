@@ -5,9 +5,10 @@
 
 --frames is compose.py's output root (<frames>/<locale>/<device>/<name>.png).
 Kept frames come from the live set: {ios,ipad}-marketing-2026-08/<locale>/ in
-the store-assets folder (--live) for the App Store, and the tracked Play images
-for Google Play (English only). --kept points at re-rendered live frames
-(<kept>/<locale>/<device>_NN.png) that win over the live files.
+../Screenshots/muhasaba-screenshots (--live; archived as release v2.0.0) for the
+App Store, and the tracked Play images for Google Play (English only). --kept
+points at re-rendered live frames (<kept>/<locale>/<device>_NN.png) that win
+over the live files.
 Writes <dest>/ios/<locale>/01..10.png, <dest>/ipad/<locale>/01..10.png and
 <dest>/play/en/1..8.png + featureGraphic.png.
 """
@@ -48,6 +49,9 @@ def main():
                     f = a.kept / loc / name
                 else:
                     f = a.live / LIVE_FOLDER[device] / loc / f"{n:02d}.png"
+                    if not f.exists():
+                        raise SystemExit(f"{f} is missing; bring it back with "
+                                         f"{a.live}/archive.sh restore v2.0.0 {LIVE_FOLDER[device]}")
                 shutil.copyfile(f, out / f"{i:02d}.png")
         if loc == "en":
             out = a.dest / "play" / "en"

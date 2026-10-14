@@ -30,6 +30,23 @@ def repo_root
   File.basename(pwd) == "fastlane" ? File.expand_path("..", pwd) : pwd
 end
 
+# Kept outside the repo and archived per version; restore one with its archive.sh.
+def screenshots_home
+  File.expand_path(File.join(repo_root, "..", "Screenshots", "muhasaba-screenshots"))
+end
+
+def app_version
+  File.read(File.join(repo_root, "pubspec.yaml"))[/^version:\s*([\d.]+)/, 1]
+end
+
+# Files what just went to the store under v<version> in the private screenshots repo.
+def archive_uploaded(set)
+  sh(File.join(screenshots_home, "archive.sh"), "push", "v#{app_version}", set,
+     "-m", "Archived by fastlane after a store upload on #{Time.now.strftime('%Y-%m-%d')}.")
+rescue StandardError => e
+  UI.important("Uploaded, but archiving #{set} to the screenshots repo failed: #{e.message}")
+end
+
 # App language code -> App Store Connect locale for TestFlight build "What's New".
 # Only ASC-supported locales are valid; everything else falls back to "default".
 def whatsnew_locale_map
@@ -198,11 +215,13 @@ platform :ios do
   desc "Push App Store metadata + screenshots to the EDITABLE version. With upload:true. Never submits for review."
   lane :metadata do |options|
     md  = File.join(repo_root, "fastlane", "metadata", "ios")
-    sc  = File.join(repo_root, "fastlane", "screenshots")
+    sc  = File.join(screenshots_home, "fastlane")
     UI.user_error!("No metadata at #{md}") unless Dir.exist?(md)
-    UI.user_error!("No screenshots at #{sc}") unless Dir.exist?(sc)
+    FileUtils.mkdir_p(sc)
     shots = Dir[File.join(sc, "*", "*.png")].count
     UI.message("Staged: #{Dir.children(md).sort.join(', ')} — #{shots} screenshots")
+    # overwrite_screenshots on an empty folder would wipe the live listing.
+    UI.important("No screenshots in #{sc}: text only, the live screenshots stay.") if shots.zero?
 
     unless options[:upload]
       UI.important("Dry run — nothing sent. Run: fastlane ios metadata upload:true")
@@ -216,7 +235,7 @@ platform :ios do
       screenshots_path: sc,
       skip_binary_upload: true,
       skip_metadata: false,
-      skip_screenshots: false,
+      skip_screenshots: shots.zero?,
       overwrite_screenshots: true,
       submit_for_review: false,
       automatic_release: false,
@@ -224,7 +243,8 @@ platform :ios do
       force: true,
       precheck_include_in_app_purchases: false,
   )
-    UI.success("Metadata + screenshots pushed to the editable version — NOT submitted for review.")
+    archive_uploaded("fastlane") unless shots.zero?
+    UI.success("Metadata#{shots.zero? ? '' : ' + screenshots'} pushed to the editable version — NOT submitted for review.")
   end
 
   desc "Build iOS with Flutter; with upload:true upload to TestFlight with localized What's New. Never submits."
@@ -279,8 +299,8 @@ private_lane :ensure_android_signing do
   props = File.join(repo_root, "android", "key.properties")
   unless File.exist?(props)
     UI.user_error!("Missing android/key.properties. Install signing first:\n" \
-      "  cp ../muhasaba-screenshots/signing/muhasaba-upload.jks android/\n" \
-      "  cp ../muhasaba-screenshots/signing/key.properties android/")
+      "  cp ../muhasaba-store-assets/signing/muhasaba-upload.jks android/\n" \
+      "  cp ../muhasaba-store-assets/signing/key.properties android/")
   end
   store = File.read(props)[/storeFile=(.+)/, 1].to_s.strip
   path  = File.expand_path(store, File.join(repo_root, "android"))
