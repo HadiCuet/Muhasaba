@@ -345,8 +345,19 @@ class EnhancedStatsService {
       );
       completionsByAmal[amal.id] = rows;
 
-      final completed = _completedSinceAdded(amal, rows, settings.rolloverHour);
-      final expected = _expectedInPeriod(amal, period, settings.rolloverHour);
+      final completed = _completedInActiveDays(
+        amal,
+        rows,
+        period,
+        settings.rolloverHour,
+        muhasabaDate,
+      );
+      final expected = _expectedInPeriod(
+        amal,
+        period,
+        settings.rolloverHour,
+        muhasabaDate,
+      );
       final amount = rows.fold<int>(0, (sum, r) => sum + r.progress);
 
       totalCompleted += completed;
@@ -393,6 +404,7 @@ class EnhancedStatsService {
         period,
         amals,
         settings.rolloverHour,
+        muhasabaDate,
         periodCompletionsOf,
       );
     }
@@ -829,15 +841,17 @@ class EnhancedStatsService {
 
   // ── Expected completions ─────────────────────────────────────────────────
 
-  /// An amal is only expected from the day it was added, so a new amal
-  /// doesn't drag down rates for the days before it existed.
-  int _expectedInPeriod(AmalRow amal, Period period, int rolloverHour) {
+  /// Only the amal's active days count, so neither a new amal nor the rest of
+  /// a period still under way drags a rate down.
+  int _expectedInPeriod(
+    AmalRow amal,
+    Period period,
+    int rolloverHour,
+    DateTime today,
+  ) {
     final periodDays = period.endExclusive.difference(period.start).inDays;
-    final added = _addedDay(amal, rolloverHour);
-    if (!added.isBefore(period.endExclusive)) return 0;
-    final active = added.isAfter(period.start)
-        ? Period(start: added, endExclusive: period.endExclusive)
-        : period;
+    final active = _activeDays(amal, period, rolloverHour, today);
+    if (active == null) return 0;
     final spanDays = active.endExclusive.difference(active.start).inDays;
     switch (amal.frequency) {
       case Frequency.daily:
@@ -897,7 +911,7 @@ class EnhancedStatsService {
       var amount = 0;
 
       for (final amal in amals) {
-        if (date.isBefore(addedDays[amal.id]!)) continue;
+        if (date.isBefore(addedDays[amal.id]!) || date.isAfter(today)) continue;
         final rows = completionsByAmal[amal.id] ?? const <CompletionRow>[];
         final match = rows
             .where((r) => _dayKey(r.muhasabaDate) == key)
@@ -1326,6 +1340,7 @@ class EnhancedStatsService {
     Period current,
     List<AmalRow> amals,
     int rolloverHour,
+    DateTime today,
     PeriodCompletionsLookup lookup,
   ) async {
     final duration = current.endExclusive.difference(current.start);
@@ -1337,8 +1352,14 @@ class EnhancedStatsService {
     var expected = 0;
     for (final amal in amals) {
       final rows = await lookup(amal.id, prev.start, prev.endExclusive);
-      completed += _completedSinceAdded(amal, rows, rolloverHour);
-      expected += _expectedInPeriod(amal, prev, rolloverHour);
+      completed += _completedInActiveDays(
+        amal,
+        rows,
+        prev,
+        rolloverHour,
+        today,
+      );
+      expected += _expectedInPeriod(amal, prev, rolloverHour, today);
     }
     if (expected == 0) return null;
     return completed / expected;
@@ -1347,16 +1368,35 @@ class EnhancedStatsService {
   DateTime _addedDay(AmalRow amal, int rolloverHour) =>
       muhasabaDateOf(amal.createdAt, rolloverHour);
 
-  /// A rollover-hour change or time-zone move can shift the added day past
-  /// a row's date; such rows would push the rate above 100%.
-  int _completedSinceAdded(
+  /// The days of [period] from the one [amal] was added through today.
+  Period? _activeDays(
     AmalRow amal,
-    List<CompletionRow> rows,
+    Period period,
     int rolloverHour,
+    DateTime today,
   ) {
     final added = _addedDay(amal, rolloverHour);
+    final tomorrow = today.add(const Duration(days: 1));
+    final start = added.isAfter(period.start) ? added : period.start;
+    final end = tomorrow.isBefore(period.endExclusive)
+        ? tomorrow
+        : period.endExclusive;
+    return start.isBefore(end) ? Period(start: start, endExclusive: end) : null;
+  }
+
+  /// A rollover-hour change or time-zone move can shift the added day past
+  /// a row's date; such rows would push the rate above 100%.
+  int _completedInActiveDays(
+    AmalRow amal,
+    List<CompletionRow> rows,
+    Period period,
+    int rolloverHour,
+    DateTime today,
+  ) {
+    final active = _activeDays(amal, period, rolloverHour, today);
+    if (active == null) return 0;
     return rows
-        .where((r) => !r.muhasabaDate.isBefore(added) && amal.meets(r.progress))
+        .where((r) => active.contains(r.muhasabaDate) && amal.meets(r.progress))
         .length;
   }
 

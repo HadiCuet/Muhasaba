@@ -524,7 +524,9 @@ class _SingleBar extends StatelessWidget {
             MediaQuery.devicePixelRatioOf(context),
           );
     return [
-      if (showLabel)
+      // A day with nothing due (not yet reached, or before an amal existed)
+      // has no rate to show.
+      if (showLabel && day.expected > 0)
         Padding(
           padding: const EdgeInsets.only(bottom: 4),
           child: Text(
