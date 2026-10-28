@@ -1,13 +1,15 @@
 #!/usr/bin/env python3
 """Seeds the demo state behind the store captures into a simulator's database.
 
-    python3 tool/screenshots/seed.py DB TODAY [LOCALE]
+    python3 tool/screenshots/seed.py DB TODAY [LOCALE] [--history]
 
 DB is the app's muhasaba.sqlite, TODAY the app's current day (YYYY-MM-DD). It
 clears completions and challenges, then writes months of streak history and
 five running challenges, one of them genuinely behind pace. iOS pins the
 simulator clock to 9:41, so only night and morning acts are ticked today.
 Titles and units stay English; the app translates them at display time.
+--history writes the longer record the Insights screens are captured from: 237
+tracked days at about four in five, the last 27 with every daily amal done.
 """
 import datetime as dt
 import sqlite3
@@ -19,6 +21,8 @@ STREAKS = {
     "Isha": (12, False), "Duha": (9, True), "Tahajjud": (3, True), "Morning Adhkar": (18, True),
     "Evening Adhkar": (6, False), "Tilawah": (21, True),
 }
+
+HISTORY_DAYS, ALL_DONE = 237, 27
 
 # title, icon, mode (0 count, 1 days), target, unit, step, category, started days ago,
 # window in days (None = no deadline), [(days ago, amount)]
@@ -48,19 +52,26 @@ def stamp(d, hour=5):
 
 
 def main():
-    db, today = sys.argv[1], dt.date.fromisoformat(sys.argv[2])
-    locale = sys.argv[3] if len(sys.argv) > 3 else "en"
+    args = [a for a in sys.argv[1:] if not a.startswith("--")]
+    db, today = args[0], dt.date.fromisoformat(args[1])
+    locale = args[2] if len(args) > 2 else "en"
+    history = "--history" in sys.argv
     ago = lambda n: today - dt.timedelta(days=n)
     c = sqlite3.connect(db)
     for table in ("completions", "challenge_entries", "challenges"):
         c.execute(f"DELETE FROM {table}")
-    c.execute("UPDATE amals SET created_at=?", (stamp(ago(120)),))
+    c.execute("UPDATE amals SET created_at=?", (stamp(ago(HISTORY_DAYS if history else 120)),))
     for k, v in dict(SETTINGS, locale=locale).items():
         c.execute("INSERT OR REPLACE INTO settings_kv(key,value) VALUES(?,?)", (k, v))
     ids = {title: i for i, title in c.execute("SELECT id,title FROM amals")}
     for title, (streak, ticked) in STREAKS.items():
-        days = [ago(n) for n in range(1, streak + 1)]
-        days += [ago(n) for n in range(streak + 2, 100) if n % 4]
+        if history:
+            streak = max(streak, ALL_DONE)
+            days = [ago(n) for n in range(1, streak + 1)]
+            days += [ago(n) for n in range(streak + 2, HISTORY_DAYS + 1) if (7 * n + 3 * ids[title]) % 5]
+        else:
+            days = [ago(n) for n in range(1, streak + 1)]
+            days += [ago(n) for n in range(streak + 2, 100) if n % 4]
         if ticked:
             days.append(today)
         for d in days:

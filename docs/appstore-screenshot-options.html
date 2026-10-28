@@ -174,7 +174,7 @@ ul.tight li{margin:6px 0}
     <p><code>Screenshots/muhasaba-screenshots/ios-marketing-2026-08/&lt;lang&gt;/</code> — iPhone 6.9″, 1320×2868<br>
        <code>Screenshots/muhasaba-screenshots/ipad-marketing-2026-08/&lt;lang&gt;/</code> — iPad 13″, 2064×2752<br>
        180 files: 9 languages × 10 files × 2 devices, archived as release <code>v2.0.0</code> of the private <code>muhasaba-screenshots</code> repo (<code>archive.sh restore v2.0.0</code>)</p>
-    <p>Re-cut any single file: <code>?export=0..9&amp;lang=xx&amp;device=iphone|ipad&amp;pal=dawn|night</code></p>
+    <p>Re-cut any single file: <code>?export=0..9&amp;lang=xx&amp;device=iphone|ipad|duo&amp;pal=dawn|night</code> (Duo: render at 2064×3003, scale to 1398×2034)</p>
   </div>
   <ul class="tight">
     <li>Captions are written in each language's own idiom, using the vocabulary the app already ships — Turkish says
@@ -378,6 +378,18 @@ const DEVICES = {
     lockTop:180, lockIcon:300, lockName:132, lockSub:64, lockGap:50,
     minar:[1290,150,880], sparks:[[420,2300,210,.5],[1760,1520,130,.38]],
     cardsA:[[-300,1320],[430,1790],[640,2260]], cardsB:[[-340,1320],[400,1790],[610,2260]] },
+
+  /* iPhone Duo cover display, 1398×2034: drawn on the iPad's 2064-wide grid at
+     2064×3003 and scaled down on export, so the type matches the iPad set. The
+     extra height goes below the caption; the device keeps the iPad's width. */
+  duo:{ W:2064, H:3003, N:10, tilt:18, capAt:'top', out:1398,
+    gut:120, capW:1800, capTop:150, capTop3:150, heroTop:900, chipsTop:2690,
+    eb:64, hs:216, heroHs:262, sub:128, card:84, chip:66, badge:62, badgeTop:2770,
+    scrW:466, scrH:678, bezel:20, radius:66, radiusIn:46,
+    dzSpan:4.44, dzOne:3.08, boxTop:1010,
+    lockTop:180, lockIcon:300, lockName:132, lockSub:64, lockGap:50,
+    minar:[1290,165,960], sparks:[[420,2510,210,.5],[1760,1660,130,.38]],
+    cardsA:[[-300,1440],[430,1955],[640,2465]], cardsB:[[-340,1440],[400,1955],[610,2465]] },
 };
 
 const RAD = d => d*Math.PI/180;
@@ -548,7 +560,7 @@ if (Q.get('feature') !== null) {
   T.innerHTML = '<span>Language</span>' +
     LANG_KEYS.map(k=>`<button data-lang="${k}">${LANGS[k].name}</button>`).join('') +
     '<span>Device</span>' +
-    ['iphone','play','ipad'].map(d=>`<button data-dk="${d}">${({iphone:'iPhone 6.9″',play:'Play phone',ipad:'iPad 13″'})[d]}</button>`).join('') +
+    ['iphone','play','ipad','duo'].map(d=>`<button data-dk="${d}">${({iphone:'iPhone 6.9″',play:'Play phone',ipad:'iPad 13″',duo:'iPhone Duo'})[d]}</button>`).join('') +
     '<span>Palette</span>' +
     ['dawn','night'].map(p=>`<button data-pal="pal-${p}">${p[0].toUpperCase()+p.slice(1)}</button>`).join('');
   const sync = () => {

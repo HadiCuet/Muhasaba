@@ -6,7 +6,7 @@ they sit beside the kept live frames without a seam.
     python3 tool/screenshots/compose.py --locale en --captures DIR --out DIR
 
 <captures>/<device>/<screen>.png are plain simulator screenshots, device
-iphone or ipad, screen today | amal_library | challenge_library | challenges |
+iphone, ipad or duo, screen today | amal_library | challenge_library | challenges |
 new_amal. Google Play and the feature graphic reuse the iPhone captures.
 Copy comes from copy/<locale>.json; `*word*` marks the highlighted part.
 """
@@ -41,6 +41,11 @@ DEVICES = {
                  scrW=1024, scrH=1366, bezel=20, radius=66, radiusIn=46, dz=1.40,
                  capAt="top", capEdge=150, gap=33,
                  lockTop=180, lockIcon=300, lockName=132, lockSub=64, lockGap=50, heroTop=840, chipsTop=2440),
+    # iPhone Duo cover display: the iPad grid at 2064 x 3003, written out at 1398 x 2034.
+    "duo": dict(W=2064, H=3003, out=1398, gut=120, capW=1800, eb=64, hs=216, heroHs=262, sub=128, chip=66,
+                scrW=466, scrH=678, bezel=20, radius=66, radiusIn=46, dz=3.08,
+                capAt="top", capEdge=150, gap=33,
+                lockTop=180, lockIcon=300, lockName=132, lockSub=64, lockGap=50, heroTop=900, chipsTop=2690),
 }
 
 # (output name, index in the 10-file strip, frame kind)
@@ -49,6 +54,8 @@ FRAMES = {
                ("iphone_05", 4, "challenge_library"), ("iphone_06", 5, "pace")],
     "ipad": [("ipad_01", 0, "statement"), ("ipad_04", 3, "amal_library"),
              ("ipad_05", 4, "challenge_library"), ("ipad_06", 5, "pace")],
+    "duo": [("duo_01", 0, "statement"), ("duo_04", 3, "amal_library"),
+            ("duo_05", 4, "challenge_library"), ("duo_06", 5, "pace")],
     "play": [("1", 0, "statement"), ("2", 1, "tick"), ("3", 2, "amal_library"),
              ("4", 3, "challenge_library"), ("5", 4, "pace"), ("8", 7, "track")],
     "fg": [("featureGraphic", 0, "fg")],
@@ -226,7 +233,7 @@ def size_vars(D, copy):
 def std_frame(copy, kind, D, idx, shot, rtl, device):
     W, H = D["W"], D["H"]
     tilt = TILT if rtl else -TILT
-    dev, bw, bh = device_html(shot, D, "tablet" if device == "ipad" else "phone", cls="band",
+    dev, bw, bh = device_html(shot, D, "tablet" if device in ("ipad", "duo") else "phone", cls="band",
                               left=(W - (D["scrW"] * D["dz"] + 2 * D["bezel"])) / 2, tilt=tilt)
     cap = caption_html(copy[kind], D, onlight=D["capAt"] == "top")
     style = (f"{size_vars(D, copy)}width:{W}px;height:{H}px;background-size:{W * STRIP_FILES}px {H}px;"
@@ -306,7 +313,7 @@ def main():
             for name, idx, kind in FRAMES[device]:
                 shot = None
                 if kind in SCREEN:
-                    cap_dev = "ipad" if device == "ipad" else "iphone"
+                    cap_dev = device if device in ("ipad", "duo") else "iphone"
                     shot = (a.captures / cap_dev / f"{SCREEN[kind]}.png").resolve().as_uri()
                 if kind == "fg":
                     frame, params = feature_graphic(copy, shot, rtl)
@@ -321,12 +328,13 @@ def main():
                     else:
                         frame, params = std_frame(copy, kind, D, idx, shot, rtl, device)
                     w, h = D["W"], D["H"]
+                scale = DEVICES.get(device, {}).get("out", w) / w
                 src = pathlib.Path(tmp) / f"{device}_{name}.html"
                 src.write_text(page(frame.replace("ICON", icon), params, copy, a.locale), encoding="utf-8")
                 out = a.out / device / f"{name}.png"
                 out.parent.mkdir(parents=True, exist_ok=True)
                 subprocess.run([CHROME, "--headless", "--disable-gpu", "--hide-scrollbars",
-                                "--force-device-scale-factor=1", "--run-all-compositor-stages-before-draw",
+                                f"--force-device-scale-factor={scale}", "--run-all-compositor-stages-before-draw",
                                 "--virtual-time-budget=10000", "--allow-file-access-from-files",
                                 f"--window-size={w},{h}", f"--screenshot={out}", src.as_uri()],
                                check=True, capture_output=True)
