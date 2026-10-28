@@ -1,6 +1,6 @@
 Qu'Allah vous récompense d'utiliser Muhasaba.
 
-• Sauvegarde et restauration : dans Paramètres › Sauvegarde, enregistrez toutes vos données dans un seul fichier, puis restaurez-les sur votre nouveau téléphone.
-• Un défi à cocher une fois par jour affiche désormais « Plus assez de jours » lorsqu'il ne peut plus être terminé à temps, et le prolonger lui ajoute les jours qu'il lui faut.
-• Les rappels s'affichent désormais même quand l'app est ouverte.
-• Le bouton « Nouvel amal » ne masque plus « Enregistrer » pendant que vous écrivez une note, ainsi que d'autres petites corrections.
+• Les Statistiques comptent désormais chaque amal à partir du jour où vous l'avez ajouté : un nouvel amal ne fait plus baisser votre taux d'accomplissement global ni ne casse votre série.
+• « Cette semaine » et « Ce mois-ci » ne comptent plus que les jours écoulés : une bonne semaine ne paraît plus moins bonne qu'elle ne l'est.
+• Le bouton « Nouvel amal » se détache désormais nettement au-dessus des amals accomplis.
+• Prêt pour l'iPhone Duo.

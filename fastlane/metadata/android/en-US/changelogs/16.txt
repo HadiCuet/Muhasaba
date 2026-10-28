@@ -1,0 +1,5 @@
+JazakAllah for using Muhasaba.
+
+• Insights now counts each amal from the day you added it, so a new amal no longer lowers your overall rate or breaks your streak.
+• This week and this month count only the days so far, so a good week reads as one.
+• The New amal button now stands out clearly over completed amals.

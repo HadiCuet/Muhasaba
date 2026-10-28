@@ -1,6 +1,6 @@
 Muhasebe'yi kullandığınız için Allah razı olsun.
 
-• Yedekleme ve geri yükleme: Ayarlar › Yedekleme'den tüm verilerinizi tek bir dosyaya kaydedin, sonra yeni telefonunuza geri yükleyin.
-• Günde bir kez işaretlenen bir hedef artık vaktinde bitemeyecekse "Kalan gün yetmiyor" diyor; süresini uzattığınızda da gereken günler ekleniyor.
-• Hatırlatıcılar artık uygulama açıkken de görünüyor.
-• Not yazarken "Yeni amel" düğmesi artık Kaydet'in üstünü kapatmıyor; ayrıca birkaç küçük düzeltme.
+• İstatistik artık her ameli eklendiği günden itibaren sayıyor; yeni bir amel eklemek genel tamamlanma oranınızı düşürmüyor, serinizi de bozmuyor.
+• "Bu Hafta" ve "Bu Ay" artık yalnızca geçen günleri sayıyor; iyi geçen bir hafta artık olduğundan kötü görünmüyor.
+• "Yeni amel" düğmesi tamamlanan amellerin üzerinde artık net biçimde seçiliyor.
+• iPhone Duo için hazır.

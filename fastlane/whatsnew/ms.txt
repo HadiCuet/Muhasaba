@@ -1,6 +1,6 @@
 JazakAllah kerana menggunakan Muhasabah.
 
-• Sandaran & pemulihan: di Tetapan › Sandaran, simpan semua data anda dalam satu fail, kemudian pulihkan di telefon baharu.
-• Cabaran yang ditanda sekali sehari kini memaparkan "Baki hari tidak cukup" apabila tidak lagi sempat disiapkan, dan apabila dilanjutkan, hari yang diperlukan terus ditambah.
-• Peringatan kini tetap muncul walaupun Muhasabah sedang dibuka.
-• Butang Amal baharu tidak lagi menutup Simpan semasa anda menulis nota, serta beberapa pembaikan kecil lain.
+• Statistik kini mengira setiap amal mulai hari amal itu ditambah, jadi amal baharu tidak lagi menurunkan kadar penyelesaian keseluruhan atau memutuskan rentetan anda.
+• "Minggu Ini" dan "Bulan Ini" kini hanya mengira hari yang sudah berlalu, jadi minggu yang baik tidak lagi kelihatan lebih teruk.
+• Butang Amal baharu kini jelas kelihatan di atas amal yang sudah selesai.
+• Sedia untuk iPhone Duo.
