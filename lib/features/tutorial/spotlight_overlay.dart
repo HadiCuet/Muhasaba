@@ -79,7 +79,11 @@ class _TutorialTourState extends State<_TutorialTour> {
       _next();
       return;
     }
-    setState(() => _rect = box.localToGlobal(Offset.zero) & box.size);
+    final overlay = Overlay.of(context).context.findRenderObject();
+    setState(
+      () =>
+          _rect = box.localToGlobal(Offset.zero, ancestor: overlay) & box.size,
+    );
   }
 
   /// Waits for every enclosing scrollable to come to rest. `ensureVisible`

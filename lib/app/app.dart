@@ -182,7 +182,25 @@ class _MuhasabaAppState extends ConsumerState<MuhasabaApp> {
         child: GestureDetector(
           behavior: HitTestBehavior.opaque,
           onTap: () => FocusManager.instance.primaryFocus?.unfocus(),
-          child: child,
+          // A portrait side inset is the iPhone Duo's status column: keep content
+          // out from under it. Landscape notches are left to the bars, which
+          // already pad for them, so they still run edge to edge.
+          child: ColoredBox(
+            color: Theme.of(context).colorScheme.surface,
+            child: Builder(
+              builder: (context) {
+                final portrait =
+                    MediaQuery.orientationOf(context) == Orientation.portrait;
+                return SafeArea(
+                  top: false,
+                  bottom: false,
+                  left: portrait,
+                  right: portrait,
+                  child: child ?? const SizedBox.shrink(),
+                );
+              },
+            ),
+          ),
         ),
       ),
       locale: locale,
