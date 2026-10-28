@@ -19,6 +19,12 @@ ThemeData _base(Brightness b) {
     listTileTheme: ListTileThemeData(iconColor: scheme.onSurfaceVariant),
     appBarTheme: const AppBarTheme(centerTitle: false),
     chipTheme: const ChipThemeData(showCheckmark: false),
+    // The default primaryContainer is the completed-row tint; the FAB would
+    // vanish over finished rows.
+    floatingActionButtonTheme: FloatingActionButtonThemeData(
+      backgroundColor: scheme.primary,
+      foregroundColor: scheme.onPrimary,
+    ),
   );
 }
 
