@@ -345,8 +345,8 @@ class EnhancedStatsService {
       );
       completionsByAmal[amal.id] = rows;
 
-      final completed = rows.where((r) => amal.meets(r.progress)).length;
-      final expected = _expectedInPeriod(amal, period);
+      final completed = _completedSinceAdded(amal, rows, settings.rolloverHour);
+      final expected = _expectedInPeriod(amal, period, settings.rolloverHour);
       final amount = rows.fold<int>(0, (sum, r) => sum + r.progress);
 
       totalCompleted += completed;
@@ -389,7 +389,12 @@ class EnhancedStatsService {
     // ── Previous-period comparison ──────────────────────────────────────────
     double? prevRate;
     if (filter.period != StatsPeriod.allTime) {
-      prevRate = await _previousPeriodRate(period, amals, periodCompletionsOf);
+      prevRate = await _previousPeriodRate(
+        period,
+        amals,
+        settings.rolloverHour,
+        periodCompletionsOf,
+      );
     }
 
     // ── Daily breakdown ─────────────────────────────────────────────────────
@@ -397,6 +402,7 @@ class EnhancedStatsService {
       period,
       muhasabaDate,
       amals,
+      settings.rolloverHour,
       completionsByAmal,
     );
 
@@ -408,6 +414,7 @@ class EnhancedStatsService {
     final heatmap = await _buildHeatmap(
       periodLastDay.isAfter(muhasabaDate) ? muhasabaDate : periodLastDay,
       amals,
+      settings.rolloverHour,
       periodCompletionsOf,
     );
 
@@ -418,6 +425,7 @@ class EnhancedStatsService {
     final globalStreaks = await _globalStreaks(
       dailyAmals,
       muhasabaDate,
+      settings.rolloverHour,
       periodCompletionsOf,
     );
 
@@ -473,7 +481,13 @@ class EnhancedStatsService {
         period.endExclusive,
       );
     }
-    return _buildDailyBreakdown(period, muhasabaDate, amals, completionsByAmal);
+    return _buildDailyBreakdown(
+      period,
+      muhasabaDate,
+      amals,
+      settings.rolloverHour,
+      completionsByAmal,
+    );
   }
 
   /// Trend, records and recent-days aggregates for one option set's details
@@ -815,8 +829,16 @@ class EnhancedStatsService {
 
   // ── Expected completions ─────────────────────────────────────────────────
 
-  int _expectedInPeriod(AmalRow amal, Period period) {
-    final spanDays = period.endExclusive.difference(period.start).inDays;
+  /// An amal is only expected from the day it was added, so a new amal
+  /// doesn't drag down rates for the days before it existed.
+  int _expectedInPeriod(AmalRow amal, Period period, int rolloverHour) {
+    final periodDays = period.endExclusive.difference(period.start).inDays;
+    final added = _addedDay(amal, rolloverHour);
+    if (!added.isBefore(period.endExclusive)) return 0;
+    final active = added.isAfter(period.start)
+        ? Period(start: added, endExclusive: period.endExclusive)
+        : period;
+    final spanDays = active.endExclusive.difference(active.start).inDays;
     switch (amal.frequency) {
       case Frequency.daily:
         return spanDays;
@@ -825,8 +847,8 @@ class EnhancedStatsService {
         if (weekdays.isNotEmpty) {
           var count = 0;
           for (
-            var d = period.start;
-            d.isBefore(period.endExclusive);
+            var d = active.start;
+            d.isBefore(active.endExclusive);
             d = d.add(const Duration(days: 1))
           ) {
             if (weekdays.contains(d.weekday)) count++;
@@ -841,15 +863,15 @@ class EnhancedStatsService {
         if (dates.isNotEmpty) {
           var count = 0;
           for (
-            var d = period.start;
-            d.isBefore(period.endExclusive);
+            var d = active.start;
+            d.isBefore(active.endExclusive);
             d = d.add(const Duration(days: 1))
           ) {
             if (isScheduledMonthDate(dates, d)) count++;
           }
           return count;
         }
-        if (spanDays < 21) return 0;
+        if (periodDays < 21) return 0;
         return amal.periodTarget > spanDays ? spanDays : amal.periodTarget;
     }
   }
@@ -860,8 +882,10 @@ class EnhancedStatsService {
     Period period,
     DateTime today,
     List<AmalRow> amals,
+    int rolloverHour,
     Map<int, List<CompletionRow>> completionsByAmal,
   ) {
+    final addedDays = {for (final a in amals) a.id: _addedDay(a, rolloverHour)};
     final days = period.endExclusive.difference(period.start).inDays;
     final result = <DailyBreakdown>[];
 
@@ -873,6 +897,7 @@ class EnhancedStatsService {
       var amount = 0;
 
       for (final amal in amals) {
+        if (date.isBefore(addedDays[amal.id]!)) continue;
         final rows = completionsByAmal[amal.id] ?? const <CompletionRow>[];
         final match = rows
             .where((r) => _dayKey(r.muhasabaDate) == key)
@@ -1055,6 +1080,7 @@ class EnhancedStatsService {
   Future<List<HeatmapDay>> _buildHeatmap(
     DateTime today,
     List<AmalRow> amals,
+    int rolloverHour,
     PeriodCompletionsLookup lookup,
   ) async {
     final dailyAmals = amals
@@ -1084,17 +1110,17 @@ class EnhancedStatsService {
       final rows = byDay[key] ?? [];
 
       var completed = 0;
+      var active = 0;
       for (final amal in dailyAmals) {
+        if (date.isBefore(_addedDay(amal, rolloverHour))) continue;
+        active++;
         if (rows.any((r) => r.amalId == amal.id && amal.meets(r.progress))) {
           completed++;
         }
       }
 
       result.add(
-        HeatmapDay(
-          date: date,
-          rate: dailyAmals.isEmpty ? 0 : completed / dailyAmals.length,
-        ),
+        HeatmapDay(date: date, rate: active == 0 ? 0 : completed / active),
       );
     }
     return result;
@@ -1228,6 +1254,7 @@ class EnhancedStatsService {
   Future<_StreakPair> _globalStreaks(
     List<AmalRow> dailyAmals,
     DateTime today,
+    int rolloverHour,
     PeriodCompletionsLookup lookup,
   ) async {
     if (dailyAmals.isEmpty) {
@@ -1247,10 +1274,21 @@ class EnhancedStatsService {
       };
     }
 
-    // A day is "fully done" when every daily amal was completed.
+    final addedDays = {
+      for (final a in dailyAmals) a.id: _addedDay(a, rolloverHour),
+    };
+
+    // A day is "fully done" when every daily amal that existed then was
+    // completed.
     bool allDone(DateTime date) {
       final key = _dayKey(date);
-      return perAmalDone.values.every((s) => s.contains(key));
+      var any = false;
+      for (final amal in dailyAmals) {
+        if (date.isBefore(addedDays[amal.id]!)) continue;
+        if (!perAmalDone[amal.id]!.contains(key)) return false;
+        any = true;
+      }
+      return any;
     }
 
     // Current streak.
@@ -1287,6 +1325,7 @@ class EnhancedStatsService {
   Future<double?> _previousPeriodRate(
     Period current,
     List<AmalRow> amals,
+    int rolloverHour,
     PeriodCompletionsLookup lookup,
   ) async {
     final duration = current.endExclusive.difference(current.start);
@@ -1298,11 +1337,27 @@ class EnhancedStatsService {
     var expected = 0;
     for (final amal in amals) {
       final rows = await lookup(amal.id, prev.start, prev.endExclusive);
-      completed += rows.where((r) => amal.meets(r.progress)).length;
-      expected += _expectedInPeriod(amal, prev);
+      completed += _completedSinceAdded(amal, rows, rolloverHour);
+      expected += _expectedInPeriod(amal, prev, rolloverHour);
     }
     if (expected == 0) return null;
     return completed / expected;
+  }
+
+  DateTime _addedDay(AmalRow amal, int rolloverHour) =>
+      muhasabaDateOf(amal.createdAt, rolloverHour);
+
+  /// A rollover-hour change or time-zone move can shift the added day past
+  /// a row's date; such rows would push the rate above 100%.
+  int _completedSinceAdded(
+    AmalRow amal,
+    List<CompletionRow> rows,
+    int rolloverHour,
+  ) {
+    final added = _addedDay(amal, rolloverHour);
+    return rows
+        .where((r) => !r.muhasabaDate.isBefore(added) && amal.meets(r.progress))
+        .length;
   }
 
   int _dayKey(DateTime d) => d.year * 10000 + d.month * 100 + d.day;
